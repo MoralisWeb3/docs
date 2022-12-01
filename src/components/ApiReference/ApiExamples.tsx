@@ -53,15 +53,16 @@ const tabs = [
       buildTemplate([
         line("// Dependencies to install:"),
         line("// $ npm install node-fetch --save"),
+        line(`// add "type": "module" to package.json`),
         line(""),
-        line("const fetch = require('node-fetch');"),
+        line("import fetch from 'node-fetch';"),
         line(""),
         line("const options = {"),
         line(`method: '${method}',`, 1),
         line("headers: {", 1),
         line(`Accept: 'application/json'${auth || body ? "," : ""}`, 2),
         body ? line(`'Content-Type': 'application/json'${auth ? "," : ""}`, 2) : null,
-        auth ? line(`X-API-Key: '${auth}'`, 2) : null,
+        auth ? line(`'X-API-Key': '${auth}'`, 2) : null,
         line("},", 1),
         body
           ? line(`body: JSON.stringify(${stringifyJSON(body, true)})`, 1).replace(
