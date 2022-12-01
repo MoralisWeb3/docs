@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials',
-  url: 'https://docs.moralis.io/',
+  url: 'https://docs.moralis.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -33,8 +33,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
         },
         blog: false,
+        pages: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -52,7 +54,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
         logo: {
           alt: 'Moralis Logo',
           src: 'img/logo.svg',
@@ -63,56 +64,27 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'index',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Home',
+          },
+          {
+            type: 'doc',
+            docId: 'reference/introduction',
+            position: 'left',
+            label: 'API Reference',
           }
         ],
-      },
-      footer: {
-        style: 'dark',
-        logo: {
-          alt: 'Moralis Logo',
-          src: 'img/logo.svg',
-          href: 'https://docs.moralis.io',
-          width: 160,
-          height: 51,
-        },
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/moralis',
-              },
-              {
-                label: 'Discord',
-                href: 'https://moralis.io/joindiscord/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/MoralisWeb3',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Moralis. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+    plugins: [
+      ['docusaurus2-dotenv', { systemvars: true, safe: true }],
+      ['@docusaurus/plugin-ideal-image', {}],
+    ],
 };
 
 module.exports = config;

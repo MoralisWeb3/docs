@@ -1,0 +1,298 @@
+.form {
+  position: relative;
+  z-index: 1;
+  margin: 2rem 0;
+}
+
+.runner {
+  padding-top: 2rem;
+}
+
+@media (min-width: 997px) {
+  .form {
+    margin-right: calc(-1 / 3 * (100% + 2 * var(--ifm-spacing-horizontal)));
+  }
+
+  .runner {
+    position: sticky;
+    top: var(--ifm-navbar-height);
+    padding: 1rem 0 0 var(--ifm-spacing-horizontal);
+  }
+}
+
+.form:before,
+.form:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  pointer-events: none;
+}
+
+.section {
+  margin-top: 1rem;
+}
+
+.section > .sectionTitle {
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+}
+
+.sectionTitle + .section {
+  margin: 0;
+}
+
+.url {
+  padding-top: 0.1rem;
+  font-size: 13px;
+}
+
+.method {
+  padding: 0.2rem 0.5rem;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.paramTitle:last-child {
+  padding: 0.3rem 0;
+}
+
+.paramName {
+  margin-right: 0.25rem;
+  font-size: 14px;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.paramType {
+  margin-right: 0.25rem;
+  font-size: 75%;
+  color: var(--ifm-font-color-secondary);
+}
+
+.paramRequired {
+  font-size: 75%;
+  color: var(--ifm-color-danger);
+}
+
+.paramDescription {
+  margin-top: 0.25rem;
+  font-size: 80%;
+}
+
+.group {
+  flex: 1;
+  border: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
+  border-radius: var(--ifm-global-radius);
+}
+
+.group .group {
+  margin: -0.25rem -0.5rem;
+}
+
+.group .field {
+  flex: 1;
+  padding: 0.75rem 1rem;
+}
+
+.group .field:not(:first-child),
+.group .groupHeader:not(:first-child) {
+  border-top: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
+}
+
+.groupHeader {
+  width: 100%;
+}
+
+.groupHeader svg {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.groupHeader,
+.groupHeader button {
+  border: 0;
+  text-align: left;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  outline: none;
+}
+
+.group > .groupHeader {
+  padding: 0.25rem 1rem;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.groupHeader button {
+  padding: 0 0.11rem;
+  margin: 0 -0.11rem;
+  line-height: 1;
+  border-radius: 3px;
+  border: var(--ifm-global-border-width) solid transparent;
+}
+
+.groupHeader button:hover,
+.groupHeader button:focus {
+  border-color: var(--ifm-toc-border-color);
+}
+
+.groupHeader:first-child {
+  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+}
+
+.groupHeader:last-child {
+  border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
+}
+
+.groupHeader:first-child:last-child {
+  border-radius: var(--ifm-global-radius);
+}
+
+.groupHeader button:hover,
+.groupHeader button:focus,
+button.groupHeader:hover,
+button.groupHeader:focus {
+  cursor: pointer;
+}
+
+.groupContainer {
+  width: 100%;
+}
+
+.groupContainer > .group:only-child {
+  margin: -0.75rem -1rem;
+  border: 0;
+}
+
+.groupContainer > .groupHeader:not(:only-child) {
+  margin-bottom: 0.75rem;
+}
+
+.fieldInput {
+  margin-top: 0.5rem;
+}
+
+.fieldInfo {
+  flex: 1;
+}
+
+@media (min-width: 425px) {
+  .group .field {
+    display: flex;
+  }
+
+  .fieldInput {
+    width: 30%;
+    margin: 0 0 0 2rem;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--ifm-global-radius);
+  outline: none;
+  resize: none;
+  font-family: var(--ifm-font-family-monospace);
+  appearance: none;
+}
+
+.input::placeholder {
+  color: #73819b;
+}
+
+.input:not(.invalid):hover {
+  border-color: #ad9dd1;
+}
+
+.input:not(.invalid):focus {
+  border-color: #73819b;
+}
+
+.input:disabled {
+  background-color: #e5eaef;
+}
+
+.invalid {
+  border-color: var(--ifm-color-danger);
+}
+
+.button {
+  padding: 0.6rem 1rem;
+  border: 0;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-font-color-base);
+}
+
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+.inputContainer {
+  display: flex;
+  position: relative;
+}
+
+.inputOverlay {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 4px;
+  font-size: 13px;
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+.inputOverlayError {
+  padding: 0.5rem 1rem;
+  color: var(--ifm-color-danger);
+}
+
+.inputOverlayButton {
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 0;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  outline: none;
+}
+
+.inputOverlayButton small {
+  display: block;
+  margin-top: 0.1rem;
+  opacity: 0.6;
+}
+
+.inlineForm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.inlineForm .input,
+.inlineForm .button {
+  margin-left: 0.5rem;
+}
+
+.groupHeader .inlineForm {
+  margin: 0.25rem 0;
+}
