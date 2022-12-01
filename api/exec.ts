@@ -15,14 +15,15 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
       [
         process.env.API_HOST,
         new Path(path).build(pathParams),
-        qs.stringify(queryParams || {}, { addQueryPrefix: true }),
+        qs.stringify(queryParams || {}, { addQueryPrefix: true })
       ].join(""),
       {
         method,
-        headers: { X-API-Key: `${auth}` },
-        body: JSON.stringify(bodyParam),
+        headers: { 'X-API-Key': `${auth}` },
+        body: JSON.stringify(bodyParam)
       }
     );
+    
     const fetchBody = await fetchRes.json();
 
     response.status(200).json({ status: fetchRes.status, body: fetchBody });
