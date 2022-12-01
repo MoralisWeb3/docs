@@ -19,7 +19,10 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
       ].join(""),
       {
         method,
-        headers: { 'X-API-Key': `'${auth}'` },
+        headers: {
+          Accept: 'application/json',
+          'X-API-Key': `${auth}`
+        },
         body: JSON.stringify(bodyParam)
       }
     );
