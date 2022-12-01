@@ -37,7 +37,7 @@ export const ApiReferenceTokenProvider = (props: React.PropsWithChildren<{}>) =>
 
     if (!queryParams.auth_token) return;
 
-    fetch("/docs/api/auth", {
+    fetch("/api/auth", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ token: queryParams.auth_token }),

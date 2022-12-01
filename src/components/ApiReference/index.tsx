@@ -71,7 +71,7 @@ const ApiReference = ({
       setLoading(true);
 
       try {
-        const response = await fetch("/docs/api/exec", {
+        const response = await fetch("/api/exec", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
