@@ -82,8 +82,8 @@ const config = {
       },
     }),
     plugins: [
-      ['docusaurus2-dotenv', { systemvars: true, safe: true }],
       ['@docusaurus/plugin-ideal-image', {}],
+      ['docusaurus-plugin-dotenv', { path: "./.env", systemvars: true }],
     ],
 };
 
