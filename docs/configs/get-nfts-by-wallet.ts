@@ -14,6 +14,66 @@ const config: ApiReferenceProps = {
         "The address of the wallet",
     },
   ],
+  queryParams: [
+    {
+      type: "string",
+      name: "chain",
+      required: false,
+      example: "",
+      description:
+        "The chain to query",
+      enum: ["eth","0x1","goerli","0x5","sepolia","0xaa36a7","polygon","0x89","mumbai","0x13881","bsc","0x38","bsc","0x61","avalanche","0xa86a","avalanche","0xa869","fantom","0xfa","palm","0x2a15c308d","cronos","0x19","cronos","0x152"],
+    },
+    {
+      type: "string",
+      name: "format",
+      required: false,
+      example: "",
+      description:
+        "The format of the token ID",
+      enum: ["decimal","hex"],
+    },
+    {
+      type: "number",
+      name: "limit",
+      required: false,
+      description:
+        "The desired page size of the result.",
+    },
+    {
+      type: "array",
+      name: "token_addresses",
+      required: false,
+      description:
+        "The addresses to get balances for (optional)",
+      field: {
+        type: "object",
+        fields: [
+          {
+            type: "string",
+            name: "address",
+            required: false,
+            description: "The address",
+          },
+        ]
+      },
+    },
+    {
+      type: "string",
+      name: "cursor",
+      required: false,
+      example: "",
+      description:
+        "The cursor returned in the previous response (used for getting the next page)",
+    },
+    {
+      type: "boolean",
+      name: "normalizeMetadata",
+      required: false,
+      description:
+        "Should normalized metadata be returned?",
+    },
+  ],
   responses: [
     {
       status: 200,
@@ -23,16 +83,21 @@ const config: ApiReferenceProps = {
         fields: [
           {
             type: "string",
-            name: "message",
-            description: "A message describing the error that occurred.",
-            example: "Error Message",
+            name: "status",
+            description: "The syncing status of the address [SYNCING/SYNCED]",
+            example: "SYNCED",
           },
           {
-            type: "string",
-            name: "type",
-            description: "The type of error that occurred.",
-            enum: ["invalid_request_error"],
-            example: "invalid_request_error",
+            type: "number",
+            name: "total",
+            description: "The total number of matches for this query",
+            example: 1,
+          },
+          {
+            type: "number",
+            name: "page",
+            description: "The current page of the result",
+            example: 1,
           },
         ],
       },
@@ -46,8 +111,8 @@ const config: ApiReferenceProps = {
           {
             type: "string",
             name: "message",
-            description: "address is not a valid hex address",
-            example: "Error Message",
+            description: "Error message",
+            example: "address is not a valid hex address",
           }
         ],
       },

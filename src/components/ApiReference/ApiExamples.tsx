@@ -79,30 +79,6 @@ const tabs = [
       ]),
   },
   {
-    lang: "ruby",
-    title: "Ruby",
-    template: ({ method, url, auth, body }) =>
-      buildTemplate([
-        line("require 'uri'"),
-        line("require 'net/http'"),
-        line("require 'openssl'"),
-        line(""),
-        line(`url = URI("${url}")`),
-        line(""),
-        line("http = Net::HTTP.new(url.host, url.port)"),
-        line("http.use_ssl = true"),
-        line(""),
-        line(`request = Net::HTTP::${capitalize(method)}.new(url)`),
-        line(`request["Accept"] = 'application/json'`),
-        body ? line(`request["Content-Type"] = 'application/json'`) : null,
-        auth ? line(`request["X-API-Key"] = '${auth}'`) : null,
-        body ? line(`request.body = "${escapeChar(stringifyJSON(body), '"')}"`) : null,
-        line(""),
-        line("response = http.request(request)"),
-        line("puts response.read_body"),
-      ]),
-  },
-  {
     lang: "python",
     title: "Python",
     template: ({ method, url, auth, body }) =>
