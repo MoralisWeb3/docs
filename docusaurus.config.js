@@ -32,6 +32,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '2.0',
+              path: '',
+            },
+          },
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
         },
@@ -53,7 +60,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      image: 'img/docusaurus-social-card.jpg',
+      algolia: {
+        appId: 'NC1LK93TN5',
+        apiKey: 'b36064a11a9ce260d626a095a8ff2693',
+        indexName: 'moralis-docs',
+      }, 
       navbar: {
+        hideOnScroll: false,
         logo: {
           alt: 'Moralis Logo',
           src: 'img/logo.svg',
@@ -73,12 +92,66 @@ const config = {
             docId: 'reference/introduction',
             position: 'left',
             label: 'API Reference',
-          }
+          },
+          {
+            type: 'dropdown',
+            label: 'SDK References',
+            position: 'left',
+            items: [
+              {
+                label: 'NodeJS',
+                href: 'https://docs.moralis.io/',
+                target: '_blank',
+              },
+              {
+                label: 'Python',
+                href: 'https://docs.moralis.io/',
+                target: '_blank',
+              },
+              {
+                label: 'C#',
+                href: 'https://docs.moralis.io/',
+                target: '_blank',
+              },
+            ],
+          },
+          // Right
+          {
+            position: 'right',
+            label: 'Dashboard',
+            href: 'https://admin.moralis.io/',
+            target: '_blank',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr class="dropdown-separator">',
+              },
+              {
+                type: 'html',
+                className: 'dropdown-archived-versions',
+                value: '<b>Archived versions</b>',
+              },
+              {
+                href: 'https://v1docs.moralis.io/',
+                label: '1.0',
+              },
+              {
+                type: 'html',
+                value: '<hr class="dropdown-separator">',
+              }
+            ],
+          },
         ],
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['php'],
       },
     }),
     plugins: [
