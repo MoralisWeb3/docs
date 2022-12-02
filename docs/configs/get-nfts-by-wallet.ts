@@ -19,7 +19,6 @@ const config: ApiReferenceProps = {
       type: "string",
       name: "chain",
       required: false,
-      example: "",
       description:
         "The chain to query",
       enum: ["eth","0x1","goerli","0x5","sepolia","0xaa36a7","polygon","0x89","mumbai","0x13881","bsc","0x38","bsc","0x61","avalanche","0xa86a","avalanche","0xa869","fantom","0xfa","palm","0x2a15c308d","cronos","0x19","cronos","0x152"],
@@ -28,7 +27,6 @@ const config: ApiReferenceProps = {
       type: "string",
       name: "format",
       required: false,
-      example: "",
       description:
         "The format of the token ID",
       enum: ["decimal","hex"],
@@ -62,7 +60,6 @@ const config: ApiReferenceProps = {
       type: "string",
       name: "cursor",
       required: false,
-      example: "",
       description:
         "The cursor returned in the previous response (used for getting the next page)",
     },
