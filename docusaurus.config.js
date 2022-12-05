@@ -91,7 +91,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "getting-started",
+            docId: "index",
             position: "left",
             label: "Guides",
           },
