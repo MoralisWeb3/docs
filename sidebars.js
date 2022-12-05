@@ -34,11 +34,83 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "NFT API",
+      label: "EVM NFT API",
       className: "sidebar-nft-api",
       items: ["reference/get-nfts-by-wallet"],
     },
-  ]
+    {
+      type: "category",
+      label: "EVM Token API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Balance API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Transaction API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Events API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Block API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Utils",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM Resolve API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM DeFi API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "Auth API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "Streams API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "Solana API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+    {
+      type: "category",
+      label: "EVM IPFS API",
+      className: "sidebar-nft-api",
+      items: ["reference/get-nfts-by-wallet"],
+    },
+  ],
 };
 
 module.exports = sidebars;
