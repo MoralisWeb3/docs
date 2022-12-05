@@ -2,9 +2,6 @@
 title: "How to get all ERC20 transactions by wallet"
 slug: "how-to-get-all-erc20-transactions-by-wallet"
 excerpt: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
-hidden: false
-createdAt: "2022-11-28T14:29:52.727Z"
-updatedAt: "2022-12-03T04:49:31.885Z"
 ---
 ## Prerequisites
 
@@ -172,15 +169,13 @@ In your terminal, you should see the following response:
 }
 ```
 
-
-
 Congratulations 🥳 You just got all ERC20 transactions by wallet with just a few lines of code using the Moralis Token API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenTransfers](🔗)
+- [getWalletTokenTransfers](/)
 
 ## Support
 

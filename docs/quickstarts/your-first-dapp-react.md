@@ -2,9 +2,6 @@
 title: "React"
 slug: "your-first-dapp-react"
 excerpt: "This tutorial will teach you how to set up a React dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any React app."
-hidden: true
-createdAt: "2022-11-26T22:00:31.798Z"
-updatedAt: "2022-11-30T01:55:50.561Z"
 ---
 ## Introduction
 
@@ -108,7 +105,7 @@ export default function Balances() {
 
 ## Set up the Server
 
-[Follow this tutorial](🔗) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
+[Follow this tutorial](/) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
 
 1. Install `cors`:
 
