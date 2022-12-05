@@ -175,7 +175,7 @@ Congratulations 🥳 You just got all ERC20 transactions by wallet with just a f
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenTransfers](/)
+- [getWalletTokenTransfers](https://todo.com/)
 
 ## Support
 
