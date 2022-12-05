@@ -18,20 +18,65 @@ const swaggerPaths = {
 
 let swaggerOAS = {};
 
+/**
+ * @name formatSwaggerJSON
+ * @description This function formats standard swagger OAS JSON to
+ * custom format for API reference docs
+ *
+ * @example
+ * const res = formatSwaggerJSON(swaggerJSON);
+ *
+ * @param swaggerJSON standard swagger OAS JSON
+ * @returns formatted swagger OAS JSON for API Reference
+ */
+const formatSwaggerJSON = (swaggerJSON) => {
+  const swaggerContent = {};
+  for (let swaggerURI in swaggerJSON.paths) {
+    const { operationId } =
+      swaggerJSON.paths?.[swaggerURI]?.get ??
+      swaggerJSON.paths?.[swaggerURI]?.post ??
+      swaggerJSON.paths?.[swaggerURI]?.put ??
+      swaggerJSON.paths?.[swaggerURI]?.delete;
+    swaggerContent[operationId] = {
+      description: swaggerJSON.paths?.[swaggerURI]?.get?.description,
+      method: "GET",
+      path: swaggerURI,
+      queryParams: swaggerJSON.paths?.[swaggerURI]?.get?.parameters,
+      responses: swaggerJSON.paths?.[swaggerURI]?.get?.responses,
+    };
+    console.log(swaggerJSON.paths?.[swaggerURI]?.get?.responses);
+  }
+  return swaggerContent;
+};
+
+/**
+ * @name generateConfigs
+ * @description Generate JSON config for API Reference
+ *
+ * @example
+ * const configs = await generateConfigs();
+ *
+ * @returns Generated JSON config
+ */
 const generateConfigs = async () => {
   try {
     for (let key in swaggerPaths) {
       const swaggerRes = await fetch(swaggerPaths[key]);
       const swaggerJSON = await swaggerRes?.json();
-      swaggerOAS[key] = swaggerJSON.paths;
+      let swaggerContent;
+      if (key === "balance") {
+        swaggerContent = formatSwaggerJSON(swaggerJSON);
+      }
+      swaggerOAS[key] = swaggerContent;
     }
 
-    console.log(swaggerOAS);
+    console.log(swaggerOAS["balance"]);
+    return swaggerOAS;
   } catch (e) {
     console.error(e);
   }
 };
 
 module.exports = {
-  configs: generateConfigs(),
+  configs: generateConfigs,
 };

@@ -36,25 +36,101 @@ const sidebars = {
       type: "category",
       label: "EVM NFT API",
       className: "sidebar-nft-api",
-      items: ["reference/get-nfts-by-wallet"],
+      items: [
+        {
+          type: "category",
+          label: "Get NFTs",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Transfers",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Collections",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Owners",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Market Data",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Metadata",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+      ],
     },
     {
       type: "category",
       label: "EVM Token API",
       className: "sidebar-token-api",
-      items: ["reference/get-nfts-by-wallet"],
+      items: [
+        {
+          type: "category",
+          label: "Get Market Data",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Balance",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Transactions",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+        {
+          type: "category",
+          label: "Get Metadata",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+      ],
     },
     {
       type: "category",
       label: "EVM Balance API",
       className: "sidebar-balance-api",
-      items: ["reference/get-nfts-by-wallet"],
+      items: [
+        {
+          type: "category",
+          label: "Get Balance",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+      ],
     },
     {
       type: "category",
       label: "EVM Transaction API",
       className: "sidebar-transaction-api",
-      items: ["reference/get-nfts-by-wallet"],
+      items: [
+        {
+          type: "category",
+          label: "Get Transaction",
+          className: "sidebar-token-api",
+          items: ["reference/get-nfts-by-wallet"],
+        },
+      ],
     },
     {
       type: "category",
