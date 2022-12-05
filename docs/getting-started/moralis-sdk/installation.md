@@ -1,0 +1,101 @@
+---
+title: "Installation"
+slug: "installation"
+hidden: false
+createdAt: "2022-11-01T13:57:28.441Z"
+updatedAt: "2022-11-23T23:31:26.759Z"
+---
+## NodeJS SDK
+
+### 1. Install Moralis NodeJS SDK
+
+To install Moralis NodeJS SDK, use one of the following commands:
+
+```shell npm
+npm install moralis
+```
+```Text yarn
+yarn add moralis
+```
+```Text pnpm
+pnpm add moralis
+```
+
+
+
+### 2. Initialize Moralis' NodeJS SDK
+
+> 🚧 Make Sure to Store the `apiKey` Value Inside a `.env` File
+
+To initialize the SDK, add the following code to your NodeJS dapp:
+
+```javascript
+const Moralis = require("moralis").default;
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+});
+```
+```typescript
+import Moralis from "moralis";
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+});
+```
+
+
+
+Here, `Moralis.start`, with `apiKey` as a required input, will initialize the Moralis SDK.
+
+Once the Moralis NodeJS SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
+
+### 3. Configuration
+
+You can set the configuration for your Moralis instance when you call `Moralis.start(config)`. For example:
+
+```javascript
+Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  formatEvmAddress: 'checksum',
+  formatEvmChainId: 'decimal',
+  logLevel: 'verbose'
+})
+```
+
+
+
+Below, you can find the possible options for the configuration:
+
+| Option           | Description                                                                                                          | Default       | Required |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| apiKey           | Your secret Moralis ApiKey                                                                                           | `null`        | yes      |
+| formatEvmAddress | Format style for evm addresses. Possible values: `'lowercase'`, `'checksum'`                                         | `'lowercase'` | no       |
+| formatEvmChainId | Format style for chains. Possible values: `'decimal'`, `'hex'`                                                       | `'hex'`       | no       |
+| logLevel         | Level of detail for log messages. Possible values: `'verbose'`, `'debug'`, `'info'`, `'warning'`, `'error'`, `'off'` | `'info'`      | no       |
+
+## Python SDK
+
+To install the Moralis Python SDK, use the following command:
+
+```powershell bash
+pip install moralis
+```
+
+
+
+A simple example of how to call the `web3_api_version` API function:
+
+```python Python
+import moralis
+
+print(moralis.utils.web3_api_version(api_key='API_KEY_HERE'))
+
+# it prints {'version': '0.0.53'}
+```
+
+
+
+You can check here the syntax for all the other functions from the Python SDK: <https://moralisweb3.github.io/Moralis-Python-SDK/>.

@@ -1,0 +1,199 @@
+---
+title: "NextJS"
+slug: "your-first-dapp-nextjs"
+excerpt: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
+hidden: false
+createdAt: "2022-08-10T05:13:01.794Z"
+updatedAt: "2022-11-29T12:59:00.941Z"
+---
+## Introduction
+
+This tutorial shows you how to create a basic NextJS dapp that uses the [@moralisweb3/next](https://www.npmjs.com/package/@moralisweb3/next) to display native balance.
+
+You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs>
+
+![](https://files.readme.io/b66bc70-image.png)
+
+## The Steps We Will Take
+
+1. Create a NextJS app
+2. Import and set up the latest @moralis/next
+3. Integrate your application with Moralis services
+4. Read any blockchain data from any blockchain 
+
+## Prerequisites
+
+1. Create a [Moralis account](https://www.moralis.io)
+2. Install and set up your editor of choice (we will use VSC in this tutorial)
+3. Install [NodeJS](https://nodejs.org/en/download/package-manager/)
+
+## Create a NextJS Dapp
+
+For this part of the tutorial, we will create a dapp that displays the native balance, ERC-20 tokens, and NFTs for any address and EVM chain!🚀
+
+1. Create a new folder for your project and open it in your editor
+2. Initialize a new project:
+
+```shell
+npm init
+```
+
+
+
+Give it a name and fill in the details as you want (press `enter` to use the default options). You should now have a `package.json` file that looks something like this:
+
+```json
+{
+  "name": "simple-nextjs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+
+
+3. Install the required dependencies:
+
+```shell npm
+npm install moralis @moralisweb3/next next-auth next react react-dom
+```
+```text yarn
+yarn add moralis next react react-dom
+```
+```text pnpm
+pnpm add moralis next react react-dom
+```
+
+
+
+4. Open `package.json` and add the following scripts:
+
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+```
+
+
+
+5. Create a `pages` directory at the root of your application and add the `index.jsx` file with the following content:
+
+```javascript
+function HomePage() {
+  return <div>Welcome to my Next.js dApp!</div>
+}
+
+export default HomePage
+```
+
+
+
+> 📘 
+> 
+> NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-features/pages). A page is a [React component](https://reactjs.org/docs/components-and-props.html) exported from a .js, .jsx, .ts, or .tsx file in the pages directory.
+
+## Add Moralis to Your NextJS Dapp
+
+1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/): 
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png",
+        "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png",
+        2880
+      ],
+      "caption": "Admin Panel"
+    }
+  ]
+}
+[/block]
+
+2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
+
+```text .env.local
+MORALIS_API_KEY=replace_me
+```
+
+
+
+> 📘 
+> 
+> NextJS `.env.local` variables are accessible to the entire application and are never exposed to the browser. They are stored only on the server side, which makes them safe.
+
+3. After `.env.local` is added, you can start your app:
+
+```shell
+npm run dev
+```
+
+
+
+> 🚧 
+> 
+> Every time you modify the `.env.local` file, you need to restart your app.
+
+### Setup @moralisweb3/next
+
+To use Moralis APIs in your NextJS project create a resolver file `pages/api/moralis/[...moralis].ts` with the following code:
+
+```javascript
+import { MoralisNextApi } from "@moralisweb3/next";
+
+export default MoralisNextApi({ apiKey: process.env.MORALIS_API_KEY });
+```
+
+You can provide a configuration object to the MoralisNextApi.
+
+### Your first @moralisweb3/next hook call and blockchain data
+
+1. Let's fetch Evm native balance! Add `useEvmNativeBalance` hook to `pages/index.jsx`:
+
+```javascript
+import { useEvmNativeBalance } from '@moralisweb3/next';
+
+function HomePage() {
+    const address = '0x1...';
+    const { data: nativeBalance } = useEvmNativeBalance({ address });
+    return (
+        <div>
+            <h3>Wallet: {address}</h3>
+            <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
+        </div>
+    );
+}
+
+export default HomePage;
+
+
+```
+
+
+
+2. Now, let's receive and use the props in our server-side Visit the `[<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/46867dc-image.png",
+        null,
+        null
+      ],
+      "caption": "The `useEvmNativeBalance()` response"
+    }
+  ]
+}
+[/block]
