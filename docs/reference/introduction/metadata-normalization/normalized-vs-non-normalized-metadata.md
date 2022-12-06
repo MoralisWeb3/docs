@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: "Normalized vs Non-Normalized NFT Metadata"
 slug: "normalized-vs-non-normalized-metadata"
 excerpt: "Get to know the difference between normalized and non-normalized metadata to know which one suits your needs."
@@ -6,7 +7,8 @@ hidden: false
 createdAt: "2022-11-11T12:20:39.265Z"
 updatedAt: "2022-11-16T10:05:06.582Z"
 ---
-The Moralis NFT API has the option to take the original source metadata and output it into a clean, predictable object - making it much easier for you to work with. 
+
+The Moralis NFT API has the option to take the original source metadata and output it into a clean, predictable object - making it much easier for you to work with.
 
 You'll find a query parameter named `normalizeMetadata` on the endpoints listed below. When this is set to true, we normalize and transform the source metadata into a standardized structure (based on ERC721, CryptoPunks, OpenSea, etc) and output this in a new object called normalized_metadata.
 
@@ -92,71 +94,66 @@ Here is the definition of normalized metadata:
       }
 ```
 
-
-
 > 📘 NFT Metadata format structure
-> 
-> Moralis created conversion processes especially for CryptoPunks, Bored Ape Yacht Club, E.N.S. and OpenSea NFTs. 
-> 
+>
+> Moralis created conversion processes especially for CryptoPunks, Bored Ape Yacht Club, E.N.S. and OpenSea NFTs.
+>
 > If an NFT is not one of these targeted types then a default transformation, based on NFT Type (ERC721 or ERC1155) is used.
-> 
+>
 > **The problem is that there are no real standards for NFT Metadata** so many projects develop their own structure.  
-> The new process will transform any metadata of the target types and if the NFT is not one of the target types, should  be able to transform most of the information in the NFT's  metadata and deliver it in the known format.
+> The new process will transform any metadata of the target types and if the NFT is not one of the target types, should be able to transform most of the information in the NFT's metadata and deliver it in the known format.
 
 Normalized NFT metadata provides you with a clean, predictable JSON format that will help you to work with NFT metadata easier.
 
 ```json
 {
-  "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.", 
-  "external_url": "https://openseacreatures.io/3", 
-  "image": "https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.png", 
+  "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.",
+  "external_url": "https://openseacreatures.io/3",
+  "image": "https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.png",
   "name": "Dave Starbelly",
   "attributes": [
     {
-      "trait_type": "Base", 
+      "trait_type": "Base",
       "value": "Starfish"
-    }, 
+    },
     {
-      "trait_type": "Eyes", 
+      "trait_type": "Eyes",
       "value": "Big"
-    }, 
+    },
     {
-      "trait_type": "Mouth", 
+      "trait_type": "Mouth",
       "value": "Surprised"
-    }, 
+    },
     {
-      "trait_type": "Level", 
+      "trait_type": "Level",
       "value": 5
-    }, 
+    },
     {
-      "trait_type": "Stamina", 
+      "trait_type": "Stamina",
       "value": 1.4
-    }, 
+    },
     {
-      "trait_type": "Personality", 
+      "trait_type": "Personality",
       "value": "Sad"
-    }, 
+    },
     {
-      "display_type": "boost_number", 
-      "trait_type": "Aqua Power", 
+      "display_type": "boost_number",
+      "trait_type": "Aqua Power",
       "value": 40
-    }, 
+    },
     {
-      "display_type": "boost_percentage", 
-      "trait_type": "Stamina Increase", 
+      "display_type": "boost_percentage",
+      "trait_type": "Stamina Increase",
       "value": 10
-    }, 
+    },
     {
-      "display_type": "number", 
-      "trait_type": "Generation", 
+      "display_type": "number",
+      "trait_type": "Generation",
       "value": 2
     }
   ]
 }
-
 ```
-
-
 
 Non-normalized NFT metadata provides you with a stringified version of the NFT metadata.
 

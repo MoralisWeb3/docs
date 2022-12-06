@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 sidebar_label: Introduction
 ---
 
@@ -18,17 +17,18 @@ The Moralis API can also be requested through the [Moralis SDK](https://docs.mor
 ```text EVM API
 https://deep-index.moralis.io/api/v2
 ```
+
 ```Text Solana API
 https://solana-gateway.moralis.io
 ```
+
 ```Text Auth API
 https://authapi.moralis.io
 ```
+
 ```Text Streams API
 https://api.moralis-streams.com
 ```
-
-
 
 ## Just Getting Started?
 
