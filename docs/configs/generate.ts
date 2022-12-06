@@ -27,13 +27,24 @@ let swaggerOAS = {};
 const translateSchemaReference = (schemaRef) => {
   const schemaName = schemaRef.replace("#/components/schemas/", "");
   const schemaJSON = swaggerSchemas[schemaName];
-  console.log(schemaJSON);
 
-  const { type, example, enum: schemaEnum } = schemaJSON;
+  const { type, example, enum: schemaEnum, properties } = schemaJSON;
   if (type) {
     return { type, example, enum: schemaEnum };
+  } else if (properties) {
+    return {
+      field: Object.keys(properties).map((name) => {
+        const { type, description, example } = properties[name];
+        return {
+          name,
+          type,
+          description,
+          example,
+        };
+      }),
+    };
   } else {
-    return { field: schemaRef };
+    return {};
   }
 };
 
@@ -76,7 +87,24 @@ const formatParameters = (parameters) => {
   return { pathParams, queryParams };
 };
 
-const formatResponses = (responses) => {};
+const formatResponses = (responses) => {
+  const formattedResponses = Object.keys(responses).map((status) => {
+    const { description, content } = responses[status];
+    console.log(content);
+    return {
+      status,
+      description,
+      ...(content
+        ? {
+            body: translateSchemaReference(
+              content["application/json"]?.schema?.$ref
+            ),
+          }
+        : {}),
+    };
+  });
+  return formattedResponses;
+};
 
 /**
  * @name formatSwaggerJSON
@@ -92,18 +120,23 @@ const formatResponses = (responses) => {};
 const formatSwaggerJSON = (swaggerJSON) => {
   const swaggerContent = {};
   for (let path in swaggerJSON.paths) {
+    // Extract all important fields from Swagger
     const { operationId, description, method, parameters, responses } =
       extractSwaggerValueByMethod(swaggerJSON, path);
+    console.log(path);
+
+    // Formatting Parameters & Responses
     const { pathParams, queryParams } = formatParameters(parameters);
+    const formattedResponses = formatResponses(responses);
+
     swaggerContent[operationId] = {
       description,
       method,
       path,
       pathParams,
       queryParams,
-      responses,
+      responses: formattedResponses,
     };
-    console.log(swaggerJSON.paths?.[path]?.get?.responses?.["200"].content);
   }
   return swaggerContent;
 };
@@ -142,7 +175,6 @@ const generateConfigs = async () => {
       () => {}
     );
 
-    console.log(swaggerOAS["balance"]);
     return swaggerOAS;
   } catch (e) {
     console.error(e);

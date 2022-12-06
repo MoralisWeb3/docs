@@ -64,16 +64,22 @@
           "type": "number"
         }
       ],
-      "responses": {
-        "200": {
+      "responses": [
+        {
+          "status": "200",
           "description": "Returns the native balance for a specific address",
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/nativeBalance" }
-            }
+          "body": {
+            "field": [
+              {
+                "name": "balance",
+                "type": "string",
+                "description": "The balance",
+                "example": "1234567890"
+              }
+            ]
           }
         }
-      }
+      ]
     }
   }
 }
