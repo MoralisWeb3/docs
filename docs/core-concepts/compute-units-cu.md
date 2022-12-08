@@ -2,9 +2,6 @@
 title: "Compute Units (CU)"
 slug: "compute-units-cu"
 excerpt: "Learn more about what is Compute Units and how does it affects your pricing."
-hidden: false
-createdAt: "2022-11-10T15:28:19.925Z"
-updatedAt: "2022-11-24T08:44:32.718Z"
 ---
 All Moralis plans have generous limits on the number of requests you can make per month. How many included requests you have depends on the plan you have, check the [pricing page](https://moralis.io/pricing) for more details.
 

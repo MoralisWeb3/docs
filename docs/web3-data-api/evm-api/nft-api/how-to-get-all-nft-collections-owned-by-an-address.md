@@ -169,7 +169,7 @@ Congratulations 🥳 you just got all the NFT collections owned by an address wi
 
 ## Youtube Video
 
-`oembed: https://www.youtube.com/watch?v=Zq-eoO-mTbc
+https://www.youtube.com/watch?v=Zq-eoO-mTbc
 
 
 ## API Reference
