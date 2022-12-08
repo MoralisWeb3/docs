@@ -8,30 +8,31 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
     return response.status(405).json({ error: "Method Not Allowed" });
   }
 
-  const { method, path, auth, bodyParam, queryParams, pathParams } = request.body || {};
+  const { method, path, auth, bodyParam, queryParams, pathParams } =
+    request.body || {};
 
   try {
     const fetchRes = await fetch(
       [
         process.env.API_HOST,
         new Path(path).build(pathParams),
-        qs.stringify(queryParams || {}, { addQueryPrefix: true })
+        qs.stringify(queryParams || {}, { addQueryPrefix: true }),
       ].join(""),
       {
         method,
         headers: {
-          Accept: 'application/json',
-          'X-API-Key': `${auth}`
+          Accept: "application/json",
+          "X-API-Key": `${auth}`,
         },
-        body: JSON.stringify(bodyParam)
+        body: JSON.stringify(bodyParam),
       }
     );
 
     const fetchBody = await fetchRes.json();
 
     response.status(200).json({ status: fetchRes.status, body: fetchBody });
-  } catch {
-    response.status(400).json({ error: "Request Failed" });
+  } catch (error) {
+    response.status(400).json({ error });
   }
 };
 

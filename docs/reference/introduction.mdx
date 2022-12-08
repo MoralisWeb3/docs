@@ -1,7 +1,9 @@
 ---
-sidebar_position: 1
 sidebar_label: Introduction
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # API Reference Introduction
 
@@ -15,20 +17,36 @@ The Moralis API can also be requested through the [Moralis SDK](https://docs.mor
 
 ## Base URL
 
-```text EVM API
+<Tabs groupId="moralis-api">
+  <TabItem value="evm" label="EVM API">
+
+```
 https://deep-index.moralis.io/api/v2
 ```
-```Text Solana API
-https://solana-gateway.moralis.io
+
+  </TabItem>
+  <TabItem value="auth" label="Auth API">
+
 ```
-```Text Auth API
 https://authapi.moralis.io
 ```
-```Text Streams API
+
+  </TabItem>
+  <TabItem value="streams" label="Streams API">
+
+```
 https://api.moralis-streams.com
 ```
 
+  </TabItem>
+  <TabItem value="solana" label="Solana API">
 
+```
+https://solana-gateway.moralis.io
+```
+
+  </TabItem>
+</Tabs>
 
 ## Just Getting Started?
 
