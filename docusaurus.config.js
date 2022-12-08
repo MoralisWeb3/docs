@@ -27,6 +27,12 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       "classic",
@@ -93,7 +99,7 @@ const config = {
             type: "doc",
             docId: "index",
             position: "left",
-            label: "Guides",
+            label: "Docs",
           },
           {
             type: "doc",
