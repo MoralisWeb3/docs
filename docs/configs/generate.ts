@@ -166,6 +166,7 @@ const generateConfigs = async () => {
       if (["balance", "block"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
+          // Write MDX Files for API Reference pages
           await fs.writeFile(
             `${swaggerPaths[key].filePath}/${functionName}.mdx`,
             `---
