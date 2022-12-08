@@ -12,10 +12,6 @@ If you have an existing application and would like to add web3 functionality int
 
 # Products
 
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList items={items} />  
-
 
 ## API
 

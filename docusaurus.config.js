@@ -79,7 +79,6 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
-      image: "img/docusaurus-social-card.jpg",
       algolia: {
         appId: "NC1LK93TN5",
         apiKey: "b36064a11a9ce260d626a095a8ff2693",
