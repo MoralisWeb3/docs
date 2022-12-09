@@ -51,7 +51,6 @@ const config = {
           remarkPlugins: [[oembed, { syncWidget: true }]],
         },
         blog: false,
-        pages: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -90,26 +89,45 @@ const config = {
           alt: "Moralis Logo",
           src: "img/logo.svg",
           srcDark: "img/logo-dark.svg",
-          href: "https://docs.moralis.io",
+          href: "/",
           target: "_self",
         },
         items: [
           {
-            type: "doc",
-            docId: "index",
-            position: "left",
-            label: "Docs",
+            type: 'doc',
+            docId: 'home/overview',
+            position: 'left',
+            label: 'Home',
           },
+          {
+            type: 'doc',
+            docId: 'web3-data-api/overview',
+            position: 'left',
+            label: 'Web3 Data API',
+          },
+          {
+            type: 'doc',
+            docId: 'streams-api/overview',
+            position: 'left',
+            label: 'Streams API',
+          },
+          {
+            type: 'doc',
+            docId: 'authentication-api/overview', 
+            position: 'left',
+            label: 'Authentication API',
+          },
+          // position: Right
           {
             type: "doc",
             docId: "reference/introduction",
-            position: "left",
+            position: "right",
             label: "API Reference",
           },
           {
             type: "dropdown",
             label: "SDK References",
-            position: "left",
+            position: "right",
             items: [
               {
                 label: "NodeJS",
@@ -127,13 +145,6 @@ const config = {
                 target: "_blank",
               },
             ],
-          },
-          // Right
-          {
-            position: "right",
-            label: "Dashboard",
-            href: "https://admin.moralis.io/",
-            target: "_blank",
           },
           {
             type: "docsVersionDropdown",
@@ -158,6 +169,12 @@ const config = {
                 value: '<hr class="dropdown-separator">',
               },
             ],
+          },
+          {
+            type: 'html',
+            position: 'right',
+            className: 'dashboard-button',
+            value: '<a class="button button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Dashboard</a>',
           },
         ],
       },
