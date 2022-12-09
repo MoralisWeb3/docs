@@ -19,7 +19,7 @@ Welcome to our documentation! Moralis is an enterprise-grade Web3 API service th
     </div>
     <div class="col col--4">
         <div class="col-demo">
-            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api-reference/">
+            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/reference/">
                 <h3>📄️ API Reference</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
@@ -48,7 +48,7 @@ Welcome to our documentation! Moralis is an enterprise-grade Web3 API service th
     </div>
     <div class="col col--4">
         <div class="col-demo">
-            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/web3-data-api/">
+            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/streams-api/">
                 <h3>📄️ Streams</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
@@ -56,7 +56,7 @@ Welcome to our documentation! Moralis is an enterprise-grade Web3 API service th
     </div>
     <div class="col col--4">
         <div class="col-demo">
-            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/web3-data-api/">
+            <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/authentication-api/">
                 <h3>📄️ Authentication</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
