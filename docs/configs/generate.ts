@@ -37,7 +37,6 @@ const translateSchemaReference = (schemaRef) => {
 
 const extractSwaggerValueByMethod = (swaggerJSON, path) => {
   const method = Object.keys(swaggerJSON.paths?.[path])[0];
-  console.log(swaggerJSON.paths?.[path]?.[method]);
   return {
     ...swaggerJSON.paths?.[path]?.[method],
     method: method.toUpperCase(),
@@ -133,7 +132,6 @@ const formatSwaggerJSON = (swaggerJSON) => {
       parameters = [],
       responses = [],
     } = extractSwaggerValueByMethod(swaggerJSON, path);
-    console.log(path);
 
     // Formatting Parameters & Responses
     const { pathParams = [], queryParams = [] } = formatParameters(parameters);
@@ -157,12 +155,16 @@ const formatSwaggerJSON = (swaggerJSON) => {
  * @description
  * Generate JSON config for API Reference & write it to JSON file.
  * This already works well for:
+ * - NFT API
+ * - Token API
  * - Balance API
+ * - Transaction API
  * - Block API
  * - Events API
  * - Utils API
  * - Resolve API
  * - DeFi API
+ * - IPFS API
  * - Streams API
  * - Auth API
  * - Solana API
@@ -183,9 +185,7 @@ const generateConfigs = async () => {
       swaggerSchemas = swaggerJSON.components.schemas;
 
       // If statement is temporary, for testing only
-      if (["utils"].includes(key)) {
-        swaggerContent = formatSwaggerJSON(swaggerJSON);
-      }
+      swaggerContent = formatSwaggerJSON(swaggerJSON);
       swaggerOAS[key] = swaggerContent;
     }
 
