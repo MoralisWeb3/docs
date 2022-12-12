@@ -1,7 +1,7 @@
 ---
 title: "Listen to all addresses"
 slug: "listen-to-all-addresses"
-excerpt: "Monitor All Transactions by a Topic"
+description: "Monitor All Transactions by a Topic"
 ---
 
 - Listen to all NFT contract transfers [tutorial](https://docs.moralis.io/docs/listen-to-all-nft-contract-transfers)

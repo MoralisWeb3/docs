@@ -1,10 +1,7 @@
 ---
 title: "Supabase Authentication"
 slug: "supabase-authentication"
-excerpt: "This tutorial will teach you how to integrate Supabase authentication with Web3 authentication. We will use the Moralis Auth API to handle the Web3 authentication flow."
-hidden: false
-createdAt: "2022-11-20T16:30:01.110Z"
-updatedAt: "2022-11-20T16:30:01.110Z"
+description: "This tutorial will teach you how to integrate Supabase authentication with Web3 authentication. We will use the Moralis Auth API to handle the Web3 authentication flow."
 ---
 This guide will teach you how to combine Web3 authentication with Supabase authentication. The Web3 authentication flow will be managed using the Moralis Auth API.
 
@@ -12,7 +9,7 @@ Let's start by defining Supabase. In short, Supabase is an open-source substitut
 
 In this guide, we will take advantage of Supabase's row-level security (RLS) as we use a custom authentication provider!
 
-![](https://files.readme.io/8858f40-ezgif.com-gif-maker_2.gif "ezgif.com-gif-maker (2).gif")
+![](/img/content/8858f40-ezgif.com-gif-maker_2.gif "ezgif.com-gif-maker (2).gif")
 
 Let's dive in.
 
@@ -31,9 +28,9 @@ We will not use the Supabase default auth schema because we do not want to use e
 
 On the dashboard, go to **Table editor**, select **public schema** and click on **Create a new table**:
 
-![](https://files.readme.io/6b88eed-Screenshot_2022-08-17_at_22.39.08.png "Screenshot 2022-08-17 at 22.39.08.png")
+![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.png "Screenshot 2022-08-17 at 22.39.08.png")
 
-![](https://files.readme.io/1e757b3-Screenshot_2022-08-17_at_22.49.04.png "Screenshot 2022-08-17 at 22.49.04.png")
+![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.png "Screenshot 2022-08-17 at 22.49.04.png")
 
 Remember, since Supabase uses PostgreSQL, your table must be structured with all the necessary fields. In this case, `id`, `moralis provider id`, and `metadata`.
 
@@ -43,7 +40,7 @@ We will create a policy that allows only authenticated users to access the table
 
 To do this, go to **Authentication** > **Policies**, then click on **Enable RLS** for the table we just created > click on **New policy** for the created table:
 
-![](https://files.readme.io/2618319-Screenshot_2022-08-17_at_22.45.42.png "Screenshot 2022-08-17 at 22.45.42.png")
+![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.png "Screenshot 2022-08-17 at 22.45.42.png")
 
 ```sql
 CREATE POLICY "Enable select for authenticated users only"
@@ -81,7 +78,7 @@ Note that `SUPABASE_SERVICE_ROLE` is the service role that has the ability to by
 
 <!-- Insert image for api keys -->
 
-![](https://files.readme.io/61ce3ef-Screenshot_2022-08-17_at_22.46.59.png "Screenshot 2022-08-17 at 22.46.59.png")
+![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.png "Screenshot 2022-08-17 at 22.46.59.png")
 
 The Moralis SDK must also be initialized:
 

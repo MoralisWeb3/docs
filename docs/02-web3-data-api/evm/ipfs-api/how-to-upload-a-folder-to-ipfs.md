@@ -1,10 +1,7 @@
 ---
 title: "How to upload a folder to IPFS"
 slug: "how-to-upload-a-folder-to-ipfs"
-excerpt: "Learn how to upload files to IPFS to host them in a decentralized manner using the Moralis IPFS API."
-hidden: false
-createdAt: "2022-11-02T18:40:03.021Z"
-updatedAt: "2022-12-03T05:03:01.131Z"
+description: "Learn how to upload files to IPFS to host them in a decentralized manner using the Moralis IPFS API."
 ---
 ## Prerequisites
 

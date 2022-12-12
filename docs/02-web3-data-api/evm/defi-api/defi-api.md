@@ -1,9 +1,6 @@
 ---
 title: "DeFi API"
 slug: "defi-api"
-hidden: false
-createdAt: "2022-11-10T18:00:05.712Z"
-updatedAt: "2022-11-24T21:23:17.178Z"
 ---
 ## What is the DeFi API?
 

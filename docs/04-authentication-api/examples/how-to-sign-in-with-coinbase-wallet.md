@@ -1,25 +1,9 @@
 ---
 title: "How to sign in with Coinbase Wallet"
 slug: "how-to-sign-in-with-coinbase-wallet"
-excerpt: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through creating a full-stack Web3 authentication solution using the popular NextJS framework."
-hidden: false
-createdAt: "2022-08-15T10:52:16.468Z"
-updatedAt: "2022-12-03T06:29:05.269Z"
+description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/50e491e-cb.gif",
-        "cb.gif",
-        750
-      ],
-      "caption": "Web3 Moralis Authentication with Coinbase Wallet - Result"
-    }
-  ]
-}
-[/block]
+![Web3 Moralis Authentication with Coinbase Wallet - Result](/img/content/50e491e-cb.gif)
 
 ## Before Starting
 
@@ -101,71 +85,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Coinbase Wallet`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0ead0ca-8.png",
-        "8.png",
-        750
-      ],
-      "caption": "Sign In Page"
-    }
-  ]
-}
-[/block]
+![Sign In Page](/img/content/0ead0ca-8.png)
 
 2. Connect Coinbase Wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/532fc36-42.png",
-        "42.png",
-        750
-      ],
-      "caption": "Coinbase Wallet - Connecting"
-    }
-  ]
-}
-[/block]
+![Coinbase Wallet - Connecting](/img/content/532fc36-42.png)
 
 3. Sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f486cbb-84.png",
-        "84.png",
-        750
-      ],
-      "caption": "Signing the Message"
-    }
-  ]
-}
-[/block]
+![Signing the Message](/img/content/f486cbb-84.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a45ec1e-122.png",
-        "122.png",
-        750
-      ],
-      "caption": "User Page"
-    }
-  ]
-}
-[/block]
+![User Page](/img/content/a45ec1e-122.png)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

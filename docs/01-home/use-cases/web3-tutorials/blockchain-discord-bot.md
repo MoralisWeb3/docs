@@ -1,9 +1,6 @@
 ---
 title: "Blockchain Discord Bot"
 slug: "blockchain-discord-bot"
-hidden: false
-createdAt: "2022-11-24T12:32:10.556Z"
-updatedAt: "2022-11-27T13:11:12.142Z"
 ---
 ## Introduction
 
@@ -115,7 +112,7 @@ ngrok http 3000
 
 This will give us an address where out express app will be running and where we can setup webhooks for streams api.
 
-![](https://files.readme.io/c2b72e9-Screenshot_2022-11-24_at_15.24.44.jpg)
+![](/img/content/c2b72e9-Screenshot_2022-11-24_at_15.24.44.jpg)
 
 5. ### Start our express server.
 
@@ -166,11 +163,11 @@ We will use Moralis Streams API to get real-time events and send notifications
 
  Inside our admin panel access [streams section](https://admin.moralis.io/streams) and create a new stream.
 
-![](https://files.readme.io/1a3f153-Screenshot_2022-11-24_at_15.54.14.jpg)
+![](/img/content/1a3f153-Screenshot_2022-11-24_at_15.54.14.jpg)
 
 Select **Create From Scratch**
 
-![](https://files.readme.io/af70faf-Screenshot_2022-11-24_at_15.55.22.jpg)
+![](/img/content/af70faf-Screenshot_2022-11-24_at_15.55.22.jpg)
 
 For this example we will use this simple donation contract, but you can use any smart contract of your choice:
 
@@ -182,23 +179,23 @@ For this example we will use this simple donation contract, but you can use any 
 
 For the webhook url have to use the url provided previously by ngrok, followed by our `/webhook` endpoint from our express app
 
-![](https://files.readme.io/3083fdd-Screenshot_2022-11-24_at_16.05.02.jpg)
+![](/img/content/3083fdd-Screenshot_2022-11-24_at_16.05.02.jpg)
 
 Our contract is deployed on mumbai testnet, so here you will select the network that your smart contrat is deployed on: 
 
-![](https://files.readme.io/89031d2-Screenshot_2022-11-24_at_16.07.14.jpg)
+![](/img/content/89031d2-Screenshot_2022-11-24_at_16.07.14.jpg)
 
 Because our donations are sending native currency to a smart contract, here we will select native transactions and check Event Emittance.
 
-![](https://files.readme.io/d2fc65d-Screenshot_2022-11-24_at_16.11.00.jpg)
+![](/img/content/d2fc65d-Screenshot_2022-11-24_at_16.11.00.jpg)
 
 Next we have to add the ABI and select the topic we with to stream.
 
-![](https://files.readme.io/7a495e0-image.png)
+![](/img/content/7a495e0-image.png)
 
 After creating the stream Moralis will send an empty POST request to confirm that the stream was created successfully.
 
-![](https://files.readme.io/3ce0485-image.png)
+![](/img/content/3ce0485-image.png)
 
 ## Verify Stream Sender
 
@@ -210,7 +207,7 @@ Back to our express endpoint, we can add logic that allows only request coming f
 
 1. ### Go to [Moralis Admin Panel](https://admin.moralis.io/web3apis) and copy your web3 api key.
 
-![](https://files.readme.io/a254a4d-Screenshot_2022-11-24_at_16.29.26.jpg)
+![](/img/content/a254a4d-Screenshot_2022-11-24_at_16.29.26.jpg)
 
 2. ### Create an `.env` file.
 
@@ -264,25 +261,25 @@ We will now begin to setup our bot to send notifications to our discord server.
 
 1. Access [Discord Developer Portal](https://discord.com/developers) and create a new application.
 
-![](https://files.readme.io/a10c89c-Screenshot_2022-11-24_at_16.41.34.jpg)
+![](/img/content/a10c89c-Screenshot_2022-11-24_at_16.41.34.jpg)
 
 2. Add a new bot to your application.
 
-![](https://files.readme.io/f180c62-Screenshot_2022-11-24_at_16.44.35.jpg)
+![](/img/content/f180c62-Screenshot_2022-11-24_at_16.44.35.jpg)
 
 3. Add the scope and the permissions to your bot.
 
-![](https://files.readme.io/77f8469-image.png)
+![](/img/content/77f8469-image.png)
 
-![](https://files.readme.io/590011d-image.png)
+![](/img/content/590011d-image.png)
 
 3. Open the generated url in a new browser tab and invite the bot to your server.
 
-![](https://files.readme.io/385ae12-image.png)
+![](/img/content/385ae12-image.png)
 
 5. Back in the Bot section, Reset and copy the new token.
 
-![](https://files.readme.io/47b8e98-Screenshot_2022-11-24_at_16.51.35.jpg)
+![](/img/content/47b8e98-Screenshot_2022-11-24_at_16.51.35.jpg)
 
 6. Add the token and the channel id you wish to send the message to inside your `.env` file.
 
@@ -358,23 +355,10 @@ node index.js
 
 2. To test our bot, We can now call the donation function from our contract.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/604fd4b-image.png",
-        null,
-        ""
-      ],
-      "border": true
-    }
-  ]
-}
-[/block]
+![](/img/content/604fd4b-image.png)
 
 
 
 3. We should see a new notification sent by our bot.
 
-![](https://files.readme.io/e8aac1e-image.png)
+![](/img/content/e8aac1e-image.png)

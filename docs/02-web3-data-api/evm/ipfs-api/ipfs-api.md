@@ -1,9 +1,6 @@
 ---
 title: "IPFS API"
 slug: "ipfs-api"
-hidden: false
-createdAt: "2022-11-11T09:04:40.765Z"
-updatedAt: "2022-11-23T13:30:08.256Z"
 ---
 ## What is the IPFS API?
 

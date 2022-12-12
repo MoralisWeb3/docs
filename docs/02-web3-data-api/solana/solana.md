@@ -1,6 +1,6 @@
 ---
 title: "Solana API"
-excerpt: "Supercharge your Solana development with the most scalable Solana API in Web3. Bring your projects to market at speed using Moralis’ Solana API!"
+description: "Supercharge your Solana development with the most scalable Solana API in Web3. Bring your projects to market at speed using Moralis’ Solana API!"
 sidebar_position: 3
 ---
 ## What is the Solana API?

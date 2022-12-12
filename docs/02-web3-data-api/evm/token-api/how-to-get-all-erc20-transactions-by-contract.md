@@ -1,10 +1,7 @@
 ---
 title: "How to get all ERC20 transactions by contract"
 slug: "how-to-get-all-erc20-transactions-by-contract"
-excerpt: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
-hidden: false
-createdAt: "2022-11-28T15:01:50.269Z"
-updatedAt: "2022-12-03T04:49:49.445Z"
+description: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
 ---
 ## Prerequisites
 

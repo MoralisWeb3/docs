@@ -1,26 +1,9 @@
 ---
 title: "How to sign in with Magic.Link"
 slug: "how-to-sign-in-with-magiclink"
-excerpt: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework."
-hidden: false
-createdAt: "2022-08-16T07:58:42.273Z"
-updatedAt: "2022-12-03T06:29:28.015Z"
+description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3e566e9-magic.gif",
-        "magic.gif",
-        1075
-      ],
-      "caption": "Web3 Moralis Authentication with Magic.Link - Result"
-    }
-  ]
-}
-[/block]
-
+![Web3 Moralis Authentication with Magic.Link - Result](/img/content/3e566e9-magic.gif)
 ## Before Starting
 
 You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality. 
@@ -116,71 +99,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Magic.Link`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/68b667b-122.png",
-        "122.png",
-        1075
-      ],
-      "caption": "Sign In Page"
-    }
-  ]
-}
-[/block]
+![Sign In Page](/img/content/68b667b-122.png)
 
 2. Enter your email:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6818115-73.png",
-        "73.png",
-        1075
-      ],
-      "caption": "Magic.Link Modal"
-    }
-  ]
-}
-[/block]
+![Magic.Link Modal](/img/content/6818115-73.png)
 
 3. Verify the login from your email:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e26217b-204.png",
-        "204.png",
-        1075
-      ],
-      "caption": "Message from Magic.Link in Gmail"
-    }
-  ]
-}
-[/block]
+![Message from Magic.Link in Gmail](/img/content/e26217b-204.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/afe14c1-391.png",
-        "391.png",
-        1075
-      ],
-      "caption": "User Page"
-    }
-  ]
-}
-[/block]
+![User Page](/img/content/afe14c1-391.png)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

@@ -1,7 +1,7 @@
 ---
 title: "How to get NFT Metadata"
 slug: "../how-to-get-the-metadata-of-an-nft"
-excerpt: "Learn how to get NFT metadata using the Moralis NFT API."
+description: "Learn how to get NFT metadata using the Moralis NFT API."
 ---
 ## Prerequisites
 

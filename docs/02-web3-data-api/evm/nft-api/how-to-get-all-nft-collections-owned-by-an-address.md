@@ -1,7 +1,7 @@
 ---
 title: "How to get all the NFT collections owned by an address"
 slug: "../how-to-get-all-nft-collections-owned-by-an-address"
-excerpt: "Learn how to get the NFT collections (with metadata) owned by an address using Moralis NFT API."
+description: "Learn how to get the NFT collections (with metadata) owned by an address using Moralis NFT API."
 ---
 ## Prerequisites
 

@@ -1,7 +1,7 @@
 ---
 title: "How to get all the NFTs from a collection"
 slug: "../how-to-get-all-the-nfts-from-a-collection"
-excerpt: "Learn how to get all NFTs from a collection using Moralis NFT API."
+description: "Learn how to get all NFTs from a collection using Moralis NFT API."
 ---
 ## Prerequisites
 

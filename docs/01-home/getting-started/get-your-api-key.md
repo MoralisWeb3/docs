@@ -1,7 +1,7 @@
 ---
 title: "Get Your API Key"
 slug: "get-your-api-key"
-excerpt: "Learn how to get an API Key and make your first request with the Moralis API."
+description: "Learn how to get an API Key and make your first request with the Moralis API."
 sidebar_position: 1
 ---
 
@@ -9,14 +9,14 @@ sidebar_position: 1
 
 Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Dashboard</a> to create your Moralis account.
 
-![Moralis Admin (Sign Up)](https://files.readme.io/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.png)
+![Moralis Admin (Sign Up)](/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.png)
 
 ## Step 2: Get API Key
 
 1. Go to <https://admin.moralis.io/web3apis>.
 2. Click on the copy icon to copy your API Key:
 
-![Moralis Admin (Sign Up)](https://files.readme.io/1de1f4d-Screen_Shot_2022-10-24_at_14.49.31.png)
+![Moralis Admin (Sign Up)](/img/content/1de1f4d-Screen_Shot_2022-10-24_at_14.49.31.png)
 
 :::info
 📘 Keep Your API Key Safe

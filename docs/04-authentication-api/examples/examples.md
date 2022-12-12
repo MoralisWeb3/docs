@@ -1,9 +1,6 @@
 ---
 title: "Examples"
-excerpt: "With Moralis, you can integrate Web3 authentication into any tech stack quickly and easily."
-hidden: false
-createdAt: "2022-08-09T17:01:03.667Z"
-updatedAt: "2022-11-07T15:10:11.497Z"
+description: "With Moralis, you can integrate Web3 authentication into any tech stack quickly and easily."
 ---
 # Why use Web3 Authentication?
 

@@ -1,10 +1,7 @@
 ---
 title: "Permission and Roles"
 slug: "permission-roles"
-excerpt: "Guide and overview of Moralis teams feature. Including information about what permissions and roles that exist."
-hidden: false
-createdAt: "2022-10-24T11:38:16.635Z"
-updatedAt: "2022-11-24T08:41:23.839Z"
+description: "Guide and overview of Moralis teams feature. Including information about what permissions and roles that exist."
 ---
 ## Roles and Permissions
 

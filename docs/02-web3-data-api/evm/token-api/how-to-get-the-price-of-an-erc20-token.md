@@ -1,10 +1,7 @@
 ---
 title: "How to get the price of an ERC20 token"
 slug: "how-to-get-the-price-of-an-erc20-token"
-excerpt: "Learn how to get the price of an ERC20 token with Moralis Token API."
-hidden: false
-createdAt: "2022-11-28T08:37:06.943Z"
-updatedAt: "2022-12-03T04:48:53.501Z"
+description: "Learn how to get the price of an ERC20 token with Moralis Token API."
 ---
 ## Prerequisites
 

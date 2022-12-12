@@ -1,25 +1,9 @@
 ---
 title: "Firebase Authentication"
 slug: "web3-firebase-authentication"
-excerpt: "This tutorial will teach you how to authenticate a user to your Firebase application with an EVM or Solana wallet. To simplify and speed up this process, we will use the \"Authenticate with Moralis Web3\" extension for Firebase."
-hidden: false
-createdAt: "2022-09-20T08:55:09.433Z"
-updatedAt: "2022-11-14T16:49:32.244Z"
+description: "This tutorial will teach you how to authenticate a user to your Firebase application with an EVM or Solana wallet. To simplify and speed up this process, we will use the \"Authenticate with Moralis Web3\" extension for Firebase."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4169289-moralis-auth-firebase.gif",
-        null,
-        "Web3 Firebase Authentication Demo"
-      ],
-      "caption": "Web3 Firebase Authentication Demo"
-    }
-  ]
-}
-[/block]
+![Web3 Firebase Authentication Demo](/img/content/4169289-moralis-auth-firebase.gif)
 
 Make sure to check out the [Your First Dapp for Firebase](https://docs.moralis.io/docs/using-firebase) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
 
@@ -31,20 +15,7 @@ In this tutorial, we will use the following services:
 
 ## Install Extension
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/befc63c-firebase-cert.gif",
-        null,
-        "How to generate and convert the Service Account certificate"
-      ],
-      "caption": "How to generate and convert the Service Account certificate"
-    }
-  ]
-}
-[/block]
+![How to generate and convert the Service Account certificate](/img/content/befc63c-firebase-cert.gif)
 
 Before we install the Moralis extension, we need to create a service account certificate. This certificate allows the extension to issue [custom tokens](https://firebase.google.com/docs/auth/admin/create-custom-tokens) to Firebase. 
 

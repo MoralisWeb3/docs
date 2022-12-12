@@ -1,10 +1,7 @@
 ---
 title: "How to get Sushiswap V2 pair reserves"
 slug: "how-to-get-sushiswap-v2-pair-reserves"
-excerpt: "Learn how to get the pair reserves of a given pair address from Sushiswap V2 using Moralis DeFi API."
-hidden: false
-createdAt: "2022-11-07T10:17:09.635Z"
-updatedAt: "2022-12-03T05:00:51.212Z"
+description: "Learn how to get the pair reserves of a given pair address from Sushiswap V2 using Moralis DeFi API."
 ---
 ## Prerequisites
 

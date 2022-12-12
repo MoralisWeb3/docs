@@ -1,10 +1,7 @@
 ---
 title: "How to get the logs for a contract"
 slug: "how-to-get-the-logs-for-a-contract"
-excerpt: "Learn how to get the logs for a contract using the Moralis Events API."
-hidden: false
-createdAt: "2022-11-02T18:00:38.318Z"
-updatedAt: "2022-12-03T04:55:13.124Z"
+description: "Learn how to get the logs for a contract using the Moralis Events API."
 ---
 ## Prerequisites
 

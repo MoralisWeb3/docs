@@ -1,12 +1,10 @@
 ---
 title: "Transaction API"
 slug: "transaction-api"
-excerpt: "Fetch real-time transactions data from various EVM blockchains into your applications with Moralis’s powerful cross-chain Transaction API, providing seamless all existing transactions and their detailed logs."
-hidden: false
-createdAt: "2022-11-10T17:57:21.846Z"
-updatedAt: "2022-12-03T05:10:04.876Z"
+description: "Fetch real-time transactions data from various EVM blockchains into your applications with Moralis’s powerful cross-chain Transaction API, providing seamless all existing transactions and their detailed logs."
 ---
-![](https://files.readme.io/a9de9d2-image.png)
+
+![](/img/content/a9de9d2-image.png)
 
 ## What is the Transaction API?
 

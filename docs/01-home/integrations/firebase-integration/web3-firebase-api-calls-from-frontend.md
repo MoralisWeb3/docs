@@ -1,17 +1,9 @@
 ---
 title: "Firebase API Calls from the Frontend"
 slug: "web3-firebase-api-calls-from-frontend"
-excerpt: "If you want to call the Moralis API from your frontend app, don't do this directly. Please note that your Moralis API key should be secured against theft or abuse. Almost anyone can extract your key by the HTTP monitor, even if your code is obfuscated. Thus, you should keep your API key secure on the backend. This tutorial demonstrates how you can do it for Firebase."
-hidden: false
-createdAt: "2022-08-19T14:31:53.455Z"
-updatedAt: "2022-11-14T16:50:40.522Z"
+description: "If you want to call the Moralis API from your frontend app, don't do this directly. Please note that your Moralis API key should be secured against theft or abuse. Almost anyone can extract your key by the HTTP monitor, even if your code is obfuscated. Thus, you should keep your API key secure on the backend. This tutorial demonstrates how you can do it for Firebase."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2815daf-firebase-proxy.gif",
+![](/img/content/2815daf-firebase-proxy.gif",
         "firebase-proxy.gif",
         800
       ],
@@ -33,12 +25,7 @@ Moreover, in this tutorial, we will use three Firebase services:
 
 The idea is basically relatively simple; if you want to call any Moralis API endpoint from your frontend app, you should create a dedicated cloud function. This function would be something like a proxy, customized precisely to the frontend's needs. In this case, the backend app knows only the API key.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/01e806d-moralis-firebase-proxy-call.png",
+![](/img/content/01e806d-moralis-firebase-proxy-call.png",
         "moralis-firebase-proxy-call.png",
         2058
       ],

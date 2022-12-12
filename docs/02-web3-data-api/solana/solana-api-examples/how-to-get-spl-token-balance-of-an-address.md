@@ -1,10 +1,7 @@
 ---
 title: "How to get SPL token balance of an address"
 slug: "how-to-get-spl-token-balance-of-an-address"
-excerpt: "Learn how to get SPL token balance of an address using Moralis Solana API."
-hidden: false
-createdAt: "2022-11-04T14:18:41.321Z"
-updatedAt: "2022-11-20T11:21:57.963Z"
+description: "Learn how to get SPL token balance of an address using Moralis Solana API."
 ---
 ## Prerequisites
 

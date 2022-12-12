@@ -1,7 +1,7 @@
 ---
 title: "Webhooks Transactions"
 slug: "webhooks-transactions"
-excerpt: "Now whenever an ingoing or outgoing transaction involving the address you are monitoring occurs, you will receive a webhook with the transaction details."
+description: "Now whenever an ingoing or outgoing transaction involving the address you are monitoring occurs, you will receive a webhook with the transaction details."
 metadata: 
   title: "Webhook Transactions"
   description: "Now whenever an ingoing or outgoing transaction involving the address you are monitoring occurs, you will receive a webhook with the transaction details."

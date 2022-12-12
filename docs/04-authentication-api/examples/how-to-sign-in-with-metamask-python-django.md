@@ -1,10 +1,7 @@
 ---
 title: "How to sign in with MetaMask using Python and Django"
 slug: "how-to-sign-in-with-metamask-python-django"
-excerpt: "This tutorial will teach you how Moralis authentication works and demonstrates how to add secure authentication to your Django application by walking you through creating a full-stack Web3 authentication stack using the popular Django web framework."
-hidden: false
-createdAt: "2022-08-14T13:28:44.848Z"
-updatedAt: "2022-12-03T06:30:36.082Z"
+description: "This tutorial will teach you how Moralis authentication works and demonstrates how to add secure authentication to your Django application by walking you through creating a full-stack Web3 authentication stack using the popular Django web framework."
 ---
 ## Introduction
 
@@ -12,35 +9,9 @@ In this tutorial, we show you how to create a full-stack Django app that allows 
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/django_moralis_auth>.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/11b4975-91a339b-auth_login_django.png",
-        "91a339b-auth_login_django.png",
-        1050
-      ],
-      "caption": "Asking the User to Log In Using Their Wallet"
-    }
-  ]
-}
-[/block]
+![Asking the User to Log In Using Their Wallet](/img/content/11b4975-91a339b-auth_login_django.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d6a5405-Screenshot_2022-08-15_at_08.04.16.png",
-        "Screenshot 2022-08-15 at 08.04.16.png",
-        1638
-      ],
-      "caption": "Data That's Visible Once the User Logs In"
-    }
-  ]
-}
-[/block]
+![Data That's Visible Once the User Logs In](/img/content/d6a5405-Screenshot_2022-08-15_at_08.04.16.png)
 
 ## Prerequisites
 
@@ -375,54 +346,14 @@ Here we have a view for the main authentication: `moralis_auth`; one view to dis
 
 After the application starts, this is how it should look when you access [`http://127.0.0.1:1000/web3_auth/moralis_auth`](http://127.0.0.1:1000/web3_auth/moralis_auth):
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/91a339b-auth_login_django.png",
-        "auth_login_django.png",
-        1050
-      ],
-      "caption": "Login Page"
-    }
-  ]
-}
-[/block]
+![Login Page](/img/content/91a339b-auth_login_django.png)
 
 This will show when clicking on the above "login" button: 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/90e05c6-login_sign_message.png",
-        "login_sign_message.png",
-        1226
-      ],
-      "sizing": "smart",
-      "caption": "MetaMask Prompt"
-    }
-  ]
-}
-[/block]
+![MetaMask Prompt](/img/content/90e05c6-login_sign_message.png)
 
 After the message is signed and the authentication is successful, you can see the complete profile page:
 
-![](https://files.readme.io/0a87357-profile_info_1.png "profile_info_1.png")
+![](/img/content/0a87357-profile_info_1.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/03f26e6-profile_info_3.png",
-        "profile_info_3.png",
-        1426
-      ],
-      "caption": "User Profile Page"
-    }
-  ]
-}
-[/block]
+![User Profile Page](/img/content/03f26e6-profile_info_3.png)

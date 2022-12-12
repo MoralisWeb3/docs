@@ -1,10 +1,7 @@
 ---
 title: "Solana Multiplayer Game - TicTacToe"
 slug: "solana-multiplayer-game-tictactoe"
-excerpt: "Multi-Player Tic Tac Toe Game using the solana smart contracts"
-hidden: false
-createdAt: "2022-11-24T11:50:20.379Z"
-updatedAt: "2022-11-25T06:36:58.116Z"
+description: "Multi-Player Tic Tac Toe Game using the solana smart contracts"
 ---
 ## Introduction
 
@@ -14,20 +11,7 @@ Once complete, you can use this dapp to create new games with other players and 
 
 This is what the final application looks like. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3901379-image.png",
-        null,
-        "Tic Tac Toe Board"
-      ],
-      "caption": "Tic Tac Toe Board"
-    }
-  ]
-}
-[/block]
+![Tic Tac Toe Board](/img/content/3901379-image.png)
 
 You can find the repository with the final code here: [Tic-Tac-Toe](https://github.com/JohnVersus/solana-dapp-tic-tac-toe).
 
@@ -234,20 +218,7 @@ solana program deploy ./target/deploy/tic_tac_toe.so
 
 Once successfully deployed it will return the program Id of the Solana Program.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5d366aa-image.png",
-        null,
-        "Console with Program Id"
-      ],
-      "caption": "Console with Program Id"
-    }
-  ]
-}
-[/block]
+![Console with Program Id](/img/content/5d366aa-image.png)
 
 Store the Program Id somewhere accessible, as we will need this to call the smart contract function from the client side.
 
@@ -302,38 +273,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/tic-tac-toe` page. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2e9d40f-image.png",
-        null,
-        "Nav Bar"
-      ],
-      "caption": "Nav Bar"
-    }
-  ]
-}
-[/block]
+![Nav Bar](/img/content/2e9d40f-image.png)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5e9b822-image.png",
-        null,
-        "Wallet Connect Button"
-      ],
-      "sizing": "200px",
-      "caption": "Select Wallet Button"
-    }
-  ]
-}
-[/block]
+![Select Wallet Button](/img/content/5e9b822-image.png)
 
 Authenticating the wallet is important for this dapp so that we can prevent unauthorized gameplay.
 
@@ -600,7 +544,7 @@ Here is the code related to the frontend code.
 
 The first step of the game is to create a new game to play using this `Create Game` tab.
 
-![](https://files.readme.io/1e15cd8-image.png)
+![](/img/content/1e15cd8-image.png)
 
 The code in `NewGameForm.tsx` files are responsible for reading the data from new game inputs and sending the data to the backend `newGame` API route for signing the transaction. 
 
@@ -661,35 +605,9 @@ const NewGameForm: FC = () => {
 
 When a transaction for the new game is successful. We can visit `Play Game` tab to play the game. Clicking the `Refresh Games` button will load the created games. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e0e1bd3-image.png",
-        null,
-        "Play Game Tab"
-      ],
-      "caption": "Play Game Tab"
-    }
-  ]
-}
-[/block]
+![Play Game Tab](/img/content/e0e1bd3-image.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7166cee-image.png",
-        null,
-        "Play Game Tab with refreshed Games"
-      ],
-      "caption": "Play Game Tab with refreshed Games"
-    }
-  ]
-}
-[/block]
+![Play Game Tab with refreshed Games](/img/content/7166cee-image.png)
 
 The code related to getting the games from the blockchain can be found in the `src/components/templates/TicTacToe/TicTacToe.tsx`
 

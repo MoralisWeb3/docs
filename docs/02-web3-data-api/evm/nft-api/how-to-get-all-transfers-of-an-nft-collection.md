@@ -1,7 +1,7 @@
 ---
 title: "How to get all transfers of an NFT collection"
 slug: "../how-to-get-all-transfers-of-an-nft-collection"
-excerpt: "Learn how to get all the transfers of an NFT collection using the Moralis NFT API."
+description: "Learn how to get all the transfers of an NFT collection using the Moralis NFT API."
 ---
 ## Prerequisites
 

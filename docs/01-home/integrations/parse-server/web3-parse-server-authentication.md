@@ -1,9 +1,6 @@
 ---
 title: "Parse Server Authentication"
 slug: "web3-parse-server-authentication"
-hidden: false
-createdAt: "2022-08-23T08:41:10.990Z"
-updatedAt: "2022-11-14T16:53:00.162Z"
 ---
 This section will show you how to use Moralis V2 with a self-hosted Parse Server.
 
@@ -13,7 +10,7 @@ To achieve this, we will need to:
 2. Set up the parse-server dashboard to access db
 3. Integrate Moralis Auth with your Parse Server
 
-![](https://files.readme.io/3199457-parse-server.gif "parse-server.gif")
+![](/img/content/3199457-parse-server.gif "parse-server.gif")
 
 For this tutorial, we'll be building with Express, which Parse makes use of. Let's get started!
 

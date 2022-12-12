@@ -1,10 +1,7 @@
 ---
 title: "How to get Uniswap V2 pair address"
 slug: "how-to-get-the-pair-address-of-a-liquidity-pool"
-excerpt: "Learn how to get the pair address of a Uniswap V2 liquidity pool using Moralis DeFi API."
-hidden: false
-createdAt: "2022-11-04T14:17:47.644Z"
-updatedAt: "2022-12-03T04:57:58.560Z"
+description: "Learn how to get the pair address of a Uniswap V2 liquidity pool using Moralis DeFi API."
 ---
 ## Prerequisites
 

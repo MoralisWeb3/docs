@@ -1,10 +1,7 @@
 ---
 title: "Unity"
 slug: "web3-multiplayer-playground"
-excerpt: "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
-hidden: false
-createdAt: "2022-10-20T06:49:37.709Z"
-updatedAt: "2022-12-01T20:29:23.636Z"
+description: "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
 ---
 # Intro
 
@@ -12,7 +9,7 @@ This Moralis Unity Sample Project demonstrates Web3 functionality; authenticatio
 
 | Intro                                                              | 4-Player Multiplayer                                                        |
 | :----------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| <img height="220" src="https://files.readme.io/458e9db-image.png" /> | <img height="220" src="https://files.readme.io/cb14e78-Screenshot_013.png" /> |
+| <img height="220" src="/img/content/458e9db-image.png" /> | <img height="220" src="/img/content/cb14e78-Screenshot_013.png" /> |
 
 > Enter the multiplayer playground - an shared environment to move, trade currency, and trade NFTs
 

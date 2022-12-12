@@ -1,9 +1,6 @@
 ---
 title: "Live Desktop Crypto Notifications"
 slug: "live-desktop-crypto-notifications"
-hidden: false
-createdAt: "2022-11-24T23:51:40.325Z"
-updatedAt: "2022-11-25T08:17:56.967Z"
 ---
 ## Introduction
 
@@ -133,7 +130,7 @@ Now we will set up a stream to send webhooks to our server every time a USDT amo
 - **tag** = `USDT50`
 - **network** = `Ethereum Mainnet`
 
-![](https://files.readme.io/5b7b050-Notifications_1.png)
+![](/img/content/5b7b050-Notifications_1.png)
 
 3. Tick "Contract interactions (logs)" and "Event Emittance", and add the [USDT contract](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#code)'s ABI:
 
@@ -145,7 +142,7 @@ Now we will set up a stream to send webhooks to our server every time a USDT amo
 
 4. For "Topic 0", tick "Transfer":
 
-![](https://files.readme.io/084c74d-Notifications_2.png)
+![](/img/content/084c74d-Notifications_2.png)
 
 5. Under "Advanced Options", add:
 
@@ -162,11 +159,11 @@ Now we will set up a stream to send webhooks to our server every time a USDT amo
 
 6. Finally, click "Create Stream".
 
-![](https://files.readme.io/eaa0626-Notifications_3.png)
+![](/img/content/eaa0626-Notifications_3.png)
 
 You should be redirected to [`https://admin.moralis.io/streams`](https://admin.moralis.io/streams). If not, check your server's terminal, you should start seeing some webhook data:
 
-![](https://files.readme.io/bf1b009-Notifications_4.png)
+![](/img/content/bf1b009-Notifications_4.png)
 
 If you don't seem to be getting any webhooks, you can reduce the filter amount.
 

@@ -1,10 +1,10 @@
 ---
 title: "NFT API"
 slug: "../nft-api"
-excerpt: "Fetch real-time NFT metadata, ownership data, transfer data, NFT prices, and much more with the most popular cross-chain NFT API in Web3."
+description: "Fetch real-time NFT metadata, ownership data, transfer data, NFT prices, and much more with the most popular cross-chain NFT API in Web3."
 sidebar_position: 1
 ---
-![](https://files.readme.io/0d1bb91-image.png)
+![](/img/content/0d1bb91-image.png)
 
 ## What is the NFT API?
 

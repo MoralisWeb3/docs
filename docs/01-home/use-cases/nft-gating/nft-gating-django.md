@@ -1,9 +1,6 @@
 ---
 title: "Django"
 slug: "nft-gating-django"
-hidden: false
-createdAt: "2022-08-15T13:15:04.313Z"
-updatedAt: "2022-11-10T16:20:11.484Z"
 ---
 ## Introduction
 
@@ -11,20 +8,7 @@ This tutorial is a continuation of the previous tutorial on how to use Moralis' 
 
 This is an example of the final result:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1c0bae3-protected_with_nft_2.png",
-        "protected_with_nft_2.png",
-        1872
-      ],
-      "caption": "Protected Page"
-    }
-  ]
-}
-[/block]
+![Protected Page](/img/content/1c0bae3-protected_with_nft_2.png)
 
 ## Prerequisites
 
@@ -115,32 +99,6 @@ path('protected', views.protected, name='protected'),
 
 ## Final Result
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/91158d8-protected_with_nft_2.png",
-        "protected_with_nft_2.png",
-        1872
-      ],
-      "caption": "Page When Wallet Address Holds An NFT From A Specific  Contract Address"
-    }
-  ]
-}
-[/block]
+![Page When Wallet Address Holds An NFT From A Specific  Contract Address](/img/content/91158d8-protected_with_nft_2.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b74feb4-protected_without_nft.png",
-        "protected_without_nft.png",
-        1818
-      ],
-      "caption": "Page When Wallet Address Does Not Hold NFT"
-    }
-  ]
-}
-[/block]
+![Page When Wallet Address Does Not Hold NFT](/img/content/b74feb4-protected_without_nft.png)

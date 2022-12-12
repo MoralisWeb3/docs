@@ -1,10 +1,7 @@
 ---
 title: "NodeJS"
 slug: "your-first-dapp-nodejs"
-excerpt: "This tutorial will teach you how to set up a server-side dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any NodeJS application.  \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
-hidden: false
-createdAt: "2022-08-09T16:07:57.981Z"
-updatedAt: "2022-11-23T10:10:36.847Z"
+description: "This tutorial will teach you how to set up a server-side dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any NodeJS application.  \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
 ## Prerequisites
 
@@ -20,22 +17,7 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 2. Open the folder in your editor
 3. Initialize a new project via `npm`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b0e009c-PGIOshI31fgZTsmR_CJat_screenshot-2022-08-08-at-144744.png",
-        "PGIOshI31fgZTsmR_CJat_screenshot-2022-08-08-at-144744.png",
-        1728
-      ],
-      "sizing": "100"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/b0e009c-PGIOshI31fgZTsmR_CJat_screenshot-2022-08-08-at-144744.png)
 
 ```shell
 npm init
@@ -106,7 +88,7 @@ app.listen(port, () => {
 
 1. Get your `Web3 Api Key` from the [Moralis dashboard](https://admin.moralis.io/): 
 
-![](https://files.readme.io/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png")
+![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png")
 
 2. Import `moralis` and initialize it with your API key in `index.js`:  
    Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](https://docs.moralis.io/docs/moralis-data-types) and [Supported Chains](https://docs.moralis.io/docs/cross-chain-requests).

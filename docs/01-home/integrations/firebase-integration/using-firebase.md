@@ -1,17 +1,9 @@
 ---
 title: "Firebase & NodeJS"
 slug: "using-firebase"
-excerpt: "Learn how to set up a Firebase dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, and more, from any Firebase application. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
-hidden: false
-createdAt: "2022-08-18T07:51:57.122Z"
-updatedAt: "2022-11-14T17:00:26.542Z"
+description: "Learn how to set up a Firebase dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, and more, from any Firebase application. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4f09542-moralis-firebase-2.gif",
+![](/img/content/4f09542-moralis-firebase-2.gif",
         "moralis-firebase-2.gif",
         800
       ],

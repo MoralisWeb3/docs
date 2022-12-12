@@ -1,10 +1,7 @@
 ---
 title: "How to get SPL token price"
 slug: "how-to-get-spl-token-price"
-excerpt: "Learn how to get SPL token price using Moralis Solana API."
-hidden: false
-createdAt: "2022-11-07T11:07:36.794Z"
-updatedAt: "2022-12-01T11:13:56.051Z"
+description: "Learn how to get SPL token price using Moralis Solana API."
 ---
 ## Prerequisites
 

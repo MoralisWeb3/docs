@@ -1,19 +1,17 @@
 ---
 title: "Overview"
 slug: "/streams-api"
-excerpt: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
+description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
 sidebar_position: 1
 metadata: 
   image: 
-    0: "https://files.readme.io/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
+    0: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
     1: "d06bbe5-Moralis-Streams-API.jpeg"
     2: 1920
     3: 720
     4: "#000000"
-createdAt: "2022-10-21T12:33:20.049Z"
-updatedAt: "2022-11-30T10:49:55.560Z"
 ---
-![](https://files.readme.io/d06bbe5-Moralis-Streams-API.jpeg)
+![](/img/content/d06bbe5-Moralis-Streams-API.jpeg)
 
 ## What is the Streams API?
 

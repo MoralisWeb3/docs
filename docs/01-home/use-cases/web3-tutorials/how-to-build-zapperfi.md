@@ -1,9 +1,6 @@
 ---
 title: "How to Build ZapperFi"
 slug: "how-to-build-zapperfi"
-hidden: false
-createdAt: "2022-11-25T11:57:25.344Z"
-updatedAt: "2022-11-28T15:27:24.922Z"
 ---
 ## Introduction
 
@@ -338,7 +335,7 @@ pnpm add axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
 
 3. Inside the`src` directory, create a new folder that will hold React components. We will call it components.
 
-![](https://files.readme.io/65f3f8a-image.png)
+![](/img/content/65f3f8a-image.png)
 
 ### Creating custom components
 
@@ -981,7 +978,7 @@ pnpm start
 
 2. You can now access `<http://localhost:3000/`> and should see your app running.
 
-![](https://files.readme.io/1d5da92-image.png)
+![](/img/content/1d5da92-image.png)
 
 ## Youtube Video
 

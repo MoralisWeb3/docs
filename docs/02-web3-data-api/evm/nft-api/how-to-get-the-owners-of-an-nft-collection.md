@@ -1,7 +1,7 @@
 ---
 title: "How to get the owners of an NFT collection"
 slug: "../how-to-get-the-owners-of-an-nft-collection"
-excerpt: "Learn how to get the owners of NFT collection by its contract address using the Moralis NFT API."
+description: "Learn how to get the owners of NFT collection by its contract address using the Moralis NFT API."
 ---
 ## Prerequisites
 

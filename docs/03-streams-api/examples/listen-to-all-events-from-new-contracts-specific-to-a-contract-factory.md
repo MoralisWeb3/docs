@@ -1,10 +1,7 @@
 ---
 title: "How to listen all events from a contract factory"
 slug: "listen-to-all-events-from-new-contracts-specific-to-a-contract-factory"
-excerpt: "Learn how to listen all events from a contract factory using Moralis Streams API."
-hidden: false
-createdAt: "2022-11-15T18:05:34.856Z"
-updatedAt: "2022-12-01T10:38:43.877Z"
+description: "Learn how to listen all events from a contract factory using Moralis Streams API."
 ---
 Let's create a stream that monitors all the events specific to a contract factory.
 

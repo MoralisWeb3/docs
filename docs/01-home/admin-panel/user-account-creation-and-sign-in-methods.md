@@ -1,9 +1,6 @@
 ---
 title: "User Account Creation"
 slug: "user-account-creation-and-sign-in-methods"
-hidden: false
-createdAt: "2022-10-31T14:49:09.456Z"
-updatedAt: "2022-11-23T23:18:02.409Z"
 ---
 ## Email and Password
 

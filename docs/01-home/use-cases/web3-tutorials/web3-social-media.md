@@ -1,9 +1,6 @@
 ---
 title: "Web3 Social Media"
 slug: "web3-social-media"
-hidden: false
-createdAt: "2022-11-24T21:29:28.353Z"
-updatedAt: "2022-11-25T08:14:35.972Z"
 ---
 ## Introduction
 
@@ -40,7 +37,7 @@ npm run dev
 
 2. Open [`http://localhost:3000`](http://localhost:3000) in your browser. You should see the following:
 
-![](https://files.readme.io/8b6d8c8-Web3_Social_Media_1.png)
+![](/img/content/8b6d8c8-Web3_Social_Media_1.png)
 
 ## Initial Setup
 
@@ -302,7 +299,7 @@ return (
 
 2. Check [`http://localhost:3000`](http://localhost:3000). Your app should now look similar to:
 
-![](https://files.readme.io/2927bab-Web3_Social_Media_2.png)
+![](/img/content/2927bab-Web3_Social_Media_2.png)
 
 3. We can now change the profile ID in `pages/api/lensCalls.js` to use another profile for our app. We will use the following`0x81`:
 
@@ -315,7 +312,7 @@ profile(request: { profileId: "0x81" }) {
 
 4. Reload the page and it should look different:
 
-![](https://files.readme.io/f00285d-Web3_Social_Media_3.png)
+![](/img/content/f00285d-Web3_Social_Media_3.png)
 
 ## Using the Moralis API
 
@@ -385,7 +382,7 @@ export default function Home({ profile, nftArray }) {
 
 5. Reload [`http://localhost:3000`](http://localhost:3000), you should now see the follower NFTs:
 
-![](https://files.readme.io/21ce843-Web3_Social_Media_4.png)
+![](/img/content/21ce843-Web3_Social_Media_4.png)
 
 ## Add the Profile's "Follow" NFT
 
@@ -429,7 +426,7 @@ export default function Home({ profile, nftArray, myNFT }) {
 
 3. Reload [`http://localhost:3000`](http://localhost:3000)and click on the "Follow Me" tab. You should now see the "follow" NFT:
 
-![](https://files.readme.io/58cad1f-Web3_Social_Media_5.png)
+![](/img/content/58cad1f-Web3_Social_Media_5.png)
 
 ## Adding Follow Functionality
 
@@ -489,6 +486,6 @@ async function follow() {
 
 4. To test, reload [`http://localhost:3000`](http://localhost:3000), click the "Follow Me" button and sign the transaction:
 
-![](https://files.readme.io/9aaf1ec-Web3_Social_Media_6.png)
+![](/img/content/9aaf1ec-Web3_Social_Media_6.png)
 
 If you sign the following transaction, your wallet should then receive a new Lens NFT.

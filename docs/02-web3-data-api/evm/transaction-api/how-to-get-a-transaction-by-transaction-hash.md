@@ -1,10 +1,7 @@
 ---
 title: "How to get a transaction by transaction hash"
 slug: "how-to-get-a-transaction-by-transaction-hash"
-excerpt: "Learn how to get a transaction content by a given transaction hash with Moralis Transaction API."
-hidden: false
-createdAt: "2022-11-07T08:32:50.744Z"
-updatedAt: "2022-12-03T04:54:27.893Z"
+description: "Learn how to get a transaction content by a given transaction hash with Moralis Transaction API."
 ---
 ## Prerequisites
 

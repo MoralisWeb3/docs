@@ -1,7 +1,7 @@
 ---
 title: "Monitor multiple addresses"
 slug: "monitor-multiple-addresses"
-excerpt: "Learn best practices for handling multiple addresses in your streams."
+description: "Learn best practices for handling multiple addresses in your streams."
 ---
 
 You do not have to create a separate stream for each address. Instead you can attach multiple addresses to the same stream. The best practice is to create as few streams as possible and instead attach addresses to existing streams whenever it makes sense. You can attach any number of addresses to a stream. 

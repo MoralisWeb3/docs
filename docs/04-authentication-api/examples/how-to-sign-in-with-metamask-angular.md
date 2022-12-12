@@ -1,10 +1,7 @@
 ---
 title: "How to sign in with MetaMask using Angular"
 slug: "how-to-sign-in-with-metamask-angular"
-excerpt: "Learn how Moralis authentication works and see how to add secure authentication to your Angular dapp. This tutorial covers how to create full-stack Web3 authentication using the popular Angular framework."
-hidden: false
-createdAt: "2022-11-15T22:53:34.949Z"
-updatedAt: "2022-12-03T06:30:57.801Z"
+description: "Learn how Moralis authentication works and see how to add secure authentication to your Angular dapp. This tutorial covers how to create full-stack Web3 authentication using the popular Angular framework."
 ---
 ## Introduction
 
@@ -95,7 +92,7 @@ async handleAuth() {}
 
 3. Run `npm run start` and open [`http://localhost:4200/signin`](http://localhost:4200/signin) in your browser. It should look like:
 
-![](https://files.readme.io/0fa10de-Angular_Sign_In_With_MetaMask_1.png)
+![](/img/content/0fa10de-Angular_Sign_In_With_MetaMask_1.png)
 
 4. Open `src/app/user/user.component.html` and replace the contents with:
 
@@ -123,7 +120,7 @@ async signOut() {}
 
 6. Open [`http://localhost:4200/user`](http://localhost:4200/user) in your browser. It should look like:
 
-![](https://files.readme.io/b7546ac-Angular_Sign_In_With_MetaMask_2.png)
+![](/img/content/b7546ac-Angular_Sign_In_With_MetaMask_2.png)
 
 ## Server Setup
 
@@ -529,41 +526,15 @@ Visit [`http://localhost:4200/signin`](http://localhost:4200/signin) to test the
 
 1. Click on the `Authenticate via MetaMask` button:
 
-![](https://files.readme.io/4ecf341-Angular_Sign_In_With_MetaMask_1.png)
+![](/img/content/4ecf341-Angular_Sign_In_With_MetaMask_1.png)
 
 2. Connect the MetaMask wallet and sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4dbf978-Angular_Sign_In_With_MetaMask_3.png",
-        null,
-        "Signing the Message"
-      ],
-      "caption": "Signing the Message"
-    }
-  ]
-}
-[/block]
+![Signing the Message](/img/content/4dbf978-Angular_Sign_In_With_MetaMask_3.png)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8c884b1-Angular_Sign_In_With_MetaMask_4.png",
-        null,
-        "User Page"
-      ],
-      "caption": "User Page"
-    }
-  ]
-}
-[/block]
+![User Page](/img/content/8c884b1-Angular_Sign_In_With_MetaMask_4.png)
 
 - When a user authenticates, we show the user's info on the page.
 - When a user is not authenticated, we redirect to the `/signin` page. 

@@ -1,10 +1,7 @@
 ---
 title: "Account Deletion"
 slug: "account-deletion"
-excerpt: "Learn how you can delete your user account or remove a team member from an organization."
-hidden: false
-createdAt: "2022-10-31T14:48:35.342Z"
-updatedAt: "2022-11-24T08:42:48.557Z"
+description: "Learn how you can delete your user account or remove a team member from an organization."
 ---
 ## Deleting a User Account
 

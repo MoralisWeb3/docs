@@ -1,10 +1,7 @@
 ---
 title: "How to monitor ENS Domain Registrations"
 slug: "monitor-ens-name-registrations"
-excerpt: "Learn how to monitor ENS domain registrations that costs higher than 1 ETH using Moralis Streams API."
-hidden: false
-createdAt: "2022-10-21T13:25:46.758Z"
-updatedAt: "2022-12-01T10:30:01.217Z"
+description: "Learn how to monitor ENS domain registrations that costs higher than 1 ETH using Moralis Streams API."
 ---
 ### Programatically
 

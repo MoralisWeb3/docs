@@ -1,10 +1,7 @@
 ---
 title: "Solana NFT Minter"
 slug: "solana-nft-minter"
-excerpt: "Mint new NFTs directly on the Solana Blockchain with just a few clicks."
-hidden: false
-createdAt: "2022-11-18T06:54:35.730Z"
-updatedAt: "2022-11-24T11:34:15.082Z"
+description: "Mint new NFTs directly on the Solana Blockchain with just a few clicks."
 ---
 ## Introduction
 
@@ -16,21 +13,7 @@ We will use [Metaplex JavaScript SDK](https://github.com/metaplex-foundation/js)
 
 This is what the final application looks like. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5863afd-image.png",
-        null,
-        "NFT Minter Page View"
-      ],
-      "sizing": "800px",
-      "caption": "Solana NFT Minter Page View"
-    }
-  ]
-}
-[/block]
+![Solana NFT Minter Page View](/img/content/5863afd-image.png)
 
 Instead of going through the entire code, we will focus on the important sections of code that power the application. 
 
@@ -94,40 +77,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you can find multiple tabs, but for our code, we only need to access the`/balances/nft` page to check the NFTs of the wallet, and the`/nftMinter`page to mint NFTs.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8d845e2-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px",
-      "caption": "Nav Bar"
-    }
-  ]
-}
-[/block]
-
-
+![Nav Bar](/img/content/8d845e2-image.png)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5e9b822-image.png",
-        null,
-        ""
-      ],
-      "sizing": "200px"
-    }
-  ]
-}
-[/block]
+![](/img/content/5e9b822-image.png)
 
 
 
@@ -267,39 +221,13 @@ The dapp can be tested by visiting the `/nftMinter` page.
 
 First, add the required data to the form, then click on the `Mint` button to mint the NFT. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bc24085-image.png",
-        null,
-        "Solana NFT Minter"
-      ],
-      "caption": "Solana NFT Minter Form"
-    }
-  ]
-}
-[/block]
+![Solana NFT Minter Form](/img/content/bc24085-image.png)
 
 The process will take a couple of seconds, and you will be asked to sign a transaction to mint the NFT. Once the transaction is signed and confirmed, you will get a notification that the minting is successful.  
 
 You can also visit the`/balances/nft` page to view your newly minted NFT. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/64db1da-image.png",
-        null,
-        "NFT balance"
-      ],
-      "caption": "NFT balance"
-    }
-  ]
-}
-[/block]
+![NFT balance](/img/content/64db1da-image.png)
 
 Congratulations!! 🥳 
 

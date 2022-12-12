@@ -1,10 +1,7 @@
 ---
 title: "GCP & Unity"
 slug: "using-unity-google-cloud"
-excerpt: "This tutorial will teach you how to host your custom backend (powered by Moralis' JS SDK) on Google Cloud and then connect it to Unity."
-hidden: false
-createdAt: "2022-09-29T07:53:40.508Z"
-updatedAt: "2022-11-14T17:00:14.809Z"
+description: "This tutorial will teach you how to host your custom backend (powered by Moralis' JS SDK) on Google Cloud and then connect it to Unity."
 ---
 # The Steps We Will Take
 
@@ -441,21 +438,7 @@ startServer()
 
 To run this server locally, it’s as easy as executing the **`npm run start`** command in the terminal. You can now send a GET request to [`http://localhost:3000/`](http://localhost:3000/) to test if the server is responding:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/63b935a-image.png",
-        null,
-        ""
-      ],
-      "border": true
-    }
-  ]
-}
-[/block]
-
+![](/img/content/63b935a-image.png)
 
 
 # Run on Google Cloud
@@ -469,7 +452,7 @@ Running the server locally is good for testing purposes, but in a production env
 
 In GCP, start by creating a [new project](https://console.cloud.google.com/projectcreate?previousPage=%2Fprojectselector2%2Frun%3Fsupportedpurview%3Dproject&supportedpurview=project):
 
-![](https://files.readme.io/7b94c88-image.png)
+![](/img/content/7b94c88-image.png)
 
 With the project created, you now have different options to run your server.
 
@@ -481,121 +464,40 @@ In this tutorial, we’re going to use this option as we believe it’s probably
 
 To start, install the [Cloud Code extension](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode&ssr=false#overview) on VSC and connect to Google Cloud by clicking on _**Connect to Google Cloud**_ on the blue bar at the bottom:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d01a327-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/d01a327-image.png)
 
 
 
 Reload VSC to make sure you’re logged in. Now, under **_CLOUD RUN_**, select your created project and click on **_Enable Cloud Run API_**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9414940-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/9414940-image.png)
 
 After that, you should see something like this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3bf5c85-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/3bf5c85-image.png)
 
 
 
 Now it’s time to create a new **Cloud Run App**. Click on the folder icon:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7af42ce-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+![](/img/content/7af42ce-image.png)
 
 
 Select _**NodeJS: Cloud Run**_:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7f08100-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/7f08100-image.png)
 
 
 
 Create a new folder and name your application. We named it **`moralis-nodejs-app`**. We just created a NodeJS dapp that is ready to be deployed to Cloud Run through VSC:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/12e43f1-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/12e43f1-image.png)
 
 
 
 So, what we need to do now is replace the code inside **`index.js`** of this newly created dapp with our customized code:
 
-![](https://files.readme.io/166dd46-image.png)
+![](/img/content/166dd46-image.png)
 
 And **very important**, change the port to `8080` as Google Cloud requires it:
 
@@ -617,58 +519,19 @@ Last but not least, **remember** to fill in your `MORALIS_API_KEY`, if, in any c
 
 Finally, it’s time to deploy, so go to the Cloud Code extension, and under **_CLOUD RUN_**, click on the cloud icon:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fd21552-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/fd21552-image.png)
 
 
 
 You should now see the deployment settings. Go to the **_Build Environment_** section and switch to **_Cloud Build_**. Then, click on **_Enable Cloud Build API_**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3602d2a-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/3602d2a-image.png)
 
 
 
 Now, go ahead and click on **_Deploy_**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4181df6-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/4181df6-image.png)
 
 
 
@@ -676,20 +539,7 @@ If you have any kind of problem with **_Cloud Build_**, switch back to **_Local_
 
 One way or another, you should have a new Google Cloud service created and running. **IMPORTANT:** Take note of the **`Service URL`** that shows up in the terminal:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b916d8-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/3b916d8-image.png)
 
 
 
@@ -705,49 +555,23 @@ You can start by downloading the sample project you’ll find in this [repositor
 
 When you open the project, the _**Moralis Web3 Setup**_ panel will appear. As we're using our own custom backend, we don't need to enter any information here, so just mark the **_Use Moralis 2.0 back-end integration and disable MoralisClient in Unity_** option and click on _**Done**_:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b6a4ec0-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/b6a4ec0-image.png)
 
 
 
 If the panel doesn't appear, you can find it on the top toolbar under _Tools > Moralis Web3 Unity SDK > Open Web Setup_:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c83b80d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/c83b80d-image.png)
 
 
 
 Now, go to _Assets > Scenes_ and open the _**Playground**_ scene:
 
-![](https://files.readme.io/a324138-image.png)
+![](/img/content/a324138-image.png)
 
 On _Assets > Scripts_, open **`ServerConfiguration.cs`** and paste the **Google Service URL** that we just obtained under `URL`:
 
-![](https://files.readme.io/447c669-image.png)
+![](/img/content/447c669-image.png)
 
 With that, we are ready to play the scene, but first, let's see how we make authentication requests from Unity.
 
@@ -755,11 +579,11 @@ With that, we are ready to play the scene, but first, let's see how we make auth
 
 In this sample project, we're using the available **AuthenticationKit** provided in the [Moralis Web3 Unity SDK](https://github.com/MoralisWeb3/web3-unity-sdk) to manage the connection with the wallet. You'll find it in _Hierarchy_ under  _Web3Authentication_:
 
-![](https://files.readme.io/d1b0435-image.png)
+![](/img/content/d1b0435-image.png)
 
 We don't need to do anything here as this project is already wired up, but we can look at the other object/script involved in the authentication process, **MoralisWeb3AuthService**. You'll find it just on top of **AuthenticationKit**:
 
-![](https://files.readme.io/74ed53e-image.png)
+![](/img/content/74ed53e-image.png)
 
 It is the script that takes care of making requests to the **`request`** and **`verify`** operations/endpoints that we created in our custom backend using _UnityWebRequests_. It then manages the state of **AuthenticationKit** depending on the response received:
 
@@ -941,23 +765,10 @@ Using this setup, we get the wallet information in the client (Unity), and we se
 
 Let's try to see if our setup works. **Play the scene**, press **_M_**, and click on **_Connect_**. Then, scan the QR code with your preferred wallet:
 
-![](https://files.readme.io/7857e49-image.png)
+![](/img/content/7857e49-image.png)
 
 After connecting and signing the message, you should be authenticated, seeing your wallet address on top of the character, and the text on the top right of the screen should be updated with your native balance:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fb30e9d-image.png",
-        null,
-        "To get the native balance we also do a _UnityWebRequest_, this time pointing to `/nativeBalance` operation/endpoint. Check `GameManager.cs`"
-      ],
-      "caption": "To get the native balance, we also do a _UnityWebRequest_, this time pointing to the `/nativeBalance` operation/endpoint. Check `GameManager.cs`."
-    }
-  ]
-}
-[/block]
+![To get the native balance, we also do a _UnityWebRequest_, this time pointing to the `/nativeBalance` operation/endpoint. Check `GameManager.cs`.](/img/content/fb30e9d-image.png)
 
 ### Congratulations! You completed the _Using Unity & Google Cloud_ tutorial!

@@ -1,9 +1,6 @@
 ---
 title: "How to get Solana portfolio balance of an address"
 slug: "how-to-get-solana-portfolio-balance-of-an-address"
-hidden: false
-createdAt: "2022-11-07T08:46:37.374Z"
-updatedAt: "2022-11-28T12:08:26.046Z"
 ---
 ## Prerequisites
 

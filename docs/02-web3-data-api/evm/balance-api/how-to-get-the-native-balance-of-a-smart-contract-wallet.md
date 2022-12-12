@@ -1,10 +1,7 @@
 ---
 title: "How to get the native balance of a multi-signature wallet"
 slug: "how-to-get-the-native-balance-of-a-smart-contract-wallet"
-excerpt: "Learn how to get the native balance of a multi-signature wallet using the Moralis Balance API."
-hidden: false
-createdAt: "2022-11-03T11:49:22.262Z"
-updatedAt: "2022-12-03T04:52:02.968Z"
+description: "Learn how to get the native balance of a multi-signature wallet using the Moralis Balance API."
 ---
 ## Prerequisites
 

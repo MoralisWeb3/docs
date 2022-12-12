@@ -1,9 +1,6 @@
 ---
 title: "Resolve API"
 slug: "resolve-api"
-hidden: false
-createdAt: "2022-11-10T17:59:25.331Z"
-updatedAt: "2022-11-24T21:23:03.702Z"
 ---
 ## What is the Resolve API?
 

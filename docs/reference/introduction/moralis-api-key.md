@@ -1,10 +1,7 @@
 ---
 title: "Moralis API Key"
 slug: "moralis-api-key"
-excerpt: "Learn all about Moralis API Key."
-hidden: false
-createdAt: "2022-08-11T07:09:23.338Z"
-updatedAt: "2022-11-09T09:37:35.666Z"
+description: "Learn all about Moralis API Key."
 ---
 The [Moralis API key](https://docs.moralis.io/docs/quickstart#step-2-get-api-key) is used to access and make Moralis-powered APIs requests. You can view and manage your Moralis API key in the [Moralis Admin Dashboard](https://admin.moralis.io).
 

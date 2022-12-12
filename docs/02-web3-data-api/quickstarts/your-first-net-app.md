@@ -1,7 +1,7 @@
 ---
 title: ".NET (C#)"
 slug: "your-first-net-app"
-excerpt: "This tutorial will teach you how to set up a server-side dapp to query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any .NET application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
+description: "This tutorial will teach you how to set up a server-side dapp to query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any .NET application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
 ## The Steps We Will Take
 
@@ -22,108 +22,30 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 1. Open Visual Studio and create a new project
 2. Select C# Console as the template:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7f2c5e2-console_1.gif",
-        "console_1.gif",
-        565
-      ],
-      "caption": "Choose Console Template"
-    }
-  ]
-}
-[/block]
+![Choose Console Template](/img/content/7f2c5e2-console_1.gif)
 
 3. Configure your new project by entering the name of the project and location. For this demo, we use "MoralisDemo" as the project name.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/56a86ff-console_2.gif",
-        "console_2.gif",
-        623
-      ],
-      "caption": "Configure Project"
-    }
-  ]
-}
-[/block]
+![Configure Project](/img/content/56a86ff-console_2.gif)
 
 4. Enter additional information and click on the "create" button. For this demo, we select ".NET 6.0" as the framework:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/99113de-console_3.gif",
-        "console_3.gif",
-        566
-      ],
-      "caption": "Select Framework"
-    }
-  ]
-}
-[/block]
+![Select Framework](/img/content/99113de-console_3.gif)
 
 5. Visual Studio will generate a basic C# Console project. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1cbb56b-console_4.gif",
-        "console_4.gif",
-        917
-      ],
-      "caption": "New Project"
-    }
-  ]
-}
-[/block]
+![New Project](/img/content/1cbb56b-console_4.gif)
 
 ## Import and Set Up the Latest Moralis .NET SDK
 
 1. Open "NuGet Package Manager" by selecting _Tools _ > _NuGet Package Manager _ > _Manage NuGet Packages for Solution..._:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/87124fa-nuget1.gif",
-        "nuget1.gif",
-        618
-      ],
-      "caption": "Open NuGet"
-    }
-  ]
-}
-[/block]
+![Open NuGet](/img/content/87124fa-nuget1.gif)
 
 2. Checkmark _Include prerelease_ and browse for Moralis.
 3. Select the latest  **Moralis** package and click on the _Install_ button:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e46e5cd-nuget2.gif",
-        "nuget2.gif",
-        971
-      ],
-      "caption": "Install the Moralis Package"
-    }
-  ]
-}
-[/block]
+![Install the Moralis Package](/img/content/e46e5cd-nuget2.gif)
 
 ## Integrate Your Dapp with Moralis Services
 
@@ -135,8 +57,6 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 using Moralis;
 using Moralis.Web3Api.Models;
 ```
-
-
 
 4. Add `namespace`, `class`, and basic public static `Main`.
 5. Within the `Main` function, set `MoralisClient.ConnectionData` with the values specific to your dapp. You can find your Moralis dapp information by signing into your [Moralis account](https://www.moralis.io). 
@@ -353,36 +273,10 @@ If you run it as is in Visual Studio, your output should be similar to:
 
 In _Solution Explorer_, right-click on _Properties \_then select \_Debug_ > _General_ and click on the _Open debug launch profile_ link:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fc042ce-console_6.gif",
-        "console_6.gif",
-        841
-      ],
-      "caption": "Open Debug Launch Profile"
-    }
-  ]
-}
-[/block]
+![Open Debug Launch Profile](/img/content/fc042ce-console_6.gif)
 
 In _Command Line Arguments_, enter your wallet address and chain ID.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ad2af03-console_7.gif",
-        "console_7.gif",
-        643
-      ],
-      "caption": "Set Input Args"
-    }
-  ]
-}
-[/block]
+![Set Input Args](/img/content/ad2af03-console_7.gif)
 
 Now, when you run your dapp, your data is displayed!

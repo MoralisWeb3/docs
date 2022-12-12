@@ -1,10 +1,7 @@
 ---
 title: "How to listen all NFT transfers"
 slug: "listen-to-all-nft-contract-transfers"
-excerpt: "Learn how to listen to all NFT transfers using Moralis Streams API."
-hidden: false
-createdAt: "2022-11-15T17:49:18.430Z"
-updatedAt: "2022-12-01T10:36:40.602Z"
+description: "Learn how to listen to all NFT transfers using Moralis Streams API."
 ---
 Lets create a stream that monitors all the NFT contract transfers.
 

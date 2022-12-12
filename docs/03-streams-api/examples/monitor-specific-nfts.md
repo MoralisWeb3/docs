@@ -1,10 +1,7 @@
 ---
 title: "How to monitor specific NFTs"
 slug: "monitor-specific-nfts"
-excerpt: "Learn how to monitor specific CryptoPunk NFTs Based on an array of Token IDs using Moralis Streams API."
-hidden: false
-createdAt: "2022-10-21T12:45:37.735Z"
-updatedAt: "2022-12-01T10:25:31.102Z"
+description: "Learn how to monitor specific CryptoPunk NFTs Based on an array of Token IDs using Moralis Streams API."
 ---
 Lets create a stream that monitor specific CryptoPunk NFTs based on an array of Token IDs.
 

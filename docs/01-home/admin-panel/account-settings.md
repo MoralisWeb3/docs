@@ -1,9 +1,6 @@
 ---
 title: "Account Settings"
 slug: "account-settings"
-hidden: false
-createdAt: "2022-10-24T11:36:25.071Z"
-updatedAt: "2022-11-23T23:22:34.926Z"
 ---
 ## Moralis Auto-Logged in Accounts
 

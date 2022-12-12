@@ -1,25 +1,9 @@
 ---
 title: "How to sign in with MetaMask"
 slug: "how-to-sign-in-with-metamask"
-excerpt: "Learn how Moralis authentication works and see how to add secure authentication to your NextJS dapp. This tutorial covers how to create full-stack Web3 authentication using the popular NextJS framework."
-hidden: false
-createdAt: "2022-08-09T18:06:03.295Z"
-updatedAt: "2022-12-03T06:28:53.991Z"
+description: "Learn how Moralis authentication works and see how to add secure authentication to your NextJS dapp. This tutorial covers how to create full-stack Web3 authentication using the popular NextJS framework."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d73d147-metamask.gif",
-        "metamask.gif",
-        806
-      ],
-      "caption": "Result of Using Moralis Web3 Authentication with MetaMask"
-    }
-  ]
-}
-[/block]
+![Result of Using Moralis Web3 Authentication with MetaMask](/img/content/d73d147-metamask.gif)
 
 ## Introduction
 
@@ -31,20 +15,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_auth>.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9094178-1bc0b65-Untitled.png",
-        "1bc0b65-Untitled.png",
-        804
-      ],
-      "caption": "The above shows what the user will see once they log in using their wallet."
-    }
-  ]
-}
-[/block]
+![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.png)
 
 > 📘 
 > 
@@ -260,20 +231,7 @@ export default SignIn;
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2dc7cb6-Untitled.png",
-        "Untitled.png",
-        670
-      ],
-      "caption": "Web3 Authentication Page"
-    }
-  ]
-}
-[/block]
+![Web3 Authentication Page](/img/content/2dc7cb6-Untitled.png)
 
 9. Extend the `handleAuth` functionality for calling `useSignMessage()` hook: 
 
@@ -418,86 +376,21 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test th
 
 1. Click on the `Authenticate via Metamask` button:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1e597e7-12.png",
-        "12.png",
-        806
-      ],
-      "caption": "Sign-In Page"
-    }
-  ]
-}
-[/block]
+![Sign-In Page](/img/content/1e597e7-12.png)
 
 2. Connect the MetaMask wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b5a4b9-38.png",
-        "38.png",
-        806
-      ],
-      "caption": "Selecting a MetaMask Wallet"
-    }
-  ]
-}
-[/block]
+![Selecting a MetaMask Wallet](/img/content/3b5a4b9-38.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a504ae5-56.png",
-        "56.png",
-        806
-      ],
-      "caption": "MetaMask Wallet Connecting"
-    }
-  ]
-}
-[/block]
+![MetaMask Wallet Connecting](/img/content/a504ae5-56.png)
 
 3. Sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d5e9a3b-105.png",
-        "105.png",
-        806
-      ],
-      "caption": "Signing the Message"
-    }
-  ]
-}
-[/block]
+![Signing the Message](/img/content/d5e9a3b-105.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/23c7fde-142.png",
-        "142.png",
-        806
-      ],
-      "caption": "User Page"
-    }
-  ]
-}
-[/block]
+![User Page](/img/content/23c7fde-142.png)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user`) to test the user session functionality: 
 
@@ -506,17 +399,4 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test th
 - When a user is authenticated, we show the user's info on the page, even refreshing after the page. 
   - (**Explanation:** _After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted **[JWT](https://jwt.io/introduction)** (**JWE**) stored inside. It contains session info [such as an address and signed message] in the user's browser.)_
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1bc0b65-Untitled.png",
-        "Untitled.png",
-        804
-      ],
-      "caption": "User Session Page"
-    }
-  ]
-}
-[/block]
+![User Session Page](/img/content/1bc0b65-Untitled.png)

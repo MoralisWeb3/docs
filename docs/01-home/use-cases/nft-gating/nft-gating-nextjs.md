@@ -1,10 +1,7 @@
 ---
 title: "NextJS"
 slug: "nft-gating-nextjs"
-excerpt: "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!"
-hidden: false
-createdAt: "2022-08-09T19:49:02.590Z"
-updatedAt: "2022-11-10T16:19:20.985Z"
+description: "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!"
 ---
 # Introduction
 
@@ -12,20 +9,7 @@ This tutorial shows you how to create a NextJS dapp containing NFT gated functio
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_nft_gating>.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dfc9bf3-81e82ad-Untitled.png",
-        "81e82ad-Untitled.png",
-        858
-      ],
-      "caption": "If User Fulfills Requirements - This is the Landing Page"
-    }
-  ]
-}
-[/block]
+![If User Fulfills Requirements - This is the Landing Page](/img/content/dfc9bf3-81e82ad-Untitled.png)
 
 # Before Starting
 
@@ -146,32 +130,6 @@ export default Protected;
 
 4. Visit the [`http://localhost:3000/protected`](http://localhost:3000/protected`) page to test the NFT gated functionality. ([`http://localhost:3000/signin`](http://localhost:3000/signin`) for authentication.)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f8b4e79-Untitled.png",
-        "Untitled.png",
-        868
-      ],
-      "caption": "Protected Page if User Does Not Fulfill Requirements"
-    }
-  ]
-}
-[/block]
+![Protected Page if User Does Not Fulfill Requirements](/img/content/f8b4e79-Untitled.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/81e82ad-Untitled.png",
-        "Untitled.png",
-        858
-      ],
-      "caption": "Protected Page When the User is Authenticated and Holds Specified NFT"
-    }
-  ]
-}
-[/block]
+![Protected Page When the User is Authenticated and Holds Specified NFT](/img/content/81e82ad-Untitled.png)

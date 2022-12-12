@@ -1,25 +1,10 @@
 ---
 title: "How to sign in with WalletConnect"
 slug: "how-to-sign-in-with-walletconnect"
-excerpt: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of creating a full-stack Web3 authentication solution using the popular NextJS framework."
-hidden: false
-createdAt: "2022-08-15T10:18:30.441Z"
-updatedAt: "2022-12-03T06:28:45.958Z"
+description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5ded2e2-morsign.gif",
-        "morsign.gif",
-        650
-      ],
-      "caption": "End Result of Using Web3 Moralis Authentication with WalletConnect"
-    }
-  ]
-}
-[/block]
+
+![End Result of Using Web3 Moralis Authentication with WalletConnect](/img/content/5ded2e2-morsign.gif)
 
 ## Before the Start
 
@@ -85,75 +70,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test au
 
 1. Click on `Authenticate via WalletConnect`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1a876b9-notconnected.png",
-        "notconnected.png",
-        674
-      ],
-      "sizing": "80",
-      "caption": "Sign In Page"
-    }
-  ]
-}
-[/block]
+![Sign In Page](/img/content/1a876b9-notconnected.png)
 
 2. Scan the QR code with your wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2541b11-wc.png",
-        "wc.png",
-        672
-      ],
-      "sizing": "80",
-      "caption": "WalletConnect Modal"
-    }
-  ]
-}
-[/block]
+![WalletConnect Modal](/img/content/2541b11-wc.png)
 
 3. Connect your wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0037a38-photo_2022-08-15_18-18-43.jpg",
-        "photo_2022-08-15_18-18-43.jpg",
-        591
-      ],
-      "sizing": "80",
-      "caption": "TrustWallet Connect - Confirm"
-    }
-  ]
-}
-[/block]
+![TrustWallet Connect - Confirm](/img/content/0037a38-photo_2022-08-15_18-18-43.jpg)
 
 4. Sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0242a69-photo_2022-08-15_18-18-44.jpg",
-        "photo_2022-08-15_18-18-44.jpg",
-        591
-      ],
-      "sizing": "80",
-      "caption": "TrustWallet Message - Signing"
-    }
-  ]
-}
-[/block]
+![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.jpg)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

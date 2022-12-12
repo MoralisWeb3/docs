@@ -1,10 +1,7 @@
 ---
 title: "Solana Micro Blogger Dapp"
 slug: "solana-micro-blogger-dapp"
-excerpt: "Burn spam or unwanted Solana NFTs and get back SOL."
-hidden: false
-createdAt: "2022-11-24T08:23:05.878Z"
-updatedAt: "2022-11-25T09:41:04.637Z"
+description: "Burn spam or unwanted Solana NFTs and get back SOL."
 ---
 ## Introduction
 
@@ -14,21 +11,7 @@ Once complete, you can use this dapp to create blog posts on Solana Blockchain.
 
 This is what the final application looks like. You can enter the text in the input and click on the "Post Blog" button to process the transaction.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/aa60ae2-image.png",
-        null,
-        "Final APP UI"
-      ],
-      "sizing": "600px",
-      "caption": "Final App UI"
-    }
-  ]
-}
-[/block]
+![Final APP UI](/img/content/aa60ae2-image.png)
 
 You can find the repository with the final code here: [Solana-Micro-Blogger](https://github.com/JohnVersus/solana-dapp-micro-blog).
 
@@ -145,21 +128,7 @@ solana program deploy ./target/deploy/micro_blog.so
 
 Once successfully deployed it will return the program Id of the Solana Program.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a01aaa2-image.png",
-        null,
-        "Console with Program Id"
-      ],
-      "sizing": "600px",
-      "caption": "Console with Program Id"
-    }
-  ]
-}
-[/block]
+![Console with Program Id](/img/content/a01aaa2-image.png)
 
 Store the Program Id somewhere accessible, as we will need this to call the smart contract function from the client side.
 
@@ -210,39 +179,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/microBlog` page to create new blog posts. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/806136a-image.png",
-        null,
-        "Nav Bar"
-      ],
-      "sizing": "600px",
-      "caption": "Nav Bar"
-    }
-  ]
-}
-[/block]
+![Nav Bar](/img/content/806136a-image.png)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5e9b822-image.png",
-        null,
-        "Wallet Connect Button"
-      ],
-      "sizing": "200px",
-      "caption": "Select Wallet Button"
-    }
-  ]
-}
-[/block]
+![Wallet Connect Button](/img/content/5e9b822-image.png)
 
 The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial. 
 
@@ -385,39 +326,11 @@ And there we have it! That's all the code required to create a transaction to ca
 
 The dapp can be tested by visiting the `/microBlog` page. Add the text that you want to store on the blockchain and click on the "Post Blog" button. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7e45d97-image.png",
-        null,
-        "Input to add new post"
-      ],
-      "sizing": "400px",
-      "caption": "Input to add a new post"
-    }
-  ]
-}
-[/block]
+![Input to add new post](/img/content/7e45d97-image.png)
 
 When posting the first blog you will have to sign two transactions. One for creating the account and the other for creating the blog post. Once the transactions are successful. You should see the blog updated in the UI, with the Blog number.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/627ed01-image.png",
-        null,
-        "Blog Post"
-      ],
-      "sizing": "400px",
-      "caption": "Blog Post"
-    }
-  ]
-}
-[/block]
+![Blog Post](/img/content/627ed01-image.png)
 
 Congratulations! 🥳 
 

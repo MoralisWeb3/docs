@@ -1,10 +1,7 @@
 ---
 title: "Angular"
 slug: "your-first-dapp-angular"
-excerpt: "This tutorial will teach you how to set up an Angular dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any Angular app."
-hidden: false
-createdAt: "2022-11-15T09:33:25.117Z"
-updatedAt: "2022-11-30T02:28:38.494Z"
+description: "This tutorial will teach you how to set up an Angular dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any Angular app."
 ---
 ## Introduction
 
@@ -115,7 +112,7 @@ export class BalancesComponent implements OnInit {
 
 9. Run the command `npm run start` and open <http://localhost:4200/balances> in your browser. It should look like:
 
-![](https://files.readme.io/6b15392-Angular_Your_First_Dapp_1.png)
+![](/img/content/6b15392-Angular_Your_First_Dapp_1.png)
 
 We have not fetched any data yet - we will update our server code and then we will get this data from our Angular dapp.
 
@@ -273,4 +270,4 @@ export class BalancesComponent implements OnInit {
 
 3. Reload the [`http://localhost:4200/balances`](http://localhost:4200/balances) page to see the results:
 
-![](https://files.readme.io/8c0d856-Angular_Your_First_Dapp_2.png)
+![](/img/content/8c0d856-Angular_Your_First_Dapp_2.png)

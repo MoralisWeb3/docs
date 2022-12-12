@@ -1,25 +1,10 @@
 ---
 title: "How to sign in with Web3Auth"
 slug: "how-to-sign-in-with-web3authio"
-excerpt: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of developing a full-stack Web3 authentication solution using the popular NextJS framework."
-hidden: false
-createdAt: "2022-08-16T07:58:14.715Z"
-updatedAt: "2022-12-03T06:29:15.485Z"
+description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of developing a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2ebfdfe-web3auth.gif",
-        null,
-        "Web3 Moralis Authentication with Web3Auth Wagmi Connector Result"
-      ],
-      "caption": "Web3 Moralis Authentication with Web3Auth - Wagmi Connector Result"
-    }
-  ]
-}
-[/block]
+
+![Web3 Moralis Authentication with Web3Auth - Wagmi Connector Result](/img/content/2ebfdfe-web3auth.gif)
 
 ## What is Web3Auth?
 
@@ -126,54 +111,15 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Web3Auth`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6cccf79-17.png",
-        null,
-        "Sign In Page"
-      ],
-      "caption": "Sign In Page"
-    }
-  ]
-}
-[/block]
+![Sign In Page](/img/content/6cccf79-17.png)
 
 2. Select the preferred sign-in method:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e8fa976-26.png",
-        null,
-        "Web3Auth authentication"
-      ],
-      "caption": "Web3Auth Authentication"
-    }
-  ]
-}
-[/block]
+![Web3Auth Authentication](/img/content/e8fa976-26.png)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e6f4aef-433.png",
-        null,
-        "User Page"
-      ],
-      "caption": "User Page"
-    }
-  ]
-}
-[/block]
+![User Page](/img/content/e6f4aef-433.png)
 
 4. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

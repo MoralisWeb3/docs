@@ -1,10 +1,7 @@
 ---
 title: "How to get all transactions of an address"
 slug: "how-to-get-all-transactions-of-an-address"
-excerpt: "Learn how to get all the transactions of an address using the Moralis Transaction API."
-hidden: false
-createdAt: "2022-10-27T19:52:44.373Z"
-updatedAt: "2022-12-03T05:12:47.207Z"
+description: "Learn how to get all the transactions of an address using the Moralis Transaction API."
 ---
 ## Prerequisites
 

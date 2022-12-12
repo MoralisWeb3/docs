@@ -1,9 +1,6 @@
 ---
 title: "Block API"
 slug: "block-api"
-hidden: false
-createdAt: "2022-11-10T17:58:38.358Z"
-updatedAt: "2022-11-24T21:40:50.818Z"
 ---
 ## What is the Block API?
 

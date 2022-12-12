@@ -1,10 +1,7 @@
 ---
 title: "How to get Uniswap V2 pair reserves"
 slug: "how-to-get-the-pair-reserves"
-excerpt: "Learn how to get the pair reserves of a given pair address from Uniswap V2 using Moralis DeFi API."
-hidden: false
-createdAt: "2022-11-07T09:19:33.143Z"
-updatedAt: "2022-12-03T04:58:34.679Z"
+description: "Learn how to get the pair reserves of a given pair address from Uniswap V2 using Moralis DeFi API."
 ---
 ## Prerequisites
 

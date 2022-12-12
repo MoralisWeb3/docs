@@ -4,7 +4,7 @@ slug: "/authentication-api"
 sidebar_position: 1
 --- 
 
-![](https://files.readme.io/594b455-image.png)
+![](/img/content/594b455-image.png)
 
 ## What is the Auth API?
 

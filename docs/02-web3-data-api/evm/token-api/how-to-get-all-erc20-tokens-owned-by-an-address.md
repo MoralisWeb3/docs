@@ -1,10 +1,7 @@
 ---
 title: "How to get all ERC20 tokens owned by an address"
 slug: "how-to-get-all-erc20-tokens-owned-by-an-address"
-excerpt: "Learn how to get all ERC20 tokens owned by an address by Moralis Token API."
-hidden: false
-createdAt: "2022-11-28T08:35:55.603Z"
-updatedAt: "2022-12-03T04:48:24.243Z"
+description: "Learn how to get all ERC20 tokens owned by an address by Moralis Token API."
 ---
 ## Prerequisites
 

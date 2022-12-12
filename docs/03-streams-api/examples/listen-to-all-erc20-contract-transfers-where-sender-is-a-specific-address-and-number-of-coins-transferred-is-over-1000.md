@@ -1,10 +1,7 @@
 ---
 title: "How to listen all ERC20 token transfers over certain amount sent by specific address"
 slug: "listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000"
-excerpt: "Learn how to listen all ERC20 token transfers over certain amount sent by specific address using Moralis Streams API."
-hidden: false
-createdAt: "2022-11-15T18:27:34.576Z"
-updatedAt: "2022-12-01T10:40:16.366Z"
+description: "Learn how to listen all ERC20 token transfers over certain amount sent by specific address using Moralis Streams API."
 ---
 Let's create a stream that monitors all the ERC20 contract transfers where sender is a specific address and the number of coins transferred is over 1000.
 

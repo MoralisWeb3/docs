@@ -1,10 +1,7 @@
 ---
 title: "Using JS SDK"
 slug: "your-first-stream-using-js-sdk"
-excerpt: "Learn how to build your first stream in just a few minutes."
-hidden: false
-createdAt: "2022-10-21T12:37:50.234Z"
-updatedAt: "2022-11-23T14:46:34.269Z"
+description: "Learn how to build your first stream in just a few minutes."
 ---
 In this example, we will monitor a wallet. Specifically, we'll monitor all incoming and outgoing transactions of that wallet!
 

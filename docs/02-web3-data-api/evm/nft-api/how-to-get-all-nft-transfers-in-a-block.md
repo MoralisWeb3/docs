@@ -1,7 +1,7 @@
 ---
 title: "How to get all NFT transfers in a block"
 slug: "../how-to-get-all-nft-transfers-in-a-block"
-excerpt: "Learn how to get all the transfers of NFTs in a block using the Moralis NFT API."
+description: "Learn how to get all the transfers of NFTs in a block using the Moralis NFT API."
 ---
 ## Prerequisites
 

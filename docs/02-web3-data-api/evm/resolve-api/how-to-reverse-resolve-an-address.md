@@ -1,10 +1,7 @@
 ---
 title: "How to resolve an Unstoppable domain"
 slug: "how-to-reverse-resolve-an-address"
-excerpt: "Learn how to resolve an Unstoppable domain to a wallet address using Moralis Resolve API."
-hidden: false
-createdAt: "2022-11-04T14:20:08.872Z"
-updatedAt: "2022-12-03T04:56:44.028Z"
+description: "Learn how to resolve an Unstoppable domain to a wallet address using Moralis Resolve API."
 ---
 ## Prerequisites
 

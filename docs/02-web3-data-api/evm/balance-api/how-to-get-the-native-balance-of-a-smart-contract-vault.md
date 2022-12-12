@@ -1,7 +1,7 @@
 ---
 title: "How to get the native balance of an ERC20 token vault"
 slug: "how-to-get-the-native-balance-of-a-smart-contract-vault"
-excerpt: "Learn how to get the native balance of a ERC20 token vault using the Moralis Balance API."
+description: "Learn how to get the native balance of a ERC20 token vault using the Moralis Balance API."
 ---
 ## Prerequisites
 

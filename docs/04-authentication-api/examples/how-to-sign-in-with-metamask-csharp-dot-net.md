@@ -1,10 +1,7 @@
 ---
 title: "How to sign in with MetaMask using C# (.NET)"
 slug: "how-to-sign-in-with-metamask-csharp-dot-net"
-excerpt: "This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session."
-hidden: false
-createdAt: "2022-08-09T17:03:20.749Z"
-updatedAt: "2022-12-03T06:30:22.389Z"
+description: "This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session."
 ---
 ## Prerequisites
 
@@ -22,95 +19,30 @@ The complete code for both the client and server application you will build duri
 1. Open Visual Studio and create a new project.
 2. Select C# ASP.NET Core Web API as the template:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c2be548-template.gif",
-        "template.gif",
-        573
-      ],
-      "caption": "Select Template"
-    }
-  ]
-}
-[/block]
+![Select Template](/img/content/c2be548-template.gif)
 
 3. Configure your new project by entering the project name, location, and solution name. For this demo, we use "MoralisDemo" as the project and solution names:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c2da301-config_proj.gif",
-        "config_proj.gif",
-        680
-      ],
-      "caption": "Configure Project"
-    }
-  ]
-}
-[/block]
+![Configure Project](/img/content/c2da301-config_proj.gif)
 
 4. Enter additional information and click on the **Create** button. For this demo, we selected ".NET 6.0" as the framework:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/648bc30-add_info.gif",
-        "add_info.gif",
-        674
-      ],
-      "caption": "Enter Additional Information"
-    }
-  ]
-}
-[/block]
+![Enter Additional Information](/img/content/648bc30-add_info.gif)
 
 5. Visual Studio will generate a basic ASP.NET REST API project with an example controller.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a2d5480-project.gif",
-        "project.gif",
-        541
-      ],
-      "caption": "New Project"
-    }
-  ]
-}
-[/block]
+![New Project](/img/content/a2d5480-project.gif)
 
 ### Import the Moralis C# SDK Package
 
 1. Open NuGet Package Manager by selecting **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1dace65-nuget1.gif",
-        "nuget1.gif",
-        618
-      ],
-      "caption": "Open NuGet Manager"
-    }
-  ]
-}
-[/block]
+![Open NuGet Manager](/img/content/1dace65-nuget1.gif)
 
 2. Checkmark the **Include prerelease** box, and browse for Moralis.
 3. Select the latest  **Moralis** package and click on the **Install** button:
 
-![Install Moralis Package](https://archbee-image-uploads.s3.amazonaws.com/e7PoB1KRzOuoKv30U5J66/zeEYSW1drxV7vtsk5JTfN_nuget2.gif)
+![Install Moralis Package](/img/content/zeEYSW1drxV7vtsk5JTfN_nuget2.gif)
 
 ### Set Up Moralis
 
@@ -642,42 +574,15 @@ Now that the backend server is ready, we will test it and configure a client app
 
 1. Click on the green start button to initiate your application in **IIS Express**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9fc903c-startapp.gif",
-        "startapp.gif",
-        289
-      ],
-      "caption": "Start the Application"
-    }
-  ]
-}
-[/block]
+![Start the Application](/img/content/9fc903c-startapp.gif)
 
 2. When the application starts, the swagger test page is displayed. Make note of **domain **and **port **of the expanded **Authentication** endpoint and the **Authentication/{address}/{network}/{chainId}** operation. Click on the **Try it now** button.
 3. Enter the address, network, and chain ID values. For this example, we will enter `0x35ba4825204dcE15C7147eA89b31178a00750f81` as the address, `0` for the network (EVM), and `80001` (Polygon Mumbai) as the chain ID. Click on the **Execute** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b2f0984-auth_msg.gif",
-        "auth_msg.gif",
-        863
-      ],
-      "caption": "Test Authentication Endpoint"
-    }
-  ]
-}
-[/block]
+![Test Authentication Endpoint](/img/content/b2f0984-auth_msg.gif)
 
 4. Close the application and stop the process in Visual Studio.
 5. Download the test client application below.
-
 
 [block:embed]
 {
@@ -689,8 +594,6 @@ Now that the backend server is ready, we will test it and configure a client app
   "href": "https://drive.google.com/file/d/1dMzlslt7GHyfqhBnjW_FlPNmUs_8YFOf/view?usp=sharing"
 }
 [/block]
-
-
 
 
 6. Open the test client in Visual Studio Code.
@@ -767,54 +670,15 @@ app.Run();
 12. Restart your server application.
 13. In Visual Studio Code, in the **Explorer** view, right-click on **index.html** and select **Open with Live Server**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f90ec14-client_login.gif",
-        "client_login.gif",
-        456
-      ],
-      "caption": "Client Login"
-    }
-  ]
-}
-[/block]
+![Client Login](/img/content/f90ec14-client_login.gif)
 
 14. Click on the **Log In** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/32ab8b2-client_sign.gif",
-        "client_sign.gif",
-        334
-      ],
-      "caption": "Sign Message"
-    }
-  ]
-}
-[/block]
+![Sign Message](/img/content/32ab8b2-client_sign.gif)
 
 15. The signature message generated by Moralis via your server application is displayed in your wallet. Click on the **Sign** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f7e1d54-jwt_2.png",
-        "jwt_2.png",
-        654
-      ],
-      "caption": "Success!"
-    }
-  ]
-}
-[/block]
+![](/img/content/f7e1d54-jwt_2.png)
 
 16. Congratulations, the client is integrated with your server application which is integrated with Moralis!
 
@@ -822,19 +686,6 @@ app.Run();
 
 Curious about the JWT your application generated? You can view your JWT token at [`jwt.io`](https://www.jwt.io).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0b43888-jwt_1.png",
-        "jwt_1.png",
-        1214
-      ],
-      "caption": "A JWT De-Coded"
-    }
-  ]
-}
-[/block]
+![A JWT De-Coded](/img/content/0b43888-jwt_1.png)
 
 When you paste your JWT into the debugger, if it is valid, the claims of the JWT are displayed. You can also use this tool to verify the signature of your token.

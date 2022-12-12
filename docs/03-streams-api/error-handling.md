@@ -1,9 +1,6 @@
 ---
 title: "Error handling"
 slug: "error-handling"
-hidden: false
-createdAt: "2022-10-21T12:55:05.477Z"
-updatedAt: "2022-11-16T12:57:34.367Z"
 ---
 
 Moralis guarantees 100% delivery of webhooks. Still, you can have errors in your streams for example if your server is down. Moralis will retry to send the webhook in intervals. If the webhook is not delivered after 24 hours and you still want to receive the failed webhooks after some time you can manually replay the failed webhooks.

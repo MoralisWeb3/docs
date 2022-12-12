@@ -1,10 +1,7 @@
 ---
 title: "How to get block content by block number"
 slug: "how-to-get-block-content-by-block-number"
-excerpt: "Learn how to get block content (with transactions and logs) by its block number using the Moralis Block API."
-hidden: false
-createdAt: "2022-11-02T22:11:06.079Z"
-updatedAt: "2022-12-03T04:55:33.797Z"
+description: "Learn how to get block content (with transactions and logs) by its block number using the Moralis Block API."
 ---
 ## Prerequisites
 

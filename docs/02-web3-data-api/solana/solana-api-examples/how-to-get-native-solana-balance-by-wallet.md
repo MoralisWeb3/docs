@@ -1,10 +1,7 @@
 ---
 title: "How to get native balance by wallet"
 slug: "how-to-get-native-solana-balance-by-wallet"
-excerpt: "Learn how to get the native balance of a wallet using the Moralis Solana API."
-hidden: false
-createdAt: "2022-11-02T19:02:29.284Z"
-updatedAt: "2022-11-18T15:24:07.734Z"
+description: "Learn how to get the native balance of a wallet using the Moralis Solana API."
 ---
 ## Prerequisites
 

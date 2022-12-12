@@ -1,7 +1,7 @@
 ---
 title: "How to get the owner of an NFT"
 slug: "../how-to-get-the-owner-of-an-nft"
-excerpt: "Learn how to get the owner of an NFT using the Moralis NFT API."
+description: "Learn how to get the owner of an NFT using the Moralis NFT API."
 ---
 ## Prerequisites
 

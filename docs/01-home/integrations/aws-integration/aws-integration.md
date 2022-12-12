@@ -1,10 +1,7 @@
 ---
 title: "AWS"
 slug: "aws-integration"
-excerpt: "Integrate your existing AWS backend with Moralis Enterprise-Grade Web3 APIs to build highly-performant and scalable dapps. You have options to integrate with several AWS offerings:\n- AWS GameSparks\n- AWS Lambda"
-hidden: false
-createdAt: "2022-11-10T16:09:19.310Z"
-updatedAt: "2022-11-25T14:25:22.991Z"
+description: "Integrate your existing AWS backend with Moralis Enterprise-Grade Web3 APIs to build highly-performant and scalable dapps. You have options to integrate with several AWS offerings:\n- AWS GameSparks\n- AWS Lambda"
 ---
 ## What is AWS Integration?
 
@@ -28,11 +25,11 @@ To create an AWS account, simply follow the following guide [here](https://docs.
 
 When creating the user, make sure you select both **_AWS Credential types_**:
 
-![](https://files.readme.io/c817a0e-image.png)
+![](/img/content/c817a0e-image.png)
 
 Also make sure to attach **_AdministratorAccess_** as a policy:
 
-![](https://files.readme.io/34621f7-image.png)
+![](/img/content/34621f7-image.png)
 
 
 
@@ -42,7 +39,7 @@ Also make sure to attach **_AdministratorAccess_** as a policy:
 
 And last, but **very important**, download the credentials in a `.csv`:
 
-![](https://files.readme.io/2f88fdb-image.png)
+![](/img/content/2f88fdb-image.png)
 
 ## Next Steps
 

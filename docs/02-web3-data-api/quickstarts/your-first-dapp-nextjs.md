@@ -1,10 +1,7 @@
 ---
 title: "NextJS"
 slug: "your-first-dapp-nextjs"
-excerpt: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
-hidden: false
-createdAt: "2022-08-10T05:13:01.794Z"
-updatedAt: "2022-11-29T12:59:00.941Z"
+description: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
 ## Introduction
 
@@ -12,7 +9,7 @@ This tutorial shows you how to create a basic NextJS dapp that uses the [@morali
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs>
 
-![](https://files.readme.io/b66bc70-image.png)
+![](/img/content/b66bc70-image.png)
 
 ## The Steps We Will Take
 
@@ -105,20 +102,7 @@ export default HomePage
 
 1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/): 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png",
-        "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png",
-        2880
-      ],
-      "caption": "Admin Panel"
-    }
-  ]
-}
-[/block]
+![Admin Panel](/img/content/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png)
 
 2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
 
@@ -183,17 +167,4 @@ export default HomePage;
 
 2. Now, let's receive and use the props in our server-side Visit the `[<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/46867dc-image.png",
-        null,
-        null
-      ],
-      "caption": "The `useEvmNativeBalance()` response"
-    }
-  ]
-}
-[/block]
+![The `useEvmNativeBalance()` response](/img/content/46867dc-image.png)

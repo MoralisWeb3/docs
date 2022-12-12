@@ -1,10 +1,7 @@
 ---
 title: "How to reverse resolve an ENS name"
 slug: "how-to-resolve-ens-name"
-excerpt: "Learn how to reverse resolve the ENS name from an address using the Moralis Resolve API."
-hidden: false
-createdAt: "2022-11-02T18:12:28.194Z"
-updatedAt: "2022-12-03T04:56:23.765Z"
+description: "Learn how to reverse resolve the ENS name from an address using the Moralis Resolve API."
 ---
 ## Prerequisites
 

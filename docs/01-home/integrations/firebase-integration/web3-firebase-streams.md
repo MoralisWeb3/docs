@@ -1,25 +1,9 @@
 ---
 title: "Firebase Streams"
 slug: "web3-firebase-streams"
-excerpt: "Moralis Streams can be used to monitor a blockchain wallet or a smart contract. This tutorial shows how you can easily plug in the Moralis Streams extension to your Firebase project and let your dapp handle blockchain events."
-hidden: false
-createdAt: "2022-10-10T10:11:38.120Z"
-updatedAt: "2022-11-15T14:25:29.834Z"
+description: "Moralis Streams can be used to monitor a blockchain wallet or a smart contract. This tutorial shows how you can easily plug in the Moralis Streams extension to your Firebase project and let your dapp handle blockchain events."
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5cdb931-firebase-streams-demo-cover.gif",
-        null,
-        "Moralis Streams for Firebase Demo"
-      ],
-      "caption": "Moralis Streams for Firebase Demo"
-    }
-  ]
-}
-[/block]
+![Moralis Streams for Firebase Demo](/img/content/5cdb931-firebase-streams-demo-cover.gif)
 
 If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the**[Your First Dapp for Firebase](https://docs.moralis.io/docs/using-firebase)** tutorial first. 
 
@@ -64,7 +48,7 @@ Go to the **Firebase Console** > **Your Project** > **Firestore Database** > **R
 
 ## How Does it Work?
 
-![](https://files.readme.io/8764004-streams-flow.png)
+![](/img/content/8764004-streams-flow.png)
 
 The extension does one thing: writes incoming data from the Moralis Streams service to your Firestore database. That's it! You don't need to do it manually.
 

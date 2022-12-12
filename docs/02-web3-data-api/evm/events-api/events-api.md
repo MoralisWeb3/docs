@@ -1,9 +1,6 @@
 ---
 title: "Events API"
 slug: "events-api"
-hidden: false
-createdAt: "2022-11-10T18:02:30.315Z"
-updatedAt: "2022-11-24T21:40:12.466Z"
 ---
 ## What is the Events API?
 

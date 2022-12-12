@@ -1,10 +1,7 @@
 ---
 title: "How to listen to all NFT transfers sent from a specific address"
 slug: "listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address"
-excerpt: "Learn how to listen to all NFT transfers sent from a specific address using Moralis Streams API."
-hidden: false
-createdAt: "2022-11-15T18:15:37.684Z"
-updatedAt: "2022-12-01T10:39:09.798Z"
+description: "Learn how to listen to all NFT transfers sent from a specific address using Moralis Streams API."
 ---
 Lets create a stream that monitors all the NFT contract transfers from a specific sender address.
 

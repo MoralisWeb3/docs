@@ -1,10 +1,7 @@
 ---
 title: "AWS Lambda"
 slug: "using-aws-lambda"
-excerpt: "This tutorial shows how to easily integrate our [NodeJS SDK](https://docs.moralis.io/docs/introduction-to-moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
-hidden: false
-createdAt: "2022-10-26T08:49:05.764Z"
-updatedAt: "2022-12-03T12:09:33.397Z"
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](https://docs.moralis.io/docs/introduction-to-moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 > 📘 What is AWS Lambda?
 > 
@@ -64,77 +61,25 @@ serverless
 
 Running this command should give you some options. Choose **_Starter_**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c026f4e-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/c026f4e-image.png)
 
 
 
 Press `ENTER` to choose a default project name or enter your own:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ff45297-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/ff45297-image.png)
 
 
 
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ac122a2-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/ac122a2-image.png)
 
 
 
 Finally, type `n` again as we don't want to deploy now:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8df9b06-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/8df9b06-image.png)
 
 
 
@@ -142,62 +87,23 @@ Type `n` again if the console seems stuck.
 
 **Nice! We have the sample project created:**
 
-![](https://files.readme.io/154ea8e-image.png)
+![](/img/content/154ea8e-image.png)
 
 Now, let's create a new folder inside the project named **_functions_** as we will be creating multiple functions and placing them there:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c4da9f8-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/c4da9f8-image.png)
 
 
 
 Continue by placing the auto generated `handler.js` inside:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bde5154-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/bde5154-image.png)
 
 
 
 Now we have to open **`serverless.yml`** and set the new location of `handler.js`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9a747e6-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/9a747e6-image.png)
 
 
 
@@ -221,20 +127,7 @@ functions:
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cab8050-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/cab8050-image.png)
 
 
 
@@ -252,39 +145,13 @@ functions:
 
 To start, let's use the existing `handler.js`. Rename it to **`getNativeBalance.js`**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6b7859d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/6b7859d-image.png)
 
 
 
 Also change `module.exports.hello` to **`module.exports.handler`**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/53288c1-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/53288c1-image.png)
 
 
 
@@ -308,20 +175,7 @@ functions:
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/94f6ff0-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/94f6ff0-image.png)
 
 
 
@@ -333,20 +187,7 @@ const Moralis = require('moralis').default;
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/71df42f-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/71df42f-image.png)
 
 
 
@@ -364,20 +205,7 @@ startMoralis();
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/431d2db-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/431d2db-image.png)
 
 
 
@@ -442,7 +270,7 @@ module.exports.handler = async (event) => {
 
 Create a new file under `functions` folder and name it **`getWalletNfts.js`**:
 
-![](https://files.readme.io/183defc-image.png)
+![](/img/content/183defc-image.png)
 
 Go to `serverless.yml` and add the following code in `functions`:
 
@@ -453,20 +281,7 @@ getWalletNfts:
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/298f2fc-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/298f2fc-image.png)
 
 
 
@@ -510,20 +325,7 @@ cd aws-node-project
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dc786c5-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/dc786c5-image.png)
 
 
 
@@ -539,11 +341,11 @@ npm install moralis
 
 Open **_event.json_** in the project root folder:
 
-![](https://files.readme.io/facb326-image.png)
+![](/img/content/facb326-image.png)
 
 Replace the _address_ and _chain_ values with your own information:
 
-![](https://files.readme.io/1bd433e-image.png)
+![](/img/content/1bd433e-image.png)
 
 Now let's test one of the functions, for example `getNativeBalance`. Open the terminal and run:
 
@@ -555,7 +357,7 @@ serverless invoke -f getNativeBalance --path event.json
 
 **Test run successfully!**
 
-![](https://files.readme.io/39d265c-image.png)
+![](/img/content/39d265c-image.png)
 
 # Lambda NodeJS Express API
 
@@ -579,77 +381,25 @@ serverless
 
 Running this command should give you some options. Choose **_Express API_**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8c14ff0-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/8c14ff0-image.png)
 
 
 
 Press `ENTER` to choose a default project name or enter your own:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/94ca4be-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/94ca4be-image.png)
 
 
 
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4a32f31-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/4a32f31-image.png)
 
 
 
 Finally, type `n` again as we don't want to deploy now:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/addbe83-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/addbe83-image.png)
 
 
 
@@ -657,20 +407,7 @@ Type `n` again if the console seems stuck.
 
 Now the sample project is created:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6402e0b-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/6402e0b-image.png)
 
 
 
@@ -698,7 +435,7 @@ functions:
 
 
 
-![](https://files.readme.io/99cc149-image.png)
+![](/img/content/99cc149-image.png)
 
 > 👍 Done
 > 
@@ -719,7 +456,7 @@ const Moralis = require('moralis').default;
 
 
 
-![](https://files.readme.io/4ca093c-image.png)
+![](/img/content/4ca093c-image.png)
 
 Add the following to allow the app accept all types of request body formats:
 
@@ -732,7 +469,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-![](https://files.readme.io/add76c3-image.png)
+![](/img/content/add76c3-image.png)
 
 Finally let's add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added in the environment:
 
@@ -748,7 +485,7 @@ startMoralis();
 
 
 
-![](https://files.readme.io/1be8b90-image.png)
+![](/img/content/1be8b90-image.png)
 
 ### Create `getNativeBalance` endpoint
 
@@ -780,7 +517,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 
 
-![](https://files.readme.io/03e3db9-image.png)
+![](/img/content/03e3db9-image.png)
 
 > 📘 
 > 
@@ -790,7 +527,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](https://docs.moralis.io/reference/getwalletnfts) when the Express endpoint is called:
 
-![](https://files.readme.io/08eff9f-image.png)
+![](/img/content/08eff9f-image.png)
 
 ```javascript
 app.post("/getWalletNfts", async (req, res, next) => {
@@ -912,20 +649,7 @@ cd aws-node-express-api-project
 
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cbd847c-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/cbd847c-image.png)
 
 
 
@@ -959,7 +683,7 @@ plugins:
 
 
 
-![](https://files.readme.io/acf1d0f-image.png)
+![](/img/content/acf1d0f-image.png)
 
 Then, start the serverless-offline server:
 
@@ -969,11 +693,11 @@ serverless offline start
 
 
 
-![](https://files.readme.io/e93d805-image.png)
+![](/img/content/e93d805-image.png)
 
 To test, navigate to `[<http://localhost:3000`>](<http://localhost:3000`>) in your browser:
 
-![](https://files.readme.io/c401071-image.png)
+![](/img/content/c401071-image.png)
 
 **Very nice!** And the best thing is that if you make a change in `handler.js` file, it will be automatically applied and you'll see the result the next time you hit the endpoint. **This rapidly improves development time.**
 
@@ -996,7 +720,7 @@ It's time to deploy to **AWS**. Whatever project you chose, open the terminal an
 serverless deploy
 ```
 
-![](https://files.readme.io/67fbb54-image.png)
+![](/img/content/67fbb54-image.png)
 
 > 👍 Congratulations!
 > 
@@ -1010,15 +734,15 @@ serverless deploy
 > 
 > If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
-![](https://files.readme.io/26fe035-image.png)
+![](/img/content/26fe035-image.png)
 
 The deployment of the **Lambda App with multiple functions** created two single functions:
 
-![](https://files.readme.io/ec41b53-image.png)
+![](/img/content/ec41b53-image.png)
 
 By contrast, the **Lambda NodeJS Express API** is contained in just one function:
 
-![](https://files.readme.io/e27401f-image.png)
+![](/img/content/e27401f-image.png)
 
 **Next, we differentiate the testing process between these functions:**
 
@@ -1033,17 +757,17 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 Select **_API Gateway_**:
 
-![](https://files.readme.io/cc3e34e-image.png)
+![](/img/content/cc3e34e-image.png)
 
 Here you will find the **API endpoint URL**. Click on it:
 
-![](https://files.readme.io/ca4a3df-image.png)
+![](/img/content/ca4a3df-image.png)
 
-![](https://files.readme.io/c0d7f46-image.png)
+![](/img/content/c0d7f46-image.png)
 
 You could reach **_getNativeBalance_** and **_getWalletNfts_** endpoints by adding them at the end of the URL:
 
-![](https://files.readme.io/3192fdf-image.png)
+![](/img/content/3192fdf-image.png)
 
 But because these are **POST requests** that need a body with _address_ and _chain_ parameters, you need to use an API platform like [Postman](https://www.postman.com/downloads/) to test it.
 
@@ -1064,24 +788,11 @@ You can test your function by pressing the _Test_ tab. Set an _Event name_ and m
 
 
 
-![](https://files.readme.io/b1a4acd-image.png)
+![](/img/content/b1a4acd-image.png)
 
 Then choose **_Test_** and see the result:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9c93832-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/9c93832-image.png)
 
 
 
@@ -1093,7 +804,7 @@ Then choose **_Test_** and see the result:
 
 Marked with green is where you can find the **function name**:
 
-![](https://files.readme.io/b89b4c7-image.png)
+![](/img/content/b89b4c7-image.png)
 
 ## Copy function ARN
 
@@ -1103,4 +814,4 @@ Marked with green is where you can find the **function name**:
 
 Marked with green is where you can copy the **ARN** which is the identifier of the function in all AWS:
 
-![](https://files.readme.io/65a9750-image.png)
+![](/img/content/65a9750-image.png)

@@ -1,10 +1,7 @@
 ---
 title: "Solana NFT Explorer"
 slug: "solana-nft-explorer"
-excerpt: "A simple app to explore all the NFTs of a solana wallet."
-hidden: false
-createdAt: "2022-11-22T12:45:46.082Z"
-updatedAt: "2022-11-24T11:33:07.499Z"
+description: "A simple app to explore all the NFTs of a solana wallet."
 ---
 ## Introduction
 
@@ -14,20 +11,7 @@ In this app we use [get Wallet NFTs](https://docs.moralis.io/docs/how-to-get-spl
 
 This is what the final application looks like. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e976274-image.png",
-        null,
-        null
-      ],
-      "caption": "Final App UI"
-    }
-  ]
-}
-[/block]
+![Final App UI](/img/content/e976274-image.png)
 
 This application has the following features:
 
@@ -84,20 +68,7 @@ Once the command has been run successfully, you should be able to view the app i
 
 The first step when you visit the app is to search for wallet NFTs using the search bar. Clicking on the "Search" button uses the Solana API to fetch the NFTs.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5312cd7-image.png",
-        null,
-        null
-      ],
-      "caption": "Search Bar"
-    }
-  ]
-}
-[/block]
+![Search Bar](/img/content/5312cd7-image.png)
 
 Here is the code responsible for it.
 
@@ -373,20 +344,7 @@ Let's look at the code responsible for paginated results.
 
 Navigation between pages is handled using these buttons. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9238099-image.png",
-        null,
-        null
-      ],
-      "caption": "Page Navigation"
-    }
-  ]
-}
-[/block]
+![Page Navigation](/img/content/9238099-image.png)
 
 Here is the code for it.
 
@@ -482,20 +440,7 @@ Now let's take a look at the filtering process.
 
 NFTs can be filtered using the search button on the top right. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d2949f8-image.png",
-        null,
-        null
-      ],
-      "caption": "Filter Input"
-    }
-  ]
-}
-[/block]
+![Filter Input](/img/content/d2949f8-image.png)
 
 Here is the code responsible for filtering the NFTs in UI.
 
@@ -569,20 +514,7 @@ if (filterSymbol?.toLowerCase().includes(filterQuery)) {
 
 Here is what the filter results in the app look like.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0c56bcf-image.png",
-        null,
-        null
-      ],
-      "caption": "Filtered Images"
-    }
-  ]
-}
-[/block]
+![Filtered Images](/img/content/0c56bcf-image.png)
 
 Congratulations! 🥳 
 

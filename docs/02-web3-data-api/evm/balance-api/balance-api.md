@@ -1,12 +1,9 @@
 ---
 title: "Balance API"
 slug: "/evm/balance-api"
-excerpt: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
-hidden: false
-createdAt: "2022-11-10T17:55:46.269Z"
-updatedAt: "2022-12-03T05:07:29.796Z"
+description: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
 ---
-![](https://files.readme.io/bb36730-image.png)
+![](/img/content/bb36730-image.png)
 
 ## What is the Balance API?
 

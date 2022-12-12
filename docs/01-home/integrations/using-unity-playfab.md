@@ -1,10 +1,7 @@
 ---
 title: "Azure PlayFab"
 slug: "using-unity-playfab"
-excerpt: "This tutorial will teach you how to set up a complete gaming backend platform for Web3 games. We use Unity as our game engine, Microsoft Azure PlayFab as our gaming backend, and Moralis to enable all the Web3 magic! You'll also learn how to use Web3 authentication and how to retrieve a user's native balance, a list of ERC-20 tokens, and the first ten NFTs they own using the Web3 API."
-hidden: false
-createdAt: "2022-08-09T16:08:44.866Z"
-updatedAt: "2022-11-23T22:23:22.172Z"
+description: "This tutorial will teach you how to set up a complete gaming backend platform for Web3 games. We use Unity as our game engine, Microsoft Azure PlayFab as our gaming backend, and Moralis to enable all the Web3 magic! You'll also learn how to use Web3 authentication and how to retrieve a user's native balance, a list of ERC-20 tokens, and the first ten NFTs they own using the Web3 API."
 ---
 > 📘 Compatible with NodeJS and .NET
 > 
@@ -26,7 +23,7 @@ This section describes how to set up your Moralis account and find the Web3 API 
 1. [Create a Moralis account if you don't already have one](https://admin.moralis.io/register).
 2. Go to **Web3 APIs** and copy and save the **API key v3**. You will need this when setting up Azure Functions.
 
-![](https://files.readme.io/9c470bb-1.png "1.png")
+![](/img/content/9c470bb-1.png "1.png")
 
 # Set up Microsoft Azure PlayFab (free plan)
 
@@ -39,11 +36,11 @@ An active PlayFab account is required to use the functionality provided by PlayF
 1. [Create a PlayFab Account](https://developer.playfab.com/).
 2. Create a **new title** on PlayFab:
 
-![](https://files.readme.io/622535b-2.png "2.png")
+![](/img/content/622535b-2.png "2.png")
 
 3. Open your new title and go to **Title settings**:
 
-![](https://files.readme.io/3d13f75-3.png "3.png")
+![](/img/content/3d13f75-3.png "3.png")
 
 4. Go to the **API Features** tab and write down the **Title ID**. You will need this when setting up Azure Functions.
 5. Go to the **Secret Keys** tab and write down the **secret key**. You will need this when setting up Azure Functions.
@@ -62,20 +59,7 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 2. [Create a Microsoft Customer Agreement subscription](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription#create-a-subscription).
 3. Search for **Function App** and select it.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b069353-4.png",
-        "4.png",
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/b069353-4.png)
 
 
 
@@ -83,39 +67,13 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 
 ## NodeJS
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cd8519e-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/cd8519e-image.png)
 
 
 
 ## .NET
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/30e91e7-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/30e91e7-image.png)
 
 
 
@@ -123,11 +81,11 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 6. Select **Review + create** and then **Create**.
 7. Open the **MoralisAzureFunctions** resource:
 
-![](https://files.readme.io/00720ee-6.png "6.png")
+![](/img/content/00720ee-6.png "6.png")
 
 7. Go to **Configuration** and select **New application setting**:
 
-![](https://files.readme.io/da6a902-7.png "7.png")
+![](/img/content/da6a902-7.png "7.png")
 
 8. Enter **MORALIS\_API\_KEY** as the name, and in the value, paste your Moralis API key. Leave **Deployment slot setting** unchecked and select **Ok**.
 9. _(Only for .NET Setup)_ Create a second application setting. Enter **MORALIS\_AUTHENTICATION\_API\_URL** as the name, and in the value, enter **<https://authapi.moralis.io/>**. Leave **Deployment slot setting** unchecked and select **Ok**.
@@ -136,9 +94,9 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 12. Create another application setting and enter **PLAYFAB\_DEV\_SECRET\_KEY** as the name, and in the value, paste your PlayFab secret key. Leave **Deployment slot setting** unchecked and select **Ok**.
 13. Select **Save** and then **Continue**.
 
-![](https://files.readme.io/72eb186-8.png "8.png")
+![](/img/content/72eb186-8.png "8.png")
 
-![](https://files.readme.io/4ba31c1-9.png "9.png")
+![](/img/content/4ba31c1-9.png "9.png")
 
 # Create Azure Functions with Visual Studio Code
 
@@ -173,110 +131,45 @@ This section walks through coding functions that integrate the Moralis SDK.
 2. Select **Azure** and sign in.
 3. Under **Workspace** select **Create Function**:
 
-![](https://files.readme.io/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
+![](/img/content/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
 
 4. Select **Create new project** and create an empty folder. I named mine **example-auth-azure-functions-nodejs**:
 
-![](https://files.readme.io/6f08068-image.png)
+![](/img/content/6f08068-image.png)
 
 5. For the language select **Javascript**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/44a1fc3-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/44a1fc3-image.png)
 
 
 
 6. Select **HTTP Trigger** for the template:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/352f141-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/352f141-image.png)
 
 
 
 7. Name it **ChallengeRequest** and press _Enter_:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2a2b9fd-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/2a2b9fd-image.png)
 
 
 
 8. Select **Function** for the authorization level:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/aa78fbe-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/aa78fbe-image.png)
 
 
 
 9. Finally, select **Open in current window**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d41d75b-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+![](/img/content/d41d75b-image.png)
 
 
 
 10. We now have the **`ChallengeRequest`** function created:
 
-![](https://files.readme.io/822b4ce-image.png)
+![](/img/content/822b4ce-image.png)
 
 11. Replace the existing code in _**index.js**_ for this:
 
@@ -406,7 +299,7 @@ For now we need to create another function that will verify the message resultin
 
 1. Repeat the same steps as for **`ChallengeRequest`** (no need to create a new project now) but this time name it **`ChallengeVerify`**:
 
-![](https://files.readme.io/90ac5b9-image.png)
+![](/img/content/90ac5b9-image.png)
 
 2. Replace the existing code in **`index.js`** for this:
 
@@ -637,7 +530,7 @@ For this one we'll need to pass various parameters in the request body, related 
 
 1. Open the terminal in VS Code:
 
-![](https://files.readme.io/a3c6570-image.png)
+![](/img/content/a3c6570-image.png)
 
 2. Install the **Moralis JS SDK** and the **PlayFab SDK** by running this command:
 
@@ -668,33 +561,33 @@ Before you get started, make sure you have the following requirements in place:
 1. Open Visual Studio Code.
 2. Select **Azure** and **Workspace** and add a function:
 
-![](https://files.readme.io/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
+![](/img/content/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
 
 3. Click on **Create new project** and select or create a folder. For this example, we will create and select a new folder named **example-auth-azure-functions**.
 4. For the language, select **C#**:
 
-![](https://files.readme.io/e3747c2-azure_functions_2.gif "azure_functions_2.gif")
+![](/img/content/e3747c2-azure_functions_2.gif "azure_functions_2.gif")
 
 5. Select the **.NET** runtime you want to use. For this tutorial, we select **.NET 6.0 LTS**:
 
-![](https://files.readme.io/3734344-azure_functions_3.gif "azure_functions_3.gif")
+![](/img/content/3734344-azure_functions_3.gif "azure_functions_3.gif")
 
 6. Select **HTTP trigger** as the template:
 
-![](https://files.readme.io/a218747-azure_functions_4.gif "azure_functions_4.gif")
+![](/img/content/a218747-azure_functions_4.gif "azure_functions_4.gif")
 
 7. Provide a root namespace for your project:
 
-![](https://files.readme.io/52ff37f-azure_functions_5.gif "azure_functions_5.gif")
+![](/img/content/52ff37f-azure_functions_5.gif "azure_functions_5.gif")
 
 8. For **AccessRights**, select **Function**:
 
-![](https://files.readme.io/64041e4-azure_functions_6.gif "azure_functions_6.gif")
+![](/img/content/64041e4-azure_functions_6.gif "azure_functions_6.gif")
 
 9. Select **Open in current window**.
 10. You should see a pop-up window indicating missing dependencies; click on **Restore**:
 
-![](https://files.readme.io/652d283-azure_functions_7.gif "azure_functions_7.gif")
+![](/img/content/652d283-azure_functions_7.gif "azure_functions_7.gif")
 
 11. Open the **.csproj** file. There will be an `ItemGroup` element with one or more `PackageReference` elements. Replace this section with the following code:
 
@@ -1586,27 +1479,27 @@ namespace PlayFab.AzureFunctions
 
 1. Sign in to Azure:
 
-![](https://files.readme.io/d39b1b6-11.png "11.png")
+![](/img/content/d39b1b6-11.png "11.png")
 
 2. Right-click on **MoralisAzureFunctions** or **MoralisAzureFunctionsJS** (depending on the environment you're using) and select **Deploy to Function App**:
 
-![](https://files.readme.io/7316191-12.png "12.png")
+![](/img/content/7316191-12.png "12.png")
 
 3. Select **Deploy**:
 
-![](https://files.readme.io/e0a7b20-13.png "13.png")
+![](/img/content/e0a7b20-13.png "13.png")
 
 4. Go to your PlayFab title ID dashboard and go to **Automation**:
 
-![](https://files.readme.io/6921c1c-14.png "14.png")
+![](/img/content/6921c1c-14.png "14.png")
 
 5. Select **Register function** and set the **Trigger** type to **HTTP**. Enter **ChallengeRequest** as the function name and copy the function URL from Visual Studio Code. Right-click on **ChallengeRequest** under **Functions** and select **Copy Function Url**, and paste it into the **Function** URL field. Select **Register function**.
 
-![](https://files.readme.io/2dbbc01-15.png "15.png")
+![](/img/content/2dbbc01-15.png "15.png")
 
 6. Create another **Register function** and set the **Trigger** type to **HTTP**. Enter **ChallengeVerify** as the function name and copy the function URL from Visual Studio Code. Right-click on **ChallengeVerify** under **Functions** and select **Copy Function Url**, and paste it into the **Function** URL field. Select **Register function**.
 
-![](https://files.readme.io/34e079c-16.png "16.png")
+![](/img/content/34e079c-16.png "16.png")
 
 7. If you want, repeat step #6 above for all the other functions we added.
 
@@ -1622,20 +1515,20 @@ This section describes how to set up a Unity application and connect to PlayFab 
 2. Open the project in Unity (recommend version: 2021.3.10f1).
 3. Open PlayFab **Editor Extensions** (If the PlayFab menu doesn’t show this, restart Unity).
 
-![](https://files.readme.io/6c4178c-unity_1.png "unity_1.png")
+![](/img/content/6c4178c-unity_1.png "unity_1.png")
 
 4. Login with your email and password:
 
-![](https://files.readme.io/f16f1c3-unity_2.png "unity_2.png")
+![](/img/content/f16f1c3-unity_2.png "unity_2.png")
 
 5. Go to **Settings** > **Project**:
 
-![](https://files.readme.io/aaa98bc-unity_3.png "unity_3.png")
+![](/img/content/aaa98bc-unity_3.png "unity_3.png")
 
 6. Select your **Studio** and **Title ID**.
 7. Go to **Scenes** and open **SampleScene**:
 
-![](https://files.readme.io/c489b31-unity_4.png "unity_4.png")
+![](/img/content/c489b31-unity_4.png "unity_4.png")
 
 ## Programmatically Interact with Moralis via PlayFab
 
@@ -1645,12 +1538,12 @@ If you choose the **Complete** project, feel free to skip this section and [**pl
 
 Programmatically integrate with Moralis via PlayFab.
 
-![](https://files.readme.io/ea13d3e-unity_4a.png "unity_4a.png")
+![](/img/content/ea13d3e-unity_4a.png "unity_4a.png")
 
 1. In the **Hierarchy** view, right-click and select **Create Empty**. Name this object **MoralisWeb3AuthService**.
 2. In the **Assets/Scripts** folder view, create a new script called `MoralisWeb3AuthService.cs`:
 
-![](https://files.readme.io/ce16bcf-unity_4b.png "unity_4b.png")
+![](/img/content/ce16bcf-unity_4b.png "unity_4b.png")
 
 3. Drag and drop the `MoralisWeb3AuthService.cs` script into the **MoralisWeb3AuthService** object.
 4. Open the edit the `MoralisWeb3AuthService.cs` script.
@@ -2140,25 +2033,25 @@ public class MoralisWeb3AuthService : MonoBehaviour
 
 1. In the Unity UI, in the **Hierarchy** view, select the `MoralisWeb3AuthService` object and add entries under both **On Success** and **On Failed**. Drag **AuthenticationKit** into each of these, selecting **AuthenticationKit/Connect** for **On Success** and **AuthenticationKit/Disconnect** for **On Failed**:
 
-![](https://files.readme.io/429cebe-unity_4c.png "unity_4c.png")
+![](/img/content/429cebe-unity_4c.png "unity_4c.png")
 
 2. In the Unity UI, in the **Hierarchy** view, select the **AuthenticationKit** object. Add an entry to **On State Changed (AuthenticationStateChanged)**. Drag the **MoralisWeb3AuthService** object to this entry and select **MoralisWeb3AuthService/StateObservable_OnValueChanged**:
 
-![](https://files.readme.io/d657299-unity_4d.png "unity_4d.png")
+![](/img/content/d657299-unity_4d.png "unity_4d.png")
 
 ## Play the Game!
 
 1. Run the **SampleScene** and select **PLAY AS GUEST**:
 
-![](https://files.readme.io/9f0d37e-unity_5.png "unity_5.png")
+![](/img/content/9f0d37e-unity_5.png "unity_5.png")
 
 2. Select **CONNECT WALLET**:
 
-![](https://files.readme.io/5b6bb54-unity_6.png "unity_6.png")
+![](/img/content/5b6bb54-unity_6.png "unity_6.png")
 
 3. Select **CONNECT** and scan the QR code with your wallet and follow all the steps.
 4. If you return to the **LOGGED IN** screen, the wallet information is added to the player's profile under **Players** > **Player Data**:
 
-![](https://files.readme.io/5433ab6-unity_7.png "unity_7.png")
+![](/img/content/5433ab6-unity_7.png "unity_7.png")
 
 5. Celebrate your **epic setup** and start thinking of all the Web3 games you can now build!
