@@ -37,6 +37,7 @@ const translateSchemaReference = (schemaRef) => {
 
 const extractSwaggerValueByMethod = (swaggerJSON, path) => {
   const method = Object.keys(swaggerJSON.paths?.[path])[0];
+  console.log(swaggerJSON.paths?.[path]?.[method]);
   return {
     ...swaggerJSON.paths?.[path]?.[method],
     method: method.toUpperCase(),
@@ -77,11 +78,11 @@ const formatParameters = (parameters) => {
 const formatResponses = (responses) => {
   const formattedResponses = Object.keys(responses).map((status) => {
     const { description, content } = responses[status];
-    console.log(content);
+    const schemaRef = content?.["application/json"]?.schema?.$ref;
     return {
       status,
       description,
-      ...(content
+      ...(schemaRef
         ? {
             body: translateSchemaReference(
               content["application/json"]?.schema?.$ref
@@ -125,12 +126,17 @@ const formatSwaggerJSON = (swaggerJSON) => {
   const swaggerContent = {};
   for (let path in swaggerJSON.paths) {
     // Extract all important fields from Swagger
-    const { operationId, description, method, parameters, responses } =
-      extractSwaggerValueByMethod(swaggerJSON, path);
+    const {
+      operationId,
+      description,
+      method,
+      parameters = [],
+      responses = [],
+    } = extractSwaggerValueByMethod(swaggerJSON, path);
     console.log(path);
 
     // Formatting Parameters & Responses
-    const { pathParams, queryParams } = formatParameters(parameters);
+    const { pathParams = [], queryParams = [] } = formatParameters(parameters);
     const formattedResponses = formatResponses(responses);
     const formattedPath = formatPath(path);
 
@@ -148,7 +154,18 @@ const formatSwaggerJSON = (swaggerJSON) => {
 
 /**
  * @name generateConfigs
- * @description Generate JSON config for API Reference & write it to JSON file
+ * @description
+ * Generate JSON config for API Reference & write it to JSON file.
+ * This already works well for:
+ * - Balance API
+ * - Block API
+ * - Events API
+ * - Utils API
+ * - Resolve API
+ * - DeFi API
+ * - Streams API
+ * - Auth API
+ * - Solana API
  *
  * @example
  * const configs = await generateConfigs();
@@ -166,7 +183,7 @@ const generateConfigs = async () => {
       swaggerSchemas = swaggerJSON.components.schemas;
 
       // If statement is temporary, for testing only
-      if (["balance"].includes(key)) {
+      if (["utils"].includes(key)) {
         swaggerContent = formatSwaggerJSON(swaggerJSON);
       }
       swaggerOAS[key] = swaggerContent;
