@@ -21,13 +21,26 @@ const translateSchemaReference = (schemaRef) => {
   } else if (properties) {
     return {
       field: Object.keys(properties).map((name) => {
-        const { type, description, example } = properties[name];
-        return {
-          name,
-          type,
-          description,
-          example,
-        };
+        const { type, description, example, items } = properties[name];
+        if (type === "array") {
+          return {
+            name,
+            type,
+            description,
+            example,
+            ...(items && items?.$ref
+              ? // If there are more arrays within the child, do recursion
+                translateSchemaReference(items?.$ref)
+              : { items }),
+          };
+        } else {
+          return {
+            name,
+            type,
+            description,
+            example,
+          };
+        }
       }),
     };
   } else {
@@ -48,26 +61,30 @@ const formatParameters = (parameters) => {
   const pathParams = [];
   for (let param of parameters) {
     const { name, description, required, schema } = param ?? {};
-    const { example, type, $ref } = schema ?? {};
+    const { example, type, $ref, items } = schema ?? {};
+    const paramsObject = {
+      name,
+      description,
+      required,
+      example,
+      ...(type
+        ? {
+            type,
+            ...(items && {
+              field: items?.$ref
+                ? translateSchemaReference(items?.$ref)
+                : items,
+            }),
+          }
+        : translateSchemaReference($ref)),
+    };
     switch (param.in) {
       case "query":
-        queryParams.push({
-          name,
-          description,
-          required,
-          example,
-          ...(type ? { type } : translateSchemaReference($ref)),
-        });
+        queryParams.push(paramsObject);
         break;
       case "path":
       default:
-        pathParams.push({
-          name,
-          description,
-          required,
-          example,
-          ...(type ? { type } : translateSchemaReference($ref)),
-        });
+        pathParams.push(paramsObject);
         break;
     }
   }

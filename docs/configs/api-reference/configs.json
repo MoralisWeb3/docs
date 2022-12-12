@@ -68,7 +68,8 @@
           "name": "token_addresses",
           "description": "The addresses to get balances for (optional)",
           "required": false,
-          "type": "array"
+          "type": "array",
+          "field": { "type": "string" }
         },
         {
           "name": "cursor",
@@ -117,7 +118,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata."
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of this item the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -289,7 +381,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" },
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address that sent the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "1"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash of the transaction"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_type",
+                    "type": "string",
+                    "description": "The transaction type"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index"
+                  },
+                  {
+                    "name": "operator",
+                    "type": "string",
+                    "description": "The operator present only for ERC1155 transfers",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  }
+                ]
+              },
               {
                 "name": "block_exists",
                 "type": "boolean",
@@ -405,7 +588,36 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -528,7 +740,102 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x9c83ff0f1c8924da96cb2fcb7e093f78eb2e316b"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata."
+                  },
+                  {
+                    "name": "minter_address",
+                    "type": "string",
+                    "description": "The address that minted the NFT",
+                    "example": "0x9c83ff0f1c8924da96cb2fcb7e093f78eb2e316b"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The quantity of this item that the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -645,7 +952,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata."
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of this item the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -750,7 +1148,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" },
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address that sent the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "1"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash of the transaction"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_type",
+                    "type": "string",
+                    "description": "The transaction type"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index"
+                  },
+                  {
+                    "name": "operator",
+                    "type": "string",
+                    "description": "The operator present only for ERC1155 transfers",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  }
+                ]
+              },
               {
                 "name": "block_exists",
                 "type": "boolean",
@@ -883,7 +1372,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" },
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address that sent the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "1"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash of the transaction"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_type",
+                    "type": "string",
+                    "description": "The transaction type"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index"
+                  },
+                  {
+                    "name": "operator",
+                    "type": "string",
+                    "description": "The operator present only for ERC1155 transfers",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  }
+                ]
+              },
               {
                 "name": "block_exists",
                 "type": "boolean",
@@ -999,7 +1579,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" },
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address that sent the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "1"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash of the transaction"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_type",
+                    "type": "string",
+                    "description": "The transaction type"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index"
+                  },
+                  {
+                    "name": "operator",
+                    "type": "string",
+                    "description": "The operator present only for ERC1155 transfers",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  }
+                ]
+              },
               {
                 "name": "block_exists",
                 "type": "boolean",
@@ -1142,7 +1813,72 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "token_ids",
+                    "type": "array",
+                    "description": "The token ID(s) traded",
+                    "example": ["15", "54"],
+                    "items": { "type": "string", "example": "15" }
+                  },
+                  {
+                    "name": "seller_address",
+                    "type": "string",
+                    "description": "The address that sold the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "buyer_address",
+                    "type": "string",
+                    "description": "The address that bought the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "marketplace_address",
+                    "type": "string",
+                    "description": "The address of the contract that traded the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "price",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "13680123"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -1519,7 +2255,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" },
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address that sent the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "1"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash of the transaction"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_type",
+                    "type": "string",
+                    "description": "The transaction type"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index"
+                  },
+                  {
+                    "name": "operator",
+                    "type": "string",
+                    "description": "The operator present only for ERC1155 transfers",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  }
+                ]
+              },
               {
                 "name": "block_exists",
                 "type": "boolean",
@@ -1655,7 +2482,98 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata."
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of this item the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -1927,7 +2845,8 @@
                 "name": "token_ids",
                 "type": "array",
                 "description": "The token ID(s) traded",
-                "example": ["15", "54"]
+                "example": ["15", "54"],
+                "items": { "type": "string", "example": "15" }
               },
               {
                 "name": "seller_address",
@@ -2066,7 +2985,8 @@
           "name": "addresses",
           "description": "The addresses to get metadata for",
           "required": false,
-          "type": "array"
+          "type": "array",
+          "field": { "type": "string" }
         },
         {
           "name": "cursor",
@@ -2105,7 +3025,119 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "889"
+                  },
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x8ce66ff0865570d1ff0bb0098fa41b4dc61e02e6"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token",
+                    "example": "https://ipfs.moralis.io:2053/ipfs/QmZZbo8u8zEWg7wtmZhJS2W718WL6FA95T4XdgmCcLp1SJ/889.json"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token",
+                    "example": "{\"name\":\"Bape #889\",\"description\":\"The #1 metavestor clan (NFT/DAO) by a team with multi billion dollar company experience.\",\"image\":\"https://bapesclan.mypinata.cloud/ipfs/QmTSUD5JA6qHaC5t25mcXySfz19AV9u4Mb6Na7ntQ6tEwf/889.jpg\",\"attributes\":[{\"trait_type\":\"Background\",\"value\":\"Black\"},{\"trait_type\":\"Body\",\"value\":\"Man\"},{\"trait_type\":\"Dress\",\"value\":\"Suit Tie Blue\"},{\"trait_type\":\"Face\",\"value\":\"Pipe\"},{\"trait_type\":\"Eye\",\"value\":\"Eye\"}]}"
+                  },
+                  { "name": "is_valid", "type": "number", "example": "1" },
+                  { "name": "syncing", "type": "number", "example": "2" },
+                  { "name": "frozen", "type": "number", "example": "0" },
+                  { "name": "resyncing", "type": "number", "example": "0" },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "example": "fffa3102469ce77f569893d16d5884f9"
+                  },
+                  {
+                    "name": "batch_id",
+                    "type": "string",
+                    "example": "fd995c8a-f8b2-40cb-a407-f43e552638b4"
+                  },
+                  {
+                    "name": "metadata_name",
+                    "type": "string",
+                    "example": "Bape #889"
+                  },
+                  {
+                    "name": "metadata_description",
+                    "type": "string",
+                    "example": "The #1 metavestor clan (NFT/DAO) by a team with multi billion dollar company experience."
+                  },
+                  {
+                    "name": "metadata_attributes",
+                    "type": "string",
+                    "example": "[{\"trait_type\":\"Background\",\"value\":\"Black\"},{\"trait_type\":\"Body\",\"value\":\"Man\"},{\"trait_type\":\"Dress\",\"value\":\"Suit Tie Blue\"},{\"trait_type\":\"Face\",\"value\":\"Pipe\"},{\"trait_type\":\"Eye\",\"value\":\"Eye\"}]"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "example": "14265936"
+                  },
+                  {
+                    "name": "opensea_lookup",
+                    "type": "object",
+                    "example": null
+                  },
+                  {
+                    "name": "minter_address",
+                    "type": "string",
+                    "example": "0xdcf086e3f7954b38180daae1405569da86588bfe"
+                  },
+                  {
+                    "name": "transaction_minted",
+                    "type": "string",
+                    "example": "0x2c8d7ec7a8439b0f67b50e93be63242de52e9b5cdfc7dc0aee80c6a2f104c41a"
+                  },
+                  {
+                    "name": "frozen_log_index",
+                    "type": "object",
+                    "example": null
+                  },
+                  { "name": "imported", "type": "object", "example": null },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "createdAt",
+                    "type": "string",
+                    "example": "2022-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "updatedAt",
+                    "type": "string",
+                    "example": "2022-04-09T23:56:44.807Z"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -2280,7 +3312,8 @@
           "name": "token_addresses",
           "description": "The addresses to get balances for (optional)",
           "required": false,
-          "type": "array"
+          "type": "array",
+          "field": { "type": "string" }
         }
       ],
       "responses": [
@@ -2406,7 +3439,72 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the token",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-04-02T10:07:54.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transferred (in wei)",
+                    "example": 650000000000000000
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index of the transfer within the block",
+                    "example": 12
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index of the transfer within the block",
+                    "example": 2
+                  }
+                ]
+              }
             ]
           }
         }
@@ -2471,7 +3569,8 @@
           "name": "addresses",
           "description": "The addresses to get metadata for",
           "required": true,
-          "type": "array"
+          "type": "array",
+          "field": { "type": "string" }
         }
       ],
       "responses": [
@@ -2534,7 +3633,8 @@
           "name": "symbols",
           "description": "The symbols to get metadata for",
           "required": true,
-          "type": "array"
+          "type": "array",
+          "field": { "type": "string", "example": "LINK" }
         }
       ],
       "responses": [
@@ -2746,7 +3846,72 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the token",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-04-02T10:07:54.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transferred (in wei)",
+                    "example": 650000000000000000
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The transaction index of the transfer within the block",
+                    "example": 12
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index of the transfer within the block",
+                    "example": 2
+                  }
+                ]
+              }
             ]
           }
         }
@@ -2953,7 +4118,112 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce of the transaction",
+                    "example": 326595425
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "description": "The transaction index",
+                    "example": 25
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transferred (in wei)",
+                    "example": 650000000000000000
+                  },
+                  {
+                    "name": "gas",
+                    "type": "string",
+                    "description": "The gas of the transaction",
+                    "example": 6721975
+                  },
+                  {
+                    "name": "gas_price",
+                    "type": "string",
+                    "description": "The gas price",
+                    "example": 20000000000
+                  },
+                  {
+                    "name": "input",
+                    "type": "string",
+                    "description": "The input"
+                  },
+                  {
+                    "name": "receipt_cumulative_gas_used",
+                    "type": "string",
+                    "description": "The receipt cumulative gas used",
+                    "example": 1340925
+                  },
+                  {
+                    "name": "receipt_gas_used",
+                    "type": "string",
+                    "description": "The receipt gas used",
+                    "example": 1340925
+                  },
+                  {
+                    "name": "receipt_contract_address",
+                    "type": "string",
+                    "description": "The receipt contract address",
+                    "example": "0x1d6a4cf64b52f6c73f201839aded7379ce58059c"
+                  },
+                  {
+                    "name": "receipt_root",
+                    "type": "string",
+                    "description": "The receipt root"
+                  },
+                  {
+                    "name": "receipt_status",
+                    "type": "string",
+                    "description": "The receipt status",
+                    "example": 1
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-04-02T10:07:54.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  }
+                ]
+              }
             ]
           }
         }
@@ -3069,7 +4339,163 @@
                 "description": "The number of results per page",
                 "example": "100"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0x1ed85b3757a6d31d01a4d6677fc52fd3911d649a0af21fe5ca3f886b153773ed"
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce",
+                    "example": "1848059"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "example": "108"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The from address",
+                    "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The to address",
+                    "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value sent",
+                    "example": "115580000000000000"
+                  },
+                  { "name": "gas", "type": "string", "example": "30000" },
+                  {
+                    "name": "gas_price",
+                    "type": "string",
+                    "description": "The gas price",
+                    "example": "52500000000"
+                  },
+                  { "name": "input", "type": "string", "example": "0x" },
+                  {
+                    "name": "receipt_cumulative_gas_used",
+                    "type": "string",
+                    "example": "4923073"
+                  },
+                  {
+                    "name": "receipt_gas_used",
+                    "type": "string",
+                    "example": "21000"
+                  },
+                  {
+                    "name": "receipt_contract_address",
+                    "type": "string",
+                    "example": null
+                  },
+                  { "name": "receipt_root", "type": "string", "example": null },
+                  {
+                    "name": "receipt_status",
+                    "type": "string",
+                    "example": "1"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": "12386788"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "logs",
+                    "type": "array",
+                    "description": "The logs of the transaction",
+                    "field": [
+                      {
+                        "name": "log_index",
+                        "type": "string",
+                        "example": "273"
+                      },
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                      },
+                      {
+                        "name": "transaction_index",
+                        "type": "string",
+                        "example": "204"
+                      },
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "The address of the contract",
+                        "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                      },
+                      {
+                        "name": "data",
+                        "type": "string",
+                        "description": "The data of the log",
+                        "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
+                      },
+                      {
+                        "name": "topic0",
+                        "type": "string",
+                        "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
+                      },
+                      {
+                        "name": "topic1",
+                        "type": "string",
+                        "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
+                      },
+                      {
+                        "name": "topic2",
+                        "type": "string",
+                        "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
+                      },
+                      { "name": "topic3", "type": "string", "example": null },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2021-05-07T11:08:35.000Z"
+                      },
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": "12386788"
+                      },
+                      {
+                        "name": "block_hash",
+                        "type": "string",
+                        "description": "The hash of the block",
+                        "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           }
         }
@@ -3220,7 +4646,67 @@
               {
                 "name": "logs",
                 "type": "array",
-                "description": "The logs of the transaction"
+                "description": "The logs of the transaction",
+                "field": [
+                  { "name": "log_index", "type": "string", "example": "273" },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "example": "204"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "data",
+                    "type": "string",
+                    "description": "The data of the log",
+                    "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
+                  },
+                  {
+                    "name": "topic0",
+                    "type": "string",
+                    "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
+                  },
+                  {
+                    "name": "topic1",
+                    "type": "string",
+                    "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
+                  },
+                  {
+                    "name": "topic2",
+                    "type": "string",
+                    "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
+                  },
+                  { "name": "topic3", "type": "string", "example": null },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": "12386788"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  }
+                ]
               }
             ]
           }
@@ -3381,7 +4867,76 @@
                 "type": "string",
                 "description": "The cursor to get to the next page"
               },
-              { "name": "result", "type": "array" }
+              {
+                "name": "result",
+                "type": "array",
+                "field": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-04-02T10:07:54.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "data",
+                    "type": "string",
+                    "description": "The data of the log",
+                    "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
+                  },
+                  {
+                    "name": "topic0",
+                    "type": "string",
+                    "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
+                  },
+                  {
+                    "name": "topic1",
+                    "type": "string",
+                    "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
+                  },
+                  {
+                    "name": "topic2",
+                    "type": "string",
+                    "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
+                  },
+                  { "name": "topic3", "type": "string", "example": null },
+                  {
+                    "name": "transaction_index",
+                    "type": "integer",
+                    "description": "The Transaction index of the log within the block",
+                    "example": 12
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "integer",
+                    "description": "The log index of the log within the block",
+                    "example": 15
+                  }
+                ]
+              }
             ]
           }
         }
@@ -3669,7 +5224,160 @@
               {
                 "name": "transactions",
                 "type": "array",
-                "description": "The transactions in the block"
+                "description": "The transactions in the block",
+                "field": [
+                  {
+                    "name": "hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0x1ed85b3757a6d31d01a4d6677fc52fd3911d649a0af21fe5ca3f886b153773ed"
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce",
+                    "example": "1848059"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "example": "108"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The from address",
+                    "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The to address",
+                    "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value sent",
+                    "example": "115580000000000000"
+                  },
+                  { "name": "gas", "type": "string", "example": "30000" },
+                  {
+                    "name": "gas_price",
+                    "type": "string",
+                    "description": "The gas price",
+                    "example": "52500000000"
+                  },
+                  { "name": "input", "type": "string", "example": "0x" },
+                  {
+                    "name": "receipt_cumulative_gas_used",
+                    "type": "string",
+                    "example": "4923073"
+                  },
+                  {
+                    "name": "receipt_gas_used",
+                    "type": "string",
+                    "example": "21000"
+                  },
+                  {
+                    "name": "receipt_contract_address",
+                    "type": "string",
+                    "example": null
+                  },
+                  { "name": "receipt_root", "type": "string", "example": null },
+                  {
+                    "name": "receipt_status",
+                    "type": "string",
+                    "example": "1"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": "12386788"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "logs",
+                    "type": "array",
+                    "description": "The logs of the transaction",
+                    "field": [
+                      {
+                        "name": "log_index",
+                        "type": "string",
+                        "example": "273"
+                      },
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                      },
+                      {
+                        "name": "transaction_index",
+                        "type": "string",
+                        "example": "204"
+                      },
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "The address of the contract",
+                        "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                      },
+                      {
+                        "name": "data",
+                        "type": "string",
+                        "description": "The data of the log",
+                        "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
+                      },
+                      {
+                        "name": "topic0",
+                        "type": "string",
+                        "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
+                      },
+                      {
+                        "name": "topic1",
+                        "type": "string",
+                        "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
+                      },
+                      {
+                        "name": "topic2",
+                        "type": "string",
+                        "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
+                      },
+                      { "name": "topic3", "type": "string", "example": null },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2021-05-07T11:08:35.000Z"
+                      },
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": "12386788"
+                      },
+                      {
+                        "name": "block_hash",
+                        "type": "string",
+                        "description": "The hash of the block",
+                        "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
