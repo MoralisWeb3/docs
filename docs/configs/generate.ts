@@ -94,6 +94,23 @@ const formatResponses = (responses) => {
 };
 
 /**
+ * @name formatPath
+ * @description Format given swagger path to modified path, replacing / with :
+ * @example
+ * const formattedPath = formatPath(path);
+ *
+ * @param path path that is going to be modified
+ * @returns returning formatted path for API reference
+ */
+const formatPath = (path) => {
+  const pathArray = path.split("/");
+  const formattedPathArray = pathArray
+    .slice(1, pathArray.length)
+    .map((p) => p.replace(/[{]/g, ":").replace(/[}]/g, ""));
+  return `/${formattedPathArray.join("/")}`;
+};
+
+/**
  * @name formatSwaggerJSON
  * @description This function formats standard swagger OAS JSON to
  * custom format for API reference docs
@@ -115,11 +132,12 @@ const formatSwaggerJSON = (swaggerJSON) => {
     // Formatting Parameters & Responses
     const { pathParams, queryParams } = formatParameters(parameters);
     const formattedResponses = formatResponses(responses);
+    const formattedPath = formatPath(path);
 
     swaggerContent[operationId] = {
       description,
       method,
-      path,
+      path: formattedPath,
       pathParams,
       queryParams,
       responses: formattedResponses,
@@ -148,7 +166,7 @@ const generateConfigs = async () => {
       swaggerSchemas = swaggerJSON.components.schemas;
 
       // If statement is temporary, for testing only
-      if (["balance", "block"].includes(key)) {
+      if (["balance"].includes(key)) {
         swaggerContent = formatSwaggerJSON(swaggerJSON);
       }
       swaggerOAS[key] = swaggerContent;
@@ -162,32 +180,30 @@ const generateConfigs = async () => {
       () => {}
     );
 
-    for (let key in swaggerOAS) {
-      if (["balance", "block"].includes(key)) {
-        for (let index in Object.keys(swaggerOAS[key])) {
-          const functionName = Object.keys(swaggerOAS[key])[index];
-          // Write MDX Files for API Reference pages
-          await fs.writeFile(
-            `${swaggerPaths[key].filePath}/${functionName}.mdx`,
-            `---
-sidebar_position: ${index}
-sidebar_label: Get Balance
----
+    //     for (let key in swaggerOAS) {
+    //       if (["balance"].includes(key)) {
+    //         for (let index in Object.keys(swaggerOAS[key])) {
+    //           const functionName = Object.keys(swaggerOAS[key])[index];
+    //           // Write MDX Files for API Reference pages
+    //           await fs.writeFile(
+    //             `${swaggerPaths[key].filePath}/${functionName}.mdx`,
+    //             `---
+    // sidebar_position: ${index}
+    // sidebar_label: Get Balance
+    // ---
 
-import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../configs/api-reference/configs.json";
+    // import ApiReference from "@site/src/components/ApiReference";
+    // import config from "../../../../configs/api-reference/configs.json";
 
-# Get Native Balance
+    // # Get Native Balance
 
-<ApiReference {...config.${key}.${functionName}} />
-          `,
-            () => {}
-          );
-        }
-      }
-    }
-
-    return swaggerOAS;
+    // <ApiReference {...config.${key}.${functionName}} />
+    //           `,
+    //             () => {}
+    //           );
+    //         }
+    //       }
+    //     }
   } catch (e) {
     console.error(e);
   }
