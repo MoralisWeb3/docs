@@ -21,13 +21,26 @@ const translateSchemaReference = (schemaRef) => {
   } else if (properties) {
     return {
       field: Object.keys(properties).map((name) => {
-        const { type, description, example } = properties[name];
-        return {
-          name,
-          type,
-          description,
-          example,
-        };
+        const { type, description, example, items } = properties[name];
+        if (type === "array") {
+          return {
+            name,
+            type,
+            description,
+            example,
+            ...(items && items?.$ref
+              ? // If there are more arrays within the child, do recursion
+                translateSchemaReference(items?.$ref)
+              : { items }),
+          };
+        } else {
+          return {
+            name,
+            type,
+            description,
+            example,
+          };
+        }
       }),
     };
   } else {
@@ -48,26 +61,30 @@ const formatParameters = (parameters) => {
   const pathParams = [];
   for (let param of parameters) {
     const { name, description, required, schema } = param ?? {};
-    const { example, type, $ref } = schema ?? {};
+    const { example, type, $ref, items } = schema ?? {};
+    const paramsObject = {
+      name,
+      description,
+      required,
+      example,
+      ...(type
+        ? {
+            type,
+            ...(items && {
+              field: items?.$ref
+                ? translateSchemaReference(items?.$ref)
+                : items,
+            }),
+          }
+        : translateSchemaReference($ref)),
+    };
     switch (param.in) {
       case "query":
-        queryParams.push({
-          name,
-          description,
-          required,
-          example,
-          ...(type ? { type } : translateSchemaReference($ref)),
-        });
+        queryParams.push(paramsObject);
         break;
       case "path":
       default:
-        pathParams.push({
-          name,
-          description,
-          required,
-          example,
-          ...(type ? { type } : translateSchemaReference($ref)),
-        });
+        pathParams.push(paramsObject);
         break;
     }
   }
@@ -77,11 +94,11 @@ const formatParameters = (parameters) => {
 const formatResponses = (responses) => {
   const formattedResponses = Object.keys(responses).map((status) => {
     const { description, content } = responses[status];
-    console.log(content);
+    const schemaRef = content?.["application/json"]?.schema?.$ref;
     return {
       status,
       description,
-      ...(content
+      ...(schemaRef
         ? {
             body: translateSchemaReference(
               content["application/json"]?.schema?.$ref
@@ -91,6 +108,23 @@ const formatResponses = (responses) => {
     };
   });
   return formattedResponses;
+};
+
+/**
+ * @name formatPath
+ * @description Format given swagger path to modified path, replacing / with :
+ * @example
+ * const formattedPath = formatPath(path);
+ *
+ * @param path path that is going to be modified
+ * @returns returning formatted path for API reference
+ */
+const formatPath = (path) => {
+  const pathArray = path.split("/");
+  const formattedPathArray = pathArray
+    .slice(1, pathArray.length)
+    .map((p) => p.replace(/[{]/g, ":").replace(/[}]/g, ""));
+  return `/${formattedPathArray.join("/")}`;
 };
 
 /**
@@ -108,18 +142,23 @@ const formatSwaggerJSON = (swaggerJSON) => {
   const swaggerContent = {};
   for (let path in swaggerJSON.paths) {
     // Extract all important fields from Swagger
-    const { operationId, description, method, parameters, responses } =
-      extractSwaggerValueByMethod(swaggerJSON, path);
-    console.log(path);
+    const {
+      operationId,
+      description,
+      method,
+      parameters = [],
+      responses = [],
+    } = extractSwaggerValueByMethod(swaggerJSON, path);
 
     // Formatting Parameters & Responses
-    const { pathParams, queryParams } = formatParameters(parameters);
+    const { pathParams = [], queryParams = [] } = formatParameters(parameters);
     const formattedResponses = formatResponses(responses);
+    const formattedPath = formatPath(path);
 
     swaggerContent[operationId] = {
       description,
       method,
-      path,
+      path: formattedPath,
       pathParams,
       queryParams,
       responses: formattedResponses,
@@ -130,7 +169,22 @@ const formatSwaggerJSON = (swaggerJSON) => {
 
 /**
  * @name generateConfigs
- * @description Generate JSON config for API Reference & write it to JSON file
+ * @description
+ * Generate JSON config for API Reference & write it to JSON file.
+ * This already works well for:
+ * - NFT API
+ * - Token API
+ * - Balance API
+ * - Transaction API
+ * - Block API
+ * - Events API
+ * - Utils API
+ * - Resolve API
+ * - DeFi API
+ * - IPFS API
+ * - Streams API
+ * - Auth API
+ * - Solana API
  *
  * @example
  * const configs = await generateConfigs();
@@ -148,9 +202,7 @@ const generateConfigs = async () => {
       swaggerSchemas = swaggerJSON.components.schemas;
 
       // If statement is temporary, for testing only
-      if (["balance", "block"].includes(key)) {
-        swaggerContent = formatSwaggerJSON(swaggerJSON);
-      }
+      swaggerContent = formatSwaggerJSON(swaggerJSON);
       swaggerOAS[key] = swaggerContent;
     }
 
@@ -162,32 +214,30 @@ const generateConfigs = async () => {
       () => {}
     );
 
-    for (let key in swaggerOAS) {
-      if (["balance", "block"].includes(key)) {
-        for (let index in Object.keys(swaggerOAS[key])) {
-          const functionName = Object.keys(swaggerOAS[key])[index];
-          // Write MDX Files for API Reference pages
-          await fs.writeFile(
-            `${swaggerPaths[key].filePath}/${functionName}.mdx`,
-            `---
-sidebar_position: ${index}
-sidebar_label: Get Balance
----
+    //     for (let key in swaggerOAS) {
+    //       if (["balance"].includes(key)) {
+    //         for (let index in Object.keys(swaggerOAS[key])) {
+    //           const functionName = Object.keys(swaggerOAS[key])[index];
+    //           // Write MDX Files for API Reference pages
+    //           await fs.writeFile(
+    //             `${swaggerPaths[key].filePath}/${functionName}.mdx`,
+    //             `---
+    // sidebar_position: ${index}
+    // sidebar_label: Get Balance
+    // ---
 
-import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../configs/api-reference/configs.json";
+    // import ApiReference from "@site/src/components/ApiReference";
+    // import config from "../../../../configs/api-reference/configs.json";
 
-# Get Native Balance
+    // # Get Native Balance
 
-<ApiReference {...config.${key}.${functionName}} />
-          `,
-            () => {}
-          );
-        }
-      }
-    }
-
-    return swaggerOAS;
+    // <ApiReference {...config.${key}.${functionName}} />
+    //           `,
+    //             () => {}
+    //           );
+    //         }
+    //       }
+    //     }
   } catch (e) {
     console.error(e);
   }
