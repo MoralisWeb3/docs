@@ -14,81 +14,19 @@ Users can be invited to participate in different organizations in Moralis throug
 
 ## Overview of Each Role's Abilities (what they are allowed and not allowed to do):
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Action",
-    "h-1": "Developer",
-    "h-2": "Maintainer",
-    "h-3": "Admin",
-    "h-4": "Owner",
-    "0-0": "Access to the cloud code _(Moralis 1.0)_",
-    "0-1": "✅",
-    "0-2": "✅",
-    "0-3": "✅",
-    "0-4": "✅",
-    "1-0": "Access/View Team  \nManagement Section",
-    "1-1": "✅",
-    "1-2": "✅",
-    "1-3": "✅",
-    "1-4": "✅",
-    "2-0": "Write Access To the DB in Admin Console _(Moralis 1.0)_",
-    "2-1": "✅",
-    "2-2": "✅",
-    "2-3": "✅",
-    "2-4": "✅",
-    "3-0": "Create a dApp _(Moralis 1.0)_",
-    "3-1": "",
-    "3-2": "✅",
-    "3-3": "✅",
-    "3-4": "✅",
-    "4-0": "Invite team members",
-    "4-1": "",
-    "4-2": "",
-    "4-3": "✅",
-    "4-4": "✅",
-    "5-0": "Remove team members",
-    "5-1": "",
-    "5-2": "",
-    "5-3": "✅",
-    "5-4": "✅",
-    "6-0": "Delete/Remove a dApp _(Moralis 1.0)_",
-    "6-1": "",
-    "6-2": "",
-    "6-3": "✅",
-    "6-4": "✅",
-    "7-0": "Accessing Secrets  \n(API Keys/Master Keys/ Env vars)",
-    "7-1": "",
-    "7-2": "",
-    "7-3": "✅",
-    "7-4": "✅",
-    "8-0": "Change team name",
-    "8-1": "",
-    "8-2": "",
-    "8-3": "✅",
-    "8-4": "✅",
-    "9-0": "Remove Admin",
-    "9-1": "",
-    "9-2": "",
-    "9-3": "",
-    "9-4": "✅",
-    "10-0": "Add/invite new Team Admin",
-    "10-1": "",
-    "10-2": "",
-    "10-3": "",
-    "10-4": "✅"
-  },
-  "cols": 5,
-  "rows": 11,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Action | Developer | Maintainer | Admin | Owner |
+|:--|:--|:--|:--|:--|
+| Access to the cloud code (Moralis 1.0) | ✅ | ✅ | ✅ | ✅ |
+| Access/View Team <br/> Management Section | ✅ | ✅ | ✅ | ✅ |
+| Write Access To the DB in Admin Console (Moralis 1.0) | ✅ | ✅ | ✅ | ✅ |
+| Create a dApp (Moralis 1.0) |   | ✅ | ✅ | ✅ |
+| Invite team members |   |   | ✅ | ✅ |
+| Remove team members |   |   | ✅ | ✅ |
+| Delete/Remove a dApp (Moralis 1.0) |   |   | ✅ | ✅ |
+| Accessing Secrets <br/> (API Keys/Master Keys/ Env vars) |   |   | ✅ | ✅ |
+| Change team name |   |   | ✅ | ✅ |
+| Remove Admin |   |   |   | ✅ |
+| Add/invite new Team Admin |   |   |   | ✅ |
 
 ## Frequently Asked Questions
 
