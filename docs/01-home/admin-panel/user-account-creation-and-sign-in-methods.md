@@ -13,7 +13,7 @@ Create a strong password to make sure your account is as secure as possible:
 - Mix letters and numbers
 - Include at least one special character
 
-You can further improve the security of your account with [two-factor-authentication](https://docs.moralis.io/docs/account-settings).
+You can further improve the security of your account with [two-factor-authentication](/docs/account-settings).
 
 ## Google Authentication
 

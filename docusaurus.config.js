@@ -8,7 +8,7 @@ const oembed = require("remark-oembed");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
-  url: "https://docs.moralis.io",
+  url: "",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -131,17 +131,17 @@ const config = {
             items: [
               {
                 label: "NodeJS",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
               {
                 label: "Python",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
               {
                 label: "C#",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
             ],

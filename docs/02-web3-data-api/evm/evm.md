@@ -8,7 +8,7 @@ sidebar_position: 2
 
 The Moralis EVM API enables Web3 developers to build and scale any dapps built on top of EVM blockchains effortlessly. Access all the information you need to index such as NFT, token, balance, and other blockchain-related data from multiple EVM blockchains.
 
-The Moralis EVM API is also fully-integrated with the [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk). Once the SDK is installed to your project, you can easily import and use them to call the APIs.
+The Moralis EVM API is also fully-integrated with the [Moralis SDK](/docs/moralis-sdk). Once the SDK is installed to your project, you can easily import and use them to call the APIs.
 
 ### EVM API Subgroups
 
@@ -45,15 +45,15 @@ The use cases for our EVM API are truly endless! Some popular use cases include:
 
 Learn the fundamentals of all Moralis EVM APIs:
 
-- [NFT API](https://docs.moralis.io/docs/nft-api)
-- [Token API](https://docs.moralis.io/docs/token-api)
-- [Balance API](https://docs.moralis.io/docs/balance-api)
-- [Transaction API](https://docs.moralis.io/docs/transaction-api)
-- [Events API](https://docs.moralis.io/docs/events-api)
-- [Block API](https://docs.moralis.io/docs/block-api)
-- [Resolve API](https://docs.moralis.io/docs/resolve-api)
-- [DeFi API](https://docs.moralis.io/docs/defi-api)
-- [IPFS API](https://docs.moralis.io/docs/ipfs-api)
+- [NFT API](/docs/nft-api)
+- [Token API](/docs/token-api)
+- [Balance API](/docs/balance-api)
+- [Transaction API](/docs/transaction-api)
+- [Events API](/docs/events-api)
+- [Block API](/docs/block-api)
+- [Resolve API](/docs/resolve-api)
+- [DeFi API](/docs/defi-api)
+- [IPFS API](/docs/ipfs-api)
 
 ## Support
 

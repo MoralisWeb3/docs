@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/docs/what-is-streams-api-1",
-      "destination": "https://docs.moralis.io/docs/streams-api/",
+      "destination": "/docs/streams-api/",
       "permanent": true
     }
   ]

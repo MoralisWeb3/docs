@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of a multi-signature wallet, Moralis provides you the `[getNativeBalance](https://docs.moralis.io/reference/getnativebalance)` API endpoint.
+In order to get the native balance of a multi-signature wallet, Moralis provides you the `[getNativeBalance](/reference/getnativebalance)` API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -143,7 +143,7 @@ Congratulations 🥳 You just got the native balance of a multi-signature wallet
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](https://docs.moralis.io/reference/getnativebalance)
+- [getNativeBalance](/reference/getnativebalance)
 
 ## Support
 

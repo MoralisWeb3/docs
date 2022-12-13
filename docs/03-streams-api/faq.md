@@ -8,7 +8,7 @@ Yes, our Streams API is in production now.
 
 ### How are Streams priced?
 
-Please see [Records and pricing](https://docs.moralis.io/docs/records-and-pricing) 
+Please see [Records and pricing](/docs/records-and-pricing) 
 
 ### Can I disable the unconfirmed webhook requests?
 
@@ -22,7 +22,7 @@ You are only charged for confirmed transactions/webhook requests.
 
 ### After how many blocks is considered a transaction as confirmed?
 
-See [number of blocks per chain for confirmed transactions](https://docs.moralis.io/docs/streams-api#supported-chains)
+See [number of blocks per chain for confirmed transactions](/docs/streams-api#supported-chains)
 
 ### How many addresses can I add to a stream?
 
@@ -74,11 +74,11 @@ Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-
 
 Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your billing page <https://admin.moralis.io/account/billing>.
 
-For each transaction, you get two webhooks (read more [here](https://docs.moralis.io/docs/streams-api)), records are only counted towards your usage for webhooks with Confirmed status True.
+For each transaction, you get two webhooks (read more [here](/docs/streams-api)), records are only counted towards your usage for webhooks with Confirmed status True.
 
 **Check your total consumed record for a period**
 
-By using /status ([see API reference](https://docs.moralis.io/reference/getstats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
+By using /status ([see API reference](/reference/getstats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
 
 **Example:**
 
@@ -96,7 +96,7 @@ Where your total consumed records for the current billing period would be `"tota
 
 **Check one streams total consumed records for a period**
 
-By using /stats/{streamId} (see [API reference](https://docs.moralis.io/reference/getstatsbystreamid)) you will get a summary of `totalLogsProcessed`,`totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
+By using /stats/{streamId} (see [API reference](/reference/getstatsbystreamid)) you will get a summary of `totalLogsProcessed`,`totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
 
 **Example:**
 

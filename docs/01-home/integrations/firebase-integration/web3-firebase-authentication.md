@@ -5,7 +5,7 @@ description: "This tutorial will teach you how to authenticate a user to your Fi
 ---
 ![Web3 Firebase Authentication Demo](/img/content/4169289-moralis-auth-firebase.gif)
 
-Make sure to check out the [Your First Dapp for Firebase](https://docs.moralis.io/docs/using-firebase) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
+Make sure to check out the [Your First Dapp for Firebase](/docs/using-firebase) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
 
 In this tutorial, we will use the following services:
 

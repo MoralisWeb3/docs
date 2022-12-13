@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -164,7 +164,7 @@ Congratulations 🥳 you just got all the transactions for a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactions](https://docs.moralis.io/reference/getwallettransactions)
+- [getWalletTransactions](/reference/getwallettransactions)
 
 ## Support
 

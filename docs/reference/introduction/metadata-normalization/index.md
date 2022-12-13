@@ -5,7 +5,7 @@ slug: "metadata-normalization"
 description: "When working with NFT Metadata, you have the option to receive either a normalized or non-normalized metadata from our NFT APIs."
 ---
 
-Through our [NFT APIs](https://docs.moralis.io/docs/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](https://docs.moralis.io/reference/normalized-vs-non-normalized-metadata).
+Through our [NFT APIs](/docs/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](/reference/normalized-vs-non-normalized-metadata).
 
 To use this feature, simply set `normalizedMetadata` parameter to `true`.
 
@@ -36,8 +36,8 @@ console.log(response.toJSON());
 
 This feature is available in the following NFT APIs:
 
-- [Get NFTs by wallet](https://docs.moralis.io/reference/getwalletnfts)
-- [Get NFTs by contract](https://docs.moralis.io/reference/getcontractnfts)
-- [Get NFT owners by contract](https://docs.moralis.io/reference/getnftowners)
-- [Get NFT metadata](https://docs.moralis.io/reference/getnftmetadata)
-- [Get owners by token ID](https://docs.moralis.io/reference/getnfttokenidowners)
+- [Get NFTs by wallet](/reference/getwalletnfts)
+- [Get NFTs by contract](/reference/getcontractnfts)
+- [Get NFT owners by contract](/reference/getnftowners)
+- [Get NFT metadata](/reference/getnftmetadata)
+- [Get owners by token ID](/reference/getnfttokenidowners)

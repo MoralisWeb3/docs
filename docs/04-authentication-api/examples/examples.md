@@ -35,7 +35,7 @@ All data is returned to your backend so you can fully store and handle it indepe
 3. The client then signs the message and passes it to your server for verification.
 4. Your server verifies the challenge with Moralis.
 
-For more information, read the full [Moralis Auth API reference](https://docs.moralis.io/reference/requestchallengeevm) 
+For more information, read the full [Moralis Auth API reference](/reference/requestchallengeevm) 
 
 # Examples
 

@@ -12,8 +12,8 @@ The AWS Integrations is built for integrating Moralis APIs to your existing AWS 
 
 With the AWS integration, developers will be able to integrate our various APIs to the following AWS offerings:
 
-- [AWS GameSparks](https://docs.moralis.io/docs/aws-gamesparks-integration-with-unity)
-- [AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda)
+- [AWS GameSparks](/docs/aws-gamesparks-integration-with-unity)
+- [AWS Lambda](/docs/using-aws-lambda)
 
 ## Prerequisites
 
@@ -45,8 +45,8 @@ And last, but **very important**, download the credentials in a `.csv`:
 
 Learn how you can integrate Moralis APIs to your AWS backend with these tutorials:
 
-- [AWS GameSparks](https://docs.moralis.io/docs/aws-gamesparks-integration-with-unity)
-- [AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda)
+- [AWS GameSparks](/docs/aws-gamesparks-integration-with-unity)
+- [AWS Lambda](/docs/using-aws-lambda)
 
 ## Support
 

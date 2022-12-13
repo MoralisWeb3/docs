@@ -5,7 +5,7 @@ description: "This tutorial shows you how to connect an **Unreal game** to a **M
 ---
 # Prerequisites
 
-- Complete [AWS Lambda integration](https://docs.moralis.io/docs/using-aws-lambda).
+- Complete [AWS Lambda integration](/docs/using-aws-lambda).
 - Install [Unreal Engine 5.1 ](https://docs.unrealengine.com/5.1/en-US/installing-unreal-engine/).
 - Install [VaRest plugin](https://www.unrealengine.com/marketplace/en-US/product/varest-plugin) to Unreal Engine 5.1.
 
@@ -33,7 +33,7 @@ Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 
 > 📘 
 > 
-> As stated in the [prerequisites](https://docs.moralis.io/docs/aws-lambda-unreal-5#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
+> As stated in the [prerequisites](/docs/aws-lambda-unreal-5#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
 
 # Setting up
 
@@ -45,10 +45,10 @@ This is the blueprint holding most of the logic of this sample game.
 
 Zoom out to visualize and locate **4 important areas**:
 
-1. [**Manage Input**](https://docs.moralis.io/docs/aws-lambda-unreal-5#manage-input)
-2. [**Construct Request Body**](https://docs.moralis.io/docs/aws-lambda-unreal-5#construct-request-body)
-3. [**Get Native Balance**](https://docs.moralis.io/docs/aws-lambda-unreal-5#get-native-balance)
-4. [**Get Wallet NFTs**](https://docs.moralis.io/docs/aws-lambda-unreal-5#get-wallet-nfts)
+1. [**Manage Input**](/docs/aws-lambda-unreal-5#manage-input)
+2. [**Construct Request Body**](/docs/aws-lambda-unreal-5#construct-request-body)
+3. [**Get Native Balance**](/docs/aws-lambda-unreal-5#get-native-balance)
+4. [**Get Wallet NFTs**](/docs/aws-lambda-unreal-5#get-wallet-nfts)
 
 ![](/img/content/0d0bd99-image.png)
 
@@ -68,19 +68,19 @@ Apart from enabling and disabling the player's input, here we get the `wallet ad
 > 
 > No need to do any action here. Just informative.
 
-What interests us in this tutorial is to know **how do we call an API endpoint**. In this case we want to call the _getNativeBalance_ and _getWalletNfts_ endpoints hosted in our [Express AWS Lambda App](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api). These endpoints need the _address_ and the _chain_ as request body parameters so here we construct the request and we **set it as a variable**:
+What interests us in this tutorial is to know **how do we call an API endpoint**. In this case we want to call the _getNativeBalance_ and _getWalletNfts_ endpoints hosted in our [Express AWS Lambda App](/docs/using-aws-lambda#lambda-nodejs-express-api). These endpoints need the _address_ and the _chain_ as request body parameters so here we construct the request and we **set it as a variable**:
 
 ![](/img/content/e9fdaae-image.png)
 
 ## Get Native Balance
 
-Add the _getNativeBalance_ endpoint URL to the _**URL field**_. You can get it [following the instructions here](https://docs.moralis.io/docs/using-aws-lambda#testing-express-api-function):
+Add the _getNativeBalance_ endpoint URL to the _**URL field**_. You can get it [following the instructions here](/docs/using-aws-lambda#testing-express-api-function):
 
 ![](/img/content/4b02975-image.png)
 
 ## Get Wallet NFTs
 
-Add the _getWalletNfts_ endpoint URL to the **_URL field_**. You can get it [following the instructions here](https://docs.moralis.io/docs/using-aws-lambda#testing-express-api-function):
+Add the _getWalletNfts_ endpoint URL to the **_URL field_**. You can get it [following the instructions here](/docs/using-aws-lambda#testing-express-api-function):
 
 ![](/img/content/0662f30-image.png)
 
@@ -106,7 +106,7 @@ Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 
 > 📘 
 > 
-> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](https://docs.moralis.io/reference/supported-chains).
+> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/reference/supported-chains).
 
 > 📘 
 > 

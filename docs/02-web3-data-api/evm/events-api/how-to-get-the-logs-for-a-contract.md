@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get logs by contract
 
-In order to get the logs for a contract, Moralis provides you a `[getContractLogs](https://docs.moralis.io/reference/getcontractlogs)` endpoint to do so.
+In order to get the logs for a contract, Moralis provides you a `[getContractLogs](/reference/getcontractlogs)` endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -175,7 +175,7 @@ Congratulations 🥳 You just got the logs for a contract address with just a fe
 
 ## API Reference
 
-- [getContractLogs](https://docs.moralis.io/reference/getcontractlogs)
+- [getContractLogs](/reference/getcontractlogs)
 
 ## Support
 

@@ -46,10 +46,10 @@ graph TD;
 
 ### Listen to all addresses use cases
 
-- Listen to all NFT contract transfers [tutorial](https://docs.moralis.io/docs/listen-to-all-nft-contract-transfers)
-- Listen to all events from new contracts specific to a contract factory [tutorial](https://docs.moralis.io/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory)
-- Listen to all NFT contracts transfers where sender is a specific address [tutorial](https://docs.moralis.io/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address)
-- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](https://docs.moralis.io/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000)
+- Listen to all NFT contract transfers [tutorial](/docs/listen-to-all-nft-contract-transfers)
+- Listen to all events from new contracts specific to a contract factory [tutorial](/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory)
+- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address)
+- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000)
 
 ## High reliability
 
@@ -82,19 +82,19 @@ graph TD;
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using JS SDK](https://docs.moralis.io/docs/your-first-stream-using-js-sdk)
-- [Your First Stream using WebUI](https://docs.moralis.io/docs/using-webui)
+- [Your First Stream using JS SDK](/docs/your-first-stream-using-js-sdk)
+- [Your First Stream using WebUI](/docs/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
 ## How Streams are priced
 
-See [Records and pricing](https://docs.moralis.io/docs/records-and-pricing)
+See [Records and pricing](/docs/records-and-pricing)
 
 ## Learn more advanced applications of Streams
 
-- [Monitor specific NFTs](https://docs.moralis.io/docs/monitor-specific-nfts)
-- [Monitor for Burn/Mint Tokens](https://docs.moralis.io/docs/monitor-for-burnmint-tokens-1)
-- [Monitor ENS Name Registrations](https://docs.moralis.io/docs/monitor-ens-name-registrations)
+- [Monitor specific NFTs](/docs/monitor-specific-nfts)
+- [Monitor for Burn/Mint Tokens](/docs/monitor-for-burnmint-tokens-1)
+- [Monitor ENS Name Registrations](/docs/monitor-ens-name-registrations)
 
 ## Demos
 

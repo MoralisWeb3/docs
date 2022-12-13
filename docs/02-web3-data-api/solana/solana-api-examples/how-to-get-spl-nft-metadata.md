@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get metadata of a SPL NFT
 
-In order to get the metadata of a SPL NFT, Moralis provides you the `[getNFTMetadata](https://docs.moralis.io/reference/getsolnftmetadata)` API endpoint to do so.
+In order to get the metadata of a SPL NFT, Moralis provides you the `[getNFTMetadata](/reference/getsolnftmetadata)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -159,7 +159,7 @@ Congratulations 🥳 You just got the metadata of a SPL NFT with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](https://docs.moralis.io/reference/getsolnftmetadata)
+- [getNFTMetadata](/reference/getsolnftmetadata)
 
 ## YouTube Tutorial
 

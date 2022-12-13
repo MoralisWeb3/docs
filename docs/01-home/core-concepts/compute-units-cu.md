@@ -13,4 +13,4 @@ This allows you to get cheaper requests for most use cases while protecting our 
 
 A compute unit is a measure of the requests needed to query computationally expensive API endpoints. Each request weighs a certain amount of compute units.
 
-See more [here](https://docs.moralis.io/reference/compute-units) for details about API endpoints that are weighted.
+See more [here](/reference/compute-units) for details about API endpoints that are weighted.

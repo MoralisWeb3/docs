@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get Pair Reserves of A Pancakeswap V1 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](https://docs.moralis.io/reference/getpairaddress)` endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](/reference/getpairaddress)` endpoint to do so.
 
 Here you'll need two parameters: `pairAddress` and `address`.
 
@@ -139,7 +139,7 @@ Congratulations 🥳 You just get the pair reserves of a Pancakeswap V1 liquidit
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](https://docs.moralis.io/reference/getpairreserves)
+- [getPairReserves](/reference/getpairreserves)
 
 ## Support
 

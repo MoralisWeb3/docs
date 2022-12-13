@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-utils
@@ -166,14 +166,14 @@ Congratulations 🥳 you just got Cryptopunk NFT metadata for token id 3931 owne
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](https://docs.moralis.io/reference/getnftmetadata)
+- [getNFTMetadata](/reference/getnftmetadata)
 
 ## Next Steps
 
 Learn how to use the Moralis NFT API to build dapps:
 
-- [NFT-Gated Website](https://docs.moralis.io/docs/nextjs-nft-gated-website)
-- [NFT-Gated Website (Django)](https://docs.moralis.io/docs/nft-gated-website-in-django)
+- [NFT-Gated Website](/docs/nextjs-nft-gated-website)
+- [NFT-Gated Website (Django)](/docs/nft-gated-website-in-django)
 
 ## Support
 

@@ -5,15 +5,15 @@ description: "This tutorial will teach you how to host your custom backend (powe
 ---
 # The Steps We Will Take
 
-- [Customize code from the _**Your First Dapp - NodeJS**_ tutorial](https://docs.moralis.io/docs/using-unity-google-cloud#customize-code-from-your-first-dapp---nodejs)
-  - [Adding authentication methods](https://docs.moralis.io/docs/using-unity-google-cloud#adding-authentication-methods)
-  - [Adding authentication operations](https://docs.moralis.io/docs/using-unity-google-cloud#adding-authentication-operations)
-- [Run on Google Cloud](https://docs.moralis.io/docs/using-unity-google-cloud#run-on-google-cloud)
-- [Calling from Unity](https://docs.moralis.io/docs/using-unity-google-cloud#calling-from-unity)
+- [Customize code from the _**Your First Dapp - NodeJS**_ tutorial](/docs/using-unity-google-cloud#customize-code-from-your-first-dapp---nodejs)
+  - [Adding authentication methods](/docs/using-unity-google-cloud#adding-authentication-methods)
+  - [Adding authentication operations](/docs/using-unity-google-cloud#adding-authentication-operations)
+- [Run on Google Cloud](/docs/using-unity-google-cloud#run-on-google-cloud)
+- [Calling from Unity](/docs/using-unity-google-cloud#calling-from-unity)
 
 # Prerequisites
 
-- Complete the [Your First Dapp - NodeJS](https://docs.moralis.io/docs/nodejs-dapp-from-scratch) tutorial
+- Complete the [Your First Dapp - NodeJS](/docs/nodejs-dapp-from-scratch) tutorial
 
 # Customize Code from the _Your First Dapp - NodeJS_ Tutorial
 
@@ -89,7 +89,7 @@ const NETWORK = "evm";
 
 ## Adding Authentication Methods
 
-Since we will be using the [Auth API](https://docs.moralis.io/reference/requestchallengeevm) in this tutorial, we need to create the methods that will call the [request](https://docs.moralis.io/reference/requestchallengeevm) and [verify](https://docs.moralis.io/reference/verifychallengeevm) endpoints.
+Since we will be using the [Auth API](/reference/requestchallengeevm) in this tutorial, we need to create the methods that will call the [request](/reference/requestchallengeevm) and [verify](/reference/verifychallengeevm) endpoints.
 
 Let’s start by adding the `requestMessage()` method:
 

@@ -13,7 +13,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 ## Prerequisites
 
-1. Follow the [Your First Dapp - Angular](https://docs.moralis.io/docs/your-first-dapp-angular) tutorial to set up your Angular dapp and server
+1. Follow the [Your First Dapp - Angular](/docs/your-first-dapp-angular) tutorial to set up your Angular dapp and server
 
 ## Install the Required Dependencies
 

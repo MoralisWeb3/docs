@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get Pair Address of A Sushiswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](https://docs.moralis.io/reference/getpairaddress)` endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](/reference/getpairaddress)` endpoint to do so.
 
 Here you'll need three parameters: `token0`, `token1` and `address`.
 
@@ -177,7 +177,7 @@ Congratulations 🥳 You just get the pair address of a Sushiswap V2 liquidity p
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](https://docs.moralis.io/reference/getpairaddress)
+- [getPairAddress](/reference/getpairaddress)
 
 ## Support
 

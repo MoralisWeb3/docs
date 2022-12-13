@@ -3,15 +3,7 @@ title: "Firebase & NodeJS"
 slug: "using-firebase"
 description: "Learn how to set up a Firebase dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, and more, from any Firebase application. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
-![](/img/content/4f09542-moralis-firebase-2.gif",
-        "moralis-firebase-2.gif",
-        800
-      ],
-      "caption": "The Result of This Tutorial"
-    }
-  ]
-}
-[/block]
+![The Result of This Tutorial](/img/content/4f09542-moralis-firebase-2.gif)
 
 ## Requirements
 
@@ -189,7 +181,7 @@ export const getBalance = functions.https.onCall(async (data: GetBalanceData) =>
 
 
 
-The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](https://docs.moralis.io/docs/introduction-to-moralis-sdk) to check all Moralis features.
+The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/docs/introduction-to-moralis-sdk) to check all Moralis features.
 
 > 🚧 Secure Firebase Function
 > 
@@ -246,4 +238,4 @@ If you have any problem with the CORS on production, you should probably allow u
 
 ## Further Reading
 
-- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](https://docs.moralis.io/docs/web3-firebase-authentication).
+- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](/docs/web3-firebase-authentication).

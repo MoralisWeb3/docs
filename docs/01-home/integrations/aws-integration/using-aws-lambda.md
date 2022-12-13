@@ -1,7 +1,7 @@
 ---
 title: "AWS Lambda"
 slug: "using-aws-lambda"
-description: "This tutorial shows how to easily integrate our [NodeJS SDK](https://docs.moralis.io/docs/introduction-to-moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](/docs/introduction-to-moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](/docs/using-aws-lambda#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](/docs/using-aws-lambda#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 > 📘 What is AWS Lambda?
 > 
@@ -13,7 +13,7 @@ description: "This tutorial shows how to easily integrate our [NodeJS SDK](https
 
 # Prerequisites
 
-- Complete [AWS Integration prerequisites](https://docs.moralis.io/docs/aws-integration#prerequisites)
+- Complete [AWS Integration prerequisites](/docs/aws-integration#prerequisites)
 - Create a [Moralis account](https://admin.moralis.io/register)
 - Install and set up your editor of choice (we will use [Visual Studio Code](https://code.visualstudio.com/) in this tutorial)
 - Install [NodeJS](https://nodejs.org/en/)
@@ -47,7 +47,7 @@ AWS credentials are configured!
 
 > 📘 Download completed project
 > 
-> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](https://docs.moralis.io/docs/using-aws-lambda#install-dependencies).
+> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](/docs/using-aws-lambda#install-dependencies).
 
 ## Project setup
 
@@ -137,7 +137,7 @@ functions:
 
 > 🚧 But remember...
 > 
-> Replace the `MORALIS_API_KEY` field with [your own key](https://docs.moralis.io/docs/quickstart#step-2-get-api-key) before testing and deploying.
+> Replace the `MORALIS_API_KEY` field with [your own key](/docs/quickstart#step-2-get-api-key) before testing and deploying.
 
 ## Development
 
@@ -363,11 +363,11 @@ serverless invoke -f getNativeBalance --path event.json
 
 > 📘 Download completed project
 > 
-> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](https://docs.moralis.io/docs/using-aws-lambda#install-dependencies-1).
+> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](/docs/using-aws-lambda#install-dependencies-1).
 
 > 📘 
 > 
-> To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](https://docs.moralis.io/docs/your-first-dapp-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
+> To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/docs/your-first-dapp-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
 
 ## Project setup
 
@@ -443,7 +443,7 @@ functions:
 
 > 🚧 But remember...
 > 
-> Replace the `MORALIS_API_KEY` field with [your own key](https://docs.moralis.io/docs/quickstart#step-2-get-api-key) before testing and deploying.
+> Replace the `MORALIS_API_KEY` field with [your own key](/docs/quickstart#step-2-get-api-key) before testing and deploying.
 
 ## Development
 
@@ -489,7 +489,7 @@ startMoralis();
 
 ### Create `getNativeBalance` endpoint
 
-With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](https://docs.moralis.io/reference/getnativebalance) when the Express endpoint is called:
+With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](/reference/getnativebalance) when the Express endpoint is called:
 
 ```javascript
 app.post("/getNativeBalance", async (req, res, next) => {
@@ -525,7 +525,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 ### Create `getWalletNfts` endpoint
 
-Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](https://docs.moralis.io/reference/getwalletnfts) when the Express endpoint is called:
+Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/reference/getwalletnfts) when the Express endpoint is called:
 
 ![](/img/content/08eff9f-image.png)
 
@@ -711,8 +711,8 @@ To test, navigate to `[<http://localhost:3000`>](<http://localhost:3000`>) in yo
 > 
 > If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
 > 
-> - [Install dependencies on `aws-node-project`](https://docs.moralis.io/docs/using-aws-lambda#install-dependencies)
-> - [Install dependencies on `aws-node-express-api-project`](https://docs.moralis.io/docs/using-aws-lambda#install-dependencies-1)
+> - [Install dependencies on `aws-node-project`](/docs/using-aws-lambda#install-dependencies)
+> - [Install dependencies on `aws-node-express-api-project`](/docs/using-aws-lambda#install-dependencies-1)
 
 It's time to deploy to **AWS**. Whatever project you chose, open the terminal and make sure you're in the root folder (where you installed the dependencies). Then, run this simple command:
 
@@ -732,7 +732,7 @@ serverless deploy
 
 > 📘 
 > 
-> If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](https://docs.moralis.io/docs/using-aws-lambda#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
+> If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](/docs/using-aws-lambda#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](/docs/using-aws-lambda#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
 ![](/img/content/26fe035-image.png)
 
@@ -746,8 +746,8 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 **Next, we differentiate the testing process between these functions:**
 
-- [Testing Express API function](https://docs.moralis.io/docs/using-aws-lambda#testing-express-api-function).
-- [Testing single functions](https://docs.moralis.io/docs/using-aws-lambda#testing-single-functions).
+- [Testing Express API function](/docs/using-aws-lambda#testing-express-api-function).
+- [Testing single functions](/docs/using-aws-lambda#testing-single-functions).
 
 ## Testing Express API function
 

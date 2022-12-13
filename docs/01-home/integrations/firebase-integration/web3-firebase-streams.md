@@ -5,7 +5,7 @@ description: "Moralis Streams can be used to monitor a blockchain wallet or a sm
 ---
 ![Moralis Streams for Firebase Demo](/img/content/5cdb931-firebase-streams-demo-cover.gif)
 
-If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the**[Your First Dapp for Firebase](https://docs.moralis.io/docs/using-firebase)** tutorial first. 
+If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the**[Your First Dapp for Firebase](/docs/using-firebase)** tutorial first. 
 
 In this tutorial, we will use the following services:
 

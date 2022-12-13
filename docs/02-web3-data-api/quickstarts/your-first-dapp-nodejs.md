@@ -5,7 +5,7 @@ description: "This tutorial will teach you how to set up a server-side dapp that
 ---
 ## Prerequisites
 
-1. Create a [Moralis account](https://docs.moralis.io/docs/quickstart)
+1. Create a [Moralis account](/docs/quickstart)
 2. Install and set up your editor of choice (we will use Visual Studio Code [VSC] in this tutorial)
 3. Install NodeJS
 
@@ -91,7 +91,7 @@ app.listen(port, () => {
 ![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png")
 
 2. Import `moralis` and initialize it with your API key in `index.js`:  
-   Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](https://docs.moralis.io/docs/moralis-data-types) and [Supported Chains](https://docs.moralis.io/docs/cross-chain-requests).
+   Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](/docs/moralis-data-types) and [Supported Chains](/docs/cross-chain-requests).
 
 ```javascript
 const express = require('express')
@@ -333,4 +333,4 @@ startServer()
 
 # Reference
 
-- [Full NodeJS SDK Reference](https://docs.moralis.io/docs/nodejs-sdk-references)
+- [Full NodeJS SDK Reference](/docs/nodejs-sdk-references)

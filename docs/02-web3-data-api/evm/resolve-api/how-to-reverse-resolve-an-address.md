@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Resolve Unstoppable Domain
 
-In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a `[resolveDomain](https://docs.moralis.io/reference/resolvedomain)` endpoint to do so.
+In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a `[resolveDomain](/reference/resolvedomain)` endpoint to do so.
 
 Here you'll need one parameter: `address`.
 
@@ -130,7 +130,7 @@ Congratulations 🥳 You just resolved an Unstoppable domain to a wallet address
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveDomain](https://docs.moralis.io/reference/resolvedomain)
+- [resolveDomain](/reference/resolvedomain)
 
 ## Support
 

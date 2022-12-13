@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get SPL token balance of an address
 
-In order to get the SPL token balance of a wallet address, Moralis provides you the `[getSPL](https://docs.moralis.io/reference/getspl)` API endpoint to do so.
+In order to get the SPL token balance of a wallet address, Moralis provides you the `[getSPL](/reference/getspl)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -142,7 +142,7 @@ Congratulations 🥳 You just got the SPL token balance of a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getSPL](https://docs.moralis.io/reference/getspl)
+- [getSPL](/reference/getspl)
 
 ## Youtube Video
 

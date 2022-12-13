@@ -12,9 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](https://docs.moralis.io/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](https://docs.moralis.io/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get block by unix timestamp
 
-In order to get the closest block by unix timestamp, Moralis provides you a `[getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)` endpoint to do so.
+In order to get the closest block by unix timestamp, Moralis provides you a `[getDateToBlock](/reference/getdatetoblock)` endpoint to do so.
 
 Here you'll need two parameters: `date` and `chain`.
 
@@ -139,7 +139,7 @@ Congratulations 🥳 You just got the closest block using a unix timestamp with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)
+- [getDateToBlock](/reference/getdatetoblock)
 
 ## Support
 

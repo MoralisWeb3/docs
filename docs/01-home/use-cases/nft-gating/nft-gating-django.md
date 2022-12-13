@@ -12,7 +12,7 @@ This is an example of the final result:
 
 ## Prerequisites
 
-1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](https://docs.moralis.io/docs/python-django-web3-auth).
+1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](/docs/python-django-web3-auth).
 
 ## Adding NFT Gated Functionality
 

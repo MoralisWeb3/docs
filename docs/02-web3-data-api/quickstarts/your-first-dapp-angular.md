@@ -16,7 +16,7 @@ This tutorial shows you how to create a basic Angular dapp and use the Moralis S
 
 ## Prerequisites
 
-1. Follow the [Your First Dapp for Node.js](https://docs.moralis.io/docs/your-first-dapp-nodejs) tutorial
+1. Follow the [Your First Dapp for Node.js](/docs/your-first-dapp-nodejs) tutorial
 
 ## Create an Angular Dapp
 
@@ -118,7 +118,7 @@ We have not fetched any data yet - we will update our server code and then we wi
 
 ## Set up the Server
 
-[Follow this tutorial](https://docs.moralis.io/docs/your-first-dapp-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side.
+[Follow this tutorial](/docs/your-first-dapp-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side.
 
 1. Replace the contents of `index.js` with the following (make sure to add your own API key):
 
