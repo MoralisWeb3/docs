@@ -1,6 +1,7 @@
 ---
 title: "Filter Streams"
 slug: "filter-streams"
+sidebar_position: 4
 ---
 
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                          |

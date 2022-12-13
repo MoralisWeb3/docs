@@ -1,6 +1,7 @@
 ---
 title: "Webhook Security"
 slug: "webhook-security"
+sidebar_position: 4
 ---
 
 ## Securing Webhook Requests

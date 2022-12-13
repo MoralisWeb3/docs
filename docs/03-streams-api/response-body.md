@@ -1,6 +1,7 @@
 ---
 title: "Response body"
 slug: "response-body"
+sidebar_position: 4
 ---
 
 The body contains the data you are interested in. Logs is in array containing raw events and stream information such as tag and the streamId. The body also contains a chainId, the blocknumber, internal transactions, the abis and a confirmed field that indicates if the block is confirmed.

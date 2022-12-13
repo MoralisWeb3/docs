@@ -1,6 +1,6 @@
 ---
 title: "How to get Sushiswap V2 pair address"
-slug: "how-to-get-sushiswap-v2-pair-address"
+slug: "../how-to-get-sushiswap-v2-pair-address"
 description: "Learn how to get the pair address of a Sushiswap V2 liquidity pool using Moralis DeFi API."
 ---
 ## Prerequisites

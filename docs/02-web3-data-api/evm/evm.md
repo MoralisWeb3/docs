@@ -1,7 +1,7 @@
 ---
 title: "EVM API"
 description: "Index NFT, token, balance, and any blockchain data from multiple EVM blockchains. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 ## What is the EVM API?

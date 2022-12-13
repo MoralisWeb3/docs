@@ -1,6 +1,7 @@
 ---
 title: "Parse data"
 slug: "parse-data"
+sidebar_position: 4
 ---
 
 Moralis automatically parses the following data for you:

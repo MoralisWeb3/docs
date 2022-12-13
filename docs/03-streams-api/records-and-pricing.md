@@ -1,6 +1,7 @@
 ---
 title: "Records and pricing"
 slug: "records-and-pricing"
+sidebar_position: 4
 ---
 
 ## Summary 

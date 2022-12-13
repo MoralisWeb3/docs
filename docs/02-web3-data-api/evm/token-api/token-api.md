@@ -1,9 +1,10 @@
 ---
 title: "Token API"
-slug: "token-api"
+slug: "../token-api"
 description: "Fetch real-time ERC20 token data into your applications with Moralis’s powerful cross-chain Token API, providing seamless access to price, ownership and transfer data."
 sidebar_position: 2
 ---
+
 ![](/img/content/7b281e7-image.png)
 
 ## What is the Token API?

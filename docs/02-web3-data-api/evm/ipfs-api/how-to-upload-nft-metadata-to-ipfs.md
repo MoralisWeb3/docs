@@ -1,6 +1,6 @@
 ---
 title: "How to upload NFT metadata to IPFS"
-slug: "how-to-upload-nft-metadata-to-ipfs"
+slug: "../how-to-upload-nft-metadata-to-ipfs"
 description: "Learn how to upload NFT metadata to IPFS network using Moralis IPFS API."
 ---
 ## Prerequisites

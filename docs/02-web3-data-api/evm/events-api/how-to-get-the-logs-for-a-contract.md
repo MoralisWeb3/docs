@@ -1,6 +1,6 @@
 ---
 title: "How to get the logs for a contract"
-slug: "how-to-get-the-logs-for-a-contract"
+slug: "../how-to-get-the-logs-for-a-contract"
 description: "Learn how to get the logs for a contract using the Moralis Events API."
 ---
 ## Prerequisites

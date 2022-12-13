@@ -1,6 +1,6 @@
 ---
 title: "Block API"
-slug: "block-api"
+slug: "../block-api"
 ---
 ## What is the Block API?
 

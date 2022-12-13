@@ -1,6 +1,6 @@
 ---
 title: "How to get the spender allowance of an ERC20 token"
-slug: "how-to-get-the-spender-allowance"
+slug: "../how-to-get-the-spender-allowance"
 description: "Learn how to get the spender allowance of an ERC20 token using Moralis Token API."
 ---
 ## Prerequisites

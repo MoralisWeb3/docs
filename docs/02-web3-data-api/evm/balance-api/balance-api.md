@@ -1,6 +1,6 @@
 ---
 title: "Balance API"
-slug: "/evm/balance-api"
+slug: "../balance-api"
 description: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
 ---
 ![](/img/content/bb36730-image.png)

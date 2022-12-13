@@ -1,6 +1,6 @@
 ---
 title: "How to get Uniswap V3 pair address"
-slug: "how-to-get-uniswap-v3-pair-address"
+slug: "../how-to-get-uniswap-v3-pair-address"
 description: "Learn how to get the pair address of a Uniswap V3 liquidity pool using Moralis DeFi API."
 ---
 ## Prerequisites

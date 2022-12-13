@@ -1,6 +1,6 @@
 ---
 title: "Events API"
-slug: "events-api"
+slug: "../events-api"
 ---
 ## What is the Events API?
 

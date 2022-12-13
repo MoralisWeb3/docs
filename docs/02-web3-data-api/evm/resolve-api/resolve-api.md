@@ -1,6 +1,6 @@
 ---
 title: "Resolve API"
-slug: "resolve-api"
+slug: "../resolve-api"
 ---
 ## What is the Resolve API?
 

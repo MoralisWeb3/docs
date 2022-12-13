@@ -1,6 +1,6 @@
 ---
 title: "How to get Pancakeswap V1 pair reserves"
-slug: "how-to-get-pancakeswap-v1-pair-reserves"
+slug: "../how-to-get-pancakeswap-v1-pair-reserves"
 description: "Learn how to get the pair reserves of a given pair address from Pancakeswap V1 using Moralis DeFi API."
 ---
 ## Prerequisites

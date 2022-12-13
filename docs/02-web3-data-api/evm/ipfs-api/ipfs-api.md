@@ -1,6 +1,6 @@
 ---
 title: "IPFS API"
-slug: "ipfs-api"
+slug: "../ipfs-api"
 ---
 ## What is the IPFS API?
 

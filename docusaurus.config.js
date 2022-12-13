@@ -95,12 +95,6 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'home/overview',
-            position: 'left',
-            label: 'Home',
-          },
-          {
-            type: 'doc',
             docId: 'web3-data-api/overview',
             position: 'left',
             label: 'Web3 Data API',
@@ -116,6 +110,12 @@ const config = {
             docId: 'authentication-api/overview', 
             position: 'left',
             label: 'Authentication API',
+          },
+          {
+            type: 'doc',
+            docId: 'example-dapps/overview', 
+            position: 'left',
+            label: 'Example dapps',
           },
           // position: Right
           {

@@ -1,6 +1,6 @@
 ---
 title: "DeFi API"
-slug: "defi-api"
+slug: "../defi-api"
 ---
 ## What is the DeFi API?
 
