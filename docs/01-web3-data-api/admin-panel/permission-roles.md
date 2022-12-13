@@ -1,6 +1,6 @@
 ---
 title: "Permission and Roles"
-slug: "permission-roles"
+slug: "/admin-panel/permission-roles"
 description: "Guide and overview of Moralis teams feature. Including information about what permissions and roles that exist."
 ---
 ## Roles and Permissions

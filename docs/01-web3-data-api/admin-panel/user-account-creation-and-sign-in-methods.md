@@ -1,6 +1,6 @@
 ---
 title: "User Account Creation"
-slug: "user-account-creation-and-sign-in-methods"
+slug: "/admin-panel/user-account-creation-and-sign-in-methods"
 ---
 ## Email and Password
 
@@ -13,7 +13,7 @@ Create a strong password to make sure your account is as secure as possible:
 - Mix letters and numbers
 - Include at least one special character
 
-You can further improve the security of your account with [two-factor-authentication](/docs/account-settings).
+You can further improve the security of your account with [two-factor-authentication](/admin-panel/account-settings).
 
 ## Google Authentication
 

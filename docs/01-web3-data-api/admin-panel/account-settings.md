@@ -1,6 +1,6 @@
 ---
 title: "Account Settings"
-slug: "account-settings"
+slug: "/admin-panel/account-settings"
 ---
 ## Moralis Auto-Logged in Accounts
 
