@@ -23,7 +23,7 @@ You are only charged for confirmed transactions/webhook requests.
 
 ### After how many blocks is considered a transaction as confirmed?
 
-See [number of blocks per chain for confirmed transactions](/docs/streams-api#supported-chains)
+See [number of blocks per chain for confirmed transactions](/streams-api#supported-chains)
 
 ### How many addresses can I add to a stream?
 
@@ -75,7 +75,7 @@ Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-
 
 Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your billing page <https://admin.moralis.io/account/billing>.
 
-For each transaction, you get two webhooks (read more [here](/docs/streams-api)), records are only counted towards your usage for webhooks with Confirmed status True.
+For each transaction, you get two webhooks (read more [here](/streams-api)), records are only counted towards your usage for webhooks with Confirmed status True.
 
 **Check your total consumed record for a period**
 

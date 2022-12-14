@@ -36,7 +36,7 @@ Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-
 
 Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your billing page <https://admin.moralis.io/account/billing>.
 
-For each transaction, you get two webhooks (read more [here](/docs/webhooks)), records are only counted towards your usage for webhooks with Confirmed status True.
+For each transaction, you get two webhooks (read more [here](/streams-api/webhooks-transactions)), records are only counted towards your usage for webhooks with Confirmed status True.
 
 ### Check your total consumed record for a period
 
