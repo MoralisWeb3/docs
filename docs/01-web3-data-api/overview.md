@@ -5,7 +5,7 @@ slug: "/web3-data-api"
 sidebar_position: 1
 --- 
 
-# Overview
+# Web3 Data API
 
 ![](/img/content/web3-data-api-3.jpg)
 
