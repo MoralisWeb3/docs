@@ -7,6 +7,10 @@ sidebar_position: 1
 
 # Overview
 
+![](/img/content/web3-data-api-3.jpg)
+
+## What is the Streams API?
+
 :::info
 WIP 
 :::
