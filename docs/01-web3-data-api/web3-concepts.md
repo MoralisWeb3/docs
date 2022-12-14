@@ -1,6 +1,6 @@
 ---
-title: "Web3 Glossary"
-slug: "web3-glossary"
+title: "Web3 Concepts"
+slug: "web3-concepts"
 sidebar_position: 9
 ---
 ## Wallets

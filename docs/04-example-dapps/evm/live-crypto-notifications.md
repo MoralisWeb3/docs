@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=QtstmvVeI18
 ## How to Get Started
 
 1. Create an Express.js API
-2. Create a stream using the [Streams API](/docs/what-is-streams-api-1)
+2. Create a stream using the [Streams API](/streams-api)
 3. Integrate your app with Moralis services
 
 ## Initial Setup
@@ -119,7 +119,7 @@ This `ngrok.io` URL is what you will use when setting up the stream to receive t
 
 ## Setting Up A Stream
 
-Now we will set up a stream to send webhooks to our server every time a USDT amount over 50k is transferred. You can [follow this guide](/docs/using-webui) to get started.
+Now we will set up a stream to send webhooks to our server every time a USDT amount over 50k is transferred. You can [follow this guide](/streams-api/getting-started/using-webui) to get started.
 
 1. Create a new stream and select "Create From Scratch".
 2. Use these options for your stream:

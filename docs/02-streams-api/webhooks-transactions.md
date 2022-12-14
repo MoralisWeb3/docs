@@ -16,7 +16,7 @@ The first webhook will come as soon as the block is mined and have `confirmed:fa
 
 The second webhook will come once enough blocks have been mined after the block containing your events and have `confirmed:true`. This number of blocks is also called `number of confirmations`.
 
-The table with the number of comfirmation required for Moralis to consider a block confirmed can be found here: [supported-chains](/docs/what-is-streams-api-1#supported-chains)
+The table with the number of comfirmation required for Moralis to consider a block confirmed can be found here: [supported-chains](/streams-api#supported-chains)
 
 ## Edge cases
 

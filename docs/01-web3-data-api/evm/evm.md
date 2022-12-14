@@ -8,7 +8,7 @@ sidebar_position: 3
 
 The Moralis EVM API enables Web3 developers to build and scale any dapps built on top of EVM blockchains effortlessly. Access all the information you need to index such as NFT, token, balance, and other blockchain-related data from multiple EVM blockchains.
 
-The Moralis EVM API is also fully-integrated with the [Moralis SDK](/docs/moralis-sdk). Once the SDK is installed to your project, you can easily import and use them to call the APIs.
+The Moralis EVM API is also fully-integrated with the [Moralis SDK](/web3-data-api/getting-started/moralis-sdk). Once the SDK is installed to your project, you can easily import and use them to call the APIs.
 
 ### EVM API Subgroups
 

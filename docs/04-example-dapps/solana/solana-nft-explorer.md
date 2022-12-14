@@ -7,7 +7,7 @@ description: "A simple app to explore all the NFTs of a solana wallet."
 
 Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding.
 
-In this app we use [get Wallet NFTs](/docs/how-to-get-spl-nft-balance-of-an-address) endpoint, to fetch all the NFTs of a wallet and we use [get NFT Metadata](/docs/how-to-get-spl-nft-metadata) endpoint to get the metadata of the wallet NFTs.
+In this app we use [get Wallet NFTs](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) endpoint, to fetch all the NFTs of a wallet and we use [get NFT Metadata](/web3-data-api/solana/how-to-get-spl-nft-metadata) endpoint to get the metadata of the wallet NFTs.
 
 This is what the final application looks like. 
 

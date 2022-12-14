@@ -91,7 +91,7 @@ app.listen(port, () => {
 ![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png")
 
 2. Import `moralis` and initialize it with your API key in `index.js`:  
-   Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](/docs/moralis-data-types) and [Supported Chains](/docs/cross-chain-requests).
+   Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](/docs/moralis-data-types) and [Supported Chains](/web3-data-api/cross-chain-requests).
 
 ```javascript
 const express = require('express')

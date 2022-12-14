@@ -83,7 +83,7 @@ graph TD;
 ## To get started, check the following tutorials:
 
 - [Your First Stream using JS SDK](/docs/your-first-stream-using-js-sdk)
-- [Your First Stream using WebUI](/docs/using-webui)
+- [Your First Stream using WebUI](/streams-api/getting-started/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
 ## How Streams are priced
