@@ -95,12 +95,6 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'home/overview',
-            position: 'left',
-            label: 'Home',
-          },
-          {
-            type: 'doc',
             docId: 'web3-data-api/overview',
             position: 'left',
             label: 'Web3 Data API',
@@ -117,6 +111,12 @@ const config = {
             position: 'left',
             label: 'Authentication API',
           },
+          {
+            type: 'doc',
+            docId: 'example-dapps/overview', 
+            position: 'left',
+            label: 'Example dapps',
+          },
           // position: Right
           {
             type: "doc",
@@ -131,17 +131,17 @@ const config = {
             items: [
               {
                 label: "NodeJS",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
               {
                 label: "Python",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
               {
                 label: "C#",
-                href: "https://docs.moralis.io/",
+                href: "/",
                 target: "_blank",
               },
             ],

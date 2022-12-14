@@ -1,9 +1,6 @@
 ---
 title: "Compute Units (CU)"
 slug: "compute-units"
-hidden: false
-createdAt: "2022-08-10T17:15:32.217Z"
-updatedAt: "2022-12-02T12:24:38.681Z"
 ---
 ## Solana API Endpoints
 

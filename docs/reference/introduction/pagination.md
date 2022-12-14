@@ -1,9 +1,6 @@
 ---
 title: "Pagination"
 slug: "pagination"
-hidden: false
-createdAt: "2022-11-10T15:26:00.532Z"
-updatedAt: "2022-11-17T08:36:12.950Z"
 ---
 ### What is Pagination?
 

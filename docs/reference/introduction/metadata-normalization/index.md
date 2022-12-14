@@ -2,13 +2,10 @@
 sidebar_position: 2
 title: "Metadata Normalization"
 slug: "metadata-normalization"
-excerpt: "When working with NFT Metadata, you have the option to receive either a normalized or non-normalized metadata from our NFT APIs."
-hidden: false
-createdAt: "2022-11-09T10:16:00.023Z"
-updatedAt: "2022-11-11T12:25:33.994Z"
+description: "When working with NFT Metadata, you have the option to receive either a normalized or non-normalized metadata from our NFT APIs."
 ---
 
-Through our [NFT APIs](https://docs.moralis.io/docs/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](https://docs.moralis.io/reference/normalized-vs-non-normalized-metadata).
+Through our [NFT APIs](/web3-data-api/evm/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](https://docs.moralis.io/reference/normalized-vs-non-normalized-metadata).
 
 To use this feature, simply set `normalizedMetadata` parameter to `true`.
 
