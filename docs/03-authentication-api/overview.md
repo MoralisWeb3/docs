@@ -28,9 +28,9 @@ The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIP
 
 The use cases for our Auth API are truly endless! Some popular use cases include:
 
-- [Sign in with Metamask](/authentication-api/tutorials/how-to-sign-in-with-metamask)
-- [Sign in with WalletConnect](/authentication-api/tutorials/how-to-sign-in-with-walletconnect)
-- [Sign in with RainbowKit](/authentication-api/tutorials/how-to-sign-in-with-rainbowkit)
-- [Sign in with Coinbase Wallet](/authentication-api/tutorials/how-to-sign-in-with-coinbase-wallet)
-- [Sign in with Web3Auth](/authentication-api/tutorials/how-to-sign-in-with-web3authio)
-- [Sign in with Magic.link](/authentication-api/tutorials/how-to-sign-in-with-magiclink)
+- [Sign in with Metamask](/authentication-api/how-to-sign-in-with-metamask)
+- [Sign in with WalletConnect](/authentication-api/how-to-sign-in-with-walletconnect)
+- [Sign in with RainbowKit](/authentication-api/how-to-sign-in-with-rainbowkit)
+- [Sign in with Coinbase Wallet](/authentication-api/how-to-sign-in-with-coinbase-wallet)
+- [Sign in with Web3Auth](/authentication-api/how-to-sign-in-with-web3authio)
+- [Sign in with Magic.link](/authentication-api/how-to-sign-in-with-magiclink)

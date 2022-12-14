@@ -183,7 +183,7 @@ export const getBalance = functions.https.onCall(async (data: GetBalanceData) =>
 
 
 
-The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/web3-data-api/getting-started/moralis-sdk) to check all Moralis features.
+The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/web3-data-api/moralis-sdk) to check all Moralis features.
 
 :::caution Secure Firebase Function
 

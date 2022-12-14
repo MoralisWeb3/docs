@@ -13,7 +13,7 @@ You can find the repository with the final code here: <https://github.com/Morali
 
 # Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with Web3 authorization using `next-auth`. (_Please check our [NextJS Web3 Auth Tutorial](/authentication-api/tutorials/how-to-sign-in-with-metamask)._)
+You can start this tutorial if you already have a NextJS dapp with Web3 authorization using `next-auth`. (_Please check our [NextJS Web3 Auth Tutorial](/authentication-api/how-to-sign-in-with-metamask)._)
 
 # NFT Gated Page with `getServerSideProps`
 

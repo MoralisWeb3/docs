@@ -1,7 +1,7 @@
 ---
 title: "AWS Lambda (NodeJS)"
 slug: "aws-lambda-nodejs"
-description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/getting-started/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 
 :::info What is AWS Lambda?
