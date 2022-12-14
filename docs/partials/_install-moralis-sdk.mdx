@@ -6,29 +6,22 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 
-<Tabs>
-  <TabItem value="npm" label="npm" default>
+<Tabs groupId="programming-language" queryString>
+  <TabItem value="javascript" label="npm" default>
     <CodeBlock
             language="shell"
             showLineNumbers>
             {`npm install ${props.node}`}
           </CodeBlock>
   </TabItem>
-  <TabItem value="yarn" label="Yarn">
+  <TabItem value="javascript-yarn" label="Yarn">
     <CodeBlock
                 language="shell"
                 showLineNumbers>
                 {`yarn add ${props.node}`}
               </CodeBlock>
   </TabItem>
-  <TabItem value="pnpm" label="pnpm">
-    <CodeBlock
-                language="shell"
-                showLineNumbers>
-                {`pnpm add ${props.node}`}
-              </CodeBlock>
-  </TabItem>
-  <TabItem value="pip" label="pip">
+  <TabItem value="python" label="pip">
     <CodeBlock
                 language="shell"
                 showLineNumbers>

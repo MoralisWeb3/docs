@@ -12,7 +12,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_setup-moralis.mdx';
+import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 

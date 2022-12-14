@@ -16,26 +16,26 @@ Integrate Web3 into any tech stack by following easy guides, recipes, and API re
 
 ## Explore Products 
 
-<div class="row">
-    <div class="col col--4">
-        <div class="col-demo">
-            <a class="card padding--lg card--homepage" href="/web3-data-api/">
+<div className="row">
+    <div className="col col--4">
+        <div className="col-demo">
+            <a className="card padding--lg card--homepage" href="/web3-data-api/">
                 <h3>📄️ Web3 Data API</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
         </div>
     </div>
-    <div class="col col--4">
-        <div class="col-demo">
-            <a class="card padding--lg card--homepage" href="/streams-api/">
+    <div className="col col--4">
+        <div className="col-demo">
+            <a className="card padding--lg card--homepage" href="/streams-api/">
                 <h3>📄️ Streams API</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
         </div>
     </div>
-    <div class="col col--4">
-        <div class="col-demo">
-            <a class="card padding--lg card--homepage" href="/authentication-api/">
+    <div className="col col--4">
+        <div className="col-demo">
+            <a className="card padding--lg card--homepage" href="/authentication-api/">
                 <h3>📄️ Authentication API</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis sem justo, et iaculis sem elementum eu.</p>
             </a>
