@@ -5,7 +5,7 @@ description: "This tutorial will teach you how to host your custom backend (powe
 ---
 ## The Steps We Will Take
 
-- [Customize code from the _**Your First Dapp - NodeJS**_ tutorial](#customize-code-from-your-first-dapp---nodejs)
+- [Customize code from the _**Quickstart NodeJS**_ tutorial](#customize-code-from-your-first-dapp---nodejs)
   - [Adding authentication methods](#adding-authentication-methods)
   - [Adding authentication operations](#adding-authentication-operations)
 - [Run on Google Cloud](#run-on-google-cloud)
@@ -13,11 +13,11 @@ description: "This tutorial will teach you how to host your custom backend (powe
 
 ## Prerequisites
 
-- Complete the [Your First Dapp - NodeJS](/docs/nodejs-dapp-from-scratch) tutorial
+- Complete the [Quickstart NodeJS](/web3-data-api/quickstart-nodejs) tutorial
 
-## Customize Code from the _Your First Dapp - NodeJS_ Tutorial
+## Customize Code from the _Quickstart NodeJS_ Tutorial
 
-We begin this tutorial from the same point we finished the **_Your First Dapp - NodeJS_** tutorial, but we will make some changes before advancing further.
+We begin this tutorial from the same point we finished the **_Quickstart NodeJS_** tutorial, but we will make some changes before advancing further.
 
 Let’s go step by step. To start, we will install [`cors`](https://www.npmjs.com/package/cors) by executing the following command in the terminal:
 

@@ -5,7 +5,7 @@ description: "This tutorial will teach you how to set up a server-side dapp that
 ---
 ## Prerequisites
 
-1. Create a [Moralis account](/docs/quickstart) and get your API key
+1. Create a [Moralis account](/web3-data-api/get-your-api-key) and get your API key
 2. Install and set up your editor of choice
 3. Install Python 3
 

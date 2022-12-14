@@ -87,7 +87,7 @@ app.listen(port, () => {
 
 
 
-5. Create a `.env` file and add your Moralis API Key inside. You can get your own key following this tutorial [How to get an API Key](/docs/quickstart).
+5. Create a `.env` file and add your Moralis API Key inside. You can get your own key following this tutorial [How to get an API Key](/web3-data-api/get-your-api-key).
 
 ```typescript .env
 MORALIS_API_KEY = YOUR_KEY_HERE

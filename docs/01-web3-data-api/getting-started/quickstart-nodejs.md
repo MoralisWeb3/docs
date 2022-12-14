@@ -5,7 +5,7 @@ description: "This tutorial will teach you how to set up a server-side dapp that
 ---
 ## Prerequisites
 
-1. Create a [Moralis account](/docs/quickstart)
+1. Create a [Moralis account](/web3-data-api/get-your-api-key)
 2. Install and set up your editor of choice (we will use Visual Studio Code [VSC] in this tutorial)
 3. Install NodeJS
 

@@ -158,7 +158,7 @@ functions:
 
 > 🚧 But remember...
 > 
-> Replace the `MORALIS_API_KEY` field with [your own key](/docs/quickstart#step-2-get-api-key) before testing and deploying.
+> Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
 
 ## Development
 
@@ -464,7 +464,7 @@ functions:
 
 > 🚧 But remember...
 > 
-> Replace the `MORALIS_API_KEY` field with [your own key](/docs/quickstart#step-2-get-api-key) before testing and deploying.
+> Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
 
 ## Development
 

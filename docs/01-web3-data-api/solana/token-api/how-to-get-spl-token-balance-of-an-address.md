@@ -12,7 +12,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](/docs/quickstart) your Moralis account and get your Moralis API Key.
+First [register](/web3-data-api/get-your-api-key) your Moralis account and get your Moralis API Key.
 
 Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
 
