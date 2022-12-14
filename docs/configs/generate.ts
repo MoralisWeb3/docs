@@ -8,7 +8,10 @@ let swaggerSchemas;
 let swaggerOAS = {};
 
 const camelToSnakeCase = (str) => {
-  return str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+  return (str.charAt(0).toUpperCase() + str.slice(1)).replace(
+    /[A-Z]/g,
+    (letter) => `-${letter.toLowerCase()}`
+  );
 };
 
 /**
@@ -149,6 +152,7 @@ const formatSwaggerJSON = (swaggerJSON) => {
     const {
       operationId,
       description,
+      summary,
       method,
       parameters = [],
       responses = [],
@@ -160,6 +164,7 @@ const formatSwaggerJSON = (swaggerJSON) => {
     const formattedPath = formatPath(path);
 
     swaggerContent[operationId] = {
+      summary,
       description,
       method,
       path: formattedPath,
@@ -222,22 +227,29 @@ const generateConfigs = async () => {
       for (let index in Object.keys(swaggerOAS[key])) {
         const functionName = Object.keys(swaggerOAS[key])[index];
         const snakeCaseFunctionName = camelToSnakeCase(functionName);
+
         // Write MDX Files for API Reference pages
         await fs.writeFile(
           `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
           `---
 sidebar_position: ${index}
-sidebar_label: Get Balance
+sidebar_label: ${swaggerOAS[key][functionName]?.summary}
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "${swaggerPaths[key].importPath}";
 
-# Get Native Balance
+# ${swaggerOAS[key][functionName]?.summary}
 
 <ApiReference {...config.${key}.${functionName}} />
               `,
-          () => {}
+          { flag: "w" },
+          (err) => {
+            if (err) {
+              return console.log(err);
+            }
+            console.log("The file was saved!");
+          }
         );
       }
     }

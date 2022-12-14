@@ -74,12 +74,12 @@ export const apiParamInitialValue = (param: ApiParam) => {
   const value = PRIMITIVE_TYPES.includes(param.type)
     ? param.example
     : param.type === "object"
-    ? param.fields.reduce((obj, field) => ({ ...obj, ...apiParamInitialValue(field) }), {})
-    : param.type === "array"
-    ? []
-    : param.type === "record"
-    ? {}
-    : undefined;
+      ? param.fields?.reduce((obj, field) => ({ ...obj, ...apiParamInitialValue(field) }), {})
+      : param.type === "array"
+        ? []
+        : param.type === "record"
+          ? {}
+          : undefined;
 
   if (path) {
     return { [path]: value };

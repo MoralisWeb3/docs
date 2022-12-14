@@ -37,7 +37,7 @@ const ApiParamRecordField = ({ param, field, form }: FieldComponentProps<"array"
                     onChange={(event) => {
                       form.setFieldValue(
                         field.name,
-                        Object.entries(field.value).reduce(
+                        Object.entries(field.value)?.reduce(
                           (obj, [fieldKey, fieldValue]) => ({
                             ...obj,
                             [fieldKey === key ? event.target.value : fieldKey]: fieldValue,

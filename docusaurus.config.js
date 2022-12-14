@@ -31,7 +31,7 @@ const config = {
     mermaid: true,
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
     [
@@ -94,33 +94,33 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'web3-data-api/overview',
-            position: 'left',
-            label: 'Web3 Data API',
+            type: "doc",
+            docId: "web3-data-api/overview",
+            position: "left",
+            label: "Web3 Data API",
           },
           {
-            type: 'doc',
-            docId: 'streams-api/overview',
-            position: 'left',
-            label: 'Streams API',
+            type: "doc",
+            docId: "streams-api/overview",
+            position: "left",
+            label: "Streams API",
           },
           {
-            type: 'doc',
-            docId: 'authentication-api/overview', 
-            position: 'left',
-            label: 'Authentication API',
+            type: "doc",
+            docId: "authentication-api/overview",
+            position: "left",
+            label: "Authentication API",
           },
           {
-            type: 'doc',
-            docId: 'example-dapps/overview', 
-            position: 'left',
-            label: 'Example dapps',
+            type: "doc",
+            docId: "example-dapps/overview",
+            position: "left",
+            label: "Example dapps",
           },
           // position: Right
           {
             type: "doc",
-            docId: "reference/introduction",
+            docId: "introduction",
             position: "right",
             label: "API Reference",
           },
@@ -171,10 +171,11 @@ const config = {
             ],
           },
           {
-            type: 'html',
-            position: 'right',
-            className: 'dashboard-button',
-            value: '<a class="button button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Dashboard</a>',
+            type: "html",
+            position: "right",
+            className: "dashboard-button",
+            value:
+              '<a class="button button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Dashboard</a>',
           },
         ],
       },

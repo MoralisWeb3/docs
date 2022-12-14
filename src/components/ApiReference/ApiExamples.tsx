@@ -66,9 +66,9 @@ const tabs = [
         line("},", 1),
         body
           ? line(`body: JSON.stringify(${stringifyJSON(body, true)})`, 1).replace(
-              /\n/g,
-              `\n${" ".repeat(INDENT_LENGTH)}`
-            )
+            /\n/g,
+            `\n${" ".repeat(INDENT_LENGTH)}`
+          )
           : null,
         line("};"),
         line(""),
@@ -98,8 +98,7 @@ const tabs = [
         line(`}`),
         line(""),
         line(
-          `response = requests.request("${method}", url, ${
-            body ? "json=payload, " : ""
+          `response = requests.request("${method}", url, ${body ? "json=payload, " : ""
           }headers=headers)`
         ),
         line(""),
@@ -180,7 +179,7 @@ export const filterOutEmpty = (value: any) => {
   }
 
   if (isPlainObject(value)) {
-    const cleanObject = Object.entries(value).reduce((obj, [key, value]) => {
+    const cleanObject = Object.entries(value)?.reduce((obj, [key, value]) => {
       const cleanValue = filterOutEmpty(value);
       return cleanValue == null ? obj : { ...obj, [key]: cleanValue };
     }, {});
