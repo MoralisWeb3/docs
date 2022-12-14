@@ -12,24 +12,9 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-First [register](/web3-data-api/get-your-api-key) your Moralis account and get your Moralis API Key.
+import SetupMoralis from '/docs/partials/_setup-moralis.mdx';
 
-Once you have your Moralis API Key, install the Moralis SDK in your project.
-
-```shell npm
-npm install moralis @moralisweb3/common-evm-util
-```
-```shell yarn
-yarn add moralis @moralisweb3/common-evm-util
-```
-```shell pnpm
-pnpm add moralis @moralisweb3/common-evm-util
-```
-```Text pip
-pip install moralis
-```
-
-
+<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
 
 ## Step 2: Get Pair Reserves of A Sushiswap V2 Liquidity Pool
 
