@@ -7,7 +7,7 @@ const oembed = require("remark-oembed");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+  title: "Moralis Web3 Documentation",
   url: "https://docs.moralis.io",
   baseUrl: "/",
   onBrokenLinks: "throw",

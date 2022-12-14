@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: "Authentication API"
+sidebar_label: "Overview"
 slug: "/authentication-api"
 sidebar_position: 1
 --- 

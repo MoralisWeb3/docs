@@ -1,6 +1,6 @@
 ---
 title: "How to sign in with WalletConnect"
-slug: "how-to-sign-in-with-walletconnect"
+slug: "../how-to-sign-in-with-walletconnect"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
 

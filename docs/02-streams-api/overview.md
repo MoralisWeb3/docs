@@ -1,15 +1,10 @@
 ---
-title: "Overview"
+title: "Streams API"
+sidebar_label: "Overview"
 slug: "/streams-api"
 description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
 sidebar_position: 1
-metadata: 
-  image: 
-    0: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
-    1: "d06bbe5-Moralis-Streams-API.jpeg"
-    2: 1920
-    3: 720
-    4: "#000000"
+image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
 ---
 ![](/img/content/d06bbe5-Moralis-Streams-API.jpeg)
 

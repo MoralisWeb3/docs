@@ -1,6 +1,6 @@
 ---
 title: "Using the Admin Panel"
-slug: "using-webui"
+slug: "../using-webui"
 description: "Learn how to create stream to monitor any address"
 ---
 1. Go to <http://admin.moralis.io/streams>.

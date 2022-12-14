@@ -1,6 +1,6 @@
 ---
 title: "How to sign in with MetaMask using Python and Django"
-slug: "how-to-sign-in-with-metamask-python-django"
+slug: "../how-to-sign-in-with-metamask-python-django"
 description: "This tutorial will teach you how Moralis authentication works and demonstrates how to add secure authentication to your Django application by walking you through creating a full-stack Web3 authentication stack using the popular Django web framework."
 ---
 ## Introduction
