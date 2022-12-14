@@ -14,7 +14,7 @@ Before getting started, make sure you have the following ready:
 
 First [register](/web3-data-api/get-your-api-key) your Moralis account and get your Moralis API Key.
 
-Once you have your Moralis API Key, install [Moralis SDK](/docs/moralis-sdk) in your project.
+Once you have your Moralis API Key, install the Moralis SDK in your project.
 
 ```shell npm
 npm install moralis @moralisweb3/common-evm-util
