@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get Pair Address of A Sushiswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](/reference/getpairaddress)` endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](https://docs.moralis.io/reference/getpairaddress)` endpoint to do so.
 
 Here you'll need three parameters: `token0`, `token1` and `address`.
 
@@ -177,7 +177,7 @@ Congratulations 🥳 You just get the pair address of a Sushiswap V2 liquidity p
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](/reference/getpairaddress)
+- [getPairAddress](https://docs.moralis.io/reference/getpairaddress)
 
 ## Support
 

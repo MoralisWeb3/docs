@@ -203,7 +203,7 @@ Congratulations 🥳 you just got all the NFTs from a collection with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getContractNFTs](/reference/getcontractnfts)
+- [getContractNFTs](https://docs.moralis.io/reference/getcontractnfts)
 
 ## Support
 

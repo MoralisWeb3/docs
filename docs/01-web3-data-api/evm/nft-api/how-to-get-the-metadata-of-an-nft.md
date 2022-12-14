@@ -166,7 +166,7 @@ Congratulations 🥳 you just got Cryptopunk NFT metadata for token id 3931 owne
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](/reference/getnftmetadata)
+- [getNFTMetadata](https://docs.moralis.io/reference/getnftmetadata)
 
 ## Next Steps
 

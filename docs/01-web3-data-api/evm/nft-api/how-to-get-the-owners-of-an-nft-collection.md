@@ -197,7 +197,7 @@ Congratulations 🥳 you just got all NFT owners of a collection with just a few
 
 For more details on the endpoint and optional parameters, check out:
 
-- [getOwnerNFTs](/reference/getnftowners)
+- [getOwnerNFTs](https://docs.moralis.io/reference/getnftowners)
 
 ## Support
 

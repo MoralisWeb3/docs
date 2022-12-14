@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get metadata of a SPL NFT
 
-In order to get the metadata of a SPL NFT, Moralis provides you the `[getNFTMetadata](/reference/getsolnftmetadata)` API endpoint to do so.
+In order to get the metadata of a SPL NFT, Moralis provides you the `[getNFTMetadata](https://docs.moralis.io/reference/getsolnftmetadata)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -159,7 +159,7 @@ Congratulations 🥳 You just got the metadata of a SPL NFT with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](/reference/getsolnftmetadata)
+- [getNFTMetadata](https://docs.moralis.io/reference/getsolnftmetadata)
 
 ## YouTube Tutorial
 

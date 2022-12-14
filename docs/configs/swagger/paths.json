@@ -1,54 +1,54 @@
 {
   "nft": {
     "swaggerPath": "https://swagger.moralis.io/nft/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/nft-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/nft-api"
   },
   "token": {
     "swaggerPath": "https://swagger.moralis.io/token/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/token-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/token-api"
   },
   "balance": {
     "swaggerPath": "https://swagger.moralis.io/balance/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/balance-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/balance-api"
   },
   "transaction": {
     "swaggerPath": "https://swagger.moralis.io/transaction/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/transaction-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/transaction-api"
   },
   "events": {
     "swaggerPath": "https://swagger.moralis.io/events/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/events-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/events-api"
   },
   "block": {
     "swaggerPath": "https://swagger.moralis.io/block/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/block-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/block-api"
   },
   "utils": {
     "swaggerPath": "https://swagger.moralis.io/utils/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/utils-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/utils-api"
   },
   "resolve": {
     "swaggerPath": "https://swagger.moralis.io/resolve/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/resolve-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/resolve-api"
   },
   "defi": {
     "swaggerPath": "https://swagger.moralis.io/defi/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/defi-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/defi-api"
   },
   "ipfs": {
     "swaggerPath": "https://swagger.moralis.io/ipfs/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/ipfs-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/evm-api/ipfs-api"
   },
   "auth": {
     "swaggerPath": "https://swagger.moralis.io/auth/v2/swagger.json",
-    "filePath": "./docs/reference/authentication-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/authentication-api"
   },
   "streams": {
     "swaggerPath": "https://swagger.moralis.io/streams/v2/swagger.json",
-    "filePath": "./docs/reference/streams-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/streams-api"
   },
   "solana": {
     "swaggerPath": "https://swagger.moralis.io/solana/v2/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/solana-api"
+    "filePath": "./docshttps://docs.moralis.io/reference/web3-data-api/solana-api"
   }
 }

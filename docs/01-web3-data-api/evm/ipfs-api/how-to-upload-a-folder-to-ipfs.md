@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Upload a Folder to IPFS
 
-In order to upload a folder to IPFS, Moralis provides you a `[uploadFolder](/reference/uploadfolder)` endpoint to do so.
+In order to upload a folder to IPFS, Moralis provides you a `[uploadFolder](https://docs.moralis.io/reference/uploadfolder)` endpoint to do so.
 
 Here you'll need two parameters: `path` and `content`.
 
@@ -138,7 +138,7 @@ Congratulations 🥳 You just uploaded your files to IPFS with just a few lines 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [uploadFolder](/reference/uploadfolder)
+- [uploadFolder](https://docs.moralis.io/reference/uploadfolder)
 
 ## Support
 

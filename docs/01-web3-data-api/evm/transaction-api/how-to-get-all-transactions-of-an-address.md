@@ -164,7 +164,7 @@ Congratulations 🥳 you just got all the transactions for a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactions](/reference/getwallettransactions)
+- [getWalletTransactions](https://docs.moralis.io/reference/getwallettransactions)
 
 ## Support
 

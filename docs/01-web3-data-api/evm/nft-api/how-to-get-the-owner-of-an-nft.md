@@ -169,7 +169,7 @@ Congratulations 🥳 you just got the owners of an NFT with just a few lines of 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTokenIdOwners](/reference/getnfttokenidowners)
+- [getNFTTokenIdOwners](https://docs.moralis.io/reference/getnfttokenidowners)
 
 ## Support
 

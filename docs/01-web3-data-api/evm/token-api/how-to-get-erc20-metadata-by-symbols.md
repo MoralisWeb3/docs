@@ -171,7 +171,7 @@ Congratulations 🥳 You just got ERC20 metadata by symbols with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadataBySymbol](/reference/gettokenmetadatabysymbol)
+- [getTokenMetadataBySymbol](https://docs.moralis.io/reference/gettokenmetadatabysymbol)
 
 ## Support
 

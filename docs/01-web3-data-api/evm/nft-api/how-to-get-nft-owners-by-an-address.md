@@ -247,7 +247,7 @@ Congratulations 🥳 you just got all the NFTs owners by a contract address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTOwners](/reference/getnftowners-1)
+- [getNFTOwners](https://docs.moralis.io/reference/getnftowners-1)
 
 ## Support
 

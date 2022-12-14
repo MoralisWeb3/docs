@@ -11,11 +11,11 @@ You'll find a query parameter named `normalizeMetadata` on the endpoints listed 
 
 ### Endpoints
 
-- [Get NFTs by wallet](/reference/getwalletnfts) - /{address}/nft
-- [Get NFTs by contract](/reference/getcontractnfts) - /nft/{address}
-- [Get NFT owners by contract](/reference/getnftowners) - /nft/{address}/owners
-- [Get NFT metadata](/reference/getnftmetadata) - /nft/{address}/{token_id}
-- [Get owners by token ID](/reference/getnfttokenidowners) - /nft/{address}/{token_id}/owners
+- [Get NFTs by wallet](https://docs.moralis.io/reference/getwalletnfts) - /{address}/nft
+- [Get NFTs by contract](https://docs.moralis.io/reference/getcontractnfts) - /nft/{address}
+- [Get NFT owners by contract](https://docs.moralis.io/reference/getnftowners) - /nft/{address}/owners
+- [Get NFT metadata](https://docs.moralis.io/reference/getnftmetadata) - /nft/{address}/{token_id}
+- [Get owners by token ID](https://docs.moralis.io/reference/getnfttokenidowners) - /nft/{address}/{token_id}/owners
 
 Here is the definition of normalized metadata:
 

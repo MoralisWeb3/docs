@@ -179,7 +179,7 @@ Congratulations 🥳 you just got the transaction content of a transaction by it
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTransaction](/reference/gettransaction)
+- [getTransaction](https://docs.moralis.io/reference/gettransaction)
 
 ## Support
 

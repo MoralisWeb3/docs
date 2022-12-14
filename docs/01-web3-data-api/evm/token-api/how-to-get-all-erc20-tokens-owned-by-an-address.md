@@ -153,7 +153,7 @@ Congratulations 🥳 You just got all ERC20 tokens owned by an address with just
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenBalances](/reference/getwallettokenbalances)
+- [getWalletTokenBalances](https://docs.moralis.io/reference/getwallettokenbalances)
 
 ## Support
 

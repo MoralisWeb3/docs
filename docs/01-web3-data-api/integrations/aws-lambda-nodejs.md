@@ -21,9 +21,9 @@ description: "This tutorial shows how to easily integrate our [NodeJS SDK](/docs
 
 ## AWS setup
 
-### Create an [AWS Account](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
+### Create an [AWS Account](https://docs.aws.amazon.com/accounts/latesthttps://docs.moralis.io/reference/manage-acct-creating.html)
 
-To create an AWS account, simply follow the following guide [here](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html).
+To create an AWS account, simply follow the following guide [here](https://docs.aws.amazon.com/accounts/latesthttps://docs.moralis.io/reference/manage-acct-creating.html).
 
 ### Create an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
 
@@ -510,7 +510,7 @@ startMoralis();
 
 ### Create `getNativeBalance` endpoint
 
-With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](/reference/getnativebalance) when the Express endpoint is called:
+With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](https://docs.moralis.io/reference/getnativebalance) when the Express endpoint is called:
 
 ```javascript
 app.post("/getNativeBalance", async (req, res, next) => {
@@ -546,7 +546,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 ### Create `getWalletNfts` endpoint
 
-Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/reference/getwalletnfts) when the Express endpoint is called:
+Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](https://docs.moralis.io/reference/getwalletnfts) when the Express endpoint is called:
 
 ![](/img/content/08eff9f-image.png)
 

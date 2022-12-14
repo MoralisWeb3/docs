@@ -89,7 +89,7 @@ const NETWORK = "evm";
 
 ## Adding Authentication Methods
 
-Since we will be using the [Auth API](/reference/requestchallengeevm) in this tutorial, we need to create the methods that will call the [request](/reference/requestchallengeevm) and [verify](/reference/verifychallengeevm) endpoints.
+Since we will be using the [Auth API](https://docs.moralis.io/reference/requestchallengeevm) in this tutorial, we need to create the methods that will call the [request](https://docs.moralis.io/reference/requestchallengeevm) and [verify](https://docs.moralis.io/reference/verifychallengeevm) endpoints.
 
 Let’s start by adding the `requestMessage()` method:
 

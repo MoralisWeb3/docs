@@ -215,7 +215,7 @@ Congratulations 🥳 you just got all the NFTs owned by an address across chains
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTs](/reference/getwalletnfts)
+- [getWalletNFTs](https://docs.moralis.io/reference/getwalletnfts)
 
 ## Next Steps
 

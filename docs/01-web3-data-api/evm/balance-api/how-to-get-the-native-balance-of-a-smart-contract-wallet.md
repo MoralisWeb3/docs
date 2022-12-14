@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of a multi-signature wallet, Moralis provides you the `[getNativeBalance](/reference/getnativebalance)` API endpoint.
+In order to get the native balance of a multi-signature wallet, Moralis provides you the `[getNativeBalance](https://docs.moralis.io/reference/getnativebalance)` API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -143,7 +143,7 @@ Congratulations 🥳 You just got the native balance of a multi-signature wallet
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](/reference/getnativebalance)
+- [getNativeBalance](https://docs.moralis.io/reference/getnativebalance)
 
 ## Support
 

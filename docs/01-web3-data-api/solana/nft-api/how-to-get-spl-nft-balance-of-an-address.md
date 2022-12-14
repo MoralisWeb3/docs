@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get SPL NFT balance of an address
 
-In order to get the SPL NFT balance of a wallet address, Moralis provides you the `[getNFTs](/reference/getsolnfts)` API endpoint to do so.
+In order to get the SPL NFT balance of a wallet address, Moralis provides you the `[getNFTs](https://docs.moralis.io/reference/getsolnfts)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -139,7 +139,7 @@ Congratulations 🥳 You just got the SPL NFT balance of a wallet address with j
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTs](/reference/getsolnfts)
+- [getNFTs](https://docs.moralis.io/reference/getsolnfts)
 
 ## YouTube Tutorial
 

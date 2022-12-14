@@ -197,7 +197,7 @@ Congratulations 🥳 you just got all the NFT transfers in a block with just a f
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTransfersByBlock](/reference/getnfttransfersbyblock)
+- [getNFTTransfersByBlock](https://docs.moralis.io/reference/getnfttransfersbyblock)
 
 ## Support
 

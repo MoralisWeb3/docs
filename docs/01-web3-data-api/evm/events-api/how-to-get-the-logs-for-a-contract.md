@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get logs by contract
 
-In order to get the logs for a contract, Moralis provides you a `[getContractLogs](/reference/getcontractlogs)` endpoint to do so.
+In order to get the logs for a contract, Moralis provides you a `[getContractLogs](https://docs.moralis.io/reference/getcontractlogs)` endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -175,7 +175,7 @@ Congratulations 🥳 You just got the logs for a contract address with just a fe
 
 ## API Reference
 
-- [getContractLogs](/reference/getcontractlogs)
+- [getContractLogs](https://docs.moralis.io/reference/getcontractlogs)
 
 ## Support
 

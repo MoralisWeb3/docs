@@ -155,7 +155,7 @@ Congratulations 🥳 You just got the spender allowance with just a few lines of
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenAllowance](/reference/gettokenallowance)
+- [getTokenAllowance](https://docs.moralis.io/reference/gettokenallowance)
 
 ## Support
 

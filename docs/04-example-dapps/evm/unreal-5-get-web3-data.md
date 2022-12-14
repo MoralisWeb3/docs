@@ -106,7 +106,7 @@ Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 
 > 📘 
 > 
-> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/reference/supported-chains).
+> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](https://docs.moralis.io/reference/supported-chains).
 
 > 📘 
 > 

@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get block by block number
 
-In order to get a block by its block number, Moralis provides you a `[getBlock](/reference/getblock)` endpoint to do so.
+In order to get a block by its block number, Moralis provides you a `[getBlock](https://docs.moralis.io/reference/getblock)` endpoint to do so.
 
 Here you'll need two parameters: `blockNumberOrHash` and `chain`.
 
@@ -202,7 +202,7 @@ Congratulations 🥳 You just got a block using its block number with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getBlock](/reference/getblock)
+- [getBlock](https://docs.moralis.io/reference/getblock)
 
 ## Support
 

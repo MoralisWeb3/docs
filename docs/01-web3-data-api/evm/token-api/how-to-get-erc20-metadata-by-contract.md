@@ -147,7 +147,7 @@ Congratulations 🥳 You just got ERC20 metadata by contract with just a few lin
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadata](/reference/gettokenmetadata)
+- [getTokenMetadata](https://docs.moralis.io/reference/gettokenmetadata)
 
 ## Support
 

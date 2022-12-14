@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get block by unix timestamp
 
-In order to get the closest block by unix timestamp, Moralis provides you a `[getDateToBlock](/reference/getdatetoblock)` endpoint to do so.
+In order to get the closest block by unix timestamp, Moralis provides you a `[getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)` endpoint to do so.
 
 Here you'll need two parameters: `date` and `chain`.
 
@@ -139,7 +139,7 @@ Congratulations 🥳 You just got the closest block using a unix timestamp with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getDateToBlock](/reference/getdatetoblock)
+- [getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)
 
 ## Support
 

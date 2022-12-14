@@ -144,7 +144,7 @@ Congratulations 🥳 You just got the price of an ERC20 Token with just a few li
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/reference/gettokenprice)
+- [getTokenPrice](https://docs.moralis.io/reference/gettokenprice)
 
 ## Support
 

@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get SPL token balance of an address
 
-In order to get the SPL token balance of a wallet address, Moralis provides you the `[getSPL](/reference/getspl)` API endpoint to do so.
+In order to get the SPL token balance of a wallet address, Moralis provides you the `[getSPL](https://docs.moralis.io/reference/getspl)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -142,7 +142,7 @@ Congratulations 🥳 You just got the SPL token balance of a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getSPL](/reference/getspl)
+- [getSPL](https://docs.moralis.io/reference/getspl)
 
 ## Youtube Video
 

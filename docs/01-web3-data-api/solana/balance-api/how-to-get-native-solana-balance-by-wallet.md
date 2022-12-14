@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get native balance of an address
 
-In order to get the native balance of a wallet address, Moralis provides you the `[solBalance](/reference/solbalance)` API endpoint to do so.
+In order to get the native balance of a wallet address, Moralis provides you the `[solBalance](https://docs.moralis.io/reference/solbalance)` API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -143,7 +143,7 @@ https://www.youtube.com/watch?v=NoAhtCJj3Q8
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [solbalance](/reference/solbalance)
+- [solbalance](https://docs.moralis.io/reference/solbalance)
 
 ## Support
 

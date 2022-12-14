@@ -177,7 +177,7 @@ Congratulations 🥳 You just got all ERC20 transactions by contract with just a
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenTransfers](/reference/gettokentransfers)
+- [getTokenTransfers](https://docs.moralis.io/reference/gettokentransfers)
 
 ## Support
 

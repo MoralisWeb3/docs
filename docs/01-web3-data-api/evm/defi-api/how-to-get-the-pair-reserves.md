@@ -33,7 +33,7 @@ pip install moralis
 
 ## Step 2: Get Pair Reserves of A Uniswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](/reference/getpairaddress)` endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](https://docs.moralis.io/reference/getpairaddress)` endpoint to do so.
 
 Here you'll need two parameters: `pairAddress` and `address`.
 
@@ -140,7 +140,7 @@ Congratulations 🥳 You just get the pair reserves of a Uniswap V2 liquidity po
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](/reference/getpairreserves)
+- [getPairReserves](https://docs.moralis.io/reference/getpairreserves)
 
 ## Support
 
