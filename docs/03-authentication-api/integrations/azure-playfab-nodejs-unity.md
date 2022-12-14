@@ -7,7 +7,7 @@ description: "This tutorial will teach you how to set up a complete gaming backe
 > 
 > You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](/docs/using-unity-playfab#set-up-azure-functions).
 
-# The Steps We Will Take
+## The Steps We Will Take
 
 1. Set up a Moralis account
 2. Set up <<glossary:Microsoft Azure PlayFab>> (free plan)
@@ -16,7 +16,7 @@ description: "This tutorial will teach you how to set up a complete gaming backe
 5. Deploy <<glossary:Azure Functions>> with Visual Studio Code
 6. Set up Unity and connect <<glossary:Microsoft Azure PlayFab>> 
 
-# Set up a Moralis Account
+## Set up a Moralis Account
 
 This section describes how to set up your Moralis account and find the Web3 API you need to integrate. Your Moralis account provides access to all Moralis Web3 functionality.
 
@@ -25,7 +25,7 @@ This section describes how to set up your Moralis account and find the Web3 API 
 
 ![](/img/content/9c470bb-1.png "1.png")
 
-# Set up Microsoft Azure PlayFab (free plan)
+## Set up Microsoft Azure PlayFab (free plan)
 
 An active PlayFab account is required to use the functionality provided by PlayFab. Please note that a free plan is available. This section describes how to set up a PlayFab account and configure your first application.
 
@@ -45,7 +45,7 @@ An active PlayFab account is required to use the functionality provided by PlayF
 4. Go to the **API Features** tab and write down the **Title ID**. You will need this when setting up Azure Functions.
 5. Go to the **Secret Keys** tab and write down the **secret key**. You will need this when setting up Azure Functions.
 
-# Set up Azure Functions
+## Set up Azure Functions
 
 To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure Functions integrates natively with PlayFab; however, Azure Functions is a separate product and requires an account separate from PlayFab.
 
@@ -65,13 +65,13 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 
 4. Create a new Function App. Because Moralis offers both **JS** and **.NET SDK**, you can choose the one that fits you better:
 
-## NodeJS
+### NodeJS
 
 ![](/img/content/cd8519e-image.png)
 
 
 
-## .NET
+### .NET
 
 ![](/img/content/30e91e7-image.png)
 
@@ -98,7 +98,7 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 
 ![](/img/content/4ba31c1-9.png "9.png")
 
-# Create Azure Functions with Visual Studio Code
+## Create Azure Functions with Visual Studio Code
 
 This section walks through coding functions that integrate the Moralis SDK.
 
@@ -109,15 +109,15 @@ This section walks through coding functions that integrate the Moralis SDK.
 > - [Visual Studio Code](https://code.visualstudio.com/)
 > - [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for Visual Studio Code
 
-## NodeJS
+### NodeJS
 
 <b>Using the Moralis NodeJS SDK</b>
 
-### Prerequisites
+#### Prerequisites
 
 - [NodeJS 16 LTS](https://nodejs.org/en/)
 
-### Function creation
+#### Function creation
 
 > 📘 
 > 
@@ -125,7 +125,7 @@ This section walks through coding functions that integrate the Moralis SDK.
 
 <b>Authentication API functions</b>
 
-#### Create [`ChallengeRequest`](https://docs.moralis.io/reference/requestchallengeevm) function
+##### Create [`ChallengeRequest`](https://docs.moralis.io/reference/requestchallengeevm) function
 
 1. Open Visual Studio Code.
 2. Select **Azure** and sign in.
@@ -295,7 +295,7 @@ To summarize, to call this **`ChallengeRequest`** function we will need a POST r
 
 For now we need to create another function that will verify the message resulting of this one.
 
-#### Create [`ChallengeVerify`](https://docs.moralis.io/reference/verifychallengeevm) function
+##### Create [`ChallengeVerify`](https://docs.moralis.io/reference/verifychallengeevm) function
 
 1. Repeat the same steps as for **`ChallengeRequest`** (no need to create a new project now) but this time name it **`ChallengeVerify`**:
 
@@ -422,7 +422,7 @@ context.res = {
 
 <b>NFT API functions</b>
 
-#### Create [`GetWalletNfts`](https://docs.moralis.io/reference/getwalletnfts-2) function
+##### Create [`GetWalletNfts`](https://docs.moralis.io/reference/getwalletnfts-2) function
 
 Repeat the same steps as before to create the new functions but name it accordingly. Once created, copy the following code into `index.js`:
 
@@ -472,7 +472,7 @@ For this function we only need the `walletAddress` and the `chainid` in the requ
 
 <b>EVM API functions</b>
 
-#### Create [`RunContractFunction`](https://docs.moralis.io/reference/runcontractfunction) function
+##### Create [`RunContractFunction`](https://docs.moralis.io/reference/runcontractfunction) function
 
 Repeat the same steps as before to create the new functions but name it accordingly. Once created, copy the following code into `index.js`:
 
@@ -526,7 +526,7 @@ module.exports = async function (context, req) {
 
 For this one we'll need to pass various parameters in the request body, related to the contract that we want to run the function from. You can see an example on [how to set the parameters](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/ee435a0ac58468f8ffee964aaaa6a87b953b63ff/Unity/Assets/CustomWeb3System/MoralisWeb3AuthService/Scripts/UnityWeb3Tools/Functions/RunContractFunctionSubsystem.cs#L34) in a Unity method and [how to call it](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/ee435a0ac58468f8ffee964aaaa6a87b953b63ff/Unity/Assets/CustomWeb3System/CustomWeb3System/Scripts/CustomBackendSystem/PlayFabBackendSystem/PlayFabBackendSystem.cs#L142).
 
-### Installing dependencies
+#### Installing dependencies
 
 1. Open the terminal in VS Code:
 
@@ -540,19 +540,19 @@ npm install moralis playfab-sdk
 
 
 
-## .NET
+### .NET
 
-<b>Using the Moralis C# .NET SDK</b>
+#<b>Using the Moralis C# .NET SDK</b>
 
-### Prerequisites
+#### Prerequisites
 
 Before you get started, make sure you have the following requirements in place:
 
 1. [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 2. [Azure Functions Core Tools version 4.x](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash#v2)
-3. [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for  Visual Studio Code
+#3. [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for  Visual Studio Code
 
-### Project Setup
+#### Project Setup
 
 > 📘 
 > 
@@ -604,7 +604,7 @@ Before you get started, make sure you have the following requirements in place:
 
 Save the updated file. You should see the pop-up indicating missing dependencies; click on **Restore**.
 
-### Main Code File
+#### Main Code File
 
 This section walks through coding our main functions code file. The functions created in this tutorial assume that requests are delivered via PlayFab.
 
@@ -699,7 +699,7 @@ var args = context.FunctionArgument;
 
 This code converts the data passed in the request into a form that we can use in the code. Note that the `context` variable holds a PlayFab context; we will use this later in the `ChallengeVerify` method.
 
-### `ChallengeRequest` Method
+#### `ChallengeRequest` Method
 
  This section walks through coding the ChallengeRequest method.
 
@@ -833,7 +833,7 @@ public static async Task<dynamic> ChallengeRequest(
 
 
 
-### `ChallengeVerify` Method
+#### `ChallengeVerify` Method
 
  This section walks through coding the ChallengeVerify method.
 
@@ -1031,11 +1031,11 @@ public static async Task<dynamic> ChallengeVerify(
 
 
 
-### Add Methods to Retrieve Wallet Balances, Tokens Owned, and NFTs
+#### Add Methods to Retrieve Wallet Balances, Tokens Owned, and NFTs
 
 One of the greatest advantages of using the Moralis SDK is the ability provided to easily retrieve just about any EVM chain data, including native balance, information about ERC-20 tokens, and NFTs. This section provides sample code just for that.
 
-### Web3 API
+#### Web3 API
 
 The Moralis SDK provides the ability to easily query and search EVM data of all kinds. A detailed listing and description of the Moralis Web3 API can be found [here](https://docs.moralis.io/reference/evm-api-overview).
 
@@ -1061,7 +1061,7 @@ ChainList chain = (ChainList)chainid;
 
 3. Make two copies of this method, renaming one `GetTokenBalances` and one `GetNfts`.
 
-### `GetNativeBalance`
+#### `GetNativeBalance`
 
 1. In the **try** block, add a call to the `GetNativeBalance` operation of the **Account** endpoint of `Web3Api`. This operation returns a `NativeBalance` object which should be returned to the calling application.
 
@@ -1073,7 +1073,7 @@ return new OkObjectResult(response);
 
 
 
-### `GetTokenBalances`
+#### `GetTokenBalances`
 
 1. In the **try** block, add a call to the `GetTokenBalances` operation of the **Account** endpoint of `Web3Api`. This operation returns a List\<Erc20TokenBalance\> object which should be returned to the calling application.
 
@@ -1085,7 +1085,7 @@ return new OkObjectResult(response);
 
 
 
-### `GetNfts`
+#### `GetNfts`
 
 1. Add code to capture the `cursor` and `limit` parameters passed into the method:
 
@@ -1118,7 +1118,7 @@ return new OkObjectResult(response);
 
 
 
-### Complete `MoralisPlayFab.cs`
+#### Complete `MoralisPlayFab.cs`
 
 Your complete `MoralisPlayFab.cs` file should look similar to:
 
@@ -1473,7 +1473,7 @@ namespace PlayFab.AzureFunctions
 
 
 
-# Deploy Azure Functions with Visual Studio Code
+## Deploy Azure Functions with Visual Studio Code
 
  This section walks through deploying Azure Functions.
 
@@ -1503,13 +1503,13 @@ namespace PlayFab.AzureFunctions
 
 7. If you want, repeat step #6 above for all the other functions we added.
 
-# Set up Unity and Connect Microsoft Azure PlayFab
+## Set up Unity and Connect Microsoft Azure PlayFab
 
 This section describes how to set up a Unity application and connect to PlayFab and enable secure Web3 authentication using the Moralis SDK.
 
 > 📘 
 > 
-> Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/docs/web3-multiplayer-playground).
+> Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/example-dapps/evm/web3-unity-multiplayer-playground).
 
 1. Download as ZIP and extract the [Moralis PlayFab Unity demo project](https://github.com/MoralisWeb3/demo-unity-moralis-auth-via-playfab):
 2. Open the project in Unity (recommend version: 2021.3.10f1).
@@ -1530,7 +1530,7 @@ This section describes how to set up a Unity application and connect to PlayFab 
 
 ![](/img/content/c489b31-unity_4.png "unity_4.png")
 
-## Programmatically Interact with Moralis via PlayFab
+### Programmatically Interact with Moralis via PlayFab
 
 If you choose the **Starter** project, this section will walk you through the code necessary to integrate with Moralis via PlayFab. 
 
@@ -2029,7 +2029,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
 }
 ```
 
-### Steps to Wire Up `MoralisWeb3AuthService`
+#### Steps to Wire Up `MoralisWeb3AuthService`
 
 1. In the Unity UI, in the **Hierarchy** view, select the `MoralisWeb3AuthService` object and add entries under both **On Success** and **On Failed**. Drag **AuthenticationKit** into each of these, selecting **AuthenticationKit/Connect** for **On Success** and **AuthenticationKit/Disconnect** for **On Failed**:
 
@@ -2039,7 +2039,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
 
 ![](/img/content/d657299-unity_4d.png "unity_4d.png")
 
-## Play the Game!
+### Play the Game!
 
 1. Run the **SampleScene** and select **PLAY AS GUEST**:
 

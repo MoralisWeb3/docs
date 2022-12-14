@@ -24,8 +24,8 @@ The Auth API provides out-of-the-box all the necessary APIs you need to authenti
 The use cases for our Auth API are truly endless! Some popular use cases include:
 
 - [Sign in with Metamask](/authentication-api/tutorials/how-to-sign-in-with-metamask)
-- [Sign in with WalletConnect](/tutorials/how-to-sign-in-with-walletconnect)
+- [Sign in with WalletConnect](/authentication-api/tutorials/how-to-sign-in-with-walletconnect)
 - [Sign in with RainbowKit](/authentication-api/tutorials/how-to-sign-in-with-rainbowkit)
-- [Sign in with Coinbase Wallet](/tutorials/how-to-sign-in-with-coinbase-wallet)
+- [Sign in with Coinbase Wallet](/authentication-api/tutorials/how-to-sign-in-with-coinbase-wallet)
 - [Sign in with Web3Auth](/authentication-api/tutorials/how-to-sign-in-with-web3authio)
 - [Sign in with Magic.link](/authentication-api/tutorials/how-to-sign-in-with-magiclink)
