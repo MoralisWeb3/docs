@@ -17,9 +17,11 @@ You can find the repository with the final code here: <https://github.com/Morali
 
 ![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.png)
 
-> 📘 
-> 
-> You can find the final dapp with implemented style on our [GitHub](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/beta/demos/nextjs).
+:::info 
+
+You can find the final dapp with implemented style on our [GitHub](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/beta/demos/nextjs).
+
+:::
 
 ## Prerequisites
 
@@ -73,13 +75,17 @@ NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 
 
 
-> ❗️ 
-> 
-> Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::danger
 
-> 🚧 
-> 
-> Every time you modify the `.env.local` file, you need to restart your dapp.
+Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+
+:::
+
+:::caution
+
+Every time you modify the `.env.local` file, you need to restart your dapp.
+
+:::
 
 ## Wrapping App with `WagmiConfig` and `SessionProvider`
 
@@ -113,7 +119,7 @@ export default MyApp;
 
 
 
-> 📘 
+:::info 
 > 
 > NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
 

@@ -3,9 +3,11 @@ title: "Azure PlayFab (NodeJS) with Unity"
 slug: "azure-playfab-nodejs-unity"
 description: "This tutorial will teach you how to set up a complete gaming backend platform for Web3 games. We use Unity as our game engine, Microsoft Azure PlayFab as our gaming backend, and Moralis to enable all the Web3 magic! You'll also learn how to use Web3 authentication and how to retrieve a user's native balance, a list of ERC-20 tokens, and the first ten NFTs they own using the Web3 API."
 ---
-> 📘 Compatible with NodeJS and .NET
-> 
-> You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](#set-up-azure-functions).
+:::info Compatible with NodeJS and .NET
+
+You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](#set-up-azure-functions).
+
+:::
 
 ## The Steps We Will Take
 
@@ -29,7 +31,7 @@ This section describes how to set up your Moralis account and find the Web3 API 
 
 An active PlayFab account is required to use the functionality provided by PlayFab. Please note that a free plan is available. This section describes how to set up a PlayFab account and configure your first application.
 
-> 📘 What is Microsoft Azure PlayFab?
+:::info What is Microsoft Azure PlayFab?
 > PlayFab is a complete backend platform for live games with managed game services. PlayFab backend services reduce the barriers to launch for game developers, offering both large and small studios cost-effective development solutions that scale with their games and help them engage, retain, and monetize players. PlayFab enables developers to use the intelligent cloud to build and operate games, analyze gaming data, and improve overall gaming experiences. 
 > [Learn more](https://docs.microsoft.com/en-us/gaming/playfab/what-is-playfab)
 
@@ -49,7 +51,7 @@ An active PlayFab account is required to use the functionality provided by PlayF
 
 To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure Functions integrates natively with PlayFab; however, Azure Functions is a separate product and requires an account separate from PlayFab.
 
-> 📘 What is Azure Functions?
+:::info What is Azure Functions?
 > 
 > Azure Functions provides serverless compute. You can use Azure Functions to build web APIs, respond to database changes, process IoT streams, manage message queues, and more. PlayFab uses Azure Functions to make it possible to use Moralis on top of the PlayFab backend.
 > 
@@ -102,7 +104,7 @@ To run Moralis on the backend of PlayFab, we need to use Azure Functions. Azure 
 
 This section walks through coding functions that integrate the Moralis SDK.
 
-> 📘 Main requirements
+:::info Main requirements
 > 
 > You can follow this section using **NodeJS** or **.NET**. Either way, make sure you have the **following requirements** in place:
 > 
@@ -119,7 +121,7 @@ This section walks through coding functions that integrate the Moralis SDK.
 
 #### Function creation
 
-> 📘 
+:::info 
 > 
 > The completed project with all the functions ready can be found on [GitHub](https://github.com/MoralisWeb3/example-auth-azure-functions-nodejs). **Download** it, **open** it with VS Code and jump to **_Installing dependencies_** to complete this section. However, continue exploring the section to learn how to do it yourself.
 
@@ -554,7 +556,7 @@ Before you get started, make sure you have the following requirements in place:
 
 #### Project Setup
 
-> 📘 
+:::info 
 > 
 > The completed project with all the functions ready can be found on [GitHub](https://github.com/MoralisWeb3/example-auth-azure-functions). However, continue exploring this section to learn how to do it yourself.
 
@@ -1507,7 +1509,7 @@ namespace PlayFab.AzureFunctions
 
 This section describes how to set up a Unity application and connect to PlayFab and enable secure Web3 authentication using the Moralis SDK.
 
-> 📘 
+:::info 
 > 
 > Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/example-dapps/evm/web3-unity-multiplayer-playground).
 

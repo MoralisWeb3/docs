@@ -2,14 +2,16 @@
 title: "Authentication"
 slug: "authentication"
 ---
-> 📘 
-> 
-> For a complete guide on how to handle authentication and examples, see the following:
-> 
-> - /authentication-api
-> - https://docs.moralis.io/reference/requestchallengeevm
-> 
-> Make sure to read these guides to understand the complete flow of how to integrate Web3 authentication.
+:::info 
+
+For a complete guide on how to handle authentication and examples, see the following:
+
+- /authentication-api
+- https://docs.moralis.io/reference/requestchallengeevm
+
+Make sure to read these guides to understand the complete flow of how to integrate Web3 authentication.
+
+:::
 
 To authenticate via the SDK, you need to implement two methods:
 

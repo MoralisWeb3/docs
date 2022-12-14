@@ -92,11 +92,11 @@ function HomePage() {
 export default HomePage
 ```
 
+:::info
 
+NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-features/pages). A page is a [React component](https://reactjs.org/docs/components-and-props.html) exported from a .js, .jsx, .ts, or .tsx file in the pages directory.
 
-> 📘 
-> 
-> NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-features/pages). A page is a [React component](https://reactjs.org/docs/components-and-props.html) exported from a .js, .jsx, .ts, or .tsx file in the pages directory.
+:::
 
 ## Add Moralis to Your NextJS Dapp
 
@@ -112,9 +112,11 @@ MORALIS_API_KEY=replace_me
 
 
 
-> 📘 
-> 
-> NextJS `.env.local` variables are accessible to the entire application and are never exposed to the browser. They are stored only on the server side, which makes them safe.
+:::info
+
+NextJS `.env.local` variables are accessible to the entire application and are never exposed to the browser. They are stored only on the server side, which makes them safe.
+
+:::
 
 3. After `.env.local` is added, you can start your app:
 
@@ -124,9 +126,11 @@ npm run dev
 
 
 
-> 🚧 
-> 
-> Every time you modify the `.env.local` file, you need to restart your app.
+:::caution
+
+Every time you modify the `.env.local` file, you need to restart your app.
+
+:::
 
 ### Setup @moralisweb3/next
 

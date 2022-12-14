@@ -73,9 +73,11 @@ export default Protected;
 
 
 
-> 📘 
-> 
-> The `getServerSideProps` only runs on the server side and never runs on the browser. When you request a page, `getServerSideProps` runs at request time, and this page will be pre-rendered with the returned props.
+:::info 
+
+The `getServerSideProps` only runs on the server side and never runs on the browser. When you request a page, `getServerSideProps` runs at request time, and this page will be pre-rendered with the returned props.
+
+:::
 
 3. Extend `getServerSideProps` . We will get the user wallet address from the user session object and check if the user has at least one specific NFT using `Moralis.EvmApi`:
 

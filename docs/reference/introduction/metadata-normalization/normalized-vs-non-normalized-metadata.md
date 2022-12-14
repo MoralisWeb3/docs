@@ -91,14 +91,16 @@ Here is the definition of normalized metadata:
       }
 ```
 
-> 📘 NFT Metadata format structure
->
-> Moralis created conversion processes especially for CryptoPunks, Bored Ape Yacht Club, E.N.S. and OpenSea NFTs.
->
-> If an NFT is not one of these targeted types then a default transformation, based on NFT Type (ERC721 or ERC1155) is used.
->
-> **The problem is that there are no real standards for NFT Metadata** so many projects develop their own structure.  
-> The new process will transform any metadata of the target types and if the NFT is not one of the target types, should be able to transform most of the information in the NFT's metadata and deliver it in the known format.
+:::info NFT Metadata format structure
+
+Moralis created conversion processes especially for CryptoPunks, Bored Ape Yacht Club, E.N.S. and OpenSea NFTs.
+
+If an NFT is not one of these targeted types then a default transformation, based on NFT Type (ERC721 or ERC1155) is used.
+
+**The problem is that there are no real standards for NFT Metadata** so many projects develop their own structure.  
+The new process will transform any metadata of the target types and if the NFT is not one of the target types, should be able to transform most of the information in the NFT's metadata and deliver it in the known format.
+
+:::
 
 Normalized NFT metadata provides you with a clean, predictable JSON format that will help you to work with NFT metadata easier.
 

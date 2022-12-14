@@ -36,7 +36,11 @@ pnpm add moralis
 
 ## Initialize Moralis' NodeJS SDK
 
-> 🚧 Make Sure to Store the `apiKey` Value Inside a `.env` File
+:::caution
+
+Make Sure to Store the `apiKey` Value Inside a `.env` File
+
+:::
 
 To initialize the SDK, add the following code to your NodeJS dapp:
 

@@ -11,9 +11,11 @@ description: "This tutorial shows you how to connect an **Unreal game** to a **M
 
 # Open sample game
 
-> 📘 Download sample game
-> 
-> Go to [GitHub](https://github.com/MoralisWeb3/demo-unreal-aws-lambda) and clone/download the repository.
+:::info Download sample game
+
+Go to [GitHub](https://github.com/MoralisWeb3/demo-unreal-aws-lambda) and clone/download the repository.
+
+:::
 
 After downloading the project, launch Unreal Engine 5.1 and under _RECENT PROJECTS_, choose _**Browse**_:
 
@@ -31,7 +33,7 @@ Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 
 ![](/img/content/e3e2255-image.png)
 
-> 📘 
+:::info 
 > 
 > As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
 
@@ -54,7 +56,7 @@ Zoom out to visualize and locate **4 important areas**:
 
 ## Manage input
 
-> 📘 
+:::info 
 > 
 > No need to do any action here. Just informative.
 
@@ -64,7 +66,7 @@ Apart from enabling and disabling the player's input, here we get the `wallet ad
 
 ## Construct request body
 
-> 📘 
+:::info 
 > 
 > No need to do any action here. Just informative.
 
@@ -90,9 +92,9 @@ Click _**Compile**_ and then the _**Save icon**_:
 
 ![](/img/content/c03b362-image.png)
 
-> 👍 
-> 
-> Everything is set up correctly.
+:::tip Everything is set up correctly.
+
+:::
 
 # Play the game
 
@@ -104,11 +106,11 @@ Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 
 ![](/img/content/98ccd15-image.png)
 
-> 📘 
+:::info 
 > 
 > In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](https://docs.moralis.io/reference/supported-chains).
 
-> 📘 
+:::info 
 > 
 > Also make sure to enter an address that holds some NFTs to see them on the game.
 
@@ -116,6 +118,8 @@ On the left side we can see our **NFTs** displayed and our **Native balance** on
 
 ![](/img/content/d5835b1-image.png)
 
-> 👍 Congratulations!
-> 
-> You've completed the **Moralis & Unreal Engine 5** integration tutorial.
+:::tip Congratulations!
+
+You've completed the **Moralis & Unreal Engine 5** integration tutorial.
+
+:::
