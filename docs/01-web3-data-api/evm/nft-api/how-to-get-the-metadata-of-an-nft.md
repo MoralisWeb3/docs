@@ -116,22 +116,6 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
-To execute the program, run the following command:
-
-```shell Shell (JavaScript)
-node index.js
-```
-```Text Shell (TypeScript)
-node index.ts
-```
-```python Shell (Python)
-python index.py
-```
-
-
-
 ## Step 3: Run the script
 
 import RunTheScript from '/docs/partials/_run-the-script.mdx';
