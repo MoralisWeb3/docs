@@ -6,6 +6,7 @@ description: "Stream blockchain data into your backend via webhooks. Ethereum, P
 sidebar_position: 1
 image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
 ---
+
 ![](/img/content/d06bbe5-Moralis-Streams-API.jpeg)
 
 ## What is the Streams API?
@@ -77,7 +78,7 @@ graph TD;
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using JS SDK](/streams-api/your-first-stream-using-js-sdk)
+- [Your First Stream using JS SDK](/streams-api/getting-started/your-first-stream-using-js-sdk)
 - [Your First Stream using WebUI](/streams-api/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
