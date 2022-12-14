@@ -25,6 +25,12 @@ Here you'll need two parameters: `address` and `network`.
 
 Once you have obtained both the `address` and `network`, you can copy the following code:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
 ```javascript index.js
 const Moralis = require('moralis').default;
 const { SolNetwork } = require('@moralisweb3/sol-utils');
@@ -49,6 +55,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
 ```typescript index.ts
 import Moralis from "moralis";
 import { SolNetwork } from "@moralisweb3/sol-utils";
@@ -73,6 +83,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
 ```python index.py
 from moralis import sol_api
 
@@ -90,6 +104,9 @@ result = sol_api.account.get_portfolio(
 print(result)
 ```
 
+</TabItem>
+</Tabs>
+
 
 
 To execute the program, run the following command:
@@ -106,7 +123,13 @@ python index.py
 
 
 
-In your terminal, you should see the following response:
+## Step 3: Run the script
+
+import RunTheScript from '/docs/partials/_run-the-script.mdx';
+
+<RunTheScript />
+
+In your terminal, you should see the following JSON response:
 
 ```json
 {
@@ -134,8 +157,6 @@ In your terminal, you should see the following response:
   }
 }
 ```
-
-
 
 Congratulations 🥳 You just got the Solana Portfolio balance of a wallet address with just a few lines of code using the Moralis Solana API!
 

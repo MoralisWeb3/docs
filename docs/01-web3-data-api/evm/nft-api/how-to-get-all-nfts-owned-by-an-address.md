@@ -24,6 +24,12 @@ Here you'll need two parameters: `address` and `chain`.
 
 Once you've obtained both the `address` and `chain`, you can copy the following code:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
 ```javascript index.js
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
@@ -48,6 +54,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
 ```typescript index.ts
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
@@ -72,6 +82,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
 ```python index.py
 from moralis import evm_api
 import json
@@ -96,23 +110,16 @@ result = evm_api.nft.get_wallet_nfts(
 print(json.dumps(result, indent=4))
 ```
 
+</TabItem>
+</Tabs>
 
+## Step 3: Run the script
 
-To execute the program, run the following command:
+import RunTheScript from '/docs/partials/_run-the-script.mdx';
 
-```Text Shell (JavaScript)
-node index.js
-```
-```Text Shell (TypeScript)
-node index.ts
-```
-```Text Shell (Python)
-python index.py
-```
+<RunTheScript />
 
-
-
-In your terminal, you should see the following response:
+In your terminal, you should see the following JSON response:
 
 ```json Response
 {
@@ -176,8 +183,6 @@ In your terminal, you should see the following response:
   "status": "SYNCED"
 }
 ```
-
-
 
 Congratulations 🥳 you just got all the NFTs owned by an address with just a few lines of code using Moralis NFT API!
 

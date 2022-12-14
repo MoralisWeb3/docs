@@ -24,6 +24,12 @@ Here, you'll need two parameters: `address` and `chain`.
 
 Once you have obtained both the `address` and `chain`, you can copy the following code:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
 ```javascript index.js
 const Moralis = require('moralis').default;
 const { EvmChain } = require('@moralisweb3/common-evm-utils');
@@ -48,6 +54,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
 ```typescript index.ts
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-util";
@@ -72,6 +82,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
 ```python index.py
 from moralis import evm_api
 
@@ -92,6 +106,9 @@ result = evm_api.nft.get_nft_contract_transfers(
 print(result)
 ```
 
+</TabItem>
+</Tabs>
+
 
 
 To execute the program, run the following command:
@@ -108,7 +125,13 @@ python index.py
 
 
 
-In your terminal, you should see the following response:
+## Step 3: Run the script
+
+import RunTheScript from '/docs/partials/_run-the-script.mdx';
+
+<RunTheScript />
+
+In your terminal, you should see the following JSON response:
 
 ```json
 {
@@ -175,8 +198,6 @@ In your terminal, you should see the following response:
   "block_exists": true
 }
 ```
-
-
 
 Congratulations 🥳 You just got all the transfers for an NFT collection with just a few lines of code using the Moralis NFT API!
 

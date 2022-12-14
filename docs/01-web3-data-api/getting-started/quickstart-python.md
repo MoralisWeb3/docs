@@ -275,8 +275,6 @@ result = evm_api.nft.get_wallet_nft_collections(
 print(result)
 ```
 
-
-
 ### How to Get NFT Owners by Contract Address Using Python
 
 ```python Python
@@ -299,8 +297,6 @@ result = evm_api.nft.get_nft_owners(
 
 print(result)
 ```
-
-
 
 ## Creating a Stream Using Python SDK
 
@@ -405,7 +401,5 @@ result = streams.evm.add_address_to_stream(
 
 print(result)
 ```
-
-
 
 You can check here the syntax for all the other functions from the Python SDK: <https://moralisweb3.github.io/Moralis-Python-SDK/>

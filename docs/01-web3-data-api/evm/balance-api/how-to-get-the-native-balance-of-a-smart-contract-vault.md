@@ -18,11 +18,17 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of an ERC20 token vault, Moralis provides you the `[getNativeBalance](https://docs.moralis.io/reference/getnativebalance)` API endpoint.
+In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](https://docs.moralis.io/reference/getnativebalance) API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
 Once you have obtained both the `address` and `chain`, you can copy the following code:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
 const Moralis = require("moralis").default;
@@ -49,6 +55,10 @@ const runApp = () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
 ```typescript index.ts
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-util";
@@ -74,6 +84,10 @@ const runApp = () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
 ```python index.py
 from moralis import evm_api
 
@@ -93,23 +107,16 @@ result = evm_api.balance.get_native_balance(
 print(result)
 ```
 
+</TabItem>
+</Tabs>
 
+## Step 3: Run the script
 
-To execute the program, run the following command:
+import RunTheScript from '/docs/partials/_run-the-script.mdx';
 
-```Text Shell (JavaScript)
-node index.js
-```
-```Text Shell (TypeScript)
-node index.ts
-```
-```Text Shell (Python)
-python index.py
-```
+<RunTheScript />
 
-
-
-In your terminal, you should see the following response:
+In your terminal, you should see the following JSON response:
 
 ```json
 [
@@ -118,8 +125,6 @@ In your terminal, you should see the following response:
 	}
 ]
 ```
-
-
 
 Congratulations 🥳 You just got the native balance of an ERC20 token vault with just a few lines of code using the Moralis Balance API!
 

@@ -18,11 +18,17 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get Pair Reserves of A Uniswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a `[getPairAddress](https://docs.moralis.io/reference/getpairaddress)` endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](https://docs.moralis.io/reference/getpairaddress) endpoint to do so.
 
 Here you'll need two parameters: `pairAddress` and `address`.
 
 Once you've obtained the `pairAddress` and `address`, you can copy the following code:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
 const Moralis = require('moralis').default;
@@ -48,6 +54,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
 ```typescript index.ts
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-util";
@@ -72,6 +82,10 @@ const runApp = async () => {
 
 runApp();
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
 ```python index.py
 from moralis import evm_api
 
@@ -92,23 +106,16 @@ print(result)
 
 ```
 
+</TabItem>
+</Tabs>
 
+## Step 3: Run the script
 
-To execute the program, run the following command:
+import RunTheScript from '/docs/partials/_run-the-script.mdx';
 
-```Text Shell (JavaScript)
-node index.js
-```
-```Text Shell (TypeScript)
-node index.ts
-```
-```Text Shell (Python)
-python index.py
-```
+<RunTheScript />
 
-
-
-In your terminal, you should see the following response:
+In your terminal, you should see the following JSON response:
 
 ```json
 {
@@ -116,8 +123,6 @@ In your terminal, you should see the following response:
   "reserve1": "794388536599735508826"
 }
 ```
-
-
 
 Congratulations 🥳 You just get the pair reserves of a Uniswap V2 liquidity pool with just a few lines of code using the Moralis DeFi API!
 

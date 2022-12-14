@@ -86,8 +86,6 @@ result = streams.evm.create_stream(
 print(result)
 ```
 
-
-
 ### Via WebUI
 
 1. Create a new Stream
