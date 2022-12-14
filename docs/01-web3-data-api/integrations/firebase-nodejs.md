@@ -181,7 +181,7 @@ export const getBalance = functions.https.onCall(async (data: GetBalanceData) =>
 
 
 
-The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/docs/introduction-to-moralis-sdk) to check all Moralis features.
+The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/web3-data-api/getting-started/moralis-sdk) to check all Moralis features.
 
 > 🚧 Secure Firebase Function
 > 
@@ -238,4 +238,4 @@ If you have any problem with the CORS on production, you should probably allow u
 
 ## Further Reading
 
-- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](/docs/web3-firebase-authentication).
+- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](/authentication-api/integrations/firebase-nodejs).

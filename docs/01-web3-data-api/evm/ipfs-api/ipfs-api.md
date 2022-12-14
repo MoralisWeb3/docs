@@ -14,5 +14,6 @@ For more info on how IPFS works please see [What is IPFS?](https://docs.ipfs.tec
 
 The IPFS API provides the following functionality out of the box to power the dapps you are building:
 
-- [Upload a folder to IPFS](/docs/how-to-upload-a-folder-to-ipfs)
-- [Upload NFT metadata (JSON) to IPFS](/docs/how-to-upload-nft-metadata-to-ipfs)
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />  

@@ -1,7 +1,7 @@
 ---
 title: "AWS Lambda (NodeJS)"
 slug: "aws-lambda-nodejs"
-description: "This tutorial shows how to easily integrate our [NodeJS SDK](/docs/introduction-to-moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/getting-started/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 > 📘 What is AWS Lambda?
 > 
@@ -388,7 +388,7 @@ serverless invoke -f getNativeBalance --path event.json
 
 > 📘 
 > 
-> To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/docs/your-first-dapp-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
+> To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
 
 ## Project setup
 
