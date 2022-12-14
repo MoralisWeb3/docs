@@ -9,7 +9,7 @@ Yes, our Streams API is in production now.
 
 ### How are Streams priced?
 
-Please see [Records and pricing](/docs/records-and-pricing) 
+Please see [Records and pricing](/streams-api/records-and-pricing) 
 
 ### Can I disable the unconfirmed webhook requests?
 

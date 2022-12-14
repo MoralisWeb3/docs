@@ -45,7 +45,7 @@ The use cases for our EVM API are truly endless! Some popular use cases include:
 
 Learn the fundamentals of all Moralis EVM APIs:
 
-- [NFT API](/docs/nft-api)
+- [NFT API](/web3-data-api/evm/nft-api)
 - [Token API](/docs/token-api)
 - [Balance API](/docs/balance-api)
 - [Transaction API](/docs/transaction-api)

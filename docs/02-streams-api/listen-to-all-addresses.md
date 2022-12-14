@@ -5,10 +5,10 @@ description: "Monitor All Transactions by a Topic"
 sidebar_position: 4
 ---
 
-- Listen to all NFT contract transfers [tutorial](/docs/listen-to-all-nft-contract-transfers)
-- Listen to all events from new contracts specific to a contract factory [tutorial](/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory)
-- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address)
-- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000)
+- Listen to all NFT contract transfers [tutorial](/streams-api/how-to-listen-all-nft-transfers)
+- Listen to all events from new contracts specific to a contract factory [tutorial](/streams-api/how-to-listen-all-events-from-a-contract-factory)
+- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address)
+- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/streams-api/how-to-listen-all-er-c20-token-transfers-over-certain-amount-sent-by-specific-address)
 
 Say you have the following topic `Transfer(address,address,uint256)`. You can get every transfer happening on chain by setting the topic to `Transfer(address,address,uint256)` and setting `allAddresses` to `true`. That means you will get all transactions that match this topic. **This is not available in all the plans.**
 

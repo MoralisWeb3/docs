@@ -46,10 +46,10 @@ graph TD;
 
 ### Listen to all addresses use cases
 
-- Listen to all NFT contract transfers [tutorial](/docs/listen-to-all-nft-contract-transfers)
-- Listen to all events from new contracts specific to a contract factory [tutorial](/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory)
-- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address)
-- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000)
+- Listen to all NFT contract transfers [tutorial](/streams-api/how-to-listen-all-nft-transfers)
+- Listen to all events from new contracts specific to a contract factory [tutorial](/streams-api/how-to-listen-all-events-from-a-contract-factory)
+- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address)
+- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/streams-api/how-to-listen-all-er-c20-token-transfers-over-certain-amount-sent-by-specific-address)
 
 ## High reliability
 
@@ -82,19 +82,19 @@ graph TD;
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using JS SDK](/docs/your-first-stream-using-js-sdk)
+- [Your First Stream using JS SDK](/streams-api/getting-started/your-first-stream-using-js-sdk)
 - [Your First Stream using WebUI](/streams-api/getting-started/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
 ## How Streams are priced
 
-See [Records and pricing](/docs/records-and-pricing)
+See [Records and pricing](/streams-api/records-and-pricing)
 
 ## Learn more advanced applications of Streams
 
-- [Monitor specific NFTs](/docs/monitor-specific-nfts)
-- [Monitor for Burn/Mint Tokens](/docs/monitor-for-burnmint-tokens-1)
-- [Monitor ENS Name Registrations](/docs/monitor-ens-name-registrations)
+- [Monitor specific NFTs](/streams-api/how-to-monitor-specific-nfts)
+- [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints)
+- [Monitor ENS Name Registrations](/streams-api/how-to-monitor-ens-domain-registrations)
 
 ## Demos
 
