@@ -5,16 +5,16 @@ description: "This tutorial will teach you how to set up a complete gaming backe
 ---
 > 📘 Compatible with NodeJS and .NET
 > 
-> You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](/docs/using-unity-playfab#set-up-azure-functions).
+> You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](#set-up-azure-functions).
 
 ## The Steps We Will Take
 
 1. Set up a Moralis account
-2. Set up <<glossary:Microsoft Azure PlayFab>> (free plan)
-3. Set up <<glossary:Azure Functions>>
-4. Create <<glossary:Azure Functions>> with Visual Studio Code
-5. Deploy <<glossary:Azure Functions>> with Visual Studio Code
-6. Set up Unity and connect <<glossary:Microsoft Azure PlayFab>> 
+2. Set up Microsoft Azure PlayFab (free plan)
+3. Set up Azure Functions
+4. Create Azure Functions with Visual Studio Code
+5. Deploy Azure Functions with Visual Studio Code
+6. Set up Unity and connect Microsoft Azure PlayFab 
 
 ## Set up a Moralis Account
 

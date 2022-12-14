@@ -5,11 +5,11 @@ description: "This tutorial will teach you how to host your custom backend (powe
 ---
 ## The Steps We Will Take
 
-- [Customize code from the _**Your First Dapp - NodeJS**_ tutorial](/docs/using-unity-google-cloud#customize-code-from-your-first-dapp---nodejs)
-  - [Adding authentication methods](/docs/using-unity-google-cloud#adding-authentication-methods)
-  - [Adding authentication operations](/docs/using-unity-google-cloud#adding-authentication-operations)
-- [Run on Google Cloud](/docs/using-unity-google-cloud#run-on-google-cloud)
-- [Calling from Unity](/docs/using-unity-google-cloud#calling-from-unity)
+- [Customize code from the _**Your First Dapp - NodeJS**_ tutorial](#customize-code-from-your-first-dapp---nodejs)
+  - [Adding authentication methods](#adding-authentication-methods)
+  - [Adding authentication operations](#adding-authentication-operations)
+- [Run on Google Cloud](#run-on-google-cloud)
+- [Calling from Unity](#calling-from-unity)
 
 ## Prerequisites
 

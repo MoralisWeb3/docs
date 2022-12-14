@@ -33,7 +33,7 @@ Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 
 > 📘 
 > 
-> As stated in the [prerequisites](/docs/aws-lambda-unreal-5#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
+> As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
 
 # Setting up
 
@@ -45,10 +45,10 @@ This is the blueprint holding most of the logic of this sample game.
 
 Zoom out to visualize and locate **4 important areas**:
 
-1. [**Manage Input**](/docs/aws-lambda-unreal-5#manage-input)
-2. [**Construct Request Body**](/docs/aws-lambda-unreal-5#construct-request-body)
-3. [**Get Native Balance**](/docs/aws-lambda-unreal-5#get-native-balance)
-4. [**Get Wallet NFTs**](/docs/aws-lambda-unreal-5#get-wallet-nfts)
+1. [**Manage Input**](#manage-input)
+2. [**Construct Request Body**](#construct-request-body)
+3. [**Get Native Balance**](#get-native-balance)
+4. [**Get Wallet NFTs**](#get-wallet-nfts)
 
 ![](/img/content/0d0bd99-image.png)
 
@@ -106,7 +106,7 @@ Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 
 > 📘 
 > 
-> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](https://docs.moralis.io/reference/supported-chains).
+> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/reference/supported-chains).
 
 > 📘 
 > 
