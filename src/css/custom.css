@@ -56,3 +56,7 @@
 .card--homepage *:last-child {
   margin-bottom: 0;
 }
+
+.DocSearch-Button-Placeholder {
+  color: #42516b;
+}
