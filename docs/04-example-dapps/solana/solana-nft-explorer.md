@@ -74,9 +74,11 @@ Here is the code responsible for it.
 
 > Only partical code is shown here to keep it clean. Visit `pages/index.jsx` to view the entire code.
 
-> 📘 Instruction
-> 
-> Read the comments in the below code in numbered order.
+:::info Instruction
+
+Read the comments in the below code in numbered order.
+
+:::
 
 ```typescript index.jsx
 // Refer full code in `pages/index.jsx`

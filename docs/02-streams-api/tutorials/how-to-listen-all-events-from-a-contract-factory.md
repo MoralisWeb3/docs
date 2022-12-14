@@ -5,9 +5,17 @@ description: "Learn how to listen all events from a contract factory using Moral
 ---
 Let's create a stream that monitors all the events specific to a contract factory.
 
-> 📘 This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::info 
 
-> 📘 You will need an ABI that is used only on your contracts in order to not receive the events from other contracts that use the same ABI.
+This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+
+:::
+
+:::info 
+
+You will need an ABI that is used only on your contracts in order to not receive the events from other contracts that use the same ABI.
+
+:::
 
 ### Programmatically
 

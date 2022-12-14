@@ -8,7 +8,11 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 ## What is Web3Auth?
 
-> 📘 Visit [Web3Auth docs](https://web3auth.io/docs/index.html) to get more information.
+:::info 
+
+Visit [Web3Auth docs](https://web3auth.io/docs/index.html) to get more information.
+
+:::
 
 Web3Auth is a pluggable auth infrastructure for Web3 wallets and applications. It streamlines the onboarding of mainstream and crypto-native users in under a minute by providing experiences they're most comfortable with. With support for all social logins, web and mobile-native platforms, wallets, and other key management methods, Web3Auth results in a standard cryptographic key provider specific to the user and application.
 

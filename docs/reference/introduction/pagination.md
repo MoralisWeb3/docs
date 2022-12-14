@@ -101,8 +101,8 @@ for j in range(0, 10):
     time.sleep(1.1)
 ```
 
+:::info Limit value for cursor
 
+The limit param value for cursor can be set at page 1 and the same limit value will be used through the following pages, you cannot change the limit value after page 1.
 
-> 📘 Limit value for cursor
-> 
-> The limit param value for cursor can be set at page 1 and the same limit value will be used through the following pages, you cannot change the limit value after page 1.
+:::

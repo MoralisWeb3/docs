@@ -12,9 +12,11 @@ In this tutorial, we will use two Firebase services:
 - [Hosting](https://firebase.google.com/docs/hosting)
 - [Cloud Functions](https://firebase.google.com/docs/functions) (only in the "Pay as you go" billing plan)
 
-> 📘 Firebase Billing Plan
-> 
-> To deploy the final dapp, you need the "Pay as you go" billing plan for your project. However, for learning purposes, you can use the free Firebase emulator on your machine.
+:::info Firebase Billing Plan
+
+To deploy the final dapp, you need the "Pay as you go" billing plan for your project. However, for learning purposes, you can use the free Firebase emulator on your machine.
+
+:::
 
 Before starting, please install [the Firebase CLI](https://firebase.google.com/docs/cli). The easiest way to do this is to use `npm`:
 
@@ -181,11 +183,13 @@ export const getBalance = functions.https.onCall(async (data: GetBalanceData) =>
 
 
 
-The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/web3-data-api/getting-started/moralis-sdk) to check all Moralis features.
+The function calls the Moralis API and receives a wallet balance for a passed wallet address from the frontend app. In our example, we check the Ethereum network; however, the Moralis API supports almost all EVM networks. If interested, go to [the SDK documentation](/web3-data-api/moralis-sdk) to check all Moralis features.
 
-> 🚧 Secure Firebase Function
-> 
-> Keep in mind that this cloud function in the current state is **not secured** for an enormous amount of requests (check [the DOS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack)). This could increase the Moralis API usage and increases your costs. There are a lot of methods to secure your dapp. Check [our demo](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/firebase-proxy) with the rate-limiting per a user's IP.
+:::caution Secure Firebase Function
+
+Keep in mind that this cloud function in the current state is **not secured** for an enormous amount of requests (check [the DOS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack)). This could increase the Moralis API usage and increases your costs. There are a lot of methods to secure your dapp. Check [our demo](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/firebase-proxy) with the rate-limiting per a user's IP.
+
+:::
 
 ## Frontend App
 

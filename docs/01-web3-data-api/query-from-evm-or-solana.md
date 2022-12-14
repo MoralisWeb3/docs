@@ -3,11 +3,13 @@ title: "Query from EVM or Solana"
 slug: "query-from-evm-or-solana"
 description: "It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type."
 ---
-> 📘 Complete API Reference
-> 
-> Using the SDK is the simplest way to query blockchain data. This section demonstrates how to implement the API calls.
-> 
-> Please head over to [API references](https://docs.moralis.io/reference) to see the full power of the APIs and all possible methods.
+:::info Complete API Reference
+
+Using the SDK is the simplest way to query blockchain data. This section demonstrates how to implement the API calls.
+
+Please head over to [API references](https://docs.moralis.io/reference) to see the full power of the APIs and all possible methods.
+
+:::
 
 Querying the APIs can be done via the `EvmApi` and `SolApi` modules as follows:
 

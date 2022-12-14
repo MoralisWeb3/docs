@@ -2,9 +2,11 @@
 title: "Advanced Setup"
 slug: "advanced-setup"
 ---
-> 📘 Advanced Use Case
-> 
-> Use the advanced setup if you want more control over what modules to add to Moralis. In most cases, you won't need to do this (and can use the umbrella `moralis` package as described above, as this is easier to use).
+:::info Advanced Use Case
+
+Use the advanced setup if you want more control over what modules to add to Moralis. In most cases, you won't need to do this (and can use the umbrella `moralis` package as described above, as this is easier to use).
+
+:::
 
 ### Install Moralis
 

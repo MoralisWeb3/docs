@@ -119,7 +119,7 @@ This `ngrok.io` URL is what you will use when setting up the stream to receive t
 
 ## Setting Up A Stream
 
-Now we will set up a stream to send webhooks to our server every time a USDT amount over 50k is transferred. You can [follow this guide](/streams-api/getting-started/using-webui) to get started.
+Now we will set up a stream to send webhooks to our server every time a USDT amount over 50k is transferred. You can [follow this guide](/streams-api/using-webui) to get started.
 
 1. Create a new stream and select "Create From Scratch".
 2. Use these options for your stream:

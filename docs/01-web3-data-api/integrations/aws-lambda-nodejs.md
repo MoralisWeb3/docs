@@ -1,15 +1,20 @@
 ---
 title: "AWS Lambda (NodeJS)"
 slug: "aws-lambda-nodejs"
-description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/getting-started/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
-> 📘 What is AWS Lambda?
-> 
-> Lambda is a compute service that lets you run code without provisioning or managing servers. [More information](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
-> 📘 What is Serverless Framework?
-> 
-> It's an all-in-one development solution for auto-scaling apps on AWS Lambda. [More information](https://www.serverless.com/framework/docs).
+:::info What is AWS Lambda?
+
+Lambda is a compute service that lets you run code without provisioning or managing servers. [More information](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+
+:::
+
+:::info What is Serverless Framework?
+
+It's an all-in-one development solution for auto-scaling apps on AWS Lambda. [More information](https://www.serverless.com/framework/docs).
+
+:::
 
 ## Prerequisites
 
@@ -37,9 +42,11 @@ Also make sure to attach **_AdministratorAccess_** as a policy:
 
 
 
-> 🚧 
-> 
-> Be aware that the **_AdministratorAccess_** policy will give the **IAM user** a lot of control over your AWS environment. In a production environment, make sure to give the IAM users **only the policies they require**.
+:::caution
+
+Be aware that the **_AdministratorAccess_** policy will give the **IAM user** a lot of control over your AWS environment. In a production environment, make sure to give the IAM users **only the policies they require**.
+
+:::
 
 And last, but **very important**, download the credentials in a `.csv`:
 
@@ -70,7 +77,7 @@ AWS credentials are configured!
 
 ## Lambda App with multiple functions
 
-> 📘 Download completed project
+:::info Download completed project
 > 
 > You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies).
 
@@ -152,13 +159,17 @@ functions:
 
 ![](/img/content/cab8050-image.png)
 
-> 👍 Done
-> 
-> **With that, we have the project set up.**
+:::tip Done
 
-> 🚧 But remember...
-> 
-> Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+**With that, we have the project set up.**
+
+:::
+
+:::caution But remember...
+
+Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+
+:::
 
 ## Development
 
@@ -251,7 +262,7 @@ module.exports.handler = async (event) => {
 
 
 
-> 📘 
+:::info 
 > 
 > We pass the `address` and the `chain` as _**event** parameters_.
 
@@ -382,11 +393,11 @@ serverless invoke -f getNativeBalance --path event.json
 
 # Lambda NodeJS Express API
 
-> 📘 Download completed project
+:::info Download completed project
 > 
 > You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies-1).
 
-> 📘 
+:::info 
 > 
 > To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
 
@@ -458,13 +469,17 @@ functions:
 
 ![](/img/content/99cc149-image.png)
 
-> 👍 Done
-> 
-> **With that, we have the project set up.**
+:::tip Done
 
-> 🚧 But remember...
-> 
-> Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+**With that, we have the project set up.**
+
+:::
+
+:::caution But remember...
+
+Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+
+:::
 
 ## Development
 
@@ -540,7 +555,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 ![](/img/content/03e3db9-image.png)
 
-> 📘 
+:::info 
 > 
 > We pass the `address` and the `chain` as parameters in the **request body**.
 
@@ -575,7 +590,7 @@ app.post("/getWalletNfts", async (req, res, next) => {
 
 
 
-> 📘 
+:::info 
 > 
 > We pass the `address` and the `chain` as parameters in the **request body**.
 
@@ -722,13 +737,13 @@ To test, navigate to `[<http://localhost:3000`>](<http://localhost:3000`>) in yo
 
 **Very nice!** And the best thing is that if you make a change in `handler.js` file, it will be automatically applied and you'll see the result the next time you hit the endpoint. **This rapidly improves development time.**
 
-> 📘 
+:::info 
 > 
 > To test an endpoint that requires a request body, you can use [Postman](https://www.postman.com/downloads/) or any other API platform out there.
 
 # Deployment
 
-> 📘 Remember...
+:::info Remember...
 > 
 > If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
 > 
@@ -743,15 +758,16 @@ serverless deploy
 
 ![](/img/content/67fbb54-image.png)
 
-> 👍 Congratulations!
-> 
-> Congratulations! Your app is running on **AWS Lambda** :)
+:::tip Congratulations!
 
+Congratulations! Your app is running on **AWS Lambda** :)
+
+:::
 
 
 # AWS Lambda Console
 
-> 📘 
+:::info 
 > 
 > If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
@@ -772,7 +788,7 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 ## Testing Express API function
 
-> 📘 
+:::info 
 > 
 > Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-express-api-project-dev-api_**.
 
@@ -794,7 +810,7 @@ But because these are **POST requests** that need a body with _address_ and _cha
 
 ## Testing single functions
 
-> 📘 
+:::info 
 > 
 > Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-project-dev-getNativeBalance_** or **_aws-node-project-dev-getWalletNfts_**.
 
@@ -819,7 +835,7 @@ Then choose **_Test_** and see the result:
 
 ## Find function name
 
-> 📘 
+:::info 
 > 
 > Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
 
@@ -829,7 +845,7 @@ Marked with green is where you can find the **function name**:
 
 ## Copy function ARN
 
-> 📘 
+:::info 
 > 
 > Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
 

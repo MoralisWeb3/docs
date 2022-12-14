@@ -18,8 +18,7 @@ Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Da
 
 ![Moralis Admin (Sign Up)](/img/content/1de1f4d-Screen_Shot_2022-10-24_at_14.49.31.png)
 
-:::info
-📘 Keep Your API Key Safe
+:::info Keep Your API Key Safe
 
 Your API key is linked to your private account. Keep your keys safe by following these best practices:
 

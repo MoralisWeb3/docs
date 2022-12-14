@@ -4,7 +4,11 @@ slug: "../ipfs-api"
 ---
 ## What is the IPFS API?
 
-> 📘 Files uploaded to IPFS will be public and searchable by their CID.
+:::info
+
+Files uploaded to IPFS will be public and searchable by their CID.
+
+:::
 
 The IPFS API enables you to easily upload and get your data **pinned automatically** to IPFS. With IPFS API, your data will be stored in a decentralized manner, which makes it resistant to tampering and censorship.
 
