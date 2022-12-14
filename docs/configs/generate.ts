@@ -7,6 +7,10 @@ const apiReferenceConfigFile = "./docs/configs/api-reference/configs.json";
 let swaggerSchemas;
 let swaggerOAS = {};
 
+const camelToSnakeCase = (str) => {
+  return str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+};
+
 /**
  * @name translateSchemaReference
  * @description This function translate a schema in OAS to its JSON format
@@ -214,30 +218,29 @@ const generateConfigs = async () => {
       () => {}
     );
 
-    //     for (let key in swaggerOAS) {
-    //       if (["balance"].includes(key)) {
-    //         for (let index in Object.keys(swaggerOAS[key])) {
-    //           const functionName = Object.keys(swaggerOAS[key])[index];
-    //           // Write MDX Files for API Reference pages
-    //           await fs.writeFile(
-    //             `${swaggerPaths[key].filePath}/${functionName}.mdx`,
-    //             `---
-    // sidebar_position: ${index}
-    // sidebar_label: Get Balance
-    // ---
+    for (let key in swaggerOAS) {
+      for (let index in Object.keys(swaggerOAS[key])) {
+        const functionName = Object.keys(swaggerOAS[key])[index];
+        const snakeCaseFunctionName = camelToSnakeCase(functionName);
+        // Write MDX Files for API Reference pages
+        await fs.writeFile(
+          `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
+          `---
+sidebar_position: ${index}
+sidebar_label: Get Balance
+---
 
-    // import ApiReference from "@site/src/components/ApiReference";
-    // import config from "../../../../configs/api-reference/configs.json";
+import ApiReference from "@site/src/components/ApiReference";
+import config from "${swaggerPaths[key].importPath}";
 
-    // # Get Native Balance
+# Get Native Balance
 
-    // <ApiReference {...config.${key}.${functionName}} />
-    //           `,
-    //             () => {}
-    //           );
-    //         }
-    //       }
-    //     }
+<ApiReference {...config.${key}.${functionName}} />
+              `,
+          () => {}
+        );
+      }
+    }
   } catch (e) {
     console.error(e);
   }
