@@ -1,6 +1,6 @@
 ---
 title: "Moralis SDK"
-slug: "moralis-sdk"
+slug: "../moralis-sdk"
 ---
 ## What is the Moralis SDK?
 
