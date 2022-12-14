@@ -29,7 +29,7 @@ export const buildResponse = (field: ApiParam) => {
   }
 
   if (field.type === "object") {
-    return field.fields.reduce(
+    return field?.fields?.reduce(
       (obj, objField) => ({
         ...obj,
         [objField.name]: buildResponse(objField),
