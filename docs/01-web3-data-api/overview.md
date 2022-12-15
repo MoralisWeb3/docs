@@ -6,7 +6,7 @@ sidebar_position: 1
 image: /img/content/web3-data-api-3.jpg
 --- 
 
-# Web3 Data APIs
+# Web3 Data API
 
 ![](/img/content/web3-data-api-3.jpg)
 
