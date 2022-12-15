@@ -8,7 +8,7 @@ const oembed = require("remark-oembed");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Moralis Web3 Documentation",
-  url: "https://docs.moralis.io",
+  url: "https://docs-gold-iota.vercel.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
