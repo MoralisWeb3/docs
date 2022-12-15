@@ -11,17 +11,9 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask sig
 
 ## RainbowKit Installation
 
-```text npm
+```bash npm2yarn
 npm install @rainbow-me/rainbowkit
 ```
-```javascript yarn
-yarn add @rainbow-me/rainbowkit
-```
-```text pnpm
-pnpm add @rainbow-me/rainbowkit
-```
-
-
 
 ## RainbowKit Configuration
 

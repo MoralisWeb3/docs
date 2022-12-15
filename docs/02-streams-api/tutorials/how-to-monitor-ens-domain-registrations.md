@@ -5,8 +5,13 @@ description: "Learn how to monitor ENS domain registrations that costs higher th
 ---
 ### Programatically
 
-```javascript
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```javascript
 const ensNameRegisteredAbi = [{  
   "anonymous": false,  
   "inputs": [  
@@ -80,6 +85,9 @@ await Moralis.Streams.addAddress({
   address: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e", // ENS Registry address  
 });
 ```
+</TabItem>
+<TabItem value="py" label="Python">
+
 ```python Python
 """
 requiremets: moralis python sdk
@@ -143,7 +151,6 @@ advanced_options = [
   }  
 ]
 
-
 body = {
     "webhookUrl": webhook_url,
     "description": "ENS Name Registrations",
@@ -180,11 +187,9 @@ result = streams.evm.add_address_to_stream(
 )
 
 print(result)
-
-
-
 ```
-
+</TabItem>
+</Tabs>
 
 
 ### Via WebUI

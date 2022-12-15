@@ -21,17 +21,9 @@ To implement authentication using a Web3 wallet (e.g., MetaMask), we will use a 
 
 1. Install `@wagmi/core`, `ethers`, and `axios` dependencies - [`@wagmi/core@0.5.8`](https://github.com/wagmi-dev/wagmi/releases/tag/%40wagmi%2Fcore%400.5.8) is a stable version we can use with Angular 14:
 
-```text npm
+```bash npm2yarn
 npm install @wagmi/core@0.5.8 ethers axios
 ```
-```text yarn
-yarn add @wagmi/core@0.5.8 ethers axios
-```
-```text pnpm
-pnpm add @wagmi/core@0.5.8 ethers axios
-```
-
-
 
 2. Open `src/environments/environment.ts` - add a variable of `SERVER_URL` for our server.
 

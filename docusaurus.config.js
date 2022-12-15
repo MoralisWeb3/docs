@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const oembed = require("remark-oembed");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -48,7 +47,10 @@ const config = {
           },
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          remarkPlugins: [[oembed, { syncWidget: true }]],
+          remarkPlugins: [
+            [require("remark-oembed"), { syncWidget: true }],
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
         },
         blog: false,
         theme: {
@@ -88,7 +90,7 @@ const config = {
         {
           name: "twitter:card",
           content: "summary_large_image",
-        },
+        }, 
         {
           name: "og:title",
           content: "Moralis Web3 Documentation",

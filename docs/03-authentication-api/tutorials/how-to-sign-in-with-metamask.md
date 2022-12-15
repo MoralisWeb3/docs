@@ -33,31 +33,15 @@ You can find the final dapp with implemented style on our [GitHub](https://githu
 
 1. Install `moralis` and `@moralisweb3/next` (if not installed) and `next-auth`dependencies:
 
-```text npm
+```bash npm2yarn
 npm install moralis @moralisweb3/next next-auth
 ```
-```text yarn
-yarn add moralis @moralisweb3/next next-auth
-```
-```text pnpm
-pnpm add moralis @moralisweb3/next next-auth
-```
-
-
 
 2. To implement authentication using a Web3 wallet (e.g., MetaMask), we need to use a Web3 library. For the tutorial, we will use [wagmi](https://wagmi.sh/docs/getting-started). So, install the `wagmi` dependency:
 
-```text npm
+```bash npm2yarn
 npm install wagmi ethers
 ```
-```text yarn
-yarn add wagmi ethers
-```
-```text pnpm
-pnpm add wagmi ethers
-```
-
-
 
 3. Add new environment variables in your `.env.local` file in the app root:
 
@@ -117,15 +101,21 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-
-
 :::info 
-> 
-> NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+:::
 
 ## Configure Next-Auth and MoralisNextAuth
 
 5. Create a new file, `pages/api/auth/[...nextauth].ts`, with the following content:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="typescript" label="Typescript">
 
 ```typescript
 import NextAuth from 'next-auth';
@@ -148,6 +138,10 @@ export default NextAuth({
   },
 });
 ```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
 ```javascript Javascript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -170,7 +164,8 @@ export default NextAuth({
 });
 ```
 
-
+</TabItem>
+</Tabs>
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
