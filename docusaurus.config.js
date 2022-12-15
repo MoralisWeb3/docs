@@ -75,7 +75,7 @@ const config = {
         },
         {
           name: "twitter:title",
-          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+          content: "Moralis Web3 Documentation",
         },
         {
           name: "twitter:description",
@@ -91,7 +91,7 @@ const config = {
         },
         {
           name: "og:title",
-          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+          content: "Moralis Web3 Documentation",
         },
         {
           name: "og:description",
@@ -99,7 +99,7 @@ const config = {
         },
         {
           name: "og:site_name",
-          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+          content: "Moralis Web3 Documentation",
         },
       ],
       docs: {
