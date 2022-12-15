@@ -8,7 +8,7 @@ const oembed = require("remark-oembed");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Moralis Web3 Documentation",
-  url: "https://docs.moralis.io",
+  url: "https://docs-gold-iota.vercel.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -67,6 +67,41 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "/img/moralis-social-card.jpg",
+      metadata: [
+        {
+          name: "description",
+          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+        },
+        {
+          name: "twitter:title",
+          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+        },
+        {
+          name: "twitter:description",
+          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+        },
+        {
+          name: "twitter:image",
+          content: "/img/moralis-social-card.jpg",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "og:title",
+          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+        },
+        {
+          name: "og:description",
+          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+        },
+        {
+          name: "og:site_name",
+          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+        },
+      ],
       docs: {
         sidebar: {
           autoCollapseCategories: true,

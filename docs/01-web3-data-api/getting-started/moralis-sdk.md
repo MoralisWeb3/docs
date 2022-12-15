@@ -24,15 +24,10 @@ For other programming languages, you can call our API as you would for a normal 
 
 To install Moralis NodeJS SDK, use one of the following commands:
 
-```shell npm
-npm install moralis
-```
-```Text yarn
-yarn add moralis
-```
-```Text pnpm
-pnpm add moralis
-```
+import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+
+<SetupMoralis node="moralis" python="false" />
+
 
 ## Initialize Moralis' NodeJS SDK
 
