@@ -241,6 +241,7 @@ const generateConfigs = async () => {
             `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
+slug: /reference/${functionName.toLowerCase()}
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
