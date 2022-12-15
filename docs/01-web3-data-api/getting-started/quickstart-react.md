@@ -36,17 +36,9 @@ cd your-first-dapp-react
 - `react-router-dom` - for setting up a route/page at `/balances`
 - `axios` - to make requests to our server
 
-```shell npm
+```bash npm2yarn
 npm install react-router-dom axios
 ```
-```text yarn
-yarn add react-router-dom axios
-```
-```text pnpm
-pnpm add react-router-dom axios
-```
-
-
 
 We will set up the routing for our `/balances` page which we will set up later. 
 

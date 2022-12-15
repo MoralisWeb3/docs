@@ -33,31 +33,15 @@ You can find the final dapp with implemented style on our [GitHub](https://githu
 
 1. Install `moralis` and `@moralisweb3/next` (if not installed) and `next-auth`dependencies:
 
-```text npm
+```bash npm2yarn
 npm install moralis @moralisweb3/next next-auth
 ```
-```text yarn
-yarn add moralis @moralisweb3/next next-auth
-```
-```text pnpm
-pnpm add moralis @moralisweb3/next next-auth
-```
-
-
 
 2. To implement authentication using a Web3 wallet (e.g., MetaMask), we need to use a Web3 library. For the tutorial, we will use [wagmi](https://wagmi.sh/docs/getting-started). So, install the `wagmi` dependency:
 
-```text npm
+```bash npm2yarn
 npm install wagmi ethers
 ```
-```text yarn
-yarn add wagmi ethers
-```
-```text pnpm
-pnpm add wagmi ethers
-```
-
-
 
 3. Add new environment variables in your `.env.local` file in the app root:
 

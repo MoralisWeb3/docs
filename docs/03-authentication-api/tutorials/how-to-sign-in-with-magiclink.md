@@ -12,17 +12,9 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask sig
 
 [WAGMI Magic Connector](https://www.npmjs.com/package/@everipedia/wagmi-magic-connector) - the easiest way to add [Magic.Link authentication](https://magic.link/auth) for dapps using [wagmi](https://wagmi.sh/): 
 
-```text npm
-npm i @everipedia/wagmi-magic-connector
+```bash npm2yarn
+npm install @everipedia/wagmi-magic-connector
 ```
-```text yarn
-yarn add @everipedia/wagmi-magic-connector
-```
-```text pnpm
-pnpm add @everipedia/wagmi-magic-connector
-```
-
-
 
 ## Configuring the Magic Connector
 

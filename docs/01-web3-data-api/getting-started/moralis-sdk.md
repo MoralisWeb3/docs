@@ -1,7 +1,8 @@
 ---
-title: "Moralis SDK"
+title: "Install Moralis SDK"
 slug: "../moralis-sdk"
 ---
+
 ## What is the Moralis SDK?
 
 With the Moralis SDK, you can implement all of Moralis' products quickly and easily in your backend. The SDK comes with numerous features, such as:
@@ -15,21 +16,19 @@ With the Moralis SDK, you can implement all of Moralis' products quickly and eas
 We currently support the following languages for our SDKs:
 
 - NodeJS
-- C#
 - Python
 
 For other programming languages, you can call our API as you would for a normal REST API.
 
-## Install Moralis NodeJS SDK
+## Install Moralis SDK
 
-To install Moralis NodeJS SDK, use one of the following commands:
+To install Moralis SDK, use one of the following commands:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis" python="false" />
+<SetupMoralis node="moralis" python="moralis" />
 
-
-## Initialize Moralis' NodeJS SDK
+## Initialize Moralis SDK
 
 :::caution
 
@@ -37,7 +36,13 @@ Make Sure to Store the `apiKey` Value Inside a `.env` File
 
 :::
 
-To initialize the SDK, add the following code to your NodeJS dapp:
+To initialize the SDK, add the following code to your dapp:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="javascript" label="Javascript" default>
 
 ```javascript
 const Moralis = require("moralis").default;
@@ -47,6 +52,10 @@ await Moralis.start({
   // ...and any other configuration
 });
 ```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
 ```typescript
 import Moralis from "moralis";
 
@@ -56,19 +65,8 @@ await Moralis.start({
 });
 ```
 
-Here, `Moralis.start`, with `apiKey` as a required input, will initialize the Moralis SDK.
-
-Once the Moralis NodeJS SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
-
-## Install Moralis Python SDK
-
-To install the Moralis Python SDK, use the following command:
-
-```powershell bash
-pip install moralis
-```
-
-A simple example of how to call the `web3_api_version` API function:
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python Python
 import moralis
@@ -78,7 +76,12 @@ print(moralis.utils.web3_api_version(api_key='API_KEY_HERE'))
 # it prints {'version': '0.0.53'}
 ```
 
-You can check here the syntax for all the other functions from the Python SDK: https://moralisweb3.github.io/Moralis-Python-SDK/.
+</TabItem>
+</Tabs>
+
+Here, `Moralis.start`, with `apiKey` as a required input, will initialize the Moralis SDK.
+
+Once the Moralis NodeJS SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
 
 ## Configuration
 

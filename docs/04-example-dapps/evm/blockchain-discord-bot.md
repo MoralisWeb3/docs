@@ -21,17 +21,9 @@ You can find the repository with the final code here: [Github](https://github.co
 
 1. ### Create a folder and initiate a project using the package manager of your choice.
 
-```Text npm
+```bash npm2yarn
 npm init -y
 ```
-```Text yarn
-yarn init -y
-```
-```Text pnpm
-pnpm init
-```
-
-
 
 This will initiate the project and create a `package.json` file containing the following:
 
@@ -55,17 +47,9 @@ This will initiate the project and create a `package.json` file containing the f
 
 2. ### Install the required dependencies.
 
-```shell npm
+```bash npm2yarn
 npm install moralis express discord.js dotenv nodemon
 ```
-```shell yarn
-yarn add moralis express discord.js dotenv nodemon
-```
-```shell pnpm
-pnpm add moralis express discord.js dotenv nodemon
-```
-
-
 
 3. ### Create an `index.js` file containing our express endpoint.
 
@@ -145,17 +129,9 @@ Back inside `package.json` add a start script that will start our express app an
 
 Run the start command.
 
-```Text npm
+```bash npm2yarn
 npm run start
 ```
-```Text yarn
-yarn run start
-```
-```Text pnpm
-pnpm start
-```
-
-
 
 ## Streams Setup
 

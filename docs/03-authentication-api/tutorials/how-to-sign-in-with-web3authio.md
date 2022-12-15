@@ -24,17 +24,9 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask sig
 
 Install the `@web3auth/web3auth-wagmi-connector` dependency:
 
-```shell npm
+```bash npm2yarn
 npm install @web3auth/web3auth-wagmi-connector
 ```
-```shell yarn
-yarn add @web3auth/web3auth-wagmi-connector
-```
-```shell pnpm
-pnpm add @web3auth/web3auth-wagmi-connector
-```
-
-
 
 ## Configuring the Web3Auth Wagmi Connector
 

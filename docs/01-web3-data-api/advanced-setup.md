@@ -1,6 +1,6 @@
 ---
-title: "Advanced Setup"
-slug: "advanced-setup"
+title: "Advanced SDK Setup"
+slug: "advanced-sdk-setup"
 ---
 :::info Advanced Use Case
 
@@ -23,17 +23,9 @@ Available packages:
 
 For example:
 
-```text npm
+```bash npm2yarn
 npm i @moralisweb3/core @moralisweb3/evm-api
 ```
-```text yarn
-yarn add @moralisweb3/core @moralisweb3/evm-api
-```
-```text pnpm
-pnpm add @moralisweb3/core @moralisweb3/evm-api
-```
-
-
 
 ### Set Up Moralis
 

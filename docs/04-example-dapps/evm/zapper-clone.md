@@ -28,17 +28,9 @@ cd backend
 
 2. Install the required dependencies.
 
-```shell npm
+```bash npm2yarn
 npm install moralis express cors dotenv nodemon
 ```
-```shell yarn
-yarn add moralis express cors dotenv nodemon
-```
-```shell pnpm
-pnpm install moralis express cors dotenv nodemon
-```
-
-
 
 3. Create a new file with a basic express app inside`backend/index.js`
 
@@ -285,17 +277,9 @@ app.get("/tokenTransfers", async (req, res) => {
 
 ### Start the express app.
 
-```shell npm
+```bash npm2yarn
 npm run start
 ```
-```shell yarn
-yarn run start
-```
-```shell pnpm
-pnpm start
-```
-
-
 
 ## Step 2: Frontend setup
 
@@ -321,17 +305,9 @@ pnpm create react-app frontend
 
 2. Go inside the frontend directory using `cd frontend` and install the required dependencies.
 
-```shell npm
+```bash npm2yarn
 npm install axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
 ```
-```Text yarn
-yarn add axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
-```
-```Text pnpm
-pnpm add axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
-```
-
-
 
 3. Inside the`src` directory, create a new folder that will hold React components. We will call it components.
 
@@ -964,17 +940,9 @@ We can now start our React app and check everything we have built.
 
 1. Run the start script inside the frontend directory.
 
-```Text npm
+```bash npm2yarn
 npm run start
 ```
-```Text yarn
-yarn run start
-```
-```Text pnpm
-pnpm start
-```
-
-
 
 2. You can now access `<http://localhost:3000/`> and should see your app running.
 
