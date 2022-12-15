@@ -12,8 +12,8 @@ export interface ApiResponse {
 }
 
 export const buildResponse = (field: ApiParam) => {
-  if (PRIMITIVE_TYPES.includes(field.type)) {
-    return field.example;
+  if (PRIMITIVE_TYPES.includes(field?.type)) {
+    return field?.example;
   }
 
   if (field.type === "array") {
