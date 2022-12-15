@@ -8,7 +8,7 @@ let swaggerSchemas;
 let swaggerOAS = {};
 
 const camelToSnakeCase = (str) => {
-  return (str.charAt(0).toUpperCase() + str.slice(1)).replace(
+  return (str.charAt(0).toLowerCase() + str.slice(1)).replace(
     /[A-Z]/g,
     (letter) => `-${letter.toLowerCase()}`
   );
@@ -24,15 +24,20 @@ const translateSchemaReference = (schemaRef) => {
 
   const { type, example, enum: schemaEnum, properties } = schemaJSON;
   if (type) {
-    return { type, example, enum: schemaEnum };
+    return {
+      type: type === "integer" ? "number" : type,
+      example,
+      enum: schemaEnum,
+    };
   } else if (properties) {
     return {
-      field: Object.keys(properties).map((name) => {
+      type: "object",
+      fields: Object.keys(properties).map((name) => {
         const { type, description, example, items } = properties[name];
         if (type === "array") {
           return {
             name,
-            type,
+            type: type === "integer" ? "number" : type,
             description,
             example,
             ...(items && items?.$ref
@@ -43,7 +48,7 @@ const translateSchemaReference = (schemaRef) => {
         } else {
           return {
             name,
-            type,
+            type: type === "integer" ? "number" : type,
             description,
             example,
           };
@@ -76,12 +81,13 @@ const formatParameters = (parameters) => {
       example,
       ...(type
         ? {
-            type,
-            ...(items && {
-              field: items?.$ref
-                ? translateSchemaReference(items?.$ref)
-                : items,
-            }),
+            type: type === "integer" ? "number" : type,
+            ...(items &&
+              (items?.$ref
+                ? {
+                    fields: translateSchemaReference(items?.$ref),
+                  }
+                : { field: items })),
           }
         : translateSchemaReference($ref)),
     };
@@ -224,14 +230,15 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      for (let index in Object.keys(swaggerOAS[key])) {
-        const functionName = Object.keys(swaggerOAS[key])[index];
-        const snakeCaseFunctionName = camelToSnakeCase(functionName);
+      if (!["nft"].includes(key)) {
+        for (let index in Object.keys(swaggerOAS[key])) {
+          const functionName = Object.keys(swaggerOAS[key])[index];
+          const snakeCaseFunctionName = camelToSnakeCase(functionName);
 
-        // Write MDX Files for API Reference pages
-        await fs.writeFile(
-          `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
-          `---
+          // Write MDX Files for API Reference pages
+          await fs.writeFile(
+            `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
+            `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
 ---
@@ -243,14 +250,15 @@ import config from "${swaggerPaths[key].importPath}";
 
 <ApiReference {...config.${key}.${functionName}} />
               `,
-          { flag: "w" },
-          (err) => {
-            if (err) {
-              return console.log(err);
+            { flag: "w" },
+            (err) => {
+              if (err) {
+                return console.log(err);
+              }
+              console.log("The file was saved!");
             }
-            console.log("The file was saved!");
-          }
-        );
+          );
+        }
       }
     }
   } catch (e) {

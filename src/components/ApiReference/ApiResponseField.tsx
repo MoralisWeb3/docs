@@ -12,23 +12,26 @@ export interface ApiResponse {
 }
 
 export const buildResponse = (field: ApiParam) => {
-  if (PRIMITIVE_TYPES.includes(field.type)) {
-    return field.example;
+  if (PRIMITIVE_TYPES.includes(field?.type)) {
+    return field?.example;
   }
 
+
+  if (field?.type === "array") console.log(field);
+
   if (field.type === "array") {
-    if (field.field.type === "oneOf") {
+    if (field.field?.type === "oneOf") {
       return [...field.field.options.map((option) => buildResponse(option))];
     }
 
     return [buildResponse(field.field)];
   }
 
-  if (field.type === "record") {
+  if (field?.type === "record") {
     return { "{KEY}": buildResponse(field.field) };
   }
 
-  if (field.type === "object") {
+  if (field?.type === "object") {
     return field?.fields?.reduce(
       (obj, objField) => ({
         ...obj,
@@ -38,7 +41,7 @@ export const buildResponse = (field: ApiParam) => {
     );
   }
 
-  if (field.type === "oneOf") {
+  if (field?.type === "oneOf") {
     return buildResponse(field.options[0]);
   }
 
@@ -51,7 +54,7 @@ const ApiResponseField = ({ field, collapsible }: { field: ApiParam; collapsible
 
   const toggleCollapsed = useCallback(() => setCollapsed((collapsed) => !collapsed), []);
 
-  if (PRIMITIVE_TYPES.includes(field.type)) {
+  if (PRIMITIVE_TYPES.includes(field?.type)) {
     const enums = field.type === "string" && field.enum ? `*[${field.enum.join(" | ")}]*` : "";
 
     return (
