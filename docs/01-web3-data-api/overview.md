@@ -3,6 +3,7 @@ title: "Web3 Data API"
 sidebar_label: "Overview"
 slug: "/web3-data-api"
 sidebar_position: 1
+image: /img/content/web3-data-api-3.jpg
 --- 
 
 # Web3 Data APIs
