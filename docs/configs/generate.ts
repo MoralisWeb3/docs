@@ -24,15 +24,20 @@ const translateSchemaReference = (schemaRef) => {
 
   const { type, example, enum: schemaEnum, properties } = schemaJSON;
   if (type) {
-    return { type, example, enum: schemaEnum };
+    return {
+      type: type === "integer" ? "number" : type,
+      example,
+      enum: schemaEnum,
+    };
   } else if (properties) {
     return {
+      type: "object",
       fields: Object.keys(properties).map((name) => {
         const { type, description, example, items } = properties[name];
         if (type === "array") {
           return {
             name,
-            type,
+            type: type === "integer" ? "number" : type,
             description,
             example,
             ...(items && items?.$ref
@@ -43,7 +48,7 @@ const translateSchemaReference = (schemaRef) => {
         } else {
           return {
             name,
-            type,
+            type: type === "integer" ? "number" : type,
             description,
             example,
           };
@@ -76,7 +81,7 @@ const formatParameters = (parameters) => {
       example,
       ...(type
         ? {
-            type,
+            type: type === "integer" ? "number" : type,
             ...(items &&
               (items?.$ref
                 ? {
@@ -225,7 +230,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (["balance", "defi", "resolve", "utils", "events"].includes(key)) {
+      if (!["nft"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);
