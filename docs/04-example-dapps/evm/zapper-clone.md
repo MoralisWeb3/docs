@@ -291,16 +291,25 @@ To style our UI we will be using [Web3uikit](https://github.com/web3ui/web3uikit
 
 1. Go back to your root directory and create a React application.
 
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="npx" label="npx">
+
+```shell
 npx create-react-app frontend
 ```
-```
+
+</TabItem>
+<TabItem value="yarn" label="Yarn">
+
+```shell
 yarn create react-app frontend
 ```
-```shell pnpm
-pnpm create react-app frontend
-```
 
+</TabItem>
+</Tabs>
 
 
 2. Go inside the frontend directory using `cd frontend` and install the required dependencies.

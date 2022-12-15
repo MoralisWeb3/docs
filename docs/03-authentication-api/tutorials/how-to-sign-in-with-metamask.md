@@ -101,15 +101,21 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-
-
 :::info 
-> 
-> NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+:::
 
 ## Configure Next-Auth and MoralisNextAuth
 
 5. Create a new file, `pages/api/auth/[...nextauth].ts`, with the following content:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="typescript" label="Typescript">
 
 ```typescript
 import NextAuth from 'next-auth';
@@ -132,6 +138,10 @@ export default NextAuth({
   },
 });
 ```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
 ```javascript Javascript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -154,7 +164,8 @@ export default NextAuth({
 });
 ```
 
-
+</TabItem>
+</Tabs>
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 

@@ -15,7 +15,7 @@ This is what the final application looks like.
 
 You can find the repository with the final code here: [Tic-Tac-Toe](https://github.com/JohnVersus/solana-dapp-tic-tac-toe).
 
-## Step1: Deploy Contract
+## Step 1: Deploy Contract
 
 Start a new rust library project named micro_blog
 
@@ -222,7 +222,7 @@ Once successfully deployed it will return the program Id of the Solana Program.
 
 Store the Program Id somewhere accessible, as we will need this to call the smart contract function from the client side.
 
-## Step2: Frontend Setup
+## Step 2: Frontend Setup
 
 Follow these steps to run the project in your local environment.
 
@@ -285,7 +285,7 @@ The code related to authentication can be found in the `src/components/modules/C
 
 If you want to know how authentication works, you can take a look at this [video](https://www.youtube.com/watch?v=0fuevxebv_E). 
 
-## Step3: Calling the Smart Contract
+## Step 3: Calling the Smart Contract
 
 In this project, we are signing all the transactions in the backend using the owner's private key, so that players don't have to sign transactions on every move.
 
@@ -293,7 +293,13 @@ The code related to this can be found in the `pages/api/TicTacToe` folder.
 
 Using the `newgame.ts` API route we can sign transactions required to create a new game by taking the player address as input and with `playGame.ts` we can sign transactions required to play the game by taking the player's move as input. 
 
-```typescript newGame.ts
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="newGame.ts" label="newGame.ts">
+
+```typescript
 import type { NextApiRequest, NextApiResponse } from 'next';
 import {
   Connection,
@@ -436,7 +442,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 ```
-```typescript playGame.ts
+
+</TabItem>
+<TabItem value="playGame.ts" label="playGame.ts">
+
+```typescript
 import type { NextApiRequest, NextApiResponse } from 'next';
 import {
   Connection,
@@ -536,11 +546,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 ```
 
-
+</TabItem>
+</Tabs>
 
 Here is the code related to the frontend code.
 
-> Only partical code is shown here to keep it clean. Visit  `src/components/templates/TicTacToe` to view the entire code.
+> Only partial code is shown here to keep it clean. Visit `src/components/templates/TicTacToe` to view the entire code.
 
 The first step of the game is to create a new game to play using this `Create Game` tab.
 
@@ -813,7 +824,7 @@ That's the end of it!!
 
 That's all the code required to create and play a Multi-player Tic-Tac-Toe game.
 
-## Step4: Testing
+## Step 4: Testing
 
 The game can be tested by first creating a new game in `Create Game` tab and then visit `Play Game` to refresh the games. Now by selecting the game you can start playing it with other players.
 

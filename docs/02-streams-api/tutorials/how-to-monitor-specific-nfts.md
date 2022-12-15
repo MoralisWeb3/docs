@@ -7,6 +7,12 @@ Lets create a stream that monitor specific CryptoPunk NFTs based on an array of 
 
 ### Programmatically
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
 ```javascript
 const punkTransferAbi = [{
   "anonymous": false,
@@ -45,6 +51,10 @@ await Moralis.Streams.addAddress({
 });
 
 ```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
 ```python Python
 from moralis import streams
 
@@ -85,6 +95,9 @@ result = streams.evm.create_stream(
 
 print(result)
 ```
+
+</TabItem>
+</Tabs>
 
 ### Via WebUI
 
