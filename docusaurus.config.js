@@ -74,8 +74,16 @@ const config = {
           content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
         },
         {
+          name: "twitter:title",
+          content: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials",
+        },
+        {
           name: "twitter:description",
           content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+        },
+        {
+          name: "twitter:image",
+          content: "/img/moralis-social-card.jpg",
         },
         {
           name: "twitter:card",
