@@ -264,6 +264,54 @@
           ]
         }
       ],
+      "bodyParams": {
+        "required": true,
+        "description": "Body",
+        "body": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "tokens",
+              "type": "object",
+              "description": "The tokens to be fetched (max 25 tokens)",
+              "example": [
+                {
+                  "token_address": "0xa4991609c508b6d4fb7156426db0bd49fe298bd8",
+                  "token_id": "12"
+                },
+                {
+                  "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
+                  "token_id": "1"
+                },
+                {
+                  "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
+                  "token_id": "200"
+                }
+              ],
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The contract address",
+                  "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                },
+                {
+                  "name": "token_id",
+                  "type": "string",
+                  "description": "The id of the token",
+                  "example": 100
+                }
+              ]
+            },
+            {
+              "name": "normalizeMetadata",
+              "type": "boolean",
+              "description": "Should normalized metadata be returned?",
+              "example": false
+            }
+          ]
+        }
+      },
       "responses": [
         { "status": "200", "description": "Returns a collection of NFT owners" }
       ]
@@ -5051,6 +5099,10 @@
           "type": "number"
         }
       ],
+      "bodyParams": {
+        "required": false,
+        "description": "ABI of the specific event"
+      },
       "responses": [
         {
           "status": "200",
@@ -5547,6 +5599,27 @@
           "type": "string"
         }
       ],
+      "bodyParams": {
+        "required": true,
+        "description": "Body",
+        "body": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "abi",
+              "type": "object",
+              "description": "The contract ABI",
+              "example": []
+            },
+            {
+              "name": "params",
+              "type": "object",
+              "description": "The params for the given function",
+              "example": {}
+            }
+          ]
+        }
+      },
       "responses": [
         {
           "status": "200",
@@ -5842,6 +5915,10 @@
       "path": "/ipfs/uploadFolder",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": {
+        "required": false,
+        "description": "Array of JSON and Base64 Supported"
+      },
       "responses": [
         {
           "status": "200",
@@ -5858,6 +5935,11 @@
       "path": "/challenge/request/evm",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": {
+        "required": true,
+        "description": "Request EVM challenge message.",
+        "body": { "type": "object" }
+      },
       "responses": [
         {
           "status": "201",
@@ -5873,6 +5955,11 @@
       "path": "/challenge/verify/evm",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": {
+        "required": true,
+        "description": "Verify EVM challenge message.",
+        "body": { "type": "object" }
+      },
       "responses": [
         {
           "status": "201",
@@ -5888,6 +5975,11 @@
       "path": "/challenge/request/solana",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": {
+        "required": true,
+        "description": "Request Solana challenge message.",
+        "body": { "type": "object" }
+      },
       "responses": [
         {
           "status": "201",
@@ -5903,6 +5995,11 @@
       "path": "/challenge/verify/solana",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": {
+        "required": true,
+        "description": "Verify Solana challenge message.",
+        "body": { "type": "object" }
+      },
       "responses": [
         {
           "status": "201",
@@ -5962,6 +6059,7 @@
       "path": "/settings",
       "pathParams": [],
       "queryParams": [],
+      "bodyParams": { "required": true, "body": { "type": "object" } },
       "responses": [
         { "status": "200", "description": "Ok", "body": { "type": "object" } }
       ]
@@ -6056,6 +6154,11 @@
         }
       ],
       "queryParams": [],
+      "bodyParams": {
+        "required": true,
+        "description": "Provide a Stream Model",
+        "body": { "type": "object" }
+      },
       "responses": [
         { "status": "200", "description": "Ok", "body": { "type": "object" } }
       ]

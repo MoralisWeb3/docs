@@ -104,6 +104,24 @@ const formatParameters = (parameters) => {
   return { pathParams, queryParams };
 };
 
+const formatBodyParameters = (requestBody) => {
+  if (requestBody) {
+    const { required, description, content } = requestBody;
+    const schemaRef = content?.["application/json"]?.schema?.$ref;
+    return {
+      required,
+      description,
+      ...(schemaRef
+        ? {
+            body: translateSchemaReference(schemaRef),
+          }
+        : {}),
+    };
+  }
+
+  return;
+};
+
 const formatResponses = (responses) => {
   const formattedResponses = Object.keys(responses).map((status) => {
     const { description, content } = responses[status];
@@ -113,9 +131,7 @@ const formatResponses = (responses) => {
       description,
       ...(schemaRef
         ? {
-            body: translateSchemaReference(
-              content["application/json"]?.schema?.$ref
-            ),
+            body: translateSchemaReference(schemaRef),
           }
         : {}),
     };
@@ -161,11 +177,13 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       summary,
       method,
       parameters = [],
+      requestBody,
       responses = [],
     } = extractSwaggerValueByMethod(swaggerJSON, path);
 
     // Formatting Parameters & Responses
     const { pathParams = [], queryParams = [] } = formatParameters(parameters);
+    const formattedBodyParams = formatBodyParameters(requestBody);
     const formattedResponses = formatResponses(responses);
     const formattedPath = formatPath(path);
 
@@ -177,6 +195,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       path: formattedPath,
       pathParams,
       queryParams,
+      bodyParams: formattedBodyParams,
       responses: formattedResponses,
     };
   }
