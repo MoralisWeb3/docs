@@ -20,6 +20,7 @@ export interface ApiReferenceProps {
   queryParams?: ApiParam[];
   bodyParam?: ApiParam;
   responses: ApiResponse[];
+  apiHost: string;
 }
 
 export interface FormValues {
@@ -56,6 +57,7 @@ const ApiReference = ({
   queryParams,
   bodyParam,
   responses,
+  apiHost,
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -81,6 +83,7 @@ const ApiReference = ({
             bodyParam: filterOutEmpty(values.body),
             queryParams: values.query,
             pathParams: values.path,
+            apiHost,
           }),
         });
 
@@ -132,7 +135,7 @@ const ApiReference = ({
             <div className="col">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
-                {process.env.API_HOST}
+                {apiHost}
                 {path}
               </div>
 
@@ -200,7 +203,7 @@ const ApiReference = ({
                   </ApiParamButton>
                 </div>
 
-                <ApiExamples method={method} path={path} />
+                <ApiExamples method={method} apiHost={apiHost} path={path} />
 
                 <div className={styles.section}>
                   <div className={styles.inlineForm}>

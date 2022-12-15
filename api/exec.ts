@@ -8,13 +8,13 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
     return response.status(405).json({ error: "Method Not Allowed" });
   }
 
-  const { method, path, auth, bodyParam, queryParams, pathParams } =
+  const { method, path, auth, bodyParam, queryParams, pathParams, apiHost } =
     request.body || {};
 
   try {
     const fetchRes = await fetch(
       [
-        process.env.API_HOST,
+        apiHost,
         new Path(path).build(pathParams),
         qs.stringify(queryParams || {}, { addQueryPrefix: true }),
       ].join(""),

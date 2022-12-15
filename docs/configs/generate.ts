@@ -151,7 +151,7 @@ const formatPath = (path) => {
  * @param swaggerJSON standard swagger OAS JSON
  * @returns formatted swagger OAS JSON for API Reference
  */
-const formatSwaggerJSON = (swaggerJSON) => {
+const formatSwaggerJSON = (swaggerJSON, apiHost) => {
   const swaggerContent = {};
   for (let path in swaggerJSON.paths) {
     // Extract all important fields from Swagger
@@ -170,6 +170,7 @@ const formatSwaggerJSON = (swaggerJSON) => {
     const formattedPath = formatPath(path);
 
     swaggerContent[operationId] = {
+      apiHost,
       summary,
       description,
       method,
@@ -216,8 +217,10 @@ const generateConfigs = async () => {
       // Store Swagger Schema for global usage
       swaggerSchemas = swaggerJSON.components.schemas;
 
+      const apiHost = swaggerJSON.servers?.[0]?.url;
+
       // If statement is temporary, for testing only
-      swaggerContent = formatSwaggerJSON(swaggerJSON);
+      swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
       swaggerOAS[key] = swaggerContent;
     }
 
