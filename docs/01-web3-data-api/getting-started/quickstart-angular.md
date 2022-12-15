@@ -28,31 +28,19 @@ We will follow the [instructions here](https://angular.io/guide/setup-local) for
 npm install -g @angular/cli
 ```
 
-
-
 2. Create a new folder for your project and open it in your editor. Create a new Angular project - select `yes` for routing and choose any stylesheet format:
 
 ```shell
 ng new your-first-dapp-angular
 ```
 
-
-
 3. Install the required dependency: 
 
 - `axios` - to make requests to our server (You can also use [Angular's HTTP module](https://angular.io/guide/http)
 
-```shell npm
-npm install axios
+```bash npm2yarn
+npm install axios 
 ```
-```text yarn
-yarn add axios
-```
-```text pnpm
-pnpm add axios
-```
-
-
 
 4. Open `src/app/app.component.html` and get rid of the boilerplate HTML and CSS code. Remove everything except for:
 
@@ -60,15 +48,11 @@ pnpm add axios
 <router-outlet></router-outlet>
 ```
 
-
-
 5. We will generate a component or page called `/balances` for displaying the balances:
 
 ```shell
 ng generate component balances
 ```
-
-
 
 6. Open `src/app/app-routing.module.ts` and add this component as a route:
 
@@ -80,8 +64,6 @@ const routes: Routes = [
 ];
 ```
 
-
-
 7. Open `src/app/balances/balances.component.html` and replace the contents with:
 
 ```html
@@ -91,8 +73,6 @@ const routes: Routes = [
   <h3>Token Balances: {{ tokenBalances }}</h3>
 </div>
 ```
-
-
 
 8. Open `src/app/balances/balances.component.ts` and add these three variables we defined above:
 
