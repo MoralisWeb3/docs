@@ -1,6 +1,7 @@
 {
   "nft": {
     "getWalletNFTs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get NFTs by wallet",
       "description": "Get NFTs owned by a given address.\n* The response will include status [SYNCED/SYNCING] based on the contracts being indexed.\n* Use the token_address param to get results for a specific contract only\n* Note that results will include all indexed NFTs\n* Any request that includes the token_address param will start the indexing process for that NFT collection the very first time it is requested.",
       "method": "GET",
@@ -218,6 +219,7 @@
       ]
     },
     "getMultipleNFTs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get Multiple NFTs",
       "description": "Returns an array of NFTs specified in the request.\n* Note that results will include all indexed NFTs\n* Any request that includes the token_address param will start the indexing process for that NFT collection the very first time it is requested.\n* Only 25 NFTs can be fetched in one API call.",
       "method": "POST",
@@ -267,6 +269,7 @@
       ]
     },
     "getWalletNFTTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transfers by wallet",
       "description": "Get transfers of NFTs given the wallet and other parameters.",
       "method": "GET",
@@ -496,6 +499,7 @@
       ]
     },
     "getWalletNFTCollections": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get collections by wallet",
       "description": "Get NFT collections owned by a given wallet address.",
       "method": "GET",
@@ -631,6 +635,7 @@
       ]
     },
     "getContractNFTs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get NFTs by contract",
       "description": "Get NFTs for a given contract address, including metadata for all NFTs (where available).\n* Results are limited to 100 per page by default\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.",
       "method": "GET",
@@ -851,6 +856,7 @@
       ]
     },
     "getNFTOwners": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get owners by contract",
       "description": "Get owners of NFTs for a given contract.\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.",
       "method": "GET",
@@ -1061,6 +1067,7 @@
       ]
     },
     "getNFTContractTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transfers by contract",
       "description": "Get transfers of NFTs for a given contract and other parameters.",
       "method": "GET",
@@ -1295,6 +1302,7 @@
       ]
     },
     "getNFTTransfersFromToBlock": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transfers from a block to a block",
       "description": "Get transfers of NFTs from a block number to a block number.",
       "method": "GET",
@@ -1521,6 +1529,7 @@
       ]
     },
     "getNFTTransfersByBlock": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transfers by block",
       "description": "Get transfers of NFTs given a block number or block hash.",
       "method": "GET",
@@ -1724,6 +1733,7 @@
       ]
     },
     "getNFTTrades": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get trades by marketplace",
       "description": "Get trades of NFTs for a given contract and marketplace.",
       "method": "GET",
@@ -1916,6 +1926,7 @@
       ]
     },
     "getNFTContractMetadata": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get collection metadata",
       "description": "Get the collection / contract level metadata for a given contract (name, symbol, base token URI).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
@@ -2010,6 +2021,7 @@
       ]
     },
     "getNFTMetadata": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get NFT metadata",
       "description": "Get NFT data, including metadata (where available), for the given NFT token ID and contract address.\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
@@ -2185,6 +2197,7 @@
       ]
     },
     "getNFTTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transfers by token ID",
       "description": "Get transfers of an NFT given a contract address and token ID.",
       "method": "GET",
@@ -2402,6 +2415,7 @@
       ]
     },
     "getNFTTokenIdOwners": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get owners by token ID",
       "description": "Get owners of a specific NFT given the contract address and token ID. \n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
@@ -2619,6 +2633,7 @@
       ]
     },
     "syncNFTContract": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Resync NFT Contract",
       "description": "Initiates a sync of a previously non synced contract.",
       "method": "PUT",
@@ -2679,6 +2694,7 @@
       ]
     },
     "reSyncMetadata": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Resync NFT metadata",
       "description": "Resync the metadata for an NFT\n* The metadata flag will request the NFT's metadata from an already existing token_uri\n* The uri (default) flag will fetch the latest token_uri from the given NFT contract address. In sync mode the metadata will also be fetched\n* The sync mode will make the endpoint synchronous so it will wait for the task to be completed before responding\n* The async mode (default) will make the endpoint asynchronous so we will wait for the task to be completed before responding\n",
       "method": "GET",
@@ -2798,6 +2814,7 @@
       ]
     },
     "getNFTLowestPrice": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get lowest price",
       "description": "Get the lowest executed price for an NFT contract for the last x days (only trades paid in ETH).",
       "method": "GET",
@@ -2936,6 +2953,7 @@
       ]
     },
     "searchNFTs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Search NFTs",
       "description": "Get NFTs that match a given metadata search query.",
       "method": "GET",
@@ -3188,6 +3206,7 @@
   },
   "token": {
     "getTokenPrice": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get price",
       "description": "Get the token price denominated in the blockchain's native token and USD.",
       "method": "GET",
@@ -3284,6 +3303,7 @@
       ]
     },
     "getWalletTokenBalances": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get balance by wallet",
       "description": "Get token balances for a specific wallet address.",
       "method": "GET",
@@ -3357,6 +3377,7 @@
       ]
     },
     "getWalletTokenTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transactions by wallet",
       "description": "Get ERC20 token transactions ordered by block number in descending order.",
       "method": "GET",
@@ -3540,6 +3561,7 @@
       ]
     },
     "getTokenMetadata": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get metadata by contract",
       "description": "Get the metadata for a given token contract address (name, symbol, decimals, logo).",
       "method": "GET",
@@ -3599,6 +3621,7 @@
       ]
     },
     "getTokenMetadataBySymbol": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get metadata by symbols",
       "description": "Get the metadata for a list of token symbols (name, symbol, decimals, logo).",
       "method": "GET",
@@ -3658,6 +3681,7 @@
       ]
     },
     "getTokenAllowance": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get spender allowance",
       "description": "Get the amount which the spender is allowed to withdraw on behalf of the owner.",
       "method": "GET",
@@ -3739,6 +3763,7 @@
       ]
     },
     "getTokenTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transactions by contract",
       "description": "Get ERC20 token transactions from a contract ordered by block number in descending order.",
       "method": "GET",
@@ -3925,6 +3950,7 @@
   },
   "balance": {
     "getNativeBalance": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get balance by wallet",
       "description": "Get the native balance for a specific wallet address.",
       "method": "GET",
@@ -4004,6 +4030,7 @@
   },
   "transaction": {
     "getWalletTransactions": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transactions by wallet",
       "description": "Get native transactions ordered by block number in descending order.",
       "method": "GET",
@@ -4227,6 +4254,7 @@
       ]
     },
     "getWalletTransactionsVerbose": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get verbose transactions by wallet",
       "description": "Get native transactions and logs ordered by block number in descending order.",
       "method": "GET",
@@ -4495,6 +4523,7 @@
       ]
     },
     "getTransaction": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transaction by hash",
       "description": "Get the contents of a transaction by the given transaction hash.",
       "method": "GET",
@@ -4705,6 +4734,7 @@
   },
   "events": {
     "getContractLogs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get logs by contract",
       "description": "Get the logs for a contract.",
       "method": "GET",
@@ -4928,6 +4958,7 @@
       ]
     },
     "getContractEvents": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get events by contract",
       "description": "Get events for a contract ordered by block number in descending order. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Events/getContractEvents).",
       "method": "POST",
@@ -5030,6 +5061,7 @@
   },
   "block": {
     "getBlock": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get block by hash",
       "description": "Get the contents of a block given the block hash.",
       "method": "GET",
@@ -5355,6 +5387,7 @@
       ]
     },
     "getDateToBlock": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get block by date",
       "description": "Get the closest block given the date.",
       "method": "GET",
@@ -5456,6 +5489,7 @@
   },
   "utils": {
     "runContractFunction": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Run contract function",
       "description": "Run a given function of a contract ABI and retrieve readonly data. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Utils/runContractFunction).",
       "method": "POST",
@@ -5521,6 +5555,7 @@
       ]
     },
     "web3ApiVersion": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get API version",
       "description": "Get the current version of the Moralis Web3 API.",
       "method": "GET",
@@ -5546,6 +5581,7 @@
       ]
     },
     "endpointWeights": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get weights of endpoints",
       "description": "Get the cost and rate limit for each API endpoint.",
       "method": "GET",
@@ -5562,6 +5598,7 @@
   },
   "resolve": {
     "resolveAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Resolve ENS name",
       "description": "Resolve an ETH address and find the ENS name.",
       "method": "GET",
@@ -5595,6 +5632,7 @@
       ]
     },
     "resolveDomain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Resolve Unstoppable domain",
       "description": "Resolve an Unstoppable domain and get the address.",
       "method": "GET",
@@ -5639,6 +5677,7 @@
   },
   "defi": {
     "getPairReserves": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get pair reserves",
       "description": "Get the liquidity reserves for a given pair address. Only Uniswap V2 based exchanges supported at the moment.",
       "method": "GET",
@@ -5707,6 +5746,7 @@
       ]
     },
     "getPairAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get pair address",
       "description": "Fetch the pair data of the provided token0+token1 combination.\nThe token0 and token1 options are interchangable (ie. there is no different outcome in \"token0=WETH and token1=USDT\" or \"token0=USDT and token1=WETH\")\n",
       "method": "GET",
@@ -5795,6 +5835,7 @@
   },
   "ipfs": {
     "uploadFolder": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Upload folder",
       "description": "Upload multiple files to IPFS and place them in a folder directory.",
       "method": "POST",
@@ -5811,6 +5852,7 @@
   },
   "auth": {
     "requestChallengeEvm": {
+      "apiHost": "https://authapi.moralis.io",
       "summary": "Request EVM challenge",
       "method": "POST",
       "path": "/challenge/request/evm",
@@ -5825,6 +5867,7 @@
       ]
     },
     "verifyChallengeEvm": {
+      "apiHost": "https://authapi.moralis.io",
       "summary": "Verify EVM challenge",
       "method": "POST",
       "path": "/challenge/verify/evm",
@@ -5839,6 +5882,7 @@
       ]
     },
     "requestChallengeSolana": {
+      "apiHost": "https://authapi.moralis.io",
       "summary": "Request Solana challenge",
       "method": "POST",
       "path": "/challenge/request/solana",
@@ -5853,6 +5897,7 @@
       ]
     },
     "verifyChallengeSolana": {
+      "apiHost": "https://authapi.moralis.io",
       "summary": "Verify Solana challenge",
       "method": "POST",
       "path": "/challenge/verify/solana",
@@ -5869,6 +5914,7 @@
   },
   "streams": {
     "GetHistory": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get history",
       "description": "Get all history",
       "method": "GET",
@@ -5884,6 +5930,7 @@
       ]
     },
     "ReplayHistory": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Replay history",
       "description": "Replay a specific history.",
       "method": "POST",
@@ -5908,6 +5955,7 @@
       ]
     },
     "SetSettings": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Set project settings",
       "description": "Set the settings for the current project based on the project api-key.",
       "method": "POST",
@@ -5919,6 +5967,7 @@
       ]
     },
     "GetStats": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get project stats",
       "description": "Get the global stats for the account.",
       "method": "GET",
@@ -5930,6 +5979,7 @@
       ]
     },
     "GetStatsByStreamId": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get project stats by Stream ID",
       "description": "Get the stats for the streamId specified",
       "method": "GET",
@@ -5948,6 +5998,7 @@
       ]
     },
     "GetStreams": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get streams",
       "description": "Get all the evm streams for the current project based on the project api-key.",
       "method": "GET",
@@ -5972,6 +6023,7 @@
       ]
     },
     "GetStream": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get a specific evm stream.",
       "description": "Get a specific evm stream.",
       "method": "GET",
@@ -5990,6 +6042,7 @@
       ]
     },
     "UpdateStreamStatus": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Update stream status",
       "description": "Updates the status of specific evm stream.",
       "method": "POST",
@@ -6008,6 +6061,7 @@
       ]
     },
     "GetAddresses": {
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get addresses by stream",
       "description": "Get all addresses associated with a specific stream.",
       "method": "GET",
@@ -6041,6 +6095,7 @@
   },
   "solana": {
     "balance": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get native balance by wallet",
       "description": "Gets the native balance owned by a given network and address.",
       "method": "GET",
@@ -6056,6 +6111,7 @@
       ]
     },
     "getSPL": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token balance by wallet",
       "description": "Gets the token balances owned by a given network and address.",
       "method": "GET",
@@ -6071,6 +6127,7 @@
       ]
     },
     "getNFTs": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get NFTs by wallet",
       "description": "Gets NFTs owned by a given network and address.",
       "method": "GET",
@@ -6086,6 +6143,7 @@
       ]
     },
     "getPortfolio": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Gets portfolio by wallet",
       "description": "Gets the portfolio for a given network and address.",
       "method": "GET",
@@ -6101,6 +6159,7 @@
       ]
     },
     "getNFTMetadata": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get NFT metadata",
       "description": "Get the global NFT metadata for a given network and contract (mint, standard, name, symbol, metaplex).",
       "method": "GET",
@@ -6116,6 +6175,7 @@
       ]
     },
     "getTokenPrice": {
+      "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token price",
       "description": "Gets the token price (usd and native) for a given contract address and network.",
       "method": "GET",

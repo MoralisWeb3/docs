@@ -190,7 +190,7 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
-const ApiExamples = ({ method, path }: Pick<ApiReferenceProps, "method" | "path">) => {
+const ApiExamples = ({ method, apiHost, path }: Pick<ApiReferenceProps, "method" | "path">) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
 
@@ -208,7 +208,7 @@ const ApiExamples = ({ method, path }: Pick<ApiReferenceProps, "method" | "path"
             {tab.template({
               method,
               url: [
-                process.env.API_HOST,
+                apiHost,
                 new Path(path).build({
                   ...defaultPathParams,
                   ...omitBy(values.path, (value) => value == null),
