@@ -225,7 +225,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (["balance", "defi", "resolve", "utils"].includes(key)) {
+      if (["balance", "defi", "resolve", "utils", "events"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);

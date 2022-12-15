@@ -62,6 +62,8 @@ const ApiReference = ({
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
 
+  console.log(pathParams, queryParams)
+
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
   }, []);
@@ -232,11 +234,11 @@ const ApiReference = ({
                         ? JSON.stringify(response.body, null, 2)
                         : "Error with Test Request"
                       : responses[responseIndex].body
-                      ? stringifyJSON(
+                        ? stringifyJSON(
                           deepCompact(buildResponse(responses[responseIndex].body)),
                           true
                         )
-                      : "Empty"}
+                        : "Empty"}
                   </CodeBlock>
                 </div>
               </div>
