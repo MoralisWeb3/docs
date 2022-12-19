@@ -8,10 +8,10 @@ let swaggerSchemas;
 let swaggerOAS = {};
 
 const camelToSnakeCase = (str) => {
-  return (str.charAt(0).toLowerCase() + str.slice(1)).replace(
-    /[A-Z]/g,
-    (letter) => `-${letter.toLowerCase()}`
-  );
+  return (str.charAt(0).toLowerCase() + str.slice(1))
+    .replaceAll("NFT", "Nft")
+    .replaceAll("SPL", "Spl")
+    .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 };
 
 /**
@@ -257,7 +257,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (!["nft", "solana"].includes(key)) {
+      if (!["nft"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);
