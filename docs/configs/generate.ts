@@ -22,8 +22,8 @@ const translateSchemaReference = (schemaRef) => {
   const schemaName = schemaRef.replace("#/components/schemas/", "");
   const schemaJSON = swaggerSchemas[schemaName];
 
-  const { type, example, enum: schemaEnum, properties } = schemaJSON;
-  if (type) {
+  const { type, example, enum: schemaEnum, properties } = schemaJSON ?? {};
+  if (type && !properties) {
     return {
       type: type === "integer" ? "number" : type,
       example,
@@ -34,16 +34,28 @@ const translateSchemaReference = (schemaRef) => {
       type: "object",
       fields: Object.keys(properties).map((name) => {
         const { type, description, example, items } = properties[name];
-        if (type === "array") {
+        /**
+         * AbiInput and AbiOutput schema reference itself which will create
+         * recursive loop. Therefore, this is a special condition to stop them.
+         */
+        if (
+          (schemaName === "AbiInput" || schemaName === "AbiOutput") &&
+          name === "components"
+        ) {
           return {
             name,
-            type: type === "integer" ? "number" : type,
+            type: "json",
+          };
+        } else if (type === "array") {
+          return {
+            name,
+            type,
             description,
             example,
             ...(items && items?.$ref
               ? // If there are more arrays within the child, do recursion
                 translateSchemaReference(items?.$ref)
-              : { items }),
+              : { field: items }),
           };
         } else {
           return {
@@ -112,11 +124,31 @@ const formatBodyParameters = (requestBody) => {
       items,
       $ref: schemaRef,
     } = content?.["application/json"]?.schema;
+    console.log(schemaRef);
+
+    const test = schemaRef ? translateSchemaReference(schemaRef) : {};
+
+    // switch (type) {
+    //   case "object":
+    //   case "array":
+    //     return {
+    //       required,
+    //       description,
+    //       ...(schemaRef ? translateSchemaReference(schemaRef) : {}),
+    //     };
+    //   default:
+    //     return {
+    //       required,
+    //       description,
+    //       type,
+    //       field: translateSchemaReference(items?.$ref),
+    //     };
+    // }
     return {
       required,
       description,
       ...(schemaRef
-        ? translateSchemaReference(schemaRef)
+        ? test
         : {
             type: type === "object" ? "json" : type,
             ...(items && { field: translateSchemaReference(items?.$ref) }),
@@ -185,6 +217,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       requestBody,
       responses = [],
     } = extractSwaggerValueByMethod(swaggerJSON, path);
+    console.log(path);
 
     // Formatting Parameters & Responses
     const { pathParams = [], queryParams = [] } = formatParameters(parameters);
@@ -234,6 +267,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 const generateConfigs = async () => {
   try {
     for (let key in swaggerPaths) {
+      // if (["streams"].includes(key)) {
       const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
       const swaggerJSON = await swaggerRes?.json();
       let swaggerContent;
@@ -246,6 +280,7 @@ const generateConfigs = async () => {
       // If statement is temporary, for testing only
       swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
       swaggerOAS[key] = swaggerContent;
+      // }
     }
 
     // Write API reference Config
@@ -257,7 +292,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (!["nft"].includes(key)) {
+      if (!["nft", "solana"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);
@@ -268,7 +303,7 @@ const generateConfigs = async () => {
             `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
-slug: /reference/${functionName.toLowerCase()}
+slug: /${swaggerPaths[key].category}/reference/${functionName.toLowerCase()}
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -276,8 +311,7 @@ import config from "${swaggerPaths[key].importPath}";
 
 # ${swaggerOAS[key][functionName]?.summary}
 
-<ApiReference {...config.${key}.${functionName}} />
-              `,
+<ApiReference {...config.${key}.${functionName}} />`,
             { flag: "w" },
             (err) => {
               if (err) {
