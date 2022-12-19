@@ -107,15 +107,20 @@ const formatParameters = (parameters) => {
 const formatBodyParameters = (requestBody) => {
   if (requestBody) {
     const { required, description, content } = requestBody;
-    const schemaRef = content?.["application/json"]?.schema?.$ref;
+    const {
+      type,
+      items,
+      $ref: schemaRef,
+    } = content?.["application/json"]?.schema;
     return {
       required,
       description,
       ...(schemaRef
-        ? {
-            body: translateSchemaReference(schemaRef),
-          }
-        : {}),
+        ? translateSchemaReference(schemaRef)
+        : {
+            type: type === "object" ? "json" : type,
+            ...(items && { field: translateSchemaReference(items?.$ref) }),
+          }),
     };
   }
 
@@ -195,7 +200,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       path: formattedPath,
       pathParams,
       queryParams,
-      bodyParams: formattedBodyParams,
+      bodyParam: formattedBodyParams,
       responses: formattedResponses,
     };
   }
@@ -252,7 +257,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (!["nft"].includes(key)) {
+      if (!["nft", "solana"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);

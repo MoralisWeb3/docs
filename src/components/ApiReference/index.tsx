@@ -141,7 +141,7 @@ const ApiReference = ({
 
               {description && <div className={styles.section}>{description}</div>}
 
-              {pathParams && (
+              {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>PATH PARAMS</div>
 
@@ -151,7 +151,7 @@ const ApiReference = ({
                 </div>
               )}
 
-              {queryParams && (
+              {queryParams && queryParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>QUERY PARAMS</div>
 
