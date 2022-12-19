@@ -64,6 +64,13 @@ const translateSchemaReference = (schemaRef) => {
                 translateSchemaReference(items?.$ref)
               : { field: items }),
           };
+        } else if (type === "object" && !items) {
+          return {
+            name,
+            type: "json",
+            description,
+            example,
+          };
         } else {
           return {
             name,
@@ -131,31 +138,12 @@ const formatBodyParameters = (requestBody) => {
       items,
       $ref: schemaRef,
     } = content?.["application/json"]?.schema;
-    console.log(schemaRef);
 
-    const test = schemaRef ? translateSchemaReference(schemaRef) : {};
-
-    // switch (type) {
-    //   case "object":
-    //   case "array":
-    //     return {
-    //       required,
-    //       description,
-    //       ...(schemaRef ? translateSchemaReference(schemaRef) : {}),
-    //     };
-    //   default:
-    //     return {
-    //       required,
-    //       description,
-    //       type,
-    //       field: translateSchemaReference(items?.$ref),
-    //     };
-    // }
     return {
       required,
       description,
       ...(schemaRef
-        ? test
+        ? translateSchemaReference(schemaRef)
         : {
             type: type === "object" ? "json" : type,
             ...(items && { field: translateSchemaReference(items?.$ref) }),
@@ -224,7 +212,6 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       requestBody,
       responses = [],
     } = extractSwaggerValueByMethod(swaggerJSON, path);
-    console.log(path);
 
     // Formatting Parameters & Responses
     const { pathParams = [], queryParams = [] } = formatParameters(parameters);
