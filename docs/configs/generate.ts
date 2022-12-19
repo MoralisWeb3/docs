@@ -33,7 +33,7 @@ const translateSchemaReference = (schemaRef) => {
     return {
       type: "object",
       fields: Object.keys(properties).map((name) => {
-        const { type, description, example, items } = properties[name];
+        const { type, description, example, items, $ref } = properties[name];
         /**
          * AbiInput and AbiOutput schema reference itself which will create
          * recursive loop. Therefore, this is a special condition to stop them.
@@ -45,6 +45,13 @@ const translateSchemaReference = (schemaRef) => {
           return {
             name,
             type: "json",
+          };
+        } else if ($ref) {
+          return {
+            name,
+            type,
+            description,
+            ...swaggerSchemas[$ref.replace("#/components/schemas/", "")],
           };
         } else if (type === "array") {
           return {

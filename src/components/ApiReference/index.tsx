@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useMemo, useContext } from "react";
+import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
 import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
@@ -139,7 +140,9 @@ const ApiReference = ({
                 {path}
               </div>
 
-              {description && <div className={styles.section}>{description}</div>}
+              {description && <div className={styles.section}>
+                <ReactMarkdown>{description}</ReactMarkdown>
+              </div>}
 
               {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
