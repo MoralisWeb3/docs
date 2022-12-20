@@ -1,31 +1,32 @@
 ---
 title: "FAQ"
 sidebar_position: 20
+description: "This FAQ page provides answers to common questions about our product. Learn more about features, compatibility, installation, and more."
 ---
 
-### Is Streams API in production?
+## Is Streams API in production?
 
 Yes, our Streams API is in production now.
 
-### How are Streams priced?
+## How are Streams priced?
 
 Please see [Records and pricing](/streams-api/records-and-pricing) 
 
-### Can I disable the unconfirmed webhook requests?
+## Can I disable the unconfirmed webhook requests?
 
 You cannot currently disable unconfirmed webhook requests, but you won't be charged for them.  We will only charge you for confirmed webhook requests.
 
-### Why do I receive two requests for the same transaction?
+## Why do I receive two requests for the same transaction?
 
 One request is sent for the unconfirmed transaction, the other is sent for the confirmed transaction. 
 
 You are only charged for confirmed transactions/webhook requests. 
 
-### After how many blocks is considered a transaction as confirmed?
+## After how many blocks is considered a transaction as confirmed?
 
 See [number of blocks per chain for confirmed transactions](/streams-api#supported-chains)
 
-### How many addresses can I add to a stream?
+## How many addresses can I add to a stream?
 
 Starter Plan accounts can add up to 10k addresses. Pro and Business plans can add up to 50k addresses. 
 
@@ -33,13 +34,13 @@ If needed, you can increase your limit by contacting our support team at hello@m
 
 Enterprise plans can have fully customized limits with no hard caps - the Streams API works with up to 100M addresses. You can also use the "listening to all addresses" feature separately for contracts.
 
-### How many separate streams can I create?
+## How many separate streams can I create?
 
 You can create up to 20 streams on a Free account and up to 200 streams with an upgraded account, and multiple addresses can be added to a single stream config, "listen to all addresses" feature can also be used with a single stream config for Business and Enterprise plans.
 
 You can contact our support team at [hello@moralis.io](mailto:hello@moralis.io) if you need a higher limit, we can support an unlimited number of streams.
 
-### Are there any events lost when a stream or the filters for a stream get updated?
+## Are there any events lost when a stream or the filters for a stream get updated?
 
 No, nothing is lost when a stream gets updated or the filters for a stream get updated.
 
@@ -52,7 +53,7 @@ No, nothing is lost when a stream gets updated or the filters for a stream get u
 - Records are only counted towards your usage for webhooks with `confirmed:true` so webhooks `withconfirmed:false` are **free**
 - Decoded logs are also free they do NOT count as `Records`.
 
-### What is a record?
+## What is a record?
 
 A record is either a transaction (`txsin` response), log (`logs`in response) or internal transaction (`txsInternalin` response). The number of records in a webhook is the sum of `txs + logs + txsInternal`.
 

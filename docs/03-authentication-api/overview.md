@@ -3,6 +3,7 @@ title: "Authentication API"
 sidebar_label: "Overview"
 slug: "/authentication-api"
 sidebar_position: 1
+description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
 --- 
 
 ![](/img/content/594b455-image.png)

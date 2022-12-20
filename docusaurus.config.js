@@ -157,7 +157,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "example-dapps/overview",
+            docId: "example-dapps/evm/evm",
             position: "left",
             label: "Example dapps",
           },

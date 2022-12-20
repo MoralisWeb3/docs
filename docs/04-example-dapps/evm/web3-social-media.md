@@ -1,6 +1,7 @@
 ---
 title: "Web3 Social Media"
 slug: "web3-social-media"
+description: "This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API."
 ---
 ## Introduction
 

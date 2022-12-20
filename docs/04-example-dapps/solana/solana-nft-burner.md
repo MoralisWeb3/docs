@@ -1,7 +1,7 @@
 ---
 title: "Solana NFT Burner"
 slug: "solana-nft-burner"
-description: "Burn spam or unwanted Solana NFTs and get back SOL."
+description: "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API."
 ---
 ## Introduction
 

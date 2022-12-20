@@ -1,6 +1,7 @@
 ---
 title: "Blockchain Discord Bot"
 slug: "blockchain-discord-bot"
+description: "This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications."
 ---
 ## Introduction
 
