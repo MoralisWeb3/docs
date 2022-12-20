@@ -1,14 +1,14 @@
 ---
 title: "How to get NFT Metadata"
 slug: "../how-to-get-the-metadata-of-an-nft"
-description: "Learn how to get NFT metadata using the Moralis NFT API."
+description: "Learn how to retrieve NFT metadata using the Moralis NFT API, with step-by-step instructions on how to set up your Moralis account, install the Moralis SDK, and use the getNFTMetadata endpoint to get the metadata for a specific NFT."
 ---
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 

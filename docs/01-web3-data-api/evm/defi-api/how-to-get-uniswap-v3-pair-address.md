@@ -8,7 +8,7 @@ description: "Learn how to get the pair address of a Uniswap V3 liquidity pool u
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 

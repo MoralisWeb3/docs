@@ -1,14 +1,14 @@
 ---
 title: "How to get SPL token price"
 slug: "../how-to-get-spl-token-price"
-description: "Learn how to get SPL token price using Moralis Solana API."
+description: "This tutorial will guide you through the process of using the Moralis API to get the price of a SPL token."
 ---
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 

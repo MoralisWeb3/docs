@@ -2,6 +2,7 @@
 title: "Web3 Concepts"
 slug: "web3-concepts"
 sidebar_position: 9
+description: "This guide provides a comprehensive overview of the technologies and concepts that make up the decentralized web, making it essential reading for anyone interested in Web3."
 ---
 ## Wallets
 

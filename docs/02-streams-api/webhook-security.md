@@ -2,6 +2,7 @@
 title: "Webhook Security"
 slug: "webhook-security"
 sidebar_position: 9
+description: "Keep your webhook requests secure with our implementation that signs every request with the web3api key. The signature is included in the request headers and can be easily verified by using our provided JavaScript function or adapting it for your preferred programming language."
 ---
 
 ## Securing Webhook Requests

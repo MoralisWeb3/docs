@@ -1,13 +1,14 @@
 ---
 title: "How to get Solana portfolio balance of an address"
 slug: "../how-to-get-solana-portfolio-balance-of-an-address"
+description: "Learn how to retrieve the Solana portfolio balance of a wallet address using the Moralis Solana API."
 ---
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 
