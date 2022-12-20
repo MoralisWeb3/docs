@@ -49,7 +49,7 @@ const config = {
           routeBasePath: "/",
           remarkPlugins: [
             [require("remark-oembed"), { syncWidget: true }],
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+            [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
         },
         blog: false,
@@ -73,7 +73,8 @@ const config = {
       metadata: [
         {
           name: "description",
-          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+          content:
+            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
         },
         {
           name: "twitter:title",
@@ -81,7 +82,8 @@ const config = {
         },
         {
           name: "twitter:description",
-          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+          content:
+            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
         },
         {
           name: "twitter:image",
@@ -90,14 +92,15 @@ const config = {
         {
           name: "twitter:card",
           content: "summary_large_image",
-        }, 
+        },
         {
           name: "og:title",
           content: "Moralis Web3 Documentation",
         },
         {
           name: "og:description",
-          content: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
+          content:
+            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
         },
         {
           name: "og:site_name",
