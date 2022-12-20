@@ -1,6 +1,7 @@
 ---
 title: "Cross-Chain Requests"
 slug: "cross-chain-requests"
+sidebar_position: 8
 ---
 # Cross-Chain EVM Requests
 
@@ -38,8 +39,6 @@ Moralis.EvmApi.block.getBlock({
 })
 ```
 
-
-
 ## Supported EVM Chains
 
 | Name                            | Chain id | EvmChain                  | Type    |
@@ -60,9 +59,9 @@ Moralis.EvmApi.block.getBlock({
 | Cronos Mainnet                  | 25       | `EvmChain.CRONOS`         | Mainnet |
 | Cronos Testnet                  | 338      | `EvmChain.CRONOS_TESTNET` | Testnet |
 
-# Solana
+## Solana
 
-## Change the Default Network
+### Change the Default Network
 
 We have two networks for the Solana API, which you can configure similarly. You can specify the mainnet or devnet:
 
@@ -80,9 +79,7 @@ Moralis.SolApi.account.getBalance({
 });
 ```
 
-
-
-## Supported Solana Networks
+### Supported Solana Networks
 
 | Name           | SolNetwork           |
 | :------------- | :------------------- |
