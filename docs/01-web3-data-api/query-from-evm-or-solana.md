@@ -2,6 +2,7 @@
 title: "Query from EVM or Solana"
 slug: "query-from-evm-or-solana"
 description: "It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type."
+sidebar_position: 8
 ---
 :::info Complete API Reference
 

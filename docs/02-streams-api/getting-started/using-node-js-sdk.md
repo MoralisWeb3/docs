@@ -1,6 +1,6 @@
 ---
-title: "Using JS SDK"
-slug: "../your-first-stream-using-js-sdk"
+title: "Using NodeJS SDK"
+slug: "../using-node-js-sdk"
 description: "Learn how to build your first stream in just a few minutes."
 ---
 In this example, we will monitor a wallet. Specifically, we'll monitor all incoming and outgoing transactions of that wallet!

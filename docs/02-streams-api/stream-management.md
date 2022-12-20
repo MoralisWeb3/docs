@@ -1,7 +1,7 @@
 ---
 title: "Stream Management"
 slug: "stream-management"
-sidebar_position: 4
+sidebar_position: 13
 ---
 
 ## GET Streams

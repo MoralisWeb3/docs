@@ -3,13 +3,13 @@ title: "Unreal 5 Get Web3 Data"
 slug: "unreal-5-get-web3-data"
 description: "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes."
 ---
-# Prerequisites
+## Prerequisites
 
 - Complete [AWS Lambda integration](/web3-data-api/integrations/aws-lambda-nodejs).
 - Install [Unreal Engine 5.1 ](https://docs.unrealengine.com/5.1/en-US/installing-unreal-engine/).
 - Install [VaRest plugin](https://www.unrealengine.com/marketplace/en-US/product/varest-plugin) to Unreal Engine 5.1.
 
-# Open sample game
+## Open sample game
 
 :::info Download sample game
 
@@ -37,7 +37,7 @@ Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 > 
 > As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
 
-# Setting up
+## Setting up
 
 On the editor, click the blueprint icon and choose _**Open Level Blueprint**_:
 
@@ -54,7 +54,7 @@ Zoom out to visualize and locate **4 important areas**:
 
 ![](/img/content/0d0bd99-image.png)
 
-## Manage input
+### Manage input
 
 :::info 
 > 
@@ -64,7 +64,7 @@ Apart from enabling and disabling the player's input, here we get the `wallet ad
 
 ![](/img/content/d81ba07-image.png)
 
-## Construct request body
+### Construct request body
 
 :::info 
 > 
@@ -74,19 +74,19 @@ What interests us in this tutorial is to know **how do we call an API endpoint**
 
 ![](/img/content/e9fdaae-image.png)
 
-## Get Native Balance
+### Get Native Balance
 
 Add the _getNativeBalance_ endpoint URL to the _**URL field**_. You can get it [following the instructions here](/web3-data-api/integrations/aws-lambda-nodejs#testing-express-api-function):
 
 ![](/img/content/4b02975-image.png)
 
-## Get Wallet NFTs
+### Get Wallet NFTs
 
 Add the _getWalletNfts_ endpoint URL to the **_URL field_**. You can get it [following the instructions here](/web3-data-api/integrations/aws-lambda-nodejs#testing-express-api-function):
 
 ![](/img/content/0662f30-image.png)
 
-## Saving changes
+### Saving changes
 
 Click _**Compile**_ and then the _**Save icon**_: 
 
@@ -96,7 +96,7 @@ Click _**Compile**_ and then the _**Save icon**_:
 
 :::
 
-# Play the game
+## Play the game
 
 On the editor, choose **_Play_**:
 

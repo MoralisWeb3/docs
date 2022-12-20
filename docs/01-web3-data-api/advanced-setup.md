@@ -1,6 +1,7 @@
 ---
 title: "Advanced SDK Setup"
 slug: "advanced-sdk-setup"
+sidebar_position: 8
 ---
 :::info Advanced Use Case
 

@@ -1,6 +1,7 @@
 ---
 title: "Moralis Data Types"
 slug: "moralis-data-types"
+sidebar_position: 8
 ---
 # Moralis Data Types
 
@@ -11,11 +12,12 @@ Within the SDK, we have several data types to make your life easier when working
 - Utility methods (such as comparing two different data types regardless of the input/format)
 - Additional properties (such as currency, `rpcUrls`, and paths to explorers)
 
-# Configuring Default Types for `EvmChain` and `EvmAddress` (Optional)
+:::info Configuring Default Types for `EvmChain` and `EvmAddress` (Optional)
 
 It's possible to set default types for `EvmChain` and `EvmAddress` to read data from them using the `.format()` method. Please visit [NodeJS SDK config](https://docs.moralis.io/docs/querying-the-api-and-parsing-responses).
+:::
 
-# Using Data Types
+## Using Data Types
 
 The most common use cases for the data types are:
 
@@ -51,8 +53,6 @@ Moralis.EvmApi.nft.getWalletNFTs({
 })
 ```
 
-
-
 ## Creating New Instances Manually for Usage Within Your Dapp
 
 If you need to use any of the data types within your apps, then you can import them from `'@moralisweb3/evm-utils` or `'@moralisweb3/sol-utils`, and create your instance via the `.create()` method.
@@ -67,8 +67,6 @@ const oneEth = EvmNative.create(1, 'ether')
 oneEth.wei // 1000000000000000000
 ```
 
-
-
 ```javascript
 import { EvmAddress } from '@moralisweb3/evm-utils'
 
@@ -76,8 +74,6 @@ const myAddress = EvmAddress.create('0xa74476443119A942dE498590Fe1f2454d7D4aC0d'
 
 myAddress.lowercase // "0xa74476443119a942de498590fe1f2454d7d4ac0d"
 ```
-
-
 
 ## Using Returned Data Types from the API
 
@@ -94,13 +90,11 @@ myBalance.ether // 1.0
 myBalance.equals("1000000000000000000") // true
 ```
 
-
-
-# `EvmChain`
+## EvmChain
 
 Instead of handling EVM chains as decimal or hex string types, the Moralis SDK now handles them as a separate class instance, and we call them `Moralis Data Types`.
 
-## Create `EvmChain`
+### Create EvmChain
 
 ```javascript
 import { EvmChain } from '@moralisweb3/evm-utils'
@@ -113,13 +107,11 @@ const chain = EvmChain.create("0x1")
 const chain = EvmChain.create(1)
 ```
 
-
-
-## Read `EvmChain`
+### Read EvmChain
 
 You can read the following values from the `EvmChain` instance:
 
-### ChainId
+#### ChainId
 
 ```javascript
 console.log("decimal: ", chain.decimal)
@@ -130,27 +122,21 @@ console.log("hex: ", chain.format())
 // output depends on specified by default formatting type
 ```
 
-
-
-### Name
+#### Name
 
 ```javascript
 console.log("name: ", chain.name)
 // name:"Ethereum Mainnet"
 ```
 
-
-
-### Currency
+#### Currency
 
 ```javascript
 console.log("currency: ", chain.currency)
 // currency: {name : "Ether", symbol: "ETH", decimals: 18 }
 ```
 
-
-
-## `EvmChain` - Comparing Equality
+### EvmChain - Comparing Equality
 
 This utility method can be helpful when you handle decimals and hex values altogether in your dapp:
 
@@ -165,11 +151,9 @@ console.log('check 4: ', chain.equals(EvmChain.create("0x1")))
 // check 4: true
 ```
 
+### EvmAddress
 
-
-# `EvmAddress`
-
-## Create `EvmAddress`
+#### Create EvmAddress
 
 ```javascript
 import { EvmAddress } from '@moralisweb3/evm-utils'
@@ -180,9 +164,7 @@ const address = EvmAddress.create('0xa9c4c85dd0495e32d08ef64d51fdeb35d200edfe')
 const address = EvmAddress.create('0xa9C4c85DD0495E32D08EF64d51fDEB35D200EDfe')
 ```
 
-
-
-## Read `EvmAddress`
+#### Read EvmAddress
 
 ```javascript
 console.log("lowercase: ", address.lowercase)
@@ -193,9 +175,7 @@ console.log("checksum: ", address.format())
 // output depends on specified by default formatting type
 ```
 
-
-
-## `EvmAddress` - Comparing Equality
+#### EvmAddress - Comparing Equality
 
 This utility method can be helpful when you handle lowercase and checksum values altogether in your dapp:
 

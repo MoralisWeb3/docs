@@ -441,9 +441,9 @@ To run this server locally, it’s as easy as executing the **`npm run start`** 
 ![](/img/content/63b935a-image.png)
 
 
-# Run on Google Cloud
+## Run on Google Cloud
 
-## Prerequisites
+### Prerequisites
 
 - Have or create a [Google account](https://support.google.com/accounts/answer/27441?hl=en)
 - Sign in to [Google Cloud](https://console.cloud.google.com/welcome?organizationId=1095921968737&supportedpurview=project)
@@ -456,9 +456,9 @@ In GCP, start by creating a [new project](https://console.cloud.google.com/proje
 
 With the project created, you now have different options to run your server.
 
-## Deploying to Cloud Run
+### Deploying to Cloud Run
 
-### Using the Cloud Code Extension
+#### Using the Cloud Code Extension
 
 In this tutorial, we’re going to use this option as we believe it’s probably the easiest method. You might want to watch the [official video](https://www.youtube.com/watch?v=EtMIEtLQNa0&t=216s) before starting, as we’ll be following similar steps.
 
@@ -543,15 +543,15 @@ One way or another, you should have a new Google Cloud service created and runni
 
 
 
-# Calling from Unity
+## Calling from Unity
 
-## Prerequisites
+### Prerequisites
 
 - Having [Unity](https://unity3d.com/get-unity/download/archive) installed (at least a 2021.3 version)
 
 You can start by downloading the sample project you’ll find in this [repository](https://github.com/MoralisWeb3/demo-unity-moralis-gcp) and opening it with Unity.
 
-## Connection to Custom Backend
+### Connection to Custom Backend
 
 When you open the project, the _**Moralis Web3 Setup**_ panel will appear. As we're using our own custom backend, we don't need to enter any information here, so just mark the **_Use Moralis 2.0 back-end integration and disable MoralisClient in Unity_** option and click on _**Done**_:
 
@@ -575,7 +575,7 @@ On _Assets > Scripts_, open **`ServerConfiguration.cs`** and paste the **Google 
 
 With that, we are ready to play the scene, but first, let's see how we make authentication requests from Unity.
 
-## Authentication
+### Authentication
 
 In this sample project, we're using the available **AuthenticationKit** provided in the [Moralis Web3 Unity SDK](https://github.com/MoralisWeb3/web3-unity-sdk) to manage the connection with the wallet. You'll find it in _Hierarchy_ under  _Web3Authentication_:
 
@@ -771,4 +771,4 @@ After connecting and signing the message, you should be authenticated, seeing yo
 
 ![To get the native balance, we also do a _UnityWebRequest_, this time pointing to the `/nativeBalance` operation/endpoint. Check `GameManager.cs`.](/img/content/fb30e9d-image.png)
 
-### Congratulations! You completed the _Using Unity & Google Cloud_ tutorial!
+#### Congratulations! You completed the _Using Unity & Google Cloud_ tutorial!

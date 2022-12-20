@@ -2,7 +2,7 @@
 title: "Listen to all addresses"
 slug: "listen-to-all-addresses"
 description: "Monitor All Transactions by a Topic"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 - Listen to all NFT contract transfers [tutorial](/streams-api/how-to-listen-all-nft-transfers)

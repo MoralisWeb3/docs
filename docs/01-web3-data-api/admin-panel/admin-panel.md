@@ -2,7 +2,7 @@
 title: "Admin panel"
 slug: "/admin-panel"
 description: "Learn how to use the Moralis Admin Panel effectively while developing your dapps."
-sidebar_position: 5
+sidebar_position: 4
 ---
 ## What is the Admin Panel?
 

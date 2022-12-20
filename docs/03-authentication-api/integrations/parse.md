@@ -353,7 +353,7 @@ app.listen(config.PORT, () => {
 
 
 
-# Client side
+## Client side
 
 Making sure that everything functions on the client side is the final step. 
 
@@ -417,8 +417,6 @@ const handleAuth = async () => {
   renderUser(user);
 };
 ```
-
-
 
 ## Demo project
 

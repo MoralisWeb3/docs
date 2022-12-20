@@ -1,7 +1,7 @@
 ---
 title: "Filter Streams"
 slug: "filter-streams"
-sidebar_position: 4
+sidebar_position: 12
 ---
 
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                          |

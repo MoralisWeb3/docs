@@ -1,7 +1,7 @@
 ---
 title: "Mandatory Test Webhook"
 slug: "mandatory-test-webhook"
-sidebar_position: 4
+sidebar_position: 7
 ---
 
 Whenever you create or update a stream, you will receive a test webhook.

@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-sidebar_position: 10
+sidebar_position: 20
 ---
 
 ### Is Streams API in production?

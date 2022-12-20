@@ -1,7 +1,7 @@
 ---
 title: "Useful Streams options"
 slug: "useful-streams-options"
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 ## Include Contract Logs

@@ -3,7 +3,7 @@ title: "Token Gating Website (NextJS)"
 slug: "token-gating-website-nextjs"
 description: "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!"
 ---
-# Introduction
+## Introduction
 
 This tutorial shows you how to create a NextJS dapp containing NFT gated functionality. We will create a protected page that's only accessible to users who authenticate and own at least one NFT from the specified NFT collection.
 
@@ -11,11 +11,11 @@ You can find the repository with the final code here: <https://github.com/Morali
 
 ![If User Fulfills Requirements - This is the Landing Page](/img/content/dfc9bf3-81e82ad-Untitled.png)
 
-# Before Starting
+## Before Starting
 
 You can start this tutorial if you already have a NextJS dapp with Web3 authorization using `next-auth`. (_Please check our [NextJS Web3 Auth Tutorial](/authentication-api/how-to-sign-in-with-metamask)._)
 
-# NFT Gated Page with `getServerSideProps`
+## NFT Gated Page with `getServerSideProps`
 
 1. Create a new page file, `pages/protected.jsx`, with the following content:
 
