@@ -78,7 +78,7 @@ graph TD;
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using JS SDK](/streams-api/your-first-stream-using-js-sdk)
+- [Your First Stream using NodeJS SDK](/streams-api/using-node-js-sdk)
 - [Your First Stream using WebUI](/streams-api/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
