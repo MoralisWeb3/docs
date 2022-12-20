@@ -124,6 +124,9 @@ const config = {
         apiKey: "b36064a11a9ce260d626a095a8ff2693",
         indexName: "moralis-docs",
       },
+      hotjar: {
+        applicationId: "3295610",
+      },
       navbar: {
         hideOnScroll: false,
         logo: {

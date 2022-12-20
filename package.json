@@ -29,6 +29,7 @@
     "axios": "^1.2.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-dotenv": "^1.0.1",
+    "docusaurus-plugin-hotjar": "^0.0.2",
     "docusaurus2-dotenv": "^1.4.0",
     "file-loader": "^6.2.0",
     "formik": "^2.2.9",
