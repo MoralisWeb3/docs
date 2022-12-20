@@ -21,7 +21,8 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
       {
         method,
         headers: {
-          Accept: "application/json",
+          accept: "application/json",
+          "content-type": "application/json",
           "X-API-Key": `${auth}`,
         },
         body: JSON.stringify(bodyParam),
