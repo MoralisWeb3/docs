@@ -37,9 +37,9 @@ const tabs = [
       return buildTemplate([
         line(`curl --request ${method} \\`),
         line(`${indent}--url ${url} \\`),
-        line(`${indent}--header 'Accept: application/json' ${body || auth ? "\\" : ""}`),
+        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
         auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
-        body ? line(`${indent}--header 'Content-Type: application/json' \\`) : null,
+        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
         body ? line(`${indent}--data '`) : null,
         body ? line(stringifyJSON(body, true)) : null,
         body ? line("'") : null,
@@ -60,8 +60,8 @@ const tabs = [
         line("const options = {"),
         line(`method: '${method}',`, 1),
         line("headers: {", 1),
-        line(`Accept: 'application/json'${auth || body ? "," : ""}`, 2),
-        body ? line(`'Content-Type': 'application/json'${auth ? "," : ""}`, 2) : null,
+        line(`accept: 'application/json'${auth || body ? "," : ""}`, 2),
+        body ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2) : null,
         auth ? line(`'X-API-Key': '${auth}'`, 2) : null,
         line("},", 1),
         body
