@@ -230,6 +230,7 @@ const config = {
       },
     }),
   plugins: [
+    ["docusaurus-plugin-hotjar", {}],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
   ],
