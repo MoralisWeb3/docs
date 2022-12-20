@@ -16,9 +16,6 @@ export const buildResponse = (field: ApiParam) => {
     return field?.example;
   }
 
-
-  if (field?.type === "array") console.log(field);
-
   if (field.type === "array") {
     if (field.field?.type === "oneOf") {
       return [...field.field.options.map((option) => buildResponse(option))];

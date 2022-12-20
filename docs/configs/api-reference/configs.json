@@ -173,7 +173,40 @@
                   },
                   {
                     "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata."
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        }
+                      }
+                    }
                   },
                   {
                     "name": "amount",
@@ -264,13 +297,59 @@
           ]
         }
       ],
+      "bodyParam": {
+        "required": true,
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "object",
+            "description": "The tokens to be fetched (max 25 tokens)",
+            "example": [
+              {
+                "token_address": "0xa4991609c508b6d4fb7156426db0bd49fe298bd8",
+                "token_id": "12"
+              },
+              {
+                "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
+                "token_id": "1"
+              },
+              {
+                "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
+                "token_id": "200"
+              }
+            ],
+            "fields": [
+              {
+                "name": "token_address",
+                "type": "string",
+                "description": "The contract address",
+                "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+              },
+              {
+                "name": "token_id",
+                "type": "string",
+                "description": "The id of the token",
+                "example": 100
+              }
+            ]
+          },
+          {
+            "name": "normalizeMetadata",
+            "type": "boolean",
+            "description": "Should normalized metadata be returned?",
+            "example": false
+          }
+        ]
+      },
       "responses": [
         { "status": "200", "description": "Returns a collection of NFT owners" }
       ]
     },
     "getWalletNFTTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transfers by wallet",
+      "summary": "Get NFT transfers by wallet",
       "description": "Get transfers of NFTs given the wallet and other parameters.",
       "method": "GET",
       "path": "/:address/nft/transfers",
@@ -500,7 +579,7 @@
     },
     "getWalletNFTCollections": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get collections by wallet",
+      "summary": "Get NFT collections by wallet",
       "description": "Get NFT collections owned by a given wallet address.",
       "method": "GET",
       "path": "/:address/nft/collections",
@@ -812,7 +891,40 @@
                   },
                   {
                     "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata."
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        }
+                      }
+                    }
                   },
                   {
                     "name": "minter_address",
@@ -857,7 +969,7 @@
     },
     "getNFTOwners": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get owners by contract",
+      "summary": "Get NFT owners by contract",
       "description": "Get owners of NFTs for a given contract.\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.",
       "method": "GET",
       "path": "/nft/:address/owners",
@@ -1021,7 +1133,40 @@
                   },
                   {
                     "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata."
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        }
+                      }
+                    }
                   },
                   {
                     "name": "amount",
@@ -1068,7 +1213,7 @@
     },
     "getNFTContractTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transfers by contract",
+      "summary": "Get NFT transfers by contract",
       "description": "Get transfers of NFTs for a given contract and other parameters.",
       "method": "GET",
       "path": "/nft/:address/transfers",
@@ -1303,7 +1448,7 @@
     },
     "getNFTTransfersFromToBlock": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transfers from a block to a block",
+      "summary": "Get NFT transfers from a block to a block",
       "description": "Get transfers of NFTs from a block number to a block number.",
       "method": "GET",
       "path": "/nft/transfers",
@@ -1530,7 +1675,7 @@
     },
     "getNFTTransfersByBlock": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transfers by block",
+      "summary": "Get NFT transfers by block",
       "description": "Get transfers of NFTs given a block number or block hash.",
       "method": "GET",
       "path": "/block/:block_number_or_hash/nft/transfers",
@@ -1734,7 +1879,7 @@
     },
     "getNFTTrades": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get trades by marketplace",
+      "summary": "Get NFT trades by marketplace",
       "description": "Get trades of NFTs for a given contract and marketplace.",
       "method": "GET",
       "path": "/nft/:address/trades",
@@ -1874,7 +2019,7 @@
                     "type": "array",
                     "description": "The token ID(s) traded",
                     "example": ["15", "54"],
-                    "items": { "type": "string", "example": "15" }
+                    "field": { "type": "string", "example": "15" }
                   },
                   {
                     "name": "seller_address",
@@ -1927,7 +2072,7 @@
     },
     "getNFTContractMetadata": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get collection metadata",
+      "summary": "Get NFT collection metadata",
       "description": "Get the collection / contract level metadata for a given contract (name, symbol, base token URI).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
       "path": "/nft/:address/metadata",
@@ -2155,7 +2300,40 @@
               },
               {
                 "name": "normalized_metadata",
-                "description": "A normalized metadata version of the NFT's metadata."
+                "description": "A normalized metadata version of the NFT's metadata.",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name or title of the NFT",
+                    "example": "Moralis Mug"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "A detailed description of the NFT",
+                    "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                  },
+                  "image": {
+                    "type": "string",
+                    "description": "The URL of the NFT's image",
+                    "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                  },
+                  "external_link": {
+                    "type": "string",
+                    "description": "A link to additional information",
+                    "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                  },
+                  "animation_url": {
+                    "type": "string",
+                    "description": "An animated version of the NFT's image",
+                    "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                    }
+                  }
+                }
               },
               {
                 "name": "minter_address",
@@ -2198,7 +2376,7 @@
     },
     "getNFTTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transfers by token ID",
+      "summary": "Get NFT transfers by token ID",
       "description": "Get transfers of an NFT given a contract address and token ID.",
       "method": "GET",
       "path": "/nft/:address/:token_id/transfers",
@@ -2416,7 +2594,7 @@
     },
     "getNFTTokenIdOwners": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get owners by token ID",
+      "summary": "Get NFT owners by token ID",
       "description": "Get owners of a specific NFT given the contract address and token ID. \n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
       "path": "/nft/:address/:token_id/owners",
@@ -2587,7 +2765,40 @@
                   },
                   {
                     "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata."
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        }
+                      }
+                    }
                   },
                   {
                     "name": "amount",
@@ -2815,7 +3026,7 @@
     },
     "getNFTLowestPrice": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get lowest price",
+      "summary": "Get NFT lowest price",
       "description": "Get the lowest executed price for an NFT contract for the last x days (only trades paid in ETH).",
       "method": "GET",
       "path": "/nft/:address/lowestprice",
@@ -2824,7 +3035,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
           "type": "string"
         }
       ],
@@ -2903,7 +3114,7 @@
                 "type": "array",
                 "description": "The token ID(s) traded",
                 "example": ["15", "54"],
-                "items": { "type": "string", "example": "15" }
+                "field": { "type": "string", "example": "15" }
               },
               {
                 "name": "seller_address",
@@ -3153,11 +3364,7 @@
                     "type": "string",
                     "example": "14265936"
                   },
-                  {
-                    "name": "opensea_lookup",
-                    "type": "object",
-                    "example": null
-                  },
+                  { "name": "opensea_lookup", "type": "json", "example": null },
                   {
                     "name": "minter_address",
                     "type": "string",
@@ -3170,10 +3377,10 @@
                   },
                   {
                     "name": "frozen_log_index",
-                    "type": "object",
+                    "type": "json",
                     "example": null
                   },
-                  { "name": "imported", "type": "object", "example": null },
+                  { "name": "imported", "type": "json", "example": null },
                   {
                     "name": "last_token_uri_sync",
                     "type": "string",
@@ -3207,7 +3414,7 @@
   "token": {
     "getTokenPrice": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get price",
+      "summary": "Get ERC20 token price",
       "description": "Get the token price denominated in the blockchain's native token and USD.",
       "method": "GET",
       "path": "/erc20/:address/price",
@@ -3278,7 +3485,32 @@
           "body": {
             "type": "object",
             "fields": [
-              { "name": "nativePrice" },
+              {
+                "name": "nativePrice",
+                "required": ["value", "decimals", "name", "symbol"],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "description": "The native price of the token",
+                    "example": "8409770570506626"
+                  },
+                  "decimals": {
+                    "type": "integer",
+                    "description": "The number of decimals on the token",
+                    "example": 18
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Ether"
+                  },
+                  "symbol": {
+                    "type": "string",
+                    "description": "The symbol of the token",
+                    "example": "ETH"
+                  }
+                }
+              },
               {
                 "name": "usdPrice",
                 "type": "number",
@@ -3304,7 +3536,7 @@
     },
     "getWalletTokenBalances": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get balance by wallet",
+      "summary": "Get ERC20 token balance by wallet",
       "description": "Get token balances for a specific wallet address.",
       "method": "GET",
       "path": "/:address/erc20",
@@ -3378,7 +3610,7 @@
     },
     "getWalletTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transactions by wallet",
+      "summary": "Get ERC20 token transactions by wallet",
       "description": "Get ERC20 token transactions ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address/erc20/transfers",
@@ -3562,7 +3794,7 @@
     },
     "getTokenMetadata": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get metadata by contract",
+      "summary": "Get ERC20 token metadata by contract",
       "description": "Get the metadata for a given token contract address (name, symbol, decimals, logo).",
       "method": "GET",
       "path": "/erc20/metadata",
@@ -3622,7 +3854,7 @@
     },
     "getTokenMetadataBySymbol": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get metadata by symbols",
+      "summary": "Get ERC20 token metadata by symbols",
       "description": "Get the metadata for a list of token symbols (name, symbol, decimals, logo).",
       "method": "GET",
       "path": "/erc20/metadata/symbols",
@@ -3682,7 +3914,7 @@
     },
     "getTokenAllowance": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get spender allowance",
+      "summary": "Get ERC20 token allowance",
       "description": "Get the amount which the spender is allowed to withdraw on behalf of the owner.",
       "method": "GET",
       "path": "/erc20/:address/allowance",
@@ -3764,7 +3996,7 @@
     },
     "getTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transactions by contract",
+      "summary": "Get ERC20 token transactions by contract",
       "description": "Get ERC20 token transactions from a contract ordered by block number in descending order.",
       "method": "GET",
       "path": "/erc20/:address/transfers",
@@ -3951,7 +4183,7 @@
   "balance": {
     "getNativeBalance": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get balance by wallet",
+      "summary": "Get native balance by wallet",
       "description": "Get the native balance for a specific wallet address.",
       "method": "GET",
       "path": "/:address/balance",
@@ -4031,7 +4263,7 @@
   "transaction": {
     "getWalletTransactions": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get transactions by wallet",
+      "summary": "Get native transactions by wallet",
       "description": "Get native transactions ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address",
@@ -4744,7 +4976,7 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
           "type": "string"
         }
       ],
@@ -5051,6 +5283,11 @@
           "type": "number"
         }
       ],
+      "bodyParam": {
+        "required": false,
+        "description": "ABI of the specific event",
+        "type": "json"
+      },
       "responses": [
         {
           "status": "200",
@@ -5547,6 +5784,25 @@
           "type": "string"
         }
       ],
+      "bodyParam": {
+        "required": true,
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "abi",
+            "type": "json",
+            "description": "The contract ABI",
+            "example": []
+          },
+          {
+            "name": "params",
+            "type": "json",
+            "description": "The params for the given function",
+            "example": {}
+          }
+        ]
+      },
       "responses": [
         {
           "status": "200",
@@ -5599,8 +5855,8 @@
   "resolve": {
     "resolveAddress": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Resolve ENS name",
-      "description": "Resolve an ETH address and find the ENS name.",
+      "summary": "Resolve ENS domain",
+      "description": "Reverse resolve a given ETH address to its ENS domain.",
       "method": "GET",
       "path": "/resolve/:address/reverse",
       "pathParams": [
@@ -5634,7 +5890,7 @@
     "resolveDomain": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Resolve Unstoppable domain",
-      "description": "Resolve an Unstoppable domain and get the address.",
+      "description": "Resolve a specific Unstoppable domain to its address.",
       "method": "GET",
       "path": "/resolve/:domain",
       "pathParams": [
@@ -5678,7 +5934,7 @@
   "defi": {
     "getPairReserves": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get pair reserves",
+      "summary": "Get DEX token pair reserves",
       "description": "Get the liquidity reserves for a given pair address. Only Uniswap V2 based exchanges supported at the moment.",
       "method": "GET",
       "path": "/:pair_address/reserves",
@@ -5747,7 +6003,7 @@
     },
     "getPairAddress": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get pair address",
+      "summary": "Get DEX token pair address",
       "description": "Fetch the pair data of the provided token0+token1 combination.\nThe token0 and token1 options are interchangable (ie. there is no different outcome in \"token0=WETH and token1=USDT\" or \"token0=USDT and token1=WETH\")\n",
       "method": "GET",
       "path": "/:token0_address/:token1_address/pairAddress",
@@ -5828,7 +6084,18 @@
         {
           "status": "200",
           "description": "Returns the pair address of the two tokens.",
-          "body": { "type": "object" }
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "token0", "type": "json" },
+              { "name": "token1", "type": "json" },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "example": "0xbbb9bf440d0f686487925fef3b0a0f9aa67753f6"
+              }
+            ]
+          }
         }
       ]
     }
@@ -5836,12 +6103,34 @@
   "ipfs": {
     "uploadFolder": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Upload folder",
+      "summary": "Upload folder to IPFS",
       "description": "Upload multiple files to IPFS and place them in a folder directory.",
       "method": "POST",
       "path": "/ipfs/uploadFolder",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": false,
+        "description": "Array of JSON and Base64 Supported",
+        "type": "array",
+        "field": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "path",
+              "type": "string",
+              "description": "Path to the file",
+              "example": "moralis/logo.jpg"
+            },
+            {
+              "name": "content",
+              "type": "string",
+              "description": "Base64 or JSON",
+              "example": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3"
+            }
+          ]
+        }
+      },
       "responses": [
         {
           "status": "200",
@@ -5858,11 +6147,95 @@
       "path": "/challenge/request/evm",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Request EVM challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string",
+            "description": "RFC 4501 dns authority that is requesting the signing.",
+            "example": "defi.finance"
+          },
+          {
+            "name": "chainId",
+            "type": "string",
+            "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
+            "example": 1
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "description": "Ethereum address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "example": "0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B"
+          },
+          {
+            "name": "statement",
+            "type": "string",
+            "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+            "example": "Please confirm"
+          },
+          {
+            "name": "uri",
+            "type": "string",
+            "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+            "example": "https://defi.finance/"
+          },
+          {
+            "name": "expirationTime",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "notBefore",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "resources",
+            "type": "array",
+            "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by new lines.",
+            "example": ["https://docs.moralis.io/"],
+            "field": { "type": "string" }
+          },
+          {
+            "name": "timeout",
+            "type": "number",
+            "description": "Time in seconds before the challenge is expired",
+            "example": 15
+          }
+        ]
+      },
       "responses": [
         {
           "status": "201",
           "description": "The back channel challenge containing the id to store on the api and the message to be signed by the user",
-          "body": { "type": "object" }
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrXa"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "defi.finance wants you to sign in with your Ethereum account:\n0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B\n\nPlease confirm\n\nURI: https://defi.finance/\nVersion: 1\nChain ID: 1\nNonce: DbU1DCTmdzR4lg3wi\nIssued At: 2022-06-12T12:15:31.290Z\nExpiration Time: 2020-01-01T00:00:00.000Z\nNot Before: 2020-01-01T00:00:00.000Z\nResources:\n- https://docs.moralis.io/"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
         }
       ]
     },
@@ -5873,11 +6246,106 @@
       "path": "/challenge/verify/evm",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Verify EVM challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "message",
+            "type": "string",
+            "description": "Message that needs to be signed by the end user.",
+            "example": "defi.finance wants you to sign in with your Ethereum account:\n0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B\n\n\nURI: https://defi.finance\nVersion: 1\nChain ID: 1\nNonce: Px7Nh1RPzlCLwqgOb\nIssued At: 2022-11-30T10:20:00.262Z"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
+            "example": "0xa8f89a58bf9b433d3100f9e41ee35b5e31fb8c7cd62547acb113162ec6f2e4140207e2dfbd4e387e1801ebc7f08a9dd105ac1d22b2e2ff0df5fa8b6d9bdcfe491c"
+          }
+        ]
+      },
       "responses": [
         {
           "status": "201",
           "description": "The token to be used to call the third party API from the client",
-          "body": { "type": "object" }
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrX"
+              },
+              {
+                "name": "domain",
+                "type": "string",
+                "description": "RFC 4501 dns authority that is requesting the signing.",
+                "example": "defi.finance"
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
+                "example": 1
+              },
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Ethereum address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "example": "0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B"
+              },
+              {
+                "name": "statement",
+                "type": "string",
+                "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+                "example": "Please confirm"
+              },
+              {
+                "name": "uri",
+                "type": "string",
+                "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+                "example": "https://defi.finance/"
+              },
+              {
+                "name": "expirationTime",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "notBefore",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "resources",
+                "type": "array",
+                "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by `\n- `.",
+                "example": ["https://docs.moralis.io/"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "version",
+                "type": "string",
+                "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
+                "example": "1.0"
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "example": "0x1234567890abcdef0123456789abcdef1234567890abcdef"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
         }
       ]
     },
@@ -5888,11 +6356,95 @@
       "path": "/challenge/request/solana",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Request Solana challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string",
+            "description": "RFC 4501 dns authority that is requesting the signing.",
+            "example": "defi.finance"
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "description": "The network where Contract Accounts must be resolved.",
+            "example": "mainnet"
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "description": "Solana public key with a length of 32 - 44 characters that is used to perform the signing",
+            "example": "26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo"
+          },
+          {
+            "name": "statement",
+            "type": "string",
+            "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+            "example": "Please confirm"
+          },
+          {
+            "name": "uri",
+            "type": "string",
+            "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+            "example": "https://defi.finance/"
+          },
+          {
+            "name": "expirationTime",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "notBefore",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "resources",
+            "type": "array",
+            "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by new lines.",
+            "example": ["https://docs.moralis.io/"],
+            "field": { "type": "string" }
+          },
+          {
+            "name": "timeout",
+            "type": "number",
+            "description": "Time in seconds before the challenge is expired",
+            "example": 15
+          }
+        ]
+      },
       "responses": [
         {
           "status": "201",
           "description": "The back channel challenge containing the id to store on the api and the message to be signed by the user",
-          "body": { "type": "object" }
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrX"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "defi.finance wants you to sign in with your Solana account:\n26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo\n\nI am a third party API\n\nURI: http://defi.finance\nVersion: 1\nNetwork: mainnet\nNonce: PYxxb9msdjVXsMQ9x\nIssued At: 2022-08-25T11:02:34.097Z\nExpiration Time: 2022-08-25T11:12:38.243Z\nResources:\n- https://docs.moralis.io/"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
         }
       ]
     },
@@ -5903,11 +6455,106 @@
       "path": "/challenge/verify/solana",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Verify Solana challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "message",
+            "type": "string",
+            "description": "Message that needs to be signed by the end user",
+            "example": "defi.finance wants you to sign in with your Solana account:\n26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo\n\nI am a third party API\n\nURI: http://defi.finance\nVersion: 1\nNetwork: mainnet\nNonce: PYxxb9msdjVXsMQ9x\nIssued At: 2022-08-25T11:02:34.097Z\nExpiration Time: 2022-08-25T11:12:38.243Z\nResources:\n- https://docs.moralis.io/"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "description": "Base58 signature that needs to be used to verify end user",
+            "example": "2pH9DqD5rve2qV4yBDshcAjWd2y8TqMx8BPb7f3KoNnuLEhE5JwjruYi4jaFaD4HN6wriLz2Vdr32kRBAJmHcyny"
+          }
+        ]
+      },
       "responses": [
         {
           "status": "201",
           "description": "The token to be used to call the third party API from the client",
-          "body": { "type": "object" }
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrX"
+              },
+              {
+                "name": "domain",
+                "type": "string",
+                "description": "RFC 4501 dns authority that is requesting the signing.",
+                "example": "defi.finance"
+              },
+              {
+                "name": "network",
+                "type": "string",
+                "description": "The network where Contract Accounts must be resolved.",
+                "example": "mainnet"
+              },
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Solana public key with a length of 32 - 44 characters that is used to perform the signing",
+                "example": "26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo"
+              },
+              {
+                "name": "statement",
+                "type": "string",
+                "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+                "example": "Please confirm"
+              },
+              {
+                "name": "uri",
+                "type": "string",
+                "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+                "example": "https://defi.finance/"
+              },
+              {
+                "name": "expirationTime",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "notBefore",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "resources",
+                "type": "array",
+                "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by `\n- `.",
+                "example": ["https://docs.moralis.io/"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "version",
+                "type": "string",
+                "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
+                "example": "1.0"
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "example": "0x1234567890abcdef0123456789abcdef1234567890abcdef"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
         }
       ]
     }
@@ -5926,7 +6573,97 @@
         { "name": "excludePayload", "required": false, "type": "boolean" }
       ],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    "format": "uuid",
+                    "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+                  },
+                  { "name": "date", "type": "string" },
+                  {
+                    "name": "payload",
+                    "type": "object",
+                    "properties": {
+                      "block": { "$ref": "#/components/schemas/Block" },
+                      "chainId": { "type": "string" },
+                      "logs": {
+                        "items": { "$ref": "#/components/schemas/Log" },
+                        "type": "array"
+                      },
+                      "txs": {
+                        "items": { "$ref": "#/components/schemas/Transaction" },
+                        "type": "array"
+                      },
+                      "txsInternal": {
+                        "items": {
+                          "$ref": "#/components/schemas/InternalTransaction"
+                        },
+                        "type": "array"
+                      },
+                      "abi": {
+                        "items": { "$ref": "#/components/schemas/AbiItem" },
+                        "type": "array"
+                      },
+                      "retries": { "type": "number", "format": "double" },
+                      "confirmed": { "type": "boolean" },
+                      "tag": { "type": "string" },
+                      "streamId": { "type": "string" }
+                    },
+                    "required": [
+                      "block",
+                      "chainId",
+                      "logs",
+                      "txs",
+                      "txsInternal",
+                      "abi",
+                      "retries",
+                      "confirmed",
+                      "tag",
+                      "streamId"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "name": "tinyPayload",
+                    "type": "object",
+                    "properties": {
+                      "chainId": { "type": "string" },
+                      "confirmed": { "type": "boolean" },
+                      "block": { "type": "string" },
+                      "records": { "type": "number", "format": "double" },
+                      "retries": { "type": "number", "format": "double" }
+                    },
+                    "required": [
+                      "chainId",
+                      "confirmed",
+                      "block",
+                      "records",
+                      "retries"
+                    ],
+                    "additionalProperties": false
+                  },
+                  { "name": "errorMessage", "type": "string" },
+                  { "name": "webhookUrl", "type": "string" },
+                  { "name": "streamId", "type": "string" },
+                  { "name": "tag", "type": "string" }
+                ]
+              },
+              { "name": "cursor", "type": "string" },
+              { "name": "total", "type": "number" }
+            ]
+          }
+        }
       ]
     },
     "ReplayHistory": {
@@ -5951,7 +6688,89 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              { "name": "date", "type": "string" },
+              {
+                "name": "payload",
+                "type": "object",
+                "properties": {
+                  "block": { "$ref": "#/components/schemas/Block" },
+                  "chainId": { "type": "string" },
+                  "logs": {
+                    "items": { "$ref": "#/components/schemas/Log" },
+                    "type": "array"
+                  },
+                  "txs": {
+                    "items": { "$ref": "#/components/schemas/Transaction" },
+                    "type": "array"
+                  },
+                  "txsInternal": {
+                    "items": {
+                      "$ref": "#/components/schemas/InternalTransaction"
+                    },
+                    "type": "array"
+                  },
+                  "abi": {
+                    "items": { "$ref": "#/components/schemas/AbiItem" },
+                    "type": "array"
+                  },
+                  "retries": { "type": "number", "format": "double" },
+                  "confirmed": { "type": "boolean" },
+                  "tag": { "type": "string" },
+                  "streamId": { "type": "string" }
+                },
+                "required": [
+                  "block",
+                  "chainId",
+                  "logs",
+                  "txs",
+                  "txsInternal",
+                  "abi",
+                  "retries",
+                  "confirmed",
+                  "tag",
+                  "streamId"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "name": "tinyPayload",
+                "type": "object",
+                "properties": {
+                  "chainId": { "type": "string" },
+                  "confirmed": { "type": "boolean" },
+                  "block": { "type": "string" },
+                  "records": { "type": "number", "format": "double" },
+                  "retries": { "type": "number", "format": "double" }
+                },
+                "required": [
+                  "chainId",
+                  "confirmed",
+                  "block",
+                  "records",
+                  "retries"
+                ],
+                "additionalProperties": false
+              },
+              { "name": "errorMessage", "type": "string" },
+              { "name": "webhookUrl", "type": "string" },
+              { "name": "streamId", "type": "string" },
+              { "name": "tag", "type": "string" }
+            ]
+          }
+        }
       ]
     },
     "SetSettings": {
@@ -5962,8 +6781,39 @@
       "path": "/settings",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "object",
+        "fields": [
+          {
+            "name": "region",
+            "type": "string",
+            "description": "The region from where all the webhooks will be posted for this project",
+            "enum": ["us-east-1", "us-west-2", "eu-central-1", "ap-southeast-1"]
+          }
+        ]
+      },
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "region",
+                "type": "string",
+                "description": "The region from where all the webhooks will be posted for this project",
+                "enum": [
+                  "us-east-1",
+                  "us-west-2",
+                  "eu-central-1",
+                  "ap-southeast-1"
+                ]
+              }
+            ]
+          }
+        }
       ]
     },
     "GetStats": {
@@ -5975,7 +6825,87 @@
       "pathParams": [],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "totalWebhooksDelivered",
+                "type": "number",
+                "description": "The total amount of webhooks delivered across all streams"
+              },
+              {
+                "name": "totalWebhooksFailed",
+                "type": "number",
+                "description": "The total amount of failed webhooks across all streams"
+              },
+              {
+                "name": "totalLogsProcessed",
+                "type": "number",
+                "description": "The total amount of logs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "totalTxsProcessed",
+                "type": "number",
+                "description": "The total amount of txs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "totalTxsInternalProcessed",
+                "type": "number",
+                "description": "The total amount of internal txs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "streams",
+                "type": "object",
+                "description": "Array of stream stats",
+                "fields": [
+                  {
+                    "name": "totalWebhooksDelivered",
+                    "type": "number",
+                    "description": "The total amount of webhooks delivered across all streams"
+                  },
+                  {
+                    "name": "totalWebhooksFailed",
+                    "type": "number",
+                    "description": "The total amount of failed webhooks across all streams"
+                  },
+                  {
+                    "name": "totalLogsProcessed",
+                    "type": "number",
+                    "description": "The total amount of logs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "totalTxsProcessed",
+                    "type": "number",
+                    "description": "The total amount of txs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "totalTxsInternalProcessed",
+                    "type": "number",
+                    "description": "The total amount of internal txs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "streamId",
+                    "type": "string",
+                    "description": "The stream id"
+                  }
+                ]
+              },
+              {
+                "name": "createdAt",
+                "type": "string",
+                "description": "The date since this stats are being counted"
+              },
+              {
+                "name": "updatedAt",
+                "type": "string",
+                "description": "The date since this stats were last updated"
+              }
+            ]
+          }
+        }
       ]
     },
     "GetStatsByStreamId": {
@@ -5994,7 +6924,87 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "totalWebhooksDelivered",
+                "type": "number",
+                "description": "The total amount of webhooks delivered across all streams"
+              },
+              {
+                "name": "totalWebhooksFailed",
+                "type": "number",
+                "description": "The total amount of failed webhooks across all streams"
+              },
+              {
+                "name": "totalLogsProcessed",
+                "type": "number",
+                "description": "The total amount of logs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "totalTxsProcessed",
+                "type": "number",
+                "description": "The total amount of txs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "totalTxsInternalProcessed",
+                "type": "number",
+                "description": "The total amount of internal txs processed across all streams, this includes failed webhooks"
+              },
+              {
+                "name": "streams",
+                "type": "object",
+                "description": "Array of stream stats",
+                "fields": [
+                  {
+                    "name": "totalWebhooksDelivered",
+                    "type": "number",
+                    "description": "The total amount of webhooks delivered across all streams"
+                  },
+                  {
+                    "name": "totalWebhooksFailed",
+                    "type": "number",
+                    "description": "The total amount of failed webhooks across all streams"
+                  },
+                  {
+                    "name": "totalLogsProcessed",
+                    "type": "number",
+                    "description": "The total amount of logs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "totalTxsProcessed",
+                    "type": "number",
+                    "description": "The total amount of txs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "totalTxsInternalProcessed",
+                    "type": "number",
+                    "description": "The total amount of internal txs processed across all streams, this includes failed webhooks"
+                  },
+                  {
+                    "name": "streamId",
+                    "type": "string",
+                    "description": "The stream id"
+                  }
+                ]
+              },
+              {
+                "name": "createdAt",
+                "type": "string",
+                "description": "The date since this stats are being counted"
+              },
+              {
+                "name": "updatedAt",
+                "type": "string",
+                "description": "The date since this stats were last updated"
+              }
+            ]
+          }
+        }
       ]
     },
     "GetStreams": {
@@ -6019,7 +7029,215 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "object",
+                "description": "Array of project Streams",
+                "fields": [
+                  {
+                    "name": "webhookUrl",
+                    "type": "string",
+                    "description": "Webhook URL where moralis will send the POST request."
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "description": "A description for this stream"
+                  },
+                  {
+                    "name": "tag",
+                    "type": "string",
+                    "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+                  },
+                  {
+                    "name": "topic0",
+                    "type": "array",
+                    "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                    "field": { "type": "string" }
+                  },
+                  {
+                    "name": "allAddresses",
+                    "type": "boolean",
+                    "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+                  },
+                  {
+                    "name": "includeNativeTxs",
+                    "type": "boolean",
+                    "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                  },
+                  {
+                    "name": "includeContractLogs",
+                    "type": "boolean",
+                    "description": "Include or not logs of contract interactions defaults to false"
+                  },
+                  {
+                    "name": "includeInternalTxs",
+                    "type": "boolean",
+                    "description": "Include or not include internal transactions defaults to false"
+                  },
+                  {
+                    "name": "getNativeBalances",
+                    "type": "object",
+                    "description": "Include native balances for each address in the webhook",
+                    "fields": [
+                      {
+                        "name": "selectors",
+                        "type": "array",
+                        "field": { "type": "string" }
+                      },
+                      { "name": "type", "type": "string" }
+                    ]
+                  },
+                  {
+                    "name": "abi",
+                    "type": "object",
+                    "fields": [
+                      { "name": "anonymous", "type": "boolean" },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "type": "object",
+                        "fields": [
+                          { "name": "name", "type": "string" },
+                          { "name": "type", "type": "string" },
+                          { "name": "indexed", "type": "boolean" },
+                          { "name": "components", "type": "json" },
+                          { "name": "internalType", "type": "string" }
+                        ]
+                      },
+                      { "name": "name", "type": "string" },
+                      {
+                        "name": "outputs",
+                        "type": "object",
+                        "fields": [
+                          { "name": "name", "type": "string" },
+                          { "name": "type", "type": "string" },
+                          { "name": "components", "type": "json" },
+                          { "name": "internalType", "type": "string" }
+                        ]
+                      },
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "gas", "type": "number" }
+                    ]
+                  },
+                  {
+                    "name": "advancedOptions",
+                    "type": "object",
+                    "fields": [
+                      { "name": "topic0", "type": "string" },
+                      {
+                        "name": "filter",
+                        "type": "object",
+                        "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                        "properties": {},
+                        "additionalProperties": {},
+                        "example": {}
+                      },
+                      { "name": "includeNativeTxs", "type": "boolean" }
+                    ]
+                  },
+                  {
+                    "name": "chainIds",
+                    "type": "array",
+                    "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                    "field": { "type": "string" }
+                  },
+                  {
+                    "name": "demo",
+                    "type": "boolean",
+                    "description": "Indicator if it is a demo stream"
+                  },
+                  {
+                    "name": "triggers",
+                    "type": "object",
+                    "description": "triggers",
+                    "fields": [
+                      { "name": "type", "type": "string" },
+                      { "name": "contractAddress", "type": "string" },
+                      {
+                        "name": "inputs",
+                        "type": "array",
+                        "field": {
+                          "anyOf": [
+                            { "type": "string" },
+                            { "items": {}, "type": "array" }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "functionAbi",
+                        "type": "object",
+                        "description": "The abi to parse the log object of the contract",
+                        "properties": {
+                          "anonymous": { "type": "boolean" },
+                          "constant": { "type": "boolean" },
+                          "inputs": {
+                            "items": {
+                              "$ref": "#/components/schemas/AbiInput"
+                            },
+                            "type": "array"
+                          },
+                          "name": { "type": "string" },
+                          "outputs": {
+                            "items": {
+                              "$ref": "#/components/schemas/AbiOutput"
+                            },
+                            "type": "array"
+                          },
+                          "payable": { "type": "boolean" },
+                          "stateMutability": { "type": "string" },
+                          "type": { "type": "string" },
+                          "gas": { "type": "number", "format": "double" }
+                        },
+                        "required": ["type"],
+                        "additionalProperties": false,
+                        "example": {}
+                      },
+                      { "name": "topic0", "type": "string" },
+                      { "name": "callFrom", "type": "string" }
+                    ]
+                  },
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    "format": "uuid",
+                    "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+                  },
+                  {
+                    "name": "status",
+                    "type": "string",
+                    "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    "enum": ["active", "paused", "error", "terminated"]
+                  },
+                  {
+                    "name": "statusMessage",
+                    "type": "string",
+                    "description": "Description of current status of stream."
+                  }
+                ]
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for fetching next page"
+              },
+              {
+                "name": "total",
+                "type": "number",
+                "description": "Total count of streams on the project"
+              }
+            ]
+          }
+        }
       ]
     },
     "GetStream": {
@@ -6038,7 +7256,194 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "webhookUrl",
+                "type": "string",
+                "description": "Webhook URL where moralis will send the POST request."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A description for this stream"
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+              },
+              {
+                "name": "topic0",
+                "type": "array",
+                "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "allAddresses",
+                "type": "boolean",
+                "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+              },
+              {
+                "name": "includeNativeTxs",
+                "type": "boolean",
+                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+              },
+              {
+                "name": "includeContractLogs",
+                "type": "boolean",
+                "description": "Include or not logs of contract interactions defaults to false"
+              },
+              {
+                "name": "includeInternalTxs",
+                "type": "boolean",
+                "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "getNativeBalances",
+                "type": "object",
+                "description": "Include native balances for each address in the webhook",
+                "fields": [
+                  {
+                    "name": "selectors",
+                    "type": "array",
+                    "field": { "type": "string" }
+                  },
+                  { "name": "type", "type": "string" }
+                ]
+              },
+              {
+                "name": "abi",
+                "type": "object",
+                "fields": [
+                  { "name": "anonymous", "type": "boolean" },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "indexed", "type": "boolean" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "name", "type": "string" },
+                  {
+                    "name": "outputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "gas", "type": "number" }
+                ]
+              },
+              {
+                "name": "advancedOptions",
+                "type": "object",
+                "fields": [
+                  { "name": "topic0", "type": "string" },
+                  {
+                    "name": "filter",
+                    "type": "object",
+                    "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                    "properties": {},
+                    "additionalProperties": {},
+                    "example": {}
+                  },
+                  { "name": "includeNativeTxs", "type": "boolean" }
+                ]
+              },
+              {
+                "name": "chainIds",
+                "type": "array",
+                "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "demo",
+                "type": "boolean",
+                "description": "Indicator if it is a demo stream"
+              },
+              {
+                "name": "triggers",
+                "type": "object",
+                "description": "triggers",
+                "fields": [
+                  { "name": "type", "type": "string" },
+                  { "name": "contractAddress", "type": "string" },
+                  {
+                    "name": "inputs",
+                    "type": "array",
+                    "field": {
+                      "anyOf": [
+                        { "type": "string" },
+                        { "items": {}, "type": "array" }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "functionAbi",
+                    "type": "object",
+                    "description": "The abi to parse the log object of the contract",
+                    "properties": {
+                      "anonymous": { "type": "boolean" },
+                      "constant": { "type": "boolean" },
+                      "inputs": {
+                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "type": "array"
+                      },
+                      "name": { "type": "string" },
+                      "outputs": {
+                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "type": "array"
+                      },
+                      "payable": { "type": "boolean" },
+                      "stateMutability": { "type": "string" },
+                      "type": { "type": "string" },
+                      "gas": { "type": "number", "format": "double" }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false,
+                    "example": {}
+                  },
+                  { "name": "topic0", "type": "string" },
+                  { "name": "callFrom", "type": "string" }
+                ]
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              {
+                "name": "statusMessage",
+                "type": "string",
+                "description": "Description of current status of stream."
+              }
+            ]
+          }
+        }
       ]
     },
     "UpdateStreamStatus": {
@@ -6056,8 +7461,208 @@
         }
       ],
       "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a Stream Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "status",
+            "type": "string",
+            "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+            "enum": ["active", "paused", "error", "terminated"]
+          }
+        ]
+      },
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "webhookUrl",
+                "type": "string",
+                "description": "Webhook URL where moralis will send the POST request."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A description for this stream"
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+              },
+              {
+                "name": "topic0",
+                "type": "array",
+                "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "allAddresses",
+                "type": "boolean",
+                "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+              },
+              {
+                "name": "includeNativeTxs",
+                "type": "boolean",
+                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+              },
+              {
+                "name": "includeContractLogs",
+                "type": "boolean",
+                "description": "Include or not logs of contract interactions defaults to false"
+              },
+              {
+                "name": "includeInternalTxs",
+                "type": "boolean",
+                "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "getNativeBalances",
+                "type": "object",
+                "description": "Include native balances for each address in the webhook",
+                "fields": [
+                  {
+                    "name": "selectors",
+                    "type": "array",
+                    "field": { "type": "string" }
+                  },
+                  { "name": "type", "type": "string" }
+                ]
+              },
+              {
+                "name": "abi",
+                "type": "object",
+                "fields": [
+                  { "name": "anonymous", "type": "boolean" },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "indexed", "type": "boolean" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "name", "type": "string" },
+                  {
+                    "name": "outputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "gas", "type": "number" }
+                ]
+              },
+              {
+                "name": "advancedOptions",
+                "type": "object",
+                "fields": [
+                  { "name": "topic0", "type": "string" },
+                  {
+                    "name": "filter",
+                    "type": "object",
+                    "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                    "properties": {},
+                    "additionalProperties": {},
+                    "example": {}
+                  },
+                  { "name": "includeNativeTxs", "type": "boolean" }
+                ]
+              },
+              {
+                "name": "chainIds",
+                "type": "array",
+                "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "demo",
+                "type": "boolean",
+                "description": "Indicator if it is a demo stream"
+              },
+              {
+                "name": "triggers",
+                "type": "object",
+                "description": "triggers",
+                "fields": [
+                  { "name": "type", "type": "string" },
+                  { "name": "contractAddress", "type": "string" },
+                  {
+                    "name": "inputs",
+                    "type": "array",
+                    "field": {
+                      "anyOf": [
+                        { "type": "string" },
+                        { "items": {}, "type": "array" }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "functionAbi",
+                    "type": "object",
+                    "description": "The abi to parse the log object of the contract",
+                    "properties": {
+                      "anonymous": { "type": "boolean" },
+                      "constant": { "type": "boolean" },
+                      "inputs": {
+                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "type": "array"
+                      },
+                      "name": { "type": "string" },
+                      "outputs": {
+                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "type": "array"
+                      },
+                      "payable": { "type": "boolean" },
+                      "stateMutability": { "type": "string" },
+                      "type": { "type": "string" },
+                      "gas": { "type": "number", "format": "double" }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false,
+                    "example": {}
+                  },
+                  { "name": "topic0", "type": "string" },
+                  { "name": "callFrom", "type": "string" }
+                ]
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              {
+                "name": "statusMessage",
+                "type": "string",
+                "description": "Description of current status of stream."
+              }
+            ]
+          }
+        }
       ]
     },
     "GetAddresses": {
@@ -6089,7 +7694,37 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "Ok", "body": { "type": "object" } }
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "object",
+                "description": "Array of project Streams",
+                "fields": [
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "Address"
+                  }
+                ]
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for fetching next page"
+              },
+              {
+                "name": "total",
+                "type": "number",
+                "description": "Total count of streams on the project"
+              }
+            ]
+          }
+        }
       ]
     }
   },
@@ -6106,7 +7741,17 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "", "body": { "type": "object" } },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "solana", "type": "string" },
+              { "name": "lamports", "type": "string" }
+            ]
+          }
+        },
         { "status": "400", "description": "" }
       ]
     },
@@ -6154,7 +7799,47 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "", "body": { "type": "object" } },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "nativeBalance",
+                "type": "object",
+                "properties": {
+                  "solana": { "type": "string" },
+                  "lamports": { "type": "string" }
+                },
+                "required": ["solana", "lamports"]
+              },
+              {
+                "name": "nfts",
+                "type": "object",
+                "fields": [
+                  { "name": "associatedTokenAddress", "type": "string" },
+                  { "name": "mint", "type": "string" },
+                  { "name": "name", "type": "string" },
+                  { "name": "symbol", "type": "string" }
+                ]
+              },
+              {
+                "name": "tokens",
+                "type": "object",
+                "fields": [
+                  { "name": "associatedTokenAddress", "type": "string" },
+                  { "name": "mint", "type": "string" },
+                  { "name": "name", "type": "string" },
+                  { "name": "symbol", "type": "string" },
+                  { "name": "amount", "type": "string" },
+                  { "name": "amountRaw", "type": "string" },
+                  { "name": "decimals", "type": "number" }
+                ]
+              }
+            ]
+          }
+        },
         { "status": "400", "description": "" }
       ]
     },
@@ -6170,7 +7855,39 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "", "body": { "type": "object" } },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "mint", "type": "string" },
+              { "name": "standard", "type": "string" },
+              { "name": "name", "type": "string" },
+              { "name": "symbol", "type": "string" },
+              {
+                "name": "metaplex",
+                "type": "object",
+                "properties": {
+                  "metadataUri": { "type": "string" },
+                  "masterEdition": { "type": "boolean" },
+                  "isMutable": { "type": "boolean" },
+                  "primarySaleHappened": { "type": "boolean" },
+                  "sellerFeeBasisPoints": { "type": "number" },
+                  "updateAuthority": { "type": "string" }
+                },
+                "required": [
+                  "metadataUri",
+                  "masterEdition",
+                  "isMutable",
+                  "primarySaleHappened",
+                  "sellerFeeBasisPoints",
+                  "updateAuthority"
+                ]
+              }
+            ]
+          }
+        },
         { "status": "400", "description": "" }
       ]
     },
@@ -6186,7 +7903,29 @@
       ],
       "queryParams": [],
       "responses": [
-        { "status": "200", "description": "", "body": { "type": "object" } },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "nativePrice",
+                "type": "object",
+                "properties": {
+                  "value": { "type": "string" },
+                  "decimals": { "type": "number" },
+                  "name": { "type": "string" },
+                  "symbol": { "type": "string" }
+                },
+                "required": ["value", "decimals", "name", "symbol"]
+              },
+              { "name": "usdPrice", "type": "number" },
+              { "name": "exchangeAddress", "type": "string" },
+              { "name": "exchangeName", "type": "string" }
+            ]
+          }
+        },
         { "status": "400", "description": "" }
       ]
     }

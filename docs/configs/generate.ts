@@ -8,10 +8,10 @@ let swaggerSchemas;
 let swaggerOAS = {};
 
 const camelToSnakeCase = (str) => {
-  return (str.charAt(0).toLowerCase() + str.slice(1)).replace(
-    /[A-Z]/g,
-    (letter) => `-${letter.toLowerCase()}`
-  );
+  return (str.charAt(0).toLowerCase() + str.slice(1))
+    .replaceAll("NFT", "Nft")
+    .replaceAll("SPL", "Spl")
+    .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 };
 
 /**
@@ -22,8 +22,8 @@ const translateSchemaReference = (schemaRef) => {
   const schemaName = schemaRef.replace("#/components/schemas/", "");
   const schemaJSON = swaggerSchemas[schemaName];
 
-  const { type, example, enum: schemaEnum, properties } = schemaJSON;
-  if (type) {
+  const { type, example, enum: schemaEnum, properties } = schemaJSON ?? {};
+  if (type && !properties) {
     return {
       type: type === "integer" ? "number" : type,
       example,
@@ -33,17 +33,43 @@ const translateSchemaReference = (schemaRef) => {
     return {
       type: "object",
       fields: Object.keys(properties).map((name) => {
-        const { type, description, example, items } = properties[name];
-        if (type === "array") {
+        const { type, description, example, items, $ref } = properties[name];
+        /**
+         * AbiInput and AbiOutput schema reference itself which will create
+         * recursive loop. Therefore, this is a special condition to stop them.
+         */
+        if (
+          (schemaName === "AbiInput" || schemaName === "AbiOutput") &&
+          name === "components"
+        ) {
           return {
             name,
-            type: type === "integer" ? "number" : type,
+            type: "json",
+          };
+        } else if ($ref) {
+          return {
+            name,
+            type,
+            description,
+            ...swaggerSchemas[$ref.replace("#/components/schemas/", "")],
+          };
+        } else if (type === "array") {
+          return {
+            name,
+            type,
             description,
             example,
             ...(items && items?.$ref
               ? // If there are more arrays within the child, do recursion
                 translateSchemaReference(items?.$ref)
-              : { items }),
+              : { field: items }),
+          };
+        } else if (type === "object" && !items) {
+          return {
+            name,
+            type: "json",
+            description,
+            example,
           };
         } else {
           return {
@@ -104,6 +130,30 @@ const formatParameters = (parameters) => {
   return { pathParams, queryParams };
 };
 
+const formatBodyParameters = (requestBody) => {
+  if (requestBody) {
+    const { required, description, content } = requestBody;
+    const {
+      type,
+      items,
+      $ref: schemaRef,
+    } = content?.["application/json"]?.schema;
+
+    return {
+      required,
+      description,
+      ...(schemaRef
+        ? translateSchemaReference(schemaRef)
+        : {
+            type: type === "object" ? "json" : type,
+            ...(items && { field: translateSchemaReference(items?.$ref) }),
+          }),
+    };
+  }
+
+  return;
+};
+
 const formatResponses = (responses) => {
   const formattedResponses = Object.keys(responses).map((status) => {
     const { description, content } = responses[status];
@@ -113,9 +163,7 @@ const formatResponses = (responses) => {
       description,
       ...(schemaRef
         ? {
-            body: translateSchemaReference(
-              content["application/json"]?.schema?.$ref
-            ),
+            body: translateSchemaReference(schemaRef),
           }
         : {}),
     };
@@ -161,11 +209,13 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       summary,
       method,
       parameters = [],
+      requestBody,
       responses = [],
     } = extractSwaggerValueByMethod(swaggerJSON, path);
 
     // Formatting Parameters & Responses
     const { pathParams = [], queryParams = [] } = formatParameters(parameters);
+    const formattedBodyParams = formatBodyParameters(requestBody);
     const formattedResponses = formatResponses(responses);
     const formattedPath = formatPath(path);
 
@@ -177,6 +227,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
       path: formattedPath,
       pathParams,
       queryParams,
+      bodyParam: formattedBodyParams,
       responses: formattedResponses,
     };
   }
@@ -210,6 +261,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 const generateConfigs = async () => {
   try {
     for (let key in swaggerPaths) {
+      // if (["streams"].includes(key)) {
       const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
       const swaggerJSON = await swaggerRes?.json();
       let swaggerContent;
@@ -222,6 +274,7 @@ const generateConfigs = async () => {
       // If statement is temporary, for testing only
       swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
       swaggerOAS[key] = swaggerContent;
+      // }
     }
 
     // Write API reference Config
@@ -233,7 +286,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (!["nft"].includes(key)) {
+      if (!["nft", "solana"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);
@@ -244,7 +297,7 @@ const generateConfigs = async () => {
             `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
-slug: /reference/${functionName.toLowerCase()}
+slug: /${swaggerPaths[key].category}/reference/${functionName.toLowerCase()}
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -252,8 +305,7 @@ import config from "${swaggerPaths[key].importPath}";
 
 # ${swaggerOAS[key][functionName]?.summary}
 
-<ApiReference {...config.${key}.${functionName}} />
-              `,
+<ApiReference {...config.${key}.${functionName}} />`,
             { flag: "w" },
             (err) => {
               if (err) {
