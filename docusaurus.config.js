@@ -185,17 +185,12 @@ const config = {
             items: [
               {
                 label: "NodeJS",
-                href: "/",
+                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
                 target: "_blank",
               },
               {
                 label: "Python",
-                href: "/",
-                target: "_blank",
-              },
-              {
-                label: "C#",
-                href: "/",
+                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
                 target: "_blank",
               },
             ],
