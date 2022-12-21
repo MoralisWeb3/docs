@@ -1,5 +1,5 @@
 ---
-title: Reduce CUs for get NFT token owners
+title: "[API] Reduce CUs for get NFT token owners"
 authors:
   name: Vincent Hoong
 ---

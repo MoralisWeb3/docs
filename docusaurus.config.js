@@ -54,6 +54,7 @@ const config = {
         },
         blog: {
           blogTitle: "Changelog",
+          blogSidebarTitle: "Recent Changes",
           postsPerPage: "ALL",
           routeBasePath: "/changelog",
           showReadingTime: true,

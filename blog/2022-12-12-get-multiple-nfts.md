@@ -1,5 +1,5 @@
 ---
-title: Solana Improvement - token name and symbol included as standard
+title: "[API] Solana Improvement - token name and symbol included as standard"
 authors:
   name: Reuben Salisbury
 ---
