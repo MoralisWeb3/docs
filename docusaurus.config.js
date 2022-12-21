@@ -52,7 +52,14 @@ const config = {
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
         },
-        blog: false,
+        blog: {
+          blogTitle: "Changelog",
+          postsPerPage: "ALL",
+          routeBasePath: "/changelog",
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -63,7 +70,7 @@ const config = {
           filename: "sitemap.xml",
         },
         gtag: {
-          trackingID: 'G-VYPYJZYKCB',
+          trackingID: "G-VYPYJZYKCB",
           anonymizeIP: false,
         },
       }),
@@ -166,10 +173,9 @@ const config = {
           },
           // position: Right
           {
-            type: "doc",
-            docId: "introduction",
+            to: "changelog",
             position: "right",
-            label: "API Reference",
+            label: "Changelog",
           },
           {
             type: "dropdown",
