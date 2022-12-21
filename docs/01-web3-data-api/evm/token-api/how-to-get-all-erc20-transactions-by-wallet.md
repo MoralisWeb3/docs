@@ -8,7 +8,7 @@ description: "Learn how to get all ERC20 transactions by wallet using Moralis To
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 

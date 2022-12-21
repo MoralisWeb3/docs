@@ -127,6 +127,9 @@ const config = {
         apiKey: "b36064a11a9ce260d626a095a8ff2693",
         indexName: "moralis-docs",
       },
+      hotjar: {
+        applicationId: "3295610",
+      },
       navbar: {
         hideOnScroll: false,
         logo: {
@@ -157,7 +160,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "example-dapps/overview",
+            docId: "example-dapps/evm/evm",
             position: "left",
             label: "Example dapps",
           },
@@ -230,6 +233,7 @@ const config = {
       },
     }),
   plugins: [
+    ["docusaurus-plugin-hotjar", {}],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
   ],

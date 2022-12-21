@@ -1,7 +1,7 @@
 ---
 title: "Using the Admin Panel"
 slug: "../using-webui"
-description: "Learn how to create stream to monitor any address"
+description: "Learn how to create a new stream on the Admin Panel of Moralis.io. Follow the step-by-step instructions to monitor your chosen address and receive data through a webhook URL."
 ---
 1. Go to <http://admin.moralis.io/streams>.
 2. Click on **New Stream** button and following page will open. You can either select some of our predefined template or create your stream from scratch. Let's create from scratch.

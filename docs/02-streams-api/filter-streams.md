@@ -2,6 +2,7 @@
 title: "Filter Streams"
 slug: "filter-streams"
 sidebar_position: 12
+description: "In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream."
 ---
 
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                          |
@@ -24,28 +25,10 @@ In some cases you might want to filter the data you receive from the webhook. Yo
 - `moralis_streams_contract_address` - for identifying current contract address that emits an event, example `{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}` (note: the address has to be in lowercase)
 - `moralis_streams_chain_id` - for identifying current chain for current event, example `{eq: ['moralis_streams_chain_id', '0x1']}`
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Special Variable",
-    "h-1": "Info",
-    "h-2": "Example",
-    "0-0": "moralis_streams_contract_address",
-    "0-1": "For identifying current contract address that emits an event  \n(note: the address has to be in lowercase)",
-    "0-2": "{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}",
-    "1-0": "moralis_streams_chain_id",
-    "1-1": "For identifying current chain for current event",
-    "1-2": "{eq: ['moralis_streams_chain_id', '0x1']}"
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Special Variable | Info | Example |
+|---|---|---|
+moralis_streams_contract_address | For identifying current contract address that emits an event (note: the address has to be in lowercase) |	```{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}``` |
+moralis_streams_chain_id |	For identifying current chain for current event	 | ```{eq: ['moralis_streams_chain_id', '0x1']} ``` | |
 
 ### Here is an example of applying different filters for different contract addresses
 
@@ -55,7 +38,7 @@ Note: the address is in lowercase
 
 Example:
 
-```
+```javascript
 const filter = {
   or: [
     {

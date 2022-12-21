@@ -1,7 +1,7 @@
 ---
 title: "Solana NFT Minter"
 slug: "solana-nft-minter"
-description: "Mint new NFTs directly on the Solana Blockchain with just a few clicks."
+description: "This tutorial teaches you how to create your very own NFT minter dapp in NextJS using Metaplex JavaScript SDK, and the Moralis API."
 ---
 ## Introduction
 

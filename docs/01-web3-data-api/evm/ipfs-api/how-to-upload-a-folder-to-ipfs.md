@@ -8,7 +8,7 @@ description: "Learn how to upload files to IPFS to host them in a decentralized 
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 

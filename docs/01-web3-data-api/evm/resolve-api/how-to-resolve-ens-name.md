@@ -8,7 +8,7 @@ description: "Learn how to reverse resolve the ENS name from an address using th
 Before getting started, make sure you have the following ready:
 
 - Node v.14+ or Python
-- NPM/Yarn/PNPM or Pip
+- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 
