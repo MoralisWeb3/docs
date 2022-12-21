@@ -180,16 +180,39 @@ const config = {
           },
           {
             type: "dropdown",
-            label: "SDK References",
+            label: "References",
             position: "right",
             items: [
               {
-                label: "NodeJS",
+                type: "html",
+                value: 'API References',
+              },
+              {
+                label: "Web3 Data API",
+                type: "doc",
+                docId: "web3-data-api/overview",
+              },
+              {
+                label: "Streams API",
+                type: "doc",
+                docId: "web3-data-api/overview",
+              },
+              {
+                label: "Authentication API",
+                type: "doc",
+                docId: "web3-data-api/overview",
+              },
+              {
+                type: "html",
+                value: 'SDK References',
+              },
+              {
+                label: "JS SDK",
                 href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
                 target: "_blank",
               },
               {
-                label: "Python",
+                label: "Python SDK",
                 href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
                 target: "_blank",
               },
@@ -202,20 +225,11 @@ const config = {
             dropdownItemsAfter: [
               {
                 type: "html",
-                value: '<hr class="dropdown-separator">',
-              },
-              {
-                type: "html",
-                className: "dropdown-archived-versions",
-                value: "<b>Archived versions</b>",
+                value: "Archived versions",
               },
               {
                 href: "https://v1docs.moralis.io/",
                 label: "1.0",
-              },
-              {
-                type: "html",
-                value: '<hr class="dropdown-separator">',
               },
             ],
           },
