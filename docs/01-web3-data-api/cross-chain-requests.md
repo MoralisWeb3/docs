@@ -9,7 +9,7 @@ All our API methods are supported for cross-chain calls. You only need to specif
 
 ```typescript
 import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 evmApi.block.getBlock({
   blockNumberOrHash: '33000000',
@@ -27,7 +27,7 @@ To change the default chain, you can specify `defaultEvmApiChain` in your config
 
 ```typescript
 import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 Moralis.start({
 	apiKey: 'YOUR_API_KEY',
@@ -41,23 +41,25 @@ Moralis.EvmApi.block.getBlock({
 
 ## Supported EVM Chains
 
-| Name                            | Chain id | EvmChain                  | Type    |
-| :------------------------------ | :------- | :------------------------ | :------ |
-| Ethereum Mainnet                | 1        | `EvmChain.ETHEREUM`       | Mainnet |
-| Ethereum Ropsten_ (deprecated)_ | 3        | `EvmChain.ROPSTEN`        | Testnet |
-| Ethereum Rinkeby_ (deprecated)_ | 4        | `EvmChain.RINKEBY`        | Testnet |
-| Ethereum Görli                  | 5        | `EvmChain.GOERLI`         | Testnet |
-| Ethereum Kovan_ (deprecated)_   | 42       | `EvmChain.KOVAN`          | Testnet |
-| Ethereum Sepolia                | 11155111 | `EvmChain.SEPOLIA`        | Testnet |
-| Polygon Mainnet                 | 137      | `EvmChain.POLYGON`        | Mainnet |
-| Polygon Mumbai                  | 80001    | `EvmChain.MUMBAI`         | Testnet |
-| Binance Smart Chain Mainnet     | 56       | `EvmChain.BSC`            | Mainnet |
-| Binance Smart Chain Testnet     | 97       | `EvmChain.BSC_TESTNET`    | Testnet |
-| Avalanche C-Chain               | 43114    | `EvmChain.AVALANCHE`      | Mainnet |
-| Avalanche Fuji Testnet          | 43113    | `EvmChain.FUJI`           | Testnet |
-| Fantom                          | 250      | `EvmChain.FANTOM`         | Mainnet |
-| Cronos Mainnet                  | 25       | `EvmChain.CRONOS`         | Mainnet |
-| Cronos Testnet                  | 338      | `EvmChain.CRONOS_TESTNET` | Testnet |
+| Name                            | Chain id    | EvmChain                  | Type    |
+| :------------------------------ | :---------- | :------------------------ | :------ |
+| Ethereum Mainnet                | 1           | `EvmChain.ETHEREUM`       | Mainnet |
+| Ethereum Ropsten_ (deprecated)_ | 3           | `EvmChain.ROPSTEN`        | Testnet |
+| Ethereum Rinkeby_ (deprecated)_ | 4           | `EvmChain.RINKEBY`        | Testnet |
+| Ethereum Görli                  | 5           | `EvmChain.GOERLI`         | Testnet |
+| Ethereum Kovan_ (deprecated)_   | 42          | `EvmChain.KOVAN`          | Testnet |
+| Ethereum Sepolia                | 11155111    | `EvmChain.SEPOLIA`        | Testnet |
+| Polygon Mainnet                 | 137         | `EvmChain.POLYGON`        | Mainnet |
+| Polygon Mumbai                  | 80001       | `EvmChain.MUMBAI`         | Testnet |
+| BNB Mainnet                     | 56          | `EvmChain.BSC`            | Mainnet |
+| BNB Chain Testnet               | 97          | `EvmChain.BSC_TESTNET`    | Testnet |
+| Avalanche C-Chain               | 43114       | `EvmChain.AVALANCHE`      | Mainnet |
+| Avalanche Fuji Testnet          | 43113       | `EvmChain.FUJI`           | Testnet |
+| Fantom                          | 250         | `EvmChain.FANTOM`         | Mainnet |
+| Cronos Mainnet                  | 25          | `EvmChain.CRONOS`         | Mainnet |
+| Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
+| Palm Mainnet                    | 11297108109 | `EvmChain.PALM`           | Mainnet |
+| Arbitrum Mainnet                | 42161       | `EvmChain.ARBITRUM`       | Mainnet |
 
 ## Solana
 

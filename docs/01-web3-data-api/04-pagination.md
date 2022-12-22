@@ -19,7 +19,7 @@ Example of using cursor in NodeJS with a Moralis Server:
 ```javascript
 
 import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 const chain = EvmChain.ETHEREUM;
 

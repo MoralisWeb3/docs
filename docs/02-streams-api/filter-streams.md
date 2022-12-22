@@ -7,14 +7,14 @@ description: "In some cases you might want to filter the data you receive from t
 
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                          |
 | :----- | :-------------------------------- | :---------------------- | :--------------------------------------- | :-------------------------------------------------------------------------------------------- |
-| or     | either ... or ...                 | Need at least 2 filters | { "or" : [ {..filter1}, {...filter2} ]}  | [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints)    |
+| or     | either ... or ...                 | Need at least 2 filters | { "or" : [ {..filter1}, {...filter2} ]}  | [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-erc20-token-burns-or-mints)    |
 | and    | all filters must satisfy          | Need at least 2 filters | { "and" : [ {..filter1}, {...filter2} ]} | [Monitor ENS Name Registrations](/streams-api/how-to-monitor-ens-domain-registrations) |
 | eq     | checks for equality               |                         | { "eq": ["value", "1000"] }              |                                                                                               |
 | ne     | checks for inequality             |                         | { "ne": ["address", "0x...325"] }        |                                                                                               |
 | lt     | value is less than                | Value must be a number  | { "lt": ["amount", "50"] }               |                                                                                               |
 | gt     | value is greater than             | Value must be a number  | { "gt": ["price", "500000"] }            |                                                                                               |
 | lte    | value is less than or equal to    | Value must be a number  | { "lte": ["value", "100"] }              |                                                                                               |
-| gte    | value is greater than or equal to | Value must be a number  | { "gte": ["value", "100"] }              | [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints)    |
+| gte    | value is greater than or equal to | Value must be a number  | { "gte": ["value", "100"] }              | [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-erc20-token-burns-or-mints)    |
 | in     | value is in array                 | Must provide an array   | { "in": \["city": ["berlin", "paris"]]}  | [Monitor specific NFTs](/streams-api/how-to-monitor-specific-nfts)                   |
 | nin    | value is not in array             | Must provide an array   | { "nin": \["name": ["bob", "alice"]]}    |                                                                                               |
 

@@ -161,6 +161,6 @@ export default HomePage;
 
 
 
-2. Now, let's receive and use the props in our server-side Visit the `[<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
+2. Now, let's receive and use the props in our server-side Visit the [<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
 
 ![The `useEvmNativeBalance()` response](/img/content/46867dc-image.png)

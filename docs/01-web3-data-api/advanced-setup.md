@@ -58,7 +58,7 @@ Now you can use any functionality from the installed modules. The only differenc
 
 ```javascript
 import MoralisEvmApi from '@moralisweb3/evm-api';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 const evmApi = core.getModule<MoralisEvmApi>(MoralisEvmApi.moduleName);
 evmApi.block.getBlock({
@@ -73,7 +73,7 @@ Instead of:
 
 ```javascript
 import Moralis from 'moralis';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 Moralis.EvmApi.block.getBlock({
     chain: EvmChain.ETHEREUM,
@@ -100,7 +100,7 @@ export const Moralis = {
 
 // app.ts
 import { Moralis } from './moralis/';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 Moralis.EvmApi.block.getBlock({
     chain: EvmChain.ETHEREUM,

@@ -1,5 +1,5 @@
 ---
-title: "How to sign in with MetaMask"
+title: "How to Authenticate Users with MetaMask"
 slug: "../how-to-sign-in-with-metamask"
 description: "Learn how Moralis authentication works and see how to add secure authentication to your NextJS dapp. This tutorial covers how to create full-stack Web3 authentication using the popular NextJS framework."
 ---

@@ -1,7 +1,7 @@
 ---
-title: "How to get all ERC20 transactions by wallet"
-slug: "../how-to-get-all-erc20-transactions-by-wallet"
-description: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
+title: "How to get all ERC20 transfers by wallet"
+slug: "../how-to-get-all-erc20-transfers-by-wallet"
+description: "Learn how to get all ERC20 transfers by wallet using Moralis Token API."
 ---
 ## Prerequisites
 
@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get all ERC20 transactions by wallet
 
-In order to get all ERC20 transactions by wallet, Moralis provides you with an `getWalletTokenTransfers` endpoint.
+In order to get all ERC20 transactions by wallet, Moralis provides you with an [getWalletTokenTransfers](https://docs.moralis.io/reference/getwallettokentransfers) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-util');
+const { EvmChain } = require('@moralisweb3/common-evm-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({
@@ -163,7 +163,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 You just got all ERC20 transactions by wallet with just a few lines of code using the Moralis Token API!
+Congratulations 🥳 You just got all ERC20 transfers by wallet with just a few lines of code using the Moralis Token API!
 
 ## API Reference
 

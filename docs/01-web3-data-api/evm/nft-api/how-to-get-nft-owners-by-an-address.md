@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All NFTs owners by a contract address
 
-In order to get all the NFTs owners by a contract address, Moralis provides you with a `getNFTOwners` endpoint to do so.
+In order to get all the NFTs owners by a contract address, Moralis provides you with a [getNFTOwners](https://docs.moralis.io/reference/getnftowners-1) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-util");
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({

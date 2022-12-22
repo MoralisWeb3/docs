@@ -67,7 +67,7 @@ The top part of **`index.js`** should look like this:
 const express = require("express")
 const cors = require('cors')
 const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/evm-utils")
+const { EvmChain } = require("@moralisweb3/common-evm-utils")
 
 const app = express()
 const port = 3000
@@ -150,7 +150,7 @@ Great! The top part of **`index.js`** should look like this:
 const express = require("express")
 const cors = require('cors')
 const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/evm-utils")
+const { EvmChain } = require("@moralisweb3/common-evm-utils")
 
 const app = express()
 const port = 3000
@@ -306,7 +306,7 @@ app.get("/", (req, res) => {
 const express = require("express")
 const cors = require('cors')
 const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/evm-utils")
+const { EvmChain } = require("@moralisweb3/common-evm-utils")
 
 const app = express()
 const port = 3000

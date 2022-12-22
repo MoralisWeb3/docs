@@ -1,6 +1,6 @@
 ---
 title: "How to monitor for ERC20 token burns or mints"
-slug: "../how-to-monitor-for-er-c20-token-burns-or-mints"
+slug: "../how-to-monitor-for-erc20-token-burns-or-mints"
 description: "Learn how to monitor ERC20 token burns or mints using Moralis Streams API."
 ---
 Lets check all USDC transfers but filter transaction where the recipient or the sender is the zero address and if the amount is greater or equal to 10000 USDC. 

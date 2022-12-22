@@ -14,13 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis" python="moralis" />
-
-
+<SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
 
 ## Step 2: Get SPL token balance of an address
 
-In order to get the SPL token balance of a wallet address, Moralis provides you the `[getSPL](https://docs.moralis.io/reference/getspl)` API endpoint to do so.
+In order to get the SPL token balance of a wallet address, Moralis provides you the [getSPL](https://docs.moralis.io/reference/getspl) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -34,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { SolNetwork } = require('@moralisweb3/sol-utils');
+const { SolNetwork } = require('@moralisweb3/common-sol-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -62,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { SolNetwork } from "@moralisweb3/sol-utils";
+import { SolNetwork } from "@moralisweb3/common-sol-utils";
 
 const runApp = async () => {
   await Moralis.start({

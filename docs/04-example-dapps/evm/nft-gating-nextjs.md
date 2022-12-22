@@ -84,7 +84,7 @@ The `getServerSideProps` only runs on the server side and never runs on the brow
 ```javascript
 import { getSession } from 'next-auth/react';
 import Moralis from 'moralis';
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 function Protected({ message, nftList }) {
     return (
@@ -108,12 +108,15 @@ export async function getServerSideProps(context) {
         };
     }
 
-    await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
+    if(!Moralis.Core.isStarted){
+        await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
+    }
 
     const nftList = await Moralis.EvmApi.nft.getWalletNFTs({
       	chain: EvmChain.ETHEREUM,
         address: session.user.address,
-        tokenAddress: '0x...',
+        // replace "0x..." with your NFT token address
+        tokenAddresses: ["0x...", ],
     });
 
     return {

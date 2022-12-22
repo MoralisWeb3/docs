@@ -90,7 +90,7 @@ MORALIS_API_KEY = YOUR_KEY_HERE
 
 6. Now in your `backend/index.js` you can add Moralis.
 
-```Text index.js
+```javascript index.js
 const Moralis = require("moralis").default;
 const express = require("express");
 const cors = require("cors");
@@ -155,7 +155,7 @@ app.get("/nativeBalance", async (req, res) => {
 
 2. Get ERC20 balances and prices.
 
-```Text index.js
+```javascript index.js
 //GET AMOUNT AND VALUE OF ERC20 TOKENS
 
 app.get("/tokenBalances", async (req, res) => {
@@ -200,7 +200,7 @@ app.get("/tokenBalances", async (req, res) => {
 
 3. Get NFTs.
 
-```Text index.js
+```javascript index.js
 //GET Users NFT's
 
 app.get("/nftBalance", async (req, res) => {
@@ -227,7 +227,7 @@ app.get("/nftBalance", async (req, res) => {
 
 4. Get historical ERC20 transfers.
 
-```Text index.js
+```javascript index.js
 //GET USERS TOKEN TRANSFERS
 
 app.get("/tokenTransfers", async (req, res) => {
@@ -329,7 +329,7 @@ Inside the components folder, we will create multiple components which will be u
 
 1. NativeTokens.js
 
-```Text NativeTokens.js
+```javascript NativeTokens.js
 import React from "react";
 import axios from "axios";
 import { Table } from "@web3uikit/core";
@@ -393,7 +393,7 @@ export default NativeTokens;
 
 2. Nfts.js
 
-```Text Nfts.js
+```javascript Nfts.js
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -513,7 +513,7 @@ export default Nfts;
 
 3. PortfolioValue.js
 
-```Text PortfolioValue.js
+```javascript PortfolioValue.js
 import React from "react";
 import { useState, useEffect } from "react";
 import "../App.css";
@@ -551,7 +551,7 @@ export default PortfolioValue;
 
 4. Tokens.js
 
-```Text Token.js
+```javascript Token.js
 import React from "react";
 import axios from "axios";
 import { Table } from "@web3uikit/core";
@@ -614,7 +614,7 @@ export default Tokens;
 
 5. TransferHistory.js
 
-```Text TransferHistory.js
+```javascript TransferHistory.js
 import React from "react";
 import axios from "axios";
 import { Reload } from "@web3uikit/icons";
@@ -676,7 +676,7 @@ export default TransferHistory;
 
 6. WalletInputs.js
 
-```Text WalletInputs.js
+```javascript WalletInputs.js
 import React from "react";
 import "../App.css";
 import {Input, Select, CryptoLogos} from '@web3uikit/core'
@@ -732,7 +732,7 @@ export default WalletInputs;
 
 Now we have to import everything inside `App.js`
 
-```Text App.js
+```javascript App.js
 import "./App.css";
 import { useState } from "react";
 import NativeTokens from "./components/NativeTokens";
@@ -830,7 +830,7 @@ We will now add the required CSS style for our app.
 
 1. Inside our `src/App.css` add the following styles.
 
-```Text App.css
+```css App.css
 .App {
   text-align: left;
   min-height: 100vh;
@@ -924,7 +924,7 @@ We will now add the required CSS style for our app.
 
 2. Inside `src/index.css` add the following:
 
-```Text index.css
+```css index.css
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

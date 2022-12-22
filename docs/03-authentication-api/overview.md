@@ -25,13 +25,17 @@ The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIP
 
 :::
 
+## How Does it Work?
+
+![](/img/content/bcd1597-image.png)
+
 ## Popular use cases
 
 The use cases for our Auth API are truly endless! Some popular use cases include:
 
-- [How to sign in with Metamask](/authentication-api/how-to-sign-in-with-metamask)
-- [How to sign in with WalletConnect](/authentication-api/how-to-sign-in-with-walletconnect)
-- [How to sign in with RainbowKit](/authentication-api/how-to-sign-in-with-rainbowkit)
-- [How to sign in with Coinbase Wallet](/authentication-api/how-to-sign-in-with-coinbase-wallet)
-- [How to sign in with Web3Auth](/authentication-api/how-to-sign-in-with-web3authio)
-- [How to sign in with Magic.link](/authentication-api/how-to-sign-in-with-magiclink)
+- [How to Authenticate Users with Metamask](/authentication-api/how-to-sign-in-with-metamask)
+- [How to Authenticate Users with WalletConnect](/authentication-api/how-to-sign-in-with-walletconnect)
+- [How to Authenticate Users with RainbowKit](/authentication-api/how-to-sign-in-with-rainbowkit)
+- [How to Authenticate Users with Coinbase Wallet](/authentication-api/how-to-sign-in-with-coinbase-wallet)
+- [How to Authenticate Users with Web3Auth](/authentication-api/how-to-sign-in-with-web3authio)
+- [How to Authenticate Users with Magic.Link](/authentication-api/how-to-sign-in-with-magiclink)

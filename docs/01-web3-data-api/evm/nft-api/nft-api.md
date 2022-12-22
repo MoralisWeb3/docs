@@ -50,3 +50,4 @@ The NFT API supports multiple EVM chains:
 | cronos            | 0x19           | 25             |
 | cronos testnet    | 0x152          | 338            |
 | palm              | 0x2a15c308d    | 11297108109    |
+| arbitrum          | 0xa4b1         | 42161          |

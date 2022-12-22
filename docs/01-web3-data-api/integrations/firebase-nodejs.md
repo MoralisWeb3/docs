@@ -123,7 +123,7 @@ firebase emulators:start
 
 
 
-While the emulator is running, you can test your dapp on `[<http://localhost:5000>](http://localhost:5000)` in your browser. The _5000_ port is set by default; if you have chosen a different port, replace it with your own.
+While the emulator is running, you can test your dapp on [<http://localhost:5000>](http://localhost:5000) in your browser. The _5000_ port is set by default; if you have chosen a different port, replace it with your own.
 
 ## Backend App
 
@@ -164,7 +164,7 @@ You can find your personal API key in the Moralis admin panel. Go to **Account S
 Now, let's create a cloud function:
 
 ```typescript functions/src/index.ts
-import {EvmChain} from '@moralisweb3/evm-utils';
+import {EvmChain} from '@moralisweb3/common-evm-utils';
 
 export interface GetBalanceData {
   address: string;

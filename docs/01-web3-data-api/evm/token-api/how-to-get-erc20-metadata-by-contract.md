@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get ERC20 metadata by contract
 
-In order to get all ERC20 metadata by contract, Moralis provides you with an `getTokenMetadata` endpoint.
+In order to get all ERC20 metadata by contract, Moralis provides you with an [getTokenMetadata](https://docs.moralis.io/reference/gettokenmetadata) endpoint.
 
 Here you'll need two parameters: `addresses` and `chain`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-util');
+const { EvmChain } = require('@moralisweb3/common-evm-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({
@@ -134,6 +134,11 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 You just got ERC20 metadata by contract with just a few lines of code using the Moralis Token API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=urBf_bP2jqw
+
 
 ## API Reference
 

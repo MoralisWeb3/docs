@@ -46,7 +46,7 @@ Give it a name and fill in the details as you want (press enter to use the defau
 4. Install the dependencies `express` and `moralis`:
 
 ```shell
-npm install moralis express
+npm install moralis express @moralisweb3/common-evm-utils
 ```
 
 
@@ -82,7 +82,7 @@ app.listen(port, () => {
 
 
 3. Run the server by calling `npm run start`. 
-4. Make sure that the server runs by going to `[<http://localhost:3000`>](<http://localhost:3000`>). It should show "Hello World!".
+4. Make sure that the server runs by going to [<http://localhost:3000`>](<http://localhost:3000`>). It should show "Hello World!".
 
 ## Add Moralis to Your Dapp
 
@@ -98,7 +98,7 @@ const express = require('express')
 // Import Moralis
 const Moralis = require('moralis').default
 // Import the EvmChain dataType
-const { EvmChain } = require("@moralisweb3/evm-utils")
+const { EvmChain } = require("@moralisweb3/common-evm-utils")
 
 const app = express()
 const port = 3000
@@ -256,7 +256,7 @@ The final code after this tutorial should look something like this:
 ```javascript
 const express = require("express")
 const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/evm-utils")
+const { EvmChain } = require("@moralisweb3/common-evm-utils")
 
 const app = express()
 const port = 3000

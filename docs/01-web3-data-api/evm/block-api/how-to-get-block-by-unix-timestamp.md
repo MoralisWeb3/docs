@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get block by unix timestamp
 
-In order to get the closest block by unix timestamp, Moralis provides you a `[getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)` endpoint to do so.
+In order to get the closest block by unix timestamp, Moralis provides you a [getDateToBlock](https://docs.moralis.io/reference/getdatetoblock) endpoint to do so.
 
 Here you'll need two parameters: `date` and `chain`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-util');
+const { EvmChain } = require('@moralisweb3/common-evm-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({

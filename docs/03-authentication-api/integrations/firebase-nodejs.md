@@ -180,3 +180,32 @@ await signInWithMoralis(moralisAuth, {
 ## Demo Project
 
 You can find the repository with the final code here: [firebase-auth-ext](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/firebase-auth-ext).
+
+## Troubleshooting
+
+#### SDK doesn't work with Next.js
+
+We recognised a complex bug with the Firebase SDK, that occurs only for Next.js framework. You may get the below error.
+
+```
+Server Error
+Error: Component auth has not been registered yet
+```
+
+
+
+To fix this bug, please apply the following workaround. You must pass own instances of the `Functions` and `Auth` classes created at your application level to the `getMoralisAuth()` method.
+
+```typescript
+const auth = getAuth(app);
+const functions = getFunctions(app);
+
+const moralisAuth = getMoralisAuth(app, {
+  auth,
+  functions
+});
+```
+
+
+
+You can find an example [here](https://github.com/MoralisWeb3/Moralis-JS-SDK/blob/main/demos/firebase-nextjs/hosting/components/Firebase.ts).

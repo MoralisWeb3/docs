@@ -1,5 +1,5 @@
 ---
-title: "How to sign in with RainbowKit"
+title: "How to Authenticate Users with RainbowKit"
 slug: "../how-to-sign-in-with-rainbowkit"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---

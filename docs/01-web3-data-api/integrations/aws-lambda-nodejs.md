@@ -382,7 +382,7 @@ Replace the _address_ and _chain_ values with your own information:
 Now let's test one of the functions, for example `getNativeBalance`. Open the terminal and run:
 
 ```powershell
-serverless invoke -f getNativeBalance --path event.json
+serverless invoke local -f getNativeBalance --path event.json
 ```
 
 
@@ -528,7 +528,7 @@ startMoralis();
 With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](https://docs.moralis.io/reference/getnativebalance) when the Express endpoint is called:
 
 ```javascript
-app.post("/getNativeBalance", async (req, res, next) => {
+app.get("/getNativeBalance", async (req, res, next) => {
   try {
     // Get native balance
     const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
@@ -553,7 +553,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 
 
-![](/img/content/03e3db9-image.png)
+![](/img/content/4840077-Screenshot_2022-12-14_at_13.13.23.png)
 
 :::info 
 > 
@@ -563,10 +563,10 @@ app.post("/getNativeBalance", async (req, res, next) => {
 
 Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](https://docs.moralis.io/reference/getwalletnfts) when the Express endpoint is called:
 
-![](/img/content/08eff9f-image.png)
+![](/img/content/b126f90-Screenshot_2022-12-14_at_13.14.35.png)
 
 ```javascript
-app.post("/getWalletNfts", async (req, res, next) => {
+app.get("/getWalletNfts", async (req, res, next) => {
   try {
 
     // Get wallet NFTs
@@ -627,7 +627,7 @@ app.get("/", (req, res, next) => {
   });
 });
 
-app.post("/getNativeBalance", async (req, res, next) => {
+app.get("/getNativeBalance", async (req, res, next) => {
   try {
     // Get native balance
     const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
@@ -649,7 +649,7 @@ app.post("/getNativeBalance", async (req, res, next) => {
   }
 });
 
-app.post("/getWalletNfts", async (req, res, next) => {
+app.get("/getWalletNfts", async (req, res, next) => {
   try {
 
     // Get wallet NFTs
@@ -731,7 +731,7 @@ serverless offline start
 
 ![](/img/content/e93d805-image.png)
 
-To test, navigate to `[<http://localhost:3000`>](<http://localhost:3000`>) in your browser:
+To test, navigate to [<http://localhost:3000`>](<http://localhost:3000`>) in your browser:
 
 ![](/img/content/c401071-image.png)
 
@@ -806,7 +806,7 @@ You could reach **_getNativeBalance_** and **_getWalletNfts_** endpoints by addi
 
 ![](/img/content/3192fdf-image.png)
 
-But because these are **POST requests** that need a body with _address_ and _chain_ parameters, you need to use an API platform like [Postman](https://www.postman.com/downloads/) to test it.
+These **GET requests** need a body with _address_ and _chain_ parameters, you can to use an API platform like [Postman](https://www.postman.com/downloads/) to test it.
 
 ## Testing single functions
 

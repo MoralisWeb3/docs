@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Resolve Unstoppable Domain
 
-In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a `[resolveDomain](https://docs.moralis.io/reference/resolvedomain)` endpoint to do so.
+In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a [resolveDomain](https://docs.moralis.io/reference/resolvedomain) endpoint to do so.
 
 Here you'll need one parameter: `address`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-util');
+const { EvmChain } = require('@moralisweb3/common-evm-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -57,7 +57,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({

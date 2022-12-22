@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All Transfers Of An NFT
 
-In order to get all the transfers of an NFT, Moralis provides you with an `[getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers-1)` endpoint.
+In order to get all the transfers of an NFT, Moralis provides you with an [getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers) endpoint.
 
 Here you'll need three parameters: `address`, `tokenId`, and `chain`.
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-util');
+const { EvmChain } = require('@moralisweb3/common-evm-utils');
 
 const runApp = async () => {
   await Moralis.start({
@@ -63,7 +63,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({
@@ -180,7 +180,7 @@ Congratulations 🥳 You just got all the transfers of an NFT with just a few li
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers-1)
+- [getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers)
 
 ## Support
 

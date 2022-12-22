@@ -14,7 +14,7 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the native balance of an address
 
@@ -32,16 +32,16 @@ import TabItem from '@theme/TabItem';
 
 ```javascript
 const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-util");
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-
+  
   const address = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045';
-
+  
   const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.balance.getNativeBalance({
@@ -49,7 +49,7 @@ const runApp = () => {
     chain,
   });
 
-  console.log(response.toJSON());
+	console.log(response.toJSON());
 }
 
 runApp();
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript 
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = () => {
   await Moralis.start({
@@ -77,7 +77,7 @@ const runApp = () => {
     chain,
   });
 
-  console.log(response.toJSON());
+	console.log(response.toJSON());
 }
 
 runApp();

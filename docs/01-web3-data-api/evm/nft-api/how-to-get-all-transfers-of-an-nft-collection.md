@@ -14,11 +14,11 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All Transfers Of An NFT Collection
 
-In order to get all the transfers for an NFT collection, Moralis provides you with a`[getNFTContractTransfers](https://docs.moralis.io/reference/getnftcontracttransfers-2)` endpoint.
+In order to get all the transfers for an NFT collection, Moralis provides you with a[getNFTContractTransfers](https://docs.moralis.io/reference/getnftcontracttransfers-2) endpoint.
 
 Here, you'll need two parameters: `address` and `chain`.
 
@@ -60,7 +60,7 @@ runApp();
 
 ```typescript index.ts
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-util";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({

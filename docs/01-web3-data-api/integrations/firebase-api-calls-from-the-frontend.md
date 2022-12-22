@@ -58,7 +58,7 @@ const result = await functions.httpsCallable('getBlock')({
 **Important Note:** Try to keep as little of an amount as possible of input parameters. For example, the chain parameter is redundant if your product is limited to the Ethereum blockchain. Moreover, this approach will reduce a chance of an unwanted usage of your functions.
 
 ```typescript functions/src/index.ts
-import {EvmChain} from '@moralisweb3/evm-utils';
+import {EvmChain} from '@moralisweb3/common-evm-utils';
 
 interface GetBlockData {
   blockNumberOrHash: string;

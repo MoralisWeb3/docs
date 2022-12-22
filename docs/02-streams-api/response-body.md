@@ -8,7 +8,13 @@ The body contains the data you are interested in. Logs is in array containing ra
 
 ## How to verify the signature for the received webhook request
 
-In JavaScript you can use this function, for other programming languages you can adapt this code. The secret is the web3api key for your account.
+In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret is the web3api key for your account.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript
 const verifySignature = (req, secret) => {
@@ -20,6 +26,25 @@ const verifySignature = (req, secret) => {
 
 }
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
+```python Python
+def verify_Signature(req, secret):
+    provided_signature = req.headers.get("x-signature")
+    if not provided_signature:
+        raise TypeError("Signature not provided")
+    
+    data = req.data+secret.encode()
+    signature = Web3.sha3(data).hex()
+    
+    if provided_signature != signature: 
+        raise ValueError("Invalid Signature")
+```
+
+</TabItem>
+</Tabs>
 
 ## Native transaction
 
@@ -258,7 +283,7 @@ We provide you with some useful metadata such as:
 
 - `tokenName`: the name of the NFT
 - `tokenSymbol`: the symbol of the NFT (only for [ERC721](https://eips.ethereum.org/EIPS/eip-721))
-- `tokenContractType`: the type of the NFT (either `[ERC721](https://eips.ethereum.org/EIPS/eip-721)` or `[ERC1155](https://eips.ethereum.org/EIPS/eip-1155)`)
+- `tokenContractType`: the type of the NFT (either [ERC721](https://eips.ethereum.org/EIPS/eip-721) or [ERC1155](https://eips.ethereum.org/EIPS/eip-1155))
 - `to`: the receiver address of the NFT transfer
 - `from`: the sender address of the NFT transfer
 - `amount`: the amount of NFT transferred in the transaction (`1` for [ERC721](https://eips.ethereum.org/EIPS/eip-721))

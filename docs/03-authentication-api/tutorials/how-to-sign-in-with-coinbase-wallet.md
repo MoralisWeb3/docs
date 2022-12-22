@@ -1,5 +1,5 @@
 ---
-title: "How to sign in with Coinbase Wallet"
+title: "How to Authenticate Users with Coinbase Wallet"
 slug: "../how-to-sign-in-with-coinbase-wallet"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
@@ -18,7 +18,7 @@ import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { signIn } from 'next-auth/react'
 import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi'
 import { useRouter } from 'next/router'
-import axios from 'axios'
+import { useAuthRequestChallengeEvm } from '@moralisweb3/next'
 
 function SignIn() {
   const { connectAsync } = useConnect()
@@ -26,6 +26,7 @@ function SignIn() {
   const { isConnected } = useAccount()
   const { signMessageAsync } = useSignMessage()
   const { push } = useRouter()
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm()
 
   const handleAuth = async () => {
     if (isConnected) {
@@ -35,25 +36,19 @@ function SignIn() {
     const { account, chain } = await connectAsync({
       connector: new CoinbaseWalletConnector({
         options: {
-          appName: 'youramazing.finance',
+          appName: 'amazing.finance',
         },
       }),
     })
 
     const userData = { address: account, chain: chain.id, network: 'evm' }
 
-    const { data } = await axios.post('/api/auth/request-message', userData, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-
-    const message = data.message
+    const { message } = await requestChallengeAsync(userData)
 
     const signature = await signMessageAsync({ message })
 
     // redirect user after success authentication to '/user' page
-    const { url } = await signIn('credentials', {
+    const { url } = await signIn('moralis-auth', {
       message,
       signature,
       redirect: false,

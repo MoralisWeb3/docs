@@ -41,7 +41,7 @@ Returns data with all the internal data types.
 Use this method when you want to run logic on the returned data, as it comes with a lot more properties/utilities compared to the `.raw()` result:
 
 ```javascript
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 const response = await Moralis.EvmApi.token.getWalletTokenBalances({
   	chain: EvmChain.ETHEREUM,
@@ -73,7 +73,7 @@ Returns raw data as it is; it comes directly from the API.
 Use this method if you want the data as it was in v1 of the SDK. This will output the data without any formatting, and the types are different than the result from  `.result`. This method is not recommended (as it lacks a lot of utilities, validations, and formatting) and should only be used when you want to migrate from the v1 version of the SDK:
 
 ```javascript
-import { EvmChain } from '@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/common-evm-utils';
 
 const balances = await Moralis.EvmApi.token.getWalletTokenBalances({
   	chain: EvmChain.ETHEREUM,
