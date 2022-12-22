@@ -14,7 +14,7 @@ Before getting started, make sure you have the following ready:
 
 import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
-<SetupMoralis node="moralis @moralisweb3/common-evm-util" python="moralis" />
+<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get an NFT's Metadata
 
@@ -151,6 +151,10 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 you just got Cryptopunk NFT metadata for token id 3931 owned by an address with just a few lines of code using Moralis NFT API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=KTQaeq8k0FY
 
 ## API Reference
 
