@@ -10,71 +10,53 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url("/fonts/golos/Golos-Text_Regular.woff2")
-      format("woff2"),
-    url("/fonts/golos/Golos-Text_Regular.woff")
-      format("woff"),
-    url("/fonts/golos/Golos-Text_Regular.ttf")
-      format("truetype");
+  src: url("/fonts/golos/Golos-Text_Regular.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 500;
   font-display: auto;
-  src: url("/fonts/golos/Golos-Text_Medium.woff2")
-      format("woff2"),
-    url("/fonts/golos/Golos-Text_Medium.woff")
-      format("woff"),
-    url("/fonts/golos/Golos-Text_Medium.ttf")
-      format("truetype");
+  src: url("/fonts/golos/Golos-Text_Medium.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 600;
   font-display: auto;
-  src: url("/fonts/golos/Golos-Text_DemiBold.woff2")
-      format("woff2"),
-    url("/fonts/golos/Golos-Text_DemiBold.woff")
-      format("woff"),
-    url("/fonts/golos/Golos-Text_DemiBold.ttf")
-      format("truetype");
+  src: url("/fonts/golos/Golos-Text_DemiBold.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 700;
   font-display: auto;
-  src: url("/fonts/golos/Golos-Text_Bold.woff2")
-      format("woff2"),
-    url("/fonts/golos/Golos-Text_Bold.woff")
-      format("woff"),
-    url("/fonts/golos/Golos-Text_Bold.ttf")
-      format("truetype");
+  src: url("/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 800;
   font-display: auto;
-  src: url("/fonts/golos/Golos-Text_Bold.woff2")
-      format("woff2"),
-    url("/fonts/golos/Golos-Text_Bold.woff")
-      format("woff"),
-    url("/fonts/golos/Golos-Text_Bold.ttf")
-      format("truetype");
+  src: url("/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  font-display: swap;
 }
 /* End Custom Fonts CSS */
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-  Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-  Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   --ifm-color-primary: #0f7fff;
   --ifm-color-primary-dark: #0071f3;
   --ifm-color-primary-darker: #006be6;
@@ -85,19 +67,19 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-    /* custom */
-    --ifm-code-font-size: 12px;
-    --ifm-navbar-height: 4.5rem;
-    --ifm-navbar-shadow: none;
-    --ifm-badge-padding-vertical: 0.4rem;
-    --ifm-badge-padding-horizontal: 0.8rem;
-    --ifm-heading-font-weight: 600;
-    --ifm-navbar-item-padding-horizontal: 0.5rem;
-    --ifm-alert-padding-vertical: 1.25rem;
-    --ifm-alert-padding-horizontal: 1.5rem;
-    --ifm-blockquote-padding-horizontal: 1rem;
-    --ifm-blockquote-border-left-width: 3px;
-    --ifm-badge-padding-horizontal: 0.5rem;
+  /* custom */
+  --ifm-code-font-size: 12px;
+  --ifm-navbar-height: 4.5rem;
+  --ifm-navbar-shadow: none;
+  --ifm-badge-padding-vertical: 0.4rem;
+  --ifm-badge-padding-horizontal: 0.8rem;
+  --ifm-heading-font-weight: 600;
+  --ifm-navbar-item-padding-horizontal: 0.5rem;
+  --ifm-alert-padding-vertical: 1.25rem;
+  --ifm-alert-padding-horizontal: 1.5rem;
+  --ifm-blockquote-padding-horizontal: 1rem;
+  --ifm-blockquote-border-left-width: 3px;
+  --ifm-badge-padding-horizontal: 0.5rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -143,7 +125,6 @@
 .DocSearch-Button-Placeholder {
   color: #42516b;
 }
-
 
 .menu {
   scrollbar-gutter: stable;
