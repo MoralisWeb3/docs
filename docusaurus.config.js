@@ -70,10 +70,6 @@ const config = {
           ignorePatterns: ["/tags/**"],
           filename: "sitemap.xml",
         },
-        gtag: {
-          trackingID: "G-VYPYJZYKCB",
-          anonymizeIP: false,
-        },
       }),
     ],
   ],
@@ -134,9 +130,6 @@ const config = {
         appId: "NC1LK93TN5",
         apiKey: "b36064a11a9ce260d626a095a8ff2693",
         indexName: "moralis-docs",
-      },
-      hotjar: {
-        applicationId: "3295610",
       },
       navbar: {
         hideOnScroll: false,
@@ -249,7 +242,7 @@ const config = {
       },
     }),
   plugins: [
-    ["docusaurus-plugin-hotjar", {}],
+    ["@twilio-labs/docusaurus-plugin-segment", { writeKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", allowedInDev: true }],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
   ],
