@@ -8,12 +8,6 @@ hide_table_of_contents: true
 # Moralis Web3 Documentation
 Integrate Web3 into any tech stack by following easy guides, recipes, and API references!
 
-:::info
-
-# WIP
-
-:::
-
 ## Explore Products 
 
 <div className="row">
