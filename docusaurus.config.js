@@ -242,7 +242,7 @@ const config = {
       },
     }),
   plugins: [
-    ["@twilio-labs/docusaurus-plugin-segment", { writeKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", allowedInDev: true }],
+    ["docusaurus-plugin-segment", { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e" }],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
   ],
