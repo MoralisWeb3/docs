@@ -105,7 +105,7 @@ const config = {
             defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [require.resolve("./src/css/custom.css")],
         },
         sitemap: {
           changefreq: "weekly",

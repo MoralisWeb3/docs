@@ -49,14 +49,6 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
-    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
-    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
   --ifm-color-primary: #0f7fff;
   --ifm-color-primary-dark: #0071f3;
   --ifm-color-primary-darker: #006be6;
@@ -64,13 +56,10 @@
   --ifm-color-primary-light: #2a8dff;
   --ifm-color-primary-lighter: #3895ff;
   --ifm-color-primary-lightest: #60aaff;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
   /* custom */
   --ifm-code-font-size: 12px;
   --ifm-navbar-height: 4.5rem;
-  --ifm-navbar-shadow: none;
+
   --ifm-badge-padding-vertical: 0.4rem;
   --ifm-badge-padding-horizontal: 0.8rem;
   --ifm-heading-font-weight: 600;
@@ -80,19 +69,31 @@
   --ifm-blockquote-padding-horizontal: 1rem;
   --ifm-blockquote-border-left-width: 3px;
   --ifm-badge-padding-horizontal: 0.5rem;
+
+  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-background-color: #041836;
-  --ifm-background-surface-color: #041836;
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+[data-theme="dark"]:root {
+  --ifm-background-color: #0f0e13;
+  --ifm-background-surface-color: #1c212f;
+  --ifm-color-primary: #57a5ff;
+  --ifm-color-primary-dark: #3593ff;
+  --ifm-color-primary-darker: #248aff;
+  --ifm-color-primary-darkest: #1380ff;
+  --ifm-color-primary-light: #79b7ff;
+  --ifm-color-primary-lighter: #8ac0ff;
+  --ifm-color-primary-lightest: #bedcff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -133,10 +134,15 @@
 
 .menu__link {
   min-height: 30px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   align-items: center;
   justify-content: flex-start;
   border-radius: 8px;
   overflow-wrap: anywhere;
+}
+
+.menu__caret::before,
+.menu__link--sublist-caret:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
