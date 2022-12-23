@@ -188,25 +188,29 @@ const config = {
             type: "doc",
             docId: "web3-data-api/overview",
             position: "left",
-            label: "Web3 Data API",
+            label: "Web3 Data",
           },
           {
             type: "doc",
             docId: "streams-api/overview",
             position: "left",
-            label: "Streams API",
+            label: "Streams",
           },
           {
             type: "doc",
             docId: "authentication-api/overview",
             position: "left",
-            label: "Authentication API",
+            label: "Authentication",
           },
           {
             type: "doc",
             docId: "example-dapps/evm/evm",
             position: "left",
-            label: "Example dapps",
+            label: "Demos",
+          },
+          {
+            type: 'search',
+            position: 'left',
           },
           // position: Right
           {

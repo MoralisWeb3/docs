@@ -58,7 +58,6 @@
   --ifm-color-primary-lightest: #60aaff;
   /* custom */
   --ifm-code-font-size: 12px;
-  --ifm-navbar-height: 4.5rem;
 
   --ifm-badge-padding-vertical: 0.4rem;
   --ifm-badge-padding-horizontal: 0.8rem;
@@ -127,9 +126,8 @@
   color: #42516b;
 }
 
-.menu {
-  scrollbar-gutter: stable;
-  margin-bottom: 20px;
+.navbar__link {
+  font-size: 14px;
 }
 
 .menu__link {
@@ -138,11 +136,28 @@
   font-weight: 400;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 8px;
   overflow-wrap: anywhere;
 }
 
 .menu__caret::before,
 .menu__link--sublist-caret:after {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
+
+.DocSearch-Button {
+  width: 300px;
+}
+
+/** Mobile view */
+@media screen and (max-width: 996px) {
+  .DocSearch-Button {
+    width: auto;
+  }
+}
+
+/** In mobile view, reduce the padding */
+@media screen and (max-width: 1280px) {
+  .DocSearch-Button {
+    width: auto;
+  }
 }
