@@ -30,6 +30,49 @@ const config = {
     mermaid: true,
   },
 
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/golos/Golos-Text_Bold.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/golos/Golos-Text_DemiBold.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/golos/Golos-Text_Medium.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/golos/Golos-Text_Regular.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+  ],
+
   themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
@@ -178,7 +221,7 @@ const config = {
             items: [
               {
                 type: "html",
-                value: 'API References',
+                value: "API References",
               },
               {
                 label: "Web3 Data API",
@@ -197,7 +240,7 @@ const config = {
               },
               {
                 type: "html",
-                value: 'SDK References',
+                value: "SDK References",
               },
               {
                 label: "JS SDK",
@@ -238,11 +281,14 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["php","solidity"],
+        additionalLanguages: ["php", "solidity"],
       },
     }),
   plugins: [
-    ["docusaurus-plugin-segment", { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e" }],
+    [
+      "docusaurus-plugin-segment",
+      { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e" },
+    ],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
   ],
