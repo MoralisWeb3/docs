@@ -14,7 +14,7 @@ hide_title: true
                     <h1 className="hero__title">Moralis Web3 Documentation</h1>
                     <p className="hero__subtitle">Integrate Web3 into any tech stack by following easy guides, recipes, and API references!</p>
                     <div>
-                    <a href="/web3-data-api/getting-started/" className="button button--secondary button--outline button--lg">
+                    <a href="/web3-data-api/getting-started/" className="button button--primary button--outline button--lg">
                         Get Started
                     </a>
                     </div>
