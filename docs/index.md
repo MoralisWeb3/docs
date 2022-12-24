@@ -22,7 +22,7 @@ hide_title: true
             </div>
             <div className="col col--6">
                 <div className="col-demo">
-                    <img src="/img/content/scaleWebApi3.svg" alt="Moralis Web3 Documentation" />
+                    <img src="/img/content/scaleWebApi3.svg" width="580" height="422" loading="eager" alt="Moralis Web3 Documentation" />
                 </div>
             </div>
         </div>
