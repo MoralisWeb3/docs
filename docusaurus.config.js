@@ -375,7 +375,7 @@ const config = {
               },
               {
                 label: 'Security Policy',
-                href: 'https://moralis.io/terms/',
+                href: 'https://moralis.io/security-policy/',
               },
             ],
           },
