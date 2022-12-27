@@ -215,7 +215,7 @@ const ApiExamples = ({ method, apiHost, path }: Pick<ApiReferenceProps, "method"
                 }),
                 qs.stringify(values.query || {}, { addQueryPrefix: true }),
               ].join(""),
-              auth: token,
+              auth: token.length > 0 ? token : "YOUR_API_KEY",
               body: filterOutEmpty(values.body),
             })}
           </CodeBlock>

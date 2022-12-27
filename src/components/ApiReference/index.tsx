@@ -199,7 +199,7 @@ const ApiReference = ({
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
 
-                  <input value={token} onChange={onChangeToken} className={styles.input} />
+                  <input value={token} onChange={onChangeToken} placeholder="YOUR_API_KEY" className={styles.input} />
 
                   <ApiParamButton type="submit" disabled={loading}>
                     Try It

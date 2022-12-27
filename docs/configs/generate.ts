@@ -86,11 +86,9 @@ const translateSchemaReference = (schemaRef) => {
   }
 };
 
-const extractSwaggerValueByMethod = (swaggerJSON, path) => {
-  const method = Object.keys(swaggerJSON.paths?.[path])[0];
+const extractSwaggerValueByMethod = (swaggerJSON, path, method) => {
   return {
     ...swaggerJSON.paths?.[path]?.[method],
-    method: method.toUpperCase(),
   };
 };
 
@@ -202,34 +200,36 @@ const formatPath = (path) => {
 const formatSwaggerJSON = (swaggerJSON, apiHost) => {
   const swaggerContent = {};
   for (let path in swaggerJSON.paths) {
-    // Extract all important fields from Swagger
-    const {
-      operationId,
-      description,
-      summary,
-      method,
-      parameters = [],
-      requestBody,
-      responses = [],
-    } = extractSwaggerValueByMethod(swaggerJSON, path);
+    for (let method in swaggerJSON.paths?.[path]) {
+      // Extract all important fields from Swagger
+      const {
+        operationId,
+        description,
+        summary,
+        parameters = [],
+        requestBody,
+        responses = [],
+      } = extractSwaggerValueByMethod(swaggerJSON, path, method);
 
-    // Formatting Parameters & Responses
-    const { pathParams = [], queryParams = [] } = formatParameters(parameters);
-    const formattedBodyParams = formatBodyParameters(requestBody);
-    const formattedResponses = formatResponses(responses);
-    const formattedPath = formatPath(path);
+      // Formatting Parameters & Responses
+      const { pathParams = [], queryParams = [] } =
+        formatParameters(parameters);
+      const formattedBodyParams = formatBodyParameters(requestBody);
+      const formattedResponses = formatResponses(responses);
+      const formattedPath = formatPath(path);
 
-    swaggerContent[operationId] = {
-      apiHost,
-      summary,
-      description,
-      method,
-      path: formattedPath,
-      pathParams,
-      queryParams,
-      bodyParam: formattedBodyParams,
-      responses: formattedResponses,
-    };
+      swaggerContent[operationId] = {
+        apiHost,
+        summary,
+        description,
+        method: method.toUpperCase(),
+        path: formattedPath,
+        pathParams,
+        queryParams,
+        bodyParam: formattedBodyParams,
+        responses: formattedResponses,
+      };
+    }
   }
   return swaggerContent;
 };
@@ -261,7 +261,6 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 const generateConfigs = async () => {
   try {
     for (let key in swaggerPaths) {
-      // if (["streams"].includes(key)) {
       const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
       const swaggerJSON = await swaggerRes?.json();
       let swaggerContent;
@@ -274,7 +273,6 @@ const generateConfigs = async () => {
       // If statement is temporary, for testing only
       swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
       swaggerOAS[key] = swaggerContent;
-      // }
     }
 
     // Write API reference Config
@@ -286,7 +284,7 @@ const generateConfigs = async () => {
     );
 
     for (let key in swaggerOAS) {
-      if (!["nft", "solana"].includes(key)) {
+      if (["nft", "solana"].includes(key)) {
         for (let index in Object.keys(swaggerOAS[key])) {
           const functionName = Object.keys(swaggerOAS[key])[index];
           const snakeCaseFunctionName = camelToSnakeCase(functionName);
