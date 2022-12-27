@@ -6816,6 +6816,37 @@
         }
       ]
     },
+    "GetSettings": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Get project settings",
+      "description": "Get the settings for the current project based on the project api-key.",
+      "method": "GET",
+      "path": "/settings",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "region",
+                "type": "string",
+                "description": "The region from where all the webhooks will be posted for this project",
+                "enum": [
+                  "us-east-1",
+                  "us-west-2",
+                  "eu-central-1",
+                  "ap-southeast-1"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
     "GetStats": {
       "apiHost": "https://api.moralis-streams.com",
       "summary": "Get project stats",
@@ -7240,6 +7271,373 @@
         }
       ]
     },
+    "CreateStream": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Create stream",
+      "description": "Creates a new evm stream.",
+      "method": "PUT",
+      "path": "/streams/evm",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a Stream Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "webhookUrl",
+            "type": "string",
+            "description": "Webhook URL where moralis will send the POST request."
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "A description for this stream"
+          },
+          {
+            "name": "tag",
+            "type": "string",
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+          },
+          {
+            "name": "topic0",
+            "type": "array",
+            "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "allAddresses",
+            "type": "boolean",
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+          },
+          {
+            "name": "includeNativeTxs",
+            "type": "boolean",
+            "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+          },
+          {
+            "name": "includeContractLogs",
+            "type": "boolean",
+            "description": "Include or not logs of contract interactions defaults to false"
+          },
+          {
+            "name": "includeInternalTxs",
+            "type": "boolean",
+            "description": "Include or not include internal transactions defaults to false"
+          },
+          {
+            "name": "getNativeBalances",
+            "type": "object",
+            "description": "Include native balances for each address in the webhook",
+            "fields": [
+              {
+                "name": "selectors",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              { "name": "type", "type": "string" }
+            ]
+          },
+          {
+            "name": "abi",
+            "type": "object",
+            "fields": [
+              { "name": "anonymous", "type": "boolean" },
+              { "name": "constant", "type": "boolean" },
+              {
+                "name": "inputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "indexed", "type": "boolean" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "name", "type": "string" },
+              {
+                "name": "outputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "payable", "type": "boolean" },
+              { "name": "stateMutability", "type": "string" },
+              { "name": "type", "type": "string" },
+              { "name": "gas", "type": "number" }
+            ]
+          },
+          {
+            "name": "advancedOptions",
+            "type": "object",
+            "fields": [
+              { "name": "topic0", "type": "string" },
+              {
+                "name": "filter",
+                "type": "object",
+                "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                "properties": {},
+                "additionalProperties": {},
+                "example": {}
+              },
+              { "name": "includeNativeTxs", "type": "boolean" }
+            ]
+          },
+          {
+            "name": "chainIds",
+            "type": "array",
+            "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "demo",
+            "type": "boolean",
+            "description": "Indicator if it is a demo stream"
+          },
+          {
+            "name": "triggers",
+            "type": "object",
+            "description": "triggers",
+            "fields": [
+              { "name": "type", "type": "string" },
+              { "name": "contractAddress", "type": "string" },
+              {
+                "name": "inputs",
+                "type": "array",
+                "field": {
+                  "anyOf": [
+                    { "type": "string" },
+                    { "items": {}, "type": "array" }
+                  ]
+                }
+              },
+              {
+                "name": "functionAbi",
+                "type": "object",
+                "description": "The abi to parse the log object of the contract",
+                "properties": {
+                  "anonymous": { "type": "boolean" },
+                  "constant": { "type": "boolean" },
+                  "inputs": {
+                    "items": { "$ref": "#/components/schemas/AbiInput" },
+                    "type": "array"
+                  },
+                  "name": { "type": "string" },
+                  "outputs": {
+                    "items": { "$ref": "#/components/schemas/AbiOutput" },
+                    "type": "array"
+                  },
+                  "payable": { "type": "boolean" },
+                  "stateMutability": { "type": "string" },
+                  "type": { "type": "string" },
+                  "gas": { "type": "number", "format": "double" }
+                },
+                "required": ["type"],
+                "additionalProperties": false,
+                "example": {}
+              },
+              { "name": "topic0", "type": "string" },
+              { "name": "callFrom", "type": "string" }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "webhookUrl",
+                "type": "string",
+                "description": "Webhook URL where moralis will send the POST request."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A description for this stream"
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+              },
+              {
+                "name": "topic0",
+                "type": "array",
+                "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "allAddresses",
+                "type": "boolean",
+                "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+              },
+              {
+                "name": "includeNativeTxs",
+                "type": "boolean",
+                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+              },
+              {
+                "name": "includeContractLogs",
+                "type": "boolean",
+                "description": "Include or not logs of contract interactions defaults to false"
+              },
+              {
+                "name": "includeInternalTxs",
+                "type": "boolean",
+                "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "getNativeBalances",
+                "type": "object",
+                "description": "Include native balances for each address in the webhook",
+                "fields": [
+                  {
+                    "name": "selectors",
+                    "type": "array",
+                    "field": { "type": "string" }
+                  },
+                  { "name": "type", "type": "string" }
+                ]
+              },
+              {
+                "name": "abi",
+                "type": "object",
+                "fields": [
+                  { "name": "anonymous", "type": "boolean" },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "indexed", "type": "boolean" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "name", "type": "string" },
+                  {
+                    "name": "outputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "gas", "type": "number" }
+                ]
+              },
+              {
+                "name": "advancedOptions",
+                "type": "object",
+                "fields": [
+                  { "name": "topic0", "type": "string" },
+                  {
+                    "name": "filter",
+                    "type": "object",
+                    "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                    "properties": {},
+                    "additionalProperties": {},
+                    "example": {}
+                  },
+                  { "name": "includeNativeTxs", "type": "boolean" }
+                ]
+              },
+              {
+                "name": "chainIds",
+                "type": "array",
+                "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "demo",
+                "type": "boolean",
+                "description": "Indicator if it is a demo stream"
+              },
+              {
+                "name": "triggers",
+                "type": "object",
+                "description": "triggers",
+                "fields": [
+                  { "name": "type", "type": "string" },
+                  { "name": "contractAddress", "type": "string" },
+                  {
+                    "name": "inputs",
+                    "type": "array",
+                    "field": {
+                      "anyOf": [
+                        { "type": "string" },
+                        { "items": {}, "type": "array" }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "functionAbi",
+                    "type": "object",
+                    "description": "The abi to parse the log object of the contract",
+                    "properties": {
+                      "anonymous": { "type": "boolean" },
+                      "constant": { "type": "boolean" },
+                      "inputs": {
+                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "type": "array"
+                      },
+                      "name": { "type": "string" },
+                      "outputs": {
+                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "type": "array"
+                      },
+                      "payable": { "type": "boolean" },
+                      "stateMutability": { "type": "string" },
+                      "type": { "type": "string" },
+                      "gas": { "type": "number", "format": "double" }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false,
+                    "example": {}
+                  },
+                  { "name": "topic0", "type": "string" },
+                  { "name": "callFrom", "type": "string" }
+                ]
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              {
+                "name": "statusMessage",
+                "type": "string",
+                "description": "Description of current status of stream."
+              }
+            ]
+          }
+        }
+      ]
+    },
     "GetStream": {
       "apiHost": "https://api.moralis-streams.com",
       "summary": "Get a specific evm stream.",
@@ -7250,6 +7648,586 @@
         {
           "name": "id",
           "description": "The id of the stream to get",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "webhookUrl",
+                "type": "string",
+                "description": "Webhook URL where moralis will send the POST request."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A description for this stream"
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+              },
+              {
+                "name": "topic0",
+                "type": "array",
+                "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "allAddresses",
+                "type": "boolean",
+                "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+              },
+              {
+                "name": "includeNativeTxs",
+                "type": "boolean",
+                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+              },
+              {
+                "name": "includeContractLogs",
+                "type": "boolean",
+                "description": "Include or not logs of contract interactions defaults to false"
+              },
+              {
+                "name": "includeInternalTxs",
+                "type": "boolean",
+                "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "getNativeBalances",
+                "type": "object",
+                "description": "Include native balances for each address in the webhook",
+                "fields": [
+                  {
+                    "name": "selectors",
+                    "type": "array",
+                    "field": { "type": "string" }
+                  },
+                  { "name": "type", "type": "string" }
+                ]
+              },
+              {
+                "name": "abi",
+                "type": "object",
+                "fields": [
+                  { "name": "anonymous", "type": "boolean" },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "indexed", "type": "boolean" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "name", "type": "string" },
+                  {
+                    "name": "outputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "gas", "type": "number" }
+                ]
+              },
+              {
+                "name": "advancedOptions",
+                "type": "object",
+                "fields": [
+                  { "name": "topic0", "type": "string" },
+                  {
+                    "name": "filter",
+                    "type": "object",
+                    "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                    "properties": {},
+                    "additionalProperties": {},
+                    "example": {}
+                  },
+                  { "name": "includeNativeTxs", "type": "boolean" }
+                ]
+              },
+              {
+                "name": "chainIds",
+                "type": "array",
+                "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "demo",
+                "type": "boolean",
+                "description": "Indicator if it is a demo stream"
+              },
+              {
+                "name": "triggers",
+                "type": "object",
+                "description": "triggers",
+                "fields": [
+                  { "name": "type", "type": "string" },
+                  { "name": "contractAddress", "type": "string" },
+                  {
+                    "name": "inputs",
+                    "type": "array",
+                    "field": {
+                      "anyOf": [
+                        { "type": "string" },
+                        { "items": {}, "type": "array" }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "functionAbi",
+                    "type": "object",
+                    "description": "The abi to parse the log object of the contract",
+                    "properties": {
+                      "anonymous": { "type": "boolean" },
+                      "constant": { "type": "boolean" },
+                      "inputs": {
+                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "type": "array"
+                      },
+                      "name": { "type": "string" },
+                      "outputs": {
+                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "type": "array"
+                      },
+                      "payable": { "type": "boolean" },
+                      "stateMutability": { "type": "string" },
+                      "type": { "type": "string" },
+                      "gas": { "type": "number", "format": "double" }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false,
+                    "example": {}
+                  },
+                  { "name": "topic0", "type": "string" },
+                  { "name": "callFrom", "type": "string" }
+                ]
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              {
+                "name": "statusMessage",
+                "type": "string",
+                "description": "Description of current status of stream."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "UpdateStream": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Update stream",
+      "description": "Updates a specific evm stream.",
+      "method": "POST",
+      "path": "/streams/evm/:id",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "The id of the stream to update",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a Stream Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "webhookUrl",
+            "type": "string",
+            "description": "Webhook URL where moralis will send the POST request."
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "A description for this stream"
+          },
+          {
+            "name": "tag",
+            "type": "string",
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+          },
+          {
+            "name": "topic0",
+            "type": "array",
+            "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "allAddresses",
+            "type": "boolean",
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+          },
+          {
+            "name": "includeNativeTxs",
+            "type": "boolean",
+            "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+          },
+          {
+            "name": "includeContractLogs",
+            "type": "boolean",
+            "description": "Include or not logs of contract interactions defaults to false"
+          },
+          {
+            "name": "includeInternalTxs",
+            "type": "boolean",
+            "description": "Include or not include internal transactions defaults to false"
+          },
+          {
+            "name": "getNativeBalances",
+            "type": "object",
+            "description": "Include native balances for each address in the webhook",
+            "fields": [
+              {
+                "name": "selectors",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              { "name": "type", "type": "string" }
+            ]
+          },
+          {
+            "name": "abi",
+            "type": "object",
+            "fields": [
+              { "name": "anonymous", "type": "boolean" },
+              { "name": "constant", "type": "boolean" },
+              {
+                "name": "inputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "indexed", "type": "boolean" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "name", "type": "string" },
+              {
+                "name": "outputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "payable", "type": "boolean" },
+              { "name": "stateMutability", "type": "string" },
+              { "name": "type", "type": "string" },
+              { "name": "gas", "type": "number" }
+            ]
+          },
+          {
+            "name": "advancedOptions",
+            "type": "object",
+            "fields": [
+              { "name": "topic0", "type": "string" },
+              {
+                "name": "filter",
+                "type": "object",
+                "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                "properties": {},
+                "additionalProperties": {},
+                "example": {}
+              },
+              { "name": "includeNativeTxs", "type": "boolean" }
+            ]
+          },
+          {
+            "name": "chainIds",
+            "type": "array",
+            "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "demo",
+            "type": "boolean",
+            "description": "Indicator if it is a demo stream"
+          },
+          {
+            "name": "triggers",
+            "type": "object",
+            "description": "triggers",
+            "fields": [
+              { "name": "type", "type": "string" },
+              { "name": "contractAddress", "type": "string" },
+              {
+                "name": "inputs",
+                "type": "array",
+                "field": {
+                  "anyOf": [
+                    { "type": "string" },
+                    { "items": {}, "type": "array" }
+                  ]
+                }
+              },
+              {
+                "name": "functionAbi",
+                "type": "object",
+                "description": "The abi to parse the log object of the contract",
+                "properties": {
+                  "anonymous": { "type": "boolean" },
+                  "constant": { "type": "boolean" },
+                  "inputs": {
+                    "items": { "$ref": "#/components/schemas/AbiInput" },
+                    "type": "array"
+                  },
+                  "name": { "type": "string" },
+                  "outputs": {
+                    "items": { "$ref": "#/components/schemas/AbiOutput" },
+                    "type": "array"
+                  },
+                  "payable": { "type": "boolean" },
+                  "stateMutability": { "type": "string" },
+                  "type": { "type": "string" },
+                  "gas": { "type": "number", "format": "double" }
+                },
+                "required": ["type"],
+                "additionalProperties": false,
+                "example": {}
+              },
+              { "name": "topic0", "type": "string" },
+              { "name": "callFrom", "type": "string" }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "webhookUrl",
+                "type": "string",
+                "description": "Webhook URL where moralis will send the POST request."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A description for this stream"
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+              },
+              {
+                "name": "topic0",
+                "type": "array",
+                "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "allAddresses",
+                "type": "boolean",
+                "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+              },
+              {
+                "name": "includeNativeTxs",
+                "type": "boolean",
+                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+              },
+              {
+                "name": "includeContractLogs",
+                "type": "boolean",
+                "description": "Include or not logs of contract interactions defaults to false"
+              },
+              {
+                "name": "includeInternalTxs",
+                "type": "boolean",
+                "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "getNativeBalances",
+                "type": "object",
+                "description": "Include native balances for each address in the webhook",
+                "fields": [
+                  {
+                    "name": "selectors",
+                    "type": "array",
+                    "field": { "type": "string" }
+                  },
+                  { "name": "type", "type": "string" }
+                ]
+              },
+              {
+                "name": "abi",
+                "type": "object",
+                "fields": [
+                  { "name": "anonymous", "type": "boolean" },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "indexed", "type": "boolean" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "name", "type": "string" },
+                  {
+                    "name": "outputs",
+                    "type": "object",
+                    "fields": [
+                      { "name": "name", "type": "string" },
+                      { "name": "type", "type": "string" },
+                      { "name": "components", "type": "json" },
+                      { "name": "internalType", "type": "string" }
+                    ]
+                  },
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "gas", "type": "number" }
+                ]
+              },
+              {
+                "name": "advancedOptions",
+                "type": "object",
+                "fields": [
+                  { "name": "topic0", "type": "string" },
+                  {
+                    "name": "filter",
+                    "type": "object",
+                    "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                    "properties": {},
+                    "additionalProperties": {},
+                    "example": {}
+                  },
+                  { "name": "includeNativeTxs", "type": "boolean" }
+                ]
+              },
+              {
+                "name": "chainIds",
+                "type": "array",
+                "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "demo",
+                "type": "boolean",
+                "description": "Indicator if it is a demo stream"
+              },
+              {
+                "name": "triggers",
+                "type": "object",
+                "description": "triggers",
+                "fields": [
+                  { "name": "type", "type": "string" },
+                  { "name": "contractAddress", "type": "string" },
+                  {
+                    "name": "inputs",
+                    "type": "array",
+                    "field": {
+                      "anyOf": [
+                        { "type": "string" },
+                        { "items": {}, "type": "array" }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "functionAbi",
+                    "type": "object",
+                    "description": "The abi to parse the log object of the contract",
+                    "properties": {
+                      "anonymous": { "type": "boolean" },
+                      "constant": { "type": "boolean" },
+                      "inputs": {
+                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "type": "array"
+                      },
+                      "name": { "type": "string" },
+                      "outputs": {
+                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "type": "array"
+                      },
+                      "payable": { "type": "boolean" },
+                      "stateMutability": { "type": "string" },
+                      "type": { "type": "string" },
+                      "gas": { "type": "number", "format": "double" }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false,
+                    "example": {}
+                  },
+                  { "name": "topic0", "type": "string" },
+                  { "name": "callFrom", "type": "string" }
+                ]
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              {
+                "name": "statusMessage",
+                "type": "string",
+                "description": "Description of current status of stream."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "DeleteStream": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Delete stream",
+      "description": "Delete a specific evm stream.",
+      "method": "DELETE",
+      "path": "/streams/evm/:id",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "The id of the stream to delete",
           "required": true,
           "type": "string"
         }
@@ -7721,6 +8699,120 @@
                 "name": "total",
                 "type": "number",
                 "description": "Total count of streams on the project"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "AddAddressToStream": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Add address to stream",
+      "description": "Adds an address to a Stream.",
+      "method": "POST",
+      "path": "/streams/evm/:id/address",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "The id of the stream to add the address to",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a Address Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "address",
+            "description": "The address or a list of addresses to be added to the Stream.",
+            "type": "oneOf",
+            "options": [
+              { "type": "string" },
+              { "field": { "type": "string" }, "type": "array" }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "streamId",
+                "type": "string",
+                "description": "The streamId"
+              },
+              {
+                "name": "address",
+                "description": "Address",
+                "type": "oneOf",
+                "options": [
+                  { "type": "string" },
+                  { "field": { "type": "string" }, "type": "array" }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "DeleteAddressFromStream": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Delete address from stream",
+      "description": "Deletes an address from a Stream.",
+      "method": "DELETE",
+      "path": "/streams/evm/:id/address",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "The id of the stream to delete the address from",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a Address Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "address",
+            "description": "The address or a list of addresses to be removed from the Stream.",
+            "type": "oneOf",
+            "options": [
+              { "type": "string" },
+              { "field": { "type": "string" }, "type": "array" }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "streamId",
+                "type": "string",
+                "description": "The streamId"
+              },
+              {
+                "name": "address",
+                "description": "Address",
+                "type": "oneOf",
+                "options": [
+                  { "type": "string" },
+                  { "field": { "type": "string" }, "type": "array" }
+                ]
               }
             ]
           }
