@@ -23,7 +23,9 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
         headers: {
           accept: "application/json",
           "content-type": "application/json",
-          "X-API-Key": `${auth}`,
+          "X-API-Key": `${
+            auth.length > 0 ? auth : process.env.MORALIS_API_KEY
+          }`,
         },
         body: JSON.stringify(bodyParam),
       }
