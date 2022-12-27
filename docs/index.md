@@ -89,4 +89,116 @@ hide_title: true
             </div>
         </div>
     </div>
+    <div className="row">
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>Token API</span></h3>
+                    <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;Balance API</h3>
+                    <p>Fetch user and token data from the Solana blockchain.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Transaction API</span></h3>
+                    <p>Summon all NFT transfers, prices, and metadata in real-time.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div className="row">
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>Events API</span></h3>
+                    <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;Block API</h3>
+                    <p>Fetch user and token data from the Solana blockchain.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>DeFi API</span></h3>
+                    <p>Summon all NFT transfers, prices, and metadata in real-time.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div className="row">
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>Resolve API</span></h3>
+                    <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;IPFS API</h3>
+                    <p>Fetch user and token data from the Solana blockchain.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+## Integrations
+
+<div className="container">
+    <div className="row">
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>Firebase</span></h3>
+                    <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;Parse Server</h3>
+                    <p>Fetch user and token data from the Solana blockchain.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Supabase</span></h3>
+                    <p>Summon all NFT transfers, prices, and metadata in real-time.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div className="row">
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>PlayFab</span></h3>
+                    <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

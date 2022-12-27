@@ -284,6 +284,104 @@ const config = {
           },
         ],
       },
+      footer: {
+        logo: {
+          alt: "Moralis Logo",
+          src: "img/logo.svg",
+          srcDark: "img/logo-dark.svg",
+          href: "/",
+          target: "_self",
+          height: "32",
+          width: "133",
+        },
+        links: [
+          {
+            title: 'Moralis',
+            items: [
+              {
+                label: 'Moralis Academy',
+                href: 'https://academy.moralis.io/',
+              },
+              {
+                label: 'Pricing',
+                href: 'https://moralis.io/pricing/',
+              },
+              {
+                label: 'Careers',
+                href: 'https://talent.moralis.io/',
+              },
+              {
+                label: 'Blog',
+                href: 'https://moralis.io/blog/',
+              },
+              {
+                label: 'Contact Support',
+                href: 'https://moralis.io/contact-support/',
+              },
+              {
+                label: 'FAQ',
+                href: 'https://moralis.io/faq/',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Forum',
+                href: 'https://forum.moralis.io/',
+              },
+              {
+                label: 'Discord',
+                href: 'https://moralis.io/joindiscord/',
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/moralis',
+              },
+            ],
+          },
+          {
+            title: 'Social',
+            items: [
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/MoralisWeb3',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCgWS9Q3P5AxCWyQLT2kQhBw',
+              },
+              {
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/company/moralisweb3/',
+              },
+            ],
+          },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Privacy',
+                href: 'https://moralis.io/privacy-policy/',
+              },
+              {
+                label: 'Terms',
+                href: 'https://moralis.io/terms/',
+              },
+              {
+                label: 'Cookie Policy',
+                href: 'https://moralis.io/cookie-policy/',
+              },
+              {
+                label: 'Security Policy',
+                href: 'https://moralis.io/terms/',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Moralis Web3 Technology`,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
