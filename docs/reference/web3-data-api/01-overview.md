@@ -1,5 +1,5 @@
 ---
-title: "API Reference"
+title: "Web3 Data - API Reference"
 sidebar_label: "Overview"
 slug: "/web3-data-api/reference/overview"
 ---

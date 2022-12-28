@@ -25,7 +25,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value: "<header style='font-weight: 700;'>API REFERENCE</header>",
+      value: "<header style='font-weight: 700;'>API Reference</header>",
       defaultStyle: true,
     },
     {
@@ -66,7 +66,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value: "<header style='font-weight: 700;'>API REFERENCE</header>",
+      value: "<header style='font-weight: 700;'>API Reference</header>",
       defaultStyle: true,
     },
     {
@@ -86,7 +86,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value: "<header style='font-weight: 700;'>API REFERENCE</header>",
+      value: "<header style='font-weight: 700;'>API Reference</header>",
       defaultStyle: true,
     },
     {
