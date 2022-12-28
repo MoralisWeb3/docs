@@ -230,17 +230,17 @@ const config = {
                 value: "API References",
               },
               {
-                label: "Web3 Data API",
+                label: "Web3 Data API (WIP)",
                 type: "doc",
                 docId: "web3-data-api/overview",
               },
               {
-                label: "Streams API",
+                label: "Streams API (WIP)",
                 type: "doc",
                 docId: "web3-data-api/overview",
               },
               {
-                label: "Authentication API",
+                label: "Authentication API (WIP) nfts",
                 type: "doc",
                 docId: "web3-data-api/overview",
               },
@@ -390,7 +390,7 @@ const config = {
     }),
   plugins: [
     [
-      "docusaurus-plugin-segment",
+      "./src/plugins/docusaurus-plugin-segment",
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e" },
     ],
     ["@docusaurus/plugin-ideal-image", {}],
