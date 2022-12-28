@@ -9,7 +9,7 @@ slug: "/authentication-api/reference/overview"
         <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/authentication-api/reference/request-challenge-evm">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM</span></h3>
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
                     <p>Authenticate and verify any user's EVM wallet.</p>
                 </a>
             </div>
