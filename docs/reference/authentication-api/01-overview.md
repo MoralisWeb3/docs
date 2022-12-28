@@ -1,8 +1,8 @@
 ---
+title: "API Reference"
+sidebar_label: "Overview"
 slug: "/authentication-api/reference/overview"
 ---
-
-# Overview
 
 <div className="container">
     <div className="row">
