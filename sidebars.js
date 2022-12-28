@@ -25,7 +25,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value: "<header style='font-weight: 700;'>REFERENCE</header>",
+      value: "<header style='font-weight: 700;'>API REFERENCE</header>",
       defaultStyle: true,
     },
     {
