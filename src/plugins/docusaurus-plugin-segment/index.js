@@ -17,7 +17,7 @@ module.exports = function (context, fromOptions) {
     throw new Error('Unable to find a Segment `apiKey` in `plugin` options or `themeConfig`.');
   }
 
-  const isProd = process.env.NODE_ENV !== 'production';
+  const isProd = process.env.NODE_ENV === 'production';
 
   const contents = snippet.min(segment);
 
