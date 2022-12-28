@@ -1,8 +1,9 @@
 ---
-title: "Solana API"
+title: "Solana API Tutorials"
 description: "Supercharge your Solana development with the most scalable Solana API in Web3. Bring your projects to market at speed using Moralis’ Solana API!"
 sidebar_position: 3
 ---
+
 ## What is the Solana API?
 
 No more wondering which tokens your users hold. With the Solana API you can get all token balances owned by a given network and address, as well as NFT data and native wallet balances.
@@ -13,7 +14,7 @@ From wallet data through to token and NFT data, the Solana API provides out-of-t
 
 - Fetching NFT metadata
 - Fetching wallet portfolios
-- Fetching token balances by wallet 
+- Fetching token balances by wallet
 - Fetching SPL token prices
 
 ## Popular use cases
@@ -31,4 +32,4 @@ The use cases for our Solana API are truly endless! Some popular use cases inclu
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />  
+<DocCardList />

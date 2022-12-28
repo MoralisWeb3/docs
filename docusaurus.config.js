@@ -211,8 +211,8 @@ const config = {
             label: "Demos",
           },
           {
-            type: 'search',
-            position: 'left',
+            type: "search",
+            position: "left",
           },
           // position: Right
           {
@@ -230,19 +230,19 @@ const config = {
                 value: "API References",
               },
               {
-                label: "Web3 Data API (WIP)",
+                label: "Web3 Data API",
                 type: "doc",
-                docId: "web3-data-api/overview",
+                docId: "reference/web3-data-api/overview",
               },
               {
-                label: "Streams API (WIP)",
+                label: "Streams API",
                 type: "doc",
-                docId: "web3-data-api/overview",
+                docId: "reference/streams-api/overview",
               },
               {
-                label: "Authentication API (WIP) nfts",
+                label: "Authentication API",
                 type: "doc",
-                docId: "web3-data-api/overview",
+                docId: "reference/authentication-api/overview",
               },
               {
                 type: "html",
@@ -296,86 +296,86 @@ const config = {
         },
         links: [
           {
-            title: 'Moralis',
+            title: "Moralis",
             items: [
               {
-                label: 'Moralis Academy',
-                href: 'https://academy.moralis.io/',
+                label: "Moralis Academy",
+                href: "https://academy.moralis.io/",
               },
               {
-                label: 'Pricing',
-                href: 'https://moralis.io/pricing/',
+                label: "Pricing",
+                href: "https://moralis.io/pricing/",
               },
               {
-                label: 'Careers',
-                href: 'https://talent.moralis.io/',
+                label: "Careers",
+                href: "https://talent.moralis.io/",
               },
               {
-                label: 'Blog',
-                href: 'https://moralis.io/blog/',
+                label: "Blog",
+                href: "https://moralis.io/blog/",
               },
               {
-                label: 'Contact Support',
-                href: 'https://moralis.io/contact-support/',
+                label: "Contact Support",
+                href: "https://moralis.io/contact-support/",
               },
               {
-                label: 'FAQ',
-                href: 'https://moralis.io/faq/',
+                label: "FAQ",
+                href: "https://moralis.io/faq/",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Forum',
-                href: 'https://forum.moralis.io/',
+                label: "Forum",
+                href: "https://forum.moralis.io/",
               },
               {
-                label: 'Discord',
-                href: 'https://moralis.io/joindiscord/',
+                label: "Discord",
+                href: "https://moralis.io/joindiscord/",
               },
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/moralis',
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/questions/tagged/moralis",
               },
             ],
           },
           {
-            title: 'Social',
+            title: "Social",
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/MoralisWeb3',
+                label: "Twitter",
+                href: "https://twitter.com/MoralisWeb3",
               },
               {
-                label: 'Youtube',
-                href: 'https://www.youtube.com/channel/UCgWS9Q3P5AxCWyQLT2kQhBw',
+                label: "Youtube",
+                href: "https://www.youtube.com/channel/UCgWS9Q3P5AxCWyQLT2kQhBw",
               },
               {
-                label: 'Linkedin',
-                href: 'https://www.linkedin.com/company/moralisweb3/',
+                label: "Linkedin",
+                href: "https://www.linkedin.com/company/moralisweb3/",
               },
             ],
           },
           {
-            title: 'Legal',
+            title: "Legal",
             items: [
               {
-                label: 'Privacy',
-                href: 'https://moralis.io/privacy-policy/',
+                label: "Privacy",
+                href: "https://moralis.io/privacy-policy/",
               },
               {
-                label: 'Terms',
-                href: 'https://moralis.io/terms/',
+                label: "Terms",
+                href: "https://moralis.io/terms/",
               },
               {
-                label: 'Cookie Policy',
-                href: 'https://moralis.io/cookie-policy/',
+                label: "Cookie Policy",
+                href: "https://moralis.io/cookie-policy/",
               },
               {
-                label: 'Security Policy',
-                href: 'https://moralis.io/security-policy/',
+                label: "Security Policy",
+                href: "https://moralis.io/security-policy/",
               },
             ],
           },
