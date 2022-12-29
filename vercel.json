@@ -3015,12 +3015,12 @@
       "permanent": true
     },
     {
-      "source": "/moralis-server/getting-started/create-a-moralis-server?utm_source=blog&utm_medium=post&utm_campaign=How to Develop an NFT Rarity Ranking dApp",
+      "source": "/moralis-server/getting-started/create-a-moralis-server",
       "destination": "/docs/your-first-dapp",
       "permanent": true
     },
     {
-      "source": "/introduction/readme?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co",
+      "source": "/introduction/readme",
       "destination": "/docs/overview",
       "permanent": true
     },
@@ -3101,7 +3101,7 @@
       "permanent": true
     },
     {
-      "source": "/getting-started/quick-start?utm_source=blog&utm_medium=post&utm_campaign=Remote Procedure Calls – What is JSON-RPC?",
+      "source": "/getting-started/quick-start",
       "destination": "/docs/your-first-dapp",
       "permanent": true
     },
@@ -3116,7 +3116,7 @@
       "permanent": true
     },
     {
-      "source": "/moralis-server/sending-assets?utm_source=blog&utm_medium=post&utm_campaign=Want the Latest in <span>Blockchain Development?</span>",
+      "source": "/moralis-server/sending-assets",
       "destination": "https://v1docs.moralis.io/moralis-server/transferring-assets",
       "permanent": true
     },
@@ -3217,7 +3217,7 @@
       "permanent": true
     },
     {
-      "source": "/transactions-and-balances/nft-balances?utm_source=blog&utm_medium=post&utm_campaign=NFT Game Development — How to Build an NFT Game App in Minutes",
+      "source": "/transactions-and-balances/nft-balances",
       "destination": "/docs/how-to-get-all-nfts-owned-by-an-address",
       "permanent": true
     },
@@ -3237,7 +3237,7 @@
       "permanent": true
     },
     {
-      "source": "/deep-index-rest-api/deep-index-api?utm_source=blog&utm_medium=post&utm_campaign=CyberFi Announces Moralis Integration",
+      "source": "/deep-index-rest-api/deep-index-api",
       "destination": "/reference/introduction",
       "permanent": true
     },
