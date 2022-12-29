@@ -1,5 +1,4 @@
 {
-  "trailingSlash": true,
   "redirects": [
     { "source": "/undefined", "destination": "/", "permanent": true },
     {
