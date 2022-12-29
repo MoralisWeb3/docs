@@ -1,9 +1,1871 @@
 {
   "redirects": [
+    { "source": "/undefined", "destination": "/", "permanent": true },
     {
-      "source": "/streams-api",
-      "destination": "https://docs.moralis.io/streams-api/",
+      "source": "/docs/sign-in-with-web3authio",
+      "destination": "/authentication-api/how-to-sign-in-with-web3authio",
       "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-magiclink",
+      "destination": "/authentication-api/how-to-sign-in-with-magiclink",
+      "permanent": true
+    },
+    { "source": "/page/undefined", "destination": "/", "permanent": true },
+    { "source": "/docs/undefined", "destination": "/", "permanent": true },
+    {
+      "source": "/docs/nextjs-nft-gated-website",
+      "destination": "/example-dapps/evm/token-gating-website-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/net-web3-auth",
+      "destination": "/authentication-api/how-to-sign-in-with-web3authio",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-metamask",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-walletconnect",
+      "destination": "/authentication-api/how-to-sign-in-with-walletconnect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-rainbowkit",
+      "destination": "/authentication-api/how-to-sign-in-with-rainbowkit",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-coinbase-wallet",
+      "destination": "/authentication-api/how-to-sign-in-with-coinbase-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-metamask-angular",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-angular",
+      "permanent": true
+    },
+    { "source": "/changelog", "destination": "/changelog", "permanent": true },
+    { "source": "/docs/overview", "destination": "/", "permanent": true },
+    {
+      "source": "/docs/quickstart",
+      "destination": "/web3-data-api/get-your-api-key",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-concepts",
+      "destination": "/web3-data-api/web3-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp",
+      "destination": "/web3-data-api/getting-started/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-nodejs",
+      "destination": "/web3-data-api/quickstart-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-nextjs",
+      "destination": "/web3-data-api/quickstart-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-net-app",
+      "destination": "/web3-data-api/quickstart-dot-net-csharp",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-python",
+      "destination": "/web3-data-api/quickstart-python",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-angular",
+      "destination": "/web3-data-api/quickstart-angular",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-react",
+      "destination": "/web3-data-api/quickstart-react",
+      "permanent": true
+    },
+    {
+      "source": "/docs/admin-panels",
+      "destination": "/admin-panel",
+      "permanent": true
+    },
+    {
+      "source": "/docs/user-account-creation-and-sign-in-methods",
+      "destination": "/admin-panel/user-account-creation-and-sign-in-methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/permission-roles",
+      "destination": "/admin-panel/permission-roles",
+      "permanent": true
+    },
+    {
+      "source": "/docs/account-settings",
+      "destination": "/admin-panel/account-settings",
+      "permanent": true
+    },
+    {
+      "source": "/docs/account-deletion",
+      "destination": "/admin-panel/account-deletion",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralis-sdk",
+      "destination": "/web3-data-api/moralis-sdk",
+      "permanent": true
+    },
+    {
+      "source": "/docs/installation",
+      "destination": "/web3-data-api/moralis-sdk",
+      "permanent": true
+    },
+    {
+      "source": "/docs/advanced-setup",
+      "destination": "/web3-data-api/advanced-sdk-setup",
+      "permanent": true
+    },
+    {
+      "source": "/docs/query-from-evm-or-solana",
+      "destination": "/web3-data-api/query-from-evm-or-solana",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralis-data-types",
+      "destination": "/web3-data-api/moralis-data-types",
+      "permanent": true
+    },
+    {
+      "source": "/docs/authentication",
+      "destination": "/authentication-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/cross-chain-requests",
+      "destination": "/web3-data-api/cross-chain-requests",
+      "permanent": true
+    },
+    {
+      "source": "/docs/security-guidelines",
+      "destination": "//web3-data-api/security-guidelines",
+      "permanent": true
+    },
+    {
+      "source": "/docs/pricing-overview",
+      "destination": "https://moralis.io/pricing/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/compute-units-cu",
+      "destination": "/reference/introduction/compute-units",
+      "permanent": true
+    },
+    {
+      "source": "/docs/rate-limits",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/docs/abuse-prevention",
+      "destination": "/web3-data-api/abuse-prevention",
+      "permanent": true
+    },
+    {
+      "source": "/docs/evm-api",
+      "destination": "/web3-data-api/evm",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-api",
+      "destination": "/web3-data-api/evm/nft-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-metadata-of-an-nft",
+      "destination": "/web3-data-api/evm/how-to-get-the-metadata-of-an-nft",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-nfts-owned-by-an-address",
+      "destination": "/web3-data-api/evm/how-to-get-all-nfts-owned-by-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-nfts-own-by-an-address-cross-chain",
+      "destination": "/web3-data-api/evm/how-to-get-all-nfts-own-by-an-address-cross-chain",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-the-nfts-from-a-collection",
+      "destination": "/web3-data-api/evm/how-to-get-all-the-nfts-from-a-collection",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-nft-collections-owned-by-an-address",
+      "destination": "/web3-data-api/evm/how-to-get-all-nft-collections-owned-by-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-nft-owners-by-an-address",
+      "destination": "/web3-data-api/evm/how-to-get-nft-owners-by-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-owners-of-an-nft-collection",
+      "destination": "/web3-data-api/evm/how-to-get-the-owners-of-an-nft-collection",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-owner-of-an-nft",
+      "destination": "/web3-data-api/evm/how-to-get-the-owner-of-an-nft",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-nft-transfers-in-a-block",
+      "destination": "/web3-data-api/evm/how-to-get-all-nft-transfers-in-a-block",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-transfers-of-an-nft",
+      "destination": "/web3-data-api/evm/how-to-get-all-transfers-of-an-nft",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-transfers-of-an-nft-collection",
+      "destination": "/web3-data-api/evm/how-to-get-all-transfers-of-an-nft-collection",
+      "permanent": true
+    },
+    {
+      "source": "/docs/token-api",
+      "destination": "/web3-data-api/evm/token-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-tokens-owned-by-an-address",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-tokens-owned-by-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-spender-allowance",
+      "destination": "/web3-data-api/evm/how-to-get-the-spender-allowance",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-price-of-an-erc20-token",
+      "destination": "/web3-data-api/evm/how-to-get-the-price-of-an-erc20-token",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-transfers-by-wallet",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transactions-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-transactions-by-contract",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transactions-by-contract",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-metadata-by-contract",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-contract",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-metadata-by-symbols",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-symbols",
+      "permanent": true
+    },
+    {
+      "source": "/docs/balance-api",
+      "destination": "/web3-data-api/evm/balance-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-balance-of-a-wallet",
+      "destination": "/web3-data-api/evm/how-to-get-the-balance-of-a-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-native-balance-of-a-smart-contract-wallet",
+      "destination": "/web3-data-api/evm/how-to-get-the-native-balance-of-a-smart-contract-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-native-balance-of-a-smart-contract-vault",
+      "destination": "/web3-data-api/evm/how-to-get-the-native-balance-of-a-smart-contract-vault",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-transactions-of-an-address",
+      "destination": "/web3-data-api/evm/how-to-get-all-transactions-of-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/transaction-api",
+      "destination": "/web3-data-api/evm/transaction-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-a-transaction-by-transaction-hash",
+      "destination": "/web3-data-api/evm/how-to-get-a-transaction-by-transaction-hash",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-transaction-verbose",
+      "destination": "/web3-data-api/evm/how-to-get-transaction-verbose",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-logs-for-a-contract",
+      "destination": "/web3-data-api/evm/how-to-get-the-logs-for-a-contract",
+      "permanent": true
+    },
+    {
+      "source": "/docs/events-api",
+      "destination": "/web3-data-api/evm/events-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/block-api",
+      "destination": "/web3-data-api/evm/block-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-block-content-by-block-number",
+      "destination": "/web3-data-api/evm/how-to-get-block-content-by-block-number",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-block-by-unix-timestamp",
+      "destination": "/web3-data-api/evm/how-to-get-block-by-unix-timestamp",
+      "permanent": true
+    },
+    {
+      "source": "/docs/resolve-api",
+      "destination": "/web3-data-api/evm/resolve-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-resolve-ens-name",
+      "destination": "/web3-data-api/evm/how-to-resolve-ens-name",
+      "permanent": true
+    },
+    {
+      "source": "/docs/defi-api",
+      "destination": "/web3-data-api/evm/defi-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-reverse-resolve-an-address",
+      "destination": "/web3-data-api/evm/how-to-reverse-resolve-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-pair-reserves",
+      "destination": "/web3-data-api/evm/how-to-get-the-pair-reserves",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-the-pair-address-of-a-liquidity-pool",
+      "destination": "/web3-data-api/evm/how-to-get-the-pair-address-of-a-liquidity-pool",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-sushiswap-v2-pair-address",
+      "destination": "/web3-data-api/evm/how-to-get-sushiswap-v2-pair-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-uniswap-v3-pair-address",
+      "destination": "/web3-data-api/evm/how-to-get-uniswap-v3-pair-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-pancakeswap-v1-pair-address",
+      "destination": "/web3-data-api/evm/how-to-get-pancakeswap-v1-pair-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-sushiswap-v2-pair-reserves",
+      "destination": "/web3-data-api/evm/how-to-get-sushiswap-v2-pair-reserves",
+      "permanent": true
+    },
+    {
+      "source": "/docs/ipfs-api",
+      "destination": "/web3-data-api/evm/ipfs-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-pancakeswap-v1-pair-reserves",
+      "destination": "/web3-data-api/evm/how-to-get-pancakeswap-v1-pair-reserves",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-upload-a-folder-to-ipfs",
+      "destination": "/web3-data-api/evm/how-to-upload-a-folder-to-ipfs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-upload-nft-metadata-to-ipfs",
+      "destination": "/web3-data-api/evm/how-to-upload-nft-metadata-to-ipfs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-run-contract-functions",
+      "destination": "/web3-data-api/evm/how-to-run-contract-functions",
+      "permanent": true
+    },
+    {
+      "source": "/docs/auth-api",
+      "destination": "/authentication-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-authentication",
+      "destination": "/authentication-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-metamask",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-metamask-python-django",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-python-django",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-metamask-csharp-dot-net",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-metamask-angular",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-angular",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-rainbowkit",
+      "destination": "/authentication-api/how-to-sign-in-with-rainbowkit",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-walletconnect",
+      "destination": "/authentication-api/how-to-sign-in-with-walletconnect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-web3authio",
+      "destination": "/authentication-api/how-to-sign-in-with-web3authio",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-coinbase-wallet",
+      "destination": "/authentication-api/how-to-sign-in-with-coinbase-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-magiclink",
+      "destination": "/authentication-api/how-to-sign-in-with-magiclink",
+      "permanent": true
+    },
+    {
+      "source": "/docs/streams-api",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-stream-using-js-sdk",
+      "destination": "/streams-api/using-node-js-sdk",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-monitor-specific-nfts",
+      "destination": "/streams-api/how-to-monitor-specific-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/using-webui",
+      "destination": "/streams-api/using-webui",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-monitor-for-burnmint-tokens",
+      "destination": "/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-listen-to-all-nft-contract-transfers",
+      "destination": "/streams-api/how-to-listen-all-nft-transfers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-monitor-ens-name-registrations",
+      "destination": "/streams-api/how-to-monitor-ens-domain-registrations",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
+      "destination": "/streams-api/how-to-listen-all-events-from-a-contract-factory",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "destination": "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "destination": "/streams-api/how-to-listen-all-er-c20-token-transfers-over-certain-amount-sent-by-specific-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-streams-api-work",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/records-and-pricing",
+      "destination": "/streams-api/records-and-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/docs/listen-to-all-addresses",
+      "destination": "/streams-api/listen-to-all-addresses",
+      "permanent": true
+    },
+    {
+      "source": "/docs/useful-streams-options",
+      "destination": "/streams-api/useful-streams-options",
+      "permanent": true
+    },
+    {
+      "source": "/docs/mandatory-test-webhook",
+      "destination": "/streams-api/mandatory-test-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/docs/webhooks-transactions",
+      "destination": "/streams-api/webhooks-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/docs/response-body",
+      "destination": "/streams-api/response-body",
+      "permanent": true
+    },
+    {
+      "source": "/docs/webhook-security",
+      "destination": "/streams-api/webhook-security",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-multiple-addresses",
+      "destination": "/streams-api/monitor-multiple-addresses",
+      "permanent": true
+    },
+    {
+      "source": "/docs/filter-streams",
+      "destination": "/streams-api/filter-streams",
+      "permanent": true
+    },
+    {
+      "source": "/docs/stream-management",
+      "destination": "/streams-api/stream-management",
+      "permanent": true
+    },
+    {
+      "source": "/docs/error-handling",
+      "destination": "/streams-api/error-handling",
+      "permanent": true
+    },
+    {
+      "source": "/docs/parse-data",
+      "destination": "/streams-api/parse-data",
+      "permanent": true
+    },
+    {
+      "source": "/docs/streams-api-frequently-asked-questions",
+      "destination": "/streams-api/faq",
+      "permanent": true
+    },
+    {
+      "source": "/docs/get-native-balances",
+      "destination": "/streams-api/get-native-balances",
+      "permanent": true
+    },
+    {
+      "source": "/docs/triggers",
+      "destination": "/streams-api/triggers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-native-solana-balance-by-wallet",
+      "destination": "/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-api",
+      "destination": "/web3-data-api/solana",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-spl-token-balance-of-an-address",
+      "destination": "/web3-data-api/solana/how-to-get-spl-token-balance-of-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-spl-nft-balance-of-an-address",
+      "destination": "/web3-data-api/solana/how-to-get-spl-nft-balance-of-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-spl-nft-metadata",
+      "destination": "/web3-data-api/solana/how-to-get-spl-nft-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-solana-portfolio-balance-of-an-address",
+      "destination": "/web3-data-api/solana/how-to-get-solana-portfolio-balance-of-an-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-spl-token-price",
+      "destination": "/web3-data-api/solana/how-to-get-spl-token-price",
+      "permanent": true
+    },
+    {
+      "source": "/docs/aws-integration",
+      "destination": "/web3-data-api/integrations/aws-lambda-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/using-aws-lambda",
+      "destination": "/web3-data-api/integrations/aws-lambda-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/aws-lambda-unreal-5",
+      "destination": "/example-dapps/evm/unreal-5-get-web3-data",
+      "permanent": true
+    },
+    {
+      "source": "/docs/using-unity-google-cloud",
+      "destination": "/authentication-api/integrations/google-cloud-nodejs-unity",
+      "permanent": true
+    },
+    {
+      "source": "/docs/using-firebase",
+      "destination": "/web3-data-api/integrations/firebase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-firebase-api-calls-from-frontend",
+      "destination": "/web3-data-api/integrations/firebase-advanced-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-firebase-authentication",
+      "destination": "/authentication-api/integrations/firebase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-firebase-streams",
+      "destination": "/streams-api/integrations/firebase",
+      "permanent": true
+    },
+    {
+      "source": "/docs/supabase-authentication",
+      "destination": "/authentication-api/integrations/supabase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-parse-server-authentication",
+      "destination": "/authentication-api/integrations/parse-server-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-gating-nextjs",
+      "destination": "/example-dapps/evm/token-gating-website-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/using-unity-playfab",
+      "destination": "/authentication-api/integrations/azure-playfab-nodejs-unity",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-gating-django",
+      "destination": "/example-dapps/evm/token-gating-website-django",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-multiplayer-playground",
+      "destination": "/example-dapps/evm/web3-unity-multiplayer-playground",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-nft-minter",
+      "destination": "/example-dapps/solana/solana-nft-minter",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-nft-burner",
+      "destination": "/example-dapps/solana/solana-nft-burner",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-nft-explorer",
+      "destination": "/example-dapps/solana/solana-nft-explorer",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-micro-blogger-dapp",
+      "destination": "/example-dapps/solana/solana-micro-blogger-dapp",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-multiplayer-game-tictactoe",
+      "destination": "/example-dapps/solana/solana-multiplayer-game-tictactoe",
+      "permanent": true
+    },
+    {
+      "source": "/docs/blockchain-discord-bot",
+      "destination": "/example-dapps/evm/blockchain-discord-bot",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-social-media",
+      "destination": "/example-dapps/evm/web3-social-media",
+      "permanent": true
+    },
+    {
+      "source": "/docs/live-desktop-crypto-notifications",
+      "destination": "/example-dapps/evm/live-crypto-notifications",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-build-zapperfi",
+      "destination": "/example-dapps/evm/zapper-clone",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nodejs-sdk-references",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnative",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnative",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20value",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index#erc20valuedata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-apimodule",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/apimodule",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-requestcontroller",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-loggercontroller",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/loggercontroller",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-module",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/module",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-moraliscore",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmchain",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index#erc20valuedata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-evmchainable",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/evmchainable",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20token",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20token",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmaddress",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnft",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnft",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils-soladdress",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/soladdress",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils-solnetwork",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactiondata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactiondata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransaction",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransaction",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransacioninput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactioninput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20input",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20input",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20data",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-api-utils-apiresultadapter",
+      "destination": "",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-api-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-api-utils-apipaginatedresultadapter",
+      "destination": "",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionloginput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionlogdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlogdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttransferinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttransfer",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttransferdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20transferinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20transferinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblockinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmblockinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblock",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmblockinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20transferdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20transferdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20transfer",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-streams-utils/evmstreamresultdata#erc20transfers",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblockdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmblockdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-modules",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/modules",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmevent",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmevent",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmeventdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmeventinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttradedata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttradedata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttrade",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttrade",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttradeinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttradeinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-bignumber",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/bignumber",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadatadata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadatainput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatainput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollection",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollectiondata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollectioninput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-test-utils-mockscenarios",
+      "destination": "",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-test-utils",
+      "destination": "",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-express-proxy",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-parse-server",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-cli",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/cli",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-supabase-auth",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/supabase-auth",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-nextjs",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/nextjs",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-proxy",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-proxy",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-parse-server-migration",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-parse-server-migration-react-client",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration-react-client",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-moralis-stream",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/moralis-stream",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-auth-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-auth-ext",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-streams-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-streams-ext",
+      "permanent": false
+    },
+    {
+      "source": "/reference/getnftcontractmetadata",
+      "destination": "/web3-data-api/reference/getnftcontractmetadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/requestchallengeevm",
+      "destination": "/auth-api/reference/requestchallengeevm",
+      "permanent": true
+    },
+    {
+      "source": "/reference/moralis-api-key",
+      "destination": "/web3-data-api/get-your-api-key",
+      "permanent": true
+    },
+    {
+      "source": "/reference/compute-units",
+      "destination": "/web3-data-api/compute-units-cu",
+      "permanent": true
+    },
+    {
+      "source": "/reference/endpointweights",
+      "destination": "/web3-data-api/reference/endpointweights",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-gated-website-in-django",
+      "destination": "/example-dapps/evm/token-gating-website-django",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftmetadata",
+      "destination": "/web3-data-api/reference/getnftmetadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnfts",
+      "destination": "/web3-data-api/reference/getsolnfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getcontractnfts",
+      "destination": "/web3-data-api/reference/getcontractnfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnftcollections",
+      "destination": "/web3-data-api/reference/getwalletnftcollections",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftowners-1",
+      "destination": "/web3-data-api/reference/getnftowners",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftowners",
+      "destination": "/web3-data-api/reference/getnftowners",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttokenidowners",
+      "destination": "/web3-data-api/reference/getnfttokenidowners",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfersbyblock",
+      "destination": "/web3-data-api/reference/getnfttransfersbyblock",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfers-1",
+      "destination": "/web3-data-api/reference/getnfttransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfers",
+      "destination": "/web3-data-api/reference/getnfttransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwallettokenbalances",
+      "destination": "/web3-data-api/reference/getwallettokenbalances",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettokenallowance",
+      "destination": "/web3-data-api/reference/gettokenallowance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettokenprice",
+      "destination": "/web3-data-api/reference/gettokenprice",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwallettokentransfers",
+      "destination": "/web3-data-api/reference/getwallettokentransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettokentransfers",
+      "destination": "/web3-data-api/reference/gettokentransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettokenmetadata",
+      "destination": "/web3-data-api/reference/gettokenmetadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettokenmetadatabysymbol",
+      "destination": "/web3-data-api/reference/gettokenmetadatabysymbol",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnativebalance",
+      "destination": "/web3-data-api/reference/getnativebalance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwallettransactions",
+      "destination": "/web3-data-api/reference/getwallettransactions",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwallettransactionsverbose",
+      "destination": "/web3-data-api/reference/getwallettransactionsverbose",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gettransaction",
+      "destination": "/web3-data-api/reference/gettransaction",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getcontractlogs",
+      "destination": "/web3-data-api/reference/getcontractlogs",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getblock",
+      "destination": "/web3-data-api/reference/getblock",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getdatetoblock",
+      "destination": "/web3-data-api/reference/getdatetoblock",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resolveaddress",
+      "destination": "/web3-data-api/reference/resolveaddress",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resolvedomain",
+      "destination": "/web3-data-api/reference/resolvedomain",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getpairaddress",
+      "destination": "/web3-data-api/reference/getpairaddress",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getpairreserves",
+      "destination": "/web3-data-api/reference/getpairreserves",
+      "permanent": true
+    },
+    {
+      "source": "/reference/uploadfolder",
+      "destination": "/web3-data-api/reference/uploadfolder",
+      "permanent": true
+    },
+    {
+      "source": "/reference/runcontractfunction",
+      "destination": "/web3-data-api/reference/runcontractfunction",
+      "permanent": true
+    },
+    {
+      "source": "/reference/requestchallengesolana",
+      "destination": "/auth-api/reference/requestchallengesolana",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nextjs-dapp",
+      "destination": "/web3-data-api/quickstart-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
+      "destination": "/streams-api/how-to-listen-all-events-from-a-contract-factory",
+      "permanent": true
+    },
+    {
+      "source": "/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address",
+      "destination": "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/listen-to-all-nft-contract-transfers",
+      "destination": "/streams-api/how-to-listen-all-nft-transfers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-specific-nfts",
+      "destination": "/streams-api/how-to-monitor-specific-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-for-burnmint-tokens",
+      "destination": "/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints",
+      "permanent": true
+    },
+    {
+      "source": "/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000",
+      "destination": "/streams-api/how-to-listen-all-er-c20-token-transfers-over-certain-amount-sent-by-specific-address",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-ens-name-registrations",
+      "destination": "/streams-api/how-to-monitor-ens-domain-registrations",
+      "permanent": true
+    },
+    {
+      "source": "/docs/streams-options",
+      "destination": "/streams-api/useful-streams-options",
+      "permanent": true
+    },
+    {
+      "source": "/docs/webhooks",
+      "destination": "/streams-api/webhooks-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/docs/what-is-streams-api-1",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getstats",
+      "destination": "/streams-api/reference/getstats",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getstatsbystreamid",
+      "destination": "/streams-api/reference/getstatsbystreamid",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-for-burnmint-tokens-1",
+      "destination": "/streams-api/how-to-monitor-for-er-c20-token-burns-or-mints",
+      "permanent": true
+    },
+    {
+      "source": "/reference/solbalance",
+      "destination": "/web3-data-api/reference/getnativebalance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getspl",
+      "destination": "/web3-data-api/reference/getspl",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getsolnfts",
+      "destination": "/web3-data-api/reference/getsolnfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getsolnftmetadata",
+      "destination": "/web3-data-api/reference/getnftmetadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getsolportfolio",
+      "destination": "/web3-data-api/reference/getsolportfolio",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getsoltokenprice",
+      "destination": "/web3-data-api/reference/getsoltokenprice",
+      "permanent": true
+    },
+    {
+      "source": "/docs/introduction-to-moralis-sdk",
+      "destination": "/web3-data-api/moralis-sdk",
+      "permanent": true
+    },
+    {
+      "source": "/reference/supported-chains",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nodejs-dapp-from-scratch",
+      "destination": "/web3-data-api/quickstart-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/reference/verifychallengeevm",
+      "destination": "/auth-api/reference/verifychallengeevm",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnfts-2",
+      "destination": "/web3-data-api/reference/getwalletnfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/evm-api-overview",
+      "destination": "/web3-data-api/evm/",
+      "permanent": true
+    },
+    {
+      "source": "/reference/auth-api-overview",
+      "destination": "/authentication-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/python-django-web3-auth",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-python-django",
+      "permanent": true
+    },
+    { "source": "/docs/", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/metadata-normalization",
+      "destination": "/reference/introduction/metadata-normalization/metadata-normalization",
+      "permanent": true
+    },
+    {
+      "source": "/reference/pagination",
+      "destination": "/reference/introduction/pagination",
+      "permanent": true
+    },
+    {
+      "source": "/reference/normalized-vs-non-normalized-metadata",
+      "destination": "/reference/introduction/metadata-normalization/normalized-vs-non-normalized-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/searchnfts",
+      "destination": "/web3-data-api/reference/searchnfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getmultiplenfts",
+      "destination": "/web3-data-api/reference/getmultiplenfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnfttransfers",
+      "destination": "/web3-data-api/reference/getwalletnfttransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftcontracttransfers",
+      "destination": "/web3-data-api/reference/getnftcontracttransfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfersfromtoblock",
+      "destination": "/web3-data-api/reference/getnfttransfersfromtoblock",
+      "permanent": true
+    },
+    {
+      "source": "/reference/syncnftcontract",
+      "destination": "/web3-data-api/reference/syncnftcontract",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttrades",
+      "destination": "/web3-data-api/reference/getnfttrades",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftlowestprice",
+      "destination": "/web3-data-api/reference/getnftlowestprice",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resyncmetadata",
+      "destination": "/web3-data-api/reference/resyncmetadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getcontractevents",
+      "destination": "/web3-data-api/reference/getcontractevents",
+      "permanent": true
+    },
+    {
+      "source": "/reference/web3apiversion",
+      "destination": "/web3-data-api/reference/web3apiversion",
+      "permanent": true
+    },
+    {
+      "source": "/reference/verifychallengesolana",
+      "destination": "/auth-api/reference/verifychallengesolana",
+      "permanent": true
+    },
+    {
+      "source": "/reference/gethistory",
+      "destination": "/streams-api/reference/gethistory",
+      "permanent": true
+    },
+    {
+      "source": "/reference/replayhistory",
+      "destination": "/streams-api/reference/replayhistory",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getsettings",
+      "destination": "/streams-api/reference/get-settings",
+      "permanent": true
+    },
+    {
+      "source": "/reference/setsettings",
+      "destination": "/streams-api/reference/setsettings",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getstreams",
+      "destination": "/streams-api/reference/getstreams",
+      "permanent": true
+    },
+    {
+      "source": "/reference/createstream",
+      "destination": "/streams-api/reference/create-stream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/updatestream",
+      "destination": "/streams-api/reference/update-stream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getstream",
+      "destination": "/streams-api/reference/getstream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/updatestreamstatus",
+      "destination": "/streams-api/reference/update-stream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/deletestream",
+      "destination": "/streams-api/reference/delete-stream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getaddresses",
+      "destination": "/streams-api/reference/getaddresses",
+      "permanent": true
+    },
+    {
+      "source": "/reference/addaddresstostream",
+      "destination": "/streams-api/reference/add-address-to-stream",
+      "permanent": true
+    },
+    {
+      "source": "/reference/deleteaddressfromstream",
+      "destination": "/streams-api/reference/delete-address-from-stream",
+      "permanent": true
+    },
+    {
+      "source": "/docs/streams-overview",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    { "source": "/reference/undefined", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/supported-chains-evm",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nodejs-sdk-references",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/modules",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnative",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnative",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20value",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20value",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-requestcontroller",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-apimodule",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/apimodule",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-loggercontroller",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/loggercontroller",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-module",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/module",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-moraliscore",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/core/",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmchain",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20token",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20token",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-evmchainable",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/evmchainable",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnft",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnft",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmaddress",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/index",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils-soladdress",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/soladdress",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-sol-utils-solnetwork",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactiondata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactiondata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransaction",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransaction",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransacioninput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactioninput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20data",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20input",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20input",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionlogdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlogdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmtransactionloginput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttransferinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttradeinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttransfer",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransfer",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblock",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmblock",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblockinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmsimpleblockinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20transferdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20transferdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-erc20transfer",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20transfer",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-modules",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/modules",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmblockdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmblockdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmevent",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmevent",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmeventinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmeventdata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventdata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttradeinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttradeinput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttradedata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttradedata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnfttrade",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttrade",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-core-bignumber",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/bignumber",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadatadata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftmetadatainput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatainput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollectiondata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollection",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection",
+      "permanent": false
+    },
+    {
+      "source": "/docs/moralisweb3-evm-utils-evmnftcollectioninput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-express-proxy",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-parse-server",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-cli",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/cli",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-supabase-auth",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/supabase-auth",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-proxy",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-proxy",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-nextjs",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/nextjs",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-parse-server-migration",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-moralis-stream",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/moralis-stream",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-auth-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-auth-ext",
+      "permanent": false
+    },
+    {
+      "source": "/docs/nodejs-demo-firebase-streams-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-streams-ext",
+      "permanent": false
     }
   ]
 }
