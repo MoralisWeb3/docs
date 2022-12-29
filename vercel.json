@@ -3384,21 +3384,6 @@
       "source": "/historical-transactions",
       "destination": "https://v1docs.moralis.io/historical-transactions",
       "permanent": true
-    },
-    {
-      "source": "https://docs/what-is-streams-api-1",
-      "destination": "https://docs/streams-overview",
-      "permanent": true
-    },
-    {
-      "source": "https://docs/webhooks",
-      "destination": "https://docs/streams-overview",
-      "permanent": true
-    },
-    {
-      "source": "/reference/auth-api-overview",
-      "destination": "/reference/auth-api",
-      "permanent": true
     }
   ]
 }
