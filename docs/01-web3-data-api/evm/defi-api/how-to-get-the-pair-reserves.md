@@ -130,7 +130,7 @@ Congratulations 🥳 You just get the pair reserves of a Uniswap V2 liquidity po
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](/reference/getpairreserves)
+- [getPairReserves](/web3-data-api/reference/get-pair-reserves)
 
 ## Support
 
