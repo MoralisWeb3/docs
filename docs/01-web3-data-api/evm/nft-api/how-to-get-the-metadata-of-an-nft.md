@@ -160,7 +160,7 @@ https://www.youtube.com/watch?v=KTQaeq8k0FY
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](https://docs.moralis.io/reference/getnftmetadata)
+- [getNFTMetadata](/web3-data-api/reference/get-nft-metadata)
 
 ## Next Steps
 

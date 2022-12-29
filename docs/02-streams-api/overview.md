@@ -49,11 +49,11 @@ graph TD;
 
 ## Run Smart Contract Functions
 
-- Run smart contract functions against Events [Read more here!](https://docs.moralis.io/docs/triggers)
+- Run smart contract functions against Events [Read more here!](/streams-api/triggers)
 
 ## Get Native Balances
 
-- Get Native Balances for addresses! [Read more here!](https://docs.moralis.io/docs/get-native-balances)
+- Get Native Balances for addresses! [Read more here!](/streams-api/get-native-balances)
 
 ## High reliability
 

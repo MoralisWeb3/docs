@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get All NFTs Owned By An Address
 
-In order to get all the NFTs owned by an address, Moralis provides you with a [getWalletNFTs](https://docs.moralis.io/reference/getwalletnfts) endpoint to do so.
+In order to get all the NFTs owned by an address, Moralis provides you with a [getWalletNFTs](/web3-data-api/reference/get-wallet-nfts) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -190,7 +190,7 @@ Congratulations 🥳 you just got all the NFTs owned by an address with just a f
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTs](https://docs.moralis.io/reference/getwalletnfts)
+- [getWalletNFTs](/web3-data-api/reference/get-wallet-nfts)
 
 ## Next Steps
 

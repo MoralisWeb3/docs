@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get the price of an ERC20 token
 
-In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](https://docs.moralis.io/reference/gettokenprice) endpoint.
+In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/reference/get-token-price) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -140,7 +140,7 @@ https://www.youtube.com/watch?v=4OYm8LHBGOQ
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](https://docs.moralis.io/reference/gettokenprice)
+- [getTokenPrice](/web3-data-api/reference/get-token-price)
 
 ## Support
 

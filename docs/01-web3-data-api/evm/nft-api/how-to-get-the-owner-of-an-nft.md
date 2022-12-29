@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get All NFTs Owned By An Address
 
-In order to get all the owners of an NFT, Moralis provides you with a [getNFTTokenIdOwners](https://docs.moralis.io/reference/getnfttokenidowners) endpoint to do so.
+In order to get all the owners of an NFT, Moralis provides you with a [getNFTTokenIdOwners](/web3-data-api/reference/get-nft-token-id-owners) endpoint to do so.
 
 Here you'll need three parameters: `address`, `token_id` and `chain`.
 
@@ -159,7 +159,7 @@ Congratulations 🥳 you just got the owners of an NFT with just a few lines of 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTokenIdOwners](https://docs.moralis.io/reference/getnfttokenidowners)
+- [getNFTTokenIdOwners](/web3-data-api/reference/get-nft-token-id-owners)
 
 ## Support
 

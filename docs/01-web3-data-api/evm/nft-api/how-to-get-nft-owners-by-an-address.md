@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get All NFTs owners by a contract address
 
-In order to get all the NFTs owners by a contract address, Moralis provides you with a [getNFTOwners](https://docs.moralis.io/reference/getnftowners-1) endpoint to do so.
+In order to get all the NFTs owners by a contract address, Moralis provides you with a [getNFTOwners](/web3-data-api/reference/get-nft-owners) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -237,7 +237,7 @@ Congratulations 🥳 you just got all the NFTs owners by a contract address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTOwners](https://docs.moralis.io/reference/getnftowners-1)
+- [getNFTOwners](/web3-data-api/reference/get-nft-owners)
 
 ## Support
 

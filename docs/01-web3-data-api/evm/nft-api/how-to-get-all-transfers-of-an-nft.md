@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get All Transfers Of An NFT
 
-In order to get all the transfers of an NFT, Moralis provides you with an [getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers) endpoint.
+In order to get all the transfers of an NFT, Moralis provides you with an [getNFTTransfers](/web3-data-api/reference/get-nft-transfers) endpoint.
 
 Here you'll need three parameters: `address`, `tokenId`, and `chain`.
 
@@ -180,7 +180,7 @@ Congratulations 🥳 You just got all the transfers of an NFT with just a few li
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTransfers](https://docs.moralis.io/reference/getnfttransfers)
+- [getNFTTransfers](/web3-data-api/reference/get-nft-transfers)
 
 ## Support
 

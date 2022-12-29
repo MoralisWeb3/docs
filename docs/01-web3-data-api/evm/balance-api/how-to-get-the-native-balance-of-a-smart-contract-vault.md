@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](https://docs.moralis.io/reference/getnativebalance) API endpoint.
+In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](/web3-data-api/reference/get-native-balance) API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -136,7 +136,7 @@ https://www.youtube.com/watch?v=sL5t07JE0aE
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](https://docs.moralis.io/reference/getnativebalance)
+- [getNativeBalance](/web3-data-api/reference/get-native-balance)
 
 ## Support
 

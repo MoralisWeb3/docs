@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get all transactions for an address
 
-In order to get all the transactions for an address, Moralis provides you a [getWalletTransactions](https://docs.moralis.io/reference/getwallettransactions) endpoint to do so.
+In order to get all the transactions for an address, Moralis provides you a [getWalletTransactions](/web3-data-api/reference/get-wallet-transactions) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -154,7 +154,7 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactions](https://docs.moralis.io/reference/getwallettransactions)
+- [getWalletTransactions](/web3-data-api/reference/get-wallet-transactions)
 
 ## Support
 

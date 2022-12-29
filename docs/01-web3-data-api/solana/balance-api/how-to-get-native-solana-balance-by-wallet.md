@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get native balance of an address
 
-In order to get the native balance of a wallet address, Moralis provides you the [solBalance](https://docs.moralis.io/reference/solbalance) API endpoint to do so.
+In order to get the native balance of a wallet address, Moralis provides you the [solBalance](/web3-data-api/reference/sol-balance) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -132,7 +132,7 @@ https://www.youtube.com/watch?v=NoAhtCJj3Q8
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [solbalance](https://docs.moralis.io/reference/solbalance)
+- [solbalance](/web3-data-api/reference/sol-balance)
 
 ## Support
 

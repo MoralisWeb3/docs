@@ -12,10 +12,6 @@ Within the SDK, we have several data types to make your life easier when working
 - Utility methods (such as comparing two different data types regardless of the input/format)
 - Additional properties (such as currency, `rpcUrls`, and paths to explorers)
 
-:::info Configuring Default Types for `EvmChain` and `EvmAddress` (Optional)
-
-It's possible to set default types for `EvmChain` and `EvmAddress` to read data from them using the `.format()` method. Please visit [NodeJS SDK config](https://docs.moralis.io/docs/querying-the-api-and-parsing-responses).
-:::
 
 ## Using Data Types
 

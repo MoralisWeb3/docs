@@ -4,6 +4,8 @@ slug: "aws-lambda-nodejs"
 description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 
+This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
+
 :::info What is AWS Lambda?
 
 Lambda is a compute service that lets you run code without provisioning or managing servers. [More information](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
@@ -26,9 +28,9 @@ It's an all-in-one development solution for auto-scaling apps on AWS Lambda. [Mo
 
 ## AWS setup
 
-### Create an [AWS Account](https://docs.aws.amazon.com/accounts/latesthttps://docs.moralis.io/reference/manage-acct-creating.html)
+### Create an [AWS Account](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
 
-To create an AWS account, simply follow the following guide [here](https://docs.aws.amazon.com/accounts/latesthttps://docs.moralis.io/reference/manage-acct-creating.html).
+To create an AWS account, simply follow the following guide [here](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html).
 
 ### Create an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
 
@@ -525,7 +527,7 @@ startMoralis();
 
 ### Create `getNativeBalance` endpoint
 
-With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](https://docs.moralis.io/reference/getnativebalance) when the Express endpoint is called:
+With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](/web3-data-api/reference/get-native-balance) when the Express endpoint is called:
 
 ```javascript
 app.get("/getNativeBalance", async (req, res, next) => {
@@ -561,7 +563,7 @@ app.get("/getNativeBalance", async (req, res, next) => {
 
 ### Create `getWalletNfts` endpoint
 
-Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](https://docs.moralis.io/reference/getwalletnfts) when the Express endpoint is called:
+Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/web3-data-api/reference/get-wallet-nfts) when the Express endpoint is called:
 
 ![](/img/content/b126f90-Screenshot_2022-12-14_at_13.14.35.png)
 

@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get Pair Reserves of A Pancakeswap V1 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](https://docs.moralis.io/reference/getpairaddress) endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/reference/get-pair-address) endpoint to do so.
 
 Here you'll need two parameters: `pairAddress` and `address`.
 
@@ -129,7 +129,7 @@ Congratulations 🥳 You just get the pair reserves of a Pancakeswap V1 liquidit
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](https://docs.moralis.io/reference/getpairreserves)
+- [getPairReserves](/reference/getpairreserves)
 
 ## Support
 

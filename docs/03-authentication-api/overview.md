@@ -16,7 +16,7 @@ Auth API allows your user to authenticate and verify signed messages with their 
 
 The Auth API provides out-of-the-box all the necessary APIs you need to authenticate your user wallet to your dapp, which includes:
 
-- Requesting challenge message for wallet signature on both [EVM](https://docs.moralis.io/reference/requestchallengeevm) and [Solana](https://docs.moralis.io/reference/requestchallengesolana)
+- Requesting challenge message for wallet signature on both [EVM](/authentication-api/reference/request-challenge-evm) and [Solana](/authentication-api/reference/request-challenge-solan)
 - Verifying signed challenge message signature on both [EVM](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeEvm) and [Solana](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeSolana)
 
 :::info 

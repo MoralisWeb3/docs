@@ -193,7 +193,7 @@ https://www.youtube.com/watch?v=3oUb9QGTXEU
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getContractNFTs](https://docs.moralis.io/reference/getcontractnfts)
+- [getContractNFTs](/web3-data-api/reference/get-contract-nfts)
 
 ## Support
 
