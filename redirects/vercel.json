@@ -1928,11 +1928,7 @@
       "destination": "/docs/your-first-dapp-nextjs",
       "permanent": true
     },
-    {
-      "source": "/docs/querying-the-api-and-parsing-responses",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/reference/getwalletnftcollections-1",
       "destination": "/reference/getwalletnftcollections",
@@ -1943,11 +1939,7 @@
       "destination": "/docs/installation",
       "permanent": true
     },
-    {
-      "source": "/docs/your-first-dapp-vue",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/reference/solana-api",
       "destination": "/docs/solana-api",
@@ -2043,11 +2035,7 @@
       "destination": "/docs/your-first-dapp",
       "permanent": true
     },
-    {
-      "source": "/moralis-server/tools/hosting",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/cloud-functions-1",
       "destination": "https://v1docs.moralis.io/cloud-functions-1",
@@ -2063,7 +2051,7 @@
       "destination": "/docs/web3-authentication",
       "permanent": true
     },
-    { "source": "/hosting", "destination": "404", "permanent": true },
+
     {
       "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-polygon-node",
       "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
@@ -2625,11 +2613,7 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/database/direct_access",
       "permanent": true
     },
-    {
-      "source": "/speedy-nodes/connect-to-arbitrum-node",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/reference/ipfs-1",
       "destination": "/reference/ipfs",
@@ -2982,11 +2966,7 @@
       "destination": "/docs/your-first-dapp",
       "permanent": true
     },
-    {
-      "source": "/artifacts/contracts/myContract.sol/myContract.json",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/reference/getnftsforcontract-1",
       "destination": "/reference/getcontractnfts",
@@ -2997,12 +2977,7 @@
       "destination": "https://v1docs.moralis.io/moralis-server/sending-assets/transfer-eth",
       "permanent": true
     },
-    { "source": "/reference/sup...", "destination": "404", "permanent": true },
-    {
-      "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-arbitrum-node",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/moralis-server/connect-the-sdk/snippets",
       "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk",
@@ -3028,11 +3003,7 @@
       "destination": "/reference/getcontractlogs",
       "permanent": true
     },
-    {
-      "source": "/moralis-dapp/tools/hosting",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/docs/first-web3-unity-game",
       "destination": "/docs/using-unity-playfab",
@@ -3285,11 +3256,7 @@
       "destination": "/docs/how-to-sign-in-with-metamask",
       "permanent": true
     },
-    {
-      "source": "/moralis-server/cloud-code/seamless-updates",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/webhooks",
       "destination": "/docs/webhooks-transactions",
@@ -3350,21 +3317,13 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/resolve-transfer",
       "permanent": true
     },
-    {
-      "source": "/moralis-server/users/crypto-login/phantom-solana",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/moralis-server/tools",
       "destination": "https://v1docs.moralis.io/moralis-dapp/tools",
       "permanent": true
     },
-    {
-      "source": "/introduction/readme%3Futm_source%3Dremote3.co%26utm_medium%3Dremote3.co%26utm_campaign%3Dremote3.co",
-      "destination": "404",
-      "permanent": true
-    },
+
     {
       "source": "/moralis-server/getting-started/pre-requisites",
       "destination": "/docs/your-first-dapp",
@@ -3390,8 +3349,7 @@
       "destination": "https://v1docs.moralis.io/moralis-sdk/queries",
       "permanent": true
     },
-    { "source": "/reference/get...", "destination": "404", "permanent": true },
-    { "source": "/analytics.js/v1/", "destination": "404", "permanent": true },
+
     {
       "source": "/moralis-server/transactions-and-balances/token-balances",
       "destination": "/docs/how-to-get-all-erc20-tokens-owned-by-an-address",
