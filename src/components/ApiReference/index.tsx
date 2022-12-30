@@ -13,6 +13,12 @@ import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
 
+export interface CodeSample {
+  language: "node" | "csharp" | "python";
+  code: string;
+  name?: string;
+}
+
 export interface ApiReferenceProps {
   method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   path: string;
@@ -22,6 +28,7 @@ export interface ApiReferenceProps {
   bodyParam?: ApiParam;
   responses: ApiResponse[];
   apiHost: string;
+  codeSamples?: CodeSample[];
 }
 
 export interface FormValues {
@@ -59,6 +66,7 @@ const ApiReference = ({
   bodyParam,
   responses,
   apiHost,
+  codeSamples
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -206,7 +214,7 @@ const ApiReference = ({
                   </ApiParamButton>
                 </div>
 
-                <ApiExamples method={method} apiHost={apiHost} path={path} />
+                <ApiExamples method={method} apiHost={apiHost} path={path} codeSamples={codeSamples} />
 
                 <div className={styles.section}>
                   <div className={styles.inlineForm}>
