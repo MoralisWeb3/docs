@@ -41,7 +41,7 @@ For each transaction, you get two webhooks (read more [here](/streams-api/webhoo
 
 ### Check your total consumed record for a period
 
-By using /status (see API [reference](https://docs.moralis.io/reference/getstats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
+By using /status (see API [reference](/streams-api/reference/get-stats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
 
 **Example:**
 
@@ -61,7 +61,7 @@ Where your total consumed records for the current billing period would be `"tota
 
 ### Check one streams total consumed records for a period
 
-By using /stats/{streamId} (see API [reference](https://docs.moralis.io/reference/getstatsbystreamid)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
+By using /stats/{streamId} (see API [reference](/streams-api/reference/get-stats-by-streamid)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
 
 **Example:**
 

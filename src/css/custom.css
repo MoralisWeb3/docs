@@ -167,3 +167,7 @@
 .card h3 {
   display:flex;align-items:center;
 }
+
+.hero {
+  background: none;
+}

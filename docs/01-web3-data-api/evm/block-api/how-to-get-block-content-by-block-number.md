@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get block by block number
 
-In order to get a block by its block number, Moralis provides you a [getBlock](https://docs.moralis.io/reference/getblock) endpoint to do so.
+In order to get a block by its block number, Moralis provides you a [getBlock](/web3-data-api/reference/get-block) endpoint to do so.
 
 Here you'll need two parameters: `blockNumberOrHash` and `chain`.
 
@@ -192,7 +192,7 @@ Congratulations 🥳 You just got a block using its block number with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getBlock](https://docs.moralis.io/reference/getblock)
+- [getBlock](/web3-data-api/reference/get-block)
 
 ## Support
 

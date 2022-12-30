@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get block by unix timestamp
 
-In order to get the closest block by unix timestamp, Moralis provides you a [getDateToBlock](https://docs.moralis.io/reference/getdatetoblock) endpoint to do so.
+In order to get the closest block by unix timestamp, Moralis provides you a [getDateToBlock](/web3-data-api/reference/get-date-to-block) endpoint to do so.
 
 Here you'll need two parameters: `date` and `chain`.
 
@@ -129,7 +129,7 @@ Congratulations 🥳 You just got the closest block using a unix timestamp with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getDateToBlock](https://docs.moralis.io/reference/getdatetoblock)
+- [getDateToBlock](/web3-data-api/reference/get-date-to-block)
 
 ## Support
 

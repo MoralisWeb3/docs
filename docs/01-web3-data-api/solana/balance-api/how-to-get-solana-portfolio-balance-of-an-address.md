@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get Solana portfolio balance of an address
 
-In order to get the Solana portfolio balance of a wallet address, Moralis provides you the [getPortfolio](https://docs.moralis.io/reference/getsolportfolio) API endpoint to do so.
+In order to get the Solana portfolio balance of a wallet address, Moralis provides you the [getPortfolio](/web3-data-api/reference/get-sol-portfolio) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -151,7 +151,7 @@ Congratulations 🥳 You just got the Solana Portfolio balance of a wallet addre
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPortfolio](https://docs.moralis.io/reference/getsolportfolio)
+- [getPortfolio](/web3-data-api/reference/get-sol-portfolio)
 
 ## YouTube Tutorial
 

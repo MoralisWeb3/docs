@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get SPL token price
 
-In order to get SPL token price, Moralis provides you the [getTokenPrice](https://docs.moralis.io/reference/getsoltokenprice) API endpoint to do so.
+In order to get SPL token price, Moralis provides you the [getTokenPrice](/web3-data-api/reference/get-sol-token-price) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -138,7 +138,7 @@ Congratulations 🥳 You just got the price of a SPL token with just a few lines
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](https://docs.moralis.io/reference/getsoltokenprice)
+- [getTokenPrice](/web3-data-api/reference/get-sol-token-price)
 
 ## YouTube Tutorial
 

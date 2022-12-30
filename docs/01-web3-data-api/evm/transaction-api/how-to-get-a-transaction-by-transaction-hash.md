@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get a transaction by transaction hash
 
-In order to get a transaction by hash, Moralis provides you a [getTransaction](https://docs.moralis.io/reference/gettransaction) endpoint to do so.
+In order to get a transaction by hash, Moralis provides you a [getTransaction](/web3-data-api/reference/get-transaction) endpoint to do so.
 
 Here you'll need two parameters: `transactionHash` and `chain`.
 
@@ -171,7 +171,7 @@ Congratulations 🥳 you just got the transaction content of a transaction by it
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTransaction](https://docs.moralis.io/reference/gettransaction)
+- [getTransaction](/web3-data-api/reference/get-transaction)
 
 ## Support
 

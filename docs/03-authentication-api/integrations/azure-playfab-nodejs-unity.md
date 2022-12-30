@@ -127,7 +127,7 @@ This section walks through coding functions that integrate the Moralis SDK.
 
 <b>Authentication API functions</b>
 
-##### Create [`ChallengeRequest`](https://docs.moralis.io/reference/requestchallengeevm) function
+##### Create [`ChallengeRequest`](/authentication-api/reference/request-challenge-evm) function
 
 1. Open Visual Studio Code.
 2. Select **Azure** and sign in.
@@ -297,7 +297,7 @@ To summarize, to call this **`ChallengeRequest`** function we will need a POST r
 
 For now we need to create another function that will verify the message resulting of this one.
 
-##### Create [`ChallengeVerify`](https://docs.moralis.io/reference/verifychallengeevm) function
+##### Create [`ChallengeVerify`](/authentication-api/reference/verify-challenge-evm) function
 
 1. Repeat the same steps as for **`ChallengeRequest`** (no need to create a new project now) but this time name it **`ChallengeVerify`**:
 
@@ -424,7 +424,7 @@ context.res = {
 
 <b>NFT API functions</b>
 
-##### Create [`GetWalletNfts`](https://docs.moralis.io/reference/getwalletnfts-2) function
+##### Create [`GetWalletNfts`](/web3-data-api/reference/get-wallet-nfts)  function
 
 Repeat the same steps as before to create the new functions but name it accordingly. Once created, copy the following code into `index.js`:
 
@@ -474,7 +474,7 @@ For this function we only need the `walletAddress` and the `chainid` in the requ
 
 <b>EVM API functions</b>
 
-##### Create [`RunContractFunction`](https://docs.moralis.io/reference/runcontractfunction) function
+##### Create [`RunContractFunction`](/web3-data-api/reference/run-contract-function) function
 
 Repeat the same steps as before to create the new functions but name it accordingly. Once created, copy the following code into `index.js`:
 
@@ -735,7 +735,7 @@ IAuthClientApi AuthenticationApi = Moralis.AuthApi.MoralisAuthApiClient.Authenti
 
 
 
-3. Add and populate a `ChallengeRequestDto` object. This object is described in detail [here](https://docs.moralis.io/reference/authentication-api-overview#how-it-works). Populate this object as appropriate for your application.
+3. Add and populate a `ChallengeRequestDto` object. This object is described in detail [here](/authentication-api/reference/overview#how-it-works). Populate this object as appropriate for your application.
 
 ```cs
 // Create the authentication message and send it back to the client
@@ -1039,12 +1039,12 @@ One of the greatest advantages of using the Moralis SDK is the ability provided 
 
 #### Web3 API
 
-The Moralis SDK provides the ability to easily query and search EVM data of all kinds. A detailed listing and description of the Moralis Web3 API can be found [here](https://docs.moralis.io/reference/evm-api-overview).
+The Moralis SDK provides the ability to easily query and search EVM data of all kinds. A detailed listing and description of the Moralis Web3 API can be found [here](/web3-data-api/evm/).
 
 For this demonstration, we will provide examples of how to create Azure Functions to call three operations:  
-  a. One to look up a user's native token balance using the [`getNativeBalance` operation of the **Account** endpoint](https://docs.moralis.io/reference/getnativebalance).  
-  b. One to retrieve a list of ERC-20 tokens owned by a user using the [`getTokenBalances` operation of the **Account** endpoint](https://docs.moralis.io/reference/getwallettokenbalances).  
-  c. One to retrieve the NFTs owned by a user using the [`getNfts` operation of the **Account** endpoint](https://docs.moralis.io/reference/getwalletnfts).
+  a. One to look up a user's native token balance using the [`getNativeBalance` operation of the **Account** endpoint](/web3-data-api/reference/get-native-balance).  
+  b. One to retrieve a list of ERC-20 tokens owned by a user using the [`getTokenBalances` operation of the **Account** endpoint](/web3-data-api/reference/get-wallet-token-balances).  
+  c. One to retrieve the NFTs owned by a user using the [`getNfts` operation of the **Account** endpoint](/web3-data-api/reference/get-wallet-nfts).
 
 Each of the three functions we will now create are almost duplicates of the [`ChallengeRequest`](#challengerequest-method) method we created earlier.
 

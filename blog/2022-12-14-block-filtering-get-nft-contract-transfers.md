@@ -8,4 +8,4 @@ Block filtering has been aded to `getNFTContractTransfers` endpoint `/api/v2/nft
 
 It's now possible to filter by blocks on the `getNFTContractTransfers` endpoint and fetch NFT contract transfers between two blocks, by specifying `from_block` & `to_block`.
 
-Docs: [https://docs.moralis.io/reference/getnftcontracttransfers](https://docs.moralis.io/reference/getnftcontracttransfers)
+Docs: [/web3-data-api/reference/get-nft-contract-transfers](/web3-data-api/reference/get-nft-contract-transfers)

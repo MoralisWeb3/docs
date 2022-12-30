@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get all ERC20 transactions by contract
 
-In order to get all ERC20 transactions by contract, Moralis provides you with an [getTokenTransfers](https://docs.moralis.io/reference/gettokentransfers) endpoint.
+In order to get all ERC20 transactions by contract, Moralis provides you with an [getTokenTransfers](/web3-data-api/reference/get-token-transfers) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -169,7 +169,7 @@ Congratulations 🥳 You just got all ERC20 transactions by contract with just a
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenTransfers](https://docs.moralis.io/reference/gettokentransfers)
+- [getTokenTransfers](/web3-data-api/reference/get-token-transfers)
 
 ## Support
 

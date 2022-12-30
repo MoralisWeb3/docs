@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get the verbose transaction of an address
 
-In order to get the verbose transactions of an address, Moralis provides you a [getWalletTransactionsVerbose](https://docs.moralis.io/reference/getwallettransactionsverbose) endpoint to do so.
+In order to get the verbose transactions of an address, Moralis provides you a [getWalletTransactionsVerbose](/web3-data-api/reference/get-wallet-transactions-verbose) endpoint to do so.
 
 Here you'll need two parameters: `transactionHash` and `chain`.
 
@@ -179,7 +179,7 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactionsVerbose](https://docs.moralis.io/reference/getwallettransactionsverbose)
+- [getWalletTransactionsVerbose](/web3-data-api/reference/get-wallet-transactions-verbose)
 
 ## Support
 

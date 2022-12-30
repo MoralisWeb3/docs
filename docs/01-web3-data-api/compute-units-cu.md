@@ -18,17 +18,17 @@ A compute unit is a measure of the requests needed to query computationally expe
 
 Request price refers to the amount of compute units that will be calculated towards your API usage billing.
 
-See more [here](https://docs.moralis.io/reference/compute-units) for details on each API endpoints CUs.
+See more [here](/web3-data-api/compute-units-cu) for details on each API endpoints CUs.
 
 ### Rate limit Cost
 
 On the other hand, request rate limit cost refers to the amount of compute units that an API request cost in terms of rate limits.
 
-Click [here](https://docs.moralis.io/docs/rate-limits) to learn more about rate limits and how you can avoid getting rate limited.
+Click [here](/web3-data-api/rate-limits) to learn more about rate limits and how you can avoid getting rate limited.
 
 ## How to Check Compute Units?
 
-To check the latest compute units of our API offerings, you can use [endpointWeights](https://docs.moralis.io/reference/endpointweights) to do so.
+To check the latest compute units of our API offerings, you can use [endpointWeights](/web3-data-api/reference/endpoint-weights) to do so.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

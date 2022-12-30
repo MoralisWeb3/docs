@@ -163,7 +163,7 @@ https://www.youtube.com/watch?v=Zq-eoO-mTbc
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTCollections](https://docs.moralis.io/reference/getwalletnftcollections)
+- [getWalletNFTCollections](/web3-data-api/reference/get-wallet-nft-collections)
 
 ## Next Steps
 

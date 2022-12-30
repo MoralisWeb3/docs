@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get Pair Address of A Uniswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](https://docs.moralis.io/reference/getpairaddress) endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/reference/get-pair-address) endpoint to do so.
 
 Here you'll need three parameters: `token0`, `token1` and `address`.
 
@@ -163,7 +163,7 @@ Congratulations 🥳 You just get the pair address of a Uniswap V2 liquidity poo
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](https://docs.moralis.io/reference/getpairaddress)
+- [getPairAddress](/web3-data-api/reference/get-pair-address)
 
 ## Support
 

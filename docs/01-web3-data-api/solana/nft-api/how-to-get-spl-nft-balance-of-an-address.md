@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get SPL NFT balance of an address
 
-In order to get the SPL NFT balance of a wallet address, Moralis provides you the [getNFTs](https://docs.moralis.io/reference/getsolnfts) API endpoint to do so.
+In order to get the SPL NFT balance of a wallet address, Moralis provides you the [getNFTs](/web3-data-api/reference/get-sol-nfts) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -133,7 +133,7 @@ Congratulations 🥳 You just got the SPL NFT balance of a wallet address with j
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTs](https://docs.moralis.io/reference/getsolnfts)
+- [getNFTs](/web3-data-api/reference/get-sol-nfts)
 
 ## YouTube Tutorial
 

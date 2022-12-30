@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get all ERC20 tokens owned by an address
 
-In order to get all ERC20 tokens owned by an address, Moralis provides you with an [getWalletTokenBalances](https://docs.moralis.io/reference/getwallettokenbalances) endpoint.
+In order to get all ERC20 tokens owned by an address, Moralis provides you with an [getWalletTokenBalances](/web3-data-api/reference/get-wallet-token-balances) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -145,7 +145,7 @@ Congratulations 🥳 You just got all ERC20 tokens owned by an address with just
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenBalances](https://docs.moralis.io/reference/getwallettokenbalances)
+- [getWalletTokenBalances](/web3-data-api/reference/get-wallet-token-balances)
 
 ## Support
 

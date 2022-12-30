@@ -8,7 +8,7 @@ sidebar_position: 8
 
 Using the SDK is the simplest way to query blockchain data. This section demonstrates how to implement the API calls.
 
-Please head over to [API references](https://docs.moralis.io/reference) to see the full power of the APIs and all possible methods.
+Please head over to [API references](/web3-data-api/reference/overview) to see the full power of the APIs and all possible methods.
 
 :::
 

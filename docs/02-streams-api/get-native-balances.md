@@ -5,7 +5,7 @@ slug: "get-native-balances"
 
 There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses. 
 
-You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to  [Triggers](https://docs.moralis.io/docs/triggers). 
+You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to  [Triggers](/streams-api/triggers). 
 
 # Native Balance Trigger
 
@@ -18,8 +18,8 @@ You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appe
 ]
 ```
 
-- `selectors` is a list of [valid Selectors](https://docs.moralis.io/docs/triggers#selectors), for each selector you will get the native balance in the Webhook.
-- `type` for which part of the Webhook you want to select the addresses. [Valid Types](https://docs.moralis.io/docs/triggers#type) and also `internalTx`is allowed!
+- `selectors` is a list of [valid Selectors](/streams-api/triggers#selectors), for each selector you will get the native balance in the Webhook.
+- `type` for which part of the Webhook you want to select the addresses. [Valid Types](/streams-api/triggers#type) and also `internalTx`is allowed!
 
 # Response
 

@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Reverse Resolve ENS name
 
-In order to reverse resolve the ENS name from an ETH address, Moralis provides you a [resolveAddress](https://docs.moralis.io/reference/resolveaddress) endpoint to do so.
+In order to reverse resolve the ENS name from an ETH address, Moralis provides you a [resolveAddress](/web3-data-api/reference/resolve-address) endpoint to do so.
 
 Here you'll need one parameter: `address`.
 
@@ -124,7 +124,7 @@ Congratulations 🥳 You just reverse resolved the ENS name from a wallet addres
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveAddress](https://docs.moralis.io/reference/resolveaddress)
+- [resolveAddress](/web3-data-api/reference/resolve-address)
 
 ## Support
 

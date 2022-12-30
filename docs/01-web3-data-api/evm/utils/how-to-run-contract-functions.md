@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get the verbose transaction of an address
 
-In order to run smart contract function, Moralis provides you a [runContractFunction](https://docs.moralis.io/reference/runcontractfunction) endpoint to do so.
+In order to run smart contract function, Moralis provides you a [runContractFunction](/web3-data-api/reference/run-contract-function) endpoint to do so.
 
 Here you'll need three parameters: `address`, `function_name` and `abi`.
 
@@ -168,7 +168,7 @@ https://www.youtube.com/watch?v=efXL6bxGXY8
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [runContractFunction](https://docs.moralis.io/reference/runcontractfunction)
+- [runContractFunction](/web3-data-api/reference/run-contract-function)
 
 ## Support
 
