@@ -1,6 +1,10 @@
 const fetch = require("node-fetch");
 const fs = require("fs");
 const swaggerPaths = require("./swagger/paths.json");
+const {
+  isGenerateSchemaOn,
+  isGenerateReferenceOn,
+} = require("./generate.config.json");
 
 const apiReferenceConfigFile = "./docs/configs/api-reference/configs.json";
 
@@ -202,6 +206,11 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
   for (let path in swaggerJSON.paths) {
     for (let method in swaggerJSON.paths?.[path]) {
       // Extract all important fields from Swagger
+      const swaggerValue = extractSwaggerValueByMethod(
+        swaggerJSON,
+        path,
+        method
+      );
       const {
         operationId,
         description,
@@ -209,7 +218,8 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
         parameters = [],
         requestBody,
         responses = [],
-      } = extractSwaggerValueByMethod(swaggerJSON, path, method);
+      } = swaggerValue;
+      const codeSamples = swaggerValue?.["x-readme"]?.["code-samples"];
 
       // Formatting Parameters & Responses
       const { pathParams = [], queryParams = [] } =
@@ -228,6 +238,7 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
         queryParams,
         bodyParam: formattedBodyParams,
         responses: formattedResponses,
+        codeSamples,
       };
     }
   }
@@ -260,39 +271,42 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
  */
 const generateConfigs = async () => {
   try {
-    for (let key in swaggerPaths) {
-      const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
-      const swaggerJSON = await swaggerRes?.json();
-      let swaggerContent;
+    if (isGenerateSchemaOn) {
+      for (let key in swaggerPaths) {
+        const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
+        const swaggerJSON = await swaggerRes?.json();
+        let swaggerContent;
 
-      // Store Swagger Schema for global usage
-      swaggerSchemas = swaggerJSON.components.schemas;
+        // Store Swagger Schema for global usage
+        swaggerSchemas = swaggerJSON.components.schemas;
 
-      const apiHost = swaggerJSON.servers?.[0]?.url;
+        const apiHost = swaggerJSON.servers?.[0]?.url;
 
-      // If statement is temporary, for testing only
-      swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
-      swaggerOAS[key] = swaggerContent;
+        // If statement is temporary, for testing only
+        swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
+        swaggerOAS[key] = swaggerContent;
+      }
+
+      // Write API reference Config
+      await fs.writeFile(
+        apiReferenceConfigFile,
+        JSON.stringify(swaggerOAS),
+        "utf8",
+        () => {}
+      );
     }
 
-    // Write API reference Config
-    await fs.writeFile(
-      apiReferenceConfigFile,
-      JSON.stringify(swaggerOAS),
-      "utf8",
-      () => {}
-    );
+    if (isGenerateReferenceOn) {
+      for (let key in swaggerOAS) {
+        if (["nft", "solana"].includes(key)) {
+          for (let index in Object.keys(swaggerOAS[key])) {
+            const functionName = Object.keys(swaggerOAS[key])[index];
+            const snakeCaseFunctionName = camelToSnakeCase(functionName);
 
-    for (let key in swaggerOAS) {
-      if (["nft", "solana"].includes(key)) {
-        for (let index in Object.keys(swaggerOAS[key])) {
-          const functionName = Object.keys(swaggerOAS[key])[index];
-          const snakeCaseFunctionName = camelToSnakeCase(functionName);
-
-          // Write MDX Files for API Reference pages
-          await fs.writeFile(
-            `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
-            `---
+            // Write MDX Files for API Reference pages
+            await fs.writeFile(
+              `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
+              `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
 slug: /${swaggerPaths[key].category}/reference/${functionName.toLowerCase()}
@@ -304,14 +318,15 @@ import config from "${swaggerPaths[key].importPath}";
 # ${swaggerOAS[key][functionName]?.summary}
 
 <ApiReference {...config.${key}.${functionName}} />`,
-            { flag: "w" },
-            (err) => {
-              if (err) {
-                return console.log(err);
+              { flag: "w" },
+              (err) => {
+                if (err) {
+                  return console.log(err);
+                }
+                console.log("The file was saved!");
               }
-              console.log("The file was saved!");
-            }
-          );
+            );
+          }
         }
       }
     }

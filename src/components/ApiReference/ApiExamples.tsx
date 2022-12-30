@@ -29,24 +29,6 @@ export const stringifyJSON = (obj: object, pretty: boolean = false) =>
 
 const tabs = [
   {
-    lang: "bash",
-    title: "cURL",
-    template: ({ method, url, auth, body }) => {
-      const indent = " ".repeat("curl ".length);
-
-      return buildTemplate([
-        line(`curl --request ${method} \\`),
-        line(`${indent}--url ${url} \\`),
-        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
-        auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
-        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
-        body ? line(`${indent}--data '`) : null,
-        body ? line(stringifyJSON(body, true)) : null,
-        body ? line("'") : null,
-      ]);
-    },
-  },
-  {
     lang: "js",
     title: "Node.js",
     template: ({ method, url, auth, body }) =>
@@ -83,7 +65,7 @@ const tabs = [
     title: "Python",
     template: ({ method, url, auth, body }) =>
       buildTemplate([
-        line("# Dependencies to install:"),
+        line("# Dependencies to install:\n"),
         line("# $ python -m pip install requests"),
         line(""),
         line("import requests"),
@@ -104,6 +86,24 @@ const tabs = [
         line(""),
         line("print(response.text)"),
       ]),
+  },
+  {
+    lang: "bash",
+    title: "cURL",
+    template: ({ method, url, auth, body }) => {
+      const indent = " ".repeat("curl ".length);
+
+      return buildTemplate([
+        line(`curl --request ${method} \\`),
+        line(`${indent}--url ${url} \\`),
+        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
+        auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
+        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
+        body ? line(`${indent}--data '`) : null,
+        body ? line(stringifyJSON(body, true)) : null,
+        body ? line("'") : null,
+      ]);
+    },
   },
   {
     lang: "go",

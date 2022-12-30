@@ -67,6 +67,12 @@
           "type": "number"
         },
         {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "token_addresses",
           "description": "The addresses to get balances for (optional)",
           "required": false,
@@ -249,6 +255,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getWalletNFTs({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTs(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        NftOwnerCollection resp = await web3Api.Account.GetNFTs(address.ToLower(), ChainList.eth);\n        result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"token_addresses\": [], \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_wallet_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getMultipleNFTs": {
@@ -345,6 +367,12 @@
       },
       "responses": [
         { "status": "200", "description": "Returns a collection of NFT owners" }
+      ],
+      "codeSamples": [
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"chain\": \"eth\", \n}\nbody = {\n    \"tokens\": [{'token_address': '0xa4991609c508b6d4fb7156426db0bd49fe298bd8', 'token_id': '12'}, {'token_address': '0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7', 'token_id': '1'}, {'token_address': '0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7', 'token_id': '200'}], \n    \"normalizeMetadata\": False, \n}\n\nresult = evm_api.nft.get_multiple_nfts(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getWalletNFTTransfers": {
@@ -431,6 +459,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -575,6 +609,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getWalletNFTTransfers({\n        address,\n        chain,\n    });\n\n    console.log(response);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTTransfers(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        NftTransferCollection balance = await web3Api.Account.GetNFTTransfers(address.ToLower(), ChainList.eth);\n        result = balance is { } && balance.Result is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"direction\": \"both\", \n    \"from_block\": 0, \n    \"to_block\": \"\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_wallet_nft_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getWalletNFTCollections": {
@@ -635,6 +685,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -710,6 +766,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getWalletNFTCollections({\n        address,\n        chain,\n    });\n\n    console.log(response);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_wallet_nft_collections(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -790,6 +857,12 @@
           "description": "The desired subrange to query",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -965,6 +1038,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const totalRanges = 1000;\n\n    const range = 1;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getContractNFTs({\n        address,\n        chain,\n        totalRanges,\n        range,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetAllTokenIds(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftCollection resp = await web3Api.Token.GetAllTokenIds(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, \"\", 10);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"totalRanges\": 0, \n    \"range\": 0, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_contract_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTOwners": {
@@ -1032,6 +1121,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -1209,6 +1304,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTOwners({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTOwners(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftOwnerCollection resp = await web3Api.Token.GetNFTOwners(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, \"\", 10);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTContractTransfers": {
@@ -1300,6 +1411,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -1444,6 +1561,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTContractTransfers({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetContractNFTTransfers(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftTransferCollection resp = await web3Api.Token.GetContractNFTTransfers(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, \"\", 10);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_nft_contract_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTTransfersFromToBlock": {
@@ -1527,6 +1660,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -1671,6 +1810,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTTransfersFromToBlock({\n        from_block: \"14876000\",\n        to_block: \"14877000\",\n        format: \"decimal\",\n        limit: \"10\",\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNftTransfersFromToBlock(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        // Fails same in Admin Consel - Invalid HEX values\n        NftTransferCollection resp = await web3Api.Token.GetNftTransfersFromToBlock(ChainList.eth, \"\", 99999, 25999999, null, null, null, 10);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_nft_transfers_from_to_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTTransfersByBlock": {
@@ -1731,6 +1886,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -1875,6 +2036,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTTransfersByBlock({\n        blockNumberOrHash,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTTransfersByBlock(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftTransferCollection nftTransfers = await web3Api.Native.GetNFTTransfersByBlock(\"500000\", ChainList.eth);\n         result = nftTransfers is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"block_number_or_hash\": \"15846571\", \n    \"chain\": \"eth\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_nft_transfers_by_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTTrades": {
@@ -1972,6 +2149,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -2068,6 +2251,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTTrades({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTTrades(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        TradeCollection resp = await web3Api.Token.GetNFTTrades(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, null, null, null, null, null, \"\", 10);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": \"\", \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"marketplace\": \"opensea\", \n    \"cursor\": \"\", \n    \"limit\": 0, \n}\n\nresult = evm_api.nft.get_nft_trades(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTContractMetadata": {
@@ -2162,6 +2361,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTContractMetadata({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTMetadata(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftContractMetadata resp = await web3Api.Token.GetNFTMetadata(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.nft.get_nft_contract_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -2372,6 +2587,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const tokenId = '1';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTMetadata({\n        address,\n        chain,\n        tokenId,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenIdMetadata(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        Nft resp = await web3Api.Token.GetTokenIdMetadata(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", \"10\", ChainList.eth);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTTransfers": {
@@ -2446,6 +2677,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -2590,6 +2827,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const tokenId = 1;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTTransfers({\n        address,\n        chain,\n        tokenId,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetWalletTokenIdTransfers(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        NftTransferCollection resp = await web3Api.Token.GetWalletTokenIdTransfers(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", \"10\", ChainList.eth, null, \"\", 10);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.nft.get_nft_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTTokenIdOwners": {
@@ -2664,6 +2917,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -2841,6 +3100,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const tokenId = 1;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTTokenIdOwners({\n        address,\n        chain,\n        tokenId,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenIdOwners(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        NftOwnerCollection resp = await web3Api.Token.GetTokenIdOwners(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", \"10\", ChainList.eth, null, \"\", 10);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_token_id_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "syncNFTContract": {
@@ -2901,6 +3176,22 @@
         {
           "status": "201",
           "description": "Contract address was triggered for index."
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.syncNFTContract({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> SyncNFTContract(IWeb3Api web3Api)\n{\n    bool result = true;\n\n    try\n    {\n        bool resp = await web3Api.Token.SyncNFTContract(\"0x698d7D745B7F5d8EF4fdB59CeB660050b3599AC3\", ChainList.mumbai);\n        result = resp;\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.nft.sync_nft_contract(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -3021,6 +3312,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const tokenId = 1;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.reSyncMetadata({\n        address,\n        chain,\n        tokenId,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> ReSyncMetadata(IWeb3Api web3Api)\n{\n    bool result = true;\n\n    try\n    {\n        bool resp = await web3Api.Token.ReSyncMetadata(\"0x698d7D745B7F5d8EF4fdB59CeB660050b3599AC3\", \"15310200874782\", ChainList.mumbai);\n        result = resp;\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n\n    return result;\n}\n\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"flag\": \"uri\", \n    \"mode\": \"sync\", \n}\n\nresult = evm_api.nft.re_sync_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -3161,6 +3468,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.getNFTLowestPrice({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNFTLowestPrice(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        Trade resp = await web3Api.Token.GetNFTLowestPrice(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, 2000);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"days\": 0, \n    \"marketplace\": \"opensea\", \n}\n\nresult = evm_api.nft.get_nft_lowest_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "searchNFTs": {
@@ -3269,6 +3592,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -3408,6 +3737,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const q = 'Pancake';\n\n    const filter = 'name';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.nft.searchNFTs({\n        q,\n        filter,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> SearchNFTs(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        NftMetadataCollection resp = await web3Api.Token.SearchNFTs(\"Apes\", ChainList.eth, null, null, null, null, null, null, \"\", 10);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"q\": \"\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"filter\": \"name\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"addresses\": [], \n    \"cursor\": \"\", \n    \"limit\": 0, \n}\n\nresult = evm_api.nft.search_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -3532,6 +3877,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenPrice({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenPrice(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        Erc20Price resp = await web3Api.Token.GetTokenPrice(\"0x6b175474e89094c44da98b954eedeac495271d0f\", ChainList.eth);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"exchange\": \"\", \n    \"to_block\": 0, \n}\n\nresult = evm_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getWalletTokenBalances": {
@@ -3605,6 +3966,22 @@
         {
           "status": "200",
           "description": "Returns token balances for a specific address"
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getWalletTokenBalances({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenBalances(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        List<Erc20TokenBalance> balance = await web3Api.Account.GetTokenBalances(address.ToLower(), ChainList.eth);\n        result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"to_block\": 1.2, \n    \"token_addresses\": [], \n}\n\nresult = evm_api.token.get_wallet_token_balances(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -3689,6 +4066,12 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -3790,6 +4173,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getWalletTokenTransfers({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenTransfers(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        Erc20TransactionCollection balance = await web3Api.Account.GetTokenTransfers(address.ToLower(), ChainList.eth);\n        result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.token.get_wallet_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getTokenMetadata": {
@@ -3850,6 +4249,22 @@
           "status": "200",
           "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo)."
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const addresses = ['0x1234567890123456789012345678901234567890'];\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenMetadata({\n        addresses,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenMetadata(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        List<string> addresses = new List<string>();\n        addresses.Add(\"0x6b175474e89094c44da98b954eedeac495271d0f\");\n        List<Erc20Metadata> resp = await web3Api.Token.GetTokenMetadata(addresses, ChainList.eth);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"addresses\": [], \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.token.get_token_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getTokenMetadataBySymbol": {
@@ -3909,6 +4324,22 @@
         {
           "status": "200",
           "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo)."
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const symbols = ['UNI', 'AAVE', 'LINK'];\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenMetadataBySymbol({\n        symbols,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenMetadataBySymbol (IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        List<string> symbols = new List<string>();\n        symbols.Add(\"DAI\");\n        List<Erc20Metadata> resp = await web3Api.Token.GetTokenMetadataBySymbol(symbols, ChainList.eth);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"symbols\": [], \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.token.get_token_metadata_by_symbol(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -3991,6 +4422,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenAllowance({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenAllowance(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        Erc20Allowance resp = await web3Api.Token.GetTokenAllowance(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", \"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", \"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"owner_address\": \"\", \n    \"spender_address\": \"\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.token.get_token_allowance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -4081,6 +4528,17 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "type": "string"
         }
       ],
       "responses": [
@@ -4177,6 +4635,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenTransfers({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenAdressTransfers(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        Erc20TransactionCollection resp = await web3Api.Token.GetTokenAddressTransfers(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, null, null, null, null, 0, 10);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n   return result;\n} \n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"offset\": 0, \n    \"limit\": 0, \n}\n\nresult = evm_api.token.get_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -4256,6 +4730,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.balance.getNativeBalance({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetNativeBalance(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        NativeBalance balance = await web3Api.Account.GetNativeBalance(address.ToLower(), ChainList.eth);\n        result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x057Ec652A4F150f7FF94f089A38008f49a0DF88e\", \n    \"chain\": \"eth\", \n    \"to_block\": 1.2, \n}\n\nresult = evm_api.balance.get_native_balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -4341,6 +4831,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "limit",
@@ -4483,6 +4979,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.transaction.getWalletTransactions({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTransactions(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n    try\n    {\n        TransactionCollection balance = await web3Api.Account.GetTransactions(address.ToLower(), ChainList.eth);\n        result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"cursor\": \"\", \n    \"limit\": 0, \n}\n\nresult = evm_api.transaction.get_wallet_transactions(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getWalletTransactionsVerbose": {
@@ -4565,6 +5077,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "limit",
@@ -4751,6 +5269,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n          ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"cursor\": \"\", \n    \"limit\": 0, \n}\n\nresult = evm_api.transaction.get_wallet_transactions_verbose(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -4961,6 +5490,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.transaction.getTransaction({\n        transactionHash,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTransaction(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        BlockTransaction blockTransaction = await web3Api.Native.GetTransaction(\"0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109\", ChainList.eth);\n         result = blockTransaction is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"transaction_hash\": \"0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.transaction.get_transaction(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -5079,6 +5624,12 @@
           "type": "number"
         },
         {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
@@ -5187,6 +5738,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.events.getContractLogs({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetLogsByAddress(IWeb3Api web3Api, string address)\n{\n    bool result = true;\n     try\n    {\n        LogEventByAddress logEvents = await web3Api.Native.GetLogsByAddress(address, ChainList.eth);\n         result = logEvents is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"block_number\": \"\", \n    \"from_block\": \"\", \n    \"to_block\": \"\", \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"topic0\": \"\", \n    \"topic1\": \"\", \n    \"topic2\": \"\", \n    \"topic3\": \"\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.events.get_contract_logs(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getContractEvents": {
@@ -5277,6 +5844,12 @@
           "type": "number"
         },
         {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
@@ -5292,6 +5865,22 @@
         {
           "status": "200",
           "description": "Returns a collection of events by topic"
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const abi = []; // Add ABI\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.events.getContractEvents({\n        address,\n        chain,\n        abi,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetContractEvents(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        // Function ABI input parameters\n        object[] inputParams = new object[3];\n        inputParams[0] = new { indexed = true, internalType = \"bytes32\", name = \"role\", type = \"bytes32\" };\n        inputParams[1] = new { indexed = true, internalType = \"address\", name = \"account\", type = \"address\" };\n        inputParams[2] = new { indexed = true, internalType = \"address\", name = \"sender\", type = \"address\" };\n        // Function ABI\n        object abi = new { anonymous = false, inputs = inputParams, name = \"RoleGranted\", type = \"event\" };\n        List<LogEvent> logEvents = await web3Api.Native.GetContractEvents(\"0x698d7D745B7F5d8EF4fdB59CeB660050b3599AC3\", \n            \"0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d\", \n            //\"bob\",\n            abi, ChainList.mumbai);\n        result = logEvents is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"topic\": \"\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"offset\": 0, \n    \"limit\": 0, \n}\nbody = \"\"\n\nresult = evm_api.events.get_contract_events(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -5621,6 +6210,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.block.getBlock({\n        chain,\n        blockNumberOrHash,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetBlock(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        Block block = await web3Api.Native.GetBlock(\"500000\", ChainList.eth);\n        result = block is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"block_number_or_hash\": \"15863321\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.block.get_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getDateToBlock": {
@@ -5707,7 +6312,7 @@
                 "example": "2022-01-03T22:59:39.000Z"
               },
               {
-                "name": "block_hash",
+                "name": "hash",
                 "type": "string",
                 "description": "The block hash",
                 "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
@@ -5720,6 +6325,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    // unix date\n    cons date = '123..'\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.block.getDateToBlock({\n        date,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetDateToBlock(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        long unixTicks = ConvertDatetimeToUnixTimeStamp(DateTime.Now.AddDays(-1));\n    // Fails due to schema def:\n    // date * number\n    //            example: 2020 - 01 - 01T00: 00:00 + 00:00\n    //The date of the block\n        BlockDate blockDate = await web3Api.Native.GetDateToBlock(unixTicks.ToString(), ChainList.eth);\n        result = blockDate is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"date\": \"\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.block.get_date_to_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -5808,6 +6429,22 @@
           "status": "200",
           "description": "Returns response of the function executed"
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const abi = []; // Add ABI\n\n    const functionName = 'balanceOf';\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.utils.runContractFunction({\n        abi,\n        functionName,\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> RunContractFunction(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        // Function ABI input parameters\n        object[] inputParams = new object[1];\n        inputParams[0] = new { internalType = \"uint256\", name = \"id\", type = \"uint256\" };\n        \n        // Function ABI Output parameters\n        object[] outputParams = new object[5];\n        outputParams[0] = new { internalType = \"uint256\", name = \"offerId\", type = \"uint256\" };\n        outputParams[1] = new { internalType = \"uint256\", name = \"id\", type = \"uint256\" };\n        outputParams[2] = new { internalType = \"address\", name = \"user\", type = \"address\" };\n        outputParams[3] = new { internalType = \"uint256\", name = \"price\", type = \"uint256\" };\n        outputParams[4] = new { internalType = \"bool\", name = \"fulfilled\", type = \"bool\" };\n        // Function ABI\n        object[] abi = new object[1];\n        abi[0] = new { inputs = inputParams, name = \"offers\", outputs = outputParams, stateMutability = \"view\", type = \"function\" };\n        // Define request object\n        RunContractDto rcd = new RunContractDto()\n        {\n            Abi = abi,\n            Params = new { id=\"1\" }\n        };\n        bob resp = await web3Api.Native.RunContractFunction<bob>(\"0x383cAe6B39ad82305242EFcfDa6EC5B2a52B4620\", \"offers\", rcd, ChainList.mumbai);\n        result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"function_name\": \"\", \n    \"chain\": \"eth\", \n}\nbody = {\n    \"abi\": [], \n    \"params\": {}, \n}\n\nresult = evm_api.utils.run_contract_function(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "web3ApiVersion": {
@@ -5834,6 +6471,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\n\ntry {\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.utils.web3ApiVersion();\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetWeb3ApiVersion(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        VersionResponse version = await web3Api.Info.GetWeb3ApiVersion();\n         result = version is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.utils.web3_api_version(\n    api_key=api_key,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "endpointWeights": {
@@ -5848,6 +6501,22 @@
         {
           "status": "200",
           "description": "The cost and rate limit for each API endpoint."
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\n\n try {\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.utils.endpointWeights();\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetEndpointWeights(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        List<EndpointWeights> weights = await web3Api.Info.GetEndpointWeights();\n         result = weights is { } && weights.Count > 0;\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.utils.endpoint_weights(\n    api_key=api_key,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -5884,6 +6553,22 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\n\ntry {\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.resolve.resolveAddress({\n        address,\n    });\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "\nprivate async Task<bool> ResolveAddress(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        Ens resp = await web3Api.Resolve.ResolveAddress(\"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045\");\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045\", \n}\n\nresult = evm_api.resolve.resolve_address(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -5928,6 +6613,22 @@
           }
         },
         { "status": "404", "description": "Returns an address" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\n\ntry {\n    const domain = 'brad.crypto';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.resolve.resolveDomain({\n        domain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> ResolveDomain(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        Resolve resp = await web3Api.Resolve.ResolveDomain(WebUtility.UrlEncode (\"brad.crypto\") );\n        result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n    return result;\n}\n\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"domain\": \"brad.crypto\", \n    \"currency\": \"eth\", \n}\n\nresult = evm_api.resolve.resolve_domain(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -5999,6 +6700,22 @@
       ],
       "responses": [
         { "status": "200", "description": "Returns the pair reserves" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    // Pair Token address\n    const pairAddress = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.defi.getPairReserves({\n        pairAddress,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetPairReserves(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        ReservesCollection balance = await web3Api.Defi.GetPairReserves(\"0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974\", ChainList.eth);\n         result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"pair_address\": \"0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974\", \n    \"chain\": \"eth\", \n    \"to_block\": \"\", \n    \"to_date\": \"\", \n}\n\nresult = evm_api.defi.get_pair_reserves(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getPairAddress": {
@@ -6097,6 +6814,22 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const token0Address = '0x1234567890123456789012345678901234567890';\n\n    const token1Address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.defi.getPairAddress({\n        token0Address,\n        token1Address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetPairAddress(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        ReservesCollection balance = await web3Api.Defi.GetPairAddress(\"uniswapv2\", \"0x2b591e99afe9f32eaa6214f7b7629768c40eeb39\", \"0xdac17f958d2ee523a2206206994597c13d831ec7\", ChainList.eth);\n         result = balance is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"exchange\": \"uniswapv2\", \n    \"token0_address\": \"0x2b591e99afe9f32eaa6214f7b7629768c40eeb39\", \n    \"token1_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\", \n    \"chain\": \"eth\", \n    \"to_block\": \"\", \n    \"to_date\": \"\", \n}\n\nresult = evm_api.defi.get_pair_address(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -6135,6 +6868,22 @@
         {
           "status": "200",
           "description": "Returns the path to the uploaded files"
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\n\ntry {\n    const abi = [\n        {\n        path: \"moralis/logo.jpg\",\n        content: \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\",\n        },\n    ];\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.ipfs.uploadFolder({\n        abi\n    });\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> UploadFolder(IWeb3Api web3Api)\n{\n    bool result = true;\n     try\n    {\n        IpfsFileRequest req = new IpfsFileRequest()\n        {\n            Path = \"moralis/logo.jpg\",\n            Content = \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n        };\n         List<IpfsFileRequest> reqs = new List<IpfsFileRequest>();\n        reqs.Add(req);\n        List<IpfsFile> resp = await web3Api.Storage.UploadFolder(reqs);\n         result = resp is { };\n    }\n    catch (Exception exp)\n    {\n        result = false;\n    }\n     return result;\n}\n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nbody = [{\n    \"path\": \"moralis/logo.jpg\", \n    \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\", \n}]\n\nresult = evm_api.ipfs.upload_folder(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -6236,6 +6985,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  // Values set in the backend\n  const DOMAIN = 'defi.finance';\n  const STATEMENT = 'Please sign this message to confirm your identity.';\n  const URI = 'https://defi.finance';\n  const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';\n  const TIMEOUT = 15;\n\n  // Values provided by the user\n  const address = \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\";\n  const chain = \"0x1\";\n  const network = \"evm\";\n\n  const result = await Moralis.Auth.requestMessage({\n    address,\n    chain,\n    network,\n    domain: DOMAIN,\n    statement: STATEMENT,\n    uri: URI,\n    expirationTime: EXPIRATION_TIME,\n    timeout: TIMEOUT,\n  });\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import auth\n\napi_key = \"YOUR_API_KEY\"\nbody = {\n    \"domain\": \"defi.finance\", \n    \"chainId\": \"1\", \n    \"address\": \"0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B\", \n    \"statement\": \"Please confirm\", \n    \"uri\": \"https://defi.finance/\", \n    \"expirationTime\": \"2020-01-01T00:00:00.000Z\", \n    \"notBefore\": \"2020-01-01T00:00:00.000Z\", \n    \"resources\": ['https://docs.moralis.io/'], \n    \"timeout\": 15, \n}\n\nresult = auth.challenge.request_challenge_evm(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -6347,6 +7107,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  // Values provided by the user\n  const message = \"\";\n  const signature = \"\";\n  const network = \"evm\";\n\n  const verifiedData = Moralis.Auth.verify({\n    message: message,\n    signature: signature,\n    network: network,\n  });\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import auth\n\napi_key = \"YOUR_API_KEY\"\nbody = {\n    \"message\": \"defi.finance wants you to sign in with your Ethereum account:<br/>0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B<br/><br/><br/>URI: https://defi.finance<br/>Version: 1<br/>Chain ID: 1<br/>Nonce: Px7Nh1RPzlCLwqgOb<br/>Issued At: 2022-11-30T10:20:00.262Z\", \n    \"signature\": \"0xa8f89a58bf9b433d3100f9e41ee35b5e31fb8c7cd62547acb113162ec6f2e4140207e2dfbd4e387e1801ebc7f08a9dd105ac1d22b2e2ff0df5fa8b6d9bdcfe491c\", \n}\n\nresult = auth.challenge.verify_challenge_evm(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "requestChallengeSolana": {
@@ -6445,6 +7216,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  // Values set in the backend\n  const DOMAIN = 'defi.finance';\n  const STATEMENT = 'Please sign this message to confirm your identity.';\n  const URI = 'https://defi.finance';\n  const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';\n  const TIMEOUT = 15;\n\n  // Values provided by the user\n  const address = '26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo';\n  const solNetwork = 'mainnet';\n  const network = 'solana';\n\n  const result = await Moralis.Auth.requestMessage({\n    address,\n    solNetwork,\n    network,\n    domain: DOMAIN,\n    statement: STATEMENT,\n    uri: URI,\n    expirationTime: EXPIRATION_TIME,\n    timeout: TIMEOUT,\n  });\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import auth\n\napi_key = \"YOUR_API_KEY\"\nbody = {\n    \"domain\": \"defi.finance\", \n    \"network\": \"mainnet\", \n    \"address\": \"26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo\", \n    \"statement\": \"Please confirm\", \n    \"uri\": \"https://defi.finance/\", \n    \"expirationTime\": \"2020-01-01T00:00:00.000Z\", \n    \"notBefore\": \"2020-01-01T00:00:00.000Z\", \n    \"resources\": ['https://docs.moralis.io/'], \n    \"timeout\": 15, \n}\n\nresult = auth.challenge.request_challenge_solana(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -6556,6 +7338,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  // Values provided by the user\n  const message = \"\";\n  const signature = \"\";\n  const network = \"solana\";\n\n  const verifiedData = Moralis.Auth.verify({\n    message: message,\n    signature: signature,\n    network: network,\n  });\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import auth\n\napi_key = \"YOUR_API_KEY\"\nbody = {\n    \"message\": \"defi.finance wants you to sign in with your Solana account:<br/>26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo<br/><br/>I am a third party API<br/><br/>URI: http://defi.finance<br/>Version: 1<br/>Network: mainnet<br/>Nonce: PYxxb9msdjVXsMQ9x<br/>Issued At: 2022-08-25T11:02:34.097Z<br/>Expiration Time: 2022-08-25T11:12:38.243Z<br/>Resources:<br/>- https://docs.moralis.io/\", \n    \"signature\": \"2pH9DqD5rve2qV4yBDshcAjWd2y8TqMx8BPb7f3KoNnuLEhE5JwjruYi4jaFaD4HN6wriLz2Vdr32kRBAJmHcyny\", \n}\n\nresult = auth.challenge.verify_challenge_solana(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
+        }
       ]
     }
   },
@@ -6664,6 +7457,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 10;\n\n  const { result } = await Moralis.Streams.getHistory({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n    \"excludePayload\": True, \n}\n\nresult = streams.history.get_history(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "ReplayHistory": {
@@ -6771,6 +7575,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst streamId = \"stream-1\";\n\n  const { result } = await Moralis.Streams.retry({\n  id,\n  streamId,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"streamId\": \"\", \n    \"id\": \"\", \n}\n\nresult = streams.history.replay_history(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "SetSettings": {
@@ -6814,6 +7629,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const { result } = await Moralis.Streams.readSettings();\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.project.get_settings(\n    api_key=api_key,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "GetSettings": {
@@ -6844,6 +7670,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const { result } = await Moralis.Streams.readSettings();\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.project.get_settings(\n    api_key=api_key,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -6936,6 +7773,12 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.stats.get_stats(\n    api_key=api_key,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -7035,6 +7878,12 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"streamId\": \"\", \n}\n\nresult = streams.stats.get_stats_by_stream_id(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -7268,6 +8117,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -7636,6 +8496,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "GetStream": {
@@ -7841,6 +8712,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getById({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -8215,6 +9097,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getById({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -8641,6 +9534,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst status = \"paused\";\n\n  const { result } = await Moralis.Streams.updateStatus({\n  id,\n  status,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\nbody = {\n    \"status\": \"\", \n}\n\nresult = streams.evm.update_stream_status(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "GetAddresses": {
@@ -8703,6 +9607,17 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getAddresses({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "AddAddressToStream": {
@@ -8759,6 +9674,17 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getAddresses({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -8828,8 +9754,18 @@
       "method": "GET",
       "path": "/account/:network/:address/balance",
       "pathParams": [
-        { "name": "network", "required": true, "type": "string" },
-        { "name": "address", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address for which the native balance will be checked",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
@@ -8845,6 +9781,17 @@
           }
         },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getBalance({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getSPL": {
@@ -8854,13 +9801,34 @@
       "method": "GET",
       "path": "/account/:network/:address/tokens",
       "pathParams": [
-        { "name": "network", "required": true, "type": "string" },
-        { "name": "address", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address for which token balances will be checked",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
         { "status": "200", "description": "" },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getSPL({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_spl(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTs": {
@@ -8870,13 +9838,34 @@
       "method": "GET",
       "path": "/account/:network/:address/nft",
       "pathParams": [
-        { "name": "network", "required": true, "type": "string" },
-        { "name": "address", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address of the contract",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
         { "status": "200", "description": "" },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getNFTs({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getPortfolio": {
@@ -8886,8 +9875,18 @@
       "method": "GET",
       "path": "/account/:network/:address/portfolio",
       "pathParams": [
-        { "name": "address", "required": true, "type": "string" },
-        { "name": "network", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address of the token contract",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
@@ -8933,6 +9932,17 @@
           }
         },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getPortfolio({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.account.get_portfolio(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getNFTMetadata": {
@@ -8942,8 +9952,18 @@
       "method": "GET",
       "path": "/nft/:network/:address/metadata",
       "pathParams": [
-        { "name": "address", "required": true, "type": "string" },
-        { "name": "network", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address of the contract",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
@@ -8981,6 +10001,17 @@
           }
         },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.nft.getNFTMetadata({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     },
     "getTokenPrice": {
@@ -8990,8 +10021,18 @@
       "method": "GET",
       "path": "/token/:network/:address/price",
       "pathParams": [
-        { "name": "address", "required": true, "type": "string" },
-        { "name": "network", "required": true, "type": "string" }
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "description": "The address of the token contract",
+          "required": true,
+          "type": "string"
+        }
       ],
       "queryParams": [],
       "responses": [
@@ -9019,6 +10060,17 @@
           }
         },
         { "status": "400", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.token.getTokenPrice({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
       ]
     }
   }
