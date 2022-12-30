@@ -23,7 +23,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-web3authio",
       "permanent": true
     },
-
     {
       "source": "/reference",
       "destination": "/web3-data-api/reference/overview",
@@ -54,7 +53,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-metamask-angular",
       "permanent": true
     },
-
     { "source": "/docs/overview", "destination": "/", "permanent": true },
     {
       "source": "/docs/quickstart",
@@ -186,7 +184,11 @@
       "destination": "/web3-data-api/abuse-prevention",
       "permanent": true
     },
-
+    {
+      "source": "/docs/faq",
+      "destination": "/web3-data-api/faq",
+      "permanent": true
+    },
     {
       "source": "/docs/evm-api",
       "destination": "/web3-data-api/evm",
@@ -482,13 +484,26 @@
       "destination": "/authentication-api/how-to-sign-in-with-coinbase-wallet",
       "permanent": true
     },
-
+    {
+      "source": "/docs/sign-in-with-metamask-react",
+      "destination": "/authentication-api/how-to-authenticate-users-with-metamask-using-react",
+      "permanent": true
+    },
     {
       "source": "/docs/how-to-sign-in-with-magiclink",
       "destination": "/authentication-api/how-to-sign-in-with-magiclink",
       "permanent": true
     },
-
+    {
+      "source": "/docs/how-to-sign-in-with-solana-phantom-wallet",
+      "destination": "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-sign-in-with-solana-wallet-provider",
+      "destination": "/authentication-api/how-to-sign-in-with-solana-wallet-provider",
+      "permanent": true
+    },
     {
       "source": "/docs/streams-api",
       "destination": "/streams-api",
@@ -674,7 +689,6 @@
       "destination": "/authentication-api/integrations/google-cloud-nodejs-unity",
       "permanent": true
     },
-
     {
       "source": "/docs/using-firebase",
       "destination": "/web3-data-api/integrations/firebase-nodejs",
@@ -885,13 +899,11 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-api-utils",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
@@ -1032,7 +1044,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
       "permanent": false
     },
-
     {
       "source": "/docs/nodejs-demo-express-proxy",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
@@ -1088,7 +1099,56 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-streams-ext",
       "permanent": false
     },
-
+    {
+      "source": "/docs/self-hosted-moralis-server",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/docs/run-parse-server-locally",
+      "destination": "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
+      "permanent": true
+    },
+    {
+      "source": "/docs/configure-your-server",
+      "destination": "/web3-data-api/self-hosted-moralis-server/configure-your-server",
+      "permanent": true
+    },
+    {
+      "source": "/docs/set-up-custom-cloud-code",
+      "destination": "/web3-data-api/self-hosted-moralis-server/set-up-custom-cloud-code",
+      "permanent": true
+    },
+    {
+      "source": "/docs/set-up-parse-dashboard",
+      "destination": "/web3-data-api/self-hosted-moralis-server/set-up-parse-dashboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/migrate-data",
+      "destination": "/web3-data-api/self-hosted-moralis-server/migrate-data",
+      "permanent": true
+    },
+    {
+      "source": "/docs/connect-to-your-client",
+      "destination": "/web3-data-api/self-hosted-moralis-server/connect-to-your-client",
+      "permanent": true
+    },
+    {
+      "source": "/docs/set-up-streams-with-parse-server",
+      "destination": "/web3-data-api/self-hosted-moralis-server/set-up-streams-with-parse-server",
+      "permanent": true
+    },
+    {
+      "source": "/docs/deploy-to-production",
+      "destination": "/web3-data-api/self-hosted-moralis-server/deploy-to-production",
+      "permanent": true
+    },
+    {
+      "source": "/reference/introduction",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
     {
       "source": "/reference/getnftcontractmetadata",
       "destination": "/web3-data-api/reference/getnftcontractmetadata",
@@ -1169,7 +1229,11 @@
       "destination": "/web3-data-api/reference/getnfttransfers",
       "permanent": true
     },
-
+    {
+      "source": "/reference/getnftcontracttransfers-2",
+      "destination": "/web3-data-api/reference/getnftcontracttransfers",
+      "permanent": true
+    },
     {
       "source": "/reference/getwallettokenbalances",
       "destination": "/web3-data-api/reference/getwallettokenbalances",
@@ -1380,7 +1444,11 @@
       "destination": "/web3-data-api/moralis-sdk",
       "permanent": true
     },
-
+    {
+      "source": "/docs/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity#prerequisites",
+      "permanent": true
+    },
     {
       "source": "/reference/supported-chains",
       "destination": "/web3-data-api",
@@ -1417,7 +1485,11 @@
       "permanent": true
     },
     { "source": "/docs/", "destination": "/", "permanent": true },
-
+    {
+      "source": "/reference/api-response",
+      "destination": "/web3-data-api/api-response",
+      "permanent": true
+    },
     {
       "source": "/reference/metadata-normalization",
       "destination": "/reference/introduction/metadata-normalization/metadata-normalization",
@@ -1478,7 +1550,6 @@
       "destination": "/web3-data-api/reference/resyncmetadata",
       "permanent": true
     },
-
     {
       "source": "/reference/getcontractevents",
       "destination": "/web3-data-api/reference/getcontractevents",
@@ -1565,7 +1636,11 @@
       "permanent": true
     },
     { "source": "/reference/undefined", "destination": "/", "permanent": true },
-
+    {
+      "source": "/docs/using-unity-aws-gamesparks",
+      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "permanent": true
+    },
     {
       "source": "/reference/supported-chains-evm",
       "destination": "/web3-data-api",
@@ -1686,7 +1761,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20input",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
@@ -1817,7 +1891,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
       "permanent": false
     },
-
     {
       "source": "/docs/nodejs-demo-express-proxy",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
@@ -1875,7 +1948,7 @@
     },
     {
       "source": "/docs/deploy-to-production-1",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/deploy-to-production",
       "permanent": true
     },
     {
@@ -1929,7 +2002,6 @@
       "destination": "/web3-data-api/quickstart-nextjs",
       "permanent": true
     },
-
     {
       "source": "/reference/getwalletnftcollections-1",
       "destination": "/web3-data-api/reference/getwalletnftcollections",
@@ -1940,7 +2012,6 @@
       "destination": "/web3-data-api/moralis-sdk",
       "permanent": true
     },
-
     {
       "source": "/reference/solana-api",
       "destination": "/web3-data-api/solana",
@@ -2036,7 +2107,6 @@
       "destination": "/web3-data-api/getting-started/",
       "permanent": true
     },
-
     {
       "source": "/cloud-functions-1",
       "destination": "https://v1docs.moralis.io/cloud-functions-1",
@@ -2052,7 +2122,6 @@
       "destination": "/authentication-api",
       "permanent": true
     },
-
     {
       "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-polygon-node",
       "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
@@ -2143,7 +2212,11 @@
       "destination": "/web3-data-api/getting-started/",
       "permanent": true
     },
-    { "source": "/docs/migrate-data-1", "destination": "", "permanent": true },
+    {
+      "source": "/docs/migrate-data-1",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
     {
       "source": "/moralis-server/web3-sdk/account",
       "destination": "/web3-data-api/evm/balance-api",
@@ -2252,7 +2325,7 @@
     },
     {
       "source": "/docs/run-parse-server-locally-1",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
       "permanent": true
     },
     {
@@ -2272,7 +2345,7 @@
     },
     {
       "source": "/docs/using-unity-aws-gamesparks",
-      "destination": "",
+      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity#prerequisites",
       "permanent": true
     },
     {
@@ -2360,7 +2433,11 @@
       "destination": "https://v1docs.moralis.io/guides/build-a-simple-dap-in-3-mins-login-part-2",
       "permanent": true
     },
-    { "source": "/misc/faq", "destination": "", "permanent": true },
+    {
+      "source": "/misc/faq",
+      "destination": "/web3-data-api/faq",
+      "permanent": true
+    },
     {
       "source": "/docs/nodejs-demo-firebase-auth",
       "destination": "/authentication-api/integrations/firebase-nodejs",
@@ -2373,7 +2450,7 @@
     },
     {
       "source": "/docs/connect-to-your-client-1",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/connect-to-your-client",
       "permanent": true
     },
     {
@@ -2448,7 +2525,7 @@
     },
     {
       "source": "/docs/migrating-to-self-hosted-parse-server",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
       "permanent": true
     },
     {
@@ -2596,7 +2673,6 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/database/direct_access",
       "permanent": true
     },
-
     {
       "source": "/reference/ipfs-1",
       "destination": "/reference/ipfs",
@@ -2822,7 +2898,7 @@
       "destination": "/web3-data-api/reference/getwallettokenbalances",
       "permanent": true
     },
-    { "source": "/page/🔗", "destination": "/docs", "permanent": true },
+    { "source": "/page/🔗", "destination": "/", "permanent": true },
     {
       "source": "/moralis-server/web3-sdk/supported-chains",
       "destination": "/web3-data-api",
@@ -2953,7 +3029,6 @@
       "destination": "/web3-data-api/getting-started/",
       "permanent": true
     },
-
     {
       "source": "/reference/getnftsforcontract-1",
       "destination": "/web3-data-api/reference/getcontractnfts",
@@ -2964,7 +3039,6 @@
       "destination": "https://v1docs.moralis.io/moralis-server/sending-assets/transfer-eth",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/connect-the-sdk/snippets",
       "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk",
@@ -2990,7 +3064,6 @@
       "destination": "/web3-data-api/reference/getcontractlogs",
       "permanent": true
     },
-
     {
       "source": "/docs/first-web3-unity-game",
       "destination": "/authentication-api/integrations/azure-playfab-nodejs-unity",
@@ -3075,7 +3148,7 @@
     },
     {
       "source": "/reference/getting-started-with-your-api",
-      "destination": "",
+      "destination": "/web3-data-api/reference/overview",
       "permanent": true
     },
     {
@@ -3135,7 +3208,7 @@
     },
     {
       "source": "/moralis-web3-rest/native-api",
-      "destination": "",
+      "destination": "/web3-data-api/reference/overview",
       "permanent": true
     },
     {
@@ -3200,7 +3273,7 @@
     },
     {
       "source": "/deep-index-rest-api/deep-index-api",
-      "destination": "",
+      "destination": "/web3-data-api/reference/overview",
       "permanent": true
     },
     {
@@ -3218,7 +3291,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-metamask",
       "permanent": true
     },
-
     {
       "source": "/webhooks",
       "destination": "/streams-api/webhooks-transactions",
@@ -3256,15 +3328,19 @@
     },
     {
       "source": "/introduction/readme/",
-      "destination": "/docs",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/docs/self-hosted-parse-server-integration",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
       "permanent": true
     },
-
+    {
+      "source": "/challenge/verify/solana",
+      "destination": "/authentication-api/reference/verify-challenge-solana",
+      "permanent": true
+    },
     {
       "source": "/moralis-dapp/getting-started/create-a-moralis-server",
       "destination": "/web3-data-api/getting-started/",
@@ -3275,13 +3351,11 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/resolve-transfer",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/tools",
       "destination": "https://v1docs.moralis.io/moralis-dapp/tools",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/getting-started/pre-requisites",
       "destination": "/web3-data-api/getting-started/",
@@ -3307,7 +3381,6 @@
       "destination": "https://v1docs.moralis.io/moralis-sdk/queries",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/transactions-and-balances/token-balances",
       "destination": "/web3-data-api/evm/how-to-get-all-erc20-tokens-owned-by-an-address",
@@ -3325,7 +3398,7 @@
     },
     {
       "source": "/moralis-server/plugins/untitled",
-      "destination": "",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
       "permanent": true
     },
     {
@@ -3357,6 +3430,7 @@
       "source": "/reference/auth-api-overview",
       "destination": "/reference/auth-api",
       "permanent": true
-    }
+    },
+    { "source": "/docs", "destination": "/", "permanent": true }
   ]
 }

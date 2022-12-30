@@ -584,17 +584,7 @@ Now that the backend server is ready, we will test it and configure a client app
 4. Close the application and stop the process in Visual Studio.
 5. Download the test client application below.
 
-[block:embed]
-{
-  "html": false,
-  "url": "https://drive.google.com/file/d/1dMzlslt7GHyfqhBnjW_FlPNmUs_8YFOf/view?usp=sharing",
-  "title": "Moralis_Auth_Demo.zip",
-  "favicon": "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png",
-  "provider": "drive.google.com",
-  "href": "https://drive.google.com/file/d/1dMzlslt7GHyfqhBnjW_FlPNmUs_8YFOf/view?usp=sharing"
-}
-[/block]
-
+[Moralis_Auth_Demo.zip](https://drive.google.com/file/d/1dMzlslt7GHyfqhBnjW_FlPNmUs_8YFOf/view?usp=sharing)
 
 6. Open the test client in Visual Studio Code.
 7. Open the `index.js` file. At the top of the file, find the `// Create server urlconst myServerUrl = "[<https://localhost:7284">;](https://localhost:7284";`)\` line and change the port to match that of your own server application.
@@ -615,8 +605,6 @@ builder.Services.AddCors(options =>
                     });
 });
 ```
-
-
 
 11. Your `Program.cs` file should now be similar to this:
 

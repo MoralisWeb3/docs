@@ -1,15 +1,13 @@
 ---
-title: "How to Authenticate Users with Phantom Wallet"
-slug: "../how-to-sign-in-with-solana-phantom-wallet"
+title: "How to Authenticate Users with Solana Wallet Adapter"
+slug: "../how-to-sign-in-with-solana-wallet-provider"
 ---
 
-This tutorial covers how to create full-stack Web3 authentication for the Phantom wallet, using the popular NextJS framework.
-
-![](https://files.readme.io/d15a406-phantom_.gif)
+This tutorial covers how to create full-stack Web3 authentication for the Solana wallet adaptor, using the popular NextJS framework.
 
 ## Introduction
 
-This tutorial shows you how to create a NextJS application that lets users log in using their Phantom wallet.
+This tutorial shows you how to create a NextJS application that allows users to log in using any wallet that uses the Solana wallet adapter. 
 
 After Web3 wallet authentication, the **[next-auth](https://next-auth.js.org/)** library creates a session cookie with an encrypted **[JWT](https://jwt.io/introduction)** (**JWE**) stored inside. It contains session info (such as an address, signed message, and expiration time) in the user's browser. It's a secure way to store users' info without a database, and it's impossible to read/modify the **JWT** without a [secret key](https://next-auth.js.org/configuration/options#secret).
 
@@ -17,7 +15,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](https://files.readme.io/a0d394e-image.png)
+![](https://files.readme.io/43e472f-image.png)
 
 > 📘 
 > 
@@ -27,7 +25,7 @@ You can find the repository with the final code here: [GitHub](https://github.co
 
 1. Create a [Moralis account](https://www.moralis.io).
 2. Install and set up [Visual Studio](https://code.visualstudio.com/).
-3. Create your NextJS dapp (you can create it using **[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)** or follow the **[NextJS dapp](/web3-data-api/quickstart-nextjs)** tutorial).
+3. Create your NextJS dapp (you can create it using **[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)** or follow the **[NextJS dapp](https://docs.moralis.io/docs/nextjs-dapp)** tutorial).
 
 ## Install the Required Dependencies
 
@@ -37,10 +35,15 @@ You can find the repository with the final code here: [GitHub](https://github.co
 npm install @moralisweb3/next next-auth @web3uikit/core
 ```
 
-2. To process data like the signature of a Solana Web3 wallet (e.g., Phantom), we need the `bs58` package to encode and decode data from the wallet. Let's install the `bs58` package:
+2. To implement authentication using a Web3 wallet (e.g., Phantom), we need to use a Solana Web3 library. For the tutorial, we will use [wagmi](https://wagmi.sh/docs/getting-started). So, let's install the `wagmi` dependency:
 
 ```bash npm2yarn
-npm install bs58 
+npm install bs58 tweetnacl \
+    @solana/wallet-adapter-base \
+    @solana/wallet-adapter-react \
+    @solana/wallet-adapter-react-ui \
+    @solana/wallet-adapter-wallets \
+    @solana/web3.js 
 ```
 
 3. Add new environment variables in your `.env.local` file in the app root:
@@ -65,19 +68,42 @@ NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 > 
 > Every time you modify the `.env.local` file, you need to restart your dapp.
 
-## Wrapping App with `SessionProvider`
+## Wrapping App with `Solana Wallet Provider` and `SessionProvider`
 
-4. Create the `pages/_app.jsx` file. We need to wrap our pages with `SessionProvider` ([docs](https://next-auth.js.org/getting-started/client#sessionprovider)):
+4. Create the `pages/_app.jsx` file. We need to wrap our pages with `Solana Wallet Provider` ([docs](https://github.com/solana-labs/wallet-adapter/blob/master/APP.md)) and `SessionProvider` ([docs](https://next-auth.js.org/getting-started/client#sessionprovider)):
 
 ```javascript
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+import {
+  PhantomWalletAdapter,
+  SolflareWalletAdapter,
+} from "@solana/wallet-adapter-wallets";
+import { clusterApiUrl } from "@solana/web3.js";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { useMemo } from "react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 
 function MyApp({ Component, pageProps }) {
- 
+  const network = WalletAdapterNetwork.Devnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const wallets = useMemo(
+    () => [new PhantomWalletAdapter(), new SolflareWalletAdapter({ network })],
+    [network]
+  );
   return (
     <SessionProvider session={pageProps.session}>
+      <ConnectionProvider endpoint={endpoint}>
+        <WalletProvider wallets={wallets} autoConnect>
+          <WalletModalProvider>
             <Component {...pageProps} />
+          </WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
     </SessionProvider>
   );
 }
@@ -143,7 +169,7 @@ export default NextAuth({
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
-```typescript \\\\\\\\\\\\\\\[...moralis].ts
+```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -170,7 +196,7 @@ export default MoralisNextApi({
 });
 
 ```
-```typescript \\\\\\\\\\\\\\\[...moralis].js
+```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -202,36 +228,37 @@ export default MoralisNextApi({
 
 ## Create Wallet Component
 
-7. Create a new file under `app/components/loginBtn/phantomBtn.tsx`:
+7. Create a new file under `app/components/loginBtn/walletAdaptor.tsx`:
 
-```typescript phantomBtn.tsx
-import React from "react";
-import { Button } from "@web3uikit/core";
-import { signIn } from "next-auth/react";
+```typescript walletAdaptor.tsx
+import { useEffect } from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+require("@solana/wallet-adapter-react-ui/styles.css");
 import base58 from "bs58";
+import { signIn, signOut } from "next-auth/react";
 import { useAuthRequestChallengeSolana } from "@moralisweb3/next";
-
-export default function PhantomBtn() {
+import React from "react";
+export default function WalletAdaptor() {
+  const { publicKey, signMessage, disconnecting, disconnect, connected } =
+    useWallet();
   const { requestChallengeAsync, error } = useAuthRequestChallengeSolana();
-  const authenticate = async () => {
-    // @ts-ignore
-    const provider = window.phantom?.solana;
-    const resp = await provider.connect();
-    const address = resp.publicKey.toString();
-    const chain = "devnet";
-    const account = {
-      address: address,
-      chain: chain,
-      network: "solana",
-    };
-    // const message = "Sign to provide access to app";
+  const signCustomMessage = async () => {
+    if (!publicKey) {
+      throw new Error("Wallet not avaiable to process request.");
+    }
+    const address = publicKey.toBase58();
     const challenge = await requestChallengeAsync({
       address,
       network: "devnet",
     });
     const encodedMessage = new TextEncoder().encode(challenge?.message);
-    const signedMessage = await provider.signMessage(encodedMessage, "utf8");
-    const signature = base58.encode(signedMessage.signature);
+    if (!encodedMessage) {
+      throw new Error("Failed to get encoded message.");
+    }
+
+    const signedMessage = await signMessage?.(encodedMessage);
+    const signature = base58.encode(signedMessage as Uint8Array);
     try {
       const authResponse = await signIn("moralis-auth", {
         message: challenge?.message,
@@ -243,52 +270,65 @@ export default function PhantomBtn() {
         throw new Error(authResponse.error);
       }
     } catch (e) {
+      disconnect();
+      console.log(e);
       return;
     }
   };
 
-  return (
-    <Button
-      text="Phantom"
-      theme="primary"
-      onClick={() => {
-        authenticate();
-      }}
-    />
-  );
+  useEffect(() => {
+    if (error) {
+      disconnect();
+      console.log(error);
+    }
+  }, [disconnect, error]);
+
+  useEffect(() => {
+    if (disconnecting) {
+      signOut({ redirect: false });
+    }
+  }, [disconnecting]);
+
+  useEffect(() => {
+    connected && signCustomMessage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected]);
+
+  return <WalletMultiButton />;
 }
 
 ```
-```typescript phantomBtn.jsx
-import React from "react";
-import { Button } from "@web3uikit/core";
-import { signIn } from "next-auth/react";
+```typescript walletAdaptor.jsx
+import { useEffect } from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+require("@solana/wallet-adapter-react-ui/styles.css");
 import base58 from "bs58";
+import { signIn, signOut } from "next-auth/react";
 import { useAuthRequestChallengeSolana } from "@moralisweb3/next";
-
-export default function PhantomBtn() {
+import React from "react";
+export default function WalletAdaptor() {
+  const { publicKey, signMessage, disconnecting, disconnect, connected } =
+    useWallet();
   const { requestChallengeAsync, error } = useAuthRequestChallengeSolana();
-  const authenticate = async () => {
-    // @ts-ignore
-    const provider = window.phantom?.solana;
-    const resp = await provider.connect();
-    const address = resp.publicKey.toString();
-    const chain = "devnet";
-    const account = {
-      address: address,
-      chain: chain,
-      network: "solana",
-    };
-    // const message = "Sign to provide access to app";
+  const signCustomMessage = async () => {
+    if (!publicKey) {
+      throw new Error("Wallet not avaiable to process request.");
+    }
+    const address = publicKey.toBase58();
     const challenge = await requestChallengeAsync({
       address,
       network: "devnet",
     });
     const encodedMessage = new TextEncoder().encode(challenge?.message);
-    const signedMessage = await provider.signMessage(encodedMessage, "utf8");
-    const signature = base58.encode(signedMessage.signature);
+    if (!encodedMessage) {
+      throw new Error("Failed to get encoded message.");
+    }
+
+    const signedMessage = await signMessage?.(encodedMessage);
+    const signature = base58.encode(signedMessage);
     try {
-      const authResponse = await signIn("credentials", {
+      const authResponse = await signIn("moralis-auth", {
         message: challenge?.message,
         signature,
         network: "Solana",
@@ -298,19 +338,31 @@ export default function PhantomBtn() {
         throw new Error(authResponse.error);
       }
     } catch (e) {
+      disconnect();
+      console.log(e);
       return;
     }
   };
 
-  return (
-    <Button
-      text="Phantom"
-      theme="primary"
-      onClick={() => {
-        authenticate();
-      }}
-    />
-  );
+  useEffect(() => {
+    if (error) {
+      disconnect();
+      console.log(error);
+    }
+  }, [disconnect, error]);
+
+  useEffect(() => {
+    if (disconnecting) {
+      signOut({ redirect: false });
+    }
+  }, [disconnecting]);
+
+  useEffect(() => {
+    connected && signCustomMessage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected]);
+
+  return <WalletMultiButton />;
 }
 
 ```
@@ -329,7 +381,7 @@ import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { Typography } from "@web3uikit/core";
 import { useSession } from "next-auth/react";
-import PhantomBtn from "../app/components/loginBtn/phantomBtn";
+import WalletAdaptor from "../app/components/loginBtn/walletAdaptor";
 
 export default function Home() {
   const router = useRouter();
@@ -359,7 +411,7 @@ export default function Home() {
                   Select Wallet for Authentication
                 </Typography>
                 <br />
-                <PhantomBtn />
+                <WalletAdaptor />
               </>
             ) : (
               <Typography variant="caption14">Loading...</Typography>
@@ -457,6 +509,9 @@ import styles from "../styles/User.module.css";
 import { getSession, signOut } from "next-auth/react";
 import UserData from "../app/components/userData/userData";
 import LogoutBtn from "../app/components/logoutBtn/logoutBtn";
+import { WalletDisconnectButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
+require("@solana/wallet-adapter-react-ui/styles.css");
 
 
 export async function getServerSideProps(context) {
@@ -470,6 +525,28 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ userSession }) {
+  const { publicKey, disconnecting, connected } = useWallet();
+  const [isPending, startTransition] = useTransition();
+
+  console.log(userSession);
+
+  useEffect(() => {
+    startTransition(() => {
+      publicKey && console.log(publicKey.toBase58());
+    });
+  }, [publicKey]);
+
+  useEffect(() => {
+    startTransition(() => {
+      disconnecting && signOut();
+    });
+  }, [disconnecting]);
+
+  useEffect(() => {
+    startTransition(() => {
+      console.log({ disconnecting });
+    });
+  }, [disconnecting]);
 
   if (userSession) {
     return (
@@ -479,7 +556,11 @@ export default function Home({ userSession }) {
             <>
               <UserData />
               <div className={styles.buttonsRow}>
+                {connected || disconnecting ? (
+                  <WalletDisconnectButton />
+                ) : (
                   <LogoutBtn />
+                )}
               </div>
             </>
           </div>
@@ -491,24 +572,103 @@ export default function Home({ userSession }) {
 
 ```
 
-## Testing with Phantom Wallet
+
+
+## Testing with any Solana Wallet
 
 Visit [`http://localhost:3000`](http://localhost:3000`) to test the authentication.
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-![](https://files.readme.io/0f54601-image.png)
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/31c94d0-image.png",
+        null,
+        ""
+      ],
+      "sizing": "500px"
+    }
+  ]
+}
+[/block]
+
+
 
 2. Connect to the Solana wallet extension
 
-![](https://files.readme.io/a7e2b4f-image.png)
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/d7eb605-image.png",
+        null,
+        ""
+      ],
+      "sizing": "300px"
+    }
+  ]
+}
+[/block]
+
+
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/a7e2b4f-image.png",
+        null,
+        ""
+      ],
+      "sizing": "400px"
+    }
+  ]
+}
+[/block]
+
+
 
 3. Sign the message:
 
-![](https://files.readme.io/08970f7-image.png)
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/08970f7-image.png",
+        null,
+        ""
+      ],
+      "sizing": "400px"
+    }
+  ]
+}
+[/block]
+
+
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![](https://files.readme.io/8b2c468-image.png)
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/44500ea-image.png",
+        null,
+        ""
+      ],
+      "sizing": "600px"
+    }
+  ]
+}
+[/block]
 
-And that completes the authentication process to Solana wallet using Phantom Wallet.
+
+
+And that completes the authentication process for Solana wallets using the Solana wallet adapter.
