@@ -29,25 +29,8 @@ export const stringifyJSON = (obj: object, pretty: boolean = false) =>
 
 const tabs = [
   {
-    lang: "bash",
-    title: "cURL",
-    template: ({ method, url, auth, body }) => {
-      const indent = " ".repeat("curl ".length);
-
-      return buildTemplate([
-        line(`curl --request ${method} \\`),
-        line(`${indent}--url ${url} \\`),
-        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
-        auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
-        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
-        body ? line(`${indent}--data '`) : null,
-        body ? line(stringifyJSON(body, true)) : null,
-        body ? line("'") : null,
-      ]);
-    },
-  },
-  {
-    lang: "js",
+    lang: "node",
+    langCode: "js",
     title: "Node.js",
     template: ({ method, url, auth, body }) =>
       buildTemplate([
@@ -80,10 +63,11 @@ const tabs = [
   },
   {
     lang: "python",
+    langCode: "python",
     title: "Python",
     template: ({ method, url, auth, body }) =>
       buildTemplate([
-        line("# Dependencies to install:"),
+        line("# Dependencies to install:\n"),
         line("# $ python -m pip install requests"),
         line(""),
         line("import requests"),
@@ -106,7 +90,27 @@ const tabs = [
       ]),
   },
   {
+    lang: "bash",
+    langCode: "bash",
+    title: "cURL",
+    template: ({ method, url, auth, body }) => {
+      const indent = " ".repeat("curl ".length);
+
+      return buildTemplate([
+        line(`curl --request ${method} \\`),
+        line(`${indent}--url ${url} \\`),
+        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
+        auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
+        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
+        body ? line(`${indent}--data '`) : null,
+        body ? line(stringifyJSON(body, true)) : null,
+        body ? line("'") : null,
+      ]);
+    },
+  },
+  {
     lang: "go",
+    langCode: "go",
     title: "Go",
     template: ({ method, url, auth, body }) =>
       buildTemplate([
@@ -146,6 +150,7 @@ const tabs = [
   },
   {
     lang: "php",
+    langCode: "php",
     title: "PHP",
     template: ({ method, url, auth, body }) =>
       buildTemplate([
@@ -190,7 +195,7 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
-const ApiExamples = ({ method, apiHost, path }: Pick<ApiReferenceProps, "method" | "path">) => {
+const ApiExamples = ({ method, apiHost, path, codeSamples }: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
 
@@ -202,25 +207,31 @@ const ApiExamples = ({ method, apiHost, path }: Pick<ApiReferenceProps, "method"
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
-      {tabs.map((tab, index) => (
-        <TabItem key={index} value={tab.lang} label={tab.title}>
-          <CodeBlock className={`language-${tab.lang}`}>
-            {tab.template({
-              method,
-              url: [
-                apiHost,
-                new Path(path).build({
-                  ...defaultPathParams,
-                  ...omitBy(values.path, (value) => value == null),
-                }),
-                qs.stringify(values.query || {}, { addQueryPrefix: true }),
-              ].join(""),
-              auth: token.length > 0 ? token : "YOUR_API_KEY",
-              body: filterOutEmpty(values.body),
-            })}
-          </CodeBlock>
-        </TabItem>
-      ))}
+      {tabs.map(({ lang, langCode, template, title }, index) => {
+        const { code } = codeSamples?.find(sample => sample?.language === lang) ?? {};
+        const auth = token.length > 0 ? token : "YOUR_API_KEY";
+        return (
+          <TabItem key={index} value={lang} label={title}>
+            <CodeBlock className={`language-${langCode}`}>
+              {code
+                ? buildTemplate([line(code?.replace(/YOUR_API_KEY/, auth))])
+                : template({
+                  method,
+                  url: [
+                    apiHost,
+                    new Path(path).build({
+                      ...defaultPathParams,
+                      ...omitBy(values.path, (value) => value == null),
+                    }),
+                    qs.stringify(values.query || {}, { addQueryPrefix: true }),
+                  ].join(""),
+                  auth: auth,
+                  body: filterOutEmpty(values.body),
+                })}
+            </CodeBlock>
+          </TabItem>
+        )
+      })}
     </Tabs>
   );
 };
