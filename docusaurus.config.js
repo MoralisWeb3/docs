@@ -395,6 +395,7 @@ const config = {
     ],
     ["@docusaurus/plugin-ideal-image", {}],
     ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
+    require.resolve("docusaurus-lunr-search"),
   ],
 };
 
