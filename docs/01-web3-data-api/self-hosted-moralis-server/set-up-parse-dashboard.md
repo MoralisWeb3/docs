@@ -1,6 +1,7 @@
 ---
 title: "Set up parse-dashboard"
 slug: "set-up-parse-dashboard"
+description: "This tutorial teaches you how to set up your Parse dashboard."
 ---
 
 ## Prerequisites

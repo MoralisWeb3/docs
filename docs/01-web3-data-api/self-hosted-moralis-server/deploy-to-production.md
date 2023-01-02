@@ -1,6 +1,7 @@
 ---
 title: "Deploy to production"
 slug: "deploy-to-production"
+description: "This tutorial teaches you how to deploy your self-hosted Parse server."
 ---
 
 ## Heroku

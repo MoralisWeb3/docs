@@ -1,6 +1,7 @@
 ---
 title: "Set up custom cloud code"
 slug: "set-up-custom-cloud-code"
+description: "This tutorial teaches you how to set up custom cloud code for your self-hosted Parse server."
 ---
 
 ## Prerequisites

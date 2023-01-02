@@ -2,6 +2,7 @@
 title: "Moralis Triggers BETA 🔥"
 slug: "triggers"
 sidebar_position: 10
+description: "Moralis Streams Triggers. Run smart contract functions against Blockchain Events."
 ---
 ## Introduction
 

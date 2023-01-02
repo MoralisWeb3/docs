@@ -2,6 +2,7 @@
 title: "Web3 Data - API Reference"
 sidebar_label: "Overview"
 slug: "/web3-data-api/reference/overview"
+description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 ---
 
 ## EVM 

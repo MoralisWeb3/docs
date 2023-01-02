@@ -1,6 +1,7 @@
 ---
 title: "Run parse-server locally"
 slug: "run-parse-server-locally"
+description: "This tutorial teaches you how to run Parse server locally."
 ---
 ## Prerequisites
 

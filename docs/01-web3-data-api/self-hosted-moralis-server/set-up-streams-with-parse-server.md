@@ -1,6 +1,7 @@
 ---
 title: "Set up streams with parse-server"
 slug: "set-up-streams-with-parse-server"
+description: "This tutorial teaches you how to set up streams for your self-hosted Parse server."
 ---
 
 ## Prerequisites

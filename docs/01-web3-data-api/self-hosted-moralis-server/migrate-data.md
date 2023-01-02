@@ -1,6 +1,7 @@
 ---
 title: "Migrate data"
 slug: "migrate-data"
+description: "This tutorial teaches you how to migrate data to your self-hosted Parse server."
 ---
 ## Whitelist your IP in Moralis
 

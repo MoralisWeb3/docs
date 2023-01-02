@@ -1,7 +1,7 @@
 ---
 title: "Security Guidelines"
 slug: "security-guidelines"
-excerpt: "Use the following security guidelines when building your dapp to keep it secure."
+description: "Use the following security guidelines when building your dapp to keep it secure."
 sidebar_position: 7
 ---
 ## Securing Your API Key

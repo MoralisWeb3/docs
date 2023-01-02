@@ -1,6 +1,7 @@
 ---
 title: "Pagination"
 slug: "pagination"
+description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 ---
 ### What is Pagination?
 
