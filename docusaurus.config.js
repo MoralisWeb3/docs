@@ -182,16 +182,16 @@ const config = {
             label: "Authentication API",
           },
           {
-            type: "doc",
-            docId: "example-dapps/evm/evm",
-            position: "left",
-            label: "Demos",
-          },
-          {
             type: "search",
             position: "left",
           },
           // position: Right
+          {
+            type: "doc",
+            docId: "example-dapps/evm/evm",
+            position: "right",
+            label: "Demos",
+          },
           {
             to: "changelog",
             position: "right",

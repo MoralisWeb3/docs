@@ -82,6 +82,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --ifm-hero-text-color: var(--ifm-heading-color);
+
+  --ifm-navbar-height: 4.5rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -129,7 +131,8 @@
 }
 
 .navbar__link {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  margin: 0 var(--ifm-navbar-item-padding-horizontal);
 }
 
 .menu__link {
