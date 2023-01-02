@@ -15,7 +15,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](https://files.readme.io/43e472f-image.png)
+![](/img/content/43e472f-image.png)
 
 > 📘 
 > 
@@ -585,7 +585,7 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
   "images": [
     {
       "image": [
-        "https://files.readme.io/31c94d0-image.png",
+        "/img/content/31c94d0-image.png",
         null,
         ""
       ],
@@ -604,7 +604,7 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
   "images": [
     {
       "image": [
-        "https://files.readme.io/d7eb605-image.png",
+        "/img/content/d7eb605-image.png",
         null,
         ""
       ],
@@ -621,7 +621,7 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
   "images": [
     {
       "image": [
-        "https://files.readme.io/a7e2b4f-image.png",
+        "/img/content/a7e2b4f-image.png",
         null,
         ""
       ],
@@ -640,7 +640,7 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
   "images": [
     {
       "image": [
-        "https://files.readme.io/08970f7-image.png",
+        "/img/content/08970f7-image.png",
         null,
         ""
       ],
@@ -659,7 +659,7 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
   "images": [
     {
       "image": [
-        "https://files.readme.io/44500ea-image.png",
+        "/img/content/44500ea-image.png",
         null,
         ""
       ],

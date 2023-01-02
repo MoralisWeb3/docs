@@ -5,7 +5,7 @@ slug: "../how-to-sign-in-with-solana-phantom-wallet"
 
 This tutorial covers how to create full-stack Web3 authentication for the Phantom wallet, using the popular NextJS framework.
 
-![](https://files.readme.io/d15a406-phantom_.gif)
+![](/img/content/d15a406-phantom_.gif)
 
 ## Introduction
 
@@ -17,7 +17,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](https://files.readme.io/a0d394e-image.png)
+![](/img/content/a0d394e-image.png)
 
 > 📘 
 > 
@@ -497,18 +497,18 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-![](https://files.readme.io/0f54601-image.png)
+![](/img/content/0f54601-image.png)
 
 2. Connect to the Solana wallet extension
 
-![](https://files.readme.io/a7e2b4f-image.png)
+![](/img/content/a7e2b4f-image.png)
 
 3. Sign the message:
 
-![](https://files.readme.io/08970f7-image.png)
+![](/img/content/08970f7-image.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![](https://files.readme.io/8b2c468-image.png)
+![](/img/content/8b2c468-image.png)
 
 And that completes the authentication process to Solana wallet using Phantom Wallet.
