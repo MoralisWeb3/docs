@@ -1,6 +1,5 @@
 import React, { useMemo, useContext } from "react";
 import { useFormikContext } from "formik";
-import capitalize from "lodash/capitalize";
 import mapValues from "lodash/mapValues";
 import omitBy from "lodash/omitBy";
 import isPlainObject from "lodash/isPlainObject";
