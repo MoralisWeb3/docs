@@ -36,9 +36,9 @@ cp .env.example .env
 - `CLOUD_PATH` is a reference to the code of your cloud functions. By default this will be `./build/cloud/main.js` and only exists after you run `yarn build`
 - `MASTER_KEY` and `APPLICATION_ID` are required for parse-server and can be any value to your choice. Make sure to never expose the `MASTER_KEY`
 
-> 🚧 
-> 
-> Make sure to never expose these values to the public. Especially the `MASTER_KEY` will give users access to the entire parse-server.
+:::caution
+Make sure to never expose these values to the public. Especially the `MASTER_KEY` will give users access to the entire parse-server.
+:::
 
 ## Setup MongoDB locally
 
@@ -56,9 +56,9 @@ This option gives you the most flexibility, but it requires a bit more work to s
 
 ### B. Use the mongodb-runner (easiest)
 
-> 🚧 
-> 
-> Do not use this method in your production server. This database runner is only built for local development and testing
+:::caution
+Do not use this method in your production server. This database runner is only built for local development and testing
+:::
 
 The easiest solution is to use the `mongodb-runner` that is included in the demo project. For more information about this, see <https://github.com/mongodb-js/runner>
 
@@ -161,8 +161,9 @@ yarn dev
 
 This will compile your app and run it locally on your specified port in your `.env` (by default this is `[<http://localhost:1337`>](<http://localhost:1337`>)
 
-> 👍 
-> 
-> Now your server can be accessed on `<http://localhost:1337/server`>. To connect your frontend to this server you need to use this server url, and your specified app id from your `.env`
+:::tip
+Now your server can be accessed on `<http://localhost:1337/server`>. To connect your frontend to this server you need to use this server url, and 
+your specified app id from your `.env`
+:::
 
 If you set up sync, an [ngrok](https://ngrok.com/) URL will also be created and logged. This is the URL that you should use when setting up a stream (see [streams docs](https://docs.moralis.io/docs/what-is-streams-api-1))

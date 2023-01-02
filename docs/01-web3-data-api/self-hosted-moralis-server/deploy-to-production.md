@@ -30,9 +30,9 @@ Navigate to "Settings" and reveal the keys. Here you can paste all the variables
 
 ![](/img/content/6f65c9c-Screenshot_2022-09-08_at_02.44.49.png)
 
-> 📘 
-> 
-> Make sure to update `SERVER_URL` in the config vars to the deployed url on Heroku. This looks something like `moralis-demo.herokuapp.com/server`. Also make sure to set this same serverUrl in your frontend.
+:::info
+Make sure to update `SERVER_URL` in the config vars to the deployed url on Heroku. This looks something like `moralis-demo.herokuapp.com/server`. Also make sure to set this same serverUrl in your frontend.
+:::
 
 ## Google App Engine
 
@@ -43,9 +43,9 @@ Navigate to "Settings" and reveal the keys. Here you can paste all the variables
 
 ### Deployment
 
-> 🚧 Be aware!
-> 
-> If your [Google Cloud free trial](https://cloud.google.com/free) has ended, the following process **could resort to expenses**.
+:::caution Be aware!
+If your [Google Cloud free trial](https://cloud.google.com/free) has ended, the following process **could resort to expenses**.
+:::
 
 Replace the environment variables values in **`app.yaml`** with your own:
 
@@ -79,11 +79,8 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 
 ![](/img/content/7cbef58-image.png)
 
-
-
-> 👍 Deployment successful
-
-
+:::tip Deployment successful 
+:::
 
 ## AWS Elastic Beanstalk
 
@@ -94,17 +91,18 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 
 ### Manual deployment
 
-> 📘 Coming soon!
+:::info Coming soon!
+:::
 
 ### One-click deployment
 
-> 🚧 Warning
-> 
-> Be aware that this process **could resort to expenses** as **Elastic Beanstalk** is not part of [AWS Free Tier](https://aws.amazon.com/es/free/).
+:::caution
+Be aware that this process **could resort to expenses** as **Elastic Beanstalk** is not part of [AWS Free Tier](https://aws.amazon.com/es/free/).
+:::
 
-> 👍 [Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-public-bucket.s3.amazonaws.com/parse-server-migration-build.zip)
-> 
-> And follow the **instructions below**:
+[Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-public-bucket.s3.amazonaws.com/parse-server-migration-build.zip)
+
+ And follow the **instructions below**:
 
 Scroll down leaving all the other settings as default and choose _**Upload your code**_:
 
@@ -130,9 +128,9 @@ Paste the environment variables retrieved on the [previous steps](https://docs.m
 
 ![](/img/content/b8e3def-image.png)
 
-> 📘 Need help?
-> 
-> This [video](https://youtu.be/9GtysZs-FrA?t=147) also shows you how to get the **environment variables**.
+:::info
+This [video](https://youtu.be/9GtysZs-FrA?t=147) also shows you how to get the **environment variables**.
+:::
 
 Elastic Beanstalk will update your environment and after a couple of minutes it will be ready:
 
@@ -146,7 +144,8 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 
 ![](/img/content/d4ef788-image.png)
 
-> 👍 Deployment successful!
+:::tip Deployment successful! 
+:::
 
 ## AWS ECS
 
@@ -168,15 +167,14 @@ Copy and save the _Repository name_ and the _URI_ as you'll need them in the nex
 
 ![](/img/content/17b0fd0-image.png)
 
-> 👍 
-> 
-> **ECR repository created!**
+:::tip **ECR repository created!**
+:::
 
 #### Create a Task Definition //TODO Maybe through JSON?
 
-> 📘 
-> 
-> [Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definition-classic.html).
+:::info
+[Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definition-classic.html).
+:::
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Task Definitions_** and **_Create new task definition_**:
 
@@ -208,15 +206,14 @@ With the container added, scroll down and choose _**Create**_. You should see th
 
 ![](/img/content/4ca8475-image.png)
 
-> 👍 
-> 
-> **Task definition created!**
+:::tip **Task definition created!**
+:::
 
 #### Create a Cluster
 
-> 📘 
-> 
-> [Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create_cluster.html).
+:::info
+[Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create_cluster.html).
+:::
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Clusters_** and **_Create Cluster_**:
 
@@ -234,15 +231,14 @@ Scroll down leaving all the other settings as default and choose _**Create**_. A
 
 ![](/img/content/2100f89-image.png)
 
-> 👍 
-> 
-> **Cluster created!**
+:::tip **Cluster created!**
+:::
 
 #### Create a service
 
-> 📘 
-> 
-> [Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-service-console-v1.html).
+:::info
+[Click here for more information](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-service-console-v1.html).
+:::
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Clusters_** and select your created cluster:
 
@@ -270,17 +266,16 @@ Set the following fields:
 - _**Minimum healthy percent**_: `0`
 - _**Maximum percent**_: `100`
 
-> 📘 
-> 
-> This value configuration will allow the deployment of updated containers.
+:::info
+This value configuration will allow the deployment of updated containers.
+:::
 
 Scroll down leaving the other settings as default and choose **_Next step_** a couple times and then _**Create service**_. You should see the service created:
 
 ![](/img/content/2e39da7-image.png)
 
-> 👍 
-> 
-> **Service created!**
+:::tip **Service created!**
+:::
 
 </details>
 
@@ -290,19 +285,19 @@ Scroll down leaving the other settings as default and choose **_Next step_** a c
 
 <summary><b>Instructions</b></summary>
 
-> 👍 [Click here to deploy automatically](https://railway.app/new/template/1c87QZ)
-> 
-> This will also create a MongoDB and Redis instance for you automatically, all managed by Railway. If you are using your own MongoDB/Redis instances, you can follow [Manual Deployment](https://docs.moralis.io/docs/deploy-to-production#manual-deployment-1), or use this template and just delete the MongoDB and Redis services later.
-> 
-> 1. After your server has deployed, assign it a domain (see Step 4 of Manual Deployment).
-> 2. Copy your MongoDB and Parse connection URL (from the "Connect" tab from Mongo).
-> 3. Click on the "Variables" tab in your Parse Server and update:
-> 
-> - `SERVER_URL` with the domain from Step 1 e.g. [`https://***.up.railway.app/server`](https://***.up.railway.app/server)
-> - `DATABASE_URI` with your MongoDB connection URL e.g. [`mongodb://mongo:***.railway.app:****`](mongodb://mongo:***.railway.app:****/parse) 
-> - `REDIS_CONNECTION_STRING` with your Redis connection URL e.g. [`redis://***@containers-us-west-157.railway.app:****`](redis://***@containers-us-west-157.railway.app:****)
-> 
-> Your server will re-deploy after these changes.
+[Click here to deploy automatically](https://railway.app/new/template/1c87QZ)
+
+This will also create a MongoDB and Redis instance for you automatically, all managed by Railway. If you are using your own MongoDB/Redis instances, you can follow [Manual Deployment](https://docs.moralis.io/docs/deploy-to-production#manual-deployment-1), or use this template and just delete the MongoDB and Redis services later.
+
+1. After your server has deployed, assign it a domain (see Step 4 of Manual Deployment).
+2. Copy your MongoDB and Parse connection URL (from the "Connect" tab from Mongo).
+3. Click on the "Variables" tab in your Parse Server and update:
+
+- `SERVER_URL` with the domain from Step 1 e.g. [`https://***.up.railway.app/server`](https://***.up.railway.app/server)
+- `DATABASE_URI` with your MongoDB connection URL e.g. [`mongodb://mongo:***.railway.app:****`](mongodb://mongo:***.railway.app:****/parse) 
+- `REDIS_CONNECTION_STRING` with your Redis connection URL e.g. [`redis://***@containers-us-west-157.railway.app:****`](redis://*@containers-us-west-157.railway.app:****)
+
+Your server will re-deploy after these changes.
 
 ### Manual Deployment
 

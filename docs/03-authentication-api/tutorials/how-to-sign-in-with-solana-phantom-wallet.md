@@ -19,9 +19,9 @@ You can find the repository with the final code here: [GitHub](https://github.co
 
 ![](/img/content/a0d394e-image.png)
 
-> 📘 
-> 
-> You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::info
+You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::
 
 ## Prerequisites
 
@@ -57,13 +57,13 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 ```
 
-> ❗️ 
-> 
-> Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::caution
+Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::
 
-> 🚧 
-> 
-> Every time you modify the `.env.local` file, you need to restart your dapp.
+:::caution
+Every time you modify the `.env.local` file, you need to restart your dapp.
+:::
 
 ## Wrapping App with `SessionProvider`
 
@@ -86,11 +86,9 @@ export default MyApp;
 
 ```
 
-
-
-> 📘 
-> 
-> NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::info
+NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::
 
 ## Configure Next-Auth and MoralisNextAuth
 

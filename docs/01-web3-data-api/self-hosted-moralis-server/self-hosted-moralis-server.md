@@ -33,9 +33,9 @@ You can integrate Moralis within any backend that you want. In this guide we wil
 - Keep your cloud-code
 - Keep your frontend the same (as this setup will allow you to use the moralis-v1 and react-moralis packages)
 
-> 👍 
-> 
-> This guide will help you setting up your own parse-server, running it locally, and deploying it to production.
+:::tip
+This guide will help you setting up your own parse-server, running it locally, and deploying it to production.
+:::
 
 ## Features
 

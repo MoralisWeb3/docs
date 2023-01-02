@@ -5,7 +5,8 @@ slug: "aws-gamesparks-integration-with-unity"
 
 In this tutorial we will create a game backend in GameSparks and we will connect it to [Using AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda), invoking its functions. Then, we will connect a basic Unity game to the GameSparks backend. This way we will have a **fully modular "Web3 gaming setup"** using **AWS**, **Unity** and the power of **Moralis**.
 
-> 📘 Tutorial's architectural diagram
+:::info Tutorial's architectural diagram
+:::
 
 ![](/img/content/71ab6cf-image.png)
 
@@ -95,21 +96,22 @@ Filter for _AllowLambda_, select your created policy and press **_Attach policie
 
 ## Connecting the game backend to Lambda
 
-> 📘 How this works?
-> 
-> To invoke Lambda functions from GameSparks you need to create a **_Message_** inside the game backend. There are **3 types of messages**:
-> 
-> - **_Events_**
-> - **_Requests_**
-> - **_Notifications_**
-> 
-> Once created, you can call a Lambda function from there. [Click here for more information](https://docs.aws.amazon.com/gamesparks/latest/dg/lambda.html).
+:::info How this works?
+
+To invoke Lambda functions from GameSparks you need to create a **_Message_** inside the game backend. There are **3 types of messages**:
+
+- **_Events_**
+- **_Requests_**
+- **_Notifications_**
+
+Once created, you can call a Lambda function from there. [Click here for more information](https://docs.aws.amazon.com/gamesparks/latest/dg/lambda.html).
+:::
 
 For this example we'll use _**requests**_, so that our client (Unity) can **get data** from our GameSparks backend. As said, this request will internally call a Lambda function from [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and will return a response.
 
-> 📘 There's a way to automate this process
-> 
-> Know that you can **skip the manual creation of requests** by **importing a snapshot**. If you like the idea, go into the [Automatic section](https://docs.moralis.io/docs/using-unity-aws-gamesparks#automatic).
+:::info There's a way to automate this process
+Know that you can **skip the manual creation of requests** by **importing a snapshot**. If you like the idea, go into the [Automatic section](https://docs.moralis.io/docs/using-unity-aws-gamesparks#automatic).
+:::
 
 ### Automatic
 
@@ -241,9 +243,9 @@ Enter an optional description and choose _**Save**_:
 
 ![](/img/content/b78ebee-image.png)
 
-> 🚧 
-> 
-> Remember to add a valid `address` and `chain` in the request body parameters!
+:::caution
+Remember to add a valid `address` and `chain` in the request body parameters!
+:::
 
 ### Manual
 
@@ -304,9 +306,9 @@ GameSparks().Lambda("lambda-function-name").Invoke(
 );
 ```
 
-> 📘 
-> 
-> [Check how to find a Lambda function name](https://docs.moralis.io/docs/using-aws-lambda#find-function-name).
+:::info
+[Check how to find a Lambda function name](https://docs.moralis.io/docs/using-aws-lambda#find-function-name).
+:::
 
 Your pane should look like this. Press **_Save_**:
 
@@ -329,9 +331,9 @@ Enter an optional description and choose _**Save**_:
 
 ![](/img/content/3975b96-image.png)
 
-> 🚧 
-> 
-> Remember to add a valid `address` and `chain` in the request body parameters!
+:::caution
+Remember to add a valid `address` and `chain` in the request body parameters!
+:::
 
 #### Create _GetWalletNfts_ request
 
@@ -395,21 +397,21 @@ Enter an optional description and choose _**Save**_:
 
 ![](/img/content/524d92c-image.png)
 
-> 🚧 
-> 
-> Remember to add a valid `address` and `chain` in the request body parameters!
+:::caution
+Remember to add a valid `address` and `chain` in the request body parameters!
+:::
 
 ## Connecting Unity to the game backend
 
-> 📘 Download the sample project
-> 
-> To start, [download the Unity sample project](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks) we have prepared. It'll be very easy to set up.
+:::info Download the sample project
+To start, [download the Unity sample project](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks) we have prepared. It'll be very easy to set up.
+:::
 
 ![](/img/content/4c58ff8-image.png)
 
-> 📘 It comes prepared!
-> 
-> This sample project already contains the **GameSparks SDK** installed. [Visit the official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/set-up.html#_install_the_gamesparks_client_sdk) for detailed information on how we did it.
+:::info It comes prepared!
+This sample project already contains the **GameSparks SDK** installed. [Visit the official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/set-up.html#_install_the_gamesparks_client_sdk) for detailed information on how we did it.
+:::
 
 ### Setting up
 
@@ -433,11 +435,12 @@ Now paste it in the **_Connection.asset_** in Unity:
 
 ![](/img/content/13b15eb-image.png)
 
-> 👍 Setup completed!
+:::tip Setup completed!
+:::
 
-> 📘 To know more...
-> 
-> For more information on the setup process, check the [official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/hello-world.html).
+:::info To know more...
+For more information on the setup process, check the [official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/hello-world.html).
+:::
 
 ### Walkthrough
 
@@ -456,9 +459,9 @@ From here we're going to split the walkthrough between:
 
 #### Authentication
 
-> 📘 Using ChainSafe SDK
-> 
-> To handle authentication and get our **wallet information**, we are using [ChainSafe Unity SDK](https://github.com/ChainSafe/web3.unity), already imported into the project.
+:::info Using ChainSafe SDK
+To handle authentication and get our **wallet information**, we are using [ChainSafe Unity SDK](https://github.com/ChainSafe/web3.unity), already imported into the project.
+:::
 
 Click on the **_Authenticate_** button to connect to your Web3 browser wallet:
 
@@ -482,9 +485,9 @@ This is the method called when we click on the _Authenticate_ button. [Managed i
 
 #### Calling backend requests
 
-> 📘 
-> 
-> With our **wallet public address** retrieved, we can now call the requests set up [here](https://docs.moralis.io/docs/using-unity-aws-gamesparks#connecting-the-game-backend-to-lambda).
+:::info
+With our **wallet public address** retrieved, we can now call the requests set up [here](https://docs.moralis.io/docs/using-unity-aws-gamesparks#connecting-the-game-backend-to-lambda).
+:::
 
 Once authenticated, you can now click on the _GetNativeBalance_ or _GetWalletNfts_ buttons to retrieve the desired information successfully:
 
@@ -515,8 +518,8 @@ Select **_Unity_** as _Game client platform_ and _**C#**_ as _Language_. Then cl
 
 Unzip the file that will be downloaded and drag the _.cs_ files to the _Assets_ folder in your Unity project. You'll now be able to access any message created in your game backend from Unity, like we just did in the section above.
 
-> 👍 Congratulations!
-> 
-> You've completed the **_Using Unity & AWS GameSparks_** tutorial.
+:::tip Congratulations!
+You've completed the **_Using Unity & AWS GameSparks_** tutorial.
+:::
 
 

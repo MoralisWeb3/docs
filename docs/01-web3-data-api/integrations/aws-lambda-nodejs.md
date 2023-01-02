@@ -81,8 +81,8 @@ AWS credentials are configured!
 ## Lambda App with multiple functions
 
 :::info Download completed project
-> 
-> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies).
+You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies).
+:::
 
 ### Project setup
 
@@ -266,8 +266,8 @@ module.exports.handler = async (event) => {
 
 
 :::info 
-> 
-> We pass the `address` and the `chain` as _**event** parameters_.
+We pass the `address` and the `chain` as _**event** parameters_.
+:::
 
 **The complete `getNativeBalance.js` should look like this:**
 
@@ -397,12 +397,12 @@ serverless invoke local -f getNativeBalance --path event.json
 # Lambda NodeJS Express API
 
 :::info Download completed project
-> 
-> You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies-1).
+You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies-1).
+:::
 
 :::info 
-> 
-> To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
+To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
+:::
 
 ## Project setup
 
@@ -559,8 +559,8 @@ app.get("/getNativeBalance", async (req, res, next) => {
 ![](/img/content/4840077-Screenshot_2022-12-14_at_13.13.23.png)
 
 :::info 
-> 
-> We pass the `address` and the `chain` as parameters in the **request body**.
+We pass the `address` and the `chain` as parameters in the **request body**.
+:::
 
 ### Create `getWalletNfts` endpoint
 
@@ -594,8 +594,8 @@ app.get("/getWalletNfts", async (req, res, next) => {
 
 
 :::info 
-> 
-> We pass the `address` and the `chain` as parameters in the **request body**.
+We pass the `address` and the `chain` as parameters in the **request body**.
+:::
 
 ### Final code
 
@@ -741,17 +741,17 @@ To test, navigate to [<http://localhost:3000`>](<http://localhost:3000`>) in you
 **Very nice!** And the best thing is that if you make a change in `handler.js` file, it will be automatically applied and you'll see the result the next time you hit the endpoint. **This rapidly improves development time.**
 
 :::info 
-> 
-> To test an endpoint that requires a request body, you can use [Postman](https://www.postman.com/downloads/) or any other API platform out there.
+To test an endpoint that requires a request body, you can use [Postman](https://www.postman.com/downloads/) or any other API platform out there.
+:::
 
 # Deployment
 
 :::info Remember...
-> 
-> If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
-> 
-> - [Install dependencies on `aws-node-project`](#install-dependencies)
-> - [Install dependencies on `aws-node-express-api-project`](#install-dependencies-1)
+If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
+
+- [Install dependencies on `aws-node-project`](#install-dependencies)
+- [Install dependencies on `aws-node-express-api-project`](#install-dependencies-1)
+:::
 
 It's time to deploy to **AWS**. Whatever project you chose, open the terminal and make sure you're in the root folder (where you installed the dependencies). Then, run this simple command:
 
@@ -770,9 +770,7 @@ Congratulations! Your app is running on **AWS Lambda** :)
 
 # AWS Lambda Console
 
-:::info 
-> 
-> If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
+ If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
 ![](/img/content/26fe035-image.png)
 
@@ -791,9 +789,7 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 ## Testing Express API function
 
-:::info 
-> 
-> Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-express-api-project-dev-api_**.
+Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-express-api-project-dev-api_**.
 
 Select **_API Gateway_**:
 
@@ -813,9 +809,7 @@ These **GET requests** need a body with _address_ and _chain_ parameters, you ca
 
 ## Testing single functions
 
-:::info 
-> 
-> Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-project-dev-getNativeBalance_** or **_aws-node-project-dev-getWalletNfts_**.
+Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose **_aws-node-project-dev-getNativeBalance_** or **_aws-node-project-dev-getWalletNfts_**.
 
 You can test your function by pressing the _Test_ tab. Set an _Event name_ and make sure to add your wallet `address` and `chain` as event parameters in the _Event JSON_ section:
 
@@ -838,9 +832,7 @@ Then choose **_Test_** and see the result:
 
 ## Find function name
 
-:::info 
-> 
-> Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
+Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
 
 Marked with green is where you can find the **function name**:
 
@@ -848,9 +840,7 @@ Marked with green is where you can find the **function name**:
 
 ## Copy function ARN
 
-:::info 
-> 
-> Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
+Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) and choose any function.
 
 Marked with green is where you can copy the **ARN** which is the identifier of the function in all AWS:
 

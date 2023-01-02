@@ -72,9 +72,9 @@ pprint.pprint(user_table.find_one())
 
 After you have established direct access to Mongo DB, you You can do your own dumps for the database.
 
-> 📘 
-> 
-> \_User table is a particular example of table that starts with \_, most of the tables will not start with \_
+:::info
+\_User table is a particular example of table that starts with \_, most of the tables will not start with \_
+:::
 
 ### Using Compass
 
