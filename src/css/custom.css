@@ -171,3 +171,13 @@
 .hero {
   background: none;
 }
+
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: var(--ifm-h1-font-size);
+  }
+
+  .footer__link-item {
+    height: 48px;
+  }
+}
