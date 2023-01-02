@@ -120,6 +120,12 @@ NextJS uses the `App` component to initialize pages. You can override it and con
 
 5. Create a new file, `pages/api/auth/[...nextauth].ts`, with the following content:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="[...nextauth].ts" default>
+
 ```typescript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -141,6 +147,10 @@ export default NextAuth({
   },
 });
 ```
+
+</TabItem>
+<TabItem value="javascript" label="[...nextauth].js">
+
 ```javascript Javascript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -163,9 +173,14 @@ export default NextAuth({
 });
 ```
 
+</TabItem>
+</Tabs>
 
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="[...moralis].ts" default>
 
 ```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
@@ -194,6 +209,10 @@ export default MoralisNextApi({
 });
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="[...moralis].js">
+
 ```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
@@ -222,11 +241,15 @@ export default MoralisNextApi({
 
 ```
 
-
+</TabItem>
+</Tabs>
 
 ## Create Wallet Component
 
 7. Create a new file under `app/components/loginBtn/walletAdaptor.tsx`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="walletAdaptor.tsx" default>
 
 ```typescript walletAdaptor.tsx
 import { useEffect } from "react";
@@ -296,6 +319,10 @@ export default function WalletAdaptor() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="walletAdaptor.jsx">
+
 ```typescript walletAdaptor.jsx
 import { useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -365,6 +392,9 @@ export default function WalletAdaptor() {
 
 ```
 
+</TabItem>
+</Tabs>
+
 
 
 ## Create Page to Sign-In
@@ -429,6 +459,9 @@ export default function Home() {
 
 8. Create components to perform the logout operation and to show the user data. 
 
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="logoutBtn.js" default>
+
 ```typescript logoutBtn.js
 // File path
 // app/components/logoutBtn/logoutBtn.js
@@ -444,6 +477,10 @@ export default function LogoutBtn() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="typescript-1" label="userData.js">
+
 ```typescript userData.js
 // File path
 // app/components/logoutBtn/userData.js
@@ -495,6 +532,8 @@ export default function UserData() {
 
 ```
 
+</TabItem>
+</Tabs>
 
 
 ## Showing the User Profile

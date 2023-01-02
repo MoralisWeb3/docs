@@ -48,13 +48,24 @@ pip install python-decouple
 
 After installing the necessary package, create a `.env` file to store your [Moralis API key](/web3-data-api/get-your-api-key) and have your `.env` file in `.gitignore` to avoid accidentally pushing your `.env` file to public repositories.
 
+
+<Tabs>
+  <TabItem value="env" label=".env" default>
+
 ```shell .env
 # Get your Moralis API Key at https://admin.moralis.io/web3apis
 MORALIS_API_KEY=xxx
 ```
+
+</TabItem>
+<TabItem value="gitignore" label=".gitignore">
+
 ```Text .gitignore
 .env
 ```
+
+</TabItem>
+</Tabs>
 
 Once all are setup, you can use the installed package to read the environment variable to get the [Moralis API key](/web3-data-api/get-your-api-key) to be used in your code.
 
