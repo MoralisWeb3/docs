@@ -167,19 +167,19 @@ const config = {
             type: "doc",
             docId: "web3-data-api/overview",
             position: "left",
-            label: "Web3 Data",
+            label: "Web3 Data API",
           },
           {
             type: "doc",
             docId: "streams-api/overview",
             position: "left",
-            label: "Streams",
+            label: "Streams API",
           },
           {
             type: "doc",
             docId: "authentication-api/overview",
             position: "left",
-            label: "Authentication",
+            label: "Authentication API",
           },
           {
             type: "doc",
