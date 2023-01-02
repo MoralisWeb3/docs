@@ -617,95 +617,20 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "/img/content/31c94d0-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/31c94d0-image.png)
 
 2. Connect to the Solana wallet extension
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "/img/content/d7eb605-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/d7eb605-image.png)
 
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "/img/content/a7e2b4f-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/a7e2b4f-image.png)
 
 3. Sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "/img/content/08970f7-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/08970f7-image.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "/img/content/44500ea-image.png",
-        null,
-        ""
-      ],
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/44500ea-image.png)
 
 And that completes the authentication process for Solana wallets using the Solana wallet adapter.
