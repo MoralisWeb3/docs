@@ -3,6 +3,7 @@ title: "How to Authenticate Users with MetaMask using Angular"
 slug: "../how-to-sign-in-with-metamask-angular"
 description: "Learn how Moralis authentication works and see how to add secure authentication to your Angular dapp. This tutorial covers how to create full-stack Web3 authentication using the popular Angular framework."
 ---
+
 ## Introduction
 
 This tutorial demonstrates how to create an Angular application that allows users to log in using their Web3 wallets.

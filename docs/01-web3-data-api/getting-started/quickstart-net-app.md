@@ -3,6 +3,10 @@ title: "Quickstart .NET (C#)"
 slug: "../quickstart-dot-net-csharp"
 description: "This tutorial will teach you how to set up a server-side dapp to query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any .NET application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
+## Introduction
+
+This tutorial will teach you how to set up a server-side dapp to query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any .NET application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!
+
 ## The Steps We Will Take
 
 1. Create a C# dapp

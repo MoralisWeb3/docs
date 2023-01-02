@@ -4,6 +4,9 @@ slug: "query-from-evm-or-solana"
 description: "It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type."
 sidebar_position: 8
 ---
+
+It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type.
+
 :::info Complete API Reference
 
 Using the SDK is the simplest way to query blockchain data. This section demonstrates how to implement the API calls.

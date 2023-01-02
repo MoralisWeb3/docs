@@ -5,6 +5,8 @@ sidebar_position: 6
 description: "This page provides information about the various options available when creating a stream with Useful Streams. Learn more about the includeContractLogs, includeInternalTxs, and advanced options to customize your stream."
 ---
 
+This page provides information about the various options available when creating a stream with Useful Streams. Learn more about the includeContractLogs, includeInternalTxs, and advanced options to customize your stream.
+
 ## Include Contract Logs
 
 The `includeContractLogs` option will include all contract logs in the webhook, should be set to true if you are monitoring a contract. If you are monitoring a wallet address you can set this to `true` to also get the contract logs if a wallet interacts with a contract

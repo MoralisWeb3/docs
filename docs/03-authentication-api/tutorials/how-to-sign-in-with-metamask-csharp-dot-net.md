@@ -3,6 +3,9 @@ title: "How to Authenticate Users with MetaMask using C# (.NET)"
 slug: "../how-to-sign-in-with-metamask-csharp-dot-net"
 description: "This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session."
 ---
+
+This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session.
+
 ## Prerequisites
 
 1. Create a [Moralis account](https://www.moralis.io).

@@ -3,6 +3,9 @@ title: "Permission and Roles"
 slug: "/admin-panel/permission-roles"
 description: "Guide and overview of Moralis teams feature. Including information about what permissions and roles that exist."
 ---
+
+Guide and overview of Moralis teams feature. Including information about what permissions and roles that exist.
+
 ## Roles and Permissions
 
 Users can be invited to participate in different organizations in Moralis through the teams feature. A user can have different abilities depending on which role they have in a particular team. There are four main roles that a user can have. The roles are the following:

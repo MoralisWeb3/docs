@@ -5,6 +5,8 @@ description: "Learn how to listen to all addresses, NFT contract transfers, even
 sidebar_position: 5
 ---
 
+Learn how to listen to all addresses, NFT contract transfers, events from new contracts specific to a contract factory, NFT contracts transfers where sender is a specific address.
+
 - Listen to all NFT contract transfers [tutorial](/streams-api/how-to-listen-all-nft-transfers)
 - Listen to all events from new contracts specific to a contract factory [tutorial](/streams-api/how-to-listen-all-events-from-a-contract-factory)
 - Listen to all NFT contracts transfers where sender is a specific address [tutorial](/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address)

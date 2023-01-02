@@ -3,6 +3,9 @@ title: "Azure PlayFab (NodeJS) with Unity"
 slug: "azure-playfab-nodejs-unity"
 description: "This tutorial will teach you how to set up a complete gaming backend platform for Web3 games. We use Unity as our game engine, Microsoft Azure PlayFab as our gaming backend, and Moralis to enable all the Web3 magic! You'll also learn how to use Web3 authentication and how to retrieve a user's native balance, a list of ERC-20 tokens, and the first ten NFTs they own using the Web3 API."
 ---
+
+This tutorial will teach you how to set up a complete gaming backend platform for Web3 games. We use Unity as our game engine, Microsoft Azure PlayFab as our gaming backend, and Moralis to enable all the Web3 magic! You'll also learn how to use Web3 authentication and how to retrieve a user's native balance, a list of ERC-20 tokens, and the first ten NFTs they own using the Web3 API.
+
 :::info Compatible with NodeJS and .NET
 
 You can complete this tutorial using both environments. The steps where you can choose are split and specifically documented for each one, like [here](#set-up-azure-functions).

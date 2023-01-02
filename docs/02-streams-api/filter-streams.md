@@ -5,6 +5,8 @@ sidebar_position: 12
 description: "In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream."
 ---
 
+In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream.
+
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                          |
 | :----- | :-------------------------------- | :---------------------- | :--------------------------------------- | :-------------------------------------------------------------------------------------------- |
 | or     | either ... or ...                 | Need at least 2 filters | { "or" : [ {..filter1}, {...filter2} ]}  | [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-erc20-token-burns-or-mints)    |
