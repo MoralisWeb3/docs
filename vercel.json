@@ -1996,7 +1996,6 @@
       "destination": "/web3-data-api/quickstart-nodejs",
       "permanent": true
     },
-    { "source": "/changelog", "destination": "/changelog", "permanent": true },
     {
       "source": "/docs/nextjs-dapp",
       "destination": "/web3-data-api/quickstart-nextjs",
