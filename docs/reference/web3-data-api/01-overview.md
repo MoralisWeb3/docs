@@ -53,7 +53,7 @@ slug: "/web3-data-api/reference/overview"
 
 #### Get Token Metadata
 * [Get ERC20 token metadata by contract](/web3-data-api/reference/get-token-metadata)
-* [Get ERC20 token metadata by symbols](/web3-data-api/reference/get-token-metadata-bysymbol)
+* [Get ERC20 token metadata by symbols](/web3-data-api/reference/get-token-metadata-by-symbol)
 
 ### Balance API
 * [Get native balance by wallet](/web3-data-api/reference/get-native-balance)
