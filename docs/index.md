@@ -4,6 +4,7 @@ slug: "/"
 sidebar_position: 1
 hide_table_of_contents: true
 hide_title: true
+description: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs."
 ---
 
 <head>
