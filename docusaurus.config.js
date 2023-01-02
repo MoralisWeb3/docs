@@ -255,9 +255,8 @@ const config = {
           {
             type: "html",
             position: "right",
-            className: "dashboard-button",
             value:
-              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Dashboard</a>',
+              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
           },
         ],
       },
