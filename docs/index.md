@@ -6,6 +6,10 @@ hide_table_of_contents: true
 hide_title: true
 ---
 
+<head>
+  <title>Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials</title>
+</head>
+
 <div className="hero shadow--lw">
     <div className="container">
         <div className="row">
