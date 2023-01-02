@@ -2,6 +2,7 @@
 title: "Solana API Tutorials"
 description: "Supercharge your Solana development with the most scalable Solana API in Web3. Bring your projects to market at speed using Moralis’ Solana API!"
 sidebar_position: 3
+slug: "../solana"
 ---
 
 ## What is the Solana API?
