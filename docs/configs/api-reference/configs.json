@@ -326,7 +326,7 @@
         "fields": [
           {
             "name": "tokens",
-            "type": "object",
+            "type": "array",
             "description": "The tokens to be fetched (max 25 tokens)",
             "example": [
               {
@@ -342,20 +342,23 @@
                 "token_id": "200"
               }
             ],
-            "fields": [
-              {
-                "name": "token_address",
-                "type": "string",
-                "description": "The contract address",
-                "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
-              },
-              {
-                "name": "token_id",
-                "type": "string",
-                "description": "The id of the token",
-                "example": 100
-              }
-            ]
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The contract address",
+                  "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                },
+                {
+                  "name": "token_id",
+                  "type": "string",
+                  "description": "The id of the token",
+                  "example": 100
+                }
+              ]
+            }
           },
           {
             "name": "normalizeMetadata",
@@ -7509,45 +7512,333 @@
               {
                 "name": "payload",
                 "type": "object",
-                "properties": {
-                  "block": { "$ref": "#/components/schemas/Block" },
-                  "chainId": { "type": "string" },
-                  "logs": {
-                    "items": { "$ref": "#/components/schemas/Log" },
-                    "type": "array"
+                "fields": [
+                  {
+                    "name": "block",
+                    "type": "object",
+                    "required": true,
+                    "fields": [
+                      {
+                        "name": "number",
+                        "type": "string"
+                      },
+                      { "name": "hash", "type": "string" },
+                      { "name": "timestamp", "type": "string" }
+                    ]
                   },
-                  "txs": {
-                    "items": { "$ref": "#/components/schemas/Transaction" },
-                    "type": "array"
+                  {
+                    "name": "chainId",
+                    "type": "string",
+                    "required": true
                   },
-                  "txsInternal": {
-                    "items": {
-                      "$ref": "#/components/schemas/InternalTransaction"
+                  {
+                    "name": "logs",
+                    "field": [
+                      {
+                        "name": "triggers",
+                        "field": [
+                          {
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "value",
+                                "type": "string",
+                                "required": true
+                              },
+                              {
+                                "name": "name",
+                                "type": "string",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ],
+                        "type": "array"
+                      },
+                      {
+                        "name": "logIndex",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "transactionHash",
+                        "type": "string",
+                        "required": true
+                      },
+                      { "name": "address", "type": "string", "required": true },
+                      { "name": "data", "type": "string", "required": true },
+                      {
+                        "name": "topic0",
+                        "type": "string",
+                        "nullable": true,
+                        "required": true
+                      },
+                      {
+                        "name": "topic1",
+                        "type": "string",
+                        "nullable": true,
+                        "required": true
+                      },
+                      {
+                        "name": "topic2",
+                        "type": "string",
+                        "nullable": true,
+                        "required": true
+                      },
+                      {
+                        "name": "topic3",
+                        "type": "string",
+                        "nullable": true,
+                        "required": true
+                      }
+                    ],
+                    "type": "array",
+                    "required": true
+                  },
+                  {
+                    "name": "txs",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "triggers",
+                          "field": [
+                            {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "value",
+                                  "type": "string",
+                                  "required": true
+                                },
+                                {
+                                  "name": "name",
+                                  "type": "string",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        {
+                          "name": "hash",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "gas",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "gasPrice",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "nonce",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "input",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "transactionIndex",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "fromAddress",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "toAddress",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "type",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "v",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "r",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "s",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "receiptCumulativeGasUsed",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "receiptGasUsed",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "receiptContractAddress",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "receiptRoot",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "receiptStatus",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        }
+                      ]
                     },
-                    "type": "array"
+                    "type": "array",
+                    "required": true
                   },
-                  "abi": {
-                    "items": { "$ref": "#/components/schemas/AbiItem" },
-                    "type": "array"
+                  {
+                    "name": "txsInternal",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "from",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "to",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        },
+                        {
+                          "name": "transactionHash",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "gas",
+                          "type": "string",
+                          "nullable": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    "type": "array",
+                    "required": true
                   },
-                  "retries": { "type": "number", "format": "double" },
-                  "confirmed": { "type": "boolean" },
-                  "tag": { "type": "string" },
-                  "streamId": { "type": "string" }
-                },
-                "required": [
-                  "block",
-                  "chainId",
-                  "logs",
-                  "txs",
-                  "txsInternal",
-                  "abi",
-                  "retries",
-                  "confirmed",
-                  "tag",
-                  "streamId"
-                ],
-                "additionalProperties": false
+                  {
+                    "name": "abi",
+                    "description": "The abi to parse the log object of the contract",
+                    "field": [
+                      {
+                        "type": "object",
+                        "fields": [
+                          { "name": "anonymous", "type": "boolean" },
+                          { "name": "constant", "type": "boolean" },
+                          {
+                            "name": "inputs",
+                            "field": {
+                              "type": "json"
+                            },
+                            "type": "array"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          {
+                            "name": "outputs",
+                            "items": [
+                              {
+                                "type": "json"
+                              }
+                            ],
+                            "type": "array"
+                          },
+                          { "name": "payable", "type": "boolean" },
+                          { "name": "stateMutability", "type": "string" },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "gas",
+                            "type": "number",
+                            "format": "double"
+                          }
+                        ]
+                      }
+                    ],
+                    "type": "array",
+                    "required": true
+                  },
+                  {
+                    "name": "retries",
+                    "type": "number",
+                    "format": "double",
+                    "required": true
+                  },
+                  {
+                    "name": "confirmed",
+                    "type": "boolean",
+                    "required": true
+                  },
+                  {
+                    "name": "tag",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "streamId",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
               },
               {
                 "name": "tinyPayload",
@@ -8061,14 +8352,14 @@
                           "constant": { "type": "boolean" },
                           "inputs": {
                             "items": {
-                              "$ref": "#/components/schemas/AbiInput"
+                              "type": "json"
                             },
                             "type": "array"
                           },
                           "name": { "type": "string" },
                           "outputs": {
                             "items": {
-                              "$ref": "#/components/schemas/AbiOutput"
+                              "type": "json"
                             },
                             "type": "array"
                           },
@@ -8284,12 +8575,12 @@
                   "anonymous": { "type": "boolean" },
                   "constant": { "type": "boolean" },
                   "inputs": {
-                    "items": { "$ref": "#/components/schemas/AbiInput" },
+                    "items": { "type": "json" },
                     "type": "array"
                   },
                   "name": { "type": "string" },
                   "outputs": {
-                    "items": { "$ref": "#/components/schemas/AbiOutput" },
+                    "items": { "type": "json" },
                     "type": "array"
                   },
                   "payable": { "type": "boolean" },
@@ -8454,12 +8745,12 @@
                       "anonymous": { "type": "boolean" },
                       "constant": { "type": "boolean" },
                       "inputs": {
-                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "name": { "type": "string" },
                       "outputs": {
-                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "payable": { "type": "boolean" },
@@ -8671,12 +8962,12 @@
                       "anonymous": { "type": "boolean" },
                       "constant": { "type": "boolean" },
                       "inputs": {
-                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "name": { "type": "string" },
                       "outputs": {
-                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "payable": { "type": "boolean" },
@@ -8886,12 +9177,12 @@
                   "anonymous": { "type": "boolean" },
                   "constant": { "type": "boolean" },
                   "inputs": {
-                    "items": { "$ref": "#/components/schemas/AbiInput" },
+                    "items": { "type": "json" },
                     "type": "array"
                   },
                   "name": { "type": "string" },
                   "outputs": {
-                    "items": { "$ref": "#/components/schemas/AbiOutput" },
+                    "items": { "type": "json" },
                     "type": "array"
                   },
                   "payable": { "type": "boolean" },
@@ -9056,12 +9347,12 @@
                       "anonymous": { "type": "boolean" },
                       "constant": { "type": "boolean" },
                       "inputs": {
-                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "name": { "type": "string" },
                       "outputs": {
-                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "payable": { "type": "boolean" },
@@ -9273,12 +9564,12 @@
                       "anonymous": { "type": "boolean" },
                       "constant": { "type": "boolean" },
                       "inputs": {
-                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "name": { "type": "string" },
                       "outputs": {
-                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "payable": { "type": "boolean" },
@@ -9492,12 +9783,12 @@
                       "anonymous": { "type": "boolean" },
                       "constant": { "type": "boolean" },
                       "inputs": {
-                        "items": { "$ref": "#/components/schemas/AbiInput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "name": { "type": "string" },
                       "outputs": {
-                        "items": { "$ref": "#/components/schemas/AbiOutput" },
+                        "items": { "type": "json" },
                         "type": "array"
                       },
                       "payable": { "type": "boolean" },
