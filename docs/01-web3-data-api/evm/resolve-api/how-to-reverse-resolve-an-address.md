@@ -3,6 +3,7 @@ title: "How to resolve an Unstoppable domain"
 slug: "../how-to-reverse-resolve-an-address"
 description: "Learn how to resolve an Unstoppable domain to a wallet address using Moralis Resolve API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,23 +32,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const domain = 'brad.crypto';
+
+  const domain = "brad.crypto";
 
   const response = await Moralis.EvmApi.resolve.resolveDomain({
     domain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -65,14 +66,14 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const domain = 'brad.crypto';
+  const domain = "brad.crypto";
 
   const response = await Moralis.EvmApi.resolve.resolveDomain({
     domain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -85,8 +86,8 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "domain": "brad.crypto", 
-    "currency": "eth", 
+    "domain": "brad.crypto",
+    "currency": "eth",
 }
 
 result = evm_api.resolve.resolve_domain(
@@ -102,7 +103,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -115,6 +116,10 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 You just resolved an Unstoppable domain to a wallet address with just a few lines of code using the Moralis Resolve API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=KgZuwI_A320
 
 ## API Reference
 

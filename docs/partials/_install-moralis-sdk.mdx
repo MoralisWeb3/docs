@@ -8,24 +8,23 @@ import CodeBlock from "@theme/CodeBlock";
 
 <Tabs groupId="programming-language" queryString>
   <TabItem value="javascript" label="npm" default>
-    <CodeBlock
-            language="shell"
-            showLineNumbers>
-            {`npm install ${props.node}`}
-          </CodeBlock>
+    <CodeBlock language="shell" showLineNumbers>
+      {`npm install ${props.node}`}
+    </CodeBlock>
   </TabItem>
-  <TabItem value="javascript-yarn" label="Yarn">
-    <CodeBlock
-                language="shell"
-                showLineNumbers>
-                {`yarn add ${props.node}`}
-              </CodeBlock>
+  <TabItem value="javascript-yarn" label="yarn">
+    <CodeBlock language="shell" showLineNumbers>
+      {`yarn add ${props.node}`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="javascript-pnpm" label="pnpm">
+    <CodeBlock language="shell" showLineNumbers>
+      {`pnpm add ${props.node}`}
+    </CodeBlock>
   </TabItem>
   <TabItem value="python" label="pip">
-    <CodeBlock
-                language="shell"
-                showLineNumbers>
-                {`pip install ${props.python}`}
-              </CodeBlock>
+    <CodeBlock language="shell" showLineNumbers>
+      {`pip install ${props.python}`}
+    </CodeBlock>
   </TabItem>
 </Tabs>

@@ -3,6 +3,7 @@ title: "AWS Lambda (NodeJS)"
 slug: "aws-lambda-nodejs"
 description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
+
 ## Introduction
 
 This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
@@ -43,8 +44,6 @@ Also make sure to attach **_AdministratorAccess_** as a policy:
 
 ![](/img/content/34621f7-image.png)
 
-
-
 :::caution
 
 Be aware that the **_AdministratorAccess_** policy will give the **IAM user** a lot of control over your AWS environment. In a production environment, make sure to give the IAM users **only the policies they require**.
@@ -63,8 +62,6 @@ This is the first step we need to take. The project doesn't need to be set up ye
 aws configure
 ```
 
-
-
 You'll need to enter your **IAM User credentials** (`AWS Access Key ID` and `AWS Secret Access Key`). Then press two times enter:
 
 ```text
@@ -73,8 +70,6 @@ AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 Default region name [None]: ENTER
 Default output format [None]: ENTER
 ```
-
-
 
 AWS credentials are configured!
 
@@ -92,31 +87,21 @@ Create an empty folder and open it with VS Code. Then, open the terminal there a
 serverless
 ```
 
-
-
 Running this command should give you some options. Choose **_Starter_**:
 
 ![](/img/content/c026f4e-image.png)
-
-
 
 Press `ENTER` to choose a default project name or enter your own:
 
 ![](/img/content/ff45297-image.png)
 
-
-
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
 ![](/img/content/ac122a2-image.png)
 
-
-
 Finally, type `n` again as we don't want to deploy now:
 
 ![](/img/content/8df9b06-image.png)
-
-
 
 Type `n` again if the console seems stuck.
 
@@ -128,19 +113,13 @@ Now, let's create a new folder inside the project named **_functions_** as we wi
 
 ![](/img/content/c4da9f8-image.png)
 
-
-
 Continue by placing the auto generated `handler.js` inside:
 
 ![](/img/content/bde5154-image.png)
 
-
-
 Now we have to open **`serverless.yml`** and set the new location of `handler.js`:
 
 ![](/img/content/9a747e6-image.png)
-
-
 
 We also want to add the `MORALIS_API_KEY` as an **environment variable**. Replace the code in `serverless.yml` with the following:
 
@@ -182,13 +161,9 @@ To start, let's use the existing `handler.js`. Rename it to **`getNativeBalance.
 
 ![](/img/content/6b7859d-image.png)
 
-
-
 Also change `module.exports.hello` to **`module.exports.handler`**:
 
 ![](/img/content/53288c1-image.png)
-
-
 
 Now open `serverless.yml` and change the function name and handler:
 
@@ -208,41 +183,29 @@ functions:
     handler: functions/getNativeBalance.handler
 ```
 
-
-
 ![](/img/content/94f6ff0-image.png)
-
-
 
 Finally it's time to customize the code in **`getNativeBalance.js`** and add the _getNativeBalance_ Moralis functionality. Let's start by adding the Moralis requirement:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 ```
 
-
-
 ![](/img/content/71df42f-image.png)
-
-
 
 Add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added as an enviromental variable:
 
 ```javascript
 const startMoralis = async () => {
   await Moralis.start({
-    apiKey: process.env.MORALIS_API_KEY
+    apiKey: process.env.MORALIS_API_KEY,
   });
 };
 
 startMoralis();
 ```
 
-
-
 ![](/img/content/431d2db-image.png)
-
-
 
 Now swap all `module.exports.handler` code section for the following code, which implements the desired SDK method:
 
@@ -251,33 +214,31 @@ module.exports.handler = async (event) => {
   // Get native balance
   const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
     address: event.address,
-    chain: event.chain
+    chain: event.chain,
   });
 
   // Format the native balance formatted in ether via the .ether getter
   const nativeBalanceEther = nativeBalance.result.balance.ether;
-  
+
   return {
-    result: nativeBalanceEther
-  }
+    result: nativeBalanceEther,
+  };
 };
 ```
 
-
-
-:::info 
+:::info
 We pass the `address` and the `chain` as _**event** parameters_.
 :::
 
 **The complete `getNativeBalance.js` should look like this:**
 
 ```javascript
-'use strict';
-const Moralis = require('moralis').default;
+"use strict";
+const Moralis = require("moralis").default;
 
 const startMoralis = async () => {
   await Moralis.start({
-    apiKey: process.env.MORALIS_API_KEY
+    apiKey: process.env.MORALIS_API_KEY,
   });
 };
 
@@ -287,19 +248,17 @@ module.exports.handler = async (event) => {
   // Get native balance
   const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
     address: event.address,
-    chain: event.chain
+    chain: event.chain,
   });
 
   // Format the native balance formatted in ether via the .ether getter
   const nativeBalanceEther = nativeBalance.result.balance.ether;
-  
+
   return {
-    result: nativeBalanceEther
-  }
+    result: nativeBalanceEther,
+  };
 };
 ```
-
-
 
 ### Create `getWalletNfts` function
 
@@ -314,17 +273,13 @@ getWalletNfts:
     handler: functions/getWalletNfts.handler
 ```
 
-
-
 ![](/img/content/298f2fc-image.png)
-
-
 
 **Finally, complete `getWalletNfts.js` by adding the following code:**
 
 ```javascript
-'use strict';
-const Moralis = require('moralis').default;
+"use strict";
+const Moralis = require("moralis").default;
 
 const startMoralis = async () => {
   await Moralis.start({
@@ -339,16 +294,14 @@ module.exports.handler = async (event) => {
   const nfts = await Moralis.EvmApi.nft.getWalletNFTs({
     address: event.address,
     chain: event.chain,
-    limit: 10
+    limit: 10,
   });
 
   return {
-    result: JSON.stringify(nfts)
-  }
+    result: JSON.stringify(nfts),
+  };
 };
 ```
-
-
 
 ## Install dependencies
 
@@ -358,19 +311,13 @@ module.exports.handler = async (event) => {
 cd aws-node-project
 ```
 
-
-
 ![](/img/content/dc786c5-image.png)
-
-
 
 Now that we're in the right location, let's install **`moralis`**:
 
 ```powershell
 npm install moralis
 ```
-
-
 
 ## Local testing
 
@@ -388,8 +335,6 @@ Now let's test one of the functions, for example `getNativeBalance`. Open the te
 serverless invoke local -f getNativeBalance --path event.json
 ```
 
-
-
 **Test run successfully!**
 
 ![](/img/content/39d265c-image.png)
@@ -400,7 +345,7 @@ serverless invoke local -f getNativeBalance --path event.json
 You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies-1).
 :::
 
-:::info 
+:::info
 To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
 :::
 
@@ -412,39 +357,27 @@ Create an empty folder and open it with VS Code. Then, open the terminal there a
 serverless
 ```
 
-
-
 Running this command should give you some options. Choose **_Express API_**:
 
 ![](/img/content/8c14ff0-image.png)
-
-
 
 Press `ENTER` to choose a default project name or enter your own:
 
 ![](/img/content/94ca4be-image.png)
 
-
-
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
 ![](/img/content/4a32f31-image.png)
-
-
 
 Finally, type `n` again as we don't want to deploy now:
 
 ![](/img/content/addbe83-image.png)
 
-
-
-Type `n` again if the console seems stuck. 
+Type `n` again if the console seems stuck.
 
 Now the sample project is created:
 
 ![](/img/content/6402e0b-image.png)
-
-
 
 We also want to add the `MORALIS_API_KEY` as an environment variable. Replace the whole code in **`serverless.yml`** with the following:
 
@@ -468,8 +401,6 @@ functions:
       - httpApi: '*'
 ```
 
-
-
 ![](/img/content/99cc149-image.png)
 
 :::tip Done
@@ -489,11 +420,9 @@ Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-
 Let's start by adding the packages needed in this app, which are `moralis` and `body-parser`. To do so, open **`handler.js`** and add the following:
 
 ```javascript
-const bodyParser = require('body-parser');
-const Moralis = require('moralis').default;
+const bodyParser = require("body-parser");
+const Moralis = require("moralis").default;
 ```
-
-
 
 ![](/img/content/4ca093c-image.png)
 
@@ -505,8 +434,6 @@ app.use(bodyParser.raw());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true }));
 ```
-
-
 
 ![](/img/content/add76c3-image.png)
 
@@ -521,8 +448,6 @@ const startMoralis = async () => {
 
 startMoralis();
 ```
-
-
 
 ![](/img/content/1be8b90-image.png)
 
@@ -544,7 +469,6 @@ app.get("/getNativeBalance", async (req, res, next) => {
 
     res.status(200);
     res.send(nativeBalanceEther);
-
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -554,11 +478,9 @@ app.get("/getNativeBalance", async (req, res, next) => {
 });
 ```
 
-
-
 ![](/img/content/4840077-Screenshot_2022-12-14_at_13.13.23.png)
 
-:::info 
+:::info
 We pass the `address` and the `chain` as parameters in the **request body**.
 :::
 
@@ -571,7 +493,6 @@ Let's create a new **Express endpoint** and add another **Moralis SDK function**
 ```javascript
 app.get("/getWalletNfts", async (req, res, next) => {
   try {
-
     // Get wallet NFTs
     const nfts = await Moralis.EvmApi.nft.getWalletNFTs({
       address: req.body.address,
@@ -581,7 +502,6 @@ app.get("/getWalletNfts", async (req, res, next) => {
 
     res.status(200);
     res.json(nfts);
-
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -591,9 +511,7 @@ app.get("/getWalletNfts", async (req, res, next) => {
 });
 ```
 
-
-
-:::info 
+:::info
 We pass the `address` and the `chain` as parameters in the **request body**.
 :::
 
@@ -604,8 +522,8 @@ This is how **`handler.js`** should be adding the endpoints. You could repeat th
 ```javascript
 const serverless = require("serverless-http");
 const express = require("express");
-const bodyParser = require('body-parser');
-const Moralis = require('moralis').default;
+const bodyParser = require("body-parser");
+const Moralis = require("moralis").default;
 
 const app = express();
 
@@ -643,7 +561,6 @@ app.get("/getNativeBalance", async (req, res, next) => {
 
     res.status(200);
     res.send(nativeBalanceEther);
-
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -654,7 +571,6 @@ app.get("/getNativeBalance", async (req, res, next) => {
 
 app.get("/getWalletNfts", async (req, res, next) => {
   try {
-
     // Get wallet NFTs
     const nfts = await Moralis.EvmApi.nft.getWalletNFTs({
       address: req.body.address,
@@ -664,7 +580,6 @@ app.get("/getWalletNfts", async (req, res, next) => {
 
     res.status(200);
     res.json(nfts);
-
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -676,8 +591,6 @@ app.get("/getWalletNfts", async (req, res, next) => {
 module.exports.handler = serverless(app);
 ```
 
-
-
 ## Install dependencies
 
 **IMPORTANT:** On the terminal, place yourself at the root folder of the project. I named my project `aws-node-express-api-project` so in my case I need to run:
@@ -686,19 +599,13 @@ module.exports.handler = serverless(app);
 cd aws-node-express-api-project
 ```
 
-
-
 ![](/img/content/cbd847c-image.png)
-
-
 
 Now that we're in the right location, let's install `moralis` and `body-parser`:
 
 ```powershell
 npm install moralis body-parser
 ```
-
-
 
 ## Local testing
 
@@ -710,8 +617,6 @@ Install the plugin:
 npm install --save-dev serverless-offline
 ```
 
-
-
 Then add the plugin to **`serverless.yml`**:
 
 ```
@@ -719,8 +624,6 @@ plugins:
   - serverless-offline
 
 ```
-
-
 
 ![](/img/content/acf1d0f-image.png)
 
@@ -730,17 +633,15 @@ Then, start the serverless-offline server:
 serverless offline start
 ```
 
-
-
 ![](/img/content/e93d805-image.png)
 
-To test, navigate to [<http://localhost:3000`>](<http://localhost:3000`>) in your browser:
+To test, navigate to [<http://localhost:3000`>](http://localhost:3000`) in your browser:
 
 ![](/img/content/c401071-image.png)
 
 **Very nice!** And the best thing is that if you make a change in `handler.js` file, it will be automatically applied and you'll see the result the next time you hit the endpoint. **This rapidly improves development time.**
 
-:::info 
+:::info
 To test an endpoint that requires a request body, you can use [Postman](https://www.postman.com/downloads/) or any other API platform out there.
 :::
 
@@ -751,7 +652,7 @@ If you come from [GitHub completed projects](https://github.com/MoralisWeb3/exam
 
 - [Install dependencies on `aws-node-project`](#install-dependencies)
 - [Install dependencies on `aws-node-express-api-project`](#install-dependencies-1)
-:::
+  :::
 
 It's time to deploy to **AWS**. Whatever project you chose, open the terminal and make sure you're in the root folder (where you installed the dependencies). Then, run this simple command:
 
@@ -767,10 +668,9 @@ Congratulations! Your app is running on **AWS Lambda** :)
 
 :::
 
-
 # AWS Lambda Console
 
- If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
+If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
 ![](/img/content/26fe035-image.png)
 
@@ -820,15 +720,11 @@ You can test your function by pressing the _Test_ tab. Set an _Event name_ and m
 }
 ```
 
-
-
 ![](/img/content/b1a4acd-image.png)
 
 Then choose **_Test_** and see the result:
 
 ![](/img/content/9c93832-image.png)
-
-
 
 ## Find function name
 
@@ -845,3 +741,7 @@ Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions)
 Marked with green is where you can copy the **ARN** which is the identifier of the function in all AWS:
 
 ![](/img/content/65a9750-image.png)
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=h2pAWyzaBgQ

@@ -3,6 +3,7 @@ title: "How to get Sushiswap V2 pair address"
 slug: "../how-to-get-sushiswap-v2-pair-address"
 description: "Learn how to get the pair address of a Sushiswap V2 liquidity pool using Moralis DeFi API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,8 +32,8 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
@@ -43,20 +44,20 @@ const runApp = async () => {
   const chain = EvmChain.ETHEREUM;
 
   // token 0 address, e.g. WETH token address
-  const token0Address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+  const token0Address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 
   // token 1 address, e.g. LINK token address
-  const token1Address = '0x514910771AF9Ca656af840dff83E8264EcF986CA';
+  const token1Address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
 
   const response = await Moralis.EvmApi.defi.getPairAddress({
-     token0Address,
-     token1Address,
-     chain,
-     exchange: 'sushiswapv2',
+    token0Address,
+    token1Address,
+    chain,
+    exchange: "sushiswapv2",
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -77,20 +78,20 @@ const runApp = async () => {
   const chain = EvmChain.ETHEREUM;
 
   // token 0 address, e.g. WETH token address
-  const token0Address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+  const token0Address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 
   // token 1 address, e.g. LINK token address
-  const token1Address = '0x514910771AF9Ca656af840dff83E8264EcF986CA';
+  const token1Address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
 
   const response = await Moralis.EvmApi.defi.getPairAddress({
-     token0Address,
-     token1Address,
-     chain,
-     exchange: 'sushiswapv2',
+    token0Address,
+    token1Address,
+    chain,
+    exchange: "sushiswapv2",
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -106,9 +107,9 @@ api_key = "YOUR_API_KEY"
 params = {
     "exchange": "sushiswapv2",
     # token 0 address, e.g. WETH token address
-    "token0_address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", 
+    "token0_address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     # token 1 address, e.g. LINK token address
-    "token1_address": "0x514910771AF9Ca656af840dff83E8264EcF986CA", 
+    "token1_address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
     "chain": "eth"
 }
 
@@ -125,7 +126,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -162,6 +163,10 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 You just get the pair address of a Sushiswap V2 liquidity pool with just a few lines of code using the Moralis DeFi API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=TocrId1UeDg
 
 ## API Reference
 

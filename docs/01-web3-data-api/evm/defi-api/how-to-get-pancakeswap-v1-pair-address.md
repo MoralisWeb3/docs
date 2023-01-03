@@ -3,6 +3,7 @@ title: "How to get Pancakeswap V1 pair address"
 slug: "../how-to-get-pancakeswap-v1-pair-address"
 description: "Learn how to get the pair address of a Pancakeswap V1 liquidity pool using Moralis DeFi API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,8 +32,8 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
@@ -43,20 +44,20 @@ const runApp = async () => {
   const chain = EvmChain.BSC;
 
   // token 0 address, e.g. WBNB token address
-  const token0Address = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+  const token0Address = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 
   // token 1 address, e.g. LINK token address
-  const token1Address = '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD';
+  const token1Address = "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD";
 
   const response = await Moralis.EvmApi.defi.getPairAddress({
-     token0Address,
-     token1Address,
-     chain,
-     exchange: 'pancakeswapv1',
+    token0Address,
+    token1Address,
+    chain,
+    exchange: "pancakeswapv1",
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -77,20 +78,20 @@ const runApp = async () => {
   const chain = EvmChain.BSC;
 
   // token 0 address, e.g. WBNB token address
-  const token0Address = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+  const token0Address = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 
   // token 1 address, e.g. LINK token address
-  const token1Address = '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD';
+  const token1Address = "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD";
 
   const response = await Moralis.EvmApi.defi.getPairAddress({
-     token0Address,
-     token1Address,
-     chain,
-     exchange: 'pancakeswapv1',
+    token0Address,
+    token1Address,
+    chain,
+    exchange: "pancakeswapv1",
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -106,9 +107,9 @@ api_key = "YOUR_API_KEY"
 params = {
     "exchange": "pancakeswapv1",
     # token 0 address, e.g. WBNB token address
-    "token0_address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", 
+    "token0_address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     # token 1 address, e.g. LINK token address
-    "token1_address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD", 
+    "token1_address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD",
     "chain": "bsc"
 }
 
@@ -125,7 +126,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -162,6 +163,10 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 You just get the pair address of a Pancakeswap V1 liquidity pool with just a few lines of code using the Moralis DeFi API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=TocrId1UeDg
 
 ## API Reference
 
