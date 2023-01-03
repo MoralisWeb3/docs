@@ -3444,6 +3444,11 @@
       "source": "/docs/how-streams-api-works",
       "destination": "/streams-api",
       "permanent": true
+    },
+    {
+      "source": "/misc/license",
+      "destination": "https://v1docs.moralis.io/misc/license",
+      "permanent": true
     }
   ]
 }
