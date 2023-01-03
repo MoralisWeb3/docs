@@ -1275,6 +1275,11 @@
       "permanent": true
     },
     {
+      "source": "/reference/getnativebalance-1",
+      "destination": "/web3-data-api/reference/get-native-balance",
+      "permanent": true
+    },
+    {
       "source": "/reference/getwallettransactions",
       "destination": "/web3-data-api/reference/get-wallet-transactions",
       "permanent": true
@@ -3435,6 +3440,66 @@
       "source": "/reference/getting-the-api-key",
       "destination": "/web3-data-api/get-your-api-key",
       "permanent": true
-    }   
+    },
+    {
+      "source": "/reference/abuse-prevention",
+      "destination": "/web3-data-api/abuse-prevention",
+      "permanent": true
+    },
+    {
+      "source": "/reference/nft-api",
+      "destination": "/web3-data-api/reference/get-multiple-nfts",
+      "permanent": false
+    },
+    {
+      "source": "/docs/monitor-all",
+      "destination": "/streams-api/monitor-multiple-addresses",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-supabase-authentication",
+      "destination": "/authentication-api/integrations/supabase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/supabase-1",
+      "destination": "/authentication-api/integrations/supabase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-tutorials",
+      "destination": "/example-dapps/evm",
+      "permanent": true
+    },
+    {
+      "source": "/docs/metaverse-game",
+      "destination": "/example-dapps/evm/web3-unity-multiplayer-playground",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-gating",
+      "destination": "/example-dapps/evm/token-gating-website-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-token-transfers",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-transactions-by-wallet",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-token-metadata-by-token-symbol",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-symbols",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-token-metadata-by-contract-address",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-contract",
+      "permanent": true
+    }
   ]
 }
