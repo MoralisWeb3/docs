@@ -80,7 +80,6 @@ const ApiReference = ({
   const execCallback = useCallback(
     async (values) => {
       setLoading(true);
-
       try {
         const response = await fetch("/api/exec", {
           method: "POST",

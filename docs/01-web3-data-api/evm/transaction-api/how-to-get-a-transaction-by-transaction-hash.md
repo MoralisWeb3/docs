@@ -3,6 +3,7 @@ title: "How to get a transaction by transaction hash"
 slug: "../how-to-get-a-transaction-by-transaction-hash"
 description: "Learn how to get a transaction content by a given transaction hash with Moralis Transaction API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -39,18 +40,19 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const transactionHash = "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
 
-	const chain = EvmChain.ETHEREUM;
+  const transactionHash =
+    "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
+
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.transaction.getTransaction({
-    	transactionHash,
-    	chain,
-	});
-  
+    transactionHash,
+    chain,
+  });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +69,19 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const transactionHash = "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
 
-	const chain = EvmChain.ETHEREUM;
+  const transactionHash =
+    "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
+
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.transaction.getTransaction({
-    	transactionHash,
-    	chain,
-	});
-  
+    transactionHash,
+    chain,
+  });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,8 +95,8 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "transaction_hash": "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875", 
-    "chain": "eth", 
+    "transaction_hash": "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875",
+    "chain": "eth",
 }
 
 result = evm_api.transaction.get_transaction(
@@ -107,11 +110,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -136,10 +137,7 @@ In your terminal, you should see the following JSON response:
   "block_timestamp": "2022-11-07T08:36:11.000Z",
   "block_number": "15916991",
   "block_hash": "0xd517ab9abb4beed9efb6b74ecbabc141d8550abe11aedb715ce9d133dcb32c9b",
-  "transfer_index": [
-    15916991,
-    203
-  ],
+  "transfer_index": [15916991, 203],
   "logs": [
     {
       "log_index": "299",
@@ -155,17 +153,17 @@ In your terminal, you should see the following JSON response:
       "block_timestamp": "2022-11-07T08:36:11.000Z",
       "block_number": "15916991",
       "block_hash": "0xd517ab9abb4beed9efb6b74ecbabc141d8550abe11aedb715ce9d133dcb32c9b",
-      "transfer_index": [
-        15916991,
-        203,
-        299
-      ]
+      "transfer_index": [15916991, 203, 299]
     }
   ]
 }
 ```
 
 Congratulations 🥳 you just got the transaction content of a transaction by its transaction hash with only a few lines of code using the Moralis Transaction API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=AbGDqxtL6XM
 
 ## API Reference
 

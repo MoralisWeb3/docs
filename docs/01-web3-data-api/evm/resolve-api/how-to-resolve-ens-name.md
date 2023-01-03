@@ -3,6 +3,7 @@ title: "How to reverse resolve an ENS name"
 slug: "../how-to-resolve-ens-name"
 description: "Learn how to reverse resolve the ENS name from an address using the Moralis Resolve API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,25 +32,25 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045';
+
+  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
   const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.resolve.resolveAddress({
     address,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,16 +68,16 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045';
+  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
   const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.resolve.resolveAddress({
     address,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -90,7 +91,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045", 
+    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
 }
 
 result = evm_api.resolve.resolve_address(
@@ -106,7 +107,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -119,6 +120,10 @@ In your terminal, you should see the following JSON response:
 ```
 
 Congratulations 🥳 You just reverse resolved the ENS name from a wallet address with just a few lines of code using the Moralis Resolve API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=Q0tPFW0nf1E
 
 ## API Reference
 

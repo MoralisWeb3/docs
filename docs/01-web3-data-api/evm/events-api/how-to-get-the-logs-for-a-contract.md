@@ -3,6 +3,7 @@ title: "How to get the logs for a contract"
 slug: "../how-to-get-the-logs-for-a-contract"
 description: "Learn how to get the logs for a contract using the Moralis Events API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782';
+
+  const address = "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -68,7 +69,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = '0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782';
+  const address = "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -76,9 +77,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,8 +92,8 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782", 
-    "chain": "eth", 
+    "address": "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782",
+    "chain": "eth",
 }
 
 result = evm_api.events.get_contract_logs(
@@ -108,7 +109,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -158,10 +159,14 @@ In your terminal, you should see the following JSON response:
       "topic3": null
     }
   ]
-}  
+}
 ```
 
 Congratulations 🥳 You just got the logs for a contract address with just a few lines of code using the Moralis Events API!
+
+## Youtube Video
+
+https://www.youtube.com/watch?v=Bff3IQjrYs0
 
 ## API Reference
 
