@@ -3,6 +3,9 @@ title: "Firebase (NodeJS)"
 slug: "firebase-nodejs"
 description: "This tutorial will teach you how to authenticate a user to your Firebase application with an EVM or Solana wallet. To simplify and speed up this process, we will use the \"Authenticate with Moralis Web3\" extension for Firebase."
 ---
+
+This tutorial will teach you how to authenticate a user to your Firebase application with an EVM or Solana wallet. To simplify and speed up this process, we will use the \"Authenticate with Moralis Web3\" extension for Firebase.
+
 ![Web3 Firebase Authentication Demo](/img/content/4169289-moralis-auth-firebase.gif)
 
 Make sure to check out the [Firebase (NodeJS)](/web3-data-api/integrations/firebase-nodejs) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 

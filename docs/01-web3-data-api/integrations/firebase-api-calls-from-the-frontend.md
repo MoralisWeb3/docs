@@ -3,6 +3,9 @@ title: "Firebase Advanced (NodeJS)"
 slug: "firebase-advanced-nodejs"
 description: "If you want to call the Moralis API from your frontend app, don't do this directly. Please note that your Moralis API key should be secured against theft or abuse. Almost anyone can extract your key by the HTTP monitor, even if your code is obfuscated. Thus, you should keep your API key secure on the backend. This tutorial demonstrates how you can do it for Firebase."
 ---
+
+If you want to call the Moralis API from your frontend app, don't do this directly. Please note that your Moralis API key should be secured against theft or abuse. Almost anyone can extract your key by the HTTP monitor, even if your code is obfuscated. Thus, you should keep your API key secure on the backend. This tutorial demonstrates how you can do it for Firebase.
+
 ![Firebase Proxy with IP Rate Limiting](/img/content/2815daf-firebase-proxy.gif)
 
 First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".

@@ -3,7 +3,7 @@ title: "Web3 Unity Multiplayer Playground"
 slug: "web3-unity-multiplayer-playground"
 description: "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
 ---
-## Intro
+## Introduction
 
 This Moralis Unity Sample Project demonstrates Web3 functionality; authentication, send assets, fetch assets, & interacting with Solidity smartcontracts (read/write) on the Polygon Mumbai blockchain.
 

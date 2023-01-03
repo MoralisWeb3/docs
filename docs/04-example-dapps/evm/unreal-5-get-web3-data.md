@@ -3,6 +3,10 @@ title: "Unreal 5 Get Web3 Data"
 slug: "unreal-5-get-web3-data"
 description: "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes."
 ---
+## Introduction
+
+This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes.
+
 ## Prerequisites
 
 - Complete [AWS Lambda integration](/web3-data-api/integrations/aws-lambda-nodejs).
@@ -34,8 +38,8 @@ Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 ![](/img/content/e3e2255-image.png)
 
 :::info 
-> 
-> As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
+As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
+:::
 
 ## Setting up
 
@@ -57,8 +61,8 @@ Zoom out to visualize and locate **4 important areas**:
 ### Manage input
 
 :::info 
-> 
-> No need to do any action here. Just informative.
+No need to do any action here. Just informative.
+:::
 
 Apart from enabling and disabling the player's input, here we get the `wallet address` and the `chain ID` from the text input fields when the _START_ button is clicked and we save them as variables:
 
@@ -67,8 +71,8 @@ Apart from enabling and disabling the player's input, here we get the `wallet ad
 ### Construct request body
 
 :::info 
-> 
-> No need to do any action here. Just informative.
+No need to do any action here. Just informative.
+:::
 
 What interests us in this tutorial is to know **how do we call an API endpoint**. In this case we want to call the _getNativeBalance_ and _getWalletNfts_ endpoints hosted in our [Express AWS Lambda App](/web3-data-api/integrations/aws-lambda-nodejs#lambda-nodejs-express-api). These endpoints need the _address_ and the _chain_ as request body parameters so here we construct the request and we **set it as a variable**:
 
@@ -107,12 +111,12 @@ Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 ![](/img/content/98ccd15-image.png)
 
 :::info 
-> 
-> In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/web3-data-api#supported-chains).
+In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/web3-data-api#supported-chains).
+:::
 
 :::info 
-> 
-> Also make sure to enter an address that holds some NFTs to see them on the game.
+Also make sure to enter an address that holds some NFTs to see them on the game.
+:::
 
 On the left side we can see our **NFTs** displayed and our **Native balance** on the right side:
 

@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
 
 ## Step 2: Get ERC20 metadata by symbols
 
-In order to get ERC20 metadata by symbols, Moralis provides you with an [getTokenMetadataBySymbol](/web3-data-api/reference/get-token-metadata-bysymbol) endpoint.
+In order to get ERC20 metadata by symbols, Moralis provides you with an [getTokenMetadataBySymbol](/web3-data-api/reference/get-token-metadata-by-symbol) endpoint.
 
 Here you'll need two parameters: `symbols` and `chain`.
 
@@ -163,7 +163,7 @@ Congratulations 🥳 You just got ERC20 metadata by symbols with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadataBySymbol](/web3-data-api/reference/get-token-metadata-bysymbol)
+- [getTokenMetadataBySymbol](/web3-data-api/reference/get-token-metadata-by-symbol)
 
 ## Support
 

@@ -3,6 +3,7 @@ title: "Supabase (NodeJS)"
 slug: "supabase-nodejs"
 description: "This tutorial will teach you how to integrate Supabase authentication with Web3 authentication. We will use the Moralis Auth API to handle the Web3 authentication flow."
 ---
+
 This guide will teach you how to combine Web3 authentication with Supabase authentication. The Web3 authentication flow will be managed using the Moralis Auth API.
 
 Let's start by defining Supabase. In short, Supabase is an open-source substitute for Firebase - backend-as-a-service, that is. Furthermore, it's a quick approach to go from Postgres schema to REST API!

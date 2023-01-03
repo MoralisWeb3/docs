@@ -1,8 +1,10 @@
 ---
 title: "User Account Creation"
 slug: "/admin-panel/user-account-creation-and-sign-in-methods"
-description: "Create a secure Moralis account using an email and password, Google authentication, or link an Ethereum address to sign in with a single sign-on. Improve your account security with two-factor-authentication and never share your private key (seed phrase) with anyone."
 ---
+
+Create a secure Moralis account using an email and password, Google authentication, or link an Ethereum address to sign in with a single sign-on. Improve your account security with two-factor-authentication and never share your private key (seed phrase) with anyone.
+
 ## Email and Password
 
 You can set up and sign in to your Moralis account using an email and password. 

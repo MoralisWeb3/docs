@@ -5,7 +5,7 @@ slug: "../how-to-sign-in-with-solana-phantom-wallet"
 
 This tutorial covers how to create full-stack Web3 authentication for the Phantom wallet, using the popular NextJS framework.
 
-![](https://files.readme.io/d15a406-phantom_.gif)
+![](/img/content/d15a406-phantom_.gif)
 
 ## Introduction
 
@@ -17,11 +17,11 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](https://files.readme.io/a0d394e-image.png)
+![](/img/content/a0d394e-image.png)
 
-> 📘 
-> 
-> You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::info
+You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::
 
 ## Prerequisites
 
@@ -57,13 +57,13 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 ```
 
-> ❗️ 
-> 
-> Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::caution
+Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::
 
-> 🚧 
-> 
-> Every time you modify the `.env.local` file, you need to restart your dapp.
+:::caution
+Every time you modify the `.env.local` file, you need to restart your dapp.
+:::
 
 ## Wrapping App with `SessionProvider`
 
@@ -86,15 +86,19 @@ export default MyApp;
 
 ```
 
-
-
-> 📘 
-> 
-> NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::info
+NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::
 
 ## Configure Next-Auth and MoralisNextAuth
 
 5. Create a new file, `pages/api/auth/[...nextauth].ts`, with the following content:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="index.ts (TypeScript)" default>
 
 ```typescript
 import NextAuth from 'next-auth';
@@ -117,6 +121,10 @@ export default NextAuth({
   },
 });
 ```
+
+</TabItem>
+<TabItem value="javascript" label="index.js (JavaScript)">
+
 ```javascript Javascript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -139,9 +147,14 @@ export default NextAuth({
 });
 ```
 
+</TabItem>
+</Tabs>
 
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="[...moralis].ts" default>
 
 ```typescript \\\\\\\\\\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
@@ -170,6 +183,10 @@ export default MoralisNextApi({
 });
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="[...moralis].js">
+
 ```typescript \\\\\\\\\\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
@@ -198,11 +215,15 @@ export default MoralisNextApi({
 
 ```
 
-
+</TabItem>
+</Tabs>
 
 ## Create Wallet Component
 
 7. Create a new file under `app/components/loginBtn/phantomBtn.tsx`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="phantomBtn.tsx">
 
 ```typescript phantomBtn.tsx
 import React from "react";
@@ -259,6 +280,10 @@ export default function PhantomBtn() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="phantomBtn.jsx">
+
 ```typescript phantomBtn.jsx
 import React from "react";
 import { Button } from "@web3uikit/core";
@@ -315,7 +340,8 @@ export default function PhantomBtn() {
 
 ```
 
-
+</TabItem>
+</Tabs>
 
 ## Create Page to Sign-In
 
@@ -379,6 +405,9 @@ export default function Home() {
 
 8. Create components to perform the logout operation and to show the user data. 
 
+<Tabs groupId="programming-language">
+<TabItem value="javascript" label="logoutBtn.js">
+
 ```typescript logoutBtn.js
 // File path
 // app/components/logoutBtn/logoutBtn.js
@@ -394,6 +423,10 @@ export default function LogoutBtn() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="javascript-1" label="userData.js">
+
 ```typescript userData.js
 // File path
 // app/components/logoutBtn/userData.js
@@ -445,6 +478,8 @@ export default function UserData() {
 
 ```
 
+</TabItem>
+</Tabs>
 
 
 ## Showing the User Profile
@@ -497,18 +532,18 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-![](https://files.readme.io/0f54601-image.png)
+![](/img/content/0f54601-image.png)
 
 2. Connect to the Solana wallet extension
 
-![](https://files.readme.io/a7e2b4f-image.png)
+![](/img/content/a7e2b4f-image.png)
 
 3. Sign the message:
 
-![](https://files.readme.io/08970f7-image.png)
+![](/img/content/08970f7-image.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![](https://files.readme.io/8b2c468-image.png)
+![](/img/content/8b2c468-image.png)
 
 And that completes the authentication process to Solana wallet using Phantom Wallet.

@@ -5,6 +5,8 @@ sidebar_position: 15
 description: "Moralis makes it easy to parse data from ERC20 Transfers and Approvals, NFT Transfers and Approvals, and Smart Contract Events. Stream your smart contract events and use our code as a guide to quickly and accurately extract the data into a typed data structure." 
 ---
 
+Moralis makes it easy to parse data from ERC20 Transfers and Approvals, NFT Transfers and Approvals, and Smart Contract Events. Stream your smart contract events and use our code as a guide to quickly and accurately extract the data into a typed data structure.
+
 Moralis automatically parses the following data for you:
 
 - ERC20 Transfers and Approvals

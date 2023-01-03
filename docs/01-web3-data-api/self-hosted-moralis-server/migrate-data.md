@@ -1,16 +1,17 @@
 ---
 title: "Migrate data"
 slug: "migrate-data"
+description: "This tutorial teaches you how to migrate data to your self-hosted Parse server."
 ---
 ## Whitelist your IP in Moralis
 
 In order to access your MongoDB you need to whitelist your IP address:
 
-![](https://files.readme.io/fa2ab6d-Screenshot_2022-09-08_at_02.10.29.png)
+![](/img/content/fa2ab6d-Screenshot_2022-09-08_at_02.10.29.png)
 
-![](https://files.readme.io/57d2813-Screenshot_2022-09-08_at_02.11.02.png)
+![](/img/content/57d2813-Screenshot_2022-09-08_at_02.11.02.png)
 
-![](https://files.readme.io/ac432f3-Screenshot_2022-09-08_at_02.11.38.png)
+![](/img/content/ac432f3-Screenshot_2022-09-08_at_02.11.38.png)
 
 ## Connect directly to the hosted Moralis MongoDB
 
@@ -72,15 +73,15 @@ pprint.pprint(user_table.find_one())
 
 After you have established direct access to Mongo DB, you You can do your own dumps for the database.
 
-> 📘 
-> 
-> \_User table is a particular example of table that starts with \_, most of the tables will not start with \_
+:::info
+\_User table is a particular example of table that starts with \_, most of the tables will not start with \_
+:::
 
 ### Using Compass
 
 You can use Compass to interact with MongoDB using a tool with an interface.
 
-![](https://files.readme.io/feedff2-Screenshot_2022-09-08_at_02.17.00.png)
+![](/img/content/feedff2-Screenshot_2022-09-08_at_02.17.00.png)
 
 Now you are connected to the MongoDB that is hosted on Moralis. For reference on how to export data, see <https://www.mongodb.com/docs/compass/current/import-export/>.
 

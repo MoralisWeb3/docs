@@ -1,8 +1,10 @@
 ---
 title: "Account Settings"
 slug: "/admin-panel/account-settings"
-description: "This page provides information on how to access and manage your Moralis account settings, including auto-logged in accounts, two-factor authentication, adding members to your team, and downloading invoices. Learn how to stay logged in for seven days, turn on/off two-factor authentication, invite team members, and access and download invoices with Moralis." 
 ---
+
+This page provides information on how to access and manage your Moralis account settings, including auto-logged in accounts, two-factor authentication, adding members to your team, and downloading invoices. Learn how to stay logged in for seven days, turn on/off two-factor authentication, invite team members, and access and download invoices with Moralis.
+
 ## Moralis Auto-Logged in Accounts
 
 A user account that has checked the box to stay logged in to Moralis will be logged in for seven days.

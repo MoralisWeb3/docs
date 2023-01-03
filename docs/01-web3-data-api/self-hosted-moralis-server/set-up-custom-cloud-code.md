@@ -1,6 +1,7 @@
 ---
 title: "Set up custom cloud code"
 slug: "set-up-custom-cloud-code"
+description: "This tutorial teaches you how to set up custom cloud code for your self-hosted Parse server."
 ---
 
 ## Prerequisites
@@ -94,7 +95,7 @@ https://www.youtube.com/watch?v=eZeGEy33SgY
 
 We will add custom jobs to our self-hosted server.
 
-![](https://files.readme.io/263def3-image.png)
+![](/img/content/263def3-image.png)
 
 First, before creating a job we need to install the required package:
 
@@ -172,12 +173,12 @@ npm run start
 
 Now head over  <http://localhost:1337/dashboard/> and select `Schedule a job` to test it.
 
-![](https://files.readme.io/de70fe6-image.png)
+![](/img/content/de70fe6-image.png)
 
 After you chose the job and the desire interval you can now click schedule:
 
-![](https://files.readme.io/305932c-image.png)
+![](/img/content/305932c-image.png)
 
 If `Start immediately` was selected your job will start right away and repeat based on the selected time interval.
 
-![](https://files.readme.io/5b811e2-image.png)
+![](/img/content/5b811e2-image.png)

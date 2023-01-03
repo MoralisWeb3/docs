@@ -108,11 +108,11 @@ Your current request usage statistics can be found under "Account>Usage".
 
 - Click on your email address at the bottom left corner and then on "Account".
 
-![](https://files.readme.io/0a77de9-image.png)
+![](/img/content/0a77de9-image.png)
 
 - Click on "Usage" on the top tab
 
-![](https://files.readme.io/ee7cadd-image.png)
+![](/img/content/ee7cadd-image.png)
 
 Once on this page, you will be able to see the following data:
 
@@ -127,7 +127,7 @@ If after reviewing your usage statistics you feel that you need a higher rate li
 
 Once you have signed up at <https://moralis.io/> you should receive a confirmation email within 5 minutes containing an activation link
 
-![](https://files.readme.io/7275f83-image.png)
+![](/img/content/7275f83-image.png)
 
 
 

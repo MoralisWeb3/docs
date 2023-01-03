@@ -15,11 +15,11 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](https://files.readme.io/43e472f-image.png)
+![](/img/content/43e472f-image.png)
 
-> 📘 
-> 
-> You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::info
+You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
+:::
 
 ## Prerequisites
 
@@ -60,13 +60,13 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 ```
 
-> ❗️ 
-> 
-> Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::caution
+Keep your `NEXTAUTH_SECRET` value in secret to prevent security problems.
+:::
 
-> 🚧 
-> 
-> Every time you modify the `.env.local` file, you need to restart your dapp.
+:::caution
+Every time you modify the `.env.local` file, you need to restart your dapp.
+:::
 
 ## Wrapping App with `Solana Wallet Provider` and `SessionProvider`
 
@@ -112,15 +112,19 @@ export default MyApp;
 
 ```
 
-
-
-> 📘 
-> 
-> NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::info 
+NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
+:::
 
 ## Configure Next-Auth and MoralisNextAuth
 
 5. Create a new file, `pages/api/auth/[...nextauth].ts`, with the following content:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="[...nextauth].ts" default>
 
 ```typescript
 import NextAuth from 'next-auth';
@@ -143,6 +147,10 @@ export default NextAuth({
   },
 });
 ```
+
+</TabItem>
+<TabItem value="javascript" label="[...nextauth].js">
+
 ```javascript Javascript
 import NextAuth from 'next-auth';
 import { MoralisNextAuthProvider } from '@moralisweb3/next';
@@ -165,9 +173,14 @@ export default NextAuth({
 });
 ```
 
+</TabItem>
+</Tabs>
 
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="[...moralis].ts" default>
 
 ```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
@@ -196,6 +209,10 @@ export default MoralisNextApi({
 });
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="[...moralis].js">
+
 ```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
@@ -224,11 +241,15 @@ export default MoralisNextApi({
 
 ```
 
-
+</TabItem>
+</Tabs>
 
 ## Create Wallet Component
 
 7. Create a new file under `app/components/loginBtn/walletAdaptor.tsx`:
+
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="walletAdaptor.tsx" default>
 
 ```typescript walletAdaptor.tsx
 import { useEffect } from "react";
@@ -298,6 +319,10 @@ export default function WalletAdaptor() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="javascript" label="walletAdaptor.jsx">
+
 ```typescript walletAdaptor.jsx
 import { useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -367,6 +392,9 @@ export default function WalletAdaptor() {
 
 ```
 
+</TabItem>
+</Tabs>
+
 
 
 ## Create Page to Sign-In
@@ -431,6 +459,9 @@ export default function Home() {
 
 8. Create components to perform the logout operation and to show the user data. 
 
+<Tabs groupId="programming-language">
+<TabItem value="typescript" label="logoutBtn.js" default>
+
 ```typescript logoutBtn.js
 // File path
 // app/components/logoutBtn/logoutBtn.js
@@ -446,6 +477,10 @@ export default function LogoutBtn() {
 }
 
 ```
+
+</TabItem>
+<TabItem value="typescript-1" label="userData.js">
+
 ```typescript userData.js
 // File path
 // app/components/logoutBtn/userData.js
@@ -497,6 +532,8 @@ export default function UserData() {
 
 ```
 
+</TabItem>
+</Tabs>
 
 
 ## Showing the User Profile
@@ -580,95 +617,20 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/31c94d0-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/31c94d0-image.png)
 
 2. Connect to the Solana wallet extension
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d7eb605-image.png",
-        null,
-        ""
-      ],
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+![](/img/content/d7eb605-image.png)
 
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a7e2b4f-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/a7e2b4f-image.png)
 
 3. Sign the message:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/08970f7-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/08970f7-image.png)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/44500ea-image.png",
-        null,
-        ""
-      ],
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
-
+![](/img/content/44500ea-image.png)
 
 And that completes the authentication process for Solana wallets using the Solana wallet adapter.

@@ -5,6 +5,8 @@ sidebar_position: 13
 description: "Moralis Stream Management allows you to monitor, update, and pause streams with ease. Programmatically or via the web UI, you can get a list of all your streams, set settings, and update the status of a stream. Get started with Moralis Stream Management today!"
 ---
 
+Moralis Stream Management allows you to monitor, update, and pause streams with ease. Programmatically or via the web UI, you can get a list of all your streams, set settings, and update the status of a stream. Get started with Moralis Stream Management today!
+
 ## GET Streams
 
 You can see a list of all your streams by calling the following method:

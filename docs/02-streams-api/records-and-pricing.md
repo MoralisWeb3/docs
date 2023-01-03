@@ -5,6 +5,8 @@ sidebar_position: 4
 description: "Discover how Records are used in Streams API to determine usage and pricing. Records are either a transaction (txs), log (logs) or internal transactions (txsInternal) in the webhook response."
 ---
 
+Discover how Records are used in Streams API to determine usage and pricing. Records are either a transaction (txs), log (logs) or internal transactions (txsInternal) in the webhook response.
+
 ## Summary 
 
 - A record is either a transaction (`txs`), log (`logs`) or internal transactions (`txsInternal`) in the webhook response. 

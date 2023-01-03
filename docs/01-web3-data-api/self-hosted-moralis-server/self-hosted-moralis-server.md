@@ -5,7 +5,7 @@ slug: "self-hosted-moralis-server"
 
 A guide to help you setup your own self-hosted server. This will give you the same functionalities as a Moralis server, but you are in full control.
 
-![](https://files.readme.io/53a7368-self-hosted-moralis-server-webpage-banner.jpg)
+![](/img/content/53a7368-self-hosted-moralis-server-webpage-banner.jpg)
 
 ## Full Video Tutorial - hosting, integrating, migrating
 
@@ -33,9 +33,9 @@ You can integrate Moralis within any backend that you want. In this guide we wil
 - Keep your cloud-code
 - Keep your frontend the same (as this setup will allow you to use the moralis-v1 and react-moralis packages)
 
-> 👍 
-> 
-> This guide will help you setting up your own parse-server, running it locally, and deploying it to production.
+:::tip
+This guide will help you setting up your own parse-server, running it locally, and deploying it to production.
+:::
 
 ## Features
 

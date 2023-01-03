@@ -123,35 +123,12 @@ const config = {
       image: "/img/moralis-social-card.jpg",
       metadata: [
         {
-          name: "description",
-          content:
-            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
-        },
-        {
-          name: "twitter:title",
-          content: "Moralis Web3 Documentation",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
-        },
-        {
           name: "twitter:image",
           content: "/img/moralis-social-card.jpg",
         },
         {
           name: "twitter:card",
           content: "summary_large_image",
-        },
-        {
-          name: "og:title",
-          content: "Moralis Web3 Documentation",
-        },
-        {
-          name: "og:description",
-          content:
-            "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs.",
         },
         {
           name: "og:site_name",
@@ -190,31 +167,31 @@ const config = {
             type: "doc",
             docId: "web3-data-api/overview",
             position: "left",
-            label: "Web3 Data",
+            label: "Web3 Data API",
           },
           {
             type: "doc",
             docId: "streams-api/overview",
             position: "left",
-            label: "Streams",
+            label: "Streams API",
           },
           {
             type: "doc",
             docId: "authentication-api/overview",
             position: "left",
-            label: "Authentication",
-          },
-          {
-            type: "doc",
-            docId: "example-dapps/evm/evm",
-            position: "left",
-            label: "Demos",
+            label: "Authentication API",
           },
           {
             type: "search",
             position: "left",
           },
           // position: Right
+          {
+            type: "doc",
+            docId: "example-dapps/evm/evm",
+            position: "right",
+            label: "Demos",
+          },
           {
             to: "changelog",
             position: "right",
@@ -278,9 +255,8 @@ const config = {
           {
             type: "html",
             position: "right",
-            className: "dashboard-button",
             value:
-              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Dashboard</a>',
+              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
           },
         ],
       },

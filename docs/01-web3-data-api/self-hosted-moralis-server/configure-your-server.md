@@ -1,6 +1,7 @@
 ---
 title: "Configure your server"
 slug: "configure-your-server"
+description: "This tutorial teaches you how to configure your self-hosted Parse server."
 ---
 
 ## Authentication
