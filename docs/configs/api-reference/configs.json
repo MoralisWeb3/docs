@@ -180,39 +180,84 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "properties": {
-                      "name": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "name",
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      "description": {
+                      {
+                        "name": "description",
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      "image": {
+                      {
+                        "name": "image",
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      "external_link": {
+                      {
+                        "name": "external_link",
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      "animation_url": {
+                      {
+                        "name": "animation_url",
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      "attributes": {
+                      {
+                        "name": "attributes",
                         "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "trait_type",
+                              "type": "string",
+                              "description": "The trait title or descriptor",
+                              "example": "Eye Color"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "description": "The value of the attribute",
+                              "example": "hazel"
+                            },
+                            {
+                              "name": "display_type",
+                              "type": "string",
+                              "description": "The type the attribute value should be displayed as",
+                              "example": "string"
+                            },
+                            {
+                              "name": "max_value",
+                              "type": "number",
+                              "description": "For numeric values, the upper range",
+                              "example": 100
+                            },
+                            {
+                              "name": "trait_count",
+                              "type": "number",
+                              "description": "The number of possible values for this trait",
+                              "example": 7
+                            },
+                            {
+                              "name": "order",
+                              "type": "number",
+                              "description": "Order the trait should appear in the attribute list.",
+                              "example": 1
+                            }
+                          ]
                         }
                       }
-                    }
+                    ]
                   },
                   {
                     "name": "amount",
@@ -968,39 +1013,84 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "properties": {
-                      "name": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "name",
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      "description": {
+                      {
+                        "name": "description",
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      "image": {
+                      {
+                        "name": "image",
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      "external_link": {
+                      {
+                        "name": "external_link",
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      "animation_url": {
+                      {
+                        "name": "animation_url",
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      "attributes": {
+                      {
+                        "name": "attributes",
                         "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "trait_type",
+                              "type": "string",
+                              "description": "The trait title or descriptor",
+                              "example": "Eye Color"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "description": "The value of the attribute",
+                              "example": "hazel"
+                            },
+                            {
+                              "name": "display_type",
+                              "type": "string",
+                              "description": "The type the attribute value should be displayed as",
+                              "example": "string"
+                            },
+                            {
+                              "name": "max_value",
+                              "type": "number",
+                              "description": "For numeric values, the upper range",
+                              "example": 100
+                            },
+                            {
+                              "name": "trait_count",
+                              "type": "number",
+                              "description": "The number of possible values for this trait",
+                              "example": 7
+                            },
+                            {
+                              "name": "order",
+                              "type": "number",
+                              "description": "Order the trait should appear in the attribute list.",
+                              "example": 1
+                            }
+                          ]
                         }
                       }
-                    }
+                    ]
                   },
                   {
                     "name": "minter_address",
@@ -1232,39 +1322,84 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "properties": {
-                      "name": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "name",
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      "description": {
+                      {
+                        "name": "description",
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      "image": {
+                      {
+                        "name": "image",
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      "external_link": {
+                      {
+                        "name": "external_link",
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      "animation_url": {
+                      {
+                        "name": "animation_url",
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      "attributes": {
+                      {
+                        "name": "attributes",
                         "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "trait_type",
+                              "type": "string",
+                              "description": "The trait title or descriptor",
+                              "example": "Eye Color"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "description": "The value of the attribute",
+                              "example": "hazel"
+                            },
+                            {
+                              "name": "display_type",
+                              "type": "string",
+                              "description": "The type the attribute value should be displayed as",
+                              "example": "string"
+                            },
+                            {
+                              "name": "max_value",
+                              "type": "number",
+                              "description": "For numeric values, the upper range",
+                              "example": 100
+                            },
+                            {
+                              "name": "trait_count",
+                              "type": "number",
+                              "description": "The number of possible values for this trait",
+                              "example": 7
+                            },
+                            {
+                              "name": "order",
+                              "type": "number",
+                              "description": "Order the trait should appear in the attribute list.",
+                              "example": 1
+                            }
+                          ]
                         }
                       }
-                    }
+                    ]
                   },
                   {
                     "name": "amount",
@@ -2519,39 +2654,84 @@
               {
                 "name": "normalized_metadata",
                 "description": "A normalized metadata version of the NFT's metadata.",
-                "properties": {
-                  "name": {
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "name",
                     "type": "string",
                     "description": "The name or title of the NFT",
                     "example": "Moralis Mug"
                   },
-                  "description": {
+                  {
+                    "name": "description",
                     "type": "string",
                     "description": "A detailed description of the NFT",
                     "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                   },
-                  "image": {
+                  {
+                    "name": "image",
                     "type": "string",
                     "description": "The URL of the NFT's image",
                     "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                   },
-                  "external_link": {
+                  {
+                    "name": "external_link",
                     "type": "string",
                     "description": "A link to additional information",
                     "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                   },
-                  "animation_url": {
+                  {
+                    "name": "animation_url",
                     "type": "string",
                     "description": "An animated version of the NFT's image",
                     "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                   },
-                  "attributes": {
+                  {
+                    "name": "attributes",
                     "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "trait_type",
+                          "type": "string",
+                          "description": "The trait title or descriptor",
+                          "example": "Eye Color"
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "description": "The value of the attribute",
+                          "example": "hazel"
+                        },
+                        {
+                          "name": "display_type",
+                          "type": "string",
+                          "description": "The type the attribute value should be displayed as",
+                          "example": "string"
+                        },
+                        {
+                          "name": "max_value",
+                          "type": "number",
+                          "description": "For numeric values, the upper range",
+                          "example": 100
+                        },
+                        {
+                          "name": "trait_count",
+                          "type": "number",
+                          "description": "The number of possible values for this trait",
+                          "example": 7
+                        },
+                        {
+                          "name": "order",
+                          "type": "number",
+                          "description": "Order the trait should appear in the attribute list.",
+                          "example": 1
+                        }
+                      ]
                     }
                   }
-                }
+                ]
               },
               {
                 "name": "minter_address",
@@ -3028,39 +3208,84 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "properties": {
-                      "name": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "name",
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      "description": {
+                      {
+                        "name": "description",
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      "image": {
+                      {
+                        "name": "image",
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      "external_link": {
+                      {
+                        "name": "external_link",
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      "animation_url": {
+                      {
+                        "name": "animation_url",
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      "attributes": {
+                      {
+                        "name": "attributes",
                         "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "trait_type",
+                              "type": "string",
+                              "description": "The trait title or descriptor",
+                              "example": "Eye Color"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "description": "The value of the attribute",
+                              "example": "hazel"
+                            },
+                            {
+                              "name": "display_type",
+                              "type": "string",
+                              "description": "The type the attribute value should be displayed as",
+                              "example": "string"
+                            },
+                            {
+                              "name": "max_value",
+                              "type": "number",
+                              "description": "For numeric values, the upper range",
+                              "example": 100
+                            },
+                            {
+                              "name": "trait_count",
+                              "type": "number",
+                              "description": "The number of possible values for this trait",
+                              "example": 7
+                            },
+                            {
+                              "name": "order",
+                              "type": "number",
+                              "description": "Order the trait should appear in the attribute list.",
+                              "example": 1
+                            }
+                          ]
                         }
                       }
-                    }
+                    ]
                   },
                   {
                     "name": "amount",
@@ -3836,28 +4061,37 @@
               {
                 "name": "nativePrice",
                 "required": ["value", "decimals", "name", "symbol"],
-                "properties": {
-                  "value": {
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "value",
                     "type": "string",
                     "description": "The native price of the token",
-                    "example": "8409770570506626"
+                    "example": "8409770570506626",
+                    "required": true
                   },
-                  "decimals": {
+                  {
+                    "name": "decimals",
                     "type": "integer",
                     "description": "The number of decimals on the token",
-                    "example": 18
+                    "example": 18,
+                    "required": true
                   },
-                  "name": {
+                  {
+                    "name": "name",
                     "type": "string",
                     "description": "The name of the token",
-                    "example": "Ether"
+                    "example": "Ether",
+                    "required": true
                   },
-                  "symbol": {
+                  {
+                    "name": "symbol",
                     "type": "string",
                     "description": "The symbol of the token",
-                    "example": "ETH"
+                    "example": "ETH",
+                    "required": true
                   }
-                }
+                ]
               },
               {
                 "name": "usdPrice",
@@ -7390,62 +7624,325 @@
                   {
                     "name": "payload",
                     "type": "object",
-                    "properties": {
-                      "block": { "$ref": "#/components/schemas/Block" },
-                      "chainId": { "type": "string" },
-                      "logs": {
-                        "items": { "$ref": "#/components/schemas/Log" },
-                        "type": "array"
+                    "fields": [
+                      {
+                        "name": "block",
+                        "type": "object",
+                        "required": true,
+                        "fields": [
+                          {
+                            "name": "number",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "hash",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "timestamp",
+                            "type": "string",
+                            "required": true
+                          }
+                        ]
                       },
-                      "txs": {
-                        "items": { "$ref": "#/components/schemas/Transaction" },
-                        "type": "array"
-                      },
-                      "txsInternal": {
-                        "items": {
-                          "$ref": "#/components/schemas/InternalTransaction"
+                      { "name": "chainId", "type": "string", "required": true },
+                      {
+                        "name": "logs",
+                        "required": true,
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "triggers",
+                              "field": {
+                                "type": "object",
+                                "fields": [
+                                  {
+                                    "name": "value",
+                                    "type": "string",
+                                    "required": true
+                                  },
+                                  {
+                                    "name": "name",
+                                    "type": "string",
+                                    "required": true
+                                  }
+                                ]
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "name": "logIndex",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "transactionHash",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "address",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "data",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "topic0",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "topic1",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "topic2",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "topic3",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            }
+                          ]
                         },
                         "type": "array"
                       },
-                      "abi": {
-                        "items": { "$ref": "#/components/schemas/AbiItem" },
+                      {
+                        "name": "txs",
+                        "required": true,
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "triggers",
+                              "field": {
+                                "type": "object",
+                                "fields": [
+                                  {
+                                    "name": "value",
+                                    "type": "string",
+                                    "required": true
+                                  },
+                                  {
+                                    "name": "name",
+                                    "type": "string",
+                                    "required": true
+                                  }
+                                ]
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "name": "hash",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "gas",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "gasPrice",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "nonce",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "input",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "transactionIndex",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "fromAddress",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "toAddress",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "type",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "v",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "r",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "s",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "receiptCumulativeGasUsed",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "receiptGasUsed",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "receiptContractAddress",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "receiptRoot",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "receiptStatus",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            }
+                          ]
+                        },
                         "type": "array"
                       },
-                      "retries": { "type": "number", "format": "double" },
-                      "confirmed": { "type": "boolean" },
-                      "tag": { "type": "string" },
-                      "streamId": { "type": "string" }
-                    },
-                    "required": [
-                      "block",
-                      "chainId",
-                      "logs",
-                      "txs",
-                      "txsInternal",
-                      "abi",
-                      "retries",
-                      "confirmed",
-                      "tag",
-                      "streamId"
+                      {
+                        "name": "txsInternal",
+                        "required": true,
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "from",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "to",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            },
+                            {
+                              "name": "transactionHash",
+                              "type": "string",
+                              "required": true
+                            },
+                            {
+                              "name": "gas",
+                              "type": "string",
+                              "nullable": true,
+                              "required": true
+                            }
+                          ]
+                        },
+                        "type": "array"
+                      },
+                      {
+                        "name": "abi",
+                        "field": { "type": "json" },
+                        "type": "array",
+                        "required": true
+                      },
+                      {
+                        "name": "retries",
+                        "type": "number",
+                        "format": "double",
+                        "required": true
+                      },
+                      {
+                        "name": "confirmed",
+                        "type": "boolean",
+                        "required": true
+                      },
+                      { "name": "tag", "type": "string", "required": true },
+                      { "name": "streamId", "type": "string", "required": true }
                     ],
                     "additionalProperties": false
                   },
                   {
                     "name": "tinyPayload",
                     "type": "object",
-                    "properties": {
-                      "chainId": { "type": "string" },
-                      "confirmed": { "type": "boolean" },
-                      "block": { "type": "string" },
-                      "records": { "type": "number", "format": "double" },
-                      "retries": { "type": "number", "format": "double" }
-                    },
-                    "required": [
-                      "chainId",
-                      "confirmed",
-                      "block",
-                      "records",
-                      "retries"
+                    "fields": [
+                      {
+                        "name": "chainId",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "confirmed",
+                        "type": "boolean",
+                        "required": true
+                      },
+                      { "name": "block", "type": "string", "required": true },
+                      {
+                        "name": "records",
+                        "type": "number",
+                        "format": "double",
+                        "required": true
+                      },
+                      {
+                        "name": "retries",
+                        "type": "number",
+                        "format": "double",
+                        "required": true
+                      }
                     ],
                     "additionalProperties": false
                   },
@@ -8306,10 +8803,8 @@
                       { "name": "topic0", "type": "string" },
                       {
                         "name": "filter",
-                        "type": "object",
+                        "type": "json",
                         "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                        "properties": {},
-                        "additionalProperties": {},
                         "example": {}
                       },
                       { "name": "includeNativeTxs", "type": "boolean" }
@@ -8347,28 +8842,43 @@
                         "name": "functionAbi",
                         "type": "object",
                         "description": "The abi to parse the log object of the contract",
-                        "properties": {
-                          "anonymous": { "type": "boolean" },
-                          "constant": { "type": "boolean" },
-                          "inputs": {
-                            "items": {
+                        "fields": [
+                          {
+                            "name": "anonymous",
+                            "type": "boolean"
+                          },
+                          { "name": "constant", "type": "boolean" },
+                          {
+                            "name": "inputs",
+                            "field": {
                               "type": "json"
                             },
                             "type": "array"
                           },
-                          "name": { "type": "string" },
-                          "outputs": {
-                            "items": {
+                          {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          {
+                            "name": "outputs",
+                            "field": {
                               "type": "json"
                             },
                             "type": "array"
                           },
-                          "payable": { "type": "boolean" },
-                          "stateMutability": { "type": "string" },
-                          "type": { "type": "string" },
-                          "gas": { "type": "number", "format": "double" }
-                        },
-                        "required": ["type"],
+                          { "name": "payable", "type": "boolean" },
+                          { "name": "stateMutability", "type": "string" },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "gas",
+                            "type": "number",
+                            "format": "double"
+                          }
+                        ],
                         "additionalProperties": false,
                         "example": {}
                       },
@@ -8530,10 +9040,8 @@
               { "name": "topic0", "type": "string" },
               {
                 "name": "filter",
-                "type": "object",
+                "type": "json",
                 "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                "properties": {},
-                "additionalProperties": {},
                 "example": {}
               },
               { "name": "includeNativeTxs", "type": "boolean" }
@@ -8700,10 +9208,8 @@
                   { "name": "topic0", "type": "string" },
                   {
                     "name": "filter",
-                    "type": "object",
+                    "type": "json",
                     "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                    "properties": {},
-                    "additionalProperties": {},
                     "example": {}
                   },
                   { "name": "includeNativeTxs", "type": "boolean" }
@@ -8917,10 +9423,8 @@
                   { "name": "topic0", "type": "string" },
                   {
                     "name": "filter",
-                    "type": "object",
+                    "type": "json",
                     "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                    "properties": {},
-                    "additionalProperties": {},
                     "example": {}
                   },
                   { "name": "includeNativeTxs", "type": "boolean" }
@@ -9132,10 +9636,8 @@
               { "name": "topic0", "type": "string" },
               {
                 "name": "filter",
-                "type": "object",
+                "type": "json",
                 "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                "properties": {},
-                "additionalProperties": {},
                 "example": {}
               },
               { "name": "includeNativeTxs", "type": "boolean" }
@@ -9302,10 +9804,8 @@
                   { "name": "topic0", "type": "string" },
                   {
                     "name": "filter",
-                    "type": "object",
+                    "type": "json",
                     "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                    "properties": {},
-                    "additionalProperties": {},
                     "example": {}
                   },
                   { "name": "includeNativeTxs", "type": "boolean" }
@@ -9519,10 +10019,8 @@
                   { "name": "topic0", "type": "string" },
                   {
                     "name": "filter",
-                    "type": "object",
+                    "type": "json",
                     "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                    "properties": {},
-                    "additionalProperties": {},
                     "example": {}
                   },
                   { "name": "includeNativeTxs", "type": "boolean" }
@@ -9738,10 +10236,8 @@
                   { "name": "topic0", "type": "string" },
                   {
                     "name": "filter",
-                    "type": "object",
+                    "type": "json",
                     "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
-                    "properties": {},
-                    "additionalProperties": {},
                     "example": {}
                   },
                   { "name": "includeNativeTxs", "type": "boolean" }
