@@ -3540,6 +3540,21 @@
       "source": "/moralis-dapp/users/web3-login",
       "destination": "https://v1docs.moralis.io/moralis-dapp/users/web3-login",
       "permanent": false
+    },
+    {
+      "source": "/docs/setup-your-first-stream",
+      "destination": "/streams-api/getting-started",
+      "permanent": false
+    },
+    {
+      "source": "/docs/examples-of-stream-use-cases",
+      "destination": "/streams-api",
+      "permanent": false
+    },
+    {
+      "source": "/changelog/2022/12/14/block-filtering-get-nft-contract-transfers",
+      "destination": "/changelog/block-filtering-added-to-getnftcontracttransfers-%EF%B8%8F",
+      "permanent": false
     }
   ]
 }
