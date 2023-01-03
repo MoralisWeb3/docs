@@ -41,7 +41,7 @@ module.exports = function (context, fromOptions) {
             attributes: {
               type: 'text/javascript',
               charset: 'UTF-8',
-              src: '//geo.cookie-script.com/s/56721ba44cd3f4b0527240dceef70f8b.js?state=ca&region=eu',
+              src: '/js/cookie-script.js?state=ca&region=eu',
             },
           },
           {
