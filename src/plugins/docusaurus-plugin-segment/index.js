@@ -42,6 +42,7 @@ module.exports = function (context, fromOptions) {
               type: 'text/javascript',
               charset: 'UTF-8',
               src: '/js/cookie-script.js?state=ca&region=eu',
+              async: true,
             },
           },
           {
