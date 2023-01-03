@@ -4060,7 +4060,6 @@
             "fields": [
               {
                 "name": "nativePrice",
-                "required": ["value", "decimals", "name", "symbol"],
                 "type": "object",
                 "fields": [
                   {
@@ -8289,11 +8288,9 @@
                           },
                           {
                             "name": "outputs",
-                            "items": [
-                              {
-                                "type": "json"
-                              }
-                            ],
+                            "field": {
+                              "type": "json"
+                            },
                             "type": "array"
                           },
                           { "name": "payable", "type": "boolean" },
@@ -8340,19 +8337,26 @@
               {
                 "name": "tinyPayload",
                 "type": "object",
-                "properties": {
-                  "chainId": { "type": "string" },
-                  "confirmed": { "type": "boolean" },
-                  "block": { "type": "string" },
-                  "records": { "type": "number", "format": "double" },
-                  "retries": { "type": "number", "format": "double" }
-                },
-                "required": [
-                  "chainId",
-                  "confirmed",
-                  "block",
-                  "records",
-                  "retries"
+                "fields": [
+                  {
+                    "name": "chainId",
+                    "type": "string",
+                    "required": true
+                  },
+                  { "name": "confirmed", "type": "boolean", "required": true },
+                  { "name": "block", "type": "string", "required": true },
+                  {
+                    "name": "records",
+                    "type": "number",
+                    "format": "double",
+                    "required": true
+                  },
+                  {
+                    "name": "retries",
+                    "type": "number",
+                    "format": "double",
+                    "required": true
+                  }
                 ],
                 "additionalProperties": false
               },
@@ -8832,10 +8836,7 @@
                         "name": "inputs",
                         "type": "array",
                         "field": {
-                          "anyOf": [
-                            { "type": "string" },
-                            { "items": {}, "type": "array" }
-                          ]
+                          "anyOf": [{ "type": "string" }, { "type": "json" }]
                         }
                       },
                       {
@@ -9069,35 +9070,41 @@
                 "name": "inputs",
                 "type": "array",
                 "field": {
-                  "anyOf": [
-                    { "type": "string" },
-                    { "items": {}, "type": "array" }
-                  ]
+                  "anyOf": [{ "type": "string" }, { "type": "json" }]
                 }
               },
               {
                 "name": "functionAbi",
                 "type": "object",
                 "description": "The abi to parse the log object of the contract",
-                "properties": {
-                  "anonymous": { "type": "boolean" },
-                  "constant": { "type": "boolean" },
-                  "inputs": {
-                    "items": { "type": "json" },
+                "fields": [
+                  {
+                    "name": "anonymous",
+                    "type": "boolean"
+                  },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "field": { "type": "json" },
                     "type": "array"
                   },
-                  "name": { "type": "string" },
-                  "outputs": {
-                    "items": { "type": "json" },
+                  {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "outputs",
+                    "field": { "type": "json" },
                     "type": "array"
                   },
-                  "payable": { "type": "boolean" },
-                  "stateMutability": { "type": "string" },
-                  "type": { "type": "string" },
-                  "gas": { "type": "number", "format": "double" }
-                },
-                "required": ["type"],
-                "additionalProperties": false,
+                  {
+                    "name": "payable",
+                    "type": "boolean"
+                  },
+                  { "name": "stateMutability", "type": "string" },
+                  { "name": "type", "type": "string", "required": true },
+                  { "name": "gas", "type": "number", "format": "double" }
+                ],
                 "example": {}
               },
               { "name": "topic0", "type": "string" },
@@ -9237,34 +9244,35 @@
                     "name": "inputs",
                     "type": "array",
                     "field": {
-                      "anyOf": [
-                        { "type": "string" },
-                        { "items": {}, "type": "array" }
-                      ]
+                      "anyOf": [{ "type": "string" }, { "type": "json" }]
                     }
                   },
                   {
                     "name": "functionAbi",
                     "type": "object",
                     "description": "The abi to parse the log object of the contract",
-                    "properties": {
-                      "anonymous": { "type": "boolean" },
-                      "constant": { "type": "boolean" },
-                      "inputs": {
-                        "items": { "type": "json" },
+                    "fields": [
+                      {
+                        "name": "anonymous",
+                        "type": "boolean"
+                      },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      "name": { "type": "string" },
-                      "outputs": {
-                        "items": { "type": "json" },
+                      { "name": "name", "type": "string" },
+                      {
+                        "name": "outputs",
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      "payable": { "type": "boolean" },
-                      "stateMutability": { "type": "string" },
-                      "type": { "type": "string" },
-                      "gas": { "type": "number", "format": "double" }
-                    },
-                    "required": ["type"],
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      { "name": "type", "type": "string", "required": true },
+                      { "name": "gas", "type": "number", "format": "double" }
+                    ],
                     "additionalProperties": false,
                     "example": {}
                   },
@@ -9452,34 +9460,50 @@
                     "name": "inputs",
                     "type": "array",
                     "field": {
-                      "anyOf": [
-                        { "type": "string" },
-                        { "items": {}, "type": "array" }
-                      ]
+                      "anyOf": [{ "type": "string" }, { "type": "json" }]
                     }
                   },
                   {
                     "name": "functionAbi",
                     "type": "object",
                     "description": "The abi to parse the log object of the contract",
-                    "properties": {
-                      "anonymous": { "type": "boolean" },
-                      "constant": { "type": "boolean" },
-                      "inputs": {
-                        "items": { "type": "json" },
+                    "fields": [
+                      {
+                        "name": "anonymous",
+                        "type": "boolean"
+                      },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "name": { "type": "string" },
-                      "outputs": {
-                        "items": { "type": "json" },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "outputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "payable": { "type": "boolean" },
-                      "stateMutability": { "type": "string" },
-                      "type": { "type": "string" },
-                      "gas": { "type": "number", "format": "double" }
-                    },
-                    "required": ["type"],
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "gas",
+                        "type": "number",
+                        "format": "double"
+                      }
+                    ],
                     "additionalProperties": false,
                     "example": {}
                   },
@@ -9665,34 +9689,50 @@
                 "name": "inputs",
                 "type": "array",
                 "field": {
-                  "anyOf": [
-                    { "type": "string" },
-                    { "items": {}, "type": "array" }
-                  ]
+                  "anyOf": [{ "type": "string" }, { "type": "json" }]
                 }
               },
               {
                 "name": "functionAbi",
                 "type": "object",
                 "description": "The abi to parse the log object of the contract",
-                "properties": {
-                  "anonymous": { "type": "boolean" },
-                  "constant": { "type": "boolean" },
-                  "inputs": {
-                    "items": { "type": "json" },
+                "fields": [
+                  {
+                    "name": "anonymous",
+                    "type": "boolean"
+                  },
+                  { "name": "constant", "type": "boolean" },
+                  {
+                    "name": "inputs",
+                    "field": {
+                      "type": "json"
+                    },
                     "type": "array"
                   },
-                  "name": { "type": "string" },
-                  "outputs": {
-                    "items": { "type": "json" },
+                  {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "outputs",
+                    "field": {
+                      "type": "json"
+                    },
                     "type": "array"
                   },
-                  "payable": { "type": "boolean" },
-                  "stateMutability": { "type": "string" },
-                  "type": { "type": "string" },
-                  "gas": { "type": "number", "format": "double" }
-                },
-                "required": ["type"],
+                  { "name": "payable", "type": "boolean" },
+                  { "name": "stateMutability", "type": "string" },
+                  {
+                    "name": "type",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "gas",
+                    "type": "number",
+                    "format": "double"
+                  }
+                ],
                 "additionalProperties": false,
                 "example": {}
               },
@@ -9833,34 +9873,50 @@
                     "name": "inputs",
                     "type": "array",
                     "field": {
-                      "anyOf": [
-                        { "type": "string" },
-                        { "items": {}, "type": "array" }
-                      ]
+                      "anyOf": [{ "type": "string" }, { "type": "json" }]
                     }
                   },
                   {
                     "name": "functionAbi",
                     "type": "object",
                     "description": "The abi to parse the log object of the contract",
-                    "properties": {
-                      "anonymous": { "type": "boolean" },
-                      "constant": { "type": "boolean" },
-                      "inputs": {
-                        "items": { "type": "json" },
+                    "fields": [
+                      {
+                        "name": "anonymous",
+                        "type": "boolean"
+                      },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "name": { "type": "string" },
-                      "outputs": {
-                        "items": { "type": "json" },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "outputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "payable": { "type": "boolean" },
-                      "stateMutability": { "type": "string" },
-                      "type": { "type": "string" },
-                      "gas": { "type": "number", "format": "double" }
-                    },
-                    "required": ["type"],
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "gas",
+                        "type": "number",
+                        "format": "double"
+                      }
+                    ],
                     "additionalProperties": false,
                     "example": {}
                   },
@@ -10048,34 +10104,50 @@
                     "name": "inputs",
                     "type": "array",
                     "field": {
-                      "anyOf": [
-                        { "type": "string" },
-                        { "items": {}, "type": "array" }
-                      ]
+                      "anyOf": [{ "type": "string" }, { "type": "json" }]
                     }
                   },
                   {
                     "name": "functionAbi",
                     "type": "object",
                     "description": "The abi to parse the log object of the contract",
-                    "properties": {
-                      "anonymous": { "type": "boolean" },
-                      "constant": { "type": "boolean" },
-                      "inputs": {
-                        "items": { "type": "json" },
+                    "fields": [
+                      {
+                        "name": "anonymous",
+                        "type": "boolean"
+                      },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "name": { "type": "string" },
-                      "outputs": {
-                        "items": { "type": "json" },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "outputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "payable": { "type": "boolean" },
-                      "stateMutability": { "type": "string" },
-                      "type": { "type": "string" },
-                      "gas": { "type": "number", "format": "double" }
-                    },
-                    "required": ["type"],
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "gas",
+                        "type": "number",
+                        "format": "double"
+                      }
+                    ],
                     "additionalProperties": false,
                     "example": {}
                   },
@@ -10265,34 +10337,50 @@
                     "name": "inputs",
                     "type": "array",
                     "field": {
-                      "anyOf": [
-                        { "type": "string" },
-                        { "items": {}, "type": "array" }
-                      ]
+                      "anyOf": [{ "type": "string" }, { "type": "json" }]
                     }
                   },
                   {
                     "name": "functionAbi",
                     "type": "object",
                     "description": "The abi to parse the log object of the contract",
-                    "properties": {
-                      "anonymous": { "type": "boolean" },
-                      "constant": { "type": "boolean" },
-                      "inputs": {
-                        "items": { "type": "json" },
+                    "fields": [
+                      {
+                        "name": "anonymous",
+                        "type": "boolean"
+                      },
+                      { "name": "constant", "type": "boolean" },
+                      {
+                        "name": "inputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "name": { "type": "string" },
-                      "outputs": {
-                        "items": { "type": "json" },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "outputs",
+                        "field": {
+                          "type": "json"
+                        },
                         "type": "array"
                       },
-                      "payable": { "type": "boolean" },
-                      "stateMutability": { "type": "string" },
-                      "type": { "type": "string" },
-                      "gas": { "type": "number", "format": "double" }
-                    },
-                    "required": ["type"],
+                      { "name": "payable", "type": "boolean" },
+                      { "name": "stateMutability", "type": "string" },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "gas",
+                        "type": "number",
+                        "format": "double"
+                      }
+                    ],
                     "additionalProperties": false,
                     "example": {}
                   },
@@ -10698,11 +10786,14 @@
               {
                 "name": "nativeBalance",
                 "type": "object",
-                "properties": {
-                  "solana": { "type": "string" },
-                  "lamports": { "type": "string" }
-                },
-                "required": ["solana", "lamports"]
+                "fields": [
+                  {
+                    "name": "solana",
+                    "type": "string",
+                    "required": true
+                  },
+                  { "name": "lamports", "type": "string", "required": true }
+                ]
               },
               {
                 "name": "nfts",
