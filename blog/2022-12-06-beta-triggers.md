@@ -1,5 +1,6 @@
 ---
 title: '[Streams] Beta "Triggers"'
+slug: "streams-beta-triggers" 
 authors:
   name: Elias
 ---

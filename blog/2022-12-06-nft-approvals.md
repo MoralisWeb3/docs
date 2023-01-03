@@ -1,5 +1,6 @@
 ---
 title: "[Streams] NFT Approvals"
+slug: "streams-nft-approvals"
 authors:
   name: Elias
 ---

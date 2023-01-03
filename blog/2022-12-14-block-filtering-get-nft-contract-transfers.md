@@ -1,5 +1,6 @@
 ---
 title: "[API] Block filtering added to getNFTContractTransfers"
+slug: "block-filtering-added-to-getnftcontracttransfers-️"
 authors:
   name: Reuben Salisbury
 ---
