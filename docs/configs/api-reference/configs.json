@@ -5762,7 +5762,7 @@
     "getContractEvents": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get events by contract",
-      "description": "Get events for a contract ordered by block number in descending order. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Events/getContractEvents).",
+      "description": "Get events for a contract ordered by block number in descending order.",
       "method": "POST",
       "path": "/:address/events",
       "pathParams": [
@@ -6352,7 +6352,7 @@
     "runContractFunction": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Run contract function",
-      "description": "Run a given function of a contract ABI and retrieve readonly data. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Utils/runContractFunction).",
+      "description": "Run a given function of a contract ABI and retrieve readonly data.",
       "method": "POST",
       "path": "/:address/function",
       "pathParams": [
@@ -6436,7 +6436,7 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const abi = []; // Add ABI\n\n    const functionName = 'balanceOf';\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.utils.runContractFunction({\n        abi,\n        functionName,\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n const abi = []; // Add ABI\n\n const functionName = 'balanceOf';\n\n const address = '0x1234567890123456789012345678901234567890';\n\n const chain = EvmChain.ETHEREUM;\n\n await Moralis.start({\n   apiKey: 'YOUR_API_KEY',\n   // ...and any other configuration\n });\n\n const response = await Moralis.EvmApi.utils.runContractFunction({\n   abi,\n   functionName,\n   address,\n   chain,\n  });\n\n console.log(response?.result);\n} catch (e) {\n console.error(e);\n}\n",
           "name": "Moralis NodeJS SDK"
         },
         {
@@ -10049,13 +10049,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
           "description": "The address for which the native balance will be checked",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "EJpLyTeE8XHG9CeREeHd6pr6hNhaRnTRJx4Z5DPhEJJ6"
         }
       ],
       "queryParams": [],
@@ -10096,13 +10099,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
           "description": "The address for which token balances will be checked",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "EJpLyTeE8XHG9CeREeHd6pr6hNhaRnTRJx4Z5DPhEJJ6"
         }
       ],
       "queryParams": [],
@@ -10133,13 +10139,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "EJpLyTeE8XHG9CeREeHd6pr6hNhaRnTRJx4Z5DPhEJJ6"
         }
       ],
       "queryParams": [],
@@ -10170,13 +10179,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
           "description": "The address of the token contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "EJpLyTeE8XHG9CeREeHd6pr6hNhaRnTRJx4Z5DPhEJJ6"
         }
       ],
       "queryParams": [],
@@ -10247,13 +10259,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
-          "description": "The address of the contract",
+          "description": "The address of the NFT program",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "DDy5QHKEDgg5ZyWmwi1rJKwYHe7ZR5udGQfJkc8EPfLM"
         }
       ],
       "queryParams": [],
@@ -10271,21 +10286,29 @@
               {
                 "name": "metaplex",
                 "type": "object",
-                "properties": {
-                  "metadataUri": { "type": "string" },
-                  "masterEdition": { "type": "boolean" },
-                  "isMutable": { "type": "boolean" },
-                  "primarySaleHappened": { "type": "boolean" },
-                  "sellerFeeBasisPoints": { "type": "number" },
-                  "updateAuthority": { "type": "string" }
-                },
-                "required": [
-                  "metadataUri",
-                  "masterEdition",
-                  "isMutable",
-                  "primarySaleHappened",
-                  "sellerFeeBasisPoints",
-                  "updateAuthority"
+                "fields": [
+                  { "name": "metadataUri", "type": "string", "required": true },
+                  {
+                    "name": "masterEdition",
+                    "type": "boolean",
+                    "required": true
+                  },
+                  { "name": "isMutable", "type": "boolean", "required": true },
+                  {
+                    "name": "primarySaleHappened",
+                    "type": "boolean",
+                    "required": true
+                  },
+                  {
+                    "name": "sellerFeeBasisPoints",
+                    "type": "number",
+                    "required": true
+                  },
+                  {
+                    "name": "updateAuthority",
+                    "type": "string",
+                    "required": true
+                  }
                 ]
               }
             ]
@@ -10316,13 +10339,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "testnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
-          "description": "The address of the token contract",
+          "description": "The address of the SPL token program",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
         }
       ],
       "queryParams": [],
@@ -10336,13 +10362,12 @@
               {
                 "name": "nativePrice",
                 "type": "object",
-                "properties": {
-                  "value": { "type": "string" },
-                  "decimals": { "type": "number" },
-                  "name": { "type": "string" },
-                  "symbol": { "type": "string" }
-                },
-                "required": ["value", "decimals", "name", "symbol"]
+                "fields": [
+                  { "name": "value", "type": "string", "required": true },
+                  { "name": "decimals", "type": "number", "required": true },
+                  { "name": "name", "type": "string", "required": true },
+                  { "name": "symbol", "type": "string", "required": true }
+                ]
               },
               { "name": "usdPrice", "type": "number" },
               { "name": "exchangeAddress", "type": "string" },

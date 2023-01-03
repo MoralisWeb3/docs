@@ -177,6 +177,15 @@ const tabs = [
 
 // Used to filter out the fields that are empty in the example body JSON
 export const filterOutEmpty = (value: any) => {
+  /**
+   * This is temporary solution for fixing
+   * Auth API adding additional `\` on special
+   * characters. This applies to:
+   * - verifyChallengeEvm
+   * - verifyChallengeSolana
+   */
+  if (value?.message) value = { ...value, message: value.message.replace("\\n", "\n") }
+
   if (Array.isArray(value)) {
     const cleanArray = value.map((item) => filterOutEmpty(item)).filter((item) => item != null);
     return cleanArray.length === 0 ? undefined : cleanArray;
