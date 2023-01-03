@@ -1186,7 +1186,7 @@
     },
     {
       "source": "/reference/getwalletnfts",
-      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
       "permanent": true
     },
     {
@@ -2900,7 +2900,7 @@
     },
     {
       "source": "/reference/token-1",
-      "destination": "/web3-data-api/reference/get-sol-token-price",
+      "destination": "/web3-data-api/evm/token-api",
       "permanent": true
     },
     {
@@ -3505,6 +3505,6 @@
       "source": "/changelog/welcome-to-moralis",
       "destination": "/changelog",
       "permanent": true
-    },
+    }
   ]
 }
