@@ -3500,6 +3500,11 @@
       "source": "/docs/how-to-get-erc20-token-metadata-by-contract-address",
       "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-contract",
       "permanent": true
-    }
+    },
+    {
+      "source": "/changelog/welcome-to-moralis",
+      "destination": "/changelog",
+      "permanent": true
+    },
   ]
 }
