@@ -3505,6 +3505,41 @@
       "source": "/changelog/welcome-to-moralis",
       "destination": "/changelog",
       "permanent": true
+    },
+    {
+      "source": "/tutorials/nft-game-course",
+      "destination": "/example-dapps/evm",
+      "permanent": true
+    },
+    {
+      "source": "/guides/build-a-simple-dapp-in-3-minutes/",
+      "destination": "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes",
+      "permanent": true
+    },
+    {
+      "source": "/tutorials/setup-cronos-testnet-defi-wallet",
+      "destination": "https://v1docs.moralis.io/tutorials/setup-cronos-testnet-defi-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/web3-sdk/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/misc/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/nft-api",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/nft-api",
+      "permanent": false
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/web3-login",
+      "permanent": false
     }
   ]
 }
