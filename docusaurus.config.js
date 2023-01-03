@@ -30,49 +30,6 @@ const config = {
     mermaid: true,
   },
 
-  headTags: [
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/golos/Golos-Text_Bold.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/golos/Golos-Text_DemiBold.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/golos/Golos-Text_Medium.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/golos/Golos-Text_Regular.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    },
-  ],
-
   themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
