@@ -275,6 +275,11 @@
       "permanent": true
     },
     {
+      "source": "/docs/how-to-get-erc20-token-metadata-by-token-addresses",
+      "destination": "web3-data-api/evm/how-to-get-erc20-token-metadata-by-token-addresses",
+      "permanent": true
+    },
+    {
       "source": "/docs/how-to-get-all-erc20-transfers-by-wallet",
       "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-wallet",
       "permanent": true
