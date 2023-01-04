@@ -97,7 +97,7 @@ const tabs = [
 
       return buildTemplate([
         line(`curl --request ${method} \\`),
-        line(`${indent}--url ${url} \\`),
+        line(`${indent}--url '${url}' \\`),
         line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
         auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
         body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
