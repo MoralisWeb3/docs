@@ -1973,7 +1973,7 @@
     },
     {
       "source": "/reference/supported-chains-for-nft-api",
-      "destination": "/web3-data-api",
+      "destination": "/web3-data-api/evm/nft-api",
       "permanent": true
     },
     {
@@ -3453,7 +3453,7 @@
     },
     {
       "source": "/reference/nft-api",
-      "destination": "/web3-data-api/reference/get-multiple-nfts",
+      "destination": "/web3-data-api/evm/nft-api",
       "permanent": false
     },
     {
