@@ -26,6 +26,7 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
           "X-API-Key": `${
             auth.length > 0 ? auth : process.env.MORALIS_API_KEY
           }`,
+          referer: "moralis.io",
         },
         body: JSON.stringify(bodyParam),
       }
