@@ -1,5 +1,6 @@
 ---
-title: "[API] Arbitrum Support Added"
+title: "[API] Get Verbose Transactions"
+slug: "apis-get-verbose-transactions"
 authors:
   name: Reuben Salisbury
 ---

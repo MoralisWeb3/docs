@@ -1,5 +1,6 @@
 ---
 title: "[API] Arbitrum Support Added"
+slug: "api-️-arbitrum-support-added"
 authors:
   name: Reuben Salisbury
 ---

@@ -1,5 +1,6 @@
 ---
 title: "[API] Palm Network Support"
+slug: "palm-network-supported-in-evm-apis"
 authors:
   name: Yoseph Kurnia Soenggoro
 ---

@@ -23,7 +23,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-web3authio",
       "permanent": true
     },
-
     {
       "source": "/reference",
       "destination": "/web3-data-api/reference/overview",
@@ -54,7 +53,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-metamask-angular",
       "permanent": true
     },
-
     { "source": "/docs/overview", "destination": "/", "permanent": true },
     {
       "source": "/docs/quickstart",
@@ -691,7 +689,6 @@
       "destination": "/authentication-api/integrations/google-cloud-nodejs-unity",
       "permanent": true
     },
-
     {
       "source": "/docs/using-firebase",
       "destination": "/web3-data-api/integrations/firebase-nodejs",
@@ -902,13 +899,11 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-api-utils",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/index",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
@@ -1049,7 +1044,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
       "permanent": false
     },
-
     {
       "source": "/docs/nodejs-demo-express-proxy",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
@@ -1192,7 +1186,7 @@
     },
     {
       "source": "/reference/getwalletnfts",
-      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
       "permanent": true
     },
     {
@@ -1277,6 +1271,11 @@
     },
     {
       "source": "/reference/getnativebalance",
+      "destination": "/web3-data-api/reference/get-native-balance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnativebalance-1",
       "destination": "/web3-data-api/reference/get-native-balance",
       "permanent": true
     },
@@ -1556,7 +1555,6 @@
       "destination": "/web3-data-api/reference/resync-metadata",
       "permanent": true
     },
-
     {
       "source": "/reference/getcontractevents",
       "destination": "/web3-data-api/reference/get-contract-events",
@@ -1768,7 +1766,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20input",
       "permanent": false
     },
-
     {
       "source": "/docs/moralisweb3-evm-utils-evmtransactionlog",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
@@ -1899,7 +1896,6 @@
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
       "permanent": false
     },
-
     {
       "source": "/docs/nodejs-demo-express-proxy",
       "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/express-proxy",
@@ -2010,7 +2006,6 @@
       "destination": "/web3-data-api/quickstart-nextjs",
       "permanent": true
     },
-
     {
       "source": "/reference/getwalletnftcollections-1",
       "destination": "/web3-data-api/reference/get-wallet-nft-collections",
@@ -2021,7 +2016,6 @@
       "destination": "/web3-data-api/moralis-sdk",
       "permanent": true
     },
-
     {
       "source": "/reference/solana-api",
       "destination": "/web3-data-api/solana",
@@ -2117,7 +2111,6 @@
       "destination": "/web3-data-api/getting-started/",
       "permanent": true
     },
-
     {
       "source": "/cloud-functions-1",
       "destination": "https://v1docs.moralis.io/cloud-functions-1",
@@ -2133,7 +2126,6 @@
       "destination": "/authentication-api",
       "permanent": true
     },
-
     {
       "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-polygon-node",
       "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
@@ -2280,7 +2272,6 @@
       "destination": "/web3-data-api/evm/how-to-get-all-transactions-of-an-address",
       "permanent": true
     },
-
     {
       "source": "/tutorials/token-price-charts",
       "destination": "https://v1docs.moralis.io/tutorials/token-price-charts",
@@ -2326,7 +2317,6 @@
       "destination": "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes",
       "permanent": true
     },
-
     {
       "source": "/docs/run-parse-server-locally-1",
       "destination": "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
@@ -2677,7 +2667,6 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/database/direct_access",
       "permanent": true
     },
-
     {
       "source": "/reference/ipfs-1",
       "destination": "/web3-data-api/reference/upload-folder",
@@ -2911,7 +2900,7 @@
     },
     {
       "source": "/reference/token-1",
-      "destination": "/web3-data-api/reference/get-sol-token-price",
+      "destination": "/web3-data-api/evm/token-api",
       "permanent": true
     },
     {
@@ -3034,7 +3023,6 @@
       "destination": "/web3-data-api/getting-started/",
       "permanent": true
     },
-
     {
       "source": "/reference/getnftsforcontract-1",
       "destination": "/web3-data-api/reference/get-contract-nfts",
@@ -3045,7 +3033,6 @@
       "destination": "https://v1docs.moralis.io/moralis-server/sending-assets/transfer-eth",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/connect-the-sdk/snippets",
       "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk",
@@ -3071,7 +3058,6 @@
       "destination": "/web3-data-api/reference/get-contract-logs",
       "permanent": true
     },
-
     {
       "source": "/docs/first-web3-unity-game",
       "destination": "/authentication-api/integrations/azure-playfab-nodejs-unity",
@@ -3199,10 +3185,14 @@
       "destination": "/admin-panel/account-settings",
       "permanent": true
     },
-
     {
       "source": "/reference/native",
       "destination": "/web3-data-api/reference/get-native-balance",
+      "permanent": true
+    },
+    {
+      "source": "/unity",
+      "destination": "/example-dapps/evm/web3-unity-multiplayer-playground",
       "permanent": true
     },
     {
@@ -3295,7 +3285,6 @@
       "destination": "/authentication-api/how-to-sign-in-with-metamask",
       "permanent": true
     },
-
     {
       "source": "/webhooks",
       "destination": "/streams-api/webhooks-transactions",
@@ -3356,13 +3345,11 @@
       "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/resolve-transfer",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/tools",
       "destination": "https://v1docs.moralis.io/moralis-dapp/tools",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/getting-started/pre-requisites",
       "destination": "/web3-data-api/getting-started/",
@@ -3388,7 +3375,6 @@
       "destination": "https://v1docs.moralis.io/moralis-sdk/queries",
       "permanent": true
     },
-
     {
       "source": "/moralis-server/transactions-and-balances/token-balances",
       "destination": "/web3-data-api/evm/how-to-get-all-erc20-tokens-owned-by-an-address",
@@ -3444,6 +3430,131 @@
       "source": "/docs/how-streams-api-works",
       "destination": "/streams-api",
       "permanent": true
+    },
+    {
+      "source": "/misc/license",
+      "destination": "https://v1docs.moralis.io/misc/license",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getting-the-api-key",
+      "destination": "/web3-data-api/get-your-api-key",
+      "permanent": true
+    },
+    {
+      "source": "/reference/abuse-prevention",
+      "destination": "/web3-data-api/abuse-prevention",
+      "permanent": true
+    },
+    {
+      "source": "/reference/nft-api",
+      "destination": "/web3-data-api/reference/get-multiple-nfts",
+      "permanent": false
+    },
+    {
+      "source": "/docs/monitor-all",
+      "destination": "/streams-api/monitor-multiple-addresses",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-supabase-authentication",
+      "destination": "/authentication-api/integrations/supabase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/supabase-1",
+      "destination": "/authentication-api/integrations/supabase-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/web3-tutorials",
+      "destination": "/example-dapps/evm",
+      "permanent": true
+    },
+    {
+      "source": "/docs/metaverse-game",
+      "destination": "/example-dapps/evm/web3-unity-multiplayer-playground",
+      "permanent": true
+    },
+    {
+      "source": "/docs/nft-gating",
+      "destination": "/example-dapps/evm/token-gating-website-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-token-transfers",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-all-erc20-transactions-by-wallet",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-token-metadata-by-token-symbol",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-symbols",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-erc20-token-metadata-by-contract-address",
+      "destination": "/web3-data-api/evm/how-to-get-erc20-metadata-by-contract",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/welcome-to-moralis",
+      "destination": "/changelog",
+      "permanent": true
+    },
+    {
+      "source": "/tutorials/nft-game-course",
+      "destination": "/example-dapps/evm",
+      "permanent": true
+    },
+    {
+      "source": "/guides/build-a-simple-dapp-in-3-minutes/",
+      "destination": "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes",
+      "permanent": true
+    },
+    {
+      "source": "/tutorials/setup-cronos-testnet-defi-wallet",
+      "destination": "https://v1docs.moralis.io/tutorials/setup-cronos-testnet-defi-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/web3-sdk/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/misc/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/nft-api",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/nft-api",
+      "permanent": false
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/web3-login",
+      "permanent": false
+    },
+    {
+      "source": "/docs/setup-your-first-stream",
+      "destination": "/streams-api/getting-started",
+      "permanent": false
+    },
+    {
+      "source": "/docs/examples-of-stream-use-cases",
+      "destination": "/streams-api",
+      "permanent": false
+    },
+    {
+      "source": "/changelog/2022/12/14/block-filtering-get-nft-contract-transfers",
+      "destination": "/changelog/block-filtering-added-to-getnftcontracttransfers-%EF%B8%8F",
+      "permanent": false
     }
   ]
 }

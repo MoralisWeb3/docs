@@ -1,5 +1,6 @@
 ---
 title: "[Streams] Get native balances"
+slug: "streams-include-native-balances"
 authors:
   name: Elias
 ---
