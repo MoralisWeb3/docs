@@ -414,7 +414,7 @@
         ]
       },
       "responses": [
-        { "status": "200", "description": "Returns a collection of NFT owners" }
+        { "status": "200", "description": "Returns a collection of NFTs" }
       ],
       "codeSamples": [
         {
