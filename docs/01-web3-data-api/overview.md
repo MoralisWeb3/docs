@@ -5,7 +5,7 @@ slug: "/web3-data-api"
 sidebar_position: 1
 image: /img/content/web3-data-api-3.jpg
 description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers."
---- 
+---
 
 # Web3 Data API
 
@@ -44,23 +44,24 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 
 ### EVM Chains
 
-| Name                            | Chain id | EvmChain                  | Type    |
-| :------------------------------ | :------- | :------------------------ | :------ |
-| Ethereum Mainnet                | 1        | `EvmChain.ETHEREUM`       | Mainnet |
-| Ethereum Ropsten_ (deprecated)_ | 3        | `EvmChain.ROPSTEN`        | Testnet |
-| Ethereum Rinkeby_ (deprecated)_ | 4        | `EvmChain.RINKEBY`        | Testnet |
-| Ethereum Görli                  | 5        | `EvmChain.GOERLI`         | Testnet |
-| Ethereum Kovan_ (deprecated)_   | 42       | `EvmChain.KOVAN`          | Testnet |
-| Ethereum Sepolia                | 11155111 | `EvmChain.SEPOLIA`        | Testnet |
-| Polygon Mainnet                 | 137      | `EvmChain.POLYGON`        | Mainnet |
-| Polygon Mumbai                  | 80001    | `EvmChain.MUMBAI`         | Testnet |
-| Binance Smart Chain Mainnet     | 56       | `EvmChain.BSC`            | Mainnet |
-| Binance Smart Chain Testnet     | 97       | `EvmChain.BSC_TESTNET`    | Testnet |
-| Avalanche C-Chain               | 43114    | `EvmChain.AVALANCHE`      | Mainnet |
-| Avalanche Fuji Testnet          | 43113    | `EvmChain.FUJI`           | Testnet |
-| Fantom                          | 250      | `EvmChain.FANTOM`         | Mainnet |
-| Cronos Mainnet                  | 25       | `EvmChain.CRONOS`         | Mainnet |
-| Cronos Testnet                  | 338      | `EvmChain.CRONOS_TESTNET` | Testnet |
+| Name                            | Chain id    | EvmChain                  | Type    |
+| :------------------------------ | :---------- | :------------------------ | :------ |
+| Ethereum Mainnet                | 1           | `EvmChain.ETHEREUM`       | Mainnet |
+| Ethereum Ropsten* (deprecated)* | 3           | `EvmChain.ROPSTEN`        | Testnet |
+| Ethereum Rinkeby* (deprecated)* | 4           | `EvmChain.RINKEBY`        | Testnet |
+| Ethereum Görli                  | 5           | `EvmChain.GOERLI`         | Testnet |
+| Ethereum Kovan* (deprecated)*   | 42          | `EvmChain.KOVAN`          | Testnet |
+| Ethereum Sepolia                | 11155111    | `EvmChain.SEPOLIA`        | Testnet |
+| Polygon Mainnet                 | 137         | `EvmChain.POLYGON`        | Mainnet |
+| Polygon Mumbai                  | 80001       | `EvmChain.MUMBAI`         | Testnet |
+| Binance Smart Chain Mainnet     | 56          | `EvmChain.BSC`            | Mainnet |
+| Binance Smart Chain Testnet     | 97          | `EvmChain.BSC_TESTNET`    | Testnet |
+| Avalanche C-Chain               | 43114       | `EvmChain.AVALANCHE`      | Mainnet |
+| Avalanche Fuji Testnet          | 43113       | `EvmChain.FUJI`           | Testnet |
+| Fantom                          | 250         | `EvmChain.FANTOM`         | Mainnet |
+| Cronos Mainnet                  | 25          | `EvmChain.CRONOS`         | Mainnet |
+| Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
+| Palm                            | 11297108109 | `EvmChain.PALM`           | Mainnet |
 
 ### Solana Chains
 
