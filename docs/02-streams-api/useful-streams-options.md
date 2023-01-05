@@ -20,13 +20,13 @@ You can also monitor all internal transactions happening on chain by setting the
 You can decide to also include Native Transactions
 
 ## Advanced Options
-An array of advanced option objects that allow you to specify additional options for creating a stream. It has the following fields:
+An array of advanced option objects that allow you to specify additional options for creating a stream. It has the following **required** fields:
 
-`topic0`: A string that specifies the topic0 to listen to. This field is required.
+`topic0`: A string that specifies the topic0 to listen to.
 
-`filter`: A custom filter object that allows you to specify conditions that the data must meet in order to be included in the stream. This field is optional. Learn more [here](https://docs.moralis.io/streams-api/filter-streams).
+`filter`: A custom filter object that allows you to specify conditions that the data must meet in order to be included in the stream. Learn more [here](https://docs.moralis.io/streams-api/filter-streams).
 
-`includeNativeTxs`: A boolean that indicates whether to include native transactions in the stream in addition to contract logs. This field is optional.
+`includeNativeTxs`: A boolean that indicates whether to include native transactions in the stream in addition to contract logs.
 
 ### Use Case
 
