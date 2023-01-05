@@ -8,7 +8,7 @@ Moralis Streams can be used to monitor a blockchain wallet or a smart contract. 
 
 ![Moralis Streams for Firebase Demo](/img/content/5cdb931-firebase-streams-demo-cover.gif)
 
-If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the **[Your First Dapp for Firebase](/streams-api/integrations/firebase)** tutorial first. 
+If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the **[Your First Dapp for Firebase](/web3-data-api/integrations/firebase-nodejs)** tutorial first.
 
 In this tutorial, we will use the following services:
 
@@ -24,11 +24,9 @@ To install the extension, you must execute the following command:
 firebase ext:install moralis/moralis-streams
 ```
 
-
-
 The installer will ask you about the Moralis API key during the installation.
 
-Now you need to add 🚨  **critical security rules** 🚨 to the **Firestore** configuration (`firestore.rules`). This step is crucial because the extension adds new documents to specific collections. Moreover, these collections cannot be modified by external users.
+Now you need to add 🚨 **critical security rules** 🚨 to the **Firestore** configuration (`firestore.rules`). This step is crucial because the extension adds new documents to specific collections. Moreover, these collections cannot be modified by external users.
 
 ```
 rules_version = '2';
@@ -43,9 +41,7 @@ service cloud.firestore {
 }
 ```
 
-
-
-Before deploying your project, be sure that you set permissions correctly. To do so, you can use Firebase's [Rules Playground](https://firebase.google.com/docs/rules/simulator). 
+Before deploying your project, be sure that you set permissions correctly. To do so, you can use Firebase's [Rules Playground](https://firebase.google.com/docs/rules/simulator).
 
 Go to the **Firebase Console** > **Your Project** > **Firestore Database** > **Rules** > **Edit Rules** and click on the **Rules Playground** tab.
 
@@ -65,19 +61,15 @@ Check the emulator logs by opening [`http://localhost:4000/logs`](http://localho
 http://localhost:5001/<project_id>/<location>/ext-moralis-streams-webhook
 ```
 
-
-
 Now, if you don't have a public IP address, you cannot use this URL for the stream's configuration. For testing, we recommend using the [**ngrok**](https://ngrok.com/) service. It creates a public URL that forwards all HTTP requests to your local host and is free for development purposes.
 
 ### Webhook URL of Deployed Dapp
 
-Go to **Firebase Console** > **Build** > **Functions** and find a function called `ext-moralis-streams-webhook`.  The URL should have the following format:
+Go to **Firebase Console** > **Build** > **Functions** and find a function called `ext-moralis-streams-webhook`. The URL should have the following format:
 
 ```
 https://<location>-<project_id>.cloudfunctions.net/ext-moralis-streams-webhook
 ```
-
-
 
 ## Configuration
 
@@ -107,9 +99,9 @@ Handling your subscribed streams is easy. To do so, you must listen to changes i
 For cloud functions, we need to create functions that are called when any item in the collection is changed. For that, we will use the `onWrite` trigger:
 
 ```typescript
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
 
-const collectionName = 'LoremIpsum';
+const collectionName = "LoremIpsum";
 
 export const onItemWrite = functions.firestore
   .document(`moralis/txs/${collectionName}/{id}`)
@@ -122,39 +114,30 @@ export const onItemWrite = functions.firestore
   });
 ```
 
-
-
 ### Handling Streams on the Frontend
 
 For the frontend dapp, we will use the `onSnapshot` method:
 
 ```javascript
 const db = firebase.firestore();
-const collectionName = 'LoremIpsum';
+const collectionName = "LoremIpsum";
 
-db
-  .collection(`moralis/txs/${collectionName}`)
-  .onSnapshot((change) => {
-  	doSomeOperation(change.docs);
-  });
+db.collection(`moralis/txs/${collectionName}`).onSnapshot((change) => {
+  doSomeOperation(change.docs);
+});
 ```
-
-
 
 The above code has one disadvantage. In the beginning, it will return all documents in the collection. To prevent that, we can filter for items older than when the application starts only:
 
 ```javascript
 const now = firebase.firestore.Timestamp.now();
 
-db
-  .collection(`moralis/txs/${collectionName}`)
-  .where('updatedAt', '>', now)
+db.collection(`moralis/txs/${collectionName}`)
+  .where("updatedAt", ">", now)
   .onSnapshot((change) => {
-  	doSomeOperation(change.docs);
+    doSomeOperation(change.docs);
   });
 ```
-
-
 
 ## Demo Project
 
