@@ -24,8 +24,7 @@ An array of advanced option objects that allow you to specify additional options
 
 `topic0`: A string that specifies the topic0 to listen to. This field is required.
 
-`filter`: A custom filter object that allows you to specify conditions that the data must meet in order to be included in the stream. This field is optional.
-
+`filter`: A custom filter object that allows you to specify conditions that the data must meet in order to be included in the stream. This field is optional. Learn more [here](https://docs.moralis.io/streams-api/filter-streams).
 `includeNativeTxs`: A boolean that indicates whether to include native transactions in the stream in addition to contract logs. This field is optional.
 
 ### Use Case
