@@ -3560,6 +3560,230 @@
       "source": "/changelog/2022/12/14/block-filtering-get-nft-contract-transfers",
       "destination": "/changelog/block-filtering-added-to-getnftcontracttransfers-%EF%B8%8F",
       "permanent": false
+    },
+
+    { "source": "/i", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/getportfolio",
+      "destination": "/web3-data-api/reference/get-sol-portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftowners-2",
+      "destination": "/web3-data-api/reference/get-nft-owners",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-nft-owners",
+      "destination": "/web3-data-api/reference/get-nft-owners",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-a-block-by-its-block-number",
+      "destination": "/web3-data-api/reference/get-block",
+      "permanent": true
+    },
+    {
+      "source": "/docs/python",
+      "destination": "https://moralisweb3.github.io/Moralis-Python-SDK/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralisweb3-test-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/evm-api/evmapi#utils",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralisweb3-api-utils-apipaginatedresultadapter",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter#pagination",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getcontractnfts-2",
+      "destination": "/web3-data-api/reference/get-contract-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-serv",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/reference/block",
+      "destination": "/web3-data-api/reference/get-block",
+      "permanent": true
+    },
+    {
+      "source": "/docs/aws-lambda-integration",
+      "destination": "/web3-data-api/integrations/aws-lambda-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttokenidowners-2",
+      "destination": "/web3-data-api/reference/get-nft-token-id-owners",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/transactions-and-balances/nft-balances",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-metadata",
+      "destination": "/web3-data-api/reference/get-nft-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfersbyblock-2",
+      "destination": "/web3-data-api/reference/get-nft-transfers-by-block",
+      "permanent": true
+    },
+    {
+      "source": "/reference/syncnftcontract-2",
+      "destination": "/web3-data-api/reference/sync-nft-contract",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-nfts",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/native-2",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/reference/searchnfts-2",
+      "destination": "/web3-data-api/reference/search-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-vue",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/configure-your-server-1",
+      "destination": "/web3-data-api/self-hosted-moralis-server/configure-your-server",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/tools/hosting",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-transfers",
+      "destination": "/web3-data-api/reference/get-wallet-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-balance",
+      "destination": "/web3-data-api/reference/get-native-balance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/balance",
+      "destination": "/web3-data-api/reference/sol-balance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/endpoints",
+      "destination": "/web3-data-api/reference/endpoint-weights",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-market-data-1",
+      "destination": "/web3-data-api/reference/get-nft-trades",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resolve-web3-domain",
+      "destination": "/web3-data-api/reference/resolve-address",
+      "permanent": true
+    },
+    {
+      "source": "/reference/nft-endpoints",
+      "destination": "/web3-data-api/reference/get-multiple-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-market-data",
+      "destination": "/web3-data-api/reference/get-nft-trades",
+      "permanent": true
+    },
+    { "source": "/functions/", "destination": "/", "permanent": true },
+    {
+      "source": "/moralis-server/solana-sdk/nft",
+      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnftcollectionsCheck",
+      "destination": "/web3-data-api/reference/get-wallet-nft-collections",
+      "permanent": true
+    },
+    {
+      "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-arbitrum-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/cloud",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-web3-rest/nft-api",
+      "destination": "/web3-data-api/evm/nft-api",
+      "permanent": true
+    },
+    {
+      "source": "/reference/endpoints-6",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/tools/moralis-admin-cli",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/tools/moralis-admin-cli",
+      "permanent": true
+    },
+    {
+      "source": "/docs/querying-the-api-and-parsing-responses",
+      "destination": "/web3-data-api/query-from-evm-or-solana",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/tools/hosting",
+      "destination": "/",
+      "permanent": true
+    },
+    { "source": "/hosting", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/utils-1",
+      "destination": "/web3-data-api/reference/run-contract-function",
+      "permanent": true
+    },
+    {
+      "source": "/reference/balance-2",
+      "destination": "/web3-data-api/reference/sol-balance",
+      "permanent": true
+    },
+    {
+      "source": "/speedy-nodes/connect-to-arbitrum-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftlowestprice-2",
+      "destination": "/web3-data-api/reference/get-nft-lowest-price",
+      "permanent": true
+    },
+    {
+      "source": "/docs/v1-server-self-hosting",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
     }
   ]
 }
