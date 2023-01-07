@@ -371,7 +371,6 @@ const config = {
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
     ],
     ["@docusaurus/plugin-ideal-image", {}],
-    ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
     require.resolve("docusaurus-lunr-search"),
   ],
 };
