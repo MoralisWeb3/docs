@@ -9,7 +9,6 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2") format("woff2");
   font-display: swap;
 }
@@ -17,7 +16,6 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 500;
-  font-display: auto;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2") format("woff2");
   font-display: swap;
 }
@@ -25,7 +23,6 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 600;
-  font-display: auto;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2") format("woff2");
   font-display: swap;
 }
@@ -33,7 +30,6 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 700;
-  font-display: auto;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
   font-display: swap;
 }
@@ -41,7 +37,6 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 800;
-  font-display: auto;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
   font-display: swap;
 }
