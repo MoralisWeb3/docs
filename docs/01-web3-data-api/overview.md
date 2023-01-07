@@ -62,6 +62,7 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 | Cronos Mainnet                  | 25          | `EvmChain.CRONOS`         | Mainnet |
 | Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
 | Palm                            | 11297108109 | `EvmChain.PALM`           | Mainnet |
+| Arbitrum                        | 42161       | `EvmChain.ARBITRUM`       | Mainnet |
 
 ### Solana Chains
 
