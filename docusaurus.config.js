@@ -147,11 +147,6 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
-      algolia: {
-        appId: "NC1LK93TN5",
-        apiKey: "b36064a11a9ce260d626a095a8ff2693",
-        indexName: "moralis-docs",
-      },
       navbar: {
         hideOnScroll: false,
         logo: {
