@@ -9,7 +9,7 @@ sidebar_position: 2
 
 Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Dashboard</a> to create your Moralis account.
 
-![Moralis Admin (Sign Up)](/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp)
+<img loading="eager" alt="Moralis Admin (Sign Up)" src="/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp" width="1024" height="582" />
 
 ## Step 2: Get API Key
 
