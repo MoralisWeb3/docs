@@ -16,7 +16,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_auth>.
 
-![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.png)
+![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.webp)
 
 :::info 
 
@@ -233,7 +233,7 @@ export default SignIn;
 
 
 
-![Web3 Authentication Page](/img/content/2dc7cb6-Untitled.png)
+![Web3 Authentication Page](/img/content/2dc7cb6-Untitled.webp)
 
 9. Extend the `handleAuth` functionality for calling `useSignMessage()` hook: 
 
@@ -378,21 +378,21 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test th
 
 1. Click on the `Authenticate via Metamask` button:
 
-![Sign-In Page](/img/content/1e597e7-12.png)
+![Sign-In Page](/img/content/1e597e7-12.webp)
 
 2. Connect the MetaMask wallet:
 
-![Selecting a MetaMask Wallet](/img/content/3b5a4b9-38.png)
+![Selecting a MetaMask Wallet](/img/content/3b5a4b9-38.webp)
 
-![MetaMask Wallet Connecting](/img/content/a504ae5-56.png)
+![MetaMask Wallet Connecting](/img/content/a504ae5-56.webp)
 
 3. Sign the message:
 
-![Signing the Message](/img/content/d5e9a3b-105.png)
+![Signing the Message](/img/content/d5e9a3b-105.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/23c7fde-142.png)
+![User Page](/img/content/23c7fde-142.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user`) to test the user session functionality: 
 
@@ -401,4 +401,4 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test th
 - When a user is authenticated, we show the user's info on the page, even refreshing after the page. 
   - (**Explanation:** _After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted **[JWT](https://jwt.io/introduction)** (**JWE**) stored inside. It contains session info [such as an address and signed message] in the user's browser.)_
 
-![User Session Page](/img/content/1bc0b65-Untitled.png)
+![User Session Page](/img/content/1bc0b65-Untitled.webp)

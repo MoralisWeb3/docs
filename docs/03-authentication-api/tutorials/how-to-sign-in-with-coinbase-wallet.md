@@ -83,19 +83,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Coinbase Wallet`:
 
-![Sign In Page](/img/content/0ead0ca-8.png)
+![Sign In Page](/img/content/0ead0ca-8.webp)
 
 2. Connect Coinbase Wallet:
 
-![Coinbase Wallet - Connecting](/img/content/532fc36-42.png)
+![Coinbase Wallet - Connecting](/img/content/532fc36-42.webp)
 
 3. Sign the message:
 
-![Signing the Message](/img/content/f486cbb-84.png)
+![Signing the Message](/img/content/f486cbb-84.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/a45ec1e-122.png)
+![User Page](/img/content/a45ec1e-122.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

@@ -11,7 +11,7 @@ Once complete, you can use this dapp to create new games with other players and 
 
 This is what the final application looks like. 
 
-![Tic Tac Toe Board](/img/content/3901379-image.png)
+![Tic Tac Toe Board](/img/content/3901379-image.webp)
 
 You can find the repository with the final code here: [Tic-Tac-Toe](https://github.com/JohnVersus/solana-dapp-tic-tac-toe).
 
@@ -218,7 +218,7 @@ solana program deploy ./target/deploy/tic_tac_toe.so
 
 Once successfully deployed it will return the program Id of the Solana Program.
 
-![Console with Program Id](/img/content/5d366aa-image.png)
+![Console with Program Id](/img/content/5d366aa-image.webp)
 
 Store the Program Id somewhere accessible, as we will need this to call the smart contract function from the client side.
 
@@ -273,11 +273,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/tic-tac-toe` page. 
 
-![Nav Bar](/img/content/2e9d40f-image.png)
+![Nav Bar](/img/content/2e9d40f-image.webp)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-![Select Wallet Button](/img/content/5e9b822-image.png)
+![Select Wallet Button](/img/content/5e9b822-image.webp)
 
 Authenticating the wallet is important for this dapp so that we can prevent unauthorized gameplay.
 
@@ -555,7 +555,7 @@ Here is the code related to the frontend code.
 
 The first step of the game is to create a new game to play using this `Create Game` tab.
 
-![](/img/content/1e15cd8-image.png)
+![](/img/content/1e15cd8-image.webp)
 
 The code in `NewGameForm.tsx` files are responsible for reading the data from new game inputs and sending the data to the backend `newGame` API route for signing the transaction. 
 
@@ -616,9 +616,9 @@ const NewGameForm: FC = () => {
 
 When a transaction for the new game is successful. We can visit `Play Game` tab to play the game. Clicking the `Refresh Games` button will load the created games. 
 
-![Play Game Tab](/img/content/e0e1bd3-image.png)
+![Play Game Tab](/img/content/e0e1bd3-image.webp)
 
-![Play Game Tab with refreshed Games](/img/content/7166cee-image.png)
+![Play Game Tab with refreshed Games](/img/content/7166cee-image.webp)
 
 The code related to getting the games from the blockchain can be found in the `src/components/templates/TicTacToe/TicTacToe.tsx`
 

@@ -7,11 +7,11 @@ description: "This tutorial teaches you how to migrate data to your self-hosted 
 
 In order to access your MongoDB you need to whitelist your IP address:
 
-![](/img/content/fa2ab6d-Screenshot_2022-09-08_at_02.10.29.png)
+![](/img/content/fa2ab6d-Screenshot_2022-09-08_at_02.10.29.webp)
 
-![](/img/content/57d2813-Screenshot_2022-09-08_at_02.11.02.png)
+![](/img/content/57d2813-Screenshot_2022-09-08_at_02.11.02.webp)
 
-![](/img/content/ac432f3-Screenshot_2022-09-08_at_02.11.38.png)
+![](/img/content/ac432f3-Screenshot_2022-09-08_at_02.11.38.webp)
 
 ## Connect directly to the hosted Moralis MongoDB
 
@@ -81,7 +81,7 @@ After you have established direct access to Mongo DB, you You can do your own du
 
 You can use Compass to interact with MongoDB using a tool with an interface.
 
-![](/img/content/feedff2-Screenshot_2022-09-08_at_02.17.00.png)
+![](/img/content/feedff2-Screenshot_2022-09-08_at_02.17.00.webp)
 
 Now you are connected to the MongoDB that is hosted on Moralis. For reference on how to export data, see <https://www.mongodb.com/docs/compass/current/import-export/>.
 

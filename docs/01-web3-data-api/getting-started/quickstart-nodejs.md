@@ -20,7 +20,7 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 2. Open the folder in your editor
 3. Initialize a new project via `npm`
 
-![](/img/content/b0e009c-PGIOshI31fgZTsmR_CJat_screenshot-2022-08-08-at-144744.png)
+![](/img/content/b0e009c-PGIOshI31fgZTsmR_CJat_screenshot-2022-08-08-at-144744.webp)
 
 ```shell
 npm init
@@ -91,7 +91,7 @@ app.listen(port, () => {
 
 1. Get your `Web3 Api Key` from the [Moralis dashboard](https://admin.moralis.io/): 
 
-![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png")
+![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp")
 
 2. Import `moralis` and initialize it with your API key in `index.js`:  
    Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](/web3-data-api/moralis-data-types) and [Supported Chains](/web3-data-api/cross-chain-requests).

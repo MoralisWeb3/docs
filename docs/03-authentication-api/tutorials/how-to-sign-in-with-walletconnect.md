@@ -70,19 +70,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test au
 
 1. Click on `Authenticate via WalletConnect`:
 
-![Sign In Page](/img/content/1a876b9-notconnected.png)
+![Sign In Page](/img/content/1a876b9-notconnected.webp)
 
 2. Scan the QR code with your wallet:
 
-![WalletConnect Modal](/img/content/2541b11-wc.png)
+![WalletConnect Modal](/img/content/2541b11-wc.webp)
 
 3. Connect your wallet:
 
-![TrustWallet Connect - Confirm](/img/content/0037a38-photo_2022-08-15_18-18-43.jpg)
+![TrustWallet Connect - Confirm](/img/content/0037a38-photo_2022-08-15_18-18-43.webp)
 
 4. Sign the message:
 
-![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.jpg)
+![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

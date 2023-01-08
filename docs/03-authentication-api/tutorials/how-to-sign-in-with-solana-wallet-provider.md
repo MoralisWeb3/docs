@@ -15,7 +15,7 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 You can find the repository with the final code here: [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
 
-![](/img/content/43e472f-image.png)
+![](/img/content/43e472f-image.webp)
 
 :::info
 You can find the final dapp with implemented style on our [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth).
@@ -617,20 +617,20 @@ Visit [`http://localhost:3000`](http://localhost:3000`) to test the authenticati
 
 1. Click on the `Select Wallet` button to select and connect to wallet:
 
-![](/img/content/31c94d0-image.png)
+![](/img/content/31c94d0-image.webp)
 
 2. Connect to the Solana wallet extension
 
-![](/img/content/d7eb605-image.png)
+![](/img/content/d7eb605-image.webp)
 
-![](/img/content/a7e2b4f-image.png)
+![](/img/content/a7e2b4f-image.webp)
 
 3. Sign the message:
 
-![](/img/content/08970f7-image.png)
+![](/img/content/08970f7-image.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![](/img/content/44500ea-image.png)
+![](/img/content/44500ea-image.webp)
 
 And that completes the authentication process for Solana wallets using the Solana wallet adapter.

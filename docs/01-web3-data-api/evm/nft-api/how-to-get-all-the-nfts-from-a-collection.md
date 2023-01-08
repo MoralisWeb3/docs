@@ -140,7 +140,7 @@ In your terminal, you should see the following JSON response:
       "name": "CRYPTOPUNKS",
       "symbol": "Ͼ",
       "token_uri": "https://www.larvalabs.com/cryptopunks/details/9082",
-      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk9082.png\",\"name\":\"CryptoPunk 9082\",\"attributes\":[\"Bandana\",\"Big Shades\",\"Shadow Beard\"],\"description\":\"Male\"}",
+      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk9082.webp\",\"name\":\"CryptoPunk 9082\",\"attributes\":[\"Bandana\",\"Big Shades\",\"Shadow Beard\"],\"description\":\"Male\"}",
       "last_token_uri_sync": null,
       "last_metadata_sync": "2022-10-05T17:55:52.262Z",
       "minter_address": "0xc352b534e8b987e036a93539fd6897f53488e56a"
@@ -156,7 +156,7 @@ In your terminal, you should see the following JSON response:
       "name": "CRYPTOPUNKS",
       "symbol": "Ͼ",
       "token_uri": "https://www.larvalabs.com/cryptopunks/details/4799",
-      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk4799.png\",\"name\":\"CryptoPunk 4799\",\"attributes\":[\"Blue Eye Shadow\",\"Black Lipstick\",\"Straight Hair Blonde\",\"Earring\"],\"description\":\"Female\"}",
+      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk4799.webp\",\"name\":\"CryptoPunk 4799\",\"attributes\":[\"Blue Eye Shadow\",\"Black Lipstick\",\"Straight Hair Blonde\",\"Earring\"],\"description\":\"Female\"}",
       "last_token_uri_sync": null,
       "last_metadata_sync": "2022-07-17T17:25:24.644Z",
       "minter_address": "0xc352b534e8b987e036a93539fd6897f53488e56a"
@@ -172,7 +172,7 @@ In your terminal, you should see the following JSON response:
       "name": "CRYPTOPUNKS",
       "symbol": "Ͼ",
       "token_uri": "https://www.larvalabs.com/cryptopunks/details/47",
-      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk047.png\",\"name\":\"CryptoPunk 047\",\"attributes\":[\"Knitted Cap\"],\"description\":\"Male\"}",
+      "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk047.webp\",\"name\":\"CryptoPunk 047\",\"attributes\":[\"Knitted Cap\"],\"description\":\"Male\"}",
       "last_token_uri_sync": null,
       "last_metadata_sync": "2022-07-24T12:12:11.930Z",
       "minter_address": "0xc352b534e8b987e036a93539fd6897f53488e56a"

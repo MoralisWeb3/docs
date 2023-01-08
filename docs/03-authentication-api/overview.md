@@ -6,7 +6,7 @@ sidebar_position: 1
 description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
 --- 
 
-![](/img/content/594b455-image.png)
+![](/img/content/594b455-image.webp)
 
 ## What is the Auth API?
 
@@ -27,7 +27,7 @@ The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIP
 
 ## How Does it Work?
 
-![](/img/content/bcd1597-image.png)
+![](/img/content/bcd1597-image.webp)
 
 ## Popular use cases
 

@@ -20,7 +20,7 @@ Moreover, in this tutorial, we will use three Firebase services:
 
 The idea is basically relatively simple; if you want to call any Moralis API endpoint from your frontend app, you should create a dedicated cloud function. This function would be something like a proxy, customized precisely to the frontend's needs. In this case, the backend app knows only the API key.
 
-![Making a Moralis API Call by Firebase Function](/img/content/01e806d-moralis-firebase-proxy-call.png)
+![Making a Moralis API Call by Firebase Function](/img/content/01e806d-moralis-firebase-proxy-call.webp)
 
 Let's consider the below function:
 

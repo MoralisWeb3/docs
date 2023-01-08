@@ -107,15 +107,15 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Web3Auth`:
 
-![Sign In Page](/img/content/6cccf79-17.png)
+![Sign In Page](/img/content/6cccf79-17.webp)
 
 2. Select the preferred sign-in method:
 
-![Web3Auth Authentication](/img/content/e8fa976-26.png)
+![Web3Auth Authentication](/img/content/e8fa976-26.webp)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/e6f4aef-433.png)
+![User Page](/img/content/e6f4aef-433.webp)
 
 4. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

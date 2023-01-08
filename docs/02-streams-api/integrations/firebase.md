@@ -47,7 +47,7 @@ Go to the **Firebase Console** > **Your Project** > **Firestore Database** > **R
 
 ## How Does it Work?
 
-![](/img/content/8764004-streams-flow.png)
+![](/img/content/8764004-streams-flow.webp)
 
 The extension does one thing: writes incoming data from the Moralis Streams service to your Firestore database. That's it! You don't need to do it manually.
 

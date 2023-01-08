@@ -321,7 +321,7 @@ npm install axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
 
 3. Inside the`src` directory, create a new folder that will hold React components. We will call it components.
 
-![](/img/content/65f3f8a-image.png)
+![](/img/content/65f3f8a-image.webp)
 
 ### Creating custom components
 
@@ -956,7 +956,7 @@ npm run start
 
 2. You can now access `<http://localhost:3000/`> and should see your app running.
 
-![](/img/content/1d5da92-image.png)
+![](/img/content/1d5da92-image.webp)
 
 ## Youtube Video
 

@@ -11,7 +11,7 @@ In this app we use [get Wallet NFTs](/web3-data-api/solana/how-to-get-native-sol
 
 This is what the final application looks like. 
 
-![Final App UI](/img/content/e976274-image.png)
+![Final App UI](/img/content/e976274-image.webp)
 
 This application has the following features:
 
@@ -68,7 +68,7 @@ Once the command has been run successfully, you should be able to view the app i
 
 The first step when you visit the app is to search for wallet NFTs using the search bar. Clicking on the "Search" button uses the Solana API to fetch the NFTs.
 
-![Search Bar](/img/content/5312cd7-image.png)
+![Search Bar](/img/content/5312cd7-image.webp)
 
 Here is the code responsible for it.
 
@@ -346,7 +346,7 @@ Let's look at the code responsible for paginated results.
 
 Navigation between pages is handled using these buttons. 
 
-![Page Navigation](/img/content/9238099-image.png)
+![Page Navigation](/img/content/9238099-image.webp)
 
 Here is the code for it.
 
@@ -442,7 +442,7 @@ Now let's take a look at the filtering process.
 
 NFTs can be filtered using the search button on the top right. 
 
-![Filter Input](/img/content/d2949f8-image.png)
+![Filter Input](/img/content/d2949f8-image.webp)
 
 Here is the code responsible for filtering the NFTs in UI.
 
@@ -516,7 +516,7 @@ if (filterSymbol?.toLowerCase().includes(filterQuery)) {
 
 Here is what the filter results in the app look like.
 
-![Filtered Images](/img/content/0c56bcf-image.png)
+![Filtered Images](/img/content/0c56bcf-image.webp)
 
 Congratulations! 🥳 
 

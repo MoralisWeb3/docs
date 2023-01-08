@@ -91,7 +91,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 body = [{
-    "path": "moralis/logo.jpg", 
+    "path": "moralis/logo.webp", 
     "content": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3", 
 }]
 
@@ -119,7 +119,7 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-    "path": "https://ipfs.moralis.io:2053/ipfs/QmfL6fMaYJDnizFVj4wxyutDnGMePG2JL95rN2A5mcWyB1/moralis/logo.jpg"
+    "path": "https://ipfs.moralis.io:2053/ipfs/QmfL6fMaYJDnizFVj4wxyutDnGMePG2JL95rN2A5mcWyB1/moralis/logo.webp"
   }
 ]
 ```

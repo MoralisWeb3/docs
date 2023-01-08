@@ -95,7 +95,7 @@ https://www.youtube.com/watch?v=eZeGEy33SgY
 
 We will add custom jobs to our self-hosted server.
 
-![](/img/content/263def3-image.png)
+![](/img/content/263def3-image.webp)
 
 First, before creating a job we need to install the required package:
 
@@ -173,12 +173,12 @@ npm run start
 
 Now head over  <http://localhost:1337/dashboard/> and select `Schedule a job` to test it.
 
-![](/img/content/de70fe6-image.png)
+![](/img/content/de70fe6-image.webp)
 
 After you chose the job and the desire interval you can now click schedule:
 
-![](/img/content/305932c-image.png)
+![](/img/content/305932c-image.webp)
 
 If `Start immediately` was selected your job will start right away and repeat based on the selected time interval.
 
-![](/img/content/5b811e2-image.png)
+![](/img/content/5b811e2-image.webp)

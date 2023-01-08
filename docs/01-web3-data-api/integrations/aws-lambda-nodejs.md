@@ -38,11 +38,11 @@ To create an AWS account, simply follow the following guide [here](https://docs.
 
 When creating the user, make sure you select both **_AWS Credential types_**:
 
-![](/img/content/c817a0e-image.png)
+![](/img/content/c817a0e-image.webp)
 
 Also make sure to attach **_AdministratorAccess_** as a policy:
 
-![](/img/content/34621f7-image.png)
+![](/img/content/34621f7-image.webp)
 
 :::caution
 
@@ -52,7 +52,7 @@ Be aware that the **_AdministratorAccess_** policy will give the **IAM user** a 
 
 And last, but **very important**, download the credentials in a `.csv`:
 
-![](/img/content/2f88fdb-image.png)
+![](/img/content/2f88fdb-image.webp)
 
 ## Configure AWS Credentials
 
@@ -89,37 +89,37 @@ serverless
 
 Running this command should give you some options. Choose **_Starter_**:
 
-![](/img/content/c026f4e-image.png)
+![](/img/content/c026f4e-image.webp)
 
 Press `ENTER` to choose a default project name or enter your own:
 
-![](/img/content/ff45297-image.png)
+![](/img/content/ff45297-image.webp)
 
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
-![](/img/content/ac122a2-image.png)
+![](/img/content/ac122a2-image.webp)
 
 Finally, type `n` again as we don't want to deploy now:
 
-![](/img/content/8df9b06-image.png)
+![](/img/content/8df9b06-image.webp)
 
 Type `n` again if the console seems stuck.
 
 **Nice! We have the sample project created:**
 
-![](/img/content/154ea8e-image.png)
+![](/img/content/154ea8e-image.webp)
 
 Now, let's create a new folder inside the project named **_functions_** as we will be creating multiple functions and placing them there:
 
-![](/img/content/c4da9f8-image.png)
+![](/img/content/c4da9f8-image.webp)
 
 Continue by placing the auto generated `handler.js` inside:
 
-![](/img/content/bde5154-image.png)
+![](/img/content/bde5154-image.webp)
 
 Now we have to open **`serverless.yml`** and set the new location of `handler.js`:
 
-![](/img/content/9a747e6-image.png)
+![](/img/content/9a747e6-image.webp)
 
 We also want to add the `MORALIS_API_KEY` as an **environment variable**. Replace the code in `serverless.yml` with the following:
 
@@ -139,7 +139,7 @@ functions:
     handler: functions/handler.hello
 ```
 
-![](/img/content/cab8050-image.png)
+![](/img/content/cab8050-image.webp)
 
 :::tip Done
 
@@ -159,11 +159,11 @@ Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-
 
 To start, let's use the existing `handler.js`. Rename it to **`getNativeBalance.js`**:
 
-![](/img/content/6b7859d-image.png)
+![](/img/content/6b7859d-image.webp)
 
 Also change `module.exports.hello` to **`module.exports.handler`**:
 
-![](/img/content/53288c1-image.png)
+![](/img/content/53288c1-image.webp)
 
 Now open `serverless.yml` and change the function name and handler:
 
@@ -183,7 +183,7 @@ functions:
     handler: functions/getNativeBalance.handler
 ```
 
-![](/img/content/94f6ff0-image.png)
+![](/img/content/94f6ff0-image.webp)
 
 Finally it's time to customize the code in **`getNativeBalance.js`** and add the _getNativeBalance_ Moralis functionality. Let's start by adding the Moralis requirement:
 
@@ -191,7 +191,7 @@ Finally it's time to customize the code in **`getNativeBalance.js`** and add the
 const Moralis = require("moralis").default;
 ```
 
-![](/img/content/71df42f-image.png)
+![](/img/content/71df42f-image.webp)
 
 Add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added as an enviromental variable:
 
@@ -205,7 +205,7 @@ const startMoralis = async () => {
 startMoralis();
 ```
 
-![](/img/content/431d2db-image.png)
+![](/img/content/431d2db-image.webp)
 
 Now swap all `module.exports.handler` code section for the following code, which implements the desired SDK method:
 
@@ -264,7 +264,7 @@ module.exports.handler = async (event) => {
 
 Create a new file under `functions` folder and name it **`getWalletNfts.js`**:
 
-![](/img/content/183defc-image.png)
+![](/img/content/183defc-image.webp)
 
 Go to `serverless.yml` and add the following code in `functions`:
 
@@ -273,7 +273,7 @@ getWalletNfts:
     handler: functions/getWalletNfts.handler
 ```
 
-![](/img/content/298f2fc-image.png)
+![](/img/content/298f2fc-image.webp)
 
 **Finally, complete `getWalletNfts.js` by adding the following code:**
 
@@ -311,7 +311,7 @@ module.exports.handler = async (event) => {
 cd aws-node-project
 ```
 
-![](/img/content/dc786c5-image.png)
+![](/img/content/dc786c5-image.webp)
 
 Now that we're in the right location, let's install **`moralis`**:
 
@@ -323,11 +323,11 @@ npm install moralis
 
 Open **_event.json_** in the project root folder:
 
-![](/img/content/facb326-image.png)
+![](/img/content/facb326-image.webp)
 
 Replace the _address_ and _chain_ values with your own information:
 
-![](/img/content/1bd433e-image.png)
+![](/img/content/1bd433e-image.webp)
 
 Now let's test one of the functions, for example `getNativeBalance`. Open the terminal and run:
 
@@ -337,7 +337,7 @@ serverless invoke local -f getNativeBalance --path event.json
 
 **Test run successfully!**
 
-![](/img/content/39d265c-image.png)
+![](/img/content/39d265c-image.webp)
 
 # Lambda NodeJS Express API
 
@@ -359,25 +359,25 @@ serverless
 
 Running this command should give you some options. Choose **_Express API_**:
 
-![](/img/content/8c14ff0-image.png)
+![](/img/content/8c14ff0-image.webp)
 
 Press `ENTER` to choose a default project name or enter your own:
 
-![](/img/content/94ca4be-image.png)
+![](/img/content/94ca4be-image.webp)
 
 After **Serverless** has downloaded the template, it will ask you to login/register to the dashboard. We don't need it for this project so type `n`:
 
-![](/img/content/4a32f31-image.png)
+![](/img/content/4a32f31-image.webp)
 
 Finally, type `n` again as we don't want to deploy now:
 
-![](/img/content/addbe83-image.png)
+![](/img/content/addbe83-image.webp)
 
 Type `n` again if the console seems stuck.
 
 Now the sample project is created:
 
-![](/img/content/6402e0b-image.png)
+![](/img/content/6402e0b-image.webp)
 
 We also want to add the `MORALIS_API_KEY` as an environment variable. Replace the whole code in **`serverless.yml`** with the following:
 
@@ -401,7 +401,7 @@ functions:
       - httpApi: '*'
 ```
 
-![](/img/content/99cc149-image.png)
+![](/img/content/99cc149-image.webp)
 
 :::tip Done
 
@@ -424,7 +424,7 @@ const bodyParser = require("body-parser");
 const Moralis = require("moralis").default;
 ```
 
-![](/img/content/4ca093c-image.png)
+![](/img/content/4ca093c-image.webp)
 
 Add the following to allow the app accept all types of request body formats:
 
@@ -435,7 +435,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true }));
 ```
 
-![](/img/content/add76c3-image.png)
+![](/img/content/add76c3-image.webp)
 
 Finally let's add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added in the environment:
 
@@ -449,7 +449,7 @@ const startMoralis = async () => {
 startMoralis();
 ```
 
-![](/img/content/1be8b90-image.png)
+![](/img/content/1be8b90-image.webp)
 
 ### Create `getNativeBalance` endpoint
 
@@ -478,7 +478,7 @@ app.get("/getNativeBalance", async (req, res, next) => {
 });
 ```
 
-![](/img/content/4840077-Screenshot_2022-12-14_at_13.13.23.png)
+![](/img/content/4840077-Screenshot_2022-12-14_at_13.13.23.webp)
 
 :::info
 We pass the `address` and the `chain` as parameters in the **request body**.
@@ -488,7 +488,7 @@ We pass the `address` and the `chain` as parameters in the **request body**.
 
 Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/web3-data-api/reference/get-wallet-nfts) when the Express endpoint is called:
 
-![](/img/content/b126f90-Screenshot_2022-12-14_at_13.14.35.png)
+![](/img/content/b126f90-Screenshot_2022-12-14_at_13.14.35.webp)
 
 ```javascript
 app.get("/getWalletNfts", async (req, res, next) => {
@@ -599,7 +599,7 @@ module.exports.handler = serverless(app);
 cd aws-node-express-api-project
 ```
 
-![](/img/content/cbd847c-image.png)
+![](/img/content/cbd847c-image.webp)
 
 Now that we're in the right location, let's install `moralis` and `body-parser`:
 
@@ -625,7 +625,7 @@ plugins:
 
 ```
 
-![](/img/content/acf1d0f-image.png)
+![](/img/content/acf1d0f-image.webp)
 
 Then, start the serverless-offline server:
 
@@ -633,11 +633,11 @@ Then, start the serverless-offline server:
 serverless offline start
 ```
 
-![](/img/content/e93d805-image.png)
+![](/img/content/e93d805-image.webp)
 
 To test, navigate to [<http://localhost:3000`>](http://localhost:3000`) in your browser:
 
-![](/img/content/c401071-image.png)
+![](/img/content/c401071-image.webp)
 
 **Very nice!** And the best thing is that if you make a change in `handler.js` file, it will be automatically applied and you'll see the result the next time you hit the endpoint. **This rapidly improves development time.**
 
@@ -660,7 +660,7 @@ It's time to deploy to **AWS**. Whatever project you chose, open the terminal an
 serverless deploy
 ```
 
-![](/img/content/67fbb54-image.png)
+![](/img/content/67fbb54-image.webp)
 
 :::tip Congratulations!
 
@@ -672,15 +672,15 @@ Congratulations! Your app is running on **AWS Lambda** :)
 
 If you have followed the whole tutorial and deployed both the [Lambda App with multiple functions](#lambda-app-with-multiple-functions) and the [Lambda NodeJS Express API](#lambda-nodejs-express-api), your **[AWS Lambda Functions page](https://console.aws.amazon.com/lambda/home#/functions)** should look like this:
 
-![](/img/content/26fe035-image.png)
+![](/img/content/26fe035-image.webp)
 
 The deployment of the **Lambda App with multiple functions** created two single functions:
 
-![](/img/content/ec41b53-image.png)
+![](/img/content/ec41b53-image.webp)
 
 By contrast, the **Lambda NodeJS Express API** is contained in just one function:
 
-![](/img/content/e27401f-image.png)
+![](/img/content/e27401f-image.webp)
 
 **Next, we differentiate the testing process between these functions:**
 
@@ -693,17 +693,17 @@ Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions)
 
 Select **_API Gateway_**:
 
-![](/img/content/cc3e34e-image.png)
+![](/img/content/cc3e34e-image.webp)
 
 Here you will find the **API endpoint URL**. Click on it:
 
-![](/img/content/ca4a3df-image.png)
+![](/img/content/ca4a3df-image.webp)
 
-![](/img/content/c0d7f46-image.png)
+![](/img/content/c0d7f46-image.webp)
 
 You could reach **_getNativeBalance_** and **_getWalletNfts_** endpoints by adding them at the end of the URL:
 
-![](/img/content/3192fdf-image.png)
+![](/img/content/3192fdf-image.webp)
 
 These **GET requests** need a body with _address_ and _chain_ parameters, you can to use an API platform like [Postman](https://www.postman.com/downloads/) to test it.
 
@@ -720,11 +720,11 @@ You can test your function by pressing the _Test_ tab. Set an _Event name_ and m
 }
 ```
 
-![](/img/content/b1a4acd-image.png)
+![](/img/content/b1a4acd-image.webp)
 
 Then choose **_Test_** and see the result:
 
-![](/img/content/9c93832-image.png)
+![](/img/content/9c93832-image.webp)
 
 ## Find function name
 
@@ -732,7 +732,7 @@ Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions)
 
 Marked with green is where you can find the **function name**:
 
-![](/img/content/b89b4c7-image.png)
+![](/img/content/b89b4c7-image.webp)
 
 ## Copy function ARN
 
@@ -740,7 +740,7 @@ Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions)
 
 Marked with green is where you can copy the **ARN** which is the identifier of the function in all AWS:
 
-![](/img/content/65a9750-image.png)
+![](/img/content/65a9750-image.webp)
 
 ## Youtube Video
 

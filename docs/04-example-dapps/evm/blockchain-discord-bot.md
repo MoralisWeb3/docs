@@ -97,7 +97,7 @@ ngrok http 3000
 
 This will give us an address where out express app will be running and where we can setup webhooks for streams api.
 
-![](/img/content/c2b72e9-Screenshot_2022-11-24_at_15.24.44.jpg)
+![](/img/content/c2b72e9-Screenshot_2022-11-24_at_15.24.44.webp)
 
 5. ### Start our express server.
 
@@ -140,11 +140,11 @@ We will use Moralis Streams API to get real-time events and send notifications
 
  Inside our admin panel access [streams section](https://admin.moralis.io/streams) and create a new stream.
 
-![](/img/content/1a3f153-Screenshot_2022-11-24_at_15.54.14.jpg)
+![](/img/content/1a3f153-Screenshot_2022-11-24_at_15.54.14.webp)
 
 Select **Create From Scratch**
 
-![](/img/content/af70faf-Screenshot_2022-11-24_at_15.55.22.jpg)
+![](/img/content/af70faf-Screenshot_2022-11-24_at_15.55.22.webp)
 
 For this example we will use this simple donation contract, but you can use any smart contract of your choice:
 
@@ -156,23 +156,23 @@ For this example we will use this simple donation contract, but you can use any 
 
 For the webhook url have to use the url provided previously by ngrok, followed by our `/webhook` endpoint from our express app
 
-![](/img/content/3083fdd-Screenshot_2022-11-24_at_16.05.02.jpg)
+![](/img/content/3083fdd-Screenshot_2022-11-24_at_16.05.02.webp)
 
 Our contract is deployed on mumbai testnet, so here you will select the network that your smart contrat is deployed on: 
 
-![](/img/content/89031d2-Screenshot_2022-11-24_at_16.07.14.jpg)
+![](/img/content/89031d2-Screenshot_2022-11-24_at_16.07.14.webp)
 
 Because our donations are sending native currency to a smart contract, here we will select native transactions and check Event Emittance.
 
-![](/img/content/d2fc65d-Screenshot_2022-11-24_at_16.11.00.jpg)
+![](/img/content/d2fc65d-Screenshot_2022-11-24_at_16.11.00.webp)
 
 Next we have to add the ABI and select the topic we with to stream.
 
-![](/img/content/7a495e0-image.png)
+![](/img/content/7a495e0-image.webp)
 
 After creating the stream Moralis will send an empty POST request to confirm that the stream was created successfully.
 
-![](/img/content/3ce0485-image.png)
+![](/img/content/3ce0485-image.webp)
 
 ## Verify Stream Sender
 
@@ -184,7 +184,7 @@ Back to our express endpoint, we can add logic that allows only request coming f
 
 1. ### Go to [Moralis Admin Panel](https://admin.moralis.io/web3apis) and copy your web3 api key.
 
-![](/img/content/a254a4d-Screenshot_2022-11-24_at_16.29.26.jpg)
+![](/img/content/a254a4d-Screenshot_2022-11-24_at_16.29.26.webp)
 
 2. ### Create an `.env` file.
 
@@ -238,25 +238,25 @@ We will now begin to setup our bot to send notifications to our discord server.
 
 1. Access [Discord Developer Portal](https://discord.com/developers) and create a new application.
 
-![](/img/content/a10c89c-Screenshot_2022-11-24_at_16.41.34.jpg)
+![](/img/content/a10c89c-Screenshot_2022-11-24_at_16.41.34.webp)
 
 2. Add a new bot to your application.
 
-![](/img/content/f180c62-Screenshot_2022-11-24_at_16.44.35.jpg)
+![](/img/content/f180c62-Screenshot_2022-11-24_at_16.44.35.webp)
 
 3. Add the scope and the permissions to your bot.
 
-![](/img/content/77f8469-image.png)
+![](/img/content/77f8469-image.webp)
 
-![](/img/content/590011d-image.png)
+![](/img/content/590011d-image.webp)
 
 3. Open the generated url in a new browser tab and invite the bot to your server.
 
-![](/img/content/385ae12-image.png)
+![](/img/content/385ae12-image.webp)
 
 5. Back in the Bot section, Reset and copy the new token.
 
-![](/img/content/47b8e98-Screenshot_2022-11-24_at_16.51.35.jpg)
+![](/img/content/47b8e98-Screenshot_2022-11-24_at_16.51.35.webp)
 
 6. Add the token and the channel id you wish to send the message to inside your `.env` file.
 
@@ -332,10 +332,10 @@ node index.js
 
 2. To test our bot, We can now call the donation function from our contract.
 
-![](/img/content/604fd4b-image.png)
+![](/img/content/604fd4b-image.webp)
 
 
 
 3. We should see a new notification sent by our bot.
 
-![](/img/content/e8aac1e-image.png)
+![](/img/content/e8aac1e-image.webp)

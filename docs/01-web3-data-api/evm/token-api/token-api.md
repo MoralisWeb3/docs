@@ -5,7 +5,7 @@ description: "Fetch real-time ERC20 token data into your applications with Moral
 sidebar_position: 2
 ---
 
-![](/img/content/7b281e7-image.png)
+![](/img/content/7b281e7-image.webp)
 
 ## What is the Token API?
 

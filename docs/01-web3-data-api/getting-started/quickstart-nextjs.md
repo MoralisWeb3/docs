@@ -9,7 +9,7 @@ This tutorial shows you how to create a basic NextJS dapp that uses the [@morali
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs>
 
-![](/img/content/b66bc70-image.png)
+![](/img/content/b66bc70-image.webp)
 
 ## The Steps We Will Take
 
@@ -94,7 +94,7 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 
 1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/): 
 
-![Admin Panel](/img/content/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.png)
+![Admin Panel](/img/content/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp)
 
 2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
 
@@ -163,4 +163,4 @@ export default HomePage;
 
 2. Now, let's receive and use the props in our server-side Visit the [<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
 
-![The `useEvmNativeBalance()` response](/img/content/46867dc-image.png)
+![The `useEvmNativeBalance()` response](/img/content/46867dc-image.webp)

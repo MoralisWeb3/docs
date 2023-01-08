@@ -131,8 +131,8 @@ In your terminal, you should see the following JSON response:
     "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "name": "Wrapped Ether",
     "symbol": "WETH",
-    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
-    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.png",
+    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.webp",
+    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.webp",
     "decimals": 18,
     "balance": "85000000000000000"
   }

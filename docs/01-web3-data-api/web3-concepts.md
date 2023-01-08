@@ -34,7 +34,7 @@ RPC node, or **r**emote **p**rocedure **c**all nodes, are responsible for storin
 
 As shown in the image below, node A broadcasts a transaction to node B and node C in the network. The nodes (A, B, and C) then verify this transaction before forwarding it to their peers, and so on. 
 
-![](/img/content/1121070-image.png)
+![](/img/content/1121070-image.webp)
 
 Self-hosting RPC nodes is possible, but requires quite extensive infrastructure, support, and management. Moralis APIs remove the need to self-host an RPC node. 
 
@@ -46,7 +46,7 @@ Smart contracts written in smart contract-specific programming languages are com
 
 All nodes execute this smart contract using their EVMs.
 
-![](/img/content/70cc1e7-image.png)
+![](/img/content/70cc1e7-image.webp)
 
 ## ERC
 
