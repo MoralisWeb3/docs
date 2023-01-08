@@ -28,7 +28,6 @@
     "@segment/snippet": "^4.15.3",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^2.3.2",
-    "file-loader": "^6.2.0",
     "formik": "^2.2.9",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
@@ -42,8 +41,7 @@
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.4",
     "react-textarea-autosize": "^8.3.3",
-    "remark-oembed": "^1.2.2",
-    "url-loader": "^4.1.1"
+    "remark-oembed": "^1.2.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.2.0",
