@@ -6,7 +6,9 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through creating a full-stack Web3 authentication solution using the popular NextJS framework.
 
-![Web3 Moralis Authentication with Coinbase Wallet - Result](/img/content/50e491e-cb.gif)
+<video controls>
+  <source src="/video/50e491e-cb.mp4"/>
+</video>
 
 ## Before Starting
 

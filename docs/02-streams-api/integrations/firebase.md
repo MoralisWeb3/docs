@@ -6,7 +6,9 @@ description: "Moralis Streams can be used to monitor a blockchain wallet or a sm
 
 Moralis Streams can be used to monitor a blockchain wallet or a smart contract. This tutorial shows how you can easily plug in the Moralis Streams extension to your Firebase project and let your dapp handle blockchain events.
 
-![Moralis Streams for Firebase Demo](/img/content/5cdb931-firebase-streams-demo-cover.gif)
+<video controls>
+  <source src="/video/5cdb931-firebase-streams-demo-cover.mp4"/>
+</video>
 
 If you're not familiar with the basics of creating a project or running the Firebase emulator, we recommend checking out the **[Your First Dapp for Firebase](/web3-data-api/integrations/firebase-nodejs)** tutorial first.
 

@@ -95,7 +95,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.remark-oembed-you-tube iframe {
+.remark-oembed-you-tube iframe, video {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;

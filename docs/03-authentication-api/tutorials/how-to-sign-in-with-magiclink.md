@@ -6,7 +6,10 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework.
 
-![Web3 Moralis Authentication with Magic.Link - Result](/img/content/3e566e9-magic.gif)
+<video controls>
+  <source src="/video/3e566e9-magic.mp4"/>
+</video>
+
 ## Before Starting
 
 You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality. 

@@ -136,7 +136,7 @@ The completed project with all the functions ready can be found on [GitHub](http
 2. Select **Azure** and sign in.
 3. Under **Workspace** select **Create Function**:
 
-![](/img/content/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
+![](/img/content/0556f0c-azure_functions_1.webp "azure_functions_1.webp")
 
 4. Select **Create new project** and create an empty folder. I named mine **example-auth-azure-functions-nodejs**:
 
@@ -566,33 +566,33 @@ The completed project with all the functions ready can be found on [GitHub](http
 1. Open Visual Studio Code.
 2. Select **Azure** and **Workspace** and add a function:
 
-![](/img/content/0556f0c-azure_functions_1.gif "azure_functions_1.gif")
+![](/img/content/0556f0c-azure_functions_1.webp "azure_functions_1.webp")
 
 3. Click on **Create new project** and select or create a folder. For this example, we will create and select a new folder named **example-auth-azure-functions**.
 4. For the language, select **C#**:
 
-![](/img/content/e3747c2-azure_functions_2.gif "azure_functions_2.gif")
+![](/img/content/e3747c2-azure_functions_2.webp "azure_functions_2.webp")
 
 5. Select the **.NET** runtime you want to use. For this tutorial, we select **.NET 6.0 LTS**:
 
-![](/img/content/3734344-azure_functions_3.gif "azure_functions_3.gif")
+![](/img/content/3734344-azure_functions_3.webp "azure_functions_3.webp")
 
 6. Select **HTTP trigger** as the template:
 
-![](/img/content/a218747-azure_functions_4.gif "azure_functions_4.gif")
+![](/img/content/a218747-azure_functions_4.webp "azure_functions_4.webp")
 
 7. Provide a root namespace for your project:
 
-![](/img/content/52ff37f-azure_functions_5.gif "azure_functions_5.gif")
+![](/img/content/52ff37f-azure_functions_5.webp "azure_functions_5.webp")
 
 8. For **AccessRights**, select **Function**:
 
-![](/img/content/64041e4-azure_functions_6.gif "azure_functions_6.gif")
+![](/img/content/64041e4-azure_functions_6.webp "azure_functions_6.webp")
 
 9. Select **Open in current window**.
 10. You should see a pop-up window indicating missing dependencies; click on **Restore**:
 
-![](/img/content/652d283-azure_functions_7.gif "azure_functions_7.gif")
+![](/img/content/652d283-azure_functions_7.webp "azure_functions_7.webp")
 
 11. Open the **.csproj** file. There will be an `ItemGroup` element with one or more `PackageReference` elements. Replace this section with the following code:
 

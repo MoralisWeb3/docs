@@ -5,7 +5,9 @@ slug: "../how-to-sign-in-with-solana-phantom-wallet"
 
 This tutorial covers how to create full-stack Web3 authentication for the Phantom wallet, using the popular NextJS framework.
 
-![](/img/content/d15a406-phantom_.gif)
+<video controls>
+  <source src="/video/d15a406-phantom_.mp4"/>
+</video>
 
 ## Introduction
 
