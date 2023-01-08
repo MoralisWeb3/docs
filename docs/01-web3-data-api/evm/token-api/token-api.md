@@ -41,6 +41,7 @@ The Token API supports multiple EVM chains:
 | ----------------- | -------------- | -------------- |
 | eth               | 0x1            | 1              |
 | goerli            | 0x5            | 5              |
+| phi               | 0x90           | 144            |
 | sepolia           | 0xaa36a7       | 11155111       |
 | polygon           | 0x89           | 137            |
 | mumbai            | 0x13881        | 80001          |
