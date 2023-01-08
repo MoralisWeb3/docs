@@ -46,7 +46,6 @@
     "react-textarea-autosize": "^8.3.3",
     "remark-oembed": "^1.2.2",
     "sharp": "^0.31.2",
-    "unist-util-visit": "^2.0.3",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
