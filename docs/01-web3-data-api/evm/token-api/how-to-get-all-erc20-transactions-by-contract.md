@@ -1,8 +1,9 @@
 ---
-title: "How to get all ERC20 transactions by contract"
-slug: "../how-to-get-all-erc20-transactions-by-contract"
-description: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
+title: "How to get all ERC20 transfers by contract"
+slug: "../how-to-get-all-erc20-transfers-by-contract"
+description: "Learn how to get all ERC20 transfers by wallet using Moralis Token API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get all ERC20 transactions by contract
+## Step 2: Get all ERC20 transfers by contract
 
-In order to get all ERC20 transactions by contract, Moralis provides you with an [getTokenTransfers](/web3-data-api/reference/get-token-transfers) endpoint.
+In order to get all ERC20 transfers by contract, Moralis provides you with an [getTokenTransfers](/web3-data-api/reference/get-token-transfers) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
+
+  const address = "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,8 +68,8 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
+
+  const address = "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -76,9 +77,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,7 +92,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984", 
+    "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
     "chain": "eth"
 }
 
@@ -106,11 +107,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -158,12 +157,12 @@ In your terminal, you should see the following JSON response:
       "value": "545480000000000000000",
       "transaction_index": 106,
       "log_index": 239
-    },
+    }
   ]
 }
 ```
 
-Congratulations 🥳 You just got all ERC20 transactions by contract with just a few lines of code using the Moralis Token API!
+Congratulations 🥳 You just got all ERC20 transfers by contract with just a few lines of code using the Moralis Token API!
 
 ## API Reference
 

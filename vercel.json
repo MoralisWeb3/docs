@@ -3784,6 +3784,11 @@
       "source": "/docs/v1-server-self-hosting",
       "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
       "permanent": true
+    },
+    {
+      "source": "/web3-data-api/evm/how-to-get-all-erc20-transactions-by-contract",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-contract",
+      "permanent": true
     }
   ]
 }
