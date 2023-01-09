@@ -3792,7 +3792,7 @@
     },
     {
       "source": "/docs/moralis-onboarding",
-      "destination": "",
+      "destination": "/web3-data-api/getting-started",
       "permanent": true
     }
   ]
