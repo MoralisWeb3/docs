@@ -20,7 +20,7 @@ You can find the repository with the final code here: <https://github.com/Morali
 
 ![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.webp)
 
-:::info 
+:::info
 
 You can find the final dapp with implemented style on our [GitHub](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/beta/demos/nextjs).
 
@@ -51,7 +51,7 @@ npm install wagmi ethers
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
 - **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
 - **NEXTAUTH_URL**: Your app address. In the development stage, use [`http://localhost:3000`](http://localhost:3000).
-- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example: 
+- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example:
 
 ```text .env.local
 APP_DOMAIN=amazing.finance
@@ -59,8 +59,6 @@ MORALIS_API_KEY=xxxx
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
 ```
-
-
 
 :::danger
 
@@ -79,11 +77,20 @@ Every time you modify the `.env.local` file, you need to restart your dapp.
 4. Create the `pages/_app.jsx` file. We need to wrap our pages with `WagmiConfig` ([docs](https://wagmi.sh/docs/WagmiConfig)) and `SessionProvider` ([docs](https://next-auth.js.org/getting-started/client#sessionprovider)):
 
 ```javascript
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
-import { publicProvider } from 'wagmi/providers/public';
-import { SessionProvider } from 'next-auth/react';
+import {
+  createClient,
+  configureChains,
+  defaultChains,
+  WagmiConfig,
+} from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
+import { SessionProvider } from "next-auth/react";
+import { mainnet } from "wagmi/chains";
 
-const { provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
+const { provider, webSocketProvider } = configureChains(
+  [mainnet],
+  [publicProvider()]
+);
 
 const client = createClient({
   provider,
@@ -104,7 +111,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-:::info 
+:::info
 
 NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
 
@@ -121,8 +128,8 @@ import TabItem from '@theme/TabItem';
 <TabItem value="typescript" label="Typescript">
 
 ```typescript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -146,8 +153,8 @@ export default NextAuth({
 <TabItem value="javascript" label="Javascript">
 
 ```javascript Javascript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -185,194 +192,196 @@ export default MoralisNextApi({
 });
 ```
 
-
-
 ## Create Sign-In Page
 
 7. Create a new page file, `pages/signin.jsx`, with the following content:
 
 ```javascript
 function SignIn() {
-    return (
-        <div>
-            <h3>Web3 Authentication</h3>
-        </div>
-    );
+  return (
+    <div>
+      <h3>Web3 Authentication</h3>
+    </div>
+  );
 }
 
 export default SignIn;
 ```
-
-
 
 8. Let's create a button for enabling our Web3 provider and `console.log` users' information:
 
 ```javascript
-import { useConnect } from 'wagmi';
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
+import { useConnect } from "wagmi";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 
 function SignIn() {
-    const { connectAsync } = useConnect();
+  const { connectAsync } = useConnect();
 
-    const handleAuth = async () => {
-        const { account, chain } = await connectAsync({ connector: new MetaMaskConnector() });
+  const handleAuth = async () => {
+    const { account, chain } = await connectAsync({
+      connector: new MetaMaskConnector(),
+    });
 
-        const userData = { address: account, chainId: chain.id };
+    const userData = { address: account, chainId: chain.id };
 
-        console.log(userData)
-    };
+    console.log(userData);
+  };
 
-    return (
-        <div>
-            <h3>Web3 Authentication</h3>
-            <button onClick={handleAuth}>Authenticate via Metamask</button>
-        </div>
-    );
+  return (
+    <div>
+      <h3>Web3 Authentication</h3>
+      <button onClick={handleAuth}>Authenticate via Metamask</button>
+    </div>
+  );
 }
 
 export default SignIn;
 ```
-
-
 
 ![Web3 Authentication Page](/img/content/2dc7cb6-Untitled.webp)
 
-9. Extend the `handleAuth` functionality for calling `useSignMessage()` hook: 
+9. Extend the `handleAuth` functionality for calling `useSignMessage()` hook:
 
 ```javascript
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
-import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi';
-import { useAuthRequestChallengeEvm } from '@moralisweb3/next';
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
+import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
 function SignIn() {
-    const { connectAsync } = useConnect();
-    const { disconnectAsync } = useDisconnect();
-    const { isConnected } = useAccount();
-    const { signMessageAsync } = useSignMessage();
-    const { requestChallengeAsync } = useAuthRequestChallengeEvm();
+  const { connectAsync } = useConnect();
+  const { disconnectAsync } = useDisconnect();
+  const { isConnected } = useAccount();
+  const { signMessageAsync } = useSignMessage();
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm();
 
-    const handleAuth = async () => {
-        if (isConnected) {
-            await disconnectAsync();
-        }
+  const handleAuth = async () => {
+    if (isConnected) {
+      await disconnectAsync();
+    }
 
-        const { account, chain } = await connectAsync({ connector: new MetaMaskConnector() });
+    const { account, chain } = await connectAsync({
+      connector: new MetaMaskConnector(),
+    });
 
-        const { message } = await requestChallengeAsync({ address: account, chainId: chain.id });
+    const { message } = await requestChallengeAsync({
+      address: account,
+      chainId: chain.id,
+    });
 
-        const signature = await signMessageAsync({ message });
-      
-        console.log(signature)
+    const signature = await signMessageAsync({ message });
 
-    };
+    console.log(signature);
+  };
 
-    return (
-        <div>
-            <h3>Web3 Authentication</h3>
-            <button onClick={handleAuth}>Authenticate via Metamask</button>
-        </div>
-    );
+  return (
+    <div>
+      <h3>Web3 Authentication</h3>
+      <button onClick={handleAuth}>Authenticate via Metamask</button>
+    </div>
+  );
 }
 
 export default SignIn;
-
 ```
-
-
 
 ## Secure Authentication after Signing and Verifying the Signed Message
 
-10. Return to the `pages/signin.jsx` file. Let's add the `next-auth` authentication: 
+10. Return to the `pages/signin.jsx` file. Let's add the `next-auth` authentication:
 
 ```javascript
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
-import { signIn } from 'next-auth/react';
-import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi';
-import { useRouter } from 'next/router';
-import { useAuthRequestChallengeEvm } from '@moralisweb3/next';
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { signIn } from "next-auth/react";
+import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
+import { useRouter } from "next/router";
+import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
 function SignIn() {
-    const { connectAsync } = useConnect();
-    const { disconnectAsync } = useDisconnect();
-    const { isConnected } = useAccount();
-    const { signMessageAsync } = useSignMessage();
-    const { requestChallengeAsync } = useAuthRequestChallengeEvm();
-    const { push } = useRouter();
+  const { connectAsync } = useConnect();
+  const { disconnectAsync } = useDisconnect();
+  const { isConnected } = useAccount();
+  const { signMessageAsync } = useSignMessage();
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm();
+  const { push } = useRouter();
 
-    const handleAuth = async () => {
-        if (isConnected) {
-            await disconnectAsync();
-        }
+  const handleAuth = async () => {
+    if (isConnected) {
+      await disconnectAsync();
+    }
 
-        const { account, chain } = await connectAsync({ connector: new MetaMaskConnector() });
+    const { account, chain } = await connectAsync({
+      connector: new MetaMaskConnector(),
+    });
 
-        const { message } = await requestChallengeAsync({ address: account, chainId: chain.id });
+    const { message } = await requestChallengeAsync({
+      address: account,
+      chainId: chain.id,
+    });
 
-        const signature = await signMessageAsync({ message });
+    const signature = await signMessageAsync({ message });
 
-        // redirect user after success authentication to '/user' page
-        const { url } = await signIn('credentials', { message, signature, redirect: false, callbackUrl: '/user' });
-        /**
-         * instead of using signIn(..., redirect: "/user")
-         * we get the url from callback and push it to the router to avoid page refreshing
-         */
-        push(url);
-    };
+    // redirect user after success authentication to '/user' page
+    const { url } = await signIn("moralis-auth", {
+      message,
+      signature,
+      redirect: false,
+      callbackUrl: "/user",
+    });
+    /**
+     * instead of using signIn(..., redirect: "/user")
+     * we get the url from callback and push it to the router to avoid page refreshing
+     */
+    push(url);
+  };
 
-    return (
-        <div>
-            <h3>Web3 Authentication</h3>
-            <button onClick={handleAuth}>Authenticate via Metamask</button>
-        </div>
-    );
+  return (
+    <div>
+      <h3>Web3 Authentication</h3>
+      <button onClick={handleAuth}>Authenticate via Metamask</button>
+    </div>
+  );
 }
 
 export default SignIn;
-
 ```
-
-
 
 ## Showing the User Profile
 
 11. Let's create a user page, `pages/user.jsx`, with the following content:
 
 ```javascript
-import { getSession, signOut } from 'next-auth/react';
+import { getSession, signOut } from "next-auth/react";
 
 // gets a prop from getServerSideProps
 function User({ user }) {
-    return (
-        <div>
-            <h4>User session:</h4>
-            <pre>{JSON.stringify(user, null, 2)}</pre>
-            <button onClick={() => signOut({ redirect: '/signin' })}>Sign out</button>
-        </div>
-    );
+  return (
+    <div>
+      <h4>User session:</h4>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
+      <button onClick={() => signOut({ redirect: "/signin" })}>Sign out</button>
+    </div>
+  );
 }
 
 export async function getServerSideProps(context) {
-    const session = await getSession(context);
-    
-    // redirect if not authenticated
-    if (!session) {
-        return {
-            redirect: {
-                destination: '/signin',
-                permanent: false,
-            },
-        };
-    }
+  const session = await getSession(context);
 
+  // redirect if not authenticated
+  if (!session) {
     return {
-        props: { user: session.user },
+      redirect: {
+        destination: "/signin",
+        permanent: false,
+      },
     };
+  }
+
+  return {
+    props: { user: session.user },
+  };
 }
 
 export default User;
 ```
-
-
 
 ## Testing the MetaMask Wallet Connector
 
@@ -396,11 +405,11 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test th
 
 ![User Page](/img/content/23c7fde-142.webp)
 
-5. Visit [`http://localhost:3000/user`](http://localhost:3000/user`) to test the user session functionality: 
+5. Visit [`http://localhost:3000/user`](http://localhost:3000/user`) to test the user session functionality:
 
 - When a user authenticates, we show the user's info on the page.
-- When a user is not authenticated, we redirect to the `/signin` page. 
-- When a user is authenticated, we show the user's info on the page, even refreshing after the page. 
+- When a user is not authenticated, we redirect to the `/signin` page.
+- When a user is authenticated, we show the user's info on the page, even refreshing after the page.
   - (**Explanation:** _After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted **[JWT](https://jwt.io/introduction)** (**JWE**) stored inside. It contains session info [such as an address and signed message] in the user's browser.)_
 
 ![User Session Page](/img/content/1bc0b65-Untitled.webp)
