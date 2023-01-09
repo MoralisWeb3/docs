@@ -3789,6 +3789,11 @@
       "source": "/web3-data-api/evm/how-to-get-all-erc20-transactions-by-contract",
       "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-contract",
       "permanent": true
+    },
+    {
+      "source": "/docs/moralis-onboarding",
+      "destination": "",
+      "permanent": true
     }
   ]
 }
