@@ -101,7 +101,7 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 Be aware that this process **could resort to expenses** as **Elastic Beanstalk** is not part of [AWS Free Tier](https://aws.amazon.com/es/free/).
 :::
 
-[Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-public-bucket.s3.amazonaws.com/parse-server-migration-build.zip)
+[Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-s3-bucket.s3.eu-west-1.amazonaws.com/parse-server-migration.zip)
 
  And follow the **instructions below**:
 
