@@ -4275,8 +4275,8 @@
     },
     "getWalletTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get ERC20 token transactions by wallet",
-      "description": "Get ERC20 token transactions ordered by block number in descending order.",
+      "summary": "Get ERC20 token transfers by wallet",
+      "description": "Get ERC20 token transfers ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address/erc20/transfers",
       "pathParams": [
@@ -4731,8 +4731,8 @@
     },
     "getTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get ERC20 token transactions by contract",
-      "description": "Get ERC20 token transactions from a contract ordered by block number in descending order.",
+      "summary": "Get ERC20 token transfers by contract",
+      "description": "Get ERC20 token transfers from a contract ordered by block number in descending order.",
       "method": "GET",
       "path": "/erc20/:address/transfers",
       "pathParams": [
