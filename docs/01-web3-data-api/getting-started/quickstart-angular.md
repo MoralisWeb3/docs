@@ -92,7 +92,7 @@ export class BalancesComponent implements OnInit {
 
 9. Run the command `npm run start` and open <http://localhost:4200/balances> in your browser. It should look like:
 
-![](/img/content/6b15392-Angular_Your_First_Dapp_1.png)
+![](/img/content/6b15392-Angular_Your_First_Dapp_1.webp)
 
 We have not fetched any data yet - we will update our server code and then we will get this data from our Angular dapp.
 
@@ -250,4 +250,4 @@ export class BalancesComponent implements OnInit {
 
 3. Reload the [`http://localhost:4200/balances`](http://localhost:4200/balances) page to see the results:
 
-![](/img/content/8c0d856-Angular_Your_First_Dapp_2.png)
+![](/img/content/8c0d856-Angular_Your_First_Dapp_2.webp)

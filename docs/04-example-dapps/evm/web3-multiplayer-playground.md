@@ -9,7 +9,7 @@ This Moralis Unity Sample Project demonstrates Web3 functionality; authenticatio
 
 | Intro | 4-Player Multiplayer |
 | :--- | :--- |
-| <img width="400" src="/img/content/458e9db-image.png" /> | <img width="400" src="/img/content/cb14e78-Screenshot_013.png" /> |
+| <img width="400" src="/img/content/458e9db-image.webp" /> | <img width="400" src="/img/content/cb14e78-Screenshot_013.webp" /> |
 
 > Enter the multiplayer playground - an shared environment to move, trade currency, and trade NFTs
 

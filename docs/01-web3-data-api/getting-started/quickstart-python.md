@@ -77,7 +77,7 @@ print(json.dumps(result, indent=4))
     "name": "CRYPTOPUNKS",
     "symbol": "\u03fe",
     "token_uri": "https://www.larvalabs.com/cryptopunks/details/3931",
-    "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk3931.png\",\"name\":\"CryptoPunk 3931\",\"attributes\":[\"Vampire Hair\",\"Goat\"],\"description\":\"Male\"}",
+    "metadata": "{\"image\":\"https://www.larvalabs.com/cryptopunks/cryptopunk3931.webp\",\"name\":\"CryptoPunk 3931\",\"attributes\":[\"Vampire Hair\",\"Goat\"],\"description\":\"Male\"}",
     "last_token_uri_sync": null,
     "last_metadata_sync": "2022-05-12T18:00:22.340Z",
     "minter_address": "0xc352b534e8b987e036a93539fd6897f53488e56a",
@@ -86,7 +86,7 @@ print(json.dumps(result, indent=4))
         "description": "Male",
         "animation_url": null,
         "external_link": null,
-        "image": "https://www.larvalabs.com/cryptopunks/cryptopunk3931.png",
+        "image": "https://www.larvalabs.com/cryptopunks/cryptopunk3931.webp",
         "attributes": [
             {
                 "trait_type": "type",

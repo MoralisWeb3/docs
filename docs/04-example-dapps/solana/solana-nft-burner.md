@@ -19,7 +19,7 @@ In this project, we will use [Metaplex JavaScript SDK](https://github.com/metapl
 
 This is what the final application looks like. You can click on any NFTs in your wallet that you want to remove and click on the burn button to burn the NFT.
 
-![Final App UI](/img/content/c37a205-image.png)
+![Final App UI](/img/content/c37a205-image.webp)
 
 Instead of going through the entire code, we will focus on the important sections of code that power the application. 
 
@@ -83,11 +83,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you'll find multiple tabs, but for our code, we only need to access the`/nftBurner` page to burn the NFTs of the wallet. If you want to mint a new NFT for testing you can use the`/nftMinter`page to mint NFTs.
 
-![Nav Bar](/img/content/8fd2c8f-image.png)
+![Nav Bar](/img/content/8fd2c8f-image.webp)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-![Select Wallet Button](/img/content/5e9b822-image.png)
+![Select Wallet Button](/img/content/5e9b822-image.webp)
 
 The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial. 
 
@@ -182,11 +182,11 @@ The dapp can be tested by visiting the `/NFTBurner` page.
 
 First, select the NFTs to delete in the UI.
 
-![NFT Selection](/img/content/9caeb78-image.png)
+![NFT Selection](/img/content/9caeb78-image.webp)
 
 Then click on the "Burn" button to initiate the transaction and you will get a request from your wallet to sign the transaction. If you observe the gas fee in the transaction, you can see that it says `+0.0105 SOL`, which means that this transaction will return `+0.0105 SOL` back to your wallet.
 
-![Transaction View](/img/content/c9948e2-image.png)
+![Transaction View](/img/content/c9948e2-image.webp)
 
 Once the transaction is successful, your NFT will be successfully deleted from the Solana blockchain and you will find `+0.0105 SOL` added to your wallet.
 

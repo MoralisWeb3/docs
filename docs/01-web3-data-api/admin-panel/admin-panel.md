@@ -13,4 +13,4 @@ The Admin Panel is the control center for managing your dapp development using M
 - Streams Configurations
 - Moralis Team
 
-![Moralis Admin Panel](/img/content/9b911a1-Screen_Shot_2022-11-01_at_17.30.41.png)
+![Moralis Admin Panel](/img/content/9b911a1-Screen_Shot_2022-11-01_at_17.30.41.webp)

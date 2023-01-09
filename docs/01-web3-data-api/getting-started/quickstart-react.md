@@ -183,4 +183,4 @@ npm run start
 
 4. Run `npm run start` in your React project, and visit the [`http://localhost:3000/balances`](http://localhost:3000/balances) page to see the results:
 
-![](/img/content/f70531f-React_1.png)
+![](/img/content/f70531f-React_1.webp)

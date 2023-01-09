@@ -10,7 +10,9 @@ Let's start by defining Supabase. In short, Supabase is an open-source substitut
 
 In this guide, we will take advantage of Supabase's row-level security (RLS) as we use a custom authentication provider!
 
-![](/img/content/8858f40-ezgif.com-gif-maker_2.gif "ezgif.com-gif-maker (2).gif")
+<video controls>
+  <source src="/video/supabase.mp4"/>
+</video>
 
 Let's dive in.
 
@@ -29,9 +31,9 @@ We will not use the Supabase default auth schema because we do not want to use e
 
 On the dashboard, go to **Table editor**, select **public schema** and click on **Create a new table**:
 
-![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.png "Screenshot 2022-08-17 at 22.39.08.png")
+![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.webp "Screenshot 2022-08-17 at 22.39.08.webp")
 
-![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.png "Screenshot 2022-08-17 at 22.49.04.png")
+![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.webp "Screenshot 2022-08-17 at 22.49.04.webp")
 
 Remember, since Supabase uses PostgreSQL, your table must be structured with all the necessary fields. In this case, `id`, `moralis provider id`, and `metadata`.
 
@@ -41,7 +43,7 @@ We will create a policy that allows only authenticated users to access the table
 
 To do this, go to **Authentication** > **Policies**, then click on **Enable RLS** for the table we just created > click on **New policy** for the created table:
 
-![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.png "Screenshot 2022-08-17 at 22.45.42.png")
+![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.webp "Screenshot 2022-08-17 at 22.45.42.webp")
 
 ```sql
 CREATE POLICY "Enable select for authenticated users only"
@@ -79,7 +81,7 @@ Note that `SUPABASE_SERVICE_ROLE` is the service role that has the ability to by
 
 <!-- Insert image for api keys -->
 
-![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.png "Screenshot 2022-08-17 at 22.46.59.png")
+![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.webp "Screenshot 2022-08-17 at 22.46.59.webp")
 
 The Moralis SDK must also be initialized:
 

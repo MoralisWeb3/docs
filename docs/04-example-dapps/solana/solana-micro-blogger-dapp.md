@@ -11,7 +11,7 @@ Once complete, you can use this dapp to create blog posts on Solana Blockchain.
 
 This is what the final application looks like. You can enter the text in the input and click on the "Post Blog" button to process the transaction.
 
-![Final APP UI](/img/content/aa60ae2-image.png)
+![Final APP UI](/img/content/aa60ae2-image.webp)
 
 You can find the repository with the final code here: [Solana-Micro-Blogger](https://github.com/JohnVersus/solana-dapp-micro-blog).
 
@@ -128,7 +128,7 @@ solana program deploy ./target/deploy/micro_blog.so
 
 Once successfully deployed it will return the program Id of the Solana Program.
 
-![Console with Program Id](/img/content/a01aaa2-image.png)
+![Console with Program Id](/img/content/a01aaa2-image.webp)
 
 Store the Program Id somewhere accessible, as we will need this to call the smart contract function from the client side.
 
@@ -179,11 +179,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/microBlog` page to create new blog posts. 
 
-![Nav Bar](/img/content/806136a-image.png)
+![Nav Bar](/img/content/806136a-image.webp)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-![Wallet Connect Button](/img/content/5e9b822-image.png)
+![Wallet Connect Button](/img/content/5e9b822-image.webp)
 
 The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial. 
 
@@ -326,11 +326,11 @@ And there we have it! That's all the code required to create a transaction to ca
 
 The dapp can be tested by visiting the `/microBlog` page. Add the text that you want to store on the blockchain and click on the "Post Blog" button. 
 
-![Input to add new post](/img/content/7e45d97-image.png)
+![Input to add new post](/img/content/7e45d97-image.webp)
 
 When posting the first blog you will have to sign two transactions. One for creating the account and the other for creating the blog post. Once the transactions are successful. You should see the blog updated in the UI, with the Blog number.
 
-![Blog Post](/img/content/627ed01-image.png)
+![Blog Post](/img/content/627ed01-image.webp)
 
 Congratulations! 🥳 
 

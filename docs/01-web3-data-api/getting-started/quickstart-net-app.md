@@ -26,30 +26,30 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 1. Open Visual Studio and create a new project
 2. Select C# Console as the template:
 
-![Choose Console Template](/img/content/7f2c5e2-console_1.gif)
+![Choose Console Template](/img/content/7f2c5e2-console_1.webp)
 
 3. Configure your new project by entering the name of the project and location. For this demo, we use "MoralisDemo" as the project name.
 
-![Configure Project](/img/content/56a86ff-console_2.gif)
+![Configure Project](/img/content/56a86ff-console_2.webp)
 
 4. Enter additional information and click on the "create" button. For this demo, we select ".NET 6.0" as the framework:
 
-![Select Framework](/img/content/99113de-console_3.gif)
+![Select Framework](/img/content/99113de-console_3.webp)
 
 5. Visual Studio will generate a basic C# Console project. 
 
-![New Project](/img/content/1cbb56b-console_4.gif)
+![New Project](/img/content/1cbb56b-console_4.webp)
 
 ## Import and Set Up the Latest Moralis .NET SDK
 
 1. Open "NuGet Package Manager" by selecting _Tools _ > _NuGet Package Manager _ > _Manage NuGet Packages for Solution..._:
 
-![Open NuGet](/img/content/87124fa-nuget1.gif)
+![Open NuGet](/img/content/87124fa-nuget1.webp)
 
 2. Checkmark _Include prerelease_ and browse for Moralis.
 3. Select the latest  **Moralis** package and click on the _Install_ button:
 
-![Install the Moralis Package](/img/content/e46e5cd-nuget2.gif)
+![Install the Moralis Package](/img/content/e46e5cd-nuget2.webp)
 
 ## Integrate Your Dapp with Moralis Services
 
@@ -277,10 +277,10 @@ If you run it as is in Visual Studio, your output should be similar to:
 
 In _Solution Explorer_, right-click on _Properties \_then select \_Debug_ > _General_ and click on the _Open debug launch profile_ link:
 
-![Open Debug Launch Profile](/img/content/fc042ce-console_6.gif)
+![Open Debug Launch Profile](/img/content/fc042ce-console_6.webp)
 
 In _Command Line Arguments_, enter your wallet address and chain ID.
 
-![Set Input Args](/img/content/ad2af03-console_7.gif)
+![Set Input Args](/img/content/ad2af03-console_7.webp)
 
 Now, when you run your dapp, your data is displayed!

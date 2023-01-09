@@ -24,16 +24,10 @@
     "@docusaurus/preset-classic": "2.2.0",
     "@docusaurus/remark-plugin-npm2yarn": "^2.2.0",
     "@docusaurus/theme-mermaid": "^2.2.0",
-    "@docusaurus/theme-search-algolia": "^2.2.0",
     "@mdx-js/react": "^1.6.22",
     "@segment/snippet": "^4.15.3",
-    "@svgr/webpack": "^5.5.0",
-    "axios": "^1.2.0",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^2.3.2",
-    "docusaurus-plugin-dotenv": "^1.0.1",
-    "docusaurus2-dotenv": "^1.4.0",
-    "file-loader": "^6.2.0",
     "formik": "^2.2.9",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
@@ -47,10 +41,7 @@
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.4",
     "react-textarea-autosize": "^8.3.3",
-    "remark-oembed": "^1.2.2",
-    "sharp": "^0.31.2",
-    "unist-util-visit": "^2.0.3",
-    "url-loader": "^4.1.1"
+    "remark-oembed": "^1.2.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.2.0",

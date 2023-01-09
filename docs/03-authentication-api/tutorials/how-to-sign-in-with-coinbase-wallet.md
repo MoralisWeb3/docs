@@ -6,7 +6,9 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through creating a full-stack Web3 authentication solution using the popular NextJS framework.
 
-![Web3 Moralis Authentication with Coinbase Wallet - Result](/img/content/50e491e-cb.gif)
+<video controls>
+  <source src="/video/50e491e-cb.mp4"/>
+</video>
 
 ## Before Starting
 
@@ -83,19 +85,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Coinbase Wallet`:
 
-![Sign In Page](/img/content/0ead0ca-8.png)
+![Sign In Page](/img/content/0ead0ca-8.webp)
 
 2. Connect Coinbase Wallet:
 
-![Coinbase Wallet - Connecting](/img/content/532fc36-42.png)
+![Coinbase Wallet - Connecting](/img/content/532fc36-42.webp)
 
 3. Sign the message:
 
-![Signing the Message](/img/content/f486cbb-84.png)
+![Signing the Message](/img/content/f486cbb-84.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/a45ec1e-122.png)
+![User Page](/img/content/a45ec1e-122.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

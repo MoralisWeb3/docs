@@ -9,7 +9,7 @@ This tutorial shows you how to create a NextJS dapp containing NFT gated functio
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_nft_gating>.
 
-![If User Fulfills Requirements - This is the Landing Page](/img/content/dfc9bf3-81e82ad-Untitled.png)
+![If User Fulfills Requirements - This is the Landing Page](/img/content/dfc9bf3-81e82ad-Untitled.webp)
 
 ## Before Starting
 
@@ -135,6 +135,6 @@ export default Protected;
 
 4. Visit the [`http://localhost:3000/protected`](http://localhost:3000/protected`) page to test the NFT gated functionality. ([`http://localhost:3000/signin`](http://localhost:3000/signin`) for authentication.)
 
-![Protected Page if User Does Not Fulfill Requirements](/img/content/f8b4e79-Untitled.png)
+![Protected Page if User Does Not Fulfill Requirements](/img/content/f8b4e79-Untitled.webp)
 
-![Protected Page When the User is Authenticated and Holds Specified NFT](/img/content/81e82ad-Untitled.png)
+![Protected Page When the User is Authenticated and Holds Specified NFT](/img/content/81e82ad-Untitled.webp)
