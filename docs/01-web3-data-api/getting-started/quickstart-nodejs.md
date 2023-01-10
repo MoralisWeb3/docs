@@ -4,7 +4,7 @@ slug: "../quickstart-nodejs"
 description: "This tutorial will teach you how to set up a server-side dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any NodeJS application.  \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
 ## Introduction
-This tutorial will teach you how to set up a server-side dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any NodeJS application.  \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!
+This tutorial will teach you how to set up a server-side dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, etc., from any NodeJS application. This tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!
 
 ## Prerequisites
 
