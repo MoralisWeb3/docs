@@ -194,6 +194,11 @@ const config = {
             label: "Changelog",
           },
           {
+            href: "https://status.moralis.io",
+            position: "right",
+            label: "Status",
+          },
+          {
             type: "dropdown",
             label: "References",
             position: "right",
