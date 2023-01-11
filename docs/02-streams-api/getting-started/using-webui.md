@@ -4,7 +4,7 @@ slug: "../using-webui"
 description: "Learn how to create a new stream on the Admin Panel of Moralis.io. Follow the step-by-step instructions to monitor your chosen address and receive data through a webhook URL."
 ---
 
-# Start 
+## Start 
 
 1. Go to <http://admin.moralis.io/streams>.
 2. Click on **Create a new Stream** button.
@@ -18,13 +18,13 @@ Create a stream by choosing one of these options:
 2. Use a template and enter a `Contract address`, `Wallet address`, `Token address`, or `Token Id` depending on the template to create a demo stream.
 3. Input a `Contract address`, `Wallet address`, `Token address` in `Add Address to Stream` and then configure your stream.
 
-# Use Examples to create a stream 
+## Use Examples to create a stream 
 
 Lets choose the `Tether` Example. Simply, click the Example and the demo stream will be created. You will see the webhook responses streaming in the right hand terminal.  
 
 <img width="1724" alt="Screenshot 2023-01-11 at 15 52 58" src="https://user-images.githubusercontent.com/122364197/211837760-817138fd-d450-4228-ac90-17d4f6de62d3.png">
 
-# Use Templates to create a stream 
+## Use Templates to create a stream 
 
 Lets track transactions of a wallet. 
 
