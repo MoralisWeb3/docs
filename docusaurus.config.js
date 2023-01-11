@@ -121,12 +121,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "/img/moralis-social-card.jpg",
+      image: "img/moralis-social-card.jpg",
       metadata: [
-        {
-          name: "twitter:image",
-          content: "/img/moralis-social-card.jpg",
-        },
         {
           name: "twitter:card",
           content: "summary_large_image",
