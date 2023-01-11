@@ -48,7 +48,7 @@ When a transaction occurs on the wallet it will appear on the right hand termina
 
 5. Then click toggle to `Prod`. You will now get webhooks sent to your URL you provided. 
 
-# Configure your own stream 
+## Configure your own stream 
 
 1. Add `Contract address` or `Wallet address` 
 
@@ -56,7 +56,9 @@ When a transaction occurs on the wallet it will appear on the right hand termina
 
 2. Configure your stream to recieve webhooks to your backend by adding `Webhook URL`, `Description`, and `Tag`. Then click toggle to `Prod`.
 
-Select the Networks you want to track. 
+![](/img/content/211853455-3b253115-c6cb-4cba-8b00-e8160f107fbb.webp)
+
+3. Select the Networks you want to track. 
 
 ![](/img/content/211853590-a71f84ab-ab8c-40ca-9d28-452ba64e1de6.webp)
 
