@@ -366,6 +366,7 @@ const config = {
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
     ],
     ["@docusaurus/plugin-ideal-image", {}],
+    "./src/plugins/docusaurus-plugin-intercom",
     require.resolve("docusaurus-lunr-search"),
   ],
 };
