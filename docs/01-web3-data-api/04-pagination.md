@@ -9,7 +9,7 @@ Pagination is a way of sorting results by dividing them up into smaller chunks s
 
 ### What is cursor Pagination?
 
-A cursor is a unique identifier (string) for a specific set of records or data chunks, which acts as a pointer to the next set of record we want to fetch from to get the next page of results. Cursor pagination works with O(1) time complexity unlike offset pagination which works O(n) complexity. 
+A cursor is a unique identifier (string) for a specific set of records or data chunks, which acts as a pointer to the next set of record we want to fetch from to get the next page of results. Cursor pagination works with O(1) time complexity unlike offset pagination which works O(n) complexity.
 
 ### Cursor pagination with Moralis API
 
@@ -64,7 +64,7 @@ let owners = {};
 
 Example of using cursor parameter in Python:
 
-```Text Python
+```python
 import requests
 import time
 
