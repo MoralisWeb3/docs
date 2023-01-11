@@ -193,11 +193,6 @@ const config = {
             position: "right",
             label: "Changelog",
           },
-          // {
-          //   href: "https://status.moralis.io",
-          //   position: "right",
-          //   label: "Status",
-          // },
           {
             type: "dropdown",
             label: "References",
@@ -294,6 +289,10 @@ const config = {
               {
                 label: "Contact Support",
                 href: "https://moralis.io/contact-support/",
+              },
+              {
+                label: "Status",
+                href: "https://status.moralis.io",
               },
               {
                 label: "FAQ",
