@@ -33,6 +33,9 @@ Lets track transactions of a wallet.
 ![](/img/content/211844836-fbc0f879-c1f5-46d2-ab3b-b0133c8d55f5.webp)
 
 2. Enter the wallet address you want to track. Or take a example wallet address like `0xe692869347b9b18Ef2DEED19ae1bBACE303B52B0` from [Etherscan](https://etherscan.io/address/0xe692869347b9b18ef2deed19ae1bbace303b52b0).
+
+![](/img/content/211853455-3b253115-c6cb-4cba-8b00-e8160f107fbb.webp)
+
 3. Click `Next` to create the stream. 
 
 ![](/img/content/211845459-74a0da71-c71a-4437-9650-0c1d00bc1592.webp)
