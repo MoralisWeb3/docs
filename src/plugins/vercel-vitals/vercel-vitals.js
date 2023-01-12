@@ -1,4 +1,5 @@
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+
 import { webVitals } from './vitals';
 
 export default (function () {
@@ -6,13 +7,6 @@ export default (function () {
     return null;
   }
 
-  return {
-    contentLoaded() {
-        const {options} = usePluginData('vercel-vitals');
+  webVitals(true);
 
-        if (!options.analyticsId) return;
-
-        webVitals({ options });
-    },
-  };
 })();

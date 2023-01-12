@@ -6,16 +6,8 @@ module.exports = function (context, options) {
   return {
     name: 'vercel-vitals',
 
-    async contentLoaded({actions}) {
-      const {setGlobalData} = actions;
-
-      const options = {
-        debug: true,
-        analyticsId: process.env.VERCEL_ANALYTICS_ID,
-      };
-
-      // Create friends global data
-      setGlobalData({options});
+    contentLoaded() {
+      console.log(process.env.VERCEL_ANALYTICS_ID);
     },
 
     getClientModules() {

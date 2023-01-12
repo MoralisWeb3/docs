@@ -365,7 +365,7 @@ const config = {
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
     ],
-    ["./src/plugins/vercel-vitals", { analyticsId: JSON.stringify(process.env.VERCEL_ANALYTICS_ID) }],
+    ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
     require.resolve("docusaurus-lunr-search"),
   ],
