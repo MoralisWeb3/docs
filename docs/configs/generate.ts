@@ -298,7 +298,7 @@ const generateConfigs = async () => {
 
     if (isGenerateReferenceOn) {
       for (let key in swaggerOAS) {
-        if (["nft", "solana"].includes(key)) {
+        if (["balance"].includes(key)) {
           for (let index in Object.keys(swaggerOAS[key])) {
             const functionName = Object.keys(swaggerOAS[key])[index];
             const snakeCaseFunctionName = camelToSnakeCase(functionName);

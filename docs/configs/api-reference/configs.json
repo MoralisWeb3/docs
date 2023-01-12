@@ -5170,6 +5170,168 @@
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x057Ec652A4F150f7FF94f089A38008f49a0DF88e\", \n    \"chain\": \"eth\", \n    \"to_block\": 1.2, \n}\n\nresult = evm_api.balance.get_native_balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
+    },
+    "getNativeBalancesForAddresses": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get balance for a set of wallet",
+      "description": "Get the native balances for a set of specific addresses",
+      "method": "GET",
+      "path": "/wallets/balances",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "providerUrl",
+          "description": "The web3 provider URL to use when using local dev chain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number on which the balances should be checked",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "The addresses to get metadata for",
+          "required": true,
+          "type": "array",
+          "field": {
+            "type": "string",
+            "example": "0xE92d1A43df510F82C66382592a047d288f85226f"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of balances",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "required": true,
+                  "description": "The chain",
+                  "example": "eth_mainnet"
+                },
+                {
+                  "name": "chain_id",
+                  "type": "string",
+                  "required": true,
+                  "description": "The chain id",
+                  "example": "2"
+                },
+                {
+                  "name": "total_balance",
+                  "type": "string",
+                  "required": true,
+                  "description": "The total balances for all the walttes",
+                  "example": "57499206466583095"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "required": true,
+                  "description": "The block Number",
+                  "example": "123456789"
+                },
+                {
+                  "name": "block_timestamp",
+                  "type": "string",
+                  "required": true,
+                  "description": "The block timestamp",
+                  "example": "0.057"
+                },
+                {
+                  "name": "total_balance_formatted",
+                  "type": "string",
+                  "required": true,
+                  "description": "The total balances for all the walttes formatted",
+                  "example": "123456789"
+                },
+                {
+                  "name": "wallet_balances",
+                  "type": "array",
+                  "required": true,
+                  "field": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "address",
+                        "example": "0x123",
+                        "required": true
+                      },
+                      {
+                        "name": "balance",
+                        "type": "string",
+                        "description": "balance",
+                        "example": "28499206466583095",
+                        "required": true
+                      },
+                      {
+                        "name": "balance_formatted",
+                        "type": "string",
+                        "description": "balance formatted",
+                        "example": "0.0285",
+                        "required": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"chain\": \"eth\", \n    \"providerUrl\": \"\", \n    \"to_block\": 1.2, \n}\nbody = {\n    \"addresses\": [], \n}\n\nresult = evm_api.balance.get_native_balances_for_addresses(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+        }
+      ]
     }
   },
   "transaction": {
