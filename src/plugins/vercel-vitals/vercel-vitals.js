@@ -7,6 +7,6 @@ export default (function () {
     return null;
   }
 
-  webVitals(true);
+  webVitals(false);
 
 })();

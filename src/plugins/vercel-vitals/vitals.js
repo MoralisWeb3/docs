@@ -48,11 +48,11 @@ function sendToAnalytics(metric, debug) {
 
 export function webVitals(debug) {
   try {
-    getFID((metric) => sendToAnalytics(metric, debug));
-    getTTFB((metric) => sendToAnalytics(metric, debug));
-    getLCP((metric) => sendToAnalytics(metric, debug));
-    getCLS((metric) => sendToAnalytics(metric, debug));
-    getFCP((metric) => sendToAnalytics(metric, debug));
+    onFID((metric) => sendToAnalytics(metric, debug));
+    onTTFB((metric) => sendToAnalytics(metric, debug));
+    onLCP((metric) => sendToAnalytics(metric, debug));
+    onCLS((metric) => sendToAnalytics(metric, debug));
+    onFCP((metric) => sendToAnalytics(metric, debug));
   } catch (err) {
     console.error("[Analytics]", err);
   }
