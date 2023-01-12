@@ -41,7 +41,8 @@
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.4",
     "react-textarea-autosize": "^8.3.3",
-    "remark-oembed": "^1.2.2"
+    "remark-oembed": "^1.2.2",
+    "web-vitals": "^3.0.4"
   },
   "devDependencies": {
     "@docusaurus/eslint-plugin": "^2.2.0",
