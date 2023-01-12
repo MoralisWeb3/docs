@@ -11,7 +11,7 @@ function getConnectionSpeed() {
 }
 
 function sendToAnalytics(metric, debug) {
-  const analyticsId = "";
+  const analyticsId = "tQd3PWp3ygJhfBt5BF0DyphJzVr";
 
   if (!analyticsId) {
     return;
