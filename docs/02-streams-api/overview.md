@@ -22,6 +22,9 @@ graph TD;
     E -- Webhook --> F[Your Server];
 ```
 
+## Working With Webhooks
+Webhooks allow you to receive real-time notifications for events that are happening in relation to your application. When a supported event occurs, a real-time notification is posted, including a data payload, via HTTP POST method to a custom URL you provide. 
+
 ## Streams API features
 
 - Get blockchain events streamed to your backend directly in real-time
