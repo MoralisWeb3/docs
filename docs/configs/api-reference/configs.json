@@ -6441,7 +6441,7 @@
         }
       ],
       "bodyParam": {
-        "required": false,
+        "required": true,
         "description": "ABI of the specific event",
         "type": "json"
       },
