@@ -13,14 +13,19 @@ const ComputeUnitsTable = (): JSX.Element => {
 
   const fetchComputeUnits = async () => {
     try {
-      const response = await fetch("/api/moralis/endpointWeights", {
+      const response = await fetch("/api/exec", {
         method: "POST",
         headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          method: "GET",
+          apiHost: "https://deep-index.moralis.io/api/v2",
+          path: "/info/endpointWeights",
+        }),
       });
 
       if (!response.ok) throw new Error();
 
-      const body = await response.json();
+      const { body } = await response.json();
 
       setEndpoints(body);
     } catch (e) {
@@ -42,10 +47,10 @@ const ComputeUnitsTable = (): JSX.Element => {
         </tr>
       </thead>
       <tbody>
-        {endpoints?.map((e) => {
+        {endpoints?.map((e, index) => {
           const { endpoint, price, rateLimitCost } = e ?? {};
           return (
-            <tr>
+            <tr key={`${endpoint}-${index}`}>
               <td>
                 <a
                   href={`/web3-data-api/reference/${camelToSnakeCase(
