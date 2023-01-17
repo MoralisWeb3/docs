@@ -64,7 +64,7 @@ Here filter the policies typing _LambdaRole_ and select **_AWSLambdaRole_**. The
 
 ![](/img/content/c4115c8-image.webp)
 
-This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](https://docs.moralis.io/docs/using-aws-lambda#copy-function-arn) in `Resource`:
+This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](https://docs.moralis.io/docs/using-aws-lambda#copy-function-arn) in `Resource`, but in this case we leave it as **`"*"`** as we want to allow the invocation of all our Lambda functions:
 
 ![](/img/content/b8ea8db-image.webp)
 
