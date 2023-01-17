@@ -372,6 +372,7 @@
           {
             "name": "tokens",
             "type": "array",
+            "required": true,
             "description": "The tokens to be fetched (max 25 tokens)",
             "example": [
               {
@@ -1951,8 +1952,9 @@
         {
           "name": "from_block",
           "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "number"
+          "required": true,
+          "type": "number",
+          "example": 16424191
         },
         {
           "name": "to_block",
