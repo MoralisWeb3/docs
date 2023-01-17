@@ -4281,6 +4281,11 @@
       "source": "/changelog/2022/12/07/get-native-balances",
       "destination": "/changelog/streams-include-native-balances",
       "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/12/reduce-cus-for-get-nft-token-owners",
+      "destination": "/changelog/api-reduce-cus-for-get-nft-token-owners",
+      "permanent": true
     }
   ]
 }
