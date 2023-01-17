@@ -6542,29 +6542,9 @@
                     },
                     {
                       "name": "data",
-                      "type": "object",
+                      "type": "json",
                       "required": true,
-                      "description": "The content of the event",
-                      "fields": [
-                        {
-                          "name": "from",
-                          "type": "string",
-                          "readOnly": true,
-                          "example": "0x54ff6974c715956a5049a123408bff91fbe29f01"
-                        },
-                        {
-                          "name": "to",
-                          "type": "string",
-                          "readOnly": true,
-                          "example": "0x74de5d4fcbf63e00296fd95d33236b9794016631"
-                        },
-                        {
-                          "name": "value",
-                          "type": "string",
-                          "readOnly": true,
-                          "example": "260103496340000000000"
-                        }
-                      ]
+                      "description": "The content of the event"
                     }
                   ]
                 }

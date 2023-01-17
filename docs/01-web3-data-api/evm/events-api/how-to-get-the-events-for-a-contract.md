@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: "How to get the events for a contract"
 slug: "../how-to-get-the-events-for-a-contract"
 description: "Learn how to get the events for a contract using the Moralis Events API."
