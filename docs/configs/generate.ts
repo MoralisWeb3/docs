@@ -5,18 +5,12 @@ const {
   isGenerateSchemaOn,
   isGenerateReferenceOn,
 } = require("./generate.config.json");
+const camelToSnakeCase = require("../../utils/camelToSnakeCase.mts");
 
-const apiReferenceConfigFile = "./docs/configs/api-reference/configs.json";
+const apiReferenceConfigFile = "./docs/configs/api-reference/configs-test.json";
 
 let swaggerSchemas;
 let swaggerOAS = {};
-
-const camelToSnakeCase = (str) => {
-  return (str.charAt(0).toLowerCase() + str.slice(1))
-    .replaceAll("NFT", "Nft")
-    .replaceAll("SPL", "Spl")
-    .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
-};
 
 /**
  * @name translateSchemaReference
