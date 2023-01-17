@@ -6448,7 +6448,100 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a collection of events by topic"
+          "description": "Returns a collection of events by topic",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total",
+                "type": "integer",
+                "description": "The total number of matches for this query",
+                "example": "2000"
+              },
+              {
+                "name": "page",
+                "type": "integer",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "integer",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash",
+                      "required": true,
+                      "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "required": true,
+                      "description": "The address of the contract",
+                      "example": "0x18F97EF6B2cbac5CA85b375b7093C4A207340d06"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block timestamp",
+                      "example": "2021-04-02T10:07:54.000Z"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block number",
+                      "example": 12526958
+                    },
+                    {
+                      "name": "block_hash",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block hash",
+                      "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                    },
+                    {
+                      "name": "data",
+                      "type": "object",
+                      "required": true,
+                      "description": "The content of the event",
+                      "fields": [
+                        {
+                          "name": "from",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "0x54ff6974c715956a5049a123408bff91fbe29f01"
+                        },
+                        {
+                          "name": "to",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "0x74de5d4fcbf63e00296fd95d33236b9794016631"
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "readOnly": true,
+                          "example": "260103496340000000000"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ],
       "codeSamples": [
