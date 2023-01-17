@@ -6351,7 +6351,8 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984"
         }
       ],
       "queryParams": [
@@ -6419,7 +6420,8 @@
           "name": "topic",
           "description": "The topic of the event",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
         },
         {
           "name": "offset",
@@ -6441,9 +6443,34 @@
         }
       ],
       "bodyParam": {
-        "required": false,
+        "required": true,
         "description": "ABI of the specific event",
-        "type": "json"
+        "type": "json",
+        "example": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
       },
       "responses": [
         {
