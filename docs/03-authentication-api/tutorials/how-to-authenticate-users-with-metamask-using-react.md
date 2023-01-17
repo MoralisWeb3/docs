@@ -43,7 +43,7 @@ Next we will add the providers required for `wagmi` and `next-auth`.
 2. Open `src/App.js` and add our required imports:
 
 ```javascript
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
+import { createClient, configureChains, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { mainnet } from "wagmi/chains";
 
