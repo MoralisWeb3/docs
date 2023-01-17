@@ -4276,6 +4276,11 @@
       "source": "/docs/how-to-get-historical-erc20-token-price",
       "destination": "/web3-data-api/evm/how-to-get-historical-erc20-token-price",
       "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/07/get-native-balances",
+      "destination": "/changelog/streams-include-native-balances",
+      "permanent": true
     }
   ]
 }
