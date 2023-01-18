@@ -44,7 +44,7 @@ module.exports = function (context, fromOptions) {
           {
             tagName: "script",
             attributes: {
-              type: "text/partytown",
+              type: "text/javascript",
               charset: "UTF-8",
               src: "/js/cookie-script.js?state=ca&region=eu",
               async: true,
@@ -60,7 +60,7 @@ module.exports = function (context, fromOptions) {
           {
             tagName: "script",
             attributes: {
-              type: "text/partytown",
+              type: "text/plain",
               async: true,
               "data-cookiescript": "accepted",
               "data-cookiecategory": "targeting",
