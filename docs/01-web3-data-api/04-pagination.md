@@ -23,45 +23,45 @@ Every request will return a cursor that can be used to get the next result until
 
 ```javascript
 
-import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/common-evm-utils';
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const chain = EvmChain.ETHEREUM;
 
-const address = '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'; //Cryptopunks contract address
+const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
 
 await Moralis.start({
-    apiKey: 'YOUR_API_KEY',
-    // ...and any other configuration
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
 });
 
 let cursor = null;
 let owners = {};
-  do {
-		const response = await Moralis.EvmApi.nft.getNFTOwners({
-    	address,
-	    chain,
-		  limit: 100,
-    	cursor: cursor,
-			});
-		console.log(console.log(
-      `Got page ${response.page} of ${Math.ceil(
-        response.total / response.page_size
-      )}, ${response.total} total`
-    );
-     for (const owner of response.result) {
-      owners[owner.owner_of] = {
-        amount: owner.amount,
-        owner: owner.owner_of,
-        tokenId: owner.token_id,
-        tokenAddress: owner.token_address,
-      };
-    }
-    cursor = response.cursor;
-  } while (cursor != "" && cursor != null);
+do {
+  const response = await Moralis.EvmApi.nft.getNFTOwners({
+    address,
+    chain,
+    limit: 100,
+    cursor: cursor,
+  });
+  console.log(
+    `Got page ${response.page} of ${Math.ceil(
+      response.total / response.page_size
+    )}, ${response.total} total`
+  );
+  for (const owner of response.result) {
+    owners[owner.owner_of] = {
+      amount: owner.amount,
+      owner: owner.owner_of,
+      tokenId: owner.token_id,
+      tokenAddress: owner.token_address,
+    };
+  }
+  cursor = response.cursor;
+} while (cursor != "" && cursor != null);
 
-  console.log("owners:", owners, "total owners:", Object.keys(owners).length);
-}
+console.log("owners:", owners, "total owners:", Object.keys(owners).length);
+
 ```
 
 ## Python example
@@ -104,8 +104,8 @@ for j in range(0, 10):
     time.sleep(1.1)
 ```
 
-:::info Limit value for cursor
+:::info Limit param
 
-The limit param value for cursor can be set at page 1 and the same limit value will be used through the following pages, you cannot change the limit value after page 1.
+The limit param can only be set in the initial call, you cannot change the limit value after the first result.
 
 :::
