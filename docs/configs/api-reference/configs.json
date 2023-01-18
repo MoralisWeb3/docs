@@ -11105,7 +11105,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -11155,7 +11155,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -11195,7 +11195,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -11235,7 +11235,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -11318,7 +11318,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -11398,7 +11398,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
