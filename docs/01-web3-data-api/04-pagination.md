@@ -3,17 +3,21 @@ title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 ---
-## What is pagination?
+## What Is Pagination?
 
-Pagination is the process of dividing up responses from an API into multiple pages of results. This allows for faster response times for end users, by reducing the amount of data that needs to be returned with each request. API pagination is used to control the amount of data that is returned for each request, as well as the order of the data. 
+Pagination is the process of dividing the responses from an API into multiple pages of results. This allows for faster response times for end users by reducing the amount of data that needs to be returned with each request.
 
-## What is cursor pagination?
+API pagination is used to control the amount of data that is returned for each request, as well as the order of the data.
 
-Cursor Pagination is a type of pagination which uses a pointer or cursor to identify a specific item in the dataset. This pointer is sent with requests to the server and in response, it sends back the data after the given item. It is ideal for scenarios where you want to pull a long list of records from the API since its performance remains constant. 
+## What Is Cursor Pagination?
 
-## Cursor pagination with Moralis API
+Cursor pagination uses a pointer, or cursor, to identify a specific item in the dataset. This pointer is sent with requests to the server, and in response, it sends back the data after the given item. 
 
-Every request will return a `cursor` that can be used to get the next result until there are no more results to return.
+It’s ideal if you want to pull a long list of records from the API since its performance remains constant.
+
+## Cursor Pagination With Moralis API
+
+Every request will return a cursor that can be used to get the next result until there are no more results to return.
 
 ## NodeJS example
 
