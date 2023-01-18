@@ -6,9 +6,9 @@ description: "Learn how you can delete your user account or remove a team member
 
 ## Deleting a User Account
 
-Users can not delete their accounts directly from the user interface. In order to delete an account, a user needs to contact [hello@moralis.io](mailto:hello@moralis.io). This can be done either by:
+Users can not delete their accounts directly from the user interface. To delete an account, a user needs to contact [hello@moralis.io](mailto:hello@moralis.io). This can be done either by:
 
-- The user themselves
+- The user
 - An owner of an account
 
 ## Removing a User From a Team
