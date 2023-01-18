@@ -22,7 +22,6 @@ Every request will return a cursor that can be used to get the next result until
 ## NodeJS example
 
 ```javascript
-
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
@@ -61,7 +60,6 @@ do {
 } while (cursor != "" && cursor != null);
 
 console.log("owners:", owners, "total owners:", Object.keys(owners).length);
-
 ```
 
 ## Python example
@@ -69,7 +67,6 @@ console.log("owners:", owners, "total owners:", Object.keys(owners).length);
 ```python
 import requests
 import time
-
 
 def get_nft_owners(offset, cursor):
     print("offset", offset)
@@ -105,7 +102,5 @@ for j in range(0, 10):
 ```
 
 :::info Limit param
-
 The limit param can only be set in the initial call, you cannot change the limit value after the first result.
-
 :::
