@@ -4556,7 +4556,7 @@
       "permanent": true
     },
     {
-      "source": "/moralis-dapp/web3-api/nft-api?q=getNFTs",
+      "source": "/moralis-dapp/web3-api/nft-api",
       "destination": "/web3-data-api/reference/get-wallet-nfts",
       "permanent": true
     },
