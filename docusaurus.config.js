@@ -366,6 +366,7 @@ const config = {
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
     ],
     ["./src/plugins/vercel-vitals", {}],
+    ["./src/plugins/docusaurus-plugin-partytown", {}],
     ["@docusaurus/plugin-ideal-image", {}],
     require.resolve("docusaurus-lunr-search"),
   ],

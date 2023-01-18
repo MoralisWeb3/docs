@@ -7,7 +7,8 @@
     "dev": "npm run start",
     "start": "docusaurus start",
     "start:vercel": "vercel dev",
-    "build": "docusaurus build",
+    "build": "npm run partytown && docusaurus build",
+    "partytown": "partytown copylib static/~partytown",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -18,6 +19,7 @@
     "generate-reference": "node docs/configs/generate.ts"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.4",
     "@docusaurus/core": "2.2.0",
     "@docusaurus/plugin-content-blog": "^2.2.0",
     "@docusaurus/plugin-ideal-image": "2.2.0",
