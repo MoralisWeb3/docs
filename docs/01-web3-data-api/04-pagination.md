@@ -3,19 +3,19 @@ title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 ---
-### What is Pagination?
+## What is pagination?
 
-Pagination is a way of sorting results by dividing them up into smaller chunks so that we can work with one at a time, for example in google search we get so many results which are paginated with page 1 and then page 2 and page 3 so on and so forth. Because fetching all of the data at once will be too much to handle for google in terms of performance.
+Pagination is the process of dividing up responses from an API into multiple pages of results. This allows for faster response times for end users, by reducing the amount of data that needs to be returned with each request. API pagination is used to control the amount of data that is returned for each request, as well as the order of the data. 
 
-### What is cursor Pagination?
+## What is cursor pagination?
 
-A cursor is a unique identifier (string) for a specific set of records or data chunks, which acts as a pointer to the next set of record we want to fetch from to get the next page of results. Cursor pagination works with O(1) time complexity unlike offset pagination which works O(n) complexity.
+Cursor Pagination is a type of pagination which uses a pointer or cursor to identify a specific item in the dataset. This pointer is sent with requests to the server and in response, it sends back the data after the given item. It is ideal for scenarios where you want to pull a long list of records from the API since its performance remains constant. 
 
-### Cursor pagination with Moralis API
+## Cursor pagination with Moralis API
 
-For paginating API results you can use cursor parameter. You get `cursor` from current request and you use it for the next request until there are no more results returned.
+Every request will return a `cursor` that can be used to get the next result until there are no more results to return.
 
-Example of using cursor in NodeJS with a Moralis Server:
+## NodeJS example
 
 ```javascript
 
@@ -60,9 +60,7 @@ let owners = {};
 }
 ```
 
-
-
-Example of using cursor parameter in Python:
+## Python example
 
 ```python
 import requests

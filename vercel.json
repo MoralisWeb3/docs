@@ -4271,6 +4271,21 @@
       "source": "/reference/streamsevmid-1",
       "destination": "/streams-api/reference/get-stream",
       "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-historical-erc20-token-price",
+      "destination": "/web3-data-api/evm/how-to-get-historical-erc20-token-price",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/07/get-native-balances",
+      "destination": "/changelog/streams-include-native-balances",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/12/reduce-cus-for-get-nft-token-owners",
+      "destination": "/changelog/api-reduce-cus-for-get-nft-token-owners",
+      "permanent": true
     }
   ]
 }
