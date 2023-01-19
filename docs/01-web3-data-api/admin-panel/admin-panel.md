@@ -4,6 +4,7 @@ slug: "/admin-panel"
 description: "Learn how to use the Moralis Admin Panel effectively while developing your dapps."
 sidebar_position: 4
 ---
+
 ## What is the Admin Panel?
 
 The Admin Panel is the control center for managing your dapp development using Moralis. In the admin panel, you will find:
