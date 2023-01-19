@@ -174,7 +174,7 @@ export default NextAuth({
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
-```
+```javascript
 import { MoralisNextApi } from '@moralisweb3/next';
 
 export default MoralisNextApi({
