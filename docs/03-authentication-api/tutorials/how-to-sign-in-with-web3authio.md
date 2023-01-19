@@ -20,7 +20,7 @@ Web3Auth is a pluggable auth infrastructure for Web3 wallets and applications. I
 
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality.
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality.
 
 ## Installing the Web3Auth Wagmi Connector
 
