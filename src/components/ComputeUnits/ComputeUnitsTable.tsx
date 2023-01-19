@@ -42,13 +42,14 @@ const ComputeUnitsTable = (): JSX.Element => {
       <thead>
         <tr>
           <td>Name</td>
+          <td>Path</td>
           <td>Price</td>
           <td>Rate Limit Cost</td>
         </tr>
       </thead>
       <tbody>
         {endpoints?.map((e, index) => {
-          const { endpoint, price, rateLimitCost } = e ?? {};
+          const { endpoint, path, price, rateLimitCost } = e ?? {};
           return (
             <tr key={`${endpoint}-${index}`}>
               <td>
@@ -60,6 +61,7 @@ const ComputeUnitsTable = (): JSX.Element => {
                   {endpoint}
                 </a>
               </td>
+              <td>{path}</td>
               <td>{price}</td>
               <td>{rateLimitCost}</td>
             </tr>
