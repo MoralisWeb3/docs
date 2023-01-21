@@ -188,8 +188,10 @@ Your screen will look like below::
   ]
 }
 ```
-decimals on USDC contract is 6
-* `10000 USDC` value will be `10000000000`
+* A zero address(`0x0000000000000000000000000000000000000000`) in `from` equals to **Mint** and in `to` equals to **burn**.
+
+* decimals in USDC contract is 6
+  - `10000 USDC` value will be `10000000000`
 
 3. Click on `Select topic to filter` and add your topic.
 ![](/img/content/streams-filter-ui-2.webp)
