@@ -1,5 +1,13 @@
 {
-    "cSpell.words": [
-        "Moralis"
-    ]
+  "cSpell.words": ["Moralis"],
+  "grammarly.files.include": [
+    "**/readme.md",
+    "**/README.md",
+    "**/*.txt",
+    "**/*.md",
+    "**/*.mdx"
+  ],
+  "grammarly.startTextCheckInPausedState": true,
+  "grammarly.config.suggestions.OxfordComma": true,
+  "grammarly.config.documentDomain": "business"
 }

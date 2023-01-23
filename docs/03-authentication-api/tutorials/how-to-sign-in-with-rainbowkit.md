@@ -10,7 +10,7 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality. 
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality. 
 
 ## RainbowKit Installation
 
@@ -23,13 +23,14 @@ npm install @rainbow-me/rainbowkit
 Modify `pages/_app.jsx`:
 
 ```javascript
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
+import { createClient, configureChains, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
+import { mainnet } from "wagmi/chains";
 import { SessionProvider } from 'next-auth/react';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 
-const { provider, webSocketProvider, chains } = configureChains(defaultChains, [publicProvider()]);
+const { provider, webSocketProvider, chains } = configureChains([mainnet], [publicProvider()]);
 
 const { connectors } = getDefaultWallets({
     appName: 'My RainbowKit App',

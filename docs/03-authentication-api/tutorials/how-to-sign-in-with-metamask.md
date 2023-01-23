@@ -77,12 +77,7 @@ Every time you modify the `.env.local` file, you need to restart your dapp.
 4. Create the `pages/_app.jsx` file. We need to wrap our pages with `WagmiConfig` ([docs](https://wagmi.sh/docs/WagmiConfig)) and `SessionProvider` ([docs](https://next-auth.js.org/getting-started/client#sessionprovider)):
 
 ```javascript
-import {
-  createClient,
-  configureChains,
-  defaultChains,
-  WagmiConfig,
-} from "wagmi";
+import { createClient, configureChains, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
 import { mainnet } from "wagmi/chains";
@@ -179,7 +174,7 @@ export default NextAuth({
 
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
-```
+```javascript
 import { MoralisNextApi } from '@moralisweb3/next';
 
 export default MoralisNextApi({

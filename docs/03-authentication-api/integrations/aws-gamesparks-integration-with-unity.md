@@ -1,9 +1,9 @@
 ---
-title: "AWS GameSparks"
-slug: "aws-gamesparks-integration-with-unity"
+title: "Amazon GameSparks"
+slug: "amazon-gamesparks-integration-with-unity"
 ---
 
-In this tutorial we will create a game backend in GameSparks and we will connect it to [Using AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda), invoking its functions. Then, we will connect a basic Unity game to the GameSparks backend. This way we will have a **fully modular "Web3 gaming setup"** using **AWS**, **Unity** and the power of **Moralis**.
+In this tutorial we will create a game backend in Amazon GameSparks and we will connect it to [Using AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda), invoking its functions. Then, we will connect a basic Unity game to the Amazon GameSparks backend. This way we will have a **fully modular "Web3 gaming setup"** using **AWS**, **Unity** and the power of **Moralis**.
 
 :::info Tutorial's architectural diagram
 :::
@@ -16,9 +16,9 @@ In this tutorial we will create a game backend in GameSparks and we will connect
 - Have [Unity Hub](https://unity3d.com/get-unity/download) installed.
 - Have a [2020.3 Unity version](https://unity3d.com/unity/qa/lts-releases?version=2020.3) installed (this project uses **2020.3.41f1**).
 
-## Create a game backend (GameSparks)
+## Create a game backend (Amazon GameSparks)
 
-[Open the GameSparks console](https://console.aws.amazon.com/gamesparks/home) and click on **_Next_** to create a game and get started developing your game backend:
+[Open the Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home) and click on **_Next_** to create a game and get started developing your game backend:
 
 ![](/img/content/1c7969a-image.webp)
 
@@ -26,7 +26,7 @@ Set a name for your game and click on _**Create**_:
 
 ![](/img/content/6cc56f2-image.webp)
 
-You now have a created a **GameSparks backend** that is ready for you to configure:
+You now have a created an **Amazon GameSparks backend** that is ready for you to configure:
 
 ![](/img/content/853fdef-image.webp)
 
@@ -64,7 +64,7 @@ Here filter the policies typing _LambdaRole_ and select **_AWSLambdaRole_**. The
 
 ![](/img/content/c4115c8-image.webp)
 
-This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](https://docs.moralis.io/docs/using-aws-lambda#copy-function-arn) in `Resource`:
+This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](https://docs.moralis.io/docs/using-aws-lambda#copy-function-arn) in `Resource`, but in this case we leave it as **`"*"`** as we want to allow the invocation of all our Lambda functions:
 
 ![](/img/content/b8ea8db-image.webp)
 
@@ -78,7 +78,7 @@ In _Review_, name your policy, for example `AllowLambdaInvokeAll` and choose **_
 
 ### Attach policy
 
-Let's attach the created policy to the game backend IAM role. Open the [GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under _Dev stage configuration_ choose **_View in IAM console_**:
+Let's attach the created policy to the game backend IAM role. Open the [Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under _Dev stage configuration_ choose **_View in IAM console_**:
 
 ![](/img/content/048379d-image.webp)
 
@@ -98,7 +98,7 @@ Filter for _AllowLambda_, select your created policy and press **_Attach policie
 
 :::info How this works?
 
-To invoke Lambda functions from GameSparks you need to create a **_Message_** inside the game backend. There are **3 types of messages**:
+To invoke Lambda functions from Amazon GameSparks you need to create a **_Message_** inside the game backend. There are **3 types of messages**:
 
 - **_Events_**
 - **_Requests_**
@@ -107,7 +107,7 @@ To invoke Lambda functions from GameSparks you need to create a **_Message_** in
 Once created, you can call a Lambda function from there. [Click here for more information](https://docs.aws.amazon.com/gamesparks/latest/dg/lambda.html).
 :::
 
-For this example we'll use _**requests**_, so that our client (Unity) can **get data** from our GameSparks backend. As said, this request will internally call a Lambda function from [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and will return a response.
+For this example we'll use _**requests**_, so that our client (Unity) can **get data** from our Amazon GameSparks backend. As said, this request will internally call a Lambda function from [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and will return a response.
 
 :::info There's a way to automate this process
 Know that you can **skip the manual creation of requests** by **importing a snapshot**. If you like the idea, go into the [Automatic section](https://docs.moralis.io/docs/using-unity-aws-gamesparks#automatic).
@@ -122,10 +122,10 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
   "Document" : {
     "Type" : "Game",
     "Sections" : {
-      "GameSparks.Core.RequestHandlers" : {
+      "Amazon GameSparks.Core.RequestHandlers" : {
         "GetNativeBalance" : {
           "Code" : {
-            "Script" : "const response = GameSparks().Lambda(\"aws-node-project-dev-getNativeBalance\").Invoke(\r\n    {\r\n      // Example of how you would send a parameter to Lambda\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nGameSparks().Logging().Debug(\"Result from Lambda is:\");\r\nGameSparks().Logging().Debug(JSON.stringify(response.Payload));\r\n\r\nreturn GameSparks().Messaging().Response({\"result\": parseFloat(response.Payload.result)});",
+            "Script" : "const response = Amazon GameSparks().Lambda(\"aws-node-project-dev-getNativeBalance\").Invoke(\r\n    {\r\n      // Example of how you would send a parameter to Lambda\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nAmazon GameSparks().Logging().Debug(\"Result from Lambda is:\");\r\nAmazon GameSparks().Logging().Debug(JSON.stringify(response.Payload));\r\n\r\nreturn Amazon GameSparks().Messaging().Response({\"result\": parseFloat(response.Payload.result)});",
             "ScriptLanguage" : "Javascript_ES5_1"
           },
           "Enabled" : true,
@@ -133,14 +133,14 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
         },
         "GetWalletNfts" : {
           "Code" : {
-            "Script" : "const response = GameSparks().Lambda(\"aws-node-project-dev-getWalletNfts\").Invoke(\r\n    {\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nGameSparks().Logging().Debug(\"Result from Lambda is:\");\r\n\r\nreturn GameSparks().Messaging().Response({\"result\": response.Payload.result});",
+            "Script" : "const response = Amazon GameSparks().Lambda(\"aws-node-project-dev-getWalletNfts\").Invoke(\r\n    {\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nAmazon GameSparks().Logging().Debug(\"Result from Lambda is:\");\r\n\r\nreturn Amazon GameSparks().Messaging().Response({\"result\": response.Payload.result});",
             "ScriptLanguage" : "Javascript_ES5_1"
           },
           "Enabled" : true,
           "Description" : ""
         }
       },
-      "GameSparks.Core.Requests" : {
+      "Amazon GameSparks.Core.Requests" : {
         "GetNativeBalance" : {
           "AllowedSources" : [ "Player" ],
           "RequestShape" : "GetNativeBalanceRequest",
@@ -154,7 +154,7 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
           "Description" : ""
         }
       },
-      "GameSparks.Core.Model" : {
+      "Amazon GameSparks.Core.Model" : {
         "GetNativeBalanceRequest" : {
           "Structure" : {
             "Description" : "",
@@ -215,7 +215,7 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
 
 ![](/img/content/d2daed4-image.webp)
 
-Now open the [GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under _Snapshot_ choose **_Actions --> Import_**:
+Now open the [Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under _Snapshot_ choose **_Actions --> Import_**:
 
 ![](/img/content/3e6a84b-image.webp)
 
@@ -251,7 +251,7 @@ Remember to add a valid `address` and `chain` in the request body parameters!
 
 #### Create _GetNativeBalance_ request
 
-Open the [GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_, expand _Configuration_, and then choose _**Cloud code**_:
+Open the [Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_, expand _Configuration_, and then choose _**Cloud code**_:
 
 ![](/img/content/63fa832-image.webp)
 
@@ -282,7 +282,7 @@ Once created, follow the next steps:
 - For the **_Request handler_** section, add the following code:
 
 ```
-const response = GameSparks().Lambda("aws-node-project-dev-getNativeBalance").Invoke(
+const response = Amazon GameSparks().Lambda("aws-node-project-dev-getNativeBalance").Invoke(
     {
       // Example of how you would send a parameter to Lambda
       "address": message.address,
@@ -290,16 +290,16 @@ const response = GameSparks().Lambda("aws-node-project-dev-getNativeBalance").In
     }
 );
 
-GameSparks().Logging().Debug("Result from Lambda is:");
-GameSparks().Logging().Debug(JSON.stringify(response.Payload));
+Amazon GameSparks().Logging().Debug("Result from Lambda is:");
+Amazon GameSparks().Logging().Debug(JSON.stringify(response.Payload));
 
-return GameSparks().Messaging().Response({"result": parseFloat(response.Payload.result)});
+return Amazon GameSparks().Messaging().Response({"result": parseFloat(response.Payload.result)});
 ```
 
 In this request, we want to call the **_GetNativeBalance_ Lambda function** created [here](https://docs.moralis.io/docs/using-aws-lambda#development). You can see we do that by calling:
 
 ```
-GameSparks().Lambda("lambda-function-name").Invoke(
+Amazon GameSparks().Lambda("lambda-function-name").Invoke(
     {
     	//Event parameters
     }
@@ -361,7 +361,7 @@ Once created, follow the next steps:
 - For the **_Request handler_** section, add the following code:
 
 ```
-const response = GameSparks().Lambda("aws-node-project-dev-getWalletNfts").Invoke(
+const response = Amazon GameSparks().Lambda("aws-node-project-dev-getWalletNfts").Invoke(
     {
       // Example of how you would send a parameter to Lambda
       "address": message.address,
@@ -369,9 +369,9 @@ const response = GameSparks().Lambda("aws-node-project-dev-getWalletNfts").Invok
     }
 );
 
-GameSparks().Logging().Debug("Result from Lambda is:");
+Amazon GameSparks().Logging().Debug("Result from Lambda is:");
 
-return GameSparks().Messaging().Response({"result": response.Payload.result});
+return Amazon GameSparks().Messaging().Response({"result": response.Payload.result});
 ```
 
 
@@ -410,7 +410,7 @@ To start, [download the Unity sample project](https://github.com/MoralisWeb3/dem
 ![](/img/content/4c58ff8-image.webp)
 
 :::info It comes prepared!
-This sample project already contains the **GameSparks SDK** installed. [Visit the official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/set-up.html#_install_the_gamesparks_client_sdk) for detailed information on how we did it.
+This sample project already contains the **Amazon GameSparks SDK** installed. [Visit the official documentation](https://docs.aws.amazon.com/gamesparks/latest/dg/set-up.html#_install_the_gamesparks_client_sdk) for detailed information on how we did it.
 :::
 
 ### Setting up
@@ -419,15 +419,15 @@ Open the project folder with **Unity Hub**:
 
 ![](/img/content/358621a-image.webp)
 
-On the _Project_ tab, go to _Assets --> Amazon --> GameSparks_ and choose the **_Connection.asset_**:
+On the _Project_ tab, go to _Assets --> Amazon --> Amazon GameSparks_ and choose the **_Connection.asset_**:
 
 ![](/img/content/3a1005b-image.webp)
 
-Now on the _Inspector_ tab you'll now see the GameSparks connection settings, with a _Game Key_ to fill up:
+Now on the _Inspector_ tab you'll now see the Amazon GameSparks connection settings, with a _Game Key_ to fill up:
 
 ![](/img/content/89a498b-image.webp)
 
-To find the key, open the [GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Copy the **_Key_**:
+To find the key, open the [Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Copy the **_Key_**:
 
 ![](/img/content/36bd47e-image.webp)
 
@@ -498,17 +498,17 @@ This is also handled in _AppManager.cs_:
 - [_GetNativeBalance_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L44)
 - [_GetWalletNfts_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L71)
 
-You can see that both [access a class named _**MyWeb3GameBackendOperations**_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L52), which is the one containing the methods to access the messages in our GameSparks game backend.
+You can see that both [access a class named _**MyWeb3GameBackendOperations**_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L52), which is the one containing the methods to access the messages in our Amazon GameSparks game backend.
 
-You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/GameSparks/MyWeb3GameBackendOperations.cs) in _Assets --> \_Project --> Scripts --> GameSparks_:
+You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/Amazon GameSparks/MyWeb3GameBackendOperations.cs) in _Assets --> \_Project --> Scripts --> Amazon GameSparks_:
 
 ![](/img/content/14c8cab-image.webp)
 
-The cool thing is that you can [import it automatically](https://docs.moralis.io/docs/using-unity-aws-gamesparks#importing-gamesparks-message-template) from the GameSparks console.
+The cool thing is that you can [import it automatically](https://docs.moralis.io/docs/using-unity-aws-gamesparks#importing-gamesparks-message-template) from the Amazon GameSparks console.
 
-### Importing GameSparks message template
+### Importing Amazon GameSparks message template
 
-Open the [GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under the _Snapshot_ section select _Actions --> **Generate SDK message template**_:
+Open the [Amazon GameSparks console](https://console.aws.amazon.com/gamesparks/home), select your game and in the navigation pane, select _Dev_. Then under the _Snapshot_ section select _Actions --> **Generate SDK message template**_:
 
 ![](/img/content/fbf9019-image.webp)
 
@@ -519,7 +519,7 @@ Select **_Unity_** as _Game client platform_ and _**C#**_ as _Language_. Then cl
 Unzip the file that will be downloaded and drag the _.cs_ files to the _Assets_ folder in your Unity project. You'll now be able to access any message created in your game backend from Unity, like we just did in the section above.
 
 :::tip Congratulations!
-You've completed the **_Using Unity & AWS GameSparks_** tutorial.
+You've completed the **_Using Unity & Amazon GameSparks_** tutorial.
 :::
 
 
