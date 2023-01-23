@@ -1460,6 +1460,11 @@
       "permanent": true
     },
     {
+      "source": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
+      "permanent": true
+    },
+    {
       "source": "/reference/supported-chains",
       "destination": "/web3-data-api",
       "permanent": true
