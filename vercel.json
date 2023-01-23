@@ -1456,7 +1456,12 @@
     },
     {
       "source": "/docs/aws-gamesparks-integration-with-unity",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
+      "permanent": true
+    },
+    {
+      "source": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -1648,7 +1653,7 @@
     { "source": "/reference/undefined", "destination": "/", "permanent": true },
     {
       "source": "/docs/using-unity-aws-gamesparks",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -2344,7 +2349,7 @@
     },
     {
       "source": "/docs/using-unity-aws-gamesparks",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -4289,7 +4294,7 @@
     },
     {
       "source": "/docs/aws-gamesparks",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
