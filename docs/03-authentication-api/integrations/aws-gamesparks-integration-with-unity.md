@@ -122,10 +122,10 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
   "Document" : {
     "Type" : "Game",
     "Sections" : {
-      "Amazon GameSparks.Core.RequestHandlers" : {
+      "GameSparks.Core.RequestHandlers" : {
         "GetNativeBalance" : {
           "Code" : {
-            "Script" : "const response = Amazon GameSparks().Lambda(\"aws-node-project-dev-getNativeBalance\").Invoke(\r\n    {\r\n      // Example of how you would send a parameter to Lambda\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nAmazon GameSparks().Logging().Debug(\"Result from Lambda is:\");\r\nAmazon GameSparks().Logging().Debug(JSON.stringify(response.Payload));\r\n\r\nreturn Amazon GameSparks().Messaging().Response({\"result\": parseFloat(response.Payload.result)});",
+            "Script" : "const response = GameSparks().Lambda(\"aws-node-project-dev-getNativeBalance\").Invoke(\r\n    {\r\n      // Example of how you would send a parameter to Lambda\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nGameSparks().Logging().Debug(\"Result from Lambda is:\");\r\nGameSparks().Logging().Debug(JSON.stringify(response.Payload));\r\n\r\nreturn GameSparks().Messaging().Response({\"result\": parseFloat(response.Payload.result)});",
             "ScriptLanguage" : "Javascript_ES5_1"
           },
           "Enabled" : true,
@@ -133,14 +133,14 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
         },
         "GetWalletNfts" : {
           "Code" : {
-            "Script" : "const response = Amazon GameSparks().Lambda(\"aws-node-project-dev-getWalletNfts\").Invoke(\r\n    {\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nAmazon GameSparks().Logging().Debug(\"Result from Lambda is:\");\r\n\r\nreturn Amazon GameSparks().Messaging().Response({\"result\": response.Payload.result});",
+            "Script" : "const response = GameSparks().Lambda(\"aws-node-project-dev-getWalletNfts\").Invoke(\r\n    {\r\n      \"address\": message.address,\r\n      \"chain\": message.chain\r\n    }\r\n);\r\n\r\nGameSparks().Logging().Debug(\"Result from Lambda is:\");\r\n\r\nreturn GameSparks().Messaging().Response({\"result\": response.Payload.result});",
             "ScriptLanguage" : "Javascript_ES5_1"
           },
           "Enabled" : true,
           "Description" : ""
         }
       },
-      "Amazon GameSparks.Core.Requests" : {
+      "GameSparks.Core.Requests" : {
         "GetNativeBalance" : {
           "AllowedSources" : [ "Player" ],
           "RequestShape" : "GetNativeBalanceRequest",
@@ -154,7 +154,7 @@ Open a text editor like VS Code and save this text as a **.JSON file**:
           "Description" : ""
         }
       },
-      "Amazon GameSparks.Core.Model" : {
+      "GameSparks.Core.Model" : {
         "GetNativeBalanceRequest" : {
           "Structure" : {
             "Description" : "",
@@ -282,7 +282,7 @@ Once created, follow the next steps:
 - For the **_Request handler_** section, add the following code:
 
 ```
-const response = Amazon GameSparks().Lambda("aws-node-project-dev-getNativeBalance").Invoke(
+const response = GameSparks().Lambda("aws-node-project-dev-getNativeBalance").Invoke(
     {
       // Example of how you would send a parameter to Lambda
       "address": message.address,
@@ -290,16 +290,16 @@ const response = Amazon GameSparks().Lambda("aws-node-project-dev-getNativeBalan
     }
 );
 
-Amazon GameSparks().Logging().Debug("Result from Lambda is:");
-Amazon GameSparks().Logging().Debug(JSON.stringify(response.Payload));
+GameSparks().Logging().Debug("Result from Lambda is:");
+GameSparks().Logging().Debug(JSON.stringify(response.Payload));
 
-return Amazon GameSparks().Messaging().Response({"result": parseFloat(response.Payload.result)});
+return GameSparks().Messaging().Response({"result": parseFloat(response.Payload.result)});
 ```
 
 In this request, we want to call the **_GetNativeBalance_ Lambda function** created [here](https://docs.moralis.io/docs/using-aws-lambda#development). You can see we do that by calling:
 
 ```
-Amazon GameSparks().Lambda("lambda-function-name").Invoke(
+GameSparks().Lambda("lambda-function-name").Invoke(
     {
     	//Event parameters
     }
@@ -361,7 +361,7 @@ Once created, follow the next steps:
 - For the **_Request handler_** section, add the following code:
 
 ```
-const response = Amazon GameSparks().Lambda("aws-node-project-dev-getWalletNfts").Invoke(
+const response = GameSparks().Lambda("aws-node-project-dev-getWalletNfts").Invoke(
     {
       // Example of how you would send a parameter to Lambda
       "address": message.address,
@@ -369,9 +369,9 @@ const response = Amazon GameSparks().Lambda("aws-node-project-dev-getWalletNfts"
     }
 );
 
-Amazon GameSparks().Logging().Debug("Result from Lambda is:");
+GameSparks().Logging().Debug("Result from Lambda is:");
 
-return Amazon GameSparks().Messaging().Response({"result": response.Payload.result});
+return GameSparks().Messaging().Response({"result": response.Payload.result});
 ```
 
 
@@ -419,7 +419,7 @@ Open the project folder with **Unity Hub**:
 
 ![](/img/content/358621a-image.webp)
 
-On the _Project_ tab, go to _Assets --> Amazon --> Amazon GameSparks_ and choose the **_Connection.asset_**:
+On the _Project_ tab, go to _Assets --> Amazon --> GameSparks_ and choose the **_Connection.asset_**:
 
 ![](/img/content/3a1005b-image.webp)
 
@@ -500,7 +500,7 @@ This is also handled in _AppManager.cs_:
 
 You can see that both [access a class named _**MyWeb3GameBackendOperations**_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L52), which is the one containing the methods to access the messages in our Amazon GameSparks game backend.
 
-You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/Amazon GameSparks/MyWeb3GameBackendOperations.cs) in _Assets --> \_Project --> Scripts --> Amazon GameSparks_:
+You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/GameSparks/MyWeb3GameBackendOperations.cs) in _Assets --> \_Project --> Scripts --> GameSparks_:
 
 ![](/img/content/14c8cab-image.webp)
 
