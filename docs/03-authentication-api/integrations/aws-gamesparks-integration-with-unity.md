@@ -8,7 +8,7 @@ In this tutorial we will create a game backend in Amazon GameSparks and we will 
 :::info Tutorial's architectural diagram
 :::
 
-![](/img/content/71ab6cf-image.webp)
+![](/img/content/amazon-gamesparks.webp)
 
 ## Prerequisites
 
