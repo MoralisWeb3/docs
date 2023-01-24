@@ -104,4 +104,4 @@ You will have to provide your ngrok url that you got from the previous step.
 
 Paste your ngrok url <https://xxxx-xx-xx-xxxx.ngrok.io/streams-webhook>
 
-![](/img/content/5330afb-Screenshot_2022-12-01_at_00.17.56.jpg)
+![](/img/content/5330afb-Screenshot_2022-12-01_at_00.17.56.webp)

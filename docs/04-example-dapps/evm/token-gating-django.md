@@ -9,7 +9,7 @@ This tutorial is a continuation of the previous tutorial on how to use Moralis' 
 
 This is an example of the final result:
 
-![Protected Page](/img/content/1c0bae3-protected_with_nft_2.png)
+![Protected Page](/img/content/1c0bae3-protected_with_nft_2.webp)
 
 ## Prerequisites
 
@@ -100,6 +100,6 @@ path('protected', views.protected, name='protected'),
 
 ## Final Result
 
-![Page When Wallet Address Holds An NFT From A Specific  Contract Address](/img/content/91158d8-protected_with_nft_2.png)
+![Page When Wallet Address Holds An NFT From A Specific  Contract Address](/img/content/91158d8-protected_with_nft_2.webp)
 
-![Page When Wallet Address Does Not Hold NFT](/img/content/b74feb4-protected_without_nft.png)
+![Page When Wallet Address Does Not Hold NFT](/img/content/b74feb4-protected_without_nft.webp)

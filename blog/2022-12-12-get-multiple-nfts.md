@@ -1,5 +1,5 @@
 ---
-title: "[API] Solana Improvement - token name and symbol included as standard"
+title: "[API] Get Multiple NFTs"
 slug: "api-get-multiple-nfts"
 authors:
   name: Reuben Salisbury

@@ -132,9 +132,9 @@ In your terminal, you should see the following JSON response:
     "name": "Chain Link",
     "symbol": "LINK",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca.png",
+    "logo": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca.webp",
     "logo_hash": "fd74ea1227adb458733847c09aab05d89c35c14b640c5ee1e0a8bffa79193eb4",
-    "thumbnail": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
@@ -144,9 +144,9 @@ In your terminal, you should see the following JSON response:
     "name": "Wrapped Ether",
     "symbol": "WETH",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.webp",
     "logo_hash": "0a7fc292596820fe066ce8ce3fd6e2ad9d479c2993f905e410ef74f2062a83ec",
-    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"

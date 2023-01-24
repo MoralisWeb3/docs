@@ -43,7 +43,7 @@ Next we will add the providers required for `wagmi` and `next-auth`.
 2. Open `src/App.js` and add our required imports:
 
 ```javascript
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
+import { createClient, configureChains, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { mainnet } from "wagmi/chains";
 
@@ -466,15 +466,15 @@ In your teminal run `npm run start` and visit [`http://localhost:3000/signin`](h
 
 1. Click on the `Authenticate via MetaMask` button:
 
-![](/img/content/26e5dc4-React_-_1.png)
+![](/img/content/26e5dc4-React_-_1.webp)
 
 2. Connect the MetaMask wallet and sign the message:
 
-![](/img/content/5f4b0f6-React_-_2.png)
+![](/img/content/5f4b0f6-React_-_2.webp)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-![](/img/content/0ff471c-React_-_3.png)
+![](/img/content/0ff471c-React_-_3.webp)
 
 - When a user authenticates, we show the user's info on the page.
 - When a user is not authenticated, we redirect to the `/signin` page. 

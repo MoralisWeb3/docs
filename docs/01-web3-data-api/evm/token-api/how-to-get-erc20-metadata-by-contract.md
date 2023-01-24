@@ -1,8 +1,9 @@
 ---
 title: "How to get ERC20 metadata by contract"
 slug: "../how-to-get-erc20-metadata-by-contract"
-description: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
+description: "Learn how to get ERC20 metadata by contract using Moralis Token API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = ['0x1f9840a85d5af5bf1d1762f925bdaddc4201f984'];
+
+  const address = ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"];
 
   const chain = EvmChain.ETHEREUM;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     addresses,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,8 +68,8 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = ['0x1f9840a85d5af5bf1d1762f925bdaddc4201f984'];
+
+  const address = ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"];
 
   const chain = EvmChain.ETHEREUM;
 
@@ -76,9 +77,9 @@ const runApp = async () => {
     addresses,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,7 +92,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "addresses": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"], 
+    "addresses": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"],
     "chain": "eth"
 }
 
@@ -106,11 +107,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -123,9 +122,9 @@ In your terminal, you should see the following JSON response:
     "name": "Uniswap",
     "symbol": "UNI",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png",
+    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.webp",
     "logo_hash": "064ee9557deba73c1a31014a60f4c081284636b785373d4ccdd1b3440df11f43",
-    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
@@ -138,7 +137,6 @@ Congratulations 🥳 You just got ERC20 metadata by contract with just a few lin
 ## Youtube Video
 
 https://www.youtube.com/watch?v=urBf_bP2jqw
-
 
 ## API Reference
 

@@ -3,11 +3,14 @@ title: "How to Authenticate Users with RainbowKit"
 slug: "../how-to-sign-in-with-rainbowkit"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
-![Result of Web3 Moralis Authentication with RainbowKit](/img/content/9dcbe29-rainbow.gif)
+
+<video controls>
+  <source src="/video/9dcbe29-rainbow.mp4"/>
+</video>
 
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality. 
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality. 
 
 ## RainbowKit Installation
 
@@ -20,13 +23,14 @@ npm install @rainbow-me/rainbowkit
 Modify `pages/_app.jsx`:
 
 ```javascript
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
+import { createClient, configureChains, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
+import { mainnet } from "wagmi/chains";
 import { SessionProvider } from 'next-auth/react';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 
-const { provider, webSocketProvider, chains } = configureChains(defaultChains, [publicProvider()]);
+const { provider, webSocketProvider, chains } = configureChains([mainnet], [publicProvider()]);
 
 const { connectors } = getDefaultWallets({
     appName: 'My RainbowKit App',
@@ -189,19 +193,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Connect Wallet`:
 
-![Sign In Page](/img/content/240a10d-10.png)
+![Sign In Page](/img/content/240a10d-10.webp)
 
 2. Select and connect a wallet you want to use for authentication from the RainbowKit modal:
 
-![RainbowKit Modal](/img/content/17386f9-27.png)
+![RainbowKit Modal](/img/content/17386f9-27.webp)
 
 3. Sign the message:
 
-![Signing the Message with MetaMask](/img/content/6ac66db-109.png)
+![Signing the Message with MetaMask](/img/content/6ac66db-109.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/2642448-169.png)
+![User Page](/img/content/2642448-169.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

@@ -6,10 +6,13 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework.
 
-![Web3 Moralis Authentication with Magic.Link - Result](/img/content/3e566e9-magic.gif)
+<video controls>
+  <source src="/video/3e566e9-magic.mp4"/>
+</video>
+
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality. 
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality. 
 
 ## Installing the Magic Connector
 
@@ -94,19 +97,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Magic.Link`:
 
-![Sign In Page](/img/content/68b667b-122.png)
+![Sign In Page](/img/content/68b667b-122.webp)
 
 2. Enter your email:
 
-![Magic.Link Modal](/img/content/6818115-73.png)
+![Magic.Link Modal](/img/content/6818115-73.webp)
 
 3. Verify the login from your email:
 
-![Message from Magic.Link in Gmail](/img/content/e26217b-204.png)
+![Message from Magic.Link in Gmail](/img/content/e26217b-204.webp)
 
 4. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/afe14c1-391.png)
+![User Page](/img/content/afe14c1-391.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

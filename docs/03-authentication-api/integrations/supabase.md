@@ -10,7 +10,9 @@ Let's start by defining Supabase. In short, Supabase is an open-source substitut
 
 In this guide, we will take advantage of Supabase's row-level security (RLS) as we use a custom authentication provider!
 
-![](/img/content/8858f40-ezgif.com-gif-maker_2.gif "ezgif.com-gif-maker (2).gif")
+<video controls>
+  <source src="/video/supabase.mp4"/>
+</video>
 
 Let's dive in.
 
@@ -29,9 +31,9 @@ We will not use the Supabase default auth schema because we do not want to use e
 
 On the dashboard, go to **Table editor**, select **public schema** and click on **Create a new table**:
 
-![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.png "Screenshot 2022-08-17 at 22.39.08.png")
+![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.webp "Screenshot 2022-08-17 at 22.39.08.webp")
 
-![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.png "Screenshot 2022-08-17 at 22.49.04.png")
+![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.webp "Screenshot 2022-08-17 at 22.49.04.webp")
 
 Remember, since Supabase uses PostgreSQL, your table must be structured with all the necessary fields. In this case, `id`, `moralis provider id`, and `metadata`.
 
@@ -41,7 +43,7 @@ We will create a policy that allows only authenticated users to access the table
 
 To do this, go to **Authentication** > **Policies**, then click on **Enable RLS** for the table we just created > click on **New policy** for the created table:
 
-![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.png "Screenshot 2022-08-17 at 22.45.42.png")
+![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.webp "Screenshot 2022-08-17 at 22.45.42.webp")
 
 ```sql
 CREATE POLICY "Enable select for authenticated users only"
@@ -79,7 +81,7 @@ Note that `SUPABASE_SERVICE_ROLE` is the service role that has the ability to by
 
 <!-- Insert image for api keys -->
 
-![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.png "Screenshot 2022-08-17 at 22.46.59.png")
+![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.webp "Screenshot 2022-08-17 at 22.46.59.webp")
 
 The Moralis SDK must also be initialized:
 
@@ -182,15 +184,19 @@ We need to add the following dependencies using the CDN:
 
 
 
-We need to initialize the Supabase SDK with the Supabase credentials again:
+We can initialize an Anon Supabase SDK with the Supabase credentials directly:
 
 ```js
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLIC_ANON_KEY);
+const _supabaseAnon = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLIC_ANON_KEY);
 ```
 
 
 
 Notice how we used `SUPABASE_PUBLIC_ANON_KEY` instead of `SUPABASE_SERVICE_ROLE` because we don't want to bypass RLS this time.
+
+Those values can also be found on Supabase dashboard. Go to **Settings** > **API** and copy them here on the client code.
+
+Remember that previously we created a policy that allows only authenticated users to access the users table. So, using this Supabase client will not be able to fetch those results but it is useful to test the access policy. Later we will initialize an authenticated one.
 
 We now want some code that retrieves the basic data about a user's wallet. The code below only works with the MetaMask provider.
 
@@ -216,8 +222,7 @@ Ok, now we have everything to authenticate a user. The authentication flow seque
 - Generate a message by the backend function to get it signed by the user.
 - Sign the message by the user's wallet.
 - Send the signed message to the backend function and receive a token.
-- Pass the received token to the `supabase.auth.setAuth(token)` method.
-- Following this process, the token is used to authenticate all requests performed by Supabase.
+- With this token, we can initialize the Supabase SDK and make requests to the database. The initialization is almost the same as before, we just need to add the token to our Supabase client so it is identified as the user.
 
 The example code of the authentication flow is available below:
 
@@ -239,7 +244,13 @@ const handleAuth = async () => {
 
   const { user } = await verifyMessage(message, signature);
 
-  token = user.token;
+  _supabaseAuthenticated = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLIC_ANON_KEY, {
+    global: {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    },
+  });
 
   renderUser(user);
 };
@@ -247,12 +258,11 @@ const handleAuth = async () => {
 
 
 
-Now we can use this token to access our users' table using the token returned after verification:
+Now we can use this Supabase client to access our users' table using the token returned after verification:
 
 ```js
 const getUser = async (token) => {
-  _supabase.auth.setAuth(token);
-  const { data } = await _supabase.from('users').select('*');
+  const { data } = await _supabaseAuthenticated.from('users').select('*');
   renderUser(data);
 };
 ```

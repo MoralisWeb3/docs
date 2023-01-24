@@ -66,3 +66,162 @@ const filter = {
   ],
 }
 ```
+
+### Steps to add filter via Admin panel
+
+1. Go to streams page, add contract address(eg:USDC - `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`) to create a stream, add the following ABI and select `Transfer(address,address,uint256)` topic.
+```json
+[{
+  "anonymous": false,
+  "inputs": [
+    {
+      "indexed": true,
+      "internalType": "address",
+      "name": "from",
+      "type": "address"
+    },
+    {
+      "indexed": true,
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+    },
+    {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "value",
+      "type": "uint256"
+    }
+  ],
+  "name": "Transfer",
+  "type": "event"
+}]
+```
+Your screen will look like below::
+![](/img/content/streams-filter-ui-1.webp)
+
+2. Let's create the following filter example with UI: This will filter all transfers with value greater than 5000 USDC and less than 50000 USDC. 
+```json
+  { 
+    "and": [ 
+      {"gt": ["value", "5000000000"]},
+      {"lt": ["value", "50000000000"]}
+    ]
+  }
+```
+decimals on USDC contract is 6
+* `5000 USDC` value will be `5000000000`
+* `50000 USDC` value will be `50000000000`
+
+3. Click on `Select topic to filter` and add your topic.
+![](/img/content/streams-filter-ui-2.webp)
+
+4. Click on `Choose variable` and select `value` from the list
+![](/img/content/streams-filter-ui-3.webp)
+
+5. Replace `Equal` with `Greater than` and Enter `5000000000` in the input field
+![](/img/content/streams-filter-ui-4.1.webp)
+![](/img/content/streams-filter-ui-4.2.webp)
+
+6. Click on `Add filter` and select `Less than` filter from the list.
+![](/img/content/streams-filter-ui-5.1.webp)
+
+7. Click on `Choose variable` and select `value` from the list and Enter `50000000000` in the input field
+![](/img/content/streams-filter-ui-5.2.webp)
+
+8. Click on `Or` and replace it with `And`
+![](/img/content/streams-filter-ui-6.webp)
+
+6. Now click on Update and you have successfully added your filter.
+![](/img/content/streams-filter-ui-7.webp)
+
+
+### Steps to add complex filters using Admin Panel
+
+1. Go to streams page, add contract address(eg:USDC - `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`) to create a stream, add the following ABI and select `Transfer(address,address,uint256)` topic.
+```json
+[{
+  "anonymous": false,
+  "inputs": [
+    {
+      "indexed": true,
+      "internalType": "address",
+      "name": "from",
+      "type": "address"
+    },
+    {
+      "indexed": true,
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+    },
+    {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "value",
+      "type": "uint256"
+    }
+  ],
+  "name": "Transfer",
+  "type": "event"
+}]
+```
+Your screen will look like below::
+![](/img/content/streams-filter-ui-1.webp)
+
+2. Let's create the following filter example with UI: This will filter all transfers where the `from` or the `to` is the zero address and the amount is greater or equal to 10000 USDC.
+```json
+{
+  "or": [
+    {
+      "and": [
+        { "eq": ["from", "0x0000000000000000000000000000000000000000"] },
+        { "gte": ["value", "10000000000"] }
+      ]
+    },
+    {
+      "and": [
+        { "eq": ["to", "0x0000000000000000000000000000000000000000"] },
+        { "gte": ["value", "10000000000"] }
+      ]
+    }
+  ]
+}
+```
+* A zero address(`0x0000000000000000000000000000000000000000`) in `from` equals to **Mint** and in `to` equals to **burn**.
+
+* decimals in USDC contract is 6
+  - `10000 USDC` value will be `10000000000`
+
+3. Click on `Select topic to filter` and add your topic.
+![](/img/content/streams-filter-ui-2.webp)
+
+4. Click on the delete icon.
+![](/img/content/streams-filter-ui-10.webp)
+
+5. Click on `Add filter` and select `And` filter from the list.
+![](/img/content/streams-filter-ui-11.webp)
+
+6. Click on `Choose variable` and select `from` from the list and enter `0x0000000000000000000000000000000000000000` in the input field.
+![](/img/content/streams-filter-ui-12.webp)
+
+7. Click on the inner `Add filter` and select `Greater than and equal to` filter from the list.
+![](/img/content/streams-filter-ui-13.webp)
+
+8. Click on `Choose variable` and select `value` from the list and enter `10000000000` in the input field.
+![](/img/content/streams-filter-ui-14.webp)
+
+9. Now click on the outer `Add filter` and select `And` filter from the list.
+![](/img/content/streams-filter-ui-15.webp)
+
+10. Click on `Choose variable` and select `to` from the list and enter `0x0000000000000000000000000000000000000000` in the input field.
+![](/img/content/streams-filter-ui-16.webp)
+
+11. Click on the inner `Add filter` and select `Greater than and equal to` filter from the list.
+![](/img/content/streams-filter-ui-17.webp)
+
+12. Click on `Choose variable` and select `value` from the list and enter `10000000000` in the input field.
+![](/img/content/streams-filter-ui-18.webp)
+
+13. Now click on Update and you have successfully added your filter.
+![](/img/content/streams-filter-ui-19.webp)

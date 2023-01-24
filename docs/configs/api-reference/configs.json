@@ -372,6 +372,7 @@
           {
             "name": "tokens",
             "type": "array",
+            "required": true,
             "description": "The tokens to be fetched (max 25 tokens)",
             "example": [
               {
@@ -418,53 +419,187 @@
           "status": "200",
           "description": "Returns a collection of NFTs",
           "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "tokens",
-                "required": true,
-                "type": "array",
-                "maxItems": 25,
-                "description": "The tokens to be fetched (max 25 tokens)",
-                "example": [
-                  {
-                    "token_address": "0xa4991609c508b6d4fb7156426db0bd49fe298bd8",
-                    "token_id": "12"
-                  },
-                  {
-                    "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
-                    "token_id": "1"
-                  },
-                  {
-                    "token_address": "0x3c64dc415ebb4690d1df2b6216148c8de6dd29f7",
-                    "token_id": "200"
-                  }
-                ],
-                "field": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the NFT contract",
+                  "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+                  "required": true
+                },
+                {
+                  "name": "token_id",
+                  "type": "string",
+                  "description": "The token ID of the NFT",
+                  "example": "15",
+                  "required": true
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract standard",
+                  "example": "ERC721",
+                  "required": true
+                },
+                {
+                  "name": "owner_of",
+                  "type": "string",
+                  "description": "The wallet address of the owner of the NFT",
+                  "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e",
+                  "required": true
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "description": "The block number when the amount or owner changed",
+                  "example": "88256",
+                  "required": true
+                },
+                {
+                  "name": "block_number_minted",
+                  "type": "string",
+                  "description": "The block number when the NFT was minted",
+                  "example": "88256",
+                  "required": true
+                },
+                {
+                  "name": "token_uri",
+                  "type": "string",
+                  "description": "The URI to the metadata of the token"
+                },
+                {
+                  "name": "metadata",
+                  "type": "string",
+                  "description": "The metadata of the token"
+                },
+                {
+                  "name": "normalized_metadata",
                   "type": "object",
+                  "description": "A normalized metadata version of the NFT's metadata.",
                   "fields": [
                     {
-                      "name": "token_address",
+                      "name": "name",
                       "type": "string",
-                      "description": "The contract address",
-                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                      "description": "The name or title of the NFT",
+                      "example": "Moralis Mug"
                     },
                     {
-                      "name": "token_id",
+                      "name": "description",
                       "type": "string",
-                      "description": "The id of the token",
-                      "example": 100
+                      "description": "A detailed description of the NFT",
+                      "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                    },
+                    {
+                      "name": "image",
+                      "type": "string",
+                      "description": "The URL of the NFT's image",
+                      "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                    },
+                    {
+                      "name": "external_link",
+                      "type": "string",
+                      "description": "A link to additional information",
+                      "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                    },
+                    {
+                      "name": "animation_url",
+                      "type": "string",
+                      "description": "An animated version of the NFT's image",
+                      "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                    },
+                    {
+                      "name": "attributes",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "trait_type",
+                            "type": "string",
+                            "description": "The trait title or descriptor",
+                            "example": "Eye Color"
+                          },
+                          {
+                            "name": "value",
+                            "type": "object",
+                            "description": "The value of the attribute",
+                            "example": "hazel"
+                          },
+                          {
+                            "name": "display_type",
+                            "type": "string",
+                            "description": "The type the attribute value should be displayed as",
+                            "example": "string"
+                          },
+                          {
+                            "name": "max_value",
+                            "type": "number",
+                            "description": "For numeric values, the upper range",
+                            "example": 100
+                          },
+                          {
+                            "name": "trait_count",
+                            "type": "number",
+                            "description": "The number of possible values for this trait",
+                            "example": 7
+                          },
+                          {
+                            "name": "order",
+                            "type": "number",
+                            "description": "Order the trait should appear in the attribute list.",
+                            "example": 1
+                          }
+                        ]
+                      }
                     }
                   ]
+                },
+                {
+                  "name": "amount",
+                  "type": "string",
+                  "description": "The number of this item the user owns (used by ERC1155)",
+                  "example": "1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the NFT contract",
+                  "example": "CryptoKitties",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "RARI",
+                  "required": true
+                },
+                {
+                  "name": "token_hash",
+                  "type": "string",
+                  "description": "The token hash",
+                  "example": "502cee781b0fb40ea02508b21d319ced",
+                  "required": true
+                },
+                {
+                  "name": "last_token_uri_sync",
+                  "type": "string",
+                  "description": "When the token_uri was last updated",
+                  "example": "2021-02-24T00:47:26.647Z",
+                  "required": true
+                },
+                {
+                  "name": "last_metadata_sync",
+                  "type": "string",
+                  "description": "When the metadata was last updated",
+                  "example": "2021-02-24T00:47:26.647Z",
+                  "required": true
                 }
-              },
-              {
-                "name": "normalizeMetadata",
-                "type": "boolean",
-                "description": "Should normalized metadata be returned?",
-                "example": false
-              }
-            ]
+              ]
+            }
           }
         }
       ],
@@ -1817,8 +1952,9 @@
         {
           "name": "from_block",
           "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "number"
+          "required": true,
+          "type": "number",
+          "example": 16424191
         },
         {
           "name": "to_block",
@@ -4275,8 +4411,8 @@
     },
     "getWalletTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get ERC20 token transactions by wallet",
-      "description": "Get ERC20 token transactions ordered by block number in descending order.",
+      "summary": "Get ERC20 token transfers by wallet",
+      "description": "Get ERC20 token transfers ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address/erc20/transfers",
       "pathParams": [
@@ -4731,8 +4867,8 @@
     },
     "getTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get ERC20 token transactions by contract",
-      "description": "Get ERC20 token transactions from a contract ordered by block number in descending order.",
+      "summary": "Get ERC20 token transfers by contract",
+      "description": "Get ERC20 token transfers from a contract ordered by block number in descending order.",
       "method": "GET",
       "path": "/erc20/:address/transfers",
       "pathParams": [
@@ -5034,6 +5170,168 @@
         {
           "language": "python",
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x057Ec652A4F150f7FF94f089A38008f49a0DF88e\", \n    \"chain\": \"eth\", \n    \"to_block\": 1.2, \n}\n\nresult = evm_api.balance.get_native_balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
+      ]
+    },
+    "getNativeBalancesForAddresses": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get balance for a set of wallet",
+      "description": "Get the native balances for a set of specific addresses",
+      "method": "GET",
+      "path": "/wallets/balances",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "providerUrl",
+          "description": "The web3 provider URL to use when using local dev chain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number on which the balances should be checked",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "The addresses to get metadata for",
+          "required": true,
+          "type": "array",
+          "field": {
+            "type": "string",
+            "example": "0xE92d1A43df510F82C66382592a047d288f85226f"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of balances",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "required": true,
+                  "description": "The chain",
+                  "example": "eth_mainnet"
+                },
+                {
+                  "name": "chain_id",
+                  "type": "string",
+                  "required": true,
+                  "description": "The chain id",
+                  "example": "2"
+                },
+                {
+                  "name": "total_balance",
+                  "type": "string",
+                  "required": true,
+                  "description": "The total balances for all the walttes",
+                  "example": "57499206466583095"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "required": true,
+                  "description": "The block Number",
+                  "example": "123456789"
+                },
+                {
+                  "name": "block_timestamp",
+                  "type": "string",
+                  "required": true,
+                  "description": "The block timestamp",
+                  "example": "0.057"
+                },
+                {
+                  "name": "total_balance_formatted",
+                  "type": "string",
+                  "required": true,
+                  "description": "The total balances for all the walttes formatted",
+                  "example": "123456789"
+                },
+                {
+                  "name": "wallet_balances",
+                  "type": "array",
+                  "required": true,
+                  "field": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "address",
+                        "example": "0x123",
+                        "required": true
+                      },
+                      {
+                        "name": "balance",
+                        "type": "string",
+                        "description": "balance",
+                        "example": "28499206466583095",
+                        "required": true
+                      },
+                      {
+                        "name": "balance_formatted",
+                        "type": "string",
+                        "description": "balance formatted",
+                        "example": "0.0285",
+                        "required": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"chain\": \"eth\", \n    \"providerUrl\": \"\", \n    \"to_block\": 1.2, \n}\nbody = {\n    \"addresses\": [], \n}\n\nresult = evm_api.balance.get_native_balances_for_addresses(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -6055,7 +6353,8 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984"
         }
       ],
       "queryParams": [
@@ -6123,7 +6422,8 @@
           "name": "topic",
           "description": "The topic of the event",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
         },
         {
           "name": "offset",
@@ -6145,14 +6445,112 @@
         }
       ],
       "bodyParam": {
-        "required": false,
+        "required": true,
         "description": "ABI of the specific event",
-        "type": "json"
+        "type": "json",
+        "example": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
       },
       "responses": [
         {
           "status": "200",
-          "description": "Returns a collection of events by topic"
+          "description": "Returns a collection of events by topic",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total",
+                "type": "integer",
+                "description": "The total number of matches for this query",
+                "example": "2000"
+              },
+              {
+                "name": "page",
+                "type": "integer",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "integer",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash",
+                      "required": true,
+                      "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "required": true,
+                      "description": "The address of the contract",
+                      "example": "0x18F97EF6B2cbac5CA85b375b7093C4A207340d06"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block timestamp",
+                      "example": "2021-04-02T10:07:54.000Z"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block number",
+                      "example": 12526958
+                    },
+                    {
+                      "name": "block_hash",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block hash",
+                      "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                    },
+                    {
+                      "name": "data",
+                      "type": "json",
+                      "required": true,
+                      "description": "The content of the event"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ],
       "codeSamples": [
@@ -7192,18 +7590,21 @@
           {
             "name": "domain",
             "type": "string",
+            "required": true,
             "description": "RFC 4501 dns authority that is requesting the signing.",
             "example": "defi.finance"
           },
           {
             "name": "chainId",
             "type": "string",
+            "required": true,
             "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
             "example": 1
           },
           {
             "name": "address",
             "type": "string",
+            "required": true,
             "description": "Ethereum address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
             "example": "0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B"
           },
@@ -7216,6 +7617,7 @@
           {
             "name": "uri",
             "type": "string",
+            "required": true,
             "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
             "example": "https://defi.finance/"
           },
@@ -7241,6 +7643,7 @@
           {
             "name": "timeout",
             "type": "number",
+            "required": true,
             "description": "Time in seconds before the challenge is expired",
             "example": 15
           }
@@ -7302,12 +7705,14 @@
           {
             "name": "message",
             "type": "string",
+            "required": true,
             "description": "Message that needs to be signed by the end user.",
             "example": "defi.finance wants you to sign in with your Ethereum account:\n0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B\n\n\nURI: https://defi.finance\nVersion: 1\nChain ID: 1\nNonce: Px7Nh1RPzlCLwqgOb\nIssued At: 2022-11-30T10:20:00.262Z"
           },
           {
             "name": "signature",
             "type": "string",
+            "required": true,
             "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
             "example": "0xa8f89a58bf9b433d3100f9e41ee35b5e31fb8c7cd62547acb113162ec6f2e4140207e2dfbd4e387e1801ebc7f08a9dd105ac1d22b2e2ff0df5fa8b6d9bdcfe491c"
           }
@@ -7423,18 +7828,21 @@
           {
             "name": "domain",
             "type": "string",
+            "required": true,
             "description": "RFC 4501 dns authority that is requesting the signing.",
             "example": "defi.finance"
           },
           {
             "name": "network",
             "type": "string",
+            "required": true,
             "description": "The network where Contract Accounts must be resolved.",
             "example": "mainnet"
           },
           {
             "name": "address",
             "type": "string",
+            "required": true,
             "description": "Solana public key with a length of 32 - 44 characters that is used to perform the signing",
             "example": "26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo"
           },
@@ -7447,6 +7855,7 @@
           {
             "name": "uri",
             "type": "string",
+            "required": true,
             "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
             "example": "https://defi.finance/"
           },
@@ -7472,6 +7881,7 @@
           {
             "name": "timeout",
             "type": "number",
+            "required": true,
             "description": "Time in seconds before the challenge is expired",
             "example": 15
           }
@@ -7533,12 +7943,14 @@
           {
             "name": "message",
             "type": "string",
+            "required": true,
             "description": "Message that needs to be signed by the end user",
             "example": "defi.finance wants you to sign in with your Solana account:\n26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo\n\nI am a third party API\n\nURI: http://defi.finance\nVersion: 1\nNetwork: mainnet\nNonce: PYxxb9msdjVXsMQ9x\nIssued At: 2022-08-25T11:02:34.097Z\nExpiration Time: 2022-08-25T11:12:38.243Z\nResources:\n- https://docs.moralis.io/"
           },
           {
             "name": "signature",
             "type": "string",
+            "required": true,
             "description": "Base58 signature that needs to be used to verify end user",
             "example": "2pH9DqD5rve2qV4yBDshcAjWd2y8TqMx8BPb7f3KoNnuLEhE5JwjruYi4jaFaD4HN6wriLz2Vdr32kRBAJmHcyny"
           }
@@ -8447,6 +8859,7 @@
           {
             "name": "region",
             "type": "string",
+            "required": true,
             "description": "The region from where all the webhooks will be posted for this project",
             "enum": ["us-east-1", "us-west-2", "eu-central-1", "ap-southeast-1"]
           }
@@ -9001,16 +9414,19 @@
           {
             "name": "webhookUrl",
             "type": "string",
+            "required": true,
             "description": "Webhook URL where moralis will send the POST request."
           },
           {
             "name": "description",
             "type": "string",
+            "required": true,
             "description": "A description for this stream"
           },
           {
             "name": "tag",
             "type": "string",
+            "required": true,
             "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
           },
           {
@@ -9103,6 +9519,7 @@
           {
             "name": "chainIds",
             "type": "array",
+            "required": true,
             "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
             "field": { "type": "string" }
           },
@@ -10253,6 +10670,7 @@
           {
             "name": "status",
             "type": "string",
+            "required": true,
             "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
             "enum": ["active", "paused", "error", "terminated"]
           }
@@ -10571,6 +10989,7 @@
             "name": "address",
             "description": "The address or a list of addresses to be added to the Stream.",
             "type": "oneOf",
+            "required": true,
             "options": [
               { "type": "string" },
               { "field": { "type": "string" }, "type": "array" }
@@ -10686,7 +11105,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -10736,7 +11155,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -10776,7 +11195,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -10816,7 +11235,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -10899,7 +11318,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {
@@ -10979,7 +11398,7 @@
           "description": "The network to query",
           "required": true,
           "type": "string",
-          "enum": ["mainnet", "testnet"],
+          "enum": ["mainnet", "devnet"],
           "example": "mainnet"
         },
         {

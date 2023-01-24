@@ -13,7 +13,7 @@ We will use [Metaplex JavaScript SDK](https://github.com/metaplex-foundation/js)
 
 This is what the final application looks like. 
 
-![Solana NFT Minter Page View](/img/content/5863afd-image.png)
+![Solana NFT Minter Page View](/img/content/5863afd-image.webp)
 
 Instead of going through the entire code, we will focus on the important sections of code that power the application. 
 
@@ -77,11 +77,11 @@ Once the command has been run successfully, you should be able to view the app i
 
 In the app, you can find multiple tabs, but for our code, we only need to access the`/balances/nft` page to check the NFTs of the wallet, and the`/nftMinter`page to mint NFTs.
 
-![Nav Bar](/img/content/8d845e2-image.png)
+![Nav Bar](/img/content/8d845e2-image.webp)
 
 To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
-![](/img/content/5e9b822-image.png)
+![](/img/content/5e9b822-image.webp)
 
 
 
@@ -221,13 +221,13 @@ The dapp can be tested by visiting the `/nftMinter` page.
 
 First, add the required data to the form, then click on the `Mint` button to mint the NFT. 
 
-![Solana NFT Minter Form](/img/content/bc24085-image.png)
+![Solana NFT Minter Form](/img/content/bc24085-image.webp)
 
 The process will take a couple of seconds, and you will be asked to sign a transaction to mint the NFT. Once the transaction is signed and confirmed, you will get a notification that the minting is successful.  
 
 You can also visit the`/balances/nft` page to view your newly minted NFT. 
 
-![NFT balance](/img/content/64db1da-image.png)
+![NFT balance](/img/content/64db1da-image.webp)
 
 Congratulations!! 🥳 
 

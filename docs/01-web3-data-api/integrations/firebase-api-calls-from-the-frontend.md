@@ -6,7 +6,9 @@ description: "If you want to call the Moralis API from your frontend app, don't 
 
 If you want to call the Moralis API from your frontend app, don't do this directly. Please note that your Moralis API key should be secured against theft or abuse. Almost anyone can extract your key by the HTTP monitor, even if your code is obfuscated. Thus, you should keep your API key secure on the backend. This tutorial demonstrates how you can do it for Firebase.
 
-![Firebase Proxy with IP Rate Limiting](/img/content/2815daf-firebase-proxy.gif)
+<video controls>
+  <source src="/video/2815daf-firebase-proxy.mp4"/>
+</video>
 
 First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".
 
@@ -20,7 +22,7 @@ Moreover, in this tutorial, we will use three Firebase services:
 
 The idea is basically relatively simple; if you want to call any Moralis API endpoint from your frontend app, you should create a dedicated cloud function. This function would be something like a proxy, customized precisely to the frontend's needs. In this case, the backend app knows only the API key.
 
-![Making a Moralis API Call by Firebase Function](/img/content/01e806d-moralis-firebase-proxy-call.png)
+![Making a Moralis API Call by Firebase Function](/img/content/01e806d-moralis-firebase-proxy-call.webp)
 
 Let's consider the below function:
 
