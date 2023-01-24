@@ -504,7 +504,7 @@ You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/d
 
 ![](/img/content/14c8cab-image.webp)
 
-The cool thing is that you can [import it automatically](https://docs.moralis.io/docs/using-unity-aws-gamesparks#importing-gamesparks-message-template) from the Amazon GameSparks console.
+The cool thing is that you can [import it automatically](https://docs.moralis.io/authentication-api/integrations/amazon-gamesparks-integration-with-unity#importing-amazon-gamesparks-message-template) from the Amazon GameSparks console.
 
 ### Importing Amazon GameSparks message template
 
