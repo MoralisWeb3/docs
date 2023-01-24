@@ -138,7 +138,7 @@ In your terminal, you should see the following JSON response:
       "name": "NFTPass",
       "symbol": "ATTPASS",
       "token_uri": "https://metadata.atticc.xyz/692",
-      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass692.png\"}",
+      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass692.webp\"}",
       "last_token_uri_sync": "2022-10-28T12:30:53.470Z",
       "last_metadata_sync": "2022-10-28T12:31:12.113Z",
       "minter_address": "0xd1fa414bbd0b71292e097d18a9d5ccbb04806c31"
@@ -155,7 +155,7 @@ In your terminal, you should see the following JSON response:
       "name": "NFTPass",
       "symbol": "ATTPASS",
       "token_uri": "https://metadata.atticc.xyz/691",
-      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass691.png\"}",
+      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass691.webp\"}",
       "last_token_uri_sync": "2022-10-28T08:04:34.923Z",
       "last_metadata_sync": "2022-10-28T08:04:49.994Z",
       "minter_address": "0x42678905eb6fb9f0f3a1334cb23b9d393b53c138"
@@ -172,7 +172,7 @@ In your terminal, you should see the following JSON response:
       "name": "NFTPass",
       "symbol": "ATTPASS",
       "token_uri": "https://metadata.atticc.xyz/65",
-      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass65.png\"}",
+      "metadata": "{\"attributes\":[{\"trait_type\":\"Name\",\"value\":\"Atticc Early Adopter Pass\"},{\"trait_type\":\"Category\",\"value\":\"Early Adopter Pass\"},{\"trait_type\":\"Number of Seats\",\"value\":\"5555\",\"display_type\":\"number\"},{\"trait_type\":\"Royalty\",\"value\":\"0\",\"display_type\":\"number\"}],\"image\":\"https://media.atticc.xyz/Pass65.webp\"}",
       "last_token_uri_sync": "2022-10-25T01:41:57.317Z",
       "last_metadata_sync": "2022-10-25T01:42:22.549Z",
       "minter_address": "0x4bcdd74a35e028dae62cb1d48528e71843e2ac7d"

@@ -38,7 +38,7 @@ npm run dev
 
 2. Open [`http://localhost:3000`](http://localhost:3000) in your browser. You should see the following:
 
-![](/img/content/8b6d8c8-Web3_Social_Media_1.png)
+![](/img/content/8b6d8c8-Web3_Social_Media_1.webp)
 
 ## Initial Setup
 
@@ -300,7 +300,7 @@ return (
 
 2. Check [`http://localhost:3000`](http://localhost:3000). Your app should now look similar to:
 
-![](/img/content/2927bab-Web3_Social_Media_2.png)
+![](/img/content/2927bab-Web3_Social_Media_2.webp)
 
 3. We can now change the profile ID in `pages/api/lensCalls.js` to use another profile for our app. We will use the following`0x81`:
 
@@ -313,7 +313,7 @@ profile(request: { profileId: "0x81" }) {
 
 4. Reload the page and it should look different:
 
-![](/img/content/f00285d-Web3_Social_Media_3.png)
+![](/img/content/f00285d-Web3_Social_Media_3.webp)
 
 ## Using the Moralis API
 
@@ -383,7 +383,7 @@ export default function Home({ profile, nftArray }) {
 
 5. Reload [`http://localhost:3000`](http://localhost:3000), you should now see the follower NFTs:
 
-![](/img/content/21ce843-Web3_Social_Media_4.png)
+![](/img/content/21ce843-Web3_Social_Media_4.webp)
 
 ## Add the Profile's "Follow" NFT
 
@@ -427,7 +427,7 @@ export default function Home({ profile, nftArray, myNFT }) {
 
 3. Reload [`http://localhost:3000`](http://localhost:3000)and click on the "Follow Me" tab. You should now see the "follow" NFT:
 
-![](/img/content/58cad1f-Web3_Social_Media_5.png)
+![](/img/content/58cad1f-Web3_Social_Media_5.webp)
 
 ## Adding Follow Functionality
 
@@ -487,6 +487,6 @@ async function follow() {
 
 4. To test, reload [`http://localhost:3000`](http://localhost:3000), click the "Follow Me" button and sign the transaction:
 
-![](/img/content/9aaf1ec-Web3_Social_Media_6.png)
+![](/img/content/9aaf1ec-Web3_Social_Media_6.webp)
 
 If you sign the following transaction, your wallet should then receive a new Lens NFT.

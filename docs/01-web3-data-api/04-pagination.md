@@ -3,71 +3,70 @@ title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 ---
-### What is Pagination?
+## What Is Pagination?
 
-Pagination is a way of sorting results by dividing them up into smaller chunks so that we can work with one at a time, for example in google search we get so many results which are paginated with page 1 and then page 2 and page 3 so on and so forth. Because fetching all of the data at once will be too much to handle for google in terms of performance.
+Pagination is the process of dividing the responses from an API into multiple pages of results. This allows for faster response times for end users by reducing the amount of data that needs to be returned with each request.
 
-### What is cursor Pagination?
+API pagination is used to control the amount of data that is returned for each request, as well as the order of the data.
 
-A cursor is a unique identifier (string) for a specific set of records or data chunks, which acts as a pointer to the next set of record we want to fetch from to get the next page of results. Cursor pagination works with O(1) time complexity unlike offset pagination which works O(n) complexity. 
+## What Is Cursor Pagination?
 
-### Cursor pagination with Moralis API
+Cursor pagination uses a pointer, or cursor, to identify a specific item in the dataset. This pointer is sent with requests to the server, and in response, it sends back the data after the given item. 
 
-For paginating API results you can use cursor parameter. You get `cursor` from current request and you use it for the next request until there are no more results returned.
+It’s ideal if you want to pull a long list of records from the API since its performance remains constant.
 
-Example of using cursor in NodeJS with a Moralis Server:
+## Cursor Pagination With Moralis API
+
+Every request will return a cursor that can be used to get the next result until there are no more results to return.
+
+## NodeJS example
 
 ```javascript
-
-import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/common-evm-utils';
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const chain = EvmChain.ETHEREUM;
 
-const address = '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'; //Cryptopunks contract address
+const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
 
 await Moralis.start({
-    apiKey: 'YOUR_API_KEY',
-    // ...and any other configuration
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
 });
 
 let cursor = null;
 let owners = {};
-  do {
-		const response = await Moralis.EvmApi.nft.getNFTOwners({
-    	address,
-	    chain,
-		  limit: 100,
-    	cursor: cursor,
-			});
-		console.log(console.log(
-      `Got page ${response.page} of ${Math.ceil(
-        response.total / response.page_size
-      )}, ${response.total} total`
-    );
-     for (const owner of response.result) {
-      owners[owner.owner_of] = {
-        amount: owner.amount,
-        owner: owner.owner_of,
-        tokenId: owner.token_id,
-        tokenAddress: owner.token_address,
-      };
-    }
-    cursor = response.cursor;
-  } while (cursor != "" && cursor != null);
+do {
+  const response = await Moralis.EvmApi.nft.getNFTOwners({
+    address,
+    chain,
+    limit: 100,
+    cursor: cursor,
+  });
+  console.log(
+    `Got page ${response.page} of ${Math.ceil(
+      response.total / response.page_size
+    )}, ${response.total} total`
+  );
+  for (const owner of response.result) {
+    owners[owner.owner_of] = {
+      amount: owner.amount,
+      owner: owner.owner_of,
+      tokenId: owner.token_id,
+      tokenAddress: owner.token_address,
+    };
+  }
+  cursor = response.cursor;
+} while (cursor != "" && cursor != null);
 
-  console.log("owners:", owners, "total owners:", Object.keys(owners).length);
-}
+console.log("owners:", owners, "total owners:", Object.keys(owners).length);
 ```
 
+## Python example
 
-
-Example of using cursor parameter in Python:
-
-```Text Python
+```python
 import requests
 import time
-
 
 def get_nft_owners(offset, cursor):
     print("offset", offset)
@@ -102,8 +101,6 @@ for j in range(0, 10):
     time.sleep(1.1)
 ```
 
-:::info Limit value for cursor
-
-The limit param value for cursor can be set at page 1 and the same limit value will be used through the following pages, you cannot change the limit value after page 1.
-
+:::info Limit param
+The limit param can only be set in the initial call, you cannot change the limit value after the first result.
 :::

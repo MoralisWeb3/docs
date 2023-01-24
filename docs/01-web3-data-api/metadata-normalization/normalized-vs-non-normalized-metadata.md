@@ -69,7 +69,7 @@ Here is the definition of normalized metadata:
           "image": {
             "type": "string",
             "description": "The URL of the NFT's image",
-            "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+            "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.webp"
           },
           "external_link": {
             "type": "string",
@@ -108,7 +108,7 @@ Normalized NFT metadata provides you with a clean, predictable JSON format that 
 {
   "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.",
   "external_url": "https://openseacreatures.io/3",
-  "image": "https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.png",
+  "image": "https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.webp",
   "name": "Dave Starbelly",
   "attributes": [
     {
@@ -157,5 +157,5 @@ Normalized NFT metadata provides you with a clean, predictable JSON format that 
 Non-normalized NFT metadata provides you with a stringified version of the NFT metadata.
 
 ```
-"{\n  \"description\": \"Friendly OpenSea Creature that enjoys long swims in the ocean.\", \n  \"external_url\": \"https://openseacreatures.io/3\", \n  \"image\": \"https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.png\", \n  \"name\": \"Dave Starbelly\",\n  \"attributes\": [\n    {\n      \"trait_type\": \"Base\", \n      \"value\": \"Starfish\"\n    }, \n    {\n      \"trait_type\": \"Eyes\", \n      \"value\": \"Big\"\n    }, \n    {\n      \"trait_type\": \"Mouth\", \n      \"value\": \"Surprised\"\n    }, \n    {\n      \"trait_type\": \"Level\", \n      \"value\": 5\n    }, \n    {\n      \"trait_type\": \"Stamina\", \n      \"value\": 1.4\n    }, \n    {\n      \"trait_type\": \"Personality\", \n      \"value\": \"Sad\"\n    }, \n    {\n      \"display_type\": \"boost_number\", \n      \"trait_type\": \"Aqua Power\", \n      \"value\": 40\n    }, \n    {\n      \"display_type\": \"boost_percentage\", \n      \"trait_type\": \"Stamina Increase\", \n      \"value\": 10\n    }, \n    {\n      \"display_type\": \"number\", \n      \"trait_type\": \"Generation\", \n      \"value\": 2\n    }\n  ]\n}\n"
+"{\n  \"description\": \"Friendly OpenSea Creature that enjoys long swims in the ocean.\", \n  \"external_url\": \"https://openseacreatures.io/3\", \n  \"image\": \"https://storage.googleapis.com/opensea-prod.appspot.com/puffs/3.webp\", \n  \"name\": \"Dave Starbelly\",\n  \"attributes\": [\n    {\n      \"trait_type\": \"Base\", \n      \"value\": \"Starfish\"\n    }, \n    {\n      \"trait_type\": \"Eyes\", \n      \"value\": \"Big\"\n    }, \n    {\n      \"trait_type\": \"Mouth\", \n      \"value\": \"Surprised\"\n    }, \n    {\n      \"trait_type\": \"Level\", \n      \"value\": 5\n    }, \n    {\n      \"trait_type\": \"Stamina\", \n      \"value\": 1.4\n    }, \n    {\n      \"trait_type\": \"Personality\", \n      \"value\": \"Sad\"\n    }, \n    {\n      \"display_type\": \"boost_number\", \n      \"trait_type\": \"Aqua Power\", \n      \"value\": 40\n    }, \n    {\n      \"display_type\": \"boost_percentage\", \n      \"trait_type\": \"Stamina Increase\", \n      \"value\": 10\n    }, \n    {\n      \"display_type\": \"number\", \n      \"trait_type\": \"Generation\", \n      \"value\": 2\n    }\n  ]\n}\n"
 ```

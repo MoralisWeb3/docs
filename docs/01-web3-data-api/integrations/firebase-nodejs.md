@@ -6,7 +6,9 @@ description: "Learn how to set up a Firebase dapp that can query blockchain data
 
 Learn how to set up a Firebase dapp that can query blockchain data, such as NFTs, tokens, balances, transfers, transactions, and more, from any Firebase application. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!
 
-![The Result of This Tutorial](/img/content/4f09542-moralis-firebase-2.gif)
+<video controls>
+  <source src="/video/4f09542-moralis-firebase-2.mp4"/>
+</video>
 
 ## Requirements
 

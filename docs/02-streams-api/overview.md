@@ -4,10 +4,10 @@ sidebar_label: "Overview"
 slug: "/streams-api"
 description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
 sidebar_position: 1
-image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.jpeg"
+image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.webp"
 ---
 
-![](/img/content/d06bbe5-Moralis-Streams-API.jpeg)
+![](/img/content/d06bbe5-Moralis-Streams-API.webp)
 
 ## What is the Streams API?
 
@@ -21,6 +21,10 @@ graph TD;
     D --> E{Your Stream};
     E -- Webhook --> F[Your Server];
 ```
+
+## Working With Webhooks
+
+Webhooks allow you to receive real-time notifications for events that are happening in relation to your application. When a supported event occurs, a real-time notification is posted, including a data payload, via HTTP POST method to a custom URL you provide.
 
 ## Streams API features
 
@@ -67,7 +71,7 @@ graph TD;
 | :------------ | :------------- | :----------------------------- | :-------------------------------------- | :--------------------- |
 | ETH           | 0x1            | ✅ YES                         |                                         | 12                     |
 | GOERLI        | 0x5            | ✅ YES                         |                                         | 12                     |
-| SEPOLIA       | 0xaa36a7       | ✅ YES                         |                                         | 12                     |
+| SEPOLIA       | 0xaa36a7       | ✅ YES                         |                                         | 18                     |
 | BNB           | 0x38           | ✅ YES                         |                                         | 18                     |
 | BNB TEST      | 0x61           | ✅ YES                         |                                         | 18                     |
 | POLYGON       | 0x89           | ✅ YES                         |                                         | 100                    |
@@ -78,11 +82,15 @@ graph TD;
 | AVAX TEST     | 0xa869         | ✅ YES                         |                                         | 100                    |
 | CRONOS        | 0x19           | ❌ Very soon                   | Planned support within a couple of days | 100                    |
 | CRONOS TEST   | 0x152          | ❌ Very soon                   | Planned support within a couple of days | 100                    |
-| RONIN         | 0x7e4          | ✅ YES                         | 🔥 NEW                                  |                        |
-| ARBITRUM      | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  |                        |
-| ARBITRUM TEST | 0x66eed        | ✅ YES                         | 🔥 NEW                                  |                        |
-| OPTIMISM      | 0xa            |                                | 🔥 NEW                                  |                        |
-| PALM          | 0x2a15c308d    |                                | 🔥 NEW                                  |                        |
+| RONIN         | 0x7e4          | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| ARBITRUM      | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| ARBITRUM TEST | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| OPTIMISM      | 0xa            |                                | 🔥 NEW                                  | 100                    |
+| PALM          | 0x2a15c308d    |                                | 🔥 NEW                                  | 100                    |
+
+:::info Reorgnization Before Confirmation
+Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
+:::
 
 ## To get started, check the following tutorials:
 

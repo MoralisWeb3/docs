@@ -1456,7 +1456,12 @@
     },
     {
       "source": "/docs/aws-gamesparks-integration-with-unity",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
+      "permanent": true
+    },
+    {
+      "source": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -1648,7 +1653,7 @@
     { "source": "/reference/undefined", "destination": "/", "permanent": true },
     {
       "source": "/docs/using-unity-aws-gamesparks",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -2344,7 +2349,7 @@
     },
     {
       "source": "/docs/using-unity-aws-gamesparks",
-      "destination": "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
       "permanent": true
     },
     {
@@ -3560,6 +3565,1306 @@
       "source": "/changelog/2022/12/14/block-filtering-get-nft-contract-transfers",
       "destination": "/changelog/block-filtering-added-to-getnftcontracttransfers-%EF%B8%8F",
       "permanent": false
+    },
+
+    { "source": "/i", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/getportfolio",
+      "destination": "/web3-data-api/reference/get-sol-portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftowners-2",
+      "destination": "/web3-data-api/reference/get-nft-owners",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-nft-owners",
+      "destination": "/web3-data-api/reference/get-nft-owners",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-a-block-by-its-block-number",
+      "destination": "/web3-data-api/reference/get-block",
+      "permanent": true
+    },
+    {
+      "source": "/docs/python",
+      "destination": "https://moralisweb3.github.io/Moralis-Python-SDK/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralisweb3-test-utils",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/evm-api/evmapi#utils",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralisweb3-api-utils-apipaginatedresultadapter",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter#pagination",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getcontractnfts-2",
+      "destination": "/web3-data-api/reference/get-contract-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-serv",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/reference/block",
+      "destination": "/web3-data-api/reference/get-block",
+      "permanent": true
+    },
+    {
+      "source": "/docs/aws-lambda-integration",
+      "destination": "/web3-data-api/integrations/aws-lambda-nodejs",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttokenidowners-2",
+      "destination": "/web3-data-api/reference/get-nft-token-id-owners",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/transactions-and-balances/nft-balances",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-metadata",
+      "destination": "/web3-data-api/reference/get-nft-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfersbyblock-2",
+      "destination": "/web3-data-api/reference/get-nft-transfers-by-block",
+      "permanent": true
+    },
+    {
+      "source": "/reference/syncnftcontract-2",
+      "destination": "/web3-data-api/reference/sync-nft-contract",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-nfts",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/native-2",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/reference/searchnfts-2",
+      "destination": "/web3-data-api/reference/search-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/your-first-dapp-vue",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/configure-your-server-1",
+      "destination": "/web3-data-api/self-hosted-moralis-server/configure-your-server",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/tools/hosting",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-transfers",
+      "destination": "/web3-data-api/reference/get-wallet-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-balance",
+      "destination": "/web3-data-api/reference/get-native-balance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/balance",
+      "destination": "/web3-data-api/reference/sol-balance",
+      "permanent": true
+    },
+    {
+      "source": "/reference/endpoints",
+      "destination": "/web3-data-api/reference/endpoint-weights",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-market-data-1",
+      "destination": "/web3-data-api/reference/get-nft-trades",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resolve-web3-domain",
+      "destination": "/web3-data-api/reference/resolve-address",
+      "permanent": true
+    },
+    {
+      "source": "/reference/nft-endpoints",
+      "destination": "/web3-data-api/reference/get-multiple-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-market-data",
+      "destination": "/web3-data-api/reference/get-nft-trades",
+      "permanent": true
+    },
+    { "source": "/functions/", "destination": "/", "permanent": true },
+    {
+      "source": "/moralis-server/solana-sdk/nft",
+      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnftcollectionsCheck",
+      "destination": "/web3-data-api/reference/get-wallet-nft-collections",
+      "permanent": true
+    },
+    {
+      "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-arbitrum-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/cloud",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-web3-rest/nft-api",
+      "destination": "/web3-data-api/evm/nft-api",
+      "permanent": true
+    },
+    {
+      "source": "/reference/endpoints-6",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/tools/moralis-admin-cli",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/tools/moralis-admin-cli",
+      "permanent": true
+    },
+    {
+      "source": "/docs/querying-the-api-and-parsing-responses",
+      "destination": "/web3-data-api/query-from-evm-or-solana",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/tools/hosting",
+      "destination": "/",
+      "permanent": true
+    },
+    { "source": "/hosting", "destination": "/", "permanent": true },
+    {
+      "source": "/reference/utils-1",
+      "destination": "/web3-data-api/reference/run-contract-function",
+      "permanent": true
+    },
+    {
+      "source": "/reference/balance-2",
+      "destination": "/web3-data-api/reference/sol-balance",
+      "permanent": true
+    },
+    {
+      "source": "/speedy-nodes/connect-to-arbitrum-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftlowestprice-2",
+      "destination": "/web3-data-api/reference/get-nft-lowest-price",
+      "permanent": true
+    },
+    {
+      "source": "/docs/v1-server-self-hosting",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/web3-data-api/evm/how-to-get-all-erc20-transactions-by-contract",
+      "destination": "/web3-data-api/evm/how-to-get-all-erc20-transfers-by-contract",
+      "permanent": true
+    },
+    {
+      "source": "/docs/moralis-onboarding",
+      "destination": "/web3-data-api/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmeventinput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/automatic-transaction-sync/smart-contract-events",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/automatic-transaction-sync/smart-contract-events",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/sending-assets",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftcontractmetadata-2",
+      "destination": "/web3-data-api/reference/get-nft-contract-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/requestchallengesolana-1",
+      "destination": "/authentication-api/reference/request-challenge-solana",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/evmchainable/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/evmchainable",
+      "permanent": true
+    },
+    {
+      "source": "/docs/solana-api-overview",
+      "destination": "/web3-data-api/solana",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/live-queries",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/live-queries",
+      "permanent": true
+    },
+    {
+      "source": "/docs/sign-in-with-metamask-python-django",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-python-django",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/connect-the-sdk/connect-using-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk/connect-using-node",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getblock-1",
+      "destination": "/web3-data-api/reference/get-block",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login/custom-auth-any-eip1193-provider",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/web3-login/custom-auth-any-eip1193-provider",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/sending-assets/resolve-transfer",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/resolve-transfer",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/resolve",
+      "destination": "/web3-data-api/evm/resolve-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/resolve",
+      "destination": "/web3-data-api/evm/resolve-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/guides/build-a-simple-dapp-in-3-minutes/build-a-simple-dapp-in-3-mins-real-time-transactions-part-4",
+      "destination": "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes/build-a-simple-dapp-in-3-mins-real-time-transactions-part-4",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login/metamask",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login/walletconnect",
+      "destination": "/authentication-api/how-to-sign-in-with-walletconnect",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3/setting-up-ganache",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3/setting-up-ganache",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/bignumber/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/bignumber",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/index/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/index/",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/objects-queries-unity",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/objects-queries-unity",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login/magic",
+      "destination": "/authentication-api/how-to-sign-in-with-magiclink",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login/walletconnect",
+      "destination": "/authentication-api/how-to-sign-in-with-walletconnect",
+      "permanent": true
+    },
+    {
+      "source": "/reference/requestchallengeevm-1",
+      "destination": "/authentication-api/reference/request-challenge-evm",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionlog",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/bulk-queries",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/bulk-queries",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/ipfs-storage-new",
+      "destination": "/web3-data-api/evm/ipfs-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/token",
+      "destination": "/web3-data-api/evm/token-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login/sign-in-message",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/web3-login/sign-in-message",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/modules/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/modules",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/modules",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/modules",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/evmchainable",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/evmchainable",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/unity-login",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/unity-login",
+      "permanent": true
+    },
+    {
+      "source": "/roles",
+      "destination": "/admin-panel/permission-roles",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/users/intro",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-sol-utils/index",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/commonsolutils",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-sol-utils/index/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/commonsolutils",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/automatic-transaction-sync/address-casing",
+      "destination": "https://v1docs.moralis.io/moralis-server/automatic-transaction-sync/address-casing",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getwalletnfttransfers-2",
+      "destination": "/web3-data-api/reference/get-wallet-nft-transfers",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmchain",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/supported-chains",
+      "destination": "/web3-data-api#supported-chains",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/index",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/index",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftinput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/bignumber",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/bignumber",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server-migration-react-client",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration-react-client",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/sending-assets/transfer-eth",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/transfer-eth",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/connect-the-sdk/boilerplate-projects",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk/boilerplate-projects",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/getting-started",
+      "destination": "/web3-data-api/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/Introduction",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/Introduction",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server-migration-react-client/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration-react-client",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollection",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-auth-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-auth-ext",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-auth-ext/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-auth-ext",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnfttransferinput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/supabase-auth",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/supabase-auth",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/supabase-auth/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/supabase-auth",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20data",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress",
+      "permanent": true
+    },
+    {
+      "source": "/reference/",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
+    {
+      "source": "/reference/transaction",
+      "destination": "/web3-data-api/reference/get-wallet-transactions",
+      "permanent": true
+    },
+
+    {
+      "source": "/reference/get-metadata-1",
+      "destination": "/web3-data-api/reference/get-nft-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-owners",
+      "destination": "/web3-data-api/reference/get-nft-owners",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmaddress",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/06/nft-approvals",
+      "destination": "/changelog/streams-nft-approvals",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/05/arbitrum-support-added",
+      "destination": "/changelog/api-%EF%B8%8F-arbitrum-support-added",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/06/beta-triggers",
+      "destination": "/changelog/streams-beta-triggers",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/index",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/commonevmutils",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/index/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/commonevmutils",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-streams-ext/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-streams-ext",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/11/29/palm-network-support",
+      "destination": "/changelog/palm-network-supported-in-evm-apis",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-streams-ext",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-streams-ext",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/Introduction",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/11/30/get-verbose-transactions",
+      "destination": "/changelog/apis-get-verbose-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/requestcontroller",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/solnetwork",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/automatic-transaction-sync",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/automatic-transaction-sync",
+      "permanent": true
+    },
+
+    {
+      "source": "/docs/using-aw...",
+      "destination": "/web3-data-api/integrations/aws-lambda-nodejs#aws-setup",
+      "permanent": true
+    },
+    {
+      "source": "/reference/run...",
+      "destination": "/web3-data-api/reference/run-contract-function",
+      "permanent": true
+    },
+    {
+      "source": "/reference/upl...",
+      "destination": "/web3-data-api/reference/upload-folder",
+      "permanent": true
+    },
+    {
+      "source": "/docs/migratin...",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/reference/streamsevmid-1",
+      "destination": "/streams-api/reference/get-stream",
+      "permanent": true
+    },
+    {
+      "source": "/docs/how-to-get-historical-erc20-token-price",
+      "destination": "/web3-data-api/evm/how-to-get-historical-erc20-token-price",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/07/get-native-balances",
+      "destination": "/changelog/streams-include-native-balances",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/2022/12/12/reduce-cus-for-get-nft-token-owners",
+      "destination": "/changelog/api-reduce-cus-for-get-nft-token-owners",
+      "permanent": true
+    },
+    {
+      "source": "/docs/aws-gamesparks",
+      "destination": "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
+      "permanent": true
+    },
+    {
+      "source": "/docs/examples",
+      "destination": "/example-dapps/evm",
+      "permanent": true
+    },
+    {
+      "source": "/docs/google-cloud",
+      "destination": "/authentication-api/integrations/google-cloud-nodejs-unity",
+      "permanent": true
+    },
+
+    {
+      "source": "/docs/introduction",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/docs/migrating-from-v1-to-v2",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/docs/monitor-all-usdt-transfers-above-100k",
+      "destination": "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "permanent": true
+    },
+
+    {
+      "source": "/docs/sign-in-with-metamask-dot-net",
+      "destination": "/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net",
+      "permanent": true
+    },
+
+    {
+      "source": "/moralis-dapp/",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/getting-started/create-a-moralis-dapp",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/automatic-transaction-sync/address-casing",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/automatic-transaction-sync/address-casing",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code/cloud-functions",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code/cloud-functions",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code/config",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code/config",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code/httprequest",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code/httprequest",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code/jobs",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/cloud-code/webhooks",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/cloud-code/webhooks",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/connect-the-sdk",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/connect-the-sdk/connect-with-react",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-react",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/connect-the-sdk/connect-with-unity",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-unity",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/direct_access",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/direct_access",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/live-queries-1",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/live-queries",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/objects",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/objects",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/permissions",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/permissions",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/queries",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/queries",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/roles",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/roles",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/database/security",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/database/security",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/files",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/files",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/files/ipfs",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/files/ipfs",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/getting-started/create-a-moralis-dapp",
+      "destination": "/web3-data-api/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/nodes",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/plugins",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/plugins",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/plugins/untitled",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/plugins/untitled",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/sending-assets/transfer-tokens",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/sending-assets/transfer-tokens",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/solana-api/nft",
+      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/solana-sdk/account",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/solana-api/account",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/solana-sdk/nft",
+      "destination": "/web3-data-api/reference/get-sol-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/tools/moralis-admin-cli",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/tools/moralis-admin-cli",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/tools/moralis-units",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/tools/moralis-units",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login",
+      "destination": "/authentication-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login/magic",
+      "destination": "/authentication-api/how-to-sign-in-with-magiclink",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login/phantom-solana",
+      "destination": "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/crypto-login/web3auth",
+      "destination": "/authentication-api/how-to-sign-in-with-web3authio",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/current-user",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/current-user",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/delete-user",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/delete-user",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/email-login",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/email-login",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/merging-addresses",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/merging-addresses",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/sessions",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/sessions",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/unity-login/authkit",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/unity-login/authkit",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/unity-login/custom-auth-platform",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/users/unity-login/custom-auth-platform",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/users/web3-login/web3auth",
+      "destination": "/authentication-api/how-to-sign-in-with-web3authio",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/account",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/account",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/moralis-web3-api-rest",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/native",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/native",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/nft-api",
+      "destination": "/web3-data-api/evm/nft-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/nft-api",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-api/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/",
+      "destination": "/web3-data-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/account",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/account",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/ipfs-storage-new",
+      "destination": "/web3-data-api/evm/ipfs-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/native",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3-api/native",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/rate-limit",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/supported-chains",
+      "destination": "/web3-data-api#supported-chains",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3-sdk/token",
+      "destination": "/web3-data-api/evm/token-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3/blockchain-interactions-unity",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3/blockchain-interactions-unity",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-dapp/web3/web3",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3/web3",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-proxy",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-proxy",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/firebase-proxy/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/firebase-proxy",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/nextjs",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server-migration",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/demos/parse-server-migration/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/demos/parse-server-migration",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/apimodule",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/apimodule",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/apimodule/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/apimodule",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/module",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/module",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/module/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/module",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-core/paginatedresponseadapter",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectiondata",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftcollectioninput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatadata",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput",
+      "permanent": true
+    },
+    {
+      "source": "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput/",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmtransactionloginput",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/automatic-transaction-sync/historical-transactions",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/automatic-transaction-sync/historical-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/sdk-utils/moralis-units",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/tools/moralis-units",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/transactions-and-balances/realtime-transactions",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/web3-sdk/rate-limit.",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/moralis-server/web3/",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3",
+      "permanent": true
+    },
+    {
+      "source": "/page/c-net-sdk-reference",
+      "destination": "https://github.com/MoralisWeb3/web3-dotnet-sdk/blob/main/README.md",
+      "permanent": true
+    },
+    {
+      "source": "/page/sdk-reference",
+      "destination": "https://moralisweb3.github.io/Moralis-JS-SDK/",
+      "permanent": true
+    },
+    {
+      "source": "/real-time-transactions",
+      "destination": "/streams-api",
+      "permanent": true
+    },
+    {
+      "source": "/reference-link/api-response",
+      "destination": "/web3-data-api/api-response",
+      "permanent": true
+    },
+    {
+      "source": "/reference-link/supported-chains",
+      "destination": "/web3-data-api#supported-chains",
+      "permanent": true
+    },
+
+    {
+      "source": "/reference/challenge-1",
+      "destination": "/authentication-api/reference/request-challenge-evm",
+      "permanent": true
+    },
+    {
+      "source": "/reference/evm-streams",
+      "destination": "/streams-api/reference/get-streams",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-transactions",
+      "destination": "/web3-data-api/reference/get-wallet-transactions",
+      "permanent": true
+    },
+    {
+      "source": "/reference/get-wallet-nfts",
+      "destination": "/web3-data-api/reference/get-wallet-nfts",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftcontracttransfers-1",
+      "destination": "/web3-data-api/reference/get-nft-contract-transfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnftmetadata-2",
+      "destination": "/web3-data-api/reference/get-nft-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/getnfttransfersCheck",
+      "destination": "/web3-data-api/reference/get-wallet-nft-transfers",
+      "permanent": true
+    },
+    {
+      "source": "/reference/health",
+      "destination": "/streams-api/reference/get-stats",
+      "permanent": true
+    },
+    {
+      "source": "/reference/res...",
+      "destination": "/web3-data-api/reference/resync-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/resyncmetadata-2",
+      "destination": "/web3-data-api/reference/resync-metadata",
+      "permanent": true
+    },
+    {
+      "source": "/reference/weights-and-rate-limits",
+      "destination": "/web3-data-api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/refrences/gettokenprice",
+      "destination": "/web3-data-api/reference/get-token-price",
+      "permanent": true
+    },
+    {
+      "source": "/run-parse-server-locally",
+      "destination": "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
+      "permanent": true
+    },
+    {
+      "source": "/Self-hosted",
+      "destination": "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "permanent": true
+    },
+    {
+      "source": "/speedy-nodes/connecting-to-rpc-nodes/connect-to-eth-node",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/nodes",
+      "permanent": true
+    },
+    {
+      "source": "/transactions-and-balances/token-balances",
+      "destination": "/web3-data-api/reference/get-wallet-token-balances",
+      "permanent": true
+    },
+    {
+      "source": "/web",
+      "destination": "https://v1docs.moralis.io/moralis-dapp/web3",
+      "permanent": true
+    },
+    {
+      "source": "/web3-data-api/reference",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
+    {
+      "source": "/web3-data-api/reference/",
+      "destination": "/web3-data-api/reference/overview",
+      "permanent": true
+    },
+    {
+      "source": "/web3-data-api/reference/get-transactions",
+      "destination": "/web3-data-api/reference/get-wallet-transactions",
+      "permanent": true
     }
   ]
 }

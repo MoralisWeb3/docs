@@ -5,7 +5,7 @@ slug: "self-hosted-moralis-server"
 
 A guide to help you setup your own self-hosted server. This will give you the same functionalities as a Moralis server, but you are in full control.
 
-![](/img/content/53a7368-self-hosted-moralis-server-webpage-banner.jpg)
+![](/img/content/53a7368-self-hosted-moralis-server-webpage-banner.webp)
 
 ## Full Video Tutorial - hosting, integrating, migrating
 

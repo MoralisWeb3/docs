@@ -87,11 +87,11 @@ You can also use a hosted MongoDB for Atlas. For some hosting providers this is 
 2. Create a new database
 3. Get the connection string
 
-![](/img/content/fc0ee49-Screenshot_2022-09-07_at_22.23.42.png)
+![](/img/content/fc0ee49-Screenshot_2022-09-07_at_22.23.42.webp)
 
-![](/img/content/27497f9-Screenshot_2022-09-07_at_23.25.41.png)
+![](/img/content/27497f9-Screenshot_2022-09-07_at_23.25.41.webp)
 
-![](/img/content/4ec4b40-Screenshot_2022-09-07_at_23.31.10.png)
+![](/img/content/4ec4b40-Screenshot_2022-09-07_at_23.31.10.webp)
 
 4. Set the `DATABASE_URI` in your `.env`. Make sure to replace `<username>` and `<password>` to a user that has read and write access. This can be set in the "Database access" page.
 
@@ -120,21 +120,21 @@ You can also use a hosted Redis via Redis Enterprise Cloud. For some hosting pro
 2. Create a new database
 3. Setup a user with read and write access
 
-![](/img/content/e6597fe-Screenshot_2022-09-07_at_23.55.21.png)
+![](/img/content/e6597fe-Screenshot_2022-09-07_at_23.55.21.webp)
 
-![](/img/content/d2522f5-Screenshot_2022-09-07_at_23.55.39.png)
+![](/img/content/d2522f5-Screenshot_2022-09-07_at_23.55.39.webp)
 
-![](/img/content/b27bb15-Screenshot_2022-09-07_at_23.56.31.png)
+![](/img/content/b27bb15-Screenshot_2022-09-07_at_23.56.31.webp)
 
-![](/img/content/9944445-Screenshot_2022-09-08_at_00.00.11.png)
+![](/img/content/9944445-Screenshot_2022-09-08_at_00.00.11.webp)
 
    Create the user, and make sure to store the username and password somewhere safe
 
 4. Get the connection string
 
-![](/img/content/c06766a-Screenshot_2022-09-08_at_00.01.54.png)
+![](/img/content/c06766a-Screenshot_2022-09-08_at_00.01.54.webp)
 
-![](/img/content/ad75338-Screenshot_2022-09-08_at_00.02.10.png)
+![](/img/content/ad75338-Screenshot_2022-09-08_at_00.02.10.webp)
 
 5. Set the `REDIS_CONNECTION_STRING` in your `.env` with the username, password and endpoint from the previous step. The result should look like `redis://<username>:<password>@<endpoint>`
 

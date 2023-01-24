@@ -4,7 +4,9 @@ slug: "../how-to-sign-in-with-web3authio"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of developing a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
 
-![Web3 Moralis Authentication with Web3Auth - Wagmi Connector Result](/img/content/2ebfdfe-web3auth.gif)
+<video controls>
+  <source src="/video/2ebfdfe-web3auth.mp4"/>
+</video>
 
 ## What is Web3Auth?
 
@@ -18,7 +20,7 @@ Web3Auth is a pluggable auth infrastructure for Web3 wallets and applications. I
 
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](doc:sign-in-with-metamask) functionality.
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality.
 
 ## Installing the Web3Auth Wagmi Connector
 
@@ -107,15 +109,15 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test aut
 
 1. Click on `Authenticate via Web3Auth`:
 
-![Sign In Page](/img/content/6cccf79-17.png)
+![Sign In Page](/img/content/6cccf79-17.webp)
 
 2. Select the preferred sign-in method:
 
-![Web3Auth Authentication](/img/content/e8fa976-26.png)
+![Web3Auth Authentication](/img/content/e8fa976-26.webp)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/e6f4aef-433.png)
+![User Page](/img/content/e6f4aef-433.webp)
 
 4. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

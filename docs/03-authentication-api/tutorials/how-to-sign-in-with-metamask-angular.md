@@ -85,7 +85,7 @@ async handleAuth() {}
 
 3. Run `npm run start` and open [`http://localhost:4200/signin`](http://localhost:4200/signin) in your browser. It should look like:
 
-![](/img/content/0fa10de-Angular_Sign_In_With_MetaMask_1.png)
+![](/img/content/0fa10de-Angular_Sign_In_With_MetaMask_1.webp)
 
 4. Open `src/app/user/user.component.html` and replace the contents with:
 
@@ -113,7 +113,7 @@ async signOut() {}
 
 6. Open [`http://localhost:4200/user`](http://localhost:4200/user) in your browser. It should look like:
 
-![](/img/content/b7546ac-Angular_Sign_In_With_MetaMask_2.png)
+![](/img/content/b7546ac-Angular_Sign_In_With_MetaMask_2.webp)
 
 ## Server Setup
 
@@ -519,15 +519,15 @@ Visit [`http://localhost:4200/signin`](http://localhost:4200/signin) to test the
 
 1. Click on the `Authenticate via MetaMask` button:
 
-![](/img/content/4ecf341-Angular_Sign_In_With_MetaMask_1.png)
+![](/img/content/4ecf341-Angular_Sign_In_With_MetaMask_1.webp)
 
 2. Connect the MetaMask wallet and sign the message:
 
-![Signing the Message](/img/content/4dbf978-Angular_Sign_In_With_MetaMask_3.png)
+![Signing the Message](/img/content/4dbf978-Angular_Sign_In_With_MetaMask_3.webp)
 
 3. After successful authentication, you will be redirected to the `/user` page:
 
-![User Page](/img/content/8c884b1-Angular_Sign_In_With_MetaMask_4.png)
+![User Page](/img/content/8c884b1-Angular_Sign_In_With_MetaMask_4.webp)
 
 - When a user authenticates, we show the user's info on the page.
 - When a user is not authenticated, we redirect to the `/signin` page. 

@@ -23,19 +23,19 @@ Go to [GitHub](https://github.com/MoralisWeb3/demo-unreal-aws-lambda) and clone/
 
 After downloading the project, launch Unreal Engine 5.1 and under _RECENT PROJECTS_, choose _**Browse**_:
 
-![](/img/content/4353feb-image.png)
+![](/img/content/4353feb-image.webp)
 
 Search for the **`.uproject`** file and open it:
 
-![](/img/content/ff45723-image.png)
+![](/img/content/ff45723-image.webp)
 
 The _Plugins_ window should automatically open but if not, go to the top toolbar and choose **_Edit --> Plugins_**:
 
-![](/img/content/2e240ee-image.png)
+![](/img/content/2e240ee-image.webp)
 
 Search for _VaRest_, **enable the checkbox** and close the _Plugins_ window:
 
-![](/img/content/e3e2255-image.png)
+![](/img/content/e3e2255-image.webp)
 
 :::info 
 As stated in the [prerequisites](#prerequisites), you need to have this plugin previously installed. We will use it to call our **Moralis API endpoints** hosted in **AWS Lambda**.
@@ -45,7 +45,7 @@ As stated in the [prerequisites](#prerequisites), you need to have this plugin p
 
 On the editor, click the blueprint icon and choose _**Open Level Blueprint**_:
 
-![](/img/content/d39c0e4-image.png)
+![](/img/content/d39c0e4-image.webp)
 
 This is the blueprint holding most of the logic of this sample game.
 
@@ -56,7 +56,7 @@ Zoom out to visualize and locate **4 important areas**:
 3. [**Get Native Balance**](#get-native-balance)
 4. [**Get Wallet NFTs**](#get-wallet-nfts)
 
-![](/img/content/0d0bd99-image.png)
+![](/img/content/0d0bd99-image.webp)
 
 ### Manage input
 
@@ -66,7 +66,7 @@ No need to do any action here. Just informative.
 
 Apart from enabling and disabling the player's input, here we get the `wallet address` and the `chain ID` from the text input fields when the _START_ button is clicked and we save them as variables:
 
-![](/img/content/d81ba07-image.png)
+![](/img/content/d81ba07-image.webp)
 
 ### Construct request body
 
@@ -76,25 +76,25 @@ No need to do any action here. Just informative.
 
 What interests us in this tutorial is to know **how do we call an API endpoint**. In this case we want to call the _getNativeBalance_ and _getWalletNfts_ endpoints hosted in our [Express AWS Lambda App](/web3-data-api/integrations/aws-lambda-nodejs#lambda-nodejs-express-api). These endpoints need the _address_ and the _chain_ as request body parameters so here we construct the request and we **set it as a variable**:
 
-![](/img/content/e9fdaae-image.png)
+![](/img/content/e9fdaae-image.webp)
 
 ### Get Native Balance
 
 Add the _getNativeBalance_ endpoint URL to the _**URL field**_. You can get it [following the instructions here](/web3-data-api/integrations/aws-lambda-nodejs#testing-express-api-function):
 
-![](/img/content/4b02975-image.png)
+![](/img/content/4b02975-image.webp)
 
 ### Get Wallet NFTs
 
 Add the _getWalletNfts_ endpoint URL to the **_URL field_**. You can get it [following the instructions here](/web3-data-api/integrations/aws-lambda-nodejs#testing-express-api-function):
 
-![](/img/content/0662f30-image.png)
+![](/img/content/0662f30-image.webp)
 
 ### Saving changes
 
 Click _**Compile**_ and then the _**Save icon**_: 
 
-![](/img/content/c03b362-image.png)
+![](/img/content/c03b362-image.webp)
 
 :::tip Everything is set up correctly.
 
@@ -104,11 +104,11 @@ Click _**Compile**_ and then the _**Save icon**_:
 
 On the editor, choose **_Play_**:
 
-![](/img/content/64b1f25-image.png)
+![](/img/content/64b1f25-image.webp)
 
 Enter a _wallet address_ and a _chain ID_ and choose _**START**_:
 
-![](/img/content/98ccd15-image.png)
+![](/img/content/98ccd15-image.webp)
 
 :::info 
 In this tutorial, we enter **`80001`** as chain ID but here you can check [all the chains that Moralis supports](/web3-data-api#supported-chains).
@@ -120,7 +120,7 @@ Also make sure to enter an address that holds some NFTs to see them on the game.
 
 On the left side we can see our **NFTs** displayed and our **Native balance** on the right side:
 
-![](/img/content/d5835b1-image.png)
+![](/img/content/d5835b1-image.webp)
 
 :::tip Congratulations!
 

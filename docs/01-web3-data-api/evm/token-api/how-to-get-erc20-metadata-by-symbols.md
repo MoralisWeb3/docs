@@ -1,7 +1,7 @@
 ---
 title: "How to get ERC20 metadata by symbols"
 slug: "../how-to-get-erc20-metadata-by-symbols"
-description: "Learn how to get all ERC20 transactions by wallet using Moralis Token API."
+description: "Learn how to get ERC20 metadata by symbols using Moralis Token API."
 ---
 
 ## Prerequisites
@@ -122,9 +122,9 @@ In your terminal, you should see the following JSON response:
     "name": "Chain Link",
     "symbol": "LINK",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca.png",
+    "logo": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca.webp",
     "logo_hash": "fd74ea1227adb458733847c09aab05d89c35c14b640c5ee1e0a8bffa79193eb4",
-    "thumbnail": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
@@ -134,9 +134,9 @@ In your terminal, you should see the following JSON response:
     "name": "Uniswap",
     "symbol": "UNI",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png",
+    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.webp",
     "logo_hash": "064ee9557deba73c1a31014a60f4c081284636b785373d4ccdd1b3440df11f43",
-    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
@@ -146,9 +146,9 @@ In your terminal, you should see the following JSON response:
     "name": "Aave Token",
     "symbol": "AAVE",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9.png",
+    "logo": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9.webp",
     "logo_hash": "a43e5ac48a66d8b0eac410ac2f5634c2517acda6f4723a55b99e3c5906132a1b",
-    "thumbnail": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9_thumb.png",
+    "thumbnail": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"

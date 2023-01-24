@@ -32,6 +32,49 @@ const config = {
 
   themes: ["@docusaurus/theme-mermaid"],
 
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    },
+  ],
+
   presets: [
     [
       "classic",
@@ -45,6 +88,7 @@ const config = {
               path: "",
             },
           },
+          editUrl: "https://github.com/MoralisWeb3/docs/edit/main/",
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
           remarkPlugins: [
@@ -77,12 +121,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "/img/moralis-social-card.jpg",
+      image: "img/moralis-social-card.jpg",
       metadata: [
-        {
-          name: "twitter:image",
-          content: "/img/moralis-social-card.jpg",
-        },
         {
           name: "twitter:card",
           content: "summary_large_image",
@@ -102,11 +142,6 @@ const config = {
         defaultMode: "dark",
         disableSwitch: false,
         respectPrefersColorScheme: true,
-      },
-      algolia: {
-        appId: "NC1LK93TN5",
-        apiKey: "b36064a11a9ce260d626a095a8ff2693",
-        indexName: "moralis-docs",
       },
       navbar: {
         hideOnScroll: false,
@@ -252,6 +287,10 @@ const config = {
                 href: "https://moralis.io/contact-support/",
               },
               {
+                label: "Status",
+                href: "https://status.moralis.io",
+              },
+              {
                 label: "FAQ",
                 href: "https://moralis.io/faq/",
               },
@@ -326,8 +365,8 @@ const config = {
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
     ],
+    ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
-    ["docusaurus-plugin-dotenv", { path: "./.env", systemvars: true }],
     require.resolve("docusaurus-lunr-search"),
   ],
 };

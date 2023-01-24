@@ -4,11 +4,13 @@ slug: "../how-to-sign-in-with-walletconnect"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
 
-![End Result of Using Web3 Moralis Authentication with WalletConnect](/img/content/5ded2e2-morsign.gif)
+<video controls>
+  <source src="/video/5ded2e2-morsign.mp4"/>
+</video>
 
 ## Before the Start
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask](doc:sign-in-with-metamask) functionality. 
+You can start this tutorial if you already have a NextJS dapp with [MetaMask](/authentication-api/how-to-sign-in-with-metamask) functionality. 
 
 ## Configuring the WalletConnect Connector
 
@@ -70,19 +72,19 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test au
 
 1. Click on `Authenticate via WalletConnect`:
 
-![Sign In Page](/img/content/1a876b9-notconnected.png)
+![Sign In Page](/img/content/1a876b9-notconnected.webp)
 
 2. Scan the QR code with your wallet:
 
-![WalletConnect Modal](/img/content/2541b11-wc.png)
+![WalletConnect Modal](/img/content/2541b11-wc.webp)
 
 3. Connect your wallet:
 
-![TrustWallet Connect - Confirm](/img/content/0037a38-photo_2022-08-15_18-18-43.jpg)
+![TrustWallet Connect - Confirm](/img/content/0037a38-photo_2022-08-15_18-18-43.webp)
 
 4. Sign the message:
 
-![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.jpg)
+![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.webp)
 
 5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
 

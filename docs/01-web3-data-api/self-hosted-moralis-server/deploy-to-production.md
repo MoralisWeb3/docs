@@ -15,21 +15,21 @@ Next login or sign-up for Heroku and configure your app:
 
 Create a new app from the top menu and set your app name and preferred region where the server is hosted:
 
-![](/img/content/41607d4-Screenshot_2022-09-08_at_02.42.11.png)
+![](/img/content/41607d4-Screenshot_2022-09-08_at_02.42.11.webp)
 
-![](/img/content/d4bb8cc-Screenshot_2022-09-08_at_02.42.38.png)
+![](/img/content/d4bb8cc-Screenshot_2022-09-08_at_02.42.38.webp)
 
 Deploy your by connecting via Github or using the Heroku CLI. This will import your code to heroku and will automatically rebuild your app when changes are pushed to your repo.
 
-![](/img/content/00b9508-Screenshot_2022-09-08_at_02.43.11.png)
+![](/img/content/00b9508-Screenshot_2022-09-08_at_02.43.11.webp)
 
 As a final step you need to set your environment variables.
 
 Navigate to "Settings" and reveal the keys. Here you can paste all the variables from your `.env` file. Make sure that these variables are production-ready (no references to localhost, and different database that used in local development)
 
-![](/img/content/914ac14-Screenshot_2022-09-08_at_02.44.26.png)
+![](/img/content/914ac14-Screenshot_2022-09-08_at_02.44.26.webp)
 
-![](/img/content/6f65c9c-Screenshot_2022-09-08_at_02.44.49.png)
+![](/img/content/6f65c9c-Screenshot_2022-09-08_at_02.44.49.webp)
 
 :::info
 Make sure to update `SERVER_URL` in the config vars to the deployed url on Heroku. This looks something like `moralis-demo.herokuapp.com/server`. Also make sure to set this same serverUrl in your frontend.
@@ -50,7 +50,7 @@ If your [Google Cloud free trial](https://cloud.google.com/free) has ended, the 
 
 Replace the environment variables values in **`app.yaml`** with your own:
 
-![](/img/content/161ccae-image.png)
+![](/img/content/161ccae-image.webp)
 
 Open the terminal, make sure you're in the root folder and run:
 
@@ -60,15 +60,15 @@ gcloud app deploy
 
 Choose your region:
 
-![](/img/content/d8a49da-image.png)
+![](/img/content/d8a49da-image.webp)
 
 Type **`Y`** to continue:
 
-![](/img/content/99306a1-image.png)
+![](/img/content/99306a1-image.webp)
 
 After a couple minutes the application is deployed:
 
-![](/img/content/87f1739-image.png)
+![](/img/content/87f1739-image.webp)
 
 Now run the following command to see it on the browser:
 
@@ -78,7 +78,7 @@ gcloud app browse
 
 Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Server_ hosted on Google App Engine**:
 
-![](/img/content/7cbef58-image.png)
+![](/img/content/7cbef58-image.webp)
 
 :::tip Deployment successful 
 :::
@@ -101,33 +101,33 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 Be aware that this process **could resort to expenses** as **Elastic Beanstalk** is not part of [AWS Free Tier](https://aws.amazon.com/es/free/).
 :::
 
-[Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-public-bucket.s3.amazonaws.com/parse-server-migration-build.zip)
+[Click here to deploy automatically](https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=demo-parse-server-migration&platform=Node.js&tierName=WebServer&environmentType=SingleInstance&sourceBundleUrl=https://moralis-s3-bucket.s3.eu-west-1.amazonaws.com/parse-server-migration.zip)
 
  And follow the **instructions below**:
 
 Scroll down leaving all the other settings as default and choose _**Upload your code**_:
 
-![](/img/content/31905da-image.png)
+![](/img/content/31905da-image.webp)
 
 _**Public S3 URL**_ should be automatically selected and filled. Make sure it is so and choose _**Review and launch**_:
 
-![](/img/content/3c4f4f6-image.png)
+![](/img/content/3c4f4f6-image.webp)
 
 Scroll down leaving all the settings as default and choose _**Create app**_:
 
-![](/img/content/a2a6af9-image.png)
+![](/img/content/a2a6af9-image.webp)
 
 After a couple minutes the application is created but the environment is **not ready** because you need to **set your environment variables**:
 
-![](/img/content/2d9a5c2-image.png)
+![](/img/content/2d9a5c2-image.webp)
 
 In the left navigation pane, go to **_Configuration_** and at the row where we find _Environment properties_, choose _**Edit**_:
 
-![](/img/content/a2e78d0-image.png)
+![](/img/content/a2e78d0-image.webp)
 
 Paste the environment variables retrieved on the [previous steps](https://docs.moralis.io/docs/run-parse-server-locally#setup-your-project) to the corresponding fields (marked in green) and choose _**Apply**_:
 
-![](/img/content/b8e3def-image.png)
+![](/img/content/b8e3def-image.webp)
 
 :::info
 This [video](https://youtu.be/9GtysZs-FrA?t=147) also shows you how to get the **environment variables**.
@@ -135,15 +135,15 @@ This [video](https://youtu.be/9GtysZs-FrA?t=147) also shows you how to get the *
 
 Elastic Beanstalk will update your environment and after a couple of minutes it will be ready:
 
-![](/img/content/00d25ea-image.png)
+![](/img/content/00d25ea-image.webp)
 
 In the left navigation pane, choose **_Go to environment_** to test it:
 
-![](/img/content/42e04c4-image.png)
+![](/img/content/42e04c4-image.webp)
 
 Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Server_ hosted on AWS Elastic Beanstalk**:
 
-![](/img/content/d4ef788-image.png)
+![](/img/content/d4ef788-image.webp)
 
 :::tip Deployment successful! 
 :::
@@ -160,13 +160,13 @@ Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Serve
 
 Open the [Amazon ECR console](https://console.aws.amazon.com/ecr/) and choose _**Get Started**_ Create repo. Name it **`parse-server-moralis-repo`**:
 
-![](/img/content/b368934-image.png)
+![](/img/content/b368934-image.webp)
 
 Leave everything else as it is and choose _**Create repository**_.
 
 Copy and save the _Repository name_ and the _URI_ as you'll need them in the next step:
 
-![](/img/content/17b0fd0-image.png)
+![](/img/content/17b0fd0-image.webp)
 
 :::tip **ECR repository created!**
 :::
@@ -179,33 +179,33 @@ Copy and save the _Repository name_ and the _URI_ as you'll need them in the nex
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Task Definitions_** and **_Create new task definition_**:
 
-![](/img/content/0bb5259-image.png)
+![](/img/content/0bb5259-image.webp)
 
 On the _Select compatibilities_ page, select **_EC2_** and choose _**Next step**_:
 
-![](/img/content/25f9568-image.png)
+![](/img/content/25f9568-image.webp)
 
 Name your task **`parse-server-moralis-task`**:
 
-![](/img/content/60e8d1b-image.png)
+![](/img/content/60e8d1b-image.webp)
 
 On the _Container definitions_ section, click on **_Add container_**:
 
-![](/img/content/aed6e67-image.png)
+![](/img/content/aed6e67-image.webp)
 
 Fill the **_Container name_** and the **_Image_** with the _Repository name_ and the _URI_ that you copied from the [created ECR repository](https://docs.moralis.io/docs/deploy-to-production#create-ecr-repository):
 
-![](/img/content/9f90980-image.png)
+![](/img/content/9f90980-image.webp)
 
 Set **_Memory Limits_** to **`500`** and **_Port mappings_** to **`80:80`**:
 
-![](/img/content/2c27f99-image.png)
+![](/img/content/2c27f99-image.webp)
 
 Leave all the other settings as default and choose _**Add**_.
 
 With the container added, scroll down and choose _**Create**_. You should see the task definition created:
 
-![](/img/content/4ca8475-image.png)
+![](/img/content/4ca8475-image.webp)
 
 :::tip **Task definition created!**
 :::
@@ -218,19 +218,19 @@ With the container added, scroll down and choose _**Create**_. You should see th
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Clusters_** and **_Create Cluster_**:
 
-![](/img/content/8cabb5b-image.png)
+![](/img/content/8cabb5b-image.webp)
 
 For _Select cluster compatibility_, choose **_EC2 Linux + Networking_** and then choose **_Next Step_**:
 
-![](/img/content/dbaa74a-image.png)
+![](/img/content/dbaa74a-image.webp)
 
 On the _Configure cluster_ page, enter a **_Cluster name_**, like **`parse-server-moralis-cluster`**:
 
-![](/img/content/928c5b4-image.png)
+![](/img/content/928c5b4-image.webp)
 
 Scroll down leaving all the other settings as default and choose _**Create**_. After some seconds you should see the cluster created:
 
-![](/img/content/2100f89-image.png)
+![](/img/content/2100f89-image.webp)
 
 :::tip **Cluster created!**
 :::
@@ -243,23 +243,23 @@ Scroll down leaving all the other settings as default and choose _**Create**_. A
 
 Open the [Amazon ECS console](https://console.aws.amazon.com/ecs/). In the navigation pane, choose **_Clusters_** and select your created cluster:
 
-![](/img/content/e3b3abb-image.png)
+![](/img/content/e3b3abb-image.webp)
 
 On the _Services_ tab, choose **_Create_**:
 
-![](/img/content/9ae2ac5-image.png)
+![](/img/content/9ae2ac5-image.webp)
 
 On the _Configure service_ page, choose _**EC2**_ as _Launch type_:
 
-![](/img/content/2fc12c6-image.png)
+![](/img/content/2fc12c6-image.webp)
 
 Select the _**Task definition**_ and the _**Cluster**_ that you just created:
 
-![](/img/content/d71da48-image.png)
+![](/img/content/d71da48-image.webp)
 
 Set the _**Service name**_ as **`parse-server-moralis-service`**:
 
-![](/img/content/64deadc-image.png)
+![](/img/content/64deadc-image.webp)
 
 Set the following fields:
 
@@ -273,7 +273,7 @@ This value configuration will allow the deployment of updated containers.
 
 Scroll down leaving the other settings as default and choose **_Next step_** a couple times and then _**Create service**_. You should see the service created:
 
-![](/img/content/2e39da7-image.png)
+![](/img/content/2e39da7-image.webp)
 
 :::tip **Service created!**
 :::
@@ -305,24 +305,24 @@ Your server will re-deploy after these changes.
 1. Go to [Railway](https://railway.app/), click "Start a New Project" and choose "Deploy from GitHub repo". Connect your GitHub account.
 2. Give permission for Railway to access your self-hosted server repository and click "Deploy Now":
 
-![](/img/content/50e28a0-Railway_2.png)
+![](/img/content/50e28a0-Railway_2.webp)
 
 3. In your project's deployment page, click on the "Variables" tab and then "Raw Editor". Paste in your environment variables and click "Update Variables":
 
-![](/img/content/43d1e9d-Railway_env_a.png)
+![](/img/content/43d1e9d-Railway_env_a.webp)
 
-![](/img/content/009db76-Railway_-_env.png)
+![](/img/content/009db76-Railway_-_env.webp)
 
 4. Click on the "Settings" tab and under "Domains", click "Generate Domain". You can choose a different Railway domain or use your own custom domain:
 
-![](/img/content/de66219-Railway_3.png)
+![](/img/content/de66219-Railway_3.webp)
 
 5. Copy this domain and update your `SERVER_URL` environment variable. Your project will re-deploy:
 
-![](/img/content/2bdc4b2-Railway_4.png)
+![](/img/content/2bdc4b2-Railway_4.webp)
 
 6: After your re-deploy is successful, open your Railway project URL in your browser to test:
 
-![](/img/content/63abd77-Railway_5.png)
+![](/img/content/63abd77-Railway_5.webp)
 
 </details>

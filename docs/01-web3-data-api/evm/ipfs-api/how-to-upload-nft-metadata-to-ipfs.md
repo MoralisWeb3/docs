@@ -179,7 +179,7 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-    "path": "https://ipfs.moralis.io:2053/ipfs/QmfL6fMaYJDnizFVj4wxyutDnGMePG2JL95rN2A5mcWyB1/moralis/logo.jpg"
+    "path": "https://ipfs.moralis.io:2053/ipfs/QmfL6fMaYJDnizFVj4wxyutDnGMePG2JL95rN2A5mcWyB1/moralis/logo.webp"
   }
 ]
 ```

@@ -10,7 +10,7 @@ Before getting started, make sure you have followed this section [Run parse-serv
 
 You will set up your own dashboard to check your data synced with mongodb.
 
-![parse dashboard](/img/content/834e9ba-Screenshot_2022-11-29_at_13.58.37.jpg)
+![parse dashboard](/img/content/834e9ba-Screenshot_2022-11-29_at_13.58.37.webp)
 
 ## Install parse dashboard
 
@@ -97,9 +97,9 @@ npm run start
 
 You can access <http://localhost:1337/dashboard/> and your should see your app.
 
-![](/img/content/d03235c-image.png)
+![](/img/content/d03235c-image.webp)
 
-![](/img/content/2ecc8d4-image.png)
+![](/img/content/2ecc8d4-image.webp)
 
 ## Secure access
 
@@ -148,4 +148,4 @@ npm run start
 
 Now head over <http://localhost:1337/dashboard/> and you should be asked to login.
 
-![](/img/content/6f65c0b-image.png)
+![](/img/content/6f65c0b-image.webp)

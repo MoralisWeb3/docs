@@ -9,9 +9,9 @@ In this tutorial, we show you how to create a full-stack Django app that allows 
 
 You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/django_moralis_auth>.
 
-![Asking the User to Log In Using Their Wallet](/img/content/11b4975-91a339b-auth_login_django.png)
+![Asking the User to Log In Using Their Wallet](/img/content/11b4975-91a339b-auth_login_django.webp)
 
-![Data That's Visible Once the User Logs In](/img/content/d6a5405-Screenshot_2022-08-15_at_08.04.16.png)
+![Data That's Visible Once the User Logs In](/img/content/d6a5405-Screenshot_2022-08-15_at_08.04.16.webp)
 
 ## Prerequisites
 
@@ -346,14 +346,14 @@ Here we have a view for the main authentication: `moralis_auth`; one view to dis
 
 After the application starts, this is how it should look when you access [`http://127.0.0.1:1000/web3_auth/moralis_auth`](http://127.0.0.1:1000/web3_auth/moralis_auth):
 
-![Login Page](/img/content/91a339b-auth_login_django.png)
+![Login Page](/img/content/91a339b-auth_login_django.webp)
 
 This will show when clicking on the above "login" button: 
 
-![MetaMask Prompt](/img/content/90e05c6-login_sign_message.png)
+![MetaMask Prompt](/img/content/90e05c6-login_sign_message.webp)
 
 After the message is signed and the authentication is successful, you can see the complete profile page:
 
-![](/img/content/0a87357-profile_info_1.png)
+![](/img/content/0a87357-profile_info_1.webp)
 
-![User Profile Page](/img/content/03f26e6-profile_info_3.png)
+![User Profile Page](/img/content/03f26e6-profile_info_3.webp)
