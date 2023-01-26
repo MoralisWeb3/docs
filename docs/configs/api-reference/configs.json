@@ -3536,7 +3536,7 @@
     },
     "syncNFTContract": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Resync NFT Contract",
+      "summary": "Sync NFT Contract",
       "description": "Initiates a sync of a previously non synced contract.",
       "method": "PUT",
       "path": "/nft/:address/sync",
