@@ -3,7 +3,7 @@
 When setting up an Aptos stream, the webhooks sent to your specified webhookUrl will contain the following data:
 
 `coinTransfers`: an array of coin transfers that occurred in the stream. Each object in the array will have the following properties:
- - `coin`: an object containing information about the coin being transferred, such as its `name`, `decimals`, `symbol`, and `supply`.
+ - `coin`: an object containing information about the coin being transferred, such as its `name`, `decimals`, and `symbol`.
  - `to`: the address of the recipient of the coin transfer.
  - `value`: the amount of coins transferred.
  - `from`: the address of the sender of the coin transfer.

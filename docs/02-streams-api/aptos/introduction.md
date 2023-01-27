@@ -4,7 +4,7 @@ The Moralis Aptos Streams API allows you to receive real-time webhooks containin
 
 # Setting up an Aptos Stream
 
-To set up a stream, you will need to make a `POST` request to the `/streams/aptos` endpoint with the following options in the request body:
+To set up a stream, you will need to make a `PUT` request to the `/streams/aptos` endpoint with the following options in the request body:
 
 `network` (required): An array containing one or more of the following values: `mainnet`, `testnet`, or `devnet`.
 
@@ -12,7 +12,7 @@ To set up a stream, you will need to make a `POST` request to the `/streams/apto
 
 `webhookUrl` (required): The URL that the webhooks should be sent to.
 
-`allAddresses` (optional): A boolean value indicating whether to listen to all addresses or not.
+`allAddresses` (optional): A boolean value indicating whether to listen to all addresses or not. If set to `true`, you must specify at least one event or function to listen to. This feature is only available on paid plans.
 
 `demo` (optional): A boolean value indicating whether to send the webhook to the specified webhookUrl or to the Moralis admin panel.
 
@@ -36,22 +36,22 @@ Note:
 
 Events and functions must be in the following format:
 
-`validAddress::module::eventOrFunction`
+`addressOrFramework::module::eventOrFunction`
 
 
 ## Example
 
-This stream 
+This stream will listen to all addresses that are involved in a transaction(s) that emit `0x1::coin::WithdrawEvent` or `0x1::coin::DepositEvent` and send the webhook to the specified webhookUrl.
 
 ```json
 {
-  "allAddresses": false,
+  "allAddresses": true,
   "network": ["mainnet"],
   "tag": "my-stream",
   "webhookUrl": "https://webhook.site/5f7b1b7b-7b1b-7b1b-7b1b-7b1b7b1b7b1b",
   "demo": false,
   "description": "my first aptos stream",
-  "events": [],
+  "events": ["0x1::coin::WithdrawEvent", "0x1::coin::DepositEvent"],
   "functions": [],
   "includeChanges": true,
   "includeEvents": true,
