@@ -61,7 +61,7 @@ This stream will listen to all addresses that are involved in a transaction(s) t
 }
 ```
 
-If you do not want to listen to allAddresses that emit specific events or call specific functions, you can attach addresses to the stream instead. When attaching addresses instead of listening to all addresses, you are not forced to specify events or functions. Read more about attaching addresses to a stream [here](/docs/02-streams-api/aptos/add-address-to-stream).
+If you do not want to listen to allAddresses that emit specific events or call specific functions, you can attach addresses to the stream instead. When attaching addresses instead of listening to all addresses, you are not forced to specify events or functions. Read more about attaching addresses to a stream [here](/streams-api/aptos/tutorials/add-address-to-stream).
 
 
 
