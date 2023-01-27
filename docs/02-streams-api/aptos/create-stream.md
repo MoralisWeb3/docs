@@ -28,6 +28,12 @@ Note:
 - If `allAddresses` is set to `true`, you must specify at least one event or function to listen to. This will override addresses that you may have attached to the stream.
 - at least one of `includeChanges`, `includeEvents`, or `includePayload` must be set to true.
 
+## Filter Event and Functions
+
+The APTOS streams API allows you to filter the data you receive by specifying events and functions. When you create or update a stream, you can specify a list of events or functions that you are interested in. If you don't specify any events or functions, you will receive all transactions where the attached address is involved.
+
+As mentioned earlier if you listen to `allAddresses` you must specify at least one event or function to listen to.
+
 ## Event and Function Format
 
 Events and functions must be in the following format:
