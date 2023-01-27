@@ -28,7 +28,7 @@ description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 
 - [Get NFT collections by wallet](/web3-data-api/reference/get-wallet-nft-collections)
 - [Get NFT collection metadata](/web3-data-api/reference/get-nft-contract-metadata)
-- [Resync NFT Contract](/web3-data-api/reference/sync-nft-contract)
+- [Sync NFT Contract](/web3-data-api/reference/sync-nft-contract)
 
 #### Get NFT Owners
 

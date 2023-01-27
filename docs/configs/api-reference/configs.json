@@ -81,12 +81,12 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -124,8 +124,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -408,9 +408,9 @@
           },
           {
             "name": "normalizeMetadata",
-            "type": "boolean",
-            "description": "Should normalized metadata be returned?",
-            "example": false
+            "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+            "required": false,
+            "type": "boolean"
           }
         ]
       },
@@ -703,7 +703,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -734,8 +734,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -929,7 +929,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -966,8 +966,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1101,12 +1101,12 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -1138,8 +1138,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1410,12 +1410,12 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -1453,8 +1453,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1745,7 +1745,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -1776,8 +1776,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1995,7 +1995,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (for getting the next page)\n",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -2026,8 +2026,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -2221,7 +2221,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -2252,8 +2252,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -2466,8 +2466,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -2775,7 +2774,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -3057,7 +3056,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -3088,8 +3087,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -3297,12 +3296,12 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -3340,8 +3339,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -3536,7 +3535,7 @@
     },
     "syncNFTContract": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Resync NFT Contract",
+      "summary": "Sync NFT Contract",
       "description": "Initiates a sync of a previously non synced contract.",
       "method": "PUT",
       "path": "/nft/:address/sync",
@@ -3999,8 +3998,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -4499,7 +4497,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -4961,7 +4959,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -5415,7 +5413,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -5661,7 +5659,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -6217,7 +6215,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -6248,8 +6246,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
