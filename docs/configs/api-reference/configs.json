@@ -86,7 +86,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -408,9 +408,9 @@
           },
           {
             "name": "normalizeMetadata",
-            "type": "boolean",
-            "description": "Should normalized metadata be returned?",
-            "example": false
+            "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+            "required": false,
+            "type": "boolean"
           }
         ]
       },
@@ -1106,7 +1106,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -1415,7 +1415,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -2774,7 +2774,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
@@ -3301,7 +3301,7 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
         }
