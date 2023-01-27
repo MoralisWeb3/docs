@@ -37,3 +37,11 @@ If the request is successful, the API will return the streamId and the address(e
 }
 ```
 
+## Via Admin Panel
+
+1. You must have an existing APTOS stream. If you do not have one, you can create one by following this tutorial [here](/streams-api/aptos/tutorials/create-stream#via-admin-panel)
+
+2. Enter a new aptos address in the input. For eg: `0x867ed1f6bf916171b1de3ee92849b8978b7d1b9e0a8cc982a3d19d535dfd9c0c` and click on `Add new address` button.
+![](/img/content/streams-aptos-add-address-1.webp)
+![](/img/content/streams-aptos-add-address-2.webp)
+
