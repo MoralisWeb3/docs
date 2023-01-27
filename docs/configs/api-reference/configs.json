@@ -81,7 +81,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -124,8 +124,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -703,7 +703,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -734,8 +734,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -929,7 +929,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -966,8 +966,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1101,7 +1101,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -1138,8 +1138,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1410,7 +1410,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -1453,8 +1453,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1745,7 +1745,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -1776,8 +1776,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -1995,7 +1995,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (for getting the next page)\n",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -2026,8 +2026,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -2221,7 +2221,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -2252,8 +2252,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -2466,8 +2466,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -3057,7 +3056,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -3088,8 +3087,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -3297,7 +3296,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -3340,8 +3339,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
@@ -3999,8 +3998,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -4499,7 +4497,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -4961,7 +4959,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -5415,7 +5413,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -5661,7 +5659,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         },
         {
@@ -6217,7 +6215,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
           "type": "string"
         }
       ],
@@ -6248,8 +6246,8 @@
               },
               {
                 "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "type": "string"
               },
               {
                 "name": "result",
