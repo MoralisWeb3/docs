@@ -6,7 +6,7 @@ robots: noindex, nofollow
 ---
 
 <head>
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex"/>
 </head>
 
 :::caution Deprecated
