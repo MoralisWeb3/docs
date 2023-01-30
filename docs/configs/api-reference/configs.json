@@ -3675,14 +3675,18 @@
           "description": "The type of resync to operate",
           "required": false,
           "example": "uri",
-          "type": "string"
+          "default": "uri",
+          "type": "string",
+          "enum": ["uri", "metadata"]
         },
         {
           "name": "mode",
           "description": "To define the behaviour of the endpoint",
           "required": false,
           "example": "sync",
-          "type": "string"
+          "default": "async",
+          "type": "string",
+          "enum": ["sync", "async"]
         }
       ],
       "responses": [
