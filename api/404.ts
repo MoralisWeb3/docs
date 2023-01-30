@@ -1,4 +1,3 @@
-import path from "path";
 import { readFileSync } from "fs";
 import { redirects } from "./data/redirects";
 
@@ -21,8 +20,7 @@ module.exports = async (req, res) => {
   } else {
     // If req.url not found show 404 page
     // Read the 404.html file from root
-    const file = path.join(process.cwd(), '.', '404.html');
-    const fileContents  = readFileSync(file, 'utf8');
+    const fileContents  = readFileSync('404.html', 'utf8');
     res.statusCode = 404;
     return res.end(fileContents);
   }
