@@ -5197,4 +5197,247 @@ export const redirects = [
     destination: "/web3-data-api/reference/get-wallet-transactions",
     permanent: true,
   },
+  {
+    source: "/docs/how-to-get-the-nfts-owner-by-an-address",
+    destination: "/web3-data-api/evm/how-to-get-nft-owners-by-an-address",
+    permanent: true,
+  },
+  {
+    source: "/docs/nodejs-demos",
+    destination: "https://moralisweb3.github.io/Moralis-JS-SDK/demos/cli",
+    permanent: true,
+  },
+  {
+    source: "/docs/resolve-api-examples",
+    destination: "/web3-data-api/evm/resolve-api",
+    permanent: true,
+  },
+  {
+    source: "/docs/solana-api-examples",
+    destination: "/web3-data-api/solana",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/connect-the-sdk/connect-with-js",
+    destination: "/web3-data-api/quickstart-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/database",
+    destination: "https://v1docs.moralis.io/moralis-dapp/database",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/sending-assets/transfer-assets-unity",
+    destination:
+      "https://v1docs.moralis.io/moralis-dapp/sending-assets/transfer-assets-unity",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/sending-assets/transfer-nfts",
+    destination:
+      "https://v1docs.moralis.io/moralis-dapp/sending-assets/transfer-nfts",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/users/auth-api/step-by-step-guide",
+    destination: "/authentication-api/tutorials",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/users/web3-login/phantom-solana",
+    destination:
+      "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+    permanent: true,
+  },
+  {
+    source: "/moralis-dapp/web3-api/defi-new",
+    destination: "/web3-data-api/evm/defi-api",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/demos/moralis-stream",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/demos/moralis-stream",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/demos/moralis-stream/",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/demos/moralis-stream",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20token",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/erc20token",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmevent",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmevent",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnative",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnative",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatainput",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-evm-utils/evmnftmetadatainput",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-sol-utils/commonsolutils/",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/commonsolutils",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/common-sol-utils/soladdress",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/common-sol-utils/soladdress",
+    permanent: true,
+  },
+  {
+    source: "/Moralis-JS-SDK/moralisweb3/evm-api/evmapi",
+    destination:
+      "https://moralisweb3.github.io/Moralis-JS-SDK/moralisweb3/evm-api/evmapi",
+    permanent: true,
+  },
+  {
+    source: "/reference/endpoints-4",
+    destination: "/web3-data-api/reference/endpoint-weights",
+    permanent: true,
+  },
+  {
+    source: "/reference/getcontractnfttransfers-1",
+    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    permanent: true,
+  },
+  {
+    source: "/reference/getmultiplenftsCheck",
+    destination: "/web3-data-api/reference/get-multiple-nfts",
+    permanent: true,
+  },
+  {
+    source: "/reference/getnfts-1",
+    destination: "/web3-data-api/reference/get-wallet-nfts",
+    permanent: true,
+  },
+  {
+    source: "/reference/getnfttokenidowners-1",
+    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    permanent: true,
+  },
+  {
+    source: "/reference/getnfttransfers-2",
+    destination: "/web3-data-api/reference/get-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/reference/getwallettokenidtransfers-1",
+    destination: "/web3-data-api/reference/get-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/reference/history",
+    destination: "/streams-api/reference/get-history",
+    permanent: true,
+  },
+  {
+    source: "/reference/info",
+    destination: "/web3-data-api/reference/endpoint-weights",
+    permanent: true,
+  },
+  {
+    source: "/reference/ipfs",
+    destination: "/web3-data-api/reference/upload-folder",
+    permanent: true,
+  },
+  {
+    source: "/reference/nft-endpoints-1",
+    destination: "/web3-data-api/reference/get-multiple-nfts",
+    permanent: true,
+  },
+  {
+    source: "/reference/nft-metadata",
+    destination: "/web3-data-api/reference/get-nft-metadata",
+    permanent: true,
+  },
+  {
+    source: "/tools/moralis-admin-cli",
+    destination:
+      "https://v1docs.moralis.io/moralis-dapp/tools/moralis-admin-cli",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-all-token-ids",
+    destination: "/web3-data-api/reference/get-contract-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-contract-nft-transfers",
+    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-logs-by-address",
+    destination: "/web3-data-api/reference/get-contract-logs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts",
+    destination: "/web3-data-api/reference/get-wallet-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-for-contract",
+    destination: "/web3-data-api/reference/get-contract-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-address-transfers",
+    destination: "/web3-data-api/reference/get-wallet-token-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-balances",
+    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-id-metadata",
+    destination: "/web3-data-api/reference/get-nft-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-id-owners",
+    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-transactions-verbose",
+    destination: "/web3-data-api/reference/get-wallet-transactions-verbose",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-token-id-transfers",
+    destination: "/web3-data-api/reference/get-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/re-sync-metadata",
+    destination: "/web3-data-api/reference/resync-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/upload-i-p-f-s-folder",
+    destination: "/web3-data-api/reference/upload-folder",
+    permanent: true,
+  },
 ];
