@@ -5342,7 +5342,7 @@
     "getWalletTransactions": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get native transactions by wallet",
-      "description": "Get native transactions ordered by block number in descending order.",
+      "description": "Get all transactions executed by certain address ordered by block number in descending order. If you are trying to get the list of all transfers, check out our transfers API for [ERC20 token](/web3-data-api/reference/get-wallet-token-transfers) and [NFT](/web3-data-api/reference/get-wallet-nft-transfers).",
       "method": "GET",
       "path": "/:address",
       "pathParams": [
