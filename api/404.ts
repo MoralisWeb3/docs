@@ -1,5 +1,5 @@
 import path from "path";
-import { promises as fs } from "fs";
+import { readFileSync } from "fs";
 import { redirects } from "./data/redirects";
 
 module.exports = async (req, res) => {
@@ -20,11 +20,10 @@ module.exports = async (req, res) => {
     return res.end();
   } else {
     // If req.url not found show 404 page
-    // Find the absolute path of the 404.html file
-    const filePath = path.join(process.cwd(), '/404.html');
-    // Read the file
-    const fileContents = await fs.readFile(filePath, 'utf8');
+    // Read the 404.html file
+    const file = path.join(process.cwd(),'404.html');
+    const stringified = readFileSync(file, 'utf8');
     res.statusCode = 404;
-    return res.end(fileContents);
+    return res.end(stringified);
   }
 };
