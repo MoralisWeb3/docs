@@ -5,6 +5,10 @@ description: "This tutorial will teach you how to set up a server-side dapp to q
 robots: noindex, nofollow
 ---
 
+<head>
+  <meta name="robots" content="noindex">
+</head>
+
 :::caution Deprecated
 
 This quickstart guide is currently deprecated.
