@@ -1,10 +1,5 @@
 {
   "rewrites": [
     { "source": "/:path*", "destination": "/api/404" }
-  ],
-  "functions": {
-    "api/404.ts": {
-      "includeFiles": "404.html"
-    }
-  }
+  ]
 }

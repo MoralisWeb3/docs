@@ -1,5 +1,4 @@
-import path from "path";
-import { readFileSync } from "fs";
+import fetch from "node-fetch";
 import { redirects } from "./data/redirects";
 
 module.exports = async (req, res) => {
@@ -20,12 +19,9 @@ module.exports = async (req, res) => {
     return res.end();
   } else {
     // If req.url not found show 404 page
-    // Read the 404.html file from root   
-    const fileContents = readFileSync(
-      path.resolve(process.cwd(), '404.html'),
-      { encoding: 'utf-8' }
-    )
+    // Get the 404.html file
+    const response = await fetch(process.env.VERCEL_URL + "/404.html", { method: "GET" });
     res.statusCode = 404;
-    return res.end(fileContents);
+    return res.end(response);
   }
 };
