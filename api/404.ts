@@ -20,10 +20,10 @@ module.exports = async (req, res) => {
     return res.end();
   } else {
     // If req.url not found show 404 page
-    // Read the 404.html file
-    const file = path.join(process.cwd(),'404.html');
-    const stringified = readFileSync(file, 'utf8');
+    // Read the 404.html file from root
+    const file = path.join(process.cwd(), '.', '404.html');
+    const fileContents  = readFileSync(file, 'utf8');
     res.statusCode = 404;
-    return res.end(stringified);
+    return res.end(fileContents);
   }
 };
