@@ -1,4 +1,4 @@
-export let redirects = [
+export const redirects = [
     { "source": "/undefined", "destination": "/", "permanent": true },
     {
       "source": "/docs/sign-in-with-web3authio",

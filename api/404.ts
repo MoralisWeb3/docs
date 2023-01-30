@@ -1,9 +1,12 @@
+import url from 'url';
 import fetch from "node-fetch";
 import { redirects } from "./data/redirects";
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-module.exports = async (req, res) => {
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
+
   const foundRedirect = redirects.find(
-    (redirect) => redirect.source === req.url
+    (redirect) => redirect.source === url.parse(req.url!).pathname
   );
 
   if (foundRedirect) {
@@ -25,6 +28,8 @@ module.exports = async (req, res) => {
     );
     const body = await response.text();
     res.statusCode = 404;
+    // Caching headers
+    res.setHeader("Cache-control", "s-maxage=600");
     return res.end(body);
   }
 };
