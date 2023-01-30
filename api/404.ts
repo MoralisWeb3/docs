@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
   } else {
     // If req.url not found show 404 page
     // Get the 404.html file
-    const response = await fetch(process.env.VERCEL_URL + "/404.html", { method: "GET" });
+    const response = await fetch("https://" + process.env.VERCEL_URL + "/404.html", { method: "GET" });
     res.statusCode = 404;
     return res.end(response);
   }
