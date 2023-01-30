@@ -4,6 +4,16 @@ slug: "../how-to-sign-in-with-metamask-csharp-dot-net"
 description: "This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session."
 ---
 
+<head>
+  <meta name="robots" content="noindex"/>
+</head>
+
+:::caution Deprecated
+
+This guide is currently deprecated.
+
+:::
+
 This guide illustrates how to implement a full-stack .NET application where users can log in with their wallets and establish a web session.
 
 ## Prerequisites
