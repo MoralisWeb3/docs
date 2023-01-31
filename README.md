@@ -1,25 +1,29 @@
-# Website
+# Moralis Documentation
+
+![GitHub deployments](https://img.shields.io/github/deployments/MoralisWeb3/docs/production?label=vercel&logo=vercel&logoColor=white)
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
-```
-$ npm i
+```sh
+npm i
 ```
 
 ### Local Development
 
-```
-$ npm start
+To start a local development server, run the following command.
+
+```sh
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command opens up a browser window and most changes are reflected live without having to restart the server.
 
 ### Build
 
-```
-$ npm build
+```sh
+npm build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
