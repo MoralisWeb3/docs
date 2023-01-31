@@ -17,7 +17,7 @@
   <p>
   </p>
   <p>
-    The official repository of [Moralis Documentation](https://docs.moralis.io).
+    The official repository of <a href="https://docs.moralis.io">Moralis Documentation</a>.
   </p>
   <br/>
 </div>
