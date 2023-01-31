@@ -10,7 +10,7 @@ description: "This tutorial will teach you how to set up a server-side dapp to q
 
 :::caution Deprecated
 
-This quickstart guide is currently deprecated.
+This quickstart guide is deprecated.
 
 :::
 

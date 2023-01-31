@@ -10,7 +10,7 @@ description: "This guide illustrates how to implement a full-stack .NET applicat
 
 :::caution Deprecated
 
-This guide is currently deprecated.
+This guide is deprecated.
 
 :::
 
