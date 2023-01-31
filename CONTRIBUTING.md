@@ -1,41 +1,31 @@
 # Contributing to Moralis Documentations
 
-We welcome contributions from everyone. Here's how you can help.
+## Code of Conduct
 
-## Reporting Bugs
+Please note that this project is governed by a [Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.
 
-Before creating a bug report, please check if a similar issue already exists.
+## Submitting Pull Requests
 
-When creating a bug report, please provide the following information:
+Guidelines for submitting pull requests, such as:
 
-- A clear and descriptive title
-- Steps to reproduce the issue
-- Expected behavior
-- Actual behavior
-- Screenshots or a screen recording, if possible
-- Your environment (e.g. operating system, browser version)
+- Use descriptive commit messages
+- Follow the project's coding style and standards
+- Include documentation for new features or changes
+- Squash commits into a single commit
 
-## Suggesting Features
+## Asking for Help
 
-Before creating a feature request, please check if a similar request already exists.
+Instructions for asking for help, such as:
 
-When creating a feature request, please provide the following information:
+- Use the [issue](https://github.com/MoralisWeb3/docs/issues) tracker
+- Join [Moralis Discord Server](https://moralis.io/discord)
 
-- A clear and descriptive title
-- A clear and detailed description of the desired feature
-- Use cases for the feature
-- If applicable, visual representations of the feature (e.g. sketches, mockups)
+## Highlighted Contributions
 
-## Pull Requests
+List of contributions that are most needed or valued, such as:
 
-Before submitting a pull request, please make sure to:
-
-- Fork the repository
-- Create a new branch for your changes
-- Make sure your changes follow the project's coding style and standards
-- Run the test suite and make sure all tests pass
-- Squash your commits into a single commit with a clear and descriptive message
-
-We will review your pull request and provide feedback as soon as possible.
+- Bug fixes
+- Documentation improvements
+- Feature implementations
 
 Thank you for your contribution!
