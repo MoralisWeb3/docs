@@ -12,6 +12,19 @@ A new flag called `disable_total` exists on the below endpoints which defaults t
 ### Planned Change
 From **February 1st 2023** the default value of `disable_total` will be set to `true`, and unless you specify `disable_total=false`, the `total` value will be returned as `null`.
 
+### Example
+Let's say you called the API using a request URL like this:
+`https://deep-index.moralis.io/api/v2/${address}?chain=eth`
+
+Notice that this request URL does not explicitly provide any parameter for `disable_total`
+
+Up until Feb 1st, this request automatically defaults `disable_total` to `false` meaning you get the `total` count value in the reponse.
+
+As from Feb 1st, this flag will default to `true` and the `total` response will return as `null`.
+
+If you rely on a `total` count value, you will need to explicitly set the `disable_total` flag in your request to `false`:
+`https://deep-index.moralis.io/api/v2/0x0a46413965858A6AC4ED5184d7643DC055A4feA3?chain=eth&disable_total=false`
+
 ### Endpoints
 
 - [Get NFTs by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts)
