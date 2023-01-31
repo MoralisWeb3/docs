@@ -38,8 +38,6 @@ const ComputeUnitsTable = (): JSX.Element => {
     fetchComputeUnits();
   }, []);
 
-  console.log(endpoints);
-
   return (
     <table style={{ textAlign: "center" }}>
       <thead>

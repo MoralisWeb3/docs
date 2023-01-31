@@ -13,11 +13,16 @@ This allows you to get cheaper requests for most use cases while protecting our 
 
 ## What is a Compute Unit (CU)?
 
-A compute unit is a measure of the requests needed to query computationally expensive API endpoints. Each request has both **price** and **rate limit cost** that are measured in terms of compute units.
+A compute unit is a measure of the requests needed to query computationally expensive API endpoints. Each request has both **price** and **rate limit cost** that are measured in terms of compute units. It is also important to note that some API will have dynamic pricing that will cost more CU the more inputs you add for the request.
 
 ### Price
 
 Request price refers to the amount of compute units that will be calculated towards your API usage billing.
+
+#### Dynamic Prices
+
+Some endpoints have a dynamically priced CU cost based on the number of resources being requested. The more resources being requested, the higher the CU cost for that particular request.
+Taking [getNativeBalancesForAddresses](/web3-data-api/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 1 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 5 CU.
 
 ### Rate limit Cost
 
