@@ -3675,14 +3675,18 @@
           "description": "The type of resync to operate",
           "required": false,
           "example": "uri",
-          "type": "string"
+          "default": "uri",
+          "type": "string",
+          "enum": ["uri", "metadata"]
         },
         {
           "name": "mode",
           "description": "To define the behaviour of the endpoint",
           "required": false,
           "example": "sync",
-          "type": "string"
+          "default": "async",
+          "type": "string",
+          "enum": ["sync", "async"]
         }
       ],
       "responses": [
@@ -5338,7 +5342,7 @@
     "getWalletTransactions": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get native transactions by wallet",
-      "description": "Get native transactions ordered by block number in descending order.",
+      "description": "Get all transactions executed by certain address ordered by block number in descending order. If you are trying to get the list of all transfers, check out our transfers API for [ERC20 token](/web3-data-api/reference/get-wallet-token-transfers) and [NFT](/web3-data-api/reference/get-wallet-nft-transfers).",
       "method": "GET",
       "path": "/:address",
       "pathParams": [
@@ -9772,7 +9776,7 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const webhookUrl = \"https://example.webhook\";\n\n  const description = \"This is your webhook description\";\n\n  const tag = \"Webhook Tag\";\n\n  const { result } = await Moralis.Streams.add({\n    webhookUrl,\n    description,\n    tag,\n  });\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {

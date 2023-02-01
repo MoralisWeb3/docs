@@ -6,6 +6,7 @@ interface EndpointWeightResponse {
   path: string;
   price: number;
   rateLimitCost: number;
+  dynamic?: boolean;
 }
 
 const ComputeUnitsTable = (): JSX.Element => {
@@ -38,18 +39,22 @@ const ComputeUnitsTable = (): JSX.Element => {
   }, []);
 
   return (
-    <table>
+    <table style={{ textAlign: "center" }}>
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Path</td>
-          <td>Price</td>
-          <td>Rate Limit Cost</td>
+          <td rowSpan={2}>Name</td>
+          <td rowSpan={2}>Path</td>
+          <td colSpan={2}>Price</td>
+          <td rowSpan={2}>Rate Limit Cost</td>
+        </tr>
+        <tr>
+          <td>Base</td>
+          <td>Additional</td>
         </tr>
       </thead>
       <tbody>
         {endpoints?.map((e, index) => {
-          const { endpoint, path, price, rateLimitCost } = e ?? {};
+          const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
           return (
             <tr key={`${endpoint}-${index}`}>
               <td>
@@ -63,6 +68,11 @@ const ComputeUnitsTable = (): JSX.Element => {
               </td>
               <td>{path}</td>
               <td>{price}</td>
+              <td>
+                {dynamic
+                  ? `+${price} CU${price > 1 ? "s" : ""} per wallet addresses`
+                  : 0}
+              </td>
               <td>{rateLimitCost}</td>
             </tr>
           );
