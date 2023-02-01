@@ -8052,6 +8052,235 @@
           "code": "from moralis import auth\n\napi_key = \"YOUR_API_KEY\"\nbody = {\n    \"message\": \"defi.finance wants you to sign in with your Solana account:<br/>26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo<br/><br/>I am a third party API<br/><br/>URI: http://defi.finance<br/>Version: 1<br/>Network: mainnet<br/>Nonce: PYxxb9msdjVXsMQ9x<br/>Issued At: 2022-08-25T11:02:34.097Z<br/>Expiration Time: 2022-08-25T11:12:38.243Z<br/>Resources:<br/>- https://docs.moralis.io/\", \n    \"signature\": \"2pH9DqD5rve2qV4yBDshcAjWd2y8TqMx8BPb7f3KoNnuLEhE5JwjruYi4jaFaD4HN6wriLz2Vdr32kRBAJmHcyny\", \n}\n\nresult = auth.challenge.verify_challenge_solana(\n    api_key=api_key,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
+    },
+    "requestChallengeAptos": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Request Aptos challenge",
+      "method": "POST",
+      "path": "/challenge/request/aptos",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Request Aptos challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string",
+            "required": true,
+            "description": "RFC 4501 dns authority that is requesting the signing.",
+            "example": "defi.finance"
+          },
+          {
+            "name": "statement",
+            "type": "string",
+            "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+            "example": "Please confirm"
+          },
+          {
+            "name": "uri",
+            "type": "string",
+            "required": true,
+            "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+            "example": "https://defi.finance/"
+          },
+          {
+            "name": "expirationTime",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "notBefore",
+            "type": "string",
+            "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          {
+            "name": "resources",
+            "type": "array",
+            "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by new lines.",
+            "example": ["https://docs.moralis.io/"],
+            "field": { "type": "string" }
+          },
+          {
+            "name": "timeout",
+            "type": "number",
+            "required": true,
+            "description": "Time in seconds before the challenge is expired",
+            "example": 15
+          },
+          {
+            "name": "chainId",
+            "type": "string",
+            "required": true,
+            "description": "An identifier that distinguishes the Aptos network deployments (to prevent cross-network attacks).",
+            "example": 1
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "required": true,
+            "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+          },
+          {
+            "name": "publicKey",
+            "type": "string",
+            "required": true,
+            "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The back channel challenge containing the id to store on the api and the message to be signed by the user",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrXa"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "defi.finance wants you to sign in with your Aptos account:\n0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d\n\nPlease confirm\n\nURI: https://defi.finance/\nVersion: 1\nChain ID: 1\nNonce: DbU1DCTmdzR4lg3wi\nIssued At: 2022-06-12T12:15:31.290Z\nExpiration Time: 2020-01-01T00:00:00.000Z\nNot Before: 2020-01-01T00:00:00.000Z\nResources:\n- https://docs.moralis.io/"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "verifyChallengeAptos": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Verify Aptos challenge",
+      "method": "POST",
+      "path": "/challenge/verify/aptos",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Verify Aptos challenge message.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "message",
+            "type": "string",
+            "required": true,
+            "description": "Message that needs to be signed by the end user.",
+            "example": "defi.finance wants you to sign in with your Aptos account:\n0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d\n\n\nURI: https://defi.finance\nVersion: 1\nChain ID: 1\nNonce: Px7Nh1RPzlCLwqgOb\nIssued At: 2022-11-30T10:20:00.262Z"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "required": true,
+            "description": "EIP-191 compliant signature signed by the Aptos account address requesting authentication.",
+            "example": "0xa8f89a58bf9b433d3100f9e41ee35b5e31fb8c7cd62547acb113162ec6f2e4140207e2dfbd4e387e1801ebc7f08a9dd105ac1d22b2e2ff0df5fa8b6d9bdcfe491c"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The token to be used to call the third party API from the client",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
+                "example": "fRyt67D3eRss3RrX"
+              },
+              {
+                "name": "domain",
+                "type": "string",
+                "description": "RFC 4501 dns authority that is requesting the signing.",
+                "example": "defi.finance"
+              },
+              {
+                "name": "statement",
+                "type": "string",
+                "description": "Human-readable ASCII assertion that the user will sign, and it must not contain `\n`.",
+                "example": "Please confirm"
+              },
+              {
+                "name": "uri",
+                "type": "string",
+                "description": "RFC 3986 URI referring to the resource that is the subject of the signing (as in the __subject__ of a claim).",
+                "example": "https://defi.finance/"
+              },
+              {
+                "name": "expirationTime",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "notBefore",
+                "type": "string",
+                "description": "ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.",
+                "example": "2020-01-01T00:00:00.000Z"
+              },
+              {
+                "name": "resources",
+                "type": "array",
+                "description": "List of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by `\n- `.",
+                "example": ["https://docs.moralis.io/"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "version",
+                "type": "string",
+                "description": "EIP-155 Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
+                "example": "1.0"
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "example": "0x1234567890abcdef0123456789abcdef1234567890abcdef"
+              },
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "description": "An identifier that distinguishes the Aptos network deployments (to prevent cross-network attacks).",
+                "example": 1
+              },
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+              },
+              {
+                "name": "publicKey",
+                "type": "string",
+                "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "streams": {
