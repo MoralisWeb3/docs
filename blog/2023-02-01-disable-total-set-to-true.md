@@ -1,29 +1,13 @@
 ---
-title: "[API] New disable_total flag for faster response times"
-slug: "disable-total-for-faster-response-times"
+title: "[API] Update to disable_total flag"
+slug: "disable-total-set-to-true"
 authors:
   name: Reuben Salisbury
 ---
 
-In order to vastly improve the response times on a number of endpoints (by up to x10!), we are planning to phase out support for `total` within our API responses.
+As outlined in an [earlier update](https://docs.moralis.io/changelog/disable-total-for-faster-response-times), today we've made a change to the default behaviour of `disable_total` on a number of endpoints in order to vastly improve their response times.
 
-A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag. 
-
-### Planned Change
-From **February 1st 2023** the default value of `disable_total` will be set to `true`, and unless you specify `disable_total=false`, the `total` value will be returned as `null`.
-
-### Example
-Let's say you called the API using a request URL like this:
-`https://deep-index.moralis.io/api/v2/${address}?chain=eth`
-
-Notice that this request URL does not explicitly provide any parameter for `disable_total`
-
-Up until Feb 1st, this request automatically defaults `disable_total` to `false` meaning you get the `total` count value in the reponse.
-
-As from Feb 1st, this flag will default to `true` and the `total` response will return as `null`.
-
-If you rely on a `total` count value, you will need to explicitly set the `disable_total` flag in your request to `false`:
-`https://deep-index.moralis.io/api/v2/0x0a46413965858A6AC4ED5184d7643DC055A4feA3?chain=eth&disable_total=false`
+This flag now defaults to `true` and the `total` response will be returned as `null`. Customers wanting to continue using the `total` will need to specify `disable_total=false` in their requests.
 
 ### Endpoints
 
@@ -42,5 +26,4 @@ If you rely on a `total` count value, you will need to explicitly set the `disab
 - [Get ERC20 token transfers by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-token-transfers)
 - [Get ERC20 token transfers by contract](https://docs.moralis.io/web3-data-api/reference/get-token-transfers)
 - [Get native transactions by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-transactions)
-- [Get verbose transactions by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-transactions-verbose)
 - [Get logs by contract](https://docs.moralis.io/web3-data-api/reference/get-contract-logs)
