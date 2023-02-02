@@ -5,7 +5,7 @@ authors:
   name: Reuben Salisbury
 ---
 
-As outlined in an [earlier update](https://docs.moralis.io/changelog/disable-total-for-faster-response-times), today we've made a change to how the default behaviour of `disable_total` on a number of endpoints in order to vastly improve their response times.
+As outlined in an [earlier update](https://docs.moralis.io/changelog/disable-total-for-faster-response-times), today we've made a change to the default behaviour of `disable_total` on a number of endpoints in order to vastly improve their response times.
 
 This flag now defaults to `true` and the `total` response will be returned as `null`. Customers wanting to continue using the `total` will need to specify `disable_total=false` in their requests.
 
