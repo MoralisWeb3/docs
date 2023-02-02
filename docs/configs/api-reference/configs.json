@@ -4232,7 +4232,16 @@
           "name": "exchange",
           "description": "The factory name or address of the token exchange",
           "required": false,
-          "type": "string"
+          "example": "uniswap-v2",
+          "type": "string",
+          "enum": [
+            "uniswap-v2",
+            "uniswap-v3",
+            "sushiswap-v2",
+            "pancakeswap-v1",
+            "pancakeswap-v2",
+            "quickswap"
+          ]
         },
         {
           "name": "to_block",
@@ -7482,7 +7491,15 @@
           "description": "The factory name or address of the token exchange",
           "required": true,
           "example": "uniswapv2",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "uniswapv2",
+            "uniswapv3",
+            "sushiswapv2",
+            "pancakeswapv1",
+            "pancakeswapv2",
+            "quickswap"
+          ]
         }
       ],
       "responses": [
