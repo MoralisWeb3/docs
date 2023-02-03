@@ -5,18 +5,21 @@ slug: /web3-data-api/reference/get-wallet-nft-transfers
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
 import config from "../../../../../configs/api-reference/configs.json";
 
 # Get NFT transfers by wallet
 
-:::info Non-Direct NFT Transfers
-
-This API will only index direct NFT Transfers.
-
-If the NFT transfer is indirect (passes through a smart contract, for example), then such transfers will _not_ be indexed by this API.
-
-The NFT transfer from the buyer to the seller through OpenSea Marketplace's smart contract is an example of an indirect transfer.
-
-:::
-
-<ApiReference {...config.nft.getWalletNFTTransfers} />
+<ApiReference {...config.nft.getWalletNFTTransfers}>
+  <Admonition type="info" icon="💡" title="Direct NFT Transfers">
+    <p>This API will index direct NFT Transfers.</p>
+    <p>
+      Note that this API won't index indirect NFT transfers (such as those that
+      pass through a smart contract).
+    </p>
+    <p>
+      The NFT transfer from the buyer to the seller through OpenSea
+      Marketplace's smart contract is an example of an indirect transfer.
+    </p>
+  </Admonition>
+</ApiReference>

@@ -1,4 +1,10 @@
-import React, { useState, useCallback, useMemo, useContext } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useContext,
+  Component,
+} from "react";
 import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
 import CodeBlock from "@theme/CodeBlock";
@@ -6,7 +12,10 @@ import Head from "@docusaurus/Head";
 
 import styles from "./styles.module.css";
 
-import ApiResponseField, { ApiResponse, buildResponse } from "./ApiResponseField";
+import ApiResponseField, {
+  ApiResponse,
+  buildResponse,
+} from "./ApiResponseField";
 import ApiParamField, { ApiParam, apiParamInitialValue } from "./ApiParamField";
 import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
@@ -29,6 +38,7 @@ export interface ApiReferenceProps {
   responses: ApiResponse[];
   apiHost: string;
   codeSamples?: CodeSample[];
+  children?: Component;
 }
 
 export interface FormValues {
@@ -66,7 +76,8 @@ const ApiReference = ({
   bodyParam,
   responses,
   apiHost,
-  codeSamples
+  codeSamples,
+  children,
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -127,14 +138,20 @@ const ApiReference = ({
     };
   }, [bodyParam, pathParams, queryParams]);
 
-  const onChangeToken = useCallback((event) => setToken(event.currentTarget.value), [setToken]);
+  const onChangeToken = useCallback(
+    (event) => setToken(event.currentTarget.value),
+    [setToken]
+  );
 
   return (
     <>
       <Head>
         <meta
           name="description"
-          content={makeMetaDescription({ description: description, path: path })}
+          content={makeMetaDescription({
+            description: description,
+            path: path,
+          })}
         />
       </Head>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
@@ -147,16 +164,21 @@ const ApiReference = ({
                 {path}
               </div>
 
-              {description && <div className={styles.section}>
-                <ReactMarkdown>{description}</ReactMarkdown>
-              </div>}
+              {description && (
+                <div className={styles.section}>
+                  <ReactMarkdown>{description}</ReactMarkdown>
+                </div>
+              )}
 
               {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>PATH PARAMS</div>
 
                   <div className={styles.group}>
-                    <ApiParamField param={{ type: "object", fields: pathParams }} prefix="path" />
+                    <ApiParamField
+                      param={{ type: "object", fields: pathParams }}
+                      prefix="path"
+                    />
                   </div>
                 </div>
               )}
@@ -166,7 +188,10 @@ const ApiReference = ({
                   <div className={styles.sectionTitle}>QUERY PARAMS</div>
 
                   <div className={styles.group}>
-                    <ApiParamField param={{ type: "object", fields: queryParams }} prefix="query" />
+                    <ApiParamField
+                      param={{ type: "object", fields: queryParams }}
+                      prefix="query"
+                    />
                   </div>
                 </div>
               )}
@@ -199,6 +224,7 @@ const ApiReference = ({
                   </div>
                 ))}
               </div>
+              <div className={styles.section}>{children}</div>
             </div>
 
             <div className="col col--5">
@@ -206,14 +232,24 @@ const ApiReference = ({
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
 
-                  <input value={token} onChange={onChangeToken} placeholder="YOUR_API_KEY (Optional)" className={styles.input} />
+                  <input
+                    value={token}
+                    onChange={onChangeToken}
+                    placeholder="YOUR_API_KEY (Optional)"
+                    className={styles.input}
+                  />
 
                   <ApiParamButton type="submit" disabled={loading}>
                     Try It
                   </ApiParamButton>
                 </div>
 
-                <ApiExamples method={method} apiHost={apiHost} path={path} codeSamples={codeSamples} />
+                <ApiExamples
+                  method={method}
+                  apiHost={apiHost}
+                  path={path}
+                  codeSamples={codeSamples}
+                />
 
                 <div className={styles.section}>
                   <div className={styles.inlineForm}>
@@ -245,11 +281,13 @@ const ApiReference = ({
                         ? JSON.stringify(response.body, null, 2)
                         : "Error with Test Request"
                       : responses[responseIndex].body
-                        ? stringifyJSON(
-                          deepCompact(buildResponse(responses[responseIndex].body)),
+                      ? stringifyJSON(
+                          deepCompact(
+                            buildResponse(responses[responseIndex].body)
+                          ),
                           true
                         )
-                        : "Empty"}
+                      : "Empty"}
                   </CodeBlock>
                 </div>
               </div>
