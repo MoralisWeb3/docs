@@ -11338,6 +11338,474 @@
           }
         }
       ]
+    },
+    "aptosStreamsGetAll": {
+      "apiHost": "/",
+      "summary": "Gets all aptos streams",
+      "description": "Get all aptos streams.",
+      "method": "GET",
+      "path": "/streams/aptos",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Limit response results max value 100",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for fetching next page",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "aptosStreamsCreate": {
+      "apiHost": "/",
+      "summary": "Create stream",
+      "description": "Creates a new aptos stream.",
+      "method": "PUT",
+      "path": "/streams/aptos",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a valid Aptos Stream Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "webhookUrl",
+            "type": "string",
+            "description": "Webhook URL where moralis will send the POST request."
+          },
+          {
+            "name": "tag",
+            "type": "string",
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+          },
+          {
+            "name": "functions",
+            "type": "array",
+            "description": "An Array of events in string-signature format ex: ['0x1::aptos_account::transfer']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "events",
+            "type": "array",
+            "description": "An Array of events in string-signature format ex: ['0x1::coin::WithdrawEvent']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "network",
+            "type": "array",
+            "description": "The network to listen to",
+            "field": {
+              "type": "string",
+              "enum": ["mainnet", "testnet", "devnet"]
+            }
+          },
+          {
+            "name": "includePayload",
+            "type": "boolean",
+            "description": "Include or not payload for every transaction in webhook defaults to false"
+          },
+          {
+            "name": "includeEvents",
+            "type": "boolean",
+            "description": "Include or not events in webhook defaults to false"
+          },
+          {
+            "name": "includeChanges",
+            "type": "boolean",
+            "description": "Include or not raw changes for every transaction in webhook defaults to false"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "A description for this stream"
+          },
+          {
+            "name": "demo",
+            "type": "boolean",
+            "description": "Indicator if it is a demo stream"
+          },
+          {
+            "name": "allAddresses",
+            "type": "boolean",
+            "description": "Include events for all addresses (only applied when at least one event or function is provided)"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "type": "string" },
+              { "name": "allAddresses", "type": "boolean" },
+              { "name": "demo", "type": "boolean" },
+              { "name": "description", "type": "string" },
+              { "name": "includeChanges", "type": "boolean" },
+              { "name": "includeEvents", "type": "boolean" },
+              { "name": "includePayload", "type": "boolean" },
+              { "name": "isErrorSince", "type": "string" },
+              {
+                "name": "network",
+                "type": "array",
+                "field": {
+                  "type": "string",
+                  "enum": ["mainnet", "testnet", "devnet"]
+                }
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              { "name": "statusMessage", "type": "string" },
+              {
+                "name": "events",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "functions",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              { "name": "tag", "type": "string" },
+              { "name": "webhookUrl", "type": "string" },
+              { "name": "amountOfAddresses", "type": "number" }
+            ]
+          }
+        }
+      ]
+    },
+    "aptosStreamsGet": {
+      "apiHost": "/",
+      "summary": "Get a specific aptos stream",
+      "description": "Get a specific aptos stream.",
+      "method": "GET",
+      "path": "/streams/aptos/:id",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "The id of the stream to get",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "type": "string" },
+              { "name": "allAddresses", "type": "boolean" },
+              { "name": "demo", "type": "boolean" },
+              { "name": "description", "type": "string" },
+              { "name": "includeChanges", "type": "boolean" },
+              { "name": "includeEvents", "type": "boolean" },
+              { "name": "includePayload", "type": "boolean" },
+              { "name": "isErrorSince", "type": "string" },
+              {
+                "name": "network",
+                "type": "array",
+                "field": {
+                  "type": "string",
+                  "enum": ["mainnet", "testnet", "devnet"]
+                }
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              { "name": "statusMessage", "type": "string" },
+              {
+                "name": "events",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "functions",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              { "name": "tag", "type": "string" },
+              { "name": "webhookUrl", "type": "string" },
+              { "name": "amountOfAddresses", "type": "number" }
+            ]
+          }
+        }
+      ]
+    },
+    "aptosStreamsUpdate": {
+      "apiHost": "/",
+      "summary": "Update stream",
+      "description": "Updates a new aptos stream",
+      "method": "POST",
+      "path": "/streams/aptos/:id",
+      "pathParams": [{ "name": "id", "required": true, "type": "string" }],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide valid values of a Aptos Stream Model",
+        "type": "object",
+        "fields": [
+          {
+            "name": "allAddresses",
+            "type": "boolean",
+            "description": "Include events for all addresses (only applied when at least one event or function is provided)"
+          },
+          {
+            "name": "demo",
+            "type": "boolean",
+            "description": "Indicator if it is a demo stream"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "A description for this stream"
+          },
+          {
+            "name": "includeChanges",
+            "type": "boolean",
+            "description": "Include or not raw changes for every transaction in webhook defaults to false"
+          },
+          {
+            "name": "includeEvents",
+            "type": "boolean",
+            "description": "Include or not events in webhook defaults to false"
+          },
+          {
+            "name": "includePayload",
+            "type": "boolean",
+            "description": "Include or not payload for every transaction in webhook defaults to false"
+          },
+          {
+            "name": "network",
+            "type": "array",
+            "description": "The network to listen to",
+            "field": {
+              "type": "string",
+              "enum": ["mainnet", "testnet", "devnet"]
+            }
+          },
+          {
+            "name": "events",
+            "type": "array",
+            "description": "An Array of events in string-signature format ex: ['0x1::coin::WithdrawEvent']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "functions",
+            "type": "array",
+            "description": "An Array of events in string-signature format ex: ['0x1::aptos_account::transfer']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "tag",
+            "type": "string",
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+          },
+          {
+            "name": "webhookUrl",
+            "type": "string",
+            "description": "Webhook URL where moralis will send the POST request."
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "type": "string" },
+              { "name": "allAddresses", "type": "boolean" },
+              { "name": "demo", "type": "boolean" },
+              { "name": "description", "type": "string" },
+              { "name": "includeChanges", "type": "boolean" },
+              { "name": "includeEvents", "type": "boolean" },
+              { "name": "includePayload", "type": "boolean" },
+              { "name": "isErrorSince", "type": "string" },
+              {
+                "name": "network",
+                "type": "array",
+                "field": {
+                  "type": "string",
+                  "enum": ["mainnet", "testnet", "devnet"]
+                }
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              { "name": "statusMessage", "type": "string" },
+              {
+                "name": "events",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              {
+                "name": "functions",
+                "type": "array",
+                "field": { "type": "string" }
+              },
+              { "name": "tag", "type": "string" },
+              { "name": "webhookUrl", "type": "string" },
+              { "name": "amountOfAddresses", "type": "number" }
+            ]
+          }
+        }
+      ]
+    },
+    "aptosStreamsDelete": {
+      "apiHost": "/",
+      "summary": "Delete a stream",
+      "description": "Deletes a aptos stream.",
+      "method": "DELETE",
+      "path": "/streams/aptos/:id",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "the id of the aptos stream to delete",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "aptosStreamsAddAddresses": {
+      "apiHost": "/",
+      "summary": "Add addresses to an aptos stream",
+      "description": "Adds addresses to an existing aptos stream",
+      "method": "POST",
+      "path": "/streams/aptos/:id/address",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "the id of the aptos stream to get the addresses from",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": { "required": true, "type": "json" },
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "aptosStreamsDeleteAddresses": {
+      "apiHost": "/",
+      "summary": "Delete addresses of an aptos stream",
+      "description": "Deletes addresses of an existing aptos stream",
+      "method": "DELETE",
+      "path": "/streams/aptos/:id/address",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "the id of the aptos stream to get the addresses from",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide a list of valid Aptos addresses, or a single address",
+        "type": "json"
+      },
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "aptosStreamsGetAddresses": {
+      "apiHost": "/",
+      "summary": "Get addresses by aptos stream id",
+      "description": "Get all addresses associated with a specific aptos stream.",
+      "method": "GET",
+      "path": "/streams/aptos/:id/address",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "the id of the aptos stream to get the addresses from",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Limit response results max value 100",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for fetching next page",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "aptosStreamsUpdateStatus": {
+      "apiHost": "/",
+      "summary": "Update a Stream Status",
+      "description": "Update a Stream Status",
+      "method": "POST",
+      "path": "/streams/aptos/:id/status",
+      "pathParams": [
+        {
+          "name": "id",
+          "description": "the id of the aptos stream to update the status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Provide an object with the status to update can be 'active' or 'paused'",
+        "type": "object",
+        "fields": [
+          {
+            "name": "status",
+            "type": "string",
+            "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+            "enum": ["active", "paused", "error", "terminated"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                "enum": ["active", "paused", "error", "terminated"]
+              },
+              { "name": "statusMessage", "type": "string" }
+            ]
+          }
+        }
+      ]
     }
   },
   "solana": {
