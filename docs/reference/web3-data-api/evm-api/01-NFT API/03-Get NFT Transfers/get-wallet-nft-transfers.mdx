@@ -9,4 +9,10 @@ import config from "../../../../../configs/api-reference/configs.json";
 
 # Get NFT transfers by wallet
 
+:::info Non-Direct NFT Transfers
+
+**ONLY** Direct NFT Transfers will be indexed by this API. It is important to note the NFT transfer is indirect – pass through a smart contract – then such transfers will not be indexed by this API. An example of such an indirect transfer would be the NFT transfer from the buyer to the seller through OpenSea Marketplace's smart contract.
+
+:::
+
 <ApiReference {...config.nft.getWalletNFTTransfers} />
