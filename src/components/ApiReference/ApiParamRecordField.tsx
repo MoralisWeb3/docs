@@ -1,13 +1,20 @@
 import React from "react";
 import omit from "lodash/omit";
 
-import { FieldComponentProps, apiParamInitialValue } from "../ApiReference/ApiParamField";
+import {
+  FieldComponentProps,
+  apiParamInitialValue,
+} from "../ApiReference/ApiParamField";
 import ApiParamInfo from "../ApiReference/ApiParamInfo";
 import ApiParamField from "../ApiReference/ApiParamField";
 
 import styles from "./styles.module.css";
 
-const ApiParamRecordField = ({ param, field, form }: FieldComponentProps<"array">) => {
+const ApiParamRecordField = ({
+  param,
+  field,
+  form,
+}: FieldComponentProps<"array">) => {
   return (
     <div className={styles.groupContainer}>
       {param.name && (
@@ -25,7 +32,9 @@ const ApiParamRecordField = ({ param, field, form }: FieldComponentProps<"array"
                   <span>
                     <button
                       type="button"
-                      onClick={() => form.setFieldValue(field.name, omit(field.value, key))}
+                      onClick={() =>
+                        form.setFieldValue(field.name, omit(field.value, key))
+                      }
                     >
                       -
                     </button>{" "}
@@ -40,7 +49,8 @@ const ApiParamRecordField = ({ param, field, form }: FieldComponentProps<"array"
                         Object.entries(field.value)?.reduce(
                           (obj, [fieldKey, fieldValue]) => ({
                             ...obj,
-                            [fieldKey === key ? event.target.value : fieldKey]: fieldValue,
+                            [fieldKey === key ? event.target.value : fieldKey]:
+                              fieldValue,
                           }),
                           {}
                         )
@@ -50,7 +60,10 @@ const ApiParamRecordField = ({ param, field, form }: FieldComponentProps<"array"
                 </div>
               </div>
 
-              <ApiParamField param={param.field} prefix={`${field.name}[${key}]`} />
+              <ApiParamField
+                param={param.field}
+                prefix={`${field.name}[${key}]`}
+              />
             </div>
           </div>
         ))}

@@ -1,6 +1,5 @@
 import React from "react";
 import OriginalIdealImage from "@theme-original/IdealImage";
-
 import styles from "./styles.module.css";
 
 function IdealImage(props) {
