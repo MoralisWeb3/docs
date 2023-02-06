@@ -2286,7 +2286,7 @@ export const redirects = [
   },
   {
     source: "/cloud-functions-1",
-    destination: "https://v1docs.moralis.io/cloud-functions-1",
+    destination: "https://v1docs.moralis.io/moralis-dapp/cloud-code/cloud-functions",
     permanent: true,
   },
   {
@@ -2551,7 +2551,7 @@ export const redirects = [
   },
   {
     source: "/moralis-sdk/live-queries",
-    destination: "https://v1docs.moralis.io/moralis-sdk/live-queries",
+    destination: "https://v1docs.moralis.io/moralis-dapp/database/live-queries",
     permanent: true,
   },
   {
@@ -2577,7 +2577,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk",
-    destination: "https://v1docs.moralis.io/moralis-dapp/web3-api",
+    destination: "https://docs.moralis.io/",
     permanent: true,
   },
   {
@@ -2615,7 +2615,7 @@ export const redirects = [
   {
     source: "/guides/build-a-simple-dap-in-3-mins-login-part-2",
     destination:
-      "https://v1docs.moralis.io/guides/build-a-simple-dap-in-3-mins-login-part-2",
+      "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes/build-a-simple-dap-in-3-mins-login-part-2",
     permanent: true,
   },
   {
@@ -3607,7 +3607,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutes",
-    destination: "/web3-data-api/getting-started/",
+    destination: "https://v1docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes",
     permanent: true,
   },
   {
