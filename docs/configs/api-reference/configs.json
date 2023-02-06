@@ -11340,7 +11340,7 @@
       ]
     },
     "aptosStreamsGetAll": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Gets all aptos streams",
       "description": "Get all aptos streams.",
       "method": "GET",
@@ -11363,7 +11363,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsCreate": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Create stream",
       "description": "Creates a new aptos stream.",
       "method": "PUT",
@@ -11487,7 +11487,7 @@
       ]
     },
     "aptosStreamsGet": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get a specific aptos stream",
       "description": "Get a specific aptos stream.",
       "method": "GET",
@@ -11550,7 +11550,7 @@
       ]
     },
     "aptosStreamsUpdate": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Update stream",
       "description": "Updates a new aptos stream",
       "method": "POST",
@@ -11674,7 +11674,7 @@
       ]
     },
     "aptosStreamsDelete": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Delete a stream",
       "description": "Deletes a aptos stream.",
       "method": "DELETE",
@@ -11691,7 +11691,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsAddAddresses": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Add addresses to an aptos stream",
       "description": "Adds addresses to an existing aptos stream",
       "method": "POST",
@@ -11709,7 +11709,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsDeleteAddresses": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Delete addresses of an aptos stream",
       "description": "Deletes addresses of an existing aptos stream",
       "method": "DELETE",
@@ -11731,7 +11731,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsGetAddresses": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get addresses by aptos stream id",
       "description": "Get all addresses associated with a specific aptos stream.",
       "method": "GET",
@@ -11761,7 +11761,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsUpdateStatus": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Update a Stream Status",
       "description": "Update a Stream Status",
       "method": "POST",
@@ -12166,7 +12166,7 @@
   },
   "aptos-web3": {
     "getNFTsByIds": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by ids",
       "description": "",
       "method": "GET",
@@ -12214,7 +12214,7 @@
       ]
     },
     "getNftsByCollection": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by Collection",
       "description": "",
       "method": "GET",
@@ -12434,7 +12434,7 @@
       ]
     },
     "getNFTsByCreators": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by creators",
       "description": "",
       "method": "GET",
@@ -12654,7 +12654,7 @@
       ]
     },
     "getNFTCollections": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections",
       "description": "",
       "method": "GET",
@@ -12831,7 +12831,7 @@
       ]
     },
     "getNFTCollectionsByIds": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io/",
       "summary": "Get NFT Collections by ids",
       "description": "",
       "method": "GET",
@@ -12879,7 +12879,7 @@
       ]
     },
     "getNFTCollectionsByCreator": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io/",
       "summary": "Get NFT Collections by creator",
       "description": "",
       "method": "GET",
@@ -13050,7 +13050,7 @@
       ]
     },
     "getNFTOwnersByTokens": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners by tokens",
       "description": "",
       "method": "GET",
@@ -13216,7 +13216,7 @@
       ]
     },
     "getNftOwnersByCollection": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners by Collection",
       "description": "",
       "method": "GET",
@@ -13396,7 +13396,7 @@
       ]
     },
     "getNftOwnersOfCollection": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners of Collection",
       "description": "",
       "method": "GET",
@@ -13489,7 +13489,7 @@
       ]
     },
     "getNFTTransfersByIds": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transferss by Token ids",
       "description": "",
       "method": "GET",
@@ -13569,7 +13569,7 @@
       ]
     },
     "getNFTTransferssByCollection": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by Collection",
       "description": "",
       "method": "GET",
@@ -13779,7 +13779,7 @@
       ]
     },
     "getNFTTransfersByCreators": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by creators",
       "description": "",
       "method": "GET",
@@ -13989,7 +13989,7 @@
       ]
     },
     "getNFTTransfersByWallets": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by wallets",
       "description": "",
       "method": "GET",
@@ -14199,7 +14199,7 @@
       ]
     },
     "getCoinInfoByCoinTypeHashes": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by Coin Type Hashes",
       "description": "",
       "method": "GET",
@@ -14247,7 +14247,7 @@
       ]
     },
     "getLatestCoins": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get lates deployed coins",
       "description": "",
       "method": "GET",
@@ -14394,7 +14394,7 @@
       ]
     },
     "getCoinsByNameRange": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by name range",
       "description": "",
       "method": "GET",
@@ -14553,7 +14553,7 @@
       ]
     },
     "getCoinsBySymbolRange": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by symbol range",
       "description": "",
       "method": "GET",
@@ -14712,7 +14712,7 @@
       ]
     },
     "getCoinsByCreators": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by creator addresses",
       "description": "",
       "method": "GET",
@@ -14866,7 +14866,7 @@
       ]
     },
     "getCoinTransfersByOwnerAddresses": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by wallet addresses",
       "description": "",
       "method": "GET",
@@ -15064,7 +15064,7 @@
       ]
     },
     "getCoinTransfersByBlockHeights": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by block heights",
       "description": "",
       "method": "GET",
@@ -15236,7 +15236,7 @@
       ]
     },
     "getCoinTransfersByCoinType": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by Coin Type",
       "description": "",
       "method": "GET",
@@ -15420,7 +15420,7 @@
       ]
     },
     "getTopHoldersByCoin": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get top Holders of Coin",
       "description": "",
       "method": "GET",
@@ -15576,7 +15576,7 @@
       ]
     },
     "getCoinBalancesByWallets": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Balances by wallet addresses",
       "description": "",
       "method": "GET",
@@ -15720,7 +15720,7 @@
       ]
     },
     "getHistoricalCoinBalancesByWallets": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Historical Coin Balances by wallet addresses",
       "description": "",
       "method": "GET",
@@ -15864,7 +15864,7 @@
       ]
     },
     "getCoinTransfersByWalletAddresses": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by wallet addresses",
       "description": "",
       "method": "GET",
@@ -16062,7 +16062,7 @@
       ]
     },
     "getNFTOwnersByOwners": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by wallet addresses",
       "description": "",
       "method": "GET",
@@ -16242,7 +16242,7 @@
       ]
     },
     "getWalletsNFTTransfers": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by wallets",
       "description": "",
       "method": "GET",
@@ -16452,7 +16452,7 @@
       ]
     },
     "getAccount": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Return the authentication key and the sequence number for an account address",
       "description": "",
       "method": "GET",
@@ -16498,7 +16498,7 @@
       ]
     },
     "getAccountResources": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieves all account resources for a given account and a specific ledger version.",
       "description": "",
       "method": "GET",
@@ -16534,7 +16534,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getAccountModules": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieves all account modules bytecode for a given account at a specific ledger version.",
       "description": "",
       "method": "GET",
@@ -16570,7 +16570,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getAccountResource": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieves an individual resource from a given account and at a specific ledger version.",
       "description": "",
       "method": "GET",
@@ -16630,7 +16630,7 @@
       ]
     },
     "getAccountModule": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieves an individual module from a given account and at a specific ledger version.",
       "description": "",
       "method": "GET",
@@ -16704,7 +16704,7 @@
       ]
     },
     "getEventsByCreationNumber": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Event types are globally identifiable by an account address and monotonically increasing creation_number, one per event type emitted to the given account.",
       "description": "",
       "method": "GET",
@@ -16740,7 +16740,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getEventsByEventHandle": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "This API uses the given account address, eventHandle, and fieldName to build a key that can globally identify an event types.",
       "description": "",
       "method": "GET",
@@ -16782,7 +16782,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getTransactions": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieve on-chain committed transactions. ",
       "description": "",
       "method": "GET",
@@ -16805,7 +16805,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "submitTransaction": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieve on-chain committed transactions. ",
       "description": "",
       "method": "POST",
@@ -16901,7 +16901,7 @@
       ]
     },
     "getTransactionByHash": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Look up a transaction by its hash.",
       "description": "",
       "method": "GET",
@@ -16918,7 +16918,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getTransactionByVersion": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Look up a transaction by its hash.",
       "description": "",
       "method": "GET",
@@ -16935,7 +16935,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "getAccountTransactions": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Retrieves on-chain committed transactions from an account.",
       "description": "",
       "method": "GET",
@@ -16965,7 +16965,7 @@
       "responses": [{ "status": "200", "description": "" }]
     },
     "submitBatchTransactions": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "This allows you to submit multiple transactions.",
       "description": "",
       "method": "POST",
@@ -17032,7 +17032,7 @@
       ]
     },
     "simulateTransaction": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have",
       "description": "",
       "method": "POST",
@@ -17082,7 +17082,7 @@
       ]
     },
     "encodeSubmission": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "This endpoint makes it possible to submit transaction requests to the API from languages that do not have library support for BCS",
       "description": "",
       "method": "POST",
@@ -17137,7 +17137,7 @@
       ]
     },
     "estimateGasPrice": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Currently, the gas estimation is handled by taking the median of the last 100,000 transactions ",
       "description": "",
       "method": "GET",
@@ -17175,7 +17175,7 @@
       ]
     },
     "getBlockByHeight": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information.",
       "description": "",
       "method": "GET",
@@ -17255,7 +17255,7 @@
       ]
     },
     "getBlockByVersion": {
-      "apiHost": "/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.",
       "description": "",
       "method": "GET",
