@@ -40,8 +40,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value:
-        "<header style='font-weight: 600; font-size: 14px'>EVM</header>",
+      value: "<header style='font-weight: 600; font-size: 14px'>EVM</header>",
       defaultStyle: true,
     },
     {

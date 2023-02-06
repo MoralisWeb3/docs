@@ -6,4 +6,4 @@ slug: "../aptos"
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />  
+<DocCardList />

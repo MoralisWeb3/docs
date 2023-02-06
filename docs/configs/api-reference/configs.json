@@ -12163,5 +12163,5176 @@
         }
       ]
     }
+  },
+  "aptos-web3": {
+    "getNFTsByIds": {
+      "apiHost": "/",
+      "summary": "Get NFTs by ids",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "token_ids",
+          "description": "The identifiers of the tokens to get",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        { "status": "200", "description": "" },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNftsByCollection": {
+      "apiHost": "/",
+      "summary": "Get NFTs by Collection",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/collections/:collection_id/tokens",
+      "pathParams": [
+        {
+          "name": "collection_id",
+          "description": "The id of the collection",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The tokens for the given collection",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "default_properties",
+                    "type": "json",
+                    "description": "The default properties of the token",
+                    "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "description": "The description of the collection",
+                    "example": "A badge which proves you are an OG #TopazTrooper."
+                  },
+                  {
+                    "name": "description_mutable",
+                    "type": "boolean",
+                    "description": "Whether the description can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "largest_property_version",
+                    "type": "string",
+                    "description": "largest_property_version",
+                    "example": "1"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "maximum",
+                    "type": "string",
+                    "description": "The maximum number of tokens that can be minted",
+                    "example": "18446744073709551615"
+                  },
+                  {
+                    "name": "maximum_mutable",
+                    "type": "boolean",
+                    "description": "Whether the maximum number of tokens can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "metadata_uri",
+                    "type": "string",
+                    "description": "The URI of the image of the token",
+                    "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Souffl3 Testnet NFT"
+                  },
+                  {
+                    "name": "payee_address",
+                    "type": "string",
+                    "description": "The address that last payed for the token",
+                    "example": "0x0b11e89a399fa11c802099024498da9fc6512bd3d2d3068f0e78320bd6243990"
+                  },
+                  {
+                    "name": "properties_mutable",
+                    "type": "boolean",
+                    "description": "Whether the properties of the token can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "royalty_mutable",
+                    "type": "boolean",
+                    "description": "Whether the royalty of the token can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "royalty_points_denominator",
+                    "type": "string",
+                    "description": "The denominator for royalty points",
+                    "example": "100"
+                  },
+                  {
+                    "name": "royalty_points_numerator",
+                    "type": "string",
+                    "description": "The numerator for royalty points",
+                    "example": "20"
+                  },
+                  {
+                    "name": "supply",
+                    "type": "string",
+                    "description": "The number of tokens minted",
+                    "example": "32976"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "uri_mutable",
+                    "type": "boolean",
+                    "description": "Whether the URI of the image can be changed",
+                    "example": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTsByCreators": {
+      "apiHost": "/",
+      "summary": "Get NFTs by creators",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/creators",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of tokens to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "creator_addresses",
+          "description": "The addresses of the creators",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "default_properties",
+                    "type": "json",
+                    "description": "The default properties of the token",
+                    "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "description": "The description of the collection",
+                    "example": "A badge which proves you are an OG #TopazTrooper."
+                  },
+                  {
+                    "name": "description_mutable",
+                    "type": "boolean",
+                    "description": "Whether the description can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "largest_property_version",
+                    "type": "string",
+                    "description": "largest_property_version",
+                    "example": "1"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "maximum",
+                    "type": "string",
+                    "description": "The maximum number of tokens that can be minted",
+                    "example": "18446744073709551615"
+                  },
+                  {
+                    "name": "maximum_mutable",
+                    "type": "boolean",
+                    "description": "Whether the maximum number of tokens can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "metadata_uri",
+                    "type": "string",
+                    "description": "The URI of the image of the token",
+                    "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Souffl3 Testnet NFT"
+                  },
+                  {
+                    "name": "payee_address",
+                    "type": "string",
+                    "description": "The address that last payed for the token",
+                    "example": "0x0b11e89a399fa11c802099024498da9fc6512bd3d2d3068f0e78320bd6243990"
+                  },
+                  {
+                    "name": "properties_mutable",
+                    "type": "boolean",
+                    "description": "Whether the properties of the token can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "royalty_mutable",
+                    "type": "boolean",
+                    "description": "Whether the royalty of the token can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "royalty_points_denominator",
+                    "type": "string",
+                    "description": "The denominator for royalty points",
+                    "example": "100"
+                  },
+                  {
+                    "name": "royalty_points_numerator",
+                    "type": "string",
+                    "description": "The numerator for royalty points",
+                    "example": "20"
+                  },
+                  {
+                    "name": "supply",
+                    "type": "string",
+                    "description": "The number of tokens minted",
+                    "example": "32976"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "uri_mutable",
+                    "type": "boolean",
+                    "description": "Whether the URI of the image can be changed",
+                    "example": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTCollections": {
+      "apiHost": "/",
+      "summary": "Get NFT Collections",
+      "description": "",
+      "method": "GET",
+      "path": "/collections",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "fromName",
+          "description": "The name of the collection to start from (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toName",
+          "description": "The name of the collection to end at (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creator",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "description": "The description of the collection",
+                    "example": "A badge which proves you are an OG #TopazTrooper."
+                  },
+                  {
+                    "name": "description_mutable",
+                    "type": "boolean",
+                    "description": "Whether the description can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "maximum",
+                    "type": "string",
+                    "description": "The maximum number of tokens that can be minted",
+                    "example": "18446744073709551615"
+                  },
+                  {
+                    "name": "maximum_mutable",
+                    "type": "boolean",
+                    "description": "Whether the maximum number of tokens can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "metadata_uri",
+                    "type": "string",
+                    "description": "The URI of the image of the collection",
+                    "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg"
+                  },
+                  {
+                    "name": "supply",
+                    "type": "string",
+                    "description": "The number of tokens minted",
+                    "example": "32976"
+                  },
+                  {
+                    "name": "table_handle",
+                    "type": "string",
+                    "description": "The address of the table that stores the tokens",
+                    "example": "0x293d59ded27fc85fef070b026834d2be7e7ced76c3c32ecbcd4f44b461518c30"
+                  },
+                  {
+                    "name": "uri_mutable",
+                    "type": "boolean",
+                    "description": "Whether the URI of the image can be changed",
+                    "example": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTCollectionsByIds": {
+      "apiHost": "/",
+      "summary": "Get NFT Collections by ids",
+      "description": "",
+      "method": "GET",
+      "path": "/collections/ids",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "ids",
+          "description": "The identifiers of the collections to get",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        { "status": "200", "description": "" },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTCollectionsByCreator": {
+      "apiHost": "/",
+      "summary": "Get NFT Collections by creator",
+      "description": "",
+      "method": "GET",
+      "path": "/collections/creators",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "creator_address",
+          "description": "The address of the creator",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creator",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "description": "The description of the collection",
+                    "example": "A badge which proves you are an OG #TopazTrooper."
+                  },
+                  {
+                    "name": "description_mutable",
+                    "type": "boolean",
+                    "description": "Whether the description can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "maximum",
+                    "type": "string",
+                    "description": "The maximum number of tokens that can be minted",
+                    "example": "18446744073709551615"
+                  },
+                  {
+                    "name": "maximum_mutable",
+                    "type": "boolean",
+                    "description": "Whether the maximum number of tokens can be changed",
+                    "example": "false"
+                  },
+                  {
+                    "name": "metadata_uri",
+                    "type": "string",
+                    "description": "The URI of the image of the collection",
+                    "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg"
+                  },
+                  {
+                    "name": "supply",
+                    "type": "string",
+                    "description": "The number of tokens minted",
+                    "example": "32976"
+                  },
+                  {
+                    "name": "table_handle",
+                    "type": "string",
+                    "description": "The address of the table that stores the tokens",
+                    "example": "0x293d59ded27fc85fef070b026834d2be7e7ced76c3c32ecbcd4f44b461518c30"
+                  },
+                  {
+                    "name": "uri_mutable",
+                    "type": "boolean",
+                    "description": "Whether the URI of the image can be changed",
+                    "example": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTOwnersByTokens": {
+      "apiHost": "/",
+      "summary": "Get NFT Owners by tokens",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/owners",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "token_ids",
+          "description": "The identifiers of the tokens to get owners for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The owners for the given tokens",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens that belonging to the owner",
+                    "example": "2"
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the token",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "table_type",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "token_properties",
+                    "type": "json",
+                    "description": "The properties of the token",
+                    "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNftOwnersByCollection": {
+      "apiHost": "/",
+      "summary": "Get NFT Owners by Collection",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/collections/:collection_id/owners",
+      "pathParams": [
+        {
+          "name": "collection_id",
+          "description": "The id of the token",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "wallet_blacklist",
+          "description": "The addresses of the wallets to blacklist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_whitelist",
+          "description": "The addresses of the wallets to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The owners for the given collection",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens that belonging to the owner",
+                    "example": "2"
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the token",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "table_type",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "token_properties",
+                    "type": "json",
+                    "description": "The properties of the token",
+                    "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNftOwnersOfCollection": {
+      "apiHost": "/",
+      "summary": "Get NFT Owners of Collection",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/collections/:collection_id/owners/list",
+      "pathParams": [
+        {
+          "name": "collection_id",
+          "description": "The id of the token",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The owner addresses for the given collection",
+                "example": [],
+                "field": { "type": "string" }
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTTransfersByIds": {
+      "apiHost": "/",
+      "summary": "Get NFT Transferss by Token ids",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/transfers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of tokens to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "wallet_blacklist",
+          "description": "The addresses of the wallets to blacklist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_whitelist",
+          "description": "The addresses of the wallets to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "token_ids",
+          "description": "The identifiers of the tokens to get",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        { "status": "200", "description": "" },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTTransferssByCollection": {
+      "apiHost": "/",
+      "summary": "Get NFT Transfers by Collection",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/transfers/collections/:collection_id",
+      "pathParams": [
+        {
+          "name": "collection_id",
+          "description": "The id of the token",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "wallet_whitelist",
+          "description": "The addresses of the wallets to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_blacklist",
+          "description": "The addresses of the wallets to blacklist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The type of tokens transferred",
+                    "example": null
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The account address of the transfer",
+                    "example": "0xa748de66f1eea7d32399b59027ab0b3786295313e2c3a1608b5d51e759aee6dd"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The creation number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address sending the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address recieving the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "token_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transfer",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction that the transfer is a part of",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "transfer_type",
+                    "type": "string",
+                    "description": "The type of transfer",
+                    "example": "0x3::token::DepositEvent"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTTransfersByCreators": {
+      "apiHost": "/",
+      "summary": "Get NFT Transfers by creators",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/transfers/creators",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "creator_addresses",
+          "description": "The addresses of the creators",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_blacklist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_whitelist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The type of tokens transferred",
+                    "example": null
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The account address of the transfer",
+                    "example": "0xa748de66f1eea7d32399b59027ab0b3786295313e2c3a1608b5d51e759aee6dd"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The creation number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address sending the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address recieving the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "token_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transfer",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction that the transfer is a part of",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "transfer_type",
+                    "type": "string",
+                    "description": "The type of transfer",
+                    "example": "0x3::token::DepositEvent"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTTransfersByWallets": {
+      "apiHost": "/",
+      "summary": "Get NFT Transfers by wallets",
+      "description": "",
+      "method": "GET",
+      "path": "/nfts/transfers/wallets",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of tokens to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "The addresses of the wallets to get transfers for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_blacklist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_whitelist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The type of tokens transferred",
+                    "example": null
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The account address of the transfer",
+                    "example": "0xa748de66f1eea7d32399b59027ab0b3786295313e2c3a1608b5d51e759aee6dd"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The creation number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address sending the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address recieving the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "token_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transfer",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction that the transfer is a part of",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "transfer_type",
+                    "type": "string",
+                    "description": "The type of transfer",
+                    "example": "0x3::token::DepositEvent"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinInfoByCoinTypeHashes": {
+      "apiHost": "/",
+      "summary": "Get Coin Metadata by Coin Type Hashes",
+      "description": "",
+      "method": "GET",
+      "path": "/coins",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "coin_type_hashes",
+          "description": "The coin type hashes to fetch info about",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        { "status": "200", "description": "" },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getLatestCoins": {
+      "apiHost": "/",
+      "summary": "Get lates deployed coins",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/latest",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins matching the query",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "number",
+                    "description": "The number of decimals of the coin",
+                    "example": 8
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name Coin",
+                    "example": "GEGG Coin"
+                  },
+                  {
+                    "name": "supply_aggregator_table_handle",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "supply_aggregator_table_key",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the coin",
+                    "example": "GEGG"
+                  },
+                  {
+                    "name": "transaction_created_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was created",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version_created",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was created",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinsByNameRange": {
+      "apiHost": "/",
+      "summary": "Get Coin Metadata by name range",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/names",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "from_name",
+          "description": "The name of the coin to start from (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_name",
+          "description": "The name of the coin to end at (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins matching the query",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "number",
+                    "description": "The number of decimals of the coin",
+                    "example": 8
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name Coin",
+                    "example": "GEGG Coin"
+                  },
+                  {
+                    "name": "supply_aggregator_table_handle",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "supply_aggregator_table_key",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the coin",
+                    "example": "GEGG"
+                  },
+                  {
+                    "name": "transaction_created_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was created",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version_created",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was created",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinsBySymbolRange": {
+      "apiHost": "/",
+      "summary": "Get Coin Metadata by symbol range",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/symbols",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "from_symbol",
+          "description": "The name of the coin to start from (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_symbol",
+          "description": "The name of the coin to end at (inclusive and case sensitive)",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins matching the query",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "number",
+                    "description": "The number of decimals of the coin",
+                    "example": 8
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name Coin",
+                    "example": "GEGG Coin"
+                  },
+                  {
+                    "name": "supply_aggregator_table_handle",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "supply_aggregator_table_key",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the coin",
+                    "example": "GEGG"
+                  },
+                  {
+                    "name": "transaction_created_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was created",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version_created",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was created",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinsByCreators": {
+      "apiHost": "/",
+      "summary": "Get Coin Metadata by creator addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/creators",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "creator_addresses",
+          "description": "The addresses of the creators",
+          "required": true,
+          "type": "array",
+          "field": { "type": "array", "items": { "type": "a" } }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins created by the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "number",
+                    "description": "The number of decimals of the coin",
+                    "example": 8
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name Coin",
+                    "example": "GEGG Coin"
+                  },
+                  {
+                    "name": "supply_aggregator_table_handle",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "supply_aggregator_table_key",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the coin",
+                    "example": "GEGG"
+                  },
+                  {
+                    "name": "transaction_created_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was created",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version_created",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was created",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinTransfersByOwnerAddresses": {
+      "apiHost": "/",
+      "summary": "Get Coin Transfers by wallet addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/transfers/wallets",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "owner_addresses",
+          "description": "The addresses of the owners to get tokens for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "from_date",
+          "description": "The date from which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "The date to which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "coin_type_blacklist",
+          "description": "The coin types of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_whitelist",
+          "description": "The coin types of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins transfers for the provided owner addresses",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "activity_type",
+                    "type": "string",
+                    "description": "The definition of the coin activity",
+                    "example": "0x1::coin::WithdrawEvent"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "block_height",
+                    "type": "string",
+                    "description": "The blockheight that the transfer was included in",
+                    "example": "49661526"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "entry_function_id_str",
+                    "type": "string",
+                    "description": "The function that was called to transfer the coin",
+                    "example": "0x563e8382514ccdcc0c0a83469c9262d22d0b052316c1bd67286ba42bb11d0815::AtodexSwapPoolV1::swap_exact_coi"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The address of the event account",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The event creation number",
+                    "example": "9"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "59"
+                  },
+                  {
+                    "name": "is_gas_fee",
+                    "type": "boolean",
+                    "description": "If the transfer was a gas fee or not",
+                    "example": false
+                  },
+                  {
+                    "name": "is_transaction_success",
+                    "type": "boolean",
+                    "description": "If the transfer was successful or not",
+                    "example": true
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was transfered",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinTransfersByBlockHeights": {
+      "apiHost": "/",
+      "summary": "Get Coin Transfers by block heights",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/transfers/blocks",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "block_heights",
+          "description": "The coin types to fetch info about",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins transfers for the provided block heights",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "activity_type",
+                    "type": "string",
+                    "description": "The definition of the coin activity",
+                    "example": "0x1::coin::WithdrawEvent"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "block_height",
+                    "type": "string",
+                    "description": "The blockheight that the transfer was included in",
+                    "example": "49661526"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "entry_function_id_str",
+                    "type": "string",
+                    "description": "The function that was called to transfer the coin",
+                    "example": "0x563e8382514ccdcc0c0a83469c9262d22d0b052316c1bd67286ba42bb11d0815::AtodexSwapPoolV1::swap_exact_coi"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The address of the event account",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The event creation number",
+                    "example": "9"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "59"
+                  },
+                  {
+                    "name": "is_gas_fee",
+                    "type": "boolean",
+                    "description": "If the transfer was a gas fee or not",
+                    "example": false
+                  },
+                  {
+                    "name": "is_transaction_success",
+                    "type": "boolean",
+                    "description": "If the transfer was successful or not",
+                    "example": true
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was transfered",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinTransfersByCoinType": {
+      "apiHost": "/",
+      "summary": "Get Coin Transfers by Coin Type",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/transfers/:coin_type",
+      "pathParams": [
+        {
+          "name": "coin_type",
+          "description": "The coin type to fetch info about",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "from_date",
+          "description": "The date from which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "The date to which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins transfers for the provided coin type",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "activity_type",
+                    "type": "string",
+                    "description": "The definition of the coin activity",
+                    "example": "0x1::coin::WithdrawEvent"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "block_height",
+                    "type": "string",
+                    "description": "The blockheight that the transfer was included in",
+                    "example": "49661526"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "entry_function_id_str",
+                    "type": "string",
+                    "description": "The function that was called to transfer the coin",
+                    "example": "0x563e8382514ccdcc0c0a83469c9262d22d0b052316c1bd67286ba42bb11d0815::AtodexSwapPoolV1::swap_exact_coi"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The address of the event account",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The event creation number",
+                    "example": "9"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "59"
+                  },
+                  {
+                    "name": "is_gas_fee",
+                    "type": "boolean",
+                    "description": "If the transfer was a gas fee or not",
+                    "example": false
+                  },
+                  {
+                    "name": "is_transaction_success",
+                    "type": "boolean",
+                    "description": "If the transfer was successful or not",
+                    "example": true
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was transfered",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTopHoldersByCoin": {
+      "apiHost": "/",
+      "summary": "Get top Holders of Coin",
+      "description": "",
+      "method": "GET",
+      "path": "/coins/owners/:coin_type_hash/top-holders",
+      "pathParams": [
+        {
+          "name": "coin_type_hash",
+          "description": "The coin type hash to fetch info about",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "min_amount",
+          "description": "The minimum amount of coins required for a wallet to be included in the results",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "min_version",
+          "description": "The minimum version on when the balance was last updated",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "wallet_blacklist",
+          "description": "The addresses of the wallets to blacklist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_whitelist",
+          "description": "The addresses of the wallets to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The top holders of the given coin",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last update to the balance",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the balance was last s",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinBalancesByWallets": {
+      "apiHost": "/",
+      "summary": "Get Coin Balances by wallet addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/wallets/coins",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of coins to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of coins to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "owner_addresses",
+          "description": "The addresses of the owners to get coin balances for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_hash_blacklist",
+          "description": "The coin type hash of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_hash_whitelist",
+          "description": "The coin type hash of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins balances for the provided wallets",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last update to the balance",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the balance was last s",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getHistoricalCoinBalancesByWallets": {
+      "apiHost": "/",
+      "summary": "Get Historical Coin Balances by wallet addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/wallets/coins/history",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "owner_addresses",
+          "description": "The addresses of the owner addresses to get historical balances for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_hash_blacklist",
+          "description": "The coin type hash of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_hash_whitelist",
+          "description": "The coin type hash of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins balances for the provided wallets",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "coin_type_hash",
+                    "type": "string",
+                    "description": "The hash of the coin_type (identifier) and a known fixed length",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the updated balance",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the balacne was updated",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCoinTransfersByWalletAddresses": {
+      "apiHost": "/",
+      "summary": "Get Coin Transfers by wallet addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/wallets/coins/transfers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "owner_addresses",
+          "description": "The addresses of the owners to get tokens for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "from_date",
+          "description": "The date from which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "The date to which to fetch coin transfers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "coin_type_blacklist",
+          "description": "The coin types of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "coin_type_whitelist",
+          "description": "The coin types of the coins to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The coins transfers for the provided owner addresses",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "activity_type",
+                    "type": "string",
+                    "description": "The definition of the coin activity",
+                    "example": "0x1::coin::WithdrawEvent"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "Amount being transfered",
+                    "example": "324933484"
+                  },
+                  {
+                    "name": "block_height",
+                    "type": "string",
+                    "description": "The blockheight that the transfer was included in",
+                    "example": "49661526"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The definition of the coin structure (identifier)",
+                    "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG"
+                  },
+                  {
+                    "name": "entry_function_id_str",
+                    "type": "string",
+                    "description": "The function that was called to transfer the coin",
+                    "example": "0x563e8382514ccdcc0c0a83469c9262d22d0b052316c1bd67286ba42bb11d0815::AtodexSwapPoolV1::swap_exact_coi"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The address of the event account",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The event creation number",
+                    "example": "9"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "59"
+                  },
+                  {
+                    "name": "is_gas_fee",
+                    "type": "boolean",
+                    "description": "If the transfer was a gas fee or not",
+                    "example": false
+                  },
+                  {
+                    "name": "is_transaction_success",
+                    "type": "boolean",
+                    "description": "If the transfer was successful or not",
+                    "example": true
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the coin",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction where the coin was transfered",
+                    "example": "210373856"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNFTOwnersByOwners": {
+      "apiHost": "/",
+      "summary": "Get NFTs by wallet addresses",
+      "description": "",
+      "method": "GET",
+      "path": "/wallets/nfts",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of collections to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "owner_addresses",
+          "description": "The addresses of the owners to get tokens for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_blacklist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_whitelist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The tokens for the given owners",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of tokens that belonging to the owner",
+                    "example": "2"
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "last_transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the last transaction",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "last_transaction_version",
+                    "type": "string",
+                    "description": "The version of the last transaction",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the owner of the token",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "table_type",
+                    "type": "string",
+                    "description": "The data structure of the token",
+                    "example": "0x3::token::TokenStore"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "token_properties",
+                    "type": "json",
+                    "description": "The properties of the token",
+                    "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getWalletsNFTTransfers": {
+      "apiHost": "/",
+      "summary": "Get NFT Transfers by wallets",
+      "description": "",
+      "method": "GET",
+      "path": "/wallets/nfts/transfers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The number of tokens to return",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "offset",
+          "description": "The number of collections to skip",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "The addresses of the wallets to get transfers for",
+          "required": true,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_blacklist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "collection_whitelist",
+          "description": "The ids of the collections to whitelist",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
+              },
+              {
+                "name": "hasNextPage",
+                "type": "boolean",
+                "description": "Indicates if there is a next page of results",
+                "example": true
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "description": "The collections for the given creators",
+                "example": [],
+                "fields": [
+                  {
+                    "name": "coin_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "description": "The type of tokens transferred",
+                    "example": null
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the collection",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d"
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "description": "The name of the collection",
+                    "example": "Topaz Troopers"
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "description": "The address of the creator of the collection",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "description": "The account address of the transfer",
+                    "example": "0xa748de66f1eea7d32399b59027ab0b3786295313e2c3a1608b5d51e759aee6dd"
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "description": "The creation number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "description": "The sequence number of the event",
+                    "example": "2"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The address sending the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Topaz Troopers 123"
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "description": "The property version of the token",
+                    "example": "1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address recieving the transfer",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac"
+                  },
+                  {
+                    "name": "token_amount",
+                    "type": "string",
+                    "description": "The number of tokens transferred",
+                    "example": "2"
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "description": "The identifier of the token",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1"
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the transfer",
+                    "example": "2022-09-17T22:03:32.000000Z"
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "description": "The version of the transaction that the transfer is a part of",
+                    "example": "210373856"
+                  },
+                  {
+                    "name": "transfer_type",
+                    "type": "string",
+                    "description": "The type of transfer",
+                    "example": "0x3::token::DepositEvent"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "statusCode",
+                "type": "string",
+                "description": "The status code",
+                "example": "400"
+              },
+              {
+                "name": "message",
+                "type": "array",
+                "description": "List of things to correct",
+                "example": ["creator_address must be 66 characters"],
+                "field": { "type": "string" }
+              },
+              {
+                "name": "error",
+                "type": "string",
+                "description": "Type of error",
+                "example": "Bad Request"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getAccount": {
+      "apiHost": "/",
+      "summary": "Return the authentication key and the sequence number for an account address",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "ledger_version",
+          "description": "Ledger version to get state of account.\nIf not provided, it will be the latest version",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "sequence_number",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                "example": "32425224034"
+              },
+              {
+                "name": "authentication_key",
+                "type": "string",
+                "description": "All bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.\nUnlike the Address type, HexEncodedBytes will not trim any zeros.",
+                "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getAccountResources": {
+      "apiHost": "/",
+      "summary": "Retrieves all account resources for a given account and a specific ledger version.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/resources",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "ledger_version",
+          "description": "Ledger version to get state of account.\nIf not provided, it will be the latest version",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "description": "Cursor specifying where to start for pagination\nThis cursor cannot be derived manually client-side. Instead, you must call this endpoint once without this query parameter specified, and then use the cursor returned in the X-Aptos-Cursor header in the response.",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getAccountModules": {
+      "apiHost": "/",
+      "summary": "Retrieves all account modules bytecode for a given account at a specific ledger version.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/modules",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "ledger_version",
+          "description": "Ledger version to get state of account.\nIf not provided, it will be the latest version",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "description": "Cursor specifying where to start for pagination\nThis cursor cannot be derived manually client-side. Instead, you must call this endpoint once without this query parameter specified, and then use the cursor returned in the X-Aptos-Cursor header in the response.",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getAccountResource": {
+      "apiHost": "/",
+      "summary": "Retrieves an individual resource from a given account and at a specific ledger version.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/resource/:resource_type",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "resource_type",
+          "description": "Name of struct to retrieve e.g. 0x1::account::Account",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "ledger_version",
+          "description": "Ledger version to get state of account.\nIf not provided, it will be the latest version",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "type",
+                "type": "string",
+                "description": "String representation of a MoveStructTag (on-chain Move struct type). This exists so you can specify MoveStructTags as path / query parameters",
+                "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>"
+              },
+              {
+                "name": "data",
+                "type": "json",
+                "description": "This is a JSON representation of some data within an account resource. More specifically, it is a map of strings to arbitrary JSON values / objects, where the keys are top level fields within the given resource.",
+                "example": {
+                  "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                  "coin_register_events": {
+                    "counter": "0",
+                    "guid": { "id": { "addr": "0x1", "creation_num": "0" } }
+                  },
+                  "self_address": "0x1",
+                  "sequence_number": "0"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getAccountModule": {
+      "apiHost": "/",
+      "summary": "Retrieves an individual module from a given account and at a specific ledger version.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/resource/:module_name",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "module_name",
+          "description": "Name of module to retrieve",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "ledger_version",
+          "description": "Ledger version to get state of account.\nIf not provided, it will be the latest version",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "bytecode",
+                "type": "string",
+                "description": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                "example": "All bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte."
+              },
+              {
+                "name": "abi",
+                "description": "A Move module",
+                "example": {
+                  "address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+                  "name": "string",
+                  "friends": ["0x1::aptos_coin"],
+                  "exposed_functions": [
+                    {
+                      "name": "string",
+                      "visibility": "private",
+                      "is_entry": true,
+                      "generic_type_params": [{ "constraints": ["string"] }],
+                      "params": ["string"],
+                      "return": ["string"]
+                    }
+                  ],
+                  "structs": [
+                    {
+                      "name": "string",
+                      "is_native": true,
+                      "abilities": ["string"],
+                      "generic_type_params": [{ "constraints": ["string"] }],
+                      "fields": [{ "name": "string", "type": "string" }]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getEventsByCreationNumber": {
+      "apiHost": "/",
+      "summary": "Event types are globally identifiable by an account address and monotonically increasing creation_number, one per event type emitted to the given account.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/events/:creation_number",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "creation_number",
+          "description": "Creation number corresponding to the event stream originating from the given account.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "description": "Starting sequence number of events.\nIf unspecified, by default will retrieve the most recent events",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getEventsByEventHandle": {
+      "apiHost": "/",
+      "summary": "This API uses the given account address, eventHandle, and fieldName to build a key that can globally identify an event types.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/events/:event_handle/:field_name",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Hex-encoded 32 byte Aptos account, with or without a 0x prefix, for which events are queried. This refers to the account that events were emitted to, not the account hosting the move module that emits that event type.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "event_handle",
+          "description": "Name of struct to lookup event handle.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "field_name",
+          "description": "Name of field to lookup event handle.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "description": "Starting sequence number of events.\nIf unspecified, by default will retrieve the most recent events",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getTransactions": {
+      "apiHost": "/",
+      "summary": "Retrieve on-chain committed transactions. ",
+      "description": "",
+      "method": "GET",
+      "path": "/transactions",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "start",
+          "description": "Account sequence number to start list of transactions.\nIf not provided, defaults to showing the latest transactions",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "submitTransaction": {
+      "apiHost": "/",
+      "summary": "Retrieve on-chain committed transactions. ",
+      "description": "",
+      "method": "POST",
+      "path": "/transactions",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "object",
+        "fields": [
+          {
+            "name": "sender",
+            "type": "string",
+            "description": "A hex encoded 32 byte Aptos account address."
+          },
+          {
+            "name": "sequence_number",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "max_gas_amount",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "gas_unit_price",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "expiration_timestamp_secs",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "payload",
+            "type": "json",
+            "description": "An enum of the possible transaction payloads"
+          },
+          { "name": "signature", "description": "", "type": "json" }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "hash",
+                "type": "string",
+                "description": "",
+                "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1"
+              },
+              {
+                "name": "sender",
+                "type": "string",
+                "description": "A hex encoded 32 byte Aptos account address.",
+                "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1"
+              },
+              {
+                "name": "sequence_number",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "max_gas_amount",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "gas_unit_price",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "expiration_timestamp_secs",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              { "name": "payload" },
+              { "name": "signature" }
+            ]
+          }
+        },
+        { "status": "201", "description": "" }
+      ]
+    },
+    "getTransactionByHash": {
+      "apiHost": "/",
+      "summary": "Look up a transaction by its hash.",
+      "description": "",
+      "method": "GET",
+      "path": "/transactions/by_hash/:txn_hash",
+      "pathParams": [
+        {
+          "name": "txn_hash",
+          "description": "Hash of transaction to retrieve",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getTransactionByVersion": {
+      "apiHost": "/",
+      "summary": "Look up a transaction by its hash.",
+      "description": "",
+      "method": "GET",
+      "path": "/transactions/by_version/:txn_version",
+      "pathParams": [
+        {
+          "name": "txn_version",
+          "description": "Version of transaction to retrieve",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "getAccountTransactions": {
+      "apiHost": "/",
+      "summary": "Retrieves on-chain committed transactions from an account.",
+      "description": "",
+      "method": "GET",
+      "path": "/accounts/:address/transactions",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Address of account with or without a 0x prefix",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "start",
+          "description": "Account sequence number to start list of transactions.\nIf not provided, defaults to showing the latest transactions",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [{ "status": "200", "description": "" }]
+    },
+    "submitBatchTransactions": {
+      "apiHost": "/",
+      "summary": "This allows you to submit multiple transactions.",
+      "description": "",
+      "method": "POST",
+      "path": "/transactions/batch",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "array",
+        "field": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "sender",
+              "type": "string",
+              "description": "A hex encoded 32 byte Aptos account address."
+            },
+            {
+              "name": "sequence_number",
+              "type": "string",
+              "description": "A string containing a 64-bit unsigned integer."
+            },
+            {
+              "name": "max_gas_amount",
+              "type": "string",
+              "description": "A string containing a 64-bit unsigned integer."
+            },
+            {
+              "name": "gas_unit_price",
+              "type": "string",
+              "description": "A string containing a 64-bit unsigned integer."
+            },
+            {
+              "name": "expiration_timestamp_secs",
+              "type": "string",
+              "description": "A string containing a 64-bit unsigned integer."
+            },
+            {
+              "name": "payload",
+              "description": "An enum of the possible transaction payloads"
+            },
+            { "name": "signature", "description": "" }
+          ]
+        }
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "transaction_failures",
+                "type": "array",
+                "description": "Summary of the failed transactions",
+                "example": [],
+                "field": { "type": "string" }
+              }
+            ]
+          }
+        },
+        { "status": "201", "description": "" }
+      ]
+    },
+    "simulateTransaction": {
+      "apiHost": "/",
+      "summary": "The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have",
+      "description": "",
+      "method": "POST",
+      "path": "/transactions/simulate",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "object",
+        "fields": [
+          {
+            "name": "sender",
+            "type": "string",
+            "description": "A hex encoded 32 byte Aptos account address."
+          },
+          {
+            "name": "sequence_number",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "max_gas_amount",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "gas_unit_price",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "expiration_timestamp_secs",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "payload",
+            "type": "json",
+            "description": "An enum of the possible transaction payloads"
+          },
+          { "name": "signature", "description": "", "type": "json" }
+        ]
+      },
+      "responses": [
+        { "status": "200", "description": "" },
+        { "status": "201", "description": "" }
+      ]
+    },
+    "encodeSubmission": {
+      "apiHost": "/",
+      "summary": "This endpoint makes it possible to submit transaction requests to the API from languages that do not have library support for BCS",
+      "description": "",
+      "method": "POST",
+      "path": "/transactions/encode_submission",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "object",
+        "fields": [
+          {
+            "name": "sender",
+            "type": "string",
+            "description": "A hex encoded 32 byte Aptos account address."
+          },
+          {
+            "name": "sequence_number",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "max_gas_amount",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "gas_unit_price",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "expiration_timestamp_secs",
+            "type": "string",
+            "description": "A string containing a 64-bit unsigned integer."
+          },
+          {
+            "name": "payload",
+            "type": "json",
+            "description": "An enum of the possible transaction payloads"
+          },
+          {
+            "name": "secondary_signers",
+            "type": "array",
+            "description": "Secondary signer accounts of the request for Multi-agent",
+            "field": { "type": "string" }
+          }
+        ]
+      },
+      "responses": [
+        { "status": "200", "description": "" },
+        { "status": "201", "description": "" }
+      ]
+    },
+    "estimateGasPrice": {
+      "apiHost": "/",
+      "summary": "Currently, the gas estimation is handled by taking the median of the last 100,000 transactions ",
+      "description": "",
+      "method": "GET",
+      "path": "/transactions/estimate_gas_price",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "deprioritized_gas_estimate",
+                "type": "json",
+                "description": "The deprioritized estimate for the gas unit price",
+                "example": 0
+              },
+              {
+                "name": "gas_estimate",
+                "type": "number",
+                "description": "The current estimate for the gas unit price",
+                "example": 0
+              },
+              {
+                "name": "prioritized_gas_estimate",
+                "type": "json",
+                "description": "The prioritized estimate for the gas unit price",
+                "example": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getBlockByHeight": {
+      "apiHost": "/",
+      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information.",
+      "description": "",
+      "method": "GET",
+      "path": "/blocks/:block_height",
+      "pathParams": [
+        {
+          "name": "block_height",
+          "description": "Block height to lookup. Starts at 0",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "with_transactions",
+          "description": "If set to true, include all transactions in the block",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns block by height",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "block_height",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "",
+                "example": "32425224034"
+              },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "first_version",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "last_version",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "transactions",
+                "type": "array",
+                "description": "List of transactions",
+                "field": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/PendingTransaction" },
+                    { "$ref": "#/components/schemas/UserTransaction" },
+                    { "$ref": "#/components/schemas/GenesisTransaction" },
+                    { "$ref": "#/components/schemas/BlockMetadataTransaction" },
+                    {
+                      "$ref": "#/components/schemas/StateCheckpointTransaction"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getBlockByVersion": {
+      "apiHost": "/",
+      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.",
+      "description": "",
+      "method": "GET",
+      "path": "/blocks/by_version/:version",
+      "pathParams": [
+        {
+          "name": "version",
+          "description": "Ledger version to lookup block information for.",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "with_transactions",
+          "description": "If set to true, include all transactions in the block",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns block by version",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "block_height",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "",
+                "example": "32425224034"
+              },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "first_version",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "last_version",
+                "type": "string",
+                "description": "A string containing a 64-bit unsigned integer.",
+                "example": "32425224034"
+              },
+              {
+                "name": "transactions",
+                "type": "array",
+                "description": "List of transactions",
+                "field": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/PendingTransaction" },
+                    { "$ref": "#/components/schemas/UserTransaction" },
+                    { "$ref": "#/components/schemas/GenesisTransaction" },
+                    { "$ref": "#/components/schemas/BlockMetadataTransaction" },
+                    {
+                      "$ref": "#/components/schemas/StateCheckpointTransaction"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   }
 }
