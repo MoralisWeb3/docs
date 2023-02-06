@@ -78,7 +78,7 @@
     "category": "web3-data-api"
   },
   "aptos-web3": {
-    "swaggerPath": "https://aptos-mainnet.aws-prod-api-1.moralis.io/aptos-api/swagger-json",
+    "swaggerPath": "https://mainnet-aptos-api.moralis.io/swagger-json",
     "filePath": "./docs/reference/web3-data-api/aptos-api",
     "importPath": "../../../configs/api-reference/configs.json",
     "category": "web3-data-api"
