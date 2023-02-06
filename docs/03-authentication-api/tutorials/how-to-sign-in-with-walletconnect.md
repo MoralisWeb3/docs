@@ -10,61 +10,67 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 ## Before the Start
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask](/authentication-api/how-to-sign-in-with-metamask) functionality. 
+You can start this tutorial if you already have a NextJS dapp with [MetaMask](/authentication-api/how-to-sign-in-with-metamask) functionality.
 
 ## Configuring the WalletConnect Connector
 
 1. Open the`pages/signin.jsx` file and add `WalletConnectConnector` as a connector to `connectAsync()`:
 
 ```javascript
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
-import { signIn } from 'next-auth/react';
-import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi';
-import { useRouter } from 'next/router';
-import { useAuthRequestChallengeEvm } from '@moralisweb3/next';
+import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import { signIn } from "next-auth/react";
+import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
+import { useRouter } from "next/router";
+import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
 function SignIn() {
-    const { connectAsync } = useConnect({
-            connector: new WalletConnectConnector({ options: { qrcode: true } }),
-        });
-    const { disconnectAsync } = useDisconnect();
-    const { isConnected } = useAccount();
-    const { signMessageAsync } = useSignMessage();
-    const { requestChallengeAsync } = useAuthRequestChallengeEvm();
-    const { push } = useRouter();
+  const { connectAsync } = useConnect({
+    connector: new WalletConnectConnector({ options: { qrcode: true } }),
+  });
+  const { disconnectAsync } = useDisconnect();
+  const { isConnected } = useAccount();
+  const { signMessageAsync } = useSignMessage();
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm();
+  const { push } = useRouter();
 
-    const handleAuth = async () => {
-        if (isConnected) {
-            await disconnectAsync();
-        }
+  const handleAuth = async () => {
+    if (isConnected) {
+      await disconnectAsync();
+    }
 
-        const { account, chain } = await connectAsync();
+    const { account, chain } = await connectAsync();
 
-        const { message } = await requestChallengeAsync({ address: account, chainId: chain.id });
+    const { message } = await requestChallengeAsync({
+      address: account,
+      chainId: chain.id,
+    });
 
-        const signature = await signMessageAsync({ message });
+    const signature = await signMessageAsync({ message });
 
-        // redirect user after success authentication to '/user' page
-        const { url } = await signIn('credentials', { message, signature, redirect: false, callbackUrl: '/user' });
-        /**
-         * instead of using signIn(..., redirect: "/user")
-         * we get the url from callback and push it to the router to avoid page refreshing
-         */
-        push(url);
-    };
+    // redirect user after success authentication to '/user' page
+    const { url } = await signIn("moralis-auth", {
+      message,
+      signature,
+      redirect: false,
+      callbackUrl: "/user",
+    });
+    /**
+     * instead of using signIn(..., redirect: "/user")
+     * we get the url from callback and push it to the router to avoid page refreshing
+     */
+    push(url);
+  };
 
-    return (
-        <div>
-            <h3>Web3 Authentication</h3>
-            <button onClick={handleAuth}>Authenticate via WalletConnect</button>
-        </div>
-    );
+  return (
+    <div>
+      <h3>Web3 Authentication</h3>
+      <button onClick={handleAuth}>Authenticate via WalletConnect</button>
+    </div>
+  );
 }
 
 export default SignIn;
 ```
-
-
 
 ## Testing the WalletConnect Connector
 
@@ -86,8 +92,8 @@ Visit [`http://localhost:3000/signin`](http://localhost:3000/signin`) to test au
 
 ![TrustWallet Message - Signing](/img/content/0242a69-photo_2022-08-15_18-18-44.webp)
 
-5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality: 
+5. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality:
 
 - When a user is authenticated, we show the user's info on the page.
-- When a user is not authenticated, we redirect to the `/signin` page. 
+- When a user is not authenticated, we redirect to the `/signin` page.
 - When a user is authenticated, we show the user's info on the page, even refreshing after the page. (_Explanation: After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted [JWT](https://jwt.io/introduction) [JWE] stored inside. It contains session info [such as an address and signed message] in the user's browser._)
