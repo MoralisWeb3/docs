@@ -54,11 +54,17 @@ const apiParamComponents: Record<
   oneOf: ApiParamOneOfField,
 };
 
-export const PRIMITIVE_TYPES: ApiParam["type"][] = ["string", "number", "boolean", "json"];
+export const PRIMITIVE_TYPES: ApiParam["type"][] = [
+  "string",
+  "number",
+  "boolean",
+  "json",
+];
 
 export const buildParamPath = (param: ApiParam | string, prefix?: string) =>
-  [prefix, typeof param === "string" ? param : param.name].filter((x) => x != null).join(".") ||
-  null;
+  [prefix, typeof param === "string" ? param : param.name]
+    .filter((x) => x != null)
+    .join(".") || null;
 
 interface ApiParamFieldProps {
   prefix: string;
@@ -74,12 +80,15 @@ export const apiParamInitialValue = (param: ApiParam) => {
   const value = PRIMITIVE_TYPES.includes(param.type)
     ? param.example
     : param.type === "object"
-      ? param.fields?.reduce((obj, field) => ({ ...obj, ...apiParamInitialValue(field) }), {})
-      : param.type === "array"
-        ? []
-        : param.type === "record"
-          ? {}
-          : undefined;
+    ? param.fields?.reduce(
+        (obj, field) => ({ ...obj, ...apiParamInitialValue(field) }),
+        {}
+      )
+    : param.type === "array"
+    ? []
+    : param.type === "record"
+    ? {}
+    : undefined;
 
   if (path) {
     return { [path]: value };
