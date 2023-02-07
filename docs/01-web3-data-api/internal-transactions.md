@@ -20,15 +20,15 @@ One transaction on a smart contract can lead to many internal transactions that 
 | Polygon Mainnet                 | ✅           | Partial                   | 
 | Polygon Mumbai                  | ✅           | ✅ Full history           | 
 | BNB Mainnet                     | ✅           | Partial                   |
-| BNB Testnet               | ✅ | Partial                   |
+| BNB Testnet                      | ✅          | ✅ Full history                   |
 
 ## Will you be adding Internal Transactions to more chains?
 Yes, absolutely! We plan to add internal transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
 
 ## Are real-time and historical Internal Transactions supported?
-Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon, Mumbai and BSC. This means for all new transactions, where internal transactions exist, they will be available through the API.
+Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon, Mumbai, BSC and BSC testnet. This means for all new transactions, where internal transactions exist, they will be available through the API.
 
-All historical internal transactions for Ethereum, Sepolia and Mumbai are also available, meaning every single internal transaction back to Block 0 is available on these blockchains. For BSC, BSC testnet and Polygon, these blockchains are still syncing and will fully complete in Q1.
+All historical internal transactions for Ethereum, Sepolia, Mumbai and BSC testnet are also available, meaning every single internal transaction back to Block 0 is available on these blockchains. For BSC and Polygon, these blockchains are still syncing and will fully complete in Q1.
 
 ## Why are Internal Transactions used?
 Internal transactions in Ethereum allow for transfer of Ether and other assets within the same smart contract without creating a new transaction on the blockchain. This can reduce the cost and increase the efficiency of executing certain operations within the contract, as it eliminates the need for a full transaction that incurs gas costs and network fees. 
