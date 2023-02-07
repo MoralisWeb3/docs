@@ -1,12 +1,18 @@
 import React from "react";
-
-import { FieldComponentProps, apiParamInitialValue } from "../ApiReference/ApiParamField";
+import {
+  FieldComponentProps,
+  apiParamInitialValue,
+} from "../ApiReference/ApiParamField";
 import ApiParamInfo from "../ApiReference/ApiParamInfo";
 import ApiParamField from "../ApiReference/ApiParamField";
 
 import styles from "./styles.module.css";
 
-const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">) => {
+const ApiParamArrayField = ({
+  param,
+  field,
+  form,
+}: FieldComponentProps<"array">) => {
   return (
     <div className={styles.groupContainer}>
       {param.name && (
@@ -34,7 +40,10 @@ const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">
                 {param.name}[{index}]
               </div>
 
-              <ApiParamField param={param.field} prefix={`${field.name}[${index}]`} />
+              <ApiParamField
+                param={param.field}
+                prefix={`${field.name}[${index}]`}
+              />
             </div>
           </div>
         ))}
@@ -42,7 +51,10 @@ const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">
         <button
           type="button"
           onClick={() => {
-            form.setFieldValue(field.name, [...field.value, apiParamInitialValue(param.field)]);
+            form.setFieldValue(field.name, [
+              ...field.value,
+              apiParamInitialValue(param.field),
+            ]);
           }}
           className={styles.groupHeader}
         >

@@ -267,18 +267,20 @@ const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
       for (let key in swaggerPaths) {
-        const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
-        const swaggerJSON = await swaggerRes?.json();
-        let swaggerContent;
+        if (["aptos-web3"].includes(key)) {
+          const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
+          const swaggerJSON = await swaggerRes?.json();
+          let swaggerContent;
 
-        // Store Swagger Schema for global usage
-        swaggerSchemas = swaggerJSON.components.schemas;
+          // Store Swagger Schema for global usage
+          swaggerSchemas = swaggerJSON.components.schemas;
 
-        const apiHost = swaggerJSON.servers?.[0]?.url;
+          const apiHost = swaggerJSON.servers?.[0]?.url;
 
-        // If statement is temporary, for testing only
-        swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
-        swaggerOAS[key] = swaggerContent;
+          // If statement is temporary, for testing only
+          swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
+          swaggerOAS[key] = swaggerContent;
+        }
       }
 
       // Write API reference Config
@@ -292,7 +294,7 @@ const generateConfigs = async () => {
 
     if (isGenerateReferenceOn) {
       for (let key in swaggerOAS) {
-        if (["balance"].includes(key)) {
+        if (["aptos-web3"].includes(key)) {
           for (let index in Object.keys(swaggerOAS[key])) {
             const functionName = Object.keys(swaggerOAS[key])[index];
             const snakeCaseFunctionName = camelToSnakeCase(functionName);
