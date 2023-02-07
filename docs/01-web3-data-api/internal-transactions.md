@@ -23,16 +23,15 @@ One transaction on a smart contract can lead to many internal transactions that 
 | BNB Chain Testnet               | Coming soon | Partial                   |
 
 ## Will you be adding Internal Transactions to more chains?
-Yes, absolutely! We plan to add Internal Transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
+Yes, absolutely! We plan to add internal transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
 
 ## Are real-time and historical Internal Transactions supported?
 
-Currently Internal Transactions will be processed in real-time across Ethereum, Sepolia, Polygon and Mumbai. This means for all new transactions, where internal transactions exist, they will be available through the API.
+Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon and Mumbai. This means for all new transactions, where internal transactions exist, they will be available through the API.
 
-All historical Internal Transactions for Ethereum, Sepolia and Mumbai are also available, meaning every single Internal Transaction back to Block 0 is available on these blockchains. For BSC, BSC testnet and Polygon, these blockchains are still syncing and will fully complete in Q1.
+All historical internal transactions for Ethereum, Sepolia and Mumbai are also available, meaning every single internal transaction back to Block 0 is available on these blockchains. For BSC, BSC testnet and Polygon, these blockchains are still syncing and will fully complete in Q1.
 
 ## Why are Internal Transactions used?
-
 Internal transactions in Ethereum allow for transfer of Ether and other assets within the same smart contract without creating a new transaction on the blockchain. This can reduce the cost and increase the efficiency of executing certain operations within the contract, as it eliminates the need for a full transaction that incurs gas costs and network fees. 
 
 Additionally, internal transactions provide a way for contracts to securely communicate with each other and interact with each other's state, facilitating complex, multi-step operations and enabling the development of more sophisticated decentralized applications.
@@ -49,7 +48,8 @@ Internal Transactions can be a powerful feature in a number of different use cas
 
 
 ## Which endpoints support Internal Transactions?
-We have included support for Internal Transactions on three existing endpoints by introducing a new query parameter `include` that supports `internal_transactions` as an input.
+We have included support for internal transactions on three existing endpoints by introducing a new query parameter `include` that supports `internal_transactions` as an input.
+
 | Name                            | Endpoint    |
 | :------------------------------ | :---------- |
 | Get native transactions by wallet | `/:address?include=internal_transactions` |
@@ -57,6 +57,7 @@ We have included support for Internal Transactions on three existing endpoints b
 | Get block by hash| `/block/:block_number_or_hash?include=internal_transactions` |
 
 We have also launched a new endpoint that specifically fetches internal transactions for a given transaction hash.
+
 | Name                            | Endpoint    |
 | :------------------------------ | :---------- |
 | Get internal transactions by transaction hash | `/transaction/:transaction_hash/internal-transactions` |
