@@ -19,14 +19,14 @@ One transaction on a smart contract can lead to many internal transactions that 
 | Ethereum Sepolia                | ✅           | ✅ Full history           | 
 | Polygon Mainnet                 | ✅           | Partial                   | 
 | Polygon Mumbai                  | ✅           | ✅ Full history           | 
-| BNB Mainnet                     | Coming soon | Partial                   |
-| BNB Chain Testnet               | Coming soon | Partial                   |
+| BSC Mainnet                     | ✅           | Partial                   |
+| BSC Testnet               | Coming soon | Partial                   |
 
 ## Will you be adding Internal Transactions to more chains?
 Yes, absolutely! We plan to add internal transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
 
 ## Are real-time and historical Internal Transactions supported?
-Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon and Mumbai. This means for all new transactions, where internal transactions exist, they will be available through the API.
+Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon, Mumbai and BSC. This means for all new transactions, where internal transactions exist, they will be available through the API.
 
 All historical internal transactions for Ethereum, Sepolia and Mumbai are also available, meaning every single internal transaction back to Block 0 is available on these blockchains. For BSC, BSC testnet and Polygon, these blockchains are still syncing and will fully complete in Q1.
 
