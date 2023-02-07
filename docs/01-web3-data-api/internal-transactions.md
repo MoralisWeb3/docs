@@ -19,8 +19,8 @@ One transaction on a smart contract can lead to many internal transactions that 
 | Ethereum Sepolia                | ✅           | ✅ Full history           | 
 | Polygon Mainnet                 | ✅           | Partial                   | 
 | Polygon Mumbai                  | ✅           | ✅ Full history           | 
-| BSC Mainnet                     | ✅           | Partial                   |
-| BSC Testnet               | Coming soon | Partial                   |
+| BNB Mainnet                     | ✅           | Partial                   |
+| BNB Testnet               | ✅ | Partial                   |
 
 ## Will you be adding Internal Transactions to more chains?
 Yes, absolutely! We plan to add internal transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
