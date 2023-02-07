@@ -2,6 +2,11 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import qs from "qs";
 import { Path } from "path-parser";
+import { Analytics } from "@segment/analytics-node";
+
+const analytics = new Analytics({
+  writeKey: process.env.SEGMENT_API_KEY ?? "",
+});
 
 const exec = async (request: VercelRequest, response: VercelResponse) => {
   if (request.method !== "POST") {
@@ -26,7 +31,7 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
           "X-API-Key": `${
             auth?.length > 0 ? auth : process.env.MORALIS_API_KEY
           }`,
-          "Authorization": `Bearer ${
+          Authorization: `Bearer ${
             auth?.length > 0 ? auth : process.env.MORALIS_API_KEY
           }`,
           referer: "moralis.io",
@@ -36,6 +41,15 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
     );
 
     const fetchBody = await fetchRes.json();
+
+    analytics.track({
+      anonymousId: "48d213bb-95c3-4f8d-af97-86b2b404dcfe",
+      event: "API Calls",
+      properties: {
+        method,
+        path,
+      },
+    });
 
     response.status(200).json({ status: fetchRes.status, body: fetchBody });
   } catch (error) {

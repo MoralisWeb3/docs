@@ -1,10 +1,9 @@
-import url from 'url';
+import url from "url";
 import fetch from "node-fetch";
 import { redirects } from "./data/redirects";
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
-
   const foundRedirect = redirects.find(
     (redirect) => redirect.source === url.parse(req.url!).pathname
   );
