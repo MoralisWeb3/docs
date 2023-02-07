@@ -363,7 +363,7 @@ const config = {
   plugins: [
     [
       "./src/plugins/docusaurus-plugin-segment",
-      { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
+      { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
     ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
