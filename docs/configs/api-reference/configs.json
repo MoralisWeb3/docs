@@ -12831,7 +12831,7 @@
       ]
     },
     "getNFTCollectionsByIds": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by ids",
       "description": "",
       "method": "GET",
@@ -12879,7 +12879,7 @@
       ]
     },
     "getNFTCollectionsByCreator": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by creator",
       "description": "",
       "method": "GET",
@@ -14248,7 +14248,7 @@
     },
     "getLatestCoins": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Get lates deployed coins",
+      "summary": "Get latest deployed coins",
       "description": "",
       "method": "GET",
       "path": "/coins/latest",
@@ -14742,7 +14742,7 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "array", "items": { "type": "a" } }
+          "field": { "type": "string" }
         }
       ],
       "responses": [
@@ -16453,7 +16453,7 @@
     },
     "getAccount": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Return the authentication key and the sequence number for an account address",
+      "summary": "Get account",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address",
@@ -16499,7 +16499,7 @@
     },
     "getAccountResources": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves all account resources for a given account and a specific ledger version.",
+      "summary": "Get account resources",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resources",
@@ -16535,7 +16535,7 @@
     },
     "getAccountModules": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves all account modules bytecode for a given account at a specific ledger version.",
+      "summary": "Get account modules",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/modules",
@@ -16571,7 +16571,7 @@
     },
     "getAccountResource": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves an individual resource from a given account and at a specific ledger version.",
+      "summary": "Get account resource",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resource/:resource_type",
@@ -16631,7 +16631,7 @@
     },
     "getAccountModule": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves an individual module from a given account and at a specific ledger version.",
+      "summary": "Get account module",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resource/:module_name",
@@ -16705,7 +16705,7 @@
     },
     "getEventsByCreationNumber": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Event types are globally identifiable by an account address and monotonically increasing creation_number, one per event type emitted to the given account.",
+      "summary": "Get events by creation number",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/events/:creation_number",
@@ -16741,7 +16741,7 @@
     },
     "getEventsByEventHandle": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This API uses the given account address, eventHandle, and fieldName to build a key that can globally identify an event types.",
+      "summary": "Get events by event handle",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/events/:event_handle/:field_name",
@@ -16783,7 +16783,7 @@
     },
     "getTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieve on-chain committed transactions. ",
+      "summary": "Get transactions",
       "description": "",
       "method": "GET",
       "path": "/transactions",
@@ -16806,7 +16806,7 @@
     },
     "submitTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieve on-chain committed transactions. ",
+      "summary": "Submit transaction",
       "description": "",
       "method": "POST",
       "path": "/transactions",
@@ -16902,7 +16902,7 @@
     },
     "getTransactionByHash": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Look up a transaction by its hash.",
+      "summary": "Get transaction by hash",
       "description": "",
       "method": "GET",
       "path": "/transactions/by_hash/:txn_hash",
@@ -16919,7 +16919,7 @@
     },
     "getTransactionByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Look up a transaction by its hash.",
+      "summary": "Get transaction by version",
       "description": "",
       "method": "GET",
       "path": "/transactions/by_version/:txn_version",
@@ -16936,7 +16936,7 @@
     },
     "getAccountTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves on-chain committed transactions from an account.",
+      "summary": "Get account transactions",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/transactions",
@@ -16966,7 +16966,7 @@
     },
     "submitBatchTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This allows you to submit multiple transactions.",
+      "summary": "Submit batch transactions",
       "description": "",
       "method": "POST",
       "path": "/transactions/batch",
@@ -17033,7 +17033,7 @@
     },
     "simulateTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have",
+      "summary": "Simulate transaction",
       "description": "",
       "method": "POST",
       "path": "/transactions/simulate",
@@ -17083,7 +17083,7 @@
     },
     "encodeSubmission": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint makes it possible to submit transaction requests to the API from languages that do not have library support for BCS",
+      "summary": "Encode submission",
       "description": "",
       "method": "POST",
       "path": "/transactions/encode_submission",
@@ -17138,7 +17138,7 @@
     },
     "estimateGasPrice": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Currently, the gas estimation is handled by taking the median of the last 100,000 transactions ",
+      "summary": "Estimate gas price",
       "description": "",
       "method": "GET",
       "path": "/transactions/estimate_gas_price",
@@ -17176,7 +17176,7 @@
     },
     "getBlockByHeight": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information.",
+      "summary": "Get block by height",
       "description": "",
       "method": "GET",
       "path": "/blocks/:block_height",
@@ -17256,7 +17256,7 @@
     },
     "getBlockByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.",
+      "summary": "Get block by version",
       "description": "",
       "method": "GET",
       "path": "/blocks/by_version/:version",
