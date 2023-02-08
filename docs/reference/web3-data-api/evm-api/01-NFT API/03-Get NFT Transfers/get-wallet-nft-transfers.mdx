@@ -11,15 +11,14 @@ import config from "../../../../../configs/api-reference/configs.json";
 # Get NFT transfers by wallet
 
 <ApiReference {...config.nft.getWalletNFTTransfers}>
-  <Admonition type="info" icon="💡" title="Direct NFT Transfers">
-    <p>This API will index direct NFT Transfers.</p>
+  <Admonition type="info" icon="💡" title="INDIRECT NFT TRANSFERS">
     <p>
-      Note that this API won't index indirect NFT transfers (such as those that
-      pass through a smart contract).
+      Note that this endpoint won't include transfers that are conducted through
+      a smart contract also known as indirect transfers.
     </p>
     <p>
-      The NFT transfer from the buyer to the seller through OpenSea
-      Marketplace's smart contract is an example of an indirect transfer.
+      For example using OpenSea to transfer NFTs is a indirect transfer as it
+      uses the OpenSea smart contract.
     </p>
   </Admonition>
 </ApiReference>

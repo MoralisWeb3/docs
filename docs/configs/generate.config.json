@@ -1,4 +1,4 @@
 {
   "isGenerateSchemaOn": true,
-  "isGenerateReferenceOn": true
+  "isGenerateReferenceOn": false
 }

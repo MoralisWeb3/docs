@@ -5351,7 +5351,7 @@
     "getWalletTransactions": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get native transactions by wallet",
-      "description": "Get all transactions executed by certain address ordered by block number in descending order. If you are trying to get the list of all transfers, check out our transfers API for [ERC20 token](/web3-data-api/reference/get-wallet-token-transfers) and [NFT](/web3-data-api/reference/get-wallet-nft-transfers).",
+      "description": "Get native transactions ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address",
       "pathParams": [
@@ -5434,6 +5434,14 @@
           "description": "If the result should skip returning the total count (Improves performance).",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "include",
+          "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "example": "internal_transactions",
+          "type": "string",
+          "enum": ["internal_transactions"]
         },
         {
           "name": "limit",
@@ -5570,6 +5578,79 @@
                     "type": "string",
                     "description": "The block hash",
                     "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "internal_transactions",
+                    "type": "object",
+                    "description": "The internal transaction",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                      },
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": 12526958
+                      },
+                      {
+                        "name": "block_hash",
+                        "type": "string",
+                        "description": "The block hash",
+                        "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                      },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "description": "Call type",
+                        "example": "CALL"
+                      },
+                      {
+                        "name": "from",
+                        "type": "string",
+                        "description": "The sender",
+                        "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                      },
+                      {
+                        "name": "to",
+                        "type": "string",
+                        "description": "The recipient",
+                        "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "description": "The value that was transfered (in wei)",
+                        "example": "650000000000000000"
+                      },
+                      {
+                        "name": "gas",
+                        "type": "string",
+                        "description": "The gas of the transaction",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "gas_used",
+                        "type": "string",
+                        "description": "The used gas",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "input",
+                        "type": "string",
+                        "description": "The input",
+                        "example": "0x"
+                      },
+                      {
+                        "name": "output",
+                        "type": "string",
+                        "description": "The output",
+                        "example": "0x"
+                      }
+                    ]
                   }
                 ]
               }
@@ -5590,7 +5671,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"cursor\": \"\", \n    \"limit\": 0, \n}\n\nresult = evm_api.transaction.get_wallet_transactions(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"cursor\": \"\", \n    \"limit\": 0, \n    \"disable_total\": True, \n}\n\nresult = evm_api.transaction.get_wallet_transactions(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -5880,6 +5961,67 @@
         }
       ]
     },
+    "getInternalTransactions": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get internal transactions by transaction hash",
+      "description": "Get the contents of a internal transaction by transaction hash.",
+      "method": "GET",
+      "path": "/transaction/:transaction_hash/internal-transactions",
+      "pathParams": [
+        {
+          "name": "transaction_hash",
+          "description": "The transaction hash",
+          "required": true,
+          "example": "0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Internal Transaction details by transaction hash"
+        }
+      ]
+    },
     "getTransaction": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get transaction by hash",
@@ -5932,6 +6074,14 @@
             "arbitrum",
             "0xa4b1"
           ]
+        },
+        {
+          "name": "include",
+          "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "example": "internal_transactions",
+          "type": "string",
+          "enum": ["internal_transactions"]
         }
       ],
       "responses": [
@@ -6081,6 +6231,79 @@
                     "type": "string",
                     "description": "The hash of the block",
                     "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  }
+                ]
+              },
+              {
+                "name": "internal_transactions",
+                "type": "object",
+                "description": "The internal transactions of the transaction",
+                "fields": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string",
+                    "description": "Call type",
+                    "example": "CALL"
+                  },
+                  {
+                    "name": "from",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "to",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transfered (in wei)",
+                    "example": "650000000000000000"
+                  },
+                  {
+                    "name": "gas",
+                    "type": "string",
+                    "description": "The gas of the transaction",
+                    "example": "6721975"
+                  },
+                  {
+                    "name": "gas_used",
+                    "type": "string",
+                    "description": "The used gas",
+                    "example": "6721975"
+                  },
+                  {
+                    "name": "input",
+                    "type": "string",
+                    "description": "The input",
+                    "example": "0x"
+                  },
+                  {
+                    "name": "output",
+                    "type": "string",
+                    "description": "The output",
+                    "example": "0x"
                   }
                 ]
               }
@@ -6635,6 +6858,14 @@
             "arbitrum",
             "0xa4b1"
           ]
+        },
+        {
+          "name": "include",
+          "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "example": "internal_transactions",
+          "type": "string",
+          "enum": ["internal_transactions"]
         }
       ],
       "responses": [
@@ -6899,6 +7130,79 @@
                         "type": "string",
                         "description": "The hash of the block",
                         "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "internal_transactions",
+                    "type": "object",
+                    "description": "The internal transactions of the transaction",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                      },
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": 12526958
+                      },
+                      {
+                        "name": "block_hash",
+                        "type": "string",
+                        "description": "The block hash",
+                        "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                      },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "description": "Call type",
+                        "example": "CALL"
+                      },
+                      {
+                        "name": "from",
+                        "type": "string",
+                        "description": "The sender",
+                        "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                      },
+                      {
+                        "name": "to",
+                        "type": "string",
+                        "description": "The recipient",
+                        "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "description": "The value that was transfered (in wei)",
+                        "example": "650000000000000000"
+                      },
+                      {
+                        "name": "gas",
+                        "type": "string",
+                        "description": "The gas of the transaction",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "gas_used",
+                        "type": "string",
+                        "description": "The used gas",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "input",
+                        "type": "string",
+                        "description": "The input",
+                        "example": "0x"
+                      },
+                      {
+                        "name": "output",
+                        "type": "string",
+                        "description": "The output",
+                        "example": "0x"
                       }
                     ]
                   }
@@ -12831,7 +13135,7 @@
       ]
     },
     "getNFTCollectionsByIds": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by ids",
       "description": "",
       "method": "GET",
@@ -12879,7 +13183,7 @@
       ]
     },
     "getNFTCollectionsByCreator": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io/",
+      "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by creator",
       "description": "",
       "method": "GET",
@@ -14248,7 +14552,7 @@
     },
     "getLatestCoins": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Get lates deployed coins",
+      "summary": "Get latest deployed coins",
       "description": "",
       "method": "GET",
       "path": "/coins/latest",
@@ -14742,7 +15046,7 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "array", "items": { "type": "a" } }
+          "field": { "type": "string" }
         }
       ],
       "responses": [
@@ -16453,7 +16757,7 @@
     },
     "getAccount": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Return the authentication key and the sequence number for an account address",
+      "summary": "Get account",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address",
@@ -16499,7 +16803,7 @@
     },
     "getAccountResources": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves all account resources for a given account and a specific ledger version.",
+      "summary": "Get account resources",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resources",
@@ -16535,7 +16839,7 @@
     },
     "getAccountModules": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves all account modules bytecode for a given account at a specific ledger version.",
+      "summary": "Get account modules",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/modules",
@@ -16571,7 +16875,7 @@
     },
     "getAccountResource": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves an individual resource from a given account and at a specific ledger version.",
+      "summary": "Get account resource",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resource/:resource_type",
@@ -16631,7 +16935,7 @@
     },
     "getAccountModule": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves an individual module from a given account and at a specific ledger version.",
+      "summary": "Get account module",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/resource/:module_name",
@@ -16705,7 +17009,7 @@
     },
     "getEventsByCreationNumber": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Event types are globally identifiable by an account address and monotonically increasing creation_number, one per event type emitted to the given account.",
+      "summary": "Get events by creation number",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/events/:creation_number",
@@ -16741,7 +17045,7 @@
     },
     "getEventsByEventHandle": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This API uses the given account address, eventHandle, and fieldName to build a key that can globally identify an event types.",
+      "summary": "Get events by event handle",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/events/:event_handle/:field_name",
@@ -16783,7 +17087,7 @@
     },
     "getTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieve on-chain committed transactions. ",
+      "summary": "Get transactions",
       "description": "",
       "method": "GET",
       "path": "/transactions",
@@ -16806,7 +17110,7 @@
     },
     "submitTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieve on-chain committed transactions. ",
+      "summary": "Submit transaction",
       "description": "",
       "method": "POST",
       "path": "/transactions",
@@ -16902,7 +17206,7 @@
     },
     "getTransactionByHash": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Look up a transaction by its hash.",
+      "summary": "Get transaction by hash",
       "description": "",
       "method": "GET",
       "path": "/transactions/by_hash/:txn_hash",
@@ -16919,7 +17223,7 @@
     },
     "getTransactionByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Look up a transaction by its hash.",
+      "summary": "Get transaction by version",
       "description": "",
       "method": "GET",
       "path": "/transactions/by_version/:txn_version",
@@ -16936,7 +17240,7 @@
     },
     "getAccountTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Retrieves on-chain committed transactions from an account.",
+      "summary": "Get account transactions",
       "description": "",
       "method": "GET",
       "path": "/accounts/:address/transactions",
@@ -16966,7 +17270,7 @@
     },
     "submitBatchTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This allows you to submit multiple transactions.",
+      "summary": "Submit batch transactions",
       "description": "",
       "method": "POST",
       "path": "/transactions/batch",
@@ -17033,7 +17337,7 @@
     },
     "simulateTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have",
+      "summary": "Simulate transaction",
       "description": "",
       "method": "POST",
       "path": "/transactions/simulate",
@@ -17083,7 +17387,7 @@
     },
     "encodeSubmission": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint makes it possible to submit transaction requests to the API from languages that do not have library support for BCS",
+      "summary": "Encode submission",
       "description": "",
       "method": "POST",
       "path": "/transactions/encode_submission",
@@ -17138,7 +17442,7 @@
     },
     "estimateGasPrice": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Currently, the gas estimation is handled by taking the median of the last 100,000 transactions ",
+      "summary": "Estimate gas price",
       "description": "",
       "method": "GET",
       "path": "/transactions/estimate_gas_price",
@@ -17176,7 +17480,7 @@
     },
     "getBlockByHeight": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information.",
+      "summary": "Get block by height",
       "description": "",
       "method": "GET",
       "path": "/blocks/:block_height",
@@ -17256,7 +17560,7 @@
     },
     "getBlockByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.",
+      "summary": "Get block by version",
       "description": "",
       "method": "GET",
       "path": "/blocks/by_version/:version",
