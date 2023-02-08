@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ApiReferenceTokenProvider } from "@site/src/components/ApiReference/ApiReferenceToken";
 
 const Root = ({ children }) => {

@@ -5,8 +5,20 @@ slug: /web3-data-api/reference/get-wallet-nft-transfers
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
 import config from "../../../../../configs/api-reference/configs.json";
 
 # Get NFT transfers by wallet
 
-<ApiReference {...config.nft.getWalletNFTTransfers} />
+<ApiReference {...config.nft.getWalletNFTTransfers}>
+  <Admonition type="info" icon="💡" title="INDIRECT NFT TRANSFERS">
+    <p>
+      Note that this endpoint won't include transfers that are conducted through
+      a smart contract also known as indirect transfers.
+    </p>
+    <p>
+      For example using OpenSea to transfer NFTs is a indirect transfer as it
+      uses the OpenSea smart contract.
+    </p>
+  </Admonition>
+</ApiReference>
