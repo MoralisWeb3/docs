@@ -1610,7 +1610,7 @@ export const redirects = [
   },
   {
     source: "/reference/metadata-normalization",
-    destination: "/web3-data-api/metadata-normalization/metadata-normalization",
+    destination: "/web3-data-api/nft-metadata/metadata-normalization",
     permanent: true,
   },
   {
@@ -1621,7 +1621,7 @@ export const redirects = [
   {
     source: "/reference/normalized-vs-non-normalized-metadata",
     destination:
-      "/web3-data-api/metadata-normalization/normalized-vs-non-normalized-metadata",
+      "/web3-data-api/nft-metadata/normalized-vs-non-normalized-metadata",
     permanent: true,
   },
   {
