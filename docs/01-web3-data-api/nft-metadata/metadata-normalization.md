@@ -2,7 +2,7 @@
 title: "Metadata Normalization"
 slug: "metadata-normalization"
 description: "When working with NFT Metadata, you have the option to receive either a normalized or non-normalized metadata from our NFT APIs."
-sidebar_position: 8
+sidebar_position: 0
 ---
 
 Through our [NFT APIs](/web3-data-api/evm/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](/web3-data-api/metadata-normalization/normalized-vs-non-normalized-metadata).
