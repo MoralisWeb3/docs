@@ -3,6 +3,7 @@ title: "How to monitor specific NFTs"
 slug: "../how-to-monitor-specific-nfts"
 description: "Learn how to monitor specific CryptoPunk NFTs Based on an array of Token IDs using Moralis Streams API."
 ---
+
 Lets create a stream that monitor specific CryptoPunk NFTs based on an array of Token IDs.
 
 ### Programmatically
@@ -14,16 +15,18 @@ import TabItem from '@theme/TabItem';
 <TabItem value="js" label="JavaScript">
 
 ```javascript
-const punkTransferAbi = [{
-  "anonymous": false,
-  "inputs": [
-    { "indexed": true, "name": "from", "type": "address" },
-    { "indexed": true, "name": "to", "type": "address" },
-    { "indexed": false, "name": "punkIndex", "type": "uint256" },
-  ],
-  "name": "PunkTransfer",
-  "type": "event",
-}]; // valid abi of the event
+const punkTransferAbi = [
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, name: "from", type: "address" },
+      { indexed: true, name: "to", type: "address" },
+      { indexed: false, name: "punkIndex", type: "uint256" },
+    ],
+    name: "PunkTransfer",
+    type: "event",
+  },
+]; // valid abi of the event
 
 const options = {
   chains: [EvmChain.ETHEREUM], // list of blockchains to monitor
@@ -35,7 +38,7 @@ const options = {
   advancedOptions: [
     {
       topic0: "PunkTransfer(address,address,uint256)",
-      filter: { "in": ["punkIndex", ["1000", "1001", "1002"]] }, // only receive transfer events if the token id is 1000/1001/1002
+      filter: { in: ["punkIndex", ["1000", "1001", "1002"]] }, // only receive transfer events if the token id is 1000/1001/1002
       includeNativeTxs: true,
     },
   ],
@@ -44,12 +47,13 @@ const options = {
 
 const stream = await Moralis.Streams.add(options);
 
+const { id } = stream.toJSON();
+
 // Attach the contract address to the stream
 await Moralis.Streams.addAddress({
-  id: stream.id,
+  id,
   address: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB", // crypto punks address
 });
-
 ```
 
 </TabItem>
@@ -72,12 +76,12 @@ punkTransferAbi = [{
 }]; // valid abi of the event
 
 body = {
-    "webhookUrl": "https://YOUR_WEBHOOK_URL", 
-    "description": "1000 to 1002 cryptopunks", 
-    "tag": "cryptoPunks", 
-    "topic0": ["PunkTransfer(address,address,uint256)"], 
-    "includeContractLogs": True, 
-    "abi": punkTransferAbi, 
+    "webhookUrl": "https://YOUR_WEBHOOK_URL",
+    "description": "1000 to 1002 cryptopunks",
+    "tag": "cryptoPunks",
+    "topic0": ["PunkTransfer(address,address,uint256)"],
+    "includeContractLogs": True,
+    "abi": punkTransferAbi,
     "advancedOptions": [
       {
         topic0: "PunkTransfer(address,address,uint256)",
@@ -85,7 +89,7 @@ body = {
         includeNativeTxs: True,
       },
     ],
-    "chainIds": ["0x1"], 
+    "chainIds": ["0x1"],
 }
 
 result = streams.evm.create_stream(
@@ -107,14 +111,12 @@ print(result)
 4. Add below value to advanced options
 
 ```json
-[  
-  {  
-    "topic0": "PunkTransfer(address,address,uint256)",  
-    "filter": { "in": ["punkIndex", ["1000", "1001", "1002"]] }  
-  }  
+[
+  {
+    "topic0": "PunkTransfer(address,address,uint256)",
+    "filter": { "in": ["punkIndex", ["1000", "1001", "1002"]] }
+  }
 ]
 ```
-
-
 
 5. Click on create stream button.
