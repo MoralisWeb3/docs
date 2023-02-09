@@ -72,9 +72,7 @@ const options = {
       includeNativeTxs: true,
     },
   ],
-  webhookUrl: "<https://YOUR_WEBHOOK_URL>
-
-", // webhook url to receive events,
+  webhookUrl: "<https://YOUR_WEBHOOK_URL>", // webhook url to receive events,
 };
 
 const stream = await Moralis.Streams.add(options);
