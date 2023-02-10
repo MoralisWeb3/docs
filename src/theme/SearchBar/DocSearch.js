@@ -30,7 +30,7 @@ class DocSearch {
             autocompleteOptions && autocompleteOptions.debug
                 ? autocompleteOptions.debug
                 : false;
-        // eslint-disable-next-line no-param-reassign
+         
         autocompleteOptions.debug = debug || autocompleteOptionsDebug;
         this.autocompleteOptions = autocompleteOptions;
         this.autocompleteOptions.cssClasses =
@@ -138,7 +138,7 @@ class DocSearch {
     getAutocompleteSource(transformData, queryHook) {
         return (query, callback) => {
             if (queryHook) {
-                // eslint-disable-next-line no-param-reassign
+                 
                 query = queryHook(query) || query;
             }
             this.client.search(query).then(hits => {
@@ -162,7 +162,7 @@ class DocSearch {
         const clonedHits = utils.deepClone(receivedHits);
         const hits = clonedHits.map(hit => {
             if (hit._highlightResult) {
-                // eslint-disable-next-line no-param-reassign
+                 
                 hit._highlightResult = utils.mergeKeyWithParent(
                     hit._highlightResult,
                     "hierarchy"
@@ -237,7 +237,7 @@ class DocSearch {
             else if (anchor) return `${hit.url}#${hit.anchor}`;
             return url;
         } else if (anchor) return `#${hit.anchor}`;
-        /* eslint-disable */
+         
         console.warn("no anchor nor url for : ", JSON.stringify(hit));
         /* eslint-enable */
         return null;

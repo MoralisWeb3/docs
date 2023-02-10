@@ -21,7 +21,8 @@ const escapeChar = (str: string, char: string) =>
 const buildTemplate = (lines: Array<string | null>) =>
   lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent: number = 0) => `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
+const line = (str: string, indent: number = 0) =>
+  `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
 export const stringifyJSON = (obj: object, pretty: boolean = false) =>
   JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
@@ -43,14 +44,16 @@ const tabs = [
         line(`method: '${method}',`, 1),
         line("headers: {", 1),
         line(`accept: 'application/json'${auth || body ? "," : ""}`, 2),
-        body ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2) : null,
+        body
+          ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2)
+          : null,
         auth ? line(`'X-API-Key': '${auth}'`, 2) : null,
         line("},", 1),
         body
-          ? line(`body: JSON.stringify(${stringifyJSON(body, true)})`, 1).replace(
-            /\n/g,
-            `\n${" ".repeat(INDENT_LENGTH)}`
-          )
+          ? line(
+              `body: JSON.stringify(${stringifyJSON(body, true)})`,
+              1
+            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
           : null,
         line("};"),
         line(""),
@@ -76,12 +79,15 @@ const tabs = [
         body ? line(`payload = ${stringifyJSON(body, true)}`) : null,
         line("headers = {"),
         line(`"Accept": "application/json"${auth || body ? "," : ""}`, 1),
-        body ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1) : null,
+        body
+          ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1)
+          : null,
         auth ? line(`"X-API-Key": "${auth}"`, 1) : null,
         line(`}`),
         line(""),
         line(
-          `response = requests.request("${method}", url, ${body ? "json=payload, " : ""
+          `response = requests.request("${method}", url, ${
+            body ? "json=payload, " : ""
           }headers=headers)`
         ),
         line(""),
@@ -98,9 +104,17 @@ const tabs = [
       return buildTemplate([
         line(`curl --request ${method} \\`),
         line(`${indent}--url '${url}' \\`),
-        line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
-        auth ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`) : null,
-        body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
+        line(
+          `${indent}--header 'accept: application/json' ${
+            body || auth ? "\\" : ""
+          }`
+        ),
+        auth
+          ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`)
+          : null,
+        body
+          ? line(`${indent}--header 'content-type: application/json' \\`)
+          : null,
         body ? line(`${indent}--data '`) : null,
         body ? line(stringifyJSON(body, true)) : null,
         body ? line("'") : null,
@@ -127,13 +141,21 @@ const tabs = [
         line(`url := "${url}"`, 1),
         line(""),
         body
-          ? line(`payload := strings.NewReader("${escapeChar(stringifyJSON(body), '"')}")`, 1)
+          ? line(
+              `payload := strings.NewReader("${escapeChar(
+                stringifyJSON(body),
+                '"'
+              )}")`,
+              1
+            )
           : null,
         body ? line("") : null,
         line(`req, _ := http.NewRequest("${method}", url, payload)`, 1),
         line(""),
         line('req.Header.Add("Accept", "application/json")', 1),
-        body ? line('req.Header.Add("Content-Type", "application/json")', 1) : null,
+        body
+          ? line('req.Header.Add("Content-Type", "application/json")', 1)
+          : null,
         auth ? line(`req.Header.Add("X-API-Key", "${auth}")`, 1) : null,
         line(""),
         line("res, _ := http.DefaultClient.Do(req)", 1),
@@ -162,7 +184,9 @@ const tabs = [
         line("$client = new \\GuzzleHttp\\Client();"),
         line(""),
         line(`$response = $client->request('${method}', '${url}', [`),
-        body ? line(`'body' => '${escapeChar(stringifyJSON(body), "'")}',`, 1) : null,
+        body
+          ? line(`'body' => '${escapeChar(stringifyJSON(body), "'")}',`, 1)
+          : null,
         line("'headers' => [", 1),
         line("'Accept' => 'application/json',", 2),
         auth ? line(`'X-API-Key' => '${auth}',`, 2) : null,
@@ -184,10 +208,13 @@ export const filterOutEmpty = (value: any) => {
    * - verifyChallengeEvm
    * - verifyChallengeSolana
    */
-  if (value?.message) value = { ...value, message: value.message.replace("\\n", "\n") }
+  if (value?.message)
+    value = { ...value, message: value.message.replace("\\n", "\n") };
 
   if (Array.isArray(value)) {
-    const cleanArray = value.map((item) => filterOutEmpty(item)).filter((item) => item != null);
+    const cleanArray = value
+      .map((item) => filterOutEmpty(item))
+      .filter((item) => item != null);
     return cleanArray.length === 0 ? undefined : cleanArray;
   }
 
@@ -203,20 +230,25 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
-const ApiExamples = ({ method, apiHost, path, codeSamples }: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+const ApiExamples = ({
+  method,
+  apiHost,
+  path,
+  codeSamples,
+}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
 
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (value, key) => `:${key}`),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
       {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code } = codeSamples?.find(sample => sample?.language === lang) ?? {};
+        const { code } =
+          codeSamples?.find((sample) => sample?.language === lang) ?? {};
         const auth = token.length > 0 ? token : "YOUR_API_KEY";
         return (
           <TabItem key={index} value={lang} label={title}>
@@ -224,21 +256,23 @@ const ApiExamples = ({ method, apiHost, path, codeSamples }: Pick<ApiReferencePr
               {code
                 ? buildTemplate([line(code?.replace(/YOUR_API_KEY/, auth))])
                 : template({
-                  method,
-                  url: [
-                    apiHost,
-                    new Path(path).build({
-                      ...defaultPathParams,
-                      ...omitBy(values.path, (value) => value == null),
-                    }),
-                    qs.stringify(values.query || {}, { addQueryPrefix: true }),
-                  ].join(""),
-                  auth: auth,
-                  body: filterOutEmpty(values.body),
-                })}
+                    method,
+                    url: [
+                      apiHost,
+                      new Path(path).build({
+                        ...defaultPathParams,
+                        ...omitBy(values.path, (value) => value == null),
+                      }),
+                      qs.stringify(values.query || {}, {
+                        addQueryPrefix: true,
+                      }),
+                    ].join(""),
+                    auth: auth,
+                    body: filterOutEmpty(values.body),
+                  })}
             </CodeBlock>
           </TabItem>
-        )
+        );
       })}
     </Tabs>
   );

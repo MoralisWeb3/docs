@@ -153,7 +153,7 @@ const utils = {
   flattenAndFlagFirst(object, flag) {
     const values = this.values(object).map(collection =>
       collection.map((item, index) => {
-        // eslint-disable-next-line no-param-reassign
+         
         item[flag] = index === 0;
         return item;
       })
