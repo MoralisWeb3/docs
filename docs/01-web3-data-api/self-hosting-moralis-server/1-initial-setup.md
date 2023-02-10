@@ -1,5 +1,5 @@
 ---
-title: "Initial setup"
+title: "Initial Setup"
 slug: "initial-setup"
 description: "This guide will teach you how to initially set up your server to then run it locally"
 ---
