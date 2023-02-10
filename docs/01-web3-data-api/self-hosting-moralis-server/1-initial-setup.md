@@ -1,7 +1,7 @@
 ---
 title: "Initial setup"
 slug: "initial-setup"
-description: "This guide will teach you how to initially set up your server"
+description: "This guide will teach you how to initially set up your server to then run it locally"
 ---
    
 This guide will teach you how to initially **set up your own server** to then **run it locally**.
@@ -49,17 +49,29 @@ You will see something like this:
 
 Next, we will go through the variables that you need to **fill/modify for this initial setup**.
 
+:::caution
+**Never expose** these values to the public. **Especially not the `MASTER_KEY`**, as it would give users access to the entire server.
+:::
+
 ### `MORALIS_API_KEY`
 
 Get your API Key from your [Moralis dashboard](https://admin.moralis.io/web3apis).
 
 ### `MASTER_KEY`
 
-It is required for Parse Server and can be any value to your choice. **Make sure to never expose it**.
+It is required for Parse Server and can be any value to your choice. For example:
+
+```shell
+M4sT3RK3y
+```
 
 ### `APPLICATION_ID`
 
-It is required for Parse Server and can be any value to your choice.
+It is required for Parse Server and can be any value to your choice. For example:
+
+```shell
+001
+```
 
 ### `DATABASE_URI`
 
@@ -79,9 +91,9 @@ Do not use this method in a production environment as it is only built for local
 yarn dev:db-start
 ```
 
-By default this will start a MongoDB on  port  `27017` so set the `.env` variable to:
+By default this will start a MongoDB on  port  `27017` so set `DATABASE_URI` to:
 ```shell
-DATABASE_URI = 'mongodb://localhost:27017'
+'mongodb://localhost:27017'
 ```
 
 You can stop the instance with:
@@ -90,7 +102,7 @@ You can stop the instance with:
 yarn dev:db-stop
 ```
 
-:::note
+:::tip
 Make sure to start the instance before running the server.
 :::
 
@@ -100,10 +112,68 @@ Make sure to start the instance before running the server.
 Redis is needed to utilise the **rate-limit functionality**. For this we are using the [`RedisCacheAdpater`](https://docs.parseplatform.org/parse-server/guide/#rediscacheadapter) of Parse Server.
 :::
 
+:::note
+You can opt-out of this dependency if you want to set up your rate-limit functionality in any other way.
+:::
 
-//TODO YOu should see something like this (foto amb totes les vars)
+See this [complete guide](https://redis.io/docs/getting-started) on how to setup Redis locally. If you're on Windows we recommend following this [amazing YouTube tutorial](https://www.youtube.com/watch?v=_nFwPTHOMIY).
+
+After running Redis locally, set `REDIS_CONNECTION_STRING` to its URL, which probably is:
+
+```shell
+'redis://127.0.0.1:6379'
+```
+
+### Complete `.env`
+
+Your `.env` file should look like this:
+
+```shell
+# See src/config.ts for details on the .env variables that you can set
+
+# Your Moralis Api key, that can be found in the dashboard. Keep this secret!
+MORALIS_API_KEY = '3ACGok8mCyMO42LRVMTclDQq5ljl8xEc7b2b5Tr6fDPrcQtYhnTI3VJBcsgVPLwG'
+
+PORT = 1337;
+MASTER_KEY = M4sT3RK3y
+APPLICATION_ID = 001
+SERVER_URL = 'http://localhost:1337/server'
+CLOUD_PATH = './build/cloud/main.js'
+DATABASE_URI = 'mongodb://localhost:27017'
+
+REDIS_CONNECTION_STRING = 'redis://127.0.0.1:6379'
+RATE_LIMIT_TTL = 30
+RATE_LIMIT_AUTHENTICATED = 50
+RATE_LIMIT_ANONYMOUS = 20
+
+USE_STREAMS = true
+STREAMS_WEBHOOK_URL = '/streams-webhook'
+```
 
 ## Run the server locally
+
+First, compile your code with:
+
+```shell
+yarn build
+```
+
+:::note
+This will compile your code to `/build`. This step is required for cloud functions to work. Alternatively you can change the path to your cloud code in the `CLOUD_PATH` environment variable but we will see that in a more advanced section.
+:::
+
+
+Now you can **run the server locally** with:
+
+```shell
+yarn dev
+```
+
+Your server is compiled and running locally on your specified `PORT` (by default `http://localhost:1337`).
+
+:::tip success
+Now your server can be accessed on **[http://localhost:1337/server](http://localhost:1337/server)**
+:::
 
 :::caution Remember
 With this initial setup, the server is still **not production-ready**. Let's continue with the next step to make it so.
