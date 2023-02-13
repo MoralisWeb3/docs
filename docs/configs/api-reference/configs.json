@@ -2597,7 +2597,7 @@
     "getNFTContractMetadata": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get NFT collection metadata",
-      "description": "Get the collection / contract level metadata for a given contract (name, symbol, base token URI).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
+      "description": "Get the collection / contract level metadata for a given contract (name, symbol, and contract type).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
       "method": "GET",
       "path": "/nft/:address/metadata",
       "pathParams": [
