@@ -2,6 +2,7 @@
 title: "Install Moralis SDK"
 slug: "../moralis-sdk"
 description: "Quickly and easily integrate Moralis' products into your backend with the Moralis SDK."
+sidebar_position: 2
 ---
 
 ## What is the Moralis SDK?

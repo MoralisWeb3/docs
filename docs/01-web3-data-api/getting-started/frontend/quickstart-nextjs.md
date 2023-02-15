@@ -2,6 +2,7 @@
 title: "Quickstart NextJS"
 slug: "../quickstart-nextjs"
 description: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
+sidebar_position: 2
 ---
 ## Introduction
 

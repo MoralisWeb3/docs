@@ -2,7 +2,7 @@
 title: "Get Your API Key"
 slug: "../get-your-api-key"
 description: "Learn how to get an API Key and make your first request with the Moralis API."
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 ## Step 1: Create Your Free Moralis Account
