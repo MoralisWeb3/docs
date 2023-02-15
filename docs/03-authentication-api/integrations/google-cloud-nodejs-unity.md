@@ -16,7 +16,7 @@ This tutorial will teach you how to host your custom backend (powered by Moralis
 
 ## Prerequisites
 
-- Complete the [Quickstart NodeJS](/web3-data-api/quickstart-nodejs) tutorial
+- Complete the [Quickstart NodeJS](/web3-data-api/getting-started/quickstart-nodejs) tutorial
 
 ## Customize Code from the _Quickstart NodeJS_ Tutorial
 

@@ -29,7 +29,7 @@ You can find the final dapp with implemented style on our [GitHub](https://githu
 
 1. Create a [Moralis account](https://www.moralis.io).
 2. Install and set up [Visual Studio](https://code.visualstudio.com/).
-3. Create your NextJS dapp (you can create it using **[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)** or follow the **[NextJS dapp](/web3-data-api/quickstart-nextjs)** tutorial).
+3. Create your NextJS dapp (you can create it using **[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)** or follow the **[NextJS dapp](/web3-data-api/getting-started/quickstart-nextjs)** tutorial).
 
 ## Install the Required Dependencies
 

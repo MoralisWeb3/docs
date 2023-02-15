@@ -70,12 +70,12 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp-nodejs",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/getting-started/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/your-first-dapp-nextjs",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/getting-started/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -90,7 +90,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp-angular",
-    destination: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/getting-started/quickstart-angular",
     permanent: true,
   },
   {
@@ -1444,7 +1444,7 @@ export const redirects = [
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/getting-started/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -1573,7 +1573,7 @@ export const redirects = [
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/getting-started/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -2171,12 +2171,12 @@ export const redirects = [
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/getting-started/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/getting-started/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -2599,7 +2599,7 @@ export const redirects = [
   {
     source:
       "/moralis-server/getting-started/connect-the-sdk/connect-with-react",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/getting-started/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -3493,7 +3493,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/connect-using-node",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/getting-started/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -5219,7 +5219,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/getting-started/quickstart-nodejs",
     permanent: true,
   },
   {
