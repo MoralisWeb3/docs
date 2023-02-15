@@ -1,10 +1,10 @@
 ---
-title: "Transaction Labelling"
+title: "Transaction Labeling"
 slug: "transaction-labelling"
 sidebar_position: 7
 ---
 
-# Transaction Labelling
+# Transaction Labeling
 
 The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI. 
 
@@ -12,9 +12,9 @@ This means that for each transaction and log we apply a friendly, easily recogni
 
 Each transaction includes a `decoded_call` object which is the decoded `input` data of the transaction, whilst each log includes a `decoded_event` object which is the decoded `topic` data.
 
-## Which endpoints support Transaction labelling?
+## Which endpoints support Transaction labeling?
 
-We have included support for transaction labelling on two new endpoints:
+We have included support for transaction labeling on two new endpoints:
 
 | Name                                        | Endpoint                                                       |
 | :------------------------------------------ | :------------------------------------------------------------- |
@@ -28,16 +28,16 @@ If transaction is related to an unverified contract, or it's part of a verified 
 
 For unsupported ABIs, we have future plans to make submissions available via the API, however until this time, if you would like an ABI to be supported, please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/feature-requests/).
 
-## What chains currently support transaction labelling?
-All of our EVM blockchains support transaction labelling, with the highest contract coverage on Ethereum.
+## What chains currently support transaction labeling?
+All of our EVM blockchains support transaction labeling, with the highest contract coverage on Ethereum.
 
 ## Will you continue to add new contract ABIs?
 
 Yes, absolutely! We plan to continue adding verified contract ABIs to our repository. We have plans to make this automatic in future, however until this time, if you would like an ABI to be supported please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/feature-requests/).
 
-## What are some use cases of Transaction labelling?
+## What are some use cases of Transaction labeling?
 
-Transaction labelling can be a powerful feature in a number of different use cases. Here are some popular ones:
+Transaction labeling can be a powerful feature in a number of different use cases. Here are some popular ones:
 
 - Displaying a clear timeline of events for a given wallet
 - Identifying different types of transactions for specific use-cases, such as taxable events
