@@ -18,8 +18,8 @@ We have included support for transaction labelling on two new endpoints:
 
 | Name                                        | Endpoint                                                       |
 | :------------------------------------------ | :------------------------------------------------------------- |
-| Get native transactions by wallet (verbose) | `/:address/verbose`                      |
-| Get transaction by hash (verbose)           | `/transaction/:transaction_hash/verbose` |
+| Get decoded transactions by wallet | `/:address/verbose`                      |
+| Get decoded transaction by hash | `/transaction/:transaction_hash/verbose` |
 
 ## Why are some transactions not decoded?
 We only decode transactions from verified ABIs. We are continuously adding to our repository of verified contract ABIs.
