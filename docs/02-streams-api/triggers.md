@@ -352,6 +352,54 @@ erc20Transfers: [
 Note that the order of the results is the same as the order of the triggers we  
 specified.
 
+### Create triggers using Admin Panel
+
+Goal: To add an `erc20transfer` trigger to get the balance of the sender of an ERC20 transfer
+
+1. Go to streams page, add contract address(eg:USDC - `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`) to create a stream. You will start seeing new webhooks on the right side of the admin panel.
+![](/img/content/streams-triggers-ui-1.webp)
+
+2. Scroll down to the bottom and you will see triggers section. Click on `Add Trigger` and select the `type` of trigger you want to add. Let's add `erc20transfer` trigger. The `type` indicates for what part of the Webhook you want to run the trigger against.
+![](/img/content/streams-triggers-ui-2.webp)
+
+3. Click on `Enter Contract Address` and provide your contract address in the popup. You can also add selectors in this field. Read more about selectors from [here](#selectors). Let's add a selector here `$contract` and click on `Save Changes`.
+![](/img/content/streams-triggers-ui-3.webp)
+
+4. Click on `Add ABI` button and input your ABI (with read-only function) in the popup. For example, every ERC20 contract has a function called `balanceOf` let's add this to the input. And click on `Save Changes`.
+![](/img/content/streams-triggers-ui-4.webp)
+
+  `balanceOf` ABI
+  ```json
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+  ```
+
+5. The `balanceOf` function takes an address as a parameter. Therefore, we need to specify an input, and input fields also accept selectors. So, we can add `$from` to the input. You can read more about selectors here. [here](#selectors).
+![](/img/content/streams-triggers-ui-5.webp)
+
+
+6. `callFrom` takes an address or selectors as input, and this is used as the caller of the smart contract function. This input is optional.
+
+7. Click on `Update Stream`. and you will start receiving new webhooks with triggers in the `erc20Transfers` part of the webhook. 
+![](/img/content/streams-triggers-ui-6.webp)
+
 ### Error Handling
 
 The Streams API will return an error if you try to add a trigger that is not  
