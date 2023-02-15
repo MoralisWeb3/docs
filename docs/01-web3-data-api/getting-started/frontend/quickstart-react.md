@@ -17,7 +17,7 @@ This tutorial shows you how to create a basic React dapp and use the Moralis SDK
 
 ## Prerequisites
 
-1. Follow the [Your First Dapp for Node.js](/web3-data-api/quickstart-nodejs) tutorial 
+1. Follow the [Your First Dapp for Node.js](/web3-data-api/getting-started/quickstart-nodejs) tutorial 
 
 ## Create a React Dapp
 
@@ -98,7 +98,7 @@ export default function Balances() {
 
 ## Set up the Server
 
-[Follow this tutorial](/web3-data-api/quickstart-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
+[Follow this tutorial](/web3-data-api/getting-started/quickstart-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
 
 1. Install `cors`:
 
