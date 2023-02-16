@@ -209,20 +209,21 @@ const ApiReference = ({
               <div className={styles.section}>
                 <div className={styles.sectionTitle}>Responses</div>
 
-                {responses.map((response, index) => (
-                  <div key={index} className={styles.section}>
-                    <div className={styles.group}>
-                      <ApiResponseField
-                        collapsible
-                        field={{
-                          type: "object",
-                          name: `${response.status} ${response.description}`,
-                          ...response.body,
-                        }}
-                      />
+                {responses &&
+                  responses?.map((response, index) => (
+                    <div key={index} className={styles.section}>
+                      <div className={styles.group}>
+                        <ApiResponseField
+                          collapsible
+                          field={{
+                            type: "object",
+                            name: `${response.status} ${response.description}`,
+                            ...response.body,
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
               <div className={styles.section}>{children}</div>
             </div>
