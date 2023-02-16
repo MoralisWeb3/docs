@@ -359,6 +359,12 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["php", "solidity"],
       },
+      algolia: {
+        appId: "K26H89KJU5",
+        apiKey: "e87aff4960989251c8cbf3cccd24d785",
+        indexName: "gold-iota",
+        contextualSearch: true,
+      },
     }),
   plugins: [
     [
@@ -367,7 +373,6 @@ const config = {
     ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
-    require.resolve("docusaurus-lunr-search"),
   ],
 };
 
