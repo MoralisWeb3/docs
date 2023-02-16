@@ -44,7 +44,15 @@ You can contact our support team at [hello@moralis.io](mailto:hello@moralis.io) 
 
 No, nothing is lost when a stream gets updated or the filters for a stream get updated.
 
-### Why is the ABI required to listen to the event?
+## Is there any limit on how many filters I can add to a Stream?
+
+No, There is no limit on how many filters you can add to a stream. You can add as many as you want. 
+
+## Does adding more complex filters (eg: Over 500k address filters) in a stream affect the delivery time of stream?
+
+No, the complexity of filters have no affect on the delivery speed of stream. 
+
+## Why is the ABI required to listen to the event?
 We want to make sure you have the data for the exact event you are listening to.
 
 For example the transfer event is very similar for both ERC20 transfers and NFT transfers. They both have Transfer(address, address, uint256), but actually they are different:
@@ -55,7 +63,7 @@ Another example could be that one smart contract uses the 'indexed' keyword (mea
 
 So only by knowing the ABI can we 'exactly' get you the event that you want to listen to.
 
-### Why don't I see all the internal transactions from my transaction?
+## Why don't I see all the internal transactions from my transaction?
 
 The answer to this question depends on your specific Stream configuration. So let's assume that you are listening to a "Wallet Transfer" and let's assume that your transaction is something like a UniSwap transaction or similar. 
 
@@ -67,7 +75,7 @@ Please also ensure that you have selected to receive Internal Transactions (`txs
 
 If you still require support, please contact us in your Slack channel, or drop a message to the forum with as much detail as you can provide.
 
-### Why don't I see all the logs from my transaction?
+## Why don't I see all the logs from my transaction?
 
 The answer is similar to above. The answer depends on your specific Stream configuration. So let's assume that you are listening to a "Wallet Transfer" and let's assume that your transaction is something like a UniSwap transaction or similar. 
 
