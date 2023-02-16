@@ -1,0 +1,238 @@
+{
+  "auth": {
+    "getAddresses": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Get addresses that are bound to the specific profileId",
+      "method": "GET",
+      "path": "/profile/:profileId/addresses",
+      "pathParams": [
+        {
+          "name": "profileId",
+          "description": "Unique identifier with a length of 66 characters",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "201",
+          "description": "The addresses that are bound to the speicifc profileId"
+        }
+      ]
+    },
+    "requestBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Request bind between profile of two addresses",
+      "description": "Request for message to bind profile that is belong to the two addresses<br>\n        All profiles under the addresses will be bound and new profile will be generated.",
+      "method": "POST",
+      "path": "/bind/request",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The two addresses that are required to be bind.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "addresses",
+            "type": "object",
+            "description": "An array of addresses that needs to be bind",
+            "fields": [
+              {
+                "name": "blockchainType",
+                "type": "string",
+                "description": "The chain in which the address belongs to",
+                "example": "evm"
+              },
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
+              },
+              {
+                "name": "publicKey",
+                "type": "string",
+                "description": "Public key performing the signing conformant. (This is only needed for Aptos address)",
+                "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The messages that is required to be signed by each of the address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "messages",
+                "type": "array",
+                "description": "Message that needs to be signed by the end user",
+                "example": [
+                  "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X",
+                  "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X"
+                ],
+                "field": { "type": "string" }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "verifyRequestBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Verify bind request",
+      "method": "POST",
+      "path": "/bind/request/verify",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Messages and its signatures that is used for verification",
+        "type": "object",
+        "fields": [
+          {
+            "name": "verifications",
+            "type": "object",
+            "description": "Message that needs to be signed by the end user",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X"
+              },
+              {
+                "name": "signature",
+                "type": "string",
+                "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
+                "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The profileId that all the addresses have been bind into.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "removeBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Request to remove bind of an address from a profile",
+      "method": "POST",
+      "path": "/bind/remove",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The address that is required to be removed from the bind of the profileId.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "blockchainType",
+            "type": "string",
+            "description": "The chain in which the address belongs to",
+            "example": "evm"
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
+          },
+          {
+            "name": "publicKey",
+            "type": "string",
+            "description": "Public key performing the signing conformant. (This is only needed for Aptos address)",
+            "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+          },
+          {
+            "name": "profileId",
+            "type": "string",
+            "description": "Unique identifier with a length of 66 characters",
+            "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The messages that is required to be signed by each of the address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "Please sign this message to unbind:\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nfrom\nProfile Id:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\nNonce: 5pXWu7aGkY2J7II0X"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "verifyRemoveBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Verify remove bind request",
+      "method": "POST",
+      "path": "/bind/remove/verify",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Messages and its signatures that is used for verification",
+        "type": "object",
+        "fields": [
+          {
+            "name": "message",
+            "type": "string",
+            "description": "Message that needs to be signed by the end user",
+            "example": "Please sign this message to unbind:\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nfrom\nProfile Id:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\nNonce: 5pXWu7aGkY2J7II0X"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
+            "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The new profileId that is being generated for this address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
