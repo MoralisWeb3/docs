@@ -6,7 +6,7 @@ sidebar_position: 7
 
 # Transaction Labeling
 
-The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI. 
+The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI.
 
 This means that for each transaction and log we apply a friendly, easily recognizable label, making it easier than ever to understand and navigate the complex world of blockchain.
 
@@ -16,12 +16,13 @@ Each transaction includes a `decoded_call` object which is the decoded `input` d
 
 We have included support for transaction labeling on two new endpoints:
 
-| Name                                        | Endpoint                                                       |
-| :------------------------------------------ | :------------------------------------------------------------- |
+| Name                               | Endpoint                                 |
+| :--------------------------------- | :--------------------------------------- |
 | Get decoded transactions by wallet | `/:address/verbose`                      |
-| Get decoded transaction by hash | `/transaction/:transaction_hash/verbose` |
+| Get decoded transaction by hash    | `/transaction/:transaction_hash/verbose` |
 
 ## Why are some transactions not decoded?
+
 We only decode transactions from verified ABIs. We are continuously adding to our repository of verified contract ABIs.
 
 If transaction is related to an unverified contract, or it's part of a verified contract that do not yet support, transactions will have a `decoded_call` of `null` and logs will have a `decoded_event` of `null`.
@@ -29,6 +30,7 @@ If transaction is related to an unverified contract, or it's part of a verified 
 For unsupported ABIs, we have future plans to make submissions available via the API, however until this time, if you would like an ABI to be supported, please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/feature-requests/).
 
 ## What chains currently support transaction labeling?
+
 All of our EVM blockchains support transaction labeling, with the highest contract coverage on Ethereum.
 
 ## Will you continue to add new contract ABIs?
@@ -44,20 +46,34 @@ Transaction labeling can be a powerful feature in a number of different use case
 - Building an intuitive block explorer
 
 ## A decoded example
+
 As an example, we can see that Ethereum transaction `0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760` is labelled as a `Transfer` on Etherscan:
 
 ![image](https://user-images.githubusercontent.com/13417464/219065293-01a75803-f1fa-482b-963a-10e8f5a2a295.png)
 
 If we [look at this transaction in more detail on Etherscan](https://etherscan.io/tx/0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760), we can see that the transaction has the following input data:
 
-<img width="727" alt="image" src="https://user-images.githubusercontent.com/13417464/219065761-fb42b2ad-7519-4da1-886f-b11a9ffe4e39.png">
+<img
+  width="727"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219065761-fb42b2ad-7519-4da1-886f-b11a9ffe4e39.png"
+/>
 
 and when decoded, this input data looks like:
 
-<img width="729" alt="image" src="https://user-images.githubusercontent.com/13417464/219065840-b407362c-9dd9-4d00-8388-19c1a05bf2d5.png">
+<img
+  width="729"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219065840-b407362c-9dd9-4d00-8388-19c1a05bf2d5.png"
+/>
 
 Similarly, this transaction also has 1 log associated with it:
-<img width="1399" alt="image" src="https://user-images.githubusercontent.com/13417464/219066977-ef587303-49d3-4312-a005-723116b98b5a.png">
+
+<img
+  width="1399"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219066977-ef587303-49d3-4312-a005-723116b98b5a.png"
+/>
 
 It is this data which is now decoded and included per transaction. Here is the full transaction data served through the Moralis API, note the `decoded_call` at the transaction level, as well as the `decoded_event` at the log level:
 
