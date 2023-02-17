@@ -3,7 +3,7 @@ import TextField, { TextFieldProps } from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import { useHistory } from "@docusaurus/router";
 
-const chains = [
+const networks = [
   {
     value: "aptos",
     label: "Aptos",
@@ -24,8 +24,8 @@ const chains = [
 const SidebarMenu = (props: TextFieldProps) => {
   const { push } = useHistory();
   return (
-    <TextField select fullWidth label="Chain" defaultValue="evm" {...props}>
-      {chains.map(({ value, label, link }) => (
+    <TextField select fullWidth label="Network" defaultValue="evm" {...props}>
+      {networks.map(({ value, label, link }) => (
         <MenuItem key={value} value={value} onClick={() => push(link)}>
           {label}
         </MenuItem>
