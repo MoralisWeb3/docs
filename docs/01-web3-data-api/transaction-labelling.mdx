@@ -6,7 +6,7 @@ sidebar_position: 7
 
 # Transaction Labeling
 
-The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI.
+The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI, such as "Transfer", "Approve", "Mint", "Deposit" etc.
 
 This means that for each transaction and log we apply a friendly, easily recognizable label, making it easier than ever to understand and navigate the complex world of blockchain.
 
@@ -27,7 +27,7 @@ We only decode transactions from verified ABIs. We are continuously adding to ou
 
 If transaction is related to an unverified contract, or it's part of a verified contract that do not yet support, transactions will have a `decoded_call` of `null` and logs will have a `decoded_event` of `null`.
 
-For unsupported ABIs, we have future plans to make submissions available via the API, however until this time, if you would like an ABI to be supported, please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/feature-requests/).
+For unsupported ABIs, we have future plans to make submissions available via the API, however until this time, if you would like an ABI to be supported, please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/contract-abi-requests/).
 
 ## What chains currently support transaction labeling?
 
@@ -35,7 +35,7 @@ All of our EVM blockchains support transaction labeling, with the highest contra
 
 ## Will you continue to add new contract ABIs?
 
-Yes, absolutely! We plan to continue adding verified contract ABIs to our repository. We have plans to make this automatic in future, however until this time, if you would like an ABI to be supported please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/feature-requests/).
+Yes, absolutely! We plan to continue adding verified contract ABIs to our repository. We have plans to make this automatic in future, however until this time, if you would like an ABI to be supported please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/contract-abi-requests/).
 
 ## What are some use cases of Transaction labeling?
 

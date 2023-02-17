@@ -81,12 +81,12 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
         },
         {
           "name": "normalizeMetadata",
-          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+          "description": "Should normalized metadata be returned?",
           "required": false,
           "type": "boolean"
         }
@@ -124,8 +124,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -256,6 +256,149 @@
                             }
                           ]
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "media_links",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "mimetype",
+                        "type": "string",
+                        "required": true,
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      {
+                        "name": "category",
+                        "type": "string",
+                        "required": true,
+                        "enum": ["image", "audio", "video"]
+                      },
+                      {
+                        "name": "original_media_url",
+                        "type": "string",
+                        "required": true,
+                        "description": "The url of the original media file."
+                      },
+                      {
+                        "name": "parent_hash",
+                        "type": "string",
+                        "required": true,
+                        "description": "Hash value of the original media file."
+                      },
+                      {
+                        "name": "media_collection",
+                        "required": true,
+                        "description": "Preview item associated with the original",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "original",
+                            "required": true,
+                            "description": "Information about the original media file",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "low",
+                            "required": true,
+                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "medium",
+                            "required": true,
+                            "description": "Preview media file, medium quality (for images 250px x 250px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "high",
+                            "required": true,
+                            "description": "Preview media file, highest quality (for images 500px x 500px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ]
                   },
@@ -408,9 +551,10 @@
           },
           {
             "name": "normalizeMetadata",
-            "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+            "type": "boolean",
             "required": false,
-            "type": "boolean"
+            "description": "Should normalized metadata be returned?",
+            "example": false
           }
         ]
       },
@@ -929,7 +1073,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
         }
       ],
@@ -966,8 +1110,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page. ). Learn more on cursor pagination [here](/web3-data-api/pagination)."
               },
               {
                 "name": "result",
@@ -1276,6 +1420,149 @@
                             }
                           ]
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "media_links",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "mimetype",
+                        "type": "string",
+                        "required": true,
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      {
+                        "name": "category",
+                        "type": "string",
+                        "required": true,
+                        "enum": ["image", "audio", "video"]
+                      },
+                      {
+                        "name": "original_media_url",
+                        "type": "string",
+                        "required": true,
+                        "description": "The url of the original media file."
+                      },
+                      {
+                        "name": "parent_hash",
+                        "type": "string",
+                        "required": true,
+                        "description": "Hash value of the original media file."
+                      },
+                      {
+                        "name": "media_collection",
+                        "required": true,
+                        "description": "Preview item associated with the original",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "original",
+                            "required": true,
+                            "description": "Information about the original media file",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "low",
+                            "required": true,
+                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "medium",
+                            "required": true,
+                            "description": "Preview media file, medium quality (for images 250px x 250px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "high",
+                            "required": true,
+                            "description": "Preview media file, highest quality (for images 500px x 500px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ]
                   },
@@ -1589,6 +1876,149 @@
                     ]
                   },
                   {
+                    "name": "media_links",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "mimetype",
+                        "type": "string",
+                        "required": true,
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      {
+                        "name": "category",
+                        "type": "string",
+                        "required": true,
+                        "enum": ["image", "audio", "video"]
+                      },
+                      {
+                        "name": "original_media_url",
+                        "type": "string",
+                        "required": true,
+                        "description": "The url of the original media file."
+                      },
+                      {
+                        "name": "parent_hash",
+                        "type": "string",
+                        "required": true,
+                        "description": "Hash value of the original media file."
+                      },
+                      {
+                        "name": "media_collection",
+                        "required": true,
+                        "description": "Preview item associated with the original",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "original",
+                            "required": true,
+                            "description": "Information about the original media file",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "low",
+                            "required": true,
+                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "medium",
+                            "required": true,
+                            "description": "Preview media file, medium quality (for images 250px x 250px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "high",
+                            "required": true,
+                            "description": "Preview media file, highest quality (for images 500px x 500px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "name": "amount",
                     "type": "string",
                     "description": "The number of this item the user owns (used by ERC1155)",
@@ -1643,7 +2073,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"disable_total\": True, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -1745,7 +2175,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
         }
       ],
@@ -1952,7 +2382,7 @@
         {
           "name": "from_block",
           "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": true,
+          "required": false,
           "type": "number",
           "example": 16424191
         },
@@ -1995,7 +2425,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (for getting the next page)\n",
           "type": "string"
         }
       ],
@@ -2467,7 +2897,8 @@
         {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
-          "type": "string"
+          "type": "string",
+          "required": false
         },
         {
           "name": "limit",
@@ -2921,6 +3352,149 @@
                 ]
               },
               {
+                "name": "media_links",
+                "description": "A set of links to 'thumbnail / preview' media files",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "mimetype",
+                    "type": "string",
+                    "required": true,
+                    "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                  },
+                  {
+                    "name": "category",
+                    "type": "string",
+                    "required": true,
+                    "enum": ["image", "audio", "video"]
+                  },
+                  {
+                    "name": "original_media_url",
+                    "type": "string",
+                    "required": true,
+                    "description": "The url of the original media file."
+                  },
+                  {
+                    "name": "parent_hash",
+                    "type": "string",
+                    "required": true,
+                    "description": "Hash value of the original media file."
+                  },
+                  {
+                    "name": "media_collection",
+                    "required": true,
+                    "description": "Preview item associated with the original",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "original",
+                        "required": true,
+                        "description": "Information about the original media file",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "width",
+                            "type": "integer",
+                            "description": "The width of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "height",
+                            "type": "integer",
+                            "description": "The height of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "The url of the preview file.",
+                            "required": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "low",
+                        "required": true,
+                        "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "width",
+                            "type": "integer",
+                            "description": "The width of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "height",
+                            "type": "integer",
+                            "description": "The height of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "The url of the preview file.",
+                            "required": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "medium",
+                        "required": true,
+                        "description": "Preview media file, medium quality (for images 250px x 250px)",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "width",
+                            "type": "integer",
+                            "description": "The width of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "height",
+                            "type": "integer",
+                            "description": "The height of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "The url of the preview file.",
+                            "required": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "high",
+                        "required": true,
+                        "description": "Preview media file, highest quality (for images 500px x 500px)",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "width",
+                            "type": "integer",
+                            "description": "The width of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "height",
+                            "type": "integer",
+                            "description": "The height of the preview image.",
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "The url of the preview file.",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "name": "minter_address",
                 "type": "string",
                 "description": "The address that minted the NFT",
@@ -3056,7 +3630,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
         }
       ],
@@ -3475,6 +4049,149 @@
                     ]
                   },
                   {
+                    "name": "media_links",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "mimetype",
+                        "type": "string",
+                        "required": true,
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      {
+                        "name": "category",
+                        "type": "string",
+                        "required": true,
+                        "enum": ["image", "audio", "video"]
+                      },
+                      {
+                        "name": "original_media_url",
+                        "type": "string",
+                        "required": true,
+                        "description": "The url of the original media file."
+                      },
+                      {
+                        "name": "parent_hash",
+                        "type": "string",
+                        "required": true,
+                        "description": "Hash value of the original media file."
+                      },
+                      {
+                        "name": "media_collection",
+                        "required": true,
+                        "description": "Preview item associated with the original",
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "original",
+                            "required": true,
+                            "description": "Information about the original media file",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "low",
+                            "required": true,
+                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "medium",
+                            "required": true,
+                            "description": "Preview media file, medium quality (for images 250px x 250px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "name": "high",
+                            "required": true,
+                            "description": "Preview media file, highest quality (for images 500px x 500px)",
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "width",
+                                "type": "integer",
+                                "description": "The width of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "height",
+                                "type": "integer",
+                                "description": "The height of the preview image.",
+                                "required": true
+                              },
+                              {
+                                "name": "url",
+                                "type": "string",
+                                "description": "The url of the preview file.",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "name": "amount",
                     "type": "string",
                     "description": "The number of this item the user owns (used by ERC1155)",
@@ -3529,13 +4246,13 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_token_id_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"token_id\": \"1\", \n    \"chain\": \"eth\", \n    \"format\": \"decimal\", \n    \"limit\": 0, \n    \"disable_total\": True, \n    \"cursor\": \"\", \n    \"normalizeMetadata\": True, \n}\n\nresult = evm_api.nft.get_nft_token_id_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
     "syncNFTContract": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Sync NFT Contract",
+      "summary": "Resync NFT Contract",
       "description": "Initiates a sync of a previously non synced contract.",
       "method": "PUT",
       "path": "/nft/:address/sync",
@@ -3683,7 +4400,7 @@
           "name": "mode",
           "description": "To define the behaviour of the endpoint",
           "required": false,
-          "example": "sync",
+          "example": "async",
           "default": "async",
           "type": "string",
           "enum": ["sync", "async"]
@@ -4003,7 +4720,8 @@
         {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
-          "type": "string"
+          "type": "string",
+          "required": false
         },
         {
           "name": "limit",
@@ -4422,8 +5140,8 @@
     },
     "getWalletTokenTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get ERC20 token transfers by wallet",
-      "description": "Get ERC20 token transfers ordered by block number in descending order.",
+      "summary": "Get ERC20 token transactions by wallet",
+      "description": "Get ERC20 token transactions ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address/erc20/transfers",
       "pathParams": [
@@ -4622,7 +5340,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.token.get_wallet_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"limit\": 0, \n    \"disable_total\": True, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.token.get_wallet_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -4953,12 +5671,6 @@
           "type": "string"
         },
         {
-          "name": "offset",
-          "description": "offset",
-          "required": false,
-          "type": "number"
-        },
-        {
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
@@ -5228,12 +5940,6 @@
             "arbitrum",
             "0xa4b1"
           ]
-        },
-        {
-          "name": "providerUrl",
-          "description": "The web3 provider URL to use when using local dev chain",
-          "required": false,
-          "type": "string"
         },
         {
           "name": "to_block",
@@ -5677,7 +6383,7 @@
     },
     "getWalletTransactionsVerbose": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get verbose transactions by wallet",
+      "summary": "Get decoded transactions by wallet",
       "description": "Get native transactions and logs ordered by block number in descending order.",
       "method": "GET",
       "path": "/:address/verbose",
@@ -5940,6 +6646,98 @@
                         "type": "string",
                         "description": "The hash of the block",
                         "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                      },
+                      {
+                        "name": "decoded_event",
+                        "type": "object",
+                        "description": "The decoded data of the log",
+                        "fields": [
+                          {
+                            "name": "signature",
+                            "type": "string",
+                            "example": "Transfer(address,address,uint256)"
+                          },
+                          {
+                            "name": "label",
+                            "type": "string",
+                            "example": "Transfer"
+                          },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "example": "event"
+                          },
+                          {
+                            "name": "params",
+                            "type": "array",
+                            "field": {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "name",
+                                  "type": "string",
+                                  "example": "from"
+                                },
+                                {
+                                  "name": "value",
+                                  "type": "string",
+                                  "example": "0x26C5011483Add49801eA8E3Ee354fE013895aCe5"
+                                },
+                                {
+                                  "name": "type",
+                                  "type": "string",
+                                  "example": "address"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "decoded_call",
+                    "type": "object",
+                    "description": "The decoded data of the transaction",
+                    "fields": [
+                      {
+                        "name": "signature",
+                        "type": "string",
+                        "example": "transfer(address,uint256)"
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "example": "transfer"
+                      },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "example": "function"
+                      },
+                      {
+                        "name": "params",
+                        "type": "array",
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "name",
+                              "type": "string",
+                              "example": "_to"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "example": "0x1CA455A55108874A95C84620dDA2566c54D17953"
+                            },
+                            {
+                              "name": "type",
+                              "type": "string",
+                              "example": "address"
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -6327,6 +7125,293 @@
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"transaction_hash\": \"0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109\", \n    \"chain\": \"eth\", \n}\n\nresult = evm_api.transaction.get_transaction(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
+    },
+    "getTransactionVerbose": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get decoded transaction by hash",
+      "description": "Get the contents of a transaction by the given transaction hash.",
+      "method": "GET",
+      "path": "/transaction/:transaction_hash/verbose",
+      "pathParams": [
+        {
+          "name": "transaction_hash",
+          "description": "The transaction hash",
+          "required": true,
+          "example": "0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Transaction details by transaction hash",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "hash",
+                "type": "string",
+                "description": "The hash of the transaction",
+                "example": "0x1ed85b3757a6d31d01a4d6677fc52fd3911d649a0af21fe5ca3f886b153773ed"
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "description": "The nonce",
+                "example": "1848059"
+              },
+              {
+                "name": "transaction_index",
+                "type": "string",
+                "example": "108"
+              },
+              {
+                "name": "from_address",
+                "type": "string",
+                "description": "The from address",
+                "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
+              },
+              {
+                "name": "to_address",
+                "type": "string",
+                "description": "The to address",
+                "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "The value sent",
+                "example": "115580000000000000"
+              },
+              { "name": "gas", "type": "string", "example": "30000" },
+              {
+                "name": "gas_price",
+                "type": "string",
+                "description": "The gas price",
+                "example": "52500000000"
+              },
+              { "name": "input", "type": "string", "example": "0x" },
+              {
+                "name": "receipt_cumulative_gas_used",
+                "type": "string",
+                "example": "4923073"
+              },
+              {
+                "name": "receipt_gas_used",
+                "type": "string",
+                "example": "21000"
+              },
+              {
+                "name": "receipt_contract_address",
+                "type": "string",
+                "example": null
+              },
+              { "name": "receipt_root", "type": "string", "example": null },
+              { "name": "receipt_status", "type": "string", "example": "1" },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "The block timestamp",
+                "example": "2021-05-07T11:08:35.000Z"
+              },
+              {
+                "name": "block_number",
+                "type": "string",
+                "description": "The block number",
+                "example": "12386788"
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "The hash of the block",
+                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+              },
+              {
+                "name": "logs",
+                "type": "object",
+                "description": "The logs of the transaction",
+                "fields": [
+                  { "name": "log_index", "type": "string", "example": "273" },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "example": "204"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "data",
+                    "type": "string",
+                    "description": "The data of the log",
+                    "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
+                  },
+                  {
+                    "name": "topic0",
+                    "type": "string",
+                    "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
+                  },
+                  {
+                    "name": "topic1",
+                    "type": "string",
+                    "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
+                  },
+                  {
+                    "name": "topic2",
+                    "type": "string",
+                    "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
+                  },
+                  { "name": "topic3", "type": "string", "example": null },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": "12386788"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "decoded_event",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "signature",
+                        "type": "string",
+                        "example": "Transfer(address,address,uint256)"
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "example": "Transfer"
+                      },
+                      { "name": "type", "type": "string", "example": "event" },
+                      {
+                        "name": "params",
+                        "type": "array",
+                        "field": {
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "name",
+                              "type": "string",
+                              "example": "from"
+                            },
+                            {
+                              "name": "value",
+                              "type": "string",
+                              "example": "0x26C5011483Add49801eA8E3Ee354fE013895aCe5"
+                            },
+                            {
+                              "name": "type",
+                              "type": "string",
+                              "example": "address"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "decoded_call",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "signature",
+                    "type": "string",
+                    "example": "transfer(address,uint256)"
+                  },
+                  { "name": "label", "type": "string", "example": "transfer" },
+                  { "name": "type", "type": "string", "example": "function" },
+                  {
+                    "name": "params",
+                    "type": "array",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "example": "_to"
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "example": "0x1CA455A55108874A95C84620dDA2566c54D17953"
+                        },
+                        {
+                          "name": "type",
+                          "type": "string",
+                          "example": "address"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "events": {
@@ -6572,14 +7657,14 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"block_number\": \"\", \n    \"from_block\": \"\", \n    \"to_block\": \"\", \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"topic0\": \"\", \n    \"topic1\": \"\", \n    \"topic2\": \"\", \n    \"topic3\": \"\", \n    \"limit\": 0, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.events.get_contract_logs(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB\", \n    \"chain\": \"eth\", \n    \"block_number\": \"\", \n    \"from_block\": \"\", \n    \"to_block\": \"\", \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"topic0\": \"\", \n    \"topic1\": \"\", \n    \"topic2\": \"\", \n    \"topic3\": \"\", \n    \"limit\": 0, \n    \"disable_total\": True, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.events.get_contract_logs(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
     "getContractEvents": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get events by contract",
-      "description": "Get events for a contract ordered by block number in descending order.",
+      "description": "Get events for a contract ordered by block number in descending order. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Events/getContractEvents).",
       "method": "POST",
       "path": "/:address/events",
       "pathParams": [
@@ -6679,7 +7764,7 @@
         }
       ],
       "bodyParam": {
-        "required": true,
+        "required": false,
         "description": "ABI of the specific event",
         "type": "json",
         "example": {
@@ -6711,6 +7796,7 @@
       "responses": [
         {
           "status": "200",
+          "description": "Returns a collection of events by topic",
           "description": "Returns a collection of events by topic",
           "body": {
             "type": "object",
@@ -6800,7 +7886,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"topic\": \"\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"offset\": 0, \n    \"limit\": 0, \n}\nbody = \"\"\n\nresult = evm_api.events.get_contract_events(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"topic\": \"\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"offset\": 0, \n    \"limit\": 0, \n    \"disable_total\": True, \n}\nbody = \"\"\n\nresult = evm_api.events.get_contract_events(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -7308,9 +8394,9 @@
               },
               {
                 "name": "block_timestamp",
-                "type": "number",
+                "type": "string",
                 "description": "The timestamp of the block",
-                "example": "2022-01-03T22:59:39.000Z"
+                "example": "2019-12-31T23:59:45.000Z"
               },
               {
                 "name": "hash",
@@ -7350,7 +8436,7 @@
     "runContractFunction": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Run contract function",
-      "description": "Run a given function of a contract ABI and retrieve readonly data.",
+      "description": "Run a given function of a contract ABI and retrieve readonly data. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Utils/runContractFunction).",
       "method": "POST",
       "path": "/:address/function",
       "pathParams": [
@@ -7413,9 +8499,10 @@
         "fields": [
           {
             "name": "abi",
-            "type": "json",
+            "type": "array",
             "description": "The contract ABI",
-            "example": []
+            "example": [],
+            "field": { "type": "json" }
           },
           {
             "name": "params",
@@ -7434,7 +8521,7 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n const abi = []; // Add ABI\n\n const functionName = 'balanceOf';\n\n const address = '0x1234567890123456789012345678901234567890';\n\n const chain = EvmChain.ETHEREUM;\n\n await Moralis.start({\n   apiKey: 'YOUR_API_KEY',\n   // ...and any other configuration\n });\n\n const response = await Moralis.EvmApi.utils.runContractFunction({\n   abi,\n   functionName,\n   address,\n   chain,\n  });\n\n console.log(response?.result);\n} catch (e) {\n console.error(e);\n}\n",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const abi = []; // Add ABI\n\n    const functionName = 'balanceOf';\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    const chain = EvmChain.ETHEREUM;\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.utils.runContractFunction({\n        abi,\n        functionName,\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n",
           "name": "Moralis NodeJS SDK"
         },
         {
@@ -8166,7 +9253,7 @@
             "name": "address",
             "type": "string",
             "required": true,
-            "description": "Solana public key with a length of 32 - 44 characters that is used to perform the signing",
+            "description": "Solana address with a length of 32 - 44 characters that is used to perform the signing",
             "example": "26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo"
           },
           {
@@ -8221,7 +9308,7 @@
                 "name": "id",
                 "type": "string",
                 "description": "17-characters Alphanumeric string Secret Challenge ID used to identify this particular request. Is should be used at the backend of the calling service to identify the completed request.",
-                "example": "fRyt67D3eRss3RrX"
+                "example": "fRyt67D3eRss3RrXa"
               },
               {
                 "name": "message",
@@ -8307,7 +9394,7 @@
               {
                 "name": "address",
                 "type": "string",
-                "description": "Solana public key with a length of 32 - 44 characters that is used to perform the signing",
+                "description": "Solana address with a length of 32 - 44 characters that is used to perform the signing",
                 "example": "26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo"
               },
               {
@@ -8436,21 +9523,21 @@
             "name": "chainId",
             "type": "string",
             "required": true,
-            "description": "An identifier that distinguishes the Aptos network deployments (to prevent cross-network attacks).",
+            "description": "Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
             "example": 1
           },
           {
             "name": "address",
             "type": "string",
             "required": true,
-            "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "description": "Aptos address performing the signing conformant.",
             "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
           },
           {
             "name": "publicKey",
             "type": "string",
             "required": true,
-            "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "description": "Aptos public key performing the signing conformant.",
             "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
           }
         ]
@@ -8583,20 +9670,254 @@
               {
                 "name": "chainId",
                 "type": "string",
-                "description": "An identifier that distinguishes the Aptos network deployments (to prevent cross-network attacks).",
+                "description": "Chain ID to which the session is bound, and the network where Contract Accounts must be resolved.",
                 "example": 1
               },
               {
                 "name": "address",
                 "type": "string",
-                "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "description": "Aptos address performing the signing conformant.",
                 "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
               },
               {
                 "name": "publicKey",
                 "type": "string",
-                "description": "Aptos address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "description": "Aptos public key performing the signing conformant.",
                 "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getAddresses": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Get addresses that are bound to the specific profileId",
+      "method": "GET",
+      "path": "/profile/:profileId/addresses",
+      "pathParams": [
+        {
+          "name": "profileId",
+          "description": "Unique identifier with a length of 66 characters",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "201",
+          "description": "The addresses that are bound to the speicifc profileId"
+        }
+      ]
+    },
+    "requestBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Request bind between profile of two addresses",
+      "description": "Request for message to bind profile that is belong to the two addresses<br>\n        All profiles under the addresses will be bound and new profile will be generated.",
+      "method": "POST",
+      "path": "/bind/request",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The two addresses that are required to be bind.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "addresses",
+            "type": "object",
+            "description": "An array of addresses that needs to be bind",
+            "fields": [
+              {
+                "name": "blockchainType",
+                "type": "string",
+                "description": "The chain in which the address belongs to",
+                "example": "evm"
+              },
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+                "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
+              },
+              {
+                "name": "publicKey",
+                "type": "string",
+                "description": "Public key performing the signing conformant. (This is only needed for Aptos address)",
+                "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The messages that is required to be signed by each of the address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "messages",
+                "type": "array",
+                "description": "Message that needs to be signed by the end user",
+                "example": [
+                  "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X",
+                  "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X"
+                ],
+                "field": { "type": "string" }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "verifyRequestBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Verify bind request",
+      "method": "POST",
+      "path": "/bind/request/verify",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Messages and its signatures that is used for verification",
+        "type": "object",
+        "fields": [
+          {
+            "name": "verifications",
+            "type": "object",
+            "description": "Message that needs to be signed by the end user",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X"
+              },
+              {
+                "name": "signature",
+                "type": "string",
+                "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
+                "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The profileId that all the addresses have been bind into.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "removeBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Request to remove bind of an address from a profile",
+      "method": "POST",
+      "path": "/bind/remove",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The address that is required to be removed from the bind of the profileId.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "blockchainType",
+            "type": "string",
+            "description": "The chain in which the address belongs to",
+            "example": "evm"
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
+            "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
+          },
+          {
+            "name": "publicKey",
+            "type": "string",
+            "description": "Public key performing the signing conformant. (This is only needed for Aptos address)",
+            "example": "0xfb2853744bb8afd58d9386d1856afd8e08de135019961dfa3a10d8c9bf83b99d"
+          },
+          {
+            "name": "profileId",
+            "type": "string",
+            "description": "Unique identifier with a length of 66 characters",
+            "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The messages that is required to be signed by each of the address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "description": "Message that needs to be signed by the end user",
+                "example": "Please sign this message to unbind:\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nfrom\nProfile Id:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\nNonce: 5pXWu7aGkY2J7II0X"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "verifyRemoveBind": {
+      "apiHost": "https://authapi.moralis.io",
+      "summary": "Verify remove bind request",
+      "method": "POST",
+      "path": "/bind/remove/verify",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Messages and its signatures that is used for verification",
+        "type": "object",
+        "fields": [
+          {
+            "name": "message",
+            "type": "string",
+            "description": "Message that needs to be signed by the end user",
+            "example": "Please sign this message to unbind:\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nfrom\nProfile Id:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\nNonce: 5pXWu7aGkY2J7II0X"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
+            "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "201",
+          "description": "The new profileId that is being generated for this address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "profileId",
+                "type": "string",
+                "description": "Unique identifier with a length of 66 characters",
+                "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
               }
             ]
           }
@@ -8976,417 +10297,6 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 10;\n\n  const { result } = await Moralis.Streams.getHistory({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n    \"excludePayload\": True, \n}\n\nresult = streams.history.get_history(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
-        }
-      ]
-    },
-    "ReplayHistory": {
-      "apiHost": "https://api.moralis-streams.com",
-      "summary": "Replay history",
-      "description": "Replay a specific history.",
-      "method": "POST",
-      "path": "/history/replay/:streamId/:id",
-      "pathParams": [
-        {
-          "name": "streamId",
-          "description": "The id of the stream the history will be replayed",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "name": "id",
-          "description": "The id of the history to replay",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "queryParams": [],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Ok",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "id",
-                "type": "string",
-                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
-                "format": "uuid",
-                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
-              },
-              { "name": "date", "type": "string" },
-              {
-                "name": "payload",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "block",
-                    "type": "object",
-                    "required": true,
-                    "fields": [
-                      {
-                        "name": "number",
-                        "type": "string"
-                      },
-                      { "name": "hash", "type": "string" },
-                      { "name": "timestamp", "type": "string" }
-                    ]
-                  },
-                  {
-                    "name": "chainId",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "logs",
-                    "field": [
-                      {
-                        "name": "triggers",
-                        "field": [
-                          {
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "value",
-                                "type": "string",
-                                "required": true
-                              },
-                              {
-                                "name": "name",
-                                "type": "string",
-                                "required": true
-                              }
-                            ]
-                          }
-                        ],
-                        "type": "array"
-                      },
-                      {
-                        "name": "logIndex",
-                        "type": "string",
-                        "required": true
-                      },
-                      {
-                        "name": "transactionHash",
-                        "type": "string",
-                        "required": true
-                      },
-                      { "name": "address", "type": "string", "required": true },
-                      { "name": "data", "type": "string", "required": true },
-                      {
-                        "name": "topic0",
-                        "type": "string",
-                        "nullable": true,
-                        "required": true
-                      },
-                      {
-                        "name": "topic1",
-                        "type": "string",
-                        "nullable": true,
-                        "required": true
-                      },
-                      {
-                        "name": "topic2",
-                        "type": "string",
-                        "nullable": true,
-                        "required": true
-                      },
-                      {
-                        "name": "topic3",
-                        "type": "string",
-                        "nullable": true,
-                        "required": true
-                      }
-                    ],
-                    "type": "array",
-                    "required": true
-                  },
-                  {
-                    "name": "txs",
-                    "field": {
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "triggers",
-                          "field": [
-                            {
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "value",
-                                  "type": "string",
-                                  "required": true
-                                },
-                                {
-                                  "name": "name",
-                                  "type": "string",
-                                  "required": true
-                                }
-                              ]
-                            }
-                          ],
-                          "type": "array"
-                        },
-                        {
-                          "name": "hash",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "gas",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "gasPrice",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "nonce",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "input",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "transactionIndex",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "fromAddress",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "toAddress",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "value",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "type",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "v",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "r",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "s",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "receiptCumulativeGasUsed",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "receiptGasUsed",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "receiptContractAddress",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "receiptRoot",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "receiptStatus",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        }
-                      ]
-                    },
-                    "type": "array",
-                    "required": true
-                  },
-                  {
-                    "name": "txsInternal",
-                    "field": {
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "from",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "to",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "value",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        },
-                        {
-                          "name": "transactionHash",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "gas",
-                          "type": "string",
-                          "nullable": true,
-                          "required": true
-                        }
-                      ]
-                    },
-                    "type": "array",
-                    "required": true
-                  },
-                  {
-                    "name": "abi",
-                    "description": "The abi to parse the log object of the contract",
-                    "field": [
-                      {
-                        "type": "object",
-                        "fields": [
-                          { "name": "anonymous", "type": "boolean" },
-                          { "name": "constant", "type": "boolean" },
-                          {
-                            "name": "inputs",
-                            "field": {
-                              "type": "json"
-                            },
-                            "type": "array"
-                          },
-                          {
-                            "name": "name",
-                            "type": "string"
-                          },
-                          {
-                            "name": "outputs",
-                            "field": {
-                              "type": "json"
-                            },
-                            "type": "array"
-                          },
-                          { "name": "payable", "type": "boolean" },
-                          { "name": "stateMutability", "type": "string" },
-                          {
-                            "name": "type",
-                            "type": "string",
-                            "required": true
-                          },
-                          {
-                            "name": "gas",
-                            "type": "number",
-                            "format": "double"
-                          }
-                        ]
-                      }
-                    ],
-                    "type": "array",
-                    "required": true
-                  },
-                  {
-                    "name": "retries",
-                    "type": "number",
-                    "format": "double",
-                    "required": true
-                  },
-                  {
-                    "name": "confirmed",
-                    "type": "boolean",
-                    "required": true
-                  },
-                  {
-                    "name": "tag",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "streamId",
-                    "type": "string",
-                    "required": true
-                  }
-                ]
-              },
-              {
-                "name": "tinyPayload",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "chainId",
-                    "type": "string",
-                    "required": true
-                  },
-                  { "name": "confirmed", "type": "boolean", "required": true },
-                  { "name": "block", "type": "string", "required": true },
-                  {
-                    "name": "records",
-                    "type": "number",
-                    "format": "double",
-                    "required": true
-                  },
-                  {
-                    "name": "retries",
-                    "type": "number",
-                    "format": "double",
-                    "required": true
-                  }
-                ],
-                "additionalProperties": false
-              },
-              { "name": "errorMessage", "type": "string" },
-              { "name": "webhookUrl", "type": "string" },
-              { "name": "streamId", "type": "string" },
-              { "name": "tag", "type": "string" }
-            ]
-          }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
           "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst streamId = \"stream-1\";\n\n  const { result } = await Moralis.Streams.retry({\n  id,\n  streamId,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
@@ -9758,7 +10668,7 @@
                   {
                     "name": "includeNativeTxs",
                     "type": "boolean",
-                    "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                    "description": "Include or not native transactions defaults to false"
                   },
                   {
                     "name": "includeContractLogs",
@@ -9946,7 +10856,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -9995,7 +10905,7 @@
           {
             "name": "includeNativeTxs",
             "type": "boolean",
-            "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+            "description": "Include or not native transactions defaults to false"
           },
           {
             "name": "includeContractLogs",
@@ -10170,7 +11080,7 @@
               {
                 "name": "includeNativeTxs",
                 "type": "boolean",
-                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                "description": "Include or not native transactions defaults to false"
               },
               {
                 "name": "includeContractLogs",
@@ -10326,12 +11236,12 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const webhookUrl = \"https://example.webhook\";\n\n  const description = \"This is your webhook description\";\n\n  const tag = \"Webhook Tag\";\n\n  const { result } = await Moralis.Streams.add({\n    webhookUrl,\n    description,\n    tag,\n  });\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -10386,7 +11296,7 @@
               {
                 "name": "includeNativeTxs",
                 "type": "boolean",
-                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                "description": "Include or not native transactions defaults to false"
               },
               {
                 "name": "includeContractLogs",
@@ -10496,34 +11406,19 @@
                       { "name": "constant", "type": "boolean" },
                       {
                         "name": "inputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      {
-                        "name": "name",
-                        "type": "string"
-                      },
+                      { "name": "name", "type": "string" },
                       {
                         "name": "outputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
                       { "name": "payable", "type": "boolean" },
                       { "name": "stateMutability", "type": "string" },
-                      {
-                        "name": "type",
-                        "type": "string",
-                        "required": true
-                      },
-                      {
-                        "name": "gas",
-                        "type": "number",
-                        "format": "double"
-                      }
+                      { "name": "type", "type": "string", "required": true },
+                      { "name": "gas", "type": "number", "format": "double" }
                     ],
                     "additionalProperties": false,
                     "example": {}
@@ -10562,7 +11457,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm_streams.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -10615,7 +11510,7 @@
           {
             "name": "includeNativeTxs",
             "type": "boolean",
-            "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+            "description": "Include or not native transactions defaults to false"
           },
           {
             "name": "includeContractLogs",
@@ -10725,34 +11620,19 @@
                   { "name": "constant", "type": "boolean" },
                   {
                     "name": "inputs",
-                    "field": {
-                      "type": "json"
-                    },
+                    "field": { "type": "json" },
                     "type": "array"
                   },
-                  {
-                    "name": "name",
-                    "type": "string"
-                  },
+                  { "name": "name", "type": "string" },
                   {
                     "name": "outputs",
-                    "field": {
-                      "type": "json"
-                    },
+                    "field": { "type": "json" },
                     "type": "array"
                   },
                   { "name": "payable", "type": "boolean" },
                   { "name": "stateMutability", "type": "string" },
-                  {
-                    "name": "type",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "gas",
-                    "type": "number",
-                    "format": "double"
-                  }
+                  { "name": "type", "type": "string", "required": true },
+                  { "name": "gas", "type": "number", "format": "double" }
                 ],
                 "additionalProperties": false,
                 "example": {}
@@ -10799,7 +11679,7 @@
               {
                 "name": "includeNativeTxs",
                 "type": "boolean",
-                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                "description": "Include or not native transactions defaults to false"
               },
               {
                 "name": "includeContractLogs",
@@ -10909,34 +11789,19 @@
                       { "name": "constant", "type": "boolean" },
                       {
                         "name": "inputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      {
-                        "name": "name",
-                        "type": "string"
-                      },
+                      { "name": "name", "type": "string" },
                       {
                         "name": "outputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
                       { "name": "payable", "type": "boolean" },
                       { "name": "stateMutability", "type": "string" },
-                      {
-                        "name": "type",
-                        "type": "string",
-                        "required": true
-                      },
-                      {
-                        "name": "gas",
-                        "type": "number",
-                        "format": "double"
-                      }
+                      { "name": "type", "type": "string", "required": true },
+                      { "name": "gas", "type": "number", "format": "double" }
                     ],
                     "additionalProperties": false,
                     "example": {}
@@ -10975,7 +11840,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm_streams.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -11030,7 +11895,7 @@
               {
                 "name": "includeNativeTxs",
                 "type": "boolean",
-                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                "description": "Include or not native transactions defaults to false"
               },
               {
                 "name": "includeContractLogs",
@@ -11140,34 +12005,19 @@
                       { "name": "constant", "type": "boolean" },
                       {
                         "name": "inputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      {
-                        "name": "name",
-                        "type": "string"
-                      },
+                      { "name": "name", "type": "string" },
                       {
                         "name": "outputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
                       { "name": "payable", "type": "boolean" },
                       { "name": "stateMutability", "type": "string" },
-                      {
-                        "name": "type",
-                        "type": "string",
-                        "required": true
-                      },
-                      {
-                        "name": "gas",
-                        "type": "number",
-                        "format": "double"
-                      }
+                      { "name": "type", "type": "string", "required": true },
+                      { "name": "gas", "type": "number", "format": "double" }
                     ],
                     "additionalProperties": false,
                     "example": {}
@@ -11264,7 +12114,7 @@
               {
                 "name": "includeNativeTxs",
                 "type": "boolean",
-                "description": "Include or not native transactions defaults to false (only applied when type:contract)"
+                "description": "Include or not native transactions defaults to false"
               },
               {
                 "name": "includeContractLogs",
@@ -11374,34 +12224,19 @@
                       { "name": "constant", "type": "boolean" },
                       {
                         "name": "inputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
-                      {
-                        "name": "name",
-                        "type": "string"
-                      },
+                      { "name": "name", "type": "string" },
                       {
                         "name": "outputs",
-                        "field": {
-                          "type": "json"
-                        },
+                        "field": { "type": "json" },
                         "type": "array"
                       },
                       { "name": "payable", "type": "boolean" },
                       { "name": "stateMutability", "type": "string" },
-                      {
-                        "name": "type",
-                        "type": "string",
-                        "required": true
-                      },
-                      {
-                        "name": "gas",
-                        "type": "number",
-                        "format": "double"
-                      }
+                      { "name": "type", "type": "string", "required": true },
+                      { "name": "gas", "type": "number", "format": "double" }
                     ],
                     "additionalProperties": false,
                     "example": {}
@@ -11440,7 +12275,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\nbody = {\n    \"status\": \"\", \n}\n\nresult = streams.evm.update_stream_status(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\nbody = {\n    \"status\": \"\", \n}\n\nresult = streams.evm_streams.update_stream_status(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -11513,7 +12348,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -11582,7 +12417,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -11644,8 +12479,8 @@
       ]
     },
     "aptosStreamsGetAll": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Gets all aptos streams",
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Gets all aptos streams.",
       "description": "Get all aptos streams.",
       "method": "GET",
       "path": "/streams/aptos",
@@ -11667,7 +12502,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsCreate": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Create stream",
       "description": "Creates a new aptos stream.",
       "method": "PUT",
@@ -11705,10 +12540,7 @@
             "name": "network",
             "type": "array",
             "description": "The network to listen to",
-            "field": {
-              "type": "string",
-              "enum": ["mainnet", "testnet", "devnet"]
-            }
+            "field": { "type": "string", "enum": ["mainnet", "testnet"] }
           },
           {
             "name": "includePayload",
@@ -11760,10 +12592,7 @@
               {
                 "name": "network",
                 "type": "array",
-                "field": {
-                  "type": "string",
-                  "enum": ["mainnet", "testnet", "devnet"]
-                }
+                "field": { "type": "string", "enum": ["mainnet", "testnet"] }
               },
               {
                 "name": "status",
@@ -11791,8 +12620,8 @@
       ]
     },
     "aptosStreamsGet": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
-      "summary": "Get a specific aptos stream",
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Get a specific aptos stream.",
       "description": "Get a specific aptos stream.",
       "method": "GET",
       "path": "/streams/aptos/:id",
@@ -11823,10 +12652,7 @@
               {
                 "name": "network",
                 "type": "array",
-                "field": {
-                  "type": "string",
-                  "enum": ["mainnet", "testnet", "devnet"]
-                }
+                "field": { "type": "string", "enum": ["mainnet", "testnet"] }
               },
               {
                 "name": "status",
@@ -11854,9 +12680,9 @@
       ]
     },
     "aptosStreamsUpdate": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Update stream",
-      "description": "Updates a new aptos stream",
+      "description": "Updates a new aptos stream.",
       "method": "POST",
       "path": "/streams/aptos/:id",
       "pathParams": [{ "name": "id", "required": true, "type": "string" }],
@@ -11900,10 +12726,7 @@
             "name": "network",
             "type": "array",
             "description": "The network to listen to",
-            "field": {
-              "type": "string",
-              "enum": ["mainnet", "testnet", "devnet"]
-            }
+            "field": { "type": "string", "enum": ["mainnet", "testnet"] }
           },
           {
             "name": "events",
@@ -11947,10 +12770,7 @@
               {
                 "name": "network",
                 "type": "array",
-                "field": {
-                  "type": "string",
-                  "enum": ["mainnet", "testnet", "devnet"]
-                }
+                "field": { "type": "string", "enum": ["mainnet", "testnet"] }
               },
               {
                 "name": "status",
@@ -11978,7 +12798,7 @@
       ]
     },
     "aptosStreamsDelete": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Delete a stream",
       "description": "Deletes a aptos stream.",
       "method": "DELETE",
@@ -11995,7 +12815,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsAddAddresses": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Add addresses to an aptos stream",
       "description": "Adds addresses to an existing aptos stream",
       "method": "POST",
@@ -12013,7 +12833,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsDeleteAddresses": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Delete addresses of an aptos stream",
       "description": "Deletes addresses of an existing aptos stream",
       "method": "DELETE",
@@ -12035,7 +12855,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsGetAddresses": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Get addresses by aptos stream id",
       "description": "Get all addresses associated with a specific aptos stream.",
       "method": "GET",
@@ -12065,7 +12885,7 @@
       "responses": [{ "status": "200", "description": "Ok" }]
     },
     "aptosStreamsUpdateStatus": {
-      "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "apiHost": "https://api.moralis-streams.com",
       "summary": "Update a Stream Status",
       "description": "Update a Stream Status",
       "method": "POST",
@@ -12322,7 +13142,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.account.get_portfolio(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_portfolio(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -12343,7 +13163,7 @@
         },
         {
           "name": "address",
-          "description": "The address of the NFT program",
+          "description": "The address of the contract",
           "required": true,
           "type": "string",
           "example": "DDy5QHKEDgg5ZyWmwi1rJKwYHe7ZR5udGQfJkc8EPfLM"
@@ -12402,7 +13222,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     },
@@ -12423,7 +13243,7 @@
         },
         {
           "name": "address",
-          "description": "The address of the SPL token program",
+          "description": "The address of the token contract",
           "required": true,
           "type": "string",
           "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
@@ -12463,7 +13283,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"\", \n    \"network\": \"\", \n}\n\nresult = sol_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
     }
@@ -12517,16 +13337,16 @@
         }
       ]
     },
-    "getNftsByCollection": {
+    "getNFTsByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by Collection",
       "description": "",
       "method": "GET",
-      "path": "/nfts/collections/:collection_id/tokens",
+      "path": "/nfts/collections/:collection_data_id_hash/tokens",
       "pathParams": [
         {
-          "name": "collection_id",
-          "description": "The id of the collection",
+          "name": "collection_data_id_hash",
+          "description": "The collection data id hash of the collection",
           "required": true,
           "type": "string"
         }
@@ -12534,13 +13354,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -12740,7 +13560,6 @@
     "getNFTsByCreators": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by creators",
-      "description": "",
       "method": "GET",
       "path": "/nfts/creators",
       "pathParams": [],
@@ -12753,7 +13572,7 @@
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -12960,20 +13779,20 @@
     "getNFTCollections": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections",
-      "description": "",
+      "descipriton": "",
       "method": "GET",
       "path": "/collections",
       "pathParams": [],
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13192,13 +14011,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13363,13 +14182,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13519,15 +14338,15 @@
         }
       ]
     },
-    "getNftOwnersByCollection": {
+    "getNFTOwnersByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners by Collection",
       "description": "",
       "method": "GET",
-      "path": "/nfts/collections/:collection_id/owners",
+      "path": "/nfts/collections/:collection_data_id_hash/owners",
       "pathParams": [
         {
-          "name": "collection_id",
+          "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
           "type": "string"
@@ -13536,13 +14355,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13699,15 +14518,15 @@
         }
       ]
     },
-    "getNftOwnersOfCollection": {
+    "getNFTOwnersOfCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners of Collection",
       "description": "",
       "method": "GET",
-      "path": "/nfts/collections/:collection_id/owners/list",
+      "path": "/nfts/collections/:collection_data_id_hash/owners/list",
       "pathParams": [
         {
-          "name": "collection_id",
+          "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
           "type": "string"
@@ -13716,13 +14535,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13808,7 +14627,7 @@
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -13872,16 +14691,16 @@
         }
       ]
     },
-    "getNFTTransferssByCollection": {
+    "getNFTTransfersByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by Collection",
       "description": "",
       "method": "GET",
-      "path": "/nfts/transfers/collections/:collection_id",
+      "path": "/nfts/transfers/collections/:collection_data_id_hash",
       "pathParams": [
         {
-          "name": "collection_id",
-          "description": "The id of the token",
+          "name": "collection_data_id_hash",
+          "description": "The collection data id hash of the token",
           "required": true,
           "type": "string"
         }
@@ -13889,13 +14708,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14092,13 +14911,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14308,7 +15127,7 @@
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14560,13 +15379,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14629,7 +15448,7 @@
                   {
                     "name": "name",
                     "type": "string",
-                    "description": "The name Coin",
+                    "description": "The name of the Coin",
                     "example": "GEGG Coin"
                   },
                   {
@@ -14707,13 +15526,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14788,7 +15607,7 @@
                   {
                     "name": "name",
                     "type": "string",
-                    "description": "The name Coin",
+                    "description": "The name of the Coin",
                     "example": "GEGG Coin"
                   },
                   {
@@ -14866,13 +15685,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -14947,7 +15766,7 @@
                   {
                     "name": "name",
                     "type": "string",
-                    "description": "The name Coin",
+                    "description": "The name of the Coin",
                     "example": "GEGG Coin"
                   },
                   {
@@ -15025,13 +15844,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15101,7 +15920,7 @@
                   {
                     "name": "name",
                     "type": "string",
-                    "description": "The name Coin",
+                    "description": "The name of the Coin",
                     "example": "GEGG Coin"
                   },
                   {
@@ -15179,13 +15998,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15263,7 +16082,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -15377,13 +16196,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15435,7 +16254,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -15556,13 +16375,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15619,7 +16438,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -15740,13 +16559,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15811,7 +16630,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -15889,13 +16708,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of coins to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of coins to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -15914,14 +16733,14 @@
         },
         {
           "name": "coin_type_hash_blacklist",
-          "description": "The coin type hash of the coins to whitelist",
+          "description": "The coin type hashes of the coins to whitelist",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "coin_type_hash_whitelist",
-          "description": "The coin type hash of the coins to whitelist",
+          "description": "The coin type hashes of the coins to whitelist",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -15955,7 +16774,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -16033,13 +16852,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -16099,7 +16918,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -16177,13 +16996,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -16261,7 +17080,7 @@
                   {
                     "name": "amount",
                     "type": "string",
-                    "description": "Amount being transfered",
+                    "description": "The amount being transfered",
                     "example": "324933484"
                   },
                   {
@@ -16365,7 +17184,7 @@
         }
       ]
     },
-    "getNFTOwnersByOwners": {
+    "getNFTByOwners": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get NFTs by wallet addresses",
       "description": "",
@@ -16375,13 +17194,13 @@
       "queryParams": [
         {
           "name": "limit",
-          "description": "The number of collections to return",
+          "description": "The number of results to return",
           "required": true,
           "type": "number"
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -16400,14 +17219,14 @@
         },
         {
           "name": "collection_blacklist",
-          "description": "The ids of the collections to whitelist",
+          "description": "The collection data id hashes of the collections to whitelist",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "collection_whitelist",
-          "description": "The ids of the collections to whitelist",
+          "description": "The collection data id hashes of the collections to whitelist",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -16561,7 +17380,7 @@
         },
         {
           "name": "offset",
-          "description": "The number of collections to skip",
+          "description": "The number of results to skip",
           "required": false,
           "type": "number"
         },
@@ -16826,7 +17645,7 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "string"
+          "type": "number"
         },
         {
           "name": "start",
@@ -16862,7 +17681,7 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "string"
+          "type": "number"
         },
         {
           "name": "start",
@@ -17032,7 +17851,7 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "string"
+          "type": "number"
         },
         {
           "name": "start",
@@ -17074,7 +17893,7 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "string"
+          "type": "number"
         },
         {
           "name": "start",
@@ -17457,7 +18276,7 @@
             "fields": [
               {
                 "name": "deprioritized_gas_estimate",
-                "type": "json",
+                "type": "number",
                 "description": "The deprioritized estimate for the gas unit price",
                 "example": 0
               },
@@ -17469,7 +18288,7 @@
               },
               {
                 "name": "prioritized_gas_estimate",
-                "type": "json",
+                "type": "number",
                 "description": "The prioritized estimate for the gas unit price",
                 "example": 0
               }
