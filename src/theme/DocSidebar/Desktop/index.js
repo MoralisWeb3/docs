@@ -6,7 +6,6 @@ import CollapseButton from "@theme/DocSidebar/Desktop/CollapseButton";
 import Content from "@theme/DocSidebar/Desktop/Content";
 import styles from "./styles.module.css";
 import SidebarMenu from "../../../components/SidebarMenu";
-import Avatar from "@mui/material/Avatar";
 
 function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
   const {
@@ -15,6 +14,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       sidebar: { hideable },
     },
   } = useThemeConfig();
+
   return (
     <div
       className={clsx(
@@ -24,8 +24,9 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       )}
     >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
-      <SidebarMenu />
-      <Avatar>H</Avatar>
+      <div style={{ margin: "1rem 1rem 0.5rem 1rem" }}>
+        <SidebarMenu />
+      </div>
       <Content path={path} sidebar={sidebar} />
       {hideable && <CollapseButton onClick={onCollapse} />}
     </div>
