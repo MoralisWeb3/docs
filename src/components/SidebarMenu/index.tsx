@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { useHistory, useLocation } from "@docusaurus/router";
 
@@ -32,12 +32,15 @@ const SidebarMenu = () => {
   const { push } = useHistory();
   const { pathname } = useLocation();
   const [network] = useState<NetworkEnum | null>(() => {
-    switch (pathname) {
-      case "/web3-data-api-aptos":
+    const [path] = pathname.split("/").slice(1);
+    switch (path) {
+      case "web3-data-api-aptos":
         return NetworkEnum.Aptos;
-      case "/web3-data-api-solana":
+      case "web3-data-api-solana":
         return NetworkEnum.Solana;
-      case "/web3-data-api":
+      case "web3-data-api":
+      case "streams-api":
+      case "authentication-api":
         return NetworkEnum.EVM;
       default:
         return;
