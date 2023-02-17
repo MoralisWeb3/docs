@@ -40,57 +40,6 @@ Make sure to update `SERVER_URL` in the config vars to the deployed url on Herok
 You are now **self-hosting** your own **Moralis Server**!
 :::
 
-## Google App Engine
-
-### Prerequisites
-
-- [Create a Google account](https://support.google.com/accounts/answer/27441?hl=en)
-- [Create a Google App Engine project](https://console.cloud.google.com/projectcreate?previousPage=%2Fprojectselector2%2Fappengine%2Fcreate%3Flang%3Dpython%26;st%3Dtrue%26hl%3Des-419&organizationId=1095921968737&hl=es-419)
-- [Install gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=es-419)
-- [Initialize gcloud CLI](https://cloud.google.com/sdk/docs/initializing?hl=es-419)
-
-### Deployment
-
-:::caution Be aware!
-If your [Google Cloud free trial](https://cloud.google.com/free) has ended, the following process **could resort to expenses**.
-:::
-
-Replace the environment variables values in **`app.yaml`** with your own:
-
-![](/img/content/161ccae-image.webp)
-
-Open the terminal, make sure you're in the root folder and run:
-
-```
-gcloud app deploy
-```
-
-Choose your region:
-
-![](/img/content/d8a49da-image.webp)
-
-Type **`Y`** to continue:
-
-![](/img/content/99306a1-image.webp)
-
-After a couple minutes the application is deployed:
-
-![](/img/content/87f1739-image.webp)
-
-Now run the following command to see it on the browser:
-
-```
-gcloud app browse
-```
-
-Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Server_ hosted on Google App Engine**:
-
-![](/img/content/7cbef58-image.webp)
-
-:::tip Success
-You are now **self-hosting** your own **Moralis Server**!
-:::
-
 ## AWS Elastic Beanstalk
 
 ### Prerequisites
@@ -157,11 +106,9 @@ You are now **self-hosting** your own **Moralis Server**!
 
 ## Railway
 
-<details>
+### One-click deployment
 
-<summary><b>Instructions</b></summary>
-
-[Click here to deploy automatically](https://railway.app/new/template/1c87QZ)
+[**Click here to deploy automatically.**](https://railway.app/new/template/1c87QZ)
 
 This will also create a MongoDB and Redis instance for you automatically, all managed by Railway. If you are using your own MongoDB/Redis instances, you can follow [Manual Deployment](https://docs.moralis.io/docs/deploy-to-production#manual-deployment-1), or use this template and just delete the MongoDB and Redis services later.
 
@@ -200,7 +147,56 @@ Your server will re-deploy after these changes.
 
 ![](/img/content/63abd77-Railway_5.webp)
 
-</details>
+:::tip Success
+You are now **self-hosting** your own **Moralis Server**!
+:::
+
+## Google App Engine
+
+### Prerequisites
+
+- [Create a Google account](https://support.google.com/accounts/answer/27441?hl=en)
+- [Create a Google App Engine project](https://console.cloud.google.com/projectcreate?previousPage=%2Fprojectselector2%2Fappengine%2Fcreate%3Flang%3Dpython%26;st%3Dtrue%26hl%3Des-419&organizationId=1095921968737&hl=es-419)
+- [Install gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=es-419)
+- [Initialize gcloud CLI](https://cloud.google.com/sdk/docs/initializing?hl=es-419)
+
+### Deployment
+
+:::caution Be aware!
+If your [Google Cloud free trial](https://cloud.google.com/free) has ended, the following process **could resort to expenses**.
+:::
+
+Replace the environment variables values in **`app.yaml`** with your own:
+
+![](/img/content/161ccae-image.webp)
+
+Open the terminal, make sure you're in the root folder and run:
+
+```
+gcloud app deploy
+```
+
+Choose your region:
+
+![](/img/content/d8a49da-image.webp)
+
+Type **`Y`** to continue:
+
+![](/img/content/99306a1-image.webp)
+
+After a couple minutes the application is deployed:
+
+![](/img/content/87f1739-image.webp)
+
+Now run the following command to see it on the browser:
+
+```
+gcloud app browse
+```
+
+Add **`/server`** to the URL and you'll be accessing your **_Moralis Parse Server_ hosted on Google App Engine**:
+
+![](/img/content/7cbef58-image.webp)
 
 :::tip Success
 You are now **self-hosting** your own **Moralis Server**!
