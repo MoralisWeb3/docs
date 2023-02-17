@@ -1610,7 +1610,7 @@ export const redirects = [
   },
   {
     source: "/reference/metadata-normalization",
-    destination: "/web3-data-api/metadata-normalization/metadata-normalization",
+    destination: "/web3-data-api/nft-metadata/metadata-normalization",
     permanent: true,
   },
   {
@@ -1621,7 +1621,7 @@ export const redirects = [
   {
     source: "/reference/normalized-vs-non-normalized-metadata",
     destination:
-      "/web3-data-api/metadata-normalization/normalized-vs-non-normalized-metadata",
+      "/web3-data-api/nft-metadata/normalized-vs-non-normalized-metadata",
     permanent: true,
   },
   {
@@ -5438,6 +5438,36 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/upload-i-p-f-s-folder",
     destination: "/web3-data-api/reference/upload-folder",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/aptos/tutorials",
+    destination: "/streams-api/aptos/tutorials/add-address-to-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/aptos/usage",
+    destination: "/streams-api/aptos/records",
+    permanent: true,
+  },
+  {
+    source: "/aptos/overview",
+    destination: "/streams-api/aptos/overview",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersbyowners",
+    destination: "/web3-data-api/reference/get-nft-by-owners",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersbycollection",
+    destination: "/web3-data-api/reference/get-nft-owners-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersofcollection",
+    destination: "/web3-data-api/reference/get-nft-owners-of-collection",
     permanent: true,
   },
 ];

@@ -22,5 +22,8 @@ yarn-error.log*
 .env
 .vercel
 
+# ESLINT
+.eslintcache
+
 # partytown
 ~partytown

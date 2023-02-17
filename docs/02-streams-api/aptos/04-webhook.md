@@ -1,15 +1,15 @@
-# Webhook Data
+# Webhook
 
 When setting up an Aptos stream, the webhooks sent to your specified webhookUrl will contain the following data:
 
 `coinTransfers`: an array of coin transfers that occurred in the stream. Each object in the array will have the following properties:
- - `coin`: an object containing information about the coin being transferred, such as its `name`, `decimals`, and `symbol`.
- - `to`: the address of the recipient of the coin transfer.
- - `value`: the amount of coins transferred.
- - `from`: the address of the sender of the coin transfer.
- - `valueWithDecimals`: the amount of coins transferred, expressed in the coin's base units.
- - `txHash`: the hash of the transaction that triggered the coin transfer.
 
+- `coin`: an object containing information about the coin being transferred, such as its `name`, `decimals`, and `symbol`.
+- `to`: the address of the recipient of the coin transfer.
+- `value`: the amount of coins transferred.
+- `from`: the address of the sender of the coin transfer.
+- `valueWithDecimals`: the amount of coins transferred, expressed in the coin's base units.
+- `txHash`: the hash of the transaction that triggered the coin transfer.
 
 `payload`: an array of objects containing the raw payload data of the transaction(s) that triggered the webhook.
 
@@ -31,7 +31,7 @@ When setting up an Aptos stream, the webhooks sent to your specified webhookUrl 
 
 Please note that data in the `coinTransfers` array will only be included if the payload function is either `0x1::coin::transfer` or `0x1::aptos_account::transfer`.
 
-Also the `coinDeposits` and `coinWithdrawals` will always be available if there are transactions that emit `0x1::coin::WithdrawEvent` or `0x1::coin::DepositEvent` even if the payload function is not `0x1::coin::transfer` or `0x1::aptos_account::transfer`. 
+Also the `coinDeposits` and `coinWithdrawals` will always be available if there are transactions that emit `0x1::coin::WithdrawEvent` or `0x1::coin::DepositEvent` even if the payload function is not `0x1::coin::transfer` or `0x1::aptos_account::transfer`.
 Also it will always be included even with `includeEvents` set to `false`.
 
 ## Example
@@ -40,27 +40,23 @@ Consider following Stream Config:
 
 ```json
 {
-    "streamId": "aa3e4721-be91-4919-8649-d46d5c2a21f7",
-    "includeEvents": true,
-    "includePayload": false,
-    "includeChanges": false,
-    "allAddresses": true,
-    "events": [
-        "0x1::coin::WithdrawEvent",
-        "0x1::coin::DepositEvent"
-    ],
-    "functions": [],
-    "webhookUrl": "https://webhook.site/4b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b",
-    "tag": "myAptosStream",
-    "description": "My Aptos Stream",
-    "network": ["mainnet"]
+  "streamId": "aa3e4721-be91-4919-8649-d46d5c2a21f7",
+  "includeEvents": true,
+  "includePayload": false,
+  "includeChanges": false,
+  "allAddresses": true,
+  "events": ["0x1::coin::WithdrawEvent", "0x1::coin::DepositEvent"],
+  "functions": [],
+  "webhookUrl": "https://webhook.site/4b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b",
+  "tag": "myAptosStream",
+  "description": "My Aptos Stream",
+  "network": ["mainnet"]
 }
 ```
 
 The following is an example of a webhook payload that would be sent to the webhookUrl:
 
 ```json
-
 {
   "streamId": "aa3e4721-be91-4919-8649-d46d5c2a21f7",
   "tag": "myAptosStream",
@@ -146,5 +142,4 @@ The following is an example of a webhook payload that would be sent to the webho
     ]
   ]
 }
-
 ```

@@ -29,6 +29,7 @@ const exec = async (request: VercelRequest, response: VercelResponse) => {
           "Authorization": `Bearer ${
             auth?.length > 0 ? auth : process.env.MORALIS_API_KEY
           }`,
+          "x-moralis-source": `api reference`,
           referer: "moralis.io",
         },
         body: JSON.stringify(bodyParam),

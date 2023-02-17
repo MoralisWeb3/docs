@@ -1,4 +1,4 @@
-# Setting up an Aptos Stream
+# Create Stream
 
 To set up a stream, you will need to make a `PUT` request to the `/streams/aptos` endpoint with the following options in the request body:
 
@@ -24,7 +24,8 @@ To set up a stream, you will need to make a `PUT` request to the `/streams/aptos
 
 `includePayload` (optional): A boolean value indicating whether to include payload data in the webhook.
 
-Note: 
+Note:
+
 - If `allAddresses` is set to `true`, you must specify at least one event or function to listen to. This will override addresses that you may have attached to the stream.
 - at least one of `includeChanges`, `includeEvents`, or `includePayload` must be set to true.
 
@@ -39,7 +40,6 @@ As mentioned earlier if you listen to `allAddresses` you must specify at least o
 Events and functions must be in the following format:
 
 `addressOrFramework::module::eventOrFunction`
-
 
 ## Example
 
@@ -63,24 +63,22 @@ This stream will listen to all addresses that are involved in a transaction(s) t
 
 If you do not want to listen to allAddresses that emit specific events or call specific functions, you can attach addresses to the stream instead. When attaching addresses instead of listening to all addresses, you are not forced to specify events or functions. Read more about attaching addresses to a stream [here](/streams-api/aptos/tutorials/add-address-to-stream).
 
-
-
 ## Via Admin Panel
 
 1. Go to <http://admin.moralis.io/streams>.
 
 2. Click on **Create a new Stream** button.
-![](/img/content/streams-aptos-1.webp)
+   ![](/img/content/streams-aptos-1.webp)
 
-3. Enter any aptos address in the input and a demo stream will be created. For eg: `0xdefe51e841bbf8c1bcd50639e627b898ea3829677ddb64989c96df8191710689` 
-**Note**: You can add multiple addresses to the same stream.
-![](/img/content/streams-aptos-2.webp)
+3. Enter any aptos address in the input and a demo stream will be created. For eg: `0xdefe51e841bbf8c1bcd50639e627b898ea3829677ddb64989c96df8191710689`
+   **Note**: You can add multiple addresses to the same stream.
+   ![](/img/content/streams-aptos-2.webp)
 
 4. Whenever address is involved in a transaction you will receive data on the admin panel.
-![](/img/content/streams-aptos-3.webp)
+   ![](/img/content/streams-aptos-3.webp)
 
-5. To get the webhook sent to your backend you have to configure your stream by adding `Webhook URL`, `Description`, and `Tag` and click on `Update stream`. 
-![](/img/content/streams-aptos-4.webp)
+5. To get the webhook sent to your backend you have to configure your stream by adding `Webhook URL`, `Description`, and `Tag` and click on `Update stream`.
+   ![](/img/content/streams-aptos-4.webp)
 
-6. Then click toggle to `Prod`. You will now get webhooks sent to the URL you provided. 
-![](/img/content/streams-aptos-5.webp)
+6. Then click toggle to `Prod`. You will now get webhooks sent to the URL you provided.
+   ![](/img/content/streams-aptos-5.webp)

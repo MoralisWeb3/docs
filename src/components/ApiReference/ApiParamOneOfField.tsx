@@ -29,7 +29,10 @@ const ApiParamOneOfField = ({ param, field }: FieldComponentProps<"oneOf">) => {
             setFieldValue(buildParamPath(field.name), undefined);
           } else {
             Object.entries(values).forEach(([key, value]) => {
-              setFieldValue(buildParamPath(key, field.name), clear ? undefined : value);
+              setFieldValue(
+                buildParamPath(key, field.name),
+                clear ? undefined : value
+              );
             });
           }
         } else {
@@ -43,7 +46,6 @@ const ApiParamOneOfField = ({ param, field }: FieldComponentProps<"oneOf">) => {
     [field.name, activeIndex, setFieldValue, param.options]
   );
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => selectOption(0), []);
 
   return (
@@ -60,15 +62,23 @@ const ApiParamOneOfField = ({ param, field }: FieldComponentProps<"oneOf">) => {
             <button
               type="button"
               onClick={() =>
-                selectOption(activeIndex === index ? (index + 1) % param.options.length : index)
+                selectOption(
+                  activeIndex === index
+                    ? (index + 1) % param.options.length
+                    : index
+                )
               }
               className={styles.groupHeader}
             >
               {activeIndex === index ? <MdExpandLess /> : <MdExpandMore />}{" "}
-              {fieldParam.displayName || fieldParam.name || `Option ${index + 1}`}
+              {fieldParam.displayName ||
+                fieldParam.name ||
+                `Option ${index + 1}`}
             </button>
 
-            {activeIndex === index && <ApiParamField param={fieldParam} prefix={field.name} />}
+            {activeIndex === index && (
+              <ApiParamField param={fieldParam} prefix={field.name} />
+            )}
           </React.Fragment>
         ))}
       </div>
