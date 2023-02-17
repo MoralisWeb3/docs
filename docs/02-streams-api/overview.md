@@ -87,6 +87,8 @@ Webhooks allow you to receive real-time notifications for events that are happen
 | ARBITRUM TEST | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
 | OPTIMISM      | 0xa            |                                | 🔥 NEW                                  | 100                    |
 | PALM          | 0x2a15c308d    |                                | 🔥 NEW                                  | 100                    |
+| APTOS MAINNET | mainnet        | Not Applicable                 | 🔥 NEW                                  | Not Applicable         |
+| APTOS TESTNET | testnet        | Not Applicable                 | 🔥 NEW                                  | Not Applicable         |
 
 :::info Reorgnization Before Confirmation
 Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
