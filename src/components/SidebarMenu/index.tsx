@@ -36,7 +36,7 @@ const SidebarMenu = () => {
       case "/web3-data-api-aptos":
         return NetworkEnum.Aptos;
       case "/web3-data-api-solana":
-        return NetworkEnum.Aptos;
+        return NetworkEnum.Solana;
       case "/web3-data-api":
         return NetworkEnum.EVM;
       default:
