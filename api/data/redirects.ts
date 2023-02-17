@@ -5450,4 +5450,9 @@ export const redirects = [
     destination: "/streams-api/aptos/records",
     permanent: true,
   },
+  {
+    source: "/aptos/overview",
+    destination: "/streams-api/aptos/overview",
+    permanent: true,
+  },
 ];
