@@ -2,6 +2,7 @@
 title: "Initial Setup"
 slug: "initial-setup"
 description: "This guide will teach you how to initially set up your server to then run it locally"
+sidebar_position: 1
 ---
    
 This guide will teach you how to initially **set up your own server** to then **run it locally**.
@@ -118,7 +119,7 @@ You can opt-out of this dependency if you want to set up your rate-limit functio
 
 See this [complete guide](https://redis.io/docs/getting-started) on how to setup Redis locally. If you're on Windows we recommend following this [amazing YouTube tutorial](https://www.youtube.com/watch?v=_nFwPTHOMIY).
 
-After running Redis locally, set `REDIS_CONNECTION_STRING` to its URL, which probably is:
+After running Redis locally, set `REDIS_CONNECTION_STRING` to its URL, which will probably be:
 
 ```shell
 'redis://127.0.0.1:6379'
