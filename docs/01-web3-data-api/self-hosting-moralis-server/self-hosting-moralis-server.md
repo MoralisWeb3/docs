@@ -5,11 +5,11 @@ slug: "self-hosting-moralis-server"
 
 ![](/img/content/53a7368-self-hosted-moralis-server-webpage-banner.webp)
 
-:::note You're in the right place
+:::info You're in the right place
 If you have a **Moralis-hosted server**, this guide will help you **migrate** to a **self-hosting solution**.
 :::
 
-:::note For you too
+:::info For you too
 If you are looking to **self-host a Moralis Server from scratch**, this guide is also for you.
 :::
 
