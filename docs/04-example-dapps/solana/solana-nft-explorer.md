@@ -3,13 +3,14 @@ title: "Solana NFT Explorer"
 slug: "solana-nft-explorer"
 description: "Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding."
 ---
+
 ## Introduction
 
 Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding.
 
-In this app we use [get Wallet NFTs](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) endpoint, to fetch all the NFTs of a wallet and we use [get NFT Metadata](/web3-data-api/solana/how-to-get-spl-nft-metadata) endpoint to get the metadata of the wallet NFTs.
+In this app we use [get Wallet NFTs](/web3-data-api-solana/solana/how-to-get-native-solana-balance-by-wallet) endpoint, to fetch all the NFTs of a wallet and we use [get NFT Metadata](/web3-data-api-solana/solana/how-to-get-spl-nft-metadata) endpoint to get the metadata of the wallet NFTs.
 
-This is what the final application looks like. 
+This is what the final application looks like.
 
 ![Final App UI](/img/content/e976274-image.webp)
 
@@ -35,15 +36,11 @@ git clone https://github.com/JohnVersus/solana-nft-explorer.git
 cd solana-nft-explorer
 ```
 
-
-
 - Install the dependencies using the`yarn` or `npm` package manager.
 
 ```shell
 yarn install
 ```
-
-
 
 - Rename `.env.local.example` file to `.env.local` and add the required environment secrets.
 
@@ -52,15 +49,11 @@ yarn install
 MORALIS_API_KEY= xxx
 ```
 
-
-
 - Start the app in localhost port 3000.
 
 ```shell
 yarn run dev
 ```
-
-
 
 Once the command has been run successfully, you should be able to view the app in localhost port 3000, or click [here](http://localhost:3000) to open the page directly.
 
@@ -97,7 +90,7 @@ const inputHandler = (e) => {
 
 // 4️⃣
 // `nftSearch` function will be called with a search button click.
-// This fucntion uses the state value in `setSearchInput` and 
+// This fucntion uses the state value in `setSearchInput` and
 // calls the backend api route to fetch the NFTs using `getNFTs` api endpoint.
 const nftSearch = async () => {
   setSearchResult(() => null);
@@ -118,14 +111,14 @@ const nftSearch = async () => {
 return (
   //...
   // 1️⃣
-  // Input component takes user input from search bar 
+  // Input component takes user input from search bar
   // and triggers `inputHandler`function on input change
-  <Input 
-  variant="filled" 
-  placeholder="Enter Wallet Address.." 
-  width={500} 
+  <Input
+  variant="filled"
+  placeholder="Enter Wallet Address.."
+  width={500}
   onInput={inputHandler} />
-  
+
   // 3️⃣
   //Button to call the `nftSearch` function
   <Button colorScheme="gray" onClick={nftSearch}>
@@ -135,14 +128,14 @@ return (
 );
 
 
-// This is the code for backend API route using which 
+// This is the code for backend API route using which
 // we fetch the wallet NFTs in `nftSearch` function.
 
 // Refer below code in `pages/api/SolApi/account/getNFTs.js`
 
 // 5️⃣
 // This API route uses `getNFTs` function from Moralis sdk to get the NFTs and
-// send the response to frontned 
+// send the response to frontned
 import Moralis from 'moralis';
 
 export default async function handler(req, res) {
@@ -162,8 +155,6 @@ export default async function handler(req, res) {
 
 ```
 
-
-
 With the above code, we have fetched all the NFTs of a Solana wallet and stored the NFT data in a `searchResult` state variable.
 
 Now we will use this data to fetch metadata of the NFT and update the UI with it. Here is the code for it.
@@ -176,7 +167,7 @@ Now we will use this data to fetch metadata of the NFT and update the UI with it
 const [pageResult, setPageResult] = useState([]);
 
 // 2️⃣
-// Load pages function updates the `pageResult` state variable with 
+// Load pages function updates the `pageResult` state variable with
 // the first 10 items of the `searchResult` data.
 // This is because we only want to show 10 NFTs per page.
 const loadPage = () => {
@@ -190,18 +181,23 @@ useEffect(() => {
   loadPage();
 }, [searchResult, page]);
 
-
-
 return (
   //...
   // 3️⃣
   // Whenever the `pageResult` state is updated this part of the UI is
   // re-rendered with the NFT data from the `pageResult`.
-  <VStack w={'full'} h={'650'} scrollBehavior={'auto'} borderWidth={'thin'} boxShadow={'inherit'} padding={'1'}>
+  <VStack
+    w={"full"}
+    h={"650"}
+    scrollBehavior={"auto"}
+    borderWidth={"thin"}
+    boxShadow={"inherit"}
+    padding={"1"}
+  >
     {pageResult?.length > 0 ? (
       <Grid templateColumns="repeat(5, 1fr)" gap={6} overflow="auto">
         {pageResult?.map((e, i) => {
-          // 4️⃣ 
+          // 4️⃣
           // `NFTCard` component is responsible for fetching the NFT metadata.
           // Refer next step for more details.
           return <NFTCard key={i} nftAddress={e.mint} filterQuery={query} />;
@@ -216,10 +212,7 @@ return (
 
   //...
 );
-
 ```
-
-
 
 Here is the code of the `NFTCard` component.
 
@@ -227,25 +220,30 @@ Here is the code of the `NFTCard` component.
 // Refer full code in `src/components/modules/NFTCard/NFTCard.jsx`
 
 // 5️⃣
-// NFTCard uses two parameters. 
+// NFTCard uses two parameters.
 // Lets take a look at `nftAddress` address now.
 const NFTCard = ({ nftAddress, filterQuery }) => {
   //...
-  const [nftData, setNftData] = useState({ contractType: '', name: '', symbol: '', metadata: '' });
+  const [nftData, setNftData] = useState({
+    contractType: "",
+    name: "",
+    symbol: "",
+    metadata: "",
+  });
   const [filterSymbol, setFilterSymbol] = useState();
 
   //7️⃣
-  // `getNFTMetadata` function sends a request to backend api route 
+  // `getNFTMetadata` function sends a request to backend api route
   // to fetch the meatdata.
   const getNFTMetadata = async () => {
     const options = {
-      network: 'mainnet',
+      network: "mainnet",
       address: nftAddress,
     };
-    const response = await apiPost('/SolApi/nft/getNFTMetadata', options);
+    const response = await apiPost("/SolApi/nft/getNFTMetadata", options);
     const result = await axios.get(`${response.metaplex.metadataUri}`, {
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
     });
     setFilterSymbol(response.symbol);
@@ -271,11 +269,16 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
   if (filterSymbol?.toLowerCase().includes(filterQuery)) {
     return (
       <>
-      // 🔟
-      // When the data in `nftData` state variable is updated, the UI 
-      // will be rendered with the NFT metadata.
-        <Box bgColor={bgColor} padding={3} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
-          <Box maxHeight="260px" overflow={'hidden'} borderRadius="xl">
+        // 🔟 // When the data in `nftData` state variable is updated, the UI //
+        will be rendered with the NFT metadata.
+        <Box
+          bgColor={bgColor}
+          padding={3}
+          borderRadius="xl"
+          borderWidth="1px"
+          borderColor={borderColor}
+        >
+          <Box maxHeight="260px" overflow={"hidden"} borderRadius="xl">
             <Image
               src={resolveIPFS(nftData?.metadata?.image)}
               //...
@@ -284,12 +287,19 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
           <Box mt="1" fontWeight="semibold" as="h4" noOfLines={1} marginTop={2}>
             {nftData?.name ? nftData?.name : <>no name</>}
           </Box>
-          <HStack alignItems={'center'}>
+          <HStack alignItems={"center"}>
             <Box as="h4" noOfLines={1} fontWeight="medium" fontSize="smaller">
               {nftData?.contractType} standard
             </Box>
           </HStack>
-          <SimpleGrid columns={1} spacing={4} bgColor={descBgColor} padding={2.5} borderRadius="xl" marginTop={2}>
+          <SimpleGrid
+            columns={1}
+            spacing={4}
+            bgColor={descBgColor}
+            padding={2.5}
+            borderRadius="xl"
+            marginTop={2}
+          >
             <Box>
               <Box as="h4" noOfLines={1} fontWeight="medium" fontSize="sm">
                 Symbol
@@ -307,8 +317,6 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
 };
 ```
 
-
-
 Code of backend API route to fetch NFT metadata
 
 ```typescript getNFTMetadata.js
@@ -316,8 +324,8 @@ Code of backend API route to fetch NFT metadata
 
 // 8️⃣
 // This API route uses `getNFTMetadata` function from Moralis sdk to get the
-// NFT metadata and sends the response to frontned 
-import Moralis from 'moralis';
+// NFT metadata and sends the response to frontned
+import Moralis from "moralis";
 
 export default async function handler(req, res) {
   const { address, network } = req.body;
@@ -333,18 +341,15 @@ export default async function handler(req, res) {
     res.status(400).json(error);
   }
 }
-
 ```
 
-
-
-By now we have gone through the code responsible to fetch the NFTs and updating the NFTs in UI. 
+By now we have gone through the code responsible to fetch the NFTs and updating the NFTs in UI.
 
 ## Step3: Paginated and Filtered Results
 
-Let's look at the code responsible for paginated results. 
+Let's look at the code responsible for paginated results.
 
-Navigation between pages is handled using these buttons. 
+Navigation between pages is handled using these buttons.
 
 ![Page Navigation](/img/content/9238099-image.webp)
 
@@ -436,11 +441,9 @@ return (
 );
 ```
 
-
-
 Now let's take a look at the filtering process.
 
-NFTs can be filtered using the search button on the top right. 
+NFTs can be filtered using the search button on the top right.
 
 ![Filter Input](/img/content/d2949f8-image.webp)
 
@@ -449,7 +452,7 @@ Here is the code responsible for filtering the NFTs in UI.
 ```typescript index.jsx
 // Refer full code in `pages/index.jsx`
 
-// State variable to store the filter query entered in the UI 
+// State variable to store the filter query entered in the UI
 const [query, setQuery] = useState('');
 
 // 2️⃣
@@ -462,7 +465,7 @@ const queryHandler = (e) => {
 return (
   //...
   // 1️⃣
-  // Input component to enter the filter query and it triggers 
+  // Input component to enter the filter query and it triggers
   // `queryHandler` function on input change
     <Input variant="filled" placeholder="Filter.." width={200} onInput={queryHandler} />
   //...
@@ -471,12 +474,10 @@ return (
   // 3️⃣
   // NFTCard Component uses the query stae as on of its property.
   <NFTCard key={i} nftAddress={e.mint} filterQuery={query} />;
-  
+
   //...
 );
 ```
-
-
 
 ```typescript NFTCard.jsx
 // Refer full code in `src/components/modules/NFTCard/NFTCard.jsx`
@@ -487,11 +488,11 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
 //...
 
 // Stores the filter symbol state.
-const [filterSymbol, setFilterSymbol] = useState(); 
-  
+const [filterSymbol, setFilterSymbol] = useState();
+
 const getNFTMetadata = async () => {
   // ...
-  // 5️⃣ 
+  // 5️⃣
   // When metadata is fetched from the backend we store the NFT symbol
   // in a state variable called `filterSymbol`
  setFilterSymbol(response.symbol);
@@ -499,8 +500,8 @@ const getNFTMetadata = async () => {
 }
 
  // 6️⃣
- // The value of `filterSymbol` is compared with the `filterQuery` and 
- // if the value matches then the NFTCard component will be rendered, 
+ // The value of `filterSymbol` is compared with the `filterQuery` and
+ // if the value matches then the NFTCard component will be rendered,
  // else the NFTCard is not rendered in the UI.
 if (filterSymbol?.toLowerCase().includes(filterQuery)) {
  return (
@@ -512,15 +513,13 @@ if (filterSymbol?.toLowerCase().includes(filterQuery)) {
 
 ```
 
-
-
 Here is what the filter results in the app look like.
 
 ![Filtered Images](/img/content/0c56bcf-image.webp)
 
-Congratulations! 🥳 
+Congratulations! 🥳
 
-You have successfully completed the tutorial and now you know how to create your very own NFT Explorer app. 
+You have successfully completed the tutorial and now you know how to create your very own NFT Explorer app.
 
 ## YouTube Tutorial
 

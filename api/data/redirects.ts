@@ -663,40 +663,40 @@ export const redirects = [
   {
     source: "/docs/how-to-get-native-solana-balance-by-wallet",
     destination:
-      "/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet",
+      "/web3-data-api-solana/solana/how-to-get-native-solana-balance-by-wallet",
     permanent: true,
   },
   {
     source: "/docs/solana-api",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-token-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-spl-token-balance-of-an-address",
+      "/web3-data-api-solana/solana/how-to-get-spl-token-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-nft-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-spl-nft-balance-of-an-address",
+      "/web3-data-api-solana/solana/how-to-get-spl-nft-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-nft-metadata",
-    destination: "/web3-data-api/solana/how-to-get-spl-nft-metadata",
+    destination: "/web3-data-api-solana/solana/how-to-get-spl-nft-metadata",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-solana-portfolio-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-solana-portfolio-balance-of-an-address",
+      "/web3-data-api-solana/solana/how-to-get-solana-portfolio-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-token-price",
-    destination: "/web3-data-api/solana/how-to-get-spl-token-price",
+    destination: "/web3-data-api-solana/solana/how-to-get-spl-token-price",
     permanent: true,
   },
   {
@@ -2191,7 +2191,7 @@ export const redirects = [
   },
   {
     source: "/reference/solana-api",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
@@ -2646,7 +2646,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-api",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
@@ -2812,7 +2812,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/solana-sdk/intro",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
@@ -4075,7 +4075,7 @@ export const redirects = [
   },
   {
     source: "/docs/solana-api-overview",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
@@ -5214,7 +5214,7 @@ export const redirects = [
   },
   {
     source: "/docs/solana-api-examples",
-    destination: "/web3-data-api/solana",
+    destination: "/web3-data-api-solana",
     permanent: true,
   },
   {
