@@ -63,9 +63,18 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 | Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
 | Palm                            | 11297108109 | `EvmChain.PALM`           | Mainnet |
 | Arbitrum                        | 42161       | `EvmChain.ARBITRUM`       | Mainnet |
+
 ### Solana Chains
 
 | Name           | SolNetwork           | Type    |
 | :------------- | :------------------- | :------ |
 | Solana mainnet | `SolNetwork.MAINNET` | Mainnet |
 | Solana devnet  | `SolNetwork.DEVNET`  | Testnet |
+
+
+### Aptos Chains
+
+| Name           | AptosNetwork           | Type    |
+| :------------- | :------------------- | :------ |
+| Aptos Mainnet | `https://mainnet-aptos-api.moralis.io` | Mainnet |
+| Aptos Testnet  | `https://testnet-aptos-api.moralis.io`  | Testnet |
