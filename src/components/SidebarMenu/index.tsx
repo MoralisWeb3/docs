@@ -1,7 +1,14 @@
-import React from "react";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import React, { useState } from "react";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { useHistory } from "@docusaurus/router";
+import { useHistory, useLocation } from "@docusaurus/router";
+
+enum NetworkEnum {
+  Aptos = "aptos",
+  EVM = "evm",
+  Solana = "solana",
+}
 
 const networks = [
   {
@@ -21,16 +28,34 @@ const networks = [
   },
 ];
 
-const SidebarMenu = (props: TextFieldProps) => {
+const SidebarMenu = () => {
   const { push } = useHistory();
-  return (
-    <TextField select fullWidth label="Network" defaultValue="evm" {...props}>
-      {networks.map(({ value, label, link }) => (
-        <MenuItem key={value} value={value} onClick={() => push(link)}>
-          {label}
-        </MenuItem>
-      ))}
-    </TextField>
+  const { pathname } = useLocation();
+  const [network] = useState<NetworkEnum | null>(() => {
+    switch (pathname) {
+      case "/web3-data-api-aptos":
+        return NetworkEnum.Aptos;
+      case "/web3-data-api-solana":
+        return NetworkEnum.Aptos;
+      case "/web3-data-api":
+        return NetworkEnum.EVM;
+      default:
+        return;
+    }
+  });
+
+  return network ? (
+    <FormControl fullWidth>
+      <Select value={network}>
+        {networks.map(({ value, label, link }) => (
+          <MenuItem key={value} value={value} onClick={() => push(link)}>
+            {label}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
+  ) : (
+    <></>
   );
 };
 

@@ -24,7 +24,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       )}
     >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
-      <div style={{ margin: "1rem 1rem 0.5rem 1rem" }}>
+      <div style={{ margin: "1rem 1rem 0rem 1rem" }}>
         <SidebarMenu />
       </div>
       <Content path={path} sidebar={sidebar} />
