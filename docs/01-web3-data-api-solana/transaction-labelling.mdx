@@ -1,0 +1,165 @@
+---
+title: "Transaction Labeling"
+slug: "transaction-labelling"
+sidebar_position: 7
+---
+
+# Transaction Labeling
+
+The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI, such as "Transfer", "Approve", "Mint", "Deposit" etc.
+
+This means that for each transaction and log we apply a friendly, easily recognizable label, making it easier than ever to understand and navigate the complex world of blockchain.
+
+Each transaction includes a `decoded_call` object which is the decoded `input` data of the transaction, whilst each log includes a `decoded_event` object which is the decoded `topic` data.
+
+## Which endpoints support Transaction labeling?
+
+We have included support for transaction labeling on two new endpoints:
+
+| Name                               | Endpoint                                 |
+| :--------------------------------- | :--------------------------------------- |
+| Get decoded transactions by wallet | `/:address/verbose`                      |
+| Get decoded transaction by hash    | `/transaction/:transaction_hash/verbose` |
+
+## Why are some transactions not decoded?
+
+We only decode transactions from verified ABIs. We are continuously adding to our repository of verified contract ABIs.
+
+If transaction is related to an unverified contract, or it's part of a verified contract that do not yet support, transactions will have a `decoded_call` of `null` and logs will have a `decoded_event` of `null`.
+
+For unsupported ABIs, we have future plans to make submissions available via the API, however until this time, if you would like an ABI to be supported, please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/contract-abi-requests/).
+
+## What chains currently support transaction labeling?
+
+All of our EVM blockchains support transaction labeling, with the highest contract coverage on Ethereum.
+
+## Will you continue to add new contract ABIs?
+
+Yes, absolutely! We plan to continue adding verified contract ABIs to our repository. We have plans to make this automatic in future, however until this time, if you would like an ABI to be supported please add your submissions to our [ABI requests board](https://roadmap.moralis.io/b/contract-abi-requests/).
+
+## What are some use cases of Transaction labeling?
+
+Transaction labeling can be a powerful feature in a number of different use cases. Here are some popular ones:
+
+- Displaying a clear timeline of events for a given wallet
+- Identifying different types of transactions for specific use-cases, such as taxable events
+- Building an intuitive block explorer
+
+## A decoded example
+
+As an example, we can see that Ethereum transaction `0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760` is labelled as a `Transfer` on Etherscan:
+
+![image](https://user-images.githubusercontent.com/13417464/219065293-01a75803-f1fa-482b-963a-10e8f5a2a295.png)
+
+If we [look at this transaction in more detail on Etherscan](https://etherscan.io/tx/0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760), we can see that the transaction has the following input data:
+
+<img
+  width="727"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219065761-fb42b2ad-7519-4da1-886f-b11a9ffe4e39.png"
+/>
+
+and when decoded, this input data looks like:
+
+<img
+  width="729"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219065840-b407362c-9dd9-4d00-8388-19c1a05bf2d5.png"
+/>
+
+Similarly, this transaction also has 1 log associated with it:
+
+<img
+  width="1399"
+  alt="image"
+  src="https://user-images.githubusercontent.com/13417464/219066977-ef587303-49d3-4312-a005-723116b98b5a.png"
+/>
+
+It is this data which is now decoded and included per transaction. Here is the full transaction data served through the Moralis API, note the `decoded_call` at the transaction level, as well as the `decoded_event` at the log level:
+
+```
+{
+  "hash": "0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760",
+  "nonce": "567407",
+  "transaction_index": "153",
+  "from_address": "0x48c04ed5691981c42154c6167398f95e8f38a7ff",
+  "to_address": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+  "value": "0",
+  "gas": "180000",
+  "gas_price": "41000000000",
+  "input": "0xa9059cbb000000000000000000000000eafeba1882a066a4ecca2f9d596cd0c4e722bfda000000000000000000000000000000000000000000000000000000b4ec8a8e9a",
+  "receipt_cumulative_gas_used": "11843646",
+  "receipt_gas_used": "51617",
+  "receipt_contract_address": null,
+  "receipt_root": null,
+  "receipt_status": "1",
+  "block_timestamp": "2023-02-15T14:51:23.000Z",
+  "block_number": "16634851",
+  "block_hash": "0x83e09485f7dc9fdef520ae59bbc02ebbca2e2508fc6b7fa5fe6da93a21c71272",
+  "transfer_index": [
+    16634851,
+    153
+  ],
+  "logs": [
+    {
+      "log_index": "285",
+      "transaction_hash": "0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760",
+      "transaction_index": "153",
+      "transaction_value": "0",
+      "address": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+      "data": "0x000000000000000000000000000000000000000000000000000000b4ec8a8e9a",
+      "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+      "topic1": "0x00000000000000000000000048c04ed5691981c42154c6167398f95e8f38a7ff",
+      "topic2": "0x000000000000000000000000eafeba1882a066a4ecca2f9d596cd0c4e722bfda",
+      "topic3": null,
+      "block_timestamp": "2023-02-15T14:51:23.000Z",
+      "block_number": "16634851",
+      "block_hash": "0x83e09485f7dc9fdef520ae59bbc02ebbca2e2508fc6b7fa5fe6da93a21c71272",
+      "transfer_index": [
+        16634851,
+        153,
+        285
+      ],
+      "decoded_event": {
+        "signature": "Transfer(address,address,uint256)",
+        "label": "Transfer",
+        "type": "event",
+        "params": [
+          {
+            "name": "from",
+            "value": "0x48c04ed5691981C42154C6167398f95e8f38a7fF",
+            "type": "address"
+          },
+          {
+            "name": "to",
+            "value": "0xeafebA1882a066A4eCcA2F9d596Cd0c4E722BfDa",
+            "type": "address"
+          },
+          {
+            "name": "value",
+            "value": "777062616730",
+            "type": "uint256"
+          }
+        ]
+      }
+    }
+  ],
+  "decoded_call": {
+    "signature": "transfer(address,uint256)",
+    "label": "transfer",
+    "type": "function",
+    "params": [
+      {
+        "name": "_to",
+        "value": "0xeafebA1882a066A4eCcA2F9d596Cd0c4E722BfDa",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "value": "777062616730",
+        "type": "uint256"
+      }
+    ]
+  }
+}
+```
