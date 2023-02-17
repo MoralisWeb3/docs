@@ -5455,4 +5455,19 @@ export const redirects = [
     destination: "/streams-api/aptos/overview",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/reference/getnftownersbyowners",
+    destination: "/web3-data-api/reference/get-nft-by-owners",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersbycollection",
+    destination: "/web3-data-api/reference/get-nft-owners-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersofcollection",
+    destination: "/web3-data-api/reference/get-nft-owners-of-collection",
+    permanent: true,
+  },
 ];
