@@ -5440,4 +5440,14 @@ export const redirects = [
     destination: "/web3-data-api/reference/upload-folder",
     permanent: true,
   },
+  {
+    source: "/streams-api/aptos/tutorials",
+    destination: "/streams-api/aptos/tutorials/add-address-to-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/aptos/usage",
+    destination: "/streams-api/aptos/records",
+    permanent: true,
+  },
 ];
