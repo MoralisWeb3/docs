@@ -155,8 +155,8 @@ STREAMS_WEBHOOK_URL = '/streams-webhook'
 
 First, compile your code with:
 
-```shell
-yarn build
+```bash npm2yarn
+npm run build
 ```
 
 :::note
@@ -166,8 +166,8 @@ This will compile your code to `/build`. This step is required for cloud functio
 
 Now you can **run the server locally** with:
 
-```shell
-yarn dev
+```bash npm2yarn
+npm run start
 ```
 
 Your server is compiled and running locally on your specified `PORT` (by default `http://localhost:1337`).
