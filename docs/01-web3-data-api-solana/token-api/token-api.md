@@ -1,9 +1,9 @@
 ---
 title: "Token API"
 slug: "../token-api"
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />  
+<DocCardList />
