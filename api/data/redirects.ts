@@ -663,7 +663,7 @@ export const redirects = [
   {
     source: "/docs/how-to-get-native-solana-balance-by-wallet",
     destination:
-      "/web3-data-api-solana/solana/how-to-get-native-solana-balance-by-wallet",
+      "/web3-data-api-solana/how-to-get-native-solana-balance-by-wallet",
     permanent: true,
   },
   {
@@ -685,7 +685,7 @@ export const redirects = [
   },
   {
     source: "/docs/how-to-get-spl-nft-metadata",
-    destination: "/web3-data-api-solana/solana/how-to-get-spl-nft-metadata",
+    destination: "/web3-data-api-solana/how-to-get-spl-nft-metadata",
     permanent: true,
   },
   {
