@@ -66,7 +66,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm">
+                <a className="card padding--lg card--homepage" href="/web3-data-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
                     <p>Get NFT, token and transaction data from EVM chains.</p>
                 </a>
@@ -82,7 +82,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/nft-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>NFT API</span></h3>
                     <p>Summon all NFT transfers, prices, and metadata in realtime.</p>
                 </a>
@@ -92,7 +92,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
                     <p>Access all the information you need for any ERC20 tokens from multiple blockchains.</p>
                 </a>
@@ -100,7 +100,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/balance-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/balance-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.34" clipPath="url(#a)"><path stroke="#78838F" d="M2.382 7.682h31.237"/><path stroke="#4F5760" d="M17.992 2.356v26.68"/><path fill="#fff" stroke="#4F5760" d="M26.218 30.053H9.053v3.593h17.165v-3.593Z"/><path stroke="#4F5760" d="M5.604 33.646h24.063"/><path stroke="#78838F" d="m7.272 7.682-4.275 12.1h8.55l-4.275-12.1Z"/><path stroke="#4F5760" d="M11.548 19.766c0 2.321-1.911 4.197-4.275 4.197-2.365 0-4.276-1.876-4.276-4.197h8.55Z"/><path stroke="#78838F" d="m28.713 7.682-4.275 12.1h8.55l-4.275-12.1Z"/><path stroke="#4F5760" d="M32.988 19.766c0 2.321-1.91 4.197-4.275 4.197-2.364 0-4.275-1.876-4.275-4.197h8.55Z"/><path fill="#fff" stroke="#4F5760" d="M17.992 10.13c1.502 0 2.72-1.195 2.72-2.67 0-1.476-1.218-2.671-2.72-2.671-1.503 0-2.72 1.195-2.72 2.67 0 1.476 1.217 2.672 2.72 2.672Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;Balance API</h3>
                     <p>Get the native balance for a specific wallet address.</p>
                 </a>
@@ -108,7 +108,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/transaction-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/transaction-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="38" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.835" clipPath="url(#a)"><path stroke="#1A1AB3" d="m32.85 21.85-6.264 6.213c-4.739 5.016-12.434 5.016-17.186 0a13.018 13.018 0 0 1-2.862-4.788"/><path stroke="#5555FA" d="M3.15 7.6v8.55h8.1"/><path stroke="#1A1AB3" d="M32.85 30.4v-8.55h-8.1"/><path stroke="#5555FA" d="M29.461 14.725c-2.24-6.683-9.18-10.174-15.511-7.809a12.049 12.049 0 0 0-4.536 3.021L3.15 16.15"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.8 4.75h32.4v28.5H1.8z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Transaction API</span></h3>
                     <p>Get transaction data from multiple blockchains.</p>
                 </a>
@@ -118,7 +118,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/events-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/events-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.944" clipPath="url(#a)"><path stroke="#E35EA3" d="m30.71 16.123-12.758 3.745-1.161-3.909"/><path stroke="#E35EA3" d="m27.322 4.625-3.239 7.344 6.624 4.154M18.751 7.144l8.57-2.52M20.845 14.7l-2.895 5.168"/><path stroke="#F5A3CB" d="m5.259 6.784 12.217-3.582 3.37 11.498-12.758 3.745"/><path stroke="#E35EA3" d="M12.062 32.528 4.882 6.996"/></g><defs><clipPath id="a"><path fill="#fff" d="M3.41 1.73h28.77V34H3.41z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Events API</span></h3>
                     <p>Get all the logs and events for contracts across multiple blockchains.</p>
                 </a>
@@ -126,7 +126,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/block-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/block-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" clipPath="url(#a)"><path stroke="#279B4F" d="M30.6 23.584v-11.2c0-.994-.532-1.918-1.4-2.422l-9.8-5.6a2.782 2.782 0 0 0-2.8 0l-9.8 5.6a2.804 2.804 0 0 0-1.4 2.422v11.2c0 .994.532 1.918 1.4 2.422l9.8 5.6a2.782 2.782 0 0 0 2.8 0l9.8-5.6a2.804 2.804 0 0 0 1.4-2.422Z"/><path stroke="#279B4F" d="M5.777 10.928 18 17.998l12.222-7.07M18 32.096V17.984"/><path stroke="#6DE983" d="m9.026 23.332 5.32-3.08M21.445 20.252l5.32 3.08"/></g><defs><clipPath id="a"><path fill="#fff" d="M4 2.584h28v30.912H4z"/></clipPath></defs></svg>&nbsp;&nbsp;Block API</h3>
                     <p>Get data on specific blocks across multiple blockchains.</p>
                 </a>
@@ -134,7 +134,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/defi-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/defi-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#019EC9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.951" d="m11.52 32.294 10.016-3-3.098-12.852-12.394-6 7.017-5.508M30.373 17.426l.491-9.984-12.425 9 3.098 12.853"/><path stroke="#019EC9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.951" d="m6.044 10.442 12.394 6 12.426-9-7.328-2.967"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.787" d="M19.094 20.328a3.934 3.934 0 1 0 0-7.87 3.934 3.934 0 0 0 0 7.87Z"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.803" d="M6.06 13.442a2.984 2.984 0 1 0 0-5.967 2.984 2.984 0 0 0 0 5.967Z"/><path fill="#fff" d="M30.93 8.426a.959.959 0 0 1-.95-.983c0-.525.442-.951.966-.951.558 0 .984.459.967.984 0 .524-.442.95-.967.95h-.016Z"/><path fill="#01CBD2" d="M30.946 4.328a3.131 3.131 0 0 0-3.131 3.082 3.135 3.135 0 0 0 3.082 3.197h.065a3.131 3.131 0 0 0 3.131-3.082 3.135 3.135 0 0 0-3.082-3.197h-.065Z"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.803" d="M21.618 31.459a2.066 2.066 0 1 0 0-4.131 2.066 2.066 0 0 0 0 4.13Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.684 3h32.393v30.77H1.684z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>DeFi API</span></h3>
                     <p>Get liquidity reserves and pair data across multiple blockchains.</p>
                 </a>
