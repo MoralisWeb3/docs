@@ -120,5 +120,9 @@ REDIS_CONNECTION_STRING = 'redis://<username>:<password>@redis-17170.c262.us-eas
 ```
 
 :::caution remember
-Make sure to replace `<username>` and `<password>` with the user's credentials if needed. Go to [*Data Access Control*](https://app.redislabs.com/#/data-access-control/users) to find/edit those or even create a new user.
+Make sure to replace `<username>` and `<password>` with the user's credentials.
+
+A `default` user is created automatically when a database is created. You can see/edit the password under the [database's configuration](https://app.redislabs.com/#/databases).
+
+However, if you want to create a **custom username and password** from scratch, go to [*Data Access Control*](https://app.redislabs.com/#/data-access-control/users).
 :::
