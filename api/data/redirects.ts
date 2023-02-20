@@ -5476,8 +5476,27 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "web3-data-api/evm/nft-api/:path*",
-    destination: "/web3-data-api/nft-api/:path*",
+    source: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/how-to-get-all-nft-collections-owned-by-an-address",
+    destination:
+      "/web3-data-api/how-to-get-all-nft-collections-owned-by-an-address",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/how-to-get-all-nft-transfers-in-a-block",
+    destination: "/web3-data-api/how-to-get-all-nft-transfers-in-a-block",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/how-to-get-all-nfts-own-by-an-address-cross-chain",
+    destination:
+      "/web3-data-api/how-to-get-all-nfts-own-by-an-address-cross-chain",
     permanent: true,
   },
 ];
