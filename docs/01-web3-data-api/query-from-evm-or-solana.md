@@ -2,7 +2,6 @@
 title: "Query from EVM or Solana"
 slug: "query-from-evm-or-solana"
 description: "It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type."
-sidebar_position: 8
 ---
 
 It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type.
@@ -24,8 +23,6 @@ const result1 = await Moralis.EvmApi.'<DOMAIN>'.'<METHOD>'
 const result2 = await Moralis.SolApi.'<DOMAIN>'.'<METHOD>'
 ```
 
-
-
 See the [SDK reference](page:sdk-reference) for all the possible domains and methods.
 
 The returned value is an `ApiResultAdapter` instance with the following methods:
@@ -34,8 +31,6 @@ The returned value is an `ApiResultAdapter` instance with the following methods:
 - `.raw`
 - `.next()` for paginated responses
 - `.pagination` for paginated responses
-
-
 
 ## `.result`
 
@@ -51,7 +46,7 @@ const response = await Moralis.EvmApi.token.getWalletTokenBalances({
     address: '0xa9C4c85DD0495E32D08EF64d51fDEB35D200EDfe',
 })
 
-// An array of Erc20Value 
+// An array of Erc20Value
 const balances = response.result
 
 console.log(balances[0].token.contractAddress.equals("0x01be23585060835e02b77ef475b0cc51aa1e0709"))
@@ -67,33 +62,29 @@ console.log(balances[0].amount)
 BigNumber<20000000000000000000>
 ```
 
-
-
 ## `.raw`
 
 Returns raw data as it is; it comes directly from the API.
 
-Use this method if you want the data as it was in v1 of the SDK. This will output the data without any formatting, and the types are different than the result from  `.result`. This method is not recommended (as it lacks a lot of utilities, validations, and formatting) and should only be used when you want to migrate from the v1 version of the SDK:
+Use this method if you want the data as it was in v1 of the SDK. This will output the data without any formatting, and the types are different than the result from `.result`. This method is not recommended (as it lacks a lot of utilities, validations, and formatting) and should only be used when you want to migrate from the v1 version of the SDK:
 
 ```javascript
-import { EvmChain } from '@moralisweb3/common-evm-utils';
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const balances = await Moralis.EvmApi.token.getWalletTokenBalances({
-  	chain: EvmChain.ETHEREUM,
-    address: '0xa9C4c85DD0495E32D08EF64d51fDEB35D200EDfe',
-})
-console.log(balances.raw)
-
-//console output:
-[
-   {
-      "token_address":"0x01be23585060835e02b77ef475b0cc51aa1e0709",
-      "name":"ChainLink Token",
-      "symbol":"LINK",
-      "logo":null,
-      "thumbnail":null,
-      "decimals":18,
-      "balance":"20000000000000000000"
-   }
-]
+  chain: EvmChain.ETHEREUM,
+  address: "0xa9C4c85DD0495E32D08EF64d51fDEB35D200EDfe",
+});
+console.log(balances.raw)[
+  //console output:
+  {
+    token_address: "0x01be23585060835e02b77ef475b0cc51aa1e0709",
+    name: "ChainLink Token",
+    symbol: "LINK",
+    logo: null,
+    thumbnail: null,
+    decimals: 18,
+    balance: "20000000000000000000",
+  }
+];
 ```

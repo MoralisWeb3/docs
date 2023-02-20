@@ -1,8 +1,10 @@
 ---
 title: "Block API"
 slug: "../block-api"
-description: "The Block API is a tool that allows Web3 developers to easily access data from specific blocks across various blockchains. It offers functionality like fetching block contents by block hash and finding the closest block by date." 
+description: "The Block API is a tool that allows Web3 developers to easily access data from specific blocks across various blockchains. It offers functionality like fetching block contents by block hash and finding the closest block by date."
+sidebar_position: 7
 ---
+
 ## What is the Block API?
 
 The Block API enables Web3 developers to quickly get data on specific blocks across multiple blockchains, in order to help them build and scale their dapps efficiently.
@@ -18,7 +20,7 @@ Plus so much more!
 
 ## Popular use cases
 
-The Block API is extremely flexible, meaning it can support a wide range of use cases, including: 
+The Block API is extremely flexible, meaning it can support a wide range of use cases, including:
 
 - Block Explorer
 - Transaction Monitoring

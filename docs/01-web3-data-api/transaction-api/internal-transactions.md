@@ -1,7 +1,6 @@
 ---
 title: "Internal Transactions"
 slug: "internal-transactions"
-sidebar_position: 7
 ---
 
 # Internal Transactions

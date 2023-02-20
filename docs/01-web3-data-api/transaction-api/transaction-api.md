@@ -2,6 +2,7 @@
 title: "Transaction API"
 slug: "../transaction-api"
 description: "Fetch real-time transactions data from various EVM blockchains into your applications with Moralis’s powerful cross-chain Transaction API, providing seamless all existing transactions and their detailed logs."
+sidebar_position: 6
 ---
 
 ![](/img/content/a9de9d2-image.webp)
@@ -21,7 +22,7 @@ Plus so much more!
 
 ### Popular use cases
 
-The Transaction API is extremely flexible, meaning it can support a wide range of use cases, including: 
+The Transaction API is extremely flexible, meaning it can support a wide range of use cases, including:
 
 - Live Price Feeds
 - Portfolio Dashboard

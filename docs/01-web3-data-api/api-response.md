@@ -1,7 +1,6 @@
 ---
 title: "API Response"
 slug: "api-response"
-sidebar_position: 8
 ---
 
 Moralis uses conventional [HTTP response codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to indicate success or failure of an API request.

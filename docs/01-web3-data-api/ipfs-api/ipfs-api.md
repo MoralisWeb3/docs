@@ -2,7 +2,9 @@
 title: "IPFS API"
 slug: "../ipfs-api"
 description: "Use the IPFS API to easily upload and access your data on the decentralized IPFS platform. Your data will be stored in a secure and resistant manner, making it resistant to tampering and censorship."
+sidebar_position: 11
 ---
+
 ## What is the IPFS API?
 
 The IPFS API enables you to easily upload and get your data **pinned automatically** to IPFS. With IPFS API, your data will be stored in a decentralized manner, which makes it resistant to tampering and censorship.
@@ -21,4 +23,4 @@ The IPFS API provides the following functionality out of the box to power the da
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />  
+<DocCardList />

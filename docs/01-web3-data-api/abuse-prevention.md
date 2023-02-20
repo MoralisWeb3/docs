@@ -1,7 +1,6 @@
 ---
 title: "Abuse Prevention"
 slug: "abuse-prevention"
-sidebar_position: 8
 ---
 
 It's important you study rate limits for your plan and the different services that you use.  

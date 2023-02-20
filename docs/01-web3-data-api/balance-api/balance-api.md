@@ -2,7 +2,9 @@
 title: "Balance API"
 slug: "../balance-api"
 description: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
+sidebar_position: 5
 ---
+
 ![](/img/content/bb36730-image.webp)
 
 ## What is the Balance API?
@@ -24,7 +26,7 @@ Plus so much more!
 
 ### Popular use cases
 
-The Balance API is extremely flexible, meaning it can support a wide range of use cases, including: 
+The Balance API is extremely flexible, meaning it can support a wide range of use cases, including:
 
 - Live Price Feeds
 - Portfolio Dashboard

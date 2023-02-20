@@ -1,23 +1,21 @@
 ---
 title: "Cross-Chain Requests"
 slug: "cross-chain-requests"
-sidebar_position: 8
 ---
+
 # Cross-Chain EVM Requests
 
 All our API methods are supported for cross-chain calls. You only need to specify the `chain` parameter. For example, this request will query block info on Polygon:
 
 ```typescript
-import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/common-evm-utils';
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 evmApi.block.getBlock({
-  blockNumberOrHash: '33000000',
-  chain: EvmChain.POLYGON
-})
+  blockNumberOrHash: "33000000",
+  chain: EvmChain.POLYGON,
+});
 ```
-
-
 
 If no `chain` is specified, it will, by default, be set to the `defaultEvmApiChain`, which is set in your config (defaults to "Ethereum mainnet").
 
@@ -26,17 +24,17 @@ If no `chain` is specified, it will, by default, be set to the `defaultEvmApiCha
 To change the default chain, you can specify `defaultEvmApiChain` in your config:
 
 ```typescript
-import Moralis  from 'moralis';
-import { EvmChain } from '@moralisweb3/common-evm-utils';
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 Moralis.start({
-	apiKey: 'YOUR_API_KEY',
-  defaultEvmApiChain: EvmChain.POLYGON
-})
+  apiKey: "YOUR_API_KEY",
+  defaultEvmApiChain: EvmChain.POLYGON,
+});
 
 Moralis.EvmApi.block.getBlock({
-  blockNumberOrHash: '33000000',
-})
+  blockNumberOrHash: "33000000",
+});
 ```
 
 ## Supported EVM Chains
@@ -44,10 +42,10 @@ Moralis.EvmApi.block.getBlock({
 | Name                            | Chain id    | EvmChain                  | Type    |
 | :------------------------------ | :---------- | :------------------------ | :------ |
 | Ethereum Mainnet                | 1           | `EvmChain.ETHEREUM`       | Mainnet |
-| Ethereum Ropsten_ (deprecated)_ | 3           | `EvmChain.ROPSTEN`        | Testnet |
-| Ethereum Rinkeby_ (deprecated)_ | 4           | `EvmChain.RINKEBY`        | Testnet |
+| Ethereum Ropsten* (deprecated)* | 3           | `EvmChain.ROPSTEN`        | Testnet |
+| Ethereum Rinkeby* (deprecated)* | 4           | `EvmChain.RINKEBY`        | Testnet |
 | Ethereum Görli                  | 5           | `EvmChain.GOERLI`         | Testnet |
-| Ethereum Kovan_ (deprecated)_   | 42          | `EvmChain.KOVAN`          | Testnet |
+| Ethereum Kovan* (deprecated)*   | 42          | `EvmChain.KOVAN`          | Testnet |
 | Ethereum Sepolia                | 11155111    | `EvmChain.SEPOLIA`        | Testnet |
 | Polygon Mainnet                 | 137         | `EvmChain.POLYGON`        | Mainnet |
 | Polygon Mumbai                  | 80001       | `EvmChain.MUMBAI`         | Testnet |
@@ -68,16 +66,16 @@ Moralis.EvmApi.block.getBlock({
 We have two networks for the Solana API, which you can configure similarly. You can specify the mainnet or devnet:
 
 ```typescript
-import Moralis  from 'moralis';
-import { SolNetwork } from '@moralisweb3/sol-utils';
+import Moralis from "moralis";
+import { SolNetwork } from "@moralisweb3/sol-utils";
 
 Moralis.start({
-	apiKey: 'YOUR_API_KEY',
-	defaultSolNetwork: SolNetwork.DEVNET
-})
+  apiKey: "YOUR_API_KEY",
+  defaultSolNetwork: SolNetwork.DEVNET,
+});
 
 Moralis.SolApi.account.getBalance({
-	address: 'ADDRESS',
+  address: "ADDRESS",
 });
 ```
 

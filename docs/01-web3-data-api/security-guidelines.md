@@ -2,8 +2,8 @@
 title: "Security Guidelines"
 slug: "security-guidelines"
 description: "Use the following security guidelines when building your dapp to keep it secure."
-sidebar_position: 7
 ---
+
 ## Securing Your API Key
 
 Your [Moralis API key](/web3-data-api/get-your-api-key) is a sensitive information that will give access to all Moralis API for those who hold it. In other words, if your [Moralis API key](/web3-data-api/get-your-api-key) is exposed to bad actors, they will be able to abuse your Moralis API usage while you pay the bill for those unauthorized usage.
@@ -48,7 +48,6 @@ pip install python-decouple
 
 After installing the necessary package, create a `.env` file to store your [Moralis API key](/web3-data-api/get-your-api-key) and have your `.env` file in `.gitignore` to avoid accidentally pushing your `.env` file to public repositories.
 
-
 <Tabs>
   <TabItem value="env" label=".env" default>
 
@@ -77,7 +76,7 @@ const Moralis = require("moralis").default;
 const dotenv = require("dotenv");
 
 // inject environment variables
-dotenv.config()
+dotenv.config();
 
 const apiKey: string = process.env.MORALIS_API_KEY;
 ```
