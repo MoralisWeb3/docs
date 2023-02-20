@@ -3,6 +3,9 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { useHistory, useLocation } from "@docusaurus/router";
+import EthereumLogo from "@site/static/img/content/networks/ethereum.webp";
+import AptosLogo from "@site/static/img/content/networks/aptos.webp";
+import SolanaLogo from "@site/static/img/content/networks/solana.webp";
 
 enum NetworkEnum {
   Aptos = "aptos",
@@ -15,16 +18,19 @@ const networks = [
     value: "aptos",
     label: "Aptos",
     link: "/web3-data-api-aptos",
+    logo: AptosLogo,
   },
   {
     value: "evm",
     label: "EVM",
     link: "/web3-data-api",
+    logo: EthereumLogo,
   },
   {
     value: "solana",
     label: "Solana",
     link: "/web3-data-api-solana",
+    logo: SolanaLogo,
   },
 ];
 
@@ -50,8 +56,9 @@ const SidebarMenu = () => {
   return network ? (
     <FormControl fullWidth>
       <Select value={network}>
-        {networks.map(({ value, label, link }) => (
+        {networks.map(({ value, label, link, logo }) => (
           <MenuItem key={value} value={value} onClick={() => push(link)}>
+            <img src={logo} alt="logo" height={20} width="auto" />
             {label}
           </MenuItem>
         ))}
