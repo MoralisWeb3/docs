@@ -5470,4 +5470,14 @@ export const redirects = [
     destination: "/web3-data-api/reference/get-nft-owners-of-collection",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/evm",
+    destination: "/web3-data-api",
+    permanent: true,
+  },
+  {
+    source: "web3-data-api/evm/nft-api/:path*",
+    destination: "/web3-data-api/nft-api/:path*",
+    permanent: true,
+  },
 ];
