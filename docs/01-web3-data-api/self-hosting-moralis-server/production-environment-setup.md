@@ -68,7 +68,7 @@ Now set the `DATABASE_URL` in your `.env` with that string:
 DATABASE_URL: 'mongodb+srv://<username>:<password>@cluster0.vok8pet.mongodb.net/?retryWrites=true&w=majority'
 ```
 
-:::caution
+:::caution remember
 Make sure to replace `<username>` and `<password>` with the created user's credentials. Also make sure that the user has read and write privileges. By default it will, but all this can be configured under [*Database Access*](https://cloud.mongodb.com/v2/63ef51b2ca3fd8321c7a3817#/security/database/users).
 :::
 
@@ -79,24 +79,46 @@ Make sure to replace `<username>` and `<password>` with the created user's crede
 This option can be used for local development as well.
 :::
 
-1. Signup for an account at <https://redis.com/redis-enterprise-cloud/overview/>
-2. Create a new database
-3. Setup a user with read and write access
+### Sign Up
 
-![](/img/content/e6597fe-Screenshot_2022-09-07_at_23.55.21.webp)
+[Create a new account](https://redis.com/try-free/). You'll be automatically logged in afterwards.
 
-![](/img/content/d2522f5-Screenshot_2022-09-07_at_23.55.39.webp)
+### Create a subscription
 
-![](/img/content/b27bb15-Screenshot_2022-09-07_at_23.56.31.webp)
+Under *Subscriptions*, choose ***New subscription***:
 
-![](/img/content/9944445-Screenshot_2022-09-08_at_00.00.11.webp)
+![](/img/content/redis-1.webp)
 
-   Create the user, and make sure to store the username and password somewhere safe
+Choose your plan, enter a *Subscription name* and choose ***Create subscription***:
 
-4. Get the connection string
+![](/img/content/redis-2.webp)
 
-![](/img/content/c06766a-Screenshot_2022-09-08_at_00.01.54.webp)
+### Create a database
 
-![](/img/content/ad75338-Screenshot_2022-09-08_at_00.02.10.webp)
+With a subscription created, now choose ***New database***:
 
-5. Set the `REDIS_CONNECTION_STRING` in your `.env` with the username, password and endpoint from the previous step. The result should look like `redis://<username>:<password>@<endpoint>`
+![](/img/content/redis-3.webp)
+
+Enter a *Database name* and choose ***Activate database***. We left all the settings as default (recommended):
+
+![](/img/content/redis-4.webp)
+
+### Connection
+
+With a database created, now choose ***Connect***:
+
+![](/img/content/redis-5.webp)
+
+Choose *RedisInsight Desktop* and ***copy the connection URL***:
+
+![](/img/content/redis-6.webp)
+
+Now set the `REDIS_CONNECTION_STRING` in your `.env` with that URL:
+
+```shell
+REDIS_CONNECTION_STRING = 'redis://<username>:<password>@redis-17170.c262.us-east-1-3.ec2.cloud.redislabs.com:17170'
+```
+
+:::caution remember
+Make sure to replace `<username>` and `<password>` with the user's credentials if needed. Go to [*Data Access Control*](https://app.redislabs.com/#/data-access-control/users) to find/edit those or even create a new user.
+:::

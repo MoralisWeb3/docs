@@ -1,6 +1,6 @@
 ---
-title: "Initial Setup"
-slug: "initial-setup"
+title: "Local Environment Setup"
+slug: "local-environment-setup"
 description: "This guide will teach you how to initially set up your server to then run it locally"
 sidebar_position: 1
 ---
@@ -48,7 +48,7 @@ You will see something like this:
 
 ![](/img/content/self-hosting-2.webp)
 
-Next, we will go through the variables that you need to **fill/modify for this initial setup**.
+Next, we will go through the variables that you need to **fill/modify for this local setup**.
 
 :::caution
 **Never expose** these values to the public. **Especially not the `MASTER_KEY`**, as it would give users access to the entire server.
@@ -80,7 +80,7 @@ It is required for Parse Server and can be any value to your choice. For example
 The Parse Server needs a **database to store all the data**. In this guide we will be using **MongoDB**, as this is also being used on the Moralis-hosted servers. [See how you could also use **Postgres**](https://docs.parseplatform.org/parse-server/guide/#database).
 :::
 
-For this initial setup, you can use the [`mongodb-runner`](https://github.com/mongodb-js/runner) to **automatically create a database instance**. 
+For this local setup, you can use the [`mongodb-runner`](https://github.com/mongodb-js/runner) to **automatically create a database instance**. 
 
 :::caution
 Do not use this method in a production environment as it is only built for local development and testing.
@@ -177,5 +177,5 @@ Now your server can be accessed on **[http://localhost:1337/server](http://local
 :::
 
 :::caution Remember
-With this initial setup, the server is still **not production-ready**. Let's continue with the next step to make it so.
+With this local setup, the server is still **not production-ready**. Let's continue with the next step to make it so.
 :::
