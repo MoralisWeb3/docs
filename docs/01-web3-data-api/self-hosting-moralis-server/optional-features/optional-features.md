@@ -10,5 +10,6 @@ The completion of both local and production environment setups is required to co
 
 Moralis Parse Server offers some optional features:
 
+- DB Dashboard (recommended)
 - Syncs --> Now Streams
 - Custom Cloud Code
