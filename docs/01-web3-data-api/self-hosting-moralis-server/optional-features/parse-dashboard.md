@@ -1,6 +1,6 @@
 ---
 title: "Parse Dashboard"
-slug: "parse-dashboard"
+slug: "./parse-dashboard"
 description: "This guide will teach you how to set up your own Parse Dashboard."
 sidebar_position: 1
 ---
@@ -14,7 +14,7 @@ This guide will teach you how to set up your own Parse Dashboard. The data store
 
 ![](/img/content/dashboard-1.webp)
 
-With MongoDB Atlas and Parse Dashboard set up, you'll have an almost exact experience to the Moralis-hosted server dashboard:
+With [MongoDB](/web3-data-api/self-hosting-moralis-server/production-environment-setup#use-mongodb-atlas) and Parse Dashboard set up, you'll have an almost exact experience to the **Moralis-hosted-server's database**:
 
 ![](/img/content/dashboard-2.webp)
 
@@ -87,7 +87,7 @@ app.use(`/dashboard`, parseDashboard);
 //......
 ```
 
-## Testing
+## Accessing
 
 Build the project:
 

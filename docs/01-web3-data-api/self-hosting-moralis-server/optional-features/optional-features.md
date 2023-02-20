@@ -1,6 +1,5 @@
 ---
 title: "Optional features"
-slug: "optional-features"
 sidebar_position: 3
 ---
 
