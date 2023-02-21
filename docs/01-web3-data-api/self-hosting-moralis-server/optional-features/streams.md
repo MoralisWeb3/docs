@@ -6,10 +6,10 @@ sidebar_position: 3
 ---
 
 :::info overview
-This guide will teach you how to **set up Streams** on your self-hosted Moralis Server.
+This guide will teach you how to **set up Streams** on your **self-hosted Moralis Server**.
 :::
 
-:::note more info
+:::note [more info](http://docs.moralis.io/streams-api)
 With **Streams** you can **listen** to **real time on-chain events**.
 :::
 

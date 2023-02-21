@@ -6,7 +6,7 @@ sidebar_position: 3
 ---
 
 :::info overview
-This guide will teach you how to **add custom jobs to your self-hosted server**.
+This guide will teach you how to **add custom jobs** to your **self-hosted Moralis server**.
 :::
 
 :::caution Important
