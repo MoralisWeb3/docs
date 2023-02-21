@@ -86,7 +86,7 @@ app.use(`/dashboard`, parseDashboard);
 //......
 ```
 
-## Accessing
+## Build and run
 
 Build the project:
 
@@ -100,9 +100,9 @@ And then run it locally:
 npm run start
 ```
 
-:::tip success
-Head over to **<http://localhost:1337/dashboard/>** to access your self-hosted dashboard.
-:::
+## Accessing
+
+Head over to **<http://localhost:1337/dashboard/>** to access your **self-hosted dashboard**:
 
 ![](/img/content/dashboard-3.webp)
 
