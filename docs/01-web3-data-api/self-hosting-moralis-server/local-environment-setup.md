@@ -179,5 +179,5 @@ Now your server can be accessed on **[http://localhost:1337/server](http://local
 :::
 
 :::caution Remember
-With this local setup, the server is still **not production-ready**. Let's continue with the next step to make it so.
+With this local setup, the server is still **not production-ready**. Let's continue with the [next step](/web3-data-api/self-hosting-moralis-server/production-environment-setup) to make it so.
 :::
