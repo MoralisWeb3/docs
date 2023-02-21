@@ -19,17 +19,30 @@ With **Streams** you can **listen** to **real time on-chain events**.
 
 ## Configuration
 
-:::tip nice!
-Our [parse-server-migration](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/parse-server-migration) project is **already configured** to listen to **Streams**.
-:::
+Open **`src/index.ts`** and make sure that `streamsSync` method gets **`config.STREAMS_WEBHOOK_URL`** as a `webhookUrl` parameter:
 
-However, if you want to **activate/deactivate** the ability to **listen to Streams** you can do so on your `.env` file by setting **`USE_STREAMS`** to `true` or `false`.
+```javascript index.ts
+//........
 
-If you want to **change** the **Streams Webhook URL endpoint** you can do so on your `.env` file by setting **`STREAMS_WEBHOOK_URL`** to a different value. By default it's:
+//Set up streamSync
+app.use(
+  streamsSync(parseServer, {
+    apiKey: config.MORALIS_API_KEY,
+    webhookUrl: config.STREAMS_WEBHOOK_URL,
+  }),
+);
+
+//.........
+```
+
+You can modify this parameter in your `.env` file by setting **`STREAMS_WEBHOOK_URL`** to a different `string` value. By default it's:
 
 ```shell .env
 STREAMS_WEBHOOK_URL = '/streams-webhook'
 ```
+:::tip
+If you want to **modify** the ability to **listen to Streams** you can do so on your `.env` file by setting **`USE_STREAMS`** to `true` or `false`.
+:::
 
 ## Build and run
 
