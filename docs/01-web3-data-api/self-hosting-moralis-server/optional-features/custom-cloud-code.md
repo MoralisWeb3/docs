@@ -44,7 +44,7 @@ Parse.Cloud.define('SayMyName', (request: any) => {
 });
 ```
 
-## Accessing cloud code from client
+## Build and run
 
 Build the project:
 
@@ -57,6 +57,8 @@ And then run it locally:
 ```bash npm2yarn
 npm run start
 ```
+
+## Accessing cloud code from client
 
 Now on a **Moralis v1 client**, you can call your **custom cloud functions** using the **Moralis v1 syntax**:
 
