@@ -14,23 +14,25 @@ enum NetworkEnum {
   Solana = "solana",
 }
 
+interface PageSidebar {
+  path: String;
+  network: NetworkEnum;
+}
+
 const networks = [
   {
     value: "aptos",
     label: "Aptos",
-    link: "/web3-data-api/aptos",
     logo: AptosLogo,
   },
   {
     value: "evm",
     label: "EVM",
-    link: "/web3-data-api/evm",
     logo: EthereumLogo,
   },
   {
     value: "solana",
     label: "Solana",
-    link: "/web3-data-api/solana",
     logo: SolanaLogo,
   },
 ];
@@ -38,27 +40,21 @@ const networks = [
 const SidebarMenu = () => {
   const { push } = useHistory();
   const { pathname } = useLocation();
-  const [network] = useState<NetworkEnum | null>(() => {
-    const [path] = pathname.split("/").slice(1);
-    switch (path) {
-      case "web3-data-api-aptos":
-        return NetworkEnum.Aptos;
-      case "web3-data-api-solana":
-        return NetworkEnum.Solana;
-      case "web3-data-api":
-      case "streams-api":
-      case "authentication-api":
-        return NetworkEnum.EVM;
-      default:
-        return;
-    }
+  const [pageState] = useState<PageSidebar | undefined>(() => {
+    const [path, network] = pathname.split("/").slice(1);
+    if (path && network) return { path, network };
+    return;
   });
 
-  return network ? (
+  return pageState ? (
     <FormControl fullWidth>
-      <Select value={network}>
-        {networks.map(({ value, label, link, logo }) => (
-          <MenuItem key={value} value={value} onClick={() => push(link)}>
+      <Select value={pageState.network}>
+        {networks.map(({ value, label, logo }) => (
+          <MenuItem
+            key={value}
+            value={value}
+            onClick={() => push(`/${pageState.path}/${value}`)}
+          >
             <Grid container alignItems="center" spacing={2}>
               <Grid item sx={{ marginTop: "5px" }}>
                 <img src={logo} alt="logo" height={20} width="auto" />

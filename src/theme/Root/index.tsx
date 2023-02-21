@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ApiReferenceTokenProvider } from "@site/src/components/ApiReference/ApiReferenceToken";
-
-const theme = createTheme({});
+import { PaletteMode } from "@mui/material";
 
 const Root = ({ children }) => {
+  const [theme, setTheme] = useState<PaletteMode>(window.localStorage.theme);
+  const MUITheme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: theme,
+        },
+      }),
+    [theme]
+  );
+
+  useEffect(() => {
+    function checkTheme() {
+      const localTheme = localStorage.getItem("theme") as PaletteMode;
+
+      if (localTheme) setTheme(localTheme);
+    }
+
+    window.addEventListener("storage", checkTheme);
+
+    return () => {
+      window.removeEventListener("storage", checkTheme);
+    };
+  }, []);
+
+  console.log(window?.localStorage?.theme);
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={MUITheme}>
       <ApiReferenceTokenProvider>{children}</ApiReferenceTokenProvider>
     </ThemeProvider>
   );
