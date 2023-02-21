@@ -4,10 +4,12 @@ slug: "production-environment-setup"
 sidebar_position: 2
 ---
 
-In this guide we will upgrade the **database** and **rate-limiting** features to **hosted solutions** so we have a **production-ready server**.
+:::info overview
+This guide will teach you how to upgrade the **database** and **rate-limiting** features to **hosted solutions** so you have a **production-ready server**.
+:::
 
-:::info
-In order to host our server at some hosting providers, you **must upgrade to the following configuration**.
+:::caution important
+In order to host your server at some hosting providers, you **must upgrade to the following setup**.
 :::
 
 ## Use MongoDB Atlas

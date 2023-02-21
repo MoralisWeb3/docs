@@ -1,13 +1,15 @@
 ---
 title: "Local Environment Setup"
 slug: "local-environment-setup"
-description: "This guide will teach you how to initially set up your server to then run it locally"
+description: "This guide will teach you how to initially set up your own Moralis Server to then run it locally"
 sidebar_position: 1
 ---
    
-This guide will teach you how to initially **set up your own server** to then **run it locally**.
+:::info overview
+This guide will teach you how to initially **set up your own Moralis Server** to then **run it locally**.
+:::
 
-:::info
+:::note more info
 Moralis Server is an extension of [Parse Server](https://github.com/parse-community/parse-server).
 :::
 

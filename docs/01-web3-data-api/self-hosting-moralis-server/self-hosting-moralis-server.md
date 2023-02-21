@@ -9,7 +9,7 @@ slug: "self-hosting-moralis-server"
 If you have a **Moralis-hosted server**, this guide will help you **migrate** to a **self-hosting solution**.
 :::
 
-:::info For you too
+:::info you too
 If you are looking to **self-host a Moralis Server from scratch**, this guide is also for you.
 :::
 
