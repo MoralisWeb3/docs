@@ -5471,13 +5471,48 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm",
-    destination: "/web3-data-api/evm",
+    source: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
-    source: "/web3-data-api/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    source: "/web3-data-api/getting-started",
+    destination: "/web3-data-api/evm/getting-started",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-python",
+    destination: "/web3-data-api/evm/quickstart-python",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-react",
+    destination: "/web3-data-api/evm/quickstart-react",
     permanent: true,
   },
 ];
