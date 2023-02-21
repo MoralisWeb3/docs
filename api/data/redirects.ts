@@ -55,7 +55,7 @@ export const redirects = [
   { source: "/docs/overview", destination: "/", permanent: true },
   {
     source: "/docs/quickstart",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
@@ -65,17 +65,17 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
     source: "/docs/your-first-dapp-nodejs",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/your-first-dapp-nextjs",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -90,7 +90,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp-angular",
-    destination: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
     permanent: true,
   },
   {
@@ -125,12 +125,12 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
     source: "/docs/installation",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -145,7 +145,7 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-data-types",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
@@ -155,7 +155,7 @@ export const redirects = [
   },
   {
     source: "/docs/cross-chain-requests",
-    destination: "/web3-data-api/cross-chain-requests",
+    destination: "/web3-data-api/evm/cross-chain-requests",
     permanent: true,
   },
   {
@@ -170,7 +170,7 @@ export const redirects = [
   },
   {
     source: "/docs/compute-units-cu",
-    destination: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/compute-units-cu",
     permanent: true,
   },
   {
@@ -663,50 +663,50 @@ export const redirects = [
   {
     source: "/docs/how-to-get-native-solana-balance-by-wallet",
     destination:
-      "/web3-data-api-solana/how-to-get-native-solana-balance-by-wallet",
+      "/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet",
     permanent: true,
   },
   {
     source: "/docs/solana-api",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-token-balance-of-an-address",
     destination:
-      "/web3-data-api-solana/solana/how-to-get-spl-token-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-spl-token-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-nft-balance-of-an-address",
     destination:
-      "/web3-data-api-solana/solana/how-to-get-spl-nft-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-spl-nft-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-nft-metadata",
-    destination: "/web3-data-api-solana/how-to-get-spl-nft-metadata",
+    destination: "/web3-data-api/solana/how-to-get-spl-nft-metadata",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-solana-portfolio-balance-of-an-address",
     destination:
-      "/web3-data-api-solana/solana/how-to-get-solana-portfolio-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-solana-portfolio-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-token-price",
-    destination: "/web3-data-api-solana/solana/how-to-get-spl-token-price",
+    destination: "/web3-data-api/solana/solana/how-to-get-spl-token-price",
     permanent: true,
   },
   {
     source: "/docs/aws-integration",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
     source: "/docs/using-aws-lambda",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
@@ -721,7 +721,7 @@ export const redirects = [
   },
   {
     source: "/docs/using-firebase",
-    destination: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
   },
   {
@@ -1259,12 +1259,12 @@ export const redirects = [
   },
   {
     source: "/reference/moralis-api-key",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
     source: "/reference/compute-units",
-    destination: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/compute-units-cu",
     permanent: true,
   },
   {
@@ -1444,7 +1444,7 @@ export const redirects = [
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -1550,7 +1550,7 @@ export const redirects = [
   },
   {
     source: "/docs/introduction-to-moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -1568,12 +1568,12 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -1763,7 +1763,7 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains-evm",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -2171,12 +2171,12 @@ export const redirects = [
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -2186,12 +2186,12 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-sdk-setup",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
     source: "/reference/solana-api",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
@@ -2211,7 +2211,7 @@ export const redirects = [
   },
   {
     source: "/docs/introduction-to-moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -2281,7 +2281,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2328,7 +2328,7 @@ export const redirects = [
   },
   {
     source: "/introduction/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2391,7 +2391,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2491,7 +2491,7 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-firebase-integration",
-    destination: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
   },
   {
@@ -2599,7 +2599,7 @@ export const redirects = [
   {
     source:
       "/moralis-server/getting-started/connect-the-sdk/connect-with-react",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -2646,7 +2646,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-api",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
@@ -2672,7 +2672,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2745,7 +2745,7 @@ export const redirects = [
   },
   {
     source: "/guides/build",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2812,7 +2812,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/solana-sdk/intro",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
@@ -2857,7 +2857,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3004,7 +3004,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/snippets",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3019,7 +3019,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3035,7 +3035,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3062,7 +3062,7 @@ export const redirects = [
   },
   {
     source: "/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3104,7 +3104,7 @@ export const redirects = [
   { source: "/page/🔗", destination: "/", permanent: true },
   {
     source: "/moralis-server/web3-sdk/supported-chains",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -3216,7 +3216,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutesVyper",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3227,7 +3227,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3237,7 +3237,7 @@ export const redirects = [
   },
   {
     source: "/guides",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3263,12 +3263,12 @@ export const redirects = [
   },
   {
     source: "/introduction/cross-chain",
-    destination: "/web3-data-api/cross-chain-requests",
+    destination: "/web3-data-api/evm/cross-chain-requests",
     permanent: true,
   },
   {
     source: "/reference/supported-chains-nft",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -3289,7 +3289,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   { source: "/introduction/readme", destination: "/", permanent: true },
@@ -3356,7 +3356,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-d",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3366,7 +3366,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/quick-start",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3463,7 +3463,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projectsMoralis",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3473,7 +3473,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk;",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -3493,7 +3493,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/connect-using-node",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -3518,12 +3518,12 @@ export const redirects = [
   },
   {
     source: "/page/nodejs-evmdatatypes",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
     source: "/page/nodejs-sdk-datatypes",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
@@ -3560,7 +3560,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3576,7 +3576,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3607,7 +3607,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutes",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3665,7 +3665,7 @@ export const redirects = [
   },
   {
     source: "/reference/getting-the-api-key",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
@@ -3843,7 +3843,7 @@ export const redirects = [
   },
   {
     source: "/docs/aws-lambda-integration",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
@@ -4075,7 +4075,7 @@ export const redirects = [
   },
   {
     source: "/docs/solana-api-overview",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
@@ -4124,7 +4124,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4298,7 +4298,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
   {
@@ -4538,7 +4538,7 @@ export const redirects = [
 
   {
     source: "/docs/using-aw...",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs#aws-setup",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs#aws-setup",
     permanent: true,
   },
   {
@@ -4596,7 +4596,7 @@ export const redirects = [
 
   {
     source: "/docs/introduction",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4839,7 +4839,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4849,7 +4849,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/moralis-web3-api-rest",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4874,12 +4874,12 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
     source: "/moralis-dapp/web3-sdk/",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4904,7 +4904,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
   {
@@ -5091,7 +5091,7 @@ export const redirects = [
   },
   {
     source: "/reference-link/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
 
@@ -5214,12 +5214,12 @@ export const redirects = [
   },
   {
     source: "/docs/solana-api-examples",
-    destination: "/web3-data-api-solana",
+    destination: "/web3-data-api/solana",
     permanent: true,
   },
   {
     source: "/moralis-dapp/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -5472,12 +5472,12 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/evm",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm/nft-api",
-    destination: "/web3-data-api/nft-api",
+    source: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
 ];

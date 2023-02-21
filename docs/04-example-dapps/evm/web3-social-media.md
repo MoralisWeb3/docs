@@ -3,6 +3,7 @@ title: "Web3 Social Media"
 slug: "web3-social-media"
 description: "This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API."
 ---
+
 ## Introduction
 
 This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API.
@@ -20,7 +21,7 @@ https://www.youtube.com/watch?v=Nn6N7IJKcgE
 1. Setup a starter (Next.js) app
 2. Connect to the Lens API
 3. Import and set up the Moralis SDK
-4. Integrate your app with Moralis 
+4. Integrate your app with Moralis
 
 ## Prerequisites
 
@@ -34,8 +35,6 @@ npm install
 npm run dev
 ```
 
-
-
 2. Open [`http://localhost:3000`](http://localhost:3000) in your browser. You should see the following:
 
 ![](/img/content/8b6d8c8-Web3_Social_Media_1.webp)
@@ -47,17 +46,14 @@ We will set up our connection to Lens (using their [API](https://docs.lens.xyz/d
 1. Inside `src/pages`, create a folder called `api`, and inside that folder, create a file called `lensCalls.js`. Open it and add our initial client setup code:
 
 ```javascript
-import { createClient } from 'urql';
+import { createClient } from "urql";
 
-const APIURL = 'https://api.lens.dev';
+const APIURL = "https://api.lens.dev";
 
 export const client = new createClient({
   url: APIURL,
 });
-
 ```
-
-
 
 2. Add our API profile code:
 
@@ -145,20 +141,16 @@ query Profile {
     }
   }
 }
-`
+`;
 ```
-
-
 
 Now we will set up our page to call this API.
 
 3. Open `pages/index.js`. At the top, add our imports for our client and the profile code we just set up:
 
 ```javascript
-import { urqlClient, Profile } from './api/lensCalls';
+import { urqlClient, Profile } from "./api/lensCalls";
 ```
-
-
 
 4. We will call the Lens API with [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) which will run the code server side and return the data to the `index.js` page as props:
 
@@ -172,18 +164,14 @@ export async function getServerSideProps() {
 }
 ```
 
-
-
 5. We will adjust the `Home` component to receive these props and log `profile` to make sure it all works:
 
 ```javascript
 export default function Home({ profile }) {
   console.log(profile);
-  
+
   // rest of Home
 ```
-
-
 
 6. Check your browser console (developer tools), you should see similar output to the following:
 
@@ -226,8 +214,6 @@ export default function Home({ profile }) {
 }
 ```
 
-
-
 ## Populating Our Profile Page
 
 We now have info about this user that we will use to populate our frontend.
@@ -236,67 +222,63 @@ We now have info about this user that we will use to populate our frontend.
 
 ```javascript
 return (
-    <div className={styles.container}>
-      <img
-        className={styles.banner}
-        src={profile.coverPicture.original.url}
-        alt="cover"
-      />
-      <div className={styles.profile}>
-        <div className={styles.profileLeft}>
-          <img
-            className={styles.profileImg}
-            src={profile.picture.original.url}
-            alt="profileImg"
-          />
-          <div className={styles.info}>
-            <div className={styles.name}>{profile.name}</div>
-            <div className={styles.handle}>{profile.handle}</div>
-            <div className={styles.bio}>{profile.bio}</div>
-            <div className={styles.follow}>
-              <div>Followers</div>
-              <div>{profile.stats.totalFollowers}</div>
-            </div>
-            <div className={styles.follow}>
-              <div>Following</div>
-              <div>{profile.stats.totalFollowing}</div>
-            </div>
+  <div className={styles.container}>
+    <img
+      className={styles.banner}
+      src={profile.coverPicture.original.url}
+      alt="cover"
+    />
+    <div className={styles.profile}>
+      <div className={styles.profileLeft}>
+        <img
+          className={styles.profileImg}
+          src={profile.picture.original.url}
+          alt="profileImg"
+        />
+        <div className={styles.info}>
+          <div className={styles.name}>{profile.name}</div>
+          <div className={styles.handle}>{profile.handle}</div>
+          <div className={styles.bio}>{profile.bio}</div>
+          <div className={styles.follow}>
+            <div>Followers</div>
+            <div>{profile.stats.totalFollowers}</div>
+          </div>
+          <div className={styles.follow}>
+            <div>Following</div>
+            <div>{profile.stats.totalFollowing}</div>
           </div>
         </div>
-        <div className={styles.profileRight}>
-          <Tabs defaultActiveKey="1" centered>
-            <TabPane tab="I'm Following" key="1">
-              <div className={styles.followingNFTs}>
-                {nftArray?.map((e) => {
-                  return <iframe className={styles.animation} src={e}></iframe>;
-                })}
-              </div>
-            </TabPane>
-            <TabPane tab="Follow Me" key="2">
-              <div className={styles.followMe}>
-                <div>
-                  <div className={styles.promptOne}>Hey There 👋🏼</div>
-                  <div className={styles.promptTwo}>
-                    Give me a follow and receive this cool NFT!
-                  </div>
-                  <Button onClick={follow} type="primary">
-                    Follow Me
-                  </Button>
+      </div>
+      <div className={styles.profileRight}>
+        <Tabs defaultActiveKey="1" centered>
+          <TabPane tab="I'm Following" key="1">
+            <div className={styles.followingNFTs}>
+              {nftArray?.map((e) => {
+                return <iframe className={styles.animation} src={e}></iframe>;
+              })}
+            </div>
+          </TabPane>
+          <TabPane tab="Follow Me" key="2">
+            <div className={styles.followMe}>
+              <div>
+                <div className={styles.promptOne}>Hey There 👋🏼</div>
+                <div className={styles.promptTwo}>
+                  Give me a follow and receive this cool NFT!
                 </div>
-                {myNFT && (
-                  <iframe className={styles.myNFT} src={myNFT}></iframe>
-                )}
+                <Button onClick={follow} type="primary">
+                  Follow Me
+                </Button>
               </div>
-            </TabPane>
-            <TabPane tab="Social Posts" key="3" disabled={true} />
-          </Tabs>
-        </div>
+              {myNFT && <iframe className={styles.myNFT} src={myNFT}></iframe>}
+            </div>
+          </TabPane>
+          <TabPane tab="Social Posts" key="3" disabled={true} />
+        </Tabs>
       </div>
     </div>
-  );
+  </div>
+);
 ```
-
-
 
 2. Check [`http://localhost:3000`](http://localhost:3000). Your app should now look similar to:
 
@@ -308,8 +290,6 @@ return (
 profile(request: { profileId: "0x81" }) {
   ...
 ```
-
-
 
 4. Reload the page and it should look different:
 
@@ -325,47 +305,41 @@ We will now use the wallet address found in this profile (`ownedBy`) to get the 
 MORALIS_API_KEY=replace_me
 ```
 
-
-
-To get your Moralis API key, [check out this guide](/web3-data-api/get-your-api-key).
+To get your Moralis API key, [check out this guide](/web3-data-api/evm/get-your-api-key).
 
 2. In `pages/index.js`, add our Moralis SDK import at the top:
 
 ```javascript
-import Moralis from 'moralis';
+import Moralis from "moralis";
 ```
-
-
 
 3. Inside `getServerSideProps`, add the following code that will call the Moralis API, filter the results for any Lens NFTs, and return the final NFT array:
 
 ```javascript
 const balances = await Moralis.EvmApi.account.getNFTs({
-    address: response?.data.profile.ownedBy,
-    chain: 0x89,
-  });
+  address: response?.data.profile.ownedBy,
+  chain: 0x89,
+});
 
-  let nftArray = [];
-  let nfts = balances?.data.result;
+let nftArray = [];
+let nfts = balances?.data.result;
 
-  for (let i = 0; i < nfts.length; i++) {
-    if (nfts[i].metadata !== null) {
-      if (
-        'animation_url' in JSON.parse(nfts[i].metadata) &&
-        JSON.parse(nfts[i].metadata).animation_url !== null &&
-        JSON.parse(nfts[i].metadata).animation_url.includes('.lens')
-      ) {
-        nftArray.push(JSON.parse(nfts[i].metadata).animation_url);
-      }
+for (let i = 0; i < nfts.length; i++) {
+  if (nfts[i].metadata !== null) {
+    if (
+      "animation_url" in JSON.parse(nfts[i].metadata) &&
+      JSON.parse(nfts[i].metadata).animation_url !== null &&
+      JSON.parse(nfts[i].metadata).animation_url.includes(".lens")
+    ) {
+      nftArray.push(JSON.parse(nfts[i].metadata).animation_url);
     }
   }
+}
 
-  return {
-    props: { profile: response?.data.profile, nftArray: nftArray },
-  };
+return {
+  props: { profile: response?.data.profile, nftArray: nftArray },
+};
 ```
-
-
 
 4. In our `Home` component, we will now include `nftArray`:
 
@@ -375,11 +349,9 @@ export default function Home({ profile, nftArray }) {
 
   // let nftArray; remove or comment this out
   let myNFT;
-  
+
   ...
 ```
-
-
 
 5. Reload [`http://localhost:3000`](http://localhost:3000), you should now see the follower NFTs:
 
@@ -410,8 +382,6 @@ return {
 }
 ```
 
-
-
 2. In our `Home` component, we will now include `myNFT`:
 
 ```javascript
@@ -419,11 +389,9 @@ export default function Home({ profile, nftArray, myNFT }) {
   console.log(profile);
 
   //let myNFT; remove or comment this out
-  
+
   ...
 ```
-
-
 
 3. Reload [`http://localhost:3000`](http://localhost:3000)and click on the "Follow Me" tab. You should now see the "follow" NFT:
 
@@ -438,12 +406,16 @@ We will use [wagmi](https://wagmi.sh/) for wallet integration.
 1. In `pages/index.js`, add these imports:
 
 ```javascript
-import { useConnect, useAccount, useDisconnect, useContractWrite, usePrepareContractWrite } from 'wagmi'
+import {
+  useConnect,
+  useAccount,
+  useDisconnect,
+  useContractWrite,
+  usePrepareContractWrite,
+} from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import abi from "../abi.json"; 
+import abi from "../abi.json";
 ```
-
-
 
 2. In our `Home` component, add the hooks needed to connect our wallet (MetaMask) and make a contract call:
 
@@ -462,11 +434,9 @@ export default function Home({ profile, nftArray, myNFT }) {
   });
 
   const { write } = useContractWrite(config);
-  
+
   ...
 ```
-
-
 
 3. Replace the current `follow` function (which is called when the "Follow Me" button is clicked) with the following:
 
@@ -482,8 +452,6 @@ async function follow() {
   write();
 }
 ```
-
-
 
 4. To test, reload [`http://localhost:3000`](http://localhost:3000), click the "Follow Me" button and sign the transaction:
 

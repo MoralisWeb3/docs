@@ -1,7 +1,7 @@
 ---
 title: "Web3 Data API"
 sidebar_label: "Overview"
-slug: "/web3-data-api-solana"
+slug: "/web3-data-api/solana"
 sidebar_position: 1
 image: /img/content/web3-data-api-3.webp
 description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers."

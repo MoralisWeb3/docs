@@ -16,7 +16,7 @@ This tutorial will teach you how to host your custom backend (powered by Moralis
 
 ## Prerequisites
 
-- Complete the [Quickstart NodeJS](/web3-data-api/quickstart-nodejs) tutorial
+- Complete the [Quickstart NodeJS](/web3-data-api/evm/quickstart-nodejs) tutorial
 
 ## Customize Code from the _Quickstart NodeJS_ Tutorial
 
@@ -28,33 +28,27 @@ Let’s go step by step. To start, we will install [`cors`](https://www.npmjs.co
 npm install cors
 ```
 
-
-
 In the top section of **`index.js`**, we will add this `require`:
 
 ```javascript
-const cors = require('cors')
+const cors = require("cors");
 ```
-
-
 
 We will also make the app use `cors` by adding this:
 
 ```javascript
-app.use(cors())
+app.use(cors());
 ```
-
-
 
 Now, let’s add a body parser (needed for POST requests). You can type this just below `cors`:
 
 ```javascript
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 ```
-
-
 
 Finally, let’s delete the `address` and `chain` constants below `MORALIS_API_KEY`, as we will retrieve them somewhere else. Instead, we will add the `NETWORK` constant and set it to `evm` (for this tutorial, we will use an EVM-compatible chain):
 
@@ -62,33 +56,31 @@ Finally, let’s delete the `address` and `chain` constants below `MORALIS_API_K
 const NETWORK = "evm";
 ```
 
-
-
 The top part of **`index.js`** should look like this:
 
 ```javascript
-const express = require("express")
-const cors = require('cors')
-const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/common-evm-utils")
+const express = require("express");
+const cors = require("cors");
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 // Use CORS
-app.use(cors())
+app.use(cors());
 
 // Using express.urlencoded middleware
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 // Values set in the backend
-const MORALIS_API_KEY = "Your Moralis API Key"
+const MORALIS_API_KEY = "Your Moralis API Key";
 const NETWORK = "evm";
 ```
-
-
 
 ## Adding Authentication Methods
 
@@ -98,7 +90,6 @@ Let’s start by adding the `requestMessage()` method:
 
 ```javascript
 async function requestMessage(address, chain) {
-
   const result = await Moralis.Auth.requestMessage({
     address,
     chain,
@@ -108,25 +99,21 @@ async function requestMessage(address, chain) {
     uri: URI,
     expirationTime: EXPIRATION_TIME,
     timeout: TIMEOUT,
-  })
+  });
 
-  return result
+  return result;
 }
 ```
-
-
 
 As you see, `Moralis.Auth.requestMessage()` needs some parameters. We will pass (as parameters) `address` and `chainId`, and we already have `NETWORK`, but we need some more from `domain` to `timeout`. Let’s add those just above the method:
 
 ```javascript
-const DOMAIN = 'moralis.io';
-const STATEMENT = 'Please sign this message to confirm your identity.';
-const URI = 'https://moralis.io/';
-const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';
+const DOMAIN = "moralis.io";
+const STATEMENT = "Please sign this message to confirm your identity.";
+const URI = "https://moralis.io/";
+const EXPIRATION_TIME = "2023-01-01T00:00:00.000Z";
 const TIMEOUT = 15;
 ```
-
-
 
 You can modify these values with the ones you want the message to have.
 
@@ -134,80 +121,75 @@ Finally, we can add the `verify()` method just below `requestMessage()`:
 
 ```javascript
 async function verify(message, signature) {
+  const verifiedData = Moralis.Auth.verify({
+    message: message,
+    signature: signature,
+    network: NETWORK,
+  });
 
-    const verifiedData = Moralis.Auth.verify({
-        message: message,
-        signature: signature,
-        network: NETWORK,
-    })
-
-    return verifiedData
+  return verifiedData;
 }
 ```
-
-
 
 Great! The top part of **`index.js`** should look like this:
 
 ```javascript
-const express = require("express")
-const cors = require('cors')
-const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/common-evm-utils")
+const express = require("express");
+const cors = require("cors");
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 // Use CORS
-app.use(cors())
+app.use(cors());
 
 // Using express.urlencoded middleware
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 // Values set in the backend
-const MORALIS_API_KEY = "Your Moralis API Key"
+const MORALIS_API_KEY = "Your Moralis API Key";
 const NETWORK = "evm";
 
 // Put your preferred message values here
-const DOMAIN = 'moralis.io';
-const STATEMENT = 'Please sign this message to confirm your identity.';
-const URI = 'https://moralis.io/';
-const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';
+const DOMAIN = "moralis.io";
+const STATEMENT = "Please sign this message to confirm your identity.";
+const URI = "https://moralis.io/";
+const EXPIRATION_TIME = "2023-01-01T00:00:00.000Z";
 const TIMEOUT = 15;
 
 // requestMessage method
 async function requestMessage(address, chain) {
+  const result = await Moralis.Auth.requestMessage({
+    address,
+    chain,
+    network: NETWORK,
+    domain: DOMAIN,
+    statement: STATEMENT,
+    uri: URI,
+    expirationTime: EXPIRATION_TIME,
+    timeout: TIMEOUT,
+  });
 
-    const result = await Moralis.Auth.requestMessage({
-        address,
-        chain,
-        network: NETWORK,
-        domain: DOMAIN,
-        statement: STATEMENT,
-        uri: URI,
-        expirationTime: EXPIRATION_TIME,
-        timeout: TIMEOUT,
-    })
-
-    return result
+  return result;
 }
 
 // verify method
 async function verify(message, signature) {
+  const verifiedData = Moralis.Auth.verify({
+    message: message,
+    signature: signature,
+    network: NETWORK,
+  });
 
-    const verifiedData = Moralis.Auth.verify({
-        message: message,
-        signature: signature,
-        network: NETWORK,
-    })
-
-    return verifiedData
+  return verifiedData;
 }
 ```
-
-
 
 ## Adding Authentication Operations
 
@@ -217,21 +199,18 @@ Let’s start with the one that will call `requestMessage()`. You can add this b
 
 ```javascript
 app.post("/request", async (req, res) => {
-    try {
-        const data = await requestMessage(req.body.address, req.body.chain)
-        res.status(200)
-        res.json(data)
-
-    } catch (error) {
-        // Handle errors
-        console.error(error)
-        res.status(500)
-        res.json({ error: error.message })
-    }
-})
+  try {
+    const data = await requestMessage(req.body.address, req.body.chain);
+    res.status(200);
+    res.json(data);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
+  }
+});
 ```
-
-
 
 As you can see, it’s a POST operation, and it expects two parameters in the request body: `address` and `chain`. They will then be used as parameters for `requestMessage()`.
 
@@ -239,21 +218,18 @@ Now, let’s add the POST operation for `verify()`:
 
 ```javascript
 app.post("/verify", async (req, res) => {
-    try {
-      const data = await verify(req.body.message, req.body.signature)
-      res.status(200)
-      res.json(data)
- 
-    } catch (error) {
-      // Handle errors
-      console.error(error)
-      res.status(500)
-      res.json({ error: error.message })
-    }
-})
+  try {
+    const data = await verify(req.body.message, req.body.signature);
+    res.status(200);
+    res.json(data);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
+  }
+});
 ```
-
-
 
 These operations expect two parameters in the request body: `message` and `signature`, to be used as parameters for `verify()`.
 
@@ -267,182 +243,177 @@ async function getNativeBalance(address, chain) {
   const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
     address,
     chain,
-  })
+  });
 
-  const native = nativeBalance.result.balance.ether
-  return native
+  const native = nativeBalance.result.balance.ether;
+  return native;
 }
 
 // POST operation for getNativeBalance()
 app.post("/nativeBalance", async (req, res) => {
   try {
     // Get and return the native balance
-    const nativeBalance = await getNativeBalance(req.body.address, req.body.chain)
-    res.status(200)
-    res.send(nativeBalance)
-
+    const nativeBalance = await getNativeBalance(
+      req.body.address,
+      req.body.chain
+    );
+    res.status(200);
+    res.send(nativeBalance);
   } catch (error) {
     // Handle errors
-    console.error(error)
-    res.status(500)
-    res.json({ error: error.message })
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
   }
-})
+});
 ```
-
-
 
 Finally, let’s add a simple GET operation for testing purposes:
 
 ```javascript
 // Default GET operation
 app.get("/", (req, res) => {
-  res.send("Server running!")
-})
+  res.send("Server running!");
+});
 ```
-
-
 
 **The final `index.js` file should look like this:**
 
 ```javascript
-const express = require("express")
-const cors = require('cors')
-const Moralis = require("moralis").default
-const { EvmChain } = require("@moralisweb3/common-evm-utils")
+const express = require("express");
+const cors = require("cors");
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 // Use CORS
-app.use(cors())
+app.use(cors());
 
 // Using express.urlencoded middleware
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 // Values set in the backend
-const MORALIS_API_KEY = "Your Moralis API KEY" //FILL THIS WITH YOUR KEY!!
+const MORALIS_API_KEY = "Your Moralis API KEY"; //FILL THIS WITH YOUR KEY!!
 const NETWORK = "evm";
 
 // Put your preferred message values here
-const DOMAIN = 'moralis.io';
-const STATEMENT = 'Please sign this message to confirm your identity.';
-const URI = 'https://moralis.io/';
-const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';
+const DOMAIN = "moralis.io";
+const STATEMENT = "Please sign this message to confirm your identity.";
+const URI = "https://moralis.io/";
+const EXPIRATION_TIME = "2023-01-01T00:00:00.000Z";
 const TIMEOUT = 15;
 
 // requestMessage method
 async function requestMessage(address, chain) {
+  const result = await Moralis.Auth.requestMessage({
+    address,
+    chain,
+    network: NETWORK,
+    domain: DOMAIN,
+    statement: STATEMENT,
+    uri: URI,
+    expirationTime: EXPIRATION_TIME,
+    timeout: TIMEOUT,
+  });
 
-    const result = await Moralis.Auth.requestMessage({
-        address,
-        chain,
-        network: NETWORK,
-        domain: DOMAIN,
-        statement: STATEMENT,
-        uri: URI,
-        expirationTime: EXPIRATION_TIME,
-        timeout: TIMEOUT,
-    })
-
-    return result
+  return result;
 }
 
 // verify method
 async function verify(message, signature) {
+  const verifiedData = Moralis.Auth.verify({
+    message: message,
+    signature: signature,
+    network: NETWORK,
+  });
 
-    const verifiedData = Moralis.Auth.verify({
-        message: message,
-        signature: signature,
-        network: NETWORK,
-    })
-
-    return verifiedData
+  return verifiedData;
 }
 
 // POST operation for requestMessage()
 app.post("/request", async (req, res) => {
-    try {
-        const data = await requestMessage(req.body.address, req.body.chain)
-        res.status(200)
-        res.json(data)
-
-    } catch (error) {
-        // Handle errors
-        console.error(error)
-        res.status(500)
-        res.json({ error: error.message })
-    }
-})
+  try {
+    const data = await requestMessage(req.body.address, req.body.chain);
+    res.status(200);
+    res.json(data);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
+  }
+});
 
 // POST operation for verify()
 app.post("/verify", async (req, res) => {
-    try {
-      const data = await verify(req.body.message, req.body.signature)
-      res.status(200)
-      res.json(data)
- 
-    } catch (error) {
-      // Handle errors
-      console.error(error)
-      res.status(500)
-      res.json({ error: error.message })
-    }
-})
+  try {
+    const data = await verify(req.body.message, req.body.signature);
+    res.status(200);
+    res.json(data);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
+  }
+});
 
 // getNativeBalance method
 async function getNativeBalance(address, chain) {
   const nativeBalance = await Moralis.EvmApi.balance.getNativeBalance({
     address,
     chain,
-  })
+  });
 
-  const native = nativeBalance.result.balance.ether
-  return native
+  const native = nativeBalance.result.balance.ether;
+  return native;
 }
 
 // POST operation for getNativeBalance()
 app.post("/nativeBalance", async (req, res) => {
   try {
     // Get and return the native balance
-    const nativeBalance = await getNativeBalance(req.body.address, req.body.chain)
-    res.status(200)
-    res.send(nativeBalance)
-
+    const nativeBalance = await getNativeBalance(
+      req.body.address,
+      req.body.chain
+    );
+    res.status(200);
+    res.send(nativeBalance);
   } catch (error) {
     // Handle errors
-    console.error(error)
-    res.status(500)
-    res.json({ error: error.message })
+    console.error(error);
+    res.status(500);
+    res.json({ error: error.message });
   }
-})
+});
 
 // Default GET operation
 app.get("/", (req, res) => {
-  res.send("Server running!")
-})
+  res.send("Server running!");
+});
 
 const startServer = async () => {
   await Moralis.start({
     apiKey: MORALIS_API_KEY,
-  })
+  });
 
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
-}
+    console.log(`Example app listening on port ${port}`);
+  });
+};
 
-startServer()
+startServer();
 ```
-
-
 
 To run this server locally, it’s as easy as executing the **`npm run start`** command in the terminal. You can now send a GET request to [`http://localhost:3000/`](http://localhost:3000/) to test if the server is responding:
 
 ![](/img/content/63b935a-image.webp)
-
 
 ## Run on Google Cloud
 
@@ -469,8 +440,6 @@ To start, install the [Cloud Code extension](https://marketplace.visualstudio.co
 
 ![](/img/content/d01a327-image.webp)
 
-
-
 Reload VSC to make sure you’re logged in. Now, under **_CLOUD RUN_**, select your created project and click on **_Enable Cloud Run API_**:
 
 ![](/img/content/9414940-image.webp)
@@ -479,24 +448,17 @@ After that, you should see something like this:
 
 ![](/img/content/3bf5c85-image.webp)
 
-
-
 Now it’s time to create a new **Cloud Run App**. Click on the folder icon:
 
 ![](/img/content/7af42ce-image.webp)
-
 
 Select _**NodeJS: Cloud Run**_:
 
 ![](/img/content/7f08100-image.webp)
 
-
-
 Create a new folder and name your application. We named it **`moralis-nodejs-app`**. We just created a NodeJS dapp that is ready to be deployed to Cloud Run through VSC:
 
 ![](/img/content/12e43f1-image.webp)
-
-
 
 So, what we need to do now is replace the code inside **`index.js`** of this newly created dapp with our customized code:
 
@@ -505,10 +467,8 @@ So, what we need to do now is replace the code inside **`index.js`** of this new
 And **very important**, change the port to `8080` as Google Cloud requires it:
 
 ```javascript
-const port = 8080
+const port = 8080;
 ```
-
-
 
 Even **more important** is that before deploying to Cloud Run, we need to install `moralis`, `express`, and `cors` packages in this project. So, open up the terminal and execute:
 
@@ -516,35 +476,25 @@ Even **more important** is that before deploying to Cloud Run, we need to instal
 npm install moralis express cors
 ```
 
-
-
 Last but not least, **remember** to fill in your `MORALIS_API_KEY`, if, in any case, you cleared it up.
 
 Finally, it’s time to deploy, so go to the Cloud Code extension, and under **_CLOUD RUN_**, click on the cloud icon:
 
 ![](/img/content/fd21552-image.webp)
 
-
-
 You should now see the deployment settings. Go to the **_Build Environment_** section and switch to **_Cloud Build_**. Then, click on **_Enable Cloud Build API_**:
 
 ![](/img/content/3602d2a-image.webp)
 
-
-
 Now, go ahead and click on **_Deploy_**:
 
 ![](/img/content/4181df6-image.webp)
-
-
 
 If you have any kind of problem with **_Cloud Build_**, switch back to **_Local_** and make sure to install [**Docker**](https://docs.docker.com/get-docker/) and have it running before clicking on _**Deploy.**_
 
 One way or another, you should have a new Google Cloud service created and running. **IMPORTANT:** Take note of the **`Service URL`** that shows up in the terminal:
 
 ![](/img/content/3b916d8-image.webp)
-
-
 
 ## Calling from Unity
 
@@ -560,13 +510,9 @@ When you open the project, the _**Moralis Web3 Setup**_ panel will appear. As we
 
 ![](/img/content/b6a4ec0-image.webp)
 
-
-
 If the panel doesn't appear, you can find it on the top toolbar under _Tools > Moralis Web3 Unity SDK > Open Web Setup_:
 
 ![](/img/content/c83b80d-image.webp)
-
-
 
 Now, go to _Assets > Scenes_ and open the _**Playground**_ scene:
 
@@ -580,7 +526,7 @@ With that, we are ready to play the scene, but first, let's see how we make auth
 
 ### Authentication
 
-In this sample project, we're using the available **AuthenticationKit** provided in the [Moralis Web3 Unity SDK](https://github.com/MoralisWeb3/web3-unity-sdk) to manage the connection with the wallet. You'll find it in _Hierarchy_ under  _Web3Authentication_:
+In this sample project, we're using the available **AuthenticationKit** provided in the [Moralis Web3 Unity SDK](https://github.com/MoralisWeb3/web3-unity-sdk) to manage the connection with the wallet. You'll find it in _Hierarchy_ under _Web3Authentication_:
 
 ![](/img/content/d1b0435-image.webp)
 
@@ -619,7 +565,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
 
     // Main Components
     private AuthenticationKit authenticationKit;
-    
+
     public void Awake()
     {
         authenticationKit = FindObjectOfType<AuthenticationKit>(true);
@@ -632,15 +578,15 @@ public class MoralisWeb3AuthService : MonoBehaviour
             case AuthenticationKitState.WalletConnected:
 
 #if !UNITY_WEBGL
-                // Get the address and chainid with WalletConnect 
+                // Get the address and chainid with WalletConnect
                 string address = WalletConnect.ActiveSession.Accounts[0];
                 int chainId = WalletConnect.ActiveSession.ChainId;
 #else
-                // Get the address and chainid with Web3 
+                // Get the address and chainid with Web3
                 string address = Web3GL.Account().ToLower();
                 int chainId = Web3GL.ChainId();
 #endif
-                // Create sign message 
+                // Create sign message
                 StartCoroutine(CreateMessage(address, chainId));
                 break;
         }
@@ -653,7 +599,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("address", address);
         form.AddField("chain", hexChainId);
-         
+
         using (UnityWebRequest webRequest = UnityWebRequest.Post(
             ServerConfiguration.URL + ServerConfiguration.RequestEndpoint, form))
         {
@@ -761,8 +707,6 @@ public class MoralisWeb3AuthService : MonoBehaviour
     }
 }
 ```
-
-
 
 Using this setup, we get the wallet information in the client (Unity), and we send it to our custom backend to manage the verification.
 

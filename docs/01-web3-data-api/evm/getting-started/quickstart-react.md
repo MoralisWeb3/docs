@@ -3,6 +3,7 @@ title: "Quickstart React"
 slug: "../quickstart-react"
 description: "This tutorial will teach you how to set up a React dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any React app."
 ---
+
 ## Introduction
 
 This tutorial shows you how to create a basic React dapp and use the Moralis SDK to display on-chain balances. You'll create a balances page and an [Express.js](https://expressjs.com/) API endpoint returning native and ERC20 balances.
@@ -11,12 +12,12 @@ This tutorial shows you how to create a basic React dapp and use the Moralis SDK
 
 1. Create a React app
 2. Set up the Moralis SDK on the server
-3. Integrate your app with Moralis 
+3. Integrate your app with Moralis
 4. Read any blockchain data from any blockchain
 
 ## Prerequisites
 
-1. Follow the [Your First Dapp for Node.js](/web3-data-api/quickstart-nodejs) tutorial 
+1. Follow the [Your First Dapp for Node.js](/web3-data-api/evm/quickstart-nodejs) tutorial
 
 ## Create a React Dapp
 
@@ -29,8 +30,6 @@ npx create-react-app your-first-dapp-react
 cd your-first-dapp-react
 ```
 
-
-
 2. Install the required dependencies:
 
 - `react-router-dom` - for setting up a route/page at `/balances`
@@ -40,18 +39,18 @@ cd your-first-dapp-react
 npm install react-router-dom axios
 ```
 
-We will set up the routing for our `/balances` page which we will set up later. 
+We will set up the routing for our `/balances` page which we will set up later.
 
 3. Open `src/App.js` and add:
 
 ```javascript
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Balances from './balances';
+import Balances from "./balances";
 
 const router = createBrowserRouter([
   {
-    path: '/balances',
+    path: "/balances",
     element: <Balances />,
   },
 ]);
@@ -62,8 +61,6 @@ function App() {
 
 export default App;
 ```
-
-
 
 We will now create our balances component which will make a request to our `balances` API (to be set up later), store the results in state (`useState`), and display it.
 
@@ -93,11 +90,9 @@ export default function Balances() {
 }
 ```
 
-
-
 ## Set up the Server
 
-[Follow this tutorial](/web3-data-api/quickstart-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
+[Follow this tutorial](/web3-data-api/evm/quickstart-nodejs) for setting up your server. We will need a server to use the Moralis API without needing to expose our API key on the client side. We will also change the port number as our React app is already using `3000`.
 
 1. Install `cors`:
 
@@ -105,17 +100,15 @@ export default function Balances() {
 npm install cors
 ```
 
-
-
 2. Replace the contents of `index.js` with the following (make sure to add your own API key):
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const app = express();
 const port = 4000;
@@ -123,15 +116,15 @@ const port = 4000;
 // allow access to React app domain
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
 
-const MORALIS_API_KEY = 'replace_me';
-const address = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+const MORALIS_API_KEY = "replace_me";
+const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
 
-app.get('/balances', async (req, res) => {
+app.get("/balances", async (req, res) => {
   try {
     // Promise.all() for receiving data async from two endpoints
     const [nativeBalance, tokenBalances] = await Promise.all([
@@ -171,15 +164,11 @@ const startServer = async () => {
 startServer();
 ```
 
-
-
 3. Run this command to start the server:
 
 ```shell
 npm run start
 ```
-
-
 
 4. Run `npm run start` in your React project, and visit the [`http://localhost:3000/balances`](http://localhost:3000/balances) page to see the results:
 

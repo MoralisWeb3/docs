@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import Grid from "@mui/material/Grid";
 import { useHistory, useLocation } from "@docusaurus/router";
 import EthereumLogo from "@site/static/img/content/networks/ethereum.webp";
 import AptosLogo from "@site/static/img/content/networks/aptos.webp";
@@ -17,19 +18,19 @@ const networks = [
   {
     value: "aptos",
     label: "Aptos",
-    link: "/web3-data-api-aptos",
+    link: "/web3-data-api/aptos",
     logo: AptosLogo,
   },
   {
     value: "evm",
     label: "EVM",
-    link: "/web3-data-api",
+    link: "/web3-data-api/evm",
     logo: EthereumLogo,
   },
   {
     value: "solana",
     label: "Solana",
-    link: "/web3-data-api-solana",
+    link: "/web3-data-api/solana",
     logo: SolanaLogo,
   },
 ];
@@ -58,8 +59,12 @@ const SidebarMenu = () => {
       <Select value={network}>
         {networks.map(({ value, label, link, logo }) => (
           <MenuItem key={value} value={value} onClick={() => push(link)}>
-            <img src={logo} alt="logo" height={20} width="auto" />
-            {label}
+            <Grid container alignItems="center" spacing={2}>
+              <Grid item sx={{ marginTop: "5px" }}>
+                <img src={logo} alt="logo" height={20} width="auto" />
+              </Grid>
+              <Grid item>{label}</Grid>
+            </Grid>
           </MenuItem>
         ))}
       </Select>

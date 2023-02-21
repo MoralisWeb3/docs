@@ -157,7 +157,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "web3-data-api/overview",
+            docId: "web3-data-api/evm/overview",
             position: "left",
             label: "Web3 Data API",
           },

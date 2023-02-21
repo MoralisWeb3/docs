@@ -1,7 +1,7 @@
 ---
 title: "Web3 Data API"
 sidebar_label: "Overview"
-slug: "/web3-data-api"
+slug: "/web3-data-api/aptos"
 sidebar_position: 1
 image: /img/content/web3-data-api-3.webp
 description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers."
@@ -28,18 +28,21 @@ Moralis indexes all core aspects of blockchain data and provides access to this 
 
 ## Use Cases
 
-Our advanced feature set of Web3 Data APIs are best for those that are building crypto fintech applictions, which includes:
+The advanced feature set of our Web3 Data APIs means it can support any type of use case, including:
 
+- NFT Marketplace
 - Wallet App
 - Portfolio Trackers
-- Block Explorers
 - Audit & Reporting
-- NFT Marketplace
-- etc.
+- Metaverse Gaming
+- Block Explorers
+- Token Gating (NFT authentication)
 
 ## Supported Chains
 
-Moralis Web3 Data APIs are continuously adding new chains and integrations. Our current supported EVM chains include:
+Moralis Web3 Data APIs are continuously adding new chains and integrations. Our current supported chains include:
+
+### EVM Chains
 
 | Name                            | Chain id    | EvmChain                  | Type    |
 | :------------------------------ | :---------- | :------------------------ | :------ |
@@ -60,3 +63,10 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 | Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
 | Palm                            | 11297108109 | `EvmChain.PALM`           | Mainnet |
 | Arbitrum                        | 42161       | `EvmChain.ARBITRUM`       | Mainnet |
+
+### Solana Chains
+
+| Name           | SolNetwork           | Type    |
+| :------------- | :------------------- | :------ |
+| Solana mainnet | `SolNetwork.MAINNET` | Mainnet |
+| Solana devnet  | `SolNetwork.DEVNET`  | Testnet |

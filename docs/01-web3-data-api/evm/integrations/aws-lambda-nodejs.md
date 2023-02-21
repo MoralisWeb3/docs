@@ -1,12 +1,12 @@
 ---
 title: "AWS Lambda (NodeJS)"
 slug: "aws-lambda-nodejs"
-description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
+description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 
 ## Introduction
 
-This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
+This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
 
 :::info What is AWS Lambda?
 
@@ -149,7 +149,7 @@ functions:
 
 :::caution But remember...
 
-Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/evm/get-your-api-key#step-2-get-api-key) before testing and deploying.
 
 :::
 
@@ -346,7 +346,7 @@ You can download the completed VS Code project [here](https://github.com/Moralis
 :::
 
 :::info
-To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
+To continue, it's recommended **(but not mandatory)** that you complete [Your First Dapp - Using NodeJS](/web3-data-api/evm/quickstart-nodejs) first, as we'll be using a similar approach and code. However, in this case we use `serverless` to create and deploy the _Express _ app, as it's **_AWS Lambda-ready_**.
 :::
 
 ## Project setup
@@ -411,7 +411,7 @@ functions:
 
 :::caution But remember...
 
-Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/get-your-api-key#step-2-get-api-key) before testing and deploying.
+Replace the `MORALIS_API_KEY` field with [your own key](/web3-data-api/evm/get-your-api-key#step-2-get-api-key) before testing and deploying.
 
 :::
 
