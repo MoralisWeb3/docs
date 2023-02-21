@@ -1,7 +1,7 @@
 ---
 title: "Custom Jobs"
 slug: "./custom-jobs"
-description: "This guide will teach you how to add custom jobs to your self-hosted server"
+description: "This guide will teach you how to add custom jobs to your self-hosted Moralis Server"
 sidebar_position: 3
 ---
 
