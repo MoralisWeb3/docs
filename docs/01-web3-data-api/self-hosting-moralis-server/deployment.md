@@ -4,7 +4,9 @@ slug: "deployment"
 sidebar_position: 4
 ---
 
-This guide will teach you how to deploy your server to a hosting service of your choice.
+:::info overview
+This guide will teach you how to **deploy your server to a hosting service of your choice**.
+:::
 
 :::caution Important
 The completion of both local and production environment setups is required to continue.

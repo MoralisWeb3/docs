@@ -5,11 +5,7 @@ sidebar_position: 2
 ---
 
 :::info overview
-This guide will teach you how to upgrade the **database** and **rate-limiting** features to **hosted solutions** so you have a **production-ready server**.
-:::
-
-:::caution important
-In order to host your server at some hosting providers, you **must upgrade to the following setup**.
+This guide will teach you how to upgrade the **database** and **rate-limiting** features from the [Local Environment Setup](/web3-data-api/self-hosting-moralis-server/local-environment-setup) to **hosted solutions** so you have a **production-ready server**.
 :::
 
 ## Use MongoDB Atlas
