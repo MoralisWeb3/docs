@@ -9,11 +9,6 @@ sidebar_position: 2
 This guide will teach you how to **set up your own [Cloud Code](https://docs.parseplatform.org/cloudcode/guide/)**.
 :::
 
-:::caution Important
-The completion of the [**Local Environment Setup**](/web3-data-api/self-hosting-moralis-server/local-environment-setup) is required to continue.
-The completion of the [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **NOT required** but it is **strongly recommended**.
-:::
-
 **Custom Cloud Code** replaces the old **Moralis-hosted Cloud Functions**:
 
 ![](/img/content/cloud-code-1.webp)
@@ -95,6 +90,6 @@ If you don't know how to set up a **Moralis v1 client**, head over to this guide
 You can also watch the following [**video tutorial**](/web3-data-api/self-hosting-moralis-server/optional-features/custom-cloud-code#video-tutorial) which goes through the whole setup.
 :::
 
-## Video Tutorial
+## Video tutorial
 
 https://www.youtube.com/watch?v=eZeGEy33SgY

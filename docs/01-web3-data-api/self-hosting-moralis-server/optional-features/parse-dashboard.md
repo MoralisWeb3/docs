@@ -9,11 +9,6 @@ sidebar_position: 1
 This guide will teach you how to **set up your own [Parse Dashboard](https://github.com/parse-community/parse-dashboard)**.
 :::
 
-:::caution Important
-The completion of the [**Local Environment Setup**](/web3-data-api/self-hosting-moralis-server/local-environment-setup) is required to continue.
-The completion of the [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **NOT required** but it is **strongly recommended**.
-:::
-
 The data stored in your MongoDB will be automatically synced and shown here:
 
 ![](/img/content/dashboard-1.webp)
