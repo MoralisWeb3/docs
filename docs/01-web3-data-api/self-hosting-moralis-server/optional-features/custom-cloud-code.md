@@ -13,13 +13,22 @@ This guide will teach you how to **set up your own [Cloud Code](https://docs.par
 
 ![](/img/content/cloud-code-1.webp)
 
-## Adding custom cloud code
+## Configuration
 
 :::note
 By default the cloud code is located in **`src/cloud/main.ts`**.
 :::
 
-Create a new file inside your `cloud` folder and name it `cloud.ts`.
+**Create a new file** inside `src/cloud/` folder and name it `cloud.ts`.
+
+Now add the following to `src/cloud/main.ts` to import the file:
+
+```typescript main.ts
+//import cloud.ts file
+import './cloud';
+```
+
+## Adding custom cloud code
 
 Add some **cloud functions** inside your newly created file `src/cloud/cloud.ts`:
 
@@ -33,12 +42,6 @@ Parse.Cloud.define('Hello', () => {
 Parse.Cloud.define('SayMyName', (request: any) => {
   return `Hello ${request.params.name}! Cloud functions are cool!`;
 });
-```
-
-Add the following to `main.ts` to import the file:
-
-```typescript main.ts
-import './cloud';
 ```
 
 ## Accessing cloud code from client
