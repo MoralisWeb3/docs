@@ -84,7 +84,7 @@ Now you can try to ***Authenticate*** and for example ***getBlock*** data:
 The following information serves as a *good-to-know*. The [`parse-server-migration-react-client`](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/parse-server-migration-react-client) project already implements it.
 :::
 
-The **authentication flow** in the **self-hosted Moralis Server** works a bit **different** in comparison to some of its other features. This is because it is using the [**Auth Api**](https://docs.moralis.io/reference/requestchallengeevm). 
+The **authentication flow differs slightly** between the **self-hosted Moralis Server** and the **Moralis-hosted Server**. This is because the first is using the [**Auth Api**](https://docs.moralis.io/reference/requestchallengeevm). 
 
 The following **code snippets** show how to handle it on a **`react-moralis` app** and how you would do it with **`Moralis-JS-SDK-v1`** alone.
 
