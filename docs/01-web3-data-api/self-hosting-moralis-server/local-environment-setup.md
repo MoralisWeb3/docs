@@ -20,7 +20,9 @@ Moralis Server is an extension of [Parse Server](https://github.com/parse-commun
 
 ## Get the sample project
 
+:::info
 To speed up the migration process, we have the [parse-server-migration](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/parse-server-migration) project ready for you.
+:::
 
 :::note
 This project includes all the supported features, and will be updated once we release a new feature.
