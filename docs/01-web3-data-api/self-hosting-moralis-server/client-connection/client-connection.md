@@ -1,17 +1,16 @@
 ---
 title: "Client connection"
-sidebar_position: 4
+sidebar_position: 5
 ---
-
-:::caution Important
-The completion of the [**Local Environment Setup**](/web3-data-api/self-hosting-moralis-server/local-environment-setup) is required to continue.
-The completion of the [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **NOT required** but it is **strongly recommended**.
-:::
 
 :::info overview
 This guide will teach you how to **connect** to your **self-hosted Moralis Server** from different **client environments**. 
 :::info
 
+:::caution Important
+The completion of the [**Local Environment Setup**](/web3-data-api/self-hosting-moralis-server/local-environment-setup) is required to continue.
+The completion of the [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **NOT required** but it is **strongly recommended**.
+:::
 
 ## React App
 
@@ -78,5 +77,112 @@ yarn start
 Now you can try to ***Authenticate*** and for example ***getBlock*** data:
 
 ![](/img/content/client-3.webp)
+
+### Information about `Authentication`
+
+:::note
+The following information serves as a *good-to-know*. The [`parse-server-migration-react-client`](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/parse-server-migration-react-client) project already implements it.
+:::
+
+The **authentication flow** in the **self-hosted Moralis Server** works a bit **different** in comparison to some of its other features. This is because it is using the [**Auth Api**](https://docs.moralis.io/reference/requestchallengeevm). 
+
+The following **code snippets** show how to handle it on a **`react-moralis` app** and how you would do it with **`Moralis-JS-SDK-v1`** alone.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="react-moralis">
+
+```javascript React
+import { useMoralis } from 'react-moralis';
+import Moralis from 'moralis-v1';
+
+export const Example = () => {
+  const { authenticate, enableWeb3 } = useMoralis();
+  const [authError, setAuthError] = useState(null);
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+
+  const handleAuth = async (provider) => {
+    try {
+      setAuthError(null);
+      setIsAuthenticating(true);
+
+      // Enable web3 to get user address and chain
+      await enableWeb3({ throwOnError: true, provider });
+      const { account, chainId } = Moralis;
+
+      if (!account) {
+        throw new Error('Connecting to chain failed, as no connected account was found');
+      }
+      if (!chainId) {
+        throw new Error('Connecting to chain failed, as no connected chain was found');
+      }
+
+      // Get message to sign from the auth api
+      const { message } = await Moralis.Cloud.run('requestMessage', {
+        address: account,
+        chain: parseInt(chainId, 16),
+        network: 'evm',
+      });
+
+      // Authenticate and login via parse
+      await authenticate({
+        signingMessage: message,
+        throwOnError: true,
+      });
+    } catch (error) {
+      setAuthError(error);
+    } finally {
+      setIsAuthenticating(false);
+    }
+  };
+
+	return (<div>
+    <button onClick={() => handleAuth("metamask")}>Authenticate via metamask</button>
+  </div>
+  )
+}
+```
+
+  </TabItem>
+  <TabItem value="javascript" label="Moralis-JS-SDK-v1" default>
+
+```javascript
+async function handleAuth(provider) {
+    await Moralis.enableWeb3({
+        throwOnError: true,
+        provider,
+    });
+
+    const { account, chainId } = Moralis;
+
+    if (!account) {
+        throw new Error("Connecting to chain failed, as no connected account was found");
+    }
+    if (!chainId) {
+        throw new Error("Connecting to chain failed, as no connected chain was found");
+    }
+
+    const { message } = await Moralis.Cloud.run("requestMessage", {
+        address: account,
+        chain: parseInt(chainId, 16),
+        network: "evm",
+    });
+
+    await Moralis.authenticate({
+        signingMessage: message,
+        throwOnError: true,
+    }).then((user) => {
+        console.log(user);
+    });
+}
+
+// Example
+handleAuth('metamask')
+```
+
+  </TabItem>
+</Tabs>
 
 ## Unity client
