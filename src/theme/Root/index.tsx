@@ -4,7 +4,7 @@ import { ApiReferenceTokenProvider } from "@site/src/components/ApiReference/Api
 import { PaletteMode } from "@mui/material";
 
 const Root = ({ children }) => {
-  const [theme, setTheme] = useState<PaletteMode>(window.localStorage.theme);
+  const [theme, setTheme] = useState<PaletteMode>("dark");
   const MUITheme = useMemo(
     () =>
       createTheme({
@@ -15,21 +15,19 @@ const Root = ({ children }) => {
     [theme]
   );
 
-  useEffect(() => {
-    function checkTheme() {
-      const localTheme = localStorage.getItem("theme") as PaletteMode;
+  // useEffect(() => {
+  //   function checkTheme() {
+  //     const localTheme = localStorage.getItem("theme") as PaletteMode;
 
-      if (localTheme) setTheme(localTheme);
-    }
+  //     if (localTheme) setTheme(localTheme);
+  //   }
 
-    window.addEventListener("storage", checkTheme);
+  //   window.addEventListener("storage", checkTheme);
 
-    return () => {
-      window.removeEventListener("storage", checkTheme);
-    };
-  }, []);
-
-  console.log(window?.localStorage?.theme);
+  //   return () => {
+  //     window.removeEventListener("storage", checkTheme);
+  //   };
+  // }, []);
 
   return (
     <ThemeProvider theme={MUITheme}>
