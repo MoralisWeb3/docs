@@ -10,7 +10,7 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 ## Before Starting
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/how-to-sign-in-with-metamask) functionality.
+You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/evm/how-to-sign-in-with-metamask) functionality.
 
 ## RainbowKit Installation
 

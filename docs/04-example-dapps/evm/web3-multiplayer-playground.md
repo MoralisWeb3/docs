@@ -3,12 +3,13 @@ title: "Web3 Unity Multiplayer Playground"
 slug: "web3-unity-multiplayer-playground"
 description: "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
 ---
+
 ## Introduction
 
 This Moralis Unity Sample Project demonstrates Web3 functionality; authentication, send assets, fetch assets, & interacting with Solidity smartcontracts (read/write) on the Polygon Mumbai blockchain.
 
-| Intro | 4-Player Multiplayer |
-| :--- | :--- |
+| Intro                                                     | 4-Player Multiplayer                                               |
+| :-------------------------------------------------------- | :----------------------------------------------------------------- |
 | <img width="400" src="/img/content/458e9db-image.webp" /> | <img width="400" src="/img/content/cb14e78-Screenshot_013.webp" /> |
 
 > Enter the multiplayer playground - an shared environment to move, trade currency, and trade NFTs
@@ -16,7 +17,6 @@ This Moralis Unity Sample Project demonstrates Web3 functionality; authenticatio
 ## Video
 
 https://www.youtube.com/watch?v=9f_SG3Fib5E
-
 
 > Unity Multiplayer enables 2 or more players to share online experiences. Web3 is an evolution of the internet running on the blockchain. Together, we'll combine technologies to create a Web3 Unity Multiplayer Playground game with Polygon Mumbai.
 
@@ -37,12 +37,12 @@ https://www.youtube.com/watch?v=9f_SG3Fib5E
 
 ### Setup Unity
 
-1. Download the [sample project](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump). 
+1. Download the [sample project](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump).
 2. Follow the [README](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/main/README.md) instructions.
 
 ### Setup Backend
 
-1. Complete the [Using Unity & PlayFab (NodeJS)](/authentication-api/integrations/azure-playfab-nodejs-unity) tutorial. Exclude **.NET** steps.
+1. Complete the [Using Unity & PlayFab (NodeJS)](/authentication-api/evm/integrations/azure-playfab-nodejs-unity) tutorial. Exclude **.NET** steps.
 2. When adding Azure's Application Settings and PlayFab's Functions, use **only** the updated table information below.
 
 | Azure - Function App - Application Settings | Value          |

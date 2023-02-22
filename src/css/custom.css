@@ -172,14 +172,14 @@
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-.col:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]) 
+.col:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]) 
 {
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
-li:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"])
+li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
+li:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"])
 {
   display: none;
 }

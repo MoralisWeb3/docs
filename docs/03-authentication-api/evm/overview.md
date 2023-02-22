@@ -1,10 +1,10 @@
 ---
 title: "Authentication API"
 sidebar_label: "Overview"
-slug: "/authentication-api"
+slug: "/authentication-api/evm"
 sidebar_position: 1
 description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
---- 
+---
 
 ![](/img/content/594b455-image.webp)
 
@@ -19,7 +19,7 @@ The Auth API provides out-of-the-box all the necessary APIs you need to authenti
 - Requesting challenge message for wallet signature on both [EVM](/authentication-api/reference/request-challenge-evm) and [Solana](/authentication-api/reference/request-challenge-solana)
 - Verifying signed challenge message signature on both [EVM](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeEvm) and [Solana](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeSolana)
 
-:::info 
+:::info
 
 The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) signature. Therefore, authentication using the Auth API with smart contract wallet is impossible.
 
@@ -33,9 +33,9 @@ The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIP
 
 The use cases for our Auth API are truly endless! Some popular use cases include:
 
-- [How to Authenticate Users with Metamask](/authentication-api/how-to-sign-in-with-metamask)
-- [How to Authenticate Users with WalletConnect](/authentication-api/how-to-sign-in-with-walletconnect)
-- [How to Authenticate Users with RainbowKit](/authentication-api/how-to-sign-in-with-rainbowkit)
-- [How to Authenticate Users with Coinbase Wallet](/authentication-api/how-to-sign-in-with-coinbase-wallet)
-- [How to Authenticate Users with Web3Auth](/authentication-api/how-to-sign-in-with-web3authio)
-- [How to Authenticate Users with Magic.Link](/authentication-api/how-to-sign-in-with-magiclink)
+- [How to Authenticate Users with Metamask](/authentication-api/evm/how-to-sign-in-with-metamask)
+- [How to Authenticate Users with WalletConnect](/authentication-api/evm/how-to-sign-in-with-walletconnect)
+- [How to Authenticate Users with RainbowKit](/authentication-api/evm/how-to-sign-in-with-rainbowkit)
+- [How to Authenticate Users with Coinbase Wallet](/authentication-api/evm/how-to-sign-in-with-coinbase-wallet)
+- [How to Authenticate Users with Web3Auth](/authentication-api/evm/how-to-sign-in-with-web3authio)
+- [How to Authenticate Users with Magic.Link](/authentication-api/evm/how-to-sign-in-with-magiclink)

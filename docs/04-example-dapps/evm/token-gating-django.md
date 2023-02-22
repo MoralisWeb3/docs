@@ -4,7 +4,6 @@ slug: "token-gating-website-django"
 description: "This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT."
 ---
 
-
 This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT.
 
 This is an example of the final result:
@@ -13,7 +12,7 @@ This is an example of the final result:
 
 ## Prerequisites
 
-1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](/authentication-api/how-to-sign-in-with-metamask-python-django).
+1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](/authentication-api/evm/how-to-sign-in-with-metamask-python-django).
 
 ## Adding NFT Gated Functionality
 
@@ -32,7 +31,7 @@ def protected(request):
         eth_address,
         CONTRACT_ADDRESS
         )
-         
+
     x = requests.get(
         REQUEST_URL,
         headers={'X-API-KEY': API_KEY})
@@ -48,8 +47,6 @@ def protected(request):
         {'nfts': nfts})
 ```
 
-
-
 In this view, we are going to extract the address from the current user session. Then, we will make a Web3 API request to get the NFTs for the current wallet address for a specific contract address. In this particular case, we decided to go with the Polygon chain.
 
 2. Add a template named `protected.html`:
@@ -57,46 +54,41 @@ In this view, we are going to extract the address from the current user session.
 ```html protected.html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moralis Django NFT Gated Demo Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-
-    {% if user.is_authenticated %}
-        <h1>Eth address: {{ user.username }}</h1>
-        <h2>Protected content</h2>
-        {% if nfts %}
-          <h3>Nice! You have our NFT!</h3>
-          <pre>
+      {% if user.is_authenticated %}
+      <h1>Eth address: {{ user.username }}</h1>
+      <h2>Protected content</h2>
+      {% if nfts %}
+      <h3>Nice! You have our NFT!</h3>
+      <pre>
 {{ nfts }}
-          </pre>
-        {% else %}
-          <h3>Sorry, you don't have our NFT!</h3>
-        {% endif %}
-        <br/>
-        <a href="{% url 'logout' %}?next={% url 'moralis_auth' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'moralis_auth' %}"> Login page </a>
-    {% endif %}
+          </pre
+      >
+      {% else %}
+      <h3>Sorry, you don't have our NFT!</h3>
+      {% endif %}
+      <br />
+      <a href="{% url 'logout' %}?next={% url 'moralis_auth' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'moralis_auth' %}"> Login page </a>
+      {% endif %}
     </div>
-
-</body>
+  </body>
 </html>
 ```
-
-
 
 3. Add this line in `urls.py` for the current Django application:
 
 ```python urls.py
 path('protected', views.protected, name='protected'),
 ```
-
-
 
 ## Final Result
 
