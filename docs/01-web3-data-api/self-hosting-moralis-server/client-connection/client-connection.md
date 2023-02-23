@@ -186,3 +186,47 @@ handleAuth('metamask')
 </Tabs>
 
 ## Unity client
+
+:::info
+We will use the last release of the [**`unity-web3-game-kit`**](https://github.com/MoralisWeb3/unity-web3-game-kit).
+:::
+
+:::caution
+
+:::
+
+### Prerequisites
+
+- 
+
+### Installation
+
+[Download the `.unitypackage`](https://github.com/MoralisWeb3/unity-web3-game-kit/releases/download/v1.2.11/moralisweb3sdk_v1_2_11.unitypackage) and drag it into your Unity project:
+
+![](/img/content/unity-1.webp)
+
+Import all the files:
+
+![](/img/content/unity-2.webp)
+
+The ***Moralis Web3 Setup*** panel will appear. Enter your `SERVER_URL` and your `APPLICATION_ID` and choose ***Done***:
+
+![](/img/content/unity-3.webp)
+
+:::note
+Your `SERVER_URL` will be different if you're [running your Moralis Server in a hosting service](/web3-data-api/self-hosting-moralis-server/deployment).
+:::
+
+### Configuration
+
+:::info overview
+To use the **`unity-web3-game-kit`** with your **self-hosted Moralis Server** you need to **apply some modifications** to the package. 
+
+This section goes through **all the steps** but if you need more help you can head over to the [**related forum thread**](https://forum.moralis.io/t/using-unity-sdk-with-self-hosted-server/20527).
+:::
+
+Open `Packages > Moralis Web3 Unity SDK package > Runtime > Kits > AuthenticationKit > Scripts > AuthenticationKit.cs`:
+
+![](/img/content/unity-4.webp)
+
+Edit the `getServerTime` code at lines 257 and 358 to check if the response is `null`:
