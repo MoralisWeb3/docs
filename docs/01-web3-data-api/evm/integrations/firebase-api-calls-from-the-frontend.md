@@ -10,7 +10,7 @@ If you want to call the Moralis API from your frontend app, don't do this direct
   <source src="/video/2815daf-firebase-proxy.mp4"/>
 </video>
 
-First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".
+First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/evm/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".
 
 Moreover, in this tutorial, we will use three Firebase services:
 
@@ -27,7 +27,7 @@ The idea is basically relatively simple; if you want to call any Moralis API end
 Let's consider the below function:
 
 ```typescript functions/src/index.ts
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
 
 interface GetBlockData {
   chain: string;
@@ -43,8 +43,6 @@ export const getBlock = functions.https.onCall(async (data: GetBlockData) => {
 });
 ```
 
-
-
 This cloud function makes a call to the Moralis API and returns a result.
 
 The code below is an example of how to call the proxy function from the frontend. As you can see, the app doesn't pass the API key to the backend:
@@ -52,18 +50,17 @@ The code below is an example of how to call the proxy function from the frontend
 ```javascript hosting/index.html
 const functions = firebase.functions();
 
-const result = await functions.httpsCallable('getBlock')({
-  chain: '0x1',
-  blockNumberOrHash: '0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171',
+const result = await functions.httpsCallable("getBlock")({
+  chain: "0x1",
+  blockNumberOrHash:
+    "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171",
 });
 ```
-
-
 
 **Important Note:** Try to keep as little of an amount as possible of input parameters. For example, the chain parameter is redundant if your product is limited to the Ethereum blockchain. Moreover, this approach will reduce a chance of an unwanted usage of your functions.
 
 ```typescript functions/src/index.ts
-import {EvmChain} from '@moralisweb3/common-evm-utils';
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 interface GetBlockData {
   blockNumberOrHash: string;
@@ -78,8 +75,6 @@ export const getBlock = functions.https.onCall(async (data: GetBlockData) => {
 });
 ```
 
-
-
 The same refers to returning data. If you only require partial returned data from the API, only return what you need. This will also reduce data transfer.
 
 ```typescript functions/src/index.ts
@@ -87,16 +82,16 @@ interface GetBlockTimestampData {
   blockNumberOrHash: string;
 }
 
-export const getBlockTimestamp = functions.https.onCall(async (data: GetBlockTimestampData) => {
-  const response = await Moralis.EvmApi.block.getBlock({
-    chain: '0x1',
-    blockNumberOrHash: data.blockNumberOrHash,
-  });
-  return response.result.result.timestamp.toISOString();
-});
+export const getBlockTimestamp = functions.https.onCall(
+  async (data: GetBlockTimestampData) => {
+    const response = await Moralis.EvmApi.block.getBlock({
+      chain: "0x1",
+      blockNumberOrHash: data.blockNumberOrHash,
+    });
+    return response.result.result.timestamp.toISOString();
+  }
+);
 ```
-
-
 
 ## Rate Limiting per Client's IP
 
@@ -107,19 +102,18 @@ In this tutorial, we focus on **IP rate limiting**. We implement this feature by
 The package uses a Firebase database to store information on how often some qualifier (such as a client's IP) requests the service. We can set a limit of requests in a specific period above which the service blocks requests and returns the `Too Many Requests HTTP` error:
 
 ```ts
-import {FirebaseFunctionsRateLimiter} from 'firebase-functions-rate-limiter';
+import { FirebaseFunctionsRateLimiter } from "firebase-functions-rate-limiter";
 
 const firestore = admin.firestore(app);
 const limiter = FirebaseFunctionsRateLimiter.withFirestoreBackend(
   {
-    name: 'rateLimiter',
+    name: "rateLimiter",
     maxCalls: 10,
     periodSeconds: 5,
- },
- firestore);
+  },
+  firestore
+);
 ```
-
-
 
 The package supports both the **RealTime** and **Firestore** databases from Firebase. We will use Firestore.
 
@@ -128,17 +122,15 @@ Now we need to create a qualifier. A qualifier cannot contain dots and colons, s
 ```ts
 // 1.2.3.4 -> 1-2-3-4
 function readNormalizedIp(request: functions.https.Request): string {
-  return request.ip ? request.ip.replace(/\.|:/g, '-') : 'unknown';
+  return request.ip ? request.ip.replace(/\.|:/g, "-") : "unknown";
 }
 ```
-
-
 
 Let's protect our function:
 
 ```typescript functions/src/index.ts
 export const getBlock = functions.https.onCall(async (data: GetBlockData) => {
-  const qualifier = 'ip-' + readNormalizedIp(context.rawRequest);
+  const qualifier = "ip-" + readNormalizedIp(context.rawRequest);
   limiter.rejectOnQuotaExceededOrRecordUsage(qualifier);
 
   // ...
@@ -146,25 +138,26 @@ export const getBlock = functions.https.onCall(async (data: GetBlockData) => {
 });
 ```
 
-
-
 We could finish here, but we want to simplify the limiter usage. So, let's wrap a whole limiting code into a single function:
 
 ```typescript functions/src/middlewares/IpRateLimiter.ts
-import * as admin from 'firebase-admin';
-import * as functions from 'firebase-functions';
-import {FirebaseFunctionsRateLimiter} from 'firebase-functions-rate-limiter';
-import {CallableContext} from 'firebase-functions/v1/https';
-import {OnCallHandler} from './OnCallHandler';
+import * as admin from "firebase-admin";
+import * as functions from "firebase-functions";
+import { FirebaseFunctionsRateLimiter } from "firebase-functions-rate-limiter";
+import { CallableContext } from "firebase-functions/v1/https";
+import { OnCallHandler } from "./OnCallHandler";
 
-export type OnCallHandler<T> = (data: T, context: CallableContext) => Promise<unknown>;
+export type OnCallHandler<T> = (
+  data: T,
+  context: CallableContext
+) => Promise<unknown>;
 
 export class IpRateLimiter {
   public constructor(private readonly limiter: FirebaseFunctionsRateLimiter) {}
 
   public readonly wrap = <T>(handler: OnCallHandler<T>) => {
     return async (data: T, context: CallableContext) => {
-      const qualifier = 'ip-' + this.readNormalizedIp(context.rawRequest);
+      const qualifier = "ip-" + this.readNormalizedIp(context.rawRequest);
 
       await this.limiter.rejectOnQuotaExceededOrRecordUsage(qualifier);
 
@@ -173,24 +166,22 @@ export class IpRateLimiter {
   };
 
   private readNormalizedIp(request: functions.https.Request): string {
-    return request.ip ? request.ip.replace(/\.|:/g, '-') : 'unknown';
+    return request.ip ? request.ip.replace(/\.|:/g, "-") : "unknown";
   }
 }
 
 export function ipRateLimiterMiddleware(firestore: admin.firestore.Firestore) {
   const limiter = FirebaseFunctionsRateLimiter.withFirestoreBackend(
     {
-      name: 'rateLimiter',
+      name: "rateLimiter",
       maxCalls: 10,
       periodSeconds: 5,
     },
-    firestore,
+    firestore
   );
   return new IpRateLimiter(limiter).wrap;
 }
 ```
-
-
 
 Now we can add the limiting feature to the cloud function in an easy way:
 
@@ -202,8 +193,6 @@ export const getBlock = functions.https.onCall(ipRateLimiter(async (data: GetBlo
   // ...
 }));
 ```
-
-
 
 ## Demo Project
 

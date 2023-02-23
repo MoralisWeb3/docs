@@ -1,6 +1,7 @@
 ---
 title: "Aptos"
 sidebar_label: "Overview"
+slug: "/streams-api/aptos"
 description: "Stream aptos blockchain data into your backend via webhooks."
 ---
 

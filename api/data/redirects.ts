@@ -531,53 +531,54 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-stream-using-js-sdk",
-    destination: "/streams-api/using-node-js-sdk",
+    destination: "/streams-api/evm/using-node-js-sdk",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-specific-nfts",
-    destination: "/streams-api/how-to-monitor-specific-nfts",
+    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
     source: "/docs/using-webui",
-    destination: "/streams-api/using-webui",
+    destination: "/streams-api/evm/using-webui",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-for-burnmint-tokens",
-    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination:
+      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
     source: "/docs/how-to-listen-to-all-nft-contract-transfers",
-    destination: "/streams-api/how-to-listen-all-nft-transfers",
+    destination: "/streams-api/evm/how-to-listen-all-nft-transfers",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-ens-name-registrations",
-    destination: "/streams-api/how-to-monitor-ens-domain-registrations",
+    destination: "/streams-api/evm/how-to-monitor-ens-domain-registrations",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
     destination:
-      "/streams-api/how-to-listen-all-events-from-a-contract-factory",
+      "/streams-api/evm/how-to-listen-all-events-from-a-contract-factory",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     destination:
-      "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     destination:
-      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
   {
@@ -587,7 +588,7 @@ export const redirects = [
   },
   {
     source: "/docs/records-and-pricing",
-    destination: "/streams-api/records-and-pricing",
+    destination: "/streams-api/evm/records-and-pricing",
     permanent: true,
   },
   {
@@ -607,7 +608,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhooks-transactions",
-    destination: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
     permanent: true,
   },
   {
@@ -617,7 +618,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhook-security",
-    destination: "/streams-api/webhook-security",
+    destination: "/streams-api/evm/webhook-security",
     permanent: true,
   },
   {
@@ -652,12 +653,12 @@ export const redirects = [
   },
   {
     source: "/docs/get-native-balances",
-    destination: "/streams-api/get-native-balances",
+    destination: "/streams-api/evm/get-native-balances",
     permanent: true,
   },
   {
     source: "/docs/triggers",
-    destination: "/streams-api/triggers",
+    destination: "/streams-api/evm/triggers",
     permanent: true,
   },
   {
@@ -737,7 +738,7 @@ export const redirects = [
   },
   {
     source: "/docs/web3-firebase-streams",
-    destination: "/streams-api/integrations/firebase",
+    destination: "/streams-api/evm/integrations/firebase",
     permanent: true,
   },
   {
@@ -1453,41 +1454,42 @@ export const redirects = [
     source:
       "/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
     destination:
-      "/streams-api/how-to-listen-all-events-from-a-contract-factory",
+      "/streams-api/evm/how-to-listen-all-events-from-a-contract-factory",
     permanent: true,
   },
   {
     source:
       "/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address",
     destination:
-      "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     permanent: true,
   },
   {
     source: "/docs/listen-to-all-nft-contract-transfers",
-    destination: "/streams-api/how-to-listen-all-nft-transfers",
+    destination: "/streams-api/evm/how-to-listen-all-nft-transfers",
     permanent: true,
   },
   {
     source: "/docs/monitor-specific-nfts",
-    destination: "/streams-api/how-to-monitor-specific-nfts",
+    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
     source: "/docs/monitor-for-burnmint-tokens",
-    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination:
+      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
     source:
       "/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000",
     destination:
-      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
   {
     source: "/docs/monitor-ens-name-registrations",
-    destination: "/streams-api/how-to-monitor-ens-domain-registrations",
+    destination: "/streams-api/evm/how-to-monitor-ens-domain-registrations",
     permanent: true,
   },
   {
@@ -1497,7 +1499,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhooks",
-    destination: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
     permanent: true,
   },
   {
@@ -1517,7 +1519,8 @@ export const redirects = [
   },
   {
     source: "/docs/monitor-for-burnmint-tokens-1",
-    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination:
+      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
@@ -2410,7 +2413,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-stream",
-    destination: "/streams-api/how-to-monitor-specific-nfts",
+    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
@@ -3017,7 +3020,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/cloud-code/webhooks",
-    destination: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
     permanent: true,
   },
   {
@@ -3514,7 +3517,7 @@ export const redirects = [
   },
   {
     source: "/webhooks",
-    destination: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
     permanent: true,
   },
   {
@@ -3650,7 +3653,7 @@ export const redirects = [
   },
   {
     source: "/webhooks",
-    destination: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
     permanent: true,
   },
   {
@@ -4615,7 +4618,7 @@ export const redirects = [
   {
     source: "/docs/monitor-all-usdt-transfers-above-100k",
     destination:
-      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
 

@@ -9,27 +9,58 @@ import AptosLogo from "@site/static/img/content/networks/aptos.webp";
 import SolanaLogo from "@site/static/img/content/networks/solana.webp";
 
 interface PageSidebar {
-  path: String;
+  path: string;
   network: string;
 }
 
-const networks = [
-  {
-    value: "aptos",
-    label: "Aptos",
-    logo: AptosLogo,
-  },
-  {
-    value: "evm",
-    label: "EVM",
-    logo: EthereumLogo,
-  },
-  {
-    value: "solana",
-    label: "Solana",
-    logo: SolanaLogo,
-  },
-];
+const networks = {
+  "web3-data-api": [
+    {
+      value: "aptos",
+      label: "Aptos",
+      logo: AptosLogo,
+    },
+    {
+      value: "evm",
+      label: "EVM",
+      logo: EthereumLogo,
+    },
+    {
+      value: "solana",
+      label: "Solana",
+      logo: SolanaLogo,
+    },
+  ],
+  "streams-api": [
+    {
+      value: "aptos",
+      label: "Aptos",
+      logo: AptosLogo,
+    },
+    {
+      value: "evm",
+      label: "EVM",
+      logo: EthereumLogo,
+    },
+  ],
+  "authentication-api": [
+    {
+      value: "aptos",
+      label: "Aptos",
+      logo: AptosLogo,
+    },
+    {
+      value: "evm",
+      label: "EVM",
+      logo: EthereumLogo,
+    },
+    {
+      value: "solana",
+      label: "Solana",
+      logo: SolanaLogo,
+    },
+  ],
+};
 
 const SidebarMenu = () => {
   const { push } = useHistory();
@@ -43,20 +74,22 @@ const SidebarMenu = () => {
   return pageState ? (
     <FormControl fullWidth>
       <Select value={pageState.network}>
-        {networks.map(({ value, label, logo }) => (
-          <MenuItem
-            key={value}
-            value={value}
-            onClick={() => push(`/${pageState.path}/${value}`)}
-          >
-            <Grid container alignItems="center" spacing={2}>
-              <Grid item sx={{ marginTop: "5px" }}>
-                <img src={logo} alt="logo" height={20} width="auto" />
+        {networks?.[pageState?.path ?? "web3-data-api"]?.map(
+          ({ value, label, logo }) => (
+            <MenuItem
+              key={value}
+              value={value}
+              onClick={() => push(`/${pageState.path}/${value}`)}
+            >
+              <Grid container alignItems="center" spacing={2}>
+                <Grid item sx={{ marginTop: "5px" }}>
+                  <img src={logo} alt="logo" height={20} width="auto" />
+                </Grid>
+                <Grid item>{label}</Grid>
               </Grid>
-              <Grid item>{label}</Grid>
-            </Grid>
-          </MenuItem>
-        ))}
+            </MenuItem>
+          )
+        )}
       </Select>
     </FormControl>
   ) : (

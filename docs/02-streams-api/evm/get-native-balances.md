@@ -3,9 +3,9 @@ title: "Get Native Balances"
 slug: "get-native-balances"
 ---
 
-There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses. 
+There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses.
 
-You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to  [Triggers](/streams-api/triggers). 
+You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to [Triggers](/streams-api/evm/triggers).
 
 # Native Balance Trigger
 
@@ -18,8 +18,8 @@ You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appe
 ]
 ```
 
-- `selectors` is a list of [valid Selectors](/streams-api/triggers#selectors), for each selector you will get the native balance in the Webhook.
-- `type` for which part of the Webhook you want to select the addresses. [Valid Types](/streams-api/triggers#type) and also `internalTx`is allowed!
+- `selectors` is a list of [valid Selectors](/streams-api/evm/triggers#selectors), for each selector you will get the native balance in the Webhook.
+- `type` for which part of the Webhook you want to select the addresses. [Valid Types](/streams-api/evm/triggers#type) and also `internalTx`is allowed!
 
 # Response
 
@@ -75,10 +75,10 @@ The Webhook introduces a new field `nativeBalances` that has the balances unique
       "address": "0x0b5c4a7fcda49e0a8661419bb55b86161a86db2a",
       "balance": "3921415148849464186"
     },
-        {
+    {
       "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
       "balance": "2135786324"
-    },
+    }
   ]
 }
 ```

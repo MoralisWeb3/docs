@@ -9,7 +9,7 @@ Find all the most frequently asked questions generally about Moralis.
 
 Moralis v2 is an enterprise-grade Web3 API solution that provides cross-chain solutions for developers building dapps. Moralis v2 offers several features for different purposes:
 
-- [EVM API](https://docs.moralis.io/docs/evm-api)
+- [EVM API](/web3-data-api/evm)
 
 Fetching NFT, token, and other on-chain related data from multiple EVM chains.
 
@@ -17,11 +17,11 @@ Fetching NFT, token, and other on-chain related data from multiple EVM chains.
 
 Verifying signed message for authenticating EVM and Solana wallets to dapps.
 
-- [Streams API](https://docs.moralis.io/docs/streams-api)
+- [Streams API](/streams-api/evm)
 
 Streaming real-time blockchain events data into your backend via webhooks.
 
-- [Solana API](https://docs.moralis.io/docs/solana-api)
+- [Solana API](/web3-data-api/solana)
 
 Fetching NFT, token, and other on-chain related data from the Solana network.
 
@@ -35,7 +35,7 @@ Moralis v1 is client-focused and provides full-stack prototyping solutions for W
 - [React Moralis SDK](https://github.com/MoralisWeb3/react-moralis)
 - [Unity SDK](https://github.com/MoralisWeb3/unity-web3-game-kit)
 
-It is important to note that Moralis v1 has been deprecated and many of the features are now no longer available. If you'd like to use Moralis v1 in your development, [self-host your Moralis server](https://docs.moralis.io/docs/self-hosted-moralis-server) as the server feature is going to be deprecated in the future. 
+It is important to note that Moralis v1 has been deprecated and many of the features are now no longer available. If you'd like to use Moralis v1 in your development, [self-host your Moralis server](https://docs.moralis.io/docs/self-hosted-moralis-server) as the server feature is going to be deprecated in the future.
 
 ## How to Build Web Application or PWA with Moralis?
 
@@ -129,14 +129,10 @@ Once you have signed up at <https://moralis.io/> you should receive a confirmati
 
 ![](/img/content/7275f83-image.webp)
 
-
-
 f it has been more than 5 minutes and you have not received an activation email please refer to the following articles:
 
 - [I didn't receive a confirmation email - Gmail tab sorting issues](https://moralis.zendesk.com/hc/en-us/articles/4653639419154)
 - [Why didn't I receive the Email or a Report?!?](https://moralis.zendesk.com/hc/en-us/articles/4653639419154)
-
-
 
 ## How to Get Support?
 
