@@ -64,7 +64,7 @@ REACT_APP_APPLICATION_ID = 001
 
 ### Testing
 
-:::tip remember
+:::note
 Make sure your **self-hosted Moralis Server** is running, **locally** or in a **hosting service**.
 :::
 
@@ -77,6 +77,10 @@ yarn start
 Now you can try to ***Authenticate*** and for example ***getBlock*** data:
 
 ![](/img/content/client-3.webp)
+
+:::tip success
+You have connected your **self-hosted Moralis Server** with a **React App**.
+:::
 
 ### Information about `Authentication`
 
@@ -187,17 +191,9 @@ handleAuth('metamask')
 
 ## Unity client
 
-:::info
-We will use the last release of the [**`unity-web3-game-kit`**](https://github.com/MoralisWeb3/unity-web3-game-kit).
+:::info overview 
+We will use the last release of the [**`unity-web3-game-kit`**](https://github.com/MoralisWeb3/unity-web3-game-kit) which is a wrapper around [`web3-unity-sdk`](https://github.com/MoralisWeb3/web3-unity-sdk).
 :::
-
-:::caution
-
-:::
-
-### Prerequisites
-
-- 
 
 ### Installation
 
@@ -222,11 +218,86 @@ Your `SERVER_URL` will be different if you're [running your Moralis Server in a 
 :::info overview
 To use the **`unity-web3-game-kit`** with your **self-hosted Moralis Server** you need to **apply some modifications** to the package. 
 
-This section goes through **all the steps** but if you need more help you can head over to the [**related forum thread**](https://forum.moralis.io/t/using-unity-sdk-with-self-hosted-server/20527).
+This section goes through **all the steps** but if you need help you can head over to the [**related forum thread**](https://forum.moralis.io/t/using-unity-sdk-with-self-hosted-server/20527).
 :::
 
-Open `Packages > Moralis Web3 Unity SDK package > Runtime > Kits > AuthenticationKit > Scripts > AuthenticationKit.cs`:
+Open `Packages > Moralis Web3 Unity SDK > Runtime > Kits > AuthenticationKit > Scripts > AuthenticationKit.cs`:
 
 ![](/img/content/unity-4.webp)
 
-Edit the `getServerTime` code at lines 257 and 358 to check if the response is `null`:
+Replace the code block from **lines [`257`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Kits/AuthenticationKit/Scripts/AuthenticationKit.cs#L257) to [`263`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Kits/AuthenticationKit/Scripts/AuthenticationKit.cs#L263)** (both included) for the following:
+
+```csharp
+if (serverTimeResponse != null)
+{
+    Debug.LogError("Failed to retrieve server time from Moralis Server!");
+}
+            
+IDictionary<string, object> requestMessageParams = new Dictionary<string, object>();
+
+requestMessageParams.Add("address", address);
+requestMessageParams.Add("chain", Web3GL.ChainId());
+
+Dictionary<string, object> authMessage = await Moralis.Cloud.RunAsync<Dictionary<string, object>>("requestMessage", requestMessageParams);
+
+string signMessage = authMessage["message"].ToString();
+```
+
+Replace the code block from **lines [`361`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Kits/AuthenticationKit/Scripts/AuthenticationKit.cs#L361) to [`367`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Kits/AuthenticationKit/Scripts/AuthenticationKit.cs#L367)** (both included) for the following:
+
+```csharp
+if (serverTimeResponse != null)
+{
+    Debug.LogError("Failed to retrieve server time from Moralis Server!");
+}
+            
+IDictionary<string, object> requestMessageParams = new Dictionary<string, object>();
+
+requestMessageParams.Add("address", address);
+requestMessageParams.Add("chain", session.ChainId);
+
+Dictionary<string, object> authMessage = await Moralis.Cloud.RunAsync<Dictionary<string, object>>("requestMessage", requestMessageParams);
+
+string signMessage = authMessage["message"].ToString();
+```
+
+Open `Packages > Moralis Web3 Unity SDK > Runtime > Core > Platform > Services > ClientServices > MoralisUserService.cs` and at **line [`101`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Core/Platform/Services/ClientServices/MoralisUserService.cs#L101)** add:
+
+```csharp
+user.authData.Clear();
+```
+
+Open `Moralis Web3 Unity SDK > Runtime > Web3Api > Client > ApiClient.cs` and under existing default headers (**line [`40`](https://github.com/MoralisWeb3/web3-unity-sdk/blob/fe522579772bb8eaeabd412710f764cb8bfbf4a7/Runtime/Web3Api/Client/ApiClient.cs#L40)**) add:
+
+```csharp
+_defaultHeaderMap.Add("x-parse-application-id", Moralis.DappId);
+```
+
+Instead of this last modification, you could add the following to your server's **`src/index.ts`**:
+
+```js
+app.use('/server/functions/:functionName', (req, res, next) => {
+  req.headers['x-parse-application-id'] = '[YOUR_APPLICATION_ID]';
+  next();
+});
+
+app.use(`/server`, parseServer);
+```
+
+### Testing
+
+Open `Assets > Moralis Web3 Unity SDK > Demos > Introduction > Introduction.unity` scene and run it. Now choose ***Connect***:
+
+![](/img/content/unity-5.webp)
+
+After signing the **authentication message** you should see the following screen:
+
+![](/img/content/unity-6.webp)
+
+:::note
+This setup is also tested successfully on **WebGL**.
+:::
+
+:::tip success
+You have connected your **self-hosted Moralis Server** with a **Unity project**.
+:::
