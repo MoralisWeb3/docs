@@ -5523,6 +5523,35 @@ export const redirects = [
   {
     source: "/web3-data-api/quickstart-react",
     destination: "/web3-data-api/evm/quickstart-react",
+  },
+  {
+    source: "/admin-panel/user-account-creation-and-sign-in-methods",
+    destination:
+      "https://intercom-help.eu/moralis/en/articles/33379-user-account-creation",
+    permanent: true,
+  },
+  {
+    source: "/admin-panel/permission-roles",
+    destination:
+      "https://intercom-help.eu/moralis/en/articles/33348-permission-and-roles",
+    permanent: true,
+  },
+  {
+    source: "/admin-panel/account-settings",
+    destination:
+      "https://intercom-help.eu/moralis/en/articles/33347-account-settings",
+    permanent: true,
+  },
+  {
+    source: "/admin-panel/account-deletion",
+    destination:
+      "https://intercom-help.eu/moralis/en/articles/33346-account-deletion",
+    permanent: true,
+  },
+  {
+    source: "/admin-panel",
+    destination:
+      "https://intercom-help.eu/moralis/en/articles/33345-what-is-the-admin-panel",
     permanent: true,
   },
 ];
