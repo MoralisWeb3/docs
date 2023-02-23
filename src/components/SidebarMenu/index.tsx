@@ -8,15 +8,9 @@ import EthereumLogo from "@site/static/img/content/networks/ethereum.webp";
 import AptosLogo from "@site/static/img/content/networks/aptos.webp";
 import SolanaLogo from "@site/static/img/content/networks/solana.webp";
 
-enum NetworkEnum {
-  Aptos = "aptos",
-  EVM = "evm",
-  Solana = "solana",
-}
-
 interface PageSidebar {
   path: String;
-  network: NetworkEnum;
+  network: string;
 }
 
 const networks = [
