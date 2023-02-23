@@ -1,6 +1,7 @@
 ---
 title: "Client connection"
-sidebar_position: 5
+slug: "client-connection"
+sidebar_position: 4
 ---
 
 :::info overview
@@ -53,7 +54,7 @@ REACT_APP_SERVER_URL = 'http://localhost:1337/server'
 ```
 
 :::note
-Your `SERVER_URL` will be different if you're [running your Moralis Server in a hosting service](/web3-data-api/self-hosting-moralis-server/deployment).
+Your `SERVER_URL` will be different if you're already [running your Moralis Server in a hosting service](/web3-data-api/self-hosting-moralis-server/deployment).
 :::
 
 Set the `REACT_APP_APPLICATION_ID` to your **`APPLICATION_ID`**:
@@ -210,7 +211,7 @@ The ***Moralis Web3 Setup*** panel will appear. Enter your `SERVER_URL` and your
 ![](/img/content/unity-3.webp)
 
 :::note
-Your `SERVER_URL` will be different if you're [running your Moralis Server in a hosting service](/web3-data-api/self-hosting-moralis-server/deployment).
+Your `SERVER_URL` will be different if you're already [running your Moralis Server in a hosting service](/web3-data-api/self-hosting-moralis-server/deployment).
 :::
 
 ### Configuration

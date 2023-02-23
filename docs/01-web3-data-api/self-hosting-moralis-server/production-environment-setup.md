@@ -8,6 +8,10 @@ sidebar_position: 2
 This guide will teach you how to upgrade the **database** and **rate-limiting** features from the [Local Environment Setup](/web3-data-api/self-hosting-moralis-server/local-environment-setup) to **hosted solutions** so you have a **production-ready server**.
 :::
 
+:::caution Important
+The completion of [**Local Environment Setup**](/web3-data-api/self-hosting-moralis-server/local-environment-setup) is **required** to continue.
+:::
+
 ## Use MongoDB Atlas
 
 :::note

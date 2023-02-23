@@ -1,7 +1,7 @@
 ---
 title: "Deployment"
 slug: "deployment"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 :::info overview
@@ -9,7 +9,7 @@ This guide will teach you how to **deploy your server to a hosting service of yo
 :::
 
 :::caution Important
-The completion of both local and production environment setups is required to continue.
+The completion of [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **required** to continue.
 :::
 
 ## Heroku
