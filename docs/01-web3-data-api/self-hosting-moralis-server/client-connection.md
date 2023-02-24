@@ -5,7 +5,7 @@ sidebar_position: 4
 ---
 
 :::info overview
-This guide will teach you how to **connect** to your **self-hosted Moralis Server** from different **client environments**. 
+This guide will teach you how to **connect to** your **self-hosted Moralis Server** from different **client environments**. We will **help you set up those**. 
 :::info
 
 :::caution Important
@@ -83,7 +83,7 @@ Now you can try to ***Authenticate*** and for example ***getBlock*** data:
 You have connected your **self-hosted Moralis Server** with a **React App**.
 :::
 
-### Information about `Authentication`
+### Note about `Authentication`
 
 :::note
 The following information serves as a *good-to-know*. The [`parse-server-migration-react-client`](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/parse-server-migration-react-client) project already implements it.
@@ -296,7 +296,7 @@ After signing the **authentication message** you should see the following screen
 ![](/img/content/unity-6.webp)
 
 :::note
-This setup is also tested successfully on **WebGL**.
+This setup is also tested and working on **WebGL**.
 :::
 
 :::tip success

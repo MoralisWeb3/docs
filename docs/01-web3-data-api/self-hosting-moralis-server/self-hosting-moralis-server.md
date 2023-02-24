@@ -25,8 +25,8 @@ Migrating from the Moralis-hosted server to a self-hosted server has several ben
 
 ## Steps to follow
 
-### [1. Local Environment Setup](local-environment-setup)
-### [2. Production Environment Setup](production-environment-setup)
-### [3. Optional features](optional-features)
-### [4. Client connection](client-connection)
-### [5. Deployment](deployment)
+1. [**Local Environment Setup**](local-environment-setup)
+2. [**Production Environment Setup**](production-environment-setup)
+3. [**Optional features**](optional-features)
+4. [**Client connection**](client-connection)
+5. [**Deployment**](deployment)

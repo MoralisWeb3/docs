@@ -1,5 +1,5 @@
 ---
-title: "Streams"
+title: "Streams (Syncs)"
 slug: "./streams"
 description: "This guide will teach you how to set up streams for your self-hosted Moralis Server"
 sidebar_position: 3
@@ -10,7 +10,7 @@ This guide will teach you how to **set up Streams** on your **self-hosted Morali
 :::
 
 :::note [more info](http://docs.moralis.io/streams-api)
-With **Streams** you can **listen** to **real time on-chain events**.
+Using **Streams**, you can **listen to real-time on-chain events** and automatically **synchronize incoming data** with your **database**.
 :::
 
 **Streams** is what you need to **replace** the **old Moralis-hosted Syncs**:

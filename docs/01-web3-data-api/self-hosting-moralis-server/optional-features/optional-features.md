@@ -8,8 +8,13 @@ The completion of the [**Local Environment Setup**](/web3-data-api/self-hosting-
 The completion of the [**Production Environment Setup**](/web3-data-api/self-hosting-moralis-server/production-environment-setup) is **NOT required** but it is **strongly recommended**.
 :::
 
-Moralis Parse Server offers some optional features:
+**Moralis-hosted Server** offered certain features that **can be replicated** in our **self-hosted Moralis Server**:
 
-- DB Dashboard (recommended)
-- Syncs --> Now Streams
-- Custom Cloud Code
+- [**Parse Dashboard**](parse-dashboard)
+- [**Custom Cloud Code**](custom-cloud-code)
+- [**Custom Jobs**](custom-jobs)
+- [**Streams (Syncs)**](streams)
+
+:::note 
+Apart from implementing those features, you can also head over to [***Advanced configuration***](advanced-configuration) to learn how to make advanced adjustments to your server.
+:::

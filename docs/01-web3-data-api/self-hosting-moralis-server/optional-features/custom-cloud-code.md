@@ -86,10 +86,8 @@ const { fetch, data, error } = useMoralisCloudFunction("Hello");
 </Tabs>
 
 :::tip
-If you don't know how to set up a **Moralis v1 client**, head over to this guide.
+If you don't know how to set up a **Moralis v1 client**, head over to [***Client connection***](/web3-data-api/self-hosting-moralis-server/client-connection).
 :::
-
-// TODO add link to moralis v1 client
 
 :::tip
 You can also watch the following [**video tutorial**](/web3-data-api/self-hosting-moralis-server/optional-features/custom-cloud-code#video-tutorial) which goes through the whole setup.
