@@ -2,11 +2,11 @@
 title: "Data migration"
 slug: "data-migration"
 sidebar_position: 4
-description: "This guide teaches you how to migrate data from your Moralis-hosted server to your self-hosted one."
+description: "This guide teaches you how to migrate data from your Moralis-hosted server to your MongoDB Atlas solution."
 ---
 
 :::info overview
-This guide teaches you how to **migrate data** from your **Moralis-hosted MongoDB** to your **self-hosted solution**.
+This guide teaches you how to **migrate data** from your **Moralis-hosted MongoDB** to your **MongoDB Atlas solution**.
 :::
 
 :::caution Important
