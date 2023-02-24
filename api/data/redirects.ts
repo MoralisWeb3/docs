@@ -1192,54 +1192,54 @@ export const redirects = [
   {
     source: "/docs/self-hosted-moralis-server",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
     source: "/docs/run-parse-server-locally",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
+      "/web3-data-api/self-hosting-moralis-server/local-environment-setup",
     permanent: true,
   },
   {
     source: "/docs/configure-your-server",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/configure-your-server",
+      "/web3-data-api/self-hosting-moralis-server/optional-features/advanced-configuration",
     permanent: true,
   },
   {
     source: "/docs/set-up-custom-cloud-code",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/set-up-custom-cloud-code",
+      "/web3-data-api/self-hosting-moralis-server/optional-features/custom-cloud-code",
     permanent: true,
   },
   {
     source: "/docs/set-up-parse-dashboard",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/set-up-parse-dashboard",
+      "/web3-data-api/self-hosting-moralis-server/optional-features/parse-dashboard",
     permanent: true,
   },
   {
     source: "/docs/migrate-data",
-    destination: "/web3-data-api/self-hosted-moralis-server/migrate-data",
+    destination: "/web3-data-api/self-hosting-moralis-server/data-migration",
     permanent: true,
   },
   {
     source: "/docs/connect-to-your-client",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/connect-to-your-client",
+      "/web3-data-api/self-hosting-moralis-server/client-connection",
     permanent: true,
   },
   {
     source: "/docs/set-up-streams-with-parse-server",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/set-up-streams-with-parse-server",
+      "/web3-data-api/self-hosting-moralis-server/optional-features/streams",
     permanent: true,
   },
   {
     source: "/docs/deploy-to-production",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/deploy-to-production",
+      "/web3-data-api/self-hosting-moralis-server/deployment",
     permanent: true,
   },
   {
@@ -2125,7 +2125,7 @@ export const redirects = [
   {
     source: "/docs/deploy-to-production-1",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/deploy-to-production",
+      "/web3-data-api/self-hosting-moralis-server/deployment",
     permanent: true,
   },
   {
@@ -2397,7 +2397,7 @@ export const redirects = [
   {
     source: "/docs/migrate-data-1",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -2503,7 +2503,7 @@ export const redirects = [
   {
     source: "/docs/run-parse-server-locally-1",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
+      "/web3-data-api/self-hosting-moralis-server/local-environment-setup",
     permanent: true,
   },
   {
@@ -2636,7 +2636,7 @@ export const redirects = [
   {
     source: "/docs/connect-to-your-client-1",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/connect-to-your-client",
+      "/web3-data-api/self-hosting-moralis-server/client-connection",
     permanent: true,
   },
   {
@@ -2715,7 +2715,7 @@ export const redirects = [
   {
     source: "/docs/migrating-to-self-hosted-parse-server",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -3550,7 +3550,7 @@ export const redirects = [
   {
     source: "/docs/self-hosted-parse-server-integration",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -3618,7 +3618,7 @@ export const redirects = [
   {
     source: "/moralis-server/plugins/untitled",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -3833,7 +3833,7 @@ export const redirects = [
   {
     source: "/moralis-serv",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -3879,7 +3879,7 @@ export const redirects = [
   {
     source: "/reference/native-2",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -3895,7 +3895,7 @@ export const redirects = [
   {
     source: "/docs/configure-your-server-1",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/configure-your-server",
+      "/web3-data-api/self-hosting-moralis-server/optional-features/advanced-configuration",
     permanent: true,
   },
   {
@@ -4014,7 +4014,7 @@ export const redirects = [
   {
     source: "/docs/v1-server-self-hosting",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -4554,7 +4554,7 @@ export const redirects = [
   {
     source: "/docs/migratin...",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -4602,7 +4602,7 @@ export const redirects = [
   {
     source: "/docs/migrating-from-v1-to-v2",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {
@@ -5158,13 +5158,13 @@ export const redirects = [
   {
     source: "/run-parse-server-locally",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/run-parse-server-locally",
+      "/web3-data-api/self-hosting-moralis-server/local-environment-setup",
     permanent: true,
   },
   {
     source: "/Self-hosted",
     destination:
-      "/web3-data-api/self-hosted-moralis-server/self-hosted-moralis-server",
+      "/web3-data-api/self-hosting-moralis-server",
     permanent: true,
   },
   {

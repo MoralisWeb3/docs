@@ -1,6 +1,6 @@
 ---
 title: "Self-hosting Moralis Server"
-slug: "self-hosting-moralis-server"
+description: "This guide will help you migrate to a self-hosted Moralis Server."
 ---
 
 ![](/img/content/53a7368-self-hosted-moralis-server-webpage-banner.webp)
