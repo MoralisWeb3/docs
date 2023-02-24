@@ -10,7 +10,7 @@ This guide will teach you how to initially **set up your own Moralis Server** to
 :::
 
 :::note more info
-Moralis Server is an extension of [Parse Server](https://github.com/parse-community/parse-server).
+Moralis Server is an extension of the [Parse Server](https://github.com/parse-community/parse-server).
 :::
 
 ## Prerequisites
@@ -81,7 +81,7 @@ It is required for Parse Server and can be any value to your choice. For example
 ### `DATABASE_URI`
 
 :::info
-The Parse Server needs a **database to store all the data**. In this guide we will be using **MongoDB**, as this is also being used on the Moralis-hosted servers. [See how you could also use **Postgres**](https://docs.parseplatform.org/parse-server/guide/#database).
+The **self-hosted Moralis Server** needs a **database to store all the data**. In this guide we will be using **MongoDB**, as this is also being used on the **Moralis-hosted server**. [See how you could also use **Postgres**](https://docs.parseplatform.org/parse-server/guide/#database).
 :::
 
 For this local setup, you can use the [`mongodb-runner`](https://github.com/mongodb-js/runner) to **automatically create a database instance**. 
