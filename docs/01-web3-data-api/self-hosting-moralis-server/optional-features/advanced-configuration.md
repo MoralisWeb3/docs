@@ -25,10 +25,6 @@ Alternatively, you can replace the `handleRateLimit` function to a custom implem
 
 ## Generate api proxy endpoints
 
-:::caution //TODO
-I think we need to expand this part. Should we connect it with [**Custom Cloud Code**](custom-cloud-code) somehow or explain this there?. Need your help with that @Yoseph
-:::
-
 The EvmApi and SolApi can be accessed in the frontend via cloud functions (this is what happens when you call `Moralis.Web3Api.<method>` in the JS SDK v1).
 
 These cloud functions are generated when you run `yarn gen:cloud`. 
