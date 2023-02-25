@@ -280,7 +280,9 @@ const ApiReference = ({
                     {responseIndex === -1
                       ? response
                         ? JSON.stringify(response.body, null, 2)
-                        : "Error with Test Request"
+                        : (response.status == 429)
+                          ? "Not so fast, this is just a doc. Please wait a minute before you try again."
+                          : "Error with Test Request"
                       : responses[responseIndex].body
                       ? stringifyJSON(
                           deepCompact(
