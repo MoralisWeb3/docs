@@ -4,7 +4,7 @@ import qs from "qs";
 import { Path } from "path-parser";
 
 const exec = async (request: VercelRequest, response: VercelResponse) => {
-  response.setHeader("Cache-Control", "s-maxage=60");
+  response.setHeader("Cache-Control", "s-maxage=300");
   
   if (request.method !== "POST") {
     return response.status(405).json({ error: "Method Not Allowed" });
