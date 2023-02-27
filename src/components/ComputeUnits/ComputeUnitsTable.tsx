@@ -14,21 +14,26 @@ const ComputeUnitsTable = (): JSX.Element => {
 
   const fetchComputeUnits = async () => {
     try {
-      const response = await fetch("/api/exec", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
+      const response = await fetch(
+        "https://deep-index.moralis.io/api/v2/info/endpointWeights",
+        {
           method: "GET",
-          apiHost: "https://deep-index.moralis.io/api/v2",
-          path: "/info/endpointWeights",
-        }),
-      });
+          headers: {
+            accept: "application/json",
+            "content-type": "application/json",
+            "X-API-Key": "TEST",
+            Authorization: "Bearer TEST",
+            "x-moralis-source": "api reference",
+            referer: "moralis.io",
+          },
+        }
+      );
 
       if (!response.ok) throw new Error();
 
-      const { body } = await response.json();
+      const fetchBody = await response.json();
 
-      setEndpoints(body);
+      setEndpoints(fetchBody);
     } catch (e) {
       console.error(e);
     }
