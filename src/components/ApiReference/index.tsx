@@ -129,7 +129,9 @@ const ApiReference = ({
 
         if (!response.ok) throw new Error();
 
-        const body = await response.json();
+        const fetchBody = await response.json();
+
+        const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
         setResponseIndex(-1);
