@@ -5554,4 +5554,9 @@ export const redirects = [
       "https://intercom-help.eu/moralis/en/articles/33345-what-is-the-admin-panel",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/reference/get-nft-by-owners",
+    destination: "/web3-data-api/aptos/reference/get-nft-by-wallet-addresses",
+    permanent: true,
+  },
 ];
