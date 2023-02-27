@@ -13229,7 +13229,7 @@
     "getTokenPrice": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token price",
-      "description": "Gets the token price (usd and native) for a given contract address and network.",
+      "description": "Gets the token price (usd and native) for a given contract address and network. Currently, this API only support fetching token price listed on Raydium DEX.",
       "method": "GET",
       "path": "/token/:network/:address/price",
       "pathParams": [
