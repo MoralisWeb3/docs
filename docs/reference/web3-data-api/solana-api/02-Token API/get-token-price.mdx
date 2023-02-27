@@ -14,10 +14,10 @@ import config from "../../../../configs/api-reference/configs.json";
 <ApiReference {...config.solana.getTokenPrice}>
   <Admonition type="info" icon="💡" title="USD Price Decimal">
     <ReactMarkdown>
-      Currently, this API only support at most 4 decimal results on `usdPrice`
-      output field. This implies that the smallest unit return will be 0.0001.
-      Any token price below $0.0001 on Raydium will be rounded down and
-      presented at 0.
+      Currently, this API only support at most 4 decimal places results on
+      `usdPrice` output field. This implies that the smallest unit return will
+      be 0.0001. Any token price below $0.0001 on Raydium will be rounded down
+      and presented at 0.
     </ReactMarkdown>
   </Admonition>
 </ApiReference>
