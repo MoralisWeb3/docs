@@ -108,7 +108,7 @@ const ApiReference = ({
             qs.stringify(values.query || {}, { addQueryPrefix: true }),
           ].join(""),
           {
-            method: "GET",
+            method,
             headers: {
               accept: "application/json",
               "content-type": "application/json",
@@ -293,7 +293,9 @@ const ApiReference = ({
 
                   <CodeBlock className="language-json">
                     {responseIndex === -1
-                      ? JSON.stringify(response.body, null, 2)
+                      ? response
+                        ? JSON.stringify(response.body, null, 2)
+                        : "Fetch response error"
                       : responses[responseIndex].body
                       ? stringifyJSON(
                           deepCompact(
