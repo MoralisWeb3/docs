@@ -93,16 +93,18 @@ const ApiReference = ({
     async (values) => {
       setLoading(true);
       try {
+
+        let pathReplace = path;
         
         // Replace path values (For example :address) in path
         for (const pathValue in values.path)
         {
-          path = path.replace(`:${pathValue}`,values.path[pathValue]);
+          pathReplace = pathReplace.replace(`:${pathValue}`,values.path[pathValue]);
         }
         const response = await fetch(
           [
             apiHost,
-            path,
+            pathReplace,
             qs.stringify(values.query || {}, { addQueryPrefix: true }),
           ].join(""),
           {
