@@ -80,7 +80,6 @@ const ApiReference = ({
   children,
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
@@ -93,13 +92,14 @@ const ApiReference = ({
     async (values) => {
       setLoading(true);
       try {
-
         let pathReplace = path;
-        
+
         // Replace path values (For example :address) in path
-        for (const pathValue in values.path)
-        {
-          pathReplace = pathReplace.replace(`:${pathValue}`,values.path[pathValue]);
+        for (const pathValue in values.path) {
+          pathReplace = pathReplace.replace(
+            `:${pathValue}`,
+            values.path[pathValue]
+          );
         }
         const response = await fetch(
           [
@@ -121,18 +121,8 @@ const ApiReference = ({
           }
         );
 
-        if (response.status == 429) {
-          setErrorMsg(
-            "Not so fast, this is just a doc. Please wait a minute before you try again."
-          );
-        } else {
-          setErrorMsg("Error with Test Request");
-        }
-
-        if (!response.ok) throw new Error();
-
         const fetchBody = await response.json();
-
+        
         const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
@@ -303,9 +293,7 @@ const ApiReference = ({
 
                   <CodeBlock className="language-json">
                     {responseIndex === -1
-                      ? response
-                        ? JSON.stringify(response.body, null, 2)
-                        : errorMsg
+                      ? JSON.stringify(response.body, null, 2)
                       : responses[responseIndex].body
                       ? stringifyJSON(
                           deepCompact(
