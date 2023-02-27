@@ -17,7 +17,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     }
     res.setHeader("location", foundRedirect.destination);
     // Caching headers
-    res.setHeader("Cache-control", "s-maxage=600");
+    res.setHeader("Cache-Control", "s-maxage=600");
     return res.end();
   } else {
     // If req.url not found show 404 page
