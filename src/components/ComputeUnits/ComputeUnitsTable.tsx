@@ -9,6 +9,11 @@ interface EndpointWeightResponse {
   dynamic?: boolean;
 }
 
+const DynamicPriceUnits = {
+  getNativeBalancesForAddresses: "wallet addresses",
+  getMultipleNFTs: "NFTs",
+};
+
 const ComputeUnitsTable = (): JSX.Element => {
   const [endpoints, setEndpoints] = useState<EndpointWeightResponse[]>([]);
 
@@ -75,7 +80,9 @@ const ComputeUnitsTable = (): JSX.Element => {
               <td>{price}</td>
               <td>
                 {dynamic
-                  ? `+${price} CU${price > 1 ? "s" : ""} per wallet addresses`
+                  ? `+${price} CU${price > 1 ? "s" : ""} per ${
+                      DynamicPriceUnits?.[endpoint]
+                    }`
                   : 0}
               </td>
               <td>{rateLimitCost}</td>
