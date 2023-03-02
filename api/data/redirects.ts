@@ -175,12 +175,12 @@ export const redirects = [
   },
   {
     source: "/docs/rate-limits",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/docs/abuse-prevention",
-    destination: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
     permanent: true,
   },
   {
@@ -1611,7 +1611,7 @@ export const redirects = [
   { source: "/docs/", destination: "/", permanent: true },
   {
     source: "/reference/api-response",
-    destination: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
     permanent: true,
   },
   {
@@ -1621,7 +1621,7 @@ export const redirects = [
   },
   {
     source: "/reference/pagination",
-    destination: "/web3-data-api/pagination",
+    destination: "/web3-data-api/evm/reference/pagination",
     permanent: true,
   },
   {
@@ -3680,7 +3680,7 @@ export const redirects = [
   },
   {
     source: "/reference/abuse-prevention",
-    destination: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
     permanent: true,
   },
   {
@@ -3762,12 +3762,12 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/misc/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -4880,7 +4880,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -4910,7 +4910,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -5071,7 +5071,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/rate-limit.",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -5097,7 +5097,7 @@ export const redirects = [
   },
   {
     source: "/reference-link/api-response",
-    destination: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
     permanent: true,
   },
   {
@@ -5158,7 +5158,7 @@ export const redirects = [
   },
   {
     source: "/reference/weights-and-rate-limits",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -5832,6 +5832,31 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/get-token-allowance",
     destination: "/web3-data-api/evm/reference/get-token-allowance",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/disable-totals",
+    destination: "/web3-data-api/evm/reference/disable-totals",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/pagination",
+    destination: "/web3-data-api/evm/reference/pagination",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
 ];
