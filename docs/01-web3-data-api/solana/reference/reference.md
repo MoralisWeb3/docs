@@ -1,8 +1,9 @@
 ---
 title: "Web3 Data - Solana API Reference"
-sidebar_label: "Overview"
+sidebar_label: "API Reference"
 slug: "/web3-data-api/solana/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
+sidebar_position: 6
 ---
 
 ### NFT API
