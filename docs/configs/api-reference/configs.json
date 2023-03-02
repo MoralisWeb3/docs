@@ -5799,6 +5799,832 @@
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"offset\": 0, \n    \"limit\": 0, \n}\n\nresult = evm_api.token.get_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
         }
       ]
+    },
+    "getTokenTransfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get ERC20 token transactions by contract",
+      "description": "Get ERC20 token transactions from a contract ordered by block number in descending order.",
+      "method": "GET",
+      "path": "/erc20/:address/transfers",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the token contract",
+          "required": true,
+          "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The maximum block number from which to get the transfers.\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "from_date",
+          "description": "The start date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "Get the transfers up to this date (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "disable_total",
+          "description": "If the result should skip returning the total count (Improves performance).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of token contract transactions.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total",
+                "type": "number",
+                "description": "The total number of matches for this query",
+                "example": "2000"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the token",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-04-02T10:07:54.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transferred (in wei)",
+                    "example": 650000000000000000
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "number",
+                    "description": "The transaction index of the transfer within the block",
+                    "example": 12
+                  },
+                  {
+                    "name": "log_index",
+                    "type": "number",
+                    "description": "The log index of the transfer within the block",
+                    "example": 2
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis  from 'moralis';\nimport { EvmChain } from '@moralisweb3/evm-utils';\n\ntry {\n    const chain = EvmChain.ETHEREUM;\n\n    const address = '0x1234567890123456789012345678901234567890';\n\n    await Moralis.start({\n        apiKey: 'YOUR_API_KEY',\n        // ...and any other configuration\n    });\n\n    const response = await Moralis.EvmApi.token.getTokenTransfers({\n        address,\n        chain,\n    });\n\n    console.log(response?.result);\n} catch (e) {\n    console.error(e);\n}\n        ",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "csharp",
+          "code": "private async Task<bool> GetTokenAdressTransfers(IWeb3Api web3Api)\n{\n    bool result = true;\n    try\n    {\n        Erc20TransactionCollection resp = await web3Api.Token.GetTokenAddressTransfers(\"0x06012c8cf97BEaD5deAe237070F9587f8E7A266d\", ChainList.eth, null, null, null, null, null, 0, 10);\n        result = resp is { };\n    }\n    catch (Exception exp) { result = false; }\n   return result;\n} \n        ",
+          "name": "Moralis C# SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\", \n    \"chain\": \"eth\", \n    \"from_block\": 0, \n    \"to_block\": 0, \n    \"from_date\": \"\", \n    \"to_date\": \"\", \n    \"limit\": 0, \n    \"disable_total\": True, \n    \"cursor\": \"\", \n}\n\nresult = evm_api.token.get_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
+      ]
+    },
+    "getErc20Transfers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "getErc20Transfers",
+      "description": "",
+      "method": "GET",
+      "path": "/erc20/transfers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The block number from which the transfers will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number to which the transfers will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "contract_addresses",
+          "description": "Contract addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_contracts",
+          "description": "Contract addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "Wallet addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_wallets",
+          "description": "Wallet addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used to getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "contract_address",
+                "type": "string",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "transaction_hash",
+                "type": "string",
+                "description": "The hash of the transaction",
+                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+              },
+              { "name": "transaction_index", "type": "number", "example": 204 },
+              { "name": "log_index", "type": "number", "example": 204 },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "The timestamp of the block",
+                "example": "2021-05-07T11:08:35.000Z"
+              },
+              {
+                "name": "block_number",
+                "type": "number",
+                "description": "The block number",
+                "example": 12386788
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "The hash of the block",
+                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+              },
+              {
+                "name": "from_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "to_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "1234"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getErc20Mints": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "getErc20Mints",
+      "description": "",
+      "method": "GET",
+      "path": "/erc20/mints",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The block number from which the mints will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number to which the mints will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "contract_addresses",
+          "description": "Contract addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_contracts",
+          "description": "Contract addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "Wallet addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_wallets",
+          "description": "Wallet addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used to getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "contract_address",
+                "type": "string",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "transaction_hash",
+                "type": "string",
+                "description": "The hash of the transaction",
+                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+              },
+              { "name": "transaction_index", "type": "number", "example": 204 },
+              { "name": "log_index", "type": "number", "example": 204 },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "The timestamp of the block",
+                "example": "2021-05-07T11:08:35.000Z"
+              },
+              {
+                "name": "block_number",
+                "type": "number",
+                "description": "The block number",
+                "example": 12386788
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "The hash of the block",
+                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+              },
+              {
+                "name": "to_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "1234"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getErc20Burns": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "getErc20Burns",
+      "description": "",
+      "method": "GET",
+      "path": "/erc20/burns",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The block number from which the burns will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number to which the burns will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "contract_addresses",
+          "description": "Contract addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_contracts",
+          "description": "Contract addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "Wallet addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_wallets",
+          "description": "Wallet addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used to getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "contract_address",
+                "type": "string",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "transaction_hash",
+                "type": "string",
+                "description": "The hash of the transaction",
+                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+              },
+              { "name": "transaction_index", "type": "number", "example": 204 },
+              { "name": "log_index", "type": "number", "example": 204 },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "The timestamp of the block",
+                "example": "2021-05-07T11:08:35.000Z"
+              },
+              {
+                "name": "block_number",
+                "type": "number",
+                "description": "The block number",
+                "example": 12386788
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "The hash of the block",
+                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+              },
+              {
+                "name": "from_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "1234"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getErc20Approvals": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "getErc20Approvals",
+      "description": "",
+      "method": "GET",
+      "path": "/erc20/approvals",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "avalanche testnet",
+            "0xa869",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "cronos testnet",
+            "0x152",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The block number from which the approvals will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number to which the approvals will be returned",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "contract_addresses",
+          "description": "Contract addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_contracts",
+          "description": "Contract addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "wallet_addresses",
+          "description": "Wallet addresses to only include",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "exclude_wallets",
+          "description": "Wallet addresses to ignore",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used to getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "contract_address",
+                "type": "string",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "transaction_hash",
+                "type": "string",
+                "description": "The hash of the transaction",
+                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+              },
+              { "name": "transaction_index", "type": "number", "example": 204 },
+              { "name": "log_index", "type": "number", "example": 204 },
+              {
+                "name": "block_timestamp",
+                "type": "string",
+                "description": "The timestamp of the block",
+                "example": "2021-05-07T11:08:35.000Z"
+              },
+              {
+                "name": "block_number",
+                "type": "number",
+                "description": "The block number",
+                "example": 12386788
+              },
+              {
+                "name": "block_hash",
+                "type": "string",
+                "description": "The hash of the block",
+                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+              },
+              {
+                "name": "from_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "to_wallet",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "The address of the contract",
+                "example": "1234"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
