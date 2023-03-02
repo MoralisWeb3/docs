@@ -71,10 +71,10 @@ const SidebarMenu = () => {
     return;
   });
 
-  return pageState ? (
+  return pageState && networks?.[pageState?.path] ? (
     <FormControl fullWidth>
       <Select value={pageState.network}>
-        {networks?.[pageState?.path ?? "web3-data-api"]?.map(
+        {networks?.[pageState?.path as string]?.map(
           ({ value, label, logo }) => (
             <MenuItem
               key={value}
