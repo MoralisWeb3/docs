@@ -3,6 +3,7 @@ title: "How to get all the NFTs owned by an address"
 slug: "../how-to-get-all-nfts-owned-by-an-address"
 description: "Learn how to get all the NFTs (and their metadata) owned by an address using the Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All NFTs Owned By An Address
 
-In order to get all the NFTs owned by an address, Moralis provides you with a [getWalletNFTs](/web3-data-api/reference/get-wallet-nfts) endpoint to do so.
+In order to get all the NFTs owned by an address, Moralis provides you with a [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -45,12 +46,12 @@ const runApp = async () => {
   const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getWalletNFTs({
-     address,
-     chain,
+    address,
+    chain,
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -73,12 +74,12 @@ const runApp = async () => {
   const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getWalletNFTs({
-     address,
-     chain,
+    address,
+    chain,
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,13 +93,13 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "limit": 100, 
-    "token_addresses": [], 
-    "cursor": "", 
-    "normalizeMetadata": True, 
+    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "chain": "eth",
+    "format": "decimal",
+    "limit": 100,
+    "token_addresses": [],
+    "cursor": "",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_wallet_nfts(
@@ -115,7 +116,7 @@ print(json.dumps(result, indent=4))
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -178,7 +179,7 @@ In your terminal, you should see the following JSON response:
       "last_token_uri_sync": null,
       "last_metadata_sync": "2022-09-20T06:11:34.545Z",
       "minter_address": null
-    },
+    }
   ],
   "status": "SYNCED"
 }
@@ -190,7 +191,7 @@ Congratulations 🥳 you just got all the NFTs owned by an address with just a f
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTs](/web3-data-api/reference/get-wallet-nfts)
+- [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)
 
 ## Next Steps
 

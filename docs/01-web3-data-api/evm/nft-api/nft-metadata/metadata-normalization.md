@@ -36,8 +36,8 @@ console.log(response.toJSON());
 
 This feature is available in the following NFT APIs:
 
-- [Get NFTs by wallet](/web3-data-api/reference/get-wallet-nfts)
-- [Get NFTs by contract](/web3-data-api/reference/get-contract-nfts)
-- [Get NFT owners by contract](/web3-data-api/reference/get-nft-owners)
-- [Get NFT metadata](/web3-data-api/reference/get-nft-metadata)
-- [Get owners by token ID](/web3-data-api/reference/get-nft-token-id-owners)
+- [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
+- [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
+- [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)
+- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
+- [Get owners by token ID](/web3-data-api/evm/reference/get-nft-token-id-owners)

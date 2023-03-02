@@ -13,7 +13,7 @@ This tutorial will teach you how to set up a complete gaming backend platform fo
 3. Set up Azure Functions
 4. Create Azure Functions with Visual Studio Code
 5. Deploy Azure Functions with Visual Studio Code
-6. Set up Unity and connect Microsoft Azure PlayFab 
+6. Set up Unity and connect Microsoft Azure PlayFab
 
 ## Set up a Moralis Account
 
@@ -29,7 +29,7 @@ This section describes how to set up your Moralis account and find the Web3 API 
 An active PlayFab account is required to use the functionality provided by PlayFab. Please note that a free plan is available. This section describes how to set up a PlayFab account and configure your first application.
 
 :::info What is Microsoft Azure PlayFab?
-PlayFab is a complete backend platform for live games with managed game services. PlayFab backend services reduce the barriers to launch for game developers, offering both large and small studios cost-effective development solutions that scale with their games and help them engage, retain, and monetize players. PlayFab enables developers to use the intelligent cloud to build and operate games, analyze gaming data, and improve overall gaming experiences. 
+PlayFab is a complete backend platform for live games with managed game services. PlayFab backend services reduce the barriers to launch for game developers, offering both large and small studios cost-effective development solutions that scale with their games and help them engage, retain, and monetize players. PlayFab enables developers to use the intelligent cloud to build and operate games, analyze gaming data, and improve overall gaming experiences.
 [Learn more](https://docs.microsoft.com/en-us/gaming/playfab/what-is-playfab)
 :::
 
@@ -73,9 +73,9 @@ Azure Functions provides serverless compute. You can use Azure Functions to buil
 
 ![](/img/content/da6a902-7.webp "7.webp")
 
-8. Create a new application setting and enter **MORALIS\_API\_KEY** as the name, and in the value, paste your Moralis API key. Leave **Deployment slot setting** unchecked and select **Ok**.
-9. Create another application setting and enter **PLAYFAB\_TITLE\_ID** as the name, and in the value, paste your PlayFab title ID. Leave **Deployment slot setting** unchecked and select **Ok**.
-10. Create another application setting and enter **PLAYFAB\_DEV\_SECRET\_KEY** as the name, and in the value, paste your PlayFab secret key. Leave **Deployment slot setting** unchecked and select **Ok**.
+8. Create a new application setting and enter **MORALIS_API_KEY** as the name, and in the value, paste your Moralis API key. Leave **Deployment slot setting** unchecked and select **Ok**.
+9. Create another application setting and enter **PLAYFAB_TITLE_ID** as the name, and in the value, paste your PlayFab title ID. Leave **Deployment slot setting** unchecked and select **Ok**.
+10. Create another application setting and enter **PLAYFAB_DEV_SECRET_KEY** as the name, and in the value, paste your PlayFab secret key. Leave **Deployment slot setting** unchecked and select **Ok**.
 11. Select **Save** and then **Continue**.
 
 ![](/img/content/72eb186-8.webp "8.webp")
@@ -91,7 +91,7 @@ Make sure you have the **following requirements** in place:
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for Visual Studio Code
-:::
+  :::
 
 ### Prerequisites
 
@@ -99,7 +99,7 @@ Make sure you have the **following requirements** in place:
 
 ### Function creation
 
-:::info 
+:::info
 The completed project with all the functions ready can be found on [GitHub](https://github.com/MoralisWeb3/example-auth-azure-functions-nodejs). **Download** it, **open** it with VS Code and jump to **_Installing dependencies_** to complete this section. However, continue exploring the section to learn how to do it yourself.
 :::
 
@@ -121,31 +121,21 @@ The completed project with all the functions ready can be found on [GitHub](http
 
 ![](/img/content/44a1fc3-image.webp)
 
-
-
 6. Select **HTTP Trigger** for the template:
 
 ![](/img/content/352f141-image.webp)
-
-
 
 7. Name it **ChallengeRequest** and press _Enter_:
 
 ![](/img/content/2a2b9fd-image.webp)
 
-
-
 8. Select **Function** for the authorization level:
 
 ![](/img/content/aa78fbe-image.webp)
 
-
-
 9. Finally, select **Open in current window**:
 
 ![](/img/content/d41d75b-image.webp)
-
-
 
 10. We now have the **`ChallengeRequest`** function created:
 
@@ -154,122 +144,108 @@ The completed project with all the functions ready can be found on [GitHub](http
 11. Replace the existing code in _**index.js**_ for this:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
 const ApiKey = process.env.MORALIS_API_KEY;
 
-const NETWORK = 'evm'; // We assume it's we are using an EVM-compatible chain
-const DOMAIN = 'moralis.io';
-const STATEMENT = 'Please sign this message to confirm your identity.';
-const URI = 'https://moralis.io/';
-const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';
+const NETWORK = "evm"; // We assume it's we are using an EVM-compatible chain
+const DOMAIN = "moralis.io";
+const STATEMENT = "Please sign this message to confirm your identity.";
+const URI = "https://moralis.io/";
+const EXPIRATION_TIME = "2023-01-01T00:00:00.000Z";
 const TIMEOUT = 15;
 
 Moralis.start({
-    apiKey: ApiKey
-})
+  apiKey: ApiKey,
+});
 
 module.exports = async function (context, req) {
-
-    try {
-        
-        if (!req.body) {
-            context.res = {
-                status: 400,
-                body: "Please pass a request body",
-            };
-        }
-
-        const result = await Moralis.Auth.requestMessage({
-            address: req.body.FunctionArgument.address, 
-            chain: req.body.FunctionArgument.chainid, 
-            network: NETWORK,
-            domain: DOMAIN,
-            statement: STATEMENT,
-            uri: URI,
-            expirationTime: EXPIRATION_TIME,
-            timeout: TIMEOUT,
-        })
-
-        context.res = {
-            body: result.raw.message // We just want to return the message
-        };
-
-    } catch (error) {
-
-        console.log(error);
-        context.res = {
-            status: 500,
-            body: JSON.stringify(error)
-        }
+  try {
+    if (!req.body) {
+      context.res = {
+        status: 400,
+        body: "Please pass a request body",
+      };
     }
-}   
+
+    const result = await Moralis.Auth.requestMessage({
+      address: req.body.FunctionArgument.address,
+      chain: req.body.FunctionArgument.chainid,
+      network: NETWORK,
+      domain: DOMAIN,
+      statement: STATEMENT,
+      uri: URI,
+      expirationTime: EXPIRATION_TIME,
+      timeout: TIMEOUT,
+    });
+
+    context.res = {
+      body: result.raw.message, // We just want to return the message
+    };
+  } catch (error) {
+    console.log(error);
+    context.res = {
+      status: 500,
+      body: JSON.stringify(error),
+    };
+  }
+};
 ```
-
-
 
 As we can see at the top, we get the **`MORALIS_API_KEY`** from the environment (we set it up in Azure Functions), we set some constants we'll need later and we start Moralis using the key:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
 const ApiKey = process.env.MORALIS_API_KEY;
 
-const NETWORK = 'evm'; // We assume it's we are using an EVM-compatible chain
-const DOMAIN = 'moralis.io';
-const STATEMENT = 'Please sign this message to confirm your identity.';
-const URI = 'https://moralis.io/';
-const EXPIRATION_TIME = '2023-01-01T00:00:00.000Z';
+const NETWORK = "evm"; // We assume it's we are using an EVM-compatible chain
+const DOMAIN = "moralis.io";
+const STATEMENT = "Please sign this message to confirm your identity.";
+const URI = "https://moralis.io/";
+const EXPIRATION_TIME = "2023-01-01T00:00:00.000Z";
 const TIMEOUT = 15;
 
 Moralis.start({
-    apiKey: ApiKey
-})
+  apiKey: ApiKey,
+});
 ```
-
-
 
 Then, inside `module.exports` we call **`Moralis.Auth.requestMessage()`** passing the constants that we set on top and we get the `address` and the `chain` from the request body. This will return a message as a result:
 
 ```javascript
 module.exports = async function (context, req) {
-
-    try {
-        
-        if (!req.body) {
-            context.res = {
-                status: 400,
-                body: "Please pass a request body",
-            };
-        }
-
-        const result = await Moralis.Auth.requestMessage({
-            address: req.body.FunctionArgument.address, 
-            chain: req.body.FunctionArgument.chainid, 
-            network: NETWORK,
-            domain: DOMAIN,
-            statement: STATEMENT,
-            uri: URI,
-            expirationTime: EXPIRATION_TIME,
-            timeout: TIMEOUT,
-        })
-
-        context.res = {
-            body: result.raw.message // We just want to return the message
-        };
-
-    } catch (error) {
-
-        console.log(error);
-        context.res = {
-            status: 500,
-            body: JSON.stringify(error)
-        }
+  try {
+    if (!req.body) {
+      context.res = {
+        status: 400,
+        body: "Please pass a request body",
+      };
     }
-}   
+
+    const result = await Moralis.Auth.requestMessage({
+      address: req.body.FunctionArgument.address,
+      chain: req.body.FunctionArgument.chainid,
+      network: NETWORK,
+      domain: DOMAIN,
+      statement: STATEMENT,
+      uri: URI,
+      expirationTime: EXPIRATION_TIME,
+      timeout: TIMEOUT,
+    });
+
+    context.res = {
+      body: result.raw.message, // We just want to return the message
+    };
+  } catch (error) {
+    console.log(error);
+    context.res = {
+      status: 500,
+      body: JSON.stringify(error),
+    };
+  }
+};
 ```
-
-
 
 To summarize, to call this **`ChallengeRequest`** function we will need a POST request containing the **wallet address** and the **chain id** as arguments, but we'll see that later in the tutorial.
 
@@ -284,224 +260,202 @@ For now we need to create another function that will verify the message resultin
 2. Replace the existing code in **`index.js`** for this:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 var PlayFab = require("playfab-sdk/Scripts/PlayFab/PlayFab.js");
 var PlayFabServer = require("playfab-sdk/Scripts/PlayFab/PlayFabServer.js");
 
-const PlayFabTitleId = process.env.PLAYFAB_TITLE_ID
-const PlayFabDeveloperKey = process.env.PLAYFAB_DEV_SECRET_KEY 
+const PlayFabTitleId = process.env.PLAYFAB_TITLE_ID;
+const PlayFabDeveloperKey = process.env.PLAYFAB_DEV_SECRET_KEY;
 
-const NETWORK = 'evm'; // We assume it's we are using an EVM-compatible chain
+const NETWORK = "evm"; // We assume it's we are using an EVM-compatible chain
 
 module.exports = async function (context, req) {
-
-    try {
-        
-        if (!req.body) {
-            context.res = {
-                status: 400,
-                body: "Please pass a request body",
-            };
-        }
-
-        const verifiedData = await Moralis.Auth.verify({
-            message: req.body.FunctionArgument.message,
-            signature: req.body.FunctionArgument.signature,
-            network: NETWORK,
-        })
-
-        // When do we consider that the authentication is completed? Before or After updating user data in PlayFab??
-        // Maybe here we should already return if the data has been verified or not.
-        
-        context.res = {
-            body: verifiedData.raw
-        };
-
-        //TODO Set PlayFab player data with some of the verified data!
-        PlayFab.settings.titleId = PlayFabTitleId;
-        PlayFab.settings.developerSecretKey = PlayFabDeveloperKey;
-
-        // Preparing request
-        var updateUserDataRequest = {
-            PlayFabId: req.body.CallerEntityProfile.Lineage.MasterPlayerAccountId,
-            Data: {
-                "MoralisProfileId": verifiedData.raw.id,
-                "Address": verifiedData.raw.address,
-                "ChainId": verifiedData.raw.chainId
-            }
-        }
-
-        PlayFabServer.UpdateUserReadOnlyData(
-            updateUserDataRequest,
-            (error, result) => {
-                if (result !== null) {
-                    context.log("API call was successful.");
-                    context.res = {
-                        status: 200,
-                        body: result
-                    };
-                    context.done();
-    
-                } else if (error !== null) {
-                    context.log("Something went wrong with the API call.");
-                    context.res = {
-                        status: 500,
-                        body: JSON.stringify(error)
-                    };
-                    context.done();
-                }
-            }
-        )
-
-    } catch (error) {
-
-        context.log(error);
-        context.res = {
-            status: 500,
-            body: JSON.stringify(error)
-        }
+  try {
+    if (!req.body) {
+      context.res = {
+        status: 400,
+        body: "Please pass a request body",
+      };
     }
-}   
+
+    const verifiedData = await Moralis.Auth.verify({
+      message: req.body.FunctionArgument.message,
+      signature: req.body.FunctionArgument.signature,
+      network: NETWORK,
+    });
+
+    // When do we consider that the authentication is completed? Before or After updating user data in PlayFab??
+    // Maybe here we should already return if the data has been verified or not.
+
+    context.res = {
+      body: verifiedData.raw,
+    };
+
+    //TODO Set PlayFab player data with some of the verified data!
+    PlayFab.settings.titleId = PlayFabTitleId;
+    PlayFab.settings.developerSecretKey = PlayFabDeveloperKey;
+
+    // Preparing request
+    var updateUserDataRequest = {
+      PlayFabId: req.body.CallerEntityProfile.Lineage.MasterPlayerAccountId,
+      Data: {
+        MoralisProfileId: verifiedData.raw.id,
+        Address: verifiedData.raw.address,
+        ChainId: verifiedData.raw.chainId,
+      },
+    };
+
+    PlayFabServer.UpdateUserReadOnlyData(
+      updateUserDataRequest,
+      (error, result) => {
+        if (result !== null) {
+          context.log("API call was successful.");
+          context.res = {
+            status: 200,
+            body: result,
+          };
+          context.done();
+        } else if (error !== null) {
+          context.log("Something went wrong with the API call.");
+          context.res = {
+            status: 500,
+            body: JSON.stringify(error),
+          };
+          context.done();
+        }
+      }
+    );
+  } catch (error) {
+    context.log(error);
+    context.res = {
+      status: 500,
+      body: JSON.stringify(error),
+    };
+  }
+};
 ```
-
-
 
 As we see at the top, in this function we need the **PlayFab SDK** besides Moralis (we will install both later). Then we get the PlayFab environment variables that we set in Azure Functions and we set the `NETWORK`:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 var PlayFab = require("playfab-sdk/Scripts/PlayFab/PlayFab.js");
 var PlayFabServer = require("playfab-sdk/Scripts/PlayFab/PlayFabServer.js");
 
-const PlayFabTitleId = process.env.PLAYFAB_TITLE_ID
-const PlayFabDeveloperKey = process.env.PLAYFAB_DEV_SECRET_KEY 
+const PlayFabTitleId = process.env.PLAYFAB_TITLE_ID;
+const PlayFabDeveloperKey = process.env.PLAYFAB_DEV_SECRET_KEY;
 
-const NETWORK = 'evm'; // We assume it's we are using an EVM-compatible chain
+const NETWORK = "evm"; // We assume it's we are using an EVM-compatible chain
 ```
-
-
 
 Inside `module.exports` we call **`Moralis.Auth.verify()`**, receiving the `message` and the `signature` from the request body:
 
 ```javascript
 const verifiedData = await Moralis.Auth.verify({
-	message: req.body.FunctionArgument.message,
+  message: req.body.FunctionArgument.message,
   signature: req.body.FunctionArgument.signature,
   network: NETWORK,
-})
+});
 
 // When do we consider that the authentication is completed? Before or After updating user data in PlayFab??
 // Maybe here we should already return if the data has been verified or not.
 
 context.res = {
-  body: verifiedData.raw
+  body: verifiedData.raw,
 };
 ```
 
-
 #### NFT API functions
 
-##### Create [`GetWalletNfts`](/web3-data-api/reference/get-wallet-nfts)  function
+##### Create [`GetWalletNfts`](/web3-data-api/evm/reference/get-wallet-nfts) function
 
 Repeat the same steps as before to create the new function but name it accordingly. Once created, copy the following code into `index.js`:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
 const ApiKey = process.env.MORALIS_API_KEY;
 
 Moralis.start({
-    apiKey: ApiKey
-})
+  apiKey: ApiKey,
+});
 
 module.exports = async function (context, req) {
-
-    try {
-        
-        if (!req.body) {
-            context.res = {
-                status: 400,
-                body: "Please pass a request body",
-            };
-        }
-
-        const response = await Moralis.EvmApi.nft.getWalletNFTs({
-            address: req.body.FunctionArgument.walletAddress,
-            chain: req.body.FunctionArgument.chainid
-        });
-
-        context.res = {
-            body: response
-        };
-
-    } catch (error) {
-
-        console.log(error);
-        context.res = {
-            status: 500,
-            body: JSON.stringify(error)
-        }
+  try {
+    if (!req.body) {
+      context.res = {
+        status: 400,
+        body: "Please pass a request body",
+      };
     }
-}   
+
+    const response = await Moralis.EvmApi.nft.getWalletNFTs({
+      address: req.body.FunctionArgument.walletAddress,
+      chain: req.body.FunctionArgument.chainid,
+    });
+
+    context.res = {
+      body: response,
+    };
+  } catch (error) {
+    console.log(error);
+    context.res = {
+      status: 500,
+      body: JSON.stringify(error),
+    };
+  }
+};
 ```
-
-
 
 For this function we only need the `walletAddress` and the `chainid` in the request body. You can take a look on [how to do this](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/ee435a0ac58468f8ffee964aaaa6a87b953b63ff/Unity/Assets/CustomWeb3System/CustomWeb3System/Scripts/CustomBackendSystem/PlayFabBackendSystem/PlayFabBackendSystem.cs#L154) on Unity.
 
 #### EVM API functions
 
-##### Create [`RunContractFunction`](/web3-data-api/reference/run-contract-function) function
+##### Create [`RunContractFunction`](/web3-data-api/evm/reference/run-contract-function) function
 
 Repeat the same steps as before to create the new function but name it accordingly. Once created, copy the following code into `index.js`:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
 const ApiKey = process.env.MORALIS_API_KEY;
 
 Moralis.start({
-    apiKey: ApiKey
-})
+  apiKey: ApiKey,
+});
 
 module.exports = async function (context, req) {
-
-    try {
-        
-        if (!req.body) {
-            context.res = {
-                status: 400,
-                body: "Please pass a request body",
-            };
-        }
-
-        const abi = JSON.parse(req.body.FunctionArgument.functionAbi);
-        const params = JSON.parse(req.body.FunctionArgument.functionParams);
-
-        const response = await Moralis.EvmApi.utils.runContractFunction({
-            abi,
-            functionName: req.body.FunctionArgument.functionName,
-            address: req.body.FunctionArgument.contractAddress,
-            chain: req.body.FunctionArgument.chainid,
-            params
-        });
-
-        context.res = {
-            body: response.result
-        };
-
-    } catch (error) {
-
-        console.log(error);
-        context.res = {
-            status: 500,
-            body: JSON.stringify(error)
-        }
+  try {
+    if (!req.body) {
+      context.res = {
+        status: 400,
+        body: "Please pass a request body",
+      };
     }
-}   
+
+    const abi = JSON.parse(req.body.FunctionArgument.functionAbi);
+    const params = JSON.parse(req.body.FunctionArgument.functionParams);
+
+    const response = await Moralis.EvmApi.utils.runContractFunction({
+      abi,
+      functionName: req.body.FunctionArgument.functionName,
+      address: req.body.FunctionArgument.contractAddress,
+      chain: req.body.FunctionArgument.chainid,
+      params,
+    });
+
+    context.res = {
+      body: response.result,
+    };
+  } catch (error) {
+    console.log(error);
+    context.res = {
+      status: 500,
+      body: JSON.stringify(error),
+    };
+  }
+};
 ```
-
-
 
 For this one we'll need to pass various parameters in the request body, related to the contract that we want to run the function from. You can see an example on [how to set the parameters](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/ee435a0ac58468f8ffee964aaaa6a87b953b63ff/Unity/Assets/CustomWeb3System/MoralisWeb3AuthService/Scripts/UnityWeb3Tools/Functions/RunContractFunctionSubsystem.cs#L34) in a Unity method and [how to call it](https://github.com/MoralisWeb3/web3-unity-sdk-sample-game-wump/blob/ee435a0ac58468f8ffee964aaaa6a87b953b63ff/Unity/Assets/CustomWeb3System/CustomWeb3System/Scripts/CustomBackendSystem/PlayFabBackendSystem/PlayFabBackendSystem.cs#L142).
 
@@ -517,10 +471,9 @@ For this one we'll need to pass various parameters in the request body, related 
 npm install moralis playfab-sdk
 ```
 
-
 ## Deploy Azure Functions with Visual Studio Code
 
- This section walks through deploying Azure Functions.
+This section walks through deploying Azure Functions.
 
 1. Sign in to Azure:
 
@@ -552,7 +505,7 @@ npm install moralis playfab-sdk
 
 This section describes how to set up a Unity application and connect to PlayFab and enable secure Web3 authentication using the Moralis SDK.
 
-:::info 
+:::info
 Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/example-dapps/evm/web3-unity-multiplayer-playground).
 :::
 
@@ -577,7 +530,7 @@ Currently this sample project only showcase how to call the **Authentication API
 
 ### Programmatically Interact with Moralis via PlayFab
 
-If you choose the **Starter** project, this section will walk you through the code necessary to integrate with Moralis via PlayFab. 
+If you choose the **Starter** project, this section will walk you through the code necessary to integrate with Moralis via PlayFab.
 
 If you choose the **Complete** project, feel free to skip this section and [**play the game!**](#play-the-game).
 
@@ -606,25 +559,21 @@ using WalletConnectSharp.Unity;
 using Assets.Scripts.Moralis;
 ```
 
-
-
 7. Next, we want to be able to respond to two events that will be evoked by **AuthenticationKit**. These will show in our scene object. Add two Unity events, `OnSuccess` and `OnFailed`. Also, add a reference to **AuthenticationKit**. Your `MoralisWeb3AuthService.cs` should now look similar to this:
 
 ```c#
   /// <summary>
-  /// Invoked when authentication was 
-  /// 
+  /// Invoked when authentication was
+  ///
   [Header("Events")] public UnityEvent OnSuccess = new UnityEvent();
 
   /// <summary>
   /// Invoked when State==AuthenticationKitState.Disconnected
-  /// 
+  ///
   public UnityEvent OnFailed = new UnityEvent();
 
   private AuthenticationKit authenticationKit = null;
 ```
-
-
 
 8. Add an `Awake` method that initializes the `authenticationKit` variable:
 
@@ -635,15 +584,13 @@ public void Awake()
 }
 ```
 
-
-
 9. Next, we will create a method to call the `ChallangeRequest` Azure Function via PlayFab. In the `MoralisWeb3AuthService` class, create a private method called `CreateMessage`. This method should accept two parameters, `address` (string) and `chainid` (int), and return `void`.
 10. To communicate with PlayFab, we will use the `ExecuteFunction` method of the `PlayFabCloudScriptAPI` object provided by PlayFab. This function accepts three parameters, an **ExecuteFunctionRequest** object, a callback to handle a success response, and a callback to handle an error response. With these, your `CreateMessage` method should look similar to this:
 
 ```c#
 private void CreateMessage(string address, int chainid)
 {
-	// Get message from Moralis with PlayFab Azure Functions 
+	// Get message from Moralis with PlayFab Azure Functions
 	PlayFabCloudScriptAPI.ExecuteFunction(new ExecuteFunctionRequest()
 	{
 		Entity = null, // Security information
@@ -658,8 +605,6 @@ private void CreateMessage(string address, int chainid)
 }
 ```
 
-
-
 12. Set up the security information for the call. To do this, update the **Entity** property of `ExecuteFunctionRequest` to:
 
 ```c#
@@ -669,8 +614,6 @@ Entity = new PlayFab.CloudScriptModels.EntityKey()
 	Type = PlayFabSettings.staticPlayer.EntityType, // Get this from when you logged in
 },
 ```
-
-
 
 13. Update the error callback parameter of `PlayFabCloudScriptAPI.ExecuteFunction` to invoke the `OnFailed` Unity event:
 
@@ -682,8 +625,6 @@ Entity = new PlayFab.CloudScriptModels.EntityKey()
 	OnFailed.Invoke();
 });
 ```
-
-
 
 14. Create a copy of the `CreateMessage` method and name it `Authenticate`. Change the parameters to `message` (string) and `signature` (string).
 15. In the `CreateMessage` method, find the **FunctionName** parameter of `ExecuteFunctionRequest` and set this to "ChallengeRequest". This tells PlayFab which of the functions should be called.
@@ -698,8 +639,6 @@ FunctionParameter =
 	},
 ```
 
-
-
 17. In the success callback parameter, add a conditional statement that checks if a PlayFab limit exceeded condition exists; if it does, invoke `OnFailed`:
 
 ```c#
@@ -713,15 +652,13 @@ if (result.FunctionResultTooLarge ?? false)
 }
 ```
 
-
-
 18. Still, within success callback, retrieve the result. If a result was returned, extract the **message** returned by Moralis and request the user to cryptographically sign it.
 19. If the user signs the message, call the `Authenticate` method, passing in the **message** and the resulting signature. If the signing of the message failed, invoke `OnFailed`. The complete `CreateMessage` method should look similar to this:
 
 ```c#
 private void CreateMessage(string address, int chainid)
 {
-	// Get message from Moralis with PlayFab Azure Functions 
+	// Get message from Moralis with PlayFab Azure Functions
 	PlayFabCloudScriptAPI.ExecuteFunction(new ExecuteFunctionRequest()
 	{
 		Entity = new PlayFab.CloudScriptModels.EntityKey()
@@ -753,7 +690,7 @@ private void CreateMessage(string address, int chainid)
 		if (!String.IsNullOrEmpty(message))
 		{
 			authenticationKit.State = AuthenticationKitState.WalletSigning;
-			
+
 #if !UNITY_WEBGL
 			// Sign the message with WalletConnect
 			string signature = await WalletConnect.ActiveSession.EthPersonalSign(address, message);
@@ -786,8 +723,6 @@ private void CreateMessage(string address, int chainid)
 }
 ```
 
-
-
 20. In the `Authenticate` method, find the **FunctionName** parameter of the `ExecuteFunctionRequest` and set this to "ChallengeVerify". This tells PlayFab which of the functions should be called.
 21. In the `CreateMessage` method, find the **FunctionParameter** parameter of the `ExecuteFunctionRequest` and change it so that it passes in the two parameters supplied to the `Authenticate` method:
 
@@ -799,8 +734,6 @@ FunctionParameter =
 		{ "signature", signature}
 	},
 ```
-
-
 
 22. In the success callback parameter, add a conditional statement that checks if a PlayFab limit exceeded condition exists; if it does, invoke `OnFailed`:
 
@@ -814,8 +747,6 @@ if (result.FunctionResultTooLarge ?? false)
 	return;
 }
 ```
-
-
 
 23. Now, check to see if the result is empty. If not, the verification call succeeded, invoke `OnSuccess`; otherwise, invoke `OnFailed`. Your complete `Authenticate` method should look similar to this:
 
@@ -854,7 +785,7 @@ private void Authenticate(string message, string signature)
 		if (!String.IsNullOrEmpty(result.FunctionResult.ToString()))
 		{
 			authenticationKit.State = AuthenticationKitState.WalletSigned;
-			
+
 			// On success fire the OnSuccess event
 			OnSuccess.Invoke();
 		}
@@ -872,8 +803,6 @@ private void Authenticate(string message, string signature)
 }
 ```
 
-
-
 24. The final step is to add a method that will be called when the authentication kit changes state. When the state changes to **AuthenticationKitState.WalletConnected**, we can extract the user's wallet address and chain ID to call the `CreateMessage` method. The code for this method is:
 
 ```c#
@@ -884,22 +813,20 @@ public void StateObservable_OnValueChanged(AuthenticationKitState authentication
 		case AuthenticationKitState.WalletConnected:
 
 #if !UNITY_WEBGL
-			// Get the address and chain ID with WalletConnect 
+			// Get the address and chain ID with WalletConnect
 			string address = WalletConnect.ActiveSession.Accounts[0];
 			int chainid = WalletConnect.ActiveSession.ChainId;
 #else
-			// Get the address and chain ID with Web3 
+			// Get the address and chain ID with Web3
 			string address = Web3GL.Account().ToLower();
 			int chainid = Web3GL.ChainId();
 #endif
-			// Create sign message 
+			// Create sign message
 			CreateMessage(address, chainid);
 			break;
 	}
 }
 ```
-
-
 
 Your complete `MoralisWeb3AuthService.cs` file should now look similar to this:
 
@@ -918,13 +845,13 @@ public class MoralisWeb3AuthService : MonoBehaviour
     //  Events ----------------------------------------
 
     /// <summary>
-    /// Invoked when authentication was 
-    /// 
+    /// Invoked when authentication was
+    ///
     [Header("Events")] public UnityEvent OnSuccess = new UnityEvent();
 
     /// <summary>
     /// Invoked when State==AuthenticationKitState.Disconnected
-    /// 
+    ///
     public UnityEvent OnFailed = new UnityEvent();
 
     private AuthenticationKit authenticationKit = null;
@@ -941,15 +868,15 @@ public class MoralisWeb3AuthService : MonoBehaviour
             case AuthenticationKitState.WalletConnected:
 
 #if !UNITY_WEBGL
-                // Get the address and chain ID with WalletConnect 
+                // Get the address and chain ID with WalletConnect
                 string address = WalletConnect.ActiveSession.Accounts[0];
                 int chainid = WalletConnect.ActiveSession.ChainId;
 #else
-                // Get the address and chain ID with Web3 
+                // Get the address and chain ID with Web3
                 string address = Web3GL.Account().ToLower();
                 int chainid = Web3GL.ChainId();
 #endif
-                // Create sign message 
+                // Create sign message
                 CreateMessage(address, chainid);
                 break;
         }
@@ -957,7 +884,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
 
     private void CreateMessage(string address, int chainid)
     {
-        // Get message from Moralis with PlayFab Azure Functions 
+        // Get message from Moralis with PlayFab Azure Functions
         PlayFabCloudScriptAPI.ExecuteFunction(new ExecuteFunctionRequest()
         {
             Entity = new PlayFab.CloudScriptModels.EntityKey()
@@ -989,7 +916,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
             if (!String.IsNullOrEmpty(message))
             {
                 authenticationKit.State = AuthenticationKitState.WalletSigning;
-                
+
 #if !UNITY_WEBGL
                 // Sign the message with WalletConnect
                 string signature = await WalletConnect.ActiveSession.EthPersonalSign(address, message);
@@ -1055,7 +982,7 @@ public class MoralisWeb3AuthService : MonoBehaviour
             if (!String.IsNullOrEmpty(result.FunctionResult.ToString()))
             {
                 authenticationKit.State = AuthenticationKitState.WalletSigned;
-                
+
                 // On success, fire the OnSuccess event
                 OnSuccess.Invoke();
             }

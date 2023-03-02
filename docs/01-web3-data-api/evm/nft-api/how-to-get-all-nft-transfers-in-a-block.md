@@ -3,6 +3,7 @@ title: "How to get all NFT transfers in a block"
 slug: "../how-to-get-all-nft-transfers-in-a-block"
 description: "Learn how to get all the transfers of NFTs in a block using the Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -39,18 +40,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const blockNumberOrHash = 15846571;
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTTransfersByBlock({
-      blockNumberOrHash,
-      chain,
+    blockNumberOrHash,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +68,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const blockNumberOrHash = 15846571;
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTTransfersByBlock({
-      blockNumberOrHash,
-      chain,
+    blockNumberOrHash,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,10 +92,10 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "block_number_or_hash": "15846571", 
-    "chain": "eth", 
-    #"limit": 100, 
-    #"cursor": "", 
+    "block_number_or_hash": "15846571",
+    "chain": "eth",
+    #"limit": 100,
+    #"cursor": "",
 }
 
 result = evm_api.nft.get_nft_transfers_by_block(
@@ -110,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -187,7 +188,7 @@ Congratulations 🥳 you just got all the NFT transfers in a block with just a f
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTransfersByBlock](/web3-data-api/reference/get-nft-transfers-by-block)
+- [getNFTTransfersByBlock](/web3-data-api/evm/reference/get-nft-transfers-by-block)
 
 ## Support
 

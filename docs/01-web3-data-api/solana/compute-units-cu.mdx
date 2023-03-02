@@ -22,7 +22,7 @@ Request price refers to the amount of compute units that will be calculated towa
 #### Dynamic Prices
 
 Some endpoints have a dynamically priced CU cost based on the number of resources being requested. The more resources being requested, the higher the CU cost for that particular request.
-Taking [getNativeBalancesForAddresses](/web3-data-api/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 1 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 5 CU.
+Taking [getNativeBalancesForAddresses](/web3-data-api/evm/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 1 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 5 CU.
 
 ### Rate limit Cost
 
@@ -34,7 +34,7 @@ import ComputeUnitsTable from "@site/src/components/ComputeUnits/ComputeUnitsTab
 
 ## How to Check Compute Units?
 
-To check the latest compute units of our API offerings, you can use [endpointWeights](/web3-data-api/reference/endpoint-weights) to do so.
+To check the latest compute units of our API offerings, you can use [endpointWeights](/web3-data-api/evm/reference/endpoint-weights) to do so.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

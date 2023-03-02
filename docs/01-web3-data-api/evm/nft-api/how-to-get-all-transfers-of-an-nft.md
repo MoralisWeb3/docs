@@ -3,6 +3,7 @@ title: "How to get all transfers of an NFT"
 slug: "../how-to-get-all-transfers-of-an-nft"
 description: "Learn how to get all the transfers of a specific NFT using the Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All Transfers Of An NFT
 
-In order to get all the transfers of an NFT, Moralis provides you with an [getNFTTransfers](/web3-data-api/reference/get-nft-transfers) endpoint.
+In order to get all the transfers of an NFT, Moralis provides you with an [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers) endpoint.
 
 Here you'll need three parameters: `address`, `tokenId`, and `chain`.
 
@@ -31,17 +32,17 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
-  
+
+  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
+
   const tokenId = 1;
 
   const chain = EvmChain.ETHEREUM;
@@ -51,9 +52,9 @@ const runApp = async () => {
     tokenId,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,9 +71,9 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
-  
+
+  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
+
   const tokenId = 1;
 
   const chain = EvmChain.ETHEREUM;
@@ -82,9 +83,9 @@ const runApp = async () => {
     tokenId,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -97,12 +98,12 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d", 
-    "token_id": "1", 
-    "chain": "eth", 
-    "format": "decimal", 
-    # "limit": 100, 
-    # "cursor": "", 
+    "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "token_id": "1",
+    "chain": "eth",
+    "format": "decimal",
+    # "limit": 100,
+    # "cursor": "",
 }
 
 result = evm_api.nft.get_nft_transfers(
@@ -116,11 +117,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -180,7 +179,7 @@ Congratulations 🥳 You just got all the transfers of an NFT with just a few li
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTransfers](/web3-data-api/reference/get-nft-transfers)
+- [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)
 
 ## Support
 

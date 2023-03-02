@@ -3,6 +3,7 @@ title: "How to get the owner of an NFT"
 slug: "../how-to-get-the-owner-of-an-nft"
 description: "Learn how to get the owner of an NFT using the Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All NFTs Owned By An Address
 
-In order to get all the owners of an NFT, Moralis provides you with a [getNFTTokenIdOwners](/web3-data-api/reference/get-nft-token-id-owners) endpoint to do so.
+In order to get all the owners of an NFT, Moralis provides you with a [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners) endpoint to do so.
 
 Here you'll need three parameters: `address`, `token_id` and `chain`.
 
@@ -39,21 +40,21 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const tokenId = 1;
 
   const response = await Moralis.EvmApi.nft.getNFTTokenIdOwners({
-      address,
-      chain,
-   		tokenId
+    address,
+    chain,
+    tokenId,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,21 +71,21 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const tokenId = 1;
 
   const response = await Moralis.EvmApi.nft.getNFTTokenIdOwners({
-      address,
-      chain,
-   		tokenId
+    address,
+    chain,
+    tokenId,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -97,13 +98,13 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xa186d739ca2b3022b966194004c6b01855d59571", 
-    "token_id": "1", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "limit": 100, 
-    "cursor": "", 
-    "normalizeMetadata": True, 
+    "address": "0xa186d739ca2b3022b966194004c6b01855d59571",
+    "token_id": "1",
+    "chain": "eth",
+    "format": "decimal",
+    "limit": 100,
+    "cursor": "",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_nft_token_id_owners(
@@ -119,7 +120,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -159,7 +160,7 @@ Congratulations 🥳 you just got the owners of an NFT with just a few lines of 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTokenIdOwners](/web3-data-api/reference/get-nft-token-id-owners)
+- [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners)
 
 ## Support
 

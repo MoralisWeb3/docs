@@ -19,7 +19,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get ERC20 Token Metadata By Multiple Token Addresses
 
-In order to an ERC20 token metadata, Moralis provides you a [getTokenMetadata](/web3-data-api/reference/get-token-metadata) API endpoint to do so.
+In order to an ERC20 token metadata, Moralis provides you a [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata) API endpoint to do so.
 
 Here you'll need two parameters: `addresses` and `chain`.
 
@@ -160,7 +160,7 @@ Congratulations 🥳 you just got the price of an ERC20 metadata by multiple tok
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadata](/web3-data-api/reference/get-token-metadata)
+- [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)
 
 ## Support
 

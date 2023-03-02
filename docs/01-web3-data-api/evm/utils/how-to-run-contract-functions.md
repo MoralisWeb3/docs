@@ -3,6 +3,7 @@ title: "How to run smart contract functions"
 slug: "../how-to-run-contract-functions"
 description: "Learn how to run smart contract functions using Moralis Utils API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the verbose transaction of an address
 
-In order to run smart contract function, Moralis provides you a [runContractFunction](/web3-data-api/reference/run-contract-function) endpoint to do so.
+In order to run smart contract function, Moralis provides you a [runContractFunction](/web3-data-api/evm/reference/run-contract-function) endpoint to do so.
 
 Here you'll need three parameters: `address`, `function_name` and `abi`.
 
@@ -27,17 +28,17 @@ Once you've obtained the `address` and `function_name` parameters, you can get t
 ```json abi.json
 [
   {
-    "inputs":[],
-    "name":"getPrice",
-    "outputs":[
+    "inputs": [],
+    "name": "getPrice",
+    "outputs": [
       {
-        "internalType":"uint256",
-        "name":"",
-        "type":"uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "stateMutability":"view",
-    "type":"function"
+    "stateMutability": "view",
+    "type": "function"
   }
 ]
 ```
@@ -51,9 +52,9 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
-const abi = require('abi.json');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
+const abi = require("abi.json");
 
 const runApp = async () => {
   await Moralis.start({
@@ -63,10 +64,10 @@ const runApp = async () => {
 
   const chain = EvmChain.ETHEREUM;
 
-  const address = '0x1A92f7381B9F03921564a437210bB9396471050C'
-  
+  const address = "0x1A92f7381B9F03921564a437210bB9396471050C";
+
   // token 0 address, e.g. WETH token address
-  const functionName = 'getPrice';
+  const functionName = "getPrice";
 
   const response = await Moralis.EvmApi.utils.runContractFunction({
     address,
@@ -76,7 +77,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -97,10 +98,10 @@ const runApp = async () => {
 
   const chain = EvmChain.ETHEREUM;
 
-  const address = '0x1A92f7381B9F03921564a437210bB9396471050C'
-  
+  const address = "0x1A92f7381B9F03921564a437210bB9396471050C";
+
   // token 0 address, e.g. WETH token address
-  const functionName = 'getPrice';
+  const functionName = "getPrice";
 
   const response = await Moralis.EvmApi.utils.runContractFunction({
     address,
@@ -110,7 +111,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -129,9 +130,9 @@ with open('abi.json', 'r') as data:
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0x1A92f7381B9F03921564a437210bB9396471050C", 
-    "function_name": "getPrice", 
-    "abi": abi, 
+    "address": "0x1A92f7381B9F03921564a437210bB9396471050C",
+    "function_name": "getPrice",
+    "abi": abi,
     "chain": "eth"
 }
 
@@ -148,7 +149,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -168,7 +169,7 @@ https://www.youtube.com/watch?v=efXL6bxGXY8
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [runContractFunction](/web3-data-api/reference/run-contract-function)
+- [runContractFunction](/web3-data-api/evm/reference/run-contract-function)
 
 ## Support
 

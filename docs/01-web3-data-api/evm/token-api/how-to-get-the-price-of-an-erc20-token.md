@@ -3,6 +3,7 @@ title: "How to get the price of an ERC20 token"
 slug: "../how-to-get-the-price-of-an-erc20-token"
 description: "Learn how to get the price of an ERC20 token with Moralis Token API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the price of an ERC20 token
 
-In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/reference/get-token-price) endpoint.
+In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/evm/reference/get-token-price) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599';
+
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,8 +68,8 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599';
+
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -76,9 +77,9 @@ const runApp = async () => {
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,7 +92,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", 
+    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
     "chain": "eth"
 }
 
@@ -106,11 +107,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -140,7 +139,7 @@ https://www.youtube.com/watch?v=4OYm8LHBGOQ
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/reference/get-token-price)
+- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
 
 ## Support
 

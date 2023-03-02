@@ -19,7 +19,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get all ERC20 transfers by wallet
 
-In order to get all ERC20 transfers by wallet, Moralis provides you with an [getWalletTokenTransfers](/web3-data-api/reference/get-wallet-token-transfers) endpoint.
+In order to get all ERC20 transfers by wallet, Moralis provides you with an [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -168,7 +168,7 @@ Congratulations 🥳 You just got all ERC20 transfers by wallet with just a few 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenTransfers](/web3-data-api/reference/get-wallet-token-transfers)
+- [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers)
 
 ## Support
 

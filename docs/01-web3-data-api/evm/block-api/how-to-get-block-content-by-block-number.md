@@ -3,6 +3,7 @@ title: "How to get block content by block number"
 slug: "../how-to-get-block-content-by-block-number"
 description: "Learn how to get block content (with transactions and logs) by its block number using the Moralis Block API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get block by block number
 
-In order to get a block by its block number, Moralis provides you a [getBlock](/web3-data-api/reference/get-block) endpoint to do so.
+In order to get a block by its block number, Moralis provides you a [getBlock](/web3-data-api/evm/reference/get-block) endpoint to do so.
 
 Here you'll need two parameters: `blockNumberOrHash` and `chain`.
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const blockNumberOrHash = '15863321';
+
+  const blockNumberOrHash = "15863321";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     blockNumberOrHash,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -68,7 +69,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const blockNumberOrHash = '15863321';
+  const blockNumberOrHash = "15863321";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -78,7 +79,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,7 +93,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "block_number_or_hash": "15863321", 
+    "block_number_or_hash": "15863321",
     "chain": "eth"
 }
 
@@ -109,7 +110,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -155,10 +156,7 @@ In your terminal, you should see the following JSON response:
       "block_timestamp": "2022-10-30T20:39:11.000Z",
       "block_number": "15863321",
       "block_hash": "0x4f5d3bb78f0311301ef282b281d23e178ced236a7ae465820fe6edeba609954a",
-      "transfer_index": [
-        15863321,
-        22
-      ],
+      "transfer_index": [15863321, 22],
       "logs": [
         {
           "log_index": "52",
@@ -173,11 +171,7 @@ In your terminal, you should see the following JSON response:
           "block_timestamp": "2022-10-30T20:39:11.000Z",
           "block_number": "15863321",
           "block_hash": "0x4f5d3bb78f0311301ef282b281d23e178ced236a7ae465820fe6edeba609954a",
-          "transfer_index": [
-            15863321,
-            22,
-            52
-          ],
+          "transfer_index": [15863321, 22, 52],
           "transaction_value": "0"
         }
       ]
@@ -192,7 +186,7 @@ Congratulations 🥳 You just got a block using its block number with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getBlock](/web3-data-api/reference/get-block)
+- [getBlock](/web3-data-api/evm/reference/get-block)
 
 ## Support
 

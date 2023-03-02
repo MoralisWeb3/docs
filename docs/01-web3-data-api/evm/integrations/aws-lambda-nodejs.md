@@ -453,7 +453,7 @@ startMoralis();
 
 ### Create `getNativeBalance` endpoint
 
-With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](/web3-data-api/reference/get-native-balance) when the Express endpoint is called:
+With `moralis` initialized, we can start adding our preferred functionalities. To do so, let's create a new **Express endpoint** and add a **Moralis SDK function** inside. Let's add the _getNativeBalance_ function, which will call the [getNativeBalance API endpoint](/web3-data-api/evm/reference/get-native-balance) when the Express endpoint is called:
 
 ```javascript
 app.get("/getNativeBalance", async (req, res, next) => {
@@ -486,7 +486,7 @@ We pass the `address` and the `chain` as parameters in the **request body**.
 
 ### Create `getWalletNfts` endpoint
 
-Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/web3-data-api/reference/get-wallet-nfts) when the Express endpoint is called:
+Let's create a new **Express endpoint** and add another **Moralis SDK function** inside. Let's add the _getWalletNfts_ function, which will call the [getWalletNfts API endpoint](/web3-data-api/evm/reference/get-wallet-nfts) when the Express endpoint is called:
 
 ![](/img/content/b126f90-Screenshot_2022-12-14_at_13.14.35.webp)
 

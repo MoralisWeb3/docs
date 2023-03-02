@@ -3,6 +3,7 @@ title: "How to get all transactions of an address"
 slug: "../how-to-get-all-transactions-of-an-address"
 description: "Learn how to get all the transactions of an address using the Moralis Transaction API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get all transactions for an address
 
-In order to get all the transactions for an address, Moralis provides you a [getWalletTransactions](/web3-data-api/reference/get-wallet-transactions) endpoint to do so.
+In order to get all the transactions for an address, Moralis provides you a [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -39,18 +40,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.transaction.getWalletTransactions({
-    	address,
-    	chain,
-	});
-  
+    address,
+    chain,
+  });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +68,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.transaction.getWalletTransactions({
-   	  address,
-   	  chain,
-	});
-  
+    address,
+    chain,
+  });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,8 +93,8 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045", 
-    "chain": "eth", 
+    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "chain": "eth",
 }
 
 result = evm_api.transaction.get_wallet_transactions(
@@ -109,7 +110,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -154,7 +155,7 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactions](/web3-data-api/reference/get-wallet-transactions)
+- [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions)
 
 ## Support
 

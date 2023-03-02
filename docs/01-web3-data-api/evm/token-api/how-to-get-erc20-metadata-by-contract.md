@@ -19,7 +19,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get ERC20 metadata by contract
 
-In order to get all ERC20 metadata by contract, Moralis provides you with an [getTokenMetadata](/web3-data-api/reference/get-token-metadata) endpoint.
+In order to get all ERC20 metadata by contract, Moralis provides you with an [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata) endpoint.
 
 Here you'll need two parameters: `addresses` and `chain`.
 
@@ -142,7 +142,7 @@ https://www.youtube.com/watch?v=urBf_bP2jqw
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadata](/web3-data-api/reference/get-token-metadata)
+- [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)
 
 ## Support
 

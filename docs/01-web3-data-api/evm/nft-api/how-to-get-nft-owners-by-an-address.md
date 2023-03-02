@@ -3,6 +3,7 @@ title: "How to get NFT owners by its contract address"
 slug: "../how-to-get-nft-owners-by-an-address"
 description: "Learn how to get the owners of NFTs by its contract address using the Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get All NFTs owners by a contract address
 
-In order to get all the NFTs owners by a contract address, Moralis provides you with a [getNFTOwners](/web3-data-api/reference/get-nft-owners) endpoint to do so.
+In order to get all the NFTs owners by a contract address, Moralis provides you with a [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners) endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -39,18 +40,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTOwners({
-      address,
-      chain,
+    address,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +68,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTOwners({
-      address,
-      chain,
+    address,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,12 +92,12 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "limit": 100, 
-    "cursor": "", 
-    "normalizeMetadata": True, 
+    "address": "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782",
+    "chain": "eth",
+    "format": "decimal",
+    "limit": 100,
+    "cursor": "",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_nft_owners(
@@ -112,7 +113,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -237,7 +238,7 @@ Congratulations 🥳 you just got all the NFTs owners by a contract address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTOwners](/web3-data-api/reference/get-nft-owners)
+- [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners)
 
 ## Support
 

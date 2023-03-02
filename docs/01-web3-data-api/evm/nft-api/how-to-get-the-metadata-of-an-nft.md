@@ -3,6 +3,7 @@ title: "How to get NFT Metadata"
 slug: "../how-to-get-the-metadata-of-an-nft"
 description: "Learn how to retrieve NFT metadata using the Moralis NFT API, with step-by-step instructions on how to set up your Moralis account, install the Moralis SDK, and use the getNFTMetadata endpoint to get the metadata for a specific NFT."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -39,21 +40,21 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const tokenId = 3931;
 
   const response = await Moralis.EvmApi.nft.getNFTMetadata({
-      address,
-      chain,
-      tokenId,
+    address,
+    chain,
+    tokenId,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,21 +71,21 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const tokenId = 3931;
 
   const response = await Moralis.EvmApi.nft.getNFTMetadata({
-      address,
-      chain,
-      tokenId,
+    address,
+    chain,
+    tokenId,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -98,11 +99,11 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB", 
-    "token_id": "3931", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "normalizeMetadata": True, 
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "token_id": "3931",
+    "chain": "eth",
+    "format": "decimal",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_nft_metadata(
@@ -118,7 +119,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -128,12 +129,7 @@ In your terminal, you should see the following JSON response:
 {
   "token_address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb",
   "token_id": "3931",
-  "transfer_index": [
-    13868997,
-    30,
-    36,
-    0
-  ],
+  "transfer_index": [13868997, 30, 36, 0],
   "owner_of": "0x1cf2b8c64aed32bff2ae80e701681316d3212afd",
   "block_number": "13868997",
   "block_number_minted": "5754322",
@@ -160,7 +156,7 @@ https://www.youtube.com/watch?v=KTQaeq8k0FY
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](/web3-data-api/reference/get-nft-metadata)
+- [getNFTMetadata](/web3-data-api/evm/reference/get-nft-metadata)
 
 ## Next Steps
 

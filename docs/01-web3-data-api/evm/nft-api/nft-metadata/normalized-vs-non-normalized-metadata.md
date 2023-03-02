@@ -11,11 +11,11 @@ You'll find a query parameter named `normalizeMetadata` on the endpoints listed 
 
 ### Endpoints
 
-- [Get NFTs by wallet](/web3-data-api/reference/get-wallet-nfts) - /{address}/nft
-- [Get NFTs by contract](/web3-data-api/reference/get-contract-nfts) - /nft/{address}
-- [Get NFT owners by contract](/web3-data-api/reference/get-nft-owners) - /nft/{address}/owners
-- [Get NFT metadata](/web3-data-api/reference/get-nft-metadata) - /nft/{address}/{token_id}
-- [Get owners by token ID](/web3-data-api/reference/get-nft-token-id-owners) - /nft/{address}/{token_id}/owners
+- [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts) - /{address}/nft
+- [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts) - /nft/{address}
+- [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners) - /nft/{address}/owners
+- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata) - /nft/{address}/{token_id}
+- [Get owners by token ID](/web3-data-api/evm/reference/get-nft-token-id-owners) - /nft/{address}/{token_id}/owners
 
 Here is the definition of normalized metadata:
 

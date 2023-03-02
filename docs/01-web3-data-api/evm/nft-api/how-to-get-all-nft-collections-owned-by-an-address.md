@@ -3,6 +3,7 @@ title: "How to get all the NFT collections owned by an address"
 slug: "../how-to-get-all-nft-collections-owned-by-an-address"
 description: "Learn how to get the NFT collections (with metadata) owned by an address using Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -39,18 +40,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getWalletNFTCollections({
-      address,
-      chain,
+    address,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +68,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getWalletNFTCollections({
-      address,
-      chain,
+    address,
+    chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,10 +92,10 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045", 
-    "chain": "eth", 
-    "limit": 100, 
-    "cursor": "", 
+    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "chain": "eth",
+    "limit": 100,
+    "cursor": "",
 }
 
 result = evm_api.nft.get_wallet_nft_collections(
@@ -110,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -158,12 +159,11 @@ Congratulations 🥳 you just got all the NFT collections owned by an address wi
 
 https://www.youtube.com/watch?v=Zq-eoO-mTbc
 
-
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTCollections](/web3-data-api/reference/get-wallet-nft-collections)
+- [getWalletNFTCollections](/web3-data-api/evm/reference/get-wallet-nft-collections)
 
 ## Next Steps
 

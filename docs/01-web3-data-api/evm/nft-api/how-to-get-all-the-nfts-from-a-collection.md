@@ -3,6 +3,7 @@ title: "How to get all the NFTs from a collection"
 slug: "../how-to-get-all-the-nfts-from-a-collection"
 description: "Learn how to get all NFTs from a collection using Moralis NFT API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,7 +13,7 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
@@ -39,18 +40,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const response = await Moralis.EvmApi.nft.getContractNFTs({
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +68,18 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
-	const chain = EvmChain.ETHEREUM;
-  
+  const chain = EvmChain.ETHEREUM;
+
   const response = await Moralis.EvmApi.nft.getContractNFTs({
     address,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,14 +93,14 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "limit": 100, 
-    # "totalRanges": 0, 
-    # "range": 0, 
-    "cursor": "", 
-    "normalizeMetadata": True, 
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "chain": "eth",
+    "format": "decimal",
+    "limit": 100,
+    # "totalRanges": 0,
+    # "range": 0,
+    "cursor": "",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_contract_nfts(
@@ -116,7 +117,7 @@ print(json.dumps(result, indent=4))
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -188,12 +189,11 @@ Congratulations 🥳 you just got all the NFTs from a collection with just a few
 
 https://www.youtube.com/watch?v=3oUb9QGTXEU
 
-
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getContractNFTs](/web3-data-api/reference/get-contract-nfts)
+- [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts)
 
 ## Support
 

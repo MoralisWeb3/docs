@@ -13,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](/web3-data-api/reference/get-native-balance) API endpoint.
+In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -71,7 +71,7 @@ const runApp = () => {
   });
 
   // address of ERC20 token vault, e.g. WETH token address
-  const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+  const address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -81,7 +81,7 @@ const runApp = () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -96,8 +96,8 @@ api_key = "YOUR_API_KEY"
 
 params = {
     # address of ERC20 token vault, e.g. WETH token address
-    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", 
-    "chain": "eth", 
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "chain": "eth",
 }
 
 result = evm_api.balance.get_native_balance(
@@ -113,7 +113,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -122,8 +122,8 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-  	"balance": "3989233490541891348056490"
-	}
+    "balance": "3989233490541891348056490"
+  }
 ]
 ```
 
@@ -137,7 +137,7 @@ https://www.youtube.com/watch?v=sL5t07JE0aE
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](/web3-data-api/reference/get-native-balance)
+- [getNativeBalance](/web3-data-api/evm/reference/get-native-balance)
 
 ## Support
 
