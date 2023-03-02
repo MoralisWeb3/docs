@@ -201,7 +201,7 @@ const config = {
               {
                 label: "Web3 Data API",
                 type: "doc",
-                docId: "reference/web3-data-api/overview",
+                docId: "web3-data-api/evm/reference/reference",
               },
               {
                 label: "Streams API",

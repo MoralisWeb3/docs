@@ -1,9 +1,9 @@
 ---
 title: "Integrations"
-sidebar_position: 20
+sidebar_position: 2000
 slug: "../integrations"
 ---
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />  
+<DocCardList />
