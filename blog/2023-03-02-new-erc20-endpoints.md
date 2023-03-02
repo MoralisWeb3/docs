@@ -7,15 +7,17 @@ authors:
 
 Today we have launched four new ERC20 token endpoints allowing you to quickly fetch mints, burns, approvals and transfers for any wallet or contract address 🚀
 
+These endpoints have no required inputs or query parameters, meaning we return all on-chain transactions by default. Each endpoint supports flexible filtering by wallet address, contract address and even addresses to exclude (see more about filtering below).
+
 ### 🆕 Mints 
-Fetch all token mints by wallet address or for a given contract using `/erc20/mints`.
+Fetch all token mints, including by wallet address or for a given contract using `/erc20/mints`.
 
 Example use case: lookup and monitor all mint events for the USDC contract.
 
 [Read the docs](/web3-data-api/reference/get-erc20-mints)
 
 ### 🔥 Burns
-Fetch all token burns by wallet address or for a given contract using `/erc20/burns`.
+Fetch all token burns, including by wallet address or for a given contract using `/erc20/burns`.
 
 Example use case: lookup and monitor all burn events for the Wrapped Ether contract.
 
