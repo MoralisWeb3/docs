@@ -3,6 +3,7 @@ title: "How to get SPL token balance of an address"
 slug: "../how-to-get-spl-token-balance-of-an-address"
 description: "Learn how to get SPL token balance of an address using Moralis Solana API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
 
 ## Step 2: Get SPL token balance of an address
 
-In order to get the SPL token balance of a wallet address, Moralis provides you the [getSPL](/web3-data-api/reference/get-spl) API endpoint to do so.
+In order to get the SPL token balance of a wallet address, Moralis provides you the [getSPL](/web3-data-api/solana/reference/get-spl) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -31,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { SolNetwork } = require('@moralisweb3/common-sol-utils');
+const Moralis = require("moralis").default;
+const { SolNetwork } = require("@moralisweb3/common-sol-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = 'BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen';
+
+  const address = "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen";
 
   const network = SolNetwork.MAINNET;
 
@@ -48,9 +49,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -68,7 +69,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = 'BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen';
+  const address = "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen";
 
   const network = SolNetwork.MAINNET;
 
@@ -76,9 +77,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,8 +92,8 @@ from moralis import sol_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "network": "mainnet", 
-    "address": "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen", 
+    "network": "mainnet",
+    "address": "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen",
 }
 
 result = sol_api.account.get_spl(
@@ -106,11 +107,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -134,7 +133,7 @@ Congratulations 🥳 You just got the SPL token balance of a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getSPL](/web3-data-api/reference/get-spl)
+- [getSPL](/web3-data-api/solana/reference/get-spl)
 
 ## Youtube Video
 

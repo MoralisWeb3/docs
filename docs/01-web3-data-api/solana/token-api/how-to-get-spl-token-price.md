@@ -3,6 +3,7 @@ title: "How to get SPL token price"
 slug: "../how-to-get-spl-token-price"
 description: "This tutorial will guide you through the process of using the Moralis API to get the price of a SPL token."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,15 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
 
-
-
 ## Step 2: Get SPL token price
 
-In order to get SPL token price, Moralis provides you the [getTokenPrice](/web3-data-api/reference/get-sol-token-price) API endpoint to do so.
+In order to get SPL token price, Moralis provides you the [getTokenPrice](/web3-data-api/solana/reference/get-sol-token-price) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -33,16 +32,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { SolNetwork } = require('@moralisweb3/common-sol-utils');
+const Moralis = require("moralis").default;
+const { SolNetwork } = require("@moralisweb3/common-sol-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = '4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R';
+
+  const address = "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R";
 
   const network = SolNetwork.MAINNET;
 
@@ -50,9 +49,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,7 +69,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = '4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R';
+  const address = "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R";
 
   const network = SolNetwork.MAINNET;
 
@@ -78,9 +77,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -93,8 +92,8 @@ from moralis import sol_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", 
-    "network": "mainnet", 
+    "address": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+    "network": "mainnet",
 }
 
 result = sol_api.token.get_token_price(
@@ -108,11 +107,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -138,7 +135,7 @@ Congratulations 🥳 You just got the price of a SPL token with just a few lines
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/reference/get-sol-token-price)
+- [getTokenPrice](/web3-data-api/solana/reference/get-sol-token-price)
 
 ## YouTube Tutorial
 

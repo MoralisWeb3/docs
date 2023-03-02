@@ -1531,12 +1531,12 @@ export const redirects = [
   },
   {
     source: "/reference/getspl",
-    destination: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
     permanent: true,
   },
   {
     source: "/reference/getsolnfts",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -1546,12 +1546,12 @@ export const redirects = [
   },
   {
     source: "/reference/getsolportfolio",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
     source: "/reference/getsoltokenprice",
-    destination: "/web3-data-api/reference/get-sol-token-price",
+    destination: "/web3-data-api/solana/reference/get-sol-token-price",
     permanent: true,
   },
   {
@@ -2213,7 +2213,7 @@ export const redirects = [
   },
   {
     source: "/docs/sol-balance",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
@@ -2325,7 +2325,7 @@ export const redirects = [
   },
   {
     source: "/reference/getspl-1",
-    destination: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
     permanent: true,
   },
   {
@@ -2346,7 +2346,7 @@ export const redirects = [
   },
   {
     source: "/reference/getportfolio-1",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
@@ -2689,7 +2689,7 @@ export const redirects = [
   },
   {
     source: "/reference/balance-1",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
@@ -3800,7 +3800,7 @@ export const redirects = [
   { source: "/i", destination: "/", permanent: true },
   {
     source: "/reference/getportfolio",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
@@ -3925,7 +3925,7 @@ export const redirects = [
   },
   {
     source: "/reference/balance",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
@@ -3956,7 +3956,7 @@ export const redirects = [
   { source: "/functions/", destination: "/", permanent: true },
   {
     source: "/moralis-server/solana-sdk/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -4008,7 +4008,7 @@ export const redirects = [
   },
   {
     source: "/reference/balance-2",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
@@ -4760,7 +4760,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-api/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -4770,7 +4770,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-sdk/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -5857,6 +5857,36 @@ export const redirects = [
   {
     source: "/web3-data-api/rate-limits",
     destination: "/web3-data-api/evm/reference/rate-limits",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-nft-metadata",
+    destination: "/web3-data-api/solana/reference/get-sol-nft-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-token-price",
+    destination: "/web3-data-api/solana/reference/get-sol-token-price",
     permanent: true,
   },
 ];
