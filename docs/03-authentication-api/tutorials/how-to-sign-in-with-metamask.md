@@ -32,6 +32,10 @@ You can find the final dapp with implemented style on our [GitHub](https://githu
 2. Install and set up [Visual Studio](https://code.visualstudio.com/).
 3. Create your NextJS dapp (you can create it using **[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)** or follow the **[NextJS dapp](/web3-data-api/quickstart-nextjs)** tutorial).
 
+:::info
+In this tutorial, we will use the latest version of nextjs and the `pages` directory to create our dapp.
+:::
+
 ## Install the Required Dependencies
 
 1. Install `moralis` and `@moralisweb3/next` (if not installed) and `next-auth`dependencies:
@@ -175,12 +179,12 @@ export default NextAuth({
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
 ```javascript
-import { MoralisNextApi } from '@moralisweb3/next';
+import { MoralisNextApi } from "@moralisweb3/next";
 
 export default MoralisNextApi({
   apiKey: process.env.MORALIS_API_KEY,
   authentication: {
-    domain: 'amazing.dapp',
+    domain: "amazing.dapp",
     uri: process.env.NEXTAUTH_URL,
     timeout: 120,
   },
