@@ -5,7 +5,7 @@ import Logo from "@theme/Logo";
 import CollapseButton from "@theme/DocSidebar/Desktop/CollapseButton";
 import Content from "@theme/DocSidebar/Desktop/Content";
 import styles from "./styles.module.css";
-import SidebarMenu from "../../../components/SidebarMenu";
+import NetworkSelect from "../../../components/NetworkSelect";
 
 function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
   const {
@@ -24,9 +24,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       )}
     >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
-      <div style={{ margin: "1rem 1rem 0rem 1rem" }}>
-        <SidebarMenu />
-      </div>
+      <NetworkSelect />
       <Content path={path} sidebar={sidebar} />
       {hideable && <CollapseButton onClick={onCollapse} />}
     </div>

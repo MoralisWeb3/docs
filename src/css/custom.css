@@ -9,35 +9,40 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 400;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 500;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 600;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 700;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 800;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+    format("woff2");
   font-display: swap;
 }
 /* End Custom Fonts CSS */
@@ -79,6 +84,12 @@
   --ifm-hero-text-color: var(--ifm-heading-color);
 
   --ifm-navbar-height: 4.5rem;
+
+  /* NetworkSelect */
+  --docs-color-border: #dadde1;
+  --docs-color-text: #000;
+  --docs-color-background-100: #f8f8f8;
+  --docs-color-background-200: #efefef;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -93,9 +104,16 @@
   --ifm-color-primary-lighter: #8ac0ff;
   --ifm-color-primary-lightest: #bedcff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* NetworkSelect */
+  --docs-color-border: #2e2e2e;
+  --docs-color-text: #fff;
+  --docs-color-background-100: #1c1c1c;
+  --docs-color-background-200: #2a2a2a;
 }
 
-.remark-oembed-you-tube iframe, video {
+.remark-oembed-you-tube iframe,
+video {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
@@ -163,7 +181,8 @@
 }
 
 .card h3 {
-  display:flex;align-items:center;
+  display: flex;
+  align-items: center;
 }
 
 .hero {
@@ -172,15 +191,17 @@
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-.col:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]) 
-{
+.col:has(
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-li:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"])
-{
+li:has(
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
@@ -192,4 +213,101 @@ li:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot
   .footer__link-item {
     height: 48px;
   }
+}
+
+.sections-menu-trigger {
+  align-items: center;
+  background-color: var(--docs-color-background-100);
+  border: 1px solid var(--docs-color-background-200);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--docs-color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: space-between;
+  outline: 0;
+  text-align: left;
+}
+
+.sections-menu-item,
+.sections-menu-trigger {
+  padding: 0 15px 0 10px;
+}
+
+.sections-menu-scrollButton {
+  align-items: center;
+  color: var(--docs-color-text);
+  cursor: default;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  width: 16px;
+}
+
+.sections-menu-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  min-width: 200px;
+  outline: 0;
+}
+
+.sections-menu-item:hover {
+  background-color: var(--docs-color-background-200);
+}
+
+.sections-menu-item[data-disabled] {
+  background-color: var(--docs-color-border);
+  cursor: not-allowed;
+}
+
+.sections-menu-content {
+  background-color: var(--docs-color-background-100);
+  z-index: 300;
+}
+
+.sections-menu-item .item-indicator,
+.sections-menu-trigger .item-indicator {
+  color: rgb(var(--docs-color-primary-100, 26 144 255) / 1);
+  height: 20px;
+  width: 20px;
+}
+
+.sections-menu-item .item-text,
+.sections-menu-trigger .item-text {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.sections-menu-item .item-text > svg,
+.sections-menu-trigger .item-text > svg {
+  height: 32px;
+  margin-right: 8px;
+  width: 32px;
+}
+
+.sections-menu-content {
+  border-radius: 6px;
+  padding: 6px 0;
+}
+
+.sections-menu-trigger.compact {
+  height: 2.5rem;
+  min-width: 5rem;
+}
+
+.sections-menu-content.compact {
+  min-width: 5rem;
+  width: 5rem;
+}
+
+.compact .sections-menu-item {
+  height: 2.5rem;
+  min-width: auto;
+  width: auto;
 }
