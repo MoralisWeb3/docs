@@ -3,6 +3,7 @@ title: "Events API"
 slug: "../events-api"
 description: "Get access to all the logs and events for contracts across multiple EVM blockchains with the Events API. Easily fetch logs and events by contract, and use it to monitor wallet activity, verify ownership, track the flow of funds, and more."
 sidebar_position: 8
+sidebar_class_name: "sidebar-events-api"
 ---
 
 ## What is the Events API?

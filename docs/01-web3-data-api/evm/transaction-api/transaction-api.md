@@ -3,6 +3,7 @@ title: "Transaction API"
 slug: "../transaction-api"
 description: "Fetch real-time transactions data from various EVM blockchains into your applications with Moralis’s powerful cross-chain Transaction API, providing seamless all existing transactions and their detailed logs."
 sidebar_position: 6
+sidebar_class_name: "sidebar-transaction-api"
 ---
 
 ![](/img/content/a9de9d2-image.webp)

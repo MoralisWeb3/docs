@@ -2,6 +2,7 @@
 title: "Utils API"
 slug: "../utils-api"
 sidebar_position: 12
+sidebar_class_name: "sidebar-utils-api"
 ---
 
 ![](/img/content/a9de9d2-image.webp)

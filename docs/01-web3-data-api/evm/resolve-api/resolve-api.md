@@ -3,6 +3,7 @@ title: "Resolve API"
 slug: "../resolve-api"
 description: "Unlock the power of decentralized identity with the Resolve API. Easily resolve ENS names and Unstoppable domains to power your Web3 dapps. Our API supports multiple EVM chains and provides quick and easy address resolution."
 sidebar_position: 10
+sidebar_class_name: "sidebar-resolve-api"
 ---
 
 ## What is the Resolve API?

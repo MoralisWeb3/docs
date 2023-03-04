@@ -3,6 +3,7 @@ title: "DeFi API"
 slug: "../defi-api"
 description: "The DeFi API is a tool for Web3 developers to easily access liquidity reserves and pair data across various blockchains."
 sidebar_position: 9
+sidebar_class_name: "sidebar-defi-api"
 ---
 
 ## What is the DeFi API?

@@ -3,6 +3,7 @@ title: "Block API"
 slug: "../block-api"
 description: "The Block API is a tool that allows Web3 developers to easily access data from specific blocks across various blockchains. It offers functionality like fetching block contents by block hash and finding the closest block by date."
 sidebar_position: 7
+sidebar_class_name: "sidebar-block-api"
 ---
 
 ## What is the Block API?

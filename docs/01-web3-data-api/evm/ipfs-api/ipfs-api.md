@@ -3,6 +3,7 @@ title: "IPFS API"
 slug: "../ipfs-api"
 description: "Use the IPFS API to easily upload and access your data on the decentralized IPFS platform. Your data will be stored in a secure and resistant manner, making it resistant to tampering and censorship."
 sidebar_position: 11
+sidebar_class_name: "sidebar-ipfs-api"
 ---
 
 ## What is the IPFS API?
