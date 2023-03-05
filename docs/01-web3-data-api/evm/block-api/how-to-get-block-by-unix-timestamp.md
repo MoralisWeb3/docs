@@ -2,6 +2,7 @@
 title: "How to get the closest block by unix timestamp"
 slug: "../how-to-get-block-by-unix-timestamp"
 description: "Learn how to get the closest block by a given unix timestamp using Moralis Block API."
+sidebar_label: "Get closest block by unix timestamp"
 ---
 
 ## Prerequisites

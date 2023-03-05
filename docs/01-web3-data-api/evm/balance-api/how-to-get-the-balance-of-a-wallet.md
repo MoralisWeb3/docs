@@ -2,6 +2,7 @@
 title: "How to get the native balance of an address"
 slug: "../how-to-get-the-balance-of-a-wallet"
 description: "Learn how to get the native balance of an address using the Moralis Balance API."
+sidebar_label: "Get native balance of address"
 ---
 
 ## Prerequisites

@@ -2,6 +2,7 @@
 title: "How to get SPL token price"
 slug: "../how-to-get-spl-token-price"
 description: "This tutorial will guide you through the process of using the Moralis API to get the price of a SPL token."
+sidebar_label: "Get SPL token price"
 ---
 
 ## Prerequisites

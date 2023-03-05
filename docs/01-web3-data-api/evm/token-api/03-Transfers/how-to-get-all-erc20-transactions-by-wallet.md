@@ -1,7 +1,8 @@
 ---
 title: "How to get all ERC20 transfers by wallet"
-slug: "../how-to-get-all-erc20-transfers-by-wallet"
+slug: "../../how-to-get-all-erc20-transfers-by-wallet"
 description: "Learn how to get all ERC20 transfers by wallet using Moralis Token API."
+sidebar_label: "Get ERC20 transfers by wallet"
 ---
 
 ## Prerequisites

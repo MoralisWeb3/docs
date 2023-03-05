@@ -1,5 +1,5 @@
 ---
-title: "API Response"
+title: "Response codes"
 slug: "api-response"
 ---
 

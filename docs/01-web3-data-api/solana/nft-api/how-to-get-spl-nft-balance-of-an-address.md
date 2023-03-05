@@ -2,6 +2,7 @@
 title: "How to get SPL NFT balance of an address"
 slug: "../how-to-get-spl-nft-balance-of-an-address"
 description: "Learn how to get SPL NFT balance of an address using Moralis Solana API."
+sidebar_label: "Get SPL NFT balance of address"
 ---
 
 ## Prerequisites

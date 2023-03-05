@@ -1,7 +1,8 @@
 ---
-title: "How to get all ERC20 tokens owned by an address"
-slug: "../how-to-get-all-erc20-tokens-owned-by-an-address"
-description: "Learn how to get all ERC20 tokens owned by an address by Moralis Token API."
+title: "How to get the spender allowance of an ERC20 token"
+slug: "../../how-to-get-the-spender-allowance"
+description: "Learn how to get the spender allowance of an ERC20 token using Moralis Token API."
+sidebar_label: "Get ERC20 token spender allowance"
 ---
 
 ## Prerequisites
@@ -17,13 +18,18 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get all ERC20 tokens owned by an address
+## Step 2: Get the spender allowance of an ERC20 token
 
-In order to get all ERC20 tokens owned by an address, Moralis provides you with an [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) endpoint.
+In order to get the spender allowance, Moralis provides you with an [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance) endpoint.
 
-Here you'll need two parameters: `address` and `chain`.
+Here you'll need four parameters: `address` , `chain`, `ownerAddress` , `spenderAddress`.
 
-Once you have obtained the `address` and `chain`, you can copy the following code:
+- `address`: The address of the token contract.
+- `chain`: The chain to query.
+- `ownerAddress`: The address of the token owner.
+- `spenderAddress`: The address of the token spender.
+
+Once you have obtained the parameters, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -41,13 +47,19 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
-
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+  const address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
+
+  const ownerAddress = "0x7c470D1633711E4b77c8397EBd1dF4095A9e9E02";
+
+  const spenderAddress = "0xed33259a056f4fb449ffb7b7e2ecb43a9b5685bf";
+
+  const response = await Moralis.EvmApi.token.getTokenAllowance({
     address,
     chain,
+    ownerAddress,
+    spenderAddress,
   });
 
   console.log(response.toJSON());
@@ -69,13 +81,19 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
-
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+  const address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
+
+  const ownerAddress = "0x7c470D1633711E4b77c8397EBd1dF4095A9e9E02";
+
+  const spenderAddress = "0xed33259a056f4fb449ffb7b7e2ecb43a9b5685bf";
+
+  const response = await Moralis.EvmApi.token.getTokenAllowance({
     address,
     chain,
+    ownerAddress,
+    spenderAddress,
   });
 
   console.log(response.toJSON());
@@ -92,11 +110,13 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
-    "chain": "eth",
+    "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "owner_address": "0x7c470D1633711E4b77c8397EBd1dF4095A9e9E02",
+    "spender_address": "0xed33259a056f4fb449ffb7b7e2ecb43a9b5685bf",
+    "chain": "eth"
 }
 
-result = evm_api.token.get_wallet_token_balances(
+result = evm_api.token.get_token_allowance(
     api_key=api_key,
     params=params,
 )
@@ -116,35 +136,18 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-[
-  {
-    "token_address": "0xefd6c64533602ac55ab64442307f6fe2c9307305",
-    "name": "APE",
-    "symbol": "APE",
-    "logo": null,
-    "thumbnail": null,
-    "decimals": 18,
-    "balance": "101715701444169451516503179"
-  },
-  {
-    "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "name": "Wrapped Ether",
-    "symbol": "WETH",
-    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.webp",
-    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.webp",
-    "decimals": 18,
-    "balance": "85000000000000000"
-  }
-]
+{
+  "allowance": "0"
+}
 ```
 
-Congratulations 🥳 You just got all ERC20 tokens owned by an address with just a few lines of code using the Moralis Token API!
+Congratulations 🥳 You just got the spender allowance with just a few lines of code using the Moralis Token API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances)
+- [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)
 
 ## Support
 

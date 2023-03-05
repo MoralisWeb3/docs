@@ -2,6 +2,7 @@
 title: "How to run smart contract functions"
 slug: "../how-to-run-contract-functions"
 description: "Learn how to run smart contract functions using Moralis Utils API."
+sidebar_label: "Run smart contract functions"
 ---
 
 ## Prerequisites

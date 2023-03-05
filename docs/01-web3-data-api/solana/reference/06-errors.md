@@ -1,5 +1,0 @@
----
-title: "Errors"
----
-
-# Errors

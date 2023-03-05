@@ -1,7 +1,8 @@
 ---
 title: "How to get all ERC20 transfers by contract"
-slug: "../how-to-get-all-erc20-transfers-by-contract"
+slug: "../../how-to-get-all-erc20-transfers-by-contract"
 description: "Learn how to get all ERC20 transfers by wallet using Moralis Token API."
+sidebar_label: "Get ERC20 transfers by contract"
 ---
 
 ## Prerequisites

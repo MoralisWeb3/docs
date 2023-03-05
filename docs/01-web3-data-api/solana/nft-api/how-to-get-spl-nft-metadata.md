@@ -2,6 +2,7 @@
 title: "How to get SPL NFT Metadata"
 slug: "../how-to-get-spl-nft-metadata"
 description: "Learn how to get metadata of a SPL NFT using Moralis Solana API."
+sidebar_label: "Get SPL NFT Metadata"
 ---
 
 ## Prerequisites

@@ -1,7 +1,8 @@
 ---
 title: "How to get historical ERC20 token price"
-slug: "../how-to-get-historical-erc20-token-price"
+slug: "../../how-to-get-historical-erc20-token-price"
 description: "Learn how to get historical ERC20 token price using Moralis Token API."
+sidebar_label: "Get ERC20 token historical price"
 ---
 
 ## Prerequisites

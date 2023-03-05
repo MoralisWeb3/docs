@@ -2,6 +2,7 @@
 title: "How to get Solana portfolio balance of an address"
 slug: "../how-to-get-solana-portfolio-balance-of-an-address"
 description: "Learn how to retrieve the Solana portfolio balance of a wallet address using the Moralis Solana API."
+sidebar_label: "Get Solana portfolio balance of address"
 ---
 
 ## Prerequisites

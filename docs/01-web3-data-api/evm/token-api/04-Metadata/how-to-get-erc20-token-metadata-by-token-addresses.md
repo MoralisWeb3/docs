@@ -1,7 +1,8 @@
 ---
 title: "How to get ERC20 token metadata by token addresses"
-slug: "../how-to-get-erc20-token-metadata-by-token-addresses"
+slug: "../../how-to-get-erc20-token-metadata-by-token-addresses"
 description: "Learn how to get ERC20 token metadata by multiple token addresses using Moralis Token API."
+sidebar_label: "Get ERC20 token metadata by token addresses"
 ---
 
 ## Prerequisites

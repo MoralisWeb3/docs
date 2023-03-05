@@ -1,8 +1,8 @@
 ---
-title: "How to get Uniswap V3 pair address"
-slug: "../how-to-get-uniswap-v3-pair-address"
-description: "Learn how to get the pair address of a Uniswap V3 liquidity pool using Moralis DeFi API."
-sidebar_label: "Get Uniswap V3 pair address"
+title: "How to get ERC20 metadata by symbols"
+slug: "../../how-to-get-erc20-metadata-by-symbols"
+description: "Learn how to get ERC20 metadata by symbols using Moralis Token API."
+sidebar_label: "Get ERC20 metadata by symbols"
 ---
 
 ## Prerequisites
@@ -18,13 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get Pair Address of A Uniswap V3 Liquidity Pool
+## Step 2: Get ERC20 metadata by symbols
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/evm/reference/get-pair-address) endpoint to do so.
+In order to get ERC20 metadata by symbols, Moralis provides you with an [getTokenMetadataBySymbol](/web3-data-api/evm/reference/get-token-metadata-by-symbol) endpoint.
 
-Here you'll need three parameters: `token0`, `token1` and `address`.
+Here you'll need two parameters: `symbols` and `chain`.
 
-Once you've obtained all three parameters, you can copy the following code:
+Once you have obtained the `symbols` and `chain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -42,19 +42,13 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
+  const symbols = ["UNI", "AAVE", "LINK"];
+
   const chain = EvmChain.ETHEREUM;
 
-  // token 0 address, e.g. WETH token address
-  const token0Address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
-
-  // token 1 address, e.g. LINK token address
-  const token1Address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
-
-  const response = await Moralis.EvmApi.defi.getPairAddress({
-    token0Address,
-    token1Address,
+  const response = await Moralis.EvmApi.token.getTokenMetadataBySymbol({
+    symbols,
     chain,
-    exchange: "uniswapv3",
   });
 
   console.log(response.toJSON());
@@ -76,19 +70,13 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
+  const symbols = ["UNI", "AAVE", "LINK"];
+
   const chain = EvmChain.ETHEREUM;
 
-  // token 0 address, e.g. WETH token address
-  const token0Address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
-
-  // token 1 address, e.g. LINK token address
-  const token1Address = "0x514910771AF9Ca656af840dff83E8264EcF986CA";
-
-  const response = await Moralis.EvmApi.defi.getPairAddress({
-    token0Address,
-    token1Address,
+  const response = await Moralis.EvmApi.token.getTokenMetadataBySymbol({
+    symbols,
     chain,
-    exchange: "uniswapv3",
   });
 
   console.log(response.toJSON());
@@ -104,17 +92,12 @@ runApp();
 from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
-
 params = {
-    "exchange": "uniswapv3",
-    # token 0 address, e.g. WETH token address
-    "token0_address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    # token 1 address, e.g. LINK token address
-    "token1_address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "symbols": ['UNI', 'AAVE', 'LINK'],
     "chain": "eth"
 }
 
-result = evm_api.defi.get_pair_address(
+result = evm_api.token.get_token_metadata_by_symbol(
     api_key=api_key,
     params=params,
 )
@@ -134,8 +117,8 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-{
-  "token0": {
+[
+  {
     "address": "0x514910771af9ca656af840dff83e8264ecf986ca",
     "name": "Chain Link",
     "symbol": "LINK",
@@ -147,33 +130,44 @@ In your terminal, you should see the following JSON response:
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
   },
-  "token1": {
-    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "name": "Wrapped Ether",
-    "symbol": "WETH",
+  {
+    "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "name": "Uniswap",
+    "symbol": "UNI",
     "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.webp",
-    "logo_hash": "0a7fc292596820fe066ce8ce3fd6e2ad9d479c2993f905e410ef74f2062a83ec",
-    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.webp",
+    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.webp",
+    "logo_hash": "064ee9557deba73c1a31014a60f4c081284636b785373d4ccdd1b3440df11f43",
+    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.webp",
     "block_number": null,
     "validated": null,
     "created_at": "2022-01-20T10:39:55.818Z"
   },
-  "pairAddress": "0xa6cc3c2531fdaa6ae1a3ca84c2855806728693e8"
-}
+  {
+    "address": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "name": "Aave Token",
+    "symbol": "AAVE",
+    "decimals": "18",
+    "logo": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9.webp",
+    "logo_hash": "a43e5ac48a66d8b0eac410ac2f5634c2517acda6f4723a55b99e3c5906132a1b",
+    "thumbnail": "https://cdn.moralis.io/eth/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9_thumb.webp",
+    "block_number": null,
+    "validated": null,
+    "created_at": "2022-01-20T10:39:55.818Z"
+  }
+]
 ```
 
-Congratulations 🥳 You just get the pair address of a Uniswap V3 liquidity pool with just a few lines of code using the Moralis DeFi API!
+Congratulations 🥳 You just got ERC20 metadata by symbols with just a few lines of code using the Moralis Token API!
 
 ## Youtube Video
 
-https://www.youtube.com/watch?v=TocrId1UeDg
+https://www.youtube.com/watch?v=t1H4FsZ9Gsw
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](/web3-data-api/evm/reference/get-pair-address)
+- [getTokenMetadataBySymbol](/web3-data-api/evm/reference/get-token-metadata-by-symbol)
 
 ## Support
 

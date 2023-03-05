@@ -1,7 +1,8 @@
 ---
-title: "How to get the price of an ERC20 token"
-slug: "../how-to-get-the-price-of-an-erc20-token"
-description: "Learn how to get the price of an ERC20 token with Moralis Token API."
+title: "How to get all ERC20 tokens owned by an address"
+slug: "../../how-to-get-all-erc20-tokens-owned-by-an-address"
+description: "Learn how to get all ERC20 tokens owned by an address by Moralis Token API."
+sidebar_label: "Get ERC20 tokens owned by address"
 ---
 
 ## Prerequisites
@@ -17,9 +18,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the price of an ERC20 token
+## Step 2: Get all ERC20 tokens owned by an address
 
-In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/evm/reference/get-token-price) endpoint.
+In order to get all ERC20 tokens owned by an address, Moralis provides you with an [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -41,11 +42,11 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
+  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getTokenPrice({
+  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
     address,
     chain,
   });
@@ -69,11 +70,11 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
+  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getTokenPrice({
+  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
     address,
     chain,
   });
@@ -92,11 +93,11 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-    "chain": "eth"
+    "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "chain": "eth",
 }
 
-result = evm_api.token.get_token_price(
+result = evm_api.token.get_wallet_token_balances(
     api_key=api_key,
     params=params,
 )
@@ -116,30 +117,35 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-{
-  "nativePrice": {
-    "value": "13753134139373781549",
+[
+  {
+    "token_address": "0xefd6c64533602ac55ab64442307f6fe2c9307305",
+    "name": "APE",
+    "symbol": "APE",
+    "logo": null,
+    "thumbnail": null,
     "decimals": 18,
-    "name": "Ether",
-    "symbol": "ETH"
+    "balance": "101715701444169451516503179"
   },
-  "usdPrice": 16115.165641767926,
-  "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
-  "exchangeName": "Uniswap v3"
-}
+  {
+    "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "name": "Wrapped Ether",
+    "symbol": "WETH",
+    "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.webp",
+    "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.webp",
+    "decimals": 18,
+    "balance": "85000000000000000"
+  }
+]
 ```
 
-Congratulations 🥳 You just got the price of an ERC20 Token with just a few lines of code using the Moralis Token API!
-
-## Youtube Video
-
-https://www.youtube.com/watch?v=4OYm8LHBGOQ
+Congratulations 🥳 You just got all ERC20 tokens owned by an address with just a few lines of code using the Moralis Token API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
+- [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances)
 
 ## Support
 

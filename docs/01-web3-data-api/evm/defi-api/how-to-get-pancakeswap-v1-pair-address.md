@@ -2,6 +2,7 @@
 title: "How to get Pancakeswap V1 pair address"
 slug: "../how-to-get-pancakeswap-v1-pair-address"
 description: "Learn how to get the pair address of a Pancakeswap V1 liquidity pool using Moralis DeFi API."
+sidebar_label: "Get Pancakeswap V1 pair address"
 ---
 
 ## Prerequisites

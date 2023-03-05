@@ -1,7 +1,8 @@
 ---
-title: "How to get ERC20 metadata by contract"
-slug: "../how-to-get-erc20-metadata-by-contract"
-description: "Learn how to get ERC20 metadata by contract using Moralis Token API."
+title: "How to get the price of an ERC20 token"
+slug: "../../how-to-get-the-price-of-an-erc20-token"
+description: "Learn how to get the price of an ERC20 token with Moralis Token API."
+sidebar_label: "Get ERC20 token price"
 ---
 
 ## Prerequisites
@@ -17,13 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get ERC20 metadata by contract
+## Step 2: Get the price of an ERC20 token
 
-In order to get all ERC20 metadata by contract, Moralis provides you with an [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata) endpoint.
+In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/evm/reference/get-token-price) endpoint.
 
-Here you'll need two parameters: `addresses` and `chain`.
+Here you'll need two parameters: `address` and `chain`.
 
-Once you have obtained the `addresses` and `chain`, you can copy the following code:
+Once you have obtained the `address` and `chain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -41,12 +42,12 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"];
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getTokenMetadata({
-    addresses,
+  const response = await Moralis.EvmApi.token.getTokenPrice({
+    address,
     chain,
   });
 
@@ -69,12 +70,12 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"];
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.token.getTokenMetadata({
-    addresses,
+  const response = await Moralis.EvmApi.token.getTokenPrice({
+    address,
     chain,
   });
 
@@ -92,11 +93,11 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "addresses": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"],
+    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
     "chain": "eth"
 }
 
-result = evm_api.token.get_token_metadata(
+result = evm_api.token.get_token_price(
     api_key=api_key,
     params=params,
 )
@@ -116,33 +117,30 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-[
-  {
-    "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
-    "name": "Uniswap",
-    "symbol": "UNI",
-    "decimals": "18",
-    "logo": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.webp",
-    "logo_hash": "064ee9557deba73c1a31014a60f4c081284636b785373d4ccdd1b3440df11f43",
-    "thumbnail": "https://cdn.moralis.io/eth/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984_thumb.webp",
-    "block_number": null,
-    "validated": null,
-    "created_at": "2022-01-20T10:39:55.818Z"
-  }
-]
+{
+  "nativePrice": {
+    "value": "13753134139373781549",
+    "decimals": 18,
+    "name": "Ether",
+    "symbol": "ETH"
+  },
+  "usdPrice": 16115.165641767926,
+  "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+  "exchangeName": "Uniswap v3"
+}
 ```
 
-Congratulations 🥳 You just got ERC20 metadata by contract with just a few lines of code using the Moralis Token API!
+Congratulations 🥳 You just got the price of an ERC20 Token with just a few lines of code using the Moralis Token API!
 
 ## Youtube Video
 
-https://www.youtube.com/watch?v=urBf_bP2jqw
+https://www.youtube.com/watch?v=4OYm8LHBGOQ
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)
+- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
 
 ## Support
 

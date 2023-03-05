@@ -1,6 +1,7 @@
 ---
 title: "Internal Transactions"
-slug: "internal-transactions"
+slug: "../internal-transactions"
+sidebar_position: 4
 ---
 
 # Internal Transactions
