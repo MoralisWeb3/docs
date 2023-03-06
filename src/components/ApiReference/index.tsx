@@ -122,7 +122,7 @@ const ApiReference = ({
         );
 
         const fetchBody = await response.json();
-        
+
         const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
