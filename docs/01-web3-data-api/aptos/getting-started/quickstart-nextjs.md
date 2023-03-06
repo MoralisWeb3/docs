@@ -3,6 +3,7 @@ title: "Quickstart NextJS"
 slug: "../quickstart-nextjs"
 description: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
+
 ## Introduction
 
 This tutorial shows you how to create a basic NextJS dapp that uses the [@moralisweb3/next](https://www.npmjs.com/package/@moralisweb3/next) to display native balance.
@@ -16,7 +17,7 @@ You can find the repository with the final code here: <https://github.com/Morali
 1. Create a NextJS app
 2. Import and set up the latest @moralis/next
 3. Integrate your application with Moralis services
-4. Read any blockchain data from any blockchain 
+4. Read any blockchain data from any blockchain
 
 ## Prerequisites
 
@@ -28,14 +29,16 @@ You can find the repository with the final code here: <https://github.com/Morali
 
 For this part of the tutorial, we will create a dapp that displays the native balance, ERC-20 tokens, and NFTs for any address and EVM chain!🚀
 
+:::info
+In this tutorial, we will use the latest version of nextjs and the `pages` directory to create our dapp.
+:::
+
 1. Create a new folder for your project and open it in your editor
 2. Initialize a new project:
 
 ```shell
 npm init
 ```
-
-
 
 Give it a name and fill in the details as you want (press `enter` to use the default options). You should now have a `package.json` file that looks something like this:
 
@@ -52,8 +55,6 @@ Give it a name and fill in the details as you want (press `enter` to use the def
   "license": "ISC"
 }
 ```
-
-
 
 3. Install the required dependencies:
 
@@ -72,16 +73,14 @@ npm install moralis @moralisweb3/next next-auth next react react-dom
 }
 ```
 
-
-
 5. Create a `pages` directory at the root of your application and add the `index.jsx` file with the following content:
 
 ```javascript
 function HomePage() {
-  return <div>Welcome to my Next.js dApp!</div>
+  return <div>Welcome to my Next.js dApp!</div>;
 }
 
-export default HomePage
+export default HomePage;
 ```
 
 :::info
@@ -92,7 +91,7 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 
 ## Add Moralis to Your NextJS Dapp
 
-1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/): 
+1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/):
 
 ![Admin Panel](/img/content/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp)
 
@@ -101,8 +100,6 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 ```text .env.local
 MORALIS_API_KEY=replace_me
 ```
-
-
 
 :::info
 
@@ -115,8 +112,6 @@ NextJS `.env.local` variables are accessible to the entire application and are n
 ```shell
 npm run dev
 ```
-
-
 
 :::caution
 
@@ -141,26 +136,22 @@ You can provide a configuration object to the MoralisNextApi.
 1. Let's fetch Evm native balance! Add `useEvmNativeBalance` hook to `pages/index.jsx`:
 
 ```javascript
-import { useEvmNativeBalance } from '@moralisweb3/next';
+import { useEvmNativeBalance } from "@moralisweb3/next";
 
 function HomePage() {
-    const address = '0x1...';
-    const { data: nativeBalance } = useEvmNativeBalance({ address });
-    return (
-        <div>
-            <h3>Wallet: {address}</h3>
-            <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
-        </div>
-    );
+  const address = "0x1...";
+  const { data: nativeBalance } = useEvmNativeBalance({ address });
+  return (
+    <div>
+      <h3>Wallet: {address}</h3>
+      <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
+    </div>
+  );
 }
 
 export default HomePage;
-
-
 ```
 
-
-
-2. Now, let's receive and use the props in our server-side Visit the [<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
+2. Now, let's receive and use the props in our server-side Visit the [<http://localhost:3000`>](http://localhost:3000/native`) page to see the results:
 
 ![The `useEvmNativeBalance()` response](/img/content/46867dc-image.webp)
