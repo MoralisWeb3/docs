@@ -3,6 +3,7 @@ title: "How to get all the NFTs owned by an address cross chain"
 slug: "../../how-to-get-all-nfts-own-by-an-address-cross-chain"
 description: "Learn how to get all NFTs (with metadata) owned by an address cross chain using Moralis NFT API."
 sidebar_label: "Get NFTs owned by address cross chain"
+sidebar_position: 2
 ---
 
 ## Prerequisites
