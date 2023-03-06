@@ -189,12 +189,14 @@ const config = {
             position: "right",
             value:
               '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
+              className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
             position: "right",
             value:
               '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
+            className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
