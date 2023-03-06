@@ -452,7 +452,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nfts(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -751,7 +751,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_multiple_nfts(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.nft.get_multiple_nfts(\n    api_key=api_key,\n    body=body,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -999,7 +999,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nft_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nft_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -1153,7 +1153,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nft_collections(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_wallet_nft_collections(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -1613,7 +1613,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_contract_nfts(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_contract_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -2063,7 +2063,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_owners(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -2316,7 +2316,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_contract_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_contract_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -2562,7 +2562,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers_from_to_block(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers_from_to_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -2784,7 +2784,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers_by_block(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers_by_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -2995,7 +2995,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_trades(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_trades(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -3102,7 +3102,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_contract_metadata(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_contract_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -3511,7 +3511,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_metadata(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -3747,7 +3747,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4204,7 +4204,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_token_id_owners(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_token_id_owners(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4277,7 +4277,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.sync_nft_contract(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.sync_nft_contract(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4413,7 +4413,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.re_sync_metadata(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.re_sync_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4564,7 +4564,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_lowest_price(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_lowest_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4829,7 +4829,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.search_nfts(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.search_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -4982,7 +4982,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_price(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5068,7 +5068,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_wallet_token_balances(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_wallet_token_balances(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5270,7 +5270,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_wallet_token_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_wallet_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5342,7 +5342,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_metadata(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5414,7 +5414,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_metadata_by_symbol(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_metadata_by_symbol(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5508,7 +5508,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_allowance(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_allowance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5710,7 +5710,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -5880,7 +5880,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_transfers(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_transfers(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6044,7 +6044,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_mints(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_mints(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6208,7 +6208,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_burns(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_burns(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6378,7 +6378,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_approvals(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_erc20_approvals(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6470,7 +6470,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.balance.get_native_balance(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.balance.get_native_balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6632,7 +6632,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.balance.get_native_balances_for_addresses(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.balance.get_native_balances_for_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -6957,7 +6957,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_wallet_transactions(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_wallet_transactions(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -7336,7 +7336,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_wallet_transactions_verbose(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_wallet_transactions_verbose(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -7409,7 +7409,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_internal_transactions(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_internal_transactions(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -7711,7 +7711,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_transaction(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_transaction(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -8006,7 +8006,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_transaction_verbose(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.transaction.get_transaction_verbose(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -8250,7 +8250,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.events.get_contract_logs(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.events.get_contract_logs(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -8474,7 +8474,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.events.get_contract_events(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.events.get_contract_events(\n    api_key=api_key,\n    body=body,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -8895,7 +8895,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.block.get_block(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.block.get_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9007,7 +9007,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.block.get_date_to_block(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.block.get_date_to_block(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9107,7 +9107,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.run_contract_function(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.utils.run_contract_function(\n    api_key=api_key,\n    body=body,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9145,7 +9145,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.web3_api_version(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.web3_api_version(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9172,7 +9172,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.endpoint_weights(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.endpoint_weights(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9220,7 +9220,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_address(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_address(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9275,7 +9275,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_domain(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_domain(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9358,7 +9358,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.defi.get_pair_reserves(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.defi.get_pair_reserves(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9476,7 +9476,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.defi.get_pair_address(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.defi.get_pair_address(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9527,7 +9527,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.ipfs.upload_folder(\n    api_key=api_key,\nparams=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.ipfs.upload_folder(\n    api_key=api_key,\n    body=body,\n    params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]

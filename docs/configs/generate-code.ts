@@ -17,7 +17,7 @@ const generateCode = async () => {
       case "ipfs":
         // Web3 Data API – EVM
         Object.keys(apiReference[group]).map((fctn) => {
-          const { pathParams, queryParams, bodyParams } =
+          const { pathParams, queryParams, bodyParam } =
             apiReference[group][fctn] ?? {};
           apiReference[group][fctn].codeSamples = [
             {
@@ -42,12 +42,12 @@ try {
               code: `from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
-${bodyParams ? `\nbody = []\n` : ""}${
+${bodyParam ? `\nbody = []\n` : ""}${
                 queryParams || pathParams ? `\nparams = {}\n` : ""
               }
 result = evm_api.${group}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
-    api_key=api_key,${bodyParams ? `\nbody=body,` : ""}${
-                queryParams || pathParams ? `\nparams=params,` : ""
+    api_key=api_key,${bodyParam ? "\n    body=body," : ""}${
+                queryParams || pathParams ? `\n    params=params,` : ""
               }
 )
 
