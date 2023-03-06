@@ -209,7 +209,7 @@ export const filterOutEmpty = (value: any) => {
    * - verifyChallengeSolana
    */
   if (value?.message)
-    value = { ...value, message: value.message.replace("\\n", "\n") };
+    value = { ...value, message: value.message.replaceAll("\\n", "\n") };
 
   if (Array.isArray(value)) {
     const cleanArray = value
