@@ -174,6 +174,12 @@ const config = {
             label: "Authentication API",
           },
           {
+            type: "doc",
+            docId: "developer-tools/overview",
+            position: "left",
+            label: "Developer tools",
+          },
+          {
             type: "search",
             position: "left",
           },

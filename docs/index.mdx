@@ -1,0 +1,58 @@
+---
+title: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials"
+slug: "/"
+sidebar_position: 1
+hide_table_of_contents: true
+hide_title: true
+description: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs."
+---
+
+import { CardGrid } from "../src/components/CardGrid"
+import { apis, integrations } from "./homeConfig.ts"
+
+<head>
+  <title>Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials</title>
+</head>
+
+<div className="hero shadow--lw">
+  <div className="container">
+    <div className="row">
+      <div className="col col--6 margin-bottom--xl">
+        <div className="col-demo">
+          <h1 className="hero__title">Moralis Web3 Documentation</h1>
+          <p className="hero__subtitle">
+            Integrate Web3 into any tech stack by following easy guides,
+            recipes, and API references!
+          </p>
+          <div>
+            <a
+              href="/web3-data-api/getting-started/"
+              className="button button--primary button--outline button--lg"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="col col--6">
+        <div className="col-demo">
+          <img
+            src="/img/content/scaleWebApi3.svg"
+            width="580"
+            height="422"
+            loading="eager"
+            alt="Moralis Web3 Documentation"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Explore Our APIs
+
+<CardGrid items={Object.values(apis)} />
+
+## Integrations
+
+<CardGrid items={Object.values(integrations)} />

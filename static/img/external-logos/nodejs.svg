@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-.73" x2="4.87" y1="501.61" y2="501.61" gradientTransform="scale(-115.3 115.3) rotate(63.888 400.455 248.468)" gradientUnits="userSpaceOnUse">
+      <stop offset=".3" stop-color="#3e863d"/>
+      <stop offset=".5" stop-color="#55934f"/>
+      <stop offset=".8" stop-color="#5aad45"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-.94" x2="2.71" y1="500.47" y2="500.47" gradientTransform="scale(177.06 -177.06) rotate(36.459 763.063 250.337)" gradientUnits="userSpaceOnUse">
+      <stop offset=".57" stop-color="#3e863d"/>
+      <stop offset=".72" stop-color="#619857"/>
+      <stop offset="1" stop-color="#76ac64"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1=".14" x2="3.44" y1="500.27" y2="500.27" gradientTransform="matrix(129.89 0 0 -129.89 23.85 65229.62)" gradientUnits="userSpaceOnUse">
+      <stop offset=".16" stop-color="#6bbf47"/>
+      <stop offset=".38" stop-color="#79b461"/>
+      <stop offset=".47" stop-color="#75ac64"/>
+      <stop offset=".7" stop-color="#659e5a"/>
+      <stop offset=".9" stop-color="#3e863d"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path d="M238.1 3.16 40.83 116.27a23.63 23.63 0 0 0-11.92 20.5v226.37a23.61 23.61 0 0 0 11.92 20.5l197.28 113.2a24.08 24.08 0 0 0 23.84 0l197.25-113.2a23.68 23.68 0 0 0 11.89-20.5V136.77a23.63 23.63 0 0 0-11.94-20.5L261.93 3.16a24.14 24.14 0 0 0-23.88 0" class="cls-1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path d="M33.8 377.52a23.94 23.94 0 0 0 7 6.12l169.2 97.1 28.19 16.09a24 24 0 0 0 13.81 3.09 23.48 23.48 0 0 0 4.68-.85l208.03-378.44a23.76 23.76 0 0 0-5.55-4.37L330 42.16l-68.28-39a25.32 25.32 0 0 0-6.18-2.49Z" class="cls-1"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path d="M247.63.13a24.35 24.35 0 0 0-9.53 3L41.4 116l212.11 383.74a23.88 23.88 0 0 0 8.47-2.9l197.27-113.2a23.73 23.73 0 0 0 11.52-16.17L254.54.52a24.25 24.25 0 0 0-4.82-.52c-.66 0-1.31 0-2 .09" class="cls-1"/>
+    </clipPath>
+    <style>
+      .cls-1{fill:none}
+    </style>
+  </defs>
+  <g style="clip-path:url(#clip-path)">
+    <path d="M670.43 97.07 114.57-173.6-170.44 404l555.85 270.67Z" style="fill:url(#linear-gradient)"/>
+  </g>
+  <g style="clip-path:url(#clip-path-2)">
+    <path d="M-206.53 177.12 186 704.84l519.09-381-392.56-527.69Z" style="fill:url(#linear-gradient-2)"/>
+  </g>
+  <g style="clip-path:url(#clip-path-3)">
+    <path d="M41.39 0v499.75h429.3V0Z" style="fill:url(#linear-gradient-3)"/>
+  </g>
+</svg>
