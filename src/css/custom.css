@@ -314,6 +314,20 @@ li:has(
 
 .menu__list {
   background-color: var(--ifm-background-surface-color);
+  border-radius: 4px;
+}
+
+.menu__list-item.theme-doc-sidebar-item-category-level-1 {
+  margin-top: 6px
+}
+
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
+.theme-doc-sidebar-item-link-level-1 .menu__link {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 15px;
+  min-height: 38px;
+  padding-left: 10px;
+  padding-right: 6px
 }
 
 .theme-doc-sidebar-item-link-level-1 .menu__link:before,
@@ -450,3 +464,4 @@ li.sidebar-developer-tools a.menu__link:before {
 li.sidebar-developer-tools a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/developer-tools-active.svg);
 }
+
