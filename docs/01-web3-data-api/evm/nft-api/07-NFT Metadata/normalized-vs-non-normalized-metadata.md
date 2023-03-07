@@ -2,7 +2,7 @@
 title: "Normalized vs Non-Normalized NFT Metadata"
 slug: "../../normalized-vs-non-normalized-metadata"
 description: "Get to know the difference between normalized and non-normalized metadata to know which one suits your needs."
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 The Moralis NFT API has the option to take the original source metadata and output it into a clean, predictable object - making it much easier for you to work with.

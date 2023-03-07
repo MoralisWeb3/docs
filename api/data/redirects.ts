@@ -5889,4 +5889,9 @@ export const redirects = [
     destination: "/web3-data-api/solana/reference/get-sol-token-price",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/web3-concepts",
+    destination: "https://moralis.io/web3-dictionary",
+    permanent: true,
+  },
 ];

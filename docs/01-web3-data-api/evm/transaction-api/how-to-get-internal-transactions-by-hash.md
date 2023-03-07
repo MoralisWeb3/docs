@@ -3,7 +3,7 @@ title: "How to get internal transactions by hash"
 slug: "../how-to-get-internal-transactions-by-hash"
 description: "Learn how to get internal transactions by hash using the Moralis Transaction API."
 sidebar_label: "Get internal transactions by hash"
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 ## Prerequisites

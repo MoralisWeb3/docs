@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as Select from "@radix-ui/react-select";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { useHistory, useLocation } from "@docusaurus/router";
 import clsx from "clsx";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -39,7 +40,8 @@ const networks = {
       iconDark: SolanaIcon,
     },
   ],
-  "streams-api": [
+  "streams-apix": [
+    // hiding sidebar temporary
     {
       value: "evm",
       label: "EVM",
@@ -53,7 +55,8 @@ const networks = {
       iconDark: AptosDarkIcon,
     },
   ],
-  "authentication-api": [
+  "authentication-apix": [
+    // hiding sidebar temporary
     {
       value: "evm",
       label: "EVM",
@@ -91,7 +94,7 @@ const NetworkSelect = () => {
   const handleNetWorkChange = (selectedNetwork) => {
     push(`/${pageState?.path}/${selectedNetwork}`);
 
-    if (windowSize === 'mobile' && mobileSidebar.shown) {
+    if (windowSize === "mobile" && mobileSidebar.shown) {
       mobileSidebar.toggle();
     }
   };
@@ -154,6 +157,28 @@ const NetworkSelect = () => {
             </Select.Content>
           </Select.Portal>
         </Select.Root>
+        {pageState.path === "web3-data-api" &&
+          pageState.network === "aptos" && (
+            <ToggleGroup.Root
+              className="ToggleGroup"
+              type="single"
+              defaultValue="mainnet"
+              orientation="horizontal"
+            >
+              <ToggleGroup.Item
+                className={styles.ToggleGroupItem}
+                value="mainnet"
+              >
+                Mainnet
+              </ToggleGroup.Item>
+              <ToggleGroup.Item
+                className={styles.ToggleGroupItem}
+                value="testnet"
+              >
+                Testnet
+              </ToggleGroup.Item>
+            </ToggleGroup.Root>
+          )}
       </div>
     </div>
   ) : (
