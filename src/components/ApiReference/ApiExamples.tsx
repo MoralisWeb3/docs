@@ -8,9 +8,9 @@ import { Path } from "path-parser";
 import CodeBlock from "@theme/CodeBlock";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
+const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -230,6 +230,34 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
+export const formatParamsByLang = (params: any, lang: string) => {
+  const keyArrays = Object.keys(params);
+  for (let key of keyArrays) {
+    console.log(key);
+    switch (lang) {
+      case "node":
+        const formattedNodeKey = camelToSnakeCase(key);
+        if (key !== formattedNodeKey) {
+          params[camelToSnakeCase(key)] = params[key];
+          delete params[key];
+        }
+        break;
+      case "python":
+        // There is a bug here deleting `normalizedMetadata` input
+        const formattedPythonKey = camelToSnakeCase(key).replace("-", "_");
+        if (key !== formattedPythonKey) {
+          params[formattedPythonKey] = params[key];
+          delete params[key];
+        }
+        break;
+      default:
+        break;
+    }
+  }
+
+  return params;
+};
+
 /**
  * @description – Only for NodeJS & Python Moralis SDK codes
  *
@@ -242,16 +270,22 @@ export const filterOutEmpty = (value: any) => {
 export const injectParamsToCode = (
   code: string,
   lang: string,
-  params: unknown,
+  params: any,
   auth: string
 ) => {
+  const { query = {}, path = {}, body = {} } = params ?? {};
   return code
     .replace(
       "{}",
-      stringifyJSON({ ...(params as any)?.query }, true).replace(
-        /\n/g,
-        `\n${lang === "node" ? " ".repeat(INDENT_LENGTH) : ""}`
-      )
+      stringifyJSON(
+        {
+          ...formatParamsByLang(query, lang),
+          ...formatParamsByLang(path, lang),
+          ...formatParamsByLang(body, lang),
+          // ...query,
+        },
+        true
+      ).replace(/\n/g, `\n${lang === "node" ? " ".repeat(INDENT_LENGTH) : ""}`)
     )
     .replace(/YOUR_API_KEY/, auth);
 };
