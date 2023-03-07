@@ -3,7 +3,7 @@ title: "How to get NFT Metadata"
 slug: "../../how-to-get-the-metadata-of-an-nft"
 description: "Learn how to retrieve NFT metadata using the Moralis NFT API, with step-by-step instructions on how to set up your Moralis account, install the Moralis SDK, and use the getNFTMetadata endpoint to get the metadata for a specific NFT."
 sidebar_label: "Get NFT Metadata"
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 ## Prerequisites
