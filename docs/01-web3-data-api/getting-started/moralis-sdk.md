@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 const Moralis = require("moralis").default;
 
 await Moralis.start({
-  apiKey: "YOUR_API_KEY",
+  apiKey: "0xa574a0d8c54FAF9c671997595A3747979965dCE8",
   // ...and any other configuration
 });
 ```
