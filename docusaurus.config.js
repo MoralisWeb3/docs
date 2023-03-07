@@ -185,12 +185,6 @@ const config = {
           },
           // position: Right
           {
-            type: "doc",
-            docId: "example-dapps/evm/evm",
-            position: "right",
-            label: "Demos",
-          },
-          {
             to: "changelog",
             position: "right",
             label: "Changelog",

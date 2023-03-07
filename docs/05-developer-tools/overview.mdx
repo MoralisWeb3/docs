@@ -7,6 +7,8 @@ sidebar_position: 1
 draft: true
 ---
 
+import { CardGrid } from "../../src/components/CardGrid"
+import { webSdks, serverSdks } from "./sdksConfig.ts"
 
 # Developer tools
 
@@ -14,5 +16,26 @@ Get started with your app quickly with our development tools.
 
 # SDKs
 
-Integrate Moralis in your favourite language or framework with one of our SDks.
+With the Moralis SDKs, you can implement all of Moralis' products quickly and easily in your dApp.
+The SDK comes with numerous features, such as:
 
+- Support for server-side and client-side
+- Get [**web3 data**](/web3-data-api) from the supported EVM chains, Aptos and Solana
+- Real-time web3 data via [**Streams**](/streams-api)
+- Web3 [**authentication**](/auth-api)
+- **Type definitions**
+- **Open source**
+
+We offer SDKs for several languages and frameworks, for web or server. See the list below for all possibilities.
+
+# Web SDKs
+
+Moralis provides the following web SDKs. This enables utilities, types and easy integrations with your favourite framework, or vanilla Javascript.
+
+<CardGrid items={Object.values(webSdks)} inlineIcons={false} />
+
+# Server SDKs
+
+Moralis provides the following server SDKs.
+
+<CardGrid items={Object.values(serverSdks)} inlineIcons={false} />
