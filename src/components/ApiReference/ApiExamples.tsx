@@ -230,6 +230,32 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
+/**
+ * @description – Only for NodeJS & Python Moralis SDK codes
+ *
+ * @param code
+ * @param lang
+ * @param params
+ * @param auth
+ * @returns
+ */
+export const injectParamsToCode = (
+  code: string,
+  lang: string,
+  params: unknown,
+  auth: string
+) => {
+  return code
+    .replace(
+      "{}",
+      stringifyJSON({ ...(params as any)?.query }, true).replace(
+        /\n/g,
+        `\n${lang === "node" ? " ".repeat(INDENT_LENGTH) : ""}`
+      )
+    )
+    .replace(/YOUR_API_KEY/, auth);
+};
+
 const ApiExamples = ({
   method,
   apiHost,
@@ -247,14 +273,16 @@ const ApiExamples = ({
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
       {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code } =
+        const { code = "" } =
           codeSamples?.find((sample) => sample?.language === lang) ?? {};
         const auth = token.length > 0 ? token : "YOUR_API_KEY";
         return (
           <TabItem key={index} value={lang} label={title}>
             <CodeBlock className={`language-${langCode}`}>
               {code
-                ? buildTemplate([line(code?.replace(/YOUR_API_KEY/, auth))])
+                ? buildTemplate([
+                    line(injectParamsToCode(code, lang, values, auth)),
+                  ])
                 : template({
                     method,
                     url: [

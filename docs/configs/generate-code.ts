@@ -25,15 +25,15 @@ const generateCode = async () => {
               code: `import Moralis from 'moralis';
 
 try {
-    await Moralis.start({
-        apiKey: "YOUR_API_KEY"
-    });
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
 
-    const response = Moralis.EvmApi.${group}.${fctn}({});
+  const response = Moralis.EvmApi.${group}.${fctn}({});
 
-    console.log(response.raw);
+  console.log(response.raw);
 } catch (e) {
-    console.error(e);
+  console.error(e);
 }`,
               name: "Moralis NodeJS SDK",
             },
@@ -46,8 +46,8 @@ ${bodyParam ? `\nbody = []\n` : ""}${
                 queryParams || pathParams ? `\nparams = {}\n` : ""
               }
 result = evm_api.${group}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
-    api_key=api_key,${bodyParam ? "\n    body=body," : ""}${
-                queryParams || pathParams ? `\n    params=params,` : ""
+  api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
+                queryParams || pathParams ? `\n  params=params,` : ""
               }
 )
 
