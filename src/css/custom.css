@@ -10,6 +10,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -18,6 +19,7 @@
   font-style: normal;
   font-weight: 500;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -26,6 +28,7 @@
   font-style: normal;
   font-weight: 600;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -34,6 +37,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -42,6 +46,7 @@
   font-style: normal;
   font-weight: 800;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -173,16 +178,10 @@ video {
   }
 }
 
-/** In mobile view, reduce the padding */
-@media screen and (max-width: 1280px) {
-  .DocSearch-Button {
-    width: auto;
-  }
-}
-
 .card h3 {
-  display: flex;
-  align-items: center;
+  display:  flex;
+  
+  align-items:  center;
 }
 
 .hero {
@@ -191,17 +190,15 @@ video {
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-.col:has(
-    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+.col:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]) 
+{
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
-li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-li:has(
-    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+li:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
+li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"])
+{
   display: none;
 }
 
@@ -214,7 +211,6 @@ li:has(
     height: 48px;
   }
 }
-
 .sections-menu-trigger {
   align-items: center;
   background-color: var(--docs-color-background-100);
@@ -463,5 +459,80 @@ li.sidebar-developer-tools a.menu__link:before {
 
 li.sidebar-developer-tools a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/developer-tools-active.svg);
+}
+
+.navbar__item--linebreak {
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .navbar__item--hide-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  :root {
+    --ifm-navbar-height: 7rem;
+  }
+
+  nav.menu {
+    padding-top: 20px;
+  }
+
+  .navbar {
+    padding-bottom: 0;
+    padding-top: 10px;
+    padding-left: 24px;
+    box-shadow: inset 0 -1px var(--ifm-toc-border-color);
+  }
+
+  .navbar__items {
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .navbar__items > .navbar__item {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0;
+    margin-right: 24px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
+
+  .navbar__items > .navbar__link--active {
+    border-bottom: 1px solid var(--ifm-navbar-link-hover-color);
+  }
+
+  .navbar__items--right > :last-child {
+    margin-bottom: 10px;
+  }
+
+  .navbar__items--right {
+    flex: 1;
+  }
+ 
+
+  .navbar__items > .navbar__item--linebreak {
+    flex-basis: 100%;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  .navbar__items > .navbar__item--linebreak hr {
+    height: 0;
+  }
+  
+  .navbar__items > .navbar__item--login {
+    margin-right: 0;
+  }
+}
+
+.markdown h1:first-child {
+  margin-bottom: .75rem;
 }
 

@@ -74,7 +74,7 @@
         },
         {
           "name": "token_addresses",
-          "description": "The addresses to get balances for (optional)",
+          "description": "The non-fungible token (NFT) addresses to get balances for",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -14128,6 +14128,7 @@
   "aptos-web3": {
     "getNFTsByIds": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by ids",
       "description": "",
       "method": "GET",
@@ -14176,6 +14177,7 @@
     },
     "getNFTsByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by Collection",
       "description": "",
       "method": "GET",
@@ -14396,6 +14398,7 @@
     },
     "getNFTsByCreators": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by creators",
       "method": "GET",
       "path": "/nfts/creators",
@@ -14615,6 +14618,7 @@
     },
     "getNFTCollections": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections",
       "descipriton": "",
       "method": "GET",
@@ -14792,6 +14796,7 @@
     },
     "getNFTCollectionsByIds": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by ids",
       "description": "",
       "method": "GET",
@@ -14840,6 +14845,7 @@
     },
     "getNFTCollectionsByCreator": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by creator",
       "description": "",
       "method": "GET",
@@ -15011,6 +15017,7 @@
     },
     "getNFTOwnersByTokens": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners by tokens",
       "description": "",
       "method": "GET",
@@ -15177,6 +15184,7 @@
     },
     "getNFTOwnersByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners by Collection",
       "description": "",
       "method": "GET",
@@ -15357,6 +15365,7 @@
     },
     "getNFTOwnersOfCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Owners of Collection",
       "description": "",
       "method": "GET",
@@ -15450,6 +15459,7 @@
     },
     "getNFTTransfersByIds": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transferss by Token ids",
       "description": "",
       "method": "GET",
@@ -15530,6 +15540,7 @@
     },
     "getNFTTransfersByCollection": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by Collection",
       "description": "",
       "method": "GET",
@@ -15740,6 +15751,7 @@
     },
     "getNFTTransfersByCreators": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by creators",
       "description": "",
       "method": "GET",
@@ -15950,6 +15962,7 @@
     },
     "getNFTTransfersByWallets": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by wallets",
       "description": "",
       "method": "GET",
@@ -16160,6 +16173,7 @@
     },
     "getCoinInfoByCoinTypeHashes": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by Coin Type Hashes",
       "description": "",
       "method": "GET",
@@ -16208,6 +16222,7 @@
     },
     "getLatestCoins": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get latest deployed coins",
       "description": "",
       "method": "GET",
@@ -16355,6 +16370,7 @@
     },
     "getCoinsByNameRange": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by name range",
       "description": "",
       "method": "GET",
@@ -16514,6 +16530,7 @@
     },
     "getCoinsBySymbolRange": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by symbol range",
       "description": "",
       "method": "GET",
@@ -16673,6 +16690,7 @@
     },
     "getCoinsByCreators": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Metadata by creator addresses",
       "description": "",
       "method": "GET",
@@ -16827,6 +16845,7 @@
     },
     "getCoinTransfersByOwnerAddresses": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by wallet addresses",
       "description": "",
       "method": "GET",
@@ -17025,6 +17044,7 @@
     },
     "getCoinTransfersByBlockHeights": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by block heights",
       "description": "",
       "method": "GET",
@@ -17197,6 +17217,7 @@
     },
     "getCoinTransfersByCoinType": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by Coin Type",
       "description": "",
       "method": "GET",
@@ -17537,6 +17558,7 @@
     },
     "getCoinBalancesByWallets": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Balances by wallet addresses",
       "description": "",
       "method": "GET",
@@ -17681,6 +17703,7 @@
     },
     "getHistoricalCoinBalancesByWallets": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Historical Coin Balances by wallet addresses",
       "description": "",
       "method": "GET",
@@ -17825,6 +17848,7 @@
     },
     "getCoinTransfersByWalletAddresses": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin Transfers by wallet addresses",
       "description": "",
       "method": "GET",
@@ -18023,6 +18047,7 @@
     },
     "getNFTByOwners": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by wallet addresses",
       "description": "",
       "method": "GET",
@@ -18203,6 +18228,7 @@
     },
     "getWalletsNFTTransfers": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by wallets",
       "description": "",
       "method": "GET",
@@ -18413,6 +18439,7 @@
     },
     "getAccount": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account",
       "description": "",
       "method": "GET",
@@ -18459,6 +18486,7 @@
     },
     "getAccountResources": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account resources",
       "description": "",
       "method": "GET",
@@ -18495,6 +18523,7 @@
     },
     "getAccountModules": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account modules",
       "description": "",
       "method": "GET",
@@ -18531,6 +18560,7 @@
     },
     "getAccountResource": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account resource",
       "description": "",
       "method": "GET",
@@ -18591,6 +18621,7 @@
     },
     "getAccountModule": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account module",
       "description": "",
       "method": "GET",
@@ -18665,6 +18696,7 @@
     },
     "getEventsByCreationNumber": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get events by creation number",
       "description": "",
       "method": "GET",
@@ -18701,6 +18733,7 @@
     },
     "getEventsByEventHandle": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get events by event handle",
       "description": "",
       "method": "GET",
@@ -18743,6 +18776,7 @@
     },
     "getTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transactions",
       "description": "",
       "method": "GET",
@@ -18766,6 +18800,7 @@
     },
     "submitTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Submit transaction",
       "description": "",
       "method": "POST",
@@ -18862,6 +18897,7 @@
     },
     "getTransactionByHash": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transaction by hash",
       "description": "",
       "method": "GET",
@@ -18879,6 +18915,7 @@
     },
     "getTransactionByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transaction by version",
       "description": "",
       "method": "GET",
@@ -18896,6 +18933,7 @@
     },
     "getAccountTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account transactions",
       "description": "",
       "method": "GET",
@@ -18926,6 +18964,7 @@
     },
     "submitBatchTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Submit batch transactions",
       "description": "",
       "method": "POST",
@@ -18993,6 +19032,7 @@
     },
     "simulateTransaction": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Simulate transaction",
       "description": "",
       "method": "POST",
@@ -19043,6 +19083,7 @@
     },
     "encodeSubmission": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Encode submission",
       "description": "",
       "method": "POST",
@@ -19098,6 +19139,7 @@
     },
     "estimateGasPrice": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Estimate gas price",
       "description": "",
       "method": "GET",
@@ -19136,6 +19178,7 @@
     },
     "getBlockByHeight": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get block by height",
       "description": "",
       "method": "GET",
@@ -19216,6 +19259,7 @@
     },
     "getBlockByVersion": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
+      "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get block by version",
       "description": "",
       "method": "GET",

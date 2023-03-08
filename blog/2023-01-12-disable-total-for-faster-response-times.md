@@ -8,6 +8,7 @@ authors:
 In order to vastly improve the response times on a number of endpoints (by up to x10!), we are planning to phase out support for `total` within our API responses.
 
 A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag.
+A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag.
 
 ### Planned Change
 

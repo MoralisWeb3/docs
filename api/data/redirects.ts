@@ -5894,4 +5894,14 @@ export const redirects = [
     destination: "https://moralis.io/web3-dictionary",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/reference/get-transaction-verbose",
+    destination: "/web3-data-api/reference/get-decoded-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-transactions-verbose",
+    destination: "/web3-data-api/reference/get-decoded-wallet-transaction",
+    permanent: true,
+  },
 ];

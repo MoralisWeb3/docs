@@ -156,6 +156,16 @@ const config = {
         },
         items: [
           {
+            type: "search",
+            position: "left",
+          },
+          {
+            type: "html",
+            position: "left",
+            className: "navbar__item--linebreak",
+            value: "<hr>",
+          },
+          {
             type: "doc",
             docId: "web3-data-api/evm/overview",
             position: "left",
@@ -173,11 +183,27 @@ const config = {
             position: "left",
             label: "Authentication API",
           },
-          {
-            type: "search",
-            position: "left",
-          },
           // position: Right
+          {
+            type: "html",
+            position: "right",
+            value:
+              '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
+              className: "navbar__item--hide-on-mobile",
+          },
+          {
+            type: "html",
+            position: "right",
+            value:
+              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
+            className: "navbar__item--hide-on-mobile navbar__item--login",
+          },
+          {
+            type: "html",
+            position: "right",
+            className: "navbar__item--linebreak",
+            value: "<hr>",
+          },
           {
             type: "doc",
             docId: "example-dapps/evm/evm",
@@ -243,12 +269,6 @@ const config = {
                 label: "1.0",
               },
             ],
-          },
-          {
-            type: "html",
-            position: "right",
-            value:
-              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
           },
         ],
       },

@@ -6,6 +6,7 @@ sidebar_label: "Get verbose transactions of address"
 sidebar_position: 2
 ---
 
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
