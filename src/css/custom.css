@@ -225,6 +225,7 @@ li:has(
   .navbar__items {
     flex-wrap: wrap;
     align-content: space-between;
+    flex: 2;
   }
 
   .navbar__items > .navbar__item {
@@ -249,7 +250,6 @@ li:has(
     flex: 1;
   }
  
-
   .navbar__items > .navbar__item--linebreak {
     flex-basis: 100%;
     height: 0;

@@ -189,6 +189,11 @@ const config = {
             position: "left",
             label: "Developer tools",
           },
+          {
+            to: "changelog",
+            position: "left",
+            label: "Changelog",
+          },
           // position: Right
           {
             type: "html",
@@ -210,51 +215,12 @@ const config = {
             className: "navbar__item--linebreak",
             value: "<hr>",
           },
-          // position: Right
           {
-            to: "changelog",
+            type: "html",
             position: "right",
-            label: "Changelog",
-          },
-          {
-            type: "dropdown",
-            label: "References",
-            position: "right",
-            items: [
-              {
-                type: "html",
-                value: "API References",
-              },
-              {
-                label: "Web3 Data API",
-                type: "doc",
-                docId: "reference/web3-data-api/overview",
-              },
-              {
-                label: "Streams API",
-                type: "doc",
-                docId: "reference/streams-api/overview",
-              },
-              {
-                label: "Authentication API",
-                type: "doc",
-                docId: "reference/authentication-api/overview",
-              },
-              {
-                type: "html",
-                value: "SDK References",
-              },
-              {
-                label: "JS SDK",
-                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
-                target: "_blank",
-              },
-              {
-                label: "Python SDK",
-                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
-                target: "_blank",
-              },
-            ],
+            value:
+              '<a class="navbar__link" href="https://moralis.io/contact-support/" target="_blank">Support</a>',
+              className: "navbar__item--hide-on-mobile",
           },
           {
             type: "docsVersionDropdown",
