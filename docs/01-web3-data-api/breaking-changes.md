@@ -12,7 +12,7 @@ When integrating with Moralis APIs or Streams, you'll need to be aware of the ty
 
 Breaking changes are typically any changes that might require action from our customers (i.e. code changes are required).
 
-For all breaking changes, we aim to provide you with at least 60 days notice prior to making the change. In certains cases related to security or privacy, we may reduce the 60 day timeframe.
+For all breaking changes, we aim to provide you with at least 60 days notice prior to making the change. In certains cases related to security, privacy or urgent issues related to service resiliency we may reduce the 60 day timeframe.
 
 **Please note:** This notice period is applicable to endpoints that are made released to general availability. However, for beta, experimental, or preview endpoints that are still in the early stages, we will continue to make frequent updates as we continue to refine them. Such endpoints will be marked as beta or experimental on our API reference page.
 
@@ -31,6 +31,7 @@ Below are examples of what we consider breaking changes:
 * Removing support for a blockchain
 * Removing an endpoint
 * Removing a field from the response (a "field" in this case is a JSON key/value pair)
+* Removing a query parameter
 * Adding a new required field, header, or parameter in the request
 * Renaming a field
 * Changing the data type of a field
