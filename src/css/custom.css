@@ -206,7 +206,7 @@ li:has(
   }
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 997px) {
   :root {
     --ifm-navbar-height: 7rem;
   }
@@ -234,6 +234,11 @@ li:has(
     margin-right: 24px;
     padding-bottom: 10px;
     display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
+
+  .navbar__items > .navbar__link--active {
+    border-bottom: 1px solid var(--ifm-navbar-link-hover-color);
   }
 
   .navbar__items--right > :last-child {
@@ -243,10 +248,7 @@ li:has(
   .navbar__items--right {
     flex: 1;
   }
-
-  .navbar__link--active {
-    border-bottom: 1px solid var(--ifm-navbar-link-hover-color);
-  }
+ 
 
   .navbar__items > .navbar__item--linebreak {
     flex-basis: 100%;
