@@ -5,13 +5,13 @@ import React, {
   useContext,
   Component,
 } from "react";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
 import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
 import qs from "qs";
 import styles from "./styles.module.css";
-
 import ApiResponseField, {
   ApiResponse,
   buildResponse,
@@ -37,6 +37,7 @@ export interface ApiReferenceProps {
   bodyParam?: ApiParam;
   responses: ApiResponse[];
   apiHost: string;
+  testHost?: string;
   codeSamples?: CodeSample[];
   children?: Component;
 }
@@ -45,6 +46,11 @@ export interface FormValues {
   path: object;
   query: object;
   body: object;
+}
+
+export enum Network {
+  MAINNET = "mainnet",
+  TESTNET = "testnet",
 }
 
 const deepCompact = (value: unknown) => {
@@ -76,6 +82,7 @@ const ApiReference = ({
   bodyParam,
   responses,
   apiHost,
+  testHost,
   codeSamples,
   children,
 }: ApiReferenceProps) => {
@@ -83,6 +90,11 @@ const ApiReference = ({
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
+  const [network, setNetwork] = useState<Network>(Network.MAINNET);
+  const hostUrl = useMemo(
+    () => (network === Network.MAINNET ? apiHost : testHost),
+    [network]
+  );
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -103,7 +115,7 @@ const ApiReference = ({
         }
         const response = await fetch(
           [
-            apiHost,
+            hostUrl,
             pathReplace,
             qs.stringify(values.query || {}, { addQueryPrefix: true }),
           ].join(""),
@@ -122,7 +134,7 @@ const ApiReference = ({
         );
 
         const fetchBody = await response.json();
-        
+
         const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
@@ -169,13 +181,40 @@ const ApiReference = ({
           })}
         />
       </Head>
+      <div>
+        {apiHost.includes("aptos") && (
+          <ToggleGroup.Root
+            className={styles.ToggleGroup}
+            type="single"
+            defaultValue="mainnet"
+            orientation="horizontal"
+            value={network}
+            onValueChange={(value: Network) => {
+              if (value) setNetwork(value);
+            }}
+          >
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="mainnet"
+            >
+              Mainnet
+            </ToggleGroup.Item>
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="testnet"
+            >
+              Testnet
+            </ToggleGroup.Item>
+          </ToggleGroup.Root>
+        )}
+      </div>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
             <div className="col">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
-                {apiHost}
+                {hostUrl}
                 {path}
               </div>
 
@@ -262,7 +301,7 @@ const ApiReference = ({
 
                 <ApiExamples
                   method={method}
-                  apiHost={apiHost}
+                  apiHost={hostUrl}
                   path={path}
                   codeSamples={codeSamples}
                 />
