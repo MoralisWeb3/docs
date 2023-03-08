@@ -2,12 +2,12 @@ export const redirects = [
   { source: "/undefined", destination: "/", permanent: true },
   {
     source: "/docs/sign-in-with-web3authio",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-magiclink",
-    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
   },
   { source: "/page/undefined", destination: "/", permanent: true },
@@ -19,7 +19,7 @@ export const redirects = [
   },
   {
     source: "/docs/net-web3-auth",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
@@ -29,27 +29,27 @@ export const redirects = [
   },
   {
     source: "/docs/sign-in-with-metamask",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-walletconnect",
-    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/how-to-sign-in-with-walletconnect",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-rainbowkit",
-    destination: "/authentication-api/evm/how-to-sign-in-with-rainbowkit",
+    destination: "/authentication-api/how-to-sign-in-with-rainbowkit",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-coinbase-wallet",
-    destination: "/authentication-api/evm/how-to-sign-in-with-coinbase-wallet",
+    destination: "/authentication-api/how-to-sign-in-with-coinbase-wallet",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-metamask-angular",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask-angular",
+    destination: "/authentication-api/how-to-sign-in-with-metamask-angular",
     permanent: true,
   },
   { source: "/docs/overview", destination: "/", permanent: true },
@@ -461,55 +461,55 @@ export const redirects = [
   },
   {
     source: "/docs/how-to-sign-in-with-metamask",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-metamask-python-django",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-metamask-python-django",
+      "/authentication-api/how-to-sign-in-with-metamask-python-django",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-metamask-csharp-dot-net",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net",
+      "/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-metamask-angular",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask-angular",
+    destination: "/authentication-api/how-to-sign-in-with-metamask-angular",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-rainbowkit",
-    destination: "/authentication-api/evm/how-to-sign-in-with-rainbowkit",
+    destination: "/authentication-api/how-to-sign-in-with-rainbowkit",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-walletconnect",
-    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/how-to-sign-in-with-walletconnect",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-web3authio",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-coinbase-wallet",
-    destination: "/authentication-api/evm/how-to-sign-in-with-coinbase-wallet",
+    destination: "/authentication-api/how-to-sign-in-with-coinbase-wallet",
     permanent: true,
   },
   {
     source: "/docs/sign-in-with-metamask-react",
     destination:
-      "/authentication-api/evm/how-to-authenticate-users-with-metamask-using-react",
+      "/authentication-api/how-to-authenticate-users-with-metamask-using-react",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-magiclink",
-    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
   },
   {
@@ -531,54 +531,54 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-stream-using-js-sdk",
-    destination: "/streams-api/evm/using-node-js-sdk",
+    destination: "/streams-api/using-node-js-sdk",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-specific-nfts",
-    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
+    destination: "/streams-api/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
     source: "/docs/using-webui",
-    destination: "/streams-api/evm/using-webui",
+    destination: "/streams-api/using-webui",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-for-burnmint-tokens",
     destination:
-      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
+      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
     source: "/docs/how-to-listen-to-all-nft-contract-transfers",
-    destination: "/streams-api/evm/how-to-listen-all-nft-transfers",
+    destination: "/streams-api/how-to-listen-all-nft-transfers",
     permanent: true,
   },
   {
     source: "/docs/how-to-monitor-ens-name-registrations",
-    destination: "/streams-api/evm/how-to-monitor-ens-domain-registrations",
+    destination: "/streams-api/how-to-monitor-ens-domain-registrations",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
     destination:
-      "/streams-api/evm/how-to-listen-all-events-from-a-contract-factory",
+      "/streams-api/how-to-listen-all-events-from-a-contract-factory",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     destination:
-      "/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     permanent: true,
   },
   {
     source:
       "/docs/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     destination:
-      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
   {
@@ -588,7 +588,7 @@ export const redirects = [
   },
   {
     source: "/docs/records-and-pricing",
-    destination: "/streams-api/evm/records-and-pricing",
+    destination: "/streams-api/records-and-pricing",
     permanent: true,
   },
   {
@@ -608,7 +608,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhooks-transactions",
-    destination: "/streams-api/evm/webhooks-transactions",
+    destination: "/streams-api/webhooks-transactions",
     permanent: true,
   },
   {
@@ -618,7 +618,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhook-security",
-    destination: "/streams-api/evm/webhook-security",
+    destination: "/streams-api/webhook-security",
     permanent: true,
   },
   {
@@ -653,12 +653,12 @@ export const redirects = [
   },
   {
     source: "/docs/get-native-balances",
-    destination: "/streams-api/evm/get-native-balances",
+    destination: "/streams-api/get-native-balances",
     permanent: true,
   },
   {
     source: "/docs/triggers",
-    destination: "/streams-api/evm/triggers",
+    destination: "/streams-api/triggers",
     permanent: true,
   },
   {
@@ -718,7 +718,7 @@ export const redirects = [
   {
     source: "/docs/using-unity-google-cloud",
     destination:
-      "/authentication-api/evm/integrations/google-cloud-nodejs-unity",
+      "/authentication-api/integrations/google-cloud-nodejs-unity",
     permanent: true,
   },
   {
@@ -733,22 +733,22 @@ export const redirects = [
   },
   {
     source: "/docs/web3-firebase-authentication",
-    destination: "/authentication-api/evm/integrations/firebase-nodejs",
+    destination: "/authentication-api/integrations/firebase-nodejs",
     permanent: true,
   },
   {
     source: "/docs/web3-firebase-streams",
-    destination: "/streams-api/evm/integrations/firebase",
+    destination: "/streams-api/integrations/firebase",
     permanent: true,
   },
   {
     source: "/docs/supabase-authentication",
-    destination: "/authentication-api/evm/integrations/supabase-nodejs",
+    destination: "/authentication-api/integrations/supabase-nodejs",
     permanent: true,
   },
   {
     source: "/docs/web3-parse-server-authentication",
-    destination: "/authentication-api/evm/integrations/parse-server-nodejs",
+    destination: "/authentication-api/integrations/parse-server-nodejs",
     permanent: true,
   },
   {
@@ -759,7 +759,7 @@ export const redirects = [
   {
     source: "/docs/using-unity-playfab",
     destination:
-      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+      "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -1455,42 +1455,42 @@ export const redirects = [
     source:
       "/docs/listen-to-all-events-from-new-contracts-specific-to-a-contract-factory",
     destination:
-      "/streams-api/evm/how-to-listen-all-events-from-a-contract-factory",
+      "/streams-api/how-to-listen-all-events-from-a-contract-factory",
     permanent: true,
   },
   {
     source:
       "/docs/listen-to-all-nft-contracts-transfers-where-sender-is-a-specific-address",
     destination:
-      "/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+      "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
     permanent: true,
   },
   {
     source: "/docs/listen-to-all-nft-contract-transfers",
-    destination: "/streams-api/evm/how-to-listen-all-nft-transfers",
+    destination: "/streams-api/how-to-listen-all-nft-transfers",
     permanent: true,
   },
   {
     source: "/docs/monitor-specific-nfts",
-    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
+    destination: "/streams-api/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
     source: "/docs/monitor-for-burnmint-tokens",
     destination:
-      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
+      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
     source:
       "/docs/listen-to-all-erc20-contract-transfers-where-sender-is-a-specific-address-and-number-of-coins-transferred-is-over-1000",
     destination:
-      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
   {
     source: "/docs/monitor-ens-name-registrations",
-    destination: "/streams-api/evm/how-to-monitor-ens-domain-registrations",
+    destination: "/streams-api/how-to-monitor-ens-domain-registrations",
     permanent: true,
   },
   {
@@ -1500,7 +1500,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhooks",
-    destination: "/streams-api/evm/webhooks-transactions",
+    destination: "/streams-api/webhooks-transactions",
     permanent: true,
   },
   {
@@ -1521,7 +1521,7 @@ export const redirects = [
   {
     source: "/docs/monitor-for-burnmint-tokens-1",
     destination:
-      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
+      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
@@ -1562,14 +1562,14 @@ export const redirects = [
   {
     source: "/docs/aws-gamesparks-integration-with-unity",
     destination:
-      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
     permanent: true,
   },
   {
     source:
-      "/authentication-api/evm/integrations/aws-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/aws-gamesparks-integration-with-unity",
     destination:
-      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
     permanent: true,
   },
   {
@@ -1605,7 +1605,7 @@ export const redirects = [
   {
     source: "/docs/python-django-web3-auth",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-metamask-python-django",
+      "/authentication-api/how-to-sign-in-with-metamask-python-django",
     permanent: true,
   },
   { source: "/docs/", destination: "/", permanent: true },
@@ -1764,7 +1764,7 @@ export const redirects = [
   {
     source: "/docs/using-unity-aws-gamesparks",
     destination:
-      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
     permanent: true,
   },
   {
@@ -2137,7 +2137,7 @@ export const redirects = [
   {
     source: "/docs/azure-playfab-integration",
     destination:
-      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+      "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -2414,7 +2414,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-stream",
-    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
+    destination: "/streams-api/how-to-monitor-specific-nfts",
     permanent: true,
   },
   {
@@ -2531,7 +2531,7 @@ export const redirects = [
   {
     source: "/docs/using-unity-aws-gamesparks",
     destination:
-      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
     permanent: true,
   },
   {
@@ -2632,7 +2632,7 @@ export const redirects = [
   },
   {
     source: "/docs/nodejs-demo-firebase-auth",
-    destination: "/authentication-api/evm/integrations/firebase-nodejs",
+    destination: "/authentication-api/integrations/firebase-nodejs",
     permanent: true,
   },
   {
@@ -2658,7 +2658,7 @@ export const redirects = [
   },
   {
     source: "/reference/verifychallengeevm-1",
-    destination: "/authentication-api/evm/reference/verify-challenge-evm",
+    destination: "/authentication-api/reference/verify-challenge-evm",
     permanent: true,
   },
   {
@@ -2886,7 +2886,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/users/crypto-login/magic",
-    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
   },
   {
@@ -3021,7 +3021,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/cloud-code/webhooks",
-    destination: "/streams-api/evm/webhooks-transactions",
+    destination: "/streams-api/webhooks-transactions",
     permanent: true,
   },
   {
@@ -3100,7 +3100,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/users/crypto-login/walletconnect",
-    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/how-to-sign-in-with-walletconnect",
     permanent: true,
   },
   {
@@ -3266,7 +3266,7 @@ export const redirects = [
   {
     source: "/docs/playfab-integration",
     destination:
-      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+      "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -3287,7 +3287,7 @@ export const redirects = [
   {
     source: "/docs/first-web3-unity-game",
     destination:
-      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+      "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -3360,7 +3360,7 @@ export const redirects = [
   },
   {
     source: "/docs/nextjs-web3-auth",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
   },
   {
@@ -3508,17 +3508,17 @@ export const redirects = [
   {
     source: "/unity",
     destination:
-      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+      "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
     source: "/moralis-server/users/crypto-login/sign-in-message",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
   },
   {
     source: "/webhooks",
-    destination: "/streams-api/evm/webhooks-transactions",
+    destination: "/streams-api/webhooks-transactions",
     permanent: true,
   },
   {
@@ -3544,7 +3544,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/users/crypto-login/web3auth",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
@@ -3654,7 +3654,7 @@ export const redirects = [
   },
   {
     source: "/webhooks",
-    destination: "/streams-api/evm/webhooks-transactions",
+    destination: "/streams-api/webhooks-transactions",
     permanent: true,
   },
   {
@@ -3695,12 +3695,12 @@ export const redirects = [
   },
   {
     source: "/docs/web3-supabase-authentication",
-    destination: "/authentication-api/evm/integrations/supabase-nodejs",
+    destination: "/authentication-api/integrations/supabase-nodejs",
     permanent: true,
   },
   {
     source: "/docs/supabase-1",
-    destination: "/authentication-api/evm/integrations/supabase-nodejs",
+    destination: "/authentication-api/integrations/supabase-nodejs",
     permanent: true,
   },
   {
@@ -4096,7 +4096,7 @@ export const redirects = [
   {
     source: "/docs/sign-in-with-metamask-python-django",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-metamask-python-django",
+      "/authentication-api/how-to-sign-in-with-metamask-python-django",
     permanent: true,
   },
   {
@@ -4146,12 +4146,12 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/web3-login/metamask",
-    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
   },
   {
     source: "/moralis-dapp/users/crypto-login/walletconnect",
-    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/how-to-sign-in-with-walletconnect",
     permanent: true,
   },
   {
@@ -4192,12 +4192,12 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/web3-login/magic",
-    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
   },
   {
     source: "/moralis-dapp/users/web3-login/walletconnect",
-    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/how-to-sign-in-with-walletconnect",
     permanent: true,
   },
   {
@@ -4590,7 +4590,7 @@ export const redirects = [
   {
     source: "/docs/aws-gamesparks",
     destination:
-      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
     permanent: true,
   },
   {
@@ -4601,7 +4601,7 @@ export const redirects = [
   {
     source: "/docs/google-cloud",
     destination:
-      "/authentication-api/evm/integrations/google-cloud-nodejs-unity",
+      "/authentication-api/integrations/google-cloud-nodejs-unity",
     permanent: true,
   },
 
@@ -4619,14 +4619,14 @@ export const redirects = [
   {
     source: "/docs/monitor-all-usdt-transfers-above-100k",
     destination:
-      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
     permanent: true,
   },
 
   {
     source: "/docs/sign-in-with-metamask-dot-net",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net",
+      "/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net",
     permanent: true,
   },
 
@@ -4791,18 +4791,18 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/crypto-login/magic",
-    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
   },
   {
     source: "/moralis-dapp/users/crypto-login/phantom-solana",
     destination:
-      "/authentication-api/evm/how-to-sign-in-with-solana-phantom-wallet",
+      "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
     permanent: true,
   },
   {
     source: "/moralis-dapp/users/crypto-login/web3auth",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
@@ -4845,7 +4845,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/web3-login/web3auth",
-    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
   },
   {
@@ -5252,7 +5252,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/auth-api/step-by-step-guide",
-    destination: "/authentication-api/evm/tutorials",
+    destination: "/authentication-api/tutorials",
     permanent: true,
   },
   {

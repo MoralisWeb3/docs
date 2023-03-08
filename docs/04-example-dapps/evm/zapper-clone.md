@@ -3,7 +3,6 @@ title: "Zapper Clone"
 slug: "zapper-clone"
 description: "This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances."
 ---
-
 ## Introduction
 
 This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances.
@@ -26,6 +25,8 @@ mkdir backend
 cd backend
 ```
 
+
+
 2. Install the required dependencies.
 
 ```bash npm2yarn
@@ -35,21 +36,23 @@ npm install moralis express cors dotenv nodemon
 3. Create a new file with a basic express app inside`backend/index.js`
 
 ```javascript index.js
-const express = require("express");
-const cors = require("cors");
-const app = express();
-const port = 8080;
+const express = require('express')
+const cors = require('cors')
+const app = express()
+const port = 8080
 
-app.use(cors());
+app.use(cors())
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+  console.log(`Example app listening on port ${port}`)
+})
 ```
+
+
 
 4. Add our start script inside `backend/package.json`
 
@@ -75,11 +78,15 @@ app.listen(port, () => {
 }
 ```
 
-5. Create a `.env` file and add your Moralis API Key inside. You can get your own key following this tutorial [How to get an API Key](/web3-data-api/evm/get-your-api-key).
+
+
+5. Create a `.env` file and add your Moralis API Key inside. You can get your own key following this tutorial [How to get an API Key](/web3-data-api/get-your-api-key).
 
 ```typescript .env
-MORALIS_API_KEY = YOUR_KEY_HERE;
+MORALIS_API_KEY = YOUR_KEY_HERE
 ```
+
+
 
 6. Now in your `backend/index.js` you can add Moralis.
 
@@ -98,6 +105,8 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 ```
+
+
 
 ### Setup our custom endpoints.
 
@@ -142,6 +151,8 @@ app.get("/nativeBalance", async (req, res) => {
 });
 ```
 
+
+
 2. Get ERC20 balances and prices.
 
 ```javascript index.js
@@ -177,12 +188,15 @@ app.get("/tokenBalances", async (req, res) => {
       }
     }
 
+
     res.send(legitTokens);
   } catch (e) {
     res.send(e);
   }
 });
 ```
+
+
 
 3. Get NFTs.
 
@@ -209,6 +223,8 @@ app.get("/nftBalance", async (req, res) => {
 });
 ```
 
+
+
 4. Get historical ERC20 transfers.
 
 ```javascript index.js
@@ -224,12 +240,13 @@ app.get("/tokenTransfers", async (req, res) => {
       address: address,
       chain: chain,
     });
-
+    
     const userTrans = response.data.result;
 
     let userTransDetails = [];
-
+    
     for (let i = 0; i < userTrans.length; i++) {
+      
       try {
         const metaResponse = await Moralis.EvmApi.token.getTokenMetadata({
           addresses: [userTrans[i].address],
@@ -245,7 +262,10 @@ app.get("/tokenTransfers", async (req, res) => {
       } catch (e) {
         console.log(e);
       }
+
     }
+
+
 
     res.send(userTransDetails);
   } catch (e) {
@@ -253,6 +273,8 @@ app.get("/tokenTransfers", async (req, res) => {
   }
 });
 ```
+
+
 
 ### Start the express app.
 
@@ -290,6 +312,7 @@ yarn create react-app frontend
 </TabItem>
 </Tabs>
 
+
 2. Go inside the frontend directory using `cd frontend` and install the required dependencies.
 
 ```bash npm2yarn
@@ -310,7 +333,8 @@ Inside the components folder, we will create multiple components which will be u
 import React from "react";
 import axios from "axios";
 import { Table } from "@web3uikit/core";
-import { Reload } from "@web3uikit/icons";
+import {Reload} from '@web3uikit/icons'
+
 
 function NativeTokens({
   wallet,
@@ -320,6 +344,8 @@ function NativeTokens({
   nativeValue,
   setNativeValue,
 }) {
+
+
   async function getNativeBalance() {
     const response = await axios.get("http://localhost:8080/nativeBalance", {
       params: {
@@ -340,29 +366,30 @@ function NativeTokens({
 
   return (
     <>
-      <div className="tabHeading">
-        Native Balance <Reload onClick={getNativeBalance} />
-      </div>
-      {nativeBalance > 0 && nativeValue > 0 && (
-        <Table
-          pageSize={1}
-          noPagination={true}
-          style={{ width: "900px" }}
-          columnsConfig="300px 300px 250px"
-          data={[["Native", nativeBalance, `$${nativeValue}`]]}
-          header={[
-            <span>Currency</span>,
-            <span>Balance</span>,
-            <span>Value</span>,
-          ]}
-        />
-      )}
+      <div className="tabHeading">Native Balance <Reload onClick={getNativeBalance}/></div>
+      {(nativeBalance >0 && nativeValue >0) && 
+      <Table
+      pageSize={1}
+      noPagination={true}
+      style={{width:"900px"}}
+      columnsConfig="300px 300px 250px"
+      data={[["Native", nativeBalance, `$${nativeValue}`]]}
+      header={[
+        <span>Currency</span>,
+        <span>Balance</span>,
+        <span>Value</span>,
+      ]}
+    />
+      }
+      
     </>
   );
 }
 
 export default NativeTokens;
 ```
+
+
 
 2. Nfts.js
 
@@ -371,7 +398,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Reload } from "@web3uikit/icons";
-import { Input } from "@web3uikit/core";
+import { Input } from "@web3uikit/core"
 
 function Nfts({ chain, wallet, filteredNfts, setFilteredNfts, nfts, setNfts }) {
   const [nameFilter, setNameFilter] = useState("");
@@ -439,8 +466,8 @@ function Nfts({ chain, wallet, filteredNfts, setFilteredNfts, nfts, setNfts }) {
       <div className="tabHeading">
         NFT Portfolio <Reload onClick={getUserNfts} />
       </div>
-      <div className="filters">
-        <Input
+      <div className= "filters">
+      <Input
           id="NameF"
           label="Name Filter"
           labelBgColor="rgb(33, 33, 38)"
@@ -456,28 +483,33 @@ function Nfts({ chain, wallet, filteredNfts, setFilteredNfts, nfts, setNfts }) {
           style={{}}
           onChange={(e) => setIdFilter(e.target.value)}
         />
-      </div>
-      <div className="nftList">
+        </div>
+        <div className="nftList">
         {filteredNfts.length > 0 &&
+        
           filteredNfts.map((e) => {
             return (
               <>
                 <div className="nftInfo">
-                  {e.image && <img src={e.image} width={200} />}
-
-                  <div>Name: {e.name}, </div>
-                  <div>(ID: {e.token_id.slice(0, 5)})</div>
+                {e.image && <img src={e.image} width={200} />}
+                
+                <div>Name: {e.name}, </div>
+                <div>(ID: {e.token_id.slice(0,5)})</div>
                 </div>
               </>
             );
-          })}
-      </div>
+          })
+          }
+          </div>
+      
     </>
   );
 }
 
 export default Nfts;
 ```
+
+
 
 3. PortfolioValue.js
 
@@ -488,6 +520,7 @@ import "../App.css";
 
 function PortfolioValue({ tokens, nativeValue }) {
   const [totalValue, setTotalValue] = useState(0);
+
 
   useEffect(() => {
     let val = 0;
@@ -501,16 +534,20 @@ function PortfolioValue({ tokens, nativeValue }) {
 
   return (
     <>
-      <div className="totalValue">
-        <h3>Portfolio Total Value</h3>
-        <h2>${totalValue}</h2>
-      </div>
+    <div className="totalValue">
+      <h3>Portfolio Total Value</h3>
+      <h2>
+       ${totalValue}
+      </h2>
+    </div>
     </>
   );
 }
 
 export default PortfolioValue;
 ```
+
+
 
 4. Tokens.js
 
@@ -521,6 +558,7 @@ import { Table } from "@web3uikit/core";
 import { Reload } from "@web3uikit/icons";
 
 function Tokens({ wallet, chain, tokens, setTokens }) {
+
   async function getTokenBalances() {
     const response = await axios.get("http://localhost:8080/tokenBalances", {
       params: {
@@ -535,24 +573,21 @@ function Tokens({ wallet, chain, tokens, setTokens }) {
   }
 
   function tokenProcessing(t) {
+
+    
     for (let i = 0; i < t.length; i++) {
-      t[i].bal = (Number(t[i].balance) / Number(`1E${t[i].decimals}`)).toFixed(
-        3
-      ); //1E18
-      t[i].val = (
-        (Number(t[i].balance) / Number(`1E${t[i].decimals}`)) *
-        Number(t[i].usd)
-      ).toFixed(2);
+      t[i].bal = (Number(t[i].balance) / Number(`1E${t[i].decimals}`)).toFixed(3); //1E18
+      t[i].val = ((Number(t[i].balance) / Number(`1E${t[i].decimals}`)) *Number(t[i].usd)).toFixed(2);
     }
 
     setTokens(t);
+
+    
   }
 
   return (
     <>
-      <div className="tabHeading">
-        ERC20 Tokens <Reload onClick={getTokenBalances} />
-      </div>
+      <div className="tabHeading">ERC20 Tokens <Reload onClick={getTokenBalances}/></div>
 
       {tokens.length > 0 && (
         <Table
@@ -560,7 +595,7 @@ function Tokens({ wallet, chain, tokens, setTokens }) {
           noPagination={true}
           style={{ width: "900px" }}
           columnsConfig="300px 300px 250px"
-          data={tokens.map((e) => [e.symbol, e.bal, `$${e.val}`])}
+          data={tokens.map((e) => [e.symbol, e.bal, `$${e.val}`] )}
           header={[
             <span>Currency</span>,
             <span>Balance</span>,
@@ -574,6 +609,8 @@ function Tokens({ wallet, chain, tokens, setTokens }) {
 
 export default Tokens;
 ```
+
+
 
 5. TransferHistory.js
 
@@ -598,6 +635,7 @@ function TransferHistory({ chain, wallet, transfers, setTransfers }) {
     }
   }
 
+
   return (
     <>
       <div className="tabHeading">
@@ -615,7 +653,7 @@ function TransferHistory({ chain, wallet, transfers, setTransfers }) {
               (Number(e.value) / Number(`1e${e.decimals}`)).toFixed(3),
               `${e.from_address.slice(0, 4)}...${e.from_address.slice(38)}`,
               `${e.to_address.slice(0, 4)}...${e.to_address.slice(38)}`,
-              e.block_timestamp.slice(0, 10),
+              e.block_timestamp.slice(0,10),
             ])}
             header={[
               <span>Token</span>,
@@ -634,76 +672,61 @@ function TransferHistory({ chain, wallet, transfers, setTransfers }) {
 export default TransferHistory;
 ```
 
+
+
 6. WalletInputs.js
 
 ```javascript WalletInputs.js
 import React from "react";
 import "../App.css";
-import { Input, Select, CryptoLogos } from "@web3uikit/core";
+import {Input, Select, CryptoLogos} from '@web3uikit/core'
 
-function WalletInputs({ chain, wallet, setChain, setWallet }) {
+function WalletInputs({chain, wallet, setChain, setWallet}) {
   return (
     <>
-      <div className="header">
-        <div className="title">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 500 500"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="logo_exterior"
-              d="M500 250C500 111.929 388.071 0 250 0C111.929 0 0 111.929 0 250C0 388.071 111.929 500 250 500C388.071 500 500 388.071 500 250Z"
-              fill="#784FFE"
-            ></path>
-            <path
-              id="logo_interior"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M154.338 187.869L330.605 187L288.404 250.6L388 250.118L345.792 312.652L168.382 313.787L211.25 250.633L112 250.595L154.338 187.869Z"
-              fill="white"
-            ></path>
-          </svg>
-          <h1>Zapper</h1>
-        </div>
-        <div className="walletInputs">
-          <Input
-            id="Wallet"
-            label="Wallet Address"
-            labelBgColor="rgb(33, 33, 38)"
-            value={wallet}
-            style={{ height: "50px" }}
-            onChange={(e) => setWallet(e.target.value)}
-          />
-          <Select
-            defaultOptionIndex={0}
-            id="Chain"
-            onChange={(e) => setChain(e.value)}
-            options={[
-              {
-                id: "eth",
-                label: "Ethereum",
-                value: "0x1",
-                prefix: <CryptoLogos chain="ethereum" />,
-              },
-              {
-                id: "matic",
-                label: "Polygon",
-                value: "0x89",
-                prefix: <CryptoLogos chain="polygon" />,
-              },
-            ]}
-          />
-        </div>
+    <div className="header">
+      <div className="title">
+        <svg width="40" height="40" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="logo_exterior" d="M500 250C500 111.929 388.071 0 250 0C111.929 0 0 111.929 0 250C0 388.071 111.929 500 250 500C388.071 500 500 388.071 500 250Z" fill="#784FFE"></path><path id="logo_interior" fill-rule="evenodd" clip-rule="evenodd" d="M154.338 187.869L330.605 187L288.404 250.6L388 250.118L345.792 312.652L168.382 313.787L211.25 250.633L112 250.595L154.338 187.869Z" fill="white"></path></svg>
+        <h1>Zapper</h1>
       </div>
+      <div className="walletInputs">
+        <Input
+          id="Wallet"
+          label="Wallet Address"
+          labelBgColor="rgb(33, 33, 38)"
+          value={wallet}
+          style={{height: "50px"}}
+          onChange={(e) => setWallet(e.target.value)}
+        />
+        <Select
+          defaultOptionIndex={0}
+          id="Chain"
+          onChange={(e) => setChain(e.value)}
+          options={[
+          {
+            id: 'eth',
+            label: 'Ethereum',
+            value: "0x1",
+            prefix: <CryptoLogos chain="ethereum"/>
+          },
+          {
+            id: 'matic',
+            label: 'Polygon',
+            value: "0x89",
+            prefix: <CryptoLogos chain="polygon"/>
+          },
+          ]}
+        />
+      </div>
+    </div>
     </>
   );
 }
 
 export default WalletInputs;
 ```
+
+
 
 ### Import our components
 
@@ -730,6 +753,7 @@ function App() {
   const [filteredNfts, setFilteredNfts] = useState([]);
   const [transfers, setTransfers] = useState([]);
 
+
   return (
     <div className="App">
       <WalletInputs
@@ -746,7 +770,10 @@ function App() {
                 <Avatar isRounded size={130} theme="image" />
                 <h2>{`${wallet.slice(0, 6)}...${wallet.slice(36)}`}</h2>
               </div>
-              <PortfolioValue nativeValue={nativeValue} tokens={tokens} />
+              <PortfolioValue
+                nativeValue={nativeValue}
+                tokens={tokens}
+              />
             </>
           )}
         </div>
@@ -769,21 +796,21 @@ function App() {
             />
           </Tab>
           <Tab tabKey={2} tabName={"Transfers"}>
-            <TransferHistory
-              chain={chain}
-              wallet={wallet}
+            <TransferHistory 
+              chain={chain} 
+              wallet={wallet} 
               transfers={transfers}
               setTransfers={setTransfers}
             />
           </Tab>
           <Tab tabKey={3} tabName={"NFT's"}>
-            <Nfts
-              wallet={wallet}
-              chain={chain}
+            <Nfts 
+              wallet={wallet} 
+              chain={chain} 
               nfts={nfts}
               setNfts={setNfts}
               filteredNfts={filteredNfts}
-              setFilteredNfts={setFilteredNfts}
+              setFilteredNfts={setFilteredNfts}  
             />
           </Tab>
         </TabList>
@@ -794,6 +821,8 @@ function App() {
 
 export default App;
 ```
+
+
 
 ## Step 3: Frontend styling
 
@@ -837,11 +866,7 @@ We will now add the required CSS style for our app.
   height: 100%;
   margin: 0;
   padding: 100px;
-  background: linear-gradient(
-    180deg,
-    rgba(142, 211, 182, 0.3) 0%,
-    rgba(36, 20, 0, 0) 50%
-  );
+  background: linear-gradient(180deg, rgba(142, 211, 182, 0.3) 0%, rgba(36,20,0,0) 50%);
 }
 
 .walletInfo {
@@ -852,7 +877,7 @@ We will now add the required CSS style for our app.
 .totalValue {
   width: 350px;
   height: 150px;
-  padding: 10px 30px;
+  padding: 10px 30px; 
   border-radius: 20px;
   background-color: rgba(33, 33, 38, 0.6);
   display: flex;
@@ -895,14 +920,16 @@ We will now add the required CSS style for our app.
 }
 ```
 
+
+
 2. Inside `src/index.css` add the following:
 
 ```css index.css
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(33, 33, 38);
@@ -910,10 +937,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 ```
+
+
 
 ## Step 4: Start the app
 

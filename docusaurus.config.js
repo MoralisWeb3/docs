@@ -173,13 +173,13 @@ const config = {
           },
           {
             type: "doc",
-            docId: "streams-api/evm/overview",
+            docId: "streams-api/overview",
             position: "left",
             label: "Streams API",
           },
           {
             type: "doc",
-            docId: "authentication-api/evm/overview",
+            docId: "authentication-api/overview",
             position: "left",
             label: "Authentication API",
           },

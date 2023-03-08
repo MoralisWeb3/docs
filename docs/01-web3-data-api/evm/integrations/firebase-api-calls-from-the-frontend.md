@@ -10,7 +10,7 @@ If you want to call the Moralis API from your frontend app, don't do this direct
   <source src="/video/2815daf-firebase-proxy.mp4"/>
 </video>
 
-First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/evm/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".
+First, check out our tutorial, [Your First Dapp using Firebase](/streams-api/integrations/firebase), because, in this section, we won't explain the basics, such as "how to create a project", or "how to run the Firebase emulator".
 
 Moreover, in this tutorial, we will use three Firebase services:
 

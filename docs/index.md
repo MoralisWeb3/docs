@@ -149,7 +149,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/firebase-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/firebase-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#FFA000" d="m6 28 4.06-26.356a.747.747 0 0 1 1.402-.243l4.2 7.946 1.675-3.232a.747.747 0 0 1 1.329 0L30 28H6Z"/><path fill="#F57C00" d="M20 18.095 15.642 10 6 28l14-9.905Z"/><path fill="#FFCA28" d="M30 28.445 26.889 8.643a.767.767 0 0 0-.511-.606.733.733 0 0 0-.758.189L6 28.444l10.855 6.263a2.195 2.195 0 0 0 2.192 0L30 28.445Z"/><path fill="#fff" fillOpacity=".2" d="M26.892 8.46a.757.757 0 0 0-.51-.596.741.741 0 0 0-.758.186L21.732 12l-3.06-5.898a.746.746 0 0 0-1.329 0L15.67 9.326 11.473 1.4a.746.746 0 0 0-1.402.242L6.013 27.93H6l.013.015.105.054L25.617 8.244a.745.745 0 0 1 1.27.41l3.083 19.295.03-.018L26.892 8.46ZM6.048 27.896 10.07 1.83a.75.75 0 0 1 .614-.631.751.751 0 0 1 .788.39l4.197 7.924 1.673-3.224a.746.746 0 0 1 1.329 0l3 5.77L6.047 27.897Z"/><path fill="#A52714" d="M19.049 34.499a2.124 2.124 0 0 1-2.193 0l-10.83-6.49-.026.177 10.856 6.51a2.124 2.124 0 0 0 2.193 0L30 28.185 29.972 28 19.05 34.499Z" opacity=".2"/></svg>&nbsp;&nbsp;<span>Firebase</span></h3>
                     <p>Authenticate a user to your Firebase application with an EVM or Solana wallet.</p>
                 </a>
@@ -157,7 +157,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/parse-server-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/parse-server-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#fff" d="M18 32.44c7.909 0 14.32-6.411 14.32-14.32C32.32 10.211 25.91 3.8 18 3.8c-7.909 0-14.32 6.411-14.32 14.32 0 7.909 6.411 14.32 14.32 14.32Z"/><path fill="#169CEE" d="M20.667 21.893H12.8c-1.147 0-1.813.707-1.813 1.72 0 .907.613 1.547 1.493 1.547 1.027 0 1.613-.707 1.667-1.72h2.28c-.12 2.48-1.667 3.8-3.974 3.8-2.16 0-3.773-1.467-3.773-3.653 0-2.28 1.693-3.867 4.24-3.867h7.787c2.626 0 4.626-1.933 4.626-4.533 0-2.627-1.786-4.48-4.333-4.48-2.52 0-4.56 1.84-4.56 5.24v2.226h-2.307v-2.226c0-4.507 2.894-7.427 6.907-7.427 3.827 0 6.613 2.747 6.613 6.64.027 3.893-2.96 6.733-6.986 6.733ZM18 34c8.947 0 16-7.08 16-16S26.947 2 18 2 2 9.107 2 18c0 8.92 7.053 16 16 16Z"/></svg>&nbsp;&nbsp;Parse Server</h3>
                     <p>Authenticate a user to your Parse server with MetaMask.</p>
                 </a>
@@ -165,7 +165,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/supabase-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/supabase-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path fill="url(#b)" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="url(#c)" fillOpacity=".2" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="#3ECF8E" d="M15.448 2.532c.818-1.03 2.476-.466 2.495.849l.127 19.226H5.304c-2.342 0-3.648-2.704-2.192-4.538L15.448 2.532Z"/></g><defs><linearGradient id="b" x1="17.923" x2="29.413" y1="17.656" y2="22.475" gradientUnits="userSpaceOnUse"><stop stopColor="#249361"/><stop offset="1" stopColor="#3ECF8E"/></linearGradient><linearGradient id="c" x1="12.829" x2="18.069" y1="10.681" y2="20.545" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stopOpacity="0"/></linearGradient><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Supabase</span></h3>
                     <p>Combine Web3 authentication with Supabase authentication.</p>
                 </a>
@@ -175,7 +175,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/azure-playfab-nodejs-unity">
+                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/azure-playfab-nodejs-unity">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#FF6D21" fillRule="evenodd" d="M10.327 5.218 3.012 9.422l-.006 4.623L3 18.667l3.512 1.928 3.513 1.929v7.99l3.993 2.243L18.012 35l2.276-1.289c1.252-.709 4.596-2.627 7.433-4.264l5.156-2.975.061-8.462L33 9.548l-.882-.56C30.569 8.002 18.01.985 17.823 1c-.1.008-3.473 1.906-7.496 4.218Zm13.175 3.245 5.39 3.06v12.855l-5.385 3.096c-2.962 1.703-5.44 3.095-5.508 3.095-.067-.001-1.019-.507-2.115-1.125l-1.992-1.124-.069-1.764c-.037-.97.005-1.764.095-1.764s.985.468 1.99 1.04c1.007.572 1.941 1.04 2.079 1.04.137 0 1.99-1.001 4.117-2.225l3.868-2.225-.063-4.506-.063-4.507-3.832-2.167c-2.107-1.191-3.953-2.166-4.102-2.164-.148 0-1.957.975-4.02 2.164l-3.75 2.163-.067 2.359c-.037 1.297-.142 2.325-.235 2.284-.092-.04-.825-.438-1.629-.883l-1.462-.81-.003-2.319-.003-2.32 5.45-3.156c2.997-1.736 5.555-3.156 5.684-3.156.128 0 2.66 1.376 5.625 3.059Zm-3.43 6.069 1.906 1.064v4.742l-1.87 1.071c-1.028.59-1.99 1.072-2.136 1.072-.147 0-1.153-.495-2.237-1.098l-1.97-1.098.064-2.299.063-2.298 1.875-1.11c1.031-.61 1.993-1.11 2.137-1.11.145-.001 1.12.478 2.168 1.064Z" clipRule="evenodd"/></svg>&nbsp;&nbsp;<span>PlayFab</span></h3>
                     <p>Set up a complete gaming backend platform for Web3 games.</p>
                 </a>

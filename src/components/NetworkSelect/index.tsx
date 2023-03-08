@@ -1,6 +1,5 @@
 import React from "react";
 import * as Select from "@radix-ui/react-select";
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { useHistory } from "@docusaurus/router";
 import clsx from "clsx";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -36,7 +35,7 @@ const networks = {
       iconDark: SolanaIcon,
     },
   ],
-  "streams-apix": [
+  "streams-api-hide": [
     // hiding sidebar temporary
     {
       value: "evm",
@@ -51,7 +50,7 @@ const networks = {
       iconDark: AptosDarkIcon,
     },
   ],
-  "authentication-apix": [
+  "authentication-api-hide": [
     // hiding sidebar temporary
     {
       value: "evm",
@@ -93,9 +92,6 @@ const NetworkSelect = () => {
     <>
       <div className={styles.netWorkSelect}>
         <div className={styles.netWorkSelect__inner}>
-          <div className={styles.netWorkSelectLabel}>
-            {pageState?.path?.split("-")?.join(" ")?.toUpperCase()}
-          </div>
           <Select.Root
             defaultValue={pageState?.network}
             onValueChange={handleNetWorkChange}
@@ -148,28 +144,6 @@ const NetworkSelect = () => {
               </Select.Content>
             </Select.Portal>
           </Select.Root>
-          {pageState.path === "web3-data-api" &&
-            pageState.network === "aptos" && (
-              <ToggleGroup.Root
-                className={styles.ToggleGroup}
-                type="single"
-                defaultValue="mainnet"
-                orientation="horizontal"
-              >
-                <ToggleGroup.Item
-                  className={styles.ToggleGroupItem}
-                  value="mainnet"
-                >
-                  Mainnet
-                </ToggleGroup.Item>
-                <ToggleGroup.Item
-                  className={styles.ToggleGroupItem}
-                  value="testnet"
-                >
-                  Testnet
-                </ToggleGroup.Item>
-              </ToggleGroup.Root>
-            )}
         </div>
       </div>
     </>

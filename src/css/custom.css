@@ -308,26 +308,26 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
   width: auto;
 }
 
-.menu__list {
+ 
+.web3-data-api .menu__list {
   background-color: var(--ifm-background-surface-color);
   border-radius: 4px;
 }
 
-.menu__list-item.theme-doc-sidebar-item-category-level-1 {
+.web3-data-api .menu__list-item.theme-doc-sidebar-item-category-level-1 {
   margin-top: 6px
 }
 
-.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
-.theme-doc-sidebar-item-link-level-1 .menu__link {
+.web3-data-api .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
+.web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link {
   font-family: var(--ifm-heading-font-family);
   font-size: 15px;
-  min-height: 38px;
   padding-left: 10px;
   padding-right: 6px
 }
 
-.theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
+.web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
   content: "";
   width: 16px;
   height: 16px;
@@ -337,7 +337,7 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
   margin-right: 12px;
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list {
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
   padding-left: 30px;
 }
 
@@ -514,7 +514,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
     flex: 1;
   }
  
-
   .navbar__items > .navbar__item--linebreak {
     flex-basis: 100%;
     height: 0;

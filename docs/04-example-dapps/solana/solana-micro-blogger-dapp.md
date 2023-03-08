@@ -3,10 +3,9 @@ title: "Solana Micro Blogger Dapp"
 slug: "solana-micro-blogger-dapp"
 description: "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis"
 ---
-
 ## Introduction
 
-This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and [Moralis Auth API](/authentication-api/evm).
+This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and [Moralis Auth API](/authentication-api).
 
 Once complete, you can use this dapp to create blog posts on Solana Blockchain.
 
@@ -26,6 +25,8 @@ cargo init micro_blog --lib
 cd micro_blog
 ```
 
+
+
 Update `Cargo.toml` file with required rust library configurations
 
 ```toml
@@ -34,12 +35,16 @@ name = "micro_blog"
 crate-type = ["cdylib", "lib"]
 ```
 
+
+
 Install the `solana_program` and `borsh` package using
 
 ```shell
 cargo add solana_program
 cargo add borsh
 ```
+
+
 
 This is the code for the Micro Blogger solana program. With this code, we will keep track of the number of blogs a wallet has posted and we will log the Blog content and counter to the transaction logs to access it from the client side. Paste this code in `lib.rs` file.
 
@@ -103,17 +108,23 @@ pub fn micro_blog(
 
 ```
 
+
+
 Build the Solana Rust Program using
 
 ```bash
 cargo build-bpf
 ```
 
+
+
 Once built successfully without any error `.so` of the program will be added to the `/target/deploy` folder. You can deploy this to the solana cluster using.
 
 ```shell
 solana program deploy ./target/deploy/micro_blog.so
 ```
+
+
 
 Once successfully deployed it will return the program Id of the Solana Program.
 
@@ -133,22 +144,28 @@ git clone https://github.com/JohnVersus/solana-dapp-micro-blog.git
 cd solana-dapp-micro-blog
 ```
 
+
+
 - Install the dependencies using the`yarn` or `npm` package manager.
 
 ```shell
 yarn install
 ```
 
+
+
 - Rename `.env.local.example` file to `.env.local` and add the required environment secrets.
 
 ```shell .env.local
 APP_CHAIN_ID=devnet
-APP_DOMAIN=ethereum.boilerplate
+APP_DOMAIN=ethereum.boilerplate 
 MORALIS_API_KEY= xxx
 NEXTAUTH_SECRET= # Linux: `openssl rand -hex 32` or go to https://generate-secret.now.sh/64
 NEXTAUTH_URL=http://localhost:3000
 
 ```
+
+
 
 - Start the app in localhost port 3000.
 
@@ -156,32 +173,36 @@ NEXTAUTH_URL=http://localhost:3000
 yarn run dev
 ```
 
+
+
 Once the command has been run successfully, you should be able to view the app in localhost port 3000, or click [here](http://localhost:3000) to open the page directly.
 
-In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/microBlog` page to create new blog posts.
+In the app, you'll find multiple tabs, but for this tutorial, we only need to access the `/microBlog` page to create new blog posts. 
 
 ![Nav Bar](/img/content/806136a-image.webp)
 
-To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice.
+To use the app, we must first connect to the Solana wallet. This can be done by clicking the "Select Wallet" button on the top right. You can then connect to the wallet of your choice. 
 
 ![Wallet Connect Button](/img/content/5e9b822-image.webp)
 
-The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial.
+The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial. 
 
-If you want to know how authentication works, you can take a look at this [video](https://www.youtube.com/watch?v=0fuevxebv_E).
+If you want to know how authentication works, you can take a look at this [video](https://www.youtube.com/watch?v=0fuevxebv_E). 
 
 ## Step3: Calling the Smart Contract
 
 The first step of the app is to add the program Id of the solana contract and initiate a devnet cluster connection, where we will test the app.
 
-> Only partical code is shown here to keep it clean. Visit `src/components/templates/microBlog` to view the entire code.
+> Only partical code is shown here to keep it clean. Visit  `src/components/templates/microBlog` to view the entire code.
 
 ```typescript MicroBlog.tsx
-const programId = "xxx";
-const connection = new Connection(clusterApiUrl("devnet"));
+const programId = 'xxx';
+const connection = new Connection(clusterApiUrl('devnet'));
 ```
 
-The next part of the code is used to create a new PDA account unique for the user that stores the blog counter data on the chain and the same code will also initiate a transaction to create a new blog post.
+
+
+The next part of the code is used to create a new PDA account unique for the user that stores the blog counter data on the chain and the same code will also initiate a transaction to create a new blog post. 
 
 ```typescript MicroBlog.tsx
 // Refer full code in `src/components/templates/microBlog/MicroBlog.tsx`
@@ -297,11 +318,13 @@ The next part of the code is used to create a new PDA account unique for the use
 
 ```
 
+
+
 And there we have it! That's all the code required to create a transaction to call the solana contract and to post the data on the chain.
 
 ## Step4: Testing
 
-The dapp can be tested by visiting the `/microBlog` page. Add the text that you want to store on the blockchain and click on the "Post Blog" button.
+The dapp can be tested by visiting the `/microBlog` page. Add the text that you want to store on the blockchain and click on the "Post Blog" button. 
 
 ![Input to add new post](/img/content/7e45d97-image.webp)
 
@@ -309,7 +332,7 @@ When posting the first blog you will have to sign two transactions. One for crea
 
 ![Blog Post](/img/content/627ed01-image.webp)
 
-Congratulations! 🥳
+Congratulations! 🥳 
 
 Now you know how to create your very own Solana Micro Blogger dapp to create blog posts in the blockchain.
 

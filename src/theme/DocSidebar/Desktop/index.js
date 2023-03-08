@@ -6,6 +6,7 @@ import CollapseButton from "@theme/DocSidebar/Desktop/CollapseButton";
 import Content from "@theme/DocSidebar/Desktop/Content";
 import styles from "./styles.module.css";
 import NetworkSelect from "../../../components/NetworkSelect";
+import usePageState from "../../../hooks/usePageState";
 
 function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
   const {
@@ -14,13 +15,15 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       sidebar: { hideable },
     },
   } = useThemeConfig();
+  const pageState = usePageState();
 
   return (
     <div
       className={clsx(
         styles.sidebar,
         hideOnScroll && styles.sidebarWithHideableNavbar,
-        isHidden && styles.sidebarHidden
+        isHidden && styles.sidebarHidden,
+        pageState?.path
       )}
     >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
