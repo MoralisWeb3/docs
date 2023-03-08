@@ -21,7 +21,6 @@ import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
-import usePageState from "../../hooks/usePageState";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -38,6 +37,7 @@ export interface ApiReferenceProps {
   bodyParam?: ApiParam;
   responses: ApiResponse[];
   apiHost: string;
+  testHost?: string;
   codeSamples?: CodeSample[];
   children?: Component;
 }
@@ -46,6 +46,11 @@ export interface FormValues {
   path: object;
   query: object;
   body: object;
+}
+
+export enum Network {
+  MAINNET = "mainnet",
+  TESTNET = "testnet",
 }
 
 const deepCompact = (value: unknown) => {
@@ -77,6 +82,7 @@ const ApiReference = ({
   bodyParam,
   responses,
   apiHost,
+  testHost,
   codeSamples,
   children,
 }: ApiReferenceProps) => {
@@ -84,7 +90,11 @@ const ApiReference = ({
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
-  const pageState = usePageState();
+  const [network, setNetwork] = useState<Network>(Network.MAINNET);
+  const hostUrl = useMemo(
+    () => (network === Network.MAINNET ? apiHost : testHost),
+    [network]
+  );
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -105,7 +115,7 @@ const ApiReference = ({
         }
         const response = await fetch(
           [
-            apiHost,
+            hostUrl,
             pathReplace,
             qs.stringify(values.query || {}, { addQueryPrefix: true }),
           ].join(""),
@@ -178,6 +188,10 @@ const ApiReference = ({
             type="single"
             defaultValue="mainnet"
             orientation="horizontal"
+            value={network}
+            onValueChange={(value: Network) => {
+              if (value) setNetwork(value);
+            }}
           >
             <ToggleGroup.Item
               className={styles.ToggleGroupItem}
@@ -200,7 +214,7 @@ const ApiReference = ({
             <div className="col">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
-                {apiHost}
+                {hostUrl}
                 {path}
               </div>
 
@@ -287,7 +301,7 @@ const ApiReference = ({
 
                 <ApiExamples
                   method={method}
-                  apiHost={apiHost}
+                  apiHost={hostUrl}
                   path={path}
                   codeSamples={codeSamples}
                 />
