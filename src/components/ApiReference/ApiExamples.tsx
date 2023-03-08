@@ -8,9 +8,9 @@ import { Path } from "path-parser";
 import CodeBlock from "@theme/CodeBlock";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
+import usePageState from "@site/src/hooks/usePageState";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -32,7 +32,7 @@ const tabs = [
     lang: "node",
     langCode: "js",
     title: "Node.js",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("// Dependencies to install:"),
         line("// $ npm install node-fetch --save"),
@@ -47,7 +47,7 @@ const tabs = [
         body
           ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2)
           : null,
-        auth ? line(`'X-API-Key': '${auth}'`, 2) : null,
+        auth ? line(`'${authField}': '${auth}'`, 2) : null,
         line("},", 1),
         body
           ? line(
@@ -67,7 +67,7 @@ const tabs = [
     lang: "python",
     langCode: "python",
     title: "Python",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("# Dependencies to install:\n"),
         line("# $ python -m pip install requests"),
@@ -82,7 +82,7 @@ const tabs = [
         body
           ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1)
           : null,
-        auth ? line(`"X-API-Key": "${auth}"`, 1) : null,
+        auth ? line(`"${authField}": "${auth}"`, 1) : null,
         line(`}`),
         line(""),
         line(
@@ -98,7 +98,7 @@ const tabs = [
     lang: "bash",
     langCode: "bash",
     title: "cURL",
-    template: ({ method, url, auth, body }) => {
+    template: ({ method, url, auth, body, authField }) => {
       const indent = " ".repeat("curl ".length);
 
       return buildTemplate([
@@ -110,7 +110,9 @@ const tabs = [
           }`
         ),
         auth
-          ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`)
+          ? line(
+              `${indent}--header '${authField}: ${auth}' ${body ? "\\" : ""}`
+            )
           : null,
         body
           ? line(`${indent}--header 'content-type: application/json' \\`)
@@ -125,7 +127,7 @@ const tabs = [
     lang: "go",
     langCode: "go",
     title: "Go",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("package main"),
         line(""),
@@ -156,7 +158,7 @@ const tabs = [
         body
           ? line('req.Header.Add("Content-Type", "application/json")', 1)
           : null,
-        auth ? line(`req.Header.Add("X-API-Key", "${auth}")`, 1) : null,
+        auth ? line(`req.Header.Add("${authField}", "${auth}")`, 1) : null,
         line(""),
         line("res, _ := http.DefaultClient.Do(req)", 1),
         line(""),
@@ -173,7 +175,7 @@ const tabs = [
     lang: "php",
     langCode: "php",
     title: "PHP",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("<?php"),
         line("// Dependencies to install:"),
@@ -189,7 +191,7 @@ const tabs = [
           : null,
         line("'headers' => [", 1),
         line("'Accept' => 'application/json',", 2),
-        auth ? line(`'X-API-Key' => '${auth}',`, 2) : null,
+        auth ? line(`'${authField}' => '${auth}',`, 2) : null,
         body ? line("'Content-Type' => 'application/json',", 2) : null,
         line("],", 1),
         line("]);"),
@@ -238,6 +240,15 @@ const ApiExamples = ({
 }: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
+  const { path: pagePath, network } = usePageState();
+
+  const authField = useMemo(
+    () =>
+      pagePath === "web3-data-api" && network === "aptos"
+        ? "Bearer"
+        : "X-API-Key",
+    []
+  );
 
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (value, key) => `:${key}`),
@@ -269,6 +280,7 @@ const ApiExamples = ({
                     ].join(""),
                     auth: auth,
                     body: filterOutEmpty(values.body),
+                    authField,
                   })}
             </CodeBlock>
           </TabItem>

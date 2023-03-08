@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import * as Select from "@radix-ui/react-select";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import { useHistory, useLocation } from "@docusaurus/router";
+import { useHistory } from "@docusaurus/router";
 import clsx from "clsx";
 import { useColorMode } from "@docusaurus/theme-common";
 import { FiCheck, FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -12,11 +12,7 @@ import AptosDarkIcon from "@site/static/img/network-icons/aptosDark.svg";
 import SolanaIcon from "@site/static/img/network-icons/solana.svg";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { useWindowSize } from "@docusaurus/theme-common";
-
-interface PageSidebar {
-  path: string;
-  network: string;
-}
+import usePageState from "../../hooks/usePageState";
 
 const networks = {
   "web3-data-api": [
@@ -81,12 +77,7 @@ const networks = {
 const NetworkSelect = () => {
   const { colorMode } = useColorMode();
   const { push } = useHistory();
-  const { pathname } = useLocation();
-  const [pageState] = useState<PageSidebar | undefined>(() => {
-    const [path, network] = pathname.split("/").slice(1);
-    if (path && network) return { path, network };
-    return;
-  });
+  const pageState = usePageState();
 
   const windowSize = useWindowSize();
   const mobileSidebar = useNavbarMobileSidebar();
