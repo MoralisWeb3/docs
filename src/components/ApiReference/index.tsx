@@ -5,13 +5,13 @@ import React, {
   useContext,
   Component,
 } from "react";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
 import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
 import qs from "qs";
 import styles from "./styles.module.css";
-
 import ApiResponseField, {
   ApiResponse,
   buildResponse,
@@ -21,6 +21,7 @@ import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
+import usePageState from "../../hooks/usePageState";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -83,6 +84,7 @@ const ApiReference = ({
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
+  const pageState = usePageState();
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -122,7 +124,7 @@ const ApiReference = ({
         );
 
         const fetchBody = await response.json();
-        
+
         const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
@@ -169,6 +171,29 @@ const ApiReference = ({
           })}
         />
       </Head>
+      <div>
+        {apiHost.includes("aptos") && (
+          <ToggleGroup.Root
+            className={styles.ToggleGroup}
+            type="single"
+            defaultValue="mainnet"
+            orientation="horizontal"
+          >
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="mainnet"
+            >
+              Mainnet
+            </ToggleGroup.Item>
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="testnet"
+            >
+              Testnet
+            </ToggleGroup.Item>
+          </ToggleGroup.Root>
+        )}
+      </div>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
