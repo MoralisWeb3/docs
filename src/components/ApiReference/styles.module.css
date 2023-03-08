@@ -303,7 +303,6 @@ button.groupHeader:focus {
 
 .ToggleGroup {
   border-radius: 4px;
-  box-shadow: 0 2px 10px var(--blackA7);
   display: flex;
   gap: .5rem;
 }
@@ -319,16 +318,16 @@ button.groupHeader:focus {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 7px;
+  border: .5px solid black;
 }
 
 .ToggleGroupItem:hover {
-  background-color: var(--violet3);
+  transition: all 0.3s ease;
+  background-color: var(--ifm-color-primary);
+  color: white;
 }
 .ToggleGroupItem[data-state='on'] {
-  background-color: var(--violet5);
-  color: var(--violet11);
-}
-.ToggleGroupItem:focus {
-  position: relative;
-  box-shadow: 0 0 0 2px black;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  cursor: not-allowed;
 }
