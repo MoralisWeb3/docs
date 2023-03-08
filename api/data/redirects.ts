@@ -5564,4 +5564,9 @@ export const redirects = [
       "https://v1docs.moralis.io/moralis-dapp/getting-started/self-hosting-moralis-server/optional-features/streams",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/web3-concepts",
+    destination: "https://moralis.io/web3-dictionary",
+    permanent: true,
+  },
 ];
