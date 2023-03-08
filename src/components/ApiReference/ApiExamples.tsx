@@ -242,6 +242,7 @@ const ApiExamples = ({
   const { token } = useContext(ApiReferenceTokenContext);
   const { path: pagePath, network } = usePageState();
 
+  // Bearer is only for Aptos Web3 Data API, the rest are X-API-Key
   const authField = useMemo(
     () =>
       pagePath === "web3-data-api" && network === "aptos"

@@ -78,7 +78,6 @@ const NetworkSelect = () => {
   const { colorMode } = useColorMode();
   const { push } = useHistory();
   const pageState = usePageState();
-
   const windowSize = useWindowSize();
   const mobileSidebar = useNavbarMobileSidebar();
 
@@ -91,87 +90,89 @@ const NetworkSelect = () => {
   };
 
   return pageState && networks?.[pageState?.path] ? (
-    <div className={styles.netWorkSelect}>
-      <div className={styles.netWorkSelect__inner}>
-        <div className={styles.netWorkSelectLabel}>
-          {pageState?.path?.split("-")?.join(" ")?.toUpperCase()}
-        </div>
-        <Select.Root
-          defaultValue={pageState?.network}
-          onValueChange={handleNetWorkChange}
-        >
-          <Select.Trigger
-            aria-label="Select Network"
-            className={clsx("sections-menu-trigger")}
+    <>
+      <div className={styles.netWorkSelect}>
+        <div className={styles.netWorkSelect__inner}>
+          <div className={styles.netWorkSelectLabel}>
+            {pageState?.path?.split("-")?.join(" ")?.toUpperCase()}
+          </div>
+          <Select.Root
+            defaultValue={pageState?.network}
+            onValueChange={handleNetWorkChange}
           >
-            <Select.Value />
-            <Select.Icon>
-              <FiChevronDown className="sections-menu-scrollButton" />
-            </Select.Icon>
-          </Select.Trigger>
-
-          <Select.Portal>
-            <Select.Content className={clsx("sections-menu-content")}>
-              <Select.ScrollUpButton className="sections-menu-scrollButton">
-                <FiChevronUp />
-              </Select.ScrollUpButton>
-
-              <Select.Viewport>
-                <Select.Group>
-                  {networks?.[pageState?.path as string]?.map(
-                    ({ value, label, icon: Icon, iconDark: IconDark }) => (
-                      <Select.Item
-                        key={value}
-                        value={value}
-                        className={clsx("sections-menu-item")}
-                      >
-                        <Select.ItemText>
-                          <div className="item-text">
-                            {colorMode === "dark"
-                              ? IconDark && <IconDark />
-                              : Icon && <Icon />}
-                            <span>{label}</span>
-                          </div>
-                        </Select.ItemText>
-                        <Select.ItemIndicator className="flex items-center">
-                          <FiCheck className="item-indicator" />
-                        </Select.ItemIndicator>
-                      </Select.Item>
-                    )
-                  )}
-                </Select.Group>
-              </Select.Viewport>
-
-              <Select.ScrollDownButton className="sections-menu-scrollButton">
-                <FiChevronDown />
-              </Select.ScrollDownButton>
-            </Select.Content>
-          </Select.Portal>
-        </Select.Root>
-        {pageState.path === "web3-data-api" &&
-          pageState.network === "aptos" && (
-            <ToggleGroup.Root
-              className="ToggleGroup"
-              type="single"
-              defaultValue="mainnet"
-              orientation="horizontal"
+            <Select.Trigger
+              aria-label="Select Network"
+              className={clsx("sections-menu-trigger")}
             >
-              <ToggleGroup.Item
-                className={styles.ToggleGroupItem}
-                value="mainnet"
+              <Select.Value />
+              <Select.Icon>
+                <FiChevronDown className="sections-menu-scrollButton" />
+              </Select.Icon>
+            </Select.Trigger>
+
+            <Select.Portal>
+              <Select.Content className={clsx("sections-menu-content")}>
+                <Select.ScrollUpButton className="sections-menu-scrollButton">
+                  <FiChevronUp />
+                </Select.ScrollUpButton>
+
+                <Select.Viewport>
+                  <Select.Group>
+                    {networks?.[pageState?.path as string]?.map(
+                      ({ value, label, icon: Icon, iconDark: IconDark }) => (
+                        <Select.Item
+                          key={value}
+                          value={value}
+                          className={clsx("sections-menu-item")}
+                        >
+                          <Select.ItemText>
+                            <div className="item-text">
+                              {colorMode === "dark"
+                                ? IconDark && <IconDark />
+                                : Icon && <Icon />}
+                              <span>{label}</span>
+                            </div>
+                          </Select.ItemText>
+                          <Select.ItemIndicator className="flex items-center">
+                            <FiCheck className="item-indicator" />
+                          </Select.ItemIndicator>
+                        </Select.Item>
+                      )
+                    )}
+                  </Select.Group>
+                </Select.Viewport>
+
+                <Select.ScrollDownButton className="sections-menu-scrollButton">
+                  <FiChevronDown />
+                </Select.ScrollDownButton>
+              </Select.Content>
+            </Select.Portal>
+          </Select.Root>
+          {pageState.path === "web3-data-api" &&
+            pageState.network === "aptos" && (
+              <ToggleGroup.Root
+                className={styles.ToggleGroup}
+                type="single"
+                defaultValue="mainnet"
+                orientation="horizontal"
               >
-                Mainnet
-              </ToggleGroup.Item>
-              <ToggleGroup.Item
-                className={styles.ToggleGroupItem}
-                value="testnet"
-              >
-                Testnet
-              </ToggleGroup.Item>
-            </ToggleGroup.Root>
-          )}
+                <ToggleGroup.Item
+                  className={styles.ToggleGroupItem}
+                  value="mainnet"
+                >
+                  Mainnet
+                </ToggleGroup.Item>
+                <ToggleGroup.Item
+                  className={styles.ToggleGroupItem}
+                  value="testnet"
+                >
+                  Testnet
+                </ToggleGroup.Item>
+              </ToggleGroup.Root>
+            )}
+        </div>
       </div>
-    </div>
+    </>
   ) : (
     <></>
   );
