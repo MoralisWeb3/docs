@@ -196,7 +196,7 @@ const config = {
             position: "right",
             value:
               '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
-            className: "navbar__item--hide-on-mobile",
+            className: "navbar__item--hide-on-mobile navbar__item--login",
           },
           {
             type: "html",
