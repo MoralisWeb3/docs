@@ -1,7 +1,7 @@
 ---
 title: "API key"
 sidebar_label: "API key"
-slug: "../api-key"
+slug: "api-key"
 sidebar_position: 1
 draft: true
 ---

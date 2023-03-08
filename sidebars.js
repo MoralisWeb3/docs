@@ -144,7 +144,7 @@ const sidebars = {
     },
     {
       type: "html",
-      value: "Example dApps",
+      value: "Sample dapps",
       defaultStyle: true,
     },
     {

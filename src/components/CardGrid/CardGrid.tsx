@@ -1,19 +1,33 @@
 import React from "react"
-import { CardGridItem, CardGridItemProps } from "./CardGridItem"
+import { Container, GridColumns, Row } from "../Grid"
+import {
+  CardGridItem,
+  CardGridItemProps,
+} from "./CardGridItem"
 
 export interface CardGridProps {
-  items: CardGridItemProps[],
+  items: CardGridItemProps[]
   // Specify whether to display the icons inline or stacked, choose "stacked" if you need more room for icons or larger title
   inlineIcons?: boolean
+  columns?: GridColumns
 }
-export const CardGrid = ({ items, inlineIcons = true }: CardGridProps): JSX.Element => {
+export const CardGrid = ({
+  items,
+  inlineIcons = true,
+  columns = 3,
+}: CardGridProps): JSX.Element => {
   return (
-    <div className="container">
-      <div className="row">
+    <Container>
+      <Row>
         {items.map((item) => (
-          <CardGridItem {...item} inlineIcons={inlineIcons} key={item.title} />
+          <CardGridItem
+            {...item}
+            inlineIcons={inlineIcons}
+            columns={columns}
+            key={item.title}
+          />
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   )
 }

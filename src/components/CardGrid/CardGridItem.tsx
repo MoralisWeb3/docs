@@ -1,12 +1,16 @@
 import React from "react"
+import Link from '@docusaurus/Link';
+import { Col, columnsToColspan, GridColumns } from "../Grid"
 
 type Icon = { src: string; alt: string }
+
 export interface CardGridItemProps {
   title: string
-  href: string
+  to: string
+  inlineIcons: boolean
+  columns: GridColumns
   description?: string
   icons?: Icon[]
-  inlineIcons?: boolean
 }
 
 export const CardGridItem = ({
@@ -14,23 +18,26 @@ export const CardGridItem = ({
   description,
   icons,
   inlineIcons,
-  href,
+  to,
+  columns,
 }: CardGridItemProps): JSX.Element => {
   const iconImages = icons && icons.length > 0 && (
     <span>
       {icons.map((icon) => (
-        <>
-          <img src={icon.src} width="36px" alt={icon.alt} />
+        <React.Fragment key={icon.src}>
+          <img src={icon.src} width="36px" alt={icon.alt}  />
           &nbsp;&nbsp;
-        </>
+        </React.Fragment>
       ))}
     </span>
   )
 
+  console.log("to", to)
+
   return (
-    <div className="col col--4">
+    <Col span={columnsToColspan[columns]}>
       <div className="col-demo margin-bottom--lg">
-        <a className="card padding--lg card--homepage" href={href}>
+        <Link className="card padding--lg card--homepage" to={to}>
           {inlineIcons ? (
             <h3>
               {iconImages}
@@ -43,8 +50,8 @@ export const CardGridItem = ({
             </>
           )}
           {description && <p>{description}</p>}
-        </a>
+        </Link>
       </div>
-    </div>
+    </Col>
   )
 }

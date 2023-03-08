@@ -1,0 +1,89 @@
+---
+title: "Ethereum Boilerplate"
+sidebar_label: "Ethereum Boilerplate"
+slug: "ethereum-boilerplate"
+sidebar_position: 2
+---
+
+import { DisplayLink, GithubDisplayLink } from "/src/components/DisplayLink"
+import { SimpleGrid, Row, Col } from "/src/components/Grid"
+import { BadgeList, BadgeListItem } from "/src/components/BadgeList"
+
+<Row>
+  <Col span={8}>
+    <img src="https://user-images.githubusercontent.com/78314301/186810447-fa66cd80-5bbb-4e41-b29f-862c8cc67d43.gif" />
+  </Col>
+  <Col span={4}>
+    <BadgeList>
+      <BadgeListItem color="secondary">NextJs</BadgeListItem>
+      <BadgeListItem color="secondary">Typescript</BadgeListItem>
+      <BadgeListItem color="secondary">Chakra UI</BadgeListItem>
+      <BadgeListItem color="secondary">Wagmi</BadgeListItem>
+    </BadgeList>
+    <DisplayLink
+      label="Live demo"
+      href="https://eth-boilerplate.vercel.app/"
+      emoji="🚀"
+    />
+    <GithubDisplayLink
+      label="Source code"
+      href="https://github.com/ethereum-boilerplate/ethereum-boilerplate"
+    />
+  </Col>
+</Row>
+
+## Intro
+
+The Ethereum Boilerplate is an easy way to get started with your dapp. It is build with NextJs and has full integration with Moralis and web3. It comes with:
+
+- Moralis authentication
+- Display Transactions
+- Display ERC20 transfers
+- Display ERC20 balances
+- Display NFT balances
+- Display NFT transfers
+- Multichain Support
+- Using Moralis from client-side
+
+## Getting Started
+
+📄 Clone or fork `ethereum-boilerplate`:
+
+```sh
+git clone https://github.com/ethereum-boilerplate/ethereum-boilerplate.git
+```
+
+💿 Install all dependencies:
+
+```sh
+cd ethereum-boilerplate
+yarn install
+```
+
+✏ Rename `.env.local.example` to `.env.local` and provide required data. Get your Web3 Api Key from the [Moralis dashboard](https://admin.moralis.io/):
+
+![image](https://user-images.githubusercontent.com/78314301/186810270-7c365d43-ebb8-4546-a383-32983fbacef9.png)
+
+🖊️ Fill the environment variables in your .env.local file in the app root:
+
+- `MORALIS_API_KEY`: You can get it [here](https://admin.moralis.io/account/profile).
+- `NEXTAUTH_URL`: Your app address. In the development stage, use http://localhost:3000.
+- `NEXTAUTH_SECRET`: Used for encrypting JWT tokens of users. You can put any value here or generate it on https://generate-secret.now.sh/32.
+
+Example:
+
+```
+MORALIS_API_KEY=xxxx
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=7197b3e8dbee5ea6274cab37245eec212
+```
+
+🚴‍♂️ Run your App:
+
+```sh
+yarn start
+```
+
+:::info Github
+See the [Github repo](https://github.com/ethereum-boilerplate/ethereum-boilerplate) for more information.
+:::

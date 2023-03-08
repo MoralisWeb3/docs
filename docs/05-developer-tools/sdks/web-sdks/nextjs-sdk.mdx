@@ -18,6 +18,7 @@ import {
   ReferenceDisplayLink,
   GithubDisplayLink,
 } from "/src/components/DisplayLink"
+import { SimpleGrid } from "/src/components/Grid"
 import JsQuickstart from "/docs/partials/_js-quickstart.mdx"
 
 <SDKHeader
@@ -231,23 +232,15 @@ const { data } = useEvmWalletTokenBalances(
 
 ## References
 
-<div className="row">
-  <div className="col col--6">
-    <div>
-      <ReferenceDisplayLink
-        label="NextJs SDK References"
-        subLabel="Technical documentation"
-        href="https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next"
-      />
-    </div>
-  </div>
-  <div className="col col--6">
-    <div>
-      <GithubDisplayLink
-        label="Github repo"
-        subLabel="View code and contribute"
-        href="https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next"
-      />
-    </div>
-  </div>
-</div>
+<SimpleGrid>
+  <ReferenceDisplayLink
+    label="NextJs SDK References"
+    subLabel="Technical documentation"
+    href="https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next"
+  />
+  <GithubDisplayLink
+    label="Github repo"
+    subLabel="View code and contribute"
+    href="https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next"
+  />
+</SimpleGrid>
