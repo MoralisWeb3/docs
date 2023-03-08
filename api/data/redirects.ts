@@ -150,7 +150,7 @@ export const redirects = [
   },
   {
     source: "/docs/authentication",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -456,7 +456,7 @@ export const redirects = [
   },
   {
     source: "/docs/web3-authentication",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -1599,7 +1599,7 @@ export const redirects = [
   },
   {
     source: "/reference/auth-api-overview",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -2238,7 +2238,7 @@ export const redirects = [
   },
   {
     source: "/docs/user-sign-in-methods",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -2268,7 +2268,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/users/crypto-login",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -2304,7 +2304,7 @@ export const redirects = [
   },
   {
     source: "/moralis-sdk/crypto-login",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -2732,7 +2732,7 @@ export const redirects = [
   },
   {
     source: "/reference/auth-api-overview",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -2778,7 +2778,7 @@ export const redirects = [
   },
   {
     source: "/users/crypto-login",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -3309,7 +3309,7 @@ export const redirects = [
   },
   {
     source: "/docs/web3-authentication",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -4786,7 +4786,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/users/crypto-login",
-    destination: "/authentication-api/evm",
+    destination: "/authentication-api",
     permanent: true,
   },
   {
@@ -5492,7 +5492,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/get-your-api-key",
+    source: "/web3-data-api/evm/get-your-api-key",
     destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
@@ -5502,17 +5502,17 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/quickstart-angular",
+    source: "/web3-data-api/evm/quickstart-angular",
     destination: "/web3-data-api/evm/quickstart-angular",
     permanent: true,
   },
   {
-    source: "/web3-data-api/quickstart-nextjs",
+    source: "/web3-data-api/evm/quickstart-nextjs",
     destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
-    source: "/web3-data-api/quickstart-nodejs",
+    source: "/web3-data-api/evm/quickstart-nodejs",
     destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
@@ -5629,7 +5629,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/reference/get-wallet-nfts",
+    source: "/web3-data-api/evm/reference/get-wallet-nfts",
     destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
