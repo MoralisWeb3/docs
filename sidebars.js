@@ -104,11 +104,6 @@ const sidebars = {
   ],
   developerToolsSidebar: [
     {
-      type: "html",
-      value: "Developer tools",
-      defaultStyle: true,
-    },
-    {
       type: "doc",
       id: "developer-tools/overview",
       label: "Overview",

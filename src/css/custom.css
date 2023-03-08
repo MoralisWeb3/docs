@@ -225,7 +225,7 @@ li:has(
   .navbar__items {
     flex-wrap: wrap;
     align-content: space-between;
-    flex: 2;
+    flex: 3;
   }
 
   .navbar__items > .navbar__item {
