@@ -74,7 +74,7 @@
         },
         {
           "name": "token_addresses",
-          "description": "The addresses to get balances for (optional)",
+          "description": "The non-fungible token (NFT) addresses to get balances for",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
