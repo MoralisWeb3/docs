@@ -73,7 +73,7 @@ description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 ### Transaction API
 
 - [Get native transactions by wallet](/web3-data-api/reference/get-wallet-transactions)
-- [Get verbose transactions by wallet](/web3-data-api/reference/get-wallet-transactions-verbose)
+- [Get verbose transactions by wallet](/web3-data-api/reference/get-decoded-wallet-transaction)
 - [Get transaction by hash](/web3-data-api/reference/get-transaction)
 
 ### Events API
