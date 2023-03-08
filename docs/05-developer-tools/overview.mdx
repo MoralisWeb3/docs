@@ -4,38 +4,56 @@ sidebar_label: "Overview"
 slug: "/development-tools"
 description: Quickly getting started on your dapp with out development tools.
 sidebar_position: 1
-draft: true
+hide_table_of_contents: true
 ---
 
-import { CardGrid } from "../../src/components/CardGrid"
+import { CardGrid } from "/src/components/CardGrid"
+import { SimpleGrid } from "/src/components/Grid"
 import { webSdks, serverSdks } from "./sdksConfig.ts"
 
 # Developer tools
 
-Get started with your app quickly with our development tools.
+## CLI
 
-# SDKs
+<SimpleGrid>
+<div>
+
+Setup and configure your dapp in with our CLI. With this CLI you can setup any dapp based on Javascript / Typescript.
+Currently we have support for ExpressJs, ReactJs, NextJs. And many more are coming.
+
+[Bootstrap your dapp with the CLI](/developer-tools/cli)
+
+</div>
+<img src="/img/content/cli-example.svg" />
+</SimpleGrid>
+
+## SDKs
 
 With the Moralis SDKs, you can implement all of Moralis' products quickly and easily in your dApp.
-The SDK comes with numerous features, such as:
-
-- Support for server-side and client-side
-- Get [**web3 data**](/web3-data-api) from the supported EVM chains, Aptos and Solana
-- Real-time web3 data via [**Streams**](/streams-api)
-- Web3 [**authentication**](/auth-api)
-- **Type definitions**
-- **Open source**
-
 We offer SDKs for several languages and frameworks, for web or server. See the list below for all possibilities.
 
-# Web SDKs
+### Web SDKs
 
 Moralis provides the following web SDKs. This enables utilities, types and easy integrations with your favourite framework, or vanilla Javascript.
 
-<CardGrid items={Object.values(webSdks)} inlineIcons={false} columns={2} />
+<CardGrid items={Object.values(webSdks)} inlineIcons={false} columns={3} />
 
-# Server SDKs
+### Server SDKs
 
 Moralis provides the following server SDKs.
 
-<CardGrid items={Object.values(serverSdks)} inlineIcons={false} columns={2} />
+<CardGrid items={Object.values(serverSdks)} inlineIcons={false} columns={3} />
+
+### Ethereum Boilerplate
+
+<SimpleGrid>
+  <div>
+
+The Ethereum Boilerplate is an easy way to get started with your dapp.
+It is build with NextJs and has full integration with Moralis and web3.
+
+[Check out the Ethereum Boilerplate](/example-dapps/ethereum-boilerplate)
+
+  </div>
+  <img src="https://user-images.githubusercontent.com/78314301/186810447-fa66cd80-5bbb-4e41-b29f-862c8cc67d43.gif" />
+</SimpleGrid>
