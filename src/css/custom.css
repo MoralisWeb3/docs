@@ -9,35 +9,40 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 400;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 500;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 600;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 700;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+    format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 800;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+    format("woff2");
   font-display: swap;
 }
 /* End Custom Fonts CSS */
@@ -95,7 +100,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.remark-oembed-you-tube iframe, video {
+.remark-oembed-you-tube iframe,
+video {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
@@ -155,15 +161,9 @@
   }
 }
 
-/** In mobile view, reduce the padding */
-@media screen and (max-width: 1280px) {
-  .DocSearch-Button {
-    width: auto;
-  }
-}
-
 .card h3 {
-  display:flex;align-items:center;
+  display: flex;
+  align-items: center;
 }
 
 .hero {
@@ -172,15 +172,17 @@
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-.col:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]) 
-{
+.col:has(
+    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"])
-{
+li:has(
+    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
@@ -192,4 +194,79 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
   .footer__link-item {
     height: 48px;
   }
+}
+
+.navbar__item--linebreak {
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .navbar__item--hide-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  :root {
+    --ifm-navbar-height: 7rem;
+  }
+
+  nav.menu {
+    padding-top: 20px;
+  }
+
+  .navbar {
+    padding-bottom: 0;
+    padding-top: 10px;
+    padding-left: 24px;
+    box-shadow: inset 0 -1px var(--ifm-toc-border-color);
+  }
+
+  .navbar__items {
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .navbar__items > .navbar__item {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0;
+    margin-right: 24px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
+
+  .navbar__items > .navbar__link--active {
+    border-bottom: 1px solid var(--ifm-navbar-link-hover-color);
+  }
+
+  .navbar__items--right > :last-child {
+    margin-bottom: 10px;
+  }
+
+  .navbar__items--right {
+    flex: 1;
+  }
+ 
+
+  .navbar__items > .navbar__item--linebreak {
+    flex-basis: 100%;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  .navbar__items > .navbar__item--linebreak hr {
+    height: 0;
+  }
+  
+  .navbar__items > .navbar__item--login {
+    margin-right: 0;
+  }
+}
+
+.markdown h1:first-child {
+  margin-bottom: .75rem;
 }

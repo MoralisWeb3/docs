@@ -233,7 +233,7 @@ export const filterOutEmpty = (value: any) => {
 export const formatParamsByLang = (params: any, lang: string) => {
   const keyArrays = Object.keys(params);
   for (let key of keyArrays) {
-    console.log(key);
+    key;
     switch (lang) {
       case "node":
         const formattedNodeKey = camelToSnakeCase(key);
@@ -244,7 +244,7 @@ export const formatParamsByLang = (params: any, lang: string) => {
         break;
       case "python":
         // There is a bug here deleting `normalizedMetadata` input
-        const formattedPythonKey = camelToSnakeCase(key).replace("-", "_");
+        const formattedPythonKey = camelToSnakeCase(key);
         if (key !== formattedPythonKey) {
           params[formattedPythonKey] = params[key];
           delete params[key];
