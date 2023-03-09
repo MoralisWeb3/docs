@@ -11,6 +11,7 @@ import TabItem from "@theme/TabItem";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
+import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -232,24 +233,21 @@ export const filterOutEmpty = (value: any) => {
 
 export const formatParamsByLang = (params: any, lang: string) => {
   for (let key of Object.keys(params)) {
-    key;
+    let formattedKey: string = "";
     switch (lang) {
       case "node":
-        const formattedNodeKey = camelToSnakeCase(key);
-        if (key !== formattedNodeKey) {
-          params[formattedNodeKey] = params[key];
-          delete params[key];
-        }
+        formattedKey = snakeToCamelCase(key);
         break;
       case "python":
-        const formattedPythonKey = camelToSnakeCase(key).replace("-", "_");
-        if (key !== formattedPythonKey) {
-          params[formattedPythonKey] = params[key];
-          delete params[key];
-        }
+        formattedKey = camelToSnakeCase(key).replace("-", "_");
         break;
       default:
         break;
+    }
+
+    if (key !== formattedKey) {
+      params[formattedKey] = params[key];
+      delete params[key];
     }
   }
 
@@ -300,8 +298,6 @@ const ApiExamples = ({
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
-
-  console.log(values);
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
