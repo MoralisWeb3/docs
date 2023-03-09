@@ -270,19 +270,43 @@ export const injectParamsToCode = (
   auth: string
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
-  return code
-    .replace(
-      "{}",
-      stringifyJSON(
-        {
-          ...formatParamsByLang({ ...query }, lang),
-          ...formatParamsByLang({ ...path }, lang),
-          ...formatParamsByLang({ ...body }, lang),
-        },
-        true
-      ).replace(/\n/g, `\n${lang === "node" ? " ".repeat(INDENT_LENGTH) : ""}`)
-    )
-    .replace(/YOUR_API_KEY/, auth);
+  switch (lang) {
+    case "node":
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+              ...formatParamsByLang({ ...body }, lang),
+            },
+            true
+          ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+    case "python":
+    default:
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+            },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(
+          "[]",
+          stringifyJSON(
+            { ...formatParamsByLang({ ...body }, lang) },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+  }
 };
 
 const ApiExamples = ({
