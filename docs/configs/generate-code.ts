@@ -59,18 +59,25 @@ print(result)`,
         break;
       case "solana":
         // Web3 Data API – Solana
-        break;
-      case "aptos-web3":
-        // Web3 Data API – Aptos
-        break;
-      case "streams":
-        // Streams API
-        break;
-      case "auth":
-        // Auth API
         Object.keys(apiReference[group]).map((fctn) => {
           const { pathParams, queryParams, bodyParam } =
             apiReference[group][fctn] ?? {};
+
+          const solGroup = () => {
+            switch (fctn) {
+              case "balance":
+              case "getSPL":
+              case "getNFTs":
+              case "getPortfolio":
+                return "account";
+              case "getNFTMetadata":
+                return "nft";
+              case "getTokenPrice":
+              default:
+                return "token";
+            }
+          };
+
           apiReference[group][fctn].codeSamples = [
             {
               language: "node",
@@ -81,7 +88,7 @@ try {
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = Moralis.Auth.${fctn}({});
+  const response = Moralis.SolApi.${solGroup()}.${fctn}({});
 
   console.log(response.raw);
 } catch (e) {
@@ -91,13 +98,13 @@ try {
             },
             {
               language: "python",
-              code: `from moralis import auth
+              code: `from moralis import sol_api
 
 api_key = "YOUR_API_KEY"
 ${bodyParam ? `\nbody = []\n` : ""}${
                 queryParams || pathParams ? `\nparams = {}\n` : ""
               }
-result = auth.challenge.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
+result = sol_api.${solGroup()}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
                 queryParams || pathParams ? `\n  params=params,` : ""
               }
@@ -107,6 +114,50 @@ print(result)`,
               name: "Moralis Python SDK",
             },
           ];
+        });
+        break;
+      case "aptos-web3":
+        // Web3 Data API – Aptos
+        break;
+      case "streams":
+        // Streams API
+        break;
+      case "auth":
+        // Auth API
+        Object.keys(apiReference[group]).map((fctn) => {
+          // const { pathParams, queryParams, bodyParam } =
+          //   apiReference[group][fctn] ?? {};
+          //           apiReference[group][fctn].codeSamples = [
+          //             {
+          //               language: "node",
+          //               code: `import Moralis from 'moralis';
+          // try {
+          //   await Moralis.start({
+          //     apiKey: "YOUR_API_KEY"
+          //   });
+          //   const response = Moralis.Auth.${fctn}({});
+          //   console.log(response.raw);
+          // } catch (e) {
+          //   console.error(e);
+          // }`,
+          //               name: "Moralis NodeJS SDK",
+          //             },
+          //             {
+          //               language: "python",
+          //               code: `from moralis import auth
+          // api_key = "YOUR_API_KEY"
+          // ${bodyParam ? `\nbody = []\n` : ""}${
+          //                 queryParams || pathParams ? `\nparams = {}\n` : ""
+          //               }
+          // result = auth.challenge.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
+          //   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
+          //                 queryParams || pathParams ? `\n  params=params,` : ""
+          //               }
+          // )
+          // print(result)`,
+          //               name: "Moralis Python SDK",
+          //             },
+          //           ];
         });
         break;
     }

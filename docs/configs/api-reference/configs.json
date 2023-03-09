@@ -13478,12 +13478,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getBalance({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.balance({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.balance(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.account.balance(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -13518,12 +13519,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getSPL({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.getSPL({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_spl(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.account.get_spl(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -13558,12 +13560,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getNFTs({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.getNFTs({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_nfts(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.account.get_nfts(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -13637,12 +13640,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"HsXZnF7Te7dZ5ijvGcDj3NWtxRBBaAuYQgh1oZLwAba2\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.account.getPortfolio({\n    network,\n    address,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.getPortfolio({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.account.get_portfolio(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.account.get_portfolio(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -13717,12 +13721,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.nft.getNFTMetadata({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.nft.getNFTMetadata({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.nft.get_nft_metadata(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.nft.get_nft_metadata(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -13778,12 +13783,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\nimport { SolNetwork, SolAddress } from \"@moralisweb3/sol-utils\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n  });\n\n  const address = SolAddress.create(\n    \"SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt\"\n  );\n\n  const network = SolNetwork.MAINNET;\n\n  const response = await Moralis.SolApi.token.getTokenPrice({\n    address,\n    network,\n  });\n\n  console.log(response?.result);\n} catch (e) {\n  console.error(e);\n}\n",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.token.getTokenPrice({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"network\": \"\", \n    \"address\": \"\", \n}\n\nresult = sol_api.token.get_token_price(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_token_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     }
