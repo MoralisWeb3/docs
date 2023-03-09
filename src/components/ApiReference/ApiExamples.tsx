@@ -272,7 +272,24 @@ export const injectParamsToCode = (
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
     case "node":
-      const customSDKParams = () => {};
+      const customNodeSDKBody = () => {
+        // For `requestChallengeEvm` and `requestChallengeSolana`
+        if (code.includes("requestMessage")) {
+          const { chainId, network } = body ?? {};
+          if (chainId) {
+            return {
+              chain: `0x${parseInt(chainId).toString(16)}`,
+              chainId: undefined,
+              network: "evm",
+            };
+          } else if (network) {
+            return {
+              solNetwork: network,
+              network: "solana",
+            };
+          }
+        }
+      };
       return code
         .replace(
           "{}",
@@ -281,6 +298,7 @@ export const injectParamsToCode = (
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
+              ...customNodeSDKBody(),
             },
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
