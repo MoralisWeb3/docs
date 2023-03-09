@@ -9145,7 +9145,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.web3_api_version(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.utils.web3_api_version(\n  api_key=api_key,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9172,7 +9172,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.utils.endpoint_weights(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.utils.endpoint_weights(\n  api_key=api_key,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9527,7 +9527,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.ipfs.upload_folder(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = evm_api.ipfs.upload_folder(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -10846,12 +10846,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst streamId = \"stream-1\";\n\n  const { result } = await Moralis.Streams.retry({\n  id,\n  streamId,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getHistory({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"streamId\": \"\", \n    \"id\": \"\", \n}\n\nresult = streams.history.replay_history(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.history.get_history(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -10901,12 +10902,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const { result } = await Moralis.Streams.readSettings();\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.setSettings({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.project.get_settings(\n    api_key=api_key,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = streams.project.set_settings(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -10943,12 +10945,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \n  const { result } = await Moralis.Streams.readSettings();\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.readSettings({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.project.get_settings(\n    api_key=api_key,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.project.get_settings(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -11045,8 +11048,14 @@
       ],
       "codeSamples": [
         {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getStats({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.stats.get_stats(\n    api_key=api_key,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nresult = streams.stats.get_stats(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -11150,8 +11159,14 @@
       ],
       "codeSamples": [
         {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getStatsById({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"streamId\": \"\", \n}\n\nresult = streams.stats.get_stats_by_stream_id(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.stats.get_stats_by_stream_id(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -11390,12 +11405,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getAll({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.evm_streams.get_streams(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -11761,12 +11777,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst limit = 20;\n\n  const { result } = await Moralis.Streams.getAll({\n  limit,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.createStream({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_streams(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = streams.evm_streams.create_stream(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -11974,12 +11991,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getById({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getById({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm_streams.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.evm_streams.get_stream(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12349,12 +12367,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getById({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.update({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\n\nresult = streams.evm_streams.get_stream(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = streams.evm_streams.update_stream(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12557,6 +12576,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.delete({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.evm_streams.delete_stream(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12778,12 +12809,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst status = \"paused\";\n\n  const { result } = await Moralis.Streams.updateStatus({\n  id,\n  status,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.updateStatus({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n}\nbody = {\n    \"status\": \"\", \n}\n\nresult = streams.evm_streams.update_stream_status(\n    api_key=api_key,\n    params=params,\n    body=body,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = streams.evm_streams.update_stream_status(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12851,12 +12883,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getAddresses({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.getAddresses({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = streams.evm_streams.get_addresses(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12920,12 +12953,13 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\n\n  const { result } = await Moralis.Streams.getAddresses({\n  id,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.addAddress({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"id\": \"\", \n    \"limit\": 1.2, \n    \"cursor\": \"\", \n}\n\nresult = streams.evm_streams.get_addresses(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = streams.evm_streams.add_address_to_stream(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -12983,6 +13017,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.Streams.deleteAddress({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = streams.evm_streams.delete_address_from_stream(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },

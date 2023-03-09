@@ -43,11 +43,15 @@ try {
 
 api_key = "YOUR_API_KEY"
 ${bodyParam ? `\nbody = []\n` : ""}${
-                queryParams || pathParams ? `\nparams = {}\n` : ""
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\nparams = {}\n`
+                  : ""
               }
 result = evm_api.${group}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
-                queryParams || pathParams ? `\n  params=params,` : ""
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\n  params=params,`
+                  : ""
               }
 )
 
@@ -102,11 +106,15 @@ try {
 
 api_key = "YOUR_API_KEY"
 ${bodyParam ? `\nbody = []\n` : ""}${
-                queryParams || pathParams ? `\nparams = {}\n` : ""
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\nparams = {}\n`
+                  : ""
               }
 result = sol_api.${solGroup()}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
-                queryParams || pathParams ? `\n  params=params,` : ""
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\n  params=params,`
+                  : ""
               }
 )
 
@@ -124,6 +132,109 @@ print(result)`,
         break;
       case "streams":
         // Streams API
+        Object.keys(apiReference[group]).map((fctn) => {
+          if (!fctn.includes("aptosStreams")) {
+            const { pathParams, queryParams, bodyParam } =
+              apiReference[group][fctn] ?? {};
+            const nodeStreamsFctn = () => {
+              switch (fctn) {
+                case "ReplayHistory":
+                  return "retry";
+                case "GetSettings":
+                  return "readSettings";
+                case "GetStatsByStreamId":
+                  return "getStatsById";
+                case "GetStreams":
+                  return "getAll";
+                case "CreateStreams":
+                  return "add";
+                case "GetStream":
+                  return "getById";
+                case "UpdateStream":
+                  return "update";
+                case "UpdateStreamStatus":
+                  return "updateStatus";
+                case "DeleteStream":
+                  return "delete";
+                case "DeleteAddressFromStream":
+                  return "deleteAddress";
+                case "AddAddressToStream":
+                  return "addAddress";
+                case "GetAddresses":
+                  return "getAddresses";
+                default:
+                  return fctn.charAt(0).toLowerCase() + fctn.slice(1);
+              }
+            };
+            const pythonStreamsGroup = () => {
+              switch (fctn) {
+                case "AddAddressToStream":
+                case "CreateStream":
+                case "DeleteAddressFromStream":
+                case "DeleteStream":
+                case "GetAddresses":
+                case "GetStream":
+                case "GetStreams":
+                case "UpdateStream":
+                case "UpdateStreamStatus":
+                  return "evm_streams";
+                case "GetHistory":
+                case "ReplayHistory":
+                  return "history";
+                case "GetSettings":
+                case "SetSettings":
+                  return "project";
+                case "GetStats":
+                case "GetStatsByStreamId":
+                default:
+                  return "stats";
+              }
+            };
+            apiReference[group][fctn].codeSamples = [
+              {
+                language: "node",
+                code: `import Moralis from 'moralis';
+
+try {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+
+  const response = Moralis.Streams.${nodeStreamsFctn()}({});
+
+  console.log(response.raw);
+} catch (e) {
+  console.error(e);
+}`,
+                name: "Moralis NodeJS SDK",
+              },
+              {
+                language: "python",
+                code: `from moralis import streams
+
+api_key = "YOUR_API_KEY"
+${bodyParam ? `\nbody = []\n` : ""}${
+                  queryParams.length > 0 || pathParams.length > 0
+                    ? `\nparams = {}\n`
+                    : ""
+                }
+result = streams.${pythonStreamsGroup()}.${camelToSnakeCase(fctn).replaceAll(
+                  "-",
+                  "_"
+                )}(
+  api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
+                  queryParams.length > 0 || pathParams.length > 0
+                    ? `\n  params=params,`
+                    : ""
+                }
+)
+
+print(result)`,
+                name: "Moralis Python SDK",
+              },
+            ];
+          }
+        });
         break;
       case "auth":
         // Auth API
@@ -139,7 +250,7 @@ print(result)`,
             const { pathParams, queryParams, bodyParam } =
               apiReference[group][fctn] ?? {};
             // Function name for Moralis NodeJS SDK syntax
-            const nodeFctn = () => {
+            const nodeAuthFctn = () => {
               switch (fctn) {
                 case "requestChallengeEvm":
                 case "requestChallengeSolana":
@@ -159,7 +270,7 @@ try {
     apiKey: "YOUR_API_KEY"
   });
   
-  const response = Moralis.Auth.${nodeFctn()}({});
+  const response = Moralis.Auth.${nodeAuthFctn()}({});
   console.log(response.raw);
 } catch (e) {
   console.error(e);
