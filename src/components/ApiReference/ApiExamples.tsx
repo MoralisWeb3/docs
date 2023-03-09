@@ -272,6 +272,7 @@ export const injectParamsToCode = (
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
     case "node":
+      const customSDKParams = () => {};
       return code
         .replace(
           "{}",
