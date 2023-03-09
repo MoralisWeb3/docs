@@ -68,6 +68,46 @@ print(result)`,
         break;
       case "auth":
         // Auth API
+        Object.keys(apiReference[group]).map((fctn) => {
+          const { pathParams, queryParams, bodyParam } =
+            apiReference[group][fctn] ?? {};
+          apiReference[group][fctn].codeSamples = [
+            {
+              language: "node",
+              code: `import Moralis from 'moralis';
+
+try {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+
+  const response = Moralis.Auth.${fctn}({});
+
+  console.log(response.raw);
+} catch (e) {
+  console.error(e);
+}`,
+              name: "Moralis NodeJS SDK",
+            },
+            {
+              language: "python",
+              code: `from moralis import auth
+
+api_key = "YOUR_API_KEY"
+${bodyParam ? `\nbody = []\n` : ""}${
+                queryParams || pathParams ? `\nparams = {}\n` : ""
+              }
+result = auth.challenge.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
+  api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
+                queryParams || pathParams ? `\n  params=params,` : ""
+              }
+)
+
+print(result)`,
+              name: "Moralis Python SDK",
+            },
+          ];
+        });
         break;
     }
   });

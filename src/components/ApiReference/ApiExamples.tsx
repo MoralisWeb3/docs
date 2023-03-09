@@ -10,7 +10,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
-const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
+import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
 import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
 
 const INDENT_LENGTH = 2;
