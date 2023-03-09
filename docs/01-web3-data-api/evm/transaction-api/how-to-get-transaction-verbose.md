@@ -3,6 +3,7 @@ title: "How to get verbose transactions of an address"
 slug: "../how-to-get-transaction-verbose"
 description: "Learn how to get verbose transactions of an address using Moralis Transaction API."
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +13,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the verbose transaction of an address
 
-In order to get the verbose transactions of an address, Moralis provides you a [getWalletTransactionsVerbose](/web3-data-api/reference/get-wallet-transactions-verbose) endpoint to do so.
+In order to get the verbose transactions of an address, Moralis provides you a [getWalletTransactionsVerbose](/web3-data-api/reference/get-decoded-wallet-transaction) endpoint to do so.
 
 Here you'll need two parameters: `transactionHash` and `chain`.
 
@@ -39,18 +40,19 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({
-    	address,
-    	chain,
-  });
-  
+  const response =
+    await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({
+      address,
+      chain,
+    });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,18 +69,19 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({
-    	address,
-    	chain,
-  });
-  
+  const response =
+    await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({
+      address,
+      chain,
+    });
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -108,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -138,10 +141,7 @@ In your terminal, you should see the following JSON response:
       "block_timestamp": "2022-12-08T16:35:11.000Z",
       "block_number": "16141217",
       "block_hash": "0xc6d379902054169a094ded6e37953549e6c4d59c3dc5b253d5db3ff2dd5a173c",
-      "transfer_index": [
-        16141217,
-        74
-      ],
+      "transfer_index": [16141217, 74],
       "logs": [
         {
           "log_index": "147",
@@ -156,11 +156,7 @@ In your terminal, you should see the following JSON response:
           "block_timestamp": "2022-12-08T16:35:11.000Z",
           "block_number": "16141217",
           "block_hash": "0xc6d379902054169a094ded6e37953549e6c4d59c3dc5b253d5db3ff2dd5a173c",
-          "transfer_index": [
-            16141217,
-            74,
-            147
-          ],
+          "transfer_index": [16141217, 74, 147],
           "transaction_value": "0"
         }
       ]
@@ -179,7 +175,7 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactionsVerbose](/web3-data-api/reference/get-wallet-transactions-verbose)
+- [getWalletTransactionsVerbose](/web3-data-api/reference/get-decoded-wallet-transaction)
 
 ## Support
 

@@ -7,12 +7,14 @@ authors:
 
 In order to vastly improve the response times on a number of endpoints (by up to x10!), we are planning to phase out support for `total` within our API responses.
 
-A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag. 
+A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag.
 
 ### Planned Change
+
 From **February 1st 2023** the default value of `disable_total` will be set to `true`, and unless you specify `disable_total=false`, the `total` value will be returned as `null`.
 
 ### Example
+
 Let's say you called the API using a request URL like this:
 `https://deep-index.moralis.io/api/v2/${address}?chain=eth`
 
@@ -42,5 +44,5 @@ If you rely on a `total` count value, you will need to explicitly set the `disab
 - [Get ERC20 token transfers by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-token-transfers)
 - [Get ERC20 token transfers by contract](https://docs.moralis.io/web3-data-api/reference/get-token-transfers)
 - [Get native transactions by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-transactions)
-- [Get verbose transactions by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-transactions-verbose)
+- [Get verbose transactions by wallet](https://docs.moralis.io/web3-data-api/reference/get-decoded-wallet-transaction)
 - [Get logs by contract](https://docs.moralis.io/web3-data-api/reference/get-contract-logs)
