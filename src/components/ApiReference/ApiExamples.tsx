@@ -231,20 +231,18 @@ export const filterOutEmpty = (value: any) => {
 };
 
 export const formatParamsByLang = (params: any, lang: string) => {
-  const keyArrays = Object.keys(params);
-  for (let key of keyArrays) {
+  for (let key of Object.keys(params)) {
     key;
     switch (lang) {
       case "node":
         const formattedNodeKey = camelToSnakeCase(key);
         if (key !== formattedNodeKey) {
-          params[camelToSnakeCase(key)] = params[key];
+          params[formattedNodeKey] = params[key];
           delete params[key];
         }
         break;
       case "python":
-        // There is a bug here deleting `normalizedMetadata` input
-        const formattedPythonKey = camelToSnakeCase(key);
+        const formattedPythonKey = camelToSnakeCase(key).replace("-", "_");
         if (key !== formattedPythonKey) {
           params[formattedPythonKey] = params[key];
           delete params[key];
@@ -279,10 +277,9 @@ export const injectParamsToCode = (
       "{}",
       stringifyJSON(
         {
-          ...formatParamsByLang(query, lang),
-          ...formatParamsByLang(path, lang),
-          ...formatParamsByLang(body, lang),
-          // ...query,
+          ...formatParamsByLang({ ...query }, lang),
+          ...formatParamsByLang({ ...path }, lang),
+          ...formatParamsByLang({ ...body }, lang),
         },
         true
       ).replace(/\n/g, `\n${lang === "node" ? " ".repeat(INDENT_LENGTH) : ""}`)
@@ -300,9 +297,11 @@ const ApiExamples = ({
   const { token } = useContext(ApiReferenceTokenContext);
 
   const defaultPathParams = useMemo(
-    () => mapValues(values.path, (value, key) => `:${key}`),
+    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
+
+  console.log(values);
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
