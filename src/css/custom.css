@@ -341,10 +341,19 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
   padding-left: 30px;
 }
 
+a.menu__link {
+  transition: all .2s ease-in;
+}
+
+a.menu__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
 li.sidebar-overview a.menu__link:before {
   background-image: url(/img/sidebar-icons/home.svg);
 }
 
+li.sidebar-overview a.menu__link:hover:before,
 li.sidebar-overview a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/home-active.svg);
 }
@@ -353,6 +362,7 @@ li.sidebar-getting-started a.menu__link:before {
   background-image: url(/img/sidebar-icons/getting-started.svg);
 }
 
+li.sidebar-getting-started a.menu__link:hover:before,
 li.sidebar-getting-started a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/getting-started-active.svg);
 }
@@ -361,6 +371,7 @@ li.sidebar-nft-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/nft-api.svg);
 }
 
+li.sidebar-nft-api a.menu__link:hover:before,
 li.sidebar-nft-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/nft-api-active.svg);
 }
@@ -369,6 +380,7 @@ li.sidebar-token-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/token-api.svg);
 }
 
+li.sidebar-token-api a.menu__link:hover:before,
 li.sidebar-token-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/token-api-active.svg);
 }
@@ -377,6 +389,7 @@ li.sidebar-balance-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/balance-api.svg);
 }
 
+li.sidebar-balance-api a.menu__link:hover:before,
 li.sidebar-balance-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/balance-api-active.svg);
 }
@@ -385,6 +398,7 @@ li.sidebar-transaction-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/transaction-api.svg);
 }
 
+li.sidebar-transaction-api a.menu__link:hover:before,
 li.sidebar-transaction-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/transaction-api-active.svg);
 }
@@ -393,6 +407,7 @@ li.sidebar-block-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/block-api.svg);
 }
 
+li.sidebar-block-api a.menu__link:hover:before,
 li.sidebar-block-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/block-api-active.svg);
 }
@@ -401,6 +416,7 @@ li.sidebar-events-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/events-api.svg);
 }
 
+li.sidebar-events-api a.menu__link:hover:before,
 li.sidebar-events-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/events-api-active.svg);
 }
@@ -409,6 +425,7 @@ li.sidebar-defi-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/defi-api.svg);
 }
 
+li.sidebar-defi-api a.menu__link:hover:before,
 li.sidebar-defi-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/defi-api-active.svg);
 }
@@ -417,6 +434,7 @@ li.sidebar-resolve-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/resolve-api.svg);
 }
 
+li.sidebar-resolve-api a.menu__link:hover:before,
 li.sidebar-resolve-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/resolve-api-active.svg);
 }
@@ -425,6 +443,7 @@ li.sidebar-ipfs-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/ipfs-api.svg);
 }
 
+li.sidebar-ipfs-api a.menu__link:hover:before,
 li.sidebar-ipfs-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/ipfs-api-active.svg);
 }
@@ -433,6 +452,7 @@ li.sidebar-utils-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/utils-api.svg);
 }
 
+li.sidebar-utils-api a.menu__link:hover:before,
 li.sidebar-utils-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/utils-api-active.svg);
 } 
@@ -441,6 +461,7 @@ li.sidebar-api-reference a.menu__link:before {
   background-image: url(/img/sidebar-icons/api-reference.svg);
 }
 
+li.sidebar-api-reference a.menu__link:hover:before,
 li.sidebar-api-reference a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/api-reference-active.svg);
 }
@@ -449,6 +470,7 @@ li.sidebar-integrations a.menu__link:before {
   background-image: url(/img/sidebar-icons/integrations.svg);
 }
 
+li.sidebar-integrations a.menu__link:hover:before,
 li.sidebar-integrations a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/integrations-active.svg);
 }
@@ -457,6 +479,7 @@ li.sidebar-developer-tools a.menu__link:before {
   background-image: url(/img/sidebar-icons/developer-tools.svg);
 }
 
+li.sidebar-developer-tools a.menu__link:hover:before,
 li.sidebar-developer-tools a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/developer-tools-active.svg);
 }
