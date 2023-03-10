@@ -11,6 +11,8 @@ import TabItem from "@theme/TabItem";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import usePageState from "@site/src/hooks/usePageState";
+import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
+import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -232,6 +234,103 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
+export const formatParamsByLang = (params: any, lang: string) => {
+  for (let key of Object.keys(params)) {
+    let formattedKey: string = "";
+    switch (lang) {
+      case "node":
+        formattedKey = snakeToCamelCase(key);
+        break;
+      case "python":
+        formattedKey = camelToSnakeCase(key).replace("-", "_");
+        break;
+      default:
+        break;
+    }
+
+    if (key !== formattedKey) {
+      params[formattedKey] = params[key];
+      delete params[key];
+    }
+  }
+
+  return params;
+};
+
+/**
+ * @description – Only for NodeJS & Python Moralis SDK codes
+ *
+ * @param code
+ * @param lang
+ * @param params
+ * @param auth
+ * @returns
+ */
+export const injectParamsToCode = (
+  code: string,
+  lang: string,
+  params: any,
+  auth: string
+) => {
+  const { query = {}, path = {}, body = {} } = params ?? {};
+  switch (lang) {
+    case "node":
+      const customNodeSDKBody = () => {
+        // For `requestChallengeEvm` and `requestChallengeSolana`
+        if (code.includes("requestMessage")) {
+          const { chainId, network } = body ?? {};
+          if (chainId) {
+            return {
+              chain: `0x${parseInt(chainId).toString(16)}`,
+              chainId: undefined,
+              network: "evm",
+            };
+          } else if (network) {
+            return {
+              solNetwork: network,
+              network: "solana",
+            };
+          }
+        }
+      };
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+              ...formatParamsByLang({ ...body }, lang),
+              ...customNodeSDKBody(),
+            },
+            true
+          ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+    case "python":
+    default:
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+            },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(
+          "[]",
+          stringifyJSON(
+            { ...formatParamsByLang({ ...body }, lang) },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+  }
+};
+
 const ApiExamples = ({
   method,
   apiHost,
@@ -252,21 +351,23 @@ const ApiExamples = ({
   );
 
   const defaultPathParams = useMemo(
-    () => mapValues(values.path, (value, key) => `:${key}`),
+    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
       {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code } =
+        const { code = "" } =
           codeSamples?.find((sample) => sample?.language === lang) ?? {};
         const auth = token.length > 0 ? token : "YOUR_API_KEY";
         return (
           <TabItem key={index} value={lang} label={title}>
             <CodeBlock className={`language-${langCode}`}>
               {code
-                ? buildTemplate([line(code?.replace(/YOUR_API_KEY/, auth))])
+                ? buildTemplate([
+                    line(injectParamsToCode(code, lang, values, auth)),
+                  ])
                 : template({
                     method,
                     url: [

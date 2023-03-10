@@ -5904,4 +5904,9 @@ export const redirects = [
     destination: "/web3-data-api/reference/get-decoded-wallet-transaction",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/metadata-normalization/metadata-normalization",
+    destination: "/web3-data-api/nft-metadata/metadata-normalization",
+    permanent: true,
+  },
 ];
