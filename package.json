@@ -16,6 +16,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "generate-reference": "node docs/configs/generate.ts",
+    "generate-code": "node docs/configs/code/generate.ts",
     "lint": "npx eslint --cache --report-unused-disable-directives \"**/*.{js,jsx,ts,tsx,mjs}\""
   },
   "dependencies": {
