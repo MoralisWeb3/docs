@@ -5924,4 +5924,54 @@ export const redirects = [
     destination: "/web3-data-api/evm/integrations",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations/firebase-advanced-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-advanced-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/internal-transactions",
+    destination: "/web3-data-api/evm/internal-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/automatic-metadata-updates",
+    destination: "/web3-data-api/evm/automatic-metadata-updates",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/",
+    destination: "/web3-data-api/evm/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/normalized-vs-non-normalized-metadata",
+    destination: "/web3-data-api/evm/normalized-vs-non-normalized-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/metadata-normalization",
+    destination: "/web3-data-api/evm/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
+    permanent: true,
+  },
 ];
