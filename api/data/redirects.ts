@@ -6154,4 +6154,103 @@ export const redirects = [
     destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/reference/get-wallets-nft-transfers",
+    destination: "/web3-data-api/aptos/reference/get-wallets-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbycointype",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-coin-type",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbyowneraddresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersbytokens",
+    destination: "/web3-data-api/aptos/reference/get-nft-owners-by-tokens",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/simulate-transaction",
+    destination: "/web3-data-api/aptos/reference/simulate-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-batch-transactions",
+    destination: "/web3-data-api/aptos/reference/submit-batch-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-transaction",
+    destination: "/web3-data-api/aptos/reference/submit-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-transaction",
+    destination: "/web3-data-api/aptos/reference/submit-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/web3-api-version",
+    destination: "/web3-data-api/evm/reference/web3-api-version",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/transaction-labelling",
+    destination: "/web3-data-api/evm/transaction-labelling",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-collection",
+    destination:
+      "/web3-data-api/aptos/reference/get-nft-transfers-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-creators",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-creators",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-ids",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-ids",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-wallets",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-wallets",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-collection",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-creators",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-creators",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-ids",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-ids",
+    permanent: true,
+  },
 ];
