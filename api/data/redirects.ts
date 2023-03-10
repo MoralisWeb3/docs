@@ -546,8 +546,7 @@ export const redirects = [
   },
   {
     source: "/docs/how-to-monitor-for-burnmint-tokens",
-    destination:
-      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
@@ -717,8 +716,7 @@ export const redirects = [
   },
   {
     source: "/docs/using-unity-google-cloud",
-    destination:
-      "/authentication-api/integrations/google-cloud-nodejs-unity",
+    destination: "/authentication-api/integrations/google-cloud-nodejs-unity",
     permanent: true,
   },
   {
@@ -758,8 +756,7 @@ export const redirects = [
   },
   {
     source: "/docs/using-unity-playfab",
-    destination:
-      "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination: "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -1477,8 +1474,7 @@ export const redirects = [
   },
   {
     source: "/docs/monitor-for-burnmint-tokens",
-    destination:
-      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
@@ -1520,8 +1516,7 @@ export const redirects = [
   },
   {
     source: "/docs/monitor-for-burnmint-tokens-1",
-    destination:
-      "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
     permanent: true,
   },
   {
@@ -2136,8 +2131,7 @@ export const redirects = [
   },
   {
     source: "/docs/azure-playfab-integration",
-    destination:
-      "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination: "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -3265,8 +3259,7 @@ export const redirects = [
   },
   {
     source: "/docs/playfab-integration",
-    destination:
-      "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination: "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -3286,8 +3279,7 @@ export const redirects = [
   },
   {
     source: "/docs/first-web3-unity-game",
-    destination:
-      "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination: "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -3507,8 +3499,7 @@ export const redirects = [
   },
   {
     source: "/unity",
-    destination:
-      "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination: "/authentication-api/integrations/azure-playfab-nodejs-unity",
     permanent: true,
   },
   {
@@ -4600,8 +4591,7 @@ export const redirects = [
   },
   {
     source: "/docs/google-cloud",
-    destination:
-      "/authentication-api/integrations/google-cloud-nodejs-unity",
+    destination: "/authentication-api/integrations/google-cloud-nodejs-unity",
     permanent: true,
   },
 
@@ -5907,6 +5897,31 @@ export const redirects = [
   {
     source: "/web3-data-api/metadata-normalization/metadata-normalization",
     destination: "/web3-data-api/nft-metadata/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api",
+    destination: "/web3-data-api/evm",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/reference/compute-units-cu",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/faq",
+    destination: "https://moralis.io/faq/",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations",
+    destination: "/web3-data-api/evm/integrations",
     permanent: true,
   },
 ];
