@@ -51,6 +51,29 @@ module.exports = function (context, fromOptions) {
             },
           },
           {
+            tagName: "script",
+            attributes: {
+              type: "text/javascript",
+              charset: "UTF-8",
+              src: "https://widget.intercom.io/widget/gy4tissf",
+              async: true,
+            },
+          },
+          {
+            tagName: "link",
+            attributes: {
+              rel: "preconnect",
+              href: `https://geo.cookie-script.com`,
+            },
+          },
+          {
+            tagName: "link",
+            attributes: {
+              rel: "preconnect",
+              href: `https://widget.intercom.io`,
+            },
+          },
+          {
             tagName: "link",
             attributes: {
               rel: "preconnect",
