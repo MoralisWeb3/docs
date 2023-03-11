@@ -73,7 +73,7 @@ sidebar_class_name: "sidebar-api-reference"
 ### Transaction API
 
 - [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
-- [Get verbose transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions-verbose)
+- [Get verbose transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
 - [Get transaction by hash](/web3-data-api/evm/reference/get-transaction)
 
 ### Events API

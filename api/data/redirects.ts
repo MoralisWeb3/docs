@@ -5694,16 +5694,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/reference/get-wallet-transactions-verbose",
-    destination: "/web3-data-api/evm/reference/get-wallet-transactions-verbose",
-    permanent: true,
-  },
-  {
-    source: "/web3-data-api/reference/get-transaction-verbose",
-    destination: "/web3-data-api/evm/reference/get-transaction-verbose",
-    permanent: true,
-  },
-  {
     source: "/web3-data-api/reference/get-wallet-transactions",
     destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
