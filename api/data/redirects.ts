@@ -5675,7 +5675,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nft-owners",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
@@ -5886,12 +5886,12 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-transaction-verbose",
-    destination: "/web3-data-api/reference/get-decoded-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-transaction",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-wallet-transactions-verbose",
-    destination: "/web3-data-api/reference/get-decoded-wallet-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-wallet-transaction",
     permanent: true,
   },
   {
@@ -6063,13 +6063,12 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-decoded-transaction",
-    destination: "/web3-data-api/aptos/reference/get-decoded-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-transaction",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-decoded-wallet-transaction",
-    destination:
-      "/web3-data-api/aptos/reference/get-decoded-wallet-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-wallet-transaction",
     permanent: true,
   },
   {
@@ -6116,7 +6115,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nft-contract-metadata",
-    destination: "/web3-data-api/aptos/reference/get-nft-contract-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
     permanent: true,
   },
   {
