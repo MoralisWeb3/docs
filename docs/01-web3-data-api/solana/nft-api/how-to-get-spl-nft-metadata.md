@@ -2,7 +2,9 @@
 title: "How to get SPL NFT Metadata"
 slug: "../how-to-get-spl-nft-metadata"
 description: "Learn how to get metadata of a SPL NFT using Moralis Solana API."
+sidebar_label: "Get SPL NFT Metadata"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,15 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
 
-
-
 ## Step 2: Get metadata of a SPL NFT
 
-In order to get the metadata of a SPL NFT, Moralis provides you the [getNFTMetadata](/web3-data-api/reference/get-sol-nft-metadata) API endpoint to do so.
+In order to get the metadata of a SPL NFT, Moralis provides you the [getNFTMetadata](/web3-data-api/solana/reference/get-sol-nft-metadata) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -33,16 +33,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { SolNetwork } = require('@moralisweb3/common-sol-utils');
+const Moralis = require("moralis").default;
+const { SolNetwork } = require("@moralisweb3/common-sol-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = 'FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV';
+
+  const address = "FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV";
 
   const network = SolNetwork.MAINNET;
 
@@ -50,9 +50,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = 'FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV';
+  const address = "FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV";
 
   const network = SolNetwork.MAINNET;
 
@@ -78,9 +78,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -93,8 +93,8 @@ from moralis import sol_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV", 
-    "network": "mainnet", 
+    "address": "FVW9KoJxXzP2cCfhLfFC7hQKBZKnaoPkyZJQgvM9moWV",
+    "network": "mainnet",
 }
 
 result = sol_api.nft.get_nft_metadata(
@@ -108,11 +108,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -153,7 +151,7 @@ Congratulations 🥳 You just got the metadata of a SPL NFT with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](/web3-data-api/reference/get-sol-nft-metadata)
+- [getNFTMetadata](/web3-data-api/solana/reference/get-sol-nft-metadata)
 
 ## YouTube Tutorial
 

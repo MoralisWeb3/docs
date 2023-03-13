@@ -2,6 +2,7 @@
 title: "How to get Sushiswap V2 pair address"
 slug: "../how-to-get-sushiswap-v2-pair-address"
 description: "Learn how to get the pair address of a Sushiswap V2 liquidity pool using Moralis DeFi API."
+sidebar_label: "Get Sushiswap V2 pair address"
 ---
 
 ## Prerequisites
@@ -19,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get Pair Address of A Sushiswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/reference/get-pair-address) endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/evm/reference/get-pair-address) endpoint to do so.
 
 Here you'll need three parameters: `token0`, `token1` and `address`.
 
@@ -172,7 +173,7 @@ https://www.youtube.com/watch?v=TocrId1UeDg
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](/web3-data-api/reference/get-pair-address)
+- [getPairAddress](/web3-data-api/evm/reference/get-pair-address)
 
 ## Support
 

@@ -849,7 +849,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         }
       ],
@@ -880,7 +880,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -1109,7 +1109,7 @@
               {
                 "name": "cursor",
                 "type": "string",
-                "description": "The cursor to get to the next page. ). Learn more on cursor pagination [here](/web3-data-api/pagination)."
+                "description": "The cursor to get to the next page. ). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination)."
               },
               {
                 "name": "result",
@@ -1244,7 +1244,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         },
         {
@@ -1281,7 +1281,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -1692,7 +1692,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         },
         {
@@ -1735,7 +1735,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -2197,7 +2197,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -2443,7 +2443,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -2634,7 +2634,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         }
       ],
@@ -2665,7 +2665,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -2875,7 +2875,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string",
           "required": false
         },
@@ -3628,7 +3628,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -3833,7 +3833,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         },
         {
@@ -3876,7 +3876,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -4666,7 +4666,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string",
           "required": false
         },
@@ -5163,7 +5163,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         }
       ],
@@ -6717,7 +6717,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         },
         {
@@ -7040,7 +7040,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         },
         {
@@ -8134,7 +8134,7 @@
         },
         {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
         }
       ],
@@ -8165,7 +8165,7 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/pagination).",
+                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
                 "type": "string"
               },
               {
@@ -10280,17 +10280,20 @@
           {
             "name": "addresses",
             "type": "object",
+            "required": true,
             "description": "An array of addresses that needs to be bind",
             "fields": [
               {
                 "name": "blockchainType",
                 "type": "string",
+                "required": true,
                 "description": "The chain in which the address belongs to",
                 "example": "evm"
               },
               {
                 "name": "address",
                 "type": "string",
+                "required": true,
                 "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
                 "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
               },
@@ -10341,17 +10344,20 @@
           {
             "name": "verifications",
             "type": "object",
+            "required": true,
             "description": "Message that needs to be signed by the end user",
             "fields": [
               {
                 "name": "message",
                 "type": "string",
+                "required": true,
                 "description": "Message that needs to be signed by the end user",
                 "example": "Please sign this message to bind:\nProfile Ids:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\n\nwith\n\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nNonce: 5pXWu7aGkY2J7II0X"
               },
               {
                 "name": "signature",
                 "type": "string",
+                "required": true,
                 "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
                 "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
               }
@@ -10392,12 +10398,14 @@
           {
             "name": "blockchainType",
             "type": "string",
+            "required": true,
             "description": "The chain in which the address belongs to",
             "example": "evm"
           },
           {
             "name": "address",
             "type": "string",
+            "required": true,
             "description": "Address performing the signing conformant to capitalization encoded checksum specified in EIP-55 where applicable.",
             "example": "0x57af6B90c2237d2F888bf4CAe56f25FE1b14e531"
           },
@@ -10410,6 +10418,7 @@
           {
             "name": "profileId",
             "type": "string",
+            "required": true,
             "description": "Unique identifier with a length of 66 characters",
             "example": "0xbfbcfab169c67072ff418133124480fea02175f1402aaa497daa4fd09026b0e1"
           }
@@ -10448,12 +10457,14 @@
           {
             "name": "message",
             "type": "string",
+            "required": true,
             "description": "Message that needs to be signed by the end user",
             "example": "Please sign this message to unbind:\nAddress: 0x6ed338bcB610640e81465FCfb9894DDfA354Cc91\nfrom\nProfile Id:\n- 0x0b2bbac1251651c0cbbdbbb29fed5a03adc8b05a2a9eb10a02aaa489b9c1f8ff\nNonce: 5pXWu7aGkY2J7II0X"
           },
           {
             "name": "signature",
             "type": "string",
+            "required": true,
             "description": "EIP-191 compliant signature signed by the Ethereum account address requesting authentication.",
             "example": "0xc4f2f59d80e036ecab4eaaac5d4ee713ab94264ca584839c98b5743c4f6777322038225a4bc1e0f13b8382166816737369f26bd66f0479cfa80d4c52c02eb2cb1b"
           }

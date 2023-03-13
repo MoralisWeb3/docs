@@ -6,13 +6,13 @@ import {
 } from "@docusaurus/theme-common";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import DocSidebarItems from "@theme/DocSidebarItems";
-import SidebarMenu from "../../../components/SidebarMenu";
+import NetworkSelect from "../../../components/NetworkSelect";
 
 const DocSidebarMobileSecondaryMenu = ({ sidebar, path }) => {
   const mobileSidebar = useNavbarMobileSidebar();
   return (
     <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
-      <SidebarMenu />
+      <NetworkSelect />
       <DocSidebarItems
         items={sidebar}
         activePath={path}
