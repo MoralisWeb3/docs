@@ -46,18 +46,18 @@ Webhooks allow you to receive real-time notifications for events that are happen
 
 ### Listen to all addresses use cases
 
-- Listen to all NFT contract transfers [tutorial](/streams-api/how-to-listen-all-nft-transfers)
-- Listen to all events from new contracts specific to a contract factory [tutorial](/streams-api/how-to-listen-all-events-from-a-contract-factory)
-- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address)
-- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address)
+- Listen to all NFT contract transfers [tutorial](/streams-api/evm/how-to-listen-all-nft-transfers)
+- Listen to all events from new contracts specific to a contract factory [tutorial](/streams-api/evm/how-to-listen-all-events-from-a-contract-factory)
+- Listen to all NFT contracts transfers where sender is a specific address [tutorial](/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address)
+- Listen to all ERC20 contract transfers where sender is a specific address and number of coins transferred is over 1000 [tutorial](/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address)
 
 ## Run Smart Contract Functions
 
-- Run smart contract functions against Events [Read more here!](/streams-api/triggers)
+- Run smart contract functions against Events [Read more here!](/streams-api/evm/triggers)
 
 ## Get Native Balances
 
-- Get Native Balances for addresses! [Read more here!](/streams-api/get-native-balances)
+- Get Native Balances for addresses! [Read more here!](/streams-api/evm/get-native-balances)
 
 ## High reliability
 
@@ -94,19 +94,19 @@ Until a block is confirmed, it is possible that a re-organization of the chain m
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using NodeJS SDK](/streams-api/using-node-js-sdk)
-- [Your First Stream using WebUI](/streams-api/using-webui)
+- [Your First Stream using NodeJS SDK](/streams-api/evm/using-node-js-sdk)
+- [Your First Stream using WebUI](/streams-api/evm/using-webui)
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
 ## How Streams are priced
 
-See [Records and pricing](/streams-api/records-and-pricing)
+See [Records and pricing](/streams-api/evm/records-and-pricing)
 
 ## Learn more advanced applications of Streams
 
-- [Monitor specific NFTs](/streams-api/how-to-monitor-specific-nfts)
-- [Monitor for Burn/Mint Tokens](/streams-api/how-to-monitor-for-erc20-token-burns-or-mints)
-- [Monitor ENS Name Registrations](/streams-api/how-to-monitor-ens-domain-registrations)
+- [Monitor specific NFTs](/streams-api/evm/how-to-monitor-specific-nfts)
+- [Monitor for Burn/Mint Tokens](/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints)
+- [Monitor ENS Name Registrations](/streams-api/evm/how-to-monitor-ens-domain-registrations)
 
 ## Demos
 

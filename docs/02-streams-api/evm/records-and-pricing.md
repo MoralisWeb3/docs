@@ -7,31 +7,29 @@ description: "Discover how Records are used in Streams API to determine usage an
 
 Discover how Records are used in Streams API to determine usage and pricing. Records are either a transaction (txs), log (logs) or internal transactions (txsInternal) in the webhook response.
 
-## Summary 
+## Summary
 
-- A record is either a transaction (`txs`), log (`logs`) or internal transactions (`txsInternal`) in the webhook response. 
-- Records is the base for usage of Streams 
-- Records are only counted towards your usage for webhooks with `confirmed:true` so webhooks with `confirmed:false` are  **free**
+- A record is either a transaction (`txs`), log (`logs`) or internal transactions (`txsInternal`) in the webhook response.
+- Records is the base for usage of Streams
+- Records are only counted towards your usage for webhooks with `confirmed:true` so webhooks with `confirmed:false` are **free**
 - Decoded logs are also **free** they do NOT count as `Records`.
 
 ## What is the record?
 
-A record is either a transaction (`txs` in response), log (`logs` in response) or internal transaction (`txsInternal` in response). The number of records in a webhook is the sum of `txs + logs + txsInternal`. 
+A record is either a transaction (`txs` in response), log (`logs` in response) or internal transaction (`txsInternal` in response). The number of records in a webhook is the sum of `txs + logs + txsInternal`.
 
 In the header of a webhook, you can find the total number of records in that webhook in the header `x-records-charged`.
 
 In this example, the `x-records-charged` is `20` so the webhook contains 20 records.
 
 ```json
-headers: {  
-    'x-region': 'us-west-2',  
-    'x-queue-size': '0',  
-    'x-records-charged': ‘20’  
-    'x-signature': '0xdf49163b5273b50a8da48e82b7254b45d81aeee9a02f1909a45d7aaea240e9c2',  
+headers: {
+    'x-region': 'us-west-2',
+    'x-queue-size': '0',
+    'x-records-charged': ‘20’
+    'x-signature': '0xdf49163b5273b50a8da48e82b7254b45d81aeee9a02f1909a45d7aaea240e9c2',
   }
 ```
-
-
 
 Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-charged': ‘0’ `
 
@@ -39,7 +37,7 @@ Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-
 
 Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your billing page <https://admin.moralis.io/account/billing>.
 
-For each transaction, you get two webhooks (read more [here](/streams-api/webhooks-transactions)), records are only counted towards your usage for webhooks with Confirmed status True.
+For each transaction, you get two webhooks (read more [here](/streams-api/evm/webhooks-transactions)), records are only counted towards your usage for webhooks with Confirmed status True.
 
 ### Check your total consumed record for a period
 
@@ -48,16 +46,14 @@ By using /status (see API [reference](/streams-api/reference/get-stats)) you wil
 **Example:**
 
 ```json
-{  
-  "totalWebhooksDelivered": 1288,  
-  "totalWebhooksFailed": 17,  
-  "totalLogsProcessed": 4257,  
-  "totalTxsProcessed": 0,  
-  "totalTxsInternalProcessed": 0  
+{
+  "totalWebhooksDelivered": 1288,
+  "totalWebhooksFailed": 17,
+  "totalLogsProcessed": 4257,
+  "totalTxsProcessed": 0,
+  "totalTxsInternalProcessed": 0
 }
 ```
-
-
 
 Where your total consumed records for the current billing period would be `"totalLogsProcessed": 4257` + `"totalTxsProcessed": 0` + `"totalTxsInternalProcessed": 0`. In this case total consumption is 4257.
 
@@ -68,20 +64,18 @@ By using /stats/{streamId} (see API [reference](/streams-api/reference/get-stats
 **Example:**
 
 ```json
-{  
-  "totalWebhooksDelivered": 0,  
-  "totalWebhooksFailed": 0,  
-  "totalLogsProcessed": 0,  
-  "totalTxsProcessed": 0,  
-  "totalTxsInternalProcessed": 0,  
-  "createdAt": "2022-10-25T08:21:00.877Z",  
-  "updatedAt": "2022-10-25T08:21:00.877Z"  
+{
+  "totalWebhooksDelivered": 0,
+  "totalWebhooksFailed": 0,
+  "totalLogsProcessed": 0,
+  "totalTxsProcessed": 0,
+  "totalTxsInternalProcessed": 0,
+  "createdAt": "2022-10-25T08:21:00.877Z",
+  "updatedAt": "2022-10-25T08:21:00.877Z"
 }
 ```
 
-
-
-Where your total consumed records for the current billing period would be `totalLogsProcessed` + `totalTxsProcessed`  + `totalTxsInternalProcessed`.
+Where your total consumed records for the current billing period would be `totalLogsProcessed` + `totalTxsProcessed` + `totalTxsInternalProcessed`.
 
 ### Records per transaction type
 
