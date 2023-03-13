@@ -1521,7 +1521,7 @@ export const redirects = [
   },
   {
     source: "/reference/solbalance",
-    destination: "/web3-data-api/evm/reference/get-native-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
