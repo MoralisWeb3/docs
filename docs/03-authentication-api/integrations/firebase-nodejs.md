@@ -10,7 +10,7 @@ This tutorial will teach you how to authenticate a user to your Firebase applica
   <source src="/video/4169289-moralis-auth-firebase.mp4"/>
 </video>
 
-Make sure to check out the [Firebase (NodeJS)](/web3-data-api/integrations/firebase-nodejs) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
+Make sure to check out the [Firebase (NodeJS)](/web3-data-api/evm/integrations/firebase-nodejs) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
 
 In this tutorial, we will use the following services:
 

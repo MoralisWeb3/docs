@@ -2,7 +2,9 @@
 title: "How to get the native balance of a multi-signature wallet"
 slug: "../how-to-get-the-native-balance-of-a-smart-contract-wallet"
 description: "Learn how to get the native balance of a multi-signature wallet using the Moralis Balance API."
+sidebar_label: "Get native balance of multi-signature wallet"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of a multi-signature wallet, Moralis provides you the [getNativeBalance](/web3-data-api/reference/get-native-balance) API endpoint.
+In order to get the native balance of a multi-signature wallet, Moralis provides you the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -68,7 +70,7 @@ const runApp = () => {
     // ...and any other configuration
   });
 
-  const address = '0x849D52316331967b6fF1198e5E32A0eB168D039d';
+  const address = "0x849D52316331967b6fF1198e5E32A0eB168D039d";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -78,7 +80,7 @@ const runApp = () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,8 +94,8 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0x849D52316331967b6fF1198e5E32A0eB168D039d", 
-    "chain": "eth", 
+    "address": "0x849D52316331967b6fF1198e5E32A0eB168D039d",
+    "chain": "eth",
 }
 
 result = evm_api.balance.get_native_balance(
@@ -109,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -118,8 +120,8 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-  "balance": "970315108126866256970"
-	}
+    "balance": "970315108126866256970"
+  }
 ]
 ```
 
@@ -133,7 +135,7 @@ https://www.youtube.com/watch?v=sL5t07JE0aE
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](/web3-data-api/reference/get-native-balance)
+- [getNativeBalance](/web3-data-api/evm/reference/get-native-balance)
 
 ## Support
 

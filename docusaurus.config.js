@@ -167,7 +167,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "web3-data-api/overview",
+            docId: "web3-data-api/evm/overview",
             position: "left",
             label: "Web3 Data API",
           },
@@ -227,7 +227,7 @@ const config = {
               {
                 label: "Web3 Data API",
                 type: "doc",
-                docId: "reference/web3-data-api/overview",
+                docId: "web3-data-api/evm/reference/reference",
               },
               {
                 label: "Streams API",
