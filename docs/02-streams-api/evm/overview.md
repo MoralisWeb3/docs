@@ -1,7 +1,7 @@
 ---
 title: "Streams API"
 sidebar_label: "Overview"
-slug: "/streams-api"
+slug: "/streams-api/evm"
 description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
 sidebar_position: 1
 image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.webp"
@@ -86,9 +86,7 @@ Webhooks allow you to receive real-time notifications for events that are happen
 | ARBITRUM      | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  | 100                    |
 | ARBITRUM TEST | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
 | OPTIMISM      | 0xa            |                                | 🔥 NEW                                  | 100                    |
-| PALM          | 0x2a15c308d    |                                | 🔥 NEW                                  | 100                    |
-| APTOS MAINNET | mainnet        | Not Applicable                 | 🔥 NEW                                  | Not Applicable         |
-| APTOS TESTNET | testnet        | Not Applicable                 | 🔥 NEW                                  | Not Applicable         |
+| PALM          | 0x2a15c308d    |                                | 🔥                                      |
 
 :::info Reorgnization Before Confirmation
 Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
