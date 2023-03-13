@@ -6242,4 +6242,9 @@ export const redirects = [
     destination: "/web3-data-api/aptos/reference/get-nfts-by-ids",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started",
+    permanent: true,
+  },
 ];
