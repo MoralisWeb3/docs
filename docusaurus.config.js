@@ -200,7 +200,7 @@ const config = {
             position: "right",
             value:
               '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
-              className: "navbar__item--hide-on-mobile",
+            className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
@@ -214,11 +214,6 @@ const config = {
             position: "right",
             className: "navbar__item--linebreak",
             value: "<hr>",
-          },
-          {
-            type: "html",
-            position: "right",
-            label: "Demos",
           },
           {
             to: "changelog",
@@ -266,7 +261,7 @@ const config = {
             ],
             value:
               '<a class="navbar__link" href="https://moralis.io/contact-support/" target="_blank">Support</a>',
-              className: "navbar__item--hide-on-mobile",
+            className: "navbar__item--hide-on-mobile",
           },
           {
             type: "docsVersionDropdown",

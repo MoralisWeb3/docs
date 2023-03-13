@@ -22,17 +22,15 @@ export const CardGridItem = ({
   columns,
 }: CardGridItemProps): JSX.Element => {
   const iconImages = icons && icons.length > 0 && (
-    <span>
+    <>
       {icons.map((icon) => (
         <React.Fragment key={icon.src}>
-          <img src={icon.src} width="36px" alt={icon.alt}  />
+          <img src={icon.src} width="36px" alt={icon.alt} />
           &nbsp;&nbsp;
         </React.Fragment>
       ))}
-    </span>
+      </>
   )
-
-  console.log("to", to)
 
   return (
     <Col span={columnsToColspan[columns]}>
