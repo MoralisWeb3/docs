@@ -401,7 +401,7 @@ context.res = {
 
 #### NFT API functions
 
-##### Create [`GetWalletNfts`](/web3-data-api/reference/get-wallet-nfts)  function
+##### Create [`GetWalletNfts`](/web3-data-api/evm/reference/get-wallet-nfts)  function
 
 Repeat the same steps as before to create the new function but name it accordingly. Once created, copy the following code into `index.js`:
 
@@ -451,7 +451,7 @@ For this function we only need the `walletAddress` and the `chainid` in the requ
 
 #### EVM API functions
 
-##### Create [`RunContractFunction`](/web3-data-api/reference/run-contract-function) function
+##### Create [`RunContractFunction`](/web3-data-api/evm/reference/run-contract-function) function
 
 Repeat the same steps as before to create the new function but name it accordingly. Once created, copy the following code into `index.js`:
 

@@ -167,7 +167,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "web3-data-api/overview",
+            docId: "web3-data-api/evm/overview",
             position: "left",
             label: "Web3 Data API",
           },
@@ -218,6 +218,52 @@ const config = {
           {
             type: "html",
             position: "right",
+            label: "Demos",
+          },
+          {
+            to: "changelog",
+            position: "right",
+            label: "Changelog",
+          },
+          {
+            type: "dropdown",
+            label: "References",
+            position: "right",
+            items: [
+              {
+                type: "html",
+                value: "API References",
+              },
+              {
+                label: "Web3 Data API",
+                type: "doc",
+                docId: "web3-data-api/evm/reference/reference",
+              },
+              {
+                label: "Streams API",
+                type: "doc",
+                docId: "reference/streams-api/overview",
+              },
+              {
+                label: "Authentication API",
+                type: "doc",
+                docId: "reference/authentication-api/overview",
+              },
+              {
+                type: "html",
+                value: "SDK References",
+              },
+              {
+                label: "JS SDK",
+                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
+                target: "_blank",
+              },
+              {
+                label: "Python SDK",
+                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
+                target: "_blank",
+              },
+            ],
             value:
               '<a class="navbar__link" href="https://moralis.io/contact-support/" target="_blank">Support</a>',
               className: "navbar__item--hide-on-mobile",

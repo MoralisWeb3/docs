@@ -2,6 +2,7 @@
 title: "How to get Pancakeswap V1 pair address"
 slug: "../how-to-get-pancakeswap-v1-pair-address"
 description: "Learn how to get the pair address of a Pancakeswap V1 liquidity pool using Moralis DeFi API."
+sidebar_label: "Get Pancakeswap V1 pair address"
 ---
 
 ## Prerequisites
@@ -19,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get Pair Address of A Pancakeswap V1 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/reference/get-pair-address) endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/evm/reference/get-pair-address) endpoint to do so.
 
 Here you'll need three parameters: `token0`, `token1` and `address`.
 
@@ -172,7 +173,7 @@ https://www.youtube.com/watch?v=TocrId1UeDg
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](/web3-data-api/reference/get-pair-address)
+- [getPairAddress](/web3-data-api/evm/reference/get-pair-address)
 
 ## Support
 

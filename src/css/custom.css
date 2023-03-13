@@ -10,6 +10,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -18,6 +19,7 @@
   font-style: normal;
   font-weight: 500;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -26,6 +28,7 @@
   font-style: normal;
   font-weight: 600;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -34,6 +37,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -42,6 +46,7 @@
   font-style: normal;
   font-weight: 800;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
+   
     format("woff2");
   font-display: swap;
 }
@@ -84,6 +89,12 @@
   --ifm-hero-text-color: var(--ifm-heading-color);
 
   --ifm-navbar-height: 4.5rem;
+
+  /* NetworkSelect */
+  --docs-color-border: #dadde1;
+  --docs-color-text: #000;
+  --docs-color-background-100: #f8f8f8;
+  --docs-color-background-200: #efefef;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -98,6 +109,12 @@
   --ifm-color-primary-lighter: #8ac0ff;
   --ifm-color-primary-lightest: #bedcff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* NetworkSelect */
+  --docs-color-border: #2e2e2e;
+  --docs-color-text: #fff;
+  --docs-color-background-100: #1c1c1c;
+  --docs-color-background-200: #2a2a2a;
 }
 
 .remark-oembed-you-tube iframe,
@@ -162,8 +179,9 @@ video {
 }
 
 .card h3 {
-  display: flex;
-  align-items: center;
+  display:  flex;
+  
+  align-items:  center;
 }
 
 .hero {
@@ -171,18 +189,16 @@ video {
 }
 
 /* Hiding C# cards*/
-.col:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-.col:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+.col:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
+.col:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]) 
+{
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
-li:has(> a[href="/web3-data-api/quickstart-dot-net-csharp"]),
-li:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
+li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"])
+{
   display: none;
 }
 
@@ -194,6 +210,278 @@ li:has(
   .footer__link-item {
     height: 48px;
   }
+}
+.sections-menu-trigger {
+  align-items: center;
+  background-color: var(--docs-color-background-100);
+  border: 1px solid var(--docs-color-background-200);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--docs-color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: space-between;
+  outline: 0;
+  text-align: left;
+}
+
+.sections-menu-item,
+.sections-menu-trigger {
+  padding: 0 15px 0 10px;
+}
+
+.sections-menu-scrollButton {
+  align-items: center;
+  color: var(--docs-color-text);
+  cursor: default;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  width: 16px;
+}
+
+.sections-menu-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  min-width: 200px;
+  outline: 0;
+}
+
+.sections-menu-item:hover {
+  background-color: var(--docs-color-background-200);
+}
+
+.sections-menu-item[data-disabled] {
+  background-color: var(--docs-color-border);
+  cursor: not-allowed;
+}
+
+.sections-menu-content {
+  background-color: var(--docs-color-background-100);
+  z-index: 300;
+}
+
+.sections-menu-item .item-indicator,
+.sections-menu-trigger .item-indicator {
+  color: rgb(var(--docs-color-primary-100, 26 144 255) / 1);
+  height: 20px;
+  width: 20px;
+}
+
+.sections-menu-item .item-text,
+.sections-menu-trigger .item-text {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.sections-menu-item .item-text > svg,
+.sections-menu-trigger .item-text > svg {
+  height: 32px;
+  margin-right: 8px;
+  width: 32px;
+}
+
+.sections-menu-content {
+  border-radius: 6px;
+  padding: 6px 0;
+}
+
+.sections-menu-trigger.compact {
+  height: 2.5rem;
+  min-width: 5rem;
+}
+
+.sections-menu-content.compact {
+  min-width: 5rem;
+  width: 5rem;
+}
+
+.compact .sections-menu-item {
+  height: 2.5rem;
+  min-width: auto;
+  width: auto;
+}
+
+ 
+.web3-data-api .menu__list {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 4px;
+}
+
+.web3-data-api .menu__list-item.theme-doc-sidebar-item-category-level-1 {
+  margin-top: 6px
+}
+
+.web3-data-api .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
+.web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 6px
+}
+
+.web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 12px;
+}
+
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
+  padding-left: 30px;
+}
+
+a.menu__link {
+  transition: all .2s ease-in;
+}
+
+a.menu__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+li.sidebar-overview a.menu__link:before {
+  background-image: url(/img/sidebar-icons/home.svg);
+}
+
+li.sidebar-overview a.menu__link:hover:before,
+li.sidebar-overview a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/home-active.svg);
+}
+
+li.sidebar-getting-started a.menu__link:before {
+  background-image: url(/img/sidebar-icons/getting-started.svg);
+}
+
+li.sidebar-getting-started a.menu__link:hover:before,
+li.sidebar-getting-started a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/getting-started-active.svg);
+}
+
+li.sidebar-nft-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/nft-api.svg);
+}
+
+li.sidebar-nft-api a.menu__link:hover:before,
+li.sidebar-nft-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/nft-api-active.svg);
+}
+
+li.sidebar-token-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/token-api.svg);
+}
+
+li.sidebar-token-api a.menu__link:hover:before,
+li.sidebar-token-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/token-api-active.svg);
+}
+
+li.sidebar-balance-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/balance-api.svg);
+}
+
+li.sidebar-balance-api a.menu__link:hover:before,
+li.sidebar-balance-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/balance-api-active.svg);
+}
+
+li.sidebar-transaction-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/transaction-api.svg);
+}
+
+li.sidebar-transaction-api a.menu__link:hover:before,
+li.sidebar-transaction-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/transaction-api-active.svg);
+}
+
+li.sidebar-block-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/block-api.svg);
+}
+
+li.sidebar-block-api a.menu__link:hover:before,
+li.sidebar-block-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/block-api-active.svg);
+}
+
+li.sidebar-events-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/events-api.svg);
+}
+
+li.sidebar-events-api a.menu__link:hover:before,
+li.sidebar-events-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/events-api-active.svg);
+}
+
+li.sidebar-defi-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/defi-api.svg);
+}
+
+li.sidebar-defi-api a.menu__link:hover:before,
+li.sidebar-defi-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/defi-api-active.svg);
+}
+
+li.sidebar-resolve-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/resolve-api.svg);
+}
+
+li.sidebar-resolve-api a.menu__link:hover:before,
+li.sidebar-resolve-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/resolve-api-active.svg);
+}
+
+li.sidebar-ipfs-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/ipfs-api.svg);
+}
+
+li.sidebar-ipfs-api a.menu__link:hover:before,
+li.sidebar-ipfs-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/ipfs-api-active.svg);
+}
+
+li.sidebar-utils-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/utils-api.svg);
+}
+
+li.sidebar-utils-api a.menu__link:hover:before,
+li.sidebar-utils-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/utils-api-active.svg);
+} 
+
+li.sidebar-api-reference a.menu__link:before {
+  background-image: url(/img/sidebar-icons/api-reference.svg);
+}
+
+li.sidebar-api-reference a.menu__link:hover:before,
+li.sidebar-api-reference a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/api-reference-active.svg);
+}
+
+li.sidebar-integrations a.menu__link:before {
+  background-image: url(/img/sidebar-icons/integrations.svg);
+}
+
+li.sidebar-integrations a.menu__link:hover:before,
+li.sidebar-integrations a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/integrations-active.svg);
+}
+
+li.sidebar-developer-tools a.menu__link:before {
+  background-image: url(/img/sidebar-icons/developer-tools.svg);
+}
+
+li.sidebar-developer-tools a.menu__link:hover:before,
+li.sidebar-developer-tools a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/developer-tools-active.svg);
 }
 
 .navbar__item--linebreak {
@@ -270,3 +558,4 @@ li:has(
 .markdown h1:first-child {
   margin-bottom: .75rem;
 }
+
