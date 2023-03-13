@@ -1285,7 +1285,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfts",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -1584,7 +1584,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfts-2",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -2537,7 +2537,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfts-1",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -2787,12 +2787,12 @@ export const redirects = [
   },
   {
     source: "/reference/getnfts",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getnfts-5",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -2953,7 +2953,7 @@ export const redirects = [
   },
   {
     source: "/reference/get",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -3854,7 +3854,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/transactions-and-balances/nft-balances",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -3874,7 +3874,7 @@ export const redirects = [
   },
   {
     source: "/reference/get-nfts",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -4865,7 +4865,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/nft-api",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -5113,7 +5113,7 @@ export const redirects = [
   },
   {
     source: "/reference/get-wallet-nfts",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -5327,7 +5327,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnfts-1",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -5393,7 +5393,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nfts",
-    destination: "",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {

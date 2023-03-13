@@ -183,6 +183,11 @@ const config = {
             position: "left",
             label: "Authentication API",
           },
+          {
+            to: "changelog",
+            position: "left",
+            label: "Changelog",
+          },
           // position: Right
           {
             type: "html",
@@ -209,11 +214,6 @@ const config = {
             docId: "example-dapps/evm/evm",
             position: "right",
             label: "Demos",
-          },
-          {
-            to: "changelog",
-            position: "right",
-            label: "Changelog",
           },
           {
             type: "dropdown",
