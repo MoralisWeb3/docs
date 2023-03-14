@@ -2,7 +2,9 @@
 title: "How to get native balance by wallet"
 slug: "../how-to-get-native-solana-balance-by-wallet"
 description: "Learn how to get the native balance of a wallet using the Moralis Solana API."
+sidebar_label: "Get native balance by wallet"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
 
 ## Step 2: Get native balance of an address
 
-In order to get the native balance of a wallet address, Moralis provides you the [solBalance](/web3-data-api/reference/sol-balance) API endpoint to do so.
+In order to get the native balance of a wallet address, Moralis provides you the [solBalance](/web3-data-api/solana/reference/sol-balance) API endpoint to do so.
 
 Here you'll need two parameters: `address` and `network`.
 
@@ -31,16 +33,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { SolNetwork } = require('@moralisweb3/common-sol-utils');
+const Moralis = require("moralis").default;
+const { SolNetwork } = require("@moralisweb3/common-sol-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const address = 'BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen';
+
+  const address = "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen";
 
   const network = SolNetwork.MAINNET;
 
@@ -48,9 +50,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -68,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = 'BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen';
+  const address = "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen";
 
   const network = SolNetwork.MAINNET;
 
@@ -76,9 +78,9 @@ const runApp = async () => {
     address,
     network,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -92,8 +94,8 @@ from moralis import sol_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen", 
-    "network": "mainnet", 
+    "address": "BWeBmN8zYDXgx2tnGj72cA533GZEWAVeqR9Eu29txaen",
+    "network": "mainnet",
 }
 
 result = sol_api.account.balance(
@@ -109,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -126,13 +128,13 @@ Congratulations 🥳 You just got the native balance of a wallet address with ju
 
 ## Youtube Video
 
-https://www.youtube.com/watch?v=NoAhtCJj3Q8 
+https://www.youtube.com/watch?v=NoAhtCJj3Q8
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [solbalance](/web3-data-api/reference/sol-balance)
+- [solbalance](/web3-data-api/solana/reference/sol-balance)
 
 ## Support
 

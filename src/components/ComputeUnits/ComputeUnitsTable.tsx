@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import endpoints from "@site/docs/configs/api-reference/compute-units.json";
 const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
 
 interface EndpointWeightResponse {
@@ -9,35 +10,12 @@ interface EndpointWeightResponse {
   dynamic?: boolean;
 }
 
+const DynamicPriceUnits = {
+  getNativeBalancesForAddresses: "wallet addresses",
+  getMultipleNFTs: "NFTs",
+};
+
 const ComputeUnitsTable = (): JSX.Element => {
-  const [endpoints, setEndpoints] = useState<EndpointWeightResponse[]>([]);
-
-  const fetchComputeUnits = async () => {
-    try {
-      const response = await fetch("/api/exec", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          method: "GET",
-          apiHost: "https://deep-index.moralis.io/api/v2",
-          path: "/info/endpointWeights",
-        }),
-      });
-
-      if (!response.ok) throw new Error();
-
-      const { body } = await response.json();
-
-      setEndpoints(body);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  useEffect(() => {
-    fetchComputeUnits();
-  }, []);
-
   return (
     <table style={{ textAlign: "center" }}>
       <thead>
@@ -53,7 +31,7 @@ const ComputeUnitsTable = (): JSX.Element => {
         </tr>
       </thead>
       <tbody>
-        {endpoints?.map((e, index) => {
+        {endpoints?.map((e: EndpointWeightResponse, index: number) => {
           const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
           return (
             <tr key={`${endpoint}-${index}`}>
@@ -70,7 +48,9 @@ const ComputeUnitsTable = (): JSX.Element => {
               <td>{price}</td>
               <td>
                 {dynamic
-                  ? `+${price} CU${price > 1 ? "s" : ""} per wallet addresses`
+                  ? `+${price} CU${price > 1 ? "s" : ""} per ${
+                      DynamicPriceUnits?.[endpoint]
+                    }`
                   : 0}
               </td>
               <td>{rateLimitCost}</td>

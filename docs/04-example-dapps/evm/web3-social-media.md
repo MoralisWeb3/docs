@@ -327,7 +327,7 @@ MORALIS_API_KEY=replace_me
 
 
 
-To get your Moralis API key, [check out this guide](/web3-data-api/get-your-api-key).
+To get your Moralis API key, [check out this guide](/web3-data-api/evm/get-your-api-key).
 
 2. In `pages/index.js`, add our Moralis SDK import at the top:
 

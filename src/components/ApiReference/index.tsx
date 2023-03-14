@@ -5,13 +5,13 @@ import React, {
   useContext,
   Component,
 } from "react";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
 import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
-
+import qs from "qs";
 import styles from "./styles.module.css";
-
 import ApiResponseField, {
   ApiResponse,
   buildResponse,
@@ -37,6 +37,7 @@ export interface ApiReferenceProps {
   bodyParam?: ApiParam;
   responses: ApiResponse[];
   apiHost: string;
+  testHost?: string;
   codeSamples?: CodeSample[];
   children?: Component;
 }
@@ -45,6 +46,11 @@ export interface FormValues {
   path: object;
   query: object;
   body: object;
+}
+
+export enum Network {
+  MAINNET = "mainnet",
+  TESTNET = "testnet",
 }
 
 const deepCompact = (value: unknown) => {
@@ -76,6 +82,7 @@ const ApiReference = ({
   bodyParam,
   responses,
   apiHost,
+  testHost,
   codeSamples,
   children,
 }: ApiReferenceProps) => {
@@ -83,6 +90,11 @@ const ApiReference = ({
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
+  const [network, setNetwork] = useState<Network>(Network.MAINNET);
+  const hostUrl = useMemo(
+    () => (network === Network.MAINNET ? apiHost : testHost),
+    [network]
+  );
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -92,23 +104,38 @@ const ApiReference = ({
     async (values) => {
       setLoading(true);
       try {
-        const response = await fetch("/api/exec", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
+        let pathReplace = path;
+
+        // Replace path values (For example :address) in path
+        for (const pathValue in values.path) {
+          pathReplace = pathReplace.replace(
+            `:${pathValue}`,
+            values.path[pathValue]
+          );
+        }
+        const response = await fetch(
+          [
+            hostUrl,
+            pathReplace,
+            qs.stringify(values.query || {}, { addQueryPrefix: true }),
+          ].join(""),
+          {
             method,
-            path,
-            auth: token,
-            bodyParam: filterOutEmpty(values.body),
-            queryParams: values.query,
-            pathParams: values.path,
-            apiHost,
-          }),
-        });
+            headers: {
+              accept: "application/json",
+              "content-type": "application/json",
+              "X-API-Key": `${token?.length > 0 ? token : "TEST"}`,
+              Authorization: `Bearer ${token?.length > 0 ? token : "TEST"}`,
+              "x-moralis-source": `api reference`,
+              referer: "moralis.io",
+            },
+            body: JSON.stringify(filterOutEmpty(values.body)),
+          }
+        );
 
-        if (!response.ok) throw new Error();
+        const fetchBody = await response.json();
 
-        const body = await response.json();
+        const body = { status: response.status, body: fetchBody };
 
         setResponse(body);
         setResponseIndex(-1);
@@ -154,13 +181,40 @@ const ApiReference = ({
           })}
         />
       </Head>
+      <div>
+        {apiHost.includes("aptos") && (
+          <ToggleGroup.Root
+            className={styles.ToggleGroup}
+            type="single"
+            defaultValue="mainnet"
+            orientation="horizontal"
+            value={network}
+            onValueChange={(value: Network) => {
+              if (value) setNetwork(value);
+            }}
+          >
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="mainnet"
+            >
+              Mainnet
+            </ToggleGroup.Item>
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="testnet"
+            >
+              Testnet
+            </ToggleGroup.Item>
+          </ToggleGroup.Root>
+        )}
+      </div>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
             <div className="col">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
-                {apiHost}
+                {hostUrl}
                 {path}
               </div>
 
@@ -228,7 +282,7 @@ const ApiReference = ({
               <div className={styles.section}>{children}</div>
             </div>
 
-            <div className="col col--5">
+            <div className="col col--6">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
@@ -247,7 +301,7 @@ const ApiReference = ({
 
                 <ApiExamples
                   method={method}
-                  apiHost={apiHost}
+                  apiHost={hostUrl}
                   path={path}
                   codeSamples={codeSamples}
                 />
@@ -280,7 +334,7 @@ const ApiReference = ({
                     {responseIndex === -1
                       ? response
                         ? JSON.stringify(response.body, null, 2)
-                        : "Error with Test Request"
+                        : "Fetch response error"
                       : responses[responseIndex].body
                       ? stringifyJSON(
                           deepCompact(

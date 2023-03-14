@@ -11,7 +11,7 @@ This feature automatically decodes raw transaction input data into human-readabl
 
 Transaction labeling can be found on the following two endpoints:
 
-- [Get decoded transactions by wallet](/web3-data-api/reference/get-wallet-transactions-verbose)
-- [Get decoded transaction by hash](/web3-data-api/reference/get-transaction-verbose)
+- [Get decoded transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
+- [Get decoded transaction by hash](/web3-data-api/evm/reference/get-decoded-transaction)
 
 [Head over to our docs](https://docs.moralis.io/web3-data-api/transaction-labelling) for more information about how this works.
