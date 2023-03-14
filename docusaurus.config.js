@@ -232,7 +232,7 @@ const config = {
               {
                 label: "Streams API",
                 type: "doc",
-                docId: "reference/streams-api/overview",
+                docId: "streams-api/evm/reference/reference",
               },
               {
                 label: "Authentication API",
