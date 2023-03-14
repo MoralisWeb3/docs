@@ -6413,4 +6413,124 @@ export const redirects = [
     destination: "/web3-data-api/evm/reference/get-erc20-approvals",
     permanent: true,
   },
+  {
+    source: "/streams-api/reference/overview",
+    destination: "/streams-api/evm/reference",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-history",
+    destination: "/streams-api/evm/reference/get-history",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/set-settings",
+    destination: "/streams-api/evm/reference/set-settings",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-settings",
+    destination: "/streams-api/evm/reference/get-settings",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stats",
+    destination: "/streams-api/evm/reference/get-stats",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stats-by-streamid",
+    destination: "/streams-api/evm/reference/get-stats-by-streamid",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-streams",
+    destination: "/streams-api/evm/reference/get-streams",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/create-stream",
+    destination: "/streams-api/evm/reference/create-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stream",
+    destination: "/streams-api/evm/reference/get-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/update-stream",
+    destination: "/streams-api/evm/reference/update-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/delete-stream",
+    destination: "/streams-api/evm/reference/delete-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/update-stream-status",
+    destination: "/streams-api/evm/reference/update-stream-status",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-addresses",
+    destination: "/streams-api/evm/reference/get-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/add-address-to-stream",
+    destination: "/streams-api/evm/reference/add-address-to-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/delete-address-from-stream",
+    destination: "/streams-api/evm/reference/delete-address-from-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get-all",
+    destination: "/streams-api/aptos/reference/aptos-streams-get-all",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-create",
+    destination: "/streams-api/aptos/reference/aptos-streams-create",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get",
+    destination: "/streams-api/aptos/reference/aptos-streams-get",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-update",
+    destination: "/streams-api/aptos/reference/aptos-streams-update",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-delete",
+    destination: "/streams-api/aptos/reference/aptos-streams-delete",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-add-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-add-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-delete-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-delete-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-get-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptosstreamsupdatestatus",
+    destination: "/streams-api/aptos/reference/aptos-streams-update-status",
+    permanent: true,
+  },
 ];
