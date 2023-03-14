@@ -19,6 +19,12 @@ You can also monitor all internal transactions happening on chain by setting the
 
 You can decide to also include Native Transactions
 
+## Include All Transaction Logs
+
+When you enable the `includeAllTxLogs` option in your stream config, it will include all related logs if any log or transaction matches your stream config. This option can only be used together with `includeNativeTxs` or `includeContractLogs`.
+
+For example: Enabling `includeAllTxLogs` in a stream with `includeNativeTxs` enabled will return all the logs related to the transaction sent in the webhook.
+
 ## Advanced Options
 An array of advanced option objects that allow you to specify additional options for creating a stream. It has the following **required** fields:
 
