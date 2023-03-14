@@ -88,6 +88,23 @@ const NetworkSelect = () => {
     }
   };
 
+  // Workaround for issue: https://github.com/radix-ui/primitives/issues/1658
+  const handleOnOpenChange = (open) => {
+    const items = document.querySelectorAll(".menu__link");
+
+    items.forEach((item) => {
+      if (open) {
+        item.addEventListener("click", function(e){
+          e.preventDefault()
+        });
+      } else {
+        item.removeEventListener("click", function(e){
+          e.preventDefault()
+        });
+      }
+    });
+  };
+
   return pageState && networks?.[pageState?.path] ? (
     <>
       <div className={styles.netWorkSelect}>
@@ -95,6 +112,7 @@ const NetworkSelect = () => {
           <Select.Root
             defaultValue={pageState?.network}
             onValueChange={handleNetWorkChange}
+            onOpenChange={handleOnOpenChange}
           >
             <Select.Trigger
               aria-label="Select Network"
