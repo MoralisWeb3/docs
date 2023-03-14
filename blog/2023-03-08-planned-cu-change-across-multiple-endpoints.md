@@ -5,7 +5,7 @@ authors:
   name: Reuben Salisbury
 ---
 
-From 22nd March 2023, the compute units (CUs) charged on the below endpoints will be changing as per the below table:
+From 28th March 2023, the compute units (CUs) charged on the below endpoints will be changing as per the tables below:
 
 | Endpoint | Compute Units |
 |------------------|--------------|
@@ -16,5 +16,9 @@ From 22nd March 2023, the compute units (CUs) charged on the below endpoints wil
 | [/erc20/mints]() | 10 |
 | [/erc20/burns]() | 10 |
 | [/erc20/approvals]() | 10 |
+| [/block/{block_number_or_hash}]() | 10 |
+
+| Query Parameter | Compute Units | Compute Units |
+| `include=internal_transactions` | +5 |
 
 For more information about what CUs are and how they're charged, visit our [Compute Units page](/web3-data-api/compute-units-cu).
