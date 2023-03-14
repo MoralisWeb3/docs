@@ -6247,4 +6247,19 @@ export const redirects = [
     destination: "/web3-data-api/evm/getting-started",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/reference/get-erc20-mints",
+    destination: "/web3-data-api/evm/reference/get-erc20-mints",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-erc20-burns",
+    destination: "/web3-data-api/evm/reference/get-erc20-burns",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-erc20-approvals",
+    destination: "/web3-data-api/evm/reference/get-erc20-approvals",
+    permanent: true,
+  },
 ];
