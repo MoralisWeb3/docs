@@ -2,7 +2,9 @@
 title: "How to get Uniswap V2 pair reserves"
 slug: "../how-to-get-the-pair-reserves"
 description: "Learn how to get the pair reserves of a given pair address from Uniswap V2 using Moralis DeFi API."
+sidebar_label: "Get Uniswap V2 pair reserves"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get Pair Reserves of A Uniswap V2 Liquidity Pool
 
-In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/reference/get-pair-address) endpoint to do so.
+In order to get pair address of a liquidity, Moralis provides you a [getPairAddress](/web3-data-api/evm/reference/get-pair-address) endpoint to do so.
 
 Here you'll need two parameters: `pairAddress` and `address`.
 
@@ -31,16 +33,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const pairAddress = '0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974'
+
+  const pairAddress = "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -50,7 +52,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -68,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const pairAddress = '0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974'
+  const pairAddress = "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -78,7 +80,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,10 +93,10 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "pair_address": "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974", 
-    "chain": "eth", 
-    # "to_block": "", 
-    # "to_date": "", 
+    "pair_address": "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974",
+    "chain": "eth",
+    # "to_block": "",
+    # "to_date": "",
 }
 
 result = evm_api.defi.get_pair_reserves(
@@ -111,7 +113,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -130,7 +132,7 @@ Congratulations 🥳 You just get the pair reserves of a Uniswap V2 liquidity po
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](/web3-data-api/reference/get-pair-reserves)
+- [getPairReserves](/web3-data-api/evm/reference/get-pair-reserves)
 
 ## Support
 

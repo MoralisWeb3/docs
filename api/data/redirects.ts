@@ -24,7 +24,7 @@ export const redirects = [
   },
   {
     source: "/reference",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
@@ -55,7 +55,7 @@ export const redirects = [
   { source: "/docs/overview", destination: "/", permanent: true },
   {
     source: "/docs/quickstart",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
@@ -65,17 +65,17 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
     source: "/docs/your-first-dapp-nodejs",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/your-first-dapp-nextjs",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -90,7 +90,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp-angular",
-    destination: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
     permanent: true,
   },
   {
@@ -125,12 +125,12 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
     source: "/docs/installation",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -145,7 +145,7 @@ export const redirects = [
   },
   {
     source: "/docs/moralis-data-types",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
@@ -155,7 +155,7 @@ export const redirects = [
   },
   {
     source: "/docs/cross-chain-requests",
-    destination: "/web3-data-api/cross-chain-requests",
+    destination: "/web3-data-api/evm/cross-chain-requests",
     permanent: true,
   },
   {
@@ -170,17 +170,17 @@ export const redirects = [
   },
   {
     source: "/docs/compute-units-cu",
-    destination: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/reference/compute-units-cu",
     permanent: true,
   },
   {
     source: "/docs/rate-limits",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/docs/abuse-prevention",
-    destination: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
     permanent: true,
   },
   {
@@ -515,13 +515,13 @@ export const redirects = [
   {
     source: "/docs/how-to-sign-in-with-solana-phantom-wallet",
     destination:
-      "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+      "/authentication-api/solana/how-to-sign-in-with-solana-phantom-wallet",
     permanent: true,
   },
   {
     source: "/docs/how-to-sign-in-with-solana-wallet-provider",
     destination:
-      "/authentication-api/how-to-sign-in-with-solana-wallet-provider",
+      "/authentication-api/solana/how-to-sign-in-with-solana-wallet-provider",
     permanent: true,
   },
   {
@@ -674,13 +674,13 @@ export const redirects = [
   {
     source: "/docs/how-to-get-spl-token-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-spl-token-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-spl-token-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-nft-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-spl-nft-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-spl-nft-balance-of-an-address",
     permanent: true,
   },
   {
@@ -691,22 +691,22 @@ export const redirects = [
   {
     source: "/docs/how-to-get-solana-portfolio-balance-of-an-address",
     destination:
-      "/web3-data-api/solana/how-to-get-solana-portfolio-balance-of-an-address",
+      "/web3-data-api/solana/solana/how-to-get-solana-portfolio-balance-of-an-address",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-spl-token-price",
-    destination: "/web3-data-api/solana/how-to-get-spl-token-price",
+    destination: "/web3-data-api/solana/solana/how-to-get-spl-token-price",
     permanent: true,
   },
   {
     source: "/docs/aws-integration",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
     source: "/docs/using-aws-lambda",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
@@ -721,7 +721,7 @@ export const redirects = [
   },
   {
     source: "/docs/using-firebase",
-    destination: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
   },
   {
@@ -1245,12 +1245,12 @@ export const redirects = [
   },
   {
     source: "/reference/introduction",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/reference/getnftcontractmetadata",
-    destination: "/web3-data-api/reference/get-nft-contract-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
     permanent: true,
   },
   {
@@ -1260,17 +1260,17 @@ export const redirects = [
   },
   {
     source: "/reference/moralis-api-key",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
     source: "/reference/compute-units",
-    destination: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/reference/compute-units-cu",
     permanent: true,
   },
   {
     source: "/reference/endpointweights",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
@@ -1280,162 +1280,162 @@ export const redirects = [
   },
   {
     source: "/reference/getnftmetadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/getwalletnfts",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getcontractnfts",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
     source: "/reference/getwalletnftcollections",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
     source: "/reference/getnftowners-1",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
     source: "/reference/getnftowners",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
     source: "/reference/getnfttokenidowners",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfersbyblock",
-    destination: "/web3-data-api/reference/get-nft-transfers-by-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-by-block",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfers-1",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfers",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
     source: "/reference/getnftcontracttransfers-2",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
     source: "/reference/getwallettokenbalances",
-    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
     permanent: true,
   },
   {
     source: "/reference/gettokenallowance",
-    destination: "/web3-data-api/reference/get-token-allowance",
+    destination: "/web3-data-api/evm/reference/get-token-allowance",
     permanent: true,
   },
   {
     source: "/reference/gettokenprice",
-    destination: "/web3-data-api/reference/get-token-price",
+    destination: "/web3-data-api/evm/reference/get-token-price",
     permanent: true,
   },
   {
     source: "/reference/getwallettokentransfers",
-    destination: "/web3-data-api/reference/get-wallet-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-transfers",
     permanent: true,
   },
   {
     source: "/reference/gettokentransfers",
-    destination: "/web3-data-api/reference/get-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-token-transfers",
     permanent: true,
   },
   {
     source: "/reference/gettokenmetadata",
-    destination: "/web3-data-api/reference/get-token-metadata",
+    destination: "/web3-data-api/evm/reference/get-token-metadata",
     permanent: true,
   },
   {
     source: "/reference/gettokenmetadatabysymbol",
-    destination: "/web3-data-api/reference/get-token-metadata-by-symbol",
+    destination: "/web3-data-api/evm/reference/get-token-metadata-by-symbol",
     permanent: true,
   },
   {
     source: "/reference/getnativebalance",
-    destination: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/evm/reference/get-native-balance",
     permanent: true,
   },
   {
     source: "/reference/getnativebalance-1",
-    destination: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/evm/reference/get-native-balance",
     permanent: true,
   },
   {
     source: "/reference/getwallettransactions",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
   {
     source: "/reference/getwallettransactionsverbose",
-    destination: "/web3-data-api/reference/get-wallet-transactions-verbose",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions-verbose",
     permanent: true,
   },
   {
     source: "/reference/gettransaction",
-    destination: "/web3-data-api/reference/get-transaction",
+    destination: "/web3-data-api/evm/reference/get-transaction",
     permanent: true,
   },
   {
     source: "/reference/getcontractlogs",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   {
     source: "/reference/getblock",
-    destination: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
     permanent: true,
   },
   {
     source: "/reference/getdatetoblock",
-    destination: "/web3-data-api/reference/get-date-to-block",
+    destination: "/web3-data-api/evm/reference/get-date-to-block",
     permanent: true,
   },
   {
     source: "/reference/resolveaddress",
-    destination: "/web3-data-api/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/resolve-address",
     permanent: true,
   },
   {
     source: "/reference/resolvedomain",
-    destination: "/web3-data-api/reference/resolve-domain",
+    destination: "/web3-data-api/evm/reference/resolve-domain",
     permanent: true,
   },
   {
     source: "/reference/getpairaddress",
-    destination: "/web3-data-api/reference/get-pair-address",
+    destination: "/web3-data-api/evm/reference/get-pair-address",
     permanent: true,
   },
   {
     source: "/reference/getpairreserves",
-    destination: "/web3-data-api/reference/get-pair-reserves",
+    destination: "/web3-data-api/evm/reference/get-pair-reserves",
     permanent: true,
   },
   {
     source: "/reference/uploadfolder",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
     source: "/reference/runcontractfunction",
-    destination: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -1445,7 +1445,7 @@ export const redirects = [
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
@@ -1521,37 +1521,37 @@ export const redirects = [
   },
   {
     source: "/reference/solbalance",
-    destination: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
     source: "/reference/getspl",
-    destination: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
     permanent: true,
   },
   {
     source: "/reference/getsolnfts",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
     source: "/reference/getsolnftmetadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/getsolportfolio",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
     source: "/reference/getsoltokenprice",
-    destination: "/web3-data-api/reference/get-sol-token-price",
+    destination: "/web3-data-api/solana/reference/get-sol-token-price",
     permanent: true,
   },
   {
     source: "/docs/introduction-to-moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -1569,12 +1569,12 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -1584,7 +1584,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfts-2",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -1606,7 +1606,7 @@ export const redirects = [
   { source: "/docs/", destination: "/", permanent: true },
   {
     source: "/reference/api-response",
-    destination: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
     permanent: true,
   },
   {
@@ -1616,7 +1616,7 @@ export const redirects = [
   },
   {
     source: "/reference/pagination",
-    destination: "/web3-data-api/pagination",
+    destination: "/web3-data-api/evm/reference/pagination",
     permanent: true,
   },
   {
@@ -1627,52 +1627,52 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts",
-    destination: "/web3-data-api/reference/search-nfts",
+    destination: "/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
     source: "/reference/getmultiplenfts",
-    destination: "/web3-data-api/reference/get-multiple-nfts",
+    destination: "/web3-data-api/evm/reference/get-multiple-nfts",
     permanent: true,
   },
   {
     source: "/reference/getwalletnfttransfers",
-    destination: "/web3-data-api/reference/get-wallet-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-transfers",
     permanent: true,
   },
   {
     source: "/reference/getnftcontracttransfers",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfersfromtoblock",
-    destination: "/web3-data-api/reference/get-nft-transfers-from-to-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-from-to-block",
     permanent: true,
   },
   {
     source: "/reference/syncnftcontract",
-    destination: "/web3-data-api/reference/sync-nft-contract",
+    destination: "/web3-data-api/evm/reference/sync-nft-contract",
     permanent: true,
   },
   {
     source: "/reference/getnfttrades",
-    destination: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
     permanent: true,
   },
   {
     source: "/reference/getnftlowestprice",
-    destination: "/web3-data-api/reference/get-nft-lowest-price",
+    destination: "/web3-data-api/evm/reference/get-nft-lowest-price",
     permanent: true,
   },
   {
     source: "/reference/resyncmetadata",
-    destination: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
     permanent: true,
   },
   {
     source: "/reference/getcontractevents",
-    destination: "/web3-data-api/reference/get-contract-events",
+    destination: "/web3-data-api/evm/reference/get-contract-events",
     permanent: true,
   },
   {
@@ -1764,7 +1764,7 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains-evm",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -2136,7 +2136,7 @@ export const redirects = [
   },
   {
     source: "/reference/uploadfolder-1",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
@@ -2172,22 +2172,22 @@ export const redirects = [
   },
   {
     source: "/docs/nodejs-dapp-from-scratch",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
     source: "/docs/nextjs-dapp",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
     source: "/reference/getwalletnftcollections-1",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
     source: "/docs/moralis-sdk-setup",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -2207,17 +2207,17 @@ export const redirects = [
   },
   {
     source: "/docs/sol-balance",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
     source: "/docs/introduction-to-moralis-sdk",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
     source: "/reference/gettokenprice-4",
-    destination: "/web3-data-api/reference/get-token-price",
+    destination: "/web3-data-api/evm/reference/get-token-price",
     permanent: true,
   },
   {
@@ -2272,17 +2272,17 @@ export const redirects = [
   },
   {
     source: "/reference/endpoints-2",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/getwalletnftcollections-2",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2319,7 +2319,7 @@ export const redirects = [
   },
   {
     source: "/reference/getspl-1",
-    destination: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
     permanent: true,
   },
   {
@@ -2329,7 +2329,7 @@ export const redirects = [
   },
   {
     source: "/introduction/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2340,7 +2340,7 @@ export const redirects = [
   },
   {
     source: "/reference/getportfolio-1",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
@@ -2392,7 +2392,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2419,33 +2419,33 @@ export const redirects = [
   },
   {
     source: "/reference/endpoints-7",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/endpoints-9",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/events-1",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   { source: "/introduction/re", destination: "/", permanent: true },
   {
     source: "/reference/endpoints-8",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/getdatetoblock-1",
-    destination: "/web3-data-api/reference/get-date-to-block",
+    destination: "/web3-data-api/evm/reference/get-date-to-block",
     permanent: true,
   },
   {
     source: "/reference/getnftlowestprice-1",
-    destination: "/web3-data-api/reference/get-nft-lowest-price",
+    destination: "/web3-data-api/evm/reference/get-nft-lowest-price",
     permanent: true,
   },
   {
@@ -2460,7 +2460,7 @@ export const redirects = [
   },
   {
     source: "/reference/block-1",
-    destination: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
     permanent: true,
   },
   {
@@ -2487,12 +2487,12 @@ export const redirects = [
   },
   {
     source: "/reference/get-nft-metadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/docs/moralis-firebase-integration",
-    destination: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
   },
   {
@@ -2519,7 +2519,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnftsforcontract",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
@@ -2537,7 +2537,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfts-1",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -2557,7 +2557,7 @@ export const redirects = [
   },
   {
     source: "/reference/getalltokenids",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
@@ -2568,12 +2568,12 @@ export const redirects = [
   },
   {
     source: "/reference/get-nft-transfers",
-    destination: "/web3-data-api/reference/get-wallet-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-transfers",
     permanent: true,
   },
   {
     source: "/reference/searchnfts-1",
-    destination: "/web3-data-api/reference/search-nfts",
+    destination: "/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -2583,12 +2583,12 @@ export const redirects = [
   },
   {
     source: "/reference/getnfttrades-2",
-    destination: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
     permanent: true,
   },
   {
     source: "/reference/gettokenidmetadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
@@ -2600,12 +2600,12 @@ export const redirects = [
   {
     source:
       "/moralis-server/getting-started/connect-the-sdk/connect-with-react",
-    destination: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
     permanent: true,
   },
   {
     source: "/reference/getwallettokenidtransfers",
-    destination: "/web3-data-api/reference/get-wallet-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-transfers",
     permanent: true,
   },
   {
@@ -2662,7 +2662,7 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenaddresstransfers",
-    destination: "/web3-data-api/reference/get-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-token-transfers",
     permanent: true,
   },
   {
@@ -2673,7 +2673,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2683,12 +2683,12 @@ export const redirects = [
   },
   {
     source: "/reference/balance-1",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
     source: "/reference/getnftmetadata-5",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
@@ -2705,12 +2705,12 @@ export const redirects = [
   },
   {
     source: "/reference/gettransactions",
-    destination: "/web3-data-api/reference/get-wallet-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-transfers",
     permanent: true,
   },
   {
     source: "/reference/gettokenprice-1",
-    destination: "/web3-data-api/reference/get-token-price",
+    destination: "/web3-data-api/evm/reference/get-token-price",
     permanent: true,
   },
   {
@@ -2721,7 +2721,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnfttransfersfromtoblock-2",
-    destination: "/web3-data-api/reference/get-nft-transfers-from-to-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-from-to-block",
     permanent: true,
   },
   {
@@ -2741,12 +2741,12 @@ export const redirects = [
   },
   {
     source: "/reference/getcontractnfts-1",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
     source: "/guides/build",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2787,17 +2787,17 @@ export const redirects = [
   },
   {
     source: "/reference/getnfts",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getnfts-5",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getwallettokenbalances-1",
-    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
     permanent: true,
   },
   {
@@ -2823,17 +2823,17 @@ export const redirects = [
   },
   {
     source: "/reference/syncnftcontract-1",
-    destination: "/web3-data-api/reference/sync-nft-contract",
+    destination: "/web3-data-api/evm/reference/sync-nft-contract",
     permanent: true,
   },
   {
     source: "/reference/events",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfersbyblock-1",
-    destination: "/web3-data-api/reference/get-nft-transfers-by-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-by-block",
     permanent: true,
   },
   {
@@ -2843,12 +2843,12 @@ export const redirects = [
   },
   {
     source: "/reference/getnftwalletcollections",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
     source: "/reference/getcontractlogs-1",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   {
@@ -2858,7 +2858,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2869,7 +2869,7 @@ export const redirects = [
   },
   {
     source: "/reference/ipfs-1",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
@@ -2890,7 +2890,7 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenidowners",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
@@ -2911,7 +2911,7 @@ export const redirects = [
   },
   {
     source: "/reference/transaction-1",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
   {
@@ -2948,12 +2948,12 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/moralis-web3-api-rest",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/reference/get",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -3005,7 +3005,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/snippets",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3020,7 +3020,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3036,7 +3036,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3046,7 +3046,7 @@ export const redirects = [
   },
   {
     source: "/reference/utils",
-    destination: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3063,7 +3063,7 @@ export const redirects = [
   },
   {
     source: "/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3099,13 +3099,13 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenbalances",
-    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
     permanent: true,
   },
   { source: "/page/🔗", destination: "/", permanent: true },
   {
     source: "/moralis-server/web3-sdk/supported-chains",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -3206,7 +3206,7 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenidowners-1",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
@@ -3217,7 +3217,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutesVyper",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3228,22 +3228,22 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
     source: "/reference/getnftmetadata-1",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/guides",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
     source: "/reference/getnftsforcontract-1",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
@@ -3264,17 +3264,17 @@ export const redirects = [
   },
   {
     source: "/introduction/cross-chain",
-    destination: "/web3-data-api/cross-chain-requests",
+    destination: "/web3-data-api/evm/cross-chain-requests",
     permanent: true,
   },
   {
     source: "/reference/supported-chains-nft",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
     source: "/reference/getlogsbyaddress",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   {
@@ -3290,13 +3290,13 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   { source: "/introduction/readme", destination: "/", permanent: true },
   {
     source: "/reference/contract-1",
-    destination: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3306,22 +3306,22 @@ export const redirects = [
   },
   {
     source: "/reference/resyncmetadata-1",
-    destination: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
     permanent: true,
   },
   {
     source: "/reference/gettokenidmetadata-1",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/getnfttrades-1",
-    destination: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfers-1",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
@@ -3342,12 +3342,12 @@ export const redirects = [
   { source: "/docs/our-products", destination: "/", permanent: true },
   {
     source: "/reference/getnfttransfersfromtoblock-1",
-    destination: "/web3-data-api/reference/get-nft-transfers-from-to-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-from-to-block",
     permanent: true,
   },
   {
     source: "/reference/getcontractnfttransfers",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
@@ -3357,17 +3357,17 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-d",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
     source: "/reference/getting-started-with-your-api",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/getting-started/quick-start",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3408,7 +3408,7 @@ export const redirects = [
   },
   {
     source: "/reference/native",
-    destination: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/evm/reference/get-native-balance",
     permanent: true,
   },
   {
@@ -3423,7 +3423,7 @@ export const redirects = [
   },
   {
     source: "/moralis-web3-rest/native-api",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
@@ -3444,7 +3444,7 @@ export const redirects = [
   },
   {
     source: "/reference/getalltokenids-1",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
@@ -3454,7 +3454,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnftowners-1",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
@@ -3464,7 +3464,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projectsMoralis",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3474,7 +3474,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk;",
-    destination: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
     permanent: true,
   },
   {
@@ -3484,17 +3484,17 @@ export const redirects = [
   },
   {
     source: "/reference/getnftwalletcollections-1",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
     source: "/deep-index-rest-api/deep-index-api",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/moralis-server/connect-the-sdk/connect-using-node",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -3519,12 +3519,12 @@ export const redirects = [
   },
   {
     source: "/page/nodejs-evmdatatypes",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
     source: "/page/nodejs-sdk-datatypes",
-    destination: "/web3-data-api/moralis-data-types",
+    destination: "/web3-data-api/evm/moralis-data-types",
     permanent: true,
   },
   {
@@ -3561,7 +3561,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3577,7 +3577,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3608,7 +3608,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutes",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3666,12 +3666,12 @@ export const redirects = [
   },
   {
     source: "/reference/getting-the-api-key",
-    destination: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
     permanent: true,
   },
   {
     source: "/reference/abuse-prevention",
-    destination: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
     permanent: true,
   },
   {
@@ -3753,12 +3753,12 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/misc/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -3791,22 +3791,22 @@ export const redirects = [
   { source: "/i", destination: "/", permanent: true },
   {
     source: "/reference/getportfolio",
-    destination: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
     permanent: true,
   },
   {
     source: "/reference/getnftowners-2",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
     source: "/reference/get-nft-owners",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
     source: "/docs/how-to-get-a-block-by-its-block-number",
-    destination: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
     permanent: true,
   },
   {
@@ -3828,7 +3828,7 @@ export const redirects = [
   },
   {
     source: "/reference/getcontractnfts-2",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
@@ -3839,42 +3839,42 @@ export const redirects = [
   },
   {
     source: "/reference/block",
-    destination: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
     permanent: true,
   },
   {
     source: "/docs/aws-lambda-integration",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
     permanent: true,
   },
   {
     source: "/reference/getnfttokenidowners-2",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
     source: "/moralis-server/transactions-and-balances/nft-balances",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/get-metadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfersbyblock-2",
-    destination: "/web3-data-api/reference/get-nft-transfers-by-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-by-block",
     permanent: true,
   },
   {
     source: "/reference/syncnftcontract-2",
-    destination: "/web3-data-api/reference/sync-nft-contract",
+    destination: "/web3-data-api/evm/reference/sync-nft-contract",
     permanent: true,
   },
   {
     source: "/reference/get-nfts",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
@@ -3885,7 +3885,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts-2",
-    destination: "/web3-data-api/reference/search-nfts",
+    destination: "/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -3906,53 +3906,53 @@ export const redirects = [
   },
   {
     source: "/reference/get-transfers",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
   {
     source: "/reference/get-balance",
-    destination: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/evm/reference/get-native-balance",
     permanent: true,
   },
   {
     source: "/reference/balance",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
     source: "/reference/endpoints",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/get-market-data-1",
-    destination: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
     permanent: true,
   },
   {
     source: "/reference/resolve-web3-domain",
-    destination: "/web3-data-api/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/resolve-address",
     permanent: true,
   },
   {
     source: "/reference/nft-endpoints",
-    destination: "/web3-data-api/reference/get-multiple-nfts",
+    destination: "/web3-data-api/evm/reference/get-multiple-nfts",
     permanent: true,
   },
   {
     source: "/reference/get-market-data",
-    destination: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
     permanent: true,
   },
   { source: "/functions/", destination: "/", permanent: true },
   {
     source: "/moralis-server/solana-sdk/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
     source: "/reference/getwalletnftcollectionsCheck",
-    destination: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
     permanent: true,
   },
   {
@@ -3972,7 +3972,7 @@ export const redirects = [
   },
   {
     source: "/reference/endpoints-6",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
@@ -3994,12 +3994,12 @@ export const redirects = [
   { source: "/hosting", destination: "/", permanent: true },
   {
     source: "/reference/utils-1",
-    destination: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
     source: "/reference/balance-2",
-    destination: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
     permanent: true,
   },
   {
@@ -4009,7 +4009,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnftlowestprice-2",
-    destination: "/web3-data-api/reference/get-nft-lowest-price",
+    destination: "/web3-data-api/evm/reference/get-nft-lowest-price",
     permanent: true,
   },
   {
@@ -4060,7 +4060,7 @@ export const redirects = [
   },
   {
     source: "/reference/getnftcontractmetadata-2",
-    destination: "/web3-data-api/reference/get-nft-contract-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
     permanent: true,
   },
   {
@@ -4098,7 +4098,7 @@ export const redirects = [
   },
   {
     source: "/reference/getblock-1",
-    destination: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
     permanent: true,
   },
   {
@@ -4125,7 +4125,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4282,7 +4282,7 @@ export const redirects = [
   },
   {
     source: "/reference/getwalletnfttransfers-2",
-    destination: "/web3-data-api/reference/get-wallet-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-transfers",
     permanent: true,
   },
   {
@@ -4299,7 +4299,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
   {
@@ -4427,23 +4427,23 @@ export const redirects = [
   },
   {
     source: "/reference/",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/reference/transaction",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
 
   {
     source: "/reference/get-metadata-1",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/get-owners",
-    destination: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
     permanent: true,
   },
   {
@@ -4539,17 +4539,17 @@ export const redirects = [
 
   {
     source: "/docs/using-aw...",
-    destination: "/web3-data-api/integrations/aws-lambda-nodejs#aws-setup",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs#aws-setup",
     permanent: true,
   },
   {
     source: "/reference/run...",
-    destination: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
     source: "/reference/upl...",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
@@ -4597,7 +4597,7 @@ export const redirects = [
 
   {
     source: "/docs/introduction",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4750,7 +4750,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-api/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -4760,7 +4760,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/solana-sdk/nft",
-    destination: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
     permanent: true,
   },
   {
@@ -4840,7 +4840,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4850,7 +4850,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/moralis-web3-api-rest",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4865,22 +4865,22 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/nft-api",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/moralis-dapp/web3-api/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/moralis-dapp/web3-sdk",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
     source: "/moralis-dapp/web3-sdk/",
-    destination: "/web3-data-api",
+    destination: "/web3-data-api/evm",
     permanent: true,
   },
   {
@@ -4900,12 +4900,12 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk/rate-limit",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/moralis-dapp/web3-sdk/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
   {
@@ -5061,7 +5061,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/rate-limit.",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
@@ -5087,12 +5087,12 @@ export const redirects = [
   },
   {
     source: "/reference-link/api-response",
-    destination: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
     permanent: true,
   },
   {
     source: "/reference-link/supported-chains",
-    destination: "/web3-data-api#supported-chains",
+    destination: "/web3-data-api/evm#supported-chains",
     permanent: true,
   },
 
@@ -5108,27 +5108,27 @@ export const redirects = [
   },
   {
     source: "/reference/get-transactions",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
   {
     source: "/reference/get-wallet-nfts",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getnftcontracttransfers-1",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
     source: "/reference/getnftmetadata-2",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfersCheck",
-    destination: "/web3-data-api/reference/get-wallet-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-transfers",
     permanent: true,
   },
   {
@@ -5138,22 +5138,22 @@ export const redirects = [
   },
   {
     source: "/reference/res...",
-    destination: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
     permanent: true,
   },
   {
     source: "/reference/resyncmetadata-2",
-    destination: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
     permanent: true,
   },
   {
     source: "/reference/weights-and-rate-limits",
-    destination: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
     permanent: true,
   },
   {
     source: "/refrences/gettokenprice",
-    destination: "/web3-data-api/reference/get-token-price",
+    destination: "/web3-data-api/evm/reference/get-token-price",
     permanent: true,
   },
   {
@@ -5175,7 +5175,7 @@ export const redirects = [
   },
   {
     source: "/transactions-and-balances/token-balances",
-    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
     permanent: true,
   },
   {
@@ -5185,17 +5185,17 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/",
-    destination: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-transactions",
-    destination: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
     permanent: true,
   },
   {
@@ -5220,7 +5220,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
     permanent: true,
   },
   {
@@ -5248,7 +5248,7 @@ export const redirects = [
   {
     source: "/moralis-dapp/users/web3-login/phantom-solana",
     destination:
-      "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+      "/authentication-api/solana/how-to-sign-in-with-solana-phantom-wallet",
     permanent: true,
   },
   {
@@ -5312,37 +5312,37 @@ export const redirects = [
   },
   {
     source: "/reference/endpoints-4",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/getcontractnfttransfers-1",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
     source: "/reference/getmultiplenftsCheck",
-    destination: "/web3-data-api/reference/get-multiple-nfts",
+    destination: "/web3-data-api/evm/reference/get-multiple-nfts",
     permanent: true,
   },
   {
     source: "/reference/getnfts-1",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/reference/getnfttokenidowners-1",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
     source: "/reference/getnfttransfers-2",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
     source: "/reference/getwallettokenidtransfers-1",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
@@ -5352,22 +5352,22 @@ export const redirects = [
   },
   {
     source: "/reference/info",
-    destination: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
     permanent: true,
   },
   {
     source: "/reference/ipfs",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
     source: "/reference/nft-endpoints-1",
-    destination: "/web3-data-api/reference/get-multiple-nfts",
+    destination: "/web3-data-api/evm/reference/get-multiple-nfts",
     permanent: true,
   },
   {
     source: "/reference/nft-metadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
@@ -5378,67 +5378,67 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-all-token-ids",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-contract-nft-transfers",
-    destination: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-logs-by-address",
-    destination: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nfts",
-    destination: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nfts-for-contract",
-    destination: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-token-address-transfers",
-    destination: "/web3-data-api/reference/get-wallet-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-transfers",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-token-balances",
-    destination: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-token-id-metadata",
-    destination: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-token-id-owners",
-    destination: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-transactions-verbose",
-    destination: "/web3-data-api/reference/get-wallet-transactions-verbose",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions-verbose",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-wallet-token-id-transfers",
-    destination: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/re-sync-metadata",
-    destination: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/upload-i-p-f-s-folder",
-    destination: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
     permanent: true,
   },
   {
@@ -5463,13 +5463,57 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/getnftownersbycollection",
-    destination: "/web3-data-api/reference/get-nft-owners-by-collection",
+    destination: "/web3-data-api/evm/reference/get-nft-owners-by-collection",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/getnftownersofcollection",
-    destination: "/web3-data-api/reference/get-nft-owners-of-collection",
+    destination: "/web3-data-api/evm/reference/get-nft-owners-of-collection",
     permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/getting-started",
+    destination: "/web3-data-api/evm/getting-started",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/moralis-sdk",
+    destination: "/web3-data-api/evm/moralis-sdk",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-python",
+    destination: "/web3-data-api/evm/quickstart-python",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-react",
+    destination: "/web3-data-api/evm/quickstart-react",
   },
   {
     source: "/admin-panel/user-account-creation-and-sign-in-methods",
@@ -5503,7 +5547,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nft-by-owners",
-    destination: "/web3-data-api/reference/get-nft-by-wallet-addresses",
+    destination: "/web3-data-api/aptos/reference/get-nft-by-wallet-addresses",
     permanent: true,
   },
   {
@@ -5565,8 +5609,642 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/web3-data-api/reference/overview",
+    destination: "/web3-data-api/evm/reference",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-multiple-nfts",
+    destination: "/web3-data-api/evm/reference/get-multiple-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-contract-nfts",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/search-nfts",
+    destination: "/web3-data-api/evm/reference/search-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-contract-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-from-to-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-from-to-block",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-block",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers-by-block",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers",
+    destination: "/web3-data-api/evm/reference/get-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-nft-collections",
+    destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/get-nft-contract-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/sync-nft-contract",
+    destination: "/web3-data-api/evm/reference/sync-nft-contract",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-owners",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-token-id-owners",
+    destination: "/web3-data-api/evm/reference/get-nft-token-id-owners",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-trades",
+    destination: "/web3-data-api/evm/reference/get-nft-trades",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-lowest-price",
+    destination: "/web3-data-api/evm/reference/get-nft-lowest-price",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-transactions",
+    destination: "/web3-data-api/evm/reference/get-wallet-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-transaction",
+    destination: "/web3-data-api/evm/reference/get-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-pair-address",
+    destination: "/web3-data-api/evm/reference/get-pair-address",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-internal-transactions",
+    destination: "/web3-data-api/evm/reference/get-internal-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-block",
+    destination: "/web3-data-api/evm/reference/get-block",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/endpoint-weights",
+    destination: "/web3-data-api/evm/reference/endpoint-weights",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-native-balances-for-addresses",
+    destination:
+      "/web3-data-api/evm/reference/get-native-balances-for-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-token-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-token-balances",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-token-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-token-transfers",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-date-to-block",
+    destination: "/web3-data-api/evm/reference/get-date-to-block",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-metadata",
+    destination: "/web3-data-api/evm/reference/get-token-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-pair-reserves",
+    destination: "/web3-data-api/evm/reference/get-pair-reserves",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-native-balance",
+    destination: "/web3-data-api/evm/reference/get-native-balance",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-price",
+    destination: "/web3-data-api/evm/reference/get-token-price",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-contract-events",
+    destination: "/web3-data-api/evm/reference/get-contract-events",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-contract-logs",
+    destination: "/web3-data-api/evm/reference/get-contract-logs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/upload-folder",
+    destination: "/web3-data-api/evm/reference/upload-folder",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/resync-metadata",
+    destination: "/web3-data-api/evm/reference/resync-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/resolve-domain",
+    destination: "/web3-data-api/evm/reference/resolve-domain",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/resolve-address",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-allowance",
+    destination: "/web3-data-api/evm/reference/get-token-allowance",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/abuse-prevention",
+    destination: "/web3-data-api/evm/reference/abuse-prevention",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/api-response",
+    destination: "/web3-data-api/evm/reference/api-response",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/disable-totals",
+    destination: "/web3-data-api/evm/reference/disable-totals",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/pagination",
+    destination: "/web3-data-api/evm/reference/pagination",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/rate-limits",
+    destination: "/web3-data-api/evm/reference/rate-limits",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-spl",
+    destination: "/web3-data-api/solana/reference/get-spl",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-nfts",
+    destination: "/web3-data-api/solana/reference/get-sol-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-portfolio",
+    destination: "/web3-data-api/solana/reference/get-sol-portfolio",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/sol-balance",
+    destination: "/web3-data-api/solana/reference/sol-balance",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-nft-metadata",
+    destination: "/web3-data-api/solana/reference/get-sol-nft-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-sol-token-price",
+    destination: "/web3-data-api/solana/reference/get-sol-token-price",
+    permanent: true,
+  },
+  {
     source: "/web3-data-api/web3-concepts",
     destination: "https://moralis.io/web3-dictionary",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-transaction-verbose",
+    destination: "/web3-data-api/evm/reference/get-decoded-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-transactions-verbose",
+    destination: "/web3-data-api/evm/reference/get-decoded-wallet-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/metadata-normalization/metadata-normalization",
+    destination: "/web3-data-api/nft-metadata/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api",
+    destination: "/web3-data-api/evm",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/compute-units-cu",
+    destination: "/web3-data-api/evm/reference/compute-units-cu",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/faq",
+    destination: "https://moralis.io/faq/",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/get-your-api-key",
+    destination: "/web3-data-api/evm/get-your-api-key",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations",
+    destination: "/web3-data-api/evm/integrations",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations/aws-lambda-nodejs",
+    destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations/firebase-advanced-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-advanced-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/integrations/firebase-nodejs",
+    destination: "/web3-data-api/evm/integrations/firebase-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/internal-transactions",
+    destination: "/web3-data-api/evm/internal-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/automatic-metadata-updates",
+    destination: "/web3-data-api/evm/automatic-metadata-updates",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/",
+    destination: "/web3-data-api/evm/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/normalized-vs-non-normalized-metadata",
+    destination: "/web3-data-api/evm/normalized-vs-non-normalized-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/nft-metadata/metadata-normalization",
+    destination: "/web3-data-api/evm/metadata-normalization",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-angular",
+    destination: "/web3-data-api/evm/quickstart-angular",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-nextjs",
+    destination: "/web3-data-api/evm/quickstart-nextjs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/quickstart-nodejs",
+    destination: "/web3-data-api/evm/quickstart-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/encode-submission",
+    destination: "/web3-data-api/aptos/reference/encode-submission",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account",
+    destination: "/web3-data-api/aptos/reference/get-account",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/estimate-gas-price",
+    destination: "/web3-data-api/aptos/reference/estimate-gas-price",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account-module",
+    destination: "/web3-data-api/aptos/reference/get-account-module",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account-modules",
+    destination: "/web3-data-api/aptos/reference/get-account-modules",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account-resource",
+    destination: "/web3-data-api/aptos/reference/get-account-resource",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account-resources",
+    destination: "/web3-data-api/aptos/reference/get-account-resources",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-account-transactions",
+    destination: "/web3-data-api/aptos/reference/get-account-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-block-by-height",
+    destination: "/web3-data-api/aptos/reference/get-block-by-height",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-block-by-version",
+    destination: "/web3-data-api/aptos/reference/get-block-by-version",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coin-balances-by-wallets",
+    destination: "/web3-data-api/aptos/reference/get-coin-balances-by-wallets",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coin-transfers-by-block-heights",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-block-heights",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coins-by-creators",
+    destination: "/web3-data-api/aptos/reference/get-coins-by-creators",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coins-by-name-range",
+    destination: "/web3-data-api/aptos/reference/get-coins-by-name-range",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coin-info-by-coin-type-hashes",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-coins-by-symbol-range",
+    destination: "/web3-data-api/aptos/reference/get-coins-by-symbol-range",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-decoded-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-decoded-wallet-transaction",
+    destination: "/web3-data-api/evm/reference/get-decoded-wallet-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-events-by-creation-number",
+    destination: "/web3-data-api/aptos/reference/get-events-by-creation-number",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-events-by-event-handle",
+    destination: "/web3-data-api/aptos/reference/get-events-by-event-handle",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-historical-coin-balances-by-wallets",
+    destination:
+      "/web3-data-api/aptos/reference/get-historical-coin-balances-by-wallets",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-latest-coins",
+    destination: "/web3-data-api/aptos/reference/get-latest-coins",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-by-wallet-addresses",
+    destination: "/web3-data-api/aptos/reference/get-nft-by-wallet-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-collections",
+    destination: "/web3-data-api/aptos/reference/get-nft-collections",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-collections-by-creator",
+    destination:
+      "/web3-data-api/aptos/reference/get-nft-collections-by-creator",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-collections-by-ids",
+    destination: "/web3-data-api/aptos/reference/get-nft-collections-by-ids",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-contract-metadata",
+    destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-owners-by-collection",
+    destination: "/web3-data-api/aptos/reference/get-nft-owners-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-owners-of-collection",
+    destination: "/web3-data-api/aptos/reference/get-nft-owners-of-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-token-metadata-by-symbol",
+    destination: "/web3-data-api/evm/reference/get-token-metadata-by-symbol",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-top-holders-by-coin",
+    destination: "/web3-data-api/aptos/reference/get-top-holders-by-coin",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-transaction-by-hash",
+    destination: "/web3-data-api/aptos/reference/get-transaction-by-hash",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-transaction-byversion",
+    destination: "/web3-data-api/aptos/reference/get-transaction-byversion",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallet-nfts",
+    destination: "/web3-data-api/evm/reference/get-wallet-nfts",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-wallets-nft-transfers",
+    destination: "/web3-data-api/aptos/reference/get-wallets-nft-transfers",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbycointype",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-coin-type",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbyowneraddresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/getnftownersbytokens",
+    destination: "/web3-data-api/aptos/reference/get-nft-owners-by-tokens",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/run-contract-function",
+    destination: "/web3-data-api/evm/reference/run-contract-function",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/simulate-transaction",
+    destination: "/web3-data-api/aptos/reference/simulate-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-batch-transactions",
+    destination: "/web3-data-api/aptos/reference/submit-batch-transactions",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-transaction",
+    destination: "/web3-data-api/aptos/reference/submit-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/submit-transaction",
+    destination: "/web3-data-api/aptos/reference/submit-transaction",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/web3-api-version",
+    destination: "/web3-data-api/evm/reference/web3-api-version",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/transaction-labelling",
+    destination: "/web3-data-api/evm/transaction-labelling",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-collection",
+    destination:
+      "/web3-data-api/aptos/reference/get-nft-transfers-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-creators",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-creators",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-ids",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-ids",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nft-transfers-by-wallets",
+    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-wallets",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-collection",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-collection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-creators",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-creators",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/reference/get-nfts-by-ids",
+    destination: "/web3-data-api/aptos/reference/get-nfts-by-ids",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started",
     permanent: true,
   },
 ];
