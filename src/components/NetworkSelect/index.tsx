@@ -90,16 +90,20 @@ const NetworkSelect = () => {
 
   // Workaround for issue: https://github.com/radix-ui/primitives/issues/1658
   const handleOnOpenChange = (open) => {
-    const items = document.querySelectorAll(".menu__link");
+    const items = document.querySelectorAll(
+      ".menu__link, .navbar-sidebar__back, .navbar__brand"
+    );
 
     items.forEach((item) => {
       if (open) {
-        item.addEventListener("click", function(e){
-          e.preventDefault()
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
         });
       } else {
-        item.removeEventListener("click", function(e){
-          e.preventDefault()
+        item.removeEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
         });
       }
     });
