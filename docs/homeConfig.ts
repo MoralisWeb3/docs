@@ -1,7 +1,7 @@
 export const apis = {
   web3Api: {
     title: "Web3 Data API",
-    to: "/web3-data-api",
+    to: "/web3-data-api/evm",
     description:
       "Get all the blockchain data you need with our highly scalable APIs.",
     icons: [

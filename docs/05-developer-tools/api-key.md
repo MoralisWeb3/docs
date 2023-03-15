@@ -5,7 +5,7 @@ slug: "api-key"
 sidebar_position: 1
 ---
 
-To use the SDKs you need an API key. If you don't have one yet, you can get one for free by [signing up for a free account](/web3-data-api/get-your-api-key).
+To use the SDKs you need an API key. If you don't have one yet, you can get one for free by [signing up for a free account](/web3-data-api/evm/get-your-api-key).
 
 ## Best practices
 
