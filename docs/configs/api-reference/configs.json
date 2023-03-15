@@ -11256,6 +11256,11 @@
                     "description": "Include or not include internal transactions defaults to false"
                   },
                   {
+                    "name": "includeAllTxLogs",
+                    "type": "boolean",
+                    "description": "Include all logs if atleast one value in tx or log matches stream config"
+                  },
+                  {
                     "name": "getNativeBalances",
                     "type": "object",
                     "description": "Include native balances for each address in the webhook",
@@ -11484,6 +11489,11 @@
             "description": "Include or not include internal transactions defaults to false"
           },
           {
+            "name": "includeAllTxLogs",
+            "type": "boolean",
+            "description": "Include all logs if atleast one value in tx or log matches stream config"
+          },
+          {
             "name": "getNativeBalances",
             "type": "object",
             "description": "Include native balances for each address in the webhook",
@@ -11646,6 +11656,11 @@
                 "name": "includeInternalTxs",
                 "type": "boolean",
                 "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "includeAllTxLogs",
+                "type": "boolean",
+                "description": "Include all logs if atleast one value in tx or log matches stream config"
               },
               {
                 "name": "getNativeBalances",
@@ -11862,6 +11877,11 @@
                 "description": "Include or not include internal transactions defaults to false"
               },
               {
+                "name": "includeAllTxLogs",
+                "type": "boolean",
+                "description": "Include all logs if atleast one value in tx or log matches stream config"
+              },
+              {
                 "name": "getNativeBalances",
                 "type": "object",
                 "description": "Include native balances for each address in the webhook",
@@ -12074,6 +12094,11 @@
             "description": "Include or not include internal transactions defaults to false"
           },
           {
+            "name": "includeAllTxLogs",
+            "type": "boolean",
+            "description": "Include all logs if atleast one value in tx or log matches stream config"
+          },
+          {
             "name": "getNativeBalances",
             "type": "object",
             "description": "Include native balances for each address in the webhook",
@@ -12236,6 +12261,11 @@
                 "name": "includeInternalTxs",
                 "type": "boolean",
                 "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "includeAllTxLogs",
+                "type": "boolean",
+                "description": "Include all logs if atleast one value in tx or log matches stream config"
               },
               {
                 "name": "getNativeBalances",
@@ -12450,6 +12480,11 @@
                 "name": "includeInternalTxs",
                 "type": "boolean",
                 "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "includeAllTxLogs",
+                "type": "boolean",
+                "description": "Include all logs if atleast one value in tx or log matches stream config"
               },
               {
                 "name": "getNativeBalances",
@@ -12678,6 +12713,11 @@
                 "name": "includeInternalTxs",
                 "type": "boolean",
                 "description": "Include or not include internal transactions defaults to false"
+              },
+              {
+                "name": "includeAllTxLogs",
+                "type": "boolean",
+                "description": "Include all logs if atleast one value in tx or log matches stream config"
               },
               {
                 "name": "getNativeBalances",
