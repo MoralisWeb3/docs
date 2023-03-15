@@ -17,6 +17,8 @@ From 28th March 2023, the compute units (CUs) charged on the below endpoints wil
 | [`/erc20/burns`](/web3-data-api/evm/reference/get-erc20-burns)               | 10            |
 | [`/erc20/approvals`](/web3-data-api/evm/reference/get-erc20-approvals)       | 10            |
 | [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)    | 10            |
+| [`/{address}/erc20/transfers`](/web3-data-api/evm/reference/get-wallet-token-transfers)    | 5            |
+| [`/erc20/{address}/transfers`](/web3-data-api/evm/reference/get-token-transfers)    | 10            |
 
 Similarly, the CUs charged for the following query parameter will be changing:
 
