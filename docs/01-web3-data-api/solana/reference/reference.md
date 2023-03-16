@@ -1,5 +1,5 @@
 ---
-title: "Web3 Data - Solana API Reference"
+title: "Web3 Data API - Solana API Reference"
 sidebar_label: "API Reference"
 slug: "/web3-data-api/solana/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
