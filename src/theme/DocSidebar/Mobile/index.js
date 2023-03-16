@@ -7,11 +7,14 @@ import {
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import NetworkSelect from "../../../components/NetworkSelect";
+import usePageState from "../../../hooks/usePageState";
 
 const DocSidebarMobileSecondaryMenu = ({ sidebar, path }) => {
   const mobileSidebar = useNavbarMobileSidebar();
+  const pageState = usePageState();
+
   return (
-    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
+    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list", pageState?.path)}>
       <NetworkSelect />
       <DocSidebarItems
         items={sidebar}
