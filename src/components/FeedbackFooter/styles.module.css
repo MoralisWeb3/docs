@@ -1,0 +1,17 @@
+.visitOurButton {
+  height: 3rem;
+  width: 90%;
+  color: var(--ifm-link-hover-color);
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 5px;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  border-top: 2px solid var(--ifm-navbar-background-color);
+}
+
+.visitOurButton:hover {
+  border-top: 2px solid var(--ifm-navbar-link-hover-color);
+}

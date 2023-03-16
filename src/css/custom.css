@@ -558,3 +558,11 @@ li.sidebar-developer-tools a.menu__link--active:before {
   margin-bottom: .75rem;
 }
 
+.table-of-contents__left-border {
+  border-left: 0;
+  padding: 0;
+}
+
+.table-of-contents li {
+  margin-left: 0;
+}
