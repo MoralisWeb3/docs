@@ -2,6 +2,7 @@
 title: "Streams - API Reference"
 sidebar_label: "API Reference"
 slug: "/streams-api/evm/evm/reference"
+sidebar_class_name: "sidebar-api-reference"
 ---
 
 ## History
