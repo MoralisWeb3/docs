@@ -2,8 +2,8 @@
   {
     "endpoint": "getBlock",
     "path": "/block/{block_number_or_hash}",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 5,
+    "rateLimitCost": 5
   },
   {
     "endpoint": "getContractEvents",
@@ -60,20 +60,20 @@
   {
     "endpoint": "getTokenBalances",
     "path": "/{address}/erc20",
-    "price": 10,
-    "rateLimitCost": 10
-  },
-  {
-    "endpoint": "getTokenTransfers",
-    "path": "/{address}/erc20/transfers",
     "price": 5,
     "rateLimitCost": 5
   },
   {
+    "endpoint": "getTokenTransfers",
+    "path": "/{address}/erc20/transfers",
+    "price": 2,
+    "rateLimitCost": 2
+  },
+  {
     "endpoint": "getTokenAddressTransfers",
     "path": "/erc20/{address}/transfers",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 2,
+    "rateLimitCost": 2
   },
   {
     "endpoint": "searchNFTs",
@@ -126,8 +126,8 @@
   {
     "endpoint": "getTokenPrice",
     "path": "/erc20/{address}/price",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 3,
+    "rateLimitCost": 3
   },
   {
     "endpoint": "getTokenAllowance",
@@ -144,20 +144,20 @@
   {
     "endpoint": "getErc20Mints",
     "path": "/erc20/mints",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 5,
+    "rateLimitCost": 5
   },
   {
     "endpoint": "getErc20Burns",
     "path": "/erc20/burns",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 5,
+    "rateLimitCost": 5
   },
   {
     "endpoint": "getErc20Approvals",
     "path": "/erc20/approvals",
-    "price": 10,
-    "rateLimitCost": 10
+    "price": 5,
+    "rateLimitCost": 5
   },
   {
     "endpoint": "getAllTokenIds",
@@ -234,8 +234,8 @@
   {
     "endpoint": "getLogsByAddress",
     "path": "/{address}/logs",
-    "price": 5,
-    "rateLimitCost": 5
+    "price": 2,
+    "rateLimitCost": 2
   },
   {
     "endpoint": "getNftTransfersFromToBlock",
@@ -264,8 +264,8 @@
   {
     "endpoint": "getWalletTransactions",
     "path": "/{address}",
-    "price": 5,
-    "rateLimitCost": 5
+    "price": 1,
+    "rateLimitCost": 3
   },
   {
     "endpoint": "resolveAddress",
