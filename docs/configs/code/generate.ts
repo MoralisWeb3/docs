@@ -29,7 +29,7 @@ try {
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = Moralis.EvmApi.${group}.${fctn}({});
+  const response = await Moralis.EvmApi.${group}.${fctn}({});
 
   console.log(response.raw);
 } catch (e) {
