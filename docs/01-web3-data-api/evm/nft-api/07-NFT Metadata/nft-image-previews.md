@@ -22,3 +22,7 @@ NFT thumbnail previews are added across all endpoints that currently return NFTs
 
 ### Does this cost additional CUs?
 Yes, the use of `media_items=true` will increase the cost of that API request by an additional 2 CUs. This is regardless of how many NFTs are returned on that particular request. If no image previews are found or served, then the additional 2 CUs will not be charged.
+
+
+### I'm using the query parameter, but I'm not receiving any previews, why?
+If image previews for an NFT haven't been generated previously, the generation process starts when the NFT is accessed via the API for the first time. The image previews will then be available on subsequent API calls.
