@@ -2,7 +2,9 @@
 title: "How to upload a folder to IPFS"
 slug: "../how-to-upload-a-folder-to-ipfs"
 description: "Learn how to upload files to IPFS to host them in a decentralized manner using the Moralis IPFS API."
+sidebar_label: "Upload folder to IPFS"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Upload a Folder to IPFS
 
-In order to upload a folder to IPFS, Moralis provides you a [uploadFolder](/web3-data-api/reference/upload-folder) endpoint to do so.
+In order to upload a folder to IPFS, Moralis provides you a [uploadFolder](/web3-data-api/evm/reference/upload-folder) endpoint to do so.
 
 Here you'll need two parameters: `path` and `content`.
 
@@ -31,26 +33,26 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-	const abi = [
+
+  const abi = [
     {
-    	path: "YOUR_FILE_PATH",
-    	content: "YOUR_JSON_OR_BASE64",
+      path: "YOUR_FILE_PATH",
+      content: "YOUR_JSON_OR_BASE64",
     },
-	];
+  ];
 
   const response = await Moralis.EvmApi.ipfs.uploadFolder({ abi });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -70,15 +72,15 @@ const runApp = async () => {
 
   const abi = [
     {
-    	path: "YOUR_FILE_PATH",
-    	content: "YOUR_JSON_OR_BASE64",
+      path: "YOUR_FILE_PATH",
+      content: "YOUR_JSON_OR_BASE64",
     },
-	];
+  ];
 
   const response = await Moralis.EvmApi.ipfs.uploadFolder({ abi });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -91,8 +93,8 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 body = [{
-    "path": "moralis/logo.webp", 
-    "content": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3", 
+    "path": "moralis/logo.webp",
+    "content": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3",
 }]
 
 result = evm_api.ipfs.upload_folder(
@@ -106,11 +108,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -130,7 +130,7 @@ Congratulations 🥳 You just uploaded your files to IPFS with just a few lines 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [uploadFolder](/web3-data-api/reference/upload-folder)
+- [uploadFolder](/web3-data-api/evm/reference/upload-folder)
 
 ## Support
 

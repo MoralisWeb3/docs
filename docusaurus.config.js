@@ -167,7 +167,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "web3-data-api/overview",
+            docId: "web3-data-api/evm/overview",
             position: "left",
             label: "Web3 Data API",
           },
@@ -182,6 +182,11 @@ const config = {
             docId: "authentication-api/overview",
             position: "left",
             label: "Authentication API",
+          },
+          {
+            to: "changelog",
+            position: "left",
+            label: "Changelog",
           },
           // position: Right
           {
@@ -211,11 +216,6 @@ const config = {
             label: "Demos",
           },
           {
-            to: "changelog",
-            position: "right",
-            label: "Changelog",
-          },
-          {
             type: "dropdown",
             label: "References",
             position: "right",
@@ -227,7 +227,7 @@ const config = {
               {
                 label: "Web3 Data API",
                 type: "doc",
-                docId: "reference/web3-data-api/overview",
+                docId: "web3-data-api/evm/reference/reference",
               },
               {
                 label: "Streams API",

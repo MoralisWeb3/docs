@@ -2,7 +2,9 @@
 title: "How to upload NFT metadata to IPFS"
 slug: "../how-to-upload-nft-metadata-to-ipfs"
 description: "Learn how to upload NFT metadata to IPFS network using Moralis IPFS API."
+sidebar_label: "Upload NFT metadata to IPFS"
 ---
+
 ## Prerequisites
 
 Before getting started, make sure you have the following ready:
@@ -12,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Upload NFT metadata to IPFS
 
-In order to upload NFT metadata to IPFS, Moralis provides you a [uploadFolder](/web3-data-api/reference/upload-folder) endpoint to do so.
+In order to upload NFT metadata to IPFS, Moralis provides you a [uploadFolder](/web3-data-api/evm/reference/upload-folder) endpoint to do so.
 
 Here you'll need two parameters: `path` and `content`.
 
@@ -39,7 +41,7 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
 	const abi = [
     {
     	path: "metadata.json",
@@ -49,23 +51,23 @@ const runApp = async () => {
         image: "ipfs://bafybeihewi4brhhmjqvquwdqnlzhnamfh26txwmw2fe4nfswfckpthowna/brandResoursesMage2.svg",
         attributes: [
           {
-            "trait_type": "Base", 
+            "trait_type": "Base",
             value: "Starfish"
-          }, 
+          },
           {
-            "trait_type": "Eyes", 
+            "trait_type": "Eyes",
             value: "Big"
-          }, 
+          },
           {
-            "trait_type": "Mouth", 
+            "trait_type": "Mouth",
             value: "Surprised"
-          }, 
+          },
       },
     },
 	];
 
   const response = await Moralis.EvmApi.ipfs.uploadFolder({ abi });
-  
+
   console.log(response.toJSON());
 }
 
@@ -94,23 +96,23 @@ const runApp = async () => {
         image: "ipfs://bafybeihewi4brhhmjqvquwdqnlzhnamfh26txwmw2fe4nfswfckpthowna/brandResoursesMage2.svg",
         attributes: [
           {
-            "trait_type": "Base", 
+            "trait_type": "Base",
             value: "Starfish"
-          }, 
+          },
           {
-            "trait_type": "Eyes", 
+            "trait_type": "Eyes",
             value: "Big"
-          }, 
+          },
           {
-            "trait_type": "Mouth", 
+            "trait_type": "Mouth",
             value: "Surprised"
-          }, 
+          },
       },
     },
 	];
 
   const response = await Moralis.EvmApi.ipfs.uploadFolder({ abi });
-  
+
   console.log(response.toJSON());
 }
 
@@ -133,15 +135,15 @@ content = {
         "image": "ipfs://bafybeihewi4brhhmjqvquwdqnlzhnamfh26txwmw2fe4nfswfckpthowna/brandResoursesMage2.svg",
         "attributes": [
           {
-            "trait_type": "Base", 
+            "trait_type": "Base",
             "value": "Starfish"
-          }, 
+          },
           {
-            "trait_type": "Eyes", 
+            "trait_type": "Eyes",
             "value": "Big"
-          }, 
+          },
           {
-            "trait_type": "Mouth", 
+            "trait_type": "Mouth",
             "value": "Surprised"
           }
         ]
@@ -166,11 +168,9 @@ print(result)
 </TabItem>
 </Tabs>
 
-
-
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -190,7 +190,7 @@ Congratulations 🥳 You just uploaded your NFT metadata to IPFS with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [uploadFolder](/web3-data-api/reference/upload-folder)
+- [uploadFolder](/web3-data-api/evm/reference/upload-folder)
 
 ## Support
 

@@ -2,6 +2,7 @@
 title: "How to get the closest block by unix timestamp"
 slug: "../how-to-get-block-by-unix-timestamp"
 description: "Learn how to get the closest block by a given unix timestamp using Moralis Block API."
+sidebar_label: "Get closest block by unix timestamp"
 ---
 
 ## Prerequisites
@@ -13,13 +14,13 @@ Before getting started, make sure you have the following ready:
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
 ## Step 2: Get block by unix timestamp
 
-In order to get the closest block by unix timestamp, Moralis provides you a [getDateToBlock](/web3-data-api/reference/get-date-to-block) endpoint to do so.
+In order to get the closest block by unix timestamp, Moralis provides you a [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block) endpoint to do so.
 
 Here you'll need two parameters: `date` and `chain`.
 
@@ -32,16 +33,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
-const Moralis = require('moralis').default;
-const { EvmChain } = require('@moralisweb3/common-evm-utils');
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
-  const date = '1667823435';
+
+  const date = "1667823435";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -49,9 +50,9 @@ const runApp = async () => {
     date,
     chain,
   });
-  
+
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -69,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const date = '1667823435';
+  const date = "1667823435";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -79,7 +80,7 @@ const runApp = async () => {
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -93,7 +94,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "date": "1667823435", 
+    "date": "1667823435",
     "chain": "eth"
 }
 
@@ -110,7 +111,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
@@ -130,7 +131,7 @@ Congratulations 🥳 You just got the closest block using a unix timestamp with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getDateToBlock](/web3-data-api/reference/get-date-to-block)
+- [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block)
 
 ## Support
 

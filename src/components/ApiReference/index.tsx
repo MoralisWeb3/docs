@@ -282,7 +282,7 @@ const ApiReference = ({
               <div className={styles.section}>{children}</div>
             </div>
 
-            <div className="col col--5">
+            <div className="col col--6">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
