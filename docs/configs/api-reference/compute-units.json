@@ -433,6 +433,185 @@
       "path": "/transactions/estimate_gas_price",
       "price": 2,
       "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getNFTsById",
+      "path": "/nfts",
+      "price": 3,
+      "rateLimitCost": 3,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTsByCollection",
+      "path": "/nfts/collections/{collection_data_id_hash}/tokens",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTsByCreators",
+      "path": "/nfts/creators",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTCollections",
+      "path": "/collections",
+      "price": 3,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "getNFTCollectionsById",
+      "path": "/collections/ids",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTCollectionsByCreator",
+      "path": "/collections/creators",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTOwnersByCollection",
+      "path": "/nfts/collections/{collection_data_id_hash}/owners",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTOwnersByToken",
+      "path": "/nfts/owners",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTOwnersOfCollection",
+      "path": "/nfts/collections/{collection_data_id_hash}/owners/list",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTTransfersByIds",
+      "path": "/nfts/transfers",
+      "price": 3,
+      "rateLimitCost": 3,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTTransfersByCollection",
+      "path": "/nfts/transfers/collections/:collection_data_id_hash",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTTransfersByCreators",
+      "path": "/nfts/transfers/creators",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTTransfersByWallets",
+      "path": "/nfts/transfers/wallets",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getCoinInfoByCoinTypeHashes",
+      "path": "/coins",
+      "price": 3,
+      "rateLimitCost": 3,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getLatestCoins",
+      "path": "/coins/latest",
+      "price": 3,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "getCoinsByNameRange",
+      "path": "/coins/names",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getCoinsBySymbolRange",
+      "path": "/coins/symbols",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getCoinsByCreators",
+      "path": "/coins/creators",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getCoinTransfersByCoinType",
+      "path": "/coins/transfers/{coin_type}",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getCoinTransfersByOwnerAddresses",
+      "path": "/coins/transfers/wallets",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getCoinTransferByBlockHeights",
+      "path": "/coins/transfers/blocks",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getCoinTransfersByWalletAddresses",
+      "path": "/wallets/coins/transfers",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getTopHoldersByCoin",
+      "path": "/coins/owners/{coin_type_hash}/top-holders",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getCoinBalancesByWallets",
+      "path": "/wallets/coins",
+      "price": 3,
+      "rateLimitCost": 3,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getHistoricalCoinBalancesByWallets",
+      "path": "/wallets/coins/history",
+      "price": 10,
+      "rateLimitCost": 10,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getWalletNFTTransfers",
+      "path": "/wallets/nfts/transfers",
+      "price": 5,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getNFTByWalletAddresses",
+      "path": "/wallets/nfts",
+      "price": 3,
+      "rateLimitCost": 3,
+      "dynamic": true
     }
   ]
 }

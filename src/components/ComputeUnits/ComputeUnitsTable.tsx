@@ -13,6 +13,22 @@ interface EndpointWeightResponse {
 const DynamicPriceUnits = {
   getNativeBalancesForAddresses: "wallet addresses",
   getMultipleNFTs: "NFTs",
+  getNFTsById: "token_ids",
+  getNFTsByCreators: "creator_addresses",
+  getNFTCollectionsById: "ids",
+  getNFTCollectionsByCreator: "creator_addresses",
+  getNFTOwnersByToken: "token_ids",
+  getNFTTransfersByIds: "token_ids",
+  getNFTTransfersByCreators: "creator_addresses",
+  getNFTTransfersByWallets: "wallet_addresses",
+  getCoinInfoByCoinTypeHashes: "coin_type_hashes",
+  getCoinsByCreators: "creator_addresses",
+  getCoinTransfersByOwnerAddresses: "owner_addresses",
+  getCoinTransfersByWalletAddresses: "wallet_addresses",
+  getCoinBalancesByWallets: "owner_addresses",
+  getHistoricalCoinBalancesByWallets: "owner_addresses",
+  getWalletNFTTransfers: "owner_addresses",
+  getNFTByWalletAddresses: "owner_addresses",
 };
 
 const ComputeUnitsTable = ({ chain }): JSX.Element => {
