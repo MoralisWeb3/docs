@@ -15,7 +15,7 @@ const DynamicPriceUnits = {
   getMultipleNFTs: "NFTs",
 };
 
-const ComputeUnitsTable = (): JSX.Element => {
+const ComputeUnitsTable = ({ chain }): JSX.Element => {
   return (
     <table style={{ textAlign: "center" }}>
       <thead>
@@ -31,7 +31,7 @@ const ComputeUnitsTable = (): JSX.Element => {
         </tr>
       </thead>
       <tbody>
-        {endpoints?.map((e: EndpointWeightResponse, index: number) => {
+        {endpoints?.[chain]?.map((e: EndpointWeightResponse, index: number) => {
           const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
           return (
             <tr key={`${endpoint}-${index}`}>
