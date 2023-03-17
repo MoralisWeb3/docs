@@ -1,6 +1,6 @@
 ---
 title: "NFT Image Previews"
-slug: "../../automatic-metadata-updates"
+slug: "../../nft-image-previews"
 description: "All NFTs served through our API include low, medium and high resolution images. Read more about how it works here."
 sidebar_position: 5
 ---
@@ -13,12 +13,12 @@ We currently support popular image types such as JPG, JPEG, PNG, GIFs, TIFF etc.
 ### What endpoints does this affect?
 NFT thumbnail previews are added across all endpoints that currently return NFTs today. Media items will be included when the query paramter, `media_items` is set to `true`, across the following endpoints:
 
-* [Get Multiple NFTs](https://docs.moralis.io/web3-data-api/reference/get-multiple-nfts) 
-* [Get NFTs by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts)
-* [Get NFTs by contract](https://docs.moralis.io/web3-data-api/reference/get-contract-nfts)
-* [Get NFT owners by contract](https://docs.moralis.io/web3-data-api/reference/get-nft-owners)
-* [Get NFT owners by token id](https://docs.moralis.io/web3-data-api/reference/get-nft-token-id-owners)
-* [Get NFT metadata](https://docs.moralis.io/web3-data-api/reference/get-nft-metadata)
+* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts) 
+* [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
+* [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
+* [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)
+* [Get NFT owners by token id](/web3-data-api/evm/reference/get-nft-token-id-owners)
+* [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
 
 ### Does this cost additional CUs?
 Yes, the use of `media_items=true` will increase the cost of that API request by an additional 2 CUs. This is regardless of how many NFTs are returned on that particular request. If no image previews are found or served, then the additional 2 CUs will not be charged.

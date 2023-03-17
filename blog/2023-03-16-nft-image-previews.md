@@ -13,12 +13,12 @@ This makes it super easy to build apps and webpages that are optimised for speed
 
 This feature is now live across the following EVM endpoints, when using the new query paramter `media_items=true`:
 
-* [Get Multiple NFTs](https://docs.moralis.io/web3-data-api/reference/get-multiple-nfts) 
-* [Get NFTs by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts)
-* [Get NFTs by contract](https://docs.moralis.io/web3-data-api/reference/get-contract-nfts)
-* [Get NFT owners by contract](https://docs.moralis.io/web3-data-api/reference/get-nft-owners)
-* [Get NFT owners by token id](https://docs.moralis.io/web3-data-api/reference/get-nft-token-id-owners)
-* [Get NFT metadata](https://docs.moralis.io/web3-data-api/reference/get-nft-metadata)
+* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts) 
+* [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
+* [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
+* [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)
+* [Get NFT owners by token id](/web3-data-api/evm/reference/get-nft-token-id-owners)
+* [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
 
 For more information about this feature, including how it impacts pricing, [check out our docs](/web3-data-api/evm/nft-image-previews).
 

@@ -3,7 +3,7 @@ title: "Amazon GameSparks"
 slug: "amazon-gamesparks-integration-with-unity"
 ---
 
-In this tutorial we will create a game backend in Amazon GameSparks and we will connect it to [Using AWS Lambda](https://docs.moralis.io/docs/using-aws-lambda), invoking its functions. Then, we will connect a basic Unity game to the Amazon GameSparks backend. This way we will have a **fully modular "Web3 gaming setup"** using **AWS**, **Unity** and the power of **Moralis**.
+In this tutorial we will create a game backend in Amazon GameSparks and we will connect it to [Using AWS Lambda](/web3-data-api/evm/integrations/aws-lambda-nodejs), invoking its functions. Then, we will connect a basic Unity game to the Amazon GameSparks backend. This way we will have a **fully modular "Web3 gaming setup"** using **AWS**, **Unity** and the power of **Moralis**.
 
 :::info Tutorial's architectural diagram
 :::
@@ -12,7 +12,7 @@ In this tutorial we will create a game backend in Amazon GameSparks and we will 
 
 ## Prerequisites
 
-- Complete [AWS Lambda integration](https://docs.moralis.io/docs/using-aws-lambda) tutorial. Choose the [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) path.
+- Complete [AWS Lambda integration](/web3-data-api/evm/integrations/aws-lambda-nodejs) tutorial. Choose the [_Lambda App with multiple functions_](/web3-data-api/evm/integrations/aws-lambda-nodejs#lambda-app-with-multiple-functions) path.
 - Have [Unity Hub](https://unity3d.com/get-unity/download) installed.
 - Have a [2020.3 Unity version](https://unity3d.com/unity/qa/lts-releases?version=2020.3) installed (this project uses **2020.3.41f1**).
 
@@ -52,7 +52,7 @@ After less than 2 minutes we will have our game backend deployed:
 
 ## Give the game backend permission to access Lambda
 
-Now that we have the game backend deployed, let's **give it permission to invoke Lambda functions**. Remember that in this tutorial we will be calling the Lambda functions deployed in [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions), but to do so, we first need to grant premissions.
+Now that we have the game backend deployed, let's **give it permission to invoke Lambda functions**. Remember that in this tutorial we will be calling the Lambda functions deployed in [_Lambda App with multiple functions_](/web3-data-api/evm/integrations/aws-lambda-nodejs#lambda-app-with-multiple-functions), but to do so, we first need to grant premissions.
 
 ### Create policy
 
@@ -64,7 +64,7 @@ Here filter the policies typing _LambdaRole_ and select **_AWSLambdaRole_**. The
 
 ![](/img/content/c4115c8-image.webp)
 
-This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](https://docs.moralis.io/docs/using-aws-lambda#copy-function-arn) in `Resource`, but in this case we leave it as **`"*"`** as we want to allow the invocation of all our Lambda functions:
+This policy allows invoking **any** Lambda function that we got deployed. If we click on the _JSON_ tab we can see there's a **`"*"`** in **`Resource`**. To specify which Lambda function we want its invocation to be allowed, we could paste its [ARN](/web3-data-api/evm/integrations/aws-lambda-nodejs#copy-function-arn) in `Resource`, but in this case we leave it as **`"*"`** as we want to allow the invocation of all our Lambda functions:
 
 ![](/img/content/b8ea8db-image.webp)
 
@@ -107,10 +107,10 @@ To invoke Lambda functions from Amazon GameSparks you need to create a **_Messag
 Once created, you can call a Lambda function from there. [Click here for more information](https://docs.aws.amazon.com/gamesparks/latest/dg/lambda.html).
 :::
 
-For this example we'll use _**requests**_, so that our client (Unity) can **get data** from our Amazon GameSparks backend. As said, this request will internally call a Lambda function from [_Lambda App with multiple functions_](https://docs.moralis.io/docs/using-aws-lambda#lambda-app-with-multiple-functions) and will return a response.
+For this example we'll use _**requests**_, so that our client (Unity) can **get data** from our Amazon GameSparks backend. As said, this request will internally call a Lambda function from [_Lambda App with multiple functions_](/web3-data-api/evm/integrations/aws-lambda-nodejs#lambda-app-with-multiple-functions) and will return a response.
 
 :::info There's a way to automate this process
-Know that you can **skip the manual creation of requests** by **importing a snapshot**. If you like the idea, go into the [Automatic section](https://docs.moralis.io/docs/using-unity-aws-gamesparks#automatic).
+Know that you can **skip the manual creation of requests** by **importing a snapshot**. If you like the idea, go into the [Automatic section](#automatic).
 :::
 
 ### Automatic
@@ -296,7 +296,7 @@ GameSparks().Logging().Debug(JSON.stringify(response.Payload));
 return GameSparks().Messaging().Response({"result": parseFloat(response.Payload.result)});
 ```
 
-In this request, we want to call the **_GetNativeBalance_ Lambda function** created [here](https://docs.moralis.io/docs/using-aws-lambda#development). You can see we do that by calling:
+In this request, we want to call the **_GetNativeBalance_ Lambda function** created [here](/web3-data-api/evm/integrations/aws-lambda-nodejs#development). You can see we do that by calling:
 
 ```
 GameSparks().Lambda("lambda-function-name").Invoke(
@@ -307,7 +307,7 @@ GameSparks().Lambda("lambda-function-name").Invoke(
 ```
 
 :::info
-[Check how to find a Lambda function name](https://docs.moralis.io/docs/using-aws-lambda#find-function-name).
+[Check how to find a Lambda function name](/web3-data-api/evm/integrations/aws-lambda-nodejs#find-function-name).
 :::
 
 Your pane should look like this. Press **_Save_**:
@@ -454,8 +454,8 @@ This is the scene that we're going to run. Let's go ahead and hit **_Play_**:
 
 From here we're going to split the walkthrough between:
 
-- [Authentication](https://docs.moralis.io/docs/using-unity-aws-gamesparks#authentication)
-- [Calling backend requests](https://docs.moralis.io/docs/using-unity-aws-gamesparks#calling-backend-requests)
+- [Authentication](#authentication)
+- [Calling backend requests](#calling-backend-requests)
 
 #### Authentication
 
@@ -486,7 +486,7 @@ This is the method called when we click on the _Authenticate_ button. [Managed i
 #### Calling backend requests
 
 :::info
-With our **wallet public address** retrieved, we can now call the requests set up [here](https://docs.moralis.io/docs/using-unity-aws-gamesparks#connecting-the-game-backend-to-lambda).
+With our **wallet public address** retrieved, we can now call the requests set up [here](#connecting-the-game-backend-to-lambda).
 :::
 
 Once authenticated, you can now click on the _GetNativeBalance_ or _GetWalletNfts_ buttons to retrieve the desired information successfully:
@@ -504,7 +504,7 @@ You can find [_MyWeb3GameBackendOperations.cs_](https://github.com/MoralisWeb3/d
 
 ![](/img/content/14c8cab-image.webp)
 
-The cool thing is that you can [import it automatically](https://docs.moralis.io/authentication-api/integrations/amazon-gamesparks-integration-with-unity#importing-amazon-gamesparks-message-template) from the Amazon GameSparks console.
+The cool thing is that you can [import it automatically](/authentication-api/integrations/amazon-gamesparks-integration-with-unity#importing-amazon-gamesparks-message-template) from the Amazon GameSparks console.
 
 ### Importing Amazon GameSparks message template
 
