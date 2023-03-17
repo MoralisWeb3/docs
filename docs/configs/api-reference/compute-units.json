@@ -287,6 +287,43 @@
       "rateLimitCost": 1
     }
   ],
-  "solana": [],
+  "solana": [
+    {
+      "endpoint": "getSolNFTs",
+      "path": "/account/{network}/{address}/nft",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getSolNFTMetadata",
+      "path": "/nft/{network}/{address}/metadata",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getSolTokenPrice",
+      "path": "/token/{network}/{address}/price",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "solBalance",
+      "path": "/account/{network}/{address}/balance",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getSPL",
+      "path": "/account/{network}/{address}/tokens",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getSolPortfolio",
+      "path": "/account/{network}/{address}/portfolio",
+      "price": 1,
+      "rateLimitCost": 1
+    }
+  ],
   "aptos": []
 }
