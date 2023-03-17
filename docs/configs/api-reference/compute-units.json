@@ -325,5 +325,114 @@
       "rateLimitCost": 1
     }
   ],
-  "aptos": []
+  "aptos": [
+    {
+      "endpoint": "getAccount",
+      "path": "/accounts/{address}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getAccountModules",
+      "path": "/accounts/{address}/modules",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getAccountModule",
+      "path": "/accounts/{address}/resource/{module}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getAccountResources",
+      "path": "/accounts/{address}/resources",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getAccountResource",
+      "path": "/accounts/{address}/resource/{resource_type}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getAccountTransactions",
+      "path": "/accounts/{address}/transactions",
+      "price": 3,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "getBlockByHeight",
+      "path": "/blocks/{block_height}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getBlockByVersion",
+      "path": "/blocks/by_version/{version}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getEventsByCreationNumber",
+      "path": "/accounts/{address}/events/{creation_number}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getEventsByEventHandle",
+      "path": "/accounts/{address}/events/{event_handle}/{field_name}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getTransactions",
+      "path": "/transactions",
+      "price": 3,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "getTransactionsByHash",
+      "path": "/transactions/by_hash/{txn_hash}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "getTransactionsByVersion",
+      "path": "/transactions/by_version/{txn_version}",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "simulateTransaction",
+      "path": "/transactions/simulate",
+      "price": 3,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "submitTransaction",
+      "path": "/transactions",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "submitBatchTransactions",
+      "path": "/transactions/batch",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "encodeSubmission",
+      "path": "/transactions/encode_submission",
+      "price": 2,
+      "rateLimitCost": 2
+    },
+    {
+      "endpoint": "estimateGasPrice",
+      "path": "/transactions/estimate_gas_price",
+      "price": 2,
+      "rateLimitCost": 2
+    }
+  ]
 }
