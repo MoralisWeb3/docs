@@ -41,7 +41,7 @@ This command opens up a browser window and most changes are reflected live witho
 ### Build
 
 ```sh
-npm build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
