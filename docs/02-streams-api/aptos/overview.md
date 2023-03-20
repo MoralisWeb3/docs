@@ -5,6 +5,7 @@ slug: "/streams-api/aptos"
 description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
 sidebar_position: 1
 image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.webp"
+sidebar_class_name: "sidebar-overview"
 ---
 
 ![](/img/content/d06bbe5-Moralis-Streams-API.webp)

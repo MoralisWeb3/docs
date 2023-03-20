@@ -2,7 +2,9 @@
 title: "Using NodeJS SDK"
 slug: "../using-node-js-sdk"
 description: "Learn how to use the Moralis Streams API to monitor a wallet with NodeJS SDK. Create a stream, install the SDK, attach an address, and receive webhooks with transaction details."
+sidebar_position: 1
 ---
+
 In this example, we will monitor a wallet. Specifically, we'll monitor all incoming and outgoing transactions of that wallet!
 
 In order to use the Moralis Streams API, you can either use the SDK (programmatically) or via our UI dashboard.
@@ -12,11 +14,11 @@ In order to use the Moralis Streams API, you can either use the SDK (programmati
 We will use Moralis SDK to create a stream, and you can install the Moralis SDK like this:
 
 ```javascript
-import Moralis from 'moralis';
+import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/evm-utils";
 
 Moralis.start({
-  apiKey: 'YOUR_API_KEY',
+  apiKey: "YOUR_API_KEY",
 });
 
 const stream = {
@@ -24,8 +26,8 @@ const stream = {
   description: "monitor Bobs wallet", // your description
   tag: "bob", // give it a tag
   webhookUrl: "https://YOUR_WEBHOOK_URL", // webhook url to receive events,
-  includeNativeTxs: true
-}
+  includeNativeTxs: true,
+};
 
 const newStream = await Moralis.Streams.add(stream);
 const { id } = newStream.toJSON(); // { id: 'YOUR_STREAM_ID', ...newStream }
@@ -35,8 +37,6 @@ const address = "0x68b3f12d6e8d85a8d3dbbc15bba9dc5103b888a4";
 
 await Moralis.Streams.addAddress({ address, id });
 ```
-
-
 
 ### Mandatory Test Webhook 🚨
 
@@ -68,8 +68,6 @@ The test body will look like this:
   "nftTransfers": []
 }
 ```
-
-
 
 ### We are Live! 🎉
 

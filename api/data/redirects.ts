@@ -6533,4 +6533,9 @@ export const redirects = [
     destination: "/streams-api/aptos/reference/aptos-streams-update-status",
     permanent: true,
   },
+  {
+    source: "/streams-api/integrations/firebase",
+    destination: "/streams-api/evm/integrations/firebase",
+    permanent: true,
+  },
 ];

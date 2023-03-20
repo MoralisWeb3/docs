@@ -1,6 +1,7 @@
 ---
 title: "Get Native Balances"
 slug: "get-native-balances"
+sidebar_position: 21
 ---
 
 There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses.

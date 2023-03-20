@@ -1,7 +1,8 @@
 ---
 title: "Streams - API Reference"
-sidebar_label: "Streams API"
+sidebar_label: "API Reference"
 slug: "/streams-api/aptos/aptos/reference"
+sidebar_class_name: "sidebar-api-reference"
 ---
 
 ## History
