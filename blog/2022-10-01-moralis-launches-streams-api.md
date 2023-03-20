@@ -21,5 +21,5 @@ Moreover, each event comes enriched with important data, such as “tokenName”
 For more information, head over to our:
 
 - [Streams Overview Homepage](https://moralis.io/streams/)
-- [Streams API Tutorials](/streams-api)
-- [Streams API Documentation](/streams-api/reference/get-history)
+- [Streams API Tutorials](/streams-api/evm)
+- [Streams API Documentation](/streams-api/evm/reference/get-history)

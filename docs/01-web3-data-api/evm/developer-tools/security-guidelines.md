@@ -128,7 +128,7 @@ In order to avoid bad actor stealing your [Moralis API key](/web3-data-api/evm/g
 
 To secure your dapp even further, we have more in-depth guides on specific APIs:
 
-- [Streams API Webhook Security](/streams-api/webhook-security)
+- [Streams API Webhook Security](/streams-api/evm/webhook-security)
 
 ## Support
 
