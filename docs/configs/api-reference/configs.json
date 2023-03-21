@@ -89,6 +89,12 @@
           "description": "Should normalized metadata be returned?",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned?",
+          "example": false
         }
       ],
       "responses": [
@@ -260,7 +266,7 @@
                     ]
                   },
                   {
-                    "name": "media_links",
+                    "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
                     "type": "object",
                     "fields": [
@@ -550,6 +556,12 @@
             "type": "boolean",
             "required": false,
             "description": "Should normalized metadata be returned?",
+            "example": false
+          },
+          {
+            "name": "media_items",
+            "type": "boolean",
+            "description": "Should preview media data be returned?",
             "example": false
           }
         ]
@@ -1252,6 +1264,12 @@
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned?",
+          "example": false
         }
       ],
       "responses": [
@@ -1423,7 +1441,7 @@
                     ]
                   },
                   {
-                    "name": "media_links",
+                    "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
                     "type": "object",
                     "fields": [
@@ -1700,6 +1718,12 @@
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned?",
+          "example": false
         }
       ],
       "responses": [
@@ -1871,7 +1895,7 @@
                     ]
                   },
                   {
-                    "name": "media_links",
+                    "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
                     "type": "object",
                     "fields": [
@@ -3179,6 +3203,12 @@
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned?",
+          "example": false
         }
       ],
       "responses": [
@@ -3323,7 +3353,7 @@
                 ]
               },
               {
-                "name": "media_links",
+                "name": "media",
                 "description": "A set of links to 'thumbnail / preview' media files",
                 "type": "object",
                 "fields": [
@@ -3841,6 +3871,12 @@
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned?",
+          "example": false
         }
       ],
       "responses": [
@@ -4012,7 +4048,7 @@
                     ]
                   },
                   {
-                    "name": "media_links",
+                    "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
                     "type": "object",
                     "fields": [

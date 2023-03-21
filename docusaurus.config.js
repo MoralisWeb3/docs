@@ -173,7 +173,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "streams-api/overview",
+            docId: "streams-api/evm/overview",
             position: "left",
             label: "Streams API",
           },
@@ -194,7 +194,7 @@ const config = {
             position: "right",
             value:
               '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
-              className: "navbar__item--hide-on-mobile",
+            className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
@@ -232,7 +232,7 @@ const config = {
               {
                 label: "Streams API",
                 type: "doc",
-                docId: "reference/streams-api/overview",
+                docId: "streams-api/evm/reference/reference",
               },
               {
                 label: "Authentication API",

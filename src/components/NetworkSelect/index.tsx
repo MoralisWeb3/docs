@@ -35,8 +35,7 @@ const networks = {
       iconDark: SolanaIcon,
     },
   ],
-  "streams-api-hide": [
-    // hiding sidebar temporary
+  "streams-api": [
     {
       value: "evm",
       label: "EVM",

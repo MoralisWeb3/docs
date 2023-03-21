@@ -6243,6 +6243,157 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/streams-api",
+    destination: "/streams-api/evm",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/getting-started",
+    destination: "/streams-api/evm/getting-started",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/using-node-js-sdk",
+    destination: "/streams-api/evm/using-node-js-sdk",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/using-webui",
+    destination: "/streams-api/evm/using-webui",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/tutorials",
+    destination: "/streams-api/evm/tutorials",
+    permanent: true,
+  },
+  {
+    source:
+      "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+    destination:
+      "/streams-api/evm/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/how-to-listen-all-events-from-a-contract-factory",
+    destination:
+      "/streams-api/evm/how-to-listen-all-events-from-a-contract-factory",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/how-to-listen-all-nft-transfers",
+    destination: "/streams-api/evm/how-to-listen-all-nft-transfers",
+    permanent: true,
+  },
+  {
+    source:
+      "/streams-api/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+    destination:
+      "/streams-api/evm/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/how-to-monitor-ens-domain-registrations",
+    destination: "/streams-api/evm/how-to-monitor-ens-domain-registrations",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/how-to-monitor-for-erc20-token-burns-or-mints",
+    destination:
+      "/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/how-to-monitor-specific-nfts",
+    destination: "/streams-api/evm/how-to-monitor-specific-nfts",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/records-and-pricing",
+    destination: "/streams-api/evm/records-and-pricing",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/listen-to-all-addresses",
+    destination: "/streams-api/evm/listen-to-all-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/useful-streams-options",
+    destination: "/streams-api/evm/useful-streams-options",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/mandatory-test-webhook",
+    destination: "/streams-api/evm/mandatory-test-webhook",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/webhooks-transactions",
+    destination: "/streams-api/evm/webhooks-transactions",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/webhook-security",
+    destination: "/streams-api/webhook-security",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/response-body",
+    destination: "/streams-api/evm/response-body",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/triggers",
+    destination: "/streams-api/evm/triggers",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/monitor-multiple-addresses",
+    destination: "/streams-api/evm/monitor-multiple-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/filter-streams",
+    destination: "/streams-api/evm/filter-streams",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/stream-management",
+    destination: "/streams-api/evm/stream-management",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/error-handling",
+    destination: "/streams-api/evm/error-handling",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/parse-data",
+    destination: "/streams-api/evm/parse-data",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/faq",
+    destination: "/streams-api/evm/faq",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/integrations",
+    destination: "/streams-api/integrations/firebase",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/aptos/overview",
+    destination: "/streams-api/aptos",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/get-native-balances",
+    destination: "/streams-api/evm/get-native-balances",
+    permanent: true,
+  },
+  {
     source: "/web3-data-api/getting-started/",
     destination: "/web3-data-api/evm/getting-started",
     permanent: true,
@@ -6260,6 +6411,131 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/get-erc20-approvals",
     destination: "/web3-data-api/evm/reference/get-erc20-approvals",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/overview",
+    destination: "/streams-api/evm/reference",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-history",
+    destination: "/streams-api/evm/reference/get-history",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/set-settings",
+    destination: "/streams-api/evm/reference/set-settings",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-settings",
+    destination: "/streams-api/evm/reference/get-settings",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stats",
+    destination: "/streams-api/evm/reference/get-stats",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stats-by-streamid",
+    destination: "/streams-api/evm/reference/get-stats-by-streamid",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-streams",
+    destination: "/streams-api/evm/reference/get-streams",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/create-stream",
+    destination: "/streams-api/evm/reference/create-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-stream",
+    destination: "/streams-api/evm/reference/get-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/update-stream",
+    destination: "/streams-api/evm/reference/update-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/delete-stream",
+    destination: "/streams-api/evm/reference/delete-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/update-stream-status",
+    destination: "/streams-api/evm/reference/update-stream-status",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/get-addresses",
+    destination: "/streams-api/evm/reference/get-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/add-address-to-stream",
+    destination: "/streams-api/evm/reference/add-address-to-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/delete-address-from-stream",
+    destination: "/streams-api/evm/reference/delete-address-from-stream",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get-all",
+    destination: "/streams-api/aptos/reference/aptos-streams-get-all",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-create",
+    destination: "/streams-api/aptos/reference/aptos-streams-create",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get",
+    destination: "/streams-api/aptos/reference/aptos-streams-get",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-update",
+    destination: "/streams-api/aptos/reference/aptos-streams-update",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-delete",
+    destination: "/streams-api/aptos/reference/aptos-streams-delete",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-add-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-add-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-delete-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-delete-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptos-streams-get-addresses",
+    destination: "/streams-api/aptos/reference/aptos-streams-get-addresses",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/reference/aptosstreamsupdatestatus",
+    destination: "/streams-api/aptos/reference/aptos-streams-update-status",
+    permanent: true,
+  },
+  {
+    source: "/streams-api/integrations/firebase",
+    destination: "/streams-api/evm/integrations/firebase",
     permanent: true,
   },
 ];
