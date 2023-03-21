@@ -1,29 +1,28 @@
 ---
-title: "Moralis Triggers BETA 🔥"
+title: "Moralis Triggers"
 slug: "triggers"
 sidebar_position: 10
 description: "Moralis Streams Triggers. Run smart contract functions against Blockchain Events."
 ---
+
 ## Introduction
 
 With Moralis Triggers you can run (read-only) smart contract functions and have the result be part of your Webhook.
 
-Let us dive into an example right away. Imagine you have a stream that listens to a bunch of addresses and in particular, you are interested in the "erc20Transfers" part of your Webhook. Because you are maintaining a database with all the token balances of the monitored addresses, you normally get the balances after receiving a Webhook with the Moralis API. But what if you can have the balances be part of each token transfer in your Webhook right away? That is now possible with Moralis Triggers! 
-
-NOTE: We are currently in beta, things can change bugs can happen even the name can change - we appreciate any feedback.
+Let us dive into an example right away. Imagine you have a stream that listens to a bunch of addresses and in particular, you are interested in the "erc20Transfers" part of your Webhook. Because you are maintaining a database with all the token balances of the monitored addresses, you normally get the balances after receiving a Webhook with the Moralis API. But what if you can have the balances be part of each token transfer in your Webhook right away? That is now possible with Moralis Triggers!
 
 Let us take look at what changed. Everything remains the same but there is a new field called "triggers" which is an array out of triggers. Let's dive deeper into each of those fields.
 
 ## Trigger Types
 
 ```typescript
-interface Trigger {  
-  type: "tx" | "log" | "erc20transfer" | "erc20approval" | "nfttransfer";  
-  contractAddress: string;  
-  functionAbi: AbiItem;  
-  inputs?: (string | string[])[];  
-  topic0?: string;  
-  callFrom?: string;  
+interface Trigger {
+  type: "tx" | "log" | "erc20transfer" | "erc20approval" | "nfttransfer";
+  contractAddress: string;
+  functionAbi: AbiItem;
+  inputs?: (string | string[])[];
+  topic0?: string;
+  callFrom?: string;
 }
 ```
 
@@ -47,17 +46,17 @@ Single ABI Item of the function to call. Arrays are not allowed.
 
 The function must be a [read-only function](#read-only-functions) `stateMutability` must be set to either `pure` or `view`!
 
-You can modify the name of the outputs which will be part of the triggers result. 
+You can modify the name of the outputs which will be part of the triggers result.
 
 Selectors are NOT supported.
 
 ### inputs (partially-optional)
 
-Must be specified if the function you are calling requires parameters. 
+Must be specified if the function you are calling requires parameters.
 
 The inputs must be in the same order as the function expects them.
 
-[Selectors are supported!](#selectors) 
+[Selectors are supported!](#selectors)
 
 #### Edge cases
 
@@ -65,13 +64,13 @@ Non primitive types are arrays or objects (struct in Solidity).
 
 ```solidity Solidity
 contract ComplexContract {
-  
+
   struct Human {
     string name;
     int age;
     address user;
   }
-  
+
   mapping(address => Human[]) friends;
 
 	function getFriends(Human memory human) public view returns(Human[] memory friend) {
@@ -88,15 +87,15 @@ Structs must be an array, so the inputs actually take strings and arrays of stri
 
 ### topic0 (optional)
 
-If you want to run a trigger on specific events you can specify it in topic0. 
+If you want to run a trigger on specific events you can specify it in topic0.
 
-Requires the ABI of that event in the root streams ABI array. 
+Requires the ABI of that event in the root streams ABI array.
 
 Selectors are not allowed.
 
 Can only be specified if type is `log`!
 
-The benefit of specifying a topic0 is using Selectors against the decoded event log for [Inputs](##inputs) or the [caller's address](##callfrom-optional), or [smart contract](##contractaddress)  .
+The benefit of specifying a topic0 is using Selectors against the decoded event log for [Inputs](##inputs) or the [caller's address](##callfrom-optional), or [smart contract](##contractaddress) .
 
 ### callFrom (optional)
 
@@ -106,11 +105,11 @@ Must be a valid address. [Selectors are supported!](#selectors)
 
 ## Selectors
 
-Selectors allow you to dynamically select information of your Webhook. They are allowed for `inputs`, `callFrom` and the `contractAddress`.  
+Selectors allow you to dynamically select information of your Webhook. They are allowed for `inputs`, `callFrom` and the `contractAddress`.
 
 Selectors begin with a `$`, and everything after that should be a valid field in your Webhook but have in mind that the selectors are strictly tied to the `type` of your trigger.
 
-For example, if you want to get the sender of an ERC20 transfer to use the address as a parameter of a smart contract function the selector would be `inputs: [ '$from' ]` and the type of your trigger should be `erc20transfer`. `$fromAddress` for example is not a valid field in any object of `erc20Transfers` and the API rejects the request. 
+For example, if you want to get the sender of an ERC20 transfer to use the address as a parameter of a smart contract function the selector would be `inputs: [ '$from' ]` and the type of your trigger should be `erc20transfer`. `$fromAddress` for example is not a valid field in any object of `erc20Transfers` and the API rejects the request.
 
 If you use selectors for `callFrom` and the `contractAddress` the validation also checks if the field is a valid address field. For example you cant use `$value` as the `$callFrom` address. The API will reject your request.
 
@@ -126,29 +125,27 @@ Every ERC20 Contract has a function called `balanceOf` so let's take a look at t
 
 ```javascript
 const balanceOfSenderAbi = {
-  "constant": true,
-  "inputs": [
+  constant: true,
+  inputs: [
     {
-      "name": "owner",
-      "type": "address",
+      name: "owner",
+      type: "address",
     },
   ],
-  "name": "balanceOf",
-  "outputs": [
+  name: "balanceOf",
+  outputs: [
     {
-      "name": "",
-      "type": "uint256",
+      name: "",
+      type: "uint256",
     },
   ],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function",
+  payable: false,
+  stateMutability: "view",
+  type: "function",
 };
 ```
 
-
-
-The balanceOf function takes in one parameter from type `address` and returns a `uint256` representing the balance. 
+The balanceOf function takes in one parameter from type `address` and returns a `uint256` representing the balance.
 
 Our goal now is to call this function for each transfer in the ERC20 Transfers array. From what we know from the balanceOf ABI we must definitely specify `inputs` with one parameter representing the address that we want to check its balance.
 
@@ -158,12 +155,10 @@ const trigger = {
   functionAbi: balanceOfSenderAbi,
   inputs: ["$from"],
   type: "erc20transfer",
-}
+};
 
 const triggers = [trigger];
 ```
-
-
 
 As we do not know the contract Address and the sender address for each transfer we make use of the powerful selectors!
 
@@ -173,12 +168,10 @@ Now we can update the Stream with this trigger using the API, or if you are usin
 
 ```javascript
 Moralis.Streams.update({
-  id: 'YOUR_STREAM_ID',
+  id: "YOUR_STREAM_ID",
   triggers,
 });
 ```
-
-
 
 Now, lets take a look at the result of the trigger:
 
@@ -217,8 +210,6 @@ const erc20Transfers: [
 ];
 ```
 
-
-
 For every transfer in the `erc20Transfers` of our Webhook, the Streams API runs the `balanceOf` function and pushes the result in a list of trigger results. Every result contains of a `name` representing the output name and a `value` that is the result of the contract call.
 
 Note that the name here is `output1` this is because the [balanceOf Abi](#balanceof-abi) has actually no name for the balance result. The cool thing is you can modify the output name of your ABI.
@@ -236,8 +227,6 @@ outputs: [
 ],
 ```
 
-
-
 We have only one output from type uint256 but you can see that we didn't specify  
 a name for the output. We can simply add a name or rename it if there is a name already
 
@@ -249,8 +238,6 @@ a name for the output. We can simply add a name or rename it if there is a name 
   },
 ];
 ```
-
-
 
 This will result in the following output:
 
@@ -274,35 +261,31 @@ const erc20Transfers: [
 ];
 ```
 
-
-
 Now the output name is `fromBalance` instead of `output1` in the triggers result.
 
 Cool! But now let us get the balances of the recipients too. For that lets copy the [balanceOf Abi](#balanceof-abi) so we don't have the same output name for both triggers.
 
 ```javascript
 const balanceOfReceiverAbi = {
-  "constant": true,
-  "inputs": [
+  constant: true,
+  inputs: [
     {
-      "name": "owner",
-      "type": "address",
+      name: "owner",
+      type: "address",
     },
   ],
-  "name": "balanceOf",
-  "outputs": [
+  name: "balanceOf",
+  outputs: [
     {
-      "name": "toBalance",
-      "type": "uint256",
+      name: "toBalance",
+      type: "uint256",
     },
   ],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function",
+  payable: false,
+  stateMutability: "view",
+  type: "function",
 };
 ```
-
-
 
 We copied the original balanceOfSenderAbi and call it balanceOfReceiverAbi and rename the output name to `toBalance` . Let's add it to our existing triggers array.
 
@@ -311,18 +294,16 @@ const trigger = {
   contractAddress: "$contract",
   functionAbi: balanceOfSenderAbi,
   inputs: ["$from"],
-  type: "erc20transfer"
-}
+  type: "erc20transfer",
+};
 const trigger2 = {
   contractAddress: "$contract",
   functionAbi: balanceOfReceiverAbi,
   inputs: ["$to"],
-  type: "erc20transfer"
-}
+  type: "erc20transfer",
+};
 const triggers = [trigger, trigger2];
 ```
-
-
 
 This will result in the following output:
 
@@ -347,8 +328,6 @@ erc20Transfers: [
 ];
 ```
 
-
-
 Note that the order of the results is the same as the order of the triggers we  
 specified.
 
@@ -357,48 +336,48 @@ specified.
 Goal: To add an `erc20transfer` trigger to get the balance of the sender of an ERC20 transfer
 
 1. Go to streams page, add contract address(eg:USDC - `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`) to create a stream. You will start seeing new webhooks on the right side of the admin panel.
-![](/img/content/streams-triggers-ui-1.webp)
+   ![](/img/content/streams-triggers-ui-1.webp)
 
 2. Scroll down to the bottom and you will see triggers section. Click on `Add Trigger` and select the `type` of trigger you want to add. Let's add `erc20transfer` trigger. The `type` indicates for what part of the Webhook you want to run the trigger against.
-![](/img/content/streams-triggers-ui-2.webp)
+   ![](/img/content/streams-triggers-ui-2.webp)
 
 3. Click on `Enter Contract Address` and provide your contract address in the popup. You can also add selectors in this field. Read more about selectors from [here](#selectors). Let's add a selector here `$contract` and click on `Save Changes`.
-![](/img/content/streams-triggers-ui-3.webp)
+   ![](/img/content/streams-triggers-ui-3.webp)
 
 4. Click on `Add ABI` button and input your ABI (with read-only function) in the popup. For example, every ERC20 contract has a function called `balanceOf` let's add this to the input. And click on `Save Changes`.
-![](/img/content/streams-triggers-ui-4.webp)
+   ![](/img/content/streams-triggers-ui-4.webp)
 
-  `balanceOf` ABI
-  ```json
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "name": "balanceOf",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  }
-  ```
+`balanceOf` ABI
+
+```json
+{
+  "constant": true,
+  "inputs": [
+    {
+      "name": "owner",
+      "type": "address"
+    }
+  ],
+  "name": "balanceOf",
+  "outputs": [
+    {
+      "name": "",
+      "type": "uint256"
+    }
+  ],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}
+```
 
 5. The `balanceOf` function takes an address as a parameter. Therefore, we need to specify an input, and input fields also accept selectors. So, we can add `$from` to the input. You can read more about selectors here. [here](#selectors).
-![](/img/content/streams-triggers-ui-5.webp)
-
+   ![](/img/content/streams-triggers-ui-5.webp)
 
 6. `callFrom` takes an address or selectors as input, and this is used as the caller of the smart contract function. This input is optional.
 
-7. Click on `Update Stream`. and you will start receiving new webhooks with triggers in the `erc20Transfers` part of the webhook. 
-![](/img/content/streams-triggers-ui-6.webp)
+7. Click on `Update Stream`. and you will start receiving new webhooks with triggers in the `erc20Transfers` part of the webhook.
+   ![](/img/content/streams-triggers-ui-6.webp)
 
 ### Error Handling
 
