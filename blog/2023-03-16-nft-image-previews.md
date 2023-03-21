@@ -7,7 +7,7 @@ authors:
 
 Time to optimize your NFTs! 
 
-All NFTs served through our API now include an optional `media_items` object that includes `low`, `medium` and `high` resolution thumbnails, along with the original image 🎉
+All NFTs served through our API now include an optional `media` object that includes `low`, `medium` and `high` resolution thumbnails, along with the original image 🎉
 
 This makes it super easy to build apps and webpages that are optimized for speed and that load in a flash ⚡
 
