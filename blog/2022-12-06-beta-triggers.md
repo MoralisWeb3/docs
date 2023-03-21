@@ -9,4 +9,4 @@ Moralis "Triggers" Beta launched!
 
 Run smart contract functions against blockchain events!
 
-[Read more!](/streams-api/triggers)
+[Read more!](/streams-api/evm/triggers)
