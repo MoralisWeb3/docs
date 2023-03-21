@@ -55,7 +55,7 @@ export function setTypewriterOptions(options) {
  * Validates a message against a JSON Schema using Ajv. If the message
  * is invalid, the `onViolation` handler will be called.
  */
-function validateAgainstSchema(message, schema) {
+export function validateAgainstSchema(message, schema) {
   const ajv = new Ajv({ schemaId: "auto", allErrors: true, verbose: true });
   ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-06.json"));
   ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-04.json"));
@@ -67,7 +67,7 @@ function validateAgainstSchema(message, schema) {
  * Helper to attach metadata on Typewriter to outbound requests.
  * This is used for attribution and debugging by the Segment team.
  */
-function withTypewriterContext(message = {}) {
+export function withTypewriterContext(message = {}) {
   return {
     ...message,
     context: {
@@ -79,107 +79,7 @@ function withTypewriterContext(message = {}) {
     },
   };
 }
-/**
- * @typedef DocsSearched
- * @property {string} query -
- */
-/**
- * @typedef FeedbackCommentProvided
- * @property {string} [comment] - the comment
- * @property {boolean} [helpful] - the rating given prior to the comment
- * @property {string} [section] - Was the feedback form in the right-nav or footer clicked?
- * @property {string} [title] -
- */
-/**
- * @typedef FeedbackProvided
- * @property {string} [comment] -
- * @property {boolean} helpful - Boolean representing the value of the feedback, true is helpful, false is not helpful
- * @property {string} section - Was the feedback form in the right-nav or footer clicked?
- * @property {string} title -
- */
-/**
- * @typedef LeadCaptured
- * @property {string} email -
- * @property {string} location -
- * @property {string} url -
- */
-/**
- * @typedef NavigationControlUsed
- * @property {string} control_value - Name of control used
- * @property {string} [search_value] - Value of search term if search bar is used
- */
-/**
- * @typedef PageViewed
- * @property {string} [browser_language] - Custom property to identify user's browser language
- * @property {string} [frontmatter] - Custom property to add additional frontmatter context to each page call
- * @property {string} [ip] -
- * @property {string} [name] -
- * @property {string} [path] -
- * @property {string} [referrer] -
- * @property {string} [search] -
- * @property {string} [timestamp] -
- * @property {string} [timezone] -
- * @property {string} [title] -
- * @property {string} [url] -
- */
-/**
- * @typedef ScrolledToBottom
- * @property {string} url -
- */
-/**
- * @typedef TocClicked
- * @property {string} link - link clicked
- * @property {string} name - name of the link clicked
- * @property {string} url - The url of the page (hostname + path)
- */
-/**
- * Fires a 'Docs Searched' track call.
- *
- * @param {DocsSearched} props - The analytics properties that will be sent to Segment.
- * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
- * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
- * 		call is fired.
- */
-export function docsSearched(props, options, callback) {
-  const schema = {
-    $schema: "http://json-schema.org/draft-07/schema#",
-    labels: {},
-    properties: {
-      context: {},
-      properties: {
-        properties: {
-          query: {
-            description: "",
-            type: "string",
-          },
-        },
-        required: ["query"],
-        type: "object",
-      },
-      traits: {
-        type: "object",
-      },
-    },
-    required: ["properties"],
-    title: "Docs Searched",
-    type: "object",
-  };
-  const message = {
-    event: "Docs Searched",
-    properties: props || {},
-    options,
-  };
-  validateAgainstSchema(message, schema);
-  const a = analytics();
-  if (a) {
-    a.track(
-      "Docs Searched",
-      props || {},
-      withTypewriterContext(options),
-      callback
-    );
-  }
-}
+
 /**
  * User submits comments after their thumbs/down rating
  *
