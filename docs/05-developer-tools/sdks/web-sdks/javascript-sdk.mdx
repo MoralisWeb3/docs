@@ -31,10 +31,10 @@ The Moralis Javascript SDK helps you integrate web3 data from our APIs into your
 
 To install by script, add the Moralis.js as a script to the `<head>` element of your HTML. This allows any newly created Moralis objects to be globally accessible in your code.
 
-```html showLineNumbers
+```html
 <head>
   <title>My Dapp</title>
-  <script src="https://unpkg.com/moralis/dist/moralis.min.js" async></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.min.js"></script>
 </head>
 ```
 
@@ -42,7 +42,7 @@ To install by script, add the Moralis.js as a script to the `<head>` element of 
 
 Next, set the API frontend key. To start using Moralis, initialise it via the start() method:
 
-```js showLineNumbers
+```js
 await Moralis.start({
   apiKey: "YOUR_API_KEY",
   // ...and any other configuration
@@ -55,10 +55,7 @@ Once the Moralis Javascript SDK is initialized, you will be able to use all the 
 When you go to production, make sure to specify a version of the SDK to use. Otherwise, you might run into unexpected breaking changes:
 
 ```html
-<script
-  src="https://unpkg.com/moralis@2.3.4/dist/moralis.min.js"
-  async
-></script>
+<script src="https://unpkg.com/moralis@2.3.4/dist/moralis.min.js"></script>
 ```
 
 :::
@@ -78,7 +75,7 @@ As an example, you can see the setup in [this demo app on Github](https://github
 
 ### Getting native balance of an address via the EVM balance API
 
-Update `YOUR_API_KEY` with your own API KEY from the Admin panel.
+In the `index.js` file update `YOUR_API_KEY` with your own API key and press the Run button.
 
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import { Sandpack } from "@codesandbox/sandpack-react";
@@ -87,11 +84,11 @@ import { Sandpack } from "@codesandbox/sandpack-react";
   template="vanilla"
   theme={monokaiPro}
   options={{
-    activeFile: "/index.html",
+    activeFile: "/index.js",
     externalResources: ["https://unpkg.com/moralis/dist/moralis.min.js"],
     showConsole: true,
     showLineNumbers: true,
-    wrapContent: true,
+    autorun: false,
   }}
   files={{
     "/index.html": `<!DOCTYPE html>
@@ -99,7 +96,7 @@ import { Sandpack } from "@codesandbox/sandpack-react";
   <head>
     <title>Get Native Balance</title>
     <script src="https://unpkg.com/moralis/dist/moralis.min.js"></script>
-    <script src="/index.js" async></script>
+    <script src="index.js" async></script>
   </head>
   <body>
     <div class="result"></div>
