@@ -1,0 +1,446 @@
+---
+title: "NodeJs SDK"
+sidebar_label: "NodeJs SDK"
+slug: "../nodejs"
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+pagination_next: null
+pagination_prev: null
+hide_title: true
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+import CodeBlock from "@theme/CodeBlock"
+import { SDKHeader } from "/src/components/SDKHeader"
+import {
+  ReferenceDisplayLink,
+  GithubDisplayLink,
+} from "/src/components/DisplayLink"
+import { SimpleGrid } from "/src/components/Grid"
+import JsQuickstart from "/docs/partials/_js-quickstart.mdx"
+
+<SDKHeader
+  logoSrc="/img/external-logos/nodejs.svg"
+  title="Moralis NodeJs SDK"
+  description="Web3 data for your NodeJs backend"
+  shields={[
+    {
+      src: "https://img.shields.io/npm/v/moralis?label=version",
+      alt: "version",
+    },
+    {
+      src: "https://img.shields.io/bundlephobia/minzip/moralis",
+      alt: "bundle size",
+    },
+    {
+      src: "https://img.shields.io/npm/types/moralis",
+      alt: "types",
+    },
+    {
+      src: "https://img.shields.io/github/last-commit/MoralisWeb3/Moralis-JS-SDK",
+      alt: "last commit",
+    },
+  ]}
+/>
+
+The Moralis NodeJs SDK helps you integrate web3 data from our APIs into your NodeJs backend.
+
+- Get [**web3 data**](/web3-data-api/evm) from the supported EVM chains, Aptos and Solana
+- Real-time web3 data via [**Streams**](/streams-api/evm)
+- Web3 [**authentication**](/authentication-api)
+- **Typescript support**
+- **Open source**
+
+## Getting Started
+
+### Prerequisites
+
+- Get your [**Moralis API key**](/web3-data-api/evm/get-your-api-key) if you haven't already.
+- Make sure to have at least the latest stable version of **nodeJs** installed.
+- Have a packagemanager (**yarn** / **npm** / **pnpm**) installed
+
+### Quickstart
+
+<JsQuickstart />
+
+### Setting up
+
+Install the Moralis Python SDK using your package manager:
+
+<Tabs groupId="package-manager" queryString>
+  <TabItem value="npm" label="npm" default>
+    <CodeBlock language="shell" showLineNumbers>
+      {`npm install moralis`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    <CodeBlock language="shell" showLineNumbers>
+      {`yarn add moralis`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    <CodeBlock language="shell" showLineNumbers>
+      {`pnpm add moralis`}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Initialise
+
+To start using Moralis, you need to initialise it via the `start()` method:
+
+<Tabs>
+<TabItem value="javascript" label="Javascript" default>
+
+```javascript
+const Moralis = require("moralis").default
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+})
+```
+
+</TabItem>
+<TabItem value="typescript" label="Typescript">
+
+```typescript
+import Moralis from "moralis"
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+})
+```
+
+</TabItem>
+</Tabs>
+
+Once the Moralis NodeJS SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
+
+## Usage
+
+All available methods are available in the `Moralis` namespace as:
+
+- `Moralis.EvmApi` for any of the [EVM Web3 Data APIs](/web3-data-api/evm)
+- `Moralis.SolApi` for any of the [Solana Web3 Data APIs](/web3-data-api/solana)
+- `Moralis.AptosApi` for any of the Aptos Web3 Data APIs
+- `Moralis.Auth` for the [Authentication API](/authentication-api)
+- `Moralis.Streams` for the [Streams API](/streams-api/evm)
+
+Then call the endpoint you want to use. See the [NodeJs SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK) for all available methods.
+See the next section for some examples.
+
+:::tip
+Use Typescript to get autocompletion and type hints for all the endpoints.
+:::
+
+## Examples
+
+### Getting native balance of an address via the EVM balance API
+
+```javascript
+import Moralis from "moralis"
+import { EvmChain } from "moralis/common-evm-utils"
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+})
+
+const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+const chain = EvmChain.ETHEREUM
+
+const { result } = await Moralis.EvmApi.balance.getNativeBalance({
+  address,
+  chain,
+})
+
+console.log(result)
+```
+
+### Getting authentication message via the Auth API
+
+```javascript
+import Moralis from "moralis"
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+})
+
+// Values provided by the user
+const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+const chain = "0x1"
+const network = "evm"
+
+const { result } = await Moralis.Auth.requestMessage({
+  address,
+  chain,
+  network,
+
+  // Values set in the backend
+  domain: "defi.finance",
+  statement: "Please sign this message to confirm your identity.",
+  uri: "https://defi.finance",
+  expirationTime: "2023-01-01T00:00:00.000Z",
+  timeout: 15,
+})
+
+console.log(result)
+```
+
+### Getting streams via the Streams API
+
+```javascript
+import Moralis from "moralis"
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+})
+
+const { result } = await Moralis.Streams.getAll({
+  networkType: "evm",
+  limit: 20,
+})
+
+console.log(result)
+```
+
+## Configuration
+
+You can set the configuration for your Moralis instance when you call `Moralis.start(config)`. For example:
+
+```javascript
+Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  formatEvmAddress: "checksum",
+  formatEvmChainId: "decimal",
+  logLevel: "verbose",
+})
+```
+
+Below, you can find the possible options for the configuration:
+
+| Option           | Description                                                                                                          | Default       | Required |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| apiKey           | Your secret Moralis ApiKey                                                                                           | `null`        | yes      |
+| formatEvmAddress | Format style for evm addresses. Possible values: `'lowercase'`, `'checksum'`                                         | `'lowercase'` | no       |
+| formatEvmChainId | Format style for chains. Possible values: `'decimal'`, `'hex'`                                                       | `'hex'`       | no       |
+| logLevel         | Level of detail for log messages. Possible values: `'verbose'`, `'debug'`, `'info'`, `'warning'`, `'error'`, `'off'` | `'info'`      | no       |
+
+Then call the endpoint you want to use. See the [NodeJs SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK/Installation/) for all available methods.
+
+## Data Types
+
+Within the SDK, we have several data types to make your life easier when working with the SDK. These data types are useful for:
+
+- Flexible input formats
+- Easy formatting of data
+- Utility methods
+
+Below are the most common ones. These data types can be used to provide as **parameter to API requests**, and can be **returned from the API as response**:
+
+- `BigNumber` to describe large numbers
+- `EvmChain` to describe the chain of an EVM network
+- `EvmAddress` to describe an address on an EVM network
+- `SolNetwork` to describe a network on Solana
+- `SolAddress` to describe an address on a Solana network
+- `AptosNetwork` to describe a network on Aptos
+- `AptosAddress` to describe an address on an Aptos network
+
+These data types are described in more depth in the [NodeJs SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK).
+
+Below we describe the use-case with `EvmAddress`, similar use-cases hold for the other data types.
+
+### Create
+
+To **create** an `EvmChain` instance, you can use:
+
+```javascript
+import { EvmChain } from "moralis/common-evm-utils"
+
+// by name
+const chain = EvmChain.ETHEREUM
+// or by hex string
+const chain = EvmChain.create("0x1")
+// or by decimal value
+const chain = EvmChain.create(1)
+```
+
+### Use as parameter
+
+Everywhere where you can provide a chain as input, you can provide either one of the following:
+
+- An `EvmChain` instance
+- A decimal for the chain (ex. `1` for Ethereum Mainnet)
+- A hex-string for the chain (ex. `"0x1"` for Ethereum Mainnet)
+
+When calling one of the APIs, you can use these inputs to **as a parameter**:
+
+```javascript
+import Moralis from "moralis"
+import { EvmChain } from "moralis/common-evm-utils"
+
+// EvmChain Instance
+const chain = EvmChain.ETHEREUM
+// or a hex string
+const chain = "0x1"
+// or a number
+const chain = 1
+
+await Moralis.EvmApi.balance.getNativeBalance({
+  chain,
+  ...otherParams,
+})
+```
+
+### Formatting
+
+To **format** the value from `EvmChain` you can call the following methods:
+
+```javascript
+console.log("decimal: ", chain.decimal)
+// decimal: 1
+console.log("hex: ", chain.hex)
+// hex: "0x1"
+console.log("hex: ", chain.format())
+// output depends on specified by default formatting type
+```
+
+### Equality comparison
+
+Comparing equality of two `EvmChain` instances is also possible:
+
+```javascript
+console.log("check 1: ", chain.equals(1))
+// check 1: true
+console.log("check 2: ", chain.equals("0x1"))
+// check 2: true
+console.log("check 3: ", chain.equals(EvmChain.create(1)))
+// check 3: true
+console.log("check 4: ", chain.equals(EvmChain.create("0x1")))
+// check 4: true
+```
+
+## Advanced setup
+
+:::info Advanced Use Case
+
+Use the advanced setup if you want more control over what modules to add to Moralis. In most cases, you won't need to do this (and can use the umbrella `moralis` package as described above, as this is easier to use).
+
+:::
+
+### Install Moralis
+
+Instead of installing the `moralis` umbrella package, you can need to install the packages _you_ want to use.
+This setup is already done for you if you use the `moralis` umbrella package, see [Github](https://github.com/MoralisWeb3/Moralis-JS-SDK/blob/main/packages/moralis/src/index.ts)
+
+Please note that you **always** need to install the `@moralisweb3/common-core` package.
+
+Available packages:
+
+- `@moralisweb3/common-core`
+- `@moralisweb3/auth`
+- `@moralisweb3/streams`
+- `@moralisweb3/evm-api`
+- `@moralisweb3/sol-api`
+- `@moralisweb3/aptos-api`
+- `@moralisweb3/common-auth-utils`
+- `@moralisweb3/common-streams-utils`
+- `@moralisweb3/common-evm-utils`
+- `@moralisweb3/common-sol-utils`
+- `@moralisweb3/common-aptos-utils`
+
+For example:
+
+```bash npm2yarn
+npm install @moralisweb3/common-core @moralisweb3/evm-api
+```
+
+### Set Up Moralis
+
+To set up Moralis, you must register the modules to the core package at the top of your code (before any interaction with Moralis):
+
+```javascript
+import Core from "@moralisweb3/common-core"
+import MoralisEvmApi from "@moralisweb3/evm-api"
+
+const core = MoralisCore.create()
+// Register all imported modules to the @moralisweb3/core module
+core.registerModules([MoralisEvmApi])
+```
+
+Then, initialize the app similarly to when using the umbrella `moralis` package. You only need to provide a configuration that is required by the packages. So, if you don't include an API package, you might not need to include the `apiKey`:
+
+```javascript
+core.start({
+  apiKey: "<YOUR_API_KEY>",
+  // ...and any other configuration
+})
+```
+
+Now you can use any functionality from the installed modules. The only difference is that you need to call in your code:
+
+```javascript
+import MoralisEvmApi from "@moralisweb3/evm-api"
+import { EvmChain } from "@moralisweb3/common-evm-utils"
+
+const evmApi = core.getModule < MoralisEvmApi > MoralisEvmApi.moduleName
+evmApi.block.getBlock({
+  chain: EvmChain.ETHEREUM,
+  blockNumberOrHash: "",
+})
+```
+
+Instead of:
+
+```javascript
+import Moralis from "moralis"
+import { EvmChain } from "@moralisweb3/common-evm-utils"
+
+Moralis.EvmApi.block.getBlock({
+  chain: EvmChain.ETHEREUM,
+  blockNumberOrHash: "",
+})
+```
+
+Of course, you are free to combine the modules in a single object and use that in your dapp:
+
+```javascript
+// moralis.ts
+import Core "@moralisweb3/common-core"
+import EvmApi from "@moralisweb3/evm-api"
+
+const core = MoralisCore.create()
+const evmApi = EvmApi.create(core)
+core.registerModules([evmApi])
+
+export const Moralis = {
+  EvmApi: evmApi,
+}
+
+// app.ts
+import { Moralis } from "./moralis/"
+import { EvmChain } from "@moralisweb3/common-evm-utils"
+
+Moralis.EvmApi.block.getBlock({
+  chain: EvmChain.ETHEREUM,
+  blockNumberOrHash: "",
+})
+```
+
+## References
+
+<SimpleGrid>
+  <ReferenceDisplayLink
+    label="NodeJs SDK References"
+    subLabel="Technical documentation"
+    href="https://moralisweb3.github.io/Moralis-JS-SDK"
+  />
+  <GithubDisplayLink
+    label="Github repo"
+    subLabel="View code and contribute"
+    href="https://github.com/MoralisWeb3/Moralis-JS-SDK"
+  />
+</SimpleGrid>
+

@@ -1,0 +1,156 @@
+---
+title: "Moralis Python SDK"
+description: "With the Moralis Python SDK, you get easy access to our APIs within your Python backend"
+sidebar_label: "Python SDK"
+slug: "../python"
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+pagination_next: null
+pagination_prev: null
+hide_title: true
+---
+
+import { SDKHeader } from "../../../../src/components/SDKHeader"
+import {
+  ReferenceDisplayLink,
+  GithubDisplayLink,
+} from "../../../../src/components/DisplayLink"
+import { SimpleGrid } from "/src/components/Grid"
+
+<SDKHeader
+  logoSrc="/img/external-logos/python.svg"
+  title="Moralis Python SDK"
+  description="Web3 data for your Python backend"
+  shields={[
+    {
+      src: "https://img.shields.io/github/last-commit/MoralisWeb3/Moralis-Python-SDK",
+      alt: "last commit",
+    },
+    {
+      src: "https://img.shields.io/pypi/v/moralis?label=version",
+      alt: "version",
+    },
+  ]}
+/>
+
+The Moralis Python SDK helps you integrate web3 data from our APIs into your Python backend.
+
+- Get [**web3 data**](/web3-data-api/evm) from the supported EVM chains, Aptos and Solana
+- Real-time web3 data via [**Streams**](/streams-api/evm)
+- Web3 [**authentication**](/authentication-api)
+- **Typings support**
+- **Open source**
+
+## Getting Started
+
+### Prerequisites
+
+- Get your [**Moralis API key**](/web3-data-api/evm/get-your-api-key), if you haven't already.
+- Make sure to have **Python 3.7** or higher installed.
+- Have **pip** installed to manage your Python packages.
+
+### Setting up
+
+Install the Moralis Python SDK using pip:
+
+```bash
+pip install moralis
+```
+
+## Usage
+
+Import the module for the api that you want to use from `moralis` from the available APIs:
+
+- `evm_api` for any of the [EVM Web3 Data APIs](/web3-data-api/evm)
+- `solana_api` for any of the [Solana Web3 Data APIs](/web3-data-api/solana)
+- `aptos_api` for any of the Aptos Web3 Data APIs
+- `auth` for the [Authentication API](/authentication-api)
+- `streams` for the [Streams API](/streams-api/evm)
+
+Then call the endpoint you want to use. See the [Python SDK reference](https://moralisweb3.github.io/Moralis-Python-SDK/) for all available methods.
+See the next section for some examples.
+
+:::tip
+Enable type checking in your IDE to get autocompletion and type hints for all the endpoints.
+:::
+
+## Examples
+
+### Getting native balance of an address via the EVM balance API
+
+```python
+from moralis import evm_api
+
+api_key = "YOUR_API_KEY"
+params = {
+    "address": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e",
+    "chain": "eth",
+    "to_block": 16766218,
+}
+
+result = evm_api.balance.get_native_balance(
+    api_key=api_key,
+    params=params,
+)
+
+print(result)
+```
+
+### Getting authentication message via the Auth API
+
+```python
+from moralis import auth
+
+api_key = "YOUR_API_KEY"
+body = {
+    "domain": "defi.finance",
+    "chainId": "1",
+    "address": "0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B",
+    "statement": "Please confirm",
+    "uri": "https://defi.finance/",
+    "expirationTime": "2020-01-01T00:00:00.000Z",
+    "notBefore": "2020-01-01T00:00:00.000Z",
+    "resources": ['https://docs.moralis.io/'],
+    "timeout": 15,
+}
+
+result = auth.challenge.request_challenge_evm(
+    api_key=api_key,
+    body=body,
+)
+
+print(result)
+```
+
+### Getting streams via the Streams API
+
+```python
+from moralis import streams
+
+api_key = "YOUR_API_KEY"
+params = {
+    "limit": 5
+}
+
+result = streams.evm_streams.get_streams(
+    api_key=api_key,
+    params=params,
+)
+
+print(result)
+```
+
+## References
+
+<SimpleGrid>
+  <ReferenceDisplayLink
+    label="Python SDK References"
+    subLabel="Technical documentation"
+    href="https://moralisweb3.github.io/Moralis-Python-SDK"
+  />
+  <GithubDisplayLink
+    label="Github repo"
+    subLabel="View code and contribute"
+    href="https://github.com/MoralisWeb3/Moralis-Python-SDK"
+  />
+</SimpleGrid>

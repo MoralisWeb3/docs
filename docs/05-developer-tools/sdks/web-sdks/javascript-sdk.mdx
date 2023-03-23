@@ -1,0 +1,279 @@
+---
+title: "Moralis Javascript SDK"
+sidebar_label: "Javascript SDK"
+slug: "../javascript"
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+pagination_next: null
+pagination_prev: null
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import { SDKHeader } from "/src/components/SDKHeader";
+import {
+  ReferenceDisplayLink,
+  GithubDisplayLink,
+} from "/src/components/DisplayLink";
+import { SimpleGrid } from "/src/components/Grid";
+import JsQuickstart from "/docs/partials/_js-quickstart.mdx";
+
+The Moralis Javascript SDK helps you integrate web3 data from our APIs into your Javascript frontend.
+
+- Get [web3 data](/web3-data-api/evm) from the supported EVM chains, Aptos and Solana
+- Typescript support
+- Open source
+
+## Manually load the moralis.min.js script
+
+### Installation
+
+To install by script, add the Moralis.js as a script to the `<head>` element of your HTML. This allows any newly created Moralis objects to be globally accessible in your code.
+
+```html showLineNumbers
+<head>
+  <title>My Dapp</title>
+  <script src="https://unpkg.com/moralis/dist/moralis.min.js" async></script>
+</head>
+```
+
+### Initialise
+
+Next, set the API frontend key. To start using Moralis, initialise it via the start() method:
+
+```js showLineNumbers
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+});
+```
+
+Once the Moralis Javascript SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
+
+:::info Specify version
+When you go to production, make sure to specify a version of the SDK to use. Otherwise, you might run into unexpected breaking changes:
+
+```html
+<script
+  src="https://unpkg.com/moralis@2.3.4/dist/moralis.min.js"
+  async
+></script>
+```
+
+:::
+
+## Load moralis.min.js as an ES Module
+
+# TODO!
+
+If you want to use the EsModule (for example in a Webpack setup), then you need to:
+
+- Follow the guide in [NodeJs SDK](/developer-tools/sdks/nodejs)
+- Polyfill any NodeJs specific dependencies if needed (this is common since Webpack v5)
+
+As an example, you can see the setup in [this demo app on Github](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/client-webpack)
+
+## Examples
+
+### Getting native balance of an address via the EVM balance API
+
+Update `YOUR_API_KEY` with your own API KEY from the Admin panel.
+
+import { monokaiPro } from "@codesandbox/sandpack-themes";
+import { Sandpack } from "@codesandbox/sandpack-react";
+
+<Sandpack
+  template="vanilla"
+  theme={monokaiPro}
+  options={{
+    activeFile: "/index.html",
+    externalResources: ["https://unpkg.com/moralis/dist/moralis.min.js"],
+    showConsole: true,
+    showLineNumbers: true,
+    wrapContent: true,
+  }}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Native Balance</title>
+    <script src="https://unpkg.com/moralis/dist/moralis.min.js"></script>
+    <script src="/index.js" async></script>
+  </head>
+  <body>
+    <div class="result"></div>
+  </body>
+</html>`,
+    "/index.js": `Moralis.start({
+  apiKey: "YOUR_API_KEY" // Replace with your own API KEY
+});
+const request = Moralis.EvmApi.balance.getNativeBalance({
+  chain: "0x1", // Ethereum
+  address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" // Vitalik.eth
+});
+const result = document.querySelector(".result");
+request
+  .then((response) => response.jsonResponse)
+  .then((data) => {
+    result.innerHTML = "Vitalik.eth balance is " + data.balance;
+  })
+  .catch((error) => {
+    console.log(error);
+  });`,
+    "/.eslintrc": `{
+  "globals": {
+    "Moralis": true
+  }
+}
+`,
+  }}
+/>
+
+## Usage
+
+All available methods are available in the `Moralis` namespace as:
+
+- `Moralis.EvmApi` for any of the [EVM Web3 Data APIs](/web3-data-api/evm)
+- `Moralis.SolApi` for any of the [Solana Web3 Data APIs](/web3-data-api/solana)
+- `Moralis.AptosApi` for any of the Aptos Web3 Data APIs
+- `Moralis.Auth` for the [Authentication API](/authentication-api)
+- `Moralis.Streams` for the [Streams API](/streams-api/evm)
+
+Then call the endpoint you want to use. See the [Javascript SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK) for all available methods.
+See the next section for some examples.
+
+:::tip
+Use Typescript to get autocompletion and type hints for all the endpoints.
+:::
+
+## Configuration
+
+You can set the configuration for your Moralis instance when you call `Moralis.start(config)`. For example:
+
+```javascript
+Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  formatEvmAddress: "checksum",
+  formatEvmChainId: "decimal",
+  logLevel: "verbose",
+});
+```
+
+Below, you can find the possible options for the configuration:
+
+| Option           | Description                                                                                                          | Default       | Required |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| apiKey           | Your secret Moralis ApiKey                                                                                           | `null`        | yes      |
+| formatEvmAddress | Format style for evm addresses. Possible values: `'lowercase'`, `'checksum'`                                         | `'lowercase'` | no       |
+| formatEvmChainId | Format style for chains. Possible values: `'decimal'`, `'hex'`                                                       | `'hex'`       | no       |
+| logLevel         | Level of detail for log messages. Possible values: `'verbose'`, `'debug'`, `'info'`, `'warning'`, `'error'`, `'off'` | `'info'`      | no       |
+
+Then call the endpoint you want to use. See the [Javascript SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK/Installation/) for all available methods.
+
+## Data Types
+
+Within the SDK, we have several data types to make your life easier when working with the SDK. These data types are useful for:
+
+- Flexible input formats
+- Easy formatting of data
+- Utility methods
+
+Below are the most common ones. These data types can be used to provide as **parameter to API requests**, and can be **returned from the API as response**:
+
+- `BigNumber` to describe large numbers
+- `EvmChain` to describe the chain of an EVM network
+- `EvmAddress` to describe an address on an EVM network
+- `SolNetwork` to describe a network on Solana
+- `SolAddress` to describe an address on a Solana network
+- `AptosNetwork` to describe a network on Aptos
+- `AptosAddress` to describe an address on an Aptos network
+
+These data types are described in more depth in the [Javascript SDK reference](https://moralisweb3.github.io/Moralis-JS-SDK).
+
+Below we describe the use-case with `EvmAddress`, similar use-cases hold for the other data types.
+
+### Create
+
+To **create** an `EvmChain` instance, you can use:
+
+```javascript
+import { EvmChain } from "moralis/common-evm-utils";
+
+// by name
+const chain = EvmChain.ETHEREUM;
+// or by hex string
+const chain = EvmChain.create("0x1");
+// or by decimal value
+const chain = EvmChain.create(1);
+```
+
+### Use as parameter
+
+Everywhere where you can provide a chain as input, you can provide either one of the following:
+
+- An `EvmChain` instance
+- A decimal for the chain (ex. `1` for Ethereum Mainnet)
+- A hex-string for the chain (ex. `"0x1"` for Ethereum Mainnet)
+
+When calling one of the APIs, you can use these inputs to **as a parameter**:
+
+```javascript
+import Moralis from "moralis";
+import { EvmChain } from "moralis/common-evm-utils";
+
+// EvmChain Instance
+const chain = EvmChain.ETHEREUM;
+// or a hex string
+const chain = "0x1";
+// or a number
+const chain = 1;
+
+await Moralis.EvmApi.balance.getNativeBalance({
+  chain,
+  ...otherParams,
+});
+```
+
+### Formatting
+
+To **format** the value from `EvmChain` you can call the following methods:
+
+```javascript
+console.log("decimal: ", chain.decimal);
+// decimal: 1
+console.log("hex: ", chain.hex);
+// hex: "0x1"
+console.log("hex: ", chain.format());
+// output depends on specified by default formatting type
+```
+
+### Equality comparison
+
+Comparing equality of two `EvmChain` instances is also possible:
+
+```javascript
+console.log("check 1: ", chain.equals(1));
+// check 1: true
+console.log("check 2: ", chain.equals("0x1"));
+// check 2: true
+console.log("check 3: ", chain.equals(EvmChain.create(1)));
+// check 3: true
+console.log("check 4: ", chain.equals(EvmChain.create("0x1")));
+// check 4: true
+```
+
+## References
+
+<SimpleGrid>
+  <ReferenceDisplayLink
+    label="Javascript SDK References"
+    subLabel="Technical documentation"
+    href="https://moralisweb3.github.io/Moralis-JS-SDK"
+  />
+  <GithubDisplayLink
+    label="Github repo"
+    subLabel="View code and contribute"
+    href="https://github.com/MoralisWeb3/Moralis-JS-SDK"
+  />
+</SimpleGrid>
