@@ -1,5 +1,5 @@
 ---
-title: "Moralis Javascript SDK"
+title: "Moralis client-side Javascript SDK"
 sidebar_label: "Javascript SDK"
 slug: "../javascript"
 toc_min_heading_level: 2
@@ -18,12 +18,16 @@ import {
 } from "/src/components/DisplayLink";
 import { SimpleGrid } from "/src/components/Grid";
 import JsQuickstart from "/docs/partials/_js-quickstart.mdx";
+import { monokaiPro } from "@codesandbox/sandpack-themes";
+import { Sandpack } from "@codesandbox/sandpack-react";
 
-The Moralis Javascript SDK helps you integrate web3 data from our APIs into your Javascript frontend.
+This introductory guide shows you how to install the client-side Javascript SDK with a script tag or package manager. It allows you to get Web3 Data from [EVM chains](/web3-data-api/evm), [Aptos](/web3-data-api/aptos) and [Solana](/web3-data-api/solana) directly in your frontend.
 
-- Get [web3 data](/web3-data-api/evm) from the supported EVM chains, Aptos and Solana
-- Typescript support
-- Open source
+:::info Rapid Prototyping
+
+Client-side Web3 Data is great for rapid prototyping and testing out your idea. If you're looking for more control consider setting up a backend and using one of our [Server-side SDKs](/developer-tools/sdks/server-sdks).
+
+:::
 
 ## Manually load the moralis.min.js script
 
@@ -38,36 +42,30 @@ To install by script, add the Moralis.js as a script to the `<head>` element of 
 </head>
 ```
 
-### Initialise
+### Initialize
 
-Next, set the API frontend key. To start using Moralis, initialise it via the start() method:
+To start using Moralis, change `YOUR_API_KEY` to your client-side [API Key](https://admin.moralis.io/web3apis) and initialize it via the start() method:
 
 ```js
 await Moralis.start({
   apiKey: "YOUR_API_KEY",
-  // ...and any other configuration
 });
 ```
 
-Once the Moralis Javascript SDK is initialized, you will be able to use all the powerful APIs provided by Moralis to build your dapps.
+Once the Moralis Javascript SDK is initialized, you will be able to use all the Web3 Data APIs provided by Moralis to build your dapps.
 
 :::info Specify version
 When you go to production, make sure to specify a version of the SDK to use. Otherwise, you might run into unexpected breaking changes:
 
 ```html
-<script src="https://unpkg.com/moralis@2.3.4/dist/moralis.min.js"></script>
+<script src="https://unpkg.com/moralis@2.17.0/dist/moralis.min.js"></script>
 ```
 
 :::
 
-## Examples
-
-### Getting native balance of an address via the EVM balance API
+### Example: Getting native balance of an address via the EVM balance API
 
 In `index.js` change `YOUR_API_KEY` with your own [API Key](https://admin.moralis.io/web3apis) and press Run or Refresh preview.
-
-import { monokaiPro } from "@codesandbox/sandpack-themes";
-import { Sandpack } from "@codesandbox/sandpack-react";
 
 <Sandpack
   template="vanilla"
@@ -92,10 +90,12 @@ import { Sandpack } from "@codesandbox/sandpack-react";
     <div class="result"></div>
   </body>
 </html>`,
-    "/index.js": `Moralis.start({
-  apiKey: "YOUR_API_KEY" // Replace with your own API KEY
-});
- 
+    "/index.js": `if(!Moralis.Core.isStarted){
+  Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+}
+  
 const request = Moralis.EvmApi.balance.getNativeBalance({
   chain: "0x1", // Ethereum
   address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" // Vitalik.eth
@@ -121,6 +121,95 @@ request
       hidden: true, // Tab visibility, defaults to `false`
     },
   }}
+/>
+
+## Load Moralis as an ES Module
+
+### Installation
+
+To install by package manager, install the Moralis ES Module from the npm public registry.
+
+```bash
+npm install moralis
+```
+
+### Initialize
+
+Next, import the module into a JavaScript file. Then change `YOUR_API_KEY` to your client-side [API Key](https://admin.moralis.io/web3apis) and initialize it via the start() method:
+
+```js
+import Moralis from "moralis";
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+});
+```
+
+Once the Moralis Javascript SDK is initialized, you will be able to use all the Web3 Data APIs provided by Moralis to build your dapps.
+
+:::info Specify version
+When you go to production, make sure to specify a version of the SDK to use. Otherwise, you might run into unexpected breaking changes:
+
+```html
+npm install moralis@2.17.0
+```
+
+:::
+
+### Example: Getting native balance of an address via the EVM balance API
+
+In `index.js` change `YOUR_API_KEY` with your own [API Key](https://admin.moralis.io/web3apis) and press Run or Refresh preview.
+
+<Sandpack
+  template="vanilla"
+  theme={monokaiPro}
+  customSetup={{
+    dependencies: {
+      moralis: "latest",
+    },
+  }}
+  options={{
+    activeFile: "/index.js",
+    showConsole: true,
+    showLineNumbers: true,
+    autorun: false,
+    editorWidthPercentage: 60, // default - 50
+  }}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Native Balance</title>
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <div class="result"></div>
+  </body>
+</html>`,
+    "/index.js": `import Moralis from 'moralis';
+ 
+if(!Moralis.Core.isStarted){
+  Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+}
+ 
+const request = Moralis.EvmApi.balance.getNativeBalance({
+chain: "0x1", // Ethereum
+address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" // Vitalik.eth
+});
+ 
+const result = document.querySelector(".result");
+ 
+request
+.then((response) => response.jsonResponse)
+.then((data) => {
+result.innerHTML = "Vitalik.eth balance is " + data.balance;
+})
+.catch((error) => {
+console.log(error);
+});`
+}}
 />
 
 ## Usage
