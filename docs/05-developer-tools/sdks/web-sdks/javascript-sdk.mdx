@@ -47,7 +47,7 @@ To install by script, add the Moralis.js as a script to the `<head>` element of 
 To start using Moralis, change `YOUR_API_KEY` to your client-side [API Key](https://admin.moralis.io/web3apis) and initialize it via the start() method:
 
 ```js
-await Moralis.start({
+Moralis.start({
   apiKey: "YOUR_API_KEY",
 });
 ```
@@ -140,7 +140,7 @@ Next, import the module into a JavaScript file. Then change `YOUR_API_KEY` to yo
 ```js
 import Moralis from "moralis";
 
-await Moralis.start({
+Moralis.start({
   apiKey: "YOUR_API_KEY",
 });
 ```
@@ -309,7 +309,7 @@ const chain = "0x1";
 // or a number
 const chain = 1;
 
-await Moralis.EvmApi.balance.getNativeBalance({
+Moralis.EvmApi.balance.getNativeBalance({
   chain,
   ...otherParams,
 });
