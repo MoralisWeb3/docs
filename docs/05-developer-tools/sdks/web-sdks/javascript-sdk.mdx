@@ -60,22 +60,11 @@ When you go to production, make sure to specify a version of the SDK to use. Oth
 
 :::
 
-## Load moralis.min.js as an ES Module
-
-# TODO!
-
-If you want to use the EsModule (for example in a Webpack setup), then you need to:
-
-- Follow the guide in [NodeJs SDK](/developer-tools/sdks/nodejs)
-- Polyfill any NodeJs specific dependencies if needed (this is common since Webpack v5)
-
-As an example, you can see the setup in [this demo app on Github](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/client-webpack)
-
 ## Examples
 
 ### Getting native balance of an address via the EVM balance API
 
-In the `index.js` file update `YOUR_API_KEY` with your own API key and press the Run button.
+In `index.js` change `YOUR_API_KEY` with your own [API Key](https://admin.moralis.io/web3apis) and press Run or Refresh preview.
 
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import { Sandpack } from "@codesandbox/sandpack-react";
@@ -89,6 +78,7 @@ import { Sandpack } from "@codesandbox/sandpack-react";
     showConsole: true,
     showLineNumbers: true,
     autorun: false,
+    editorWidthPercentage: 60, // default - 50
   }}
   files={{
     "/index.html": `<!DOCTYPE html>
@@ -105,11 +95,14 @@ import { Sandpack } from "@codesandbox/sandpack-react";
     "/index.js": `Moralis.start({
   apiKey: "YOUR_API_KEY" // Replace with your own API KEY
 });
+ 
 const request = Moralis.EvmApi.balance.getNativeBalance({
   chain: "0x1", // Ethereum
   address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" // Vitalik.eth
 });
+ 
 const result = document.querySelector(".result");
+ 
 request
   .then((response) => response.jsonResponse)
   .then((data) => {
@@ -118,12 +111,15 @@ request
   .catch((error) => {
     console.log(error);
   });`,
-    "/.eslintrc": `{
+    "/.eslintrc": {
+      code: `{
   "globals": {
     "Moralis": true
   }
 }
 `,
+      hidden: true, // Tab visibility, defaults to `false`
+    },
   }}
 />
 
