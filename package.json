@@ -20,6 +20,8 @@
     "lint": "npx eslint --cache --report-unused-disable-directives \"**/*.{js,jsx,ts,tsx,mjs}\""
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.1.11",
+    "@codesandbox/sandpack-themes": "^2.0.21",
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/plugin-content-blog": "^2.3.1",
     "@docusaurus/plugin-ideal-image": "^2.3.1",

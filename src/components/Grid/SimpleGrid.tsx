@@ -38,8 +38,6 @@ export const SimpleGrid = ({ children, columns }: GridProps) => {
     return (12 / childCount) as GridColSpan
   }, [])
 
-  console.log({colSpan})
-
   return (
     <Row>
       {React.Children.map(children, (child, index) => {

@@ -9,10 +9,6 @@ export const webSdks = {
         src: "/img/external-logos/js.svg",
         alt: "javascript",
       },
-      {
-        src: "/img/external-logos/ts.svg",
-        alt: "typescript",
-      },
     ],
   },
   react: {
