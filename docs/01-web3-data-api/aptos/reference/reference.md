@@ -38,8 +38,8 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Coins
 
-- [Get Coins by coin type hash](/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes)
 - [Get latest deployed coins](/web3-data-api/aptos/reference/get-latest-coins)
+- [Get Coins by coin type hash](/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes)
 - [Get Coins by name range](/web3-data-api/aptos/reference/get-coins-by-name-range)
 - [Get Coins by symbol range](/web3-data-api/aptos/reference/get-coins-by-symbol-range)
 - [Get Coins by creator](/web3-data-api/aptos/reference/get-coins-by-creators)
