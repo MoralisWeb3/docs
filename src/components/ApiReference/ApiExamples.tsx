@@ -251,6 +251,43 @@ export const formatParamsByLang = (params: any, lang: string) => {
     if (key !== formattedKey) {
       params[formattedKey] = params[key];
       delete params[key];
+      // Handling hex chain values for NodeJS SDK
+    } else if (formattedKey === "chain" && lang === "node") {
+      params.chain = (() => {
+        const { chain } = params ?? {};
+        switch (chain) {
+          case "eth":
+            return "0x1";
+          case "goerli":
+            return "0x5";
+          case "sepolia":
+            return "0xaa36a7";
+          case "polygon":
+            return "0x89";
+          case "mumbai":
+            return "0x13881";
+          case "bsc":
+            return "0x38";
+          case "bsc testnet":
+            return "0x61";
+          case "avalanche":
+            return "0xa86a";
+          case "avalanche testnet":
+            return "0xa869";
+          case "fantom":
+            return "0xfa";
+          case "palm":
+            return "0x2a15c308d";
+          case "cronos":
+            return "0x19";
+          case "cronos testnet":
+            return "0x152";
+          case "arbitrum":
+            return "0xa4b1";
+          default:
+            return chain;
+        }
+      })();
     }
   }
 
