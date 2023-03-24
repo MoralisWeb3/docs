@@ -418,7 +418,11 @@ const ApiExamples = ({
                       }),
                     ].join(""),
                     auth: auth,
-                    body: filterOutEmpty(values.body),
+                    body:
+                      // temporary fix for runContractFunction
+                      path === "/:address/function"
+                        ? values.body
+                        : filterOutEmpty(values.body),
                     authField,
                   })}
             </CodeBlock>
