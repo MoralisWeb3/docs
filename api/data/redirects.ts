@@ -6163,7 +6163,7 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
@@ -6536,6 +6536,13 @@ export const redirects = [
   {
     source: "/streams-api/integrations/firebase",
     destination: "/streams-api/evm/integrations/firebase",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
 ];

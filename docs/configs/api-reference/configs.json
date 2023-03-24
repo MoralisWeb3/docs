@@ -16652,7 +16652,7 @@
     "getCoinTransfersByOwnerAddresses": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
-      "summary": "Get Coin Transfers by wallet addresses",
+      "summary": "Get Coin transfers by wallet(s)",
       "description": "",
       "method": "GET",
       "path": "/coins/transfers/wallets",

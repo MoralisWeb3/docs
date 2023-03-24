@@ -46,10 +46,9 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Coin Transfers
 
-- [Get Coin Transfers by wallet addresses](/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses)
+- [Get Coin transfers by wallet(s)](/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses)
 - [Get Coin transfers by block height(s)](/web3-data-api/aptos/reference/get-coin-transfers-by-block-heights)
 - [Get Coin transfers by coin type](/web3-data-api/aptos/reference/get-coin-transfers-by-coin-type)
-- [Get Coin transfers by wallet(s)](/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses)
 
 #### Get Coin Balances
 
