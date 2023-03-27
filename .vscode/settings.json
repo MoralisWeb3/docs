@@ -12,6 +12,7 @@
   "grammarly.config.documentDomain": "business",
   "markdown.validate.ignoredLinks": [
     "/web3-data-api/aptos/reference/get-coin-balances-by-wallets",
-    "/web3-data-api/aptos/reference/get-nft-collections-by-creator"
+    "/web3-data-api/aptos/reference/get-nft-collections-by-creator",
+    "/web3-data-api/aptos/reference/get-account-transactions"
   ]
 }
