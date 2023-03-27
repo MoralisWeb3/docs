@@ -540,13 +540,13 @@
                   "name": "token_address",
                   "type": "string",
                   "description": "The contract address",
-                  "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                  "example": "0xa4991609c508b6d4fb7156426db0bd49fe298bd8"
                 },
                 {
                   "name": "token_id",
                   "type": "string",
                   "description": "The id of the token",
-                  "example": 100
+                  "example": 12
                 }
               ]
             }
@@ -562,7 +562,7 @@
             "name": "media_items",
             "type": "boolean",
             "description": "Should preview media data be returned?",
-            "example": false
+            "example": true
           }
         ]
       },
