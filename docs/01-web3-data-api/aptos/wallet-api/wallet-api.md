@@ -22,7 +22,7 @@ Plus so much more!
 
 ## Popular use cases
 
-The Block API is extremely flexible, meaning it can support a wide range of use cases, including:
+The Wallet API is extremely flexible, meaning it can support a wide range of use cases, including:
 
 - Block Explorer
 - Transaction Monitoring

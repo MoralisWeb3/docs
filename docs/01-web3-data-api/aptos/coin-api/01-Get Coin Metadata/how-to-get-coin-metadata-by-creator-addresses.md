@@ -22,9 +22,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get coin metadata by creator addresses, Moralis provides you a [getCoinsByCreators](/web3-data-api/aptos/reference/get-coins-by-creators) endpoint to do so.
 
-Here you'll need one parameter: `address`.
+Here you'll need two parameters: `limit` and `creatorAddresses`.
 
-Once you have obtained the `address`, you can copy the following code:
+Once you have obtained both the `limit` and `creatorAddresses`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

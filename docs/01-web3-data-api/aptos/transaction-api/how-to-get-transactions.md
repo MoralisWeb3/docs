@@ -22,9 +22,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get transactions, Moralis provides you a [getTransactions](/web3-data-api/aptos/reference/get-transactions) endpoint to do so.
 
-Here you'll need one parameter: `address`.
+Here you'll need one parameter: `limit`.
 
-Once you have obtained the `address`, you can copy the following code:
+Once you have obtained the `limit`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
