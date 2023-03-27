@@ -144,6 +144,8 @@ Congratulations 🥳 You just got NFT collections by creator with just a few lin
 
 ## Youtube Video
 
+https://www.youtube.com/watch?v=8505sYAMLYc
+
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
