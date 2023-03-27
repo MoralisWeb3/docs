@@ -98,7 +98,7 @@ api_key = "YOUR_API_KEY"
 params = {
     "network": "mainnet",
     "limit": 10,
-    "ownerAddresses": ["0x34d54bca84f3a0e34b351d173d5934e93a6f1bb36892832de314239c96506d75"]
+    "owner_addresses": ["0x34d54bca84f3a0e34b351d173d5934e93a6f1bb36892832de314239c96506d75"]
 }
 
 result = aptos_api.wallets.get_coin_balances_by_wallets(
