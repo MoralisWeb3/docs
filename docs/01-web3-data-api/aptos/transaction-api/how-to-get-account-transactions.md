@@ -202,6 +202,8 @@ Congratulations 🥳 You just got account transactions with just a few lines of 
 
 ## Youtube Video
 
+https://www.youtube.com/watch?v=Z6kN01OJRM0
+
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
