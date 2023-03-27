@@ -2,7 +2,7 @@
 title: "How to get coin balances by wallet addresses"
 slug: "../how-to-get-coin-balances-by-wallet-addresses"
 description: "Learn how to get coin balances by wallet addresses using Moralis Wallet API."
-sidebar_label: "Get Coin Balances By Wallet Addresse"
+sidebar_label: "Get Coin Balances By Wallet Addresses"
 ---
 
 ## Prerequisites
