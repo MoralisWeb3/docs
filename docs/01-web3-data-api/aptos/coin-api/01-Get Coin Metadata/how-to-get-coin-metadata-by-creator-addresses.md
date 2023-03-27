@@ -179,6 +179,8 @@ Congratulations 🥳 You just got coin metadata by creator addresses with just a
 
 ## Youtube Video
 
+https://www.youtube.com/watch?v=Nx2hUqB0NWo
+
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
