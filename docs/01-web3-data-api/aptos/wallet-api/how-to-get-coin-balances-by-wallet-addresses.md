@@ -141,6 +141,8 @@ Congratulations 🥳 You just got coin balances by wallet addresses with just a 
 
 ## Youtube Video
 
+https://www.youtube.com/watch?v=dt8e7CSrsio
+
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
