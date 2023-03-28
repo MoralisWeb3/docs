@@ -17,7 +17,7 @@
     "typecheck": "tsc",
     "generate-reference": "node docs/configs/generate.ts",
     "generate-code": "node docs/configs/code/generate.ts",
-    "algolia": "node ./utils/algoliaCrawlerReindex.ts",
+    "algolia": "node ./utils/algoliaCrawlerReindex.mts",
     "lint": "npx eslint --cache --report-unused-disable-directives \"**/*.{js,jsx,ts,tsx,mjs}\""
   },
   "dependencies": {
