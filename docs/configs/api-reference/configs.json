@@ -14857,7 +14857,128 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "collection_data_id_hash",
+                  "type": "string",
+                  "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d",
+                  "description": "The identifier of the collection",
+                  "maxLength": 64,
+                  "minLength": 64,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "collection_name",
+                  "type": "string",
+                  "example": "Topaz Troopers",
+                  "description": "The name of the collection",
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "creator_address",
+                  "type": "string",
+                  "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                  "description": "The address of the creator of the collection",
+                  "maxLength": 66,
+                  "minLength": 66,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "example": "A badge which proves you are an OG #TopazTrooper.",
+                  "description": "The description of the collection",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "description_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the description can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "last_transaction_timestamp",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "2022-09-17T22:03:32.000000Z",
+                  "description": "The timestamp of the last transaction",
+                  "required": true
+                },
+                {
+                  "name": "last_transaction_version",
+                  "type": "string",
+                  "example": "210373856",
+                  "description": "The version of the last transaction",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "maximum",
+                  "type": "string",
+                  "example": "18446744073709551615",
+                  "description": "The maximum number of tokens that can be minted",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "maximum_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the maximum number of tokens can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "metadata_uri",
+                  "type": "string",
+                  "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg",
+                  "description": "The URI of the image of the collection",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "supply",
+                  "type": "string",
+                  "example": "32976",
+                  "description": "The number of tokens minted",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "table_handle",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "0x293d59ded27fc85fef070b026834d2be7e7ced76c3c32ecbcd4f44b461518c30",
+                  "description": "The address of the table that stores the tokens",
+                  "required": true
+                },
+                {
+                  "name": "uri_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the URI of the image can be changed",
+                  "nullable": false,
+                  "required": true
+                }
+              ]
+            }
+          }
+        },
         {
           "status": "400",
           "description": "",
