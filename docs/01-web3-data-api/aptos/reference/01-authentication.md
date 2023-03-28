@@ -8,7 +8,7 @@ The Moralis API uses API keys to authenticate requests. You can view your API ke
 
 Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
 
-Authentication to the API is performed via API Keys. Provide your API key as an `X-API-Key` header:
+Authentication to the API is performed via API Keys. Provide your API key as an `Bearer:` header:
 
 ```bash
 curl --request GET \
