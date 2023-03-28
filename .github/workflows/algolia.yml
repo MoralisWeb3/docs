@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: npm ci
+      - run: npm ci
       - name: Reindex Algolia Crawler
         run: npm run algolia
