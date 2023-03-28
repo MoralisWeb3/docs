@@ -1,6 +1,6 @@
-import React from 'react';
-import {useDocsVersionCandidates} from '@docusaurus/theme-common/internal';
-import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
+import React from "react";
+import { useDocsVersionCandidates } from "@docusaurus/theme-common/internal";
+import DefaultNavbarItem from "@theme/NavbarItem/DefaultNavbarItem";
 const getVersionMainDoc = (version) =>
   version.docs.find((doc) => doc.id === version.mainDocId);
 export default function DocsVersionNavbarItem({

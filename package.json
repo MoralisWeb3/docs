@@ -18,7 +18,12 @@
     "generate-reference": "node docs/configs/generate.ts",
     "generate-code": "node docs/configs/code/generate.ts",
     "algolia": "node ./utils/algoliaCrawlerReindex.ts",
-    "lint": "npx eslint --cache --report-unused-disable-directives \"**/*.{js,jsx,ts,tsx,mjs}\""
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
@@ -53,9 +58,16 @@
     "@docusaurus/eslint-plugin": "^2.4.0",
     "@docusaurus/module-type-aliases": "^2.4.0",
     "@tsconfig/docusaurus": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "cypress": "^12.3.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.8.7",
     "typescript": "^4.7.4",
-    "vercel": "^28.10.1"
+    "vercel": "^28.10.1",
+    "husky": "^7.0.0"
   },
   "browserslist": {
     "production": [

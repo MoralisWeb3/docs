@@ -23,10 +23,10 @@ const escapeChar = (str: string, char: string) =>
 const buildTemplate = (lines: Array<string | null>) =>
   lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent: number = 0) =>
+const line = (str: string, indent = 0) =>
   `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
-export const stringifyJSON = (obj: object, pretty: boolean = false) =>
+export const stringifyJSON = (obj: object, pretty = false) =>
   JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
 
 const tabs = [
@@ -235,8 +235,8 @@ export const filterOutEmpty = (value: any) => {
 };
 
 export const formatParamsByLang = (params: any, lang: string) => {
-  for (let key of Object.keys(params)) {
-    let formattedKey: string = "";
+  for (const key of Object.keys(params)) {
+    let formattedKey = "";
     switch (lang) {
       case "node":
         formattedKey = snakeToCamelCase(key);
@@ -294,6 +294,25 @@ export const formatParamsByLang = (params: any, lang: string) => {
   return params;
 };
 
+const customNodeSdkBody = (code: string, body: any) => {
+  // For `requestChallengeEvm` and `requestChallengeSolana`
+  if (code.includes("requestMessage")) {
+    const { chainId, network } = body ?? {};
+    if (chainId) {
+      return {
+        chain: `0x${parseInt(chainId).toString(16)}`,
+        chainId: undefined,
+        network: "evm",
+      };
+    } else if (network) {
+      return {
+        solNetwork: network,
+        network: "solana",
+      };
+    }
+  }
+};
+
 /**
  * @description – Only for NodeJS & Python Moralis SDK codes
  *
@@ -312,24 +331,6 @@ export const injectParamsToCode = (
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
     case "node":
-      const customNodeSDKBody = () => {
-        // For `requestChallengeEvm` and `requestChallengeSolana`
-        if (code.includes("requestMessage")) {
-          const { chainId, network } = body ?? {};
-          if (chainId) {
-            return {
-              chain: `0x${parseInt(chainId).toString(16)}`,
-              chainId: undefined,
-              network: "evm",
-            };
-          } else if (network) {
-            return {
-              solNetwork: network,
-              network: "solana",
-            };
-          }
-        }
-      };
       return code
         .replace(
           "{}",
@@ -338,7 +339,7 @@ export const injectParamsToCode = (
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
-              ...customNodeSDKBody(),
+              ...customNodeSdkBody(code, body),
             },
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)

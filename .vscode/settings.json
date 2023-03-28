@@ -1,5 +1,4 @@
 {
-  "cSpell.words": ["Moralis"],
   "grammarly.files.include": [
     "**/readme.md",
     "**/README.md",
@@ -7,6 +6,16 @@
     "**/*.md",
     "**/*.mdx"
   ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown"
+  ],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
   "grammarly.startTextCheckInPausedState": true,
   "grammarly.config.suggestions.OxfordComma": true,
   "grammarly.config.documentDomain": "business",
@@ -17,5 +26,6 @@
     "/web3-data-api/aptos/reference/get-transactions",
     "/web3-data-api/aptos/reference/get-coins-by-creators",
     "/web3-data-api/aptos/reference/get-latest-coins"
-  ]
+  ],
+  "eslint.workingDirectories": [".eslintrc", ".eslintignore"]
 }
