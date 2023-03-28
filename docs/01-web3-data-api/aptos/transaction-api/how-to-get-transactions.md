@@ -230,8 +230,6 @@ In your terminal, you should see the following JSON response:
 
 Congratulations 🥳 You just got transactions with just a few lines of code using the Moralis Transaction API!
 
-## Youtube Video
-
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
