@@ -6163,7 +6163,7 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
@@ -6539,6 +6539,13 @@ export const redirects = [
     permanent: true,
   },
   {
+    source:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
+    permanent: true,
+  },
+  {
     source: "/web3-data-api/evm/token-api/erc20-spam-detection",
     destination: "/web3-data-api/evm/erc20-spam-detection",
     permanent: true,
@@ -6567,13 +6574,13 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/aptos/coin-api/how-to-get-latest-deployed-coins",
-    destination: "/web3-data-api/coin-api/how-to-get-latest-deployed-coins",
+    destination: "/web3-data-api/aptos/how-to-get-latest-deployed-coins",
     permanent: true,
   },
   {
     source:
       "/web3-data-api/aptos/nft-api/how-to-get-nft-collections-by-creator",
-    destination: "/web3-data-api/nft-api/how-to-get-nft-collections-by-creator",
+    destination: "/web3-data-api/aptos/how-to-get-nft-collections-by-creator",
     permanent: true,
   },
   {

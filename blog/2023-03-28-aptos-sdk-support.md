@@ -15,7 +15,7 @@ We are happy to announce that our SDKs now support Aptos! Try it out today with 
 
 ### Tutorials
 
-- [How to get NFT collections by creator](web3-data-api/aptos/nft-api/how-to-get-nft-collections-by-creator)
-- [How to get coin metadata by creator addresses](/web3-data-api/aptos/coin-api/how-to-get-coin-metadata-by-creator-addresses)
+- [How to get NFT collections by creator](web3-data-api/aptos/how-to-get-nft-collections-by-creator)
+- [How to get coin metadata by creator addresses](/web3-data-api/aptos/how-to-get-coin-metadata-by-creator-addresses)
 - [How to get coin balances by wallet addresses](/web3-data-api/aptos/how-to-get-coin-balances-by-wallet-addresses)
 
