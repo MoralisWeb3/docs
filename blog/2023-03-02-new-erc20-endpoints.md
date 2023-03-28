@@ -3,7 +3,7 @@ title: "Mints, Burns, Approvals & Transfers 🔥"
 slug: "2023-03-02-new-erc20-endpoints.md"
 authors:
   name: Reuben Salisbury
-tags: [API]
+tags: [Web3 Data API]
 ---
 
 Today we have launched four new ERC20 token endpoints allowing you to quickly fetch mints, burns, approvals and transfers for any wallet or contract address 🚀

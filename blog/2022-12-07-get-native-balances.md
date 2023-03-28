@@ -3,7 +3,7 @@ title: "Streams Get native balances"
 slug: "streams-include-native-balances"
 authors:
   name: Elias
-tags: [Streams]
+tags: [Streams API]
 ---
 
 There is a new option added to the Stream options. By setting getNativeBalances you can get the native balances of addresses in your webhook! Read more here!

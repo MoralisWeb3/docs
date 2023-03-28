@@ -3,7 +3,7 @@ title: "NFT Image Previews ⚡"
 slug: "nft-image-previews"
 authors:
   name: Reuben Salisbury
-tags: [API]
+tags: [Web3 Data API]
 ---
 
 Time to optimize your NFTs! 

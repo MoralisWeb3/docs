@@ -3,7 +3,7 @@ title: "New disable_total flag for faster response times"
 slug: "disable-total-for-faster-response-times"
 authors:
   name: Reuben Salisbury
-tags: [API]
+tags: [Web3 Data API]
 ---
 
 In order to vastly improve the response times on a number of endpoints (by up to x10!), we are planning to phase out support for `total` within our API responses.

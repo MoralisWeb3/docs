@@ -3,7 +3,7 @@ title: "Streams API Launched 🎉"
 slug: "moralis-launches-streams-api"
 authors:
   name: Ossian Markiewicz
-tags: [Streams]
+tags: [Streams API]
 ---
 
 Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos and all testnets are supported. We’re working on adding more networks every day! 🚀🎉

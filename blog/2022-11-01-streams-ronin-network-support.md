@@ -3,7 +3,7 @@ title: "Streams Ronin Network Support ✨"
 slug: "streams-ronin-network-support"
 authors:
   name: Ossian Markiewicz
-tags: [Streams]
+tags: [Streams API]
 ---
 
 We’re thrilled to be launching the first-ever real-time Ronin events stream! ✨

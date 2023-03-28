@@ -3,7 +3,7 @@ title: "Update to disable_total flag"
 slug: "disable-total-set-to-true"
 authors:
   name: Reuben Salisbury
-tags: [API]
+tags: [Web3 Data API]
 ---
 
 As outlined in an [earlier update](/changelog/disable-total-for-faster-response-times), today we've made a change to the default behaviour of `disable_total` on a number of endpoints in order to vastly improve their response times.

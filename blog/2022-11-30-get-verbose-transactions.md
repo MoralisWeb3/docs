@@ -3,7 +3,7 @@ title: "Get Verbose Transactions"
 slug: "apis-get-verbose-transactions"
 authors:
   name: Reuben Salisbury
-tags: [API]
+tags: [Web3 Data API]
 ---
 
 One API - all transactions and logs. ✨ Use our Verbose Transaction Endpoint and save yourself the hassle of multiple API calls. What's more, this Transaction API endpoint extracts data sequenced by block number. Organized - just how you like it.
