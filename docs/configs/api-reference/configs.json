@@ -15692,11 +15692,7 @@
     "getNFTTransfersByIds": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
-<<<<<<< HEAD
       "summary": "Get NFT transfers by token(s)",
-=======
-      "summary": "Get NFT Transfers by Token ids",
->>>>>>> bd04bf35dc3c2e8099312552d0c554585fd9d984
       "description": "",
       "method": "GET",
       "path": "/nfts/transfers",
