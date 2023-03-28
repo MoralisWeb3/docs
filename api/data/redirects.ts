@@ -6574,13 +6574,13 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/aptos/coin-api/how-to-get-latest-deployed-coins",
-    destination: "/web3-data-api/coin-api/how-to-get-latest-deployed-coins",
+    destination: "/web3-data-api/aptos/how-to-get-latest-deployed-coins",
     permanent: true,
   },
   {
     source:
       "/web3-data-api/aptos/nft-api/how-to-get-nft-collections-by-creator",
-    destination: "/web3-data-api/nft-api/how-to-get-nft-collections-by-creator",
+    destination: "/web3-data-api/aptos/how-to-get-nft-collections-by-creator",
     permanent: true,
   },
   {
