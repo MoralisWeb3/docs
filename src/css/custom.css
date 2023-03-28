@@ -10,7 +10,6 @@
   font-style: normal;
   font-weight: 400;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
-   
     format("woff2");
   font-display: swap;
 }
@@ -19,7 +18,6 @@
   font-style: normal;
   font-weight: 500;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
-   
     format("woff2");
   font-display: swap;
 }
@@ -28,7 +26,6 @@
   font-style: normal;
   font-weight: 600;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
-   
     format("woff2");
   font-display: swap;
 }
@@ -37,7 +34,6 @@
   font-style: normal;
   font-weight: 700;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
-   
     format("woff2");
   font-display: swap;
 }
@@ -46,7 +42,6 @@
   font-style: normal;
   font-weight: 800;
   src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
-   
     format("woff2");
   font-display: swap;
 }
@@ -179,9 +174,9 @@ video {
 }
 
 .card h3 {
-  display:  flex;
-  
-  align-items:  center;
+  display: flex;
+
+  align-items: center;
 }
 
 .hero {
@@ -190,15 +185,17 @@ video {
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-.col:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]) 
-{
+.col:has(
+    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"])
-{
+li:has(
+    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+  ) {
   display: none;
 }
 
@@ -308,7 +305,6 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
   width: auto;
 }
 
- 
 .web3-data-api .menu__list,
 .streams-api .menu__list {
   background-color: var(--ifm-background-surface-color);
@@ -317,23 +313,35 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
 
 .web3-data-api .menu__list-item.theme-doc-sidebar-item-category-level-1,
 .streams-api .menu__list-item.theme-doc-sidebar-item-category-level-1 {
-  margin-top: 6px
+  margin-top: 6px;
 }
 
-.web3-data-api .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
-.streams-api .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link,
+.web3-data-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
+.streams-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link {
   font-family: var(--ifm-heading-font-family);
   font-size: 15px;
   padding-left: 10px;
-  padding-right: 6px
+  padding-right: 6px;
 }
 
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before,
-.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
+.web3-data-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link:before,
+.streams-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link:before {
   content: "";
   width: 16px;
   height: 16px;
@@ -349,7 +357,7 @@ li:has(> a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net
 }
 
 a.menu__link {
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 a.menu__link:hover {
@@ -462,7 +470,7 @@ li.sidebar-utils-api a.menu__link:before {
 li.sidebar-utils-api a.menu__link:hover:before,
 li.sidebar-utils-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/utils-api-active.svg);
-} 
+}
 
 li.sidebar-api-reference a.menu__link:before {
   background-image: url(/img/sidebar-icons/api-reference.svg);
@@ -543,7 +551,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   .navbar__items--right {
     flex: 1;
   }
- 
+
   .navbar__items > .navbar__item--linebreak {
     flex-basis: 100%;
     height: 0;
@@ -555,13 +563,12 @@ li.sidebar-developer-tools a.menu__link--active:before {
   .navbar__items > .navbar__item--linebreak hr {
     height: 0;
   }
-  
+
   .navbar__items > .navbar__item--login {
     margin-right: 0;
   }
 }
 
 .markdown h1:first-child {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
-

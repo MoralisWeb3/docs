@@ -25,4 +25,14 @@ Yes, the use of `media_items=true` will increase the cost of that API request by
 
 
 ### I'm using the query parameter, but I'm not receiving any previews, why?
-If image previews for an NFT haven't been generated previously, the generation process starts when the NFT is accessed via the API for the first time. The image previews will then be available on subsequent API calls.
+If image previews for an NFT haven't been generated previously, the generation process starts when the NFT is accessed via the API for the very first time. Once processing has been completed, the image previews will then be available on subsequent API calls.
+
+Preview generation can have the following statuses:
+- `success` - The NFT preview was created and retrieved successfully.
+- `processing` - The NFT preview does not yet exist for this NFT, and it is currently being processed.
+- `unsupported_media` - The mime-type of the NFT's media file indicates a type not currently supported.
+- `invalid_url` - The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.
+- `host_unavailable` - The 'image' URL from the NFT's metadata returned a HttpCode indicating the host / file is not available.
+- `temporarily_unavailable` - The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.
+
+Regardless of the preview generation status, in all cases the API will return the `original_media_url`.

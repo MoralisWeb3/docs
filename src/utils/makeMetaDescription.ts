@@ -1,4 +1,10 @@
-const makeMetaDescription = ({ description, path }: { description?: string; path?: string }) => {
+const makeMetaDescription = ({
+  description,
+  path,
+}: {
+  description?: string;
+  path?: string;
+}) => {
   if (description) {
     return `${description.replace(".", "")} [API Documentation].`;
   }

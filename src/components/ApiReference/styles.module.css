@@ -1,7 +1,7 @@
 .form {
   position: relative;
   z-index: 1;
-  margin: .75rem 0;
+  margin: 0.75rem 0;
 }
 
 .runner {
@@ -330,7 +330,7 @@ button.groupHeader:focus {
 }
 
 .ToggleGroupItem:hover,
-.ToggleGroupItem[data-state='on'] {
+.ToggleGroupItem[data-state="on"] {
   color: var(--ifm-link-hover-color);
   border-bottom: 2px solid var(--ifm-navbar-link-hover-color);
 }

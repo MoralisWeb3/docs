@@ -9,8 +9,12 @@ import styles from "./styles.module.css";
 interface ApiParamBaseInputProps extends FieldComponentProps {
   multiline?: boolean;
   enum?: Array<string | boolean>;
-  valueToString?: (value: string | FieldComponentProps["param"]["example"]) => string;
-  stringToValue?: (value: string) => string | FieldComponentProps["param"]["example"];
+  valueToString?: (
+    value: string | FieldComponentProps["param"]["example"]
+  ) => string;
+  stringToValue?: (
+    value: string
+  ) => string | FieldComponentProps["param"]["example"];
 }
 
 const ApiParamBaseInput = ({
@@ -55,12 +59,21 @@ const ApiParamBaseInput = ({
   const fieldProps = {
     ...field,
     value:
-      field.value == null ? "" : valueToString ? valueToString(field.value) : String(field.value),
+      field.value == null
+        ? ""
+        : valueToString
+        ? valueToString(field.value)
+        : String(field.value),
     onChange: handleChange,
   };
 
   return (
-    <div tabIndex={-1} className={styles.inputContainer} onFocus={handleFocus} onBlur={handleBlur}>
+    <div
+      tabIndex={-1}
+      className={styles.inputContainer}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+    >
       {options ? (
         <select {...fieldProps} className={inputClassName}>
           <option />
@@ -73,7 +86,14 @@ const ApiParamBaseInput = ({
       ) : (
         <input {...fieldProps} className={inputClassName} />
       )}
-      {focused && <ApiParamInputOverlay field={field} form={form} meta={meta} param={param} />}
+      {focused && (
+        <ApiParamInputOverlay
+          field={field}
+          form={form}
+          meta={meta}
+          param={param}
+        />
+      )}
     </div>
   );
 };

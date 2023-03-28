@@ -126,9 +126,112 @@ print(result)`,
         break;
       case "aptos-web3":
         // Web3 Data API – Aptos
-        /**
-         * Currently Aptos APIs have not been integrated with the SDKs
-         */
+        Object.keys(apiReference[group]).map((fctn) => {
+          const { pathParams, queryParams, bodyParam } =
+            apiReference[group][fctn] ?? {};
+
+          const aptosGroup = () => {
+            switch (fctn) {
+              case "getAccount":
+              case "getAccountModule":
+              case "getAccountModules":
+              case "getAccountResource":
+              case "getAccountResources":
+              case "getEventsByCreationNumber":
+              case "getEventsByEventHandle":
+                return "accounts";
+              case "getBlockByHeight":
+              case "getBlockByVersion":
+                return "blocks";
+              case "getCoinInfoByCoinTypeHashes":
+              case "getCoinTransfersByBlockHeight":
+              case "getCoinTransfersByCoinType":
+              case "getCoinTransfersByOwnerAddresses":
+              case "getCoinByCreators":
+              case "getCoinsByNameRange":
+              case "getCoinsBySymbolRange":
+              case "getLatestCoins":
+              case "getTopHoldersByCoin":
+                return "coins";
+              case "getNFTCollections":
+              case "getNFTCollectionsByCreator":
+              case "getNFTCollectionsByIds":
+                return "collections";
+              case "getNFTOwnersByCollection":
+              case "getNFTOwnersByTokens":
+              case "getNFTOwnersOfCollection":
+              case "getNFTTransfersByCollection":
+              case "getNFTTransfersByCreators":
+              case "getNFTTransfersByIds":
+              case "getNFTTransfersByWallets":
+              case "getNFTsByCollection":
+              case "getNFTsByCreators":
+              case "getNFTsByIds":
+                return "nfts";
+              case "encodeSubmission":
+              case "estimateGasPrice":
+              case "getAccountTransactions":
+              case "getTransactionByHash":
+              case "getTransactionByVersion":
+              case "getTransactions":
+              case "simulateTransaction":
+              case "submitBatchTransactions":
+              case "submitTransaction":
+                return "transactions";
+              case "getCoinBalancesByWallets":
+              case "getCoinTransfersByWalletAddresses":
+              case "getHistoricalCoinBalancesByWallets":
+              case "getNFTByOwners":
+              case "getWalletsNFTTransfers":
+              default:
+                return "wallets";
+            }
+          };
+
+          apiReference[group][fctn].codeSamples = [
+            {
+              language: "node",
+              code: `import Moralis from 'moralis';
+
+try {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+
+  const response = Moralis.AptosApi.${aptosGroup()}.${fctn}({});
+
+  console.log(response);
+} catch (e) {
+  console.error(e);
+}`,
+              name: "Moralis NodeJS SDK",
+            },
+            {
+              language: "python",
+              code: `from moralis import aptos_api
+
+api_key = "YOUR_API_KEY"
+${bodyParam ? `\nbody = []\n` : ""}${
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\nparams = {}\n`
+                  : ""
+              }
+result = aptos_api.${aptosGroup()}.${camelToSnakeCase(fctn).replaceAll(
+                "-",
+                "_"
+              )}(
+  api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
+                queryParams.length > 0 || pathParams.length > 0
+                  ? `\n  params=params,`
+                  : ""
+              }
+)
+
+print(result)`,
+              name: "Moralis Python SDK",
+            },
+          ];
+        });
         break;
       case "streams":
         // Streams API
