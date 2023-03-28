@@ -1,12 +1,17 @@
 name: Reindex Algolia Crawler
 
 on:
-  schedule:
-  - cron: "0 * * * *"
+  [push]
+  # schedule:
+  #   - cron: "0 * * * *"
 
 jobs:
   reindex:
     runs-on: ubuntu-latest
     steps:
-    - name: Reindex Algolia Crawler
-      run: npm run algolia
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Reindex Algolia Crawler
+        run: npm run algolia
