@@ -26,6 +26,18 @@
     "/web3-data-api/aptos/reference/get-transactions",
     "/web3-data-api/aptos/reference/get-coins-by-creators",
     "/web3-data-api/aptos/reference/get-latest-coins",
+    "/web3-data-api/evm/reference/get-token-price",
+    "/web3-data-api/evm/reference/get-wallet-transactions",
+    "/web3-data-api/evm/reference/get-contract-logs",
+    "/web3-data-api/evm/reference/get-wallet-token-balances",
+    "/web3-data-api/evm/reference/get-erc20-mints",
+    "/web3-data-api/evm/reference/get-erc20-burns",
+    "/web3-data-api/evm/reference/compute-units-cu",
+    "/web3-data-api/evm/reference/get-token-transfers",
+    "/web3-data-api/evm/reference/get-wallet-token-transfers",
+    "/web3-data-api/evm/reference/get-block",
+    "/web3-data-api/evm/reference/get-erc20-approvals",
+    "/changelog/planned-cu-increase-across-multiple-endpoints",
     "/web3-data-api/evm/nft-spam-detection"
   ],
   "eslint.workingDirectories": [".eslintrc", ".eslintignore"]
