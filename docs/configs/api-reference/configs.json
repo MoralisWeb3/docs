@@ -15739,7 +15739,190 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "cursor": {
+              "type": "string",
+              "nullable": true,
+              "required": true,
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4",
+              "description": "The cursor to use for the next page of results. (Cursor is null on last page)"
+            },
+            "hasNextPage": {
+              "type": "boolean",
+              "example": true,
+              "description": "Indicates if there is a next page of results",
+              "nullable": false,
+              "required": true
+            },
+            "result": {
+              "description": "The collections for the given creators",
+              "example": [],
+              "nullable": false,
+              "maxItems": 100,
+              "minItems": 0,
+              "required": true,
+              "type": "array",
+              "field": {
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "coin_amount",
+                    "type": "string",
+                    "nullable": false,
+                    "example": "2",
+                    "description": "The number of tokens transferred",
+                    "required": true
+                  },
+                  {
+                    "name": "coin_type",
+                    "type": "string",
+                    "nullable": false,
+                    "example": null,
+                    "description": "The type of tokens transferred",
+                    "required": true
+                  },
+                  {
+                    "name": "collection_data_id_hash",
+                    "type": "string",
+                    "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d",
+                    "description": "The identifier of the collection",
+                    "maxLength": 64,
+                    "minLength": 64,
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "collection_name",
+                    "type": "string",
+                    "example": "Topaz Troopers",
+                    "description": "The name of the collection",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "creator_address",
+                    "type": "string",
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                    "description": "The address of the creator of the collection",
+                    "maxLength": 66,
+                    "minLength": 66,
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "event_account_address",
+                    "type": "string",
+                    "example": "0xa748de66f1eea7d32399b59027ab0b3786295313e2c3a1608b5d51e759aee6dd",
+                    "description": "The account address of the transfer",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "event_creation_number",
+                    "type": "string",
+                    "example": "2",
+                    "description": "The creation number of the event",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "event_sequence_number",
+                    "type": "string",
+                    "example": "2",
+                    "description": "The sequence number of the event",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "from_address",
+                    "type": "string",
+                    "nullable": false,
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                    "description": "The address sending the transfer",
+                    "maxLength": 66,
+                    "minLength": 66,
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "example": "Topaz Troopers 123",
+                    "description": "The name of the token",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "property_version",
+                    "type": "string",
+                    "example": "1",
+                    "description": "The property version of the token",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "nullable": false,
+                    "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                    "description": "The address recieving the transfer",
+                    "maxLength": 66,
+                    "minLength": 66,
+                    "required": true
+                  },
+                  {
+                    "name": "token_amount",
+                    "type": "string",
+                    "example": "2",
+                    "description": "The number of tokens transferred",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "token_data_id_hash",
+                    "type": "string",
+                    "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1",
+                    "description": "The identifier of the token",
+                    "maxLength": 64,
+                    "minLength": 64,
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "transaction_timestamp",
+                    "type": "string",
+                    "nullable": false,
+                    "example": "2022-09-17T22:03:32.000000Z",
+                    "description": "The timestamp of the transfer",
+                    "required": true
+                  },
+                  {
+                    "name": "transaction_version",
+                    "type": "string",
+                    "example": "210373856",
+                    "description": "The version of the transaction that the transfer is a part of",
+                    "nullable": false,
+                    "required": true
+                  },
+                  {
+                    "name": "transfer_type",
+                    "type": "string",
+                    "example": "0x3::token::DepositEvent",
+                    "description": "The type of transfer",
+                    "nullable": false,
+                    "required": true
+                  }
+                ]
+              }
+            }
+          }
+        },
         {
           "status": "400",
           "description": "",
