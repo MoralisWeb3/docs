@@ -1,4 +1,5 @@
 const { config } = require("dotenv");
+import fetch from "node-fetch";
 
 // inject environment variables
 config();
