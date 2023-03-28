@@ -1,6 +1,6 @@
 ---
 title: "Report Spam"
-slug: "../report-erc20-spam"
+slug: "../../report-erc20-spam"
 description: "ERC20 spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
 sidebar_position: 6
 ---
