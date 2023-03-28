@@ -3,6 +3,7 @@ title: "[Notice] CU change across multiple endpoints"
 slug: "cu-increase-across-multiple-endpoints"
 authors:
   name: Reuben Salisbury
+tags: [Notice]
 ---
 
 As outlined in an [earlier post](/changelog/planned-cu-increase-across-multiple-endpoints), today we have change the compute units (CUs) charged on the below endpoints will be changing as per the following table:
