@@ -9,7 +9,7 @@ async function reindex() {
     const BASE64_BASIC_AUTH = `Basic ${Buffer.from(
       `${process.env.CRAWLER_USER_ID}:${process.env.CRAWLER_API_KEY}`
     ).toString("base64")}`;
-    const res = await fetch(
+    fetch(
       `https://crawler.algolia.com/api/1/crawlers/${process.env.CRAWLER_ID}/reindex`,
       {
         method: "POST",
@@ -19,7 +19,6 @@ async function reindex() {
         },
       }
     );
-    console.log(res);
   } catch (e) {
     console.error(e);
   }
