@@ -29,7 +29,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get NFT Transfers
 
-- [Get NFT Transferss by Token ids](/web3-data-api/aptos/reference/get-nft-transfers-by-ids)
+- [Get NFT Transfers by Token ids](/web3-data-api/aptos/reference/get-nft-transfers-by-ids)
 - [Get NFT Transfers by Collection](/web3-data-api/aptos/reference/get-nft-transfers-by-collection)
 - [Get NFT Transfers by creators](/web3-data-api/aptos/reference/get-nft-transfers-by-creators)
 - [Get NFT Transfers by wallets](/web3-data-api/aptos/reference/get-nft-transfers-by-wallets)
