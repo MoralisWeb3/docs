@@ -1,6 +1,6 @@
 ---
-title: "Transaction API"
-slug: "../transaction-api"
+title: "Transactions API"
+slug: "../transactions-api"
 description: "The Transaction API is a tool that allows Web3 developers to easily access transaction data from Aptos blockchains."
 sidebar_position: 6
 sidebar_class_name: "sidebar-transaction-api"

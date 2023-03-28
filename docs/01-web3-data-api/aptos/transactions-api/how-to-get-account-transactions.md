@@ -42,7 +42,7 @@ const runApp = async () => {
   });
 
   const address =
-    "0x57410cf1141dd18aef4acf956d3c35a9634111642c5ed0ab0d017d634869959b";
+    "0x34d54bca84f3a0e34b351d173d5934e93a6f1bb36892832de314239c96506d75";
 
   const response = await Moralis.AptosApi.transactions.getAccountTransactions({
     address,
@@ -67,7 +67,7 @@ const runApp = async () => {
   });
 
   const address =
-    "0x57410cf1141dd18aef4acf956d3c35a9634111642c5ed0ab0d017d634869959b";
+    "0x34d54bca84f3a0e34b351d173d5934e93a6f1bb36892832de314239c96506d75";
 
   const response = await Moralis.AptosApi.transactions.getAccountTransactions({
     address,
@@ -89,7 +89,7 @@ api_key = "YOUR_API_KEY"
 
 params = {
     "network": "mainnet",
-    "address": "0x57410cf1141dd18aef4acf956d3c35a9634111642c5ed0ab0d017d634869959b"
+    "address": "0x34d54bca84f3a0e34b351d173d5934e93a6f1bb36892832de314239c96506d75"
 }
 
 result = aptos_api.transactions.get_account_transactions(

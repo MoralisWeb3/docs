@@ -1,8 +1,9 @@
 ---
-title: "[Notice] Planned CU change across multiple endpoints"
+title: "Planned CU change across multiple endpoints"
 slug: "planned-cu-increase-across-multiple-endpoints"
 authors:
   name: Reuben Salisbury
+tags: [Notice]
 ---
 
 From 28th March 2023, the compute units (CUs) charged on the below endpoints will be changing as per the following table:

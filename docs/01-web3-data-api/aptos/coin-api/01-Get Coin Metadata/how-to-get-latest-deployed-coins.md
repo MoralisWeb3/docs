@@ -1,6 +1,6 @@
 ---
 title: "How to get latest deployed coins"
-slug: "../how-to-get-latest-deployed-coins"
+slug: "../../how-to-get-latest-deployed-coins"
 description: "Learn how to get latest deployed coins using Moralis Coin API."
 sidebar_label: Get Latest Deployed Coins
 ---
