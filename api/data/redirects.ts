@@ -6576,4 +6576,9 @@ export const redirects = [
     destination: "/web3-data-api/nft-api/how-to-get-nft-collections-by-creator",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/aptos/transaction-api",
+    destination: "/web3-data-api/aptos/transactions-api",
+    permanent: true,
+  },
 ];
