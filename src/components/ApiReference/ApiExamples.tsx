@@ -326,7 +326,9 @@ export const injectParamsToCode = (
   code: string,
   lang: string,
   params: any,
-  auth: string
+  auth: string,
+  network: string,
+  aptosNetwork: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
@@ -340,6 +342,7 @@ export const injectParamsToCode = (
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
               ...customNodeSdkBody(code, body),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
@@ -374,7 +377,11 @@ const ApiExamples = ({
   apiHost,
   path,
   codeSamples,
-}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+  aptosNetwork,
+}: Pick<
+  ApiReferenceProps,
+  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
+>) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
   const { path: pagePath, network } = usePageState();
@@ -404,7 +411,16 @@ const ApiExamples = ({
             <CodeBlock className={`language-${langCode}`}>
               {code
                 ? buildTemplate([
-                    line(injectParamsToCode(code, lang, values, auth)),
+                    line(
+                      injectParamsToCode(
+                        code,
+                        lang,
+                        values,
+                        auth,
+                        network,
+                        aptosNetwork
+                      )
+                    ),
                   ])
                 : template({
                     method,

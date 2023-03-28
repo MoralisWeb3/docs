@@ -40,6 +40,7 @@ export interface ApiReferenceProps {
   testHost?: string;
   codeSamples?: CodeSample[];
   children?: Component;
+  aptosNetwork?: "mainnet" | "testnet";
 }
 
 export interface FormValues {
@@ -298,6 +299,7 @@ const ApiReference = ({
                   method={method}
                   apiHost={hostUrl}
                   path={path}
+                  aptosNetwork={network}
                   codeSamples={codeSamples}
                 />
 
