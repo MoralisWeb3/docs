@@ -37,7 +37,8 @@
     "/web3-data-api/evm/reference/get-wallet-token-transfers",
     "/web3-data-api/evm/reference/get-block",
     "/web3-data-api/evm/reference/get-erc20-approvals",
-    "/changelog/planned-cu-increase-across-multiple-endpoints"
+    "/changelog/planned-cu-increase-across-multiple-endpoints",
+    "/web3-data-api/evm/nft-spam-detection"
   ],
   "eslint.workingDirectories": [".eslintrc", ".eslintignore"]
 }
