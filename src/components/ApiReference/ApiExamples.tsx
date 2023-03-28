@@ -357,6 +357,7 @@ export const injectParamsToCode = (
             {
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
           ).replace(/\n/g, `\n`)
