@@ -24,6 +24,8 @@ Similarly, the CUs charged for the following query parameter has changed:
 
 | Query Parameter                 | Previous Compute Units | New Compute Units |
 | ------------------------------- | ---------------------- | ----------------- |
-| `include=internal_transactions` | 0                      | 5                 |
+| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions) | 0                      | 5                |
+| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 0         | 3           |
+| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block) | 0         | 10           |
 
 For more information about what CUs are and how they're charged, visit our [Compute Units page](/web3-data-api/evm/reference/compute-units-cu).
