@@ -1,8 +1,9 @@
 name: Reindex Algolia Crawler
 
 on:
-  schedule:
-    - cron: "0 * * * *"
+  [push]
+  # schedule:
+  #   - cron: "0 * * * *"
 
 jobs:
   reindex:
@@ -14,4 +15,8 @@ jobs:
           node-version: 16
       - run: npm ci
       - name: Reindex Algolia Crawler
+        env:
+          CRAWLER_API_KEY: ${{secrets.CRAWLER_API_KEY}}
+          CRAWLER_USER_ID: ${{secrets.CRAWLER_USER_ID}}
+          CRAWLER_ID: ${{secrets.CRAWLER_ID}}
         run: npm run algolia
