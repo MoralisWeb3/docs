@@ -28,7 +28,7 @@ const response = await Moralis.EvmApi.nft.getNFTMetadata({
   address,
   chain,
   tokenId,
-  normalizedMetadata: true,
+  normalizeMetadata: true,
 });
 
 console.log(response.toJSON());
