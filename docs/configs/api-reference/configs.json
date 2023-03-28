@@ -13950,7 +13950,198 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "collection_data_id_hash",
+                  "type": "string",
+                  "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d",
+                  "description": "The identifier of the collection",
+                  "maxLength": 64,
+                  "minLength": 64,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "collection_name",
+                  "type": "string",
+                  "example": "Topaz Troopers",
+                  "description": "The name of the collection",
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "creator_address",
+                  "type": "string",
+                  "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                  "description": "The address of the creator of the collection",
+                  "maxLength": 66,
+                  "minLength": 66,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "default_properties",
+                  "type": "object",
+                  "example": "{\"point\": \"0x30\", \"author\": \"0x33454e4a4f59204c616273\"}",
+                  "description": "The default properties of the token",
+                  "nullable": true,
+                  "required": true
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "example": "A badge which proves you are an OG #TopazTrooper.",
+                  "description": "The description of the collection",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "description_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the description can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "largest_property_version",
+                  "type": "string",
+                  "example": "1",
+                  "description": "largest_property_version",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "last_transaction_timestamp",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "2022-09-17T22:03:32.000000Z",
+                  "description": "The timestamp of the last transaction",
+                  "required": true
+                },
+                {
+                  "name": "last_transaction_version",
+                  "type": "string",
+                  "example": "210373856",
+                  "description": "The version of the last transaction",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "maximum",
+                  "type": "string",
+                  "example": "18446744073709551615",
+                  "description": "The maximum number of tokens that can be minted",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "maximum_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the maximum number of tokens can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "metadata_uri",
+                  "type": "string",
+                  "example": "https://static-cdn.risewallet.io/nft/aptos-monkeys/1572.jpeg",
+                  "description": "The URI of the image of the token",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "example": "Souffl3 Testnet NFT",
+                  "description": "The name of the token",
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "payee_address",
+                  "type": "string",
+                  "example": "0x0b11e89a399fa11c802099024498da9fc6512bd3d2d3068f0e78320bd6243990",
+                  "description": "The address that last payed for the token",
+                  "maxLength": 66,
+                  "minLength": 66,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "properties_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the properties of the token can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "royalty_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the royalty of the token can be changed",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "royalty_points_denominator",
+                  "type": "string",
+                  "example": "100",
+                  "description": "The denominator for royalty points",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "royalty_points_numerator",
+                  "type": "string",
+                  "example": "20",
+                  "description": "The numerator for royalty points",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "supply",
+                  "type": "string",
+                  "example": "32976",
+                  "description": "The number of tokens minted",
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "token_data_id_hash",
+                  "type": "string",
+                  "example": "1824178d98256f40046db3db8cf462f1c0a8e0d37304218044f11e69761c88e1",
+                  "description": "The identifier of the token",
+                  "maxLength": 64,
+                  "minLength": 64,
+                  "nullable": false,
+                  "required": true
+                },
+                {
+                  "name": "uri_mutable",
+                  "type": "boolean",
+                  "example": "false",
+                  "description": "Whether the URI of the image can be changed",
+                  "nullable": false,
+                  "required": true
+                }
+              ]
+            }
+          }
+        },
         {
           "status": "400",
           "description": "",
