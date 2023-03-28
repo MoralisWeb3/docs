@@ -13979,6 +13979,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTsByIds({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nfts_by_ids(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTsByCollection": {
@@ -14200,6 +14212,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTsByCollection({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nfts_by_collection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTsByCreators": {
@@ -14420,6 +14444,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTsByCreators({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nfts_by_creators(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTCollections": {
@@ -14598,6 +14634,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.collections.getNFTCollections({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.collections.get_nft_collections(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTCollectionsByIds": {
@@ -14646,6 +14694,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.collections.getNFTCollectionsByIds({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.collections.get_nft_collections_by_ids(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -14819,6 +14879,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.collections.getNFTCollectionsByCreator({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.collections.get_nft_collections_by_creator(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTOwnersByTokens": {
@@ -14985,6 +15057,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTOwnersByTokens({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_owners_by_tokens(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -15167,6 +15251,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTOwnersByCollection({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_owners_by_collection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTOwnersOfCollection": {
@@ -15261,6 +15357,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTOwnersOfCollection({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_owners_of_collection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTTransfersByIds": {
@@ -15341,6 +15449,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTTransfersByIds({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_transfers_by_ids(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -15553,6 +15673,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTTransfersByCollection({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_transfers_by_collection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTTransfersByCreators": {
@@ -15763,6 +15895,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTTransfersByCreators({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_transfers_by_creators(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -15975,6 +16119,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.nfts.getNFTTransfersByWallets({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.nfts.get_nft_transfers_by_wallets(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getCoinInfoByCoinTypeHashes": {
@@ -16023,6 +16179,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getCoinInfoByCoinTypeHashes({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coin_info_by_coin_type_hashes(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -16171,6 +16339,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getLatestCoins({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_latest_coins(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -16332,6 +16512,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getCoinsByNameRange({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coins_by_name_range(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getCoinsBySymbolRange": {
@@ -16492,6 +16684,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getCoinsBySymbolRange({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coins_by_symbol_range(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getCoinsByCreators": {
@@ -16646,6 +16850,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getCoinsByCreators({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coins_by_creators(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -16846,6 +17062,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coin_transfers_by_owner_addresses(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getCoinTransfersByBlockHeights": {
@@ -17018,6 +17246,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getCoinTransfersByBlockHeights({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coin_transfers_by_block_heights(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -17204,6 +17444,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getCoinTransfersByCoinType({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coin_transfers_by_coin_type(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getTopHoldersByCoin": {
@@ -17360,6 +17612,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.coins.getTopHoldersByCoin({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_top_holders_by_coin(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getCoinBalancesByWallets": {
@@ -17505,6 +17769,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getCoinBalancesByWallets({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coin_balances_by_wallets(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getHistoricalCoinBalancesByWallets": {
@@ -17649,6 +17925,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getHistoricalCoinBalancesByWallets({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_historical_coin_balances_by_wallets(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -17849,6 +18137,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getCoinTransfersByWalletAddresses({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coin_transfers_by_wallet_addresses(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getNFTByOwners": {
@@ -18029,6 +18329,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getNFTByOwners({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_nft_by_owners(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -18241,6 +18553,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.wallets.getWalletsNFTTransfers({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_wallets_nft_transfers(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getAccount": {
@@ -18288,6 +18612,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getAccount({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_account(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getAccountResources": {
@@ -18325,7 +18661,19 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }]
+      "responses": [{ "status": "200", "description": "" }],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getAccountResources({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_account_resources(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     },
     "getAccountModules": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
@@ -18362,7 +18710,19 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }]
+      "responses": [{ "status": "200", "description": "" }],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getAccountModules({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_account_modules(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     },
     "getAccountResource": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
@@ -18422,6 +18782,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getAccountResource({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_account_resource(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -18498,6 +18870,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getAccountModule({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_account_module(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getEventsByCreationNumber": {
@@ -18535,7 +18919,19 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }]
+      "responses": [{ "status": "200", "description": "" }],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getEventsByCreationNumber({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_events_by_creation_number(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     },
     "getEventsByEventHandle": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
@@ -18578,7 +18974,19 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }]
+      "responses": [{ "status": "200", "description": "" }],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.accounts.getEventsByEventHandle({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.accounts.get_events_by_event_handle(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     },
     "getTransactions": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
@@ -22375,6 +22783,18 @@
             }
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.getTransactions({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.transactions.get_transactions(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "submitTransaction": {
@@ -22472,6 +22892,18 @@
           }
         },
         { "status": "201", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.submitTransaction({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = aptos_api.transactions.submit_transaction(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getTransactionByHash": {
@@ -26244,6 +26676,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.getTransactionByHash({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.transactions.get_transaction_by_hash(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getTransactionByVersion": {
@@ -30015,6 +30459,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.getTransactionByVersion({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.transactions.get_transaction_by_version(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -33820,6 +34276,18 @@
             }
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.getAccountTransactions({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.transactions.get_account_transactions(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "submitBatchTransactions": {
@@ -33888,6 +34356,18 @@
           }
         },
         { "status": "201", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.submitBatchTransactions({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = aptos_api.transactions.submit_batch_transactions(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "simulateTransaction": {
@@ -33939,6 +34419,18 @@
       "responses": [
         { "status": "200", "description": "" },
         { "status": "201", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.simulateTransaction({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = aptos_api.transactions.simulate_transaction(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "encodeSubmission": {
@@ -33995,6 +34487,18 @@
       "responses": [
         { "status": "200", "description": "" },
         { "status": "201", "description": "" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.encodeSubmission({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nresult = aptos_api.transactions.encode_submission(\n  api_key=api_key,\n  body=body,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "estimateGasPrice": {
@@ -34033,6 +34537,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.transactions.estimateGasPrice({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = aptos_api.transactions.estimate_gas_price(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -37876,6 +38392,18 @@
             ]
           }
         }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.blocks.getBlockByHeight({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.blocks.get_block_by_height(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
       ]
     },
     "getBlockByVersion": {
@@ -41717,6 +42245,18 @@
               }
             ]
           }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.AptosApi.blocks.getBlockByVersion({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.blocks.get_block_by_version(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     }

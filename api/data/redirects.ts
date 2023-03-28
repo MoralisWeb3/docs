@@ -6545,4 +6545,24 @@ export const redirects = [
       "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/evm/token-api/erc20-spam-detection",
+    destination: "/web3-data-api/evm/erc20-spam-detection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/token-api/report-erc20-spam",
+    destination: "/web3-data-api/evm/report-erc20-spam",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/nft-api/nft-spam-detection",
+    destination: "/web3-data-api/evm/nft-spam-detection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/nft-api/report-nft-spam",
+    destination: "/web3-data-api/evm/report-nft-spam",
+    permanent: true,
+  },
 ];
