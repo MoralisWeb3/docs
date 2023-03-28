@@ -15443,18 +15443,21 @@
               {
                 "name": "cursor",
                 "type": "string",
+                "required": true,
                 "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
                 "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
               },
               {
                 "name": "hasNextPage",
                 "type": "boolean",
+                "required": true,
                 "description": "Indicates if there is a next page of results",
                 "example": true
               },
               {
                 "name": "result",
                 "type": "object",
+                "required": true,
                 "description": "The owners for the given collection",
                 "example": [],
                 "fields": [
@@ -15622,18 +15625,21 @@
               {
                 "name": "cursor",
                 "type": "string",
+                "required": true,
                 "description": "The cursor to use for the next page of results. (Cursor is null on last page)",
                 "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhkODUwOTQyZWY4ODExZjJhODY2NjkyYTYyMzAxMWJkZTUyYTQ2MmMxIiwiY2hhaW4iOiJldGgiLCJkaXNhYmxlVG90YWwiOiJ0cnVlIiwiYXBpS2V5SWQiOjM2NTg5LCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0NjgxNTM3IiwicGFnZSI6MSwidG90YWwiOjAsIm9mZnNldCI6MSwidWMiOnRydWUsImlhdCI6MTY3MTk3ODQwNH0.XM9IN3wRJgWzSvQCy-K4Asgs_j8p9xTM1pY7UnHEhs4"
               },
               {
                 "name": "hasNextPage",
                 "type": "boolean",
+                "required": true,
                 "description": "Indicates if there is a next page of results",
                 "example": true
               },
               {
                 "name": "result",
                 "type": "array",
+                "required": true,
                 "description": "The owner addresses for the given collection",
                 "example": [],
                 "field": { "type": "string" }
