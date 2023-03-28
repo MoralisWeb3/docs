@@ -1,8 +1,9 @@
 ---
-title: '[Streams] Beta "Triggers"'
+title: 'Streams Beta "Triggers"'
 slug: "streams-beta-triggers"
 authors:
   name: Elias
+tags: [Streams]
 ---
 
 Moralis "Triggers" Beta launched!

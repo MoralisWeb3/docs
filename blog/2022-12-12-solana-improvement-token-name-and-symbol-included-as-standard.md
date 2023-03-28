@@ -1,8 +1,9 @@
 ---
-title: "[API] Solana Improvement - token name and symbol included as standard"
+title: "Solana Improvement - token name and symbol included as standard"
 slug: "api-solana-improvement-token-name-and-symbol-included-as-standard"
 authors:
   name: Reuben Salisbury
+tags: [API]
 ---
 
 Token and NFT name and symbol are now always returned on the below endpoints. 🎉

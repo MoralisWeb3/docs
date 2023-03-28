@@ -1,8 +1,9 @@
 ---
-title: "[API] Get Multiple NFTs"
+title: "Get Multiple NFTs"
 slug: "api-get-multiple-nfts"
 authors:
   name: Reuben Salisbury
+tags: [API]
 ---
 
 We've just shipped a new EVM feature Get Multiple NFTs, meaning you can now specify a list of NFTs to return in one API call. :zap:

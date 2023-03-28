@@ -1,8 +1,9 @@
 ---
-title: "[API] Transaction decoding & labeling 🔣➡🆒"
+title: "Transaction decoding & labeling 🔣➡🆒"
 slug: "2023-02-16-transaction-labeling.md"
 authors:
   name: Reuben Salisbury
+tags: [API]
 ---
 
 Today we have launched version 1 of our new transaction decoding and labeling feature 🥳

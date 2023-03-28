@@ -1,8 +1,9 @@
 ---
-title: "[API] NFT Image Previews ⚡"
+title: "NFT Image Previews ⚡"
 slug: "nft-image-previews"
 authors:
   name: Reuben Salisbury
+tags: [API]
 ---
 
 Time to optimize your NFTs! 
@@ -10,6 +11,8 @@ Time to optimize your NFTs!
 All NFTs served through our API now include an optional `media` object that includes `low`, `medium` and `high` resolution thumbnails, along with the original image 🎉
 
 This makes it super easy to build apps and webpages that are optimized for speed and that load in a flash ⚡
+
+<!--truncate-->
 
 This feature is now live across the following EVM endpoints, when using the new query parameter `media_items=true`:
 
