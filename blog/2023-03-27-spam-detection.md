@@ -1,8 +1,9 @@
 ---
-title: "[API] Spam Detection for ERC20s and NFTs 🧐⚠️"
+title: "Spam Detection for ERC20s and NFTs 🧐⚠️"
 slug: "2023-03-27-spam-detection"
 authors:
   name: Reuben Salisbury
+tags: [API]
 ---
 
 We're excited to announce the launch of our new spam detection feature across our EVM APIs! 
