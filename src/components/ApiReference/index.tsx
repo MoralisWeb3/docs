@@ -125,7 +125,11 @@ const ApiReference = ({
               "x-moralis-source": `api reference`,
               referer: "moralis.io",
             },
-            body: JSON.stringify(filterOutEmpty(values.body)),
+            body: JSON.stringify(
+              path === "/:address/function"
+                ? values.body
+                : filterOutEmpty(values.body)
+            ),
           }
         );
 
