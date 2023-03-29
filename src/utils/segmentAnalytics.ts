@@ -695,6 +695,7 @@ const clientAPI = {
 };
 export default new Proxy(clientAPI, {
   get(target, method) {
+    // eslint-disable-next-line no-prototype-builtins
     if (typeof method === "string" && target.hasOwnProperty(method)) {
       return target[method];
     }

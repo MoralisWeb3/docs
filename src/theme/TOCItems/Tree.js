@@ -8,12 +8,10 @@ function TOCItemTree({ toc, className, linkClassName, isChild }) {
     <ul className={isChild ? undefined : className}>
       {toc.map((heading) => (
         <li key={heading.id}>
-          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
           <a
             href={`#${heading.id}`}
             className={linkClassName ?? undefined}
             // Developer provided the HTML, so assume it's safe.
-            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: heading.value }}
           />
           <TOCItemTree
