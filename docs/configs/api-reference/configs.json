@@ -19788,7 +19788,71 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "version",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "guid",
+                  "example": "",
+                  "description": "",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "creation_number",
+                      "type": "string",
+                      "example": "32425224034",
+                      "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                      "required": true
+                    },
+                    {
+                      "name": "account_address",
+                      "type": "string",
+                      "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                      "description": "A hex encoded 32 byte Aptos account address.\nThis is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x.",
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "sequence_number",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "type",
+                  "type": "string",
+                  "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                  "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.",
+                  "required": true
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "example": {},
+                  "description": "The JSON representation of the event",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
