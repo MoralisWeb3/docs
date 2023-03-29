@@ -360,14 +360,11 @@ export const injectParamsToCode = (
               ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
-          ).replace(/\n/g, `\n`)
+          )
         )
         .replace(
           "[]",
-          stringifyJSON(
-            { ...formatParamsByLang({ ...body }, lang) },
-            true
-          ).replace(/\n/g, `\n`)
+          stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
         )
         .replace(/YOUR_API_KEY/, auth);
   }
