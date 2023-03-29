@@ -23,10 +23,10 @@ const escapeChar = (str: string, char: string) =>
 const buildTemplate = (lines: Array<string | null>) =>
   lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent: number = 0) =>
+const line = (str: string, indent = 0) =>
   `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
-export const stringifyJSON = (obj: object, pretty: boolean = false) =>
+export const stringifyJSON = (obj: object, pretty = false) =>
   JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
 
 const tabs = [
@@ -235,8 +235,8 @@ export const filterOutEmpty = (value: any) => {
 };
 
 export const formatParamsByLang = (params: any, lang: string) => {
-  for (let key of Object.keys(params)) {
-    let formattedKey: string = "";
+  for (const key of Object.keys(params)) {
+    let formattedKey = "";
     switch (lang) {
       case "node":
         formattedKey = snakeToCamelCase(key);
@@ -251,10 +251,66 @@ export const formatParamsByLang = (params: any, lang: string) => {
     if (key !== formattedKey) {
       params[formattedKey] = params[key];
       delete params[key];
+      // Handling hex chain values for NodeJS SDK
+    } else if (formattedKey === "chain" && lang === "node") {
+      params.chain = (() => {
+        const { chain } = params ?? {};
+        switch (chain) {
+          case "eth":
+            return "0x1";
+          case "goerli":
+            return "0x5";
+          case "sepolia":
+            return "0xaa36a7";
+          case "polygon":
+            return "0x89";
+          case "mumbai":
+            return "0x13881";
+          case "bsc":
+            return "0x38";
+          case "bsc testnet":
+            return "0x61";
+          case "avalanche":
+            return "0xa86a";
+          case "avalanche testnet":
+            return "0xa869";
+          case "fantom":
+            return "0xfa";
+          case "palm":
+            return "0x2a15c308d";
+          case "cronos":
+            return "0x19";
+          case "cronos testnet":
+            return "0x152";
+          case "arbitrum":
+            return "0xa4b1";
+          default:
+            return chain;
+        }
+      })();
     }
   }
 
   return params;
+};
+
+const customNodeSdkBody = (code: string, body: any) => {
+  // For `requestChallengeEvm` and `requestChallengeSolana`
+  if (code.includes("requestMessage")) {
+    const { chainId, network } = body ?? {};
+    if (chainId) {
+      return {
+        chain: `0x${parseInt(chainId).toString(16)}`,
+        chainId: undefined,
+        networkType: "evm",
+      };
+    } else if (network) {
+      return {
+        solNetwork: network,
+        networkType: "solana",
+      };
+    }
+  }
 };
 
 /**
@@ -270,29 +326,13 @@ export const injectParamsToCode = (
   code: string,
   lang: string,
   params: any,
-  auth: string
+  auth: string,
+  network: string,
+  aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
     case "node":
-      const customNodeSDKBody = () => {
-        // For `requestChallengeEvm` and `requestChallengeSolana`
-        if (code.includes("requestMessage")) {
-          const { chainId, network } = body ?? {};
-          if (chainId) {
-            return {
-              chain: `0x${parseInt(chainId).toString(16)}`,
-              chainId: undefined,
-              network: "evm",
-            };
-          } else if (network) {
-            return {
-              solNetwork: network,
-              network: "solana",
-            };
-          }
-        }
-      };
       return code
         .replace(
           "{}",
@@ -301,7 +341,8 @@ export const injectParamsToCode = (
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
-              ...customNodeSDKBody(),
+              ...customNodeSdkBody(code, body),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
@@ -316,6 +357,7 @@ export const injectParamsToCode = (
             {
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
           ).replace(/\n/g, `\n`)
@@ -336,7 +378,11 @@ const ApiExamples = ({
   apiHost,
   path,
   codeSamples,
-}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+  aptosNetwork,
+}: Pick<
+  ApiReferenceProps,
+  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
+>) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
   const { path: pagePath, network } = usePageState();
@@ -366,22 +412,40 @@ const ApiExamples = ({
             <CodeBlock className={`language-${langCode}`}>
               {code
                 ? buildTemplate([
-                    line(injectParamsToCode(code, lang, values, auth)),
+                    line(
+                      injectParamsToCode(
+                        code,
+                        lang,
+                        values,
+                        auth,
+                        network,
+                        aptosNetwork
+                      )
+                    ),
                   ])
                 : template({
                     method,
                     url: [
                       apiHost,
-                      new Path(path).build({
-                        ...defaultPathParams,
-                        ...omitBy(values.path, (value) => value == null),
-                      }),
+                      new Path(path).build(
+                        {
+                          ...defaultPathParams,
+                          ...omitBy(values.path, (value) => value == null),
+                        },
+                        {
+                          urlParamsEncoding: "uriComponent",
+                        }
+                      ),
                       qs.stringify(values.query || {}, {
                         addQueryPrefix: true,
                       }),
                     ].join(""),
                     auth: auth,
-                    body: filterOutEmpty(values.body),
+                    body:
+                      // temporary fix for runContractFunction
+                      path === "/:address/function"
+                        ? values.body
+                        : filterOutEmpty(values.body),
                     authField,
                   })}
             </CodeBlock>

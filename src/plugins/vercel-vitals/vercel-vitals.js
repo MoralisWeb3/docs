@@ -1,6 +1,6 @@
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-import { webVitals } from './vitals';
+import { webVitals } from "./vitals";
 
 export default (function () {
   if (!ExecutionEnvironment.canUseDOM) {
@@ -8,5 +8,4 @@ export default (function () {
   }
 
   webVitals(false);
-
 })();

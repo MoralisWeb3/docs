@@ -6163,7 +6163,7 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
@@ -6536,6 +6536,56 @@ export const redirects = [
   {
     source: "/streams-api/integrations/firebase",
     destination: "/streams-api/evm/integrations/firebase",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
+    destination:
+      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/token-api/erc20-spam-detection",
+    destination: "/web3-data-api/evm/erc20-spam-detection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/token-api/report-erc20-spam",
+    destination: "/web3-data-api/evm/report-erc20-spam",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/nft-api/nft-spam-detection",
+    destination: "/web3-data-api/evm/nft-spam-detection",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/nft-api/report-nft-spam",
+    destination: "/web3-data-api/evm/report-nft-spam",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/aptos/coin-api/how-to-get-coin-metadata-by-creator-addresses",
+    destination:
+      "/web3-data-api/aptos/how-to-get-coin-metadata-by-creator-addresses",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/aptos/coin-api/how-to-get-latest-deployed-coins",
+    destination: "/web3-data-api/aptos/how-to-get-latest-deployed-coins",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/aptos/nft-api/how-to-get-nft-collections-by-creator",
+    destination: "/web3-data-api/aptos/how-to-get-nft-collections-by-creator",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/aptos/transaction-api",
+    destination: "/web3-data-api/aptos/transactions-api",
     permanent: true,
   },
 ];

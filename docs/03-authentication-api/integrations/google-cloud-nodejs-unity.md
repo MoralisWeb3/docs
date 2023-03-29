@@ -102,7 +102,7 @@ async function requestMessage(address, chain) {
   const result = await Moralis.Auth.requestMessage({
     address,
     chain,
-    network: NETWORK,
+    networkType: NETWORK,
     domain: DOMAIN,
     statement: STATEMENT,
     uri: URI,

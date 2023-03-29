@@ -1,8 +1,9 @@
 ---
-title: "[API] Internal Transactions have landed 🎉"
+title: "Internal Transactions have landed 🎉"
 slug: "internal-transactions"
 authors:
   name: Reuben Salisbury
+tags: [Web3 Data API]
 ---
 
 We’re excited to announce that today we have launched internal transactions across a number of our most popular EVM chains!

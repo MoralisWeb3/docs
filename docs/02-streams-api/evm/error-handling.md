@@ -47,8 +47,6 @@ The Streams API provides an endpoint to get all failed webhooks. It is useful to
 const history = await Moralis.Streams.getHistory({ limit: 100 });
 ```
 
-
-
 **Via WebUI**
 
 1. Go to Failed Deliveries. All your failed deliveries are listed here.
@@ -58,31 +56,29 @@ const history = await Moralis.Streams.getHistory({ limit: 100 });
 The Response is a list of failed webhooks that are uniquely identified by id. The payload contains the webhook details.
 
 ```json
-{  
-  "result": [  
-    {  
-      "id": "HISTORY_ID",  
-      "date": "string",  
-      "payload": {  
-        // the failed webhook  
-      },  
-      "tinyPayload": {  
-        "block": {},  
-        "chainId": "",  
-        "amount": 0  
-      },  
-      "streamId": "STREAM_ID",  
-      "tag": "TAG",  
-      "errorMessage": "string",  
-      "webhookUrl": "string"  
-    }  
-  ],  
-  "total": "number",  
-  "cursor": "string"  
+{
+  "result": [
+    {
+      "id": "HISTORY_ID",
+      "date": "string",
+      "payload": {
+        // the failed webhook
+      },
+      "tinyPayload": {
+        "block": {},
+        "chainId": "",
+        "amount": 0
+      },
+      "streamId": "STREAM_ID",
+      "tag": "TAG",
+      "errorMessage": "string",
+      "webhookUrl": "string"
+    }
+  ],
+  "total": "number",
+  "cursor": "string"
 }
 ```
-
-
 
 ### Replay Failed Webhook
 
@@ -91,10 +87,8 @@ You can replay (retry) a failed webhook by calling the specific endpoint.
 **Programmatically**
 
 ```javascript
-await Moralis.Streams.retryWebhook({ id: "HISTORY_ID", streamId: "STREAM_ID" });
+await Moralis.Streams.retry({ id: "HISTORY_ID", streamId: "STREAM_ID" });
 ```
-
-
 
 **Via WebUI**
 
@@ -106,14 +100,12 @@ await Moralis.Streams.retryWebhook({ id: "HISTORY_ID", streamId: "STREAM_ID" });
 You can use the Swagger UI or make an API call to the endpoint.
 
 ```curl
-curl -X 'POST'  
-  '<https://api.moralis-streams.com/history/replay/WEBHOOK_ID>'  
-  -H 'accept: application/json'  
-  -H 'x-api-key: YOUR_API_KEY'  
+curl -X 'POST'
+  '<https://api.moralis-streams.com/history/replay/WEBHOOK_ID>'
+  -H 'accept: application/json'
+  -H 'x-api-key: YOUR_API_KEY'
   -H 'Content-Type: application/json'
 ```
-
-
 
 ### Webhook Successrate
 
