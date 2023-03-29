@@ -27,7 +27,7 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask sig
 Install the `@web3auth/web3auth-wagmi-connector` dependency:
 
 ```bash npm2yarn
-npm install @web3auth/web3auth-wagmi-connector@1.0.0
+npm install @web3auth/web3auth-wagmi-connector@3.0.0
 ```
 
 ## Configuring the Web3Auth Wagmi Connector
@@ -54,6 +54,7 @@ function SignIn() {
   const { isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
   const { push } = useRouter();
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm()
 
   const handleAuth = async () => {
     if (isConnected) {
@@ -62,25 +63,26 @@ function SignIn() {
 
     const { account } = await connectAsync();
 
-    const { message } = await requestChallengeAsync({
+    const challengeResponse = await requestChallengeAsync({
       address: account,
       chainId: "0x1",
     });
 
-    const signature = await signMessageAsync({ message });
+    const signature = await signMessageAsync({
+      message: challengeResponse?.message as string
+     });
 
     // redirect user after success authentication to '/user' page
-    const { url } = await signIn("moralis-auth", {
-      message,
+    const authResponse = await signIn("moralis-auth", {
+      message: challengeResponse?.message as string,
       signature,
       redirect: false,
       callbackUrl: "/user",
     });
-    /**
-     * instead of using signIn(..., redirect: "/user")
-     * we get the url from callback and push it to the router to avoid page refreshing
-     */
-    push(url);
+
+    // instead of using signIn(..., redirect: "/user") we get the url from
+    // the callback and push it to the router to avoid page refreshing
+    push(authResponse?.url as string);
   };
 
   return (
