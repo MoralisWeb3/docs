@@ -212,7 +212,7 @@ const ApiReference = ({
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
-            <div className="col">
+            <div className="col col--5">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
                 {hostUrl}
@@ -282,8 +282,7 @@ const ApiReference = ({
               </div>
               <div className={styles.section}>{children}</div>
             </div>
-
-            <div className="col col--6">
+            <div className="col col--7">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>

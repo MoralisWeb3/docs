@@ -19290,7 +19290,7 @@
                 },
                 {
                   "name": "data",
-                  "type": "object",
+                  "type": "json",
                   "example": {
                     "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
                     "coin_register_events": {
@@ -19368,8 +19368,8 @@
                 {
                   "name": "bytecode",
                   "type": "string",
-                  "example": "All bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.",
-                  "description": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                  "description": "All bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.",
+                  "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
                   "required": true
                 },
                 {
@@ -19477,7 +19477,7 @@
                             "example": [],
                             "description": "Parameters associated with the move function",
                             "type": "array",
-                            "items": { "type": "string" },
+                            "field": { "type": "string" },
                             "required": true
                           },
                           {
@@ -19485,7 +19485,7 @@
                             "example": "",
                             "description": "Return type of the function",
                             "type": "array",
-                            "items": { "type": "string" },
+                            "field": { "type": "string" },
                             "required": true
                           }
                         ]
@@ -19519,7 +19519,7 @@
                             "example": [],
                             "description": "Abilities associated with the struct",
                             "type": "array",
-                            "items": { "type": "string" },
+                            "field": { "type": "string" },
                             "required": true
                           },
                           {
