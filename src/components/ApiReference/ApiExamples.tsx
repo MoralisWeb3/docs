@@ -328,7 +328,7 @@ export const injectParamsToCode = (
   params: any,
   auth: string,
   network: string,
-  aptosNetwork: "mainnet" | "testnet"
+  aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
@@ -360,14 +360,11 @@ export const injectParamsToCode = (
               ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
-          ).replace(/\n/g, `\n`)
+          )
         )
         .replace(
           "[]",
-          stringifyJSON(
-            { ...formatParamsByLang({ ...body }, lang) },
-            true
-          ).replace(/\n/g, `\n`)
+          stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
         )
         .replace(/YOUR_API_KEY/, auth);
   }
@@ -427,10 +424,15 @@ const ApiExamples = ({
                     method,
                     url: [
                       apiHost,
-                      new Path(path).build({
-                        ...defaultPathParams,
-                        ...omitBy(values.path, (value) => value == null),
-                      }),
+                      new Path(path).build(
+                        {
+                          ...defaultPathParams,
+                          ...omitBy(values.path, (value) => value == null),
+                        },
+                        {
+                          urlParamsEncoding: "uriComponent",
+                        }
+                      ),
                       qs.stringify(values.query || {}, {
                         addQueryPrefix: true,
                       }),
