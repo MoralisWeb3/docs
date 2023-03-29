@@ -16652,7 +16652,105 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "coin_type",
+                "type": "string",
+                "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG",
+                "description": "The definition of the coin structure (identifier)",
+                "maxLength": 5000,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "coin_type_hash",
+                "type": "string",
+                "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d",
+                "description": "The hash of the coin_type (identifier) and a known fixed length",
+                "maxLength": 64,
+                "minLength": 64,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "creator_address",
+                "type": "string",
+                "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                "description": "The address of the creator of the coin",
+                "maxLength": 66,
+                "minLength": 66,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "decimals",
+                "type": "number",
+                "example": 8,
+                "description": "The number of decimals of the coin",
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "example": "GEGG Coin",
+                "description": "The name of the Coin",
+                "maxLength": 32,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "supply_aggregator_table_handle",
+                "type": "string",
+                "nullable": false,
+                "example": "0x3::token::TokenStore",
+                "description": "The data structure of the token",
+                "required": true
+              },
+              {
+                "name": "supply_aggregator_table_key",
+                "type": "string",
+                "nullable": false,
+                "example": "0x3::token::TokenStore",
+                "description": "The data structure of the token",
+                "required": true
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "example": "GEGG",
+                "description": "The symbol of the coin",
+                "maxLength": 10,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "transaction_created_timestamp",
+                "type": "string",
+                "nullable": false,
+                "example": "2022-09-17T22:03:32.000000Z",
+                "description": "The timestamp of the transaction of when the coin was created",
+                "required": true
+              },
+              {
+                "name": "transaction_version_created",
+                "type": "string",
+                "example": "210373856",
+                "description": "The version of the transaction where the coin was created",
+                "nullable": false,
+                "required": true
+              }
+            ]
+          }
+        },
         {
           "status": "400",
           "description": "",
