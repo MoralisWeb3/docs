@@ -3,8 +3,8 @@
     {
       "endpoint": "getBlock",
       "path": "/block/{block_number_or_hash}",
-      "price": 5,
-      "rateLimitCost": 5
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getContractEvents",
@@ -61,20 +61,20 @@
     {
       "endpoint": "getTokenBalances",
       "path": "/{address}/erc20",
-      "price": 5,
-      "rateLimitCost": 5
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
-      "price": 2,
-      "rateLimitCost": 2
+      "price": 5,
+      "rateLimitCost": 5
     },
     {
       "endpoint": "getTokenAddressTransfers",
       "path": "/erc20/{address}/transfers",
-      "price": 2,
-      "rateLimitCost": 2
+      "price": 5,
+      "rateLimitCost": 5
     },
     {
       "endpoint": "searchNFTs",
@@ -127,8 +127,8 @@
     {
       "endpoint": "getTokenPrice",
       "path": "/erc20/{address}/price",
-      "price": 3,
-      "rateLimitCost": 3
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getTokenAllowance",
@@ -145,20 +145,20 @@
     {
       "endpoint": "getErc20Mints",
       "path": "/erc20/mints",
-      "price": 5,
-      "rateLimitCost": 5
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getErc20Burns",
       "path": "/erc20/burns",
-      "price": 5,
-      "rateLimitCost": 5
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getErc20Approvals",
       "path": "/erc20/approvals",
-      "price": 5,
-      "rateLimitCost": 5
+      "price": 10,
+      "rateLimitCost": 10
     },
     {
       "endpoint": "getAllTokenIds",
@@ -235,8 +235,8 @@
     {
       "endpoint": "getLogsByAddress",
       "path": "/{address}/logs",
-      "price": 2,
-      "rateLimitCost": 2
+      "price": 5,
+      "rateLimitCost": 5
     },
     {
       "endpoint": "getNftTransfersFromToBlock",
@@ -265,8 +265,8 @@
     {
       "endpoint": "getWalletTransactions",
       "path": "/{address}",
-      "price": 1,
-      "rateLimitCost": 3
+      "price": 5,
+      "rateLimitCost": 5
     },
     {
       "endpoint": "resolveAddress",

@@ -6,7 +6,8 @@ import ApiParamBaseInput from "./ApiParamBaseInput";
 
 const ApiParamJSONField = (props: FieldComponentProps<"json">) => {
   const valueToString = useCallback(
-    (value: object | string) => (typeof value === "string" ? value : JSON.stringify(value)),
+    (value: object | string) =>
+      typeof value === "string" ? value : JSON.stringify(value),
     []
   );
   const stringToValue = useCallback((value: string) => {

@@ -1,8 +1,9 @@
 ---
-title: "[API] Metadata Normalization 🔤"
+title: "Metadata Normalization 🔤"
 slug: "metadata-normalization"
 authors:
   name: Reuben Salisbury
+tags: [Web3 Data API]
 ---
 
 We just made working with NFT metadata a breeze! 💨 Get predictable, structured outputs at each endpoint thanks to our new built-in NFT API Metadata Normalization.

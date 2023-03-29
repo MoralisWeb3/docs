@@ -1,10 +1,27 @@
 {
-  "plugins": ["@docusaurus"],
-  "parser": "@babel/eslint-parser",
+  "plugins": ["@docusaurus", "@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "requireConfigFile": false,
-    "ecmaVersion": 8
+    "ecmaVersion": "latest"
   },
-  "extends": ["plugin:@docusaurus/recommended"],
-  "rules": {}
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:@docusaurus/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-types": "off",
+    "prettier/prettier": "error"
+  }
 }

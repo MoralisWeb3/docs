@@ -14,7 +14,13 @@ const DocSidebarMobileSecondaryMenu = ({ sidebar, path }) => {
   const pageState = usePageState();
 
   return (
-    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list", pageState?.path)}>
+    <ul
+      className={clsx(
+        ThemeClassNames.docs.docSidebarMenu,
+        "menu__list",
+        pageState?.path
+      )}
+    >
       <NetworkSelect />
       <DocSidebarItems
         items={sidebar}

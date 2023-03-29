@@ -1,8 +1,9 @@
 ---
-title: "[Streams] NFT Approvals"
+title: "Streams NFT Approvals"
 slug: "streams-nft-approvals"
 authors:
   name: Elias
+tags: [Streams API]
 ---
 
 `nftApprovals` in webhooks becomes deprecated. A new list `nftTokenApprovals` is introduced. The new field will not split between `ERC1155` and `ERC721` instead it unifies the NFT Approvals.
@@ -39,6 +40,7 @@ authors:
   ...
 }
 ```
+<!--truncate-->
 
 ## Fields
 

@@ -10,13 +10,16 @@ interface ApiReferenceTokenContextProps {
   setToken: (token: string) => void;
 }
 
-export const ApiReferenceTokenContext = React.createContext<ApiReferenceTokenContextProps>({
-  ssoToken: "",
-  token: "",
-  setToken: () => {},
-});
+export const ApiReferenceTokenContext =
+  React.createContext<ApiReferenceTokenContextProps>({
+    ssoToken: "",
+    token: "",
+    setToken: () => {},
+  });
 
-export const ApiReferenceTokenProvider = (props: React.PropsWithChildren<{}>) => {
+export const ApiReferenceTokenProvider = (
+  props: React.PropsWithChildren<{}>
+) => {
   const [token, setToken] = useState("");
   const [ssoToken, setSsoToken] = useState("");
 
@@ -33,7 +36,9 @@ export const ApiReferenceTokenProvider = (props: React.PropsWithChildren<{}>) =>
   }, []);
 
   useEffect(() => {
-    const queryParams = qs.parse(window.location.search, { ignoreQueryPrefix: true });
+    const queryParams = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
 
     if (!queryParams.auth_token) return;
 
@@ -62,5 +67,10 @@ export const ApiReferenceTokenProvider = (props: React.PropsWithChildren<{}>) =>
     localStorage.setItem(STORAGE_SSO_AUTH_KEY, ssoToken);
   }, [ssoToken]);
 
-  return <ApiReferenceTokenContext.Provider {...props} value={{ ssoToken, token, setToken }} />;
+  return (
+    <ApiReferenceTokenContext.Provider
+      {...props}
+      value={{ ssoToken, token, setToken }}
+    />
+  );
 };

@@ -1,5 +1,4 @@
 {
-  "cSpell.words": ["Moralis"],
   "grammarly.files.include": [
     "**/readme.md",
     "**/README.md",
@@ -7,7 +6,39 @@
     "**/*.md",
     "**/*.mdx"
   ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown"
+  ],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
   "grammarly.startTextCheckInPausedState": true,
   "grammarly.config.suggestions.OxfordComma": true,
-  "grammarly.config.documentDomain": "business"
+  "grammarly.config.documentDomain": "business",
+  "markdown.validate.ignoredLinks": [
+    "/web3-data-api/aptos/reference/get-coin-balances-by-wallets",
+    "/web3-data-api/aptos/reference/get-nft-collections-by-creator",
+    "/web3-data-api/aptos/reference/get-account-transactions",
+    "/web3-data-api/aptos/reference/get-transactions",
+    "/web3-data-api/aptos/reference/get-coins-by-creators",
+    "/web3-data-api/aptos/reference/get-latest-coins",
+    "/web3-data-api/evm/reference/get-token-price",
+    "/web3-data-api/evm/reference/get-wallet-transactions",
+    "/web3-data-api/evm/reference/get-contract-logs",
+    "/web3-data-api/evm/reference/get-wallet-token-balances",
+    "/web3-data-api/evm/reference/get-erc20-mints",
+    "/web3-data-api/evm/reference/get-erc20-burns",
+    "/web3-data-api/evm/reference/compute-units-cu",
+    "/web3-data-api/evm/reference/get-token-transfers",
+    "/web3-data-api/evm/reference/get-wallet-token-transfers",
+    "/web3-data-api/evm/reference/get-block",
+    "/web3-data-api/evm/reference/get-erc20-approvals",
+    "/changelog/planned-cu-increase-across-multiple-endpoints",
+    "/web3-data-api/evm/nft-spam-detection"
+  ],
+  "eslint.workingDirectories": [".eslintrc", ".eslintignore"]
 }
