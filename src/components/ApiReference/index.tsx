@@ -126,6 +126,7 @@ const ApiReference = ({
               referer: "moralis.io",
             },
             body: JSON.stringify(
+              // temporary fix for runContractFunction
               path === "/:address/function"
                 ? values.body
                 : filterOutEmpty(values.body)
