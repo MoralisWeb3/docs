@@ -134,7 +134,12 @@ const ApiReference = ({
           }
         );
 
-        const fetchBody = await response.json();
+        console.log(response);
+
+        const fetchBody =
+          path === "/nft/:address/sync" && response.status === 201
+            ? response.text()
+            : await response.json();
 
         const body = { status: response.status, body: fetchBody };
 
