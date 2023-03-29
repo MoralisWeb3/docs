@@ -7,7 +7,7 @@ sidebar_position: 0
 
 Through our [NFT APIs](/web3-data-api/evm/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](/web3-data-api/evm/normalized-vs-non-normalized-metadata).
 
-To use this feature, simply set `normalizedMetadata` parameter to `true`.
+To use this feature, simply set `normalizeMetadata` parameter to `true`.
 
 ```javascript
 import Moralis from "moralis";
