@@ -1,12 +1,12 @@
-import React from "react"
-import styles from "./DisplayLink.module.css"
+import React from "react";
+import styles from "./DisplayLink.module.css";
 
 export interface DisplayLinkProps {
-  label: string
-  href: string
-  subLabel?: string
-  iconSrc?: string
-  emoji?: string
+  label: string;
+  href: string;
+  subLabel?: string;
+  iconSrc?: string;
+  emoji?: string;
 }
 
 export const DisplayLink = ({
@@ -34,5 +34,5 @@ export const DisplayLink = ({
         </div>
       </a>
     </>
-  )
-}
+  );
+};

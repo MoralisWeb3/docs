@@ -1,16 +1,16 @@
-import React from "react"
-import styles from "./SDKHeader.module.css"
+import React from "react";
+import styles from "./SDKHeader.module.css";
 
 interface Shield {
-  alt: string
-  src: string
+  alt: string;
+  src: string;
 }
 interface SDKHeaderProps {
-  logoSrc: string
-  name: string
-  title: string
-  description?: string
-  shields?: Shield[]
+  logoSrc: string;
+  name: string;
+  title: string;
+  description?: string;
+  shields?: Shield[];
 }
 
 export const SDKHeader = ({
@@ -25,10 +25,7 @@ export const SDKHeader = ({
       <header className={styles.header}>
         <h1>{title}</h1>
         <div className={styles.imgWrapper}>
-          <img
-            src="/img/favicon.svg"
-            alt="moralis"
-          />
+          <img src="/img/favicon.svg" alt="moralis" />
           <span className={styles.x}>X</span>
           <img src={logoSrc} alt={name} />
         </div>
@@ -42,5 +39,5 @@ export const SDKHeader = ({
         )}
       </header>
     </>
-  )
-}
+  );
+};

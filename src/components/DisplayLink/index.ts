@@ -1,3 +1,3 @@
-export * from "./DisplayLink"
-export * from "./GithubDisplayLink"
-export * from "./ReferenceDisplayLink"
+export * from "./DisplayLink";
+export * from "./GithubDisplayLink";
+export * from "./ReferenceDisplayLink";

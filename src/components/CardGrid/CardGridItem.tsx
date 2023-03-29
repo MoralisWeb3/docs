@@ -1,16 +1,16 @@
-import React from "react"
-import Link from '@docusaurus/Link';
-import { Col, columnsToColspan, GridColumns } from "../Grid"
+import React from "react";
+import Link from "@docusaurus/Link";
+import { Col, columnsToColspan, GridColumns } from "../Grid";
 
-type Icon = { src: string; alt: string }
+type Icon = { src: string; alt: string };
 
 export interface CardGridItemProps {
-  title: string
-  to: string
-  inlineIcons: boolean
-  columns: GridColumns
-  description?: string
-  icons?: Icon[]
+  title: string;
+  to: string;
+  inlineIcons: boolean;
+  columns: GridColumns;
+  description?: string;
+  icons?: Icon[];
 }
 
 export const CardGridItem = ({
@@ -29,8 +29,8 @@ export const CardGridItem = ({
           &nbsp;&nbsp;
         </React.Fragment>
       ))}
-      </>
-  )
+    </>
+  );
 
   return (
     <Col span={columnsToColspan[columns]}>
@@ -51,5 +51,5 @@ export const CardGridItem = ({
         </Link>
       </div>
     </Col>
-  )
-}
+  );
+};
