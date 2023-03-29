@@ -21326,7 +21326,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "A string containing a 64-bit unsigned integer."
+                      "description": "The timestamp of the block (in milliseconds)"
                     }
                   ]
                 },
@@ -23212,7 +23212,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -23771,7 +23771,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -25232,7 +25232,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "A string containing a 64-bit unsigned integer."
+                    "description": "The timestamp of the block (in milliseconds)"
                   }
                 ]
               },
@@ -27110,7 +27110,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -27665,7 +27665,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -29016,7 +29016,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "A string containing a 64-bit unsigned integer."
+                    "description": "The timestamp of the block (in milliseconds)"
                   }
                 ]
               },
@@ -30894,7 +30894,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -31449,7 +31449,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -32819,7 +32819,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "A string containing a 64-bit unsigned integer."
+                      "description": "The timestamp of the block (in milliseconds)"
                     }
                   ]
                 },
@@ -34705,7 +34705,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -35264,7 +35264,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -36931,7 +36931,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "A string containing a 64-bit unsigned integer."
+                          "description": "The timestamp of the block (in milliseconds)"
                         }
                       ]
                     },
@@ -38819,7 +38819,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -39378,7 +39378,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -40785,7 +40785,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "A string containing a 64-bit unsigned integer."
+                          "description": "The timestamp of the block (in milliseconds)"
                         }
                       ]
                     },
@@ -42673,7 +42673,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -43232,7 +43232,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
