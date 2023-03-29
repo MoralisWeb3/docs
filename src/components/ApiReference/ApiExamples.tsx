@@ -328,7 +328,7 @@ export const injectParamsToCode = (
   params: any,
   auth: string,
   network: string,
-  aptosNetwork: "mainnet" | "testnet"
+  aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
@@ -427,10 +427,15 @@ const ApiExamples = ({
                     method,
                     url: [
                       apiHost,
-                      new Path(path).build({
-                        ...defaultPathParams,
-                        ...omitBy(values.path, (value) => value == null),
-                      }),
+                      new Path(path).build(
+                        {
+                          ...defaultPathParams,
+                          ...omitBy(values.path, (value) => value == null),
+                        },
+                        {
+                          urlParamsEncoding: "uriComponent",
+                        }
+                      ),
                       qs.stringify(values.query || {}, {
                         addQueryPrefix: true,
                       }),
