@@ -1,8 +1,9 @@
 ---
-title: "[Streams] Streams API Launched 🎉"
+title: "Streams API Launched 🎉"
 slug: "moralis-launches-streams-api"
 authors:
   name: Ossian Markiewicz
+tags: [Streams API]
 ---
 
 Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos and all testnets are supported. We’re working on adding more networks every day! 🚀🎉
@@ -21,5 +22,5 @@ Moreover, each event comes enriched with important data, such as “tokenName”
 For more information, head over to our:
 
 - [Streams Overview Homepage](https://moralis.io/streams/)
-- [Streams API Tutorials](https://docs.moralis.io/docs/streams-api)
-- [Streams API Documentation](https://docs.moralis.io/reference/gethistory)
+- [Streams API Tutorials](/streams-api/evm)
+- [Streams API Documentation](/streams-api/evm/reference/get-history)

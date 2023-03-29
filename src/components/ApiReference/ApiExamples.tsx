@@ -8,9 +8,11 @@ import { Path } from "path-parser";
 import CodeBlock from "@theme/CodeBlock";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
+import usePageState from "@site/src/hooks/usePageState";
+import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
+import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -21,10 +23,10 @@ const escapeChar = (str: string, char: string) =>
 const buildTemplate = (lines: Array<string | null>) =>
   lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent: number = 0) =>
+const line = (str: string, indent = 0) =>
   `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
-export const stringifyJSON = (obj: object, pretty: boolean = false) =>
+export const stringifyJSON = (obj: object, pretty = false) =>
   JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
 
 const tabs = [
@@ -32,7 +34,7 @@ const tabs = [
     lang: "node",
     langCode: "js",
     title: "Node.js",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("// Dependencies to install:"),
         line("// $ npm install node-fetch --save"),
@@ -47,7 +49,7 @@ const tabs = [
         body
           ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2)
           : null,
-        auth ? line(`'X-API-Key': '${auth}'`, 2) : null,
+        auth ? line(`'${authField}': '${auth}'`, 2) : null,
         line("},", 1),
         body
           ? line(
@@ -67,7 +69,7 @@ const tabs = [
     lang: "python",
     langCode: "python",
     title: "Python",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("# Dependencies to install:\n"),
         line("# $ python -m pip install requests"),
@@ -82,7 +84,7 @@ const tabs = [
         body
           ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1)
           : null,
-        auth ? line(`"X-API-Key": "${auth}"`, 1) : null,
+        auth ? line(`"${authField}": "${auth}"`, 1) : null,
         line(`}`),
         line(""),
         line(
@@ -98,7 +100,7 @@ const tabs = [
     lang: "bash",
     langCode: "bash",
     title: "cURL",
-    template: ({ method, url, auth, body }) => {
+    template: ({ method, url, auth, body, authField }) => {
       const indent = " ".repeat("curl ".length);
 
       return buildTemplate([
@@ -110,7 +112,9 @@ const tabs = [
           }`
         ),
         auth
-          ? line(`${indent}--header 'X-API-Key: ${auth}' ${body ? "\\" : ""}`)
+          ? line(
+              `${indent}--header '${authField}: ${auth}' ${body ? "\\" : ""}`
+            )
           : null,
         body
           ? line(`${indent}--header 'content-type: application/json' \\`)
@@ -125,7 +129,7 @@ const tabs = [
     lang: "go",
     langCode: "go",
     title: "Go",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("package main"),
         line(""),
@@ -156,7 +160,7 @@ const tabs = [
         body
           ? line('req.Header.Add("Content-Type", "application/json")', 1)
           : null,
-        auth ? line(`req.Header.Add("X-API-Key", "${auth}")`, 1) : null,
+        auth ? line(`req.Header.Add("${authField}", "${auth}")`, 1) : null,
         line(""),
         line("res, _ := http.DefaultClient.Do(req)", 1),
         line(""),
@@ -173,7 +177,7 @@ const tabs = [
     lang: "php",
     langCode: "php",
     title: "PHP",
-    template: ({ method, url, auth, body }) =>
+    template: ({ method, url, auth, body, authField }) =>
       buildTemplate([
         line("<?php"),
         line("// Dependencies to install:"),
@@ -189,7 +193,7 @@ const tabs = [
           : null,
         line("'headers' => [", 1),
         line("'Accept' => 'application/json',", 2),
-        auth ? line(`'X-API-Key' => '${auth}',`, 2) : null,
+        auth ? line(`'${authField}' => '${auth}',`, 2) : null,
         body ? line("'Content-Type' => 'application/json',", 2) : null,
         line("],", 1),
         line("]);"),
@@ -230,31 +234,195 @@ export const filterOutEmpty = (value: any) => {
   return value;
 };
 
+export const formatParamsByLang = (params: any, lang: string) => {
+  for (const key of Object.keys(params)) {
+    let formattedKey = "";
+    switch (lang) {
+      case "node":
+        formattedKey = snakeToCamelCase(key);
+        break;
+      case "python":
+        formattedKey = camelToSnakeCase(key).replace("-", "_");
+        break;
+      default:
+        break;
+    }
+
+    if (key !== formattedKey) {
+      params[formattedKey] = params[key];
+      delete params[key];
+      // Handling hex chain values for NodeJS SDK
+    } else if (formattedKey === "chain" && lang === "node") {
+      params.chain = (() => {
+        const { chain } = params ?? {};
+        switch (chain) {
+          case "eth":
+            return "0x1";
+          case "goerli":
+            return "0x5";
+          case "sepolia":
+            return "0xaa36a7";
+          case "polygon":
+            return "0x89";
+          case "mumbai":
+            return "0x13881";
+          case "bsc":
+            return "0x38";
+          case "bsc testnet":
+            return "0x61";
+          case "avalanche":
+            return "0xa86a";
+          case "avalanche testnet":
+            return "0xa869";
+          case "fantom":
+            return "0xfa";
+          case "palm":
+            return "0x2a15c308d";
+          case "cronos":
+            return "0x19";
+          case "cronos testnet":
+            return "0x152";
+          case "arbitrum":
+            return "0xa4b1";
+          default:
+            return chain;
+        }
+      })();
+    }
+  }
+
+  return params;
+};
+
+const customNodeSdkBody = (code: string, body: any) => {
+  // For `requestChallengeEvm` and `requestChallengeSolana`
+  if (code.includes("requestMessage")) {
+    const { chainId, network } = body ?? {};
+    if (chainId) {
+      return {
+        chain: `0x${parseInt(chainId).toString(16)}`,
+        chainId: undefined,
+        networkType: "evm",
+      };
+    } else if (network) {
+      return {
+        solNetwork: network,
+        networkType: "solana",
+      };
+    }
+  }
+};
+
+/**
+ * @description – Only for NodeJS & Python Moralis SDK codes
+ *
+ * @param code
+ * @param lang
+ * @param params
+ * @param auth
+ * @returns
+ */
+export const injectParamsToCode = (
+  code: string,
+  lang: string,
+  params: any,
+  auth: string,
+  network: string,
+  aptosNetwork: "mainnet" | "testnet"
+) => {
+  const { query = {}, path = {}, body = {} } = params ?? {};
+  switch (lang) {
+    case "node":
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+              ...formatParamsByLang({ ...body }, lang),
+              ...customNodeSdkBody(code, body),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
+            },
+            true
+          ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+    case "python":
+    default:
+      return code
+        .replace(
+          "{}",
+          stringifyJSON(
+            {
+              ...formatParamsByLang({ ...query }, lang),
+              ...formatParamsByLang({ ...path }, lang),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
+            },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(
+          "[]",
+          stringifyJSON(
+            { ...formatParamsByLang({ ...body }, lang) },
+            true
+          ).replace(/\n/g, `\n`)
+        )
+        .replace(/YOUR_API_KEY/, auth);
+  }
+};
+
 const ApiExamples = ({
   method,
   apiHost,
   path,
   codeSamples,
-}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+  aptosNetwork,
+}: Pick<
+  ApiReferenceProps,
+  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
+>) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
+  const { path: pagePath, network } = usePageState();
+
+  // Bearer is only for Aptos Web3 Data API, the rest are X-API-Key
+  const authField = useMemo(
+    () =>
+      pagePath === "web3-data-api" && network === "aptos"
+        ? "Bearer"
+        : "X-API-Key",
+    []
+  );
 
   const defaultPathParams = useMemo(
-    () => mapValues(values.path, (value, key) => `:${key}`),
+    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
       {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code } =
+        const { code = "" } =
           codeSamples?.find((sample) => sample?.language === lang) ?? {};
         const auth = token.length > 0 ? token : "YOUR_API_KEY";
         return (
           <TabItem key={index} value={lang} label={title}>
             <CodeBlock className={`language-${langCode}`}>
               {code
-                ? buildTemplate([line(code?.replace(/YOUR_API_KEY/, auth))])
+                ? buildTemplate([
+                    line(
+                      injectParamsToCode(
+                        code,
+                        lang,
+                        values,
+                        auth,
+                        network,
+                        aptosNetwork
+                      )
+                    ),
+                  ])
                 : template({
                     method,
                     url: [
@@ -268,7 +436,12 @@ const ApiExamples = ({
                       }),
                     ].join(""),
                     auth: auth,
-                    body: filterOutEmpty(values.body),
+                    body:
+                      // temporary fix for runContractFunction
+                      path === "/:address/function"
+                        ? values.body
+                        : filterOutEmpty(values.body),
+                    authField,
                   })}
             </CodeBlock>
           </TabItem>

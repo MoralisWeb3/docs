@@ -1,7 +1,7 @@
 .form {
   position: relative;
   z-index: 1;
-  margin: 2rem 0;
+  margin: 0.75rem 0;
 }
 
 .runner {
@@ -295,4 +295,46 @@ button.groupHeader:focus {
 
 .groupHeader .inlineForm {
   margin: 0.25rem 0;
+}
+
+.ToggleGroup {
+  display: inline-flex;
+  border-radius: 4px;
+  background-color: var(--ifm-navbar-background-color);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.ToggleGroupItem {
+  all: unset;
+  font-size: 14px;
+  display: flex;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.ToggleGroupItem:first-child {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ToggleGroupItem:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.ToggleGroupItem:hover,
+.ToggleGroupItem[data-state="on"] {
+  color: var(--ifm-link-hover-color);
+  border-bottom: 2px solid var(--ifm-navbar-link-hover-color);
+}
+
+.ToggleGroupItem:focus {
+  position: relative;
 }

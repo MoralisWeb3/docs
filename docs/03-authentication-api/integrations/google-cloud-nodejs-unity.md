@@ -16,7 +16,7 @@ This tutorial will teach you how to host your custom backend (powered by Moralis
 
 ## Prerequisites
 
-- Complete the [Quickstart NodeJS](/web3-data-api/quickstart-nodejs) tutorial
+- Complete the [Quickstart NodeJS](/web3-data-api/evm/quickstart-nodejs) tutorial
 
 ## Customize Code from the _Quickstart NodeJS_ Tutorial
 
@@ -102,7 +102,7 @@ async function requestMessage(address, chain) {
   const result = await Moralis.Auth.requestMessage({
     address,
     chain,
-    network: NETWORK,
+    networkType: NETWORK,
     domain: DOMAIN,
     statement: STATEMENT,
     uri: URI,

@@ -14,6 +14,7 @@
     </a><br/>
     <img alt="vercel" src="https://img.shields.io/github/deployments/MoralisWeb3/docs/production?label=vercel&logo=vercel&logoColor=white" />
     <img alt="github" src="https://img.shields.io/github/last-commit/MoralisWeb3/docs" />
+    <img alt="algolia" src="https://github.com/MoralisWeb3/docs/actions/workflows/algolia.yml/badge.svg" />
   <p>
   </p>
   <p>
@@ -41,7 +42,7 @@ This command opens up a browser window and most changes are reflected live witho
 ### Build
 
 ```sh
-npm build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.

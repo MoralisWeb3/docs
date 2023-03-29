@@ -45,14 +45,26 @@ export const buildResponse = (field: ApiParam) => {
   return "";
 };
 
-const ApiResponseField = ({ field, collapsible }: { field: ApiParam; collapsible?: boolean }) => {
+const ApiResponseField = ({
+  field,
+  collapsible,
+}: {
+  field: ApiParam;
+  collapsible?: boolean;
+}) => {
   const [collapsed, setCollapsed] = useState(!!collapsible);
   const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const toggleCollapsed = useCallback(() => setCollapsed((collapsed) => !collapsed), []);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    []
+  );
 
   if (PRIMITIVE_TYPES.includes(field?.type)) {
-    const enums = field.type === "string" && field.enum ? `*[${field.enum.join(" | ")}]*` : "";
+    const enums =
+      field.type === "string" && field.enum
+        ? `*[${field.enum.join(" | ")}]*`
+        : "";
 
     return (
       <div className={styles.field}>
@@ -72,7 +84,11 @@ const ApiResponseField = ({ field, collapsible }: { field: ApiParam; collapsible
         <div className={styles.groupContainer}>
           {field.name &&
             (collapsible ? (
-              <button type="button" className={styles.groupHeader} onClick={toggleCollapsed}>
+              <button
+                type="button"
+                className={styles.groupHeader}
+                onClick={toggleCollapsed}
+              >
                 <ApiParamInfo param={field} />
               </button>
             ) : (
@@ -144,7 +160,9 @@ const ApiResponseField = ({ field, collapsible }: { field: ApiParam; collapsible
               <React.Fragment key={index}>
                 {expandedIndex === index ? (
                   <div className={styles.groupHeader}>
-                    {fieldParam.displayName || fieldParam.name || `Option ${index + 1}`}
+                    {fieldParam.displayName ||
+                      fieldParam.name ||
+                      `Option ${index + 1}`}
                   </div>
                 ) : (
                   <button
@@ -152,11 +170,15 @@ const ApiResponseField = ({ field, collapsible }: { field: ApiParam; collapsible
                     onClick={() => setExpandedIndex(index)}
                     className={styles.groupHeader}
                   >
-                    {fieldParam.displayName || fieldParam.name || `Option ${index + 1}`}
+                    {fieldParam.displayName ||
+                      fieldParam.name ||
+                      `Option ${index + 1}`}
                   </button>
                 )}
 
-                {expandedIndex === index && <ApiResponseField key={index} field={fieldParam} />}
+                {expandedIndex === index && (
+                  <ApiResponseField key={index} field={fieldParam} />
+                )}
               </React.Fragment>
             ))}
           </div>
