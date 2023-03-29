@@ -302,12 +302,12 @@ const customNodeSdkBody = (code: string, body: any) => {
       return {
         chain: `0x${parseInt(chainId).toString(16)}`,
         chainId: undefined,
-        network: "evm",
+        networkType: "evm",
       };
     } else if (network) {
       return {
         solNetwork: network,
-        network: "solana",
+        networkType: "solana",
       };
     }
   }
