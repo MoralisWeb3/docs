@@ -19268,6 +19268,18 @@
             "type": "array",
             "field": {
               "type": "object",
+              "example": {
+                "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                "data": {
+                  "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                  "coin_register_events": {
+                    "counter": "0",
+                    "guid": { "id": { "addr": "0x1", "creation_num": "0" } }
+                  },
+                  "self_address": "0x1",
+                  "sequence_number": "0"
+                }
+              },
               "fields": [
                 {
                   "name": "type",
