@@ -17,7 +17,7 @@ With this feature you can effortlessly identify and hide suspicious contracts or
 
 All contracts that are marked as spam have been evaluated against a set of criteria. 
 
-Factors such as liquidity, exchange presence, team presence, and project maturity have been considered.
+Factors such as liquidity, exchange presence, team presence, minting & transfer activities (honeypot activity, etc.), project maturity, and other undisclosed evaluation factors have been taken into consideration.
 
 ### Community support! Help report spam or suspicious contracts 
 
@@ -34,3 +34,15 @@ Spam detection is available on the following endpoints:
 - [Get ERC20 token metadata by symbols](https://docs.moralis.io/web3-data-api/reference/get-token-metadata-by-symbol)
 - [Get ERC20 token transfers](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
 - [Get ERC20 token approvals](https://docs.moralis.io/web3-data-api/reference/get-erc20-approvals)
+
+### What chains is this supported on?
+This feature is supported on all EVMs, however, our initial classification includes contracts from:
+
+- Ethereum mainet
+- Polygon mainnet
+- Avalance mainnet
+- Fantom mainnet
+- Binance mainnet
+- Cronos mainnet
+- Arbitrum mainnet
+- Optimism mainnet
