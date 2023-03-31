@@ -189,6 +189,10 @@ async function walk(dir: string): Promise<string[]> {
   return flattenedFiles;
 }
 
+async function sleep(millis) {
+  return new Promise((resolve) => setTimeout(resolve, millis));
+}
+
 async function generateEmbeddings() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
@@ -270,6 +274,7 @@ async function generateEmbeddings() {
         `Adding ${sections.length} page sections (with embeddings) for '${path}'`
       );
       for (const section of sections) {
+        await sleep(1500);
         // OpenAI recommends replacing newlines with spaces for best results (specific to embeddings)
         const input = section.replace(/\n/g, " ");
 
@@ -283,7 +288,6 @@ async function generateEmbeddings() {
             model: "text-embedding-ada-002",
             input,
           });
-
           if (embeddingResponse.status !== 200) {
             throw new Error(inspect(embeddingResponse.data, false, 2));
           }
