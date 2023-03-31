@@ -3,10 +3,12 @@ import { oneLine, stripIndent } from "common-tags";
 import GPT3Tokenizer from "gpt3-tokenizer";
 import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import cosSimilarity from "cos-similarity";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const GPT3NodeTokenizer = (GPT3Tokenizer as any).default;
 
 export class ApplicationError extends Error {
   constructor(message: string, public data: Record<string, any> = {}) {
@@ -55,7 +57,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       throw new UserError("Missing query in request data");
     }
 
-    const sanitizedQuery = query.trim();
+    const sanitizedQuery = (query as any)?.trim();
 
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
 
@@ -90,26 +92,25 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     const [{ embedding }] = embeddingResponse.data.data;
 
-    const { error: matchError, data: pageSections } = await supabaseClient.rpc(
-      "match_page_sections",
-      {
-        embedding,
-        match_threshold: 0.78,
-        match_count: 10,
-        min_content_length: 50,
-      }
-    );
+    const { data = [], error: matchError } = await supabaseClient
+      .from("page_section")
+      .select();
+    (data ?? []).sort((a, b) => {
+      const aDotProduct = cosSimilarity(a?.embedding, embedding);
+      const bDotProduct = cosSimilarity(b?.embedding, embedding);
+      return bDotProduct - aDotProduct;
+    });
 
     if (matchError) {
       throw new ApplicationError("Failed to match page sections", matchError);
     }
 
-    const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
+    const tokenizer = new GPT3NodeTokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
 
-    for (let i = 0; i < pageSections.length; i++) {
-      const pageSection = pageSections[i];
+    for (let i = 0; i < data.length; i++) {
+      const pageSection = data[i];
       const content = pageSection.content;
       const encoded = tokenizer.encode(content);
       tokenCount += encoded.text.length;
@@ -123,7 +124,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     const prompt = stripIndent`
       ${oneLine`
-        You are a very enthusiastic Supabase representative who loves
+        You are a very enthusiastic Moralis representative who loves
         to help people! Given the following sections from the Supabase
         documentation, answer the question using only that information,
         outputted in markdown format. If you are unsure and the answer
@@ -146,25 +147,18 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       prompt,
       max_tokens: 512,
       temperature: 0,
-      stream: true,
     };
 
-    const response = await fetch("https://api.openai.com/v1/completions", {
-      headers: {
-        Authorization: `Bearer ${openAiKey}`,
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(completionOptions),
-    });
+    const response = await openai.createCompletion(completionOptions);
 
-    if (!response.ok) {
-      const error = await response.json();
+    if (response.status !== 200) {
+      const error = response;
       throw new ApplicationError("Failed to generate completion", error);
     }
 
     // Proxy the streamed SSE response from OpenAI
-    return new Response(response.body, {
+    res.status(200).json({
+      body: response.data.choices?.[0]?.text,
       headers: {
         ...corsHeaders,
         "Content-Type": "text/event-stream",
@@ -172,16 +166,11 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     });
   } catch (err: unknown) {
     if (err instanceof UserError) {
-      return new Response(
-        JSON.stringify({
-          error: err.message,
-          data: err.data,
-        }),
-        {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
-      );
+      res.status(400).json({
+        error: err.message,
+        data: err.data,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     } else if (err instanceof ApplicationError) {
       // Print out application errors with their additional data
       console.error(`${err.message}: ${JSON.stringify(err.data)}`);
