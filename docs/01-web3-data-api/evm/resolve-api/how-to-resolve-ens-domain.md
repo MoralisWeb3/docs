@@ -2,7 +2,7 @@
 title: "How to resolve an ENS domain"
 slug: "../how-to-resolve-ens-domain"
 description: "Learn how to resolve the ENS domain using the Moralis Resolve API."
-sidebar_label: "Get ENS domain by address"
+sidebar_label: "Get address by ENS domain"
 ---
 
 ## Prerequisites
