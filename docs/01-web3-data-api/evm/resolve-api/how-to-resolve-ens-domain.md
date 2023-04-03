@@ -1,8 +1,8 @@
 ---
-title: "How to reverse resolve an ENS name"
-slug: "../how-to-resolve-ens-name"
-description: "Learn how to reverse resolve the ENS name from an address using the Moralis Resolve API."
-sidebar_label: "Get ENS name by address"
+title: "How to resolve an ENS domain"
+slug: "../how-to-resolve-ens-domain"
+description: "Learn how to resolve the ENS domain using the Moralis Resolve API."
+sidebar_label: "Get address by ENS domain"
 ---
 
 ## Prerequisites
@@ -18,13 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Reverse Resolve ENS name
+## Step 2: Resolve ENS domain
 
-In order to reverse resolve the ENS name from an ETH address, Moralis provides you a [resolveAddress](/web3-data-api/evm/reference/resolve-address) endpoint to do so.
+In order to resolve the ENS domain to an ETH address, Moralis provides you a [resolveENSDomain](/web3-data-api/evm/reference/resolve-ens-domain) endpoint to do so.
 
-Here you'll need one parameter: `address`.
+Here you'll need one parameter: `domain`.
 
-Once you've obtained the `address`, you can copy the following code:
+Once you've obtained the `domain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -42,10 +42,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const domain = "vitalik.eth";
 
-  const response = await Moralis.EvmApi.resolve.resolveAddress({
-    address,
+  const response = await Moralis.EvmApi.resolve.resolveENSDomain({
+    domain,
   });
 
   console.log(response.toJSON());
@@ -67,10 +67,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const domain = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-  const response = await Moralis.EvmApi.resolve.resolveAddress({
-    address,
+  const response = await Moralis.EvmApi.resolve.resolveENSDomain({
+    domain,
   });
 
   console.log(response.toJSON());
@@ -88,10 +88,10 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "domain": "vitalik.eth",
 }
 
-result = evm_api.resolve.resolve_address(
+result = evm_api.resolve.resolve_ens_domain(
     api_key=api_key,
     params=params,
 )
@@ -112,21 +112,17 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "name": "vitalik.eth"
+  "address": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
 }
 ```
 
-Congratulations 🥳 You just reverse resolved the ENS name from a wallet address with just a few lines of code using the Moralis Resolve API!
-
-## Youtube Video
-
-https://www.youtube.com/watch?v=Q0tPFW0nf1E
+Congratulations 🥳 You just resolved the address to an ENS domain with just a few lines of code using the Moralis Resolve API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveAddress](/web3-data-api/evm/reference/resolve-address)
+- [resolveENSDomain](/web3-data-api/evm/reference/resolve-ens-domain)
 
 ## Support
 
