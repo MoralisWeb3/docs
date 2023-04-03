@@ -9217,7 +9217,7 @@
   "resolve": {
     "resolveAddress": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Resolve ENS domain",
+      "summary": "ENS lookup by address",
       "description": "Reverse resolve a given ETH address to its ENS domain.",
       "method": "GET",
       "path": "/resolve/:address/reverse",
@@ -9312,6 +9312,53 @@
         {
           "language": "python",
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_domain(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "resolveENSDomain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "ENS lookup by domain",
+      "description": "Resolve a specific ENS domain to its address.",
+      "method": "GET",
+      "path": "/resolve/ens/:domain",
+      "pathParams": [
+        {
+          "name": "domain",
+          "description": "The domain to be resolved",
+          "required": true,
+          "example": "vitalik.eth",
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns an address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "description": "Resolved domain address",
+                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+              }
+            ]
+          }
+        },
+        { "status": "404", "description": "Returns an address" }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.resolve.resolveENSDomain({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_e_n_s_domain(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
