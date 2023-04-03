@@ -18,11 +18,12 @@
     "generate-reference": "node docs/configs/generate.ts",
     "generate-code": "node docs/configs/code/generate.ts",
     "algolia": "node ./utils/algoliaCrawlerReindex.ts",
+    "vale": "npx vale ./src",
     "lint": "npx eslint src",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix",
+    "format": "npm run vale && npm run prettier:fix && npm run lint:fix",
     "prepare": "husky install"
   },
   "dependencies": {

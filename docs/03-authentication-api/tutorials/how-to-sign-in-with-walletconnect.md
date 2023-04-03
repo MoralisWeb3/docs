@@ -14,7 +14,7 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask](/a
 
 ## Configuring the WalletConnect Connector
 
-1. Open the`pages/signin.jsx` file and add `WalletConnectConnector` as a connector to `connectAsync()`:
+1. Open the`pages/signin.jsx` file and add `WalletConnectConnector` as a connector to `connectAsync()`. You should have your [Project ID](https://cloud.walletconnect.com/sign-in) for the WalletConnect configuration and replace `xxx` with it in the code below.
 
 ```javascript
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
@@ -25,7 +25,9 @@ import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
 function SignIn() {
   const { connectAsync } = useConnect({
-    connector: new WalletConnectConnector({ options: { qrcode: true } }),
+    connector: new WalletConnectConnector({
+      options: { projectId: "xxx", showQrModal: true },
+    }),
   });
   const { disconnectAsync } = useDisconnect();
   const { isConnected } = useAccount();

@@ -3,3 +3,4 @@ node_modules
 .docusaurus
 .vercel
 build
+.vale.ini

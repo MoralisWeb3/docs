@@ -41,3 +41,9 @@ Spam detection is available on the following endpoints:
 - [Get NFT transfers from a block to a block](https://docs.moralis.io/web3-data-api/evm/reference/get-nft-transfers-from-to-block)
 - [Get NFT transfers by block](https://docs.moralis.io/web3-data-api/evm/reference/get-nft-transfers-by-block)
 
+### What chains is this supported on?
+This feature is supported on all EVMs, however, our initial classification includes contracts from:
+
+- Ethereum mainnet
+- Polygon mainnet
+- Binance mainnet

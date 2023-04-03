@@ -16652,7 +16652,105 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "coin_type",
+                "type": "string",
+                "example": "T0xa911c7236486be921f6cc9227b09afe4a4ad14d291ba1bb8a9b7c4d628759de::gegg::GEGG",
+                "description": "The definition of the coin structure (identifier)",
+                "maxLength": 5000,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "coin_type_hash",
+                "type": "string",
+                "example": "6993fb8b5688d392a2d94127b9926519d6327e69f2bcf3dc0c5df2c060aec97d",
+                "description": "The hash of the coin_type (identifier) and a known fixed length",
+                "maxLength": 64,
+                "minLength": 64,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "creator_address",
+                "type": "string",
+                "example": "0x9125e4054d884fdc7296b66e12c0d63a7baa0d88c77e8e784987c0a967c670ac",
+                "description": "The address of the creator of the coin",
+                "maxLength": 66,
+                "minLength": 66,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "decimals",
+                "type": "number",
+                "example": 8,
+                "description": "The number of decimals of the coin",
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "example": "GEGG Coin",
+                "description": "The name of the Coin",
+                "maxLength": 32,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "supply_aggregator_table_handle",
+                "type": "string",
+                "nullable": false,
+                "example": "0x3::token::TokenStore",
+                "description": "The data structure of the token",
+                "required": true
+              },
+              {
+                "name": "supply_aggregator_table_key",
+                "type": "string",
+                "nullable": false,
+                "example": "0x3::token::TokenStore",
+                "description": "The data structure of the token",
+                "required": true
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "example": "GEGG",
+                "description": "The symbol of the coin",
+                "maxLength": 10,
+                "minLength": 1,
+                "nullable": false,
+                "required": true
+              },
+              {
+                "name": "transaction_created_timestamp",
+                "type": "string",
+                "nullable": false,
+                "example": "2022-09-17T22:03:32.000000Z",
+                "description": "The timestamp of the transaction of when the coin was created",
+                "required": true
+              },
+              {
+                "name": "transaction_version_created",
+                "type": "string",
+                "example": "210373856",
+                "description": "The version of the transaction where the coin was created",
+                "nullable": false,
+                "required": true
+              }
+            ]
+          }
+        },
         {
           "status": "400",
           "description": "",
@@ -19162,7 +19260,54 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "example": {
+                "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                "data": {
+                  "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                  "coin_register_events": {
+                    "counter": "0",
+                    "guid": { "id": { "addr": "0x1", "creation_num": "0" } }
+                  },
+                  "self_address": "0x1",
+                  "sequence_number": "0"
+                }
+              },
+              "fields": [
+                {
+                  "name": "type",
+                  "type": "string",
+                  "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                  "description": "String representation of a MoveStructTag (on-chain Move struct type). This exists so you can specify MoveStructTags as path / query parameters",
+                  "required": true
+                },
+                {
+                  "name": "data",
+                  "type": "json",
+                  "example": {
+                    "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "coin_register_events": {
+                      "counter": "0",
+                      "guid": { "id": { "addr": "0x1", "creation_num": "0" } }
+                    },
+                    "self_address": "0x1",
+                    "sequence_number": "0"
+                  },
+                  "description": "This is a JSON representation of some data within an account resource. More specifically, it is a map of strings to arbitrary JSON values / objects, where the keys are top level fields within the given resource.",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -19211,7 +19356,230 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "bytecode",
+                  "type": "string",
+                  "description": "All bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.",
+                  "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                  "required": true
+                },
+                {
+                  "name": "abi",
+                  "example": {
+                    "address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+                    "name": "string",
+                    "friends": ["0x1::aptos_coin"],
+                    "exposed_functions": [
+                      {
+                        "name": "string",
+                        "visibility": "private",
+                        "is_entry": true,
+                        "generic_type_params": [{ "constraints": ["string"] }],
+                        "params": ["string"],
+                        "return": ["string"]
+                      }
+                    ],
+                    "structs": [
+                      {
+                        "name": "string",
+                        "is_native": true,
+                        "abilities": ["string"],
+                        "generic_type_params": [{ "constraints": ["string"] }],
+                        "fields": [{ "name": "string", "type": "string" }]
+                      }
+                    ]
+                  },
+                  "description": "A Move module",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                      "description": "A hex encoded 32 byte Aptos account address.",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "example": "",
+                      "description": "",
+                      "required": true
+                    },
+                    {
+                      "name": "friends",
+                      "example": [],
+                      "description": "Friends of the module",
+                      "type": "array",
+                      "field": { "type": "string" },
+                      "required": true
+                    },
+                    {
+                      "name": "exposed_functions",
+                      "example": [],
+                      "description": "Public functions of the module",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "example": "",
+                            "description": "Name of the function",
+                            "required": true
+                          },
+                          {
+                            "name": "visibility",
+                            "type": "string",
+                            "example": "private",
+                            "description": "Move function visibility",
+                            "required": true
+                          },
+                          {
+                            "name": "is_entry",
+                            "type": "boolean",
+                            "example": true,
+                            "description": "Whether the function can be called as an entry function directly in a transaction",
+                            "required": true
+                          },
+                          {
+                            "name": "generic_type_params",
+                            "example": [],
+                            "description": "Generic type params associated with the Move function",
+                            "type": "array",
+                            "field": {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "constraints",
+                                  "example": [],
+                                  "description": "Move abilities tied to the generic type param and associated with the function that uses it",
+                                  "type": "array",
+                                  "field": { "type": "string" },
+                                  "required": true
+                                }
+                              ]
+                            },
+                            "required": true
+                          },
+                          {
+                            "name": "params",
+                            "example": [],
+                            "description": "Parameters associated with the move function",
+                            "type": "array",
+                            "field": { "type": "string" },
+                            "required": true
+                          },
+                          {
+                            "name": "return",
+                            "example": "",
+                            "description": "Return type of the function",
+                            "type": "array",
+                            "field": { "type": "string" },
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "structs",
+                      "example": [],
+                      "description": "Structs of the module",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "example": "",
+                            "description": "Name of the struct",
+                            "required": true
+                          },
+                          {
+                            "name": "is_native",
+                            "type": "boolean",
+                            "example": true,
+                            "description": "Whether the struct is a native struct of Move",
+                            "required": true
+                          },
+                          {
+                            "name": "abilities",
+                            "example": [],
+                            "description": "Abilities associated with the struct",
+                            "type": "array",
+                            "field": { "type": "string" },
+                            "required": true
+                          },
+                          {
+                            "name": "generic_type_params",
+                            "example": [],
+                            "description": "Generic types associated with the struct",
+                            "type": "array",
+                            "field": {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "constraints",
+                                  "example": [],
+                                  "description": "Move abilities tied to the generic type param and associated with the function that uses it",
+                                  "type": "array",
+                                  "field": { "type": "string" },
+                                  "required": true
+                                }
+                              ]
+                            },
+                            "required": true
+                          },
+                          {
+                            "name": "fields",
+                            "example": [],
+                            "description": "Fields associated with the struct",
+                            "type": "array",
+                            "field": {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "name",
+                                  "type": "string",
+                                  "example": "sender",
+                                  "description": "Name of the field",
+                                  "required": true
+                                },
+                                {
+                                  "name": "type",
+                                  "type": "string",
+                                  "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                                  "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -19420,7 +19788,71 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "version",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "guid",
+                  "example": "",
+                  "description": "",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "creation_number",
+                      "type": "string",
+                      "example": "32425224034",
+                      "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                      "required": true
+                    },
+                    {
+                      "name": "account_address",
+                      "type": "string",
+                      "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                      "description": "A hex encoded 32 byte Aptos account address.\nThis is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x.",
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "sequence_number",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "type",
+                  "type": "string",
+                  "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                  "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.",
+                  "required": true
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "example": {},
+                  "description": "The JSON representation of the event",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -19475,7 +19907,71 @@
           "type": "string"
         }
       ],
-      "responses": [{ "status": "200", "description": "" }],
+      "responses": [
+        {
+          "status": "200",
+          "description": "",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "version",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "guid",
+                  "example": "",
+                  "description": "",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "creation_number",
+                      "type": "string",
+                      "example": "32425224034",
+                      "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                      "required": true
+                    },
+                    {
+                      "name": "account_address",
+                      "type": "string",
+                      "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1",
+                      "description": "A hex encoded 32 byte Aptos account address.\nThis is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x.",
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "sequence_number",
+                  "type": "string",
+                  "example": "32425224034",
+                  "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                  "required": true
+                },
+                {
+                  "name": "type",
+                  "type": "string",
+                  "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                  "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.",
+                  "required": true
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "example": {},
+                  "description": "The JSON representation of the event",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -20830,7 +21326,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "A string containing a 64-bit unsigned integer."
+                      "description": "The timestamp of the block (in milliseconds)"
                     }
                   ]
                 },
@@ -22716,7 +23212,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -23275,7 +23771,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -24736,7 +25232,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "A string containing a 64-bit unsigned integer."
+                    "description": "The timestamp of the block (in milliseconds)"
                   }
                 ]
               },
@@ -26614,7 +27110,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -27169,7 +27665,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -28520,7 +29016,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "A string containing a 64-bit unsigned integer."
+                    "description": "The timestamp of the block (in milliseconds)"
                   }
                 ]
               },
@@ -30398,7 +30894,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -30953,7 +31449,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "The timestamp of the block (in milliseconds)",
                     "required": true
                   }
                 ]
@@ -32323,7 +32819,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "A string containing a 64-bit unsigned integer."
+                      "description": "The timestamp of the block (in milliseconds)"
                     }
                   ]
                 },
@@ -34209,7 +34705,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -34768,7 +35264,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "The timestamp of the block (in milliseconds)",
                       "required": true
                     }
                   ]
@@ -36435,7 +36931,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "A string containing a 64-bit unsigned integer."
+                          "description": "The timestamp of the block (in milliseconds)"
                         }
                       ]
                     },
@@ -38323,7 +38819,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -38882,7 +39378,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -40289,7 +40785,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "A string containing a 64-bit unsigned integer."
+                          "description": "The timestamp of the block (in milliseconds)"
                         }
                       ]
                     },
@@ -42177,7 +42673,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
@@ -42736,7 +43232,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "The timestamp of the block (in milliseconds)",
                           "required": true
                         }
                       ]
