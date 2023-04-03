@@ -52,12 +52,13 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     };
     validateAgainstSchema(message, schema);
     if (analytics) {
-      analytics.track(
-        "Feedback Comment Provided",
-        props || {},
-        withTypewriterContext(options)
-      );
+      // analytics.track(
+      //   "Feedback Comment Provided",
+      //   props || {}
+      //   // withTypewriterContext(options)
+      // );
     }
+    res.status(200).send("test");
   } catch (e) {
     console.error(e);
   }

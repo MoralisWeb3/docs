@@ -603,15 +603,6 @@ const clientAPI = {
    */
   setTypewriterOptions,
   /**
-   * Fires a 'Docs Searched' track call.
-   *
-   * @param {DocsSearched} props - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  docsSearched,
-  /**
    * User submits comments after their thumbs/down rating
    *
    * @param {FeedbackCommentProvided} [props] - The analytics properties that will be sent to Segment.
@@ -629,70 +620,8 @@ const clientAPI = {
    * 		call is fired.
    */
   feedbackProvided,
-  /**
-   * Fires a 'Home Button Clicked' track call.
-   *
-   * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  homeButtonClicked,
-  /**
-   * Fires a 'Lead Captured' track call.
-   *
-   * @param {LeadCaptured} props - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  leadCaptured,
-  /**
-   * User clicks one of the navigation elements like the home button, ToC, or searches
-   *
-   * @param {NavigationControlUsed} props - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  navigationControlUsed,
-  /**
-   * Fires a 'Page Viewed' track call.
-   *
-   * @param {PageViewed} [props] - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  pageViewed,
-  /**
-   * Fires a 'Scroll to Top Clicked' track call.
-   *
-   * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  scrollToTopClicked,
-  /**
-   * User scrolled to the bottom of the page
-   *
-   * @param {ScrolledToBottom} props - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  scrolledToBottom,
-  /**
-   * Table of Contents Clicked
-   *
-   * @param {TocClicked} props - The analytics properties that will be sent to Segment.
-   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-   * 		call is fired.
-   */
-  tocClicked,
 };
+
 export default new Proxy(clientAPI, {
   get(target, method) {
     // eslint-disable-next-line no-prototype-builtins
