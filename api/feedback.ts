@@ -1,11 +1,12 @@
 import { Analytics } from "@segment/analytics-node";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import {
-  withTypewriterContext,
+  // withTypewriterContext,
   validateAgainstSchema,
 } from "../src/utils/segmentAnalytics";
+import { v4 as uuidv4 } from "uuid";
 
-const analytics = new Analytics({ writeKey: "<YOUR_WRITE_KEY>" });
+const analytics = new Analytics({ writeKey: process.env.SEGMENT_API_KEY });
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   try {
@@ -49,14 +50,11 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       event: "Feedback Comment Provided",
       properties: props || {},
       options,
+      anonymousId: uuidv4(),
     };
     validateAgainstSchema(message, schema);
     if (analytics) {
-      // analytics.track(
-      //   "Feedback Comment Provided",
-      //   props || {}
-      //   // withTypewriterContext(options)
-      // );
+      analytics.track(message);
     }
     res.status(200).send("test");
   } catch (e) {
