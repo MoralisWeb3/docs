@@ -82,14 +82,14 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "Should normalized metadata be returned?",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
           "type": "boolean"
         },
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -547,13 +547,13 @@
             "name": "normalizeMetadata",
             "type": "boolean",
             "required": false,
-            "description": "Should normalized metadata be returned?",
+            "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
             "example": false
           },
           {
             "name": "media_items",
             "type": "boolean",
-            "description": "Should preview media data be returned?",
+            "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
             "example": true
           }
         ]
@@ -1241,14 +1241,14 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
           "type": "boolean"
         },
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -1691,14 +1691,14 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
           "type": "boolean"
         },
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -3152,14 +3152,14 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
           "type": "boolean"
         },
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -3812,14 +3812,14 @@
         },
         {
           "name": "normalizeMetadata",
-          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](https://docs.moralis.io/web3-data-api/metadata-normalization/metadata-normalization).",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
           "type": "boolean"
         },
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -6440,7 +6440,7 @@
         },
         {
           "name": "wallet_addresses",
-          "description": "The addresses to get metadata for",
+          "description": "The addresses to get metadata for (max 25 addresses)",
           "required": true,
           "type": "array",
           "field": {
@@ -6638,7 +6638,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         },
@@ -7367,7 +7366,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         }
@@ -8418,7 +8416,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         }
@@ -13900,7 +13897,7 @@
                   "type": "string",
                   "nullable": false,
                   "example": "2022-09-17T22:03:32.000000Z",
-                  "description": "The timestamp of the last transaction",
+                  "description": "The timestamp of the last transaction returned in milliseconds",
                   "required": true
                 },
                 {
@@ -14164,7 +14161,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -14396,7 +14393,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -14622,7 +14619,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -14791,7 +14788,7 @@
                   "type": "string",
                   "nullable": false,
                   "example": "2022-09-17T22:03:32.000000Z",
-                  "description": "The timestamp of the last transaction",
+                  "description": "The timestamp of the last transaction returned in milliseconds",
                   "required": true
                 },
                 {
@@ -14988,7 +14985,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -15167,7 +15164,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -15363,7 +15360,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -15774,7 +15771,7 @@
                     "type": "string",
                     "nullable": false,
                     "example": "2022-09-17T22:03:32.000000Z",
-                    "description": "The timestamp of the transfer",
+                    "description": "The timestamp of the transfer returned in milliseconds",
                     "required": true
                   },
                   {
@@ -16001,7 +15998,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transfer",
+                    "description": "The timestamp of the transfer returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -16224,7 +16221,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transfer",
+                    "description": "The timestamp of the transfer returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -16447,7 +16444,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transfer",
+                    "description": "The timestamp of the transfer returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -16612,7 +16609,7 @@
                 "type": "string",
                 "nullable": false,
                 "example": "2022-09-17T22:03:32.000000Z",
-                "description": "The timestamp of the transaction of when the coin was created",
+                "description": "The timestamp of the transaction of when the coin was created returned in milliseconds",
                 "required": true
               },
               {
@@ -16772,7 +16769,7 @@
                   {
                     "name": "transaction_created_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was created",
+                    "description": "The timestamp of the transaction of when the coin was created returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -16944,7 +16941,7 @@
                   {
                     "name": "transaction_created_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was created",
+                    "description": "The timestamp of the transaction of when the coin was created returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -17116,7 +17113,7 @@
                   {
                     "name": "transaction_created_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was created",
+                    "description": "The timestamp of the transaction of when the coin was created returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -17283,7 +17280,7 @@
                   {
                     "name": "transaction_created_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was created",
+                    "description": "The timestamp of the transaction of when the coin was created returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -17494,7 +17491,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "description": "The timestamp of the transaction of when the coin was transfered returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -17679,7 +17676,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "description": "The timestamp of the transaction of when the coin was transfered returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -17876,7 +17873,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "description": "The timestamp of the transaction of when the coin was transfered returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18038,7 +18035,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last update to the balance",
+                    "description": "The timestamp of the last update to the balance returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18195,7 +18192,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last update to the balance",
+                    "description": "The timestamp of the last update to the balance returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18352,7 +18349,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the updated balance",
+                    "description": "The timestamp of the updated balance returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18569,7 +18566,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transaction of when the coin was transfered",
+                    "description": "The timestamp of the transaction of when the coin was transfered returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18726,7 +18723,7 @@
                   {
                     "name": "last_transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the last transaction",
+                    "description": "The timestamp of the last transaction returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -18979,7 +18976,7 @@
                   {
                     "name": "transaction_timestamp",
                     "type": "string",
-                    "description": "The timestamp of the transfer",
+                    "description": "The timestamp of the transfer returned in milliseconds",
                     "example": "2022-09-17T22:03:32.000000Z"
                   },
                   {
@@ -19933,7 +19930,7 @@
                       "name": "expiration_timestamp_secs",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "A string containing a 64-bit unsigned integer. returned in milliseconds",
                       "required": true
                     },
                     {
@@ -21201,7 +21198,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "The timestamp of the block (in milliseconds)"
+                      "description": "The timestamp of the block returned in milliseconds"
                     }
                   ]
                 },
@@ -23087,7 +23084,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "The timestamp of the block (in milliseconds)",
+                      "description": "The timestamp of the block returned in milliseconds",
                       "required": true
                     }
                   ]
@@ -23646,7 +23643,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "The timestamp of the block (in milliseconds)",
+                      "description": "The timestamp of the block returned in milliseconds",
                       "required": true
                     }
                   ]
@@ -23705,7 +23702,7 @@
           {
             "name": "expiration_timestamp_secs",
             "type": "string",
-            "description": "A string containing a 64-bit unsigned integer."
+            "description": "A string containing a 64-bit unsigned integer returned in milliseconds."
           },
           {
             "name": "payload",
@@ -23755,7 +23752,7 @@
               {
                 "name": "expiration_timestamp_secs",
                 "type": "string",
-                "description": "A string containing a 64-bit unsigned integer.",
+                "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                 "example": "32425224034"
               },
               { "name": "payload" },
@@ -23843,7 +23840,7 @@
                     "name": "expiration_timestamp_secs",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                     "required": true
                   },
                   {
@@ -24736,7 +24733,7 @@
                     "name": "expiration_timestamp_secs",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                     "required": true
                   },
                   {
@@ -25107,7 +25104,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "The timestamp of the block (in milliseconds)"
+                    "description": "The timestamp of the block returned in milliseconds"
                   }
                 ]
               },
@@ -26985,7 +26982,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "The timestamp of the block (in milliseconds)",
+                    "description": "The timestamp of the block returned in milliseconds",
                     "required": true
                   }
                 ]
@@ -27540,7 +27537,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "The timestamp of the block (in milliseconds)",
+                    "description": "The timestamp of the block returned in milliseconds",
                     "required": true
                   }
                 ]
@@ -27627,7 +27624,7 @@
                     "name": "expiration_timestamp_secs",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "A string containing a 64-bit unsigned integer.",
+                    "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                     "required": true
                   },
                   {
@@ -28891,7 +28888,7 @@
                     "type": "string",
                     "example": "32425224034",
                     "required": true,
-                    "description": "The timestamp of the block (in milliseconds)"
+                    "description": "The timestamp of the block returned in milliseconds"
                   }
                 ]
               },
@@ -30769,7 +30766,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "The timestamp of the block (in milliseconds)",
+                    "description": "The timestamp of the block returned in milliseconds",
                     "required": true
                   }
                 ]
@@ -31324,7 +31321,7 @@
                     "name": "timestamp",
                     "type": "string",
                     "example": "32425224034",
-                    "description": "The timestamp of the block (in milliseconds)",
+                    "description": "The timestamp of the block returned in milliseconds",
                     "required": true
                   }
                 ]
@@ -31426,7 +31423,7 @@
                       "name": "expiration_timestamp_secs",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                       "required": true
                     },
                     {
@@ -32323,7 +32320,7 @@
                       "name": "expiration_timestamp_secs",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "A string containing a 64-bit unsigned integer.",
+                      "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                       "required": true
                     },
                     {
@@ -32694,7 +32691,7 @@
                       "type": "string",
                       "example": "32425224034",
                       "required": true,
-                      "description": "The timestamp of the block (in milliseconds)"
+                      "description": "The timestamp of the block returned in milliseconds"
                     }
                   ]
                 },
@@ -34580,7 +34577,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "The timestamp of the block (in milliseconds)",
+                      "description": "The timestamp of the block returned in milliseconds",
                       "required": true
                     }
                   ]
@@ -35139,7 +35136,7 @@
                       "name": "timestamp",
                       "type": "string",
                       "example": "32425224034",
-                      "description": "The timestamp of the block (in milliseconds)",
+                      "description": "The timestamp of the block returned in milliseconds",
                       "required": true
                     }
                   ]
@@ -35200,7 +35197,7 @@
             {
               "name": "expiration_timestamp_secs",
               "type": "string",
-              "description": "A string containing a 64-bit unsigned integer."
+              "description": "A string containing a 64-bit unsigned integer returned in milliseconds."
             },
             {
               "name": "payload",
@@ -35278,7 +35275,7 @@
           {
             "name": "expiration_timestamp_secs",
             "type": "string",
-            "description": "A string containing a 64-bit unsigned integer."
+            "description": "A string containing a 64-bit unsigned integer returned in milliseconds."
           },
           {
             "name": "payload",
@@ -35341,7 +35338,7 @@
           {
             "name": "expiration_timestamp_secs",
             "type": "string",
-            "description": "A string containing a 64-bit unsigned integer."
+            "description": "A string containing a 64-bit unsigned integer returned in milliseconds."
           },
           {
             "name": "payload",
@@ -35469,7 +35466,7 @@
               {
                 "name": "block_timestamp",
                 "type": "string",
-                "description": "A string containing a 64-bit unsigned integer.",
+                "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                 "example": "32425224034"
               },
               {
@@ -35533,7 +35530,7 @@
                           "name": "expiration_timestamp_secs",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                           "required": true
                         },
                         {
@@ -36430,7 +36427,7 @@
                           "name": "expiration_timestamp_secs",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                           "required": true
                         },
                         {
@@ -36806,7 +36803,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "The timestamp of the block (in milliseconds)"
+                          "description": "The timestamp of the block returned in milliseconds"
                         }
                       ]
                     },
@@ -38694,7 +38691,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "The timestamp of the block (in milliseconds)",
+                          "description": "The timestamp of the block returned in milliseconds",
                           "required": true
                         }
                       ]
@@ -39253,7 +39250,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "The timestamp of the block (in milliseconds)",
+                          "description": "The timestamp of the block returned in milliseconds",
                           "required": true
                         }
                       ]
@@ -39323,7 +39320,7 @@
               {
                 "name": "block_timestamp",
                 "type": "string",
-                "description": "A string containing a 64-bit unsigned integer.",
+                "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                 "example": "32425224034"
               },
               {
@@ -39387,7 +39384,7 @@
                           "name": "expiration_timestamp_secs",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                           "required": true
                         },
                         {
@@ -40284,7 +40281,7 @@
                           "name": "expiration_timestamp_secs",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "A string containing a 64-bit unsigned integer.",
+                          "description": "A string containing a 64-bit unsigned integer returned in milliseconds.",
                           "required": true
                         },
                         {
@@ -40660,7 +40657,7 @@
                           "type": "string",
                           "example": "32425224034",
                           "required": true,
-                          "description": "The timestamp of the block (in milliseconds)"
+                          "description": "The timestamp of the block returned in milliseconds"
                         }
                       ]
                     },
@@ -42548,7 +42545,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "The timestamp of the block (in milliseconds)",
+                          "description": "The timestamp of the block returned in milliseconds",
                           "required": true
                         }
                       ]
@@ -43107,7 +43104,7 @@
                           "name": "timestamp",
                           "type": "string",
                           "example": "32425224034",
-                          "description": "The timestamp of the block (in milliseconds)",
+                          "description": "The timestamp of the block returned in milliseconds",
                           "required": true
                         }
                       ]
