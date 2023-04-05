@@ -26,7 +26,7 @@ function BlogListPageMetadata(props) {
   );
 }
 function BlogListPageContent(props) {
-  const { metadata, items, sidebar } = props;
+  const { metadata, items } = props;
   const modifiedSidebar = items.map((i) => {
     const { date, permalink, title } = i?.content?.metadata ?? {};
     return {
@@ -35,10 +35,21 @@ function BlogListPageContent(props) {
       title,
     };
   });
+  // Group `modifiedSidebar` by month `date`
+  const groupedSidebaByDate = modifiedSidebar.reduce((acc, item) => {
+    const date = new Date(item.date);
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
+    const key = `${month} ${year}`;
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(item);
+    return acc;
+  }, {});
 
-  console.log(modifiedSidebar);
   return (
-    <BlogLayout sidebar={sidebar}>
+    <BlogLayout sidebar={groupedSidebaByDate}>
       <BlogPostItems items={items} />
       <BlogListPaginator metadata={metadata} />
     </BlogLayout>

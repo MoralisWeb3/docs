@@ -4,17 +4,22 @@ import { NavbarSecondaryMenuFiller } from "@docusaurus/theme-common";
 function BlogSidebarMobileSecondaryMenu({ sidebar }) {
   return (
     <ul className="menu__list">
-      {sidebar.items.map((item) => (
-        <li key={item.permalink} className="menu__list-item">
-          <Link
-            isNavLink
-            to={item.permalink}
-            className="menu__link"
-            activeClassName="menu__link--active"
-          >
-            {item.title}
-          </Link>
-        </li>
+      {Object.keys(sidebar).map((month) => (
+        <>
+          <div>{month}</div>
+          <li key={sidebar[month].permalink} className="menu__list-item">
+            {sidebar[month].map((item) => (
+              <Link
+                isNavLink
+                to={item.permalink}
+                className="menu__link"
+                activeClassName="menu__link--active"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </li>
+        </>
       ))}
     </ul>
   );
