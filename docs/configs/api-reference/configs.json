@@ -93,7 +93,7 @@
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -561,7 +561,7 @@
           {
             "name": "media_items",
             "type": "boolean",
-            "description": "Should preview media data be returned?",
+            "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
             "example": true
           }
         ]
@@ -1268,7 +1268,7 @@
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -1722,7 +1722,7 @@
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -3207,7 +3207,7 @@
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
@@ -3875,7 +3875,7 @@
         {
           "name": "media_items",
           "type": "boolean",
-          "description": "Should preview media data be returned?",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
         }
       ],
