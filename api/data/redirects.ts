@@ -6588,4 +6588,9 @@ export const redirects = [
     destination: "/web3-data-api/aptos/transactions-api",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/quickstart-dot-net-csharp",
+    destination: "/web3-data-api/evm/quickstart-dot-net-csharp",
+    permanent: true,
+  },
 ];
