@@ -67,7 +67,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const domain = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const domain = "vitalik.eth";
 
   const response = await Moralis.EvmApi.resolve.resolveENSDomain({
     domain,
