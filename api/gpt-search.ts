@@ -2,7 +2,6 @@ import { createClient } from "@supabase/supabase-js";
 import { oneLine, stripIndent } from "common-tags";
 import GPT3Tokenizer from "gpt3-tokenizer";
 import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
 
@@ -29,7 +28,7 @@ export const config = {
   runtime: "edge",
 };
 
-module.exports = async (req: VercelRequest, res: VercelResponse) => {
+const handler = async (req: Request): Promise<Response> => {
   try {
     // Handle CORS
     if (req.method === "OPTIONS") {
@@ -160,10 +159,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     return new Response(stream);
   } catch (err: unknown) {
     if (err instanceof UserError) {
-      res.status(400).json({
-        error: err.message,
-        data: err.data,
-      });
+      console.error(err);
     } else if (err instanceof ApplicationError) {
       // Print out application errors with their additional data
       console.error(`${err.message}: ${JSON.stringify(err.data)}`);
@@ -184,3 +180,5 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     );
   }
 };
+
+export default handler;
