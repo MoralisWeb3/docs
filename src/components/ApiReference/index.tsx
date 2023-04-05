@@ -134,7 +134,12 @@ const ApiReference = ({
           }
         );
 
-        const fetchBody = await response.json();
+        console.log(response);
+
+        const fetchBody =
+          path === "/nft/:address/sync" && response.status === 201
+            ? response.text()
+            : await response.json();
 
         const body = { status: response.status, body: fetchBody };
 
@@ -212,7 +217,7 @@ const ApiReference = ({
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
-            <div className="col">
+            <div className="col col--5">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
                 {hostUrl}
@@ -224,7 +229,7 @@ const ApiReference = ({
                   <ReactMarkdown>{description}</ReactMarkdown>
                 </div>
               )}
-
+              <div className={styles.section}>{children}</div>
               {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>PATH PARAMS</div>
@@ -280,10 +285,8 @@ const ApiReference = ({
                     </div>
                   ))}
               </div>
-              <div className={styles.section}>{children}</div>
             </div>
-
-            <div className="col col--6">
+            <div className="col col--7">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
