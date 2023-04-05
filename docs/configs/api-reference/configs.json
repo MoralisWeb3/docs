@@ -6564,7 +6564,7 @@
         },
         {
           "name": "wallet_addresses",
-          "description": "The addresses to get metadata for",
+          "description": "The addresses to get metadata for (max 25 addresses)",
           "required": true,
           "type": "array",
           "field": {
