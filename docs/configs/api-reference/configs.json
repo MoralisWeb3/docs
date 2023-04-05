@@ -6766,7 +6766,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         },
@@ -7507,7 +7506,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         }
@@ -8574,7 +8572,6 @@
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
-          "example": "internal_transactions",
           "type": "string",
           "enum": ["internal_transactions"]
         }
