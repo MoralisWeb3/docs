@@ -229,7 +229,7 @@ const ApiReference = ({
                   <ReactMarkdown>{description}</ReactMarkdown>
                 </div>
               )}
-
+              <div className={styles.section}>{children}</div>
               {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>PATH PARAMS</div>
@@ -285,7 +285,6 @@ const ApiReference = ({
                     </div>
                   ))}
               </div>
-              <div className={styles.section}>{children}</div>
             </div>
             <div className="col col--7">
               <div className={styles.runner}>
