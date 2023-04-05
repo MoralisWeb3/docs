@@ -43,6 +43,7 @@
     "common-tags": "^1.8.2",
     "cos-similarity": "^1.1.1",
     "dotenv": "^16.0.3",
+    "eventsource-parser": "^1.0.0",
     "formik": "^2.2.9",
     "gpt3-tokenizer": "^1.1.4",
     "lodash": "^4.17.21",

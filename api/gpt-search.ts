@@ -4,6 +4,7 @@ import GPT3Tokenizer from "gpt3-tokenizer";
 import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import cosSimilarity from "cos-similarity";
+import { OpenAIStream } from "../utils/openAIStream";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -22,6 +23,10 @@ export const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
+};
+
+export const config = {
+  runtime: "edge",
 };
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
@@ -109,8 +114,8 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     let tokenCount = 0;
     let contextText = "";
 
-    for (let i = 0; i < data.length; i++) {
-      const pageSection = data[i];
+    for (let i = 0; i < (data ?? [])?.length; i++) {
+      const pageSection = data?.[i] ?? {};
       const content = pageSection.content;
       const encoded = tokenizer.encode(content);
       tokenCount += encoded.text.length;
@@ -147,29 +152,17 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       prompt,
       max_tokens: 512,
       temperature: 0,
+      stream: true,
     };
 
-    const response = await openai.createCompletion(completionOptions);
-
-    if (response.status !== 200) {
-      const error = response;
-      throw new ApplicationError("Failed to generate completion", error);
-    }
-
     // Proxy the streamed SSE response from OpenAI
-    res.status(200).json({
-      body: response.data.choices?.[0]?.text,
-      headers: {
-        ...corsHeaders,
-        "Content-Type": "text/event-stream",
-      },
-    });
+    const stream = await OpenAIStream(completionOptions);
+    return new Response(stream);
   } catch (err: unknown) {
     if (err instanceof UserError) {
       res.status(400).json({
         error: err.message,
         data: err.data,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     } else if (err instanceof ApplicationError) {
       // Print out application errors with their additional data
