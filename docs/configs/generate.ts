@@ -10,7 +10,7 @@ const camelToSnakeCase = require("../../utils/camelToSnakeCase.mts");
 const apiReferenceConfigFile = "./docs/configs/api-reference/configs-test.json";
 
 let swaggerSchemas;
-let swaggerOAS = {};
+const swaggerOAS = {};
 
 /**
  * @name translateSchemaReference
@@ -93,7 +93,7 @@ const extractSwaggerValueByMethod = (swaggerJSON, path, method) => {
 const formatParameters = (parameters) => {
   const queryParams = [];
   const pathParams = [];
-  for (let param of parameters) {
+  for (const param of parameters) {
     const { name, description, required, schema } = param ?? {};
     const { example, type, $ref, items } = schema ?? {};
     const paramsObject = {
@@ -197,8 +197,8 @@ const formatPath = (path) => {
  */
 const formatSwaggerJSON = (swaggerJSON, apiHost) => {
   const swaggerContent = {};
-  for (let path in swaggerJSON.paths) {
-    for (let method in swaggerJSON.paths?.[path]) {
+  for (const path in swaggerJSON.paths) {
+    for (const method in swaggerJSON.paths?.[path]) {
       // Extract all important fields from Swagger
       const swaggerValue = extractSwaggerValueByMethod(
         swaggerJSON,
@@ -266,8 +266,8 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
-      for (let key in swaggerPaths) {
-        if (["nft"].includes(key)) {
+      for (const key in swaggerPaths) {
+        if (["resolve"].includes(key)) {
           const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
           const swaggerJSON = await swaggerRes?.json();
           let swaggerContent;
@@ -293,9 +293,9 @@ const generateConfigs = async () => {
     }
 
     if (isGenerateReferenceOn) {
-      for (let key in swaggerOAS) {
+      for (const key in swaggerOAS) {
         if (["streams"].includes(key)) {
-          for (let index in Object.keys(swaggerOAS[key])) {
+          for (const index in Object.keys(swaggerOAS[key])) {
             const functionName = Object.keys(swaggerOAS[key])[index];
             const snakeCaseFunctionName = camelToSnakeCase(functionName);
 
