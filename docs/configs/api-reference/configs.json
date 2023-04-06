@@ -17173,7 +17173,7 @@
     "getCoinsBySymbolRange": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
-      "summary": "Get Coins by symbol range",
+      "summary": "Get Coins by symbol",
       "description": "",
       "method": "GET",
       "path": "/coins/symbols",
