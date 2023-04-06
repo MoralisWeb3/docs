@@ -40,8 +40,8 @@ sidebar_class_name: "sidebar-api-reference"
 
 - [Get latest deployed coins](/web3-data-api/aptos/reference/get-latest-coins)
 - [Get Coins by coin type hash](/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes)
-- [Get Coins by name range](/web3-data-api/aptos/reference/get-coins-by-name-range)
-- [Get Coins by symbol range](/web3-data-api/aptos/reference/get-coins-by-symbol-range)
+- [Get Coins by name](/web3-data-api/aptos/reference/get-coins-by-name-range)
+- [Get Coins by symbol](/web3-data-api/aptos/reference/get-coins-by-symbol-range)
 - [Get Coins by creator](/web3-data-api/aptos/reference/get-coins-by-creators)
 
 #### Get Coin Transfers
@@ -78,7 +78,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get transactions](/web3-data-api/aptos/reference/get-transactions)
 - [Submit transaction](/web3-data-api/aptos/reference/submit-transaction)
 - [Get transaction by hash](/web3-data-api/aptos/reference/get-transaction-by-hash)
-- [Get transaction by version](/web3-data-api/aptos/reference/get-transaction-byversion)
+- [Get transaction by version](/web3-data-api/aptos/reference/get-transaction-by-version)
 - [Get account transactions](/web3-data-api/aptos/reference/get-account-transactions)
 - [Submit batch transactions](/web3-data-api/aptos/reference/submit-batch-transactions)
 - [Simulate transaction](/web3-data-api/aptos/reference/simulate-transaction)
