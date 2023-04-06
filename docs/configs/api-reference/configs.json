@@ -14076,7 +14076,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14302,7 +14303,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14535,7 +14537,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14907,7 +14910,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15091,7 +15095,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15277,7 +15282,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15473,7 +15479,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15575,7 +15582,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15858,7 +15866,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16074,7 +16083,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16297,7 +16307,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16511,7 +16522,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by coin type hash",
-      "description": "",
+      "description": "Get one or many Coins by coin type hash.",
       "method": "GET",
       "path": "/coins",
       "pathParams": [],
@@ -16679,7 +16690,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16830,7 +16842,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by name",
-      "description": "",
+      "description": "Get Coins by searching coin name using `from_name` or `to_name`, or combine both to return coins within a range (e.g. all coins `from_name` \"A\" to `to_name` \"D\" will return all coins from A to D). Returns all coins in A-Z order if `from_name` or `to_name` is not specified.",
       "method": "GET",
       "path": "/coins/names",
       "pathParams": [],
@@ -16839,7 +16851,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17002,7 +17015,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by symbol",
-      "description": "",
+      "description": "Get Coins by searching coin symbol using `from_symbol` or `to_symbol`, or combine both to return coins within a range (e.g. all coins `from_symbol` \"A\" to `to_symbol` \"D\" will return all coins from A to D). Returns all coins in A-Z order if `from_symbol` or `to_symbol` is not specified.",
       "method": "GET",
       "path": "/coins/symbols",
       "pathParams": [],
@@ -17011,7 +17024,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17174,7 +17188,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by creator",
-      "description": "",
+      "description": "Get Coins created by one or many creator addresses.",
       "method": "GET",
       "path": "/coins/creators",
       "pathParams": [],
@@ -17183,7 +17197,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17350,7 +17365,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17552,7 +17568,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin transfers by block height(s)",
-      "description": "",
+      "description": "Get Coin transfers from one or many block heights.",
       "method": "GET",
       "path": "/coins/transfers/blocks",
       "pathParams": [],
@@ -17561,7 +17577,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17737,7 +17754,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin transfers by coin type",
-      "description": "",
+      "description": "Get Coin transfers by a specific coin type e.g. `0x1::aptos_coin::AptosCoin`",
       "method": "GET",
       "path": "/coins/transfers/:coin_type",
       "pathParams": [
@@ -17753,7 +17770,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17933,7 +17951,7 @@
     "getTopHoldersByCoin": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin top holders",
-      "description": "",
+      "description": "Get the top holders of a coin by coin type hash.",
       "method": "GET",
       "path": "/coins/owners/:coin_type_hash/top-holders",
       "pathParams": [
@@ -17949,7 +17967,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18102,7 +18121,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin balances by wallet(s)",
-      "description": "",
+      "description": "Get Coin balances for one or many wallet addresses.",
       "method": "GET",
       "path": "/wallets/coins",
       "pathParams": [],
@@ -18111,7 +18130,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18259,7 +18279,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get historical Coin balances by wallet(s)",
-      "description": "",
+      "description": "Get historical Coin balances for one or many wallet addresses. Filter by coin type hashes to retrieve specific balances.",
       "method": "GET",
       "path": "/wallets/coins/history",
       "pathParams": [],
@@ -18268,7 +18288,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18425,7 +18446,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18636,7 +18658,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18820,7 +18843,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by wallet(s)",
-      "description": "",
+      "description": "Get NFT transfers from one or many wallet addresses.",
       "method": "GET",
       "path": "/wallets/nfts/transfers",
       "pathParams": [],
@@ -18829,7 +18852,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -19043,7 +19067,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account",
-      "description": "",
+      "description": "Get account information for a given address.",
       "method": "GET",
       "path": "/accounts/:address",
       "pathParams": [
@@ -19102,7 +19126,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account resources",
-      "description": "",
+      "description": "Get account resources for a given address.",
       "method": "GET",
       "path": "/accounts/:address/resources",
       "pathParams": [
@@ -19124,7 +19148,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19198,7 +19223,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account modules",
-      "description": "",
+      "description": "Get account modules for a given address.",
       "method": "GET",
       "path": "/accounts/:address/modules",
       "pathParams": [
@@ -19220,7 +19245,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19652,7 +19678,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19771,7 +19798,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19871,7 +19899,8 @@
           "name": "limit",
           "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -31364,7 +31393,8 @@
           "name": "limit",
           "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
