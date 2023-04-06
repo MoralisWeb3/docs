@@ -121,6 +121,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'support_us',
+        content:
+          '📢<a target="_blank" rel="noopener noreferrer" href="/changelog/cu-increase-across-multiple-endpoints">[Notice] CU change across multiple endpoints</a>',
+        backgroundColor: '#57a5ff',
+        textColor: '#fff',
+        isCloseable: true,
+      },
       image: "img/moralis-social-card.jpg",
       metadata: [
         {
