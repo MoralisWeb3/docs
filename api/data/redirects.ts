@@ -6593,4 +6593,9 @@ export const redirects = [
     destination: "/web3-data-api/evm/quickstart-dot-net-csharp",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/aptos/reference/get-transaction-byversion",
+    destination: "/web3-data-api/aptos/reference/get-transaction-by-version",
+    permanent: true,
+  },
 ];
