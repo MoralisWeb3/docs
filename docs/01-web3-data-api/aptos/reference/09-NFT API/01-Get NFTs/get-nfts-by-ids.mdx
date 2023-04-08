@@ -9,4 +9,23 @@ import config from "../../../../../configs/api-reference/configs.json";
 
 # Get NFTs by token ID hashes
 
-<ApiReference {...config["aptos-web3"].getNFTsByIds} />
+<ApiReference {...config["aptos-web3"].getNFTsByIds} /> import Moralis from 'moralis';
+
+try {
+  await Moralis.start({
+    apiKey: "AfJkgiIaqD8lLHBXLkpjbDfAegAZWyuqyPd56nI5GxZJYDA1Miga6y9wDPIHr3H1"
+  });
+
+  const response = Moralis.AptosApi.nfts.getNFTsByIds({
+    "tokenIds": [
+      "0x4a10e6fdb57b07f1c69efc9ca090661856c1f23d3f1ab4b212034e98cf318aa3",
+      "0x007ab5199b6c57f7aa51bc3d0604a43505501a0c",
+      "0xaE21E420CD9C480c2c01A5ed88fa7e9495848701"
+    ],
+    "network": "testnet"
+  });
+
+  console.log(response);
+} catch (e) {
+  console.error(e);
+}
