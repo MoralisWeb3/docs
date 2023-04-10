@@ -9214,7 +9214,7 @@
   "resolve": {
     "resolveAddress": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "ENS lookup by address",
+      "summary": "ENS Lookup by Address",
       "description": "Reverse resolve a given ETH address to its ENS domain.",
       "method": "GET",
       "path": "/resolve/:address/reverse",
@@ -9315,7 +9315,7 @@
     },
     "resolveENSDomain": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "ENS lookup by domain",
+      "summary": "ENS Lookup by Domain",
       "description": "Resolve a specific ENS domain to its address.",
       "method": "GET",
       "path": "/resolve/ens/:domain",
@@ -13980,7 +13980,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by token ID hashes",
-      "description": "",
+      "description": "Get one or many NFTs by token ID hash. Learn more about token ID hashes.",
       "method": "GET",
       "path": "/nfts",
       "pathParams": [],
@@ -13990,7 +13990,10 @@
           "description": "The identifiers of the tokens to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -14232,7 +14235,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by collection",
-      "description": "",
+      "description": "Get NFTs by one or many collection ID hashes.",
       "method": "GET",
       "path": "/nfts/collections/:collection_data_id_hash/tokens",
       "pathParams": [
@@ -14240,7 +14243,8 @@
           "name": "collection_data_id_hash",
           "description": "The collection data id hash of the collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -14248,7 +14252,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14465,6 +14470,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by creator(s)",
+      "description": "Get NFTs by one or many creator addresses.",
       "method": "GET",
       "path": "/nfts/creators",
       "pathParams": [],
@@ -14473,7 +14479,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14492,7 +14499,10 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
+          }
         }
       ],
       "responses": [
@@ -14697,7 +14707,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections",
-      "descipriton": "",
+      "descipriton": "Get NFT Collections by searching collection title using `fromName` or `toName`, or combine both to return collections within a range (e.g. all collections `fromName` \"A\" to `toName` \"D\" will return all collections from A to D). Returns all collections in A-Z order if `fromName` or `toName` is not specified",
       "method": "GET",
       "path": "/collections",
       "pathParams": [],
@@ -14706,7 +14716,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -14887,7 +14898,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT collections by collection ID hashes",
-      "description": "",
+      "description": "Get one or many NFT Collections by collection ID hash.",
       "method": "GET",
       "path": "/collections/ids",
       "pathParams": [],
@@ -14897,7 +14908,10 @@
           "description": "The identifiers of the collections to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
+          }
         }
       ],
       "responses": [
@@ -15069,7 +15083,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Collections by creator",
-      "description": "",
+      "description": "Get NFT Collections created by one or many creator addresses.",
       "method": "GET",
       "path": "/collections/creators",
       "pathParams": [],
@@ -15078,7 +15092,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15096,7 +15111,8 @@
           "name": "creator_address",
           "description": "The address of the creator",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
         }
       ],
       "responses": [
@@ -15253,7 +15269,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT owners by token(s)",
-      "description": "",
+      "description": "Get owners for one or many NFTs by token ID hash. Learn more about token ID hashes.",
       "method": "GET",
       "path": "/nfts/owners",
       "pathParams": [],
@@ -15262,7 +15278,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15281,7 +15298,10 @@
           "description": "The identifiers of the tokens to get owners for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -15432,7 +15452,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by collection",
-      "description": "",
+      "description": "Get NFT transfers for a given collection ID hash.",
       "method": "GET",
       "path": "/nfts/collections/:collection_data_id_hash/owners",
       "pathParams": [
@@ -15440,7 +15460,8 @@
           "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -15448,7 +15469,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15628,7 +15650,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT owners of collection",
-      "description": "",
+      "description": "Get owners of a given NFT collection.",
       "method": "GET",
       "path": "/nfts/collections/:collection_data_id_hash/owners/list",
       "pathParams": [
@@ -15636,7 +15658,8 @@
           "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -15644,7 +15667,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15737,7 +15761,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by token(s)",
-      "description": "",
+      "description": "Get NFT transfers for one or many NFT token ID hashes.",
       "method": "GET",
       "path": "/nfts/transfers",
       "pathParams": [],
@@ -15746,7 +15770,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -15779,7 +15804,10 @@
           "description": "The identifiers of the tokens to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -16013,7 +16041,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by collection",
-      "description": "",
+      "description": "Get NFT transfers for a given collection.",
       "method": "GET",
       "path": "/nfts/transfers/collections/:collection_data_id_hash",
       "pathParams": [
@@ -16021,7 +16049,8 @@
           "name": "collection_data_id_hash",
           "description": "The collection data id hash of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -16029,7 +16058,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16236,7 +16266,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT Transfers by creators",
-      "description": "",
+      "description": "Get NFT transfers for NFTs created by one or many specific creator addresses.",
       "method": "GET",
       "path": "/nfts/transfers/creators",
       "pathParams": [],
@@ -16245,7 +16275,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16264,7 +16295,10 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -16459,7 +16493,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by wallet(s)",
-      "description": "",
+      "description": "Get NFT transfers from one or many wallet addresses.",
       "method": "GET",
       "path": "/nfts/transfers/wallets",
       "pathParams": [],
@@ -16468,7 +16502,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -16487,7 +16522,10 @@
           "description": "The addresses of the wallets to get transfers for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -16682,7 +16720,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by coin type hash",
-      "description": "",
+      "description": "Get one or many Coins by coin type hash.",
       "method": "GET",
       "path": "/coins",
       "pathParams": [],
@@ -16692,7 +16730,10 @@
           "description": "The coin type hashes to fetch info about",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6"
+          }
         }
       ],
       "responses": [
@@ -16841,7 +16882,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get latest deployed coins",
-      "description": "",
+      "description": "Get the latest deployed Coins.",
       "method": "GET",
       "path": "/coins/latest",
       "pathParams": [],
@@ -16850,7 +16891,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17000,8 +17042,8 @@
     "getCoinsByNameRange": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
-      "summary": "Get Coins by name range",
-      "description": "",
+      "summary": "Get Coins by name",
+      "description": "Get Coins by searching coin name using `from_name` or `to_name`, or combine both to return coins within a range (e.g. all coins `from_name` \"A\" to `to_name` \"D\" will return all coins from A to D). Returns all coins in A-Z order if `from_name` or `to_name` is not specified.",
       "method": "GET",
       "path": "/coins/names",
       "pathParams": [],
@@ -17010,7 +17052,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17172,8 +17215,8 @@
     "getCoinsBySymbolRange": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
-      "summary": "Get Coins by symbol range",
-      "description": "",
+      "summary": "Get Coins by symbol",
+      "description": "Get Coins by searching coin symbol using `from_symbol` or `to_symbol`, or combine both to return coins within a range (e.g. all coins `from_symbol` \"A\" to `to_symbol` \"D\" will return all coins from A to D). Returns all coins in A-Z order if `from_symbol` or `to_symbol` is not specified.",
       "method": "GET",
       "path": "/coins/symbols",
       "pathParams": [],
@@ -17182,7 +17225,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17345,7 +17389,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coins by creator",
-      "description": "",
+      "description": "Get Coins created by one or many creator addresses.",
       "method": "GET",
       "path": "/coins/creators",
       "pathParams": [],
@@ -17354,7 +17398,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17521,7 +17566,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17540,7 +17586,10 @@
           "description": "The addresses of the owners to get tokens for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "from_date",
@@ -17723,7 +17772,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin transfers by block height(s)",
-      "description": "",
+      "description": "Get Coin transfers from one or many block heights.",
       "method": "GET",
       "path": "/coins/transfers/blocks",
       "pathParams": [],
@@ -17732,7 +17781,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -17908,7 +17958,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin transfers by coin type",
-      "description": "",
+      "description": "Get Coin transfers by a specific coin type e.g. `0x1::aptos_coin::AptosCoin`",
       "method": "GET",
       "path": "/coins/transfers/:coin_type",
       "pathParams": [
@@ -17916,7 +17966,8 @@
           "name": "coin_type",
           "description": "The coin type to fetch info about",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x1::aptos_coin::AptosCoin"
         }
       ],
       "queryParams": [
@@ -17924,7 +17975,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18104,7 +18156,7 @@
     "getTopHoldersByCoin": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "summary": "Get Coin top holders",
-      "description": "",
+      "description": "Get the top holders of a coin by coin type hash.",
       "method": "GET",
       "path": "/coins/owners/:coin_type_hash/top-holders",
       "pathParams": [
@@ -18112,7 +18164,8 @@
           "name": "coin_type_hash",
           "description": "The coin type hash to fetch info about",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6"
         }
       ],
       "queryParams": [
@@ -18120,7 +18173,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18273,7 +18327,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get Coin balances by wallet(s)",
-      "description": "",
+      "description": "Get Coin balances for one or many wallet addresses.",
       "method": "GET",
       "path": "/wallets/coins",
       "pathParams": [],
@@ -18282,7 +18336,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18301,7 +18356,10 @@
           "description": "The addresses of the owners to get coin balances for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "coin_type_hash_blacklist",
@@ -18430,7 +18488,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get historical Coin balances by wallet(s)",
-      "description": "",
+      "description": "Get historical Coin balances for one or many wallet addresses. Filter by coin type hashes to retrieve specific balances.",
       "method": "GET",
       "path": "/wallets/coins/history",
       "pathParams": [],
@@ -18439,7 +18497,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18458,7 +18517,10 @@
           "description": "The addresses of the owner addresses to get historical balances for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "coin_type_hash_blacklist",
@@ -18596,7 +18658,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18798,7 +18861,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by wallet(s)",
-      "description": "",
+      "description": "Get NFTs belonging to one or many wallets.",
       "method": "GET",
       "path": "/wallets/nfts",
       "pathParams": [],
@@ -18807,7 +18870,8 @@
           "name": "limit",
           "description": "The number of results to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -18826,7 +18890,10 @@
           "description": "The addresses of the owners to get tokens for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -18991,7 +19058,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by wallet(s)",
-      "description": "",
+      "description": "Get NFT transfers from one or many wallet addresses.",
       "method": "GET",
       "path": "/wallets/nfts/transfers",
       "pathParams": [],
@@ -19000,7 +19067,8 @@
           "name": "limit",
           "description": "The number of tokens to return",
           "required": true,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "offset",
@@ -19019,7 +19087,10 @@
           "description": "The addresses of the wallets to get transfers for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -19214,7 +19285,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account",
-      "description": "",
+      "description": "Get account information for a given address.",
       "method": "GET",
       "path": "/accounts/:address",
       "pathParams": [
@@ -19273,7 +19344,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account resources",
-      "description": "",
+      "description": "Get account resources for a given address.",
       "method": "GET",
       "path": "/accounts/:address/resources",
       "pathParams": [
@@ -19295,7 +19366,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19369,7 +19441,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account modules",
-      "description": "",
+      "description": "Get account modules for a given address.",
       "method": "GET",
       "path": "/accounts/:address/modules",
       "pathParams": [
@@ -19391,7 +19463,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19641,7 +19714,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account resource",
-      "description": "",
+      "description": "Get a specific account resource type for a given address.",
       "method": "GET",
       "path": "/accounts/:address/resource/:resource_type",
       "pathParams": [
@@ -19714,7 +19787,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account module",
-      "description": "",
+      "description": "Get a specific account module for a given address.",
       "method": "GET",
       "path": "/accounts/:address/resource/:module_name",
       "pathParams": [
@@ -19801,7 +19874,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get events by creation number",
-      "description": "",
+      "description": "Get events by creation number for a given address.",
       "method": "GET",
       "path": "/accounts/:address/events/:creation_number",
       "pathParams": [
@@ -19823,7 +19896,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -19914,7 +19988,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get events by event handle",
-      "description": "",
+      "description": "Get events by event handle for a given address.",
       "method": "GET",
       "path": "/accounts/:address/events/:event_handle/:field_name",
       "pathParams": [
@@ -19942,7 +20016,8 @@
           "name": "limit",
           "description": "Max number of account resources to retrieve.\nIf not provided, defaults to default page size.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -20033,7 +20108,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transactions",
-      "description": "",
+      "description": "Get latest transactions or from a specific account sequence number.",
       "method": "GET",
       "path": "/transactions",
       "pathParams": [],
@@ -20042,7 +20117,8 @@
           "name": "limit",
           "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -23842,7 +23918,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Submit transaction",
-      "description": "",
+      "description": "Submit a transaction to the Aptos Network.",
       "method": "POST",
       "path": "/transactions",
       "pathParams": [],
@@ -23951,7 +24027,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transaction by hash",
-      "description": "",
+      "description": "Get transaction by transaction hash.",
       "method": "GET",
       "path": "/transactions/by_hash/:txn_hash",
       "pathParams": [
@@ -27735,7 +27811,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get transaction by version",
-      "description": "",
+      "description": "Get transaction by transaction version.",
       "method": "GET",
       "path": "/transactions/by_version/:txn_version",
       "pathParams": [
@@ -31519,7 +31595,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get account transactions",
-      "description": "",
+      "description": "Get all transactions for a given address.",
       "method": "GET",
       "path": "/accounts/:address/transactions",
       "pathParams": [
@@ -31535,7 +31611,8 @@
           "name": "limit",
           "description": "Max number of transactions to retrieve.\nIf not provided, defaults to default page size",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 5
         },
         {
           "name": "start",
@@ -35335,7 +35412,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Submit batch transactions",
-      "description": "",
+      "description": "Submit batch transactions to the Aptos Network.",
       "method": "POST",
       "path": "/transactions/batch",
       "pathParams": [],
@@ -35415,7 +35492,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Simulate transaction",
-      "description": "",
+      "description": "Simulate a transaction.",
       "method": "POST",
       "path": "/transactions/simulate",
       "pathParams": [],
@@ -35478,7 +35555,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Encode submission",
-      "description": "",
+      "description": "Encode a submission.",
       "method": "POST",
       "path": "/transactions/encode_submission",
       "pathParams": [],
@@ -35546,7 +35623,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Estimate gas price",
-      "description": "",
+      "description": "Estimate gas price based on current network load.",
       "method": "GET",
       "path": "/transactions/estimate_gas_price",
       "pathParams": [],
@@ -35597,7 +35674,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get block by height",
-      "description": "",
+      "description": "Get block by specific block height.",
       "method": "GET",
       "path": "/blocks/:block_height",
       "pathParams": [
@@ -39451,7 +39528,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get block by version",
-      "description": "",
+      "description": "Get block by specific ledger version.",
       "method": "GET",
       "path": "/blocks/by_version/:version",
       "pathParams": [
