@@ -13818,7 +13818,10 @@
           "description": "The identifiers of the tokens to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -14068,7 +14071,8 @@
           "name": "collection_data_id_hash",
           "description": "The collection data id hash of the collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -14323,7 +14327,10 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
+          }
         }
       ],
       "responses": [
@@ -14729,7 +14736,10 @@
           "description": "The identifiers of the collections to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
+          }
         }
       ],
       "responses": [
@@ -14929,7 +14939,8 @@
           "name": "creator_address",
           "description": "The address of the creator",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
         }
       ],
       "responses": [
@@ -15115,7 +15126,10 @@
           "description": "The identifiers of the tokens to get owners for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -15274,7 +15288,8 @@
           "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -15471,7 +15486,8 @@
           "name": "collection_data_id_hash",
           "description": "The id of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -15616,7 +15632,10 @@
           "description": "The identifiers of the tokens to get",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "9a47523002a8940afaae60cb01d13ccea0408b17e958ebf1940a9f687785d6da"
+          }
         }
       ],
       "responses": [
@@ -15858,7 +15877,8 @@
           "name": "collection_data_id_hash",
           "description": "The collection data id hash of the token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301"
         }
       ],
       "queryParams": [
@@ -16103,7 +16123,10 @@
           "description": "The addresses of the creators",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -16327,7 +16350,10 @@
           "description": "The addresses of the wallets to get transfers for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -16532,7 +16558,10 @@
           "description": "The coin type hashes to fetch info about",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6"
+          }
         }
       ],
       "responses": [
@@ -17385,7 +17414,10 @@
           "description": "The addresses of the owners to get tokens for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "from_date",
@@ -17762,7 +17794,8 @@
           "name": "coin_type",
           "description": "The coin type to fetch info about",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x1::aptos_coin::AptosCoin"
         }
       ],
       "queryParams": [
@@ -17959,7 +17992,8 @@
           "name": "coin_type_hash",
           "description": "The coin type hash to fetch info about",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6"
         }
       ],
       "queryParams": [
@@ -18150,7 +18184,10 @@
           "description": "The addresses of the owners to get coin balances for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "coin_type_hash_blacklist",
@@ -18308,7 +18345,10 @@
           "description": "The addresses of the owner addresses to get historical balances for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "coin_type_hash_blacklist",
@@ -18678,7 +18718,10 @@
           "description": "The addresses of the owners to get tokens for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
@@ -18872,7 +18915,10 @@
           "description": "The addresses of the wallets to get transfers for",
           "required": true,
           "type": "array",
-          "field": { "type": "string" }
+          "field": {
+            "type": "string",
+            "example": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"
+          }
         },
         {
           "name": "collection_blacklist",
