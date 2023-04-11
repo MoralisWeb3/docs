@@ -617,7 +617,7 @@ export const redirects = [
   },
   {
     source: "/docs/webhook-security",
-    destination: "/streams-api/webhook-security",
+    destination: "/streams-api/evm/webhook-security",
     permanent: true,
   },
   {
@@ -6335,7 +6335,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/webhook-security",
-    destination: "/streams-api/webhook-security",
+    destination: "/streams-api/evm/webhook-security",
     permanent: true,
   },
   {
