@@ -57,17 +57,15 @@ const handler = async (req: Request): Promise<Response> => {
       throw new UserError("Missing request data");
     }
 
-    console.log(requestData);
-
     const { query } = requestData;
-
-    console.log(query);
 
     if (!query) {
       throw new UserError("Missing query in request data");
     }
 
     const sanitizedQuery = (query as any)?.trim();
+
+    console.log("Test1", sanitizedQuery);
 
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
 
@@ -81,6 +79,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const [results] = moderationResponse.data.results;
 
+    console.log("Test2", results);
     if (results.flagged) {
       throw new UserError("Flagged content", {
         flagged: true,
