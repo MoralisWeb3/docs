@@ -109,8 +109,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     const [{ embedding }] = (await embeddingResponse.json()).data;
 
-    console.log("Test 1", embedding);
-
     const { data = [], error: matchError } = await supabaseClient
       .from("page_section")
       .select();
