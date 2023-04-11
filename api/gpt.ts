@@ -69,12 +69,21 @@ const handler = async (req: Request): Promise<Response> => {
 
     const configuration = new Configuration({ apiKey: openAiKey });
     const openai = new OpenAIApi(configuration);
-    console.log("Test 1: Initializing OpenAI");
 
     // Moderate the content to comply with OpenAI T&C
-    const moderationResponse = await openai.createModeration({
-      input: sanitizedQuery,
-    });
+    const moderationResponse = await fetch(
+      "https://api.openai.com/v1/moderations",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openAiKey}`,
+        },
+        method: "POST",
+        body: JSON.stringify({ input: sanitizedQuery }),
+      }
+    );
+
+    console.log(moderationResponse);
 
     const [results] = moderationResponse.data.results;
 
