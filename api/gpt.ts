@@ -122,7 +122,7 @@ const handler = async (req: Request): Promise<Response> => {
       throw new ApplicationError("Failed to match page sections", matchError);
     }
 
-    console.log("Test 0", data);
+    console.log("Test 0");
 
     const tokenizer = new GPT3NodeTokenizer({ type: "gpt3" });
     let tokenCount = 0;
@@ -143,7 +143,7 @@ const handler = async (req: Request): Promise<Response> => {
       contextText += `${content.trim()}\n---\n`;
     }
 
-    console.log("Test 1.5", contextText);
+    console.log("Test 1.5");
 
     const prompt = stripIndent`
       ${oneLine`
@@ -165,7 +165,7 @@ const handler = async (req: Request): Promise<Response> => {
       Answer as markdown (including related code snippets if available):
     `;
 
-    console.log("Test 2", prompt);
+    console.log("Test 2");
 
     const completionOptions: CreateCompletionRequest = {
       model: "text-davinci-003",
