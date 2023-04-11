@@ -51,10 +51,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     const requestData = req;
 
-    if (!requestData) {
-      throw new UserError("Missing request data");
-    }
-
     const { query } = requestData;
 
     if (!query) {
