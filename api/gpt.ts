@@ -65,12 +65,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     const sanitizedQuery = (query as any)?.trim();
 
-    console.log("Test1", sanitizedQuery);
-
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
 
     const configuration = new Configuration({ apiKey: openAiKey });
     const openai = new OpenAIApi(configuration);
+    console.log("Test 1: Initializing OpenAI");
 
     // Moderate the content to comply with OpenAI T&C
     const moderationResponse = await openai.createModeration({
