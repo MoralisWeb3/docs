@@ -1,8 +1,9 @@
 ---
-title: "[API] Block filtering added to getNFTContractTransfers"
+title: "Block filtering added to getNFTContractTransfers"
 slug: "block-filtering-added-to-getnftcontracttransfers-️"
 authors:
   name: Reuben Salisbury
+tags: [Web3 Data API]
 ---
 
 Block filtering has been aded to `getNFTContractTransfers` endpoint `/api/v2/nft/{address}/transfers` 🎛️

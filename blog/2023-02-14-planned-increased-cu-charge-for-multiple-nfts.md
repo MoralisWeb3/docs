@@ -1,8 +1,9 @@
 ---
-title: "[Notice] Planned CU increase on getMultipleNFTs"
+title: "Planned CU increase on getMultipleNFTs"
 slug: "planned-increased-cu-charge-for-multiple-nfts"
 authors:
   name: Reuben Salisbury
+tags: [Notice]
 ---
 
 [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts) will soon change to a dynamically priced endpoint.

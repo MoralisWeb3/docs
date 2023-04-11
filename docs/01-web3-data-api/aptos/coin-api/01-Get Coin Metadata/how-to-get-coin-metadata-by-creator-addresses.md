@@ -1,6 +1,6 @@
 ---
 title: "How to get coin metadata by creator addresses"
-slug: "../how-to-get-coin-metadata-by-creator-addresses"
+slug: "../../how-to-get-coin-metadata-by-creator-addresses"
 description: "Learn how to get coin metadata by creator addresses using Moralis Coin API."
 sidebar_label: Get Coin Metadata By Creator Addresses
 ---

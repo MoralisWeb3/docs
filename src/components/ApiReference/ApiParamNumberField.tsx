@@ -9,7 +9,11 @@ const ApiParamNumberField = (props: FieldComponentProps<"json">) => {
   const stringToValue = useCallback((value: string) => parseInt(value, 10), []);
 
   return (
-    <ApiParamBaseInput {...props} valueToString={valueToString} stringToValue={stringToValue} />
+    <ApiParamBaseInput
+      {...props}
+      valueToString={valueToString}
+      stringToValue={stringToValue}
+    />
   );
 };
 

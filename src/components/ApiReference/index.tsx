@@ -40,17 +40,13 @@ export interface ApiReferenceProps {
   testHost?: string;
   codeSamples?: CodeSample[];
   children?: Component;
+  aptosNetwork?: "mainnet" | "testnet";
 }
 
 export interface FormValues {
   path: object;
   query: object;
   body: object;
-}
-
-export enum Network {
-  MAINNET = "mainnet",
-  TESTNET = "testnet",
 }
 
 const deepCompact = (value: unknown) => {
@@ -64,7 +60,7 @@ const deepCompact = (value: unknown) => {
     const object = Object.fromEntries(
       Object.entries(value)
         .map(([key, value]) => [key, deepCompact(value)])
-        .filter(([key, value]) => value != null)
+        .filter(([, value]) => value != null)
     );
 
     return Object.keys(object).length === 0 ? undefined : object;
@@ -90,9 +86,9 @@ const ApiReference = ({
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
-  const [network, setNetwork] = useState<Network>(Network.MAINNET);
+  const [network, setNetwork] = useState<"mainnet" | "testnet">("mainnet");
   const hostUrl = useMemo(
-    () => (network === Network.MAINNET ? apiHost : testHost),
+    () => (network === "mainnet" ? apiHost : testHost),
     [network]
   );
 
@@ -129,11 +125,21 @@ const ApiReference = ({
               "x-moralis-source": `api reference`,
               referer: "moralis.io",
             },
-            body: JSON.stringify(filterOutEmpty(values.body)),
+            body: JSON.stringify(
+              // temporary fix for runContractFunction
+              path === "/:address/function"
+                ? values.body
+                : filterOutEmpty(values.body)
+            ),
           }
         );
 
-        const fetchBody = await response.json();
+        console.log(response);
+
+        const fetchBody =
+          path === "/nft/:address/sync" && response.status === 201
+            ? response.text()
+            : await response.json();
 
         const body = { status: response.status, body: fetchBody };
 
@@ -189,7 +195,7 @@ const ApiReference = ({
             defaultValue="mainnet"
             orientation="horizontal"
             value={network}
-            onValueChange={(value: Network) => {
+            onValueChange={(value: "mainnet" | "testnet") => {
               if (value) setNetwork(value);
             }}
           >
@@ -211,7 +217,7 @@ const ApiReference = ({
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
           <div className="row row--no-gutters">
-            <div className="col">
+            <div className="col col--5">
               <div className={styles.url}>
                 <span className={styles.method}>{method}</span>
                 {hostUrl}
@@ -223,7 +229,7 @@ const ApiReference = ({
                   <ReactMarkdown>{description}</ReactMarkdown>
                 </div>
               )}
-
+              <div className={styles.section}>{children}</div>
               {pathParams && pathParams.length > 0 && (
                 <div className={styles.section}>
                   <div className={styles.sectionTitle}>PATH PARAMS</div>
@@ -279,10 +285,8 @@ const ApiReference = ({
                     </div>
                   ))}
               </div>
-              <div className={styles.section}>{children}</div>
             </div>
-
-            <div className="col col--6">
+            <div className="col col--7">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
                   <div className={styles.sectionTitle}>API KEY</div>
@@ -303,6 +307,7 @@ const ApiReference = ({
                   method={method}
                   apiHost={hostUrl}
                   path={path}
+                  aptosNetwork={network}
                   codeSamples={codeSamples}
                 />
 

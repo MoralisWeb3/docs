@@ -23,10 +23,10 @@ const escapeChar = (str: string, char: string) =>
 const buildTemplate = (lines: Array<string | null>) =>
   lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent: number = 0) =>
+const line = (str: string, indent = 0) =>
   `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
-export const stringifyJSON = (obj: object, pretty: boolean = false) =>
+export const stringifyJSON = (obj: object, pretty = false) =>
   JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
 
 const tabs = [
@@ -235,8 +235,8 @@ export const filterOutEmpty = (value: any) => {
 };
 
 export const formatParamsByLang = (params: any, lang: string) => {
-  for (let key of Object.keys(params)) {
-    let formattedKey: string = "";
+  for (const key of Object.keys(params)) {
+    let formattedKey = "";
     switch (lang) {
       case "node":
         formattedKey = snakeToCamelCase(key);
@@ -294,6 +294,25 @@ export const formatParamsByLang = (params: any, lang: string) => {
   return params;
 };
 
+const customNodeSdkBody = (code: string, body: any) => {
+  // For `requestChallengeEvm` and `requestChallengeSolana`
+  if (code.includes("requestMessage")) {
+    const { chainId, network } = body ?? {};
+    if (chainId) {
+      return {
+        chain: `0x${parseInt(chainId).toString(16)}`,
+        chainId: undefined,
+        networkType: "evm",
+      };
+    } else if (network) {
+      return {
+        solNetwork: network,
+        networkType: "solana",
+      };
+    }
+  }
+};
+
 /**
  * @description – Only for NodeJS & Python Moralis SDK codes
  *
@@ -307,29 +326,13 @@ export const injectParamsToCode = (
   code: string,
   lang: string,
   params: any,
-  auth: string
+  auth: string,
+  network: string,
+  aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   switch (lang) {
     case "node":
-      const customNodeSDKBody = () => {
-        // For `requestChallengeEvm` and `requestChallengeSolana`
-        if (code.includes("requestMessage")) {
-          const { chainId, network } = body ?? {};
-          if (chainId) {
-            return {
-              chain: `0x${parseInt(chainId).toString(16)}`,
-              chainId: undefined,
-              network: "evm",
-            };
-          } else if (network) {
-            return {
-              solNetwork: network,
-              network: "solana",
-            };
-          }
-        }
-      };
       return code
         .replace(
           "{}",
@@ -338,7 +341,8 @@ export const injectParamsToCode = (
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
-              ...customNodeSDKBody(),
+              ...customNodeSdkBody(code, body),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
@@ -353,16 +357,14 @@ export const injectParamsToCode = (
             {
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
+              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             },
             true
-          ).replace(/\n/g, `\n`)
+          )
         )
         .replace(
           "[]",
-          stringifyJSON(
-            { ...formatParamsByLang({ ...body }, lang) },
-            true
-          ).replace(/\n/g, `\n`)
+          stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
         )
         .replace(/YOUR_API_KEY/, auth);
   }
@@ -373,7 +375,11 @@ const ApiExamples = ({
   apiHost,
   path,
   codeSamples,
-}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+  aptosNetwork,
+}: Pick<
+  ApiReferenceProps,
+  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
+>) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
   const { path: pagePath, network } = usePageState();
@@ -403,16 +409,30 @@ const ApiExamples = ({
             <CodeBlock className={`language-${langCode}`}>
               {code
                 ? buildTemplate([
-                    line(injectParamsToCode(code, lang, values, auth)),
+                    line(
+                      injectParamsToCode(
+                        code,
+                        lang,
+                        values,
+                        auth,
+                        network,
+                        aptosNetwork
+                      )
+                    ),
                   ])
                 : template({
                     method,
                     url: [
                       apiHost,
-                      new Path(path).build({
-                        ...defaultPathParams,
-                        ...omitBy(values.path, (value) => value == null),
-                      }),
+                      new Path(path).build(
+                        {
+                          ...defaultPathParams,
+                          ...omitBy(values.path, (value) => value == null),
+                        },
+                        {
+                          urlParamsEncoding: "uriComponent",
+                        }
+                      ),
                       qs.stringify(values.query || {}, {
                         addQueryPrefix: true,
                       }),

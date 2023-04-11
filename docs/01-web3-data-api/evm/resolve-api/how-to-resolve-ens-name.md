@@ -44,8 +44,6 @@ const runApp = async () => {
 
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-  const chain = EvmChain.ETHEREUM;
-
   const response = await Moralis.EvmApi.resolve.resolveAddress({
     address,
   });
@@ -71,8 +69,6 @@ const runApp = async () => {
 
   const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
 
-  const chain = EvmChain.ETHEREUM;
-
   const response = await Moralis.EvmApi.resolve.resolveAddress({
     address,
   });
@@ -92,7 +88,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
 }
 
 result = evm_api.resolve.resolve_address(
