@@ -18,7 +18,7 @@ const runApp = async () => {
       body: JSON.stringify({ input: sanitizedQuery }),
     }
   );
-  console.log(await moderationResponse.json());
+  console.log((await moderationResponse.json()).results);
 };
 
 runApp();

@@ -71,13 +71,20 @@ const handler = async (req: Request): Promise<Response> => {
     const openai = new OpenAIApi(configuration);
 
     // Moderate the content to comply with OpenAI T&C
-    const moderationResponse = await openai.createModeration({
-      input: sanitizedQuery,
-    });
+    const moderationResponse = await fetch(
+      "https://api.openai.com/v1/moderations",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openAiKey}`,
+        },
+        method: "POST",
+        body: JSON.stringify({ input: sanitizedQuery }),
+      }
+    );
 
-    const [results] = moderationResponse.data.results;
+    const [results] = (await moderationResponse.json()).results;
 
-    console.log("Test2", results);
     if (results.flagged) {
       throw new UserError("Flagged content", {
         flagged: true,
