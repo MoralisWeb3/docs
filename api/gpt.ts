@@ -92,19 +92,22 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
-    const embeddingResponse = await openai.createEmbedding({
-      model: "text-embedding-ada-002",
-      input: sanitizedQuery.replaceAll("\n", " "),
-    });
+    const embeddingResponse = await fetch(
+      "https://api.openai.com/v1/embeddings",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openAiKey}`,
+        },
+        method: "POST",
+        body: JSON.stringify({
+          model: "text-embedding-ada-002",
+          input: sanitizedQuery.replaceAll("\n", " "),
+        }),
+      }
+    );
 
-    if (embeddingResponse.status !== 200) {
-      throw new ApplicationError(
-        "Failed to create embedding for question",
-        embeddingResponse
-      );
-    }
-
-    const [{ embedding }] = embeddingResponse.data.data;
+    const [{ embedding }] = (await embeddingResponse.json()).data;
 
     const { data = [], error: matchError } = await supabaseClient
       .from("page_section")
