@@ -4,7 +4,6 @@ import GPT3Tokenizer from "gpt3-tokenizer";
 import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
-import fetch from "node-fetch";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -72,19 +71,9 @@ const handler = async (req: Request): Promise<Response> => {
     const openai = new OpenAIApi(configuration);
 
     // Moderate the content to comply with OpenAI T&C
-    const moderationResponse = await fetch(
-      "https://api.openai.com/v1/moderations",
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${openAiKey}`,
-        },
-        method: "POST",
-        body: JSON.stringify({ input: sanitizedQuery }),
-      }
-    );
-
-    console.log(moderationResponse);
+    const moderationResponse = await openai.createModeration({
+      input: sanitizedQuery,
+    });
 
     const [results] = moderationResponse.data.results;
 
