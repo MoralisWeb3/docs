@@ -122,9 +122,13 @@ const handler = async (req: Request): Promise<Response> => {
       throw new ApplicationError("Failed to match page sections", matchError);
     }
 
+    console.log("Test 0", data);
+
     const tokenizer = new GPT3NodeTokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
+
+    console.log("Test 1", tokenizer);
 
     for (let i = 0; i < (data ?? [])?.length; i++) {
       const pageSection = data?.[i] ?? {};
@@ -138,6 +142,8 @@ const handler = async (req: Request): Promise<Response> => {
 
       contextText += `${content.trim()}\n---\n`;
     }
+
+    console.log("Test 1.5", contextText);
 
     const prompt = stripIndent`
       ${oneLine`
