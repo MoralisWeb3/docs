@@ -117,20 +117,20 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
- [
-  {
-    "coin_type": "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDT",
-    "coin_type_hash": "175cc6491b0d75a131a36391318cde4c4b1312de70675c7e46cc54dacfe7ae29",
-    "name": "Tether USD",
-    "creator_address": "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa",
-    "decimals": 6,
-    "supply_aggregator_table_handle": null,
-    "supply_aggregator_table_key": null,
-    "symbol": "USDT",
-    "transaction_created_timestamp": "2022-10-19T02:43:38.000Z",
-    "transaction_version_created": "2413215"
-  }
-]
+  [
+    {
+      "coin_type": "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDT",
+      "coin_type_hash": "175cc6491b0d75a131a36391318cde4c4b1312de70675c7e46cc54dacfe7ae29",
+      "name": "Tether USD",
+      "creator_address": "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa",
+      "decimals": 6,
+      "supply_aggregator_table_handle": null,
+      "supply_aggregator_table_key": null,
+      "symbol": "USDT",
+      "transaction_created_timestamp": "2022-10-19T02:43:38.000Z",
+      "transaction_version_created": "2413215"
+    }
+  ]
 }
 ```
 
