@@ -1,14 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
 import { oneLine, stripIndent } from "common-tags";
 import GPT3Tokenizer from "gpt3-tokenizer";
-import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
+import { CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const GPT3NodeTokenizer = (GPT3Tokenizer as any).default;
 
 export class ApplicationError extends Error {
   constructor(message: string, public data: Record<string, any> = {}) {
@@ -67,9 +66,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
 
-    const configuration = new Configuration({ apiKey: openAiKey });
-    const openai = new OpenAIApi(configuration);
-
     // Moderate the content to comply with OpenAI T&C
     const moderationResponse = await fetch(
       "https://api.openai.com/v1/moderations",
@@ -124,7 +120,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Test 0");
 
-    const tokenizer = new GPT3NodeTokenizer({ type: "gpt3" });
+    const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
 
