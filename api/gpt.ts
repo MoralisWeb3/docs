@@ -4,6 +4,7 @@ import GPT3Tokenizer from "gpt3-tokenizer";
 import { Configuration, OpenAIApi, CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
+import fetch from "node-fetch";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
