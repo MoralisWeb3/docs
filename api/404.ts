@@ -22,13 +22,15 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   } else {
     // If req.url not found show 404 page
     // Get the 404.html file
-    const response = await fetch(
-      "https://" + process.env.VERCEL_URL + "/404.html"
-    );
-    const body = await response.text();
-    res.statusCode = 404;
-    // Caching headers
-    res.setHeader("Cache-control", "s-maxage=600");
-    return res.end(body);
+    if (process.env.NODE_ENV !== "development") {
+      const response = await fetch(
+        "https://" + process.env.VERCEL_URL + "/404.html"
+      );
+      const body = await response.text();
+      res.statusCode = 404;
+      // Caching headers
+      res.setHeader("Cache-control", "s-maxage=600");
+      return res.end(body);
+    }
   }
 };

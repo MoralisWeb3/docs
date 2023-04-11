@@ -49,7 +49,13 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const requestData = req;
+    const requestData = (await req.json()) as {
+      query?: string;
+    };
+
+    if (!requestData) {
+      throw new UserError("Missing request data");
+    }
 
     const { query } = requestData;
 
