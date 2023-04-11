@@ -109,6 +109,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     const [{ embedding }] = (await embeddingResponse.json()).data;
 
+    console.log("Test 1", embedding);
+
     const { data = [], error: matchError } = await supabaseClient
       .from("page_section")
       .select();
@@ -158,6 +160,8 @@ const handler = async (req: Request): Promise<Response> => {
 
       Answer as markdown (including related code snippets if available):
     `;
+
+    console.log("Test 2", prompt);
 
     const completionOptions: CreateCompletionRequest = {
       model: "text-davinci-003",
