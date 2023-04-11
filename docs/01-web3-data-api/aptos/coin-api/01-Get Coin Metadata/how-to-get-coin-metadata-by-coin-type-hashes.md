@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 
-## Step 2: Get transactions
+## Step 2: Get Coin Metadata By Coin Type Hashes
 
 In order to get coin metadata by coin type hashes, Moralis provides you a [getCoinsByCoinTypeHash](/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes) endpoint to do so.
 
@@ -134,7 +134,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 You just got coin metadata by creator addresses with just a few lines of code using the Moralis Coin API!
+Congratulations 🥳 You just got coin metadata by coin type hashes with just a few lines of code using the Moralis Coin API!
 
 ## Youtube Video
 
