@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useContext, useEffect } from "react";
 import { useFormikContext } from "formik";
 import mapValues from "lodash/mapValues";
 import omitBy from "lodash/omitBy";
@@ -397,6 +397,41 @@ const ApiExamples = ({
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
+
+  const generateBio = async () => {
+    const response = await fetch("/api/gpt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: "How to use Moralis in React?",
+      }),
+    });
+
+    if (!response.ok) {
+      console.error(response.statusText);
+    }
+
+    const data = response.body;
+    if (!data) {
+      return;
+    }
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      console.log(chunkValue);
+    }
+  };
+
+  useEffect(() => {
+    generateBio();
+  }, []);
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
