@@ -2,12 +2,6 @@
   "rewrites": [
     {
       "source": "/:path*{/}?",
-      "has": [
-        {
-          "type": "host",
-          "value": "undefined"
-        }
-      ],
       "destination": "/api/404"
     }
   ]
