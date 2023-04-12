@@ -1,4 +1,3 @@
-import url from "url";
 import fetch from "node-fetch";
 import { redirects } from "./data/redirects";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -10,8 +9,10 @@ function getProtocol() {
 }
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
+  const pathname = new URL(req.url, getProtocol() + req.headers.host).pathname;
+
   const foundRedirect = redirects.find(
-    (redirect) => redirect.source === url.parse(req.url!).pathname
+    (redirect) => redirect.source === pathname
   );
 
   if (foundRedirect) {
