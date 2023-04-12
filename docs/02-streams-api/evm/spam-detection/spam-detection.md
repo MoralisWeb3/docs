@@ -8,7 +8,7 @@ sidebar_position: 6
 Spam detection is designed to provide an extra layer of protection and help you easily identify possible spam contracts.
 
 ### How does it work?
-Our latest update adds a new property called **`possibleSpam`** for the following items in the webhook: `erc20Transfers`, `erc20Approvals`, `nftTokenApprovals`, and `nftTransfers`. This property can be **`true`** or **`false`**,depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
+Property called **`possibleSpam`** for the following items in the webhook: `erc20Transfers`, `erc20Approvals`, `nftTokenApprovals`, and `nftTransfers`. This property can be **`true`** or **`false`**,depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
 
 With this feature you can effortlessly identify and hide suspicious contracts or notify your customers about potential risks associated with them.
 
