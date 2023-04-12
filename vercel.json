@@ -5,7 +5,11 @@
       "has": [
         {
           "type": "host",
-          "value": ""
+          "value": "docs.moralis.io"
+        },
+        {
+          "type": "host",
+          "value": "(.*).vercel.app"
         }
       ],
       "destination": "/api/404"
