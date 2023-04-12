@@ -5,8 +5,8 @@
       "has": [
         {
           "type": "host",
-          "value": "docs-git-feat-feedback-moralis-web3.vercel.app"
-        }
+          "value": "^docs[.]moralis[.]io|.*[.]vercel[.]app$"
+        } 
       ],
       "destination": "/api/404"
     }
