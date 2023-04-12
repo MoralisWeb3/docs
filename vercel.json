@@ -4,9 +4,8 @@
       "source": "/:path*{/}?",
       "has": [
         {
-          "type": "header",
-          "key": "host",
-          "value": "(?!localhost).*"
+          "type": "host",
+          "value": "docs-git-feat-feedback-moralis-web3.vercel.app"
         }
       ],
       "destination": "/api/404"
