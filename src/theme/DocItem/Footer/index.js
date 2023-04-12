@@ -61,10 +61,11 @@ export default function DocItemFooter() {
     return null;
   }
 
-  const handleClick = (value) => () => {
+  const handleClick = (choice) => () => {
     fetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ value }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ choice: choice }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -81,22 +82,22 @@ export default function DocItemFooter() {
     >
       <hr />
       {canDisplayTagsRow && <TagsRow tags={tags} />}
-      <div class="row">
-        <div class="col col--4">
+      <div className="row">
+        <div className="col col--4">
           <div className="font-bold mb-2">Need support?</div>
           <p>
             Questions? Problems? Need more info? Contact our Support for
             assitance!
           </p>
           <a
-            class="button button--sm button--outline button--secondary margin-right--sm"
+            className="button button--sm button--outline button--secondary margin-right--sm"
             href="https://moralis.io/contact-support/"
             target="_blank"
           >
             Contact Support
           </a>
         </div>
-        <div class="col col--4">
+        <div className="col col--4">
           <div className="font-bold mb-2">Help improve these docs!</div>
           {canDisplayEditMetaRow && (
             <EditMetaRow
@@ -110,23 +111,23 @@ export default function DocItemFooter() {
             href="https://segment.com/docs/"
             target="_blank"
             rel="noreferrer noopener"
-            class="theme-edit-this-page"
+            className="theme-edit-this-page"
           >
             <HiPlusCircle className="mr-2" />
             Request docs change
           </a>
         </div>
-        <div class="col col--4">
+        <div className="col col--4">
           <div className="font-bold mb-2">Was this page helpful?</div>
           <button
-            class="button button--md button--outline button--primary margin-right--sm"
+            className="button button--md button--outline button--primary margin-right--sm"
             onClick={handleClick("yes")}
           >
             <FiThumbsUp className="mr-2" />
             Yes
           </button>
           <button
-            class="button button--md button--outline button--primary"
+            className="button button--md button--outline button--primary"
             onClick={handleClick("no")}
           >
             <FiThumbsDown className="mr-2" />
