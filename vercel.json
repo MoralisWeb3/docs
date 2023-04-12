@@ -1,5 +1,14 @@
 {
   "rewrites": [
-    { "source": "/:path*{/}?", "destination": "/api/404" }
+    {
+      "source": "/:path*{/}?",
+      "has": [
+        {
+          "type": "host",
+          "value": ""
+        }
+      ],
+      "destination": "/api/404"
+    }
   ]
 }

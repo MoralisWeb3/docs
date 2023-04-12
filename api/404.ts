@@ -28,11 +28,10 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   } else {
     // If req.url not found show 404 page
     // Get the 404.html file
-    process.env.VERCEL_ENV === "production";
-
     const response = await fetch(
       getProtocol() + process.env.VERCEL_URL + "/404.html"
     );
+
     const body = await response.text();
     res.statusCode = 404;
     // Caching headers
