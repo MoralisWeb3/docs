@@ -10,4 +10,4 @@ We're excited to announce the launch of our new spam detection feature to EVM St
 
 Property called **`possibleSpam`** for the following items in the webhook: `erc20Transfers`, `erc20Approvals`, `nftTokenApprovals`, and `nftTransfers`. This property can be **`true`** or **`false`**,depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
 
-[Check out our docs](/streams-api/evm/spam-detection) for more information about this feature including which endpoints it's active on.
+[Check out our docs](/web3-data-api/evm/nft-spam-detection) for more information about this feature including which endpoints it's active on.
