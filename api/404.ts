@@ -9,7 +9,7 @@ function getProtocol() {
 }
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
-  const pathname = new URL(req.url, getProtocol() + req.headers.host).pathname;
+  const pathname = new URL(req.url).pathname;
 
   const foundRedirect = redirects.find(
     (redirect) => redirect.source === pathname
