@@ -1,6 +1,6 @@
 ---
-title: "How to get estimate gas price"
-slug: "../how-to-get-estimate-gas-price"
+title: "How to estimate the gas price"
+slug: "../how-to-estimate-the-gas-price"
 description: "Learn how to estimate the gas price using Moralis Transaction API."
 sidebar_label: Get Estimate Gas Price
 ---
