@@ -1,5 +1,6 @@
 ---
-title: "Authentication"
+title: "Aptos API – Authentication"
+sidebar_label: "Authentication"
 ---
 
 # Authentication
