@@ -6,7 +6,7 @@ import LastUpdated from "@theme/LastUpdated";
 import EditThisPage from "@theme/EditThisPage";
 import TagsListInline from "@theme/TagsListInline";
 import styles from "./styles.module.css";
-import { HiPlusCircle } from "react-icons/hi";
+import { HiPlusCircle, HiPencil } from "react-icons/hi";
 import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 import {
   Popover,
@@ -54,13 +54,7 @@ function EditMetaRow({
 }
 export default function DocItemFooter() {
   const { metadata } = useDoc();
-  const {
-    editUrl,
-    lastUpdatedAt,
-    formattedLastUpdatedAt,
-    lastUpdatedBy,
-    tags,
-  } = metadata;
+  const { editUrl, lastUpdatedAt, lastUpdatedBy, tags, permalink } = metadata;
   const canDisplayTagsRow = tags.length > 0;
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
   const canDisplayFooter = canDisplayTagsRow || canDisplayEditMetaRow;
@@ -131,18 +125,23 @@ export default function DocItemFooter() {
             Help improve these docs!
           </div>
           {canDisplayEditMetaRow && (
-            <EditMetaRow
-              editUrl={editUrl}
-              lastUpdatedAt={lastUpdatedAt}
-              lastUpdatedBy={lastUpdatedBy}
-              formattedLastUpdatedAt={formattedLastUpdatedAt}
-            />
+            <>
+              <a
+                href={`${editUrl}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-center w-full"
+              >
+                <HiPencil className="mr-2" />
+                Edit page
+              </a>
+            </>
           )}
           <a
-            href="https://segment.com/docs/"
+            href={`https://github.com/MoralisWeb3/docs/issues/new?assignees=&labels=feedback&template=feature_request.md&title=Feature request for: ${permalink}`}
             target="_blank"
             rel="noreferrer noopener"
-            className="theme-edit-this-page"
+            className="flex items-center w-full"
           >
             <HiPlusCircle className="mr-2" />
             Request a change
@@ -151,7 +150,7 @@ export default function DocItemFooter() {
         <div className="col col--4">
           <div className="text-xl font-medium mb-2">Was this page helpful?</div>
           <button
-            className={`button button--md button--outline mr-2 ${
+            className={`inline-flex align-top items-center button button--md button--outline mr-2 mb-2 ${
               choice === "yes" ? "bg-green-500" : "button--primary"
             }`}
             onClick={handleClick("yes")}
@@ -161,7 +160,7 @@ export default function DocItemFooter() {
             Yes
           </button>
           <button
-            className={`button button--md button--outline ${
+            className={`inline-flex align-top items-center button button--md button--outline ${
               choice === "no" ? "bg-gray-500" : "button--primary"
             }`}
             onClick={handleClick("no")}
