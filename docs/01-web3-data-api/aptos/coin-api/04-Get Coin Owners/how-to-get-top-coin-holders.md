@@ -22,7 +22,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get top coin holders, Moralis provides you a [getTopHoldersByCoin](/web3-data-api/aptos/reference/get-top-holders-by-coin) endpoint to do so.
 
-Here you'll need two parameters: `limit`, `coinTypeHash`, and `network`.
+Here you'll need three parameters: `limit`, `coinTypeHash`, and `network`.
 
 Once you have obtained both the `limit`, `coinTypeHash`, and `network`, you can copy the following code:
 
