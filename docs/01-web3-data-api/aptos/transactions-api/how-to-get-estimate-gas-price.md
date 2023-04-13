@@ -129,7 +129,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 You just got estimate gas price with just a few lines of code using the Moralis Transaction API!
+Congratulations 🥳 You just estimate the gas price with just a few lines of code using the Moralis Transaction API!
 
 ## Youtube Video
 
