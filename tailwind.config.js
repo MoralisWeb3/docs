@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
   darkMode: ["class", '[data-theme="dark"]'],
   corePlugins: { preflight: false },
 };

@@ -8,6 +8,13 @@ import TagsListInline from "@theme/TagsListInline";
 import styles from "./styles.module.css";
 import { HiPlusCircle } from "react-icons/hi";
 import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@site/src/components/ui/popover";
+import { Textarea } from "@site/src/components/ui/textarea";
+import { Button } from "@site/src/components/ui/button";
 
 function TagsRow(props) {
   return (
@@ -61,18 +68,40 @@ export default function DocItemFooter() {
     return null;
   }
 
+  const [status, setStatus] = React.useState("empty");
+  const [choice, setChoice] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
+  const handleMessageChange = (event) => {
+    // 👇️ access textarea value
+    setMessage(event.target.value);
+  };
+
   const handleClick = (choice) => () => {
+    setChoice(choice);
+    setStatus("message");
+  };
+
+  const handlePopoverChange = (open) => {
+    if (!open) {
+      sendMessage();
+    }
+  };
+
+  const sendMessage = () => {
+    setStatus("submitting");
+
     fetch("/api/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ choice: choice }),
+      body: JSON.stringify({ choice: choice, message: message }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        setStatus("success");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        setStatus("error");
       });
   };
 
@@ -83,9 +112,9 @@ export default function DocItemFooter() {
       <hr />
       {canDisplayTagsRow && <TagsRow tags={tags} />}
       <div className="row">
-        <div className="col col--4">
-          <div className="font-bold mb-2">Need support?</div>
-          <p>
+        <div className="col col--4 mb-6">
+          <div className="text-xl font-medium mb-2">Need support?</div>
+          <p className="mb-2">
             Questions? Problems? Need more info? Contact our Support for
             assitance!
           </p>
@@ -94,11 +123,13 @@ export default function DocItemFooter() {
             href="https://moralis.io/contact-support/"
             target="_blank"
           >
-            Contact Support
+            Visit our Support page
           </a>
         </div>
-        <div className="col col--4">
-          <div className="font-bold mb-2">Help improve these docs!</div>
+        <div className="col col--4 mb-6">
+          <div className="text-xl font-medium mb-2">
+            Help improve these docs!
+          </div>
           {canDisplayEditMetaRow && (
             <EditMetaRow
               editUrl={editUrl}
@@ -114,25 +145,64 @@ export default function DocItemFooter() {
             className="theme-edit-this-page"
           >
             <HiPlusCircle className="mr-2" />
-            Request docs change
+            Request a change
           </a>
         </div>
         <div className="col col--4">
-          <div className="font-bold mb-2">Was this page helpful?</div>
+          <div className="text-xl font-medium mb-2">Was this page helpful?</div>
           <button
-            className="button button--md button--outline button--primary margin-right--sm"
+            className={`button button--md button--outline mr-2 ${
+              choice === "yes" ? "bg-green-500" : "button--primary"
+            }`}
             onClick={handleClick("yes")}
+            disabled={status !== "empty"}
           >
             <FiThumbsUp className="mr-2" />
             Yes
           </button>
           <button
-            className="button button--md button--outline button--primary"
+            className={`button button--md button--outline ${
+              choice === "no" ? "bg-gray-500" : "button--primary"
+            }`}
             onClick={handleClick("no")}
+            disabled={status !== "empty"}
           >
             <FiThumbsDown className="mr-2" />
             No
           </button>
+          <Popover
+            open={status === "message"}
+            onOpenChange={handlePopoverChange}
+          >
+            <PopoverTrigger
+              className={`flex w-full bg-transparent border-none`}
+            ></PopoverTrigger>
+            <PopoverContent align="start" className={`p-2`}>
+              <Textarea
+                onChange={handleMessageChange}
+                placeholder={`${
+                  choice === "yes"
+                    ? "Great! What did you like?"
+                    : "Sorry to hear that. What can we do better?"
+                }`}
+              />
+              <div className="flex justify-end w-full mt-2">
+                <Button
+                  onClick={sendMessage}
+                  disabled={status === "submitting"}
+                >
+                  Send
+                </Button>
+              </div>
+            </PopoverContent>
+          </Popover>
+          <div
+            className={`mt-2 ${
+              ["submitting", "success"].includes(status) ? "block" : "hidden"
+            }`}
+          >
+            Thanks for your feedback!
+          </div>
         </div>
       </div>
       <hr />
