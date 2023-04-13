@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 
-## Step 2: Get estimate gas price
+## Step 2: Estimate gas price
 
 In order to get estimate gas price, Moralis provides you a [estimateGasPrice](/web3-data-api/aptos/reference/estimate-gas-price) endpoint to do so.
 
