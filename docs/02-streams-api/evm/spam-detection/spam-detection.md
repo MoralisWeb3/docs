@@ -1,6 +1,6 @@
 ---
 title: "Spam Detection"
-slug: "../../spam-detection"
+slug: "../spam-detection"
 description: "Spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
 sidebar_position: 6
 ---
