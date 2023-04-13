@@ -75,10 +75,12 @@ const runApp = async () => {
 
   const coinTypeHash = "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
 
+  const network = "mainnet";
+  
   const response = await Moralis.AptosApi.coins.getTopHoldersByCoin({
     limit,
     coinTypeHash,
-    network: "mainnet"
+    network,
   });
 
   console.log(response.result);
