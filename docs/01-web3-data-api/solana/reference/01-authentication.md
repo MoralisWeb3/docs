@@ -1,5 +1,6 @@
 ---
-title: "Authentication"
+title: "Solana API – Authentication"
+sidebar_label: "Authentication"
 ---
 
 # Authentication
