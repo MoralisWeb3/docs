@@ -24,7 +24,7 @@ In order to get top coin holders, Moralis provides you a [getTopHoldersByCoin](/
 
 Here you'll need three parameters: `limit`, `coinTypeHash`, and `network`.
 
-Once you have obtained both the `limit`, `coinTypeHash`, and `network`, you can copy the following code:
+Once you have obtained the `limit`, `coinTypeHash`, and `network`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
