@@ -65,8 +65,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
+  const network = "mainnet";
+  
   const response = await Moralis.AptosApi.transactions.estimateGasPrice({
-    "network": "mainnet"
+    network,
   });
 
   console.log(response);
