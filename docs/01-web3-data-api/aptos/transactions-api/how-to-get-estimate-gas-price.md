@@ -2,7 +2,7 @@
 title: "How to estimate the gas price"
 slug: "../how-to-estimate-the-gas-price"
 description: "Learn how to estimate the gas price using Moralis Transaction API."
-sidebar_label: Get Estimate Gas Price
+sidebar_label: Estimate Gas Price
 ---
 
 ## Prerequisites
