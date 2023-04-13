@@ -22,6 +22,10 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get estimate gas price, Moralis provides you a [estimateGasPrice](/web3-data-api/aptos/reference/estimate-gas-price) endpoint to do so.
 
+Here you'll need one parameter: `network`.
+
+Once you have obtained the `network`, you can copy the following code:
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
