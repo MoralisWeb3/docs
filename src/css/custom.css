@@ -4,6 +4,10 @@
  * work well for content-centric websites.
  */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Start Custom Fonts CSS */
 @font-face {
   font-family: "Golos";
@@ -90,6 +94,8 @@
   --docs-color-text: #000;
   --docs-color-background-100: #f8f8f8;
   --docs-color-background-200: #efefef;
+
+  --ifm-hr-background-color: var(--ifm-toc-border-color);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
