@@ -9,9 +9,18 @@ export default function SearchNavbarItem({ mobile, className }) {
   return (
     <>
       <NavbarSearch className={className}>
-        <SearchBar />
+        <div
+          style={{
+            display: "flex",
+            gap: ".5rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SearchBar />
+          <AvatarMain />
+        </div>
       </NavbarSearch>
-      <AvatarMain />
     </>
   );
 }
