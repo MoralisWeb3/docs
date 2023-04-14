@@ -399,7 +399,7 @@ const ApiExamples = ({
   );
 
   const generateBio = async () => {
-    const response = await fetch("/api/gpt-search", {
+    const response = await fetch("/api/gpt-preprocess", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
