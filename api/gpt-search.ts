@@ -16,6 +16,8 @@ const handler = async (req: NextRequest): Promise<Response> => {
       prompt?: string;
     };
 
+    console.log("Prompt", prompt);
+
     if (!prompt) {
       return new Response("No prompt in the request", { status: 400 });
     }
