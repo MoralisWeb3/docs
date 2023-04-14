@@ -409,26 +409,36 @@ const ApiExamples = ({
       }),
     });
 
-    console.log(response.json());
-
     if (!response.ok) {
       console.error(response.statusText);
     }
 
-    // const data = response.body;
-    // if (!data) {
-    //   return;
-    // }
-    // const reader = data.getReader();
-    // const decoder = new TextDecoder();
-    // let done = false;
+    const prompt = await response.json();
 
-    // while (!done) {
-    //   const { value, done: doneReading } = await reader.read();
-    //   done = doneReading;
-    //   const chunkValue = decoder.decode(value);
-    //   console.log(chunkValue);
-    // }
+    const answer = await fetch("/api/gpt-search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt,
+      }),
+    });
+
+    const data = answer.body;
+    if (!data) {
+      return;
+    }
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      console.log(chunkValue);
+    }
   };
 
   useEffect(() => {
