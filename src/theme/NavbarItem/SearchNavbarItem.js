@@ -1,7 +1,9 @@
 import React from "react";
 import SearchBar from "@theme/SearchBar";
 import NavbarSearch from "@theme/Navbar/Search";
-import { AvatarMain } from "../../components/Avatar/Avatar";
+import { AvatarMain } from "../../components/Avatar";
+import Modal from "../../components/Modal";
+import { DialogTrigger } from "@site/src/components/Modal/ModalPrimitive";
 export default function SearchNavbarItem({ mobile, className }) {
   if (mobile) {
     return null;
@@ -18,7 +20,11 @@ export default function SearchNavbarItem({ mobile, className }) {
           }}
         >
           <SearchBar />
-          <AvatarMain />
+          <Modal>
+            <DialogTrigger style={{ background: "none", border: 0 }}>
+              <AvatarMain />
+            </DialogTrigger>
+          </Modal>
         </div>
       </NavbarSearch>
     </>
