@@ -6,7 +6,6 @@ export function AvatarMain() {
   return (
     <Avatar>
       <AvatarImage src={ChatGPTLogo} alt="ChatGPT" />
-      <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   );
 }
