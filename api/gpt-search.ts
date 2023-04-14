@@ -22,7 +22,7 @@ const handler = async (req: NextRequest): Promise<Response> => {
     }
 
     const completionOptions = {
-      model: "gpt-3.5-turbo",
+      model: "text-davinci-003",
       prompt,
       max_tokens: 512,
       temperature: 0,
