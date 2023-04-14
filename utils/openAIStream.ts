@@ -3,7 +3,6 @@ import {
   ParsedEvent,
   ReconnectInterval,
 } from "eventsource-parser";
-import fetch from "node-fetch";
 
 export async function OpenAIStream(payload) {
   const encoder = new TextEncoder();
@@ -19,8 +18,6 @@ export async function OpenAIStream(payload) {
     method: "POST",
     body: JSON.stringify(payload),
   });
-
-  console.log("test 3", res);
 
   const stream = new ReadableStream({
     async start(controller) {

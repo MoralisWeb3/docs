@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useEffect } from "react";
+import React, { useMemo, useContext, useEffect, useState } from "react";
 import { useFormikContext } from "formik";
 import mapValues from "lodash/mapValues";
 import omitBy from "lodash/omitBy";
@@ -382,6 +382,7 @@ const ApiExamples = ({
 >) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
+  const [answer, setAnswer] = useState<any>(null);
   const { path: pagePath, network } = usePageState();
 
   // Bearer is only for Aptos Web3 Data API, the rest are X-API-Key
@@ -398,51 +399,59 @@ const ApiExamples = ({
     []
   );
 
-  const generateBio = async () => {
-    const response = await fetch("/api/gpt-preprocess", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: "How to use Moralis in React?",
-      }),
-    });
+  const generateAnswer = async () => {
+    try {
+      const response = await fetch("/api/gpt-preprocess", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: "How to use Moralis in React?",
+        }),
+      });
 
-    if (!response.ok) {
-      console.error(response.statusText);
-    }
+      if (!response.ok) {
+        console.error(response.statusText);
+      }
 
-    const prompt = await response.json();
+      const prompt = await response.json();
 
-    const answer = await fetch("/api/gpt-search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt,
-      }),
-    });
+      console.log(prompt);
 
-    const data = answer.body;
-    if (!data) {
-      return;
-    }
-    const reader = data.getReader();
-    const decoder = new TextDecoder();
-    let done = false;
+      const answer = await fetch("/api/gpt-search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt,
+        }),
+      });
 
-    while (!done) {
-      const { value, done: doneReading } = await reader.read();
-      done = doneReading;
-      const chunkValue = decoder.decode(value);
-      console.log(chunkValue);
+      const data = answer.body;
+      if (!data) {
+        return;
+      }
+      const reader = data.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value);
+        setAnswer((prev) => prev + chunkValue);
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
 
+  console.log(answer);
+
   useEffect(() => {
-    generateBio();
+    generateAnswer();
   }, []);
 
   return (
