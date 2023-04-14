@@ -415,7 +415,7 @@ const ApiExamples = ({
         console.error(response.statusText);
       }
 
-      const prompt = await response.json();
+      const { prompt } = await response.json();
 
       console.log(prompt);
 
