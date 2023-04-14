@@ -45,7 +45,6 @@
     "dotenv": "^16.0.3",
     "eventsource-parser": "^1.0.0",
     "formik": "^2.2.9",
-    "gpt-3-encoder": "^1.1.4",
     "gpt3-tokenizer": "^1.1.4",
     "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.1.3",
