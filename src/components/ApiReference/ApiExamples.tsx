@@ -401,21 +401,23 @@ const ApiExamples = ({
 
   const generateAnswer = async () => {
     try {
-      const response = await fetch("/api/gpt-preprocess", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: "How to use Moralis in React?",
-        }),
-      });
+      // const response = await fetch("/api/gpt-preprocess", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     query: "How to use Moralis in React?",
+      //   }),
+      // });
 
-      if (!response.ok) {
-        console.error(response.statusText);
-      }
+      // if (!response.ok) {
+      //   console.error(response.statusText);
+      // }
 
-      const { prompt } = await response.json();
+      // const { prompt } = await response.json();
+
+      const prompt = "Help me write an poem about Web3";
 
       console.log(prompt);
 

@@ -8,16 +8,28 @@ export const config = {
 
 const handler = async (req: NextRequest): Promise<Response> => {
   try {
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error("Missing env var from OpenAI");
+    }
+
     const { prompt } = (await req.json()) as {
       prompt?: string;
     };
 
+    if (!prompt) {
+      return new Response("No prompt in the request", { status: 400 });
+    }
+
     const completionOptions: CreateCompletionRequest = {
       model: "text-davinci-003",
       prompt,
-      max_tokens: 512,
-      temperature: 0,
+      temperature: 0.7,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
+      max_tokens: 200,
       stream: true,
+      n: 1,
     };
 
     const stream = await OpenAIStream(completionOptions);
