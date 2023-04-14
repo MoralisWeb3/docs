@@ -8,7 +8,9 @@ export const config = {
 
 const handler = async (req: NextRequest): Promise<Response> => {
   try {
-    if (!process.env.OPENAI_API_KEY) {
+    console.log("Initial call");
+
+    if (!process.env.OPENAI_KEY) {
       throw new Error("Missing env var from OpenAI");
     }
 
