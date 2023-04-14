@@ -1,9 +1,9 @@
+import fetch from "node-fetch";
 import { createClient } from "@supabase/supabase-js";
 import { oneLine, stripIndent } from "common-tags";
-import { CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
-import { OpenAIStream } from "../utils/openAIStream";
 import GPT3Tokenizer from "../utils/gpt3Tokenizer";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -23,11 +23,7 @@ export const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-export const config = {
-  runtime: "edge",
-};
-
-const handler = async (req: Request): Promise<Response> => {
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   try {
     // Handle CORS
     if (req.method === "OPTIONS") {
@@ -48,9 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const requestData = (await req.json()) as {
-      query?: string;
-    };
+    const requestData = req?.body;
 
     if (!requestData) {
       throw new UserError("Missing request data");
@@ -118,8 +112,6 @@ const handler = async (req: Request): Promise<Response> => {
       throw new ApplicationError("Failed to match page sections", matchError);
     }
 
-    console.log("Test 0");
-
     const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
@@ -136,8 +128,6 @@ const handler = async (req: Request): Promise<Response> => {
 
       contextText += `${content.trim()}\n---\n`;
     }
-
-    console.log("Test 1");
 
     const prompt = stripIndent`
       ${oneLine`
@@ -159,41 +149,9 @@ const handler = async (req: Request): Promise<Response> => {
       Answer as markdown (including related code snippets if available):
     `;
 
-    console.log("Test 2");
-
-    const completionOptions: CreateCompletionRequest = {
-      model: "text-davinci-003",
-      prompt,
-      max_tokens: 512,
-      temperature: 0,
-      stream: true,
-    };
-
-    // Proxy the streamed SSE response from OpenAI
-    const stream = await OpenAIStream(completionOptions);
-    return new Response(stream);
+    res.status(200).json({ prompt });
   } catch (err: unknown) {
-    if (err instanceof UserError) {
-      console.error(err);
-    } else if (err instanceof ApplicationError) {
-      // Print out application errors with their additional data
-      console.error(`${err.message}: ${JSON.stringify(err.data)}`);
-    } else {
-      // Print out unexpected errors as is to help with debugging
-      console.error(err);
-    }
-
-    // TODO: include more response info in debug environments
-    return new Response(
-      JSON.stringify({
-        error: "There was an error processing your request",
-      }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
-    );
+    console.error(err, res);
+    res.status(500).json({ error: err });
   }
 };
-
-export default handler;

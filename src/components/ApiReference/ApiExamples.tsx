@@ -399,7 +399,7 @@ const ApiExamples = ({
   );
 
   const generateBio = async () => {
-    const response = await fetch("/api/gpt", {
+    const response = await fetch("/api/gpt-search", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -409,24 +409,26 @@ const ApiExamples = ({
       }),
     });
 
+    console.log(response.json());
+
     if (!response.ok) {
       console.error(response.statusText);
     }
 
-    const data = response.body;
-    if (!data) {
-      return;
-    }
-    const reader = data.getReader();
-    const decoder = new TextDecoder();
-    let done = false;
+    // const data = response.body;
+    // if (!data) {
+    //   return;
+    // }
+    // const reader = data.getReader();
+    // const decoder = new TextDecoder();
+    // let done = false;
 
-    while (!done) {
-      const { value, done: doneReading } = await reader.read();
-      done = doneReading;
-      const chunkValue = decoder.decode(value);
-      console.log(chunkValue);
-    }
+    // while (!done) {
+    //   const { value, done: doneReading } = await reader.read();
+    //   done = doneReading;
+    //   const chunkValue = decoder.decode(value);
+    //   console.log(chunkValue);
+    // }
   };
 
   useEffect(() => {
