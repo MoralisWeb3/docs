@@ -3,8 +3,7 @@ import { oneLine, stripIndent } from "common-tags";
 import { CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
-import model from "@dqbd/tiktoken/encoders/cl100k_base.json";
-import { Tiktoken } from "@dqbd/tiktoken/lite/init";
+import GPT3Tokenizer from "../utils/gpt3Tokenizer";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -121,23 +120,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Test 0");
 
-    // await init((imports) => WebAssembly.instantiate(wasm, imports));
-
-    const encoding = new Tiktoken(
-      model.bpe_ranks,
-      model.special_tokens,
-      model.pat_str
-    );
-
+    const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
 
     for (let i = 0; i < (data ?? [])?.length; i++) {
       const pageSection = data?.[i] ?? {};
       const content = pageSection.content;
-      const encoded = encoding.encode(content);
-      encoding.free();
-      tokenCount += encoded.length;
+      const encoded = tokenizer.encode(content);
+      tokenCount += encoded.text.length;
 
       if (tokenCount >= 1500) {
         break;
