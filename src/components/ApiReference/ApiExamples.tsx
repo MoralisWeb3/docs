@@ -382,7 +382,7 @@ const ApiExamples = ({
 >) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
-  const [answer, setAnswer] = useState<any>(null);
+  const [answer, setAnswer] = useState<string>("");
   const { path: pagePath, network } = usePageState();
 
   // Bearer is only for Aptos Web3 Data API, the rest are X-API-Key
@@ -401,25 +401,21 @@ const ApiExamples = ({
 
   const generateAnswer = async () => {
     try {
-      // const response = await fetch("/api/gpt-preprocess", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     query: "How to use Moralis in React?",
-      //   }),
-      // });
+      const response = await fetch("/api/gpt-preprocess", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: "How to use Moralis in React?",
+        }),
+      });
 
-      // if (!response.ok) {
-      //   console.error(response.statusText);
-      // }
+      if (!response.ok) {
+        console.error(response.statusText);
+      }
 
-      // const { prompt } = await response.json();
-
-      const prompt = "Help me write an poem about Web3";
-
-      console.log(prompt);
+      const { prompt } = await response.json();
 
       const answer = await fetch("/api/gpt-search", {
         method: "POST",
