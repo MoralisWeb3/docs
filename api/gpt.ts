@@ -3,9 +3,8 @@ import { oneLine, stripIndent } from "common-tags";
 import { CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
-import wasm from "@dqbd/tiktoken/lite/tiktoken_bg.wasm?module";
 import model from "@dqbd/tiktoken/encoders/cl100k_base.json";
-import { init, Tiktoken } from "@dqbd/tiktoken/lite/init";
+import { Tiktoken } from "@dqbd/tiktoken/lite/init";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -122,7 +121,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Test 0");
 
-    await init((imports) => WebAssembly.instantiate(wasm, imports));
+    // await init((imports) => WebAssembly.instantiate(wasm, imports));
 
     const encoding = new Tiktoken(
       model.bpe_ranks,
