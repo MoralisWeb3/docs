@@ -39,6 +39,8 @@ export default class GPT3Tokenizer {
   private bpeRanks: ArrayKeyedMap<[string, string], number>;
   private cache: { [key: string]: string };
 
+  private textEncoder: TextEncoder;
+
   constructor(options: { type: "gpt3" | "codex" }) {
     this.encodings = encodings;
     this.vocab = bpeVocab;
@@ -49,6 +51,7 @@ export default class GPT3Tokenizer {
     this.byteEncoder = new Map();
     this.byteDecoder = new Map();
     this.cache = {};
+    this.textEncoder = new TextEncoder();
     this.initialize();
   }
 
@@ -205,7 +208,9 @@ export default class GPT3Tokenizer {
     return word;
   }
 
-  abstract encodeUtf8(text: string): Uint8Array;
+  encodeUtf8(text: string): Uint8Array {
+    return this.textEncoder.encode(text);
+  }
 
   encode(text: string): { bpe: number[]; text: string[] } {
     let bpeTokens: number[] = [];
