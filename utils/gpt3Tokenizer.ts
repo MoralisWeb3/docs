@@ -40,6 +40,7 @@ export default class GPT3Tokenizer {
   private cache: { [key: string]: string };
 
   private textEncoder: TextEncoder;
+  private textDecoder: TextDecoder;
 
   constructor(options: { type: "gpt3" | "codex" }) {
     this.encodings = encodings;
@@ -52,6 +53,7 @@ export default class GPT3Tokenizer {
     this.byteDecoder = new Map();
     this.cache = {};
     this.textEncoder = new TextEncoder();
+    this.textDecoder = new TextDecoder();
     this.initialize();
   }
 
@@ -153,6 +155,7 @@ export default class GPT3Tokenizer {
       return token;
     }
 
+    // eslint-disable-next-line no-constant-condition
     while (true) {
       const minPairs: { [key: number]: [string, string] } = {};
       for (const pair of Array.from(pairs)) {
@@ -234,7 +237,9 @@ export default class GPT3Tokenizer {
     };
   }
 
-  abstract decodeUtf8(bytes: Uint8Array): string;
+  decodeUtf8(bytes: Uint8Array): string {
+    return this.textDecoder.decode(bytes);
+  }
 
   decode(tokens: number[]): string {
     const text = tokens.map((x) => this.decodings[x]).join("");
