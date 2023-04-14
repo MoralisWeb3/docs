@@ -1,9 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
 import { oneLine, stripIndent } from "common-tags";
-import GPT3Tokenizer from "gpt3-tokenizer";
 import { CreateCompletionRequest } from "openai";
 import cosSimilarity from "cos-similarity";
 import { OpenAIStream } from "../utils/openAIStream";
+import { encode } from "gpt-3-encoder";
 
 const openAiKey = process.env.OPENAI_KEY;
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -120,17 +120,14 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Test 0");
 
-    const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
-
-    console.log("Test 1", tokenizer);
 
     for (let i = 0; i < (data ?? [])?.length; i++) {
       const pageSection = data?.[i] ?? {};
       const content = pageSection.content;
-      const encoded = tokenizer.encode(content);
-      tokenCount += encoded.text.length;
+      const encoded = encode(content);
+      tokenCount += encoded.length;
 
       if (tokenCount >= 1500) {
         break;
@@ -139,7 +136,7 @@ const handler = async (req: Request): Promise<Response> => {
       contextText += `${content.trim()}\n---\n`;
     }
 
-    console.log("Test 1.5");
+    console.log("Test 1");
 
     const prompt = stripIndent`
       ${oneLine`
