@@ -573,12 +573,12 @@ For the webhook url have to use the url provided previously by ngrok, followed b
 
 ![](/img/content/Screenshot_2023-01-11_at_10.11.50.webp)
 
-Our contract is deployed on Ethereum mainnet, so here you will select the network that your smart contrat is deployed on:
+Our contract is deployed on Ethereum mainnet, so here you will select the network that your smart contract is deployed on:
 And also select contract interactions.
 
 ![](/img/content/step4.webp)
 
-Next we check Event Emittance, then we have to add the ABI and select the topic we with to stream.
+Next we check Event Emittance, then we have to add the ABI and select the topic we want to stream.
 
 ![](/img/content/step5.webp)
 
@@ -644,7 +644,7 @@ It means you should shut down your server, send a message in the newly created c
 
 ## Testing the bot
 
-1. Run your bot by have 2 terminals opened in the `backend` folder.
+1. Run your bot by having 2 terminals opened in the `backend` folder.
 
 In the first one run
 
