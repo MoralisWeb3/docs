@@ -158,7 +158,7 @@ For the webhook url have to use the url provided previously by ngrok, followed b
 
 ![](/img/content/3083fdd-Screenshot_2022-11-24_at_16.05.02.webp)
 
-Our contract is deployed on mumbai testnet, so here you will select the network that your smart contrat is deployed on: 
+Our contract is deployed on mumbai testnet, so here you will select the network that your smart contract is deployed on: 
 
 ![](/img/content/89031d2-Screenshot_2022-11-24_at_16.07.14.webp)
 
@@ -166,7 +166,7 @@ Because our donations are sending native currency to a smart contract, here we w
 
 ![](/img/content/d2fc65d-Screenshot_2022-11-24_at_16.11.00.webp)
 
-Next we have to add the ABI and select the topic we with to stream.
+Next we have to add the ABI and select the topic we want to stream.
 
 ![](/img/content/7a495e0-image.webp)
 
@@ -176,9 +176,9 @@ After creating the stream Moralis will send an empty POST request to confirm tha
 
 ## Verify Stream Sender
 
-Right now everybody what knows our webhook endpoint is able to make a POST request to our express server.
+Right now everybody who knows our webhook endpoint is able to make a POST request to our express server.
 
-To stop this form causing any errors, what we have to do know is to verify that the request are sent by Moralis using `Moralis.Streams.verifySignature`.
+To stop this from causing any errors, what we have to do now is to verify that the requests are sent by Moralis using `Moralis.Streams.verifySignature`.
 
 Back to our express endpoint, we can add logic that allows only request coming from Moralis to go through.
 
