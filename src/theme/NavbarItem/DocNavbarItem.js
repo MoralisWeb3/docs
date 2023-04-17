@@ -70,11 +70,7 @@ export default function DocNavbarItem({
     <DefaultNavbarItem
       exact
       {...props}
-      isActive={() =>
-        checkIsActive() ??
-        (activeDoc?.path === doc.path ||
-          (!!activeDoc?.sidebar && activeDoc.sidebar === doc.sidebar))
-      }
+      isActive={checkIsActive}
       label={staticLabel ?? doc.id}
       to={doc.path}
     />
