@@ -1,11 +1,18 @@
-import url from "url";
 import fetch from "node-fetch";
 import { redirects } from "./data/redirects";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
+function getProtocol() {
+  const isProd = process.env.VERCEL_ENV === "production";
+  if (isProd) return "https://";
+  return "http://";
+}
+
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
+  const pathname = new URL(req.url, `https://${req.headers.host}`).pathname;
+
   const foundRedirect = redirects.find(
-    (redirect) => redirect.source === url.parse(req.url!).pathname
+    (redirect) => redirect.source === pathname
   );
 
   if (foundRedirect) {
@@ -23,8 +30,9 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     // If req.url not found show 404 page
     // Get the 404.html file
     const response = await fetch(
-      "https://" + process.env.VERCEL_URL + "/404.html"
+      getProtocol() + process.env.VERCEL_URL + "/404.html"
     );
+
     const body = await response.text();
     res.statusCode = 404;
     // Caching headers
