@@ -54,6 +54,7 @@ function SignIn() {
   const { isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
   const { push } = useRouter();
+  const { requestChallengeAsync } = useAuthRequestChallengeEvm()
 
   const handleAuth = async () => {
     if (isConnected) {
