@@ -5754,7 +5754,7 @@
     "getErc20Transfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Transfers",
-      "description": "",
+      "description": "Get ERC20 token transactions by one or many wallet addresses and/or contract addresses, ordered by block number in descending order.\n\n Supports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/transfers",
       "pathParams": [],
@@ -5816,28 +5816,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -5924,7 +5924,7 @@
     "getErc20Mints": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Mints",
-      "description": "",
+      "description": "Get ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/mints",
       "pathParams": [],
@@ -5986,28 +5986,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -6088,7 +6088,7 @@
     "getErc20Burns": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Burns",
-      "description": "",
+      "description": "Get ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/burns",
       "pathParams": [],
@@ -6150,28 +6150,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -6252,7 +6252,7 @@
     "getErc20Approvals": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Approvals",
-      "description": "",
+      "description": "Get ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/approvals",
       "pathParams": [],
@@ -6314,28 +6314,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }

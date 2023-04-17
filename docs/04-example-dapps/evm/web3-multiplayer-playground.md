@@ -5,13 +5,13 @@ description: "Learn how to create a Web3 Multiplayer Playground using Moralis, N
 ---
 ## Introduction
 
-This Moralis Unity Sample Project demonstrates Web3 functionality; authentication, send assets, fetch assets, & interacting with Solidity smartcontracts (read/write) on the Polygon Mumbai blockchain.
+This Moralis Unity Sample Project demonstrates Web3 functionality; authentication, send assets, fetch assets, & interacting with Solidity smart contracts (read/write) on the Polygon Mumbai blockchain.
 
 | Intro | 4-Player Multiplayer |
 | :--- | :--- |
 | <img width="400" src="/img/content/458e9db-image.webp" /> | <img width="400" src="/img/content/cb14e78-Screenshot_013.webp" /> |
 
-> Enter the multiplayer playground - an shared environment to move, trade currency, and trade NFTs
+> Enter the multiplayer playground - a shared environment to move, trade currency, and trade NFTs
 
 ## Video
 
