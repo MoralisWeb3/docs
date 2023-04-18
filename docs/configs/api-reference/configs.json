@@ -848,6 +848,18 @@
           "type": "string"
         },
         {
+          "name": "from_date",
+          "description": "The date from where to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "Get transfers up until this date (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
