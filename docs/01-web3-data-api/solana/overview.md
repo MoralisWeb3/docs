@@ -8,9 +8,10 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# Web3 Data API – Solana
+# Solana Web3 Data API
 
-![](/img/content/web3-data-api-3.webp)
+![23_04_Solana-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769900-094e347c-0113-4b96-94be-13d6d5cd5415.jpg)
+
 
 ## What are the Web3 Data APIs?
 
