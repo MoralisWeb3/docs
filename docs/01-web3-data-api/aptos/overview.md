@@ -8,15 +8,15 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# Web3 Data API – Aptos
+# Aptos Web3 Data API
 
-![](/img/content/web3-data-api-3.webp)
+![23_04_Aptos-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769407-b8a10c03-03c6-4f8c-b328-b1555c623aa3.jpg)
 
 ## What are the Web3 Data APIs?
 
 The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers.
 
-## Web3 Data API Features
+## Aptos Features
 
 Moralis indexes all core aspects of blockchain data and provides access to this through a suite of data-focussed API endpoints. No matter what you are building, our Web3 Data API will support the data you will need; including Blocks, Transactions, NFTs, Tokens and Balance information.
 
