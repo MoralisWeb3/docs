@@ -91,10 +91,10 @@ export default function DocItemFooter() {
       body: JSON.stringify({ choice: choice, message: message }),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         setStatus("success");
       })
-      .catch((error) => {
+      .catch(() => {
         setStatus("error");
       });
   };
