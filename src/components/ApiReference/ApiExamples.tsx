@@ -382,16 +382,7 @@ const ApiExamples = ({
 >) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
-  const { path: pagePath, network } = usePageState();
-
-  // Bearer is only for Aptos Web3 Data API, the rest are X-API-Key
-  const authField = useMemo(
-    () =>
-      pagePath === "web3-data-api" && network === "aptos"
-        ? "Bearer"
-        : "X-API-Key",
-    []
-  );
+  const { network } = usePageState();
 
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
@@ -443,7 +434,7 @@ const ApiExamples = ({
                       path === "/:address/function"
                         ? values.body
                         : filterOutEmpty(values.body),
-                    authField,
+                    authField: "X-API-Key",
                   })}
             </CodeBlock>
           </TabItem>
