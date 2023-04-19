@@ -12,10 +12,10 @@ sidebar_position: 3
 
 Our Market Data API allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers. We're introducing four new endpoints with this launch, including:
 
-- [ERC20 top movers](add-link-to-docs)
-- [ERC20 top 50 coins](add-link-to-docs)
-- [Top NFT collections by market cap](add-link-to-docs)
-- [Hot NFT collections by trading volume](add-link-to-docs)
+- [ERC20 top movers](/)
+- [ERC20 top 50 coins](/)
+- [Top NFT collections by market cap](/)
+- [Hot NFT collections by trading volume](/)
 
 ## Example use cases
 
