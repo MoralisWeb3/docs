@@ -149,7 +149,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       Answer as markdown (including related code snippets if available):
     `;
     
-    // Add prompt to supabase DB
+    // Add prompt, sanitizedQuery, unsanitizedQuery to supabase DB
     console.log(prompt);
 
     res.status(200).json({ prompt });
