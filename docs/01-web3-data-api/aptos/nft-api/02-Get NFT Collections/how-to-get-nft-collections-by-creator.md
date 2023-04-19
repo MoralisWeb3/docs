@@ -1,6 +1,6 @@
 ---
 title: "How to get NFT collections by creator"
-slug: "../how-to-get-nft-collections-by-creator"
+slug: "../../how-to-get-nft-collections-by-creator"
 description: "Learn how to get NFT collections by creator using Moralis NFT API."
 sidebar_label: Get NFT Collections By Creator
 ---
