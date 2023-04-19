@@ -1,4 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+  useLayoutEffect,
+} from "react";
 import { DocSearchButton, useDocSearchKeyboardEvents } from "@docsearch/react";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -15,6 +21,22 @@ import Translate from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { createPortal } from "react-dom";
 import translations from "@theme/SearchTranslations";
+import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
+import { useInstantSearch, InstantSearch } from "react-instantsearch-hooks-web";
+import algoliasearch from "algoliasearch/lite";
+import aa from "search-insights";
+
+aa("init", {
+  appId: "K26H89KJU5",
+  apiKey: "9f76506cf0358c279d81b2fb759fca37",
+  useCookie: true,
+});
+
+const searchClient = algoliasearch(
+  "K26H89KJU5",
+  "9f76506cf0358c279d81b2fb759fca37"
+);
+
 let DocSearchModal = null;
 function Hit({ hit, children }) {
   return (
@@ -23,6 +45,37 @@ function Hit({ hit, children }) {
       onClick={() => {
         try {
           // Call api/insights
+          aa("sendEvents", {
+            events: [
+              {
+                eventType: "click",
+                eventName: "Product Clicked",
+                index: "gold-iota",
+                userToken: "user-123456",
+                timestamp: 1681812223581,
+                objectIDs: ["9780545139700", "9780439784542"],
+                queryID: "43b15df305339e827f0ac0bdc5ebcaa7",
+                positions: [7, 6],
+              },
+              {
+                eventType: "view",
+                eventName: "Viewed Product Detail Page",
+                index: "gold-iota",
+                userToken: "user-123456",
+                timestamp: 1681812223581,
+                objectIDs: ["9780545139700", "9780439784542"],
+              },
+              {
+                eventType: "conversion",
+                eventName: "Purchased Product",
+                index: "gold-iota",
+                userToken: "user-123456",
+                timestamp: 1681812223581,
+                objectIDs: ["9780545139700", "9780439784542"],
+                queryID: "43b15df305339e827f0ac0bdc5ebcaa7",
+              },
+            ],
+          });
         } catch (e) {
           console.error(e);
         }
@@ -49,6 +102,21 @@ function mergeFacetFilters(f1, f2) {
   const normalize = (f) => (typeof f === "string" ? [f] : f);
   return [...normalize(f1), ...normalize(f2)];
 }
+
+function InsightsMiddleware() {
+  const { use } = useInstantSearch();
+
+  useLayoutEffect(() => {
+    const middleware = createInsightsMiddleware({
+      insightsClient: aa,
+    });
+
+    return use(middleware);
+  }, [use]);
+
+  return null;
+}
+
 function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
   const { siteMetadata } = useDocusaurusContext();
   const processSearchResultUrl = useSearchResultUrlProcessor();
@@ -158,38 +226,40 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
           crossOrigin="anonymous"
         />
       </Head>
+      <InstantSearch indexName="gold-iota" searchClient={searchClient}>
+        <InsightsMiddleware />
+        <DocSearchButton
+          onTouchStart={importDocSearchModalIfNeeded}
+          onFocus={importDocSearchModalIfNeeded}
+          onMouseOver={importDocSearchModalIfNeeded}
+          onClick={onOpen}
+          ref={searchButtonRef}
+          translations={translations.button}
+        />
 
-      <DocSearchButton
-        onTouchStart={importDocSearchModalIfNeeded}
-        onFocus={importDocSearchModalIfNeeded}
-        onMouseOver={importDocSearchModalIfNeeded}
-        onClick={onOpen}
-        ref={searchButtonRef}
-        translations={translations.button}
-      />
-
-      {isOpen &&
-        DocSearchModal &&
-        searchContainer.current &&
-        createPortal(
-          <DocSearchModal
-            onClose={onClose}
-            initialScrollY={window.scrollY}
-            initialQuery={initialQuery}
-            navigator={navigator}
-            transformItems={transformItems}
-            hitComponent={Hit}
-            transformSearchClient={transformSearchClient}
-            {...(props.searchPagePath && {
-              resultsFooterComponent,
-            })}
-            {...props}
-            searchParameters={searchParameters}
-            placeholder={translations.placeholder}
-            translations={translations.modal}
-          />,
-          searchContainer.current
-        )}
+        {isOpen &&
+          DocSearchModal &&
+          searchContainer.current &&
+          createPortal(
+            <DocSearchModal
+              onClose={onClose}
+              initialScrollY={window.scrollY}
+              initialQuery={initialQuery}
+              navigator={navigator}
+              transformItems={transformItems}
+              hitComponent={Hit}
+              transformSearchClient={transformSearchClient}
+              {...(props.searchPagePath && {
+                resultsFooterComponent,
+              })}
+              {...props}
+              searchParameters={searchParameters}
+              placeholder={translations.placeholder}
+              translations={translations.modal}
+            />,
+            searchContainer.current
+          )}
+      </InstantSearch>
     </>
   );
 }
