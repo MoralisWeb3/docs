@@ -32,6 +32,17 @@ import ComputeUnitsTable from "@site/src/components/ComputeUnits/ComputeUnitsTab
 
 <ComputeUnitsTable chain="evm" />
 
+### Query Parameters
+
+In addition to having compute units charged on each API request, there are additional query parameters that cost additional compute units when added to an API request.
+
+| Query parameter                                                                                                      | CU Cost |
+| -------------------------------------------------------------------------------------------------------------------- | ------- |
+| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)              | 5       |
+| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 3       |
+| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 10      |
+| `media_items=true`                                                                                                   | 2       |
+
 ## How to Check Compute Units?
 
 To check the latest compute units of our API offerings, you can use [endpointWeights](/web3-data-api/evm/reference/endpoint-weights) to do so.
