@@ -22,9 +22,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get top coin holders, Moralis provides you a [getTopHoldersByCoin](/web3-data-api/aptos/reference/get-top-holders-by-coin) endpoint to do so.
 
-Here you'll need two parameters: `limit` and `coinTypeHash`.
+Here you'll need three parameters: `limit`, `coinTypeHash`, and `network`.
 
-Once you have obtained both the `limit` and `coinTypeHash`, you can copy the following code:
+Once you have obtained the `limit`, `coinTypeHash`, and `network`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -43,14 +43,14 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const coinTypeHash = 
-    "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6",
-  ;
+  const coinTypeHash = "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
+
+  const network = "mainnet";
 
   const response = await Moralis.AptosApi.coins.getTopHoldersByCoin({
     limit,
     coinTypeHash,
-    network: "mainnet"
+    network,
   });
 
   console.log(response.result);
@@ -73,14 +73,14 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const coinTypeHash = 
-    "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6",
-  ;
+  const coinTypeHash = "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
 
+  const network = "mainnet";
+  
   const response = await Moralis.AptosApi.coins.getTopHoldersByCoin({
     limit,
     coinTypeHash,
-    network: "mainnet"
+    network,
   });
 
   console.log(response.result);

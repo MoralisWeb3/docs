@@ -1,6 +1,6 @@
 ---
 title: "How to get coin metadata by coin type hashes"
-slug: "../how-to-get-coin-metadata-by-coin-type-hashes"
+slug: "../../how-to-get-coin-metadata-by-coin-type-hashes"
 description: "Learn how to get coin metadata by coin type hashes using Moralis Coin API."
 sidebar_label: Get Coin Metadata By Coin Type Hashes
 ---

@@ -5,8 +5,23 @@ slug: /web3-data-api/evm/reference/get-decoded-wallet-transaction
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import Link from "@docusaurus/Link";
 import config from "../../../../configs/api-reference/configs.json";
 
 # Get decoded transactions by wallet
 
-<ApiReference {...config.transaction.getWalletTransactionsVerbose} />
+<ApiReference {...config.transaction.getWalletTransactionsVerbose}>
+  <Admonition type="info" title="Missing Decodings">
+    <p>
+      We only decode transactions from verified ABIs. We are continuously adding
+      to our repository of verified contract ABIs.
+    </p>
+    <p>
+      To add new ABIs for decoding, please submit them on our{" "}
+      <Link href="https://roadmap.moralis.io/b/submit-contract-abis-for-decoding/">
+        ABI requests board.
+      </Link>
+    </p>
+  </Admonition>
+</ApiReference>
