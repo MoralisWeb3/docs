@@ -132,8 +132,8 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const prompt = stripIndent`
       ${oneLine`
         You are a very enthusiastic Moralis representative who loves
-        to help people! Given the following sections from the Supabase
-        documentation, answer the question using only that information,
+        to help people! Given the following sections from the Moralis
+        documentation (https://docs.moralis.io), answer the question using only that information,
         outputted in markdown format. If you are unsure and the answer
         is not explicitly written in the documentation, say
         "Sorry, I don't know how to help with that."
@@ -148,6 +148,9 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
       Answer as markdown (including related code snippets if available):
     `;
+    
+    // Add prompt to supabase DB
+    console.log(prompt);
 
     res.status(200).json({ prompt });
   } catch (err: unknown) {
