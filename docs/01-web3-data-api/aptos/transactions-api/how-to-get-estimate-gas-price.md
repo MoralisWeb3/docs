@@ -1,8 +1,8 @@
 ---
-title: "How to get estimate gas price"
-slug: "../how-to-get-estimate-gas-price"
-description: "Learn how to get estimate gas price using Moralis Transaction API."
-sidebar_label: Get Estimate Gas Price
+title: "How to estimate the gas price"
+slug: "../how-to-estimate-the-gas-price"
+description: "Learn how to estimate the gas price using Moralis Transaction API."
+sidebar_label: Estimate Gas Price
 ---
 
 ## Prerequisites
@@ -18,9 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 
-## Step 2: Get estimate gas price
+## Step 2: Estimate gas price
 
-In order to get estimate gas price, Moralis provides you a [estimateGasPrice](/web3-data-api/aptos/reference/estimate-gas-price) endpoint to do so.
+In order to estimate the gas price, Moralis provides you a [estimateGasPrice](/web3-data-api/aptos/reference/estimate-gas-price) endpoint to do so.
+
+Here you'll need one parameter: `network`.
+
+Once you have obtained the `network`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,8 +41,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
+  const network = "mainnet";
+
   const response = await Moralis.AptosApi.transactions.estimateGasPrice({
-    "network": "mainnet"
+    network,
   });
 
   console.log(response);
@@ -59,8 +65,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
+  const network = "mainnet";
+  
   const response = await Moralis.AptosApi.transactions.estimateGasPrice({
-    "network": "mainnet"
+    network,
   });
 
   console.log(response);
@@ -121,7 +129,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 You just got estimate gas price with just a few lines of code using the Moralis Transaction API!
+Congratulations 🥳 You just estimate the gas price with just a few lines of code using the Moralis Transaction API!
 
 ## Youtube Video
 

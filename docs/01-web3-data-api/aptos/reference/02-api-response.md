@@ -1,5 +1,5 @@
 ---
-title: "Response codes"
+title: "Aptos Response codes"
 slug: "api-response"
 sidebar_label: "Response codes"
 ---
