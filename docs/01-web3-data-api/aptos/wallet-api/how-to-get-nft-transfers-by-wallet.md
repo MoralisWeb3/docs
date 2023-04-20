@@ -42,7 +42,9 @@ const runApp = async () => {
   });
 
   const limit = 10;
+  
   const walletAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  
   const network = "mainnet";
 
   const response = Moralis.AptosApi.wallets.getWalletsNFTTransfers({
@@ -70,7 +72,9 @@ const runApp = async () => {
   });
 
   const limit = 10;
+  
   const walletAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  
   const network = "mainnet";
 
   const response = Moralis.AptosApi.wallets.getWalletsNFTTransfers({
