@@ -64,7 +64,7 @@ To initialize the package, we need to create a new instance of `MoralisAuth`. To
 
 ```typescript
 import { initializeApp } from '@firebase/app';
-import { getMoralisAuth } from '@moralisweb3/client-firebase-auth';
+import { getMoralisAuth } from '@moralisweb3/client-firebase-auth-utils';
 
 export const app = initializeApp({
   // your configuration here
