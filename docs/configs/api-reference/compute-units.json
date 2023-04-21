@@ -7,6 +7,12 @@
       "rateLimitCost": 10
     },
     {
+      "endpoint": "getDateToBlock",
+      "path": "/dateToBlock",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
       "endpoint": "getContractEvents",
       "path": "/{address}/events",
       "price": 2,
