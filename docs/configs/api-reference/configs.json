@@ -9152,7 +9152,7 @@
         },
         {
           "name": "date",
-          "description": "Unix date in milliseconds or a datestring (any format that is accepted by momentjs)",
+          "description": "Unix date in seconds or a datestring (any format that is accepted by momentjs)",
           "required": true,
           "type": "string"
         }
