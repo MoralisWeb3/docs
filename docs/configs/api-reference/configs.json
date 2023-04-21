@@ -848,6 +848,18 @@
           "type": "string"
         },
         {
+          "name": "from_date",
+          "description": "The date from where to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "Get transfers up until this date (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
@@ -5754,7 +5766,7 @@
     "getErc20Transfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Transfers",
-      "description": "",
+      "description": "Get ERC20 token transactions by one or many wallet addresses and/or contract addresses, ordered by block number in descending order.\n\n Supports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/transfers",
       "pathParams": [],
@@ -5816,28 +5828,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -5924,7 +5936,7 @@
     "getErc20Mints": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Mints",
-      "description": "",
+      "description": "Get ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/mints",
       "pathParams": [],
@@ -5986,28 +5998,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -6088,7 +6100,7 @@
     "getErc20Burns": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Burns",
-      "description": "",
+      "description": "Get ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/burns",
       "pathParams": [],
@@ -6150,28 +6162,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -6252,7 +6264,7 @@
     "getErc20Approvals": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "getErc20Approvals",
-      "description": "",
+      "description": "Get ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. \n\nSupports advanced filtering to specifically include or exclude particular wallet addresses or contract addresses. \n\nSupports up to 100 inputs.",
       "method": "GET",
       "path": "/erc20/approvals",
       "pathParams": [],
@@ -6314,28 +6326,28 @@
         },
         {
           "name": "contract_addresses",
-          "description": "Contract addresses to only include",
+          "description": "Contract addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_contracts",
-          "description": "Contract addresses to ignore",
+          "description": "Contract addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "wallet_addresses",
-          "description": "Wallet addresses to only include",
+          "description": "Wallet addresses to only include (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
         },
         {
           "name": "exclude_wallets",
-          "description": "Wallet addresses to ignore",
+          "description": "Wallet addresses to ignore (max 100 addresses)",
           "required": false,
           "type": "array",
           "field": { "type": "string" }
@@ -7079,6 +7091,13 @@
           "type": "string"
         },
         {
+          "name": "include",
+          "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "type": "string",
+          "enum": ["internal_transactions"]
+        },
+        {
           "name": "disable_total",
           "description": "If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
           "required": false,
@@ -7354,6 +7373,79 @@
                             }
                           ]
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "internal_transactions",
+                    "type": "object",
+                    "description": "The internal transactions of the transaction",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                      },
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": 12526958
+                      },
+                      {
+                        "name": "block_hash",
+                        "type": "string",
+                        "description": "The block hash",
+                        "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                      },
+                      {
+                        "name": "type",
+                        "type": "string",
+                        "description": "Call type",
+                        "example": "CALL"
+                      },
+                      {
+                        "name": "from",
+                        "type": "string",
+                        "description": "The sender",
+                        "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                      },
+                      {
+                        "name": "to",
+                        "type": "string",
+                        "description": "The recipient",
+                        "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "description": "The value that was transfered (in wei)",
+                        "example": "650000000000000000"
+                      },
+                      {
+                        "name": "gas",
+                        "type": "string",
+                        "description": "The gas of the transaction",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "gas_used",
+                        "type": "string",
+                        "description": "The used gas",
+                        "example": "6721975"
+                      },
+                      {
+                        "name": "input",
+                        "type": "string",
+                        "description": "The input",
+                        "example": "0x"
+                      },
+                      {
+                        "name": "output",
+                        "type": "string",
+                        "description": "The output",
+                        "example": "0x"
                       }
                     ]
                   }
@@ -7802,6 +7894,13 @@
             "arbitrum",
             "0xa4b1"
           ]
+        },
+        {
+          "name": "include",
+          "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "type": "string",
+          "enum": ["internal_transactions"]
         }
       ],
       "responses": [
@@ -8025,6 +8124,79 @@
                         }
                       ]
                     }
+                  }
+                ]
+              },
+              {
+                "name": "internal_transactions",
+                "type": "object",
+                "description": "The internal transactions of the transaction",
+                "fields": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number",
+                    "example": 12526958
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
+                  },
+                  {
+                    "name": "type",
+                    "type": "string",
+                    "description": "Call type",
+                    "example": "CALL"
+                  },
+                  {
+                    "name": "from",
+                    "type": "string",
+                    "description": "The sender",
+                    "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "to",
+                    "type": "string",
+                    "description": "The recipient",
+                    "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The value that was transfered (in wei)",
+                    "example": "650000000000000000"
+                  },
+                  {
+                    "name": "gas",
+                    "type": "string",
+                    "description": "The gas of the transaction",
+                    "example": "6721975"
+                  },
+                  {
+                    "name": "gas_used",
+                    "type": "string",
+                    "description": "The used gas",
+                    "example": "6721975"
+                  },
+                  {
+                    "name": "input",
+                    "type": "string",
+                    "description": "The input",
+                    "example": "0x"
+                  },
+                  {
+                    "name": "output",
+                    "type": "string",
+                    "description": "The output",
+                    "example": "0x"
                   }
                 ]
               }

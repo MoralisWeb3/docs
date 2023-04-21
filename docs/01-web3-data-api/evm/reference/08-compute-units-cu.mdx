@@ -1,6 +1,7 @@
 ---
-title: "Compute Units (CU)"
+title: "EVM Compute Units"
 slug: "compute-units-cu"
+sidebar_label: "Compute Units (CU)"
 description: "Learn more about what is Compute Units and how does it affects your pricing."
 ---
 
@@ -30,6 +31,17 @@ On the other hand, request rate limit cost refers to the amount of compute units
 import ComputeUnitsTable from "@site/src/components/ComputeUnits/ComputeUnitsTable.tsx";
 
 <ComputeUnitsTable chain="evm" />
+
+### Query Parameters
+
+In addition to having compute units charged on each API request, there are additional query parameters that cost additional compute units when added to an API request.
+
+| Query parameter                                                                                                      | CU Cost |
+| -------------------------------------------------------------------------------------------------------------------- | ------- |
+| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)              | 5       |
+| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 3       |
+| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 10      |
+| `media_items=true`                                                                                                   | 2       |
 
 ## How to Check Compute Units?
 
