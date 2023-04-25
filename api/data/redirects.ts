@@ -6598,4 +6598,9 @@ export const redirects = [
     destination: "/web3-data-api/aptos/reference/get-transaction-by-version",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/aptos/how-to-get-get-wallets-nft-transfers",
+    destination: "/web3-data-api/aptos/how-to-get-wallets-nft-transfers",
+    permanent: true,
+  },
 ];
