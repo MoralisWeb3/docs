@@ -1,8 +1,8 @@
 ---
-title: "How to get NFT transfers by wallet(s)"
-slug: "../how-to-get-wallets-nft-transfers"
-description: "Learn how to get NFT transfers by wallet(s) using Moralis Wallet API."
-sidebar_label: "Get NFT Transfers By Wallet(s)"
+title: "How to get coin transfers by wallet(s)"
+slug: "../how-to-get-wallets-coin-transfers-by-wallet"
+description: "Learn how to get coin transfers by wallet(s) using Moralis Wallet API."
+sidebar_label: "Get Coin Transfers By Wallet(s)"
 ---
 
 ## Prerequisites
@@ -18,13 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 
-## Step 2: Get NFT Transfers By Wallet(s)
+## Step 2: Get Coin Transfers By Wallet(s)
 
-In order to get NFT transfers by wallet(s), Moralis provides you a [getWalletsNFTTransfers](/web3-data-api/aptos/reference/get-wallets-nft-transfers) endpoint to do so.
+In order to get coin transfers by wallet(s), Moralis provides you a [getCoinTransfersByOwnerAddresses](/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses) endpoint to do so.
 
-Here you'll need three parameters: `limit`, `walletAddresses` and `network`.
+Here you'll need three parameters: `limit`, `ownerAddresses` and `network`.
 
-Once you have obtained the `limit`, `walletAddresses` and `network`, you can copy the following code:
+Once you have obtained the `limit`, `ownerAddresses` and `network`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -43,11 +43,11 @@ const runApp = async () => {
 
   const limit = 10;
   
-  const walletAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  const ownerAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
   
   const network = "mainnet";
 
-  const response = Moralis.AptosApi.wallets.getWalletsNFTTransfers({
+  const response = Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({
     limit,
     walletAddresses,
     network
@@ -73,11 +73,11 @@ const runApp = async () => {
 
   const limit = 10;
   
-  const walletAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  const ownerAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
   
   const network = "mainnet";
 
-  const response = Moralis.AptosApi.wallets.getWalletsNFTTransfers({
+  const response = Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({
     limit,
     walletAddresses,
     network
@@ -99,11 +99,11 @@ api_key = "YOUR_API_KEY"
 
 params = {
     "limit": 10,
-    "wallet_addresses": ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"]
+    "owner_addresses": ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"]
     "network": "mainnet",
 }
 
-result = aptos_api.wallets.get_wallets_nft_transfers(
+result = aptos_api.coins.get_coin_transfers_by_owner_addresses(
     api_key=api_key,
     params=params,
 )
@@ -124,27 +124,23 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "cursor": null,
-  "hasNextPage": false,
+  "cursor": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2IjoiMjAyMy0wMy0yMVQyMTo1NTo0MS4wMDBaIiwibyI6MiwiaWF0IjoxNjgyMDY3NTc2fQ.505lbLYPA4Vg4aUNbZIqv9CsgbcyaHeSgcySFwgOqpM",
+  "hasNextPage": true,
   "result": [
     {
-      "collection_data_id_hash": "92c681b47797568f7513421a7cc1d47d349a71af66cd91794844543ff5430c67",
-      "collection_name": "Aptos Wizards",
-      "creator_address": "0x6d4336aeac8441314cacdd42ea7aae57b3fad71ea26a00186a23eb8f1fa19ffb",
+      "activity_type": "0x1::coin::WithdrawEvent",
+      "amount": "18620000",
+      "block_height": "42022697",
+      "coin_type": "0x1::aptos_coin::AptosCoin",
       "event_account_address": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50",
-      "event_creation_number": "27",
-      "event_sequence_number": "0",
-      "name": "Aptos Wizards #4221",
-      "property_version": "0",
-      "token_amount": "1",
-      "token_data_id_hash": "1eb27f897040b5ae8cf236591354658a2044703bf46307687f916651ca317bda",
-      "transaction_timestamp": "2023-03-26T21:48:41.000Z",
-      "transfer_type": "0x3::token_transfers::TokenClaimEvent",
-      "transaction_version": "108478769",
-      "coin_amount": null,
-      "coin_type": null,
-      "from_address": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50",
-      "to_address": "0xfd55b452c755d56c12860a760f61eb9d8edd46677b8fa59eee905989049620a9"
+      "event_creation_number": "3",
+      "event_sequence_number": "11",
+      "is_gas_fee": false,
+      "entry_function_id_str": "0x1::aptos_account::transfer",
+      "is_transaction_success": true,
+      "owner_address": "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50",
+      "transaction_timestamp": "2023-03-26T21:48:28.000Z",
+      "transaction_version": "108478684"
     }
   ]
 }
@@ -154,13 +150,13 @@ Congratulations 🥳 You just got the NFT transfers by wallet(s) with just a few
 
 ## Youtube Video
 
-https://www.youtube.com/watch?v=0fIi1PUGUoY
+https://www.youtube.com/watch?v=8T7Zhs1r1R0
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletsNFTTransfers](/web3-data-api/aptos/reference/get-wallets-nft-transfers)
+- [getCoinTransfersByOwnerAddresses](/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses)
 
 ## Support
 
