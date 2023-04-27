@@ -1,8 +1,8 @@
 ---
 title: "Market Data API"
-slug: "../market-data-api"
 description: "Fetch trending NFT collections, top ERC20s by market cap, top movers, and much more with the most popular cross-chain Market Data API in Web3."
 sidebar_position: 3
+sidebar_class_name: "sidebar-market-data-api"
 ---
 
 ![23_04_Market-Data-API](https://user-images.githubusercontent.com/13417464/232770625-5621e164-165b-4cd4-afe2-365b6b2b8591.jpg)

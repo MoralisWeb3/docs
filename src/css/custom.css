@@ -478,6 +478,15 @@ li.sidebar-utils-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/utils-api-active.svg);
 }
 
+li.sidebar-market-data-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/market-data-api.svg);
+}
+
+li.sidebar-market-data-api a.menu__link:hover:before,
+li.sidebar-market-data-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/market-data-api-active.svg);
+}
+
 li.sidebar-api-reference a.menu__link:before {
   background-image: url(/img/sidebar-icons/api-reference.svg);
 }
