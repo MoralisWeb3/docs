@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import Timeline from "@site/src/components/Timeline";
 
@@ -25,11 +26,16 @@ export default function BlogLayout(props) {
             <Timeline content={sidebar} />
           </div>
         ) : (
-          <div className="row justify-center h-screen">
-            <main className="col" itemScope itemType="http://schema.org/Blog">
-              {children}
-            </main>
-            {toc && <div className="col col--2">{toc}</div>}
+          <div className="grid gap-3 mt-3">
+            <div className="row ml-1">
+              <Link href="/changelog">Go Back</Link>
+            </div>
+            <div className="row justify-center h-screen">
+              <main className="col" itemScope itemType="http://schema.org/Blog">
+                {children}
+              </main>
+              {toc && <div className="col col--2">{toc}</div>}
+            </div>
           </div>
         )}
       </div>
