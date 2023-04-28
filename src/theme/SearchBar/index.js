@@ -22,7 +22,12 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { createPortal } from "react-dom";
 import translations from "@theme/SearchTranslations";
 import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
-import { useInstantSearch, InstantSearch } from "react-instantsearch-hooks-web";
+import {
+  useInstantSearch,
+  InstantSearch,
+  Configure,
+  useHits,
+} from "react-instantsearch-hooks-web";
 import algoliasearch from "algoliasearch/lite";
 import aa from "search-insights";
 
@@ -39,43 +44,13 @@ const searchClient = algoliasearch(
 
 let DocSearchModal = null;
 function Hit({ hit, children }) {
+  const { sendEvent } = useHits();
   return (
     <Link
       to={hit.url}
       onClick={() => {
         try {
-          // Call api/insights
-          aa("sendEvents", {
-            events: [
-              {
-                eventType: "click",
-                eventName: "Product Clicked",
-                index: "gold-iota",
-                userToken: "user-123456",
-                timestamp: 1681812223581,
-                objectIDs: ["9780545139700", "9780439784542"],
-                queryID: "43b15df305339e827f0ac0bdc5ebcaa7",
-                positions: [7, 6],
-              },
-              {
-                eventType: "view",
-                eventName: "Viewed Product Detail Page",
-                index: "gold-iota",
-                userToken: "user-123456",
-                timestamp: 1681812223581,
-                objectIDs: ["9780545139700", "9780439784542"],
-              },
-              {
-                eventType: "conversion",
-                eventName: "Purchased Product",
-                index: "gold-iota",
-                userToken: "user-123456",
-                timestamp: 1681812223581,
-                objectIDs: ["9780545139700", "9780439784542"],
-                queryID: "43b15df305339e827f0ac0bdc5ebcaa7",
-              },
-            ],
-          });
+          sendEvent("click", hit, "Search Results Clicked");
         } catch (e) {
           console.error(e);
         }
@@ -226,7 +201,12 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <InstantSearch indexName="gold-iota" searchClient={searchClient}>
+      <InstantSearch
+        indexName="gold-iota"
+        insights={{ useCookie: true }}
+        searchClient={searchClient}
+      >
+        <Configure clickAnalytics />
         <InsightsMiddleware />
         <DocSearchButton
           onTouchStart={importDocSearchModalIfNeeded}
