@@ -27,29 +27,29 @@ function BlogListPageMetadata(props) {
 }
 function BlogListPageContent(props) {
   const { metadata, items } = props;
-  const modifiedSidebar = items.map((i) => {
-    const { date, permalink, title } = i?.content?.metadata ?? {};
-    return {
-      date,
-      permalink,
-      title,
-    };
-  });
-  // Group `modifiedSidebar` by month `date`
-  const groupedSidebaByDate = modifiedSidebar.reduce((acc, item) => {
-    const date = new Date(item.date);
-    const month = date.toLocaleString("default", { month: "long" });
-    const year = date.getFullYear();
-    const key = `${month} ${year}`;
-    if (!acc[key]) {
-      acc[key] = [];
-    }
-    acc[key].push(item);
-    return acc;
-  }, {});
+  const modifiedSidebar = items
+    .map((i) => {
+      const { date, permalink, title, description } =
+        i?.content?.metadata ?? {};
+      const modifiedDate = new Date(date);
+      const day = modifiedDate.getDay();
+      const month = modifiedDate.toLocaleString("default", { month: "long" });
+      const year = modifiedDate.getFullYear();
+      const newDate = `${month} ${day}, ${year}`;
+      return {
+        date: newDate,
+        permalink,
+        title,
+        description,
+      };
+    })
+    // Sort by date
+    .sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
 
   return (
-    <BlogLayout sidebar={groupedSidebaByDate}>
+    <BlogLayout sidebar={modifiedSidebar}>
       <BlogPostItems items={items} />
       <BlogListPaginator metadata={metadata} />
     </BlogLayout>
