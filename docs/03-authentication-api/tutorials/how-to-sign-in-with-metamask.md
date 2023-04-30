@@ -47,7 +47,7 @@ npm install moralis @moralisweb3/next next-auth
 2. To implement authentication using a Web3 wallet (e.g., MetaMask), we need to use a Web3 library. For the tutorial, we will use [wagmi](https://wagmi.sh/docs/getting-started). So, install the `wagmi` dependency:
 
 ```bash npm2yarn
-npm install wagmi ethers
+npm install wagmi ethers@^5
 ```
 
 3. Add new environment variables in your `.env.local` file in the app root:
