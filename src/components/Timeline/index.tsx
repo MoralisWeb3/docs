@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+
 import "./styles.module.css";
 
 const Timeline = ({ content }) => {
@@ -22,12 +23,7 @@ const Timeline = ({ content }) => {
               </p>
             </div>
             <div className="mb-6 ml-4">
-              <Link
-                href={permalink}
-                className="button button--md button--outline button--primary"
-              >
-                Read More
-              </Link>
+              <Link href={permalink}>Read More {" >"}</Link>
             </div>
           </li>
         );
