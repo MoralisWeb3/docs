@@ -10,7 +10,7 @@ export default function BlogLayout(props) {
 
   return (
     <Layout {...layoutProps}>
-      <div className="container margin-vert--lg max-w-2xl">
+      <div className="container margin-vert--lg" style={{ maxWidth: "42rem" }}>
         {pathname === "/changelog" ? (
           <div className="grid gap-9 mt-9">
             <div className="grid gap-2">
