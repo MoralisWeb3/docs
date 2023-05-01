@@ -25,7 +25,7 @@ To implement authentication using a Web3 wallet (e.g., MetaMask), we will use a 
 1. Install `wagmi` and `ethers` in your React app:
 
 ```bash npm2yarn
-npm install wagmi ethers
+npm install wagmi ethers@^5
 ```
 
 ## Initial Setup

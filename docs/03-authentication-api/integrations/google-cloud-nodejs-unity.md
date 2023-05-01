@@ -4,15 +4,30 @@ slug: "google-cloud-nodejs-unity"
 description: "This tutorial will teach you how to host your custom backend (powered by Moralis' JS SDK) on Google Cloud and then connect it to Unity."
 ---
 
+:::caution Deprecated
+
+This tutorial guide is deprecated.
+
+:::
+
 This tutorial will teach you how to host your custom backend (powered by Moralis' JS SDK) on Google Cloud and then connect it to Unity.
 
 ## The Steps We Will Take
 
-- [Customize code from the _**Quickstart NodeJS**_ tutorial](#customize-code-from-your-first-dapp---nodejs)
-  - [Adding authentication methods](#adding-authentication-methods)
-  - [Adding authentication operations](#adding-authentication-operations)
+- [The Steps We Will Take](#the-steps-we-will-take)
+- [Prerequisites](#prerequisites)
+- [Customize Code from the _Quickstart NodeJS_ Tutorial](#customize-code-from-the-quickstart-nodejs-tutorial)
+- [Adding Authentication Methods](#adding-authentication-methods)
+- [Adding Authentication Operations](#adding-authentication-operations)
 - [Run on Google Cloud](#run-on-google-cloud)
+  - [Prerequisites](#prerequisites-1)
+  - [Deploying to Cloud Run](#deploying-to-cloud-run)
+    - [Using the Cloud Code Extension](#using-the-cloud-code-extension)
 - [Calling from Unity](#calling-from-unity)
+  - [Prerequisites](#prerequisites-2)
+  - [Connection to Custom Backend](#connection-to-custom-backend)
+  - [Authentication](#authentication)
+    - [Congratulations! You completed the _Using Unity \& Google Cloud_ tutorial!](#congratulations-you-completed-the-using-unity--google-cloud-tutorial)
 
 ## Prerequisites
 
