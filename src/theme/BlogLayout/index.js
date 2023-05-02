@@ -20,7 +20,12 @@ export default function BlogLayout(props) {
                 </h1>
               </div>
               <div className="row justify-center">
-                <p>All the latest Moralis updates, straight from the team.</p>
+                <p className="text-center leading-9">
+                  All the latest Moralis updates, straight from the team.
+                  <br />
+                  For information about our breaking changes policy,{" "}
+                  <Link href="breaking-changes">see more here</Link>
+                </p>
               </div>
             </div>
             <Timeline content={sidebar} />
