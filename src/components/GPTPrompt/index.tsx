@@ -18,6 +18,7 @@ const GPTPrompt = () => {
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <GPTTextarea
             value={query}
+            placeholder="Ask Moralis GPT a question..."
             onChange={(e) => setQuery(e.target.value)}
           />
           <Button type="submit">Answer</Button>
