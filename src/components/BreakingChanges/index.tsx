@@ -3,17 +3,12 @@ import Link from "@docusaurus/Link";
 
 const BreakingChanges = () => {
   return (
-    <>
-      <div
-        className="row justify-center mt-5 mb-3"
-        style={{ maxWidth: "42rem" }}
-      >
-        <div className="column items-start">
-          <Link href="/changelog">Go Back</Link>
-        </div>
-      </div>
+    <div className="ml-5 mr-5">
       <div className="row justify-center">
         <div className="column" style={{ maxWidth: "42rem" }}>
+          <div className="mt-5 mb-3">
+            <Link href="/changelog">Go Back</Link>
+          </div>
           <h1>Breaking changes to API and Streams</h1>
           <p>
             When integrating with Moralis APIs or Streams, you'll need to be
@@ -90,7 +85,7 @@ const BreakingChanges = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
