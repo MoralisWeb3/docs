@@ -5,7 +5,6 @@ export default function BlogPostItems({
   items,
   component: BlogPostItemComponent = BlogPostItem,
 }) {
-  console.log(items);
   return (
     <>
       {items.map(({ content: BlogPostContent }) => (
