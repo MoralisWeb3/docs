@@ -20,6 +20,7 @@ interface ApiBaseParam<Type extends string, Value = never> {
   required?: boolean;
   type: Type;
   example?: Value;
+  disabled?: boolean;
 }
 
 export type ApiParam =
@@ -110,6 +111,7 @@ const validateField = (param: ApiParam) => (value: string) => {
 };
 
 const ApiParamField = ({ prefix, param }: ApiParamFieldProps) => {
+  console.log(param);
   const Component = apiParamComponents[param.type];
   const field = (
     <Field name={buildParamPath(param, prefix)} validate={validateField(param)}>
