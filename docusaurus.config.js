@@ -403,7 +403,7 @@ const config = {
                 tagName: "link",
                 attributes: {
                   rel: "stylesheet",
-                  href: "https://cdn.jsdelivr.net/npm/tailwindcss/dist/preflight.min.css",
+                  href: "/css/preflight.min.css",
                 },
               },
             ],
