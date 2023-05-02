@@ -583,8 +583,3 @@ li.sidebar-developer-tools a.menu__link--active:before {
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
 }
-
-* {
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
-}
