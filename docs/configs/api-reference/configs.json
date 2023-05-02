@@ -9738,7 +9738,7 @@
     "uploadFolder": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Upload folder to IPFS",
-      "description": "Upload multiple files to IPFS and place them in a folder directory.",
+      "description": "Upload multiple files to IPFS and place them in a folder directory. To use the API, [sign up to Moralis](https://admin.moralis.io/register) and get your API key from the dashboard.\n",
       "method": "POST",
       "path": "/ipfs/uploadFolder",
       "pathParams": [],
@@ -9754,13 +9754,15 @@
               "name": "path",
               "type": "string",
               "description": "Path to the file",
-              "example": "moralis/logo.jpg"
+              "example": "moralis/logo.jpg",
+              "disabled": true
             },
             {
               "name": "content",
               "type": "string",
               "description": "Base64 or JSON",
-              "example": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3"
+              "example": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3",
+              "disabled": true
             }
           ]
         }
@@ -14152,7 +14154,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFTs by token ID hashes",
-      "description": "Get one or many NFTs by token ID hash. Learn more about token ID hashes.",
+      "description": "Get one or many NFTs by token ID hash. Learn more about token ID hashes [here](/web3-data-api/aptos/token-id-hashes).",
       "method": "GET",
       "path": "/nfts",
       "pathParams": [],
@@ -15441,7 +15443,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT owners by token(s)",
-      "description": "Get owners for one or many NFTs by token ID hash. Learn more about token ID hashes.",
+      "description": "Get owners for one or many NFTs by token ID hash. Learn more about token ID hashes [here](/web3-data-api/aptos/token-id-hashes).",
       "method": "GET",
       "path": "/nfts/owners",
       "pathParams": [],
@@ -15933,7 +15935,7 @@
       "apiHost": "https://mainnet-aptos-api.moralis.io",
       "testHost": "https://testnet-aptos-api.moralis.io",
       "summary": "Get NFT transfers by token(s)",
-      "description": "Get NFT transfers for one or many NFT token ID hashes.",
+      "description": "Get NFT transfers for one or many NFT token ID hashes. Learn more about token ID hashes [here](/web3-data-api/aptos/token-id-hashes).",
       "method": "GET",
       "path": "/nfts/transfers",
       "pathParams": [],

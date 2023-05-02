@@ -134,8 +134,6 @@ const ApiReference = ({
           }
         );
 
-        console.log(response);
-
         const fetchBody =
           path === "/nft/:address/sync" && response.status === 201
             ? response.text()
