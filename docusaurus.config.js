@@ -393,9 +393,22 @@ const config = {
     ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
-    async function myPlugin(context, options) {
+    async function pluginTailwindCSS(context, options) {
       return {
         name: "docusaurus-tailwindcss",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: "link",
+                attributes: {
+                  rel: "stylesheet",
+                  href: "https://cdn.jsdelivr.net/npm/tailwindcss/dist/preflight.min.css",
+                },
+              },
+            ],
+          };
+        },
         configurePostCss(postcssOptions) {
           // Appends TailwindCSS and AutoPrefixer.
           postcssOptions.plugins.push(require("tailwindcss"));
