@@ -41,6 +41,7 @@ export interface ApiReferenceProps {
   codeSamples?: CodeSample[];
   children?: Component;
   aptosNetwork?: "mainnet" | "testnet";
+  disabled?: boolean;
 }
 
 export interface FormValues {
@@ -81,6 +82,7 @@ const ApiReference = ({
   testHost,
   codeSamples,
   children,
+  disabled,
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -296,7 +298,11 @@ const ApiReference = ({
                     className={styles.input}
                   />
 
-                  <ApiParamButton type="submit" disabled={loading}>
+                  <ApiParamButton
+                    type="submit"
+                    disabled={disabled || loading}
+                    className={disabled || loading ? "cursor-not-allowed" : ""}
+                  >
                     Try It
                   </ApiParamButton>
                 </div>
