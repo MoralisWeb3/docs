@@ -9564,6 +9564,7 @@
   },
   "ipfs": {
     "uploadFolder": {
+      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Upload folder to IPFS",
       "description": "Upload multiple files to IPFS and place them in a folder directory. To use the API, [sign up to Moralis](https://admin.moralis.io/register) and get your API key from the dashboard.\n",
