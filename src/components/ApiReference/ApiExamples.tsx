@@ -8,7 +8,7 @@ import { Path } from "path-parser";
 import CodeBlock from "@theme/CodeBlock";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { useLocation, useHistory } from "@docusaurus/router";
+import { useHistory } from "@docusaurus/router";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import usePageState from "@site/src/hooks/usePageState";
