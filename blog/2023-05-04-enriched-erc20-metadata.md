@@ -1,6 +1,6 @@
 ---
-title: "Enhanced ERC20 Endpoints with Added Metadata"
-slug: "enahnced-erc20-metadata"
+title: "Enriched Metadata for ERC20 Endpoints"
+slug: "enriched-erc20-metadata"
 authors:
   name: Reuben Salisbury
 tags: [Web3 Data API]
