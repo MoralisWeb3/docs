@@ -301,7 +301,7 @@ const ApiReference = ({
                   <ApiParamButton
                     type="submit"
                     disabled={disabled || loading}
-                    className={disabled || loading ? "cursor-not-allowed" : ""}
+                    className={disabled ? "cursor-not-allowed" : ""}
                   >
                     Try It
                   </ApiParamButton>
