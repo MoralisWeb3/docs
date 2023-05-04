@@ -206,6 +206,7 @@ button.groupHeader:focus {
   resize: none;
   font-family: var(--ifm-font-family-monospace);
   appearance: none;
+  border: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
 }
 
 .input::placeholder {
