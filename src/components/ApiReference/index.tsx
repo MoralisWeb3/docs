@@ -21,6 +21,7 @@ import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
+import LoadingCircle from "@site/src/components/LoadingCircle";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -303,10 +304,9 @@ const ApiReference = ({
                     disabled={disabled || loading}
                     className={disabled ? "cursor-not-allowed" : ""}
                   >
-                    Try It
+                    {loading ? <LoadingCircle /> : "Try It"}
                   </ApiParamButton>
                 </div>
-
                 <ApiExamples
                   method={method}
                   apiHost={hostUrl}
