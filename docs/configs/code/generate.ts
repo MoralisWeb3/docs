@@ -198,7 +198,7 @@ try {
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = Moralis.AptosApi.${aptosGroup()}.${fctn}({});
+  const response = await Moralis.AptosApi.${aptosGroup()}.${fctn}({});
 
   console.log(response);
 } catch (e) {
