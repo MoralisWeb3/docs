@@ -144,10 +144,10 @@ print(result)`,
               case "getBlockByVersion":
                 return "blocks";
               case "getCoinInfoByCoinTypeHashes":
-              case "getCoinTransfersByBlockHeight":
+              case "getCoinTransfersByBlockHeights":
               case "getCoinTransfersByCoinType":
               case "getCoinTransfersByOwnerAddresses":
-              case "getCoinByCreators":
+              case "getCoinsByCreators":
               case "getCoinsByNameRange":
               case "getCoinsBySymbolRange":
               case "getLatestCoins":
