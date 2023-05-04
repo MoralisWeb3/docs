@@ -122,8 +122,8 @@ const ApiReference = ({
             headers: {
               accept: "application/json",
               "content-type": "application/json",
-              "X-API-Key": `${token?.length > 0 ? token : "TEST"}`,
-              Authorization: `Bearer ${token?.length > 0 ? token : "TEST"}`,
+              "X-API-Key": `${token?.length > 0 ? token : "test"}`,
+              Authorization: `Bearer ${token?.length > 0 ? token : "test"}`,
               "x-moralis-source": `api reference`,
               referer: "moralis.io",
             },
