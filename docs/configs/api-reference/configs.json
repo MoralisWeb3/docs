@@ -17718,12 +17718,12 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.AptosApi.wallets.getCoinsByCreators({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.AptosApi.coins.getCoinsByCreators({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coins_by_creators(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coins_by_creators(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -18119,12 +18119,12 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.AptosApi.wallets.getCoinTransfersByBlockHeights({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.AptosApi.coins.getCoinTransfersByBlockHeights({});\n\n  console.log(response);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.wallets.get_coin_transfers_by_block_heights(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import aptos_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = aptos_api.coins.get_coin_transfers_by_block_heights(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
