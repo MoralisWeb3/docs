@@ -22,7 +22,6 @@ import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
 import LoadingCircle from "@site/src/components/LoadingCircle";
-import { useLocation, useHistory } from "@docusaurus/router";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -72,20 +71,6 @@ const deepCompact = (value: unknown) => {
   return value;
 };
 
-const objectToQueryParams = (params) => {
-  return (
-    "?" +
-    Object.keys(params)
-      .map(
-        (key) =>
-          `${encodeURIComponent(key)}=${encodeURIComponent(
-            JSON.stringify(params[key])
-          )}`
-      )
-      .join("&")
-  );
-};
-
 const ApiReference = ({
   description,
   method,
@@ -105,7 +90,6 @@ const ApiReference = ({
   const [responseIndex, setResponseIndex] = useState(0);
   const { token, setToken } = useContext(ApiReferenceTokenContext);
   const [network, setNetwork] = useState<"mainnet" | "testnet">("mainnet");
-  const history = useHistory();
   const hostUrl = useMemo(
     () => (network === "mainnet" ? apiHost : testHost),
     [network]
@@ -181,12 +165,6 @@ const ApiReference = ({
       type: "object",
       fields: queryParams,
     };
-
-    const newQueryParams = objectToQueryParams({
-      myState: { ...pathParam, ...queryParam, ...bodyParam },
-    });
-
-    history.replace({ search: newQueryParams });
 
     return {
       path: pathParam && apiParamInitialValue(pathParam),
