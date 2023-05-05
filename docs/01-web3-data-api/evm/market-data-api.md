@@ -35,4 +35,10 @@ Our initial launch only supports Ethereum. Future chains will be coming!
 | eth               | 0x1            | 1              |
 
 ## How often is the data refreshed?
-All endpoints are refreshed on an hourly basis.
+All endpoints are refreshed on an hourly basis and report on the last 24 hours of data.
+
+## Is the Market Data API available on all plans?
+No, this set of endpoints is not available to users on our free plan (requires Pro plan or above).
+
+## Feature requests or feedback
+We would welcome your feature requests or feedback on how we can improve the next iteration of our Market Data API. Please submit all feedback here: https://moralis.typeform.com/to/fcCh9UEC
