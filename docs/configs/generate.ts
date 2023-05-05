@@ -267,7 +267,7 @@ const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
       for (const key in swaggerPaths) {
-        if (["token"].includes(key)) {
+        if (["web3"].includes(key)) {
           const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
           const swaggerJSON = await swaggerRes?.json();
           let swaggerContent;
