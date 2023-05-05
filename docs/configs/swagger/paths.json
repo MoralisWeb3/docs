@@ -83,5 +83,11 @@
     "filePath": "./docs/reference/web3-data-api/aptos-api",
     "importPath": "../../../configs/api-reference/configs.json",
     "category": "web3-data-api"
+  },
+  "web3": {
+    "swaggerPath": "https://deep-index.moralis.io/api-docs-2.1/v2.1/swagger.json",
+    "filePath": "./docs/reference/web3-data-api/market-data-api",
+    "importPath": "../../../configs/api-reference/configs.json",
+    "category": "web3-data-api"
   }
 }
