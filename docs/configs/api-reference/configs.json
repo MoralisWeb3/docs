@@ -4967,6 +4967,30 @@
             "type": "object",
             "fields": [
               {
+                "name": "tokenName",
+                "type": "string",
+                "description": "The name of the token",
+                "example": "Kylin Network"
+              },
+              {
+                "name": "tokenSymbol",
+                "type": "string",
+                "description": "The symbol of the token",
+                "example": "KYL"
+              },
+              {
+                "name": "tokenLogo",
+                "type": "string",
+                "description": "The logo of the token",
+                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+              },
+              {
+                "name": "tokenDecimals",
+                "type": "string",
+                "description": "The number of decimals of the token",
+                "example": "18"
+              },
+              {
                 "name": "nativePrice",
                 "type": "object",
                 "fields": [
@@ -5017,6 +5041,12 @@
                 "type": "string",
                 "description": "The name of the exchange used to calculate the price",
                 "example": "Uniswap v3"
+              },
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The address of the token",
+                "example": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c"
               }
             ]
           }
@@ -5868,53 +5898,96 @@
             "type": "object",
             "fields": [
               {
-                "name": "contract_address",
+                "name": "cursor",
                 "type": "string",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                "description": "The cursor to get to the next page"
               },
               {
-                "name": "transaction_hash",
-                "type": "string",
-                "description": "The hash of the transaction",
-                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
-              },
-              { "name": "transaction_index", "type": "number", "example": 204 },
-              { "name": "log_index", "type": "number", "example": 204 },
-              {
-                "name": "block_timestamp",
-                "type": "string",
-                "description": "The timestamp of the block",
-                "example": "2021-05-07T11:08:35.000Z"
-              },
-              {
-                "name": "block_number",
-                "type": "number",
-                "description": "The block number",
-                "example": 12386788
-              },
-              {
-                "name": "block_hash",
-                "type": "string",
-                "description": "The hash of the block",
-                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-              },
-              {
-                "name": "from_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "to_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "value",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "1234"
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "contract_address",
+                    "type": "string",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "number",
+                    "example": 204
+                  },
+                  { "name": "log_index", "type": "number", "example": 204 },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "number",
+                    "description": "The block number",
+                    "example": 12386788
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "from_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "to_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "1234"
+                  },
+                  {
+                    "name": "value_decimal",
+                    "type": "string",
+                    "description": "The decimal value of the transfer",
+                    "example": "577329894.8283165"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
@@ -6038,47 +6111,90 @@
             "type": "object",
             "fields": [
               {
-                "name": "contract_address",
+                "name": "cursor",
                 "type": "string",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                "description": "The cursor to get to the next page"
               },
               {
-                "name": "transaction_hash",
-                "type": "string",
-                "description": "The hash of the transaction",
-                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
-              },
-              { "name": "transaction_index", "type": "number", "example": 204 },
-              { "name": "log_index", "type": "number", "example": 204 },
-              {
-                "name": "block_timestamp",
-                "type": "string",
-                "description": "The timestamp of the block",
-                "example": "2021-05-07T11:08:35.000Z"
-              },
-              {
-                "name": "block_number",
-                "type": "number",
-                "description": "The block number",
-                "example": 12386788
-              },
-              {
-                "name": "block_hash",
-                "type": "string",
-                "description": "The hash of the block",
-                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-              },
-              {
-                "name": "to_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "value",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "1234"
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "contract_address",
+                    "type": "string",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "number",
+                    "example": 204
+                  },
+                  { "name": "log_index", "type": "number", "example": 204 },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "number",
+                    "description": "The block number",
+                    "example": 12386788
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "to_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "1234"
+                  },
+                  {
+                    "name": "value_decimal",
+                    "type": "string",
+                    "description": "The decimal value of the transfer",
+                    "example": "577329894.8283165"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
@@ -6202,47 +6318,90 @@
             "type": "object",
             "fields": [
               {
-                "name": "contract_address",
+                "name": "cursor",
                 "type": "string",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                "description": "The cursor to get to the next page"
               },
               {
-                "name": "transaction_hash",
-                "type": "string",
-                "description": "The hash of the transaction",
-                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
-              },
-              { "name": "transaction_index", "type": "number", "example": 204 },
-              { "name": "log_index", "type": "number", "example": 204 },
-              {
-                "name": "block_timestamp",
-                "type": "string",
-                "description": "The timestamp of the block",
-                "example": "2021-05-07T11:08:35.000Z"
-              },
-              {
-                "name": "block_number",
-                "type": "number",
-                "description": "The block number",
-                "example": 12386788
-              },
-              {
-                "name": "block_hash",
-                "type": "string",
-                "description": "The hash of the block",
-                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-              },
-              {
-                "name": "from_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "value",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "1234"
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "contract_address",
+                    "type": "string",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "number",
+                    "example": 204
+                  },
+                  { "name": "log_index", "type": "number", "example": 204 },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "number",
+                    "description": "The block number",
+                    "example": 12386788
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "from_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "1234"
+                  },
+                  {
+                    "name": "value_decimal",
+                    "type": "string",
+                    "description": "The decimal value of the transfer",
+                    "example": "577329894.8283165"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
@@ -6366,53 +6525,96 @@
             "type": "object",
             "fields": [
               {
-                "name": "contract_address",
+                "name": "cursor",
                 "type": "string",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                "description": "The cursor to get to the next page"
               },
               {
-                "name": "transaction_hash",
-                "type": "string",
-                "description": "The hash of the transaction",
-                "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
-              },
-              { "name": "transaction_index", "type": "number", "example": 204 },
-              { "name": "log_index", "type": "number", "example": 204 },
-              {
-                "name": "block_timestamp",
-                "type": "string",
-                "description": "The timestamp of the block",
-                "example": "2021-05-07T11:08:35.000Z"
-              },
-              {
-                "name": "block_number",
-                "type": "number",
-                "description": "The block number",
-                "example": 12386788
-              },
-              {
-                "name": "block_hash",
-                "type": "string",
-                "description": "The hash of the block",
-                "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-              },
-              {
-                "name": "from_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "to_wallet",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-              },
-              {
-                "name": "value",
-                "type": "string",
-                "description": "The address of the contract",
-                "example": "1234"
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "contract_address",
+                    "type": "string",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "number",
+                    "example": 204
+                  },
+                  { "name": "log_index", "type": "number", "example": 204 },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "2021-05-07T11:08:35.000Z"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "number",
+                    "description": "The block number",
+                    "example": 12386788
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The hash of the block",
+                    "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                  },
+                  {
+                    "name": "from_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "to_wallet",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "description": "The address of the contract",
+                    "example": "1234"
+                  },
+                  {
+                    "name": "value_decimal",
+                    "type": "string",
+                    "description": "The decimal value of the transfer",
+                    "example": "577329894.8283165"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
