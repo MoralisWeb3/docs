@@ -1,4 +1,440 @@
 {
+  "market-data": {
+    "getTopERC20TokensByMarketCap": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get top ERC20 tokens",
+      "description": "Get the top ERC20 tokens by market cap",
+      "method": "GET",
+      "path": "/market-data/erc20s/top-tokens",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the top ERC20 tokens by market cap",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "rank",
+                  "type": "string",
+                  "example": "1",
+                  "description": "The rank",
+                  "required": true
+                },
+                {
+                  "name": "token_name",
+                  "type": "string",
+                  "example": "Wrapped Ether",
+                  "description": "The token name",
+                  "required": true
+                },
+                {
+                  "name": "token_symbol",
+                  "type": "string",
+                  "example": "WETH",
+                  "description": "The token symbol",
+                  "required": true
+                },
+                {
+                  "name": "token_logo",
+                  "type": "string",
+                  "example": "1",
+                  "description": "The rank",
+                  "required": true
+                },
+                {
+                  "name": "token_decimals",
+                  "type": "string",
+                  "example": "18",
+                  "description": "The token decimals",
+                  "required": true
+                },
+                {
+                  "name": "contract_address",
+                  "type": "string",
+                  "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                  "description": "The contract address",
+                  "required": true
+                },
+                {
+                  "name": "price_usd",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "he price in USD",
+                  "required": true
+                },
+                {
+                  "name": "price_24h_percent_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The price change in the last 24h",
+                  "required": true
+                },
+                {
+                  "name": "price_7d_percent_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The price change in the last 7d",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_usd",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The market cap in USD",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "getTopERC20TokensByPriceMovers": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get top ERC20 tokens",
+      "description": "Get the top ERC20 tokens by price change",
+      "method": "GET",
+      "path": "/market-data/erc20s/top-movers",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns an a list of ERC20 tokens with their price change",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "gainers",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "rank",
+                      "type": "string",
+                      "description": "The rank",
+                      "example": "1",
+                      "required": true
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Wrapped Ether",
+                      "required": true
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "WETH",
+                      "required": true
+                    },
+                    {
+                      "name": "token_logo",
+                      "type": "string",
+                      "description": "The token image",
+                      "example": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
+                      "required": true
+                    },
+                    {
+                      "name": "token_decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "18",
+                      "required": true
+                    },
+                    {
+                      "name": "contract_address",
+                      "type": "string",
+                      "description": "The contract address",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                      "required": true
+                    },
+                    {
+                      "name": "price_usd",
+                      "type": "string",
+                      "description": "The price in USD",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "price_24h_percent_change",
+                      "type": "string",
+                      "description": "The price change in the last 24h",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "price_7d_percent_change",
+                      "type": "string",
+                      "description": "The price change in the last 7d",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "market_cap_usd",
+                      "type": "string",
+                      "description": "The market cap in USD",
+                      "example": "0.0285",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "losers",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "rank",
+                      "type": "string",
+                      "description": "The rank",
+                      "example": "1",
+                      "required": true
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Wrapped Ether",
+                      "required": true
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "WETH",
+                      "required": true
+                    },
+                    {
+                      "name": "token_logo",
+                      "type": "string",
+                      "description": "The token image",
+                      "example": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
+                      "required": true
+                    },
+                    {
+                      "name": "token_decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "18",
+                      "required": true
+                    },
+                    {
+                      "name": "contract_address",
+                      "type": "string",
+                      "description": "The contract address",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                      "required": true
+                    },
+                    {
+                      "name": "price_usd",
+                      "type": "string",
+                      "description": "The price in USD",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "price_24h_percent_change",
+                      "type": "string",
+                      "description": "The price change in the last 24h",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "price_7d_percent_change",
+                      "type": "string",
+                      "description": "The price change in the last 7d",
+                      "example": "0.0285",
+                      "required": true
+                    },
+                    {
+                      "name": "market_cap_usd",
+                      "type": "string",
+                      "description": "The market cap in USD",
+                      "example": "0.0285",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTopNFTCollectionsByMarketCap": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get top NFT collections",
+      "description": "Get the top NFT collections by market cap",
+      "method": "GET",
+      "path": "/market-data/nfts/top-collections",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the top NFT collections by market cap",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "rank",
+                  "type": "string",
+                  "example": "1",
+                  "description": "The rank",
+                  "required": true
+                },
+                {
+                  "name": "collection_title",
+                  "type": "string",
+                  "example": "CryptoPunks",
+                  "description": "The collection title",
+                  "required": true
+                },
+                {
+                  "name": "collection_image",
+                  "type": "string",
+                  "description": "The collection image",
+                  "required": true
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price in USD",
+                  "required": true
+                },
+                {
+                  "name": "floor_price_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 24hr percent change",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap in USD",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap 24hr percent change",
+                  "required": true
+                },
+                {
+                  "name": "volume_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The volume in USD",
+                  "required": true
+                },
+                {
+                  "name": "volume_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The volume 24hr percent change",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "getHottestNFTCollectionsByTradingVolume": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get hottest NFT collections",
+      "description": "Get the hottest NFT collections by trading volume",
+      "method": "GET",
+      "path": "/market-data/nfts/hottest-collections",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the hottest NFT collections by trading volume",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "rank",
+                  "type": "string",
+                  "example": "1",
+                  "description": "The rank",
+                  "required": true
+                },
+                {
+                  "name": "collection_title",
+                  "type": "string",
+                  "example": "CryptoPunks",
+                  "description": "The collection title",
+                  "required": true
+                },
+                {
+                  "name": "collection_image",
+                  "type": "string",
+                  "description": "The collection image",
+                  "required": true
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price in USD",
+                  "required": true
+                },
+                {
+                  "name": "floor_price_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 24hr percent change",
+                  "required": true
+                },
+                {
+                  "name": "volume_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The volume in USD",
+                  "required": true
+                },
+                {
+                  "name": "volume_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The volume 24hr percent change",
+                  "required": true
+                },
+                {
+                  "name": "The average price in USD",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The volume 24hr percent change",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
   "nft": {
     "getWalletNFTs": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
