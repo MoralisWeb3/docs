@@ -22,6 +22,7 @@ import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
 import LoadingCircle from "@site/src/components/LoadingCircle";
+import { useLocation } from "@docusaurus/router";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -71,6 +72,38 @@ const deepCompact = (value: unknown) => {
   return value;
 };
 
+function isValidJsonString(s) {
+  try {
+    console.log(s);
+    JSON.parse(s);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+const queryParamsToObject = (search) => {
+  return search
+    ? search
+        .substring(1)
+        .split("&")
+        .reduce((acc, item) => {
+          const [key, value] = item.split("=");
+          if (isValidJsonString(value)) {
+            acc[key] = JSON.parse(value);
+          } else {
+            const decodedValue = decodeURIComponent(value);
+            if (isValidJsonString(decodedValue)) {
+              acc[key] = JSON.parse(decodedValue);
+            } else {
+              acc[key] = decodedValue;
+            }
+          }
+          return acc;
+        }, {})
+    : {};
+};
+
 const ApiReference = ({
   description,
   method,
@@ -94,6 +127,8 @@ const ApiReference = ({
     () => (network === "mainnet" ? apiHost : testHost),
     [network]
   );
+  const location = useLocation();
+  const initialQueryValues = queryParamsToObject(location.search);
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -157,19 +192,42 @@ const ApiReference = ({
   );
 
   const initialValues = useMemo(() => {
-    const pathParam: ApiParam = pathParams && {
-      type: "object",
-      fields: pathParams,
-    };
-    const queryParam: ApiParam = queryParams && {
-      type: "object",
-      fields: queryParams,
-    };
-    return {
-      path: pathParam && apiParamInitialValue(pathParam),
-      query: queryParam && apiParamInitialValue(queryParam),
-      body: bodyParam && apiParamInitialValue(bodyParam),
-    };
+    if (Object.keys(initialQueryValues).length === 0) {
+      const pathParam: ApiParam = pathParams && {
+        type: "object",
+        fields: pathParams,
+      };
+      const queryParam: ApiParam = queryParams && {
+        type: "object",
+        fields: queryParams,
+      };
+
+      return {
+        path: pathParam && apiParamInitialValue(pathParam),
+        query: queryParam && apiParamInitialValue(queryParam),
+        body: bodyParam && apiParamInitialValue(bodyParam),
+      };
+    } else {
+      const path = {};
+      const query = {};
+      const body = {};
+      // return {};
+      for (const key in initialQueryValues) {
+        if (pathParams.some((item) => item?.name === key)) {
+          path[key] = initialQueryValues[key];
+        } else if (queryParams.some((item) => item?.name === key)) {
+          query[key] = initialQueryValues[key];
+        } else {
+          body[key] = initialQueryValues[key];
+        }
+      }
+
+      return {
+        path,
+        query,
+        body,
+      };
+    }
   }, [bodyParam, pathParams, queryParams]);
 
   const onChangeToken = useCallback(
