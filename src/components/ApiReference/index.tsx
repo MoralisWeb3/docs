@@ -72,6 +72,16 @@ const deepCompact = (value: unknown) => {
   return value;
 };
 
+function isValidJsonString(s) {
+  try {
+    console.log(s);
+    JSON.parse(s);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 const queryParamsToObject = (search) => {
   return search
     ? search
@@ -79,7 +89,16 @@ const queryParamsToObject = (search) => {
         .split("&")
         .reduce((acc, item) => {
           const [key, value] = item.split("=");
-          acc[key] = decodeURIComponent(value);
+          if (isValidJsonString(value)) {
+            acc[key] = JSON.parse(value);
+          } else {
+            const decodedValue = decodeURIComponent(value);
+            if (isValidJsonString(decodedValue)) {
+              acc[key] = JSON.parse(decodedValue);
+            } else {
+              acc[key] = decodedValue;
+            }
+          }
           return acc;
         }, {})
     : {};
