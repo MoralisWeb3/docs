@@ -1,6 +1,7 @@
 {
   "market-data": {
     "getTopERC20TokensByMarketCap": {
+      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by market cap",
@@ -94,6 +95,7 @@
       ]
     },
     "getTopERC20TokensByPriceMovers": {
+      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by price change",
@@ -272,6 +274,7 @@
       ]
     },
     "getTopNFTCollectionsByMarketCap": {
+      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top NFT collections",
       "description": "Get the top NFT collections by market cap",
@@ -357,6 +360,7 @@
       ]
     },
     "getHottestNFTCollectionsByTradingVolume": {
+      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get hottest NFT collections",
       "description": "Get the hottest NFT collections by trading volume",
