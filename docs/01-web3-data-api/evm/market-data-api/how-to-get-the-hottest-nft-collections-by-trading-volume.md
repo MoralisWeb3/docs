@@ -1,8 +1,9 @@
 ---
-title: "How to get the top NFT collections by market cap"
-slug: "../../how-to-get-the-top-nft-collections-by-market-cap"
-description: "Learn how to get the top NFT collections by market cap using Market Data API."
-sidebar_label: "Get the top NFT collections by market cap"
+title: "How to get the hottest NFT collections by trading volume"
+slug: "../../how-to-get-the-hottest-nft-collections-by-trading-volume"
+description: "Learn how to get the hottest NFT collections by trading volume using Market Data API."
+sidebar_label: "Get the hottest NFT collections by trading volume"
+sidebar_position: 3
 ---
 
 ## Prerequisites
@@ -18,9 +19,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the top NFT collections by market cap
+## Step 2: Get the hottest NFT collections by trading volume
 
-In order to get the top NFT collections by market cap, Moralis provides you with a [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
+In order to get the hottest NFT collections by trading volume, Moralis provides you with a [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -135,45 +136,26 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-{
-  "gainers": [
-    {
-      "rank": "1",
-      "token_name": "Wrapped Ether",
-      "token_symbol": "WETH",
-      "token_logo": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
-      "token_decimals": "18",
-      "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "price_usd": "0.0285",
-      "price_24h_percent_change": "0.0285",
-      "price_7d_percent_change": "0.0285",
-      "market_cap_usd": "0.0285"
-    }
-  ],
-  "losers": [
-    {
-      "rank": "1",
-      "token_name": "Wrapped Ether",
-      "token_symbol": "WETH",
-      "token_logo": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
-      "token_decimals": "18",
-      "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "price_usd": "0.0285",
-      "price_24h_percent_change": "0.0285",
-      "price_7d_percent_change": "0.0285",
-      "market_cap_usd": "0.0285"
-    }
-  ]
-}
+[
+  {
+    "rank": "1",
+    "collection_title": "CryptoPunks",
+    "floor_price_usd": "0.0",
+    "floor_price_24hr_percent_change": "0.0",
+    "volume_usd": "0.0",
+    "volume_24hr_percent_change": "0.0",
+    "The average price in USD": "0.0"
+  }
+]
 ```
 
-Congratulations 🥳 you just got the top NFT collections by market cap using Market Data API!
+Congratulations 🥳 you just got the hottest NFT collections by trading volume using Market Data API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
+- [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume)
 
 ## Support
 

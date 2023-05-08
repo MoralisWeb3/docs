@@ -1,9 +1,9 @@
 ---
-title: "How to get the top ERC20 tokens by price change"
-slug: "../../how-to-get-the-top-erc20-tokens-by-price-change"
-description: "Learn how to get the top ERC20 tokens by price change using Market Data API."
-sidebar_label: "Get the top ERC20 tokens by price change"
-sidebar_position: 1
+title: "How to get the top NFT collections by market cap"
+slug: "../../how-to-get-the-top-nft-collections-by-market-cap"
+description: "Learn how to get the top NFT collections by market cap using Market Data API."
+sidebar_label: "Get the top NFT collections by market cap"
+sidebar_position: 2
 ---
 
 ## Prerequisites
@@ -19,9 +19,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the top ERC20 tokens by price change
+## Step 2: Get the top NFT collections by market cap
 
-In order to get the top ERC20 tokens by price change, Moralis provides you with a [getTopERC20TokensByPriceMovers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top NFT collections by market cap, Moralis provides you with a [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -168,13 +168,13 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got the top ERC20 tokens by price change using Market Data API!
+Congratulations 🥳 you just got the top NFT collections by market cap using Market Data API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopERC20TokensByPriceMovers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
+- [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
 
 ## Support
 
