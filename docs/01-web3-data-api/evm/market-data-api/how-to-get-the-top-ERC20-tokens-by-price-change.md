@@ -1,8 +1,8 @@
 ---
-title: "How to get the top ERC20 tokens by market cap"
-slug: "../../how-to-get-the-top-erc20-tokens-by-market-cap"
-description: "Learn how to get the top ERC20 tokens by market cap using Market Data API."
-sidebar_label: "Get NFTs by wallet addresses"
+title: "How to get the top ERC20 tokens by price change"
+slug: "../../how-to-get-the-top-ERC20-tokens-by-price-change"
+description: "Learn how to get the top ERC20 tokens by price change using Market Data API."
+sidebar_label: "Get the top ERC20 tokens by price change"
 ---
 
 ## Prerequisites
@@ -18,9 +18,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get The Top ERC20 Tokens By Market Cap
+## Step 2: Get the top ERC20 tokens by price change
 
-In order to get the top ERC20 tokens by market cap, Moralis provides you with a [getTopERC20TokensByMarketCap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top ERC20 tokens by price change, Moralis provides you with a [getTopERC20TokensByPriceMovers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -135,29 +135,45 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-[
-  {
-    "rank": "1",
-    "token_name": "Wrapped Ether",
-    "token_symbol": "WETH",
-    "token_logo": "1",
-    "token_decimals": "18",
-    "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "price_usd": "0.0285",
-    "price_24h_percent_change": "0.0285",
-    "price_7d_percent_change": "0.0285",
-    "market_cap_usd": "0.0285"
-  }
-]
+{
+  "gainers": [
+    {
+      "rank": "1",
+      "token_name": "Wrapped Ether",
+      "token_symbol": "WETH",
+      "token_logo": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
+      "token_decimals": "18",
+      "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "price_usd": "0.0285",
+      "price_24h_percent_change": "0.0285",
+      "price_7d_percent_change": "0.0285",
+      "market_cap_usd": "0.0285"
+    }
+  ],
+  "losers": [
+    {
+      "rank": "1",
+      "token_name": "Wrapped Ether",
+      "token_symbol": "WETH",
+      "token_logo": "https://assets.coingecko.com/coins/images/2518/large/weth.png?1595348880",
+      "token_decimals": "18",
+      "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "price_usd": "0.0285",
+      "price_24h_percent_change": "0.0285",
+      "price_7d_percent_change": "0.0285",
+      "market_cap_usd": "0.0285"
+    }
+  ]
+}
 ```
 
-Congratulations 🥳 you just got the top ERC20 tokens by market cap using Market Data API!
+Congratulations 🥳 you just got the top ERC20 tokens by price change using Market Data API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopERC20TokensByMarketCap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap) 
+- [getTopERC20TokensByPriceMovers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
 
 ## Support
 
