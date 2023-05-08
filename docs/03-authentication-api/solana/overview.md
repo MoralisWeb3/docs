@@ -1,7 +1,7 @@
 ---
 title: "Authentication API"
 sidebar_label: "Overview"
-slug: "/authentication-api"
+slug: "/authentication-api/solana"
 sidebar_position: 1
 description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
 --- 
