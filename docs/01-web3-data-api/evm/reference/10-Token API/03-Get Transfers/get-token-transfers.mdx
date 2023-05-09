@@ -12,19 +12,17 @@ import config from "../../../../../configs/api-reference/configs.json";
 # Get ERC20 token transfers by contract
 
 <ApiReference {...config.token.getTokenTransfers}>
-  <Admonition type="warning" title="Discontinued Notice">
+  <Admonition type="caution" title="Recommendation: Switch to New Endpoint">
     <p>
-      We have plans to remove this endpoint in the future. While we do not have
-      an exact date for this change yet, we will formally notify our users as
-      soon as we have one via our changelog, email and socials. We will provide
-      at least a 60-day notice period before discontinuing the endpoint.
+      We've introduced a more feature-rich and more performant version of this
+      API endpoint. While the existing endpoint will remain functional, we
+      encourage users to transition to the new one for an enhanced experience.
     </p>
     <p>
-      We highly recommend transitioning to our new endpoint{" "}
+      Go to new endpoint →{" "}
       <Link href="/web3-data-api/reference/get-erc20-transfers">
         /erc20/transfers
-      </Link>{" "}
-      for a more reliable and performant experience.
+      </Link>
     </p>
   </Admonition>
 </ApiReference>
