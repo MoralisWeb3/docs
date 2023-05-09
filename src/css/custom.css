@@ -192,7 +192,7 @@ video {
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
 .col:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
   ) {
   display: none;
 }
@@ -200,13 +200,13 @@ video {
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
 li:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
   ) {
   display: none;
 }
 
 /* Hiding Google Unity tutorial sidebar elements*/
-li:has(> a[href="/authentication-api/integrations/google-cloud-nodejs-unity"]) {
+li:has(> a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]) {
   display: none;
 }
 
