@@ -107,7 +107,7 @@ const NETWORK = "evm";
 
 ## Adding Authentication Methods
 
-Since we will be using the [Auth API](/authentication-api/reference/request-challenge-evm) in this tutorial, we need to create the methods that will call the [request](/authentication-api/reference/request-challenge-evm) and [verify](/authentication-api/reference/verify-challenge-evm) endpoints.
+Since we will be using the [Auth API](/authentication-api/evm/reference/request-challenge-evm) in this tutorial, we need to create the methods that will call the [request](/authentication-api/evm/reference/request-challenge-evm) and [verify](/authentication-api/evm/reference/verify-challenge-evm) endpoints.
 
 Let’s start by adding the `requestMessage()` method:
 

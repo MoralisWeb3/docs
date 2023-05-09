@@ -4,6 +4,7 @@ sidebar_label: "Overview"
 slug: "/authentication-api/evm"
 sidebar_position: 1
 description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
+sidebar_class_name: "sidebar-overview"
 --- 
 
 ![](/img/content/594b455-image.webp)
@@ -16,7 +17,7 @@ Auth API allows your user to authenticate and verify signed messages with their 
 
 The Auth API provides out-of-the-box all the necessary APIs you need to authenticate your user wallet to your dapp, which includes:
 
-- Requesting challenge message for wallet signature on both [EVM](/authentication-api/reference/request-challenge-evm) and [Solana](/authentication-api/reference/request-challenge-solana)
+- Requesting challenge message for wallet signature on both [EVM](/authentication-api/evm/reference/request-challenge-evm) and [Solana](/authentication-api/solana/reference/request-challenge-solana)
 - Verifying signed challenge message signature on both [EVM](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeEvm) and [Solana](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeSolana)
 
 :::info 

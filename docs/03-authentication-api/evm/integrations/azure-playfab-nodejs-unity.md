@@ -105,7 +105,7 @@ The completed project with all the functions ready can be found on [GitHub](http
 
 #### Authentication API functions
 
-##### Create [`ChallengeRequest`](/authentication-api/reference/request-challenge-evm) function
+##### Create [`ChallengeRequest`](/authentication-api/evm/reference/request-challenge-evm) function
 
 1. Open Visual Studio Code.
 2. Select **Azure** and sign in.
@@ -275,7 +275,7 @@ To summarize, to call this **`ChallengeRequest`** function we will need a POST r
 
 For now we need to create another function that will verify the message resulting of this one.
 
-##### Create [`ChallengeVerify`](/authentication-api/reference/verify-challenge-evm) function
+##### Create [`ChallengeVerify`](/authentication-api/evm/reference/verify-challenge-evm) function
 
 1. Repeat the same steps as for **`ChallengeRequest`** (no need to create a new project now) but this time name it **`ChallengeVerify`**:
 
