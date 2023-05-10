@@ -5,7 +5,7 @@ description: "This tutorial teaches you how to create your very own Micro Blogge
 ---
 ## Introduction
 
-This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and [Moralis Auth API](/authentication-api).
+This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and [Moralis Auth API](/authentication-api/solana).
 
 Once complete, you can use this dapp to create blog posts on Solana Blockchain.
 

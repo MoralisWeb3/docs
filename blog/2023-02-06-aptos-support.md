@@ -10,7 +10,7 @@ We’re beyond excited to be bringing the power of Moralis Web3 APIs to Aptos. A
 
 * [Web3 API](/web3-data-api/aptos/reference/get-nfts-by-ids)
 * [Streams API](/streams-api/aptos)
-* [Auth API](/authentication-api/reference/request-challenge-aptos)
+* [Auth API](/authentication-api/aptos/reference/request-challenge-aptos)
 
 Unleash your creativity and get building on the next big Aptos dapp!
 

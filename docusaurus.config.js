@@ -179,7 +179,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "authentication-api/overview",
+            docId: "authentication-api/evm/overview",
             position: "left",
             label: "Authentication API",
           },
@@ -237,7 +237,7 @@ const config = {
               {
                 label: "Authentication API",
                 type: "doc",
-                docId: "reference/authentication-api/overview",
+                docId: "authentication-api/evm/reference/reference",
               },
               {
                 type: "html",

@@ -5,7 +5,7 @@ description: "This tutorial teaches you how to create your very own Multiplayer 
 ---
 ## Introduction
 
-This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and [Moralis Auth API](/authentication-api).
+This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and [Moralis Auth API](/authentication-api/solana).
 
 Once complete, you can use this dapp to create new games with other players and play the game in real-time.
 

@@ -211,4 +211,4 @@ If you have any problem with the CORS on production, you should probably allow u
 
 ## Further Reading
 
-- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](/authentication-api/integrations/firebase-nodejs).
+- If you want to integrate Firebase authorization with Web3 authorization, check [our tutorial](/authentication-api/evm/integrations/firebase-nodejs).
