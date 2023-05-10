@@ -98,6 +98,11 @@
           "language": "node",
           "code": "import Moralis from 'moralis';\nimport snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getTopERC20TokensByMarketCap({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_top_erc20_tokens_by_market_cap(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -284,6 +289,11 @@
           "language": "node",
           "code": "import Moralis from 'moralis';\nimport snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getTopERC20TokensByPriceMovers({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_top_erc20_tokens_by_price_movers(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -377,6 +387,11 @@
           "language": "node",
           "code": "import Moralis from 'moralis';\nimport snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getTopNFTCollectionsByMarketCap({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_top_nft_collections_by_market_cap(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -463,6 +478,11 @@
           "language": "node",
           "code": "import Moralis from 'moralis';\nimport snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getHottestNFTCollectionsByTradingVolume({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_hottest_nft_collections_by_trading_volume(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     }

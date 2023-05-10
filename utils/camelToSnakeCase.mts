@@ -3,6 +3,7 @@ const camelToSnakeCase = (str) => {
     .replaceAll("NFT", "Nft")
     .replaceAll("SPL", "Spl")
     .replaceAll("IPFS", "Ipfs")
+    .replaceAll("ERC", "Erc")
     .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 };
 

@@ -50,7 +50,10 @@ ${bodyParam ? `\nbody = []\n` : ""}${
                   ? `\nparams = {}\n`
                   : ""
               }
-result = evm_api.${group}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
+result = evm_api.${camelToSnakeCase(group).replaceAll(
+                "-",
+                "_"
+              )}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
                 queryParams.length > 0 || pathParams.length > 0
                   ? `\n  params=params,`
