@@ -13,7 +13,7 @@ This is an example of the final result:
 
 ## Prerequisites
 
-1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](/authentication-api/how-to-sign-in-with-metamask-python-django).
+1. Finish the previous tutorial on how to use the [Moralis Auth API in Django](/authentication-api/evm/how-to-sign-in-with-metamask-python-django).
 
 ## Adding NFT Gated Functionality
 

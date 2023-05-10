@@ -6603,4 +6603,168 @@ export const redirects = [
     destination: "/web3-data-api/aptos/how-to-get-wallets-nft-transfers",
     permanent: true,
   },
+  {
+    source: "/authentication-api",
+    destination: "/authentication-api/evm",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/tutorials",
+    destination: "/authentication-api/evm/tutorials",
+    permanent: true,
+  },
+  {
+    source:
+      "/authentication-api/how-to-authenticate-users-with-metamask-using-react",
+    destination:
+      "/authentication-api/evm/how-to-authenticate-users-with-metamask-using-react",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-coinbase-wallet",
+    destination: "/authentication-api/evm/how-to-sign-in-with-coinbase-wallet",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-magiclink",
+    destination: "/authentication-api/evm/how-to-sign-in-with-magiclink",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-metamask-angular",
+    destination: "/authentication-api/evm/how-to-sign-in-with-metamask-angular",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-metamask-python-django",
+    destination:
+      "/authentication-api/evm/how-to-sign-in-with-metamask-python-django",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-metamask",
+    destination: "/authentication-api/evm/how-to-sign-in-with-metamask",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-rainbowkit",
+    destination: "/authentication-api/evm/how-to-sign-in-with-rainbowkit",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-solana-phantom-wallet",
+    destination:
+      "/authentication-api/solana/how-to-sign-in-with-solana-phantom-wallet",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-solana-wallet-provider",
+    destination:
+      "/authentication-api/solana/how-to-sign-in-with-solana-wallet-provider",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-walletconnect",
+    destination: "/authentication-api/evm/how-to-sign-in-with-walletconnect",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/how-to-sign-in-with-web3authio",
+    destination: "/authentication-api/evm/how-to-sign-in-with-web3authio",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/integrations/integrations",
+    destination: "/authentication-api/evm/integrations/integrations",
+    permanent: true,
+  },
+  {
+    source:
+      "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
+    destination:
+      "/authentication-api/evm/integrations/amazon-gamesparks-integration-with-unity",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/integrations/azure-playfab-nodejs-unity",
+    destination:
+      "/authentication-api/evm/integrations/azure-playfab-nodejs-unity",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/integrations/firebase-nodejs",
+    destination: "/authentication-api/evm/integrations/firebase-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/integrations/parse-server-nodejs",
+    destination: "/authentication-api/evm/integrations/parse-server-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/integrations/supabase-nodejs",
+    destination: "/authentication-api/integrations/supabase-nodejs",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/overview",
+    destination: "/authentication-api/evm/reference/overview",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/request-challenge-evm",
+    destination: "/authentication-api/evm/reference/request-challenge-evm",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/verify-challenge-evm",
+    destination: "/authentication-api/evm/reference/verify-challenge-evm",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/request-challenge-aptos",
+    destination: "/authentication-api/aptos/reference/request-challenge-aptos",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/verify-challenge-aptos",
+    destination: "/authentication-api/aptos/reference/verify-challenge-aptos",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/request-challenge-solana",
+    destination:
+      "/authentication-api/solana/reference/request-challenge-solana",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/verify-challenge-solana",
+    destination: "/authentication-api/solana/reference/verify-challenge-solana",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/get-profile-addresses",
+    destination: "/authentication-api/evm/reference/get-profile-addresses",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/request-bind",
+    destination: "/authentication-api/evm/reference/request-bind",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/verify-request-bind",
+    destination: "/authentication-api/evm/reference/verify-request-bind",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/remove-bind",
+    destination: "/authentication-api/evm/reference/remove-bind",
+    permanent: true,
+  },
+  {
+    source: "/authentication-api/reference/verify-remove-bind",
+    destination: "/authentication-api/evm/reference/verify-remove-bind",
+    permanent: true,
+  },
 ];
