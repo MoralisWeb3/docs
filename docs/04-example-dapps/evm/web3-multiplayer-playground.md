@@ -42,7 +42,7 @@ https://www.youtube.com/watch?v=9f_SG3Fib5E
 
 ### Setup Backend
 
-1. Complete the [Using Unity & PlayFab (NodeJS)](/authentication-api/integrations/azure-playfab-nodejs-unity) tutorial. Exclude **.NET** steps.
+1. Complete the [Using Unity & PlayFab (NodeJS)](/authentication-api/evm/integrations/azure-playfab-nodejs-unity) tutorial. Exclude **.NET** steps.
 2. When adding Azure's Application Settings and PlayFab's Functions, use **only** the updated table information below.
 
 | Azure - Function App - Application Settings | Value          |
