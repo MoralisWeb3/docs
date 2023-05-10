@@ -1,10 +1,12 @@
 const fs = require("fs");
 const apiReference = require("../api-reference/configs.json");
 const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
+const snakeToCamelCase = require("../../../utils/snakeToCamelCase.mts");
 
 const generateCode = async () => {
   Object.keys(apiReference).map((group) => {
     switch (group) {
+      case "market-data":
       case "nft":
       case "token":
       case "balance":
@@ -23,13 +25,14 @@ const generateCode = async () => {
             {
               language: "node",
               code: `import Moralis from 'moralis';
+import snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';
 
 try {
   await Moralis.start({
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = await Moralis.EvmApi.${group}.${fctn}({});
+  const response = await Moralis.EvmApi.${snakeToCamelCase(group)}.${fctn}({});
 
   console.log(response.raw);
 } catch (e) {
