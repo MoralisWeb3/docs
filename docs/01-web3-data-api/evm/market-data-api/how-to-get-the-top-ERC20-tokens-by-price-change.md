@@ -39,22 +39,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const allNFTs = [];
+  const response =
+    await Moralis.EvmApi.marketData.getTopERC20TokensByPriceMovers();
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
-
-  const chains = [EvmChain.ETHEREUM, EvmChain.BSC, EvmChain.POLYGON];
-
-  for (const chain of chains) {
-    const response = await Moralis.EvmApi.nft.getWalletNFTs({
-      address,
-      chain,
-    });
-
-    allNFTs.push(response);
-  }
-
-  console.log(allNFTs);
+  console.log(response.raw);
 };
 
 runApp();
@@ -73,22 +61,10 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const allNFTs = [];
+  const response =
+    await Moralis.EvmApi.marketData.getTopERC20TokensByPriceMovers();
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
-
-  const chains = [EvmChain.ETHEREUM, EvmChain.BSC, EvmChain.POLYGON];
-
-  for (const chain of chains) {
-    const response = await Moralis.EvmApi.nft.getWalletNFTs({
-      address,
-      chain,
-    });
-
-    allNFTs.push(response);
-  }
-
-  console.log(allNFTs);
+  console.log(response.raw);
 };
 
 runApp();
@@ -102,26 +78,12 @@ from moralis import evm_api
 import json
 
 api_key = "YOUR_API_KEY"
-params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    "chain": "eth",
-    "format": "decimal",
-    "limit": 1,
-    "token_addresses": [],
-    "cursor": "",
-    "normalizeMetadata": True,
-}
 
-result = []
-for chain in ('eth', 'bsc', 'polygon'):
-	params['chain'] = chain
-	result += [evm_api.nft.get_wallet_nfts(
-    api_key=api_key,
-    params=params,
-	)]
+result = evm_api.market_data.get_top_erc20_tokens_by_price_movers(
+  api_key=api_key,
+)
 
-# converting it to json because of unicode characters
-print(json.dumps(result, indent=4))
+print(result)
 ```
 
 </TabItem>
