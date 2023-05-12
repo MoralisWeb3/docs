@@ -62,13 +62,19 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
                     <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" id="a" width="36" height="36"  viewBox="0 0 500 500"><path fill="#51e7c1" d="M400.14 163.42h-42.4c-4.94 0-9.64-2.12-12.91-5.81l-17.2-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.45 25.45 0 0 1-19.04 8.58H41.53c-6.61 18.84-10.92 38.74-12.64 59.38h219.1c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56L316.48 217c3.27 3.7 7.97 5.81 12.91 5.81h178.84c-1.72-20.65-6.03-40.55-12.64-59.38h-95.46ZM161.48 347.67c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.55l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h242.36c9.08-18.76 15.73-38.89 19.69-59.98H272.3c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58H32.19c3.96 21.09 10.62 41.22 19.69 59.98h109.59ZM333.42 98.52c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h46.09C417.02 40.18 347.21 2.44 268.57 2.44S120.12 40.18 76.22 98.52h257.2ZM240.84 407.11h-63.03c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58h-.98c43.91 47.05 106.44 76.5 175.87 76.5s131.95-29.45 175.87-76.5H240.84Z" class="b"/></svg>&nbsp;&nbsp;Aptos API</h3>
+                    <p>Fetch user and token data from the Aptos blockchain.</p>
                 </a>
             </div>
         </div>
@@ -83,18 +89,24 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                    <h3><svg id="Layer_24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 23.78 23.78"><line class="cls-1" x1="1.68" y1="21.66" x2="21.87" y2="21.66" fill="#6fc276"/><rect class="cls-4" x="3.59" y="17.65" width="2.58" height="3.99" fill="#6fc276"/><rect class="cls-4" x="10.53" y="15.76" width="2.58" height="5.88" fill="#6fc276"/><rect class="cls-4" x="17.48" y="12.68" width="2.58" height="8.96" fill="#6fc276"/><polyline class="cls-3" points="2.55 12.45 9.07 6.01 13.2 10.14 20.62 2.72" fill="#6fc276"/><polyline class="cls-2" points="16.42 2.01 21.75 2.01 21.75 7.05" fill="#6fc276"/></svg>&nbsp;&nbsp;<span>Market Data API</span></h3>
+                    <p>Explore the latest market trends for ERC20 tokens and NFTs.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>NFT API</span></h3>
                     <p>Summon all NFT transfers, prices, and metadata in realtime.</p>
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
-                    <p>Access all the information you need for any ERC20 tokens from multiple blockchains.</p>
+                    <p>Access all the information you need for any ERC20 tokens.</p>
                 </a>
             </div>
         </div>
@@ -114,8 +126,6 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/events-api">
