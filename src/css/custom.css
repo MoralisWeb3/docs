@@ -206,7 +206,9 @@ li:has(
 }
 
 /* Hiding Google Unity tutorial sidebar elements*/
-li:has(> a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]) {
+li:has(
+    > a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]
+  ) {
   display: none;
 }
 
@@ -591,4 +593,32 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
+}
+.cls-1 {
+  stroke-width: 1.4px;
+}
+.cls-1,
+.cls-2,
+.cls-3 {
+  fill: none;
+  stroke-linecap: round;
+}
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4 {
+  stroke: #6fc276;
+}
+.cls-1,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+.cls-2,
+.cls-3 {
+  fill-rule: evenodd;
+  stroke-width: 1.4px;
+}
+.cls-2,
+.cls-4 {
+  stroke-linejoin: round;
 }
