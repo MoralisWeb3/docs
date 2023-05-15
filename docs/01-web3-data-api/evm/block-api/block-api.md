@@ -42,9 +42,7 @@ The Block API supports multiple EVM chains:
 | bsc               | 0x38           | 56             |
 | bsc testnet       | 0x61           | 97             |
 | avalanche         | 0xa86a         | 43114          |
-| avalanche testnet | 0xa869         | 43113          |
 | fantom            | 0xfa           | 250            |
 | cronos            | 0x19           | 25             |
-| cronos testnet    | 0x152          | 338            |
 | palm              | 0x2a15c308d    | 11297108109    |
 | arbitrum          | 0xa4b1         | 42161          |
