@@ -32,7 +32,7 @@ function BlogListPageContent(props) {
       const { date, permalink, title, description } =
         i?.content?.metadata ?? {};
       const modifiedDate = new Date(date);
-      const day = modifiedDate.getDay();
+      const day = modifiedDate.getDate();
       const month = modifiedDate.toLocaleString("default", { month: "long" });
       const year = modifiedDate.getFullYear();
       const newDate = `${month} ${day}, ${year}`;
