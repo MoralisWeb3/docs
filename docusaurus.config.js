@@ -3,6 +3,9 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -381,7 +384,7 @@ const config = {
       },
       algolia: {
         appId: "K26H89KJU5",
-        apiKey: "e87aff4960989251c8cbf3cccd24d785",
+        apiKey: process.env.ALGOLIA_API_KEY,
         indexName: "gold-iota",
         contextualSearch: true,
       },
@@ -389,7 +392,7 @@ const config = {
   plugins: [
     [
       "./src/plugins/docusaurus-plugin-segment",
-      { apiKey: "YcdRMoR4AjWlz236XSYBGlj4AnTEn86e", host: "tr-cdn.moralis.io" },
+      { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
     ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
