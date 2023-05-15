@@ -389,6 +389,9 @@ const config = {
         contextualSearch: true,
       },
     }),
+  customFields: {
+    specialApiKey: process.env.SPECIAL_API_KEY,
+  },
   plugins: [
     [
       "./src/plugins/docusaurus-plugin-segment",
