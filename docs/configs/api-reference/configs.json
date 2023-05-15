@@ -9907,6 +9907,103 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "contractsReview": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Review contracts",
+      "description": "Review contracts as spam or not spam",
+      "method": "POST",
+      "path": "/contracts-review",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        }
+      ],
+      "bodyParam": {
+        "required": true,
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "contracts",
+            "type": "object",
+            "description": "The contracts to be reported",
+            "example": [
+              {
+                "contract_address": "0xa4991609c508b6d4fb7156426db0bd49fe298bd8",
+                "report_type": "spam",
+                "contract_type": "ERC20",
+                "reason": "The contract contains shady code"
+              }
+            ],
+            "fields": [
+              {
+                "name": "contract_address",
+                "type": "string",
+                "description": "The contract address",
+                "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+              },
+              {
+                "name": "reason",
+                "type": "string",
+                "description": "The reason for the contract being spam",
+                "example": 100
+              },
+              {
+                "name": "report_type",
+                "type": "string",
+                "description": "This can be spam or not_spam",
+                "example": "spam",
+                "enum": ["spam", "not_spam"]
+              },
+              {
+                "name": "contract_type",
+                "type": "string",
+                "description": "This can be ERC20, or NFT",
+                "example": "ERC20",
+                "enum": ["ERC20", "NFT"]
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a message acknowledging the report"
+        }
+      ]
     }
   },
   "resolve": {
