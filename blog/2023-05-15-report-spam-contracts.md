@@ -12,4 +12,4 @@ Easily report new spam contracts by specifying `report_type` as `spam`, or reque
 
 Submissions will be reviewed and incorporated into our spam library, and reflected across our ERC20 and NFT API endpoints.
 
-[Check out the docs for more information.]()
+[Check out the docs for more information.](/web3-data-api/evm/reference/contracts-review)
