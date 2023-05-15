@@ -13,10 +13,7 @@ Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Da
 
 ## Step 2: Get API Key
 
-1. Go to <https://admin.moralis.io/web3apis>.
-2. Click on the copy icon to copy your API Key:
-
-![Moralis Admin (Sign Up)](/img/content/1de1f4d-Screen_Shot_2022-10-24_at_14.49.31.webp)
+Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/) by going to one of your existing project > Settings > Secrets > Copy one of your secrests.
 
 :::info Keep Your API Key Safe
 
