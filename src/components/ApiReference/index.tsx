@@ -23,6 +23,7 @@ import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
 import LoadingCircle from "@site/src/components/LoadingCircle";
 import { useLocation } from "@docusaurus/router";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -121,6 +122,8 @@ const ApiReference = ({
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [responseIndex, setResponseIndex] = useState(0);
+  const { siteConfig } = useDocusaurusContext();
+  const { specialApiKey = [] } = siteConfig?.customFields ?? {};
   const { token, setToken } = useContext(ApiReferenceTokenContext);
   const [network, setNetwork] = useState<"mainnet" | "testnet">("mainnet");
   const hostUrl = useMemo(
@@ -359,8 +362,15 @@ const ApiReference = ({
 
                   <ApiParamButton
                     type="submit"
-                    disabled={disabled || loading}
-                    className={disabled ? "cursor-not-allowed" : ""}
+                    disabled={
+                      !(specialApiKey as string[]).includes(token) &&
+                      (disabled || loading)
+                    }
+                    className={
+                      !(specialApiKey as string[]).includes(token) || disabled
+                        ? "cursor-not-allowed"
+                        : ""
+                    }
                   >
                     {loading ? <LoadingCircle /> : "Try It"}
                   </ApiParamButton>
