@@ -273,16 +273,12 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0x61";
           case "avalanche":
             return "0xa86a";
-          case "avalanche testnet":
-            return "0xa869";
           case "fantom":
             return "0xfa";
           case "palm":
             return "0x2a15c308d";
           case "cronos":
             return "0x19";
-          case "cronos testnet":
-            return "0x152";
           case "arbitrum":
             return "0xa4b1";
           default:
