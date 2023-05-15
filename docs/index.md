@@ -50,25 +50,31 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/streams-api/evm">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#99D3FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.569" d="M31.466 24.814v-6.148a6 6 0 0 0-4.093-5.688l-2.565-.86V6.885"/><path stroke="#0F7FFF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.569" d="M6.605 26.83v-6.355a8 8 0 0 1 5.65-7.647l4.642-1.426V6.885M21.033 3.885V22.5"/><path stroke="#99D3FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.569" d="M12.744 3.885v17.49"/><path stroke="#0F7FFF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.569" d="M21.033 29.586a3.337 3.337 0 1 0 0-6.673 3.337 3.337 0 0 0 0 6.673ZM6.809 34.349a3.337 3.337 0 1 0 0-6.674 3.337 3.337 0 0 0 0 6.674Z"/><path fill="#99D3FF" d="M12.743 25.182a3.086 3.086 0 1 0 0-6.172 3.086 3.086 0 0 0 0 6.172Z"/><path fill="#99D3FF" stroke="#99D3FF" strokeWidth="1.567" d="M33.753 26.976a2.303 2.303 0 1 1-4.605 0 2.303 2.303 0 0 1 4.605 0Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Streams API</span></h3>
-                    <p>Receive blockchain data by listing to realtime on-chain events.</p>
+                    <p>Receive blockchain data by listening to realtime on-chain events.</p>
                 </a>
             </div>
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api">
+                <a className="card padding--lg card--homepage" href="/authentication-api/evm">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.3" clipPath="url(#a)"><path stroke="#00D1AE" d="M27.57 19.69v6.739c0 1.497-1.09 2.723-2.423 2.723H6.838"/><path stroke="#00AD96" d="M9.874 14.178v-2.723A6.8 6.8 0 0 1 16.68 4.65a6.8 6.8 0 0 1 6.806 6.806v2.723"/><path stroke="#00D1AE" d="M5.79 23.093V16.9c0-1.498 1.089-2.723 2.423-2.723h18.295M31 22.699l-3.58-3.567-3.58 3.567"/><path stroke="#00D1AE" d="m2.06 19.977 3.58 3.58 3.58-3.58"/><path stroke="#00AD96" d="M16.68 23.284v-2.723"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Authentication API</span></h3>
                     <p>Authenticate users with their wallet to safely interact with your backend.</p>
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
                     <p>Get NFT, token and transaction data from EVM chains.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" id="a" width="36" height="36"  viewBox="0 0 500 500"><path fill="#51e7c1" d="M400.14 163.42h-42.4c-4.94 0-9.64-2.12-12.91-5.81l-17.2-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.45 25.45 0 0 1-19.04 8.58H41.53c-6.61 18.84-10.92 38.74-12.64 59.38h219.1c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56L316.48 217c3.27 3.7 7.97 5.81 12.91 5.81h178.84c-1.72-20.65-6.03-40.55-12.64-59.38h-95.46ZM161.48 347.67c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.55l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h242.36c9.08-18.76 15.73-38.89 19.69-59.98H272.3c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58H32.19c3.96 21.09 10.62 41.22 19.69 59.98h109.59ZM333.42 98.52c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h46.09C417.02 40.18 347.21 2.44 268.57 2.44S120.12 40.18 76.22 98.52h257.2ZM240.84 407.11h-63.03c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58h-.98c43.91 47.05 106.44 76.5 175.87 76.5s131.95-29.45 175.87-76.5H240.84Z" class="b"/></svg>&nbsp;&nbsp;Aptos API</h3>
+                    <p>Fetch user and token data from the Aptos blockchain.</p>
                 </a>
             </div>
         </div>
@@ -83,18 +89,24 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                    <h3><svg id="Layer_24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 23.78 23.78"><line class="cls-1" x1="1.68" y1="21.66" x2="21.87" y2="21.66" fill="#6fc276"/><rect class="cls-4" x="3.59" y="17.65" width="2.58" height="3.99" fill="#6fc276"/><rect class="cls-4" x="10.53" y="15.76" width="2.58" height="5.88" fill="#6fc276"/><rect class="cls-4" x="17.48" y="12.68" width="2.58" height="8.96" fill="#6fc276"/><polyline class="cls-3" points="2.55 12.45 9.07 6.01 13.2 10.14 20.62 2.72" fill="#6fc276"/><polyline class="cls-2" points="16.42 2.01 21.75 2.01 21.75 7.05" fill="#6fc276"/></svg>&nbsp;&nbsp;<span>Market Data API</span></h3>
+                    <p>Explore the latest market trends for ERC20 tokens and NFTs.</p>
+                </a>
+            </div>
+        </div>
+        <div className="col col--4">
+            <div className="col-demo margin-bottom--lg">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>NFT API</span></h3>
                     <p>Summon all NFT transfers, prices, and metadata in realtime.</p>
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
-                    <p>Access all the information you need for any ERC20 tokens from multiple blockchains.</p>
+                    <p>Access all the information you need for any ERC20 tokens.</p>
                 </a>
             </div>
         </div>
@@ -114,8 +126,6 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                 </a>
             </div>
         </div>
-    </div>
-    <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/events-api">
@@ -149,7 +159,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/firebase-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/firebase-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#FFA000" d="m6 28 4.06-26.356a.747.747 0 0 1 1.402-.243l4.2 7.946 1.675-3.232a.747.747 0 0 1 1.329 0L30 28H6Z"/><path fill="#F57C00" d="M20 18.095 15.642 10 6 28l14-9.905Z"/><path fill="#FFCA28" d="M30 28.445 26.889 8.643a.767.767 0 0 0-.511-.606.733.733 0 0 0-.758.189L6 28.444l10.855 6.263a2.195 2.195 0 0 0 2.192 0L30 28.445Z"/><path fill="#fff" fillOpacity=".2" d="M26.892 8.46a.757.757 0 0 0-.51-.596.741.741 0 0 0-.758.186L21.732 12l-3.06-5.898a.746.746 0 0 0-1.329 0L15.67 9.326 11.473 1.4a.746.746 0 0 0-1.402.242L6.013 27.93H6l.013.015.105.054L25.617 8.244a.745.745 0 0 1 1.27.41l3.083 19.295.03-.018L26.892 8.46ZM6.048 27.896 10.07 1.83a.75.75 0 0 1 .614-.631.751.751 0 0 1 .788.39l4.197 7.924 1.673-3.224a.746.746 0 0 1 1.329 0l3 5.77L6.047 27.897Z"/><path fill="#A52714" d="M19.049 34.499a2.124 2.124 0 0 1-2.193 0l-10.83-6.49-.026.177 10.856 6.51a2.124 2.124 0 0 0 2.193 0L30 28.185 29.972 28 19.05 34.499Z" opacity=".2"/></svg>&nbsp;&nbsp;<span>Firebase</span></h3>
                     <p>Authenticate a user to your Firebase application with an EVM or Solana wallet.</p>
                 </a>
@@ -157,7 +167,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/parse-server-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/parse-server-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#fff" d="M18 32.44c7.909 0 14.32-6.411 14.32-14.32C32.32 10.211 25.91 3.8 18 3.8c-7.909 0-14.32 6.411-14.32 14.32 0 7.909 6.411 14.32 14.32 14.32Z"/><path fill="#169CEE" d="M20.667 21.893H12.8c-1.147 0-1.813.707-1.813 1.72 0 .907.613 1.547 1.493 1.547 1.027 0 1.613-.707 1.667-1.72h2.28c-.12 2.48-1.667 3.8-3.974 3.8-2.16 0-3.773-1.467-3.773-3.653 0-2.28 1.693-3.867 4.24-3.867h7.787c2.626 0 4.626-1.933 4.626-4.533 0-2.627-1.786-4.48-4.333-4.48-2.52 0-4.56 1.84-4.56 5.24v2.226h-2.307v-2.226c0-4.507 2.894-7.427 6.907-7.427 3.827 0 6.613 2.747 6.613 6.64.027 3.893-2.96 6.733-6.986 6.733ZM18 34c8.947 0 16-7.08 16-16S26.947 2 18 2 2 9.107 2 18c0 8.92 7.053 16 16 16Z"/></svg>&nbsp;&nbsp;Parse Server</h3>
                     <p>Authenticate a user to your Parse server with MetaMask.</p>
                 </a>
@@ -165,7 +175,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/supabase-nodejs">
+                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/supabase-nodejs">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path fill="url(#b)" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="url(#c)" fillOpacity=".2" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="#3ECF8E" d="M15.448 2.532c.818-1.03 2.476-.466 2.495.849l.127 19.226H5.304c-2.342 0-3.648-2.704-2.192-4.538L15.448 2.532Z"/></g><defs><linearGradient id="b" x1="17.923" x2="29.413" y1="17.656" y2="22.475" gradientUnits="userSpaceOnUse"><stop stopColor="#249361"/><stop offset="1" stopColor="#3ECF8E"/></linearGradient><linearGradient id="c" x1="12.829" x2="18.069" y1="10.681" y2="20.545" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stopOpacity="0"/></linearGradient><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Supabase</span></h3>
                     <p>Combine Web3 authentication with Supabase authentication.</p>
                 </a>
@@ -175,7 +185,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/integrations/azure-playfab-nodejs-unity">
+                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/azure-playfab-nodejs-unity">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#FF6D21" fillRule="evenodd" d="M10.327 5.218 3.012 9.422l-.006 4.623L3 18.667l3.512 1.928 3.513 1.929v7.99l3.993 2.243L18.012 35l2.276-1.289c1.252-.709 4.596-2.627 7.433-4.264l5.156-2.975.061-8.462L33 9.548l-.882-.56C30.569 8.002 18.01.985 17.823 1c-.1.008-3.473 1.906-7.496 4.218Zm13.175 3.245 5.39 3.06v12.855l-5.385 3.096c-2.962 1.703-5.44 3.095-5.508 3.095-.067-.001-1.019-.507-2.115-1.125l-1.992-1.124-.069-1.764c-.037-.97.005-1.764.095-1.764s.985.468 1.99 1.04c1.007.572 1.941 1.04 2.079 1.04.137 0 1.99-1.001 4.117-2.225l3.868-2.225-.063-4.506-.063-4.507-3.832-2.167c-2.107-1.191-3.953-2.166-4.102-2.164-.148 0-1.957.975-4.02 2.164l-3.75 2.163-.067 2.359c-.037 1.297-.142 2.325-.235 2.284-.092-.04-.825-.438-1.629-.883l-1.462-.81-.003-2.319-.003-2.32 5.45-3.156c2.997-1.736 5.555-3.156 5.684-3.156.128 0 2.66 1.376 5.625 3.059Zm-3.43 6.069 1.906 1.064v4.742l-1.87 1.071c-1.028.59-1.99 1.072-2.136 1.072-.147 0-1.153-.495-2.237-1.098l-1.97-1.098.064-2.299.063-2.298 1.875-1.11c1.031-.61 1.993-1.11 2.137-1.11.145-.001 1.12.478 2.168 1.064Z" clipRule="evenodd"/></svg>&nbsp;&nbsp;<span>PlayFab</span></h3>
                     <p>Set up a complete gaming backend platform for Web3 games.</p>
                 </a>

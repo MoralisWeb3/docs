@@ -1,10 +1,12 @@
 const fs = require("fs");
 const apiReference = require("../api-reference/configs.json");
 const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
+const snakeToCamelCase = require("../../../utils/snakeToCamelCase.mts");
 
 const generateCode = async () => {
   Object.keys(apiReference).map((group) => {
     switch (group) {
+      case "market-data":
       case "nft":
       case "token":
       case "balance":
@@ -23,13 +25,14 @@ const generateCode = async () => {
             {
               language: "node",
               code: `import Moralis from 'moralis';
+import snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';
 
 try {
   await Moralis.start({
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = await Moralis.EvmApi.${group}.${fctn}({});
+  const response = await Moralis.EvmApi.${snakeToCamelCase(group)}.${fctn}({});
 
   console.log(response.raw);
 } catch (e) {
@@ -47,7 +50,10 @@ ${bodyParam ? `\nbody = []\n` : ""}${
                   ? `\nparams = {}\n`
                   : ""
               }
-result = evm_api.${group}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
+result = evm_api.${camelToSnakeCase(group).replaceAll(
+                "-",
+                "_"
+              )}.${camelToSnakeCase(fctn).replaceAll("-", "_")}(
   api_key=api_key,${bodyParam ? "\n  body=body," : ""}${
                 queryParams.length > 0 || pathParams.length > 0
                   ? `\n  params=params,`
@@ -144,10 +150,10 @@ print(result)`,
               case "getBlockByVersion":
                 return "blocks";
               case "getCoinInfoByCoinTypeHashes":
-              case "getCoinTransfersByBlockHeight":
+              case "getCoinTransfersByBlockHeights":
               case "getCoinTransfersByCoinType":
               case "getCoinTransfersByOwnerAddresses":
-              case "getCoinByCreators":
+              case "getCoinsByCreators":
               case "getCoinsByNameRange":
               case "getCoinsBySymbolRange":
               case "getLatestCoins":
@@ -198,7 +204,7 @@ try {
     apiKey: "YOUR_API_KEY"
   });
 
-  const response = Moralis.AptosApi.${aptosGroup()}.${fctn}({});
+  const response = await Moralis.AptosApi.${aptosGroup()}.${fctn}({});
 
   console.log(response);
 } catch (e) {

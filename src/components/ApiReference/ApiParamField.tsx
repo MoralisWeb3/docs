@@ -20,6 +20,7 @@ interface ApiBaseParam<Type extends string, Value = never> {
   required?: boolean;
   type: Type;
   example?: Value;
+  disabled?: boolean;
 }
 
 export type ApiParam =

@@ -49,7 +49,7 @@ const networks = {
       iconDark: AptosDarkIcon,
     },
   ],
-  "authentication-api-hide": [
+  "authentication-api": [
     // hiding sidebar temporary
     {
       value: "evm",

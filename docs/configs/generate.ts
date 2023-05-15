@@ -267,7 +267,7 @@ const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
       for (const key in swaggerPaths) {
-        if (["transaction"].includes(key)) {
+        if (["web3"].includes(key)) {
           const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
           const swaggerJSON = await swaggerRes?.json();
           let swaggerContent;
@@ -294,7 +294,7 @@ const generateConfigs = async () => {
 
     if (isGenerateReferenceOn) {
       for (const key in swaggerOAS) {
-        if (["transaction"].includes(key)) {
+        if (["token"].includes(key)) {
           for (const index in Object.keys(swaggerOAS[key])) {
             const functionName = Object.keys(swaggerOAS[key])[index];
             const snakeCaseFunctionName = camelToSnakeCase(functionName);

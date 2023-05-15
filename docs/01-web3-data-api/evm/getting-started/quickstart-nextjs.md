@@ -92,9 +92,7 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 
 ## Add Moralis to Your NextJS Dapp
 
-1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/): 
-
-![Admin Panel](/img/content/05df856-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp)
+1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/) by going to one of your existing project > Settings > Secrets > Copy one of your secrests.
 
 2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
 

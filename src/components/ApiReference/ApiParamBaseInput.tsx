@@ -75,18 +75,30 @@ const ApiParamBaseInput = ({
       onBlur={handleBlur}
     >
       {options ? (
-        <select {...fieldProps} className={inputClassName}>
+        <select
+          {...fieldProps}
+          className={inputClassName}
+          disabled={param?.disabled}
+        >
           <option />
           {options.map((option, index) => (
             <option key={index}>{String(option)}</option>
           ))}
         </select>
       ) : multiline ? (
-        <TextareaAutosize {...fieldProps} className={inputClassName} />
+        <TextareaAutosize
+          {...fieldProps}
+          className={inputClassName}
+          disabled={param?.disabled}
+        />
       ) : (
-        <input {...fieldProps} className={inputClassName} />
+        <input
+          {...fieldProps}
+          className={inputClassName}
+          disabled={param?.disabled}
+        />
       )}
-      {focused && (
+      {focused && !param?.disabled && (
         <ApiParamInputOverlay
           field={field}
           form={form}

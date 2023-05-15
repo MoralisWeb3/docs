@@ -21,6 +21,8 @@ import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import makeMetaDescription from "@site/src/utils/makeMetaDescription";
+import LoadingCircle from "@site/src/components/LoadingCircle";
+import { useLocation } from "@docusaurus/router";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -41,6 +43,7 @@ export interface ApiReferenceProps {
   codeSamples?: CodeSample[];
   children?: Component;
   aptosNetwork?: "mainnet" | "testnet";
+  disabled?: boolean;
 }
 
 export interface FormValues {
@@ -69,6 +72,38 @@ const deepCompact = (value: unknown) => {
   return value;
 };
 
+function isValidJsonString(s) {
+  try {
+    console.log(s);
+    JSON.parse(s);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+const queryParamsToObject = (search) => {
+  return search
+    ? search
+        .substring(1)
+        .split("&")
+        .reduce((acc, item) => {
+          const [key, value] = item.split("=");
+          if (isValidJsonString(value)) {
+            acc[key] = JSON.parse(value);
+          } else {
+            const decodedValue = decodeURIComponent(value);
+            if (isValidJsonString(decodedValue)) {
+              acc[key] = JSON.parse(decodedValue);
+            } else {
+              acc[key] = decodedValue;
+            }
+          }
+          return acc;
+        }, {})
+    : {};
+};
+
 const ApiReference = ({
   description,
   method,
@@ -81,6 +116,7 @@ const ApiReference = ({
   testHost,
   codeSamples,
   children,
+  disabled,
 }: ApiReferenceProps) => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -91,6 +127,8 @@ const ApiReference = ({
     () => (network === "mainnet" ? apiHost : testHost),
     [network]
   );
+  const location = useLocation();
+  const initialQueryValues = queryParamsToObject(location.search);
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -120,8 +158,8 @@ const ApiReference = ({
             headers: {
               accept: "application/json",
               "content-type": "application/json",
-              "X-API-Key": `${token?.length > 0 ? token : "TEST"}`,
-              Authorization: `Bearer ${token?.length > 0 ? token : "TEST"}`,
+              "X-API-Key": `${token?.length > 0 ? token : "test"}`,
+              Authorization: `Bearer ${token?.length > 0 ? token : "test"}`,
               "x-moralis-source": `api reference`,
               referer: "moralis.io",
             },
@@ -133,8 +171,6 @@ const ApiReference = ({
             ),
           }
         );
-
-        console.log(response);
 
         const fetchBody =
           path === "/nft/:address/sync" && response.status === 201
@@ -156,19 +192,42 @@ const ApiReference = ({
   );
 
   const initialValues = useMemo(() => {
-    const pathParam: ApiParam = pathParams && {
-      type: "object",
-      fields: pathParams,
-    };
-    const queryParam: ApiParam = queryParams && {
-      type: "object",
-      fields: queryParams,
-    };
-    return {
-      path: pathParam && apiParamInitialValue(pathParam),
-      query: queryParam && apiParamInitialValue(queryParam),
-      body: bodyParam && apiParamInitialValue(bodyParam),
-    };
+    if (Object.keys(initialQueryValues).length === 0) {
+      const pathParam: ApiParam = pathParams && {
+        type: "object",
+        fields: pathParams,
+      };
+      const queryParam: ApiParam = queryParams && {
+        type: "object",
+        fields: queryParams,
+      };
+
+      return {
+        path: pathParam && apiParamInitialValue(pathParam),
+        query: queryParam && apiParamInitialValue(queryParam),
+        body: bodyParam && apiParamInitialValue(bodyParam),
+      };
+    } else {
+      const path = {};
+      const query = {};
+      const body = {};
+      // return {};
+      for (const key in initialQueryValues) {
+        if (pathParams.some((item) => item?.name === key)) {
+          path[key] = initialQueryValues[key];
+        } else if (queryParams.some((item) => item?.name === key)) {
+          query[key] = initialQueryValues[key];
+        } else {
+          body[key] = initialQueryValues[key];
+        }
+      }
+
+      return {
+        path,
+        query,
+        body,
+      };
+    }
   }, [bodyParam, pathParams, queryParams]);
 
   const onChangeToken = useCallback(
@@ -298,11 +357,14 @@ const ApiReference = ({
                     className={styles.input}
                   />
 
-                  <ApiParamButton type="submit" disabled={loading}>
-                    Try It
+                  <ApiParamButton
+                    type="submit"
+                    disabled={disabled || loading}
+                    className={disabled ? "cursor-not-allowed" : ""}
+                  >
+                    {loading ? <LoadingCircle /> : "Try It"}
                   </ApiParamButton>
                 </div>
-
                 <ApiExamples
                   method={method}
                   apiHost={hostUrl}

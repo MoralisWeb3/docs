@@ -192,7 +192,7 @@ video {
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
 .col:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
   ) {
   display: none;
 }
@@ -200,13 +200,15 @@ video {
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
 li:has(
-    > a[href="/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net"]
+    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
   ) {
   display: none;
 }
 
 /* Hiding Google Unity tutorial sidebar elements*/
-li:has(> a[href="/authentication-api/integrations/google-cloud-nodejs-unity"]) {
+li:has(
+    > a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]
+  ) {
   display: none;
 }
 
@@ -483,6 +485,15 @@ li.sidebar-utils-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/utils-api-active.svg);
 }
 
+li.sidebar-market-data-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/market-data-api.svg);
+}
+
+li.sidebar-market-data-api a.menu__link:hover:before,
+li.sidebar-market-data-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/market-data-api-active.svg);
+}
+
 li.sidebar-api-reference a.menu__link:before {
   background-image: url(/img/sidebar-icons/api-reference.svg);
 }
@@ -582,4 +593,32 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
+}
+.cls-1 {
+  stroke-width: 1.4px;
+}
+.cls-1,
+.cls-2,
+.cls-3 {
+  fill: none;
+  stroke-linecap: round;
+}
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4 {
+  stroke: #6fc276;
+}
+.cls-1,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+.cls-2,
+.cls-3 {
+  fill-rule: evenodd;
+  stroke-width: 1.4px;
+}
+.cls-2,
+.cls-4 {
+  stroke-linejoin: round;
 }
