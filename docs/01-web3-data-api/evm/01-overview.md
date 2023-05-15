@@ -56,9 +56,7 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 | Binance Smart Chain Mainnet     | 56          | `EvmChain.BSC`            | Mainnet |
 | Binance Smart Chain Testnet     | 97          | `EvmChain.BSC_TESTNET`    | Testnet |
 | Avalanche C-Chain               | 43114       | `EvmChain.AVALANCHE`      | Mainnet |
-| Avalanche Fuji Testnet          | 43113       | `EvmChain.FUJI`           | Testnet |
 | Fantom                          | 250         | `EvmChain.FANTOM`         | Mainnet |
 | Cronos Mainnet                  | 25          | `EvmChain.CRONOS`         | Mainnet |
-| Cronos Testnet                  | 338         | `EvmChain.CRONOS_TESTNET` | Testnet |
 | Palm                            | 11297108109 | `EvmChain.PALM`           | Mainnet |
 | Arbitrum                        | 42161       | `EvmChain.ARBITRUM`       | Mainnet |
