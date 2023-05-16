@@ -390,7 +390,7 @@ const config = {
       },
     }),
   customFields: {
-    specialApiKey: process.env.SPECIAL_API_KEY,
+    specialApiKey: [],
   },
   plugins: [
     [
