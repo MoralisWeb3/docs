@@ -103,8 +103,6 @@ params = {
     "token_id": "1",
     "chain": "eth",
     "format": "decimal",
-    # "limit": 100,
-    # "cursor": "",
 }
 
 result = evm_api.nft.get_nft_transfers(
