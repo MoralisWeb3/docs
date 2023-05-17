@@ -42,7 +42,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const blockNumberOrHash = 15846571;
+  const blockNumberOrHash = "15846571";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -70,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const blockNumberOrHash = 15846571;
+  const blockNumberOrHash = "15846571";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -95,8 +95,6 @@ api_key = "YOUR_API_KEY"
 params = {
     "block_number_or_hash": "15846571",
     "chain": "eth",
-    #"limit": 100,
-    #"cursor": "",
 }
 
 result = evm_api.nft.get_nft_transfers_by_block(

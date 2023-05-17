@@ -44,7 +44,7 @@ const runApp = async () => {
 
   const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
 
-  const tokenId = 1;
+  const tokenId = "1";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -75,7 +75,7 @@ const runApp = async () => {
 
   const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
 
-  const tokenId = 1;
+  const tokenId = "1";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -103,8 +103,6 @@ params = {
     "token_id": "1",
     "chain": "eth",
     "format": "decimal",
-    # "limit": 100,
-    # "cursor": "",
 }
 
 result = evm_api.nft.get_nft_transfers(
