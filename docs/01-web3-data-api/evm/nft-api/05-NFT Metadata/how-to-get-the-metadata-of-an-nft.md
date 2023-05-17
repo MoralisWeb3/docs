@@ -47,7 +47,7 @@ const runApp = async () => {
 
   const chain = EvmChain.ETHEREUM;
 
-  const tokenId = 3931;
+  const tokenId = "3931";
 
   const response = await Moralis.EvmApi.nft.getNFTMetadata({
     address,
@@ -78,7 +78,7 @@ const runApp = async () => {
 
   const chain = EvmChain.ETHEREUM;
 
-  const tokenId = 3931;
+  const tokenId = "3931";
 
   const response = await Moralis.EvmApi.nft.getNFTMetadata({
     address,
