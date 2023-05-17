@@ -58,7 +58,7 @@ const runApp = async () => {
     historicalPrice.push(response?.toJSON());
   }
 
-  console.log(response.toJSON());
+  console.log(historicalPrice);
 };
 
 runApp();
@@ -93,7 +93,7 @@ const runApp = async () => {
     historicalPrice.push(response?.toJSON());
   }
 
-  console.log(response.toJSON());
+  console.log(historicalPrice);
 };
 
 runApp();
