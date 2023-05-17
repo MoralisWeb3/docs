@@ -42,7 +42,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const blockNumberOrHash = 15846571;
+  const blockNumberOrHash = "15846571";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -70,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const blockNumberOrHash = 15846571;
+  const blockNumberOrHash = "15846571";
 
   const chain = EvmChain.ETHEREUM;
 
