@@ -5,24 +5,8 @@ slug: /web3-data-api/evm/reference/get-wallet-token-transfers
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import Admonition from "@theme/Admonition";
-import Link from "@docusaurus/Link";
 import config from "../../../../../configs/api-reference/configs.json";
 
 # Get ERC20 token transfers by wallet
 
-<ApiReference {...config.token.getWalletTokenTransfers}>
-  <Admonition type="caution" title="Recommendation: Switch to New Endpoint">
-    <p>
-      We've introduced a more feature-rich and more performant version of this
-      API endpoint. While the existing endpoint will remain functional, we
-      encourage users to transition to the new one for an enhanced experience.
-    </p>
-    <p>
-      Go to new endpoint: {" "}
-      <Link href="/web3-data-api/reference/get-erc20-transfers">
-        /erc20/transfers
-      </Link>
-    </p>
-  </Admonition>
-</ApiReference>
+<ApiReference {...config.token.getWalletTokenTransfers} />
