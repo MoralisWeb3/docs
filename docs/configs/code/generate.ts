@@ -25,7 +25,6 @@ const generateCode = async () => {
             {
               language: "node",
               code: `import Moralis from 'moralis';
-import snakeToCamelCase from '@site/utils/snakeToCamelCase.mts';
 
 try {
   await Moralis.start({
