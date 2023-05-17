@@ -72,7 +72,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address =
+  const transactionHash =
     "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071";
 
   const chain = EvmChain.ETHEREUM;
@@ -97,7 +97,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071",
+    "transaction_hash": "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071",
     "chain": "eth",
 }
 
