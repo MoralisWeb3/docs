@@ -1,8 +1,9 @@
 ---
-title: "How to report spam ERC20 contracts"
-slug: "../how-to-report-erc20-spam"
-description: "Learn how to report spam ERC20 contracts using Moralis Utils API."
-sidebar_label: "Report spam ERC20 contracts"
+title: "How to report spam NFT contracts"
+slug: "../how-to-report-nft-spam"
+description: "Learn how to report spam NFT contracts using Moralis Utils API."
+sidebar_label: "Report spam NFT contracts"
+sidebar_position: 7
 ---
 
 ## Prerequisites
@@ -18,7 +19,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Report spam ERC20 contracts
+## Step 2: Report spam NFT contracts
 
 In order to run smart contract function, Moralis provides you a [contractsReview](/web3-data-api/evm/reference/contracts-review) endpoint to do so.
 
@@ -59,7 +60,7 @@ const runApp = async () => {
           reason,
           contractAddress,
           reportType: "spam",
-          contractType: "ERC20",
+          contractType: "NFT",
         },
       ],
     }
@@ -101,7 +102,7 @@ const runApp = async () => {
           reason,
           contractAddress,
           reportType: "spam",
-          contractType: "ERC20",
+          contractType: "NFT",
         },
       ],
     }
@@ -127,7 +128,7 @@ body = {
             "contract_address": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
             "reason": "My Reason",
             "report_type": "spam",
-            "contract_type": "ERC20"
+            "contract_type": "NFT"
         }
     ]
 }
@@ -160,7 +161,7 @@ In your terminal, you should see the following JSON response:
 { "message": "Submission successful" }
 ```
 
-Congratulations 🥳 You just report spam ERC20 contracts with just a few lines of code using the Moralis Utils API!
+Congratulations 🥳 You just report spam NFT contracts with just a few lines of code using the Moralis Utils API!
 
 ## API Reference
 
