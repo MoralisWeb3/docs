@@ -6767,4 +6767,14 @@ export const redirects = [
     destination: "/authentication-api/evm/reference/verify-remove-bind",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/evm/how-to-report-nft-spam",
+    destination: "/web3-data-api/evm/report-nft-spam",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/how-to-report-erc20-spam",
+    destination: "/web3-data-api/evm/report-erc20-spam",
+    permanent: true,
+  },
 ];
