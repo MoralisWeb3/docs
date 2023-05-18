@@ -1,6 +1,6 @@
 ---
 title: "How to report spam ERC20 contracts"
-slug: "../how-to-report-erc20-spam"
+slug: "../../how-to-report-erc20-spam"
 description: "Learn how to report spam ERC20 contracts using Moralis Utils API."
 sidebar_label: "Report Spam ERC20 Contracts"
 sidebar_position: 7

@@ -1,6 +1,6 @@
 ---
 title: "How to report spam NFT contracts"
-slug: "../how-to-report-nft-spam"
+slug: "../../how-to-report-nft-spam"
 description: "Learn how to report spam NFT contracts using Moralis Utils API."
 sidebar_label: "Report Spam NFT Contracts"
 sidebar_position: 7
