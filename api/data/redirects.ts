@@ -741,7 +741,7 @@ export const redirects = [
   },
   {
     source: "/docs/supabase-authentication",
-    destination: "/authentication-api/integrations/supabase-nodejs",
+    destination: "/authentication-api/evm/integrations/supabase-nodejs",
     permanent: true,
   },
   {
@@ -3686,12 +3686,12 @@ export const redirects = [
   },
   {
     source: "/docs/web3-supabase-authentication",
-    destination: "/authentication-api/integrations/supabase-nodejs",
+    destination: "/authentication-api/evm/integrations/supabase-nodejs",
     permanent: true,
   },
   {
     source: "/docs/supabase-1",
-    destination: "/authentication-api/integrations/supabase-nodejs",
+    destination: "/authentication-api/evm/integrations/supabase-nodejs",
     permanent: true,
   },
   {
@@ -6703,7 +6703,7 @@ export const redirects = [
   },
   {
     source: "/authentication-api/integrations/supabase-nodejs",
-    destination: "/authentication-api/integrations/supabase-nodejs",
+    destination: "/authentication-api/evm/integrations/supabase-nodejs",
     permanent: true,
   },
   {
