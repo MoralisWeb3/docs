@@ -1,6 +1,6 @@
 ---
 title: "Token ID Hashes"
-slug: "../../token-id-hashes"
+slug: "mohammadzahoor/Noori/token-id-hashes"
 sidebar_label: Token ID Hashes
 ---
 
