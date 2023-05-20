@@ -55,6 +55,7 @@ Moralis Web3 Data APIs are continuously adding new chains and integrations. Our 
 | Polygon Mumbai                  | 80001       | `EvmChain.MUMBAI`         | Testnet |
 | Binance Smart Chain Mainnet     | 56          | `EvmChain.BSC`            | Mainnet |
 | Binance Smart Chain Testnet     | 97          | `EvmChain.BSC_TESTNET`    | Testnet |
+| PHI Network                     | 144         | `EvmChain.PHI`            | Mainnet |
 | Avalanche C-Chain               | 43114       | `EvmChain.AVALANCHE`      | Mainnet |
 | Fantom                          | 250         | `EvmChain.FANTOM`         | Mainnet |
 | Cronos Mainnet                  | 25          | `EvmChain.CRONOS`         | Mainnet |
