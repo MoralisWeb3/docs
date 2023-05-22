@@ -5106,7 +5106,17 @@
           "description": "What fields the search should match on. To look into the entire metadata set the value to 'global'. To have a better response time you can look into a specific field like name",
           "required": false,
           "example": "name",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "name",
+            "description",
+            "attributes",
+            "global",
+            "name,description",
+            "name,attributes",
+            "description,attributes",
+            "name,description,attributes"
+          ]
         },
         {
           "name": "from_block",
