@@ -1,3 +1,4 @@
+import { set } from "lodash";
 import { useState } from "react";
 
 // Create JSDoc for useChatGPT hook
@@ -9,6 +10,7 @@ import { useState } from "react";
  */
 const useChatGPT = () => {
   const [answer, setAnswer] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   /**
    * @title generateAnswer
@@ -24,6 +26,7 @@ const useChatGPT = () => {
   const generateAnswer = async (query: string) => {
     try {
       setAnswer("");
+      setLoading(true);
 
       const response = await fetch("/api/gpt-preprocess", {
         method: "POST",
@@ -55,6 +58,9 @@ const useChatGPT = () => {
       if (!data) {
         return;
       }
+
+      setLoading(false);
+
       const reader = data.getReader();
       const decoder = new TextDecoder();
       let done = false;
@@ -67,10 +73,11 @@ const useChatGPT = () => {
       }
     } catch (e) {
       console.error(e);
+      setLoading(false);
     }
   };
 
-  return { answer, generateAnswer };
+  return { answer, generateAnswer, loading };
 };
 
 export default useChatGPT;

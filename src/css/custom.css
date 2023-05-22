@@ -96,6 +96,8 @@
   --docs-color-background-200: #efefef;
 
   --ifm-hr-background-color: var(--ifm-toc-border-color);
+
+  --ifm-z-index-fixed: 40;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
