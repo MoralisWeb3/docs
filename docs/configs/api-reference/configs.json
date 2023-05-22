@@ -542,7 +542,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -1302,7 +1303,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "direction",
@@ -1708,7 +1710,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -2170,7 +2173,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -2646,7 +2650,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -2888,7 +2893,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -3648,7 +3654,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "normalizeMetadata",
@@ -4059,7 +4066,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -4291,7 +4299,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "limit",
@@ -4700,7 +4709,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x60E4d786628Fea6478F785A6d7e704777c86a7c6",
           "type": "string"
         }
       ],
@@ -5083,7 +5092,8 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string"
+          "type": "string",
+          "enum": ["decimal", "hex"]
         },
         {
           "name": "q",
@@ -5096,7 +5106,17 @@
           "description": "What fields the search should match on. To look into the entire metadata set the value to 'global'. To have a better response time you can look into a specific field like name",
           "required": false,
           "example": "name",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "name",
+            "description",
+            "attributes",
+            "global",
+            "name,description",
+            "name,attributes",
+            "description,attributes",
+            "name,description,attributes"
+          ]
         },
         {
           "name": "from_block",
