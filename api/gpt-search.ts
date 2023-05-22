@@ -1,11 +1,10 @@
-import type { NextRequest } from "next/server";
 import { OpenAIStream } from "../utils/openAIStream";
 
 export const config = {
   runtime: "edge",
 };
 
-const handler = async (req: NextRequest): Promise<Response> => {
+const handler = async (req: Request): Promise<Response> => {
   try {
     console.log("Initial call");
 

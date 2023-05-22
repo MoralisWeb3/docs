@@ -23,6 +23,8 @@ const useChatGPT = () => {
    */
   const generateAnswer = async (query: string) => {
     try {
+      setAnswer("");
+
       const response = await fetch("/api/gpt-preprocess", {
         method: "POST",
         headers: {

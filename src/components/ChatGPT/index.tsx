@@ -7,7 +7,6 @@ import {
 } from "@site/src/components/ui/dialog";
 import ChatGPTLogo from "@site/static/img/chatgpt.webp";
 import useChatGPT from "@site/src/hooks/useChatGPT";
-import GPTResponse from "./GPTResponse";
 import ReactMarkdown from "react-markdown";
 
 export default function ChatGPT() {

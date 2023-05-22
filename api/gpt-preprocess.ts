@@ -150,7 +150,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     `;
 
     // Add prompt, sanitizedQuery, unsanitizedQuery to supabase DB
-    console.log(prompt);
+    // console.log(prompt);
 
     res.status(200).json({ prompt });
   } catch (err: unknown) {
