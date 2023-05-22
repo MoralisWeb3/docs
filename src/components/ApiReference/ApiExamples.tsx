@@ -310,6 +310,23 @@ const customNodeSdkBody = (code: string, body: any) => {
   }
 };
 
+function removeEmpty(jsonData) {
+  for (const key in jsonData) {
+    if (typeof jsonData[key] === "object" && jsonData[key] !== null) {
+      // if the property is an object
+      jsonData[key] = removeEmpty(jsonData[key]); // recursively repeat process for sub-object
+      if (Object.keys(jsonData[key]).length === 0) {
+        // if the object has no more properties (i.e., is empty)
+        delete jsonData[key]; // delete the object
+      }
+    } else if (Array.isArray(jsonData[key]) && jsonData[key].length === 0) {
+      // if the property is an empty array
+      delete jsonData[key]; // delete the array
+    }
+  }
+  return jsonData;
+}
+
 /**
  * @description – Only for NodeJS & Python Moralis SDK codes
  *
@@ -334,13 +351,13 @@ export const injectParamsToCode = (
         .replace(
           "{}",
           stringifyJSON(
-            {
+            removeEmpty({
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...formatParamsByLang({ ...body }, lang),
               ...customNodeSdkBody(code, body),
               ...(network === "aptos" ? { network: aptosNetwork } : {}),
-            },
+            }),
             true
           ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
         )
@@ -351,11 +368,11 @@ export const injectParamsToCode = (
         .replace(
           "{}",
           stringifyJSON(
-            {
+            removeEmpty({
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
               ...(network === "aptos" ? { network: aptosNetwork } : {}),
-            },
+            }),
             true
           )
         )
@@ -363,6 +380,8 @@ export const injectParamsToCode = (
           "[]",
           stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
         )
+        .replace("true", "True")
+        .replace("false", "False")
         .replace(/YOUR_API_KEY/, auth);
   }
 };
