@@ -24,7 +24,7 @@ export default function ChatGPT() {
       <DialogTrigger asChild>
         <Avatar>
           <AvatarImage src={ChatGPTLogo} alt="ChatGPT" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback>GPT</AvatarFallback>
         </Avatar>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[768px] sm:min-h-[300px]">
