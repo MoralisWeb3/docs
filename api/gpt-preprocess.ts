@@ -100,7 +100,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const [{ embedding }] = (await embeddingResponse.json()).data;
 
     const { data = [], error: matchError } = await supabaseClient
-      .from("page_section")
+      .from("page_section_duplicate")
       .select();
     (data ?? []).sort((a, b) => {
       const aDotProduct = cosSimilarity(a?.embedding, embedding);

@@ -261,18 +261,16 @@ async function generateEmbeddings() {
   console.log(`Discovered ${markdownFiles.length} pages`);
   console.log("Checking which pages are new or have changed");
 
-  for (const markdownFile of markdownFiles.slice(120, 125)) {
+  for (const markdownFile of markdownFiles) {
     const path = markdownFile.replace(/^pages/, "").replace(/\.mdx?$/, "");
     try {
       const contents = await readFile(markdownFile, "utf8");
 
       const { checksum, meta, sections } = processMdxForSearch(contents);
 
-      console.log(sections);
-
       // Check for existing page in DB and compare checksums
       const { error: fetchPageError, data: existingPage } = await supabaseClient
-        .from("page")
+        .from("page_duplicate")
         .select()
         .filter("path", "eq", path)
         .limit(1)
@@ -295,7 +293,7 @@ async function generateEmbeddings() {
         );
 
         const { error: deletePageSectionError } = await supabaseClient
-          .from("page_section")
+          .from("page_section_duplicate")
           .delete()
           .filter("page_id", "eq", existingPage.id);
 
@@ -307,7 +305,7 @@ async function generateEmbeddings() {
       // Create/update page record. Intentionally clear checksum until we
       // have successfully generated all page sections.
       const { error: upsertPageError, data: page } = await supabaseClient
-        .from("page")
+        .from("page_duplicate")
         .upsert({ checksum: null, path, meta }, { onConflict: "path" })
         .select()
         .limit(1)
@@ -342,7 +340,7 @@ async function generateEmbeddings() {
           const [responseData] = embeddingResponse.data.data;
 
           const { error: insertPageSectionError } = await supabaseClient
-            .from("page_section")
+            .from("page_section_duplicate")
             .insert({
               page_id: page.id,
               content: section,
@@ -371,7 +369,7 @@ async function generateEmbeddings() {
 
       // Set page checksum so that we know this page was stored successfully
       const { error: updatePageError } = await supabaseClient
-        .from("page")
+        .from("page_duplicate")
         .update({ checksum })
         .filter("id", "eq", page.id);
 
