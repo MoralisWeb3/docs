@@ -16,7 +16,7 @@ After Web3 wallet authentication, the **[next-auth](https://next-auth.js.org/)**
 
 Once the user is logged in, they will be able to visit a page that displays all their user data.
 
-You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_auth>.
+You can find the repository with the final code [here](https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_auth).
 
 ![The above shows what the user will see once they log in using their wallet.](/img/content/9094178-1bc0b65-Untitled.webp)
 

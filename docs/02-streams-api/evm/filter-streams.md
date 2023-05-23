@@ -26,13 +26,13 @@ In some cases you might want to filter the data you receive from the webhook. Yo
 
 - `moralis_streams_contract_address` - for identifying current contract address that emits an event, example `{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}` (note: the address has to be in lowercase)
 - `moralis_streams_chain_id` - for identifying current chain for current event, example `{eq: ['moralis_streams_chain_id', '0x1']}`
-- `moralis_streams_possibleSpam` - for filtering on `possibleSpam` (read more about [possibleSpam](/streams-api/evm/spam-detection) here) events, example `{eq: [moralis_streams_possibleSpam: "false"]}`  to filter out events that are possible spam
+- `moralis_streams_possibleSpam` - for filtering on `possibleSpam` (read more about [possibleSpam](/streams-api/evm/spam-detection) here) events, example `{eq: [moralis_streams_possibleSpam: "false"]}` to filter out events that are possible spam
 
-| Special Variable                 | Info                                                                                                    | Example                                                                                    |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `moralis_streams_contract_address` | For identifying current contract address that emits an event (note: the address has to be in lowercase) | `{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}` |
-| `moralis_streams_chain_id`         | For identifying current chain for current event                                                         | `{eq: ['moralis_streams_chain_id', '0x1']} `                                               |     |
-| `moralis_streams_possibleSpam` | For filtering on `possibleSpam` (read more about [possibleSpam](/streams-api/evm/spam-detection) here) events | `{eq: [moralis_streams_possibleSpam: "false"]}` |
+| Special Variable                   | Info                                                                                                          | Example                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --- |
+| `moralis_streams_contract_address` | For identifying current contract address that emits an event (note: the address has to be in lowercase)       | `{eq: ['moralis_streams_contract_address', '0x0000000000000000000000000000000000000000']}` |
+| `moralis_streams_chain_id`         | For identifying current chain for current event                                                               | `{eq: ['moralis_streams_chain_id', '0x1']} `                                               |     |
+| `moralis_streams_possibleSpam`     | For filtering on `possibleSpam` (read more about [possibleSpam](/streams-api/evm/spam-detection) here) events | `{eq: [moralis_streams_possibleSpam: "false"]}`                                            |
 
 ### Here is an example of applying different filters for different contract addresses
 

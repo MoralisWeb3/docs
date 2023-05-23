@@ -7,7 +7,7 @@ description: "This tutorial will teach you how Moralis authentication works and 
 
 In this tutorial, we show you how to create a full-stack Django app that allows users to log in using their Web3 wallets, and Django will create a session associated with the individual user. Once logged in, the user can visit a page that displays all their user data.
 
-You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/django_moralis_auth>.
+You can find the repository with the final code [here](https://github.com/MoralisWeb3/demo-apps/tree/main/django_moralis_auth).
 
 ![Asking the User to Log In Using Their Wallet](/img/content/11b4975-91a339b-auth_login_django.webp)
 

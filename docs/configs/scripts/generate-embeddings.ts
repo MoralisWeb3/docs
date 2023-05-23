@@ -133,11 +133,9 @@ function processMdxForSearch(content: string): ProcessedMdx {
   const meta = extractMetaExport(mdxTree);
 
   // Remove all MDX elements from markdown
-  const mdTree = filter(mdxTree, (node) => {
-    if (node.type === "mdxJsxFlowElement") {
-      console.log(node);
-    }
-    return (
+  const mdTree = filter(
+    mdxTree,
+    (node) =>
       ![
         "mdxjsEsm",
         "mdxJsxTextElement",
@@ -152,8 +150,7 @@ function processMdxForSearch(content: string): ProcessedMdx {
           node?.name === "RunTheScript"
         )
       )
-    );
-  });
+  );
 
   for (let i = 0; i < mdTree.children.length; i++) {
     const node = mdTree.children[i];
@@ -203,7 +200,7 @@ function processMdxForSearch(content: string): ProcessedMdx {
 
   const sectionTrees = splitTreeBy(mdTree, (node) => node.type === "heading");
 
-  const sections = []; // sectionTrees.map((tree) => toMarkdown(tree));
+  const sections = sectionTrees.map((tree) => toMarkdown(tree));
 
   return {
     checksum,
@@ -264,12 +261,14 @@ async function generateEmbeddings() {
   console.log(`Discovered ${markdownFiles.length} pages`);
   console.log("Checking which pages are new or have changed");
 
-  for (const markdownFile of markdownFiles) {
+  for (const markdownFile of markdownFiles.slice(120, 125)) {
     const path = markdownFile.replace(/^pages/, "").replace(/\.mdx?$/, "");
     try {
       const contents = await readFile(markdownFile, "utf8");
 
       const { checksum, meta, sections } = processMdxForSearch(contents);
+
+      console.log(sections);
 
       // Check for existing page in DB and compare checksums
       const { error: fetchPageError, data: existingPage } = await supabaseClient

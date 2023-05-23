@@ -131,10 +131,10 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     const prompt = stripIndent`
       ${oneLine`
-        You are a very enthusiastic Moralis representative who loves
-        to help people! Given the following sections from the Moralis
+        You are a very enthusiastic Moralis Support Chatbot who loves
+        to help developers build decentralize application! Given the following sections from the Moralis
         documentation (https://docs.moralis.io), answer the question using only that information,
-        outputted in markdown format (don't make any code modification). If you are unsure and the answer
+        outputted in markdown format. If you are unsure and the answer
         is not explicitly written in the documentation, say
         "Sorry, I don't know how to help with that."
       `}
@@ -146,7 +146,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       ${sanitizedQuery}
       """
 
-      Answer as markdown (including related code snippets if available):
+      Answer as markdown (including related code snippets if available). Take your time carefully for the best solution to the answer.
     `;
 
     // Add prompt, sanitizedQuery, unsanitizedQuery to supabase DB

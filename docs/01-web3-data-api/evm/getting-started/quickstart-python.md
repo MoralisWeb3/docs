@@ -391,4 +391,4 @@ result = streams.evm.add_address_to_stream(
 print(result)
 ```
 
-You can check here the syntax for all the other functions from the Python SDK: <https://moralisweb3.github.io/Moralis-Python-SDK/>
+You can check here the syntax for all the other functions from the [Python SDK](https://moralisweb3.github.io/Moralis-Python-SDK/)

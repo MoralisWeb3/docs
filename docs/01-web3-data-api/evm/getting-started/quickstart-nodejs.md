@@ -77,7 +77,7 @@ app.listen(port, () => {
 ```
 
 3. Run the server by calling `npm run start`.
-4. Make sure that the server runs by going to [<http://localhost:3000`>](http://localhost:3000`). It should show "Hello World!".
+4. Make sure that the server runs by going to [http://localhost:3000](http://localhost:3000). It should show "Hello World!".
 
 ## Add Moralis to Your Dapp
 

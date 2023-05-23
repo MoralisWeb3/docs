@@ -7,7 +7,7 @@ description: "This tutorial will teach you how to set up a NextJS dapp that can 
 
 This tutorial shows you how to create a basic NextJS dapp that uses the [@moralisweb3/next](https://www.npmjs.com/package/@moralisweb3/next) to display native balance.
 
-You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs>
+You can find the repository with the final code [here](https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs)
 
 ![](/img/content/b66bc70-image.webp)
 
@@ -159,6 +159,6 @@ export default HomePage;
 
 
 
-2. Now, let's receive and use the props in our server-side Visit the [<http://localhost:3000`>](<http://localhost:3000/native`>) page to see the results:
+2. Now, let's receive and use the props in our server-side Visit the [http://localhost:3000](http://localhost:3000/native) page to see the results:
 
 ![The `useEvmNativeBalance()` response](/img/content/46867dc-image.webp)

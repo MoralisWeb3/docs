@@ -7,7 +7,7 @@ description: "This tutorial teaches you how to add NFT gated functionality to yo
 
 This tutorial shows you how to create a NextJS dapp containing NFT gated functionality. We will create a protected page that's only accessible to users who authenticate and own at least one NFT from the specified NFT collection.
 
-You can find the repository with the final code here: <https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_nft_gating>.
+You can find the repository with the final code [here](https://github.com/MoralisWeb3/demo-apps/tree/main/nextjs_moralis_nft_gating).
 
 ![If User Fulfills Requirements - This is the Landing Page](/img/content/dfc9bf3-81e82ad-Untitled.webp)
 
