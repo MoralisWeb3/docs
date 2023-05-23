@@ -133,17 +133,65 @@ function processMdxForSearch(content: string): ProcessedMdx {
   const meta = extractMetaExport(mdxTree);
 
   // Remove all MDX elements from markdown
-  const mdTree = filter(
-    mdxTree,
-    (node) =>
+  const mdTree = filter(mdxTree, (node) => {
+    if (node.type === "mdxJsxFlowElement") {
+      console.log(node);
+    }
+    return (
       ![
         "mdxjsEsm",
-        "mdxJsxFlowElement",
         "mdxJsxTextElement",
         "mdxFlowExpression",
         "mdxTextExpression",
-      ].includes(node.type)
-  );
+      ].includes(node.type) &&
+      !(
+        node.type === "mdxJsxFlowElement" &&
+        !(
+          node?.name === "Tabs" ||
+          node?.name === "TabItem" ||
+          node?.name === "RunTheScript"
+        )
+      )
+    );
+  });
+
+  for (let i = 0; i < mdTree.children.length; i++) {
+    const node = mdTree.children[i];
+    if (node.type === "mdxJsxFlowElement") {
+      if (node.name === "Tabs") {
+        mdTree.children.splice(
+          i,
+          1,
+          ...node.children.map((child) => child.children[0])
+        );
+      } else if (node.name === "RunTheScript") {
+        mdTree.children.splice(
+          i,
+          1,
+          ...[
+            {
+              type: "code",
+              lang: "shell",
+              value: "node index.js",
+              meta: "Shell (JavaScript)",
+            },
+            {
+              type: "code",
+              lang: "shell",
+              value: "ts-node index.ts",
+              meta: "Shell (TypeScript)",
+            },
+            {
+              type: "code",
+              lang: "shell",
+              value: "python index.py",
+              meta: "Shell (Python)",
+            },
+          ]
+        );
+      }
+    }
+  }
 
   if (!mdTree) {
     return {
@@ -155,7 +203,7 @@ function processMdxForSearch(content: string): ProcessedMdx {
 
   const sectionTrees = splitTreeBy(mdTree, (node) => node.type === "heading");
 
-  const sections = sectionTrees.map((tree) => toMarkdown(tree));
+  const sections = []; // sectionTrees.map((tree) => toMarkdown(tree));
 
   return {
     checksum,
