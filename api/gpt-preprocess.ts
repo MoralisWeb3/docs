@@ -150,7 +150,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       
       1. Include code snippets, if available. If the programming language is not specified, then provide the code snippets in JavaScript.
       2. Include links to the documentation, if available.
-      3. Inquiries about supported chains should include all supported EVM chains, Aptos chains, and Solana networks. Answer must be presented as bullet points.
+      3. When asked about supported chains, it should include all EVM chains, Aptos chains, and Solana networks that Moralis supported. Answer must be presented as bullet points.
       
       Take your time carefully to construct the best solution to the answer that satisfy all the given requirements.
     `;
