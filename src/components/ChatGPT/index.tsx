@@ -20,6 +20,7 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@site/src/components/ui/alert";
+import remarkGfm from "remark-gfm";
 
 export default function ChatGPT() {
   const [query, setQuery] = useState<string>("");
