@@ -145,7 +145,9 @@ export default function ChatGPT() {
                     <span className="sr-only">Loading...</span>
                   </div>
                 )}
-                <ReactMarkdown>{answer}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {answer}
+                </ReactMarkdown>
               </ScrollArea>
             )}
           </div>
