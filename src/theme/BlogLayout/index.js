@@ -12,8 +12,6 @@ export default function BlogLayout(props) {
   const subscribe = useQueryStringValue("subscribe");
   const { toast } = useToast();
 
-  const succesUrl = window.location.href + "?subscribe=true";
-
   useEffect(() => {
     if (subscribe) {
       setTimeout(() => {
@@ -42,7 +40,7 @@ export default function BlogLayout(props) {
               <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
                 <h2 className="sr-only">Sign up for our newsletter</h2>
                 <form
-                  action={`https://eu.customerioforms.com/forms/submit_action?site_id=6c69e3929c946a3eee81&form_id=445866b47b20460&success_url=${succesUrl}`}
+                  action={`https://eu.customerioforms.com/forms/submit_action?site_id=6c69e3929c946a3eee81&form_id=445866b47b20460&success_url=${window.location.href}?subscribe=true"`}
                   method="post"
                   className="flex flex-wrap -mx-2"
                 >
