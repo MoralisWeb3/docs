@@ -5,12 +5,18 @@ import { useLocation } from "@docusaurus/router";
 import Timeline from "@site/src/components/Timeline";
 import { useQueryStringValue } from "@docusaurus/theme-common/internal";
 import { useToast } from "@site/src/components/ui/use-toast";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 export default function BlogLayout(props) {
   const { pathname } = useLocation();
   const { sidebar, toc, children, ...layoutProps } = props;
   const subscribe = useQueryStringValue("subscribe");
   const { toast } = useToast();
+  const { withBaseUrl } = useBaseUrlUtils();
+
+  const succesUrl = withBaseUrl("/changelog?subscribe=true", {
+    absolute: true,
+  });
 
   useEffect(() => {
     if (subscribe) {
@@ -40,7 +46,7 @@ export default function BlogLayout(props) {
               <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
                 <h2 className="sr-only">Sign up for our newsletter</h2>
                 <form
-                  action={`https://eu.customerioforms.com/forms/submit_action?site_id=6c69e3929c946a3eee81&form_id=445866b47b20460&success_url=${window.location.href}?subscribe=true"`}
+                  action={`https://eu.customerioforms.com/forms/submit_action?site_id=6c69e3929c946a3eee81&form_id=445866b47b20460&success_url=${succesUrl}`}
                   method="post"
                   className="flex flex-wrap -mx-2"
                 >
