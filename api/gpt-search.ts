@@ -23,7 +23,7 @@ const handler = async (req: Request): Promise<Response> => {
     const completionOptions = {
       model: "text-davinci-003",
       prompt,
-      max_tokens: 512,
+      max_tokens: 2048,
       temperature: 0,
       stream: true,
     };
