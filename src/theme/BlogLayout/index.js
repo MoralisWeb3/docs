@@ -26,22 +26,10 @@ export default function BlogLayout(props) {
   return (
     <Layout {...layoutProps}>
       <div className="container margin-vert--lg" style={{ maxWidth: "42rem" }}>
-        <a
-          onClick={() => {
-            toast({
-              title: "Scheduled: Catch up",
-              description: "Friday, February 10, 2023 at 5:57 PM",
-            });
-          }}
-        >
-          Show Toast
-        </a>
         {pathname === "/changelog" ? (
           <div>
             <header className="py-16 sm:text-center">
-              <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
-                Latest Updates
-              </h1>
+              <h1>Latest Updates</h1>
               <p className="text-lg">
                 All the latest Moralis updates, straight from the team.
                 <br />
