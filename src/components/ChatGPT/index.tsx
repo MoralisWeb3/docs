@@ -20,15 +20,18 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@site/src/components/ui/alert";
+import remarkGfm from "remark-gfm";
 
 export default function ChatGPT() {
   const [query, setQuery] = useState<string>("");
   const { answer, generateAnswer, loading } = useChatGPT();
 
   const suggetions = [
-    "How do I get started with Moralis?",
+    "How do I get started with Moralis in NodeJS?",
     "What chains does Moralis support?",
     "How do I get an API key?",
+    "How to get all NFTs of a wallet address using Python?",
+    "How to get started with Streams API?",
   ];
 
   const handleSuggestion = (e) => {
@@ -138,7 +141,9 @@ export default function ChatGPT() {
                   <span className="sr-only">Loading...</span>
                 </div>
               )}
-              <ReactMarkdown>{answer}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {answer}
+              </ReactMarkdown>
             </ScrollArea>
           )}
           <Alert>
