@@ -150,7 +150,10 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       
       1. Include code snippets, if available. If the programming language is not specified, then provide the code snippets in JavaScript.
       2. Include links to the documentation, if available.
-      3. When asked about supported chains, it should include all EVM chains, Aptos chains, and Solana networks that Moralis supported. Answer must be presented as bullet points.
+      3. Include supported chains only when it is asked. If the question is not related to chains, then do not include the supported chains.
+      4. Include all EVM chains, Aptos chains, and Solana networks that Moralis supported when the supported networks are inquiried. Answer must be presented as bullet points.
+      Only mention networks that are supported by Moralis.
+      5. Do not include any code when the question is about getting the Moralis API key.
       
       Take your time carefully to construct the best solution to the answer that satisfy all the given requirements.
     `;
