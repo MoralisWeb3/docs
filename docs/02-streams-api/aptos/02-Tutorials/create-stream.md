@@ -65,7 +65,7 @@ If you do not want to listen to allAddresses that emit specific events or call s
 
 ## Via Admin Panel
 
-1. Go to <http://admin.moralis.io/streams>.
+1. Go to [http://admin.moralis.io/streams](http://admin.moralis.io/streams).
 
 2. Click on **Create a new Stream** button.
    ![](/img/content/streams-aptos-1.webp)

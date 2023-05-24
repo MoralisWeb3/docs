@@ -635,7 +635,7 @@ serverless offline start
 
 ![](/img/content/e93d805-image.webp)
 
-To test, navigate to [<http://localhost:3000`>](http://localhost:3000`) in your browser:
+To test, navigate to [http://localhost:3000](http://localhost:3000) in your browser:
 
 ![](/img/content/c401071-image.webp)
 

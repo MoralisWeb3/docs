@@ -87,7 +87,7 @@ export class BalancesComponent implements OnInit {
 }
 ```
 
-9. Run the command `npm run start` and open <http://localhost:4200/balances> in your browser. It should look like:
+9. Run the command `npm run start` and open [http://localhost:4200/balances](http://localhost:4200/balances) in your browser. It should look like:
 
 ![](/img/content/6b15392-Angular_Your_First_Dapp_1.webp)
 

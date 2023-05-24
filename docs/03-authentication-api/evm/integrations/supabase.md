@@ -79,8 +79,6 @@ Now, we can get `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE` from the Supabase das
 
 Note that `SUPABASE_SERVICE_ROLE` is the service role that has the ability to bypass the RLS. Never share it publicly or use it on the client side.
 
-<!-- Insert image for api keys -->
-
 ![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.webp "Screenshot 2022-08-17 at 22.46.59.webp")
 
 The Moralis SDK must also be initialized:
@@ -269,4 +267,4 @@ const getUser = async (token) => {
 
 
 
-The complete code of the authentication flow is available on GitHub: <https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/supabase-auth>.
+The complete code of the authentication flow is available on [GitHub](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/demos/supabase-auth).

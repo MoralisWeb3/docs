@@ -106,7 +106,7 @@ You can now test your new project in the emulator:
 firebase emulators:start
 ```
 
-While the emulator is running, you can test your dapp on [<http://localhost:5000>](http://localhost:5000) in your browser. The _5000_ port is set by default; if you have chosen a different port, replace it with your own.
+While the emulator is running, you can test your dapp on [http://localhost:5000](http://localhost:5000) in your browser. The _5000_ port is set by default; if you have chosen a different port, replace it with your own.
 
 ## Backend App
 
