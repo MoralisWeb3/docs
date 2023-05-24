@@ -100,7 +100,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const [{ embedding }] = (await embeddingResponse.json()).data;
 
     const { data = [], error: matchError } = await supabaseClient
-      .from("page_section_duplicate")
+      .from("page_section")
       .select();
     (data ?? []).sort((a, b) => {
       const aDotProduct = cosSimilarity(a?.embedding, embedding);
@@ -146,7 +146,9 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       ${sanitizedQuery}
       """
 
-      Answer as markdown (including related code snippets if available). Take your time carefully for the best solution to the answer.
+      Answer as markdown and include code snippets, if available. If the programming language is not specified, then provide the code snippets in JavaScript.
+      
+      Take your time carefully for the best solution to the answer.
     `;
 
     // Add prompt, sanitizedQuery, unsanitizedQuery to supabase DB
