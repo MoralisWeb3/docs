@@ -90,9 +90,10 @@ export default function ChatGPT() {
                 <p className="text-sm text-gray-500 mb-4">
                   Some questions to try
                 </p>
-                {suggetions.map((suggetion) => {
+                {suggetions.map((suggetion, index) => {
                   return (
                     <Button
+                      key={index}
                       variant="subtle"
                       size="sm"
                       className="mr-3 mb-3"
