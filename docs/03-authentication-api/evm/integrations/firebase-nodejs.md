@@ -35,7 +35,7 @@ Open the converter and load your certificate. The app will return processed valu
 We are now ready to run the CLI command.
 
 ```Text CLI
-firebase ext:install moralis/moralis-auth
+firebase ext:install moralis/moralis-auth@latest
 ```
 
 
