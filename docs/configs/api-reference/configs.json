@@ -5472,6 +5472,14 @@
           ]
         },
         {
+          "name": "include",
+          "description": "If the result should contain the 24hr percent change",
+          "required": false,
+          "example": "percent_change",
+          "type": "string",
+          "enum": ["percent_change"]
+        },
+        {
           "name": "exchange",
           "description": "The factory name or address of the token exchange",
           "required": false,
