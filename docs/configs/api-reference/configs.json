@@ -5320,6 +5320,108 @@
     }
   },
   "token": {
+    "getMultipleTokenPrices": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Get Multiple ERC20 token prices",
+      "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address",
+      "method": "POST",
+      "path": "/erc20/prices",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        },
+        {
+          "name": "include",
+          "description": "If the result should contain the 24hr percent change",
+          "required": false,
+          "example": "percent_change",
+          "type": "string",
+          "enum": ["percent_change"]
+        }
+      ],
+      "bodyParam": {
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to be fetched",
+            "example": [
+              { "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7" },
+              { "token_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" },
+              {
+                "token_address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+                "exchange": "uniswapv2",
+                "to_block": "16314545"
+              },
+              { "token_address": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0" }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The contract address",
+                  "example": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+                },
+                {
+                  "name": "exchange",
+                  "type": "string",
+                  "description": "The exchange",
+                  "example": "uniswapv3"
+                },
+                {
+                  "name": "to_block",
+                  "type": "string",
+                  "description": "The block number",
+                  "example": 16314545
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address"
+        }
+      ]
+    },
     "getTokenPrice": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get ERC20 token price",
