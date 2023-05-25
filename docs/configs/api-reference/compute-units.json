@@ -131,6 +131,13 @@
       "rateLimitCost": 1
     },
     {
+      "endpoint": "getMultipleTokenPrices",
+      "path": "/erc20/prices",
+      "price": 10,
+      "rateLimitCost": 5,
+      "dynamic": true
+    },
+    {
       "endpoint": "getTokenPrice",
       "path": "/erc20/{address}/price",
       "price": 10,

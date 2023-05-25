@@ -29,6 +29,7 @@ const DynamicPriceUnits = {
   getHistoricalCoinBalancesByWallets: "owner_addresses",
   getWalletNFTTransfers: "owner_addresses",
   getNFTByWalletAddresses: "owner_addresses",
+  getMultipleTokenPrices: "tokens",
 };
 
 const ComputeUnitsTable = ({ chain }): JSX.Element => {
@@ -53,7 +54,7 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
             <tr key={`${endpoint}-${index}`}>
               <td>
                 <a
-                  href={`/web3-data-api/reference/${camelToSnakeCase(
+                  href={`/web3-data-api/${chain}/reference/${camelToSnakeCase(
                     endpoint
                   )}`}
                 >
