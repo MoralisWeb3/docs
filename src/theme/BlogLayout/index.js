@@ -94,7 +94,7 @@ export default function BlogLayout(props) {
             <div className="row ml-1">
               <Link href="/changelog">Go Back</Link>
             </div>
-            <div className="row justify-center h-screen">
+            <div className="row justify-center">
               <main className="col" itemScope itemType="http://schema.org/Blog">
                 {children}
               </main>
