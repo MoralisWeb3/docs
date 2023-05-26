@@ -20,8 +20,9 @@ In the event that no `exchange` value is specified, the API will proceed to syst
 
 # Which endpoints is integrated with the supported DEXs?
 
-We have integrated the supported DEXs on an endpoint:
+We have integrated the supported DEXs on two endpoints:
 
-| Name                                                            | Endpoint                |
-| :-------------------------------------------------------------- | :---------------------- |
-| [Get token price](/web3-data-api/evm/reference/get-token-price) | `/erc20/:address/price` |
+| Name                                                                                          | Endpoint                |
+| :-------------------------------------------------------------------------------------------- | :---------------------- |
+| [Get Get Multiple ERC20 token prices](/web3-data-api/evm/reference/get-multiple-token-prices) | `/erc20/prices`         |
+| [Get ERC20 token price](/web3-data-api/evm/reference/get-token-price)                         | `/erc20/:address/price` |
