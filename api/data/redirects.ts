@@ -6791,4 +6791,9 @@ export const redirects = [
       "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/evm/supported-dexs",
+    destination: "/web3-data-api/evm/supported-dexs-token-api",
+    permanent: true,
+  },
 ];

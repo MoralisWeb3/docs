@@ -1,6 +1,6 @@
 ---
 title: "Supported DEXs"
-slug: "../supported-dexs"
+slug: "../supported-dexs-token-api"
 sidebar_position: 5
 ---
 

@@ -100,16 +100,64 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-    "rank": "1",
+    "rank": 1,
     "token_name": "Wrapped Ether",
     "token_symbol": "WETH",
-    "token_logo": "1",
+    "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
     "token_decimals": "18",
     "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "price_usd": "0.0285",
-    "price_24h_percent_change": "0.0285",
-    "price_7d_percent_change": "0.0285",
-    "market_cap_usd": "0.0285"
+    "price_usd": "1803.89",
+    "price_24h_percent_change": "1.43",
+    "price_7d_percent_change": "0.01",
+    "market_cap_usd": "214188093967"
+  },
+  {
+    "rank": 2,
+    "token_name": "Tether USD",
+    "token_symbol": "USDT",
+    "token_logo": "https://cdn.moralis.io/eth/0xdac17f958d2ee523a2206206994597c13d831ec7.png",
+    "token_decimals": "6",
+    "contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "price_usd": "1",
+    "price_24h_percent_change": "0",
+    "price_7d_percent_change": "0.01",
+    "market_cap_usd": "83063097247"
+  },
+  {
+    "rank": 3,
+    "token_name": "BNB",
+    "token_symbol": "BNB",
+    "token_logo": "https://market-data-images.s3.us-east-1.amazonaws.com/tokenImages/0xe9950d9ad217dbd35c1f5790eb0d21bd461729c754928e550c1f497c3182bc75.png",
+    "token_decimals": "18",
+    "contract_address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+    "price_usd": "302.06",
+    "price_24h_percent_change": "-0.73",
+    "price_7d_percent_change": "-2.35",
+    "market_cap_usd": "48009547905"
+  },
+  {
+    "rank": 4,
+    "token_name": "USD Coin",
+    "token_symbol": "USDC",
+    "token_logo": "https://cdn.moralis.io/eth/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.png",
+    "token_decimals": "6",
+    "contract_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "price_usd": "1",
+    "price_24h_percent_change": "0.02",
+    "price_7d_percent_change": "-0.1",
+    "market_cap_usd": "29140112792"
+  },
+  {
+    "rank": 5,
+    "token_name": "iearn USDC v2",
+    "token_symbol": "yUSDCv2",
+    "token_logo": "https://cdn.moralis.io/eth/0xd6ad7a6750a7593e092a9b218d66c0a814a3436e.png",
+    "token_decimals": "6",
+    "contract_address": "0xd6ad7a6750a7593e092a9b218d66c0a814a3436e",
+    "price_usd": "0.999891",
+    "price_24h_percent_change": "0.01",
+    "price_7d_percent_change": "-0.11",
+    "market_cap_usd": "29140112792"
   }
 ]
 ```

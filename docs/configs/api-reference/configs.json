@@ -41,8 +41,8 @@
                 {
                   "name": "token_logo",
                   "type": "string",
-                  "example": "1",
-                  "description": "The rank",
+                  "example": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+                  "description": "The token logo",
                   "required": true
                 },
                 {
