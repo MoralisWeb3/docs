@@ -4,7 +4,7 @@ slug: "../supported-dexs"
 sidebar_position: 5
 ---
 
-The Moralis Token API is integrated with an extensive range of Decentralized Exchanges (DEXs), operating across numerous EVM blockchains. A comprehensive list of these supported DEXs is presented in the subsequent table for your reference.
+The Moralis DeFi API is integrated with an extensive range of Decentralized Exchanges (DEXs), operating across numerous EVM blockchains. A comprehensive list of these supported DEXs is presented in the subsequent table for your reference.
 
 | Chain       | Supported DEX(s)                          |
 | ----------- | ----------------------------------------- |
@@ -20,9 +20,10 @@ In the event that no `exchange` value is specified, the API will proceed to syst
 
 # Which endpoints is integrated with the supported DEXs?
 
-We have integrated the supported DEXs on two endpoints:
+We have integrated the supported DEXs on an endpoint:
 
-| Name                                                                                          | Endpoint                |
-| :-------------------------------------------------------------------------------------------- | :---------------------- |
-| [Get Multiple ERC20 token prices](/web3-data-api/evm/reference/get-multiple-token-prices) | `/erc20/prices`         |
-| [Get ERC20 token price](/web3-data-api/evm/reference/get-token-price)                         | `/erc20/:address/price` |
+| Name | Endpoint |
+| :--- | :------- |
+
+| [Get DEX token pair address
+](/web3-data-api/evm/reference/get-pair-address) | `/:token0_address/:token1_address/pairAddress` |

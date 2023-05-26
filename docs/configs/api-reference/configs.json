@@ -1,7 +1,6 @@
 {
   "market-data": {
     "getTopERC20TokensByMarketCap": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by market cap",
@@ -107,7 +106,6 @@
       ]
     },
     "getTopERC20TokensByPriceMovers": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by price change",
@@ -298,7 +296,6 @@
       ]
     },
     "getTopNFTCollectionsByMarketCap": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top NFT collections",
       "description": "Get the top NFT collections by market cap",
@@ -396,10 +393,9 @@
       ]
     },
     "getHottestNFTCollectionsByTradingVolume": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get hottest NFT collections",
-      "description": "Get the hottest NFT collections by trading volume",
+      "summary": "Get top NFT collections",
+      "description": "Get the top NFT collections by trading volume",
       "method": "GET",
       "path": "/market-data/nfts/hottest-collections",
       "pathParams": [],
@@ -407,7 +403,7 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the hottest NFT collections by trading volume",
+          "description": "Returns the top NFT collections by trading volume",
           "body": {
             "type": "array",
             "field": {
@@ -10519,7 +10515,6 @@
   },
   "ipfs": {
     "uploadFolder": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Upload folder to IPFS",
       "description": "Upload multiple files to IPFS and place them in a folder directory. To use the API, [sign up to Moralis](https://admin.moralis.io/register) and get your API key from the dashboard.\n",
