@@ -117,7 +117,7 @@ Congratulations 🥳 you just got the top NFT collections by trading volume usin
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume)
+- [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
 
 ## Support
 
