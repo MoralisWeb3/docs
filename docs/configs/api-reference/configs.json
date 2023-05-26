@@ -5402,7 +5402,21 @@
                   "name": "exchange",
                   "type": "string",
                   "description": "The exchange",
-                  "example": "uniswapv3"
+                  "example": "uniswapv3",
+                  "enum": [
+                    "uniswapv2",
+                    "uniswapv3",
+                    "sushiswapv2",
+                    "pancakeswapv1",
+                    "pancakeswapv2",
+                    "quickswap",
+                    "quickswapv2",
+                    "traderjoe",
+                    "pangolin",
+                    "spookyswap",
+                    "vvs",
+                    "camelotv2"
+                  ]
                 },
                 {
                   "name": "to_block",
