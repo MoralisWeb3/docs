@@ -22,31 +22,33 @@ const ApiParamArrayField = ({
       )}
 
       <div className={styles.group}>
-        {[...field.value].map((value, index) => (
-          <div key={index} className={styles.field}>
-            <div className={styles.group}>
-              <div className={styles.groupHeader}>
-                <button
-                  type="button"
-                  onClick={() =>
-                    form.setFieldValue(field.name, [
-                      ...field.value.slice(0, index),
-                      ...field.value.slice(index + 1),
-                    ])
-                  }
-                >
-                  -
-                </button>{" "}
-                {param.name}[{index}]
-              </div>
+        {(Array.isArray(field.value) ? [...field.value] : []).map(
+          (value, index) => (
+            <div key={index} className={styles.field}>
+              <div className={styles.group}>
+                <div className={styles.groupHeader}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      form.setFieldValue(field.name, [
+                        ...field.value.slice(0, index),
+                        ...field.value.slice(index + 1),
+                      ])
+                    }
+                  >
+                    -
+                  </button>{" "}
+                  {param.name}[{index}]
+                </div>
 
-              <ApiParamField
-                param={param.field}
-                prefix={`${field.name}[${index}]`}
-              />
+                <ApiParamField
+                  param={param.field}
+                  prefix={`${field.name}[${index}]`}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
 
         <button
           type="button"
