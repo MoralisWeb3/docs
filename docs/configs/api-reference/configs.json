@@ -10475,7 +10475,13 @@
             "sushiswapv2",
             "pancakeswapv1",
             "pancakeswapv2",
-            "quickswap"
+            "quickswap",
+            "quickswapv2",
+            "traderjoe",
+            "pangolin",
+            "spookyswap",
+            "vvs",
+            "camelotv2"
           ]
         }
       ],
