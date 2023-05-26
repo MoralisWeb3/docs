@@ -2,7 +2,7 @@
 title: "Spam Detection"
 slug: "../../erc20-spam-detection"
 description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ERC20 spam detection is designed to provide an extra layer of protection and help you easily identify possible spam contracts.
