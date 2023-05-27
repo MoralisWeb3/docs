@@ -21,19 +21,4 @@ The table with the number of comfirmation required for Moralis to consider a blo
 
 In rare cases the webhook with `confirmed: true` may come before the one with `confirmed:false`, please ensure to handle this scenario on your end.
 
-## Verify Webhooks
 
-The Webhook will set a `x-signature` in the header. It is for verifying if the data you will receive is from Moralis. Essentially it is a hash (sha3) of the body and your API Key.
-
-You can verify the webhook with the following code:
-
-```javascript
-import Moralis from "moralis";
-
-const { headers, body } = request;
-
-Moralis.Streams.verifySignature({
-  body,
-  signature: headers["x-signature"],
-}); // throws error if not valid
-```
