@@ -11,25 +11,30 @@ You have to return status code 200 for the stream to start.
 The test body will look like this:
 
 ```json
-{  
-  "abi": {},  
-  "block": {  
-    "hash": "",  
-    "number": "",  
-    "timestamp": ""  
-  },  
-  "txs": \[],  
-  "txsInternal": \[],  
-  "logs": \[],  
-  "chainId": "",  
-  "tag": "",  
-  "streamId": : "",  
-  "confirmed": true,  
-  "retries": 0,  
-  "erc20Approvals": \[],  
-  "erc20Transfers": \[],  
-  "nftApprovals": \[ ERC721: \[], ERC1155: \[] ],  
-  "nftTransfers": \[]  
+{
+  "abi": [],
+  "block": {
+    "number": "",
+    "hash": "",
+    "timestamp": ""
+  },
+  "txs": [],
+  "txsInternal": [],
+  "logs": [],
+  "chainId": "",
+  "confirmed": true,
+  "retries": 0,
+  "tag": "",
+  "streamId": "",
+  "erc20Approvals": [],
+  "erc20Transfers": [],
+  "nftTokenApprovals": [],
+  "nftApprovals": {
+    "ERC721": [],
+    "ERC1155": []
+  },
+  "nftTransfers": [],
+  "nativeBalances": []
 }
 ```
 
