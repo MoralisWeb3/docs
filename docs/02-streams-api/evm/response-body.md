@@ -6,46 +6,6 @@ sidebar_position: 10
 
 The body contains the data you are interested in. Logs is in array containing raw events and stream information such as tag and the streamId. The body also contains a chainId, the blocknumber, internal transactions, the abis and a confirmed field that indicates if the block is confirmed.
 
-## How to verify the signature for the received webhook request
-
-In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret is the web3api key for your account.
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs groupId="programming-language">
-  <TabItem value="javascript" label="index.js (JavaScript)" default>
-
-```javascript
-const verifySignature = (req, secret) => {
-
-    const providedSignature = req.headers["x-signature"]
-    if(!providedSignature) throw new Error("Signature not provided")
-    const generatedSignature= web3.utils.sha3(JSON.stringify(req.body)+secret)
-    if(generatedSignature !== providedSignature) throw new Error("Invalid Signature")
-
-}
-```
-
-</TabItem>
-<TabItem value="python" label="index.py (Python)">
-
-```python Python
-def verify_Signature(req, secret):
-    provided_signature = req.headers.get("x-signature")
-    if not provided_signature:
-        raise TypeError("Signature not provided")
-    
-    data = req.data+secret.encode()
-    signature = Web3.sha3(data).hex()
-    
-    if provided_signature != signature: 
-        raise ValueError("Invalid Signature")
-```
-
-</TabItem>
-</Tabs>
-
 ## Native transaction
 
 For native transaction you have to set `Native Transactions (txs)` in admin interface when you create or update a Stream. Or you can set `includeNativeTxs` to true if you are using the swagger interface directly or the SDK.
