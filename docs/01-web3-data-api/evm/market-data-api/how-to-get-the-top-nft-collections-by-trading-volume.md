@@ -1,8 +1,8 @@
 ---
-title: "How to get the hottest NFT collections by trading volume"
-slug: "../../how-to-get-the-hottest-nft-collections-by-trading-volume"
-description: "Learn how to get the hottest NFT collections by trading volume using Market Data API."
-sidebar_label: "Get the hottest NFT collections by trading volume"
+title: "How to get the top NFT collections by trading volume"
+slug: "../../how-to-get-the-top-nft-collections-by-trading-volume"
+description: "Learn how to get the top NFT collections by trading volume using Market Data API."
+sidebar_label: "Get the top NFT collections by trading volume"
 sidebar_position: 3
 ---
 
@@ -19,9 +19,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the hottest NFT collections by trading volume
+## Step 2: Get the top NFT collections by trading volume
 
-In order to get the hottest NFT collections by trading volume, Moralis provides you with a [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top NFT collections by trading volume, Moralis provides you with a [getHottestNFTCollectionsByTradingVolume](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -111,13 +111,13 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳 you just got the hottest NFT collections by trading volume using Market Data API!
+Congratulations 🥳 you just got the top NFT collections by trading volume using Market Data API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume)
+- [getHottestNFTCollectionsByTradingVolume](web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
 
 ## Support
 

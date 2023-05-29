@@ -6777,4 +6777,23 @@ export const redirects = [
     destination: "/web3-data-api/evm/report-erc20-spam",
     permanent: true,
   },
+  {
+    source:
+      "/web3-data-api/how-to-get-the-hottest-nft-collections-by-trading-volume",
+    destination:
+      "/web3-data-api/how-to-get-the-top-nft-collections-by-trading-volume",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume",
+    destination:
+      "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/supported-dexs",
+    destination: "/web3-data-api/evm/supported-dexs-token-api",
+    permanent: true,
+  },
 ];

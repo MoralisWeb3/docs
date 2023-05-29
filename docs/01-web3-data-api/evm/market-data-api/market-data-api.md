@@ -15,7 +15,7 @@ Our Market Data API allows you to explore the latest trends in NFT collections, 
 - [ERC20 top movers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)
 - [ERC20 top 50 tokens](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
 - [Top NFT collections by market cap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
-- [Hot NFT collections by trading volume](/web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume)
+- [Hot NFT collections by trading volume](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
 
 ## Example use cases
 

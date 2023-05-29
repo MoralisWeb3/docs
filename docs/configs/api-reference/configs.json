@@ -1,7 +1,6 @@
 {
   "market-data": {
     "getTopERC20TokensByMarketCap": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by market cap",
@@ -42,8 +41,8 @@
                 {
                   "name": "token_logo",
                   "type": "string",
-                  "example": "1",
-                  "description": "The rank",
+                  "example": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+                  "description": "The token logo",
                   "required": true
                 },
                 {
@@ -107,7 +106,6 @@
       ]
     },
     "getTopERC20TokensByPriceMovers": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top ERC20 tokens",
       "description": "Get the top ERC20 tokens by price change",
@@ -298,7 +296,6 @@
       ]
     },
     "getTopNFTCollectionsByMarketCap": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get top NFT collections",
       "description": "Get the top NFT collections by market cap",
@@ -396,10 +393,9 @@
       ]
     },
     "getHottestNFTCollectionsByTradingVolume": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get hottest NFT collections",
-      "description": "Get the hottest NFT collections by trading volume",
+      "summary": "Get top NFT collections",
+      "description": "Get the top NFT collections by trading volume",
       "method": "GET",
       "path": "/market-data/nfts/hottest-collections",
       "pathParams": [],
@@ -407,7 +403,7 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the hottest NFT collections by trading volume",
+          "description": "Returns the top NFT collections by trading volume",
           "body": {
             "type": "array",
             "field": {
@@ -5402,7 +5398,20 @@
                   "name": "exchange",
                   "type": "string",
                   "description": "The exchange",
-                  "example": "uniswapv3"
+                  "enum": [
+                    "uniswapv2",
+                    "uniswapv3",
+                    "sushiswapv2",
+                    "pancakeswapv1",
+                    "pancakeswapv2",
+                    "quickswap",
+                    "quickswapv2",
+                    "traderjoe",
+                    "pangolin",
+                    "spookyswap",
+                    "vvs",
+                    "camelotv2"
+                  ]
                 },
                 {
                   "name": "to_block",
@@ -5425,7 +5434,7 @@
     "getTokenPrice": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Get ERC20 token price",
-      "description": "Get the token price denominated in the blockchain's native token and USD.",
+      "description": "Get the token price denominated in the blockchain's native token and USD. [View supported exchanges here](/web3-data-api/evm/supported-dexs).",
       "method": "GET",
       "path": "/erc20/:address/price",
       "pathParams": [
@@ -5481,17 +5490,22 @@
         },
         {
           "name": "exchange",
-          "description": "The factory name or address of the token exchange",
+          "description": "The factory name or address of the token exchange. [View supported exchanges here](/web3-data-api/evm/supported-dexs)",
           "required": false,
-          "example": "uniswap-v2",
           "type": "string",
           "enum": [
-            "uniswap-v2",
-            "uniswap-v3",
-            "sushiswap-v2",
-            "pancakeswap-v1",
-            "pancakeswap-v2",
-            "quickswap"
+            "uniswapv2",
+            "uniswapv3",
+            "sushiswapv2",
+            "pancakeswapv1",
+            "pancakeswapv2",
+            "quickswap",
+            "quickswapv2",
+            "traderjoe",
+            "pangolin",
+            "spookyswap",
+            "vvs",
+            "camelotv2"
           ]
         },
         {
@@ -10455,7 +10469,13 @@
             "sushiswapv2",
             "pancakeswapv1",
             "pancakeswapv2",
-            "quickswap"
+            "quickswap",
+            "quickswapv2",
+            "traderjoe",
+            "pangolin",
+            "spookyswap",
+            "vvs",
+            "camelotv2"
           ]
         }
       ],
@@ -10493,7 +10513,6 @@
   },
   "ipfs": {
     "uploadFolder": {
-      "disabled": true,
       "apiHost": "https://deep-index.moralis.io/api/v2",
       "summary": "Upload folder to IPFS",
       "description": "Upload multiple files to IPFS and place them in a folder directory. To use the API, [sign up to Moralis](https://admin.moralis.io/register) and get your API key from the dashboard.\n",
