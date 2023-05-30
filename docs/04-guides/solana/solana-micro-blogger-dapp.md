@@ -1,6 +1,6 @@
 ---
 title: "Solana Micro Blogger Dapp"
-slug: "solana-micro-blogger-dapp"
+slug: "/guides/solana-micro-blogger-dapp"
 description: "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis"
 ---
 ## Introduction

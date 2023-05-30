@@ -553,7 +553,7 @@ npm install moralis playfab-sdk
 This section describes how to set up a Unity application and connect to PlayFab and enable secure Web3 authentication using the Moralis SDK.
 
 :::info 
-Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/example-dapps/evm/web3-unity-multiplayer-playground).
+Currently this sample project only showcase how to call the **Authentication API functions**. To see how to call other functions implemented in this guide (like NFT or EVM related), check this more advanced [project](/guides/web3-unity-multiplayer-playground).
 :::
 
 1. Download as ZIP and extract the [Moralis PlayFab Unity demo project](https://github.com/MoralisWeb3/demo-unity-moralis-auth-via-playfab):

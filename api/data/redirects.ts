@@ -14,7 +14,7 @@ export const redirects = [
   { source: "/docs/undefined", destination: "/", permanent: true },
   {
     source: "/docs/nextjs-nft-gated-website",
-    destination: "/example-dapps/evm/token-gating-website-nextjs",
+    destination: "/guides/token-gating-website-nextjs",
     permanent: true,
   },
   {
@@ -711,7 +711,7 @@ export const redirects = [
   },
   {
     source: "/docs/aws-lambda-unreal-5",
-    destination: "/example-dapps/evm/unreal-5-get-web3-data",
+    destination: "/guides/unreal-5-get-web3-data",
     permanent: true,
   },
   {
@@ -751,7 +751,7 @@ export const redirects = [
   },
   {
     source: "/docs/nft-gating-nextjs",
-    destination: "/example-dapps/evm/token-gating-website-nextjs",
+    destination: "/guides/token-gating-website-nextjs",
     permanent: true,
   },
   {
@@ -761,57 +761,57 @@ export const redirects = [
   },
   {
     source: "/docs/nft-gating-django",
-    destination: "/example-dapps/evm/token-gating-website-django",
+    destination: "/guides/token-gating-website-django",
     permanent: true,
   },
   {
     source: "/docs/web3-multiplayer-playground",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
     source: "/docs/solana-nft-minter",
-    destination: "/example-dapps/solana/solana-nft-minter",
+    destination: "/guides/solana-nft-minter",
     permanent: true,
   },
   {
     source: "/docs/solana-nft-burner",
-    destination: "/example-dapps/solana/solana-nft-burner",
+    destination: "/guides/solana-nft-burner",
     permanent: true,
   },
   {
     source: "/docs/solana-nft-explorer",
-    destination: "/example-dapps/solana/solana-nft-explorer",
+    destination: "/guides/solana-nft-explorer",
     permanent: true,
   },
   {
     source: "/docs/solana-micro-blogger-dapp",
-    destination: "/example-dapps/solana/solana-micro-blogger-dapp",
+    destination: "/guides/solana-micro-blogger-dapp",
     permanent: true,
   },
   {
     source: "/docs/solana-multiplayer-game-tictactoe",
-    destination: "/example-dapps/solana/solana-multiplayer-game-tictactoe",
+    destination: "/guides/solana-multiplayer-game-tictactoe",
     permanent: true,
   },
   {
     source: "/docs/blockchain-discord-bot",
-    destination: "/example-dapps/evm/blockchain-discord-bot",
+    destination: "/guides/blockchain-discord-bot",
     permanent: true,
   },
   {
     source: "/docs/web3-social-media",
-    destination: "/example-dapps/evm/web3-social-media",
+    destination: "/guides/web3-social-media",
     permanent: true,
   },
   {
     source: "/docs/live-desktop-crypto-notifications",
-    destination: "/example-dapps/evm/live-crypto-notifications",
+    destination: "/guides/live-crypto-notifications",
     permanent: true,
   },
   {
     source: "/docs/how-to-build-zapperfi",
-    destination: "/example-dapps/evm/zapper-clone",
+    destination: "/guides/zapper-clone",
     permanent: true,
   },
   {
@@ -1275,7 +1275,7 @@ export const redirects = [
   },
   {
     source: "/docs/nft-gated-website-in-django",
-    destination: "/example-dapps/evm/token-gating-website-django",
+    destination: "/guides/token-gating-website-django",
     permanent: true,
   },
   {
@@ -2167,7 +2167,7 @@ export const redirects = [
   },
   {
     source: "/docs/nextjs-nft-gated-website",
-    destination: "/example-dapps/evm/token-gating-website-nextjs",
+    destination: "/guides/token-gating-website-nextjs",
     permanent: true,
   },
   {
@@ -2242,7 +2242,7 @@ export const redirects = [
   },
   {
     source: "/docs/nft-gated-website-in-django",
-    destination: "/example-dapps/evm/token-gating-website-django",
+    destination: "/guides/token-gating-website-django",
     permanent: true,
   },
   {
@@ -2257,7 +2257,7 @@ export const redirects = [
   },
   {
     source: "/docs/unity-demos",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
@@ -3078,7 +3078,7 @@ export const redirects = [
   },
   {
     source: "/page/unity-demos",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
@@ -3378,7 +3378,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-web3-game",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
@@ -3413,12 +3413,12 @@ export const redirects = [
   },
   {
     source: "/unity",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
     source: "/unity/",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
@@ -3696,17 +3696,17 @@ export const redirects = [
   },
   {
     source: "/docs/web3-tutorials",
-    destination: "/example-dapps/evm",
+    destination: "/guides",
     permanent: true,
   },
   {
     source: "/docs/metaverse-game",
-    destination: "/example-dapps/evm/web3-unity-multiplayer-playground",
+    destination: "/guides/web3-unity-multiplayer-playground",
     permanent: true,
   },
   {
     source: "/docs/nft-gating",
-    destination: "/example-dapps/evm/token-gating-website-nextjs",
+    destination: "/guides/token-gating-website-nextjs",
     permanent: true,
   },
   {
@@ -3736,7 +3736,7 @@ export const redirects = [
   },
   {
     source: "/tutorials/nft-game-course",
-    destination: "/example-dapps/evm",
+    destination: "/guides",
     permanent: true,
   },
   {
@@ -4586,7 +4586,7 @@ export const redirects = [
   },
   {
     source: "/docs/examples",
-    destination: "/example-dapps/evm",
+    destination: "/guides",
     permanent: true,
   },
   {
