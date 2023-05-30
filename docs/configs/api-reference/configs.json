@@ -1307,7 +1307,8 @@
           "description": "The transfer direction",
           "required": false,
           "example": "both",
-          "type": "string"
+          "type": "string",
+          "enum": ["both", "from", "to"]
         },
         {
           "name": "from_block",
