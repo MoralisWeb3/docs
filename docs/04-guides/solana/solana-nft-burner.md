@@ -1,6 +1,6 @@
 ---
 title: "Solana NFT Burner"
-slug: "solana-nft-burner"
+slug: "/guides/solana-nft-burner"
 description: "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API."
 ---
 ## Introduction
@@ -11,7 +11,7 @@ Once complete, you can use this dapp to burn spam or unwanted NFTs from your wal
 
 #### Why Does Burning Solana NFTs Give You Solana Tokens Back?
 
-Solana blockchain has this concept called "Rent" that should be paid every time we store data in the Solana account. When we [mint new NFTs](/example-dapps/solana/solana-nft-minter) we pay the rent through a transaction fee. 
+Solana blockchain has this concept called "Rent" that should be paid every time we store data in the Solana account. When we [mint new NFTs](/guides/solana-nft-minter) we pay the rent through a transaction fee. 
 
 When we burn NFTs, the Solana program returns back the remaining rent in the NFT account to the current NFT owner. So, even by burning spam or unwanted NFTs, we can recover some Solana tokens from NFT accounts.  
 

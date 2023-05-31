@@ -1,6 +1,6 @@
 ---
 title: "Solana Multiplayer Game - TicTacToe"
-slug: "solana-multiplayer-game-tictactoe"
+slug: "/guides/solana-multiplayer-game-tictactoe"
 description: "This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and Moralis"
 ---
 ## Introduction

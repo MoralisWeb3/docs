@@ -164,8 +164,8 @@ If you want to know more details on the endpoint and optional parameters, check 
 
 Learn how to use the Moralis NFT API to build dapps:
 
-- [NFT-Gated Website NodeJS](/example-dapps/evm/token-gating-website-nextjs)
-- [NFT-Gated Website (Django)](/example-dapps/evm/token-gating-website-django)
+- [NFT-Gated Website NodeJS](/guides/token-gating-website-nextjs)
+- [NFT-Gated Website (Django)](/guides/token-gating-website-django)
 
 ## Support
 
