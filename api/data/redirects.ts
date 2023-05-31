@@ -3237,11 +3237,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/guides",
-    destination: "/web3-data-api/evm/getting-started/",
-    permanent: true,
-  },
-  {
     source: "/reference/getnftsforcontract-1",
     destination: "/web3-data-api/evm/reference/get-contract-nfts",
     permanent: true,
