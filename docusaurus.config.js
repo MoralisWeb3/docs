@@ -214,9 +214,9 @@ const config = {
           },
           {
             type: "doc",
-            docId: "example-dapps/evm/evm",
+            docId: "guides/evm/evm",
             position: "right",
-            label: "Demos",
+            label: "Guides",
           },
           {
             type: "dropdown",

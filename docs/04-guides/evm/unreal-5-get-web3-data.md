@@ -1,6 +1,6 @@
 ---
 title: "Unreal 5 Get Web3 Data"
-slug: "unreal-5-get-web3-data"
+slug: "/guides/unreal-5-get-web3-data"
 description: "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes."
 ---
 ## Introduction
@@ -51,10 +51,16 @@ This is the blueprint holding most of the logic of this sample game.
 
 Zoom out to visualize and locate **4 important areas**:
 
-1. [**Manage Input**](#manage-input)
-2. [**Construct Request Body**](#construct-request-body)
-3. [**Get Native Balance**](#get-native-balance)
-4. [**Get Wallet NFTs**](#get-wallet-nfts)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Open sample game](#open-sample-game)
+- [Setting up](#setting-up)
+  - [Manage input](#manage-input)
+  - [Construct request body](#construct-request-body)
+  - [Get Native Balance](#get-native-balance)
+  - [Get Wallet NFTs](#get-wallet-nfts)
+  - [Saving changes](#saving-changes)
+- [Play the game](#play-the-game)
 
 ![](/img/content/0d0bd99-image.webp)
 
