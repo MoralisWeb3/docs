@@ -22,44 +22,58 @@ Every request will return a cursor that can be used to get the next result until
 ## NodeJS example
 
 ```javascript
-import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/common-evm-utils";
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const chain = EvmChain.ETHEREUM;
-
-const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
-
-await Moralis.start({
-  apiKey: "YOUR_API_KEY",
-  // ...and any other configuration
-});
-
-let cursor = null;
-let owners = {};
-do {
-  const response = await Moralis.EvmApi.nft.getNFTOwners({
-    address,
-    chain,
-    limit: 100,
-    cursor: cursor,
+const init = async () => {
+  const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
+  const chain = EvmChain.ETHEREUM;
+  await Moralis.start({
+    apiKey: "MORALIS_API_KEY",
+    // ...and any other configuration
   });
-  console.log(
-    `Got page ${response.page} of ${Math.ceil(
-      response.total / response.page_size
-    )}, ${response.total} total`
-  );
-  for (const owner of response.result) {
-    owners[owner.owner_of] = {
-      amount: owner.amount,
-      owner: owner.owner_of,
-      tokenId: owner.token_id,
-      tokenAddress: owner.token_address,
-    };
-  }
-  cursor = response.cursor;
-} while (cursor != "" && cursor != null);
 
-console.log("owners:", owners, "total owners:", Object.keys(owners).length);
+  let cursor = null;
+  let owners = {};
+  do {
+    const response = await Moralis.EvmApi.nft.getNFTOwners({
+      address,
+      chain,
+      limit: 100,
+      cursor: cursor,
+      disableTotal: false,
+    });
+    console.log(
+      `Got page ${response.pagination.page} of ${Math.ceil(
+        response.pagination.total / response.pagination.pageSize
+      )}, ${response.pagination.total} total`
+    );
+    for (const NFT of response.result) {
+      if (NFT.ownerOf.checksum in owners) {
+        owners[NFT.ownerOf.checksum].push({
+          amount: NFT.amount,
+          owner: NFT.ownerOf,
+          tokenId: NFT.tokenId,
+          tokenAddress: NFT.tokenAddress,
+        });
+      } else {
+        owners[NFT.ownerOf.checksum] = [
+          {
+            amount: NFT.amount,
+            owner: NFT.ownerOf,
+            tokenId: NFT.tokenId,
+            tokenAddress: NFT.tokenAddress,
+          },
+        ];
+      }
+    }
+    cursor = response.pagination.cursor;
+  } while (cursor != "" && cursor != null);
+
+  console.log("owners:", owners, "total owners:", Object.keys(owners).length);
+};
+
+init();
 ```
 
 ## Python example
