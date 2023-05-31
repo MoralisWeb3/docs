@@ -9,11 +9,7 @@ import ChatGPTLogo from "@site/static/img/chatgpt.webp";
 import useChatGPT from "@site/src/hooks/useChatGPT";
 import ReactMarkdown from "react-markdown";
 import { ScrollArea } from "@site/src/components/ui/scroll-area";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@site/src/components/ui/avatar";
+import { Avatar, AvatarImage } from "@site/src/components/ui/avatar";
 import { Microscope, Bot } from "lucide-react";
 import {
   Alert,

@@ -214,7 +214,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "guides/evm/evm",
+            docId: "guides/overview",
             position: "right",
             label: "Guides",
           },
