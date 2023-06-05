@@ -80,9 +80,15 @@ const guidesList = [
 const Guides = () => {
   return (
     <>
-      {badgeList.map((name) => (
-        <Badge variant="outline">{name}</Badge>
-      ))}
+      <div className="container">
+        <div className="row">
+          {badgeList.map((name) => (
+            <Badge variant="outline" className="cursor-pointer mr-3">
+              {name}
+            </Badge>
+          ))}
+        </div>
+      </div>
       <div className="grid gap-4 grid-cols-3 mt-4">
         {guidesList.map(({ title, link }) => (
           <Card>
