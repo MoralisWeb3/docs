@@ -83,19 +83,21 @@ const Guides = () => {
       {badgeList.map((name) => (
         <Badge variant="outline">{name}</Badge>
       ))}
-      {guidesList.map(({ title, link }) => (
-        <Card>
-          <CardHeader>
-            <CardTitle>{title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>Card Content</p>
-          </CardContent>
-          <CardFooter>
-            <Link href={link}>Read More</Link>
-          </CardFooter>
-        </Card>
-      ))}
+      <div className="grid gap-4 grid-cols-3 mt-4">
+        {guidesList.map(({ title, link }) => (
+          <Card>
+            <CardHeader>
+              <h2>{title}</h2>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+              <Link href={link}>Read More</Link>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     </>
   );
 };
