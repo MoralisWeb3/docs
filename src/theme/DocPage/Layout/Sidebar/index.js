@@ -31,11 +31,12 @@ export default function DocPageLayoutSidebar({
     setHiddenSidebarContainer((value) => !value);
   }, [setHiddenSidebarContainer, hiddenSidebar]);
   return (
-    !pathname.includes("/guides") && (
+    pathname !== "/guides" && (
       <aside
         className={clsx(
           ThemeClassNames.docs.docSidebarContainer,
           styles.docSidebarContainer,
+          !pathname.includes("/guides") && styles.docSidebarContainerBorder,
           hiddenSidebarContainer && styles.docSidebarContainerHidden
         )}
         onTransitionEnd={(e) => {
@@ -54,13 +55,19 @@ export default function DocPageLayoutSidebar({
               hiddenSidebar && styles.sidebarViewportHidden
             )}
           >
-            <DocSidebar
-              sidebar={sidebar}
-              path={pathname}
-              onCollapse={toggleSidebar}
-              isHidden={hiddenSidebar}
-            />
-            {hiddenSidebar && <ExpandButton toggleSidebar={toggleSidebar} />}
+            {!pathname.includes("/guides") && (
+              <>
+                <DocSidebar
+                  sidebar={sidebar}
+                  path={pathname}
+                  onCollapse={toggleSidebar}
+                  isHidden={hiddenSidebar}
+                />
+                {hiddenSidebar && (
+                  <ExpandButton toggleSidebar={toggleSidebar} />
+                )}
+              </>
+            )}
           </div>
         </ResetOnSidebarChange>
       </aside>
