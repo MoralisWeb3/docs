@@ -2,6 +2,7 @@
 title: "Solana NFT Explorer"
 slug: "/guides/solana-nft-explorer"
 description: "Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding."
+tags: [Solana API, NFT API, Demos]
 ---
 ## Introduction
 

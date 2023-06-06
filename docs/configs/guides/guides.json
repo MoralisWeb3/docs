@@ -5,7 +5,7 @@
       "title": "Automated Blockchain Telegram Bot",
       "slug": "/guides/automated-blockchain-telegram-bot",
       "description": "This tutorial teaches you how to create an automated web3 telegram bot that listens to blockchain events and sends real-time notifications.",
-      "tags": ["Streams"]
+      "tags": ["Streams", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -15,7 +15,8 @@
     "data": {
       "title": "Blockchain Discord Bot",
       "slug": "/guides/blockchain-discord-bot",
-      "description": "This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications."
+      "description": "This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications.",
+      "tags": ["Streams", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -25,7 +26,8 @@
     "data": {
       "title": "Live Crypto Notifications",
       "slug": "/guides/live-crypto-notifications",
-      "description": "This tutorial teaches you how to use the Streams API to display live desktop notifications for any USDT transfers."
+      "description": "This tutorial teaches you how to use the Streams API to display live desktop notifications for any USDT transfers.",
+      "tags": ["Streams", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -35,7 +37,8 @@
     "data": {
       "title": "Token Gating Website (NextJS)",
       "slug": "/guides/token-gating-website-nextjs",
-      "description": "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!"
+      "description": "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!",
+      "tags": ["NFT API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -45,7 +48,8 @@
     "data": {
       "title": "Solana Micro Blogger Dapp",
       "slug": "/guides/solana-micro-blogger-dapp",
-      "description": "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis"
+      "description": "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis",
+      "tags": ["Authentication API", "Solana API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -55,7 +59,8 @@
     "data": {
       "title": "Solana Multiplayer Game - TicTacToe",
       "slug": "/guides/solana-multiplayer-game-tictactoe",
-      "description": "This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and Moralis"
+      "description": "This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and Moralis",
+      "tags": ["Solana API", "Authentication API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -65,7 +70,8 @@
     "data": {
       "title": "Solana NFT Burner",
       "slug": "/guides/solana-nft-burner",
-      "description": "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API."
+      "description": "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API.",
+      "tags": ["Solana API", "NFT API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -75,7 +81,8 @@
     "data": {
       "title": "Solana NFT Explorer",
       "slug": "/guides/solana-nft-explorer",
-      "description": "Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding."
+      "description": "Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding.",
+      "tags": ["Solana API", "NFT API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -85,7 +92,8 @@
     "data": {
       "title": "Solana NFT Minter",
       "slug": "/guides/solana-nft-minter",
-      "description": "This tutorial teaches you how to create your very own NFT minter dapp in NextJS using Metaplex JavaScript SDK, and the Moralis API."
+      "description": "This tutorial teaches you how to create your very own NFT minter dapp in NextJS using Metaplex JavaScript SDK, and the Moralis API.",
+      "tags": ["Solana API", "NFT API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -95,7 +103,8 @@
     "data": {
       "title": "Token Gating Website (Django)",
       "slug": "/guides/token-gating-website-django",
-      "description": "This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT."
+      "description": "This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT.",
+      "tags": ["Authentication API", "NFT API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -105,7 +114,8 @@
     "data": {
       "title": "Unreal 5 Get Web3 Data",
       "slug": "/guides/unreal-5-get-web3-data",
-      "description": "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes."
+      "description": "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes.",
+      "tags": ["NFT API", "Balance API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -115,7 +125,8 @@
     "data": {
       "title": "Web3 Unity Multiplayer Playground",
       "slug": "/guides/web3-unity-multiplayer-playground",
-      "description": "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
+      "description": "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity.",
+      "tags": ["Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -125,7 +136,8 @@
     "data": {
       "title": "Web3 Social Media",
       "slug": "/guides/web3-social-media",
-      "description": "This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API."
+      "description": "This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API.",
+      "tags": ["NFT API", "Token API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -135,7 +147,8 @@
     "data": {
       "title": "Zapper Clone",
       "slug": "/guides/zapper-clone",
-      "description": "This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances."
+      "description": "This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances.",
+      "tags": ["NFT API", "Token API", "Balance API", "Demos"]
     },
     "isEmpty": false,
     "excerpt": ""

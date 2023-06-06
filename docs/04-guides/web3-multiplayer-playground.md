@@ -2,6 +2,7 @@
 title: "Web3 Unity Multiplayer Playground"
 slug: "/guides/web3-unity-multiplayer-playground"
 description: "Learn how to create a Web3 Multiplayer Playground using Moralis, NodeJS, and Unity."
+tags: [Demos]
 ---
 ## Introduction
 

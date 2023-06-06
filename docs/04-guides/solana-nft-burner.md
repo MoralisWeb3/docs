@@ -2,6 +2,7 @@
 title: "Solana NFT Burner"
 slug: "/guides/solana-nft-burner"
 description: "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API."
+tags: [Solana API, NFT API, Demos]
 ---
 ## Introduction
 

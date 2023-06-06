@@ -2,7 +2,7 @@
 title: "Automated Blockchain Telegram Bot"
 slug: "/guides/automated-blockchain-telegram-bot"
 description: "This tutorial teaches you how to create an automated web3 telegram bot that listens to blockchain events and sends real-time notifications."
-tags: [Streams]
+tags: [Streams, Demos]
 ---
 
 ## Introduction

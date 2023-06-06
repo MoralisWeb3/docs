@@ -2,6 +2,7 @@
 title: "Zapper Clone"
 slug: "/guides/zapper-clone"
 description: "This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances."
+tags: [NFT API, Token API, Balance API, Demos]
 ---
 ## Introduction
 

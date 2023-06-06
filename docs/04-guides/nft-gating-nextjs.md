@@ -2,6 +2,7 @@
 title: "Token Gating Website (NextJS)"
 slug: "/guides/token-gating-website-nextjs"
 description: "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!"
+tags: [NFT API, Demos]
 ---
 ## Introduction
 

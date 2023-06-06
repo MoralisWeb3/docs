@@ -2,6 +2,7 @@
 title: "Live Crypto Notifications"
 slug: "/guides/live-crypto-notifications"
 description: "This tutorial teaches you how to use the Streams API to display live desktop notifications for any USDT transfers."
+tags: [Streams, Demos]
 ---
 
 ## Introduction
