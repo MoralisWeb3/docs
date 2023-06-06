@@ -35,11 +35,11 @@ export default function DocNavbarItem({
         case "web3apiEvmSidebar":
           switch (activeDoc.sidebar) {
             case "web3apiEvmSidebar":
-              return activeDoc.path === "/web3-data-api/evm";
+              return activeDoc.path.includes("/web3-data-api/evm");
             case "web3apiAptosSidebar":
-              return activeDoc.path === "/web3-data-api/aptos";
+              return activeDoc.path.includes("/web3-data-api/aptos");
             case "web3apiSolanaSidebar":
-              return activeDoc.path === "/web3-data-api/solana";
+              return activeDoc.path.includes("/web3-data-api/solana");
             default:
               return false;
           }
@@ -47,13 +47,23 @@ export default function DocNavbarItem({
         case "streamsEvmSidebar":
           switch (activeDoc.sidebar) {
             case "streamsEvmSidebar":
-              return activeDoc.path === "/streams-api/evm";
+              return activeDoc.path.includes("/streams-api/evm");
             case "streamsAptosSidebar":
-              return activeDoc.path === "/streams-api/aptos";
+              return activeDoc.path.includes("/streams-api/aptos");
             default:
               return false;
           }
-        case "authenticationSidebar":
+        case "authenticationEvmSidebar":
+          switch (activeDoc.sidebar) {
+            case "authenticationEvmSidebar":
+              return activeDoc.path.includes("/authentication-api/evm");
+            case "authenticationAptosSidebar":
+              return activeDoc.path.includes("/authentication-api/aptos");
+            case "authenticationSolanaSidebar":
+              return activeDoc.path.includes("/authentication-api/solana");
+            default:
+              return false;
+          }
         case "exampledappsSidebar":
         default:
           return (
