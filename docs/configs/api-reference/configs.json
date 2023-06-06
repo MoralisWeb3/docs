@@ -4337,12 +4337,6 @@
             "type": "object",
             "fields": [
               {
-                "name": "status",
-                "type": "string",
-                "description": "The syncing status of the address [SYNCING/SYNCED]",
-                "example": "SYNCING"
-              },
-              {
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
@@ -4367,7 +4361,7 @@
               },
               {
                 "name": "result",
-                "type": "object",
+                "type": "array",
                 "fields": [
                   {
                     "name": "token_address",
