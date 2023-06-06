@@ -833,11 +833,6 @@ Congratulations! 🥳
 
 Now you know how to create your very own Multi-Player Tic Tac Toe game on the solana blockchain.
 
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=fa911cljnfQ
-
-
 ## Support
 
 If you have any trouble following the tutorial, feel free to reach out to our community engineers in our [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to get 24/7 developer support.

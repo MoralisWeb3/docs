@@ -234,10 +234,6 @@ Congratulations!! 🥳
 
 Now you know how to create your very own NFT minter dapp on the Solana blockchain.
 
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=JxkSHq0X-aE
-
 ## Support
 
 If you have any trouble following the tutorial, feel free to reach out to our community engineers in our [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to get 24/7 developer support.

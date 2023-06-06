@@ -195,10 +195,6 @@ Congratulations! 🥳
 
 Now you know how to create your very own NFT burner dapp to delete spam or unwanted NFTs from the blockchain.
 
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=qARimfhe4Ys
-
 ## Support
 
 If you have any trouble following the tutorial, feel free to reach out to our community engineers in our [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to get 24/7 developer support.

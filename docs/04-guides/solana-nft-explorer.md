@@ -523,10 +523,6 @@ Congratulations! 🥳
 
 You have successfully completed the tutorial and now you know how to create your very own NFT Explorer app. 
 
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=EvxSq0MJnMI
-
 ## Support
 
 If you have any trouble following the tutorial, feel free to reach out to our community engineers in our [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to get 24/7 developer support.
