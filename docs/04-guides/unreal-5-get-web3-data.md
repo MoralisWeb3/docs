@@ -2,6 +2,7 @@
 title: "Unreal 5 Get Web3 Data"
 slug: "/guides/unreal-5-get-web3-data"
 description: "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes."
+tags: [NFT API, Balance API, Demos]
 ---
 ## Introduction
 

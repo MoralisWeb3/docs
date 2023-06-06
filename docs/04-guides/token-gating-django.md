@@ -2,6 +2,7 @@
 title: "Token Gating Website (Django)"
 slug: "/guides/token-gating-website-django"
 description: "This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT."
+tags: [Authentication API, NFT API, Demos]
 ---
 
 

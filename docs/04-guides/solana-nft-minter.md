@@ -2,6 +2,7 @@
 title: "Solana NFT Minter"
 slug: "/guides/solana-nft-minter"
 description: "This tutorial teaches you how to create your very own NFT minter dapp in NextJS using Metaplex JavaScript SDK, and the Moralis API."
+tags: [Solana API, NFT API, Demos]
 ---
 ## Introduction
 
@@ -232,10 +233,6 @@ You can also visit the`/balances/nft` page to view your newly minted NFT.
 Congratulations!! 🥳 
 
 Now you know how to create your very own NFT minter dapp on the Solana blockchain.
-
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=JxkSHq0X-aE
 
 ## Support
 

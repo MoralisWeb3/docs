@@ -2,6 +2,7 @@
 title: "Solana Multiplayer Game - TicTacToe"
 slug: "/guides/solana-multiplayer-game-tictactoe"
 description: "This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and Moralis"
+tags: [Solana API, Authentication API, Demos]
 ---
 ## Introduction
 
@@ -831,11 +832,6 @@ The game can be tested by first creating a new game in `Create Game` tab and the
 Congratulations! 🥳 
 
 Now you know how to create your very own Multi-Player Tic Tac Toe game on the solana blockchain.
-
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=fa911cljnfQ
-
 
 ## Support
 

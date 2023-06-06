@@ -2,6 +2,7 @@
 title: "Solana NFT Burner"
 slug: "/guides/solana-nft-burner"
 description: "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API."
+tags: [Solana API, NFT API, Demos]
 ---
 ## Introduction
 
@@ -193,10 +194,6 @@ Once the transaction is successful, your NFT will be successfully deleted from t
 Congratulations! 🥳 
 
 Now you know how to create your very own NFT burner dapp to delete spam or unwanted NFTs from the blockchain.
-
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=qARimfhe4Ys
 
 ## Support
 

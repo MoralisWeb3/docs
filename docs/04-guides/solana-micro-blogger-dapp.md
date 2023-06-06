@@ -2,6 +2,7 @@
 title: "Solana Micro Blogger Dapp"
 slug: "/guides/solana-micro-blogger-dapp"
 description: "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis"
+tags: [Authentication API, Solana API, Demos]
 ---
 ## Introduction
 
@@ -335,10 +336,6 @@ When posting the first blog you will have to sign two transactions. One for crea
 Congratulations! 🥳 
 
 Now you know how to create your very own Solana Micro Blogger dapp to create blog posts in the blockchain.
-
-## YouTube Tutorial
-
-https://www.youtube.com/watch?v=UBAvXNSLU7w
 
 ## Support
 
