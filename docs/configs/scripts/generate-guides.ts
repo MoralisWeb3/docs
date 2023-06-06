@@ -12,6 +12,8 @@ fs.readdir(directoryPath, function (err, files) {
   }
 
   for (const file of files) {
+    if (file === "overview.mdx") continue;
+
     const str = fs.readFileSync(`./docs/04-guides/${file}`, "utf8");
 
     guidesList.push(matter(str));
