@@ -10,4 +10,11 @@ import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get native balance for multiple wallets
 
-<ApiReference {...config.balance.getNativeBalancesForAddresses} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(
+      ({ endpoint }) => endpoint === "getNativeBalancesForAddresses"
+    ),
+    ...config.balance.getNativeBalancesForAddresses,
+  }}
+/>

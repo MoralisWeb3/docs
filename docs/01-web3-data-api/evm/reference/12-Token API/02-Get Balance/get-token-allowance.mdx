@@ -7,11 +7,19 @@ slug: /web3-data-api/evm/reference/get-token-allowance
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get ERC20 token allowance
 
-<ApiReference {...config.token.getTokenAllowance}>
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(
+      ({ endpoint }) => endpoint === "getTokenAllowance"
+    ),
+    ...config.token.getTokenAllowance,
+  }}
+>
   <Admonition type="caution" title="Recommendation: Switch to New Endpoint">
     <p>
       We've introduced a more feature-rich and more performant version of this
@@ -19,7 +27,7 @@ import config from "../../../../../configs/api-reference/configs.json";
       encourage users to transition to the new one for an enhanced experience.
     </p>
     <p>
-      Go to new endpoint: {" "}
+      Go to new endpoint:{" "}
       <Link href="/web3-data-api/evm/reference/get-erc20-approvals">
         /erc20/approvals
       </Link>

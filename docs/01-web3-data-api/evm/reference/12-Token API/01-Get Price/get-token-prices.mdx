@@ -5,8 +5,14 @@ slug: /web3-data-api/evm/reference/get-token-price
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get ERC20 token price
 
-<ApiReference {...config.token.getTokenPrice} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "getTokenPrice"),
+    ...config.token.getTokenPrice,
+  }}
+/>

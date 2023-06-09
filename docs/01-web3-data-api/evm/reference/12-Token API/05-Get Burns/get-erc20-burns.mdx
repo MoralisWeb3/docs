@@ -7,11 +7,17 @@ slug: /web3-data-api/evm/reference/get-erc20-burns
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get ERC20 token burns
 
-<ApiReference {...config.token.getErc20Burns}>
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "getErc20Burns"),
+    ...config.token.getErc20Burns,
+  }}
+>
   <Admonition title="Token Burns" icon="🔥">
     <p>
       This endpoint retrieves information about token burns for a specific

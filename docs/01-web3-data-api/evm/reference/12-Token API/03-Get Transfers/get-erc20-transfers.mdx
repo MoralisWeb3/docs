@@ -5,8 +5,16 @@ slug: /web3-data-api/reference/get-erc20-transfers
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get ERC20 token transfers
 
-<ApiReference {...config.token.getErc20Transfers} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(
+      ({ endpoint }) => endpoint === "getErc20Transfers"
+    ),
+    ...config.token.getErc20Transfers,
+  }}
+/>
