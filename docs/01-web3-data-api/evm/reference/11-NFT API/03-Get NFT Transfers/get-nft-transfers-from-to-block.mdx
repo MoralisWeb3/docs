@@ -5,8 +5,16 @@ slug: /web3-data-api/evm/reference/get-nft-transfers-from-to-block
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get NFT transfers from a block to a block
 
-<ApiReference {...config.nft.getNFTTransfersFromToBlock} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(
+      ({ endpoint }) => endpoint === "getNFTTransfersFromToBlock"
+    ),
+    ...config.nft.getNFTTransfersFromToBlock,
+  }}
+/>
