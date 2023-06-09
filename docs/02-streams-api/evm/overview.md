@@ -68,26 +68,26 @@ Webhooks allow you to receive real-time notifications for events that are happen
 
 ## Supported chains
 
-| Chain         | Chain Id (HEX) | Internal Transaction Supported | Note                                    | Blocks until confirmed |
-| :------------ | :------------- | :----------------------------- | :-------------------------------------- | :--------------------- |
-| ETH           | 0x1            | ✅ YES                         |                                         | 12                     |
-| GOERLI        | 0x5            | ✅ YES                         |                                         | 12                     |
-| SEPOLIA       | 0xaa36a7       | ✅ YES                         |                                         | 18                     |
-| BNB           | 0x38           | ✅ YES                         |                                         | 18                     |
-| BNB TEST      | 0x61           | ✅ YES                         |                                         | 18                     |
-| POLYGON       | 0x89           | ✅ YES                         |                                         | 100                    |
-| MUMBAI        | 0x13881        | ✅ YES                         |                                         | 100                    |
-| FANTOM TEST   | 0xfa2          | ✅ YES                         |                                         | 100                    |
-| FANTOM        | 0xfa           | ✅ YES                         |                                         | 100                    |
-| AVAX          | 0xa86a         | ✅ YES                         |                                         | 100                    |
-| AVAX TEST     | 0xa869         | ✅ YES                         |                                         | 100                    |
-| CRONOS        | 0x19           | ❌ Very soon                   | Planned support within a couple of days | 100                    |
-| CRONOS TEST   | 0x152          | ❌ Very soon                   | Planned support within a couple of days | 100                    |
-| RONIN         | 0x7e4          | ✅ YES                         | 🔥 NEW                                  | 100                    |
-| ARBITRUM      | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  | 100                    |
-| ARBITRUM TEST | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
-| OPTIMISM      | 0xa            |                                | 🔥 NEW                                  | 100                    |
-| PALM          | 0x2a15c308d    |                                | 🔥                                      |
+| Chain                      | Chain Id (HEX) | Internal Transaction Supported | Note                                    | Blocks until confirmed |
+| :------------------------- | :------------- | :----------------------------- | :-------------------------------------- | :--------------------- |
+| ETH                        | 0x1            | ✅ YES                         |                                         | 12                     |
+| GOERLI                     | 0x5            | ✅ YES                         |                                         | 12                     |
+| SEPOLIA                    | 0xaa36a7       | ✅ YES                         |                                         | 18                     |
+| BNB                        | 0x38           | ✅ YES                         |                                         | 18                     |
+| BNB TEST                   | 0x61           | ✅ YES                         |                                         | 18                     |
+| POLYGON                    | 0x89           | ✅ YES                         |                                         | 100                    |
+| MUMBAI                     | 0x13881        | ✅ YES                         |                                         | 100                    |
+| FANTOM TEST                | 0xfa2          | ✅ YES                         |                                         | 100                    |
+| FANTOM                     | 0xfa           | ✅ YES                         |                                         | 100                    |
+| AVAX                       | 0xa86a         | ✅ YES                         |                                         | 100                    |
+| AVAX TEST _(deprecated)_   | 0xa869         | ✅ YES                         |                                         | 100                    |
+| CRONOS                     | 0x19           | ❌ Very soon                   | Planned support within a couple of days | 100                    |
+| CRONOS TEST _(deprecated)_ | 0x152          | ❌ Very soon                   | Planned support within a couple of days | 100                    |
+| RONIN                      | 0x7e4          | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| ARBITRUM                   | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| ARBITRUM TEST              | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
+| OPTIMISM                   | 0xa            |                                | 🔥 NEW                                  | 100                    |
+| PALM                       | 0x2a15c308d    |                                | 🔥                                      |
 
 :::info Reorgnization Before Confirmation
 Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
