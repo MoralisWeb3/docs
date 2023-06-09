@@ -8,10 +8,18 @@ import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get decoded transactions by wallet
 
-<ApiReference {...config.transaction.getWalletTransactionsVerbose}>
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(
+      ({ endpoint }) => endpoint === "getWalletTransactionsVerbose"
+    ),
+    ...config.transaction.getWalletTransactionsVerbose,
+  }}
+>
   <Admonition type="info" title="Missing Decodings">
     <p>
       We only decode transactions from verified ABIs. We are continuously adding

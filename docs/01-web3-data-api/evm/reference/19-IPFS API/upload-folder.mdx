@@ -6,7 +6,13 @@ slug: /web3-data-api/evm/reference/upload-folder
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Upload folder to IPFS
 
-<ApiReference {...config.ipfs.uploadFolder} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "uploadFolder"),
+    ...config.ipfs.uploadFolder,
+  }}
+/>

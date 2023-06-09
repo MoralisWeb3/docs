@@ -6,7 +6,13 @@ slug: /web3-data-api/evm/reference/get-pair-address
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get DEX token pair address
 
-<ApiReference {...config.defi.getPairAddress} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "getPairAddress"),
+    ...config.defi.getPairAddress,
+  }}
+/>

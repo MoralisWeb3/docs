@@ -5,8 +5,14 @@ slug: /web3-data-api/evm/reference/resync-metadata
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Resync NFT metadata
 
-<ApiReference {...config.nft.reSyncMetadata} />
+<ApiReference
+  {...{
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "reSyncMetadata"),
+    ...config.nft.reSyncMetadata,
+  }}
+/>
