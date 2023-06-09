@@ -10,4 +10,9 @@ import computeUnits from "@site/docs/configs/api-reference/compute-units.json";
 
 # Get block by hash
 
-<ApiReference {...config.block.getBlock, ...(computeUnits.evm.find(({ endpoint }) => endpoint === "getBlock"))} />
+<ApiReference
+  {...{
+    ...config.block.getBlock,
+    ...computeUnits.evm.find(({ endpoint }) => endpoint === "getBlock"),
+  }}
+/>
