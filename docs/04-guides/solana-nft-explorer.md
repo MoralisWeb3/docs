@@ -28,7 +28,7 @@ You can find the repository with the final code here: [Solana-NFT-Explorer](http
 
 Follow these steps to run the project in your local environment.
 
-- Clone the project from [GitHub](https://github.com/JohnVersus/solana-nft-explorer) using the`git clone` command and `cd` into the project
+- Clone the project from [GitHub](https://github.com/JohnVersus/solana-nft-explorer) using the `git clone` command and `cd` into the project
 
 ```shell
 git clone https://github.com/JohnVersus/solana-nft-explorer.git
@@ -38,7 +38,7 @@ cd solana-nft-explorer
 
 
 
-- Install the dependencies using the`yarn` or `npm` package manager.
+- Install the dependencies using the `yarn` or `npm` package manager.
 
 ```shell
 yarn install
@@ -73,7 +73,7 @@ The first step when you visit the app is to search for wallet NFTs using the sea
 
 Here is the code responsible for it.
 
-> Only partical code is shown here to keep it clean. Visit `pages/index.jsx` to view the entire code.
+> Only partial code is shown here to keep it clean. Visit `pages/index.jsx` to view the entire code.
 
 :::info Instruction
 
@@ -98,7 +98,7 @@ const inputHandler = (e) => {
 
 // 4️⃣
 // `nftSearch` function will be called with a search button click.
-// This fucntion uses the state value in `setSearchInput` and 
+// This function uses the state value in `setSearchInput` and 
 // calls the backend api route to fetch the NFTs using `getNFTs` api endpoint.
 const nftSearch = async () => {
   setSearchResult(() => null);
@@ -143,7 +143,7 @@ return (
 
 // 5️⃣
 // This API route uses `getNFTs` function from Moralis sdk to get the NFTs and
-// send the response to frontned 
+// send the response to frontend 
 import Moralis from 'moralis';
 
 export default async function handler(req, res) {
@@ -237,7 +237,7 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
 
   //7️⃣
   // `getNFTMetadata` function sends a request to backend api route 
-  // to fetch the meatdata.
+  // to fetch the metadata.
   const getNFTMetadata = async () => {
     const options = {
       network: 'mainnet',
@@ -262,7 +262,7 @@ const NFTCard = ({ nftAddress, filterQuery }) => {
 
   // 6️⃣
   // When the component is first loaded with `nftAddress` this below
-  // useEffect will be triggerd and it invokes the `getNFTMetadata` function.
+  // useEffect will be triggered and it invokes the `getNFTMetadata` function.
   useEffect(() => {
     if (nftAddress) {
       getNFTMetadata();
@@ -317,7 +317,7 @@ Code of backend API route to fetch NFT metadata
 
 // 8️⃣
 // This API route uses `getNFTMetadata` function from Moralis sdk to get the
-// NFT metadata and sends the response to frontned 
+// NFT metadata and sends the response to frontend 
 import Moralis from 'moralis';
 
 export default async function handler(req, res) {
@@ -375,7 +375,7 @@ const nextPage = () => {
 };
 
 // 4️⃣
-// loadpPage function updates the data in page result state with next 10 NFT data.
+// loadPage function updates the data in page result state with next 10 NFT data.
 const loadPage = () => {
   setPageResult(searchResult?.slice((page - 1) * 10, page * 10));
 };
