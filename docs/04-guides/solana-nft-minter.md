@@ -24,7 +24,7 @@ You can find the repository with the final code here: [Solana-NFT-Minter](https:
 
 Follow these steps to run the project in your local environment.
 
-- Clone the project from [GitHub](https://github.com/JohnVersus/solana-nft-minter) using the`git clone` command and `cd` into the project
+- Clone the project from [GitHub](https://github.com/JohnVersus/solana-nft-minter) using the `git clone` command and `cd` into the project
 
 ```shell
 git clone https://github.com/JohnVersus/solana-nft-minter.git
@@ -34,7 +34,7 @@ cd solana-nft-minter
 
 
 
-- Install the dependencies using the`yarn` or `npm` package manager.
+- Install the dependencies using the `yarn` or `npm` package manager.
 
 ```shell
 yarn install
@@ -94,7 +94,7 @@ If you want to know how authentication works, you can take a look at this [video
 
 The first step of the app is to connect the Metaplex SDK with the wallet and the devnet cluster.
 
-> Only partical code is shown here to keep it clean. Visit  `src/components/templates/nftMinter` to view the entire code.
+> Only partial code is shown here to keep it clean. Visit  `src/components/templates/nftMinter` to view the entire code.
 
 ```typescript NFTMinter.tsx
 /* 
@@ -159,7 +159,7 @@ Here's the code to upload the metadata to Arweave.
 // Complete code can be found in `pages/api/upload.ts`
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-// Creating a new connetion the backend
+// Creating a new connection the backend
 const connection = new Connection(clusterApiUrl("devnet"));
 const metaplex = new Metaplex(connection);
 
