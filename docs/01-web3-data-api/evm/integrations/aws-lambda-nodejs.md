@@ -193,7 +193,7 @@ const Moralis = require("moralis").default;
 
 ![](/img/content/71df42f-image.webp)
 
-Add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added as an enviromental variable:
+Add the function that will initialize `moralis`, using the `MORALIS_API_KEY` that we added as an environmental variable:
 
 ```javascript
 const startMoralis = async () => {
