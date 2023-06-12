@@ -21,8 +21,8 @@
     {
       "endpoint": "getTransaction",
       "path": "/transaction/{transaction_hash}",
-      "price": 3,
-      "rateLimitCost": 2
+      "price": 2,
+      "rateLimitCost": 3
     },
     {
       "endpoint": "getDecodedTransaction",
@@ -329,6 +329,13 @@
       "path": "/contracts-review",
       "price": 0,
       "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getWalletActiveChains",
+      "path": "/wallets/{address}/chains",
+      "price": 10,
+      "rateLimitCost": 5,
+      "dynamic": true
     }
   ],
   "solana": [
