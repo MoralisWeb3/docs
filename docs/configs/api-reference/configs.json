@@ -483,6 +483,151 @@
       ]
     }
   },
+  "wallet": {
+    "getWalletActiveChains": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "getWalletActiveChains",
+      "description": "Get the active chains for a wallet address.",
+      "method": "GET",
+      "path": "/wallets/:address/chains",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Wallet address",
+          "required": true,
+          "type": "string",
+          "example": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chains",
+          "description": "The chains to query.",
+          "required": false,
+          "type": "array",
+          "field": {
+            "type": "string",
+            "example": "eth",
+            "enum": [
+              "eth",
+              "0x1",
+              "goerli",
+              "0x5",
+              "sepolia",
+              "0xaa36a7",
+              "polygon",
+              "0x89",
+              "mumbai",
+              "0x13881",
+              "bsc",
+              "0x38",
+              "bsc testnet",
+              "0x61",
+              "avalanche",
+              "0xa86a",
+              "fantom",
+              "0xfa",
+              "palm",
+              "0x2a15c308d",
+              "cronos",
+              "0x19",
+              "arbitrum",
+              "0xa4b1"
+            ]
+          }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the active chains for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "description": "The address of the wallet",
+                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+              },
+              {
+                "name": "active_chains",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "chain",
+                    "type": "string",
+                    "description": "The chain name",
+                    "example": "eth"
+                  },
+                  {
+                    "name": "chain_id",
+                    "type": "string",
+                    "description": "The chain id",
+                    "example": "0x1"
+                  },
+                  {
+                    "name": "first_transaction",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": "123456789",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The block timestamp",
+                        "example": "2022-08-23T20:58:31.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09",
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "name": "last_transaction",
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "block_number",
+                        "type": "string",
+                        "description": "The block number",
+                        "example": "123456789",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The block timestamp",
+                        "example": "2022-08-23T20:58:31.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
   "nft": {
     "getWalletNFTs": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
