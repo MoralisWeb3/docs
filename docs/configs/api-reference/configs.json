@@ -504,7 +504,7 @@
           "description": "The chains to query.",
           "required": false,
           "type": "array",
-          "fields": {
+          "field": {
             "type": "string",
             "example": "eth",
             "enum": [
