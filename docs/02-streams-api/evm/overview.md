@@ -82,7 +82,7 @@ Webhooks allow you to receive real-time notifications for events that are happen
 | AVAX                       | 0xa86a         | ✅ YES                         |                                         | 100                    |
 | AVAX TEST _(deprecated)_   | 0xa869         | ✅ YES                         |                                         | 100                    |
 | CRONOS                     | 0x19           | ❌ Very soon                   | Planned support within a couple of days | 100                    |
-| CRONOS TEST _(deprecated)_ | 0x152          | ❌ Very soon                   | Planned support within a couple of days | 100                    |
+| CRONOS TEST _(deprecated)_ | 0x152          | ❌ NO                          |                                         | 100                    |
 | RONIN                      | 0x7e4          | ✅ YES                         | 🔥 NEW                                  | 100                    |
 | ARBITRUM                   | 0xa4b1         | ✅ YES                         | 🔥 NEW                                  | 100                    |
 | ARBITRUM TEST              | 0x66eed        | ✅ YES                         | 🔥 NEW                                  | 100                    |
