@@ -30,6 +30,7 @@ const DynamicPriceUnits = {
   getWalletNFTTransfers: "owner_addresses",
   getNFTByWalletAddresses: "owner_addresses",
   getMultipleTokenPrices: "tokens",
+  getWalletActiveChains: "chains",
 };
 
 const ComputeUnitsTable = ({ chain }): JSX.Element => {
