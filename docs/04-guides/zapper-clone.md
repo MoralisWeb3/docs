@@ -320,7 +320,7 @@ yarn create react-app frontend
 npm install axios @web3uikit/core @web3uikit/web3 @web3uikit/icons
 ```
 
-3. Inside the`src` directory, create a new folder that will hold React components. We will call it components.
+3. Inside the `src` directory, create a new folder that will hold React components. We will call it components.
 
 ![](/img/content/65f3f8a-image.webp)
 
@@ -640,7 +640,7 @@ function TransferHistory({ chain, wallet, transfers, setTransfers }) {
   return (
     <>
       <div className="tabHeading">
-        Tansfer History <Reload onClick={getTokenTransfers} />
+        Transfer History <Reload onClick={getTokenTransfers} />
       </div>
       <div>
         {transfers.length > 0 && (

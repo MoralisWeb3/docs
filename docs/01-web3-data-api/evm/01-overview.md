@@ -30,7 +30,7 @@ Moralis indexes all core aspects of blockchain data and provides access to this 
 
 ## Use Cases
 
-Our advanced feature set of Web3 Data APIs are best for those that are building crypto fintech applictions, which includes:
+Our advanced feature set of Web3 Data APIs are best for those that are building crypto fintech applications, which includes:
 
 - Wallet App
 - Portfolio Trackers
