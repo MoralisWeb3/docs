@@ -1,6 +1,6 @@
 ---
-title: "What is an NFT API?"
-slug: "/guides/what-is-nft-api"
+title: "NFT API - Full Guide & Walkthrough"
+slug: "/guides/nft-api-full-guide-walkthrough"
 description: "This tutorial teaches you what an NFT API is, what are some of its most common use cases, and how to use it within your tech stack."
 tags: [NFT API, Ethereum, Polygon, EVM, ETH NFT API, Polygon NFT API]
 ---
