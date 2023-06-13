@@ -10,7 +10,7 @@ The Moralis Token API is integrated with an extensive range of Decentralized Exc
 | ----------- | ----------------------------------------- |
 | Eth mainnet | `uniswapv2`, `uniswapv3`, `sushiswapv2`   |
 | Polygon     | `uniswapv2`, `uniswapv3`, `quickswapv2`   |
-| BSC         | `uniswapv2`, `uniswapv3`, `pancakeswapv1` |
+| BSC         | `uniswapv3`, `pancakeswapv1`, `pancakeswapv2`, `pancakeswapv3` |
 | Avalanche   | `traderjoe`, `pangolin`                   |
 | Fantom      | `spookyswap`                              |
 | Cronos      | `vvs`                                     |
