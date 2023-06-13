@@ -15,7 +15,7 @@ The [NFT API](https://moralis.io/api/nft/) is divided into **6 categories** base
 
 ### Get NFTs API
 
-The [NFT Stats API](/web3-data-api/evm/reference/get-multiple-nfts) is a collection of [NFT API](https://moralis.io/api/nft/) that provides developer with.
+The [Get NFTs API](/web3-data-api/evm/reference/get-multiple-nfts) is a collection of [NFT API](https://moralis.io/api/nft/) that provides developer with.
 
 This API category comprised of 4 APIs:
 
@@ -30,17 +30,23 @@ This API category comprised of 4 APIs:
 
 This API category comprised of 5 APIs:
 
-| API Name | Path | Description | Application |
-| -------- | ---- | ----------- | ----------- |
-|          |      |             |             |
+| API Name                                                                                   | Path                                        | Description | Application |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------- | ----------- | ----------- |
+| [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)             | /{address}/nft/transfers                    |             |             |
+| [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers)         | /nft/{address}/transfers                    |             |             |
+| [getNFTTransfersFromToBlock](/web3-data-api/evm/reference/get-nft-transfers-from-to-block) | /nft/transfers                              |             |             |
+| [getNFTTransfersByBlock](/web3-data-api/evm/reference/get-nft-transfers-by-block)          | /block/{block_number_or_hash}/nft/transfers |             |             |
+| [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)                          | /nft/{address}/{token_id}/transfers         |             |             |
 
 ### Get NFT Collections API
 
 This API category comprised of 3 APIs:
 
-| API Name | Path | Description | Application |
-| -------- | ---- | ----------- | ----------- |
-|          |      |             |             |
+| API Name                                                                           | Path                       | Description | Application |
+| ---------------------------------------------------------------------------------- | -------------------------- | ----------- | ----------- |
+| [getWalletNFTCollections](/web3-data-api/evm/reference/get-wallet-nft-collections) | /{address}/nft/collections |             |             |
+| [getNFTContractMetadata](/web3-data-api/evm/reference/get-nft-contract-metadata)   | /nft/{address}/metadata    |             |             |
+| [syncNFTContract](/web3-data-api/evm/reference/sync-nft-contract)                  | /nft/{address}/sync        |             |             |
 
 ### Get NFT Owners API
 
@@ -57,8 +63,8 @@ This API category comprised of 2 APIs:
 
 | API Name                                                               | Path                       | Description | Application |
 | ---------------------------------------------------------------------- | -------------------------- | ----------- | ----------- |
-| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)            | /nft/{address}/lowestprice |             |             |
-| [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) |                            |             |             |
+| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)            | /nft/{address}/trades      |             |             |
+| [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) | /nft/{address}/lowestprice |             |             |
 
 ### Get NFT Metadata API
 
@@ -87,3 +93,12 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 ### Step 2: Add to Your Code
 
 ### Step 3: Going Live!
+
+Once you have all your code set and functioning properly, it's time to push your code to production.
+
+Before doing so, make sure that your API key is stored in a secure place. The best practice for this will be:
+
+- Storing your API key in an environment variable (secrets) `process.env`
+- Have your API called on the backend. While it is possible to call the NFT API on the fronted, it is highly discouraged as it can easily reveal your API key on the browser.
+
+Once everything checks out, your app is good to go live with [Moralis NFT API](https://moralis.io/api/nft/)! 🚀
