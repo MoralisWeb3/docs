@@ -13,7 +13,7 @@ An [NFT API](https://moralis.io/api/nft/) is a collection of APIs that can be us
 
 The [NFT API](https://moralis.io/api/nft/) is divided into **6 categories** based on their use cases as follows:
 
-### NFT Stats API
+### Get NFTs API
 
 The [NFT Stats API](/web3-data-api/evm/reference/get-multiple-nfts) is a collection of [NFT API](https://moralis.io/api/nft/) that provides developer with.
 
@@ -26,7 +26,7 @@ This API category comprised of 4 APIs:
 | [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts) | /nft/{address}       |             | Portfolio Dashboard, Wallets, Token Explorer, NFT-based Games, etc. |
 | [searchNFTs](/web3-data-api/evm/reference/search-nfts)            | /nft/search          |             | Portfolio Dashboard, Wallets, Token Explorer, NFT-based Games, etc. |
 
-### NFT Transfers API
+### Get NFT Transfers API
 
 This API category comprised of 5 APIs:
 
@@ -34,7 +34,7 @@ This API category comprised of 5 APIs:
 | -------- | ---- | ----------- | ----------- |
 |          |      |             |             |
 
-### NFT Collections API
+### Get NFT Collections API
 
 This API category comprised of 3 APIs:
 
@@ -42,7 +42,7 @@ This API category comprised of 3 APIs:
 | -------- | ---- | ----------- | ----------- |
 |          |      |             |             |
 
-### NFT Ownership API
+### Get NFT Owners API
 
 This API category comprised of 2 APIs:
 
@@ -51,21 +51,23 @@ This API category comprised of 2 APIs:
 | [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners)                 | /nft/{address}/owners            |             |             |
 | [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners) | /nft/{address}/{token_id}/owners |             |             |
 
-### NFT Marketplace API
+### Get NFT Market Data API
 
 This API category comprised of 2 APIs:
 
-| API Name | Path | Description | Application |
-| -------- | ---- | ----------- | ----------- |
-|          |      |             |             |
+| API Name                                                               | Path                       | Description | Application |
+| ---------------------------------------------------------------------- | -------------------------- | ----------- | ----------- |
+| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)            | /nft/{address}/lowestprice |             |             |
+| [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) |                            |             |             |
 
-### NFT Metadata API
+### Get NFT Metadata API
 
 This API comprised of 2 APIs:
 
-| API Name | Path | Description | Application |
-| -------- | ---- | ----------- | ----------- |
-|          |      |             |             |
+| API Name                                                        | Path                                     | Description | Application |
+| --------------------------------------------------------------- | ---------------------------------------- | ----------- | ----------- |
+| [getNFTMetadata](/web3-data-api/evm/reference/get-nft-metadata) | /nft/{address}/{token_id}                |             |             |
+| [reSyncMetadata](/web3-data-api/evm/reference/resync-metadata)  | nft/{address}/{token_id}/metadata/resync |             |             |
 
 ## How to get started?
 
