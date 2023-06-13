@@ -1,6 +1,6 @@
 ---
 title: "How to get the top ERC20 tokens by market cap"
-slug: "../../how-to-get-the-top-erc20-tokens-by-market-cap"
+slug: "../how-to-get-the-top-erc20-tokens-by-market-cap"
 description: "Learn how to get the top ERC20 tokens by market cap using Market Data API."
 sidebar_label: "Get the top ERC20 tokens by market cap"
 sidebar_position: 0

@@ -1,6 +1,6 @@
 ---
 title: "How to get the top ERC20 tokens by price change"
-slug: "../../how-to-get-the-top-erc20-tokens-by-price-change"
+slug: "../how-to-get-the-top-erc20-tokens-by-price-change"
 description: "Learn how to get the top ERC20 tokens by price change using Market Data API."
 sidebar_label: "Get the top ERC20 tokens by price change"
 sidebar_position: 1

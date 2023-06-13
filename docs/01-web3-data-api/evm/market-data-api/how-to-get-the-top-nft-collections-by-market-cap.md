@@ -1,6 +1,6 @@
 ---
 title: "How to get the top NFT collections by market cap"
-slug: "../../how-to-get-the-top-nft-collections-by-market-cap"
+slug: "../how-to-get-the-top-nft-collections-by-market-cap"
 description: "Learn how to get the top NFT collections by market cap using Market Data API."
 sidebar_label: "Get the top NFT collections by market cap"
 sidebar_position: 2
