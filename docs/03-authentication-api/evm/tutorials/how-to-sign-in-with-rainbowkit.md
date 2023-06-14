@@ -23,14 +23,14 @@ npm install @rainbow-me/rainbowkit
 Modify `pages/_app.jsx`:
 
 ```javascript
-import { createClient, configureChains, WagmiConfig } from "wagmi";
+import { createConfig, configureChains, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { mainnet } from "wagmi/chains";
 import { SessionProvider } from "next-auth/react";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
-const { provider, webSocketProvider, chains } = configureChains(
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
   [publicProvider()]
 );
@@ -40,18 +40,17 @@ const { connectors } = getDefaultWallets({
   chains,
 });
 
-const client = createClient({
-  provider,
-  webSocketProvider,
+const config = createConfig({
   autoConnect: true,
-  // added connectors from rainbowkit
+  publicClient,
+  webSocketPublicClient,
   connectors,
 });
 
 // added RainbowKitProvider wrapper
 function MyApp({ Component, pageProps }) {
   return (
-    <WagmiConfig client={client}>
+    <WagmiConfig config={config}>
       <SessionProvider session={pageProps.session} refetchInterval={0}>
         <RainbowKitProvider chains={chains}>
           <Component {...pageProps} />
