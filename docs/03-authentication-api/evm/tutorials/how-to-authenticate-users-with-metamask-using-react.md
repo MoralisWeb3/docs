@@ -22,29 +22,29 @@ Once the user is logged in, they will be able to visit a page that displays all 
 
 To implement authentication using a Web3 wallet (e.g., MetaMask), we will use a Web3 library. For the tutorial, we will use [wagmi](https://wagmi.sh).
 
-1. Install `wagmi` and `ethers` in your React app:
+1. Install `wagmi` and `viem` in your React app:
 
 ```bash npm2yarn
-npm install wagmi ethers@^5
+npm install wagmi viem
 ```
 
 ## Initial Setup
 
 First we will add an environment variable that will be used when calling our API.
 
-1. Create a file called `.env` in the root of your project (where `package.json` is) and add:
+1. Create a file called `.env` in the root of your react project (where `package.json` is) and add:
 
-```
+```sh
 REACT_APP_SERVER_URL=http://localhost:4000
 ```
 
-Next we will add the providers required for `wagmi` and `next-auth`.
+Next we will add the providers required for `wagmi`.
 
 2. Open `src/App.js` and add our required imports:
 
 ```javascript
-import { createClient, configureChains, WagmiConfig } from 'wagmi';
-import { publicProvider } from 'wagmi/providers/public';
+import { createConfig, configureChains, WagmiConfig } from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
 import { mainnet } from "wagmi/chains";
 
 import Signin from './signin';
@@ -56,34 +56,91 @@ import User from './user';
 3. We will add the client and providers, and update the routes for our `/signin` component (to be set up next):
 
 ```javascript
-const { provider, webSocketProvider } = configureChains([mainnet], [
-  publicProvider(),
-]);
+const { publicClient, webSocketPublicClient } = configureChains(
+  [mainnet],
+  [publicProvider()]
+);
 
-const client = createClient({
-  provider,
-  webSocketProvider,
+const config = createConfig({
   autoConnect: true,
+  publicClient,
+  webSocketPublicClient,
 });
+
 
 const router = createBrowserRouter([
   {
-    path: '/signin',
+    path: "/signin",
     element: <Signin />,
   },
   {
-    path: '/user',
+    path: "/user",
     element: <User />,
+  },
+  {
+    path: "/",
+    element: <h1>Home Component</h1>,
   },
 ]);
 
 function App() {
   return (
-    <WagmiConfig client={client}>
+    <WagmiConfig config={config}>
       <RouterProvider router={router} />
     </WagmiConfig>
   );
 }
+
+export default App;
+```
+
+# Your full App.js file should look like this 
+
+```javascript
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { createConfig, configureChains, WagmiConfig } from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
+import { mainnet } from "wagmi/chains";
+
+import Signin from "./signin";
+import User from "./user";
+
+const { publicClient, webSocketPublicClient } = configureChains(
+  [mainnet],
+  [publicProvider()]
+);
+
+const config = createConfig({
+  autoConnect: true,
+  publicClient,
+  webSocketPublicClient,
+});
+
+const router = createBrowserRouter([
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/user",
+    element: <User />,
+  },
+  {
+    path: "/",
+    element: <h1>Home Component</h1>,
+  },
+]);
+
+function App() {
+  return (
+    <WagmiConfig config={config}>
+      <RouterProvider router={router} />
+    </WagmiConfig>
+  );
+}
+
+export default App;
 ```
 
 
@@ -140,7 +197,6 @@ app.post('/request-message', async (req, res) => {
     const message = await Moralis.Auth.requestMessage({
       address,
       chain,
-      network,
       ...config,
     });
 
@@ -264,7 +320,6 @@ app.post('/request-message', async (req, res) => {
     const message = await Moralis.Auth.requestMessage({
       address,
       chain,
-      network,
       ...config,
     });
 
@@ -347,11 +402,11 @@ Now we will finish setting up our React pages to integrate with our server.
 1. In `src`, create a file called `signin.jsx` and add:
 
 ```javascript
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi';
-import { InjectedConnector } from 'wagmi/connectors/injected';
-import axios from 'axios';
+import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
+import axios from "axios";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -367,18 +422,18 @@ export default function SignIn() {
       await disconnectAsync();
     }
     // enabling the web3 provider metamask
-    const { account, chain } = await connectAsync({
+    const { account } = await connectAsync({
       connector: new InjectedConnector(),
     });
 
-    const userData = { address: account, chain: chain.id, network: 'evm' };
+    const userData = { address: account, chain: 1 };
     // making a post request to our 'request-message' endpoint
     const { data } = await axios.post(
       `${process.env.REACT_APP_SERVER_URL}/request-message`,
       userData,
       {
         headers: {
-          'content-type': 'application/json',
+          "content-type": "application/json",
         },
       }
     );
@@ -396,7 +451,7 @@ export default function SignIn() {
     );
 
     // redirect to /user
-    navigate('/user');
+    navigate("/user");
   };
 
   return (
@@ -410,9 +465,9 @@ export default function SignIn() {
 
 
 
-2. In `src`, create a file called `user.jsx` and add:
+2. Inside `src`, create a new file called `user.jsx` and add:
 
-```
+```js
 import { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
