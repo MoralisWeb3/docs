@@ -243,10 +243,20 @@ export const formatParamsByLang = (params: any, lang: string) => {
         formattedKey = snakeToCamelCase(key);
         break;
       case "python":
-        formattedKey = camelToSnakeCase(key).replace("-", "_");
+        formattedKey = camelToSnakeCase(key)?.replace("-", "_");
         break;
       default:
         break;
+    }
+
+    // If an array, recursively format each child
+    if (Array.isArray(params[key])) {
+      params[key] = params[key]
+        .filter((val) => val !== null && val !== undefined) // filter null or undefined values
+        .map((childParams) => {
+          console.log(childParams);
+          return formatParamsByLang(childParams, lang);
+        });
     }
 
     if (key !== formattedKey) {
