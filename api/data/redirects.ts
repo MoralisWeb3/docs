@@ -6823,4 +6823,9 @@ export const redirects = [
       "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
     permanent: true,
   },
+  {
+    source: "/web3-data-api/evm/reference/get-wallet-active-chains",
+    destination: "/web3-data-api/evm/reference/get-chain-activity-by-wallet",
+    permanent: true,
+  },
 ];
