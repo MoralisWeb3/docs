@@ -14,4 +14,4 @@ For each chain that a wallet has been detected on, we return its `first_transact
 
 Perfect for wallet analytics, user engagement, wallet age gated sites plus so much more 🙌
 
-[Check out the docs](/web3-data-api/evm/reference/get-wallet-active-chains)
+[Check out the docs](/web3-data-api/evm/reference/get-chain-activity-by-wallet)
