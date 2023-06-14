@@ -75,7 +75,6 @@ const deepCompact = (value: unknown) => {
 
 function isValidJsonString(s) {
   try {
-    console.log(s);
     JSON.parse(s);
     return true;
   } catch (e) {
