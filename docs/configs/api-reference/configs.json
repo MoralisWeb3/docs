@@ -2356,12 +2356,6 @@
             "type": "object",
             "fields": [
               {
-                "name": "status",
-                "type": "string",
-                "description": "The syncing status of the address [SYNCING/SYNCED]",
-                "example": "SYNCING"
-              },
-              {
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
@@ -2386,316 +2380,319 @@
               },
               {
                 "name": "result",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "token_address",
-                    "type": "string",
-                    "description": "The address of the NFT contract",
-                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-                  },
-                  {
-                    "name": "token_id",
-                    "type": "string",
-                    "description": "The token ID of the NFT",
-                    "example": "15"
-                  },
-                  {
-                    "name": "contract_type",
-                    "type": "string",
-                    "description": "The type of NFT contract standard",
-                    "example": "ERC721"
-                  },
-                  {
-                    "name": "owner_of",
-                    "type": "string",
-                    "description": "The wallet address of the owner of the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "block_number",
-                    "type": "string",
-                    "description": "The block number when the amount or owner changed",
-                    "example": "88256"
-                  },
-                  {
-                    "name": "block_number_minted",
-                    "type": "string",
-                    "description": "The block number when the NFT was minted",
-                    "example": "88256"
-                  },
-                  {
-                    "name": "token_uri",
-                    "type": "string",
-                    "description": "The URI to the metadata of the token"
-                  },
-                  {
-                    "name": "metadata",
-                    "type": "string",
-                    "description": "The metadata of the token"
-                  },
-                  {
-                    "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata.",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "name",
-                        "type": "string",
-                        "description": "The name or title of the NFT",
-                        "example": "Moralis Mug"
-                      },
-                      {
-                        "name": "description",
-                        "type": "string",
-                        "description": "A detailed description of the NFT",
-                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
-                      },
-                      {
-                        "name": "image",
-                        "type": "string",
-                        "description": "The URL of the NFT's image",
-                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
-                      },
-                      {
-                        "name": "external_link",
-                        "type": "string",
-                        "description": "A link to additional information",
-                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
-                      },
-                      {
-                        "name": "animation_url",
-                        "type": "string",
-                        "description": "An animated version of the NFT's image",
-                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
-                      },
-                      {
-                        "name": "attributes",
-                        "type": "array",
-                        "field": {
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "trait_type",
-                              "type": "string",
-                              "description": "The trait title or descriptor",
-                              "example": "Eye Color"
-                            },
-                            {
-                              "name": "value",
-                              "type": "string",
-                              "description": "The value of the attribute",
-                              "example": "hazel"
-                            },
-                            {
-                              "name": "display_type",
-                              "type": "string",
-                              "description": "The type the attribute value should be displayed as",
-                              "example": "string"
-                            },
-                            {
-                              "name": "max_value",
-                              "type": "number",
-                              "description": "For numeric values, the upper range",
-                              "example": 100
-                            },
-                            {
-                              "name": "trait_count",
-                              "type": "number",
-                              "description": "The number of possible values for this trait",
-                              "example": 7
-                            },
-                            {
-                              "name": "order",
-                              "type": "number",
-                              "description": "Order the trait should appear in the attribute list.",
-                              "example": 1
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "media",
-                    "description": "A set of links to 'thumbnail / preview' media files",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "mimetype",
-                        "type": "string",
-                        "required": true,
-                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
-                      },
-                      {
-                        "name": "category",
-                        "type": "string",
-                        "required": true,
-                        "enum": ["image", "audio", "video"]
-                      },
-                      {
-                        "name": "original_media_url",
-                        "type": "string",
-                        "required": true,
-                        "description": "The url of the original media file."
-                      },
-                      {
-                        "name": "parent_hash",
-                        "type": "string",
-                        "required": true,
-                        "description": "Hash value of the original media file."
-                      },
-                      {
-                        "name": "media_collection",
-                        "required": true,
-                        "description": "Preview item associated with the original",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "original",
-                            "required": true,
-                            "description": "Information about the original media file",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The address of the NFT contract",
+                      "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID of the NFT",
+                      "example": "15"
+                    },
+                    {
+                      "name": "contract_type",
+                      "type": "string",
+                      "description": "The type of NFT contract standard",
+                      "example": "ERC721"
+                    },
+                    {
+                      "name": "owner_of",
+                      "type": "string",
+                      "description": "The wallet address of the owner of the NFT",
+                      "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "description": "The block number when the amount or owner changed",
+                      "example": "88256"
+                    },
+                    {
+                      "name": "block_number_minted",
+                      "type": "string",
+                      "description": "The block number when the NFT was minted",
+                      "example": "88256"
+                    },
+                    {
+                      "name": "token_uri",
+                      "type": "string",
+                      "description": "The URI to the metadata of the token"
+                    },
+                    {
+                      "name": "metadata",
+                      "type": "string",
+                      "description": "The metadata of the token"
+                    },
+                    {
+                      "name": "normalized_metadata",
+                      "description": "A normalized metadata version of the NFT's metadata.",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name or title of the NFT",
+                          "example": "Moralis Mug"
+                        },
+                        {
+                          "name": "description",
+                          "type": "string",
+                          "description": "A detailed description of the NFT",
+                          "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                        },
+                        {
+                          "name": "image",
+                          "type": "string",
+                          "description": "The URL of the NFT's image",
+                          "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                        },
+                        {
+                          "name": "external_link",
+                          "type": "string",
+                          "description": "A link to additional information",
+                          "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                        },
+                        {
+                          "name": "animation_url",
+                          "type": "string",
+                          "description": "An animated version of the NFT's image",
+                          "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                        },
+                        {
+                          "name": "attributes",
+                          "type": "array",
+                          "field": {
                             "type": "object",
                             "fields": [
                               {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "trait_type",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "low",
-                            "required": true,
-                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The trait title or descriptor",
+                                "example": "Eye Color"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "value",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "medium",
-                            "required": true,
-                            "description": "Preview media file, medium quality (for images 250px x 250px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The value of the attribute",
+                                "example": "hazel"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "display_type",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "high",
-                            "required": true,
-                            "description": "Preview media file, highest quality (for images 500px x 500px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The type the attribute value should be displayed as",
+                                "example": "string"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
+                                "name": "max_value",
+                                "type": "number",
+                                "description": "For numeric values, the upper range",
+                                "example": 100
                               },
                               {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
+                                "name": "trait_count",
+                                "type": "number",
+                                "description": "The number of possible values for this trait",
+                                "example": 7
+                              },
+                              {
+                                "name": "order",
+                                "type": "number",
+                                "description": "Order the trait should appear in the attribute list.",
+                                "example": 1
                               }
                             ]
                           }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "amount",
-                    "type": "string",
-                    "description": "The number of this item the user owns (used by ERC1155)",
-                    "example": "1"
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "description": "The name of the NFT contract",
-                    "example": "CryptoKitties"
-                  },
-                  {
-                    "name": "symbol",
-                    "type": "string",
-                    "description": "The symbol of the NFT contract",
-                    "example": "RARI"
-                  },
-                  {
-                    "name": "token_hash",
-                    "type": "string",
-                    "description": "The token hash",
-                    "example": "502cee781b0fb40ea02508b21d319ced"
-                  },
-                  {
-                    "name": "last_token_uri_sync",
-                    "type": "string",
-                    "description": "When the token_uri was last updated",
-                    "example": "2021-02-24T00:47:26.647Z"
-                  },
-                  {
-                    "name": "last_metadata_sync",
-                    "type": "string",
-                    "description": "When the metadata was last updated",
-                    "example": "2021-02-24T00:47:26.647Z"
-                  }
-                ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "media",
+                      "description": "A set of links to 'thumbnail / preview' media files",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "mimetype",
+                          "type": "string",
+                          "required": true,
+                          "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                        },
+                        {
+                          "name": "category",
+                          "type": "string",
+                          "required": true,
+                          "enum": ["image", "audio", "video"]
+                        },
+                        {
+                          "name": "original_media_url",
+                          "type": "string",
+                          "required": true,
+                          "description": "The url of the original media file."
+                        },
+                        {
+                          "name": "parent_hash",
+                          "type": "string",
+                          "required": true,
+                          "description": "Hash value of the original media file."
+                        },
+                        {
+                          "name": "media_collection",
+                          "required": true,
+                          "description": "Preview item associated with the original",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "original",
+                              "required": true,
+                              "description": "Information about the original media file",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "low",
+                              "required": true,
+                              "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "medium",
+                              "required": true,
+                              "description": "Preview media file, medium quality (for images 250px x 250px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "high",
+                              "required": true,
+                              "description": "Preview media file, highest quality (for images 500px x 500px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "amount",
+                      "type": "string",
+                      "description": "The number of this item the user owns (used by ERC1155)",
+                      "example": "1"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the NFT contract",
+                      "example": "CryptoKitties"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the NFT contract",
+                      "example": "RARI"
+                    },
+                    {
+                      "name": "token_hash",
+                      "type": "string",
+                      "description": "The token hash",
+                      "example": "502cee781b0fb40ea02508b21d319ced"
+                    },
+                    {
+                      "name": "last_token_uri_sync",
+                      "type": "string",
+                      "description": "When the token_uri was last updated",
+                      "example": "2021-02-24T00:47:26.647Z"
+                    },
+                    {
+                      "name": "last_metadata_sync",
+                      "type": "string",
+                      "description": "When the metadata was last updated",
+                      "example": "2021-02-24T00:47:26.647Z"
+                    }
+                  ]
+                }
               }
             ]
           }
@@ -4482,12 +4479,6 @@
             "type": "object",
             "fields": [
               {
-                "name": "status",
-                "type": "string",
-                "description": "The syncing status of the address [SYNCING/SYNCED]",
-                "example": "SYNCING"
-              },
-              {
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
@@ -4512,316 +4503,319 @@
               },
               {
                 "name": "result",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "token_address",
-                    "type": "string",
-                    "description": "The address of the NFT contract",
-                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-                  },
-                  {
-                    "name": "token_id",
-                    "type": "string",
-                    "description": "The token ID of the NFT",
-                    "example": "15"
-                  },
-                  {
-                    "name": "contract_type",
-                    "type": "string",
-                    "description": "The type of NFT contract standard",
-                    "example": "ERC721"
-                  },
-                  {
-                    "name": "owner_of",
-                    "type": "string",
-                    "description": "The wallet address of the owner of the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "block_number",
-                    "type": "string",
-                    "description": "The block number when the amount or owner changed",
-                    "example": "88256"
-                  },
-                  {
-                    "name": "block_number_minted",
-                    "type": "string",
-                    "description": "The block number when the NFT was minted",
-                    "example": "88256"
-                  },
-                  {
-                    "name": "token_uri",
-                    "type": "string",
-                    "description": "The URI to the metadata of the token"
-                  },
-                  {
-                    "name": "metadata",
-                    "type": "string",
-                    "description": "The metadata of the token"
-                  },
-                  {
-                    "name": "normalized_metadata",
-                    "description": "A normalized metadata version of the NFT's metadata.",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "name",
-                        "type": "string",
-                        "description": "The name or title of the NFT",
-                        "example": "Moralis Mug"
-                      },
-                      {
-                        "name": "description",
-                        "type": "string",
-                        "description": "A detailed description of the NFT",
-                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
-                      },
-                      {
-                        "name": "image",
-                        "type": "string",
-                        "description": "The URL of the NFT's image",
-                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
-                      },
-                      {
-                        "name": "external_link",
-                        "type": "string",
-                        "description": "A link to additional information",
-                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
-                      },
-                      {
-                        "name": "animation_url",
-                        "type": "string",
-                        "description": "An animated version of the NFT's image",
-                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
-                      },
-                      {
-                        "name": "attributes",
-                        "type": "array",
-                        "field": {
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "trait_type",
-                              "type": "string",
-                              "description": "The trait title or descriptor",
-                              "example": "Eye Color"
-                            },
-                            {
-                              "name": "value",
-                              "type": "string",
-                              "description": "The value of the attribute",
-                              "example": "hazel"
-                            },
-                            {
-                              "name": "display_type",
-                              "type": "string",
-                              "description": "The type the attribute value should be displayed as",
-                              "example": "string"
-                            },
-                            {
-                              "name": "max_value",
-                              "type": "number",
-                              "description": "For numeric values, the upper range",
-                              "example": 100
-                            },
-                            {
-                              "name": "trait_count",
-                              "type": "number",
-                              "description": "The number of possible values for this trait",
-                              "example": 7
-                            },
-                            {
-                              "name": "order",
-                              "type": "number",
-                              "description": "Order the trait should appear in the attribute list.",
-                              "example": 1
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "media",
-                    "description": "A set of links to 'thumbnail / preview' media files",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "mimetype",
-                        "type": "string",
-                        "required": true,
-                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
-                      },
-                      {
-                        "name": "category",
-                        "type": "string",
-                        "required": true,
-                        "enum": ["image", "audio", "video"]
-                      },
-                      {
-                        "name": "original_media_url",
-                        "type": "string",
-                        "required": true,
-                        "description": "The url of the original media file."
-                      },
-                      {
-                        "name": "parent_hash",
-                        "type": "string",
-                        "required": true,
-                        "description": "Hash value of the original media file."
-                      },
-                      {
-                        "name": "media_collection",
-                        "required": true,
-                        "description": "Preview item associated with the original",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "original",
-                            "required": true,
-                            "description": "Information about the original media file",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The address of the NFT contract",
+                      "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID of the NFT",
+                      "example": "15"
+                    },
+                    {
+                      "name": "contract_type",
+                      "type": "string",
+                      "description": "The type of NFT contract standard",
+                      "example": "ERC721"
+                    },
+                    {
+                      "name": "owner_of",
+                      "type": "string",
+                      "description": "The wallet address of the owner of the NFT",
+                      "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "description": "The block number when the amount or owner changed",
+                      "example": "88256"
+                    },
+                    {
+                      "name": "block_number_minted",
+                      "type": "string",
+                      "description": "The block number when the NFT was minted",
+                      "example": "88256"
+                    },
+                    {
+                      "name": "token_uri",
+                      "type": "string",
+                      "description": "The URI to the metadata of the token"
+                    },
+                    {
+                      "name": "metadata",
+                      "type": "string",
+                      "description": "The metadata of the token"
+                    },
+                    {
+                      "name": "normalized_metadata",
+                      "description": "A normalized metadata version of the NFT's metadata.",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name or title of the NFT",
+                          "example": "Moralis Mug"
+                        },
+                        {
+                          "name": "description",
+                          "type": "string",
+                          "description": "A detailed description of the NFT",
+                          "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                        },
+                        {
+                          "name": "image",
+                          "type": "string",
+                          "description": "The URL of the NFT's image",
+                          "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                        },
+                        {
+                          "name": "external_link",
+                          "type": "string",
+                          "description": "A link to additional information",
+                          "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                        },
+                        {
+                          "name": "animation_url",
+                          "type": "string",
+                          "description": "An animated version of the NFT's image",
+                          "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                        },
+                        {
+                          "name": "attributes",
+                          "type": "array",
+                          "field": {
                             "type": "object",
                             "fields": [
                               {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "trait_type",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "low",
-                            "required": true,
-                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The trait title or descriptor",
+                                "example": "Eye Color"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "value",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "medium",
-                            "required": true,
-                            "description": "Preview media file, medium quality (for images 250px x 250px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The value of the attribute",
+                                "example": "hazel"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
+                                "name": "display_type",
                                 "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "high",
-                            "required": true,
-                            "description": "Preview media file, highest quality (for images 500px x 500px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
+                                "description": "The type the attribute value should be displayed as",
+                                "example": "string"
                               },
                               {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
+                                "name": "max_value",
+                                "type": "number",
+                                "description": "For numeric values, the upper range",
+                                "example": 100
                               },
                               {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
+                                "name": "trait_count",
+                                "type": "number",
+                                "description": "The number of possible values for this trait",
+                                "example": 7
+                              },
+                              {
+                                "name": "order",
+                                "type": "number",
+                                "description": "Order the trait should appear in the attribute list.",
+                                "example": 1
                               }
                             ]
                           }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "amount",
-                    "type": "string",
-                    "description": "The number of this item the user owns (used by ERC1155)",
-                    "example": "1"
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "description": "The name of the NFT contract",
-                    "example": "CryptoKitties"
-                  },
-                  {
-                    "name": "symbol",
-                    "type": "string",
-                    "description": "The symbol of the NFT contract",
-                    "example": "RARI"
-                  },
-                  {
-                    "name": "token_hash",
-                    "type": "string",
-                    "description": "The token hash",
-                    "example": "502cee781b0fb40ea02508b21d319ced"
-                  },
-                  {
-                    "name": "last_token_uri_sync",
-                    "type": "string",
-                    "description": "When the token_uri was last updated",
-                    "example": "2021-02-24T00:47:26.647Z"
-                  },
-                  {
-                    "name": "last_metadata_sync",
-                    "type": "string",
-                    "description": "When the metadata was last updated",
-                    "example": "2021-02-24T00:47:26.647Z"
-                  }
-                ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "media",
+                      "description": "A set of links to 'thumbnail / preview' media files",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "mimetype",
+                          "type": "string",
+                          "required": true,
+                          "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                        },
+                        {
+                          "name": "category",
+                          "type": "string",
+                          "required": true,
+                          "enum": ["image", "audio", "video"]
+                        },
+                        {
+                          "name": "original_media_url",
+                          "type": "string",
+                          "required": true,
+                          "description": "The url of the original media file."
+                        },
+                        {
+                          "name": "parent_hash",
+                          "type": "string",
+                          "required": true,
+                          "description": "Hash value of the original media file."
+                        },
+                        {
+                          "name": "media_collection",
+                          "required": true,
+                          "description": "Preview item associated with the original",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "original",
+                              "required": true,
+                              "description": "Information about the original media file",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "low",
+                              "required": true,
+                              "description": "Preview media file, lowest quality (for images 100px x 100px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "medium",
+                              "required": true,
+                              "description": "Preview media file, medium quality (for images 250px x 250px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "high",
+                              "required": true,
+                              "description": "Preview media file, highest quality (for images 500px x 500px)",
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "width",
+                                  "type": "integer",
+                                  "description": "The width of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "height",
+                                  "type": "integer",
+                                  "description": "The height of the preview image.",
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "The url of the preview file.",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "amount",
+                      "type": "string",
+                      "description": "The number of this item the user owns (used by ERC1155)",
+                      "example": "1"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the NFT contract",
+                      "example": "CryptoKitties"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the NFT contract",
+                      "example": "RARI"
+                    },
+                    {
+                      "name": "token_hash",
+                      "type": "string",
+                      "description": "The token hash",
+                      "example": "502cee781b0fb40ea02508b21d319ced"
+                    },
+                    {
+                      "name": "last_token_uri_sync",
+                      "type": "string",
+                      "description": "When the token_uri was last updated",
+                      "example": "2021-02-24T00:47:26.647Z"
+                    },
+                    {
+                      "name": "last_metadata_sync",
+                      "type": "string",
+                      "description": "When the metadata was last updated",
+                      "example": "2021-02-24T00:47:26.647Z"
+                    }
+                  ]
+                }
               }
             ]
           }
