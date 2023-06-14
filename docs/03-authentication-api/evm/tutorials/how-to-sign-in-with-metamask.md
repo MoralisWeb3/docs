@@ -81,25 +81,26 @@ Every time you modify the `.env.local` file, you need to restart your dapp.
 4. Create the `pages/_app.jsx` file. We need to wrap our pages with `WagmiConfig` ([docs](https://wagmi.sh/docs/WagmiConfig)) and `SessionProvider` ([docs](https://next-auth.js.org/getting-started/client#sessionprovider)):
 
 ```javascript
-import { createClient, configureChains, WagmiConfig } from "wagmi";
+import { configureChains, WagmiConfig, createConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
 import { mainnet } from "wagmi/chains";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
-const { provider, webSocketProvider } = configureChains(
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
   [publicProvider()]
 );
 
-const client = createClient({
-  provider,
-  webSocketProvider,
-  autoConnect: true,
+const config = createConfig({
+  connectors: [new InjectedConnector({ chains })],
+  publicClient,
+  webSocketPublicClient,
 });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <WagmiConfig client={client}>
+    <WagmiConfig config={config}>
       <SessionProvider session={pageProps.session} refetchInterval={0}>
         <Component {...pageProps} />
       </SessionProvider>
