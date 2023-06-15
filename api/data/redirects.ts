@@ -334,7 +334,7 @@ export const redirects = [
   },
   {
     source: "/docs/transaction-api",
-    destination: "/web3-data-api/evm/transaction-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -355,12 +355,12 @@ export const redirects = [
   },
   {
     source: "/docs/events-api",
-    destination: "/web3-data-api/evm/events-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
     source: "/docs/block-api",
-    destination: "/web3-data-api/evm/block-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -385,7 +385,7 @@ export const redirects = [
   },
   {
     source: "/docs/defi-api",
-    destination: "/web3-data-api/evm/defi-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -2802,7 +2802,7 @@ export const redirects = [
   },
   {
     source: "/moralis-sdk/historical-transactions",
-    destination: "/web3-data-api/evm/transaction-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -3619,7 +3619,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/defi-new",
-    destination: "/web3-data-api/evm/defi-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -5248,7 +5248,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/defi-new",
-    destination: "/web3-data-api/evm/defi-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {

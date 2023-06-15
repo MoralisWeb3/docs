@@ -1,6 +1,6 @@
 ---
 title: "How to get block content by block number"
-slug: "../how-to-get-block-content-by-block-number"
+slug: "../../how-to-get-block-content-by-block-number"
 description: "Learn how to get block content (with transactions and logs) by its block number using the Moralis Block API."
 sidebar_label: "Get block by block number"
 ---

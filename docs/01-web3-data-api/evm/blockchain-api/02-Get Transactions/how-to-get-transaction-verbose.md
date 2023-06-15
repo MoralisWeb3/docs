@@ -1,6 +1,6 @@
 ---
 title: "How to get verbose transactions of an address"
-slug: "../how-to-get-transaction-verbose"
+slug: "../../how-to-get-transaction-verbose"
 description: "Learn how to get verbose transactions of an address using Moralis Transaction API."
 sidebar_label: "Get verbose transactions of address"
 sidebar_position: 2

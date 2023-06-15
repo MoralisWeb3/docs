@@ -1,6 +1,6 @@
 ---
 title: "How to get a transaction by transaction hash"
-slug: "../how-to-get-a-transaction-by-transaction-hash"
+slug: "../../how-to-get-a-transaction-by-transaction-hash"
 description: "Learn how to get a transaction content by a given transaction hash with Moralis Transaction API."
 sidebar_label: "Get a transaction by hash"
 sidebar_position: 5

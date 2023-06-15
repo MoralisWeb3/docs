@@ -118,38 +118,6 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                 </a>
             </div>
         </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/transaction-api">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="38" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.835" clipPath="url(#a)"><path stroke="#1A1AB3" d="m32.85 21.85-6.264 6.213c-4.739 5.016-12.434 5.016-17.186 0a13.018 13.018 0 0 1-2.862-4.788"/><path stroke="#5555FA" d="M3.15 7.6v8.55h8.1"/><path stroke="#1A1AB3" d="M32.85 30.4v-8.55h-8.1"/><path stroke="#5555FA" d="M29.461 14.725c-2.24-6.683-9.18-10.174-15.511-7.809a12.049 12.049 0 0 0-4.536 3.021L3.15 16.15"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.8 4.75h32.4v28.5H1.8z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Transaction API</span></h3>
-                    <p>Get transaction data from multiple blockchains.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/events-api">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.944" clipPath="url(#a)"><path stroke="#E35EA3" d="m30.71 16.123-12.758 3.745-1.161-3.909"/><path stroke="#E35EA3" d="m27.322 4.625-3.239 7.344 6.624 4.154M18.751 7.144l8.57-2.52M20.845 14.7l-2.895 5.168"/><path stroke="#F5A3CB" d="m5.259 6.784 12.217-3.582 3.37 11.498-12.758 3.745"/><path stroke="#E35EA3" d="M12.062 32.528 4.882 6.996"/></g><defs><clipPath id="a"><path fill="#fff" d="M3.41 1.73h28.77V34H3.41z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Events API</span></h3>
-                    <p>Get all the logs and events for contracts across multiple blockchains.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/block-api">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" clipPath="url(#a)"><path stroke="#279B4F" d="M30.6 23.584v-11.2c0-.994-.532-1.918-1.4-2.422l-9.8-5.6a2.782 2.782 0 0 0-2.8 0l-9.8 5.6a2.804 2.804 0 0 0-1.4 2.422v11.2c0 .994.532 1.918 1.4 2.422l9.8 5.6a2.782 2.782 0 0 0 2.8 0l9.8-5.6a2.804 2.804 0 0 0 1.4-2.422Z"/><path stroke="#279B4F" d="M5.777 10.928 18 17.998l12.222-7.07M18 32.096V17.984"/><path stroke="#6DE983" d="m9.026 23.332 5.32-3.08M21.445 20.252l5.32 3.08"/></g><defs><clipPath id="a"><path fill="#fff" d="M4 2.584h28v30.912H4z"/></clipPath></defs></svg>&nbsp;&nbsp;Block API</h3>
-                    <p>Get data on specific blocks across multiple blockchains.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/defi-api">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#019EC9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.951" d="m11.52 32.294 10.016-3-3.098-12.852-12.394-6 7.017-5.508M30.373 17.426l.491-9.984-12.425 9 3.098 12.853"/><path stroke="#019EC9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.951" d="m6.044 10.442 12.394 6 12.426-9-7.328-2.967"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.787" d="M19.094 20.328a3.934 3.934 0 1 0 0-7.87 3.934 3.934 0 0 0 0 7.87Z"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.803" d="M6.06 13.442a2.984 2.984 0 1 0 0-5.967 2.984 2.984 0 0 0 0 5.967Z"/><path fill="#fff" d="M30.93 8.426a.959.959 0 0 1-.95-.983c0-.525.442-.951.966-.951.558 0 .984.459.967.984 0 .524-.442.95-.967.95h-.016Z"/><path fill="#01CBD2" d="M30.946 4.328a3.131 3.131 0 0 0-3.131 3.082 3.135 3.135 0 0 0 3.082 3.197h.065a3.131 3.131 0 0 0 3.131-3.082 3.135 3.135 0 0 0-3.082-3.197h-.065Z"/><path fill="#fff" stroke="#01CBD2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.803" d="M21.618 31.459a2.066 2.066 0 1 0 0-4.131 2.066 2.066 0 0 0 0 4.13Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.684 3h32.393v30.77H1.684z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>DeFi API</span></h3>
-                    <p>Get liquidity reserves and pair data across multiple blockchains.</p>
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 
