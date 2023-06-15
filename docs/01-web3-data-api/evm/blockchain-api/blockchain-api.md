@@ -1,6 +1,6 @@
 ---
-title: "Block API"
-slug: "../block-api"
+title: "Blockchain API"
+slug: "../blockchain-api"
 description: "The Block API is a tool that allows Web3 developers to easily access data from specific blocks across various blockchains. It offers functionality like fetching block contents by block hash and finding the closest block by date."
 sidebar_position: 7
 sidebar_class_name: "sidebar-block-api"
@@ -8,11 +8,11 @@ sidebar_class_name: "sidebar-block-api"
 
 ## What is the Block API?
 
-The Block API enables Web3 developers to quickly get data on specific blocks across multiple blockchains, in order to help them build and scale their dapps efficiently.
+The Blockchain API enables Web3 developers to quickly get data on specific blocks across multiple blockchains, in order to help them build and scale their dapps efficiently.
 
 ## Block API Features
 
-The Block API provides the following functionality out of the box to power the dapps you are building:
+The Blockchain API provides the following functionality out of the box to power the dapps you are building:
 
 - fetching the contents of a block given the block hash
 - fetching the closest block given the date
@@ -21,7 +21,7 @@ Plus so much more!
 
 ## Popular use cases
 
-The Block API is extremely flexible, meaning it can support a wide range of use cases, including:
+The Blockchain API is extremely flexible, meaning it can support a wide range of use cases, including:
 
 - Block Explorer
 - Transaction Monitoring
@@ -30,7 +30,7 @@ The Block API is extremely flexible, meaning it can support a wide range of use 
 
 ## Supported chains
 
-The Block API supports multiple EVM chains:
+The Blockchain API supports multiple EVM chains:
 
 | Chain Name        | Chain Id (HEX) | Chain Id (INT) |
 | ----------------- | -------------- | -------------- |
