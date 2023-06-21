@@ -3792,7 +3792,8 @@
           "name": "normalizeMetadata",
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
-          "type": "boolean"
+          "type": "boolean",
+          "example": true
         },
         {
           "name": "media_items",
