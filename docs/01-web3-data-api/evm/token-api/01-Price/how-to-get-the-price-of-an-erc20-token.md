@@ -118,15 +118,23 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
+  "tokenName": "Wrapped BTC",
+  "tokenSymbol": "WBTC",
+  "tokenLogo": "https://cdn.moralis.io/eth/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png",
+  "tokenDecimals": "8",
   "nativePrice": {
-    "value": "13753134139373781549",
+    "value": "15844922382819160000",
     "decimals": 18,
     "name": "Ether",
-    "symbol": "ETH"
+    "symbol": "ETH",
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
   },
-  "usdPrice": 16115.165641767926,
+  "usdPrice": 29012.967874240312,
+  "usdPriceFormatted": "29012.967874240312",
+  "24hrPercentChange": "8.125434468247821",
   "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
-  "exchangeName": "Uniswap v3"
+  "exchangeName": "Uniswap v3",
+  "tokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
 }
 ```
 
