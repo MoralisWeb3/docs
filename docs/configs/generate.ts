@@ -267,20 +267,20 @@ const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
       for (const key in swaggerPaths) {
-        if (["web3"].includes(key)) {
-          const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
-          const swaggerJSON = await swaggerRes?.json();
-          let swaggerContent;
+        // if (["web3"].includes(key)) {
+        const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
+        const swaggerJSON = await swaggerRes?.json();
+        let swaggerContent;
 
-          // Store Swagger Schema for global usage
-          swaggerSchemas = swaggerJSON.components.schemas;
+        // Store Swagger Schema for global usage
+        swaggerSchemas = swaggerJSON.components.schemas;
 
-          const apiHost = swaggerJSON.servers?.[0]?.url;
+        const apiHost = swaggerJSON.servers?.[0]?.url;
 
-          // If statement is temporary, for testing only
-          swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
-          swaggerOAS[key] = swaggerContent;
-        }
+        // If statement is temporary, for testing only
+        swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
+        swaggerOAS[key] = swaggerContent;
+        // }
       }
 
       // Write API reference Config
@@ -294,15 +294,15 @@ const generateConfigs = async () => {
 
     if (isGenerateReferenceOn) {
       for (const key in swaggerOAS) {
-        if (["web3"].includes(key)) {
-          for (const index in Object.keys(swaggerOAS[key])) {
-            const functionName = Object.keys(swaggerOAS[key])[index];
-            const snakeCaseFunctionName = camelToSnakeCase(functionName);
+        // if (["web3"].includes(key)) {
+        for (const index in Object.keys(swaggerOAS[key])) {
+          const functionName = Object.keys(swaggerOAS[key])[index];
+          const snakeCaseFunctionName = camelToSnakeCase(functionName);
 
-            // Write MDX Files for API Reference pages
-            await fs.writeFile(
-              `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
-              `---
+          // Write MDX Files for API Reference pages
+          await fs.writeFile(
+            `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
+            `---
 sidebar_position: ${index}
 sidebar_label: ${swaggerOAS[key][functionName]?.summary}
 slug: /${swaggerPaths[key].category}/reference/${functionName.toLowerCase()}
@@ -314,16 +314,16 @@ import config from "${swaggerPaths[key].importPath}";
 # ${swaggerOAS[key][functionName]?.summary}
 
 <ApiReference {...config.${key}.${functionName}} />`,
-              { flag: "w" },
-              (err) => {
-                if (err) {
-                  return console.log(err);
-                }
-                console.log("The file was saved!");
+            { flag: "w" },
+            (err) => {
+              if (err) {
+                return console.log(err);
               }
-            );
-          }
+              console.log("The file was saved!");
+            }
+          );
         }
+        // }
       }
     }
   } catch (e) {
