@@ -1548,6 +1548,18 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
@@ -2861,6 +2873,18 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
@@ -3104,6 +3128,18 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
@@ -3320,6 +3356,18 @@
                     "type": "string",
                     "description": "The address that received the NFT",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
                   },
                   {
                     "name": "value",
@@ -3792,7 +3840,8 @@
           "name": "normalizeMetadata",
           "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
           "required": false,
-          "type": "boolean"
+          "type": "boolean",
+          "example": true
         },
         {
           "name": "media_items",
@@ -5997,6 +6046,18 @@
                     "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value that was transferred (in wei)",
@@ -6419,6 +6480,18 @@
                     "type": "string",
                     "description": "The sender",
                     "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
+                  },
+                  {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
                   },
                   {
                     "name": "value",
@@ -7686,6 +7759,18 @@
                     "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value that was transferred (in wei)",
@@ -7995,6 +8080,18 @@
                     "type": "string",
                     "description": "The to address",
                     "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+                  },
+                  {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
                   },
                   {
                     "name": "value",
@@ -8465,6 +8562,18 @@
                 "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
               },
               {
+                "name": "from_address_label",
+                "type": "string",
+                "description": "The label of the from address",
+                "example": "Binance 1"
+              },
+              {
+                "name": "to_address_label",
+                "type": "string",
+                "description": "The label of the to address",
+                "example": "Binance 2"
+              },
+              {
                 "name": "value",
                 "type": "string",
                 "description": "The value sent",
@@ -8760,6 +8869,18 @@
                 "type": "string",
                 "description": "The to address",
                 "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+              },
+              {
+                "name": "from_address_label",
+                "type": "string",
+                "description": "The label of the from address",
+                "example": "Binance 1"
+              },
+              {
+                "name": "to_address_label",
+                "type": "string",
+                "description": "The label of the to address",
+                "example": "Binance 2"
               },
               {
                 "name": "value",
@@ -9702,6 +9823,18 @@
                     "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
                     "description": "The value sent",
@@ -10394,6 +10527,41 @@
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.resolve.resolve_domain(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
+      ]
+    },
+    "resolveAddressToDomain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2",
+      "summary": "Resolve Address to Unstoppable domain",
+      "description": "Resolve a specific address to its Unstoppable domain",
+      "method": "GET",
+      "path": "/resolve/:address/domain",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address to be resolved",
+          "required": true,
+          "example": "0x94ef5300cbc0aa600a821ccbc561b057e456ab23",
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns an unstoppable domain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "description": "Resolved unstoppable domain address",
+                "example": "sandy.nft"
+              }
+            ]
+          }
+        },
+        { "status": "404", "description": "Returns an unstoppable domain" }
       ]
     },
     "resolveENSDomain": {
