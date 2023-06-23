@@ -62,6 +62,7 @@ const runApp = async () => {
             "trait_type": "Mouth",
             value: "Surprised"
           },
+        ],
       },
     },
 	];
@@ -107,6 +108,7 @@ const runApp = async () => {
             "trait_type": "Mouth",
             value: "Surprised"
           },
+        ],
       },
     },
 	];
