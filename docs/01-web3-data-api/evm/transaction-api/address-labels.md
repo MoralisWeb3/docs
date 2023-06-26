@@ -47,8 +47,23 @@ Any endpoint that includes a `to_address` and `from_address`! This list currentl
 
 | Name                               | Endpoint                                 |
 | :--------------------------------- | :--------------------------------------- |
+| Get native transactions by wallet | `/:address`                      |
 | Get decoded transactions by wallet | `/:address/verbose`                      |
+| Get transaction by hash    | `/transaction/:transaction_hash` |
 | Get decoded transaction by hash    | `/transaction/:transaction_hash/verbose` |
+| Get NFT transfers by wallet    | `/:address/nft/transfers` |
+| Get NFT transfers by contract    | `/nft/:address/transfers` |
+| Get NFT transfers from a block to a block    | `/nft/transfers` |
+| Get NFT transfers by block   | `/block/:block_hash/nft/transfers` |
+| Get NFT transfers by token id | `/nft/:address/transfers` |
+| Get ERC20 transfers by wallet | `/:address/erc20/transfers` |
+| Get ERC20 transfers by contract | `/erc20/:address/transfers` |
+| Get ERC20 mints | `/erc20/mints` |
+| Get ERC20 burns | `/erc20/burns` |
+| Get ERC20 approvals | `/erc20/approvals` |
+| Get ERC20 metadata by contract | `/erc20/metadata` |
+| Get ERC20 metadata by symbol | `/erc20/metadata/symbol` |
+
 
 ## How many labels are supported?
 We support over 1,000 labels and counting. Examples of these include:
@@ -58,18 +73,25 @@ We support over 1,000 labels and counting. Examples of these include:
 - Kraken
 - Binance
 - Bittrex
+- Bitfinex
+- ...plus many more
 
 **Decentralized Exchanges**
 - Uniswap
 - Aave
 - 1inch
 - Pancakeswap
+- Sushiswap
+- ...plus many more
 
 **NFT Marketplaces**
 - OpenSea
 - Blur
 - Rarible
 - Sorare
+- LooksRare
+- ...plus many more
+
 
 As well as all ERC20 token and cryptocurrency contract labels.
 
