@@ -19,19 +19,27 @@ The [Get Price API](/web3-data-api/evm/reference/get-multiple-token-prices) is a
 
 This API category comprised of 2 APIs:
 
-| API Name                                                                         | Path                   | Use Cases                                           |
-| -------------------------------------------------------------------------------- | ---------------------- | --------------------------------------------------- |
-| [getMultipleTokenPrices](/web3-data-api/evm/reference/get-multiple-token-prices) | /erc20/prices          | Fetch multiple ERC20 token prices                   |
-| [getTokenPrice](/web3-data-api/evm/reference/get-token-price)                    | /erc20/{address}/price | Fetch an ERC20 token price specified by its address |
+| API Name                                                                         | Path                   | Use Cases                                              |
+| -------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------ |
+| [getMultipleTokenPrices](/web3-data-api/evm/reference/get-multiple-token-prices) | /erc20/prices          | Fetch multiple ERC20 token prices.                     |
+| [getTokenPrice](/web3-data-api/evm/reference/get-token-price)                    | /erc20/{address}/price | Fetch an ERC20 token price specified by its `address`. |
 
 ### Get Balance
 
-| API Name                                                                         | Path                       | Use Cases |
-| -------------------------------------------------------------------------------- | -------------------------- | --------- |
-| [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) | /{address}/erc20           |           |
-| [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)            | /erc20/{address}/allowance |           |
+The [Get Balance API](/web3-data-api/evm/reference/get-wallet-token-balances) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time balances and allowances of ERC20 tokens on wallet addresses.
+
+This API category comprised of 2 APIs:
+
+| API Name                                                                         | Path                       | Use Cases                                                                                                                    |
+| -------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) | /{address}/erc20           | Fetch ERC20 token balances for a specific wallet `address`.                                                                  |
+| [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)            | /erc20/{address}/allowance | Fetch the allowance of a specific ERC20 token given its `address` by the `spender_address` on behalf of the `owner_address`. |
 
 ### Get Transfers
+
+The [Get Transfers API](/web3-data-api/reference/get-erc20-transfers) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with all ERC20 token transfers on the [EVM chains](/web3-data-api/evm#supported-chains) the Moralis supported.
+
+This API category comprised of 3 APIs:
 
 | API Name                                                                           | Path                       | Use Cases |
 | ---------------------------------------------------------------------------------- | -------------------------- | --------- |
@@ -41,23 +49,39 @@ This API category comprised of 2 APIs:
 
 ### Get Mints
 
-| API Name                                                      | Path         | Use Case |
-| ------------------------------------------------------------- | ------------ | -------- |
-| [getErc20Mints](/web3-data-api/evm/reference/get-erc20-mints) | /erc20/mints |          |
+The [Get Mints API](/web3-data-api/evm/reference/get-erc20-mints) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time minting information on any ERC20 tokens.
+
+This API category comprised of 1 API:
+
+| API Name                                                      | Path         | Use Case                                                                                                                                |
+| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [getErc20Mints](/web3-data-api/evm/reference/get-erc20-mints) | /erc20/mints | Fetch ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Burns
 
-| API Name                                                      | Path         | Use Case |
-| ------------------------------------------------------------- | ------------ | -------- |
-| [getErc20Burns](/web3-data-api/evm/reference/get-erc20-burns) | /erc20/burns |          |
+The [Get Burns API](/web3-data-api/evm/reference/get-erc20-burns) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time burning information on any ERC20 tokens.
+
+This API category comprised of 1 API:
+
+| API Name                                                      | Path         | Use Case                                                                                                                                |
+| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [getErc20Burns](/web3-data-api/evm/reference/get-erc20-burns) | /erc20/burns | Fetch ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Approvals
 
-| API Name                                                              | Path             | Use Case |
-| --------------------------------------------------------------------- | ---------------- | -------- |
-| [getErc20Approvals](/web3-data-api/evm/reference/get-erc20-approvals) | /erc20/approvals |          |
+The [Get Approvals API](/web3-data-api/evm/reference/get-erc20-approvals) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time approvals information on any ERC20 tokens.
+
+This API category comprised of 1 API:
+
+| API Name                                                              | Path             | Use Case                                                                                                                       |
+| --------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| [getErc20Approvals](/web3-data-api/evm/reference/get-erc20-approvals) | /erc20/approvals | Fetch ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Metadata
+
+The [Get Metadata API](/web3-data-api/evm/reference/get-token-metadata) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with detailed metadata on any ERC20 tokens.
+
+This API category comprised of 2 APIs:
 
 | API Name                                                                              | Path                    | Use Case |
 | ------------------------------------------------------------------------------------- | ----------------------- | -------- |
@@ -85,7 +109,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ### Step 2: Add to Your Code
 
-#### Feature #1: 
+#### Feature #1:
 
 ### Step 3: Going Live!
 
@@ -99,4 +123,3 @@ Before doing so, make sure that your API key is stored in a secure place. The be
 - Have your API called on the backend. While it is possible to call the NFT API on the fronted, it is highly discouraged as it can easily reveal your API key on the browser.
 
 Once everything checks out, your app is good to go live with [Moralis Token API](https://moralis.io/api/token/)! 🚀
-
