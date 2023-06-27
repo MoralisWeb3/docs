@@ -9,7 +9,7 @@ tags: [NFT API, Ethereum, Polygon, EVM, ETH NFT API, Polygon NFT API]
 
 ![](/img/content/0d1bb91-image.webp)
 
-An [NFT API](https://moralis.io/api/nft/) is a collection of APIs that can be used to index NFT data, e.g. NFT balance, NFT metadata, from multiple [EVM chains](http://localhost:3000/web3-data-api/evm#supported-chains) that we support.
+An [NFT API](https://moralis.io/api/nft/) is a collection of APIs that can be used to index NFT data, e.g. NFT balance, NFT metadata, from multiple [EVM chains](/web3-data-api/evm#supported-chains) that we support.
 
 The [NFT API](https://moralis.io/api/nft/) is designed to provide high-quality, structured NFT data to developers to build application that interact with various kinds of NFTs (ERC721, ERC115, others).
 
