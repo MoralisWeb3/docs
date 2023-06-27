@@ -41,11 +41,11 @@ The [Get Transfers API](/web3-data-api/reference/get-erc20-transfers) is a colle
 
 This API category comprised of 3 APIs:
 
-| API Name                                                                           | Path                       | Use Cases |
-| ---------------------------------------------------------------------------------- | -------------------------- | --------- |
-| [getErc20Transfers](/web3-data-api/reference/get-erc20-transfers)                  | /erc20/transfers           |           |
-| [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) | /{address}/erc20/transfers |           |
-| [getTokenTransfers](/web3-data-api/evm/reference/get-token-transfers)              | /erc20/{address}/transfers |           |
+| API Name                                                                           | Path                       | Use Cases                                                                                             |
+| ---------------------------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [getErc20Transfers](/web3-data-api/reference/get-erc20-transfers)                  | /erc20/transfers           | Fetch historical ERC20 token transactions ordered by descending block order.                          |
+| [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) | /{address}/erc20/transfers | Fetch historical ERC20 token transactions on a given wallet `address` by descending block order.      |
+| [getTokenTransfers](/web3-data-api/evm/reference/get-token-transfers)              | /erc20/{address}/transfers | Fetch historical ERC20 token transactions on a given ERC20 token `address` by descending block order. |
 
 ### Get Mints
 
@@ -83,10 +83,10 @@ The [Get Metadata API](/web3-data-api/evm/reference/get-token-metadata) is a col
 
 This API category comprised of 2 APIs:
 
-| API Name                                                                              | Path                    | Use Case |
-| ------------------------------------------------------------------------------------- | ----------------------- | -------- |
-| [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)                   | /erc20/metadata         |          |
-| [getTokenMetadataBySymbol](/web3-data-api/evm/reference/get-token-metadata-by-symbol) | /erc20/metadata/symbols |          |
+| API Name                                                                              | Path                    | Use Case                                                                                   |
+| ------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
+| [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)                   | /erc20/metadata         | Fetch the metadata (name, symbol, decimals, logo) of a given ERC20 token contract address. |
+| [getTokenMetadataBySymbol](/web3-data-api/evm/reference/get-token-metadata-by-symbol) | /erc20/metadata/symbols | Fetch the metadata (name, symbol, decimals, logo) of a given ERC20 token's symbol.         |
 
 ## How to get started?
 
@@ -119,7 +119,7 @@ Let's start to use the [Token API](https://moralis.io/api/nft/) to build these t
 
 Here you'll need two parameters: `addresses` and `chain`.
 
-Once you've obtained both the `address` and `chain`, you can copy the following code and add it to your existing codebase:
+Once you've obtained both the `addresses` and `chain`, you can copy the following code and add it to your existing codebase:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -208,9 +208,9 @@ Once the code is added, you will be able to obtain all the metadata, which inclu
 
 #### Feature #2: Fetch the balance of an ERC20 token in the user's wallet address
 
-Here you'll need two parameters: `address` and `chain`.
+Here you'll need three parameters: `address`, `tokenAddresses`, and `chain`.
 
-Once you've obtained both the `address` and `chain`, you can copy the following code and add it to your existing codebase:
+Once you've obtained both the `address`, `tokenAddresses`, and `chain`, you can copy the following code and add it to your existing codebase:
 
 <Tabs groupId="programming-language">
   <TabItem value="javascript" label="JavaScript" default>
@@ -225,13 +225,16 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const addresses = ["ERC20_TOKEN_ADDRESS"];
+  const address = "USER_WALLET_ADDRESS";
+
+  const tokenAddresses = ["ERC20_TOKEN_ADDRESS"];
 
   const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
-  const response = await Moralis.EvmApi.token.getTokenMetadata({
+  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
     chain,
-    addresses,
+    tokenAddresses,
+    address,
   });
 
   console.log(response.raw);
@@ -253,13 +256,16 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const addresses = ["ERC20_TOKEN_ADDRESS"];
+  const address = "USER_WALLET_ADDRESS";
+
+  const tokenAddresses = ["ERC20_TOKEN_ADDRESS"];
 
   const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
-  const response = await Moralis.EvmApi.token.getTokenMetadata({
+  const response = await Moralis.EvmApi.token.getWalletTokenBalances({
     chain,
-    addresses,
+    tokenAddresses,
+    address,
   });
 
   console.log(response.raw);
@@ -277,11 +283,12 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "addresses": ["ERC20_TOKEN_ADDRESS"],
+    "address": "USER_WALLET_ADDRESS",
+    "token_addresses": ["ERC20_TOKEN_ADDRESS"],
     "chain": "CHAIN", # e.g. "eth", "polygon", etc.
 }
 
-result = evm_api.token.get_token_metadata(
+result = evm_api.token.get_wallet_token_balances(
     api_key=api_key,
     params=params,
 )
@@ -292,11 +299,99 @@ print(result)
 </TabItem>
 </Tabs>
 
-Once the code is added, you will be able to obtain all the metadata, which includes name, symbol, and decimals information on a given specific ERC20 token address using just a few lines of code with [Moralis Token API](https://moralis.io/api/token/).
+Once the code is added, you will be able to obtain the balance of a given specific ERC20 token address held in the user wallet address using just a few lines of code with [Moralis Token API](https://moralis.io/api/token/).
+
+#### Feature #3: Fetch the price of a given ERC20 token
+
+Here you'll need two parameters: `address` and `chain`.
+
+Once you've obtained both the `address` and `chain`, you can copy the following code and add it to your existing codebase:
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="JavaScript" default>
+
+```javascript index.js
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
+
+const runApp = async () => {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY",
+    // ...and any other configuration
+  });
+
+  const address = "ERC20_TOKEN_ADDRESS";
+
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+
+  const response = await Moralis.EvmApi.token.getTokenPrice({
+    chain,
+    address,
+  });
+
+  console.log(response.raw);
+};
+
+runApp();
+```
+
+</TabItem>
+<TabItem value="typescript" label="TypeScript">
+
+```typescript index.ts
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
+
+const runApp = async () => {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY",
+    // ...and any other configuration
+  });
+
+  const address = "ERC20_TOKEN_ADDRESS";
+
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+
+  const response = await Moralis.EvmApi.token.getTokenPrice({
+    chain,
+    address,
+  });
+
+  console.log(response.raw);
+};
+
+runApp();
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python index.py
+from moralis import evm_api
+import json
+
+api_key = "YOUR_API_KEY"
+params = {
+    "address": "ERC20_TOKEN_ADDRESS",
+    "chain": "CHAIN", # e.g. "eth", "polygon", etc.
+}
+
+result = evm_api.token.get_token_price(
+    api_key=api_key,
+    params=params,
+)
+
+print(result)
+```
+
+</TabItem>
+</Tabs>
+
+Once the code is added, you will be able to obtain real-time pricing data on the given ERC20 token using just a few lines of code with [Moralis Token API](https://moralis.io/api/token/).
 
 ### Step 3: Going Live!
 
-Once you have a few lines of new code, you have successfully integrated the [Moralis Token API](https://moralis.io/api/token/) to your simple app.
+Once you have a few lines of new code, you have successfully integrated the [Moralis Token API](https://moralis.io/api/token/) to your simple ERC20 token explorer app.
 
 Now, it's time to push your code to production.
 
