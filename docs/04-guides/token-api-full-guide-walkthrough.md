@@ -212,9 +212,6 @@ Here you'll need two parameters: `address` and `chain`.
 
 Once you've obtained both the `address` and `chain`, you can copy the following code and add it to your existing codebase:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs groupId="programming-language">
   <TabItem value="javascript" label="JavaScript" default>
 
