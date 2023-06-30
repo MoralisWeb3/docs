@@ -289,6 +289,11 @@ li:has(
   display: none;
 }
 
+li:has(> a[href="/web3-data-api/evm/reference/run-contract-function"]),
+li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
+  display: none;
+}
+
 @media (max-width: 996px) {
   .hero__title {
     font-size: var(--ifm-h1-font-size);
