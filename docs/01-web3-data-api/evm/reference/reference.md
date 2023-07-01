@@ -96,12 +96,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get DEX token pair reserves](/web3-data-api/evm/reference/get-pair-reserves)
 - [Get DEX token pair address](/web3-data-api/evm/reference/get-pair-address)
 
-### IPFS API
-
-- [Upload folder to IPFS](/web3-data-api/evm/reference/upload-folder)
-
 ### Utils
 
-- [Run contract function](/web3-data-api/evm/reference/run-contract-function)
 - [Get API version](/web3-data-api/evm/reference/web3-api-version)
 - [Get weights of endpoints](/web3-data-api/evm/reference/endpoint-weights)

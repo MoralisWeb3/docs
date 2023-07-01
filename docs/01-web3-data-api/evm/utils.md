@@ -1,6 +1,6 @@
 ---
 title: "Utils API"
-slug: "../utils-api"
+slug: "utils-api"
 sidebar_position: 12
 sidebar_class_name: "sidebar-utils-api"
 ---
