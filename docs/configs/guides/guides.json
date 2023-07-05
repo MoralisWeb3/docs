@@ -5,7 +5,30 @@
       "title": "Automated Blockchain Telegram Bot",
       "slug": "/guides/automated-blockchain-telegram-bot",
       "description": "This tutorial teaches you how to create an automated web3 telegram bot that listens to blockchain events and sends real-time notifications.",
-      "tags": ["Streams", "Demos"]
+      "tags": [
+        "Streams",
+        "Demos"
+      ]
+    },
+    "isEmpty": false,
+    "excerpt": ""
+  },
+  {
+    "content": "\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n\n# Block API - Full Guide & Walkthrough\n\nThe Block API enables Web3 developers to quickly get data on specific blocks across multiple blockchains. It allows you to retrieve all the transactional content related to [blockchain blocks](https://moralis.io/api/block/) using either a block hash or a block number. Additionally, you can query the closest blocks by their corresponding dates. This guide will walk you through how to interact with these APIs using both JavaScript and Python SDKs.\n\n## What is a Block API?\n\n[Block API](https://moralis.io/api/block/) is a collection of APIs that can be used to index Block data. With the Moralis Block API, you can get all transactions information mined on a block using its hash or number. Furthermore, you can also obtain data about the closest block to a specific date.\n\nThe Block API is categorized into **two primary endpoints** according to their use cases:\n\n| Endpoint                                         | Path                                   | Use Cases                                                                                                                                    |\n| ------------------------------------------------ | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |\n| [getBlock](/web3-data-api/evm/reference/get-block)        | /block/{block_number_or_hash}          | Fetch detailed information of a specific block using its block number or hash. Ideal for querying data about a specific block.       |\n| [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block)  | /dateToBlock                           | Fetch information of the closest block to a specific date. Perfect for obtaining historical data of blocks for a particular date.    |\n\n## Getting Started with the Moralis Block API\n\n### Step 1: Install the Moralis SDK\n\nimport SetupMoralis from '/docs/partials/\\_install-moralis-sdk.mdx';\n\n<SetupMoralis node=\"moralis\" python=\"moralis\" />\n\n### Step 2: Integrate the Block API into Your Code\n\nIntegrating the Block API into your application is straightforward. All the [Block APIs](https://moralis.io/api/block/) can be called using `Moralis.EvmApi.block.{apiName}`, where `apiName` is replaced by the actual name of the [Block API](https://moralis.io/api/block/) used.\n\nIn this guide, let's consider that you're developing a simple app to index blockchain blocks. \n\nHere are three initial features you can build using the [Block API](https://moralis.io/api/block/):\n\n#### Feature #1: Fetch All Transactions of a Block\n\nTo fetch all transactions from a block, you can use the Moralis [getBlock](/web3-data-api/evm/reference/get-block) endpoint.\n\nRequired parameters are:  \n`blockNumberOrHash`: Accepts the block number or block hash.  \n`chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain. Check the supported chains [here](/web3-data-api/evm#supported-chains).  \n`include`: Optional parameter that includes internal transactions if the value is set to 'internal_transactions'.  \n\nAfter retrieving the `blockNumberOrHash`, `chain`, and `include`, incorporate the following code into your existing codebase:\n\n<Tabs groupId=\"getBlock\">\n<TabItem value=\"js\" label=\"JavaScript\">\n\n```js\nconst Moralis = require(\"moralis\").default;\nconst { EvmChain } = require(\"@moralisweb3/common-evm-utils\");\n\nconst runApp = async () => {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\",\n    // ...and any other configuration\n  });\n\n  const blockNumberOrHash = \"15863321\";\n  const chain = EvmChain.ETHEREUM;\n\n  const response = await Moralis.EvmApi.block.getBlock({\n    blockNumberOrHash,\n    chain,\n    include: \"internal_transactions\",\n  });\n\n  console.log(response.raw);\n};\n\nrunApp();\n\n```\n</TabItem>\n\n<TabItem value=\"ts\" label=\"TypeScript\">\n\n```ts\nimport Moralis from \"moralis\";\nimport { EvmChain } from \"@moralisweb3/common-evm-utils\";\n\nconst runApp = async () => {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\",\n    // ...and any other configuration\n  });\n\n  const blockNumberOrHash = \"15863321\";\n  const chain = EvmChain.ETHEREUM;\n\n  const response = await Moralis.EvmApi.block.getBlock({\n    blockNumberOrHash,\n    chain,\n    include: \"internal_transactions\",\n  });\n\n  console.log(response?.raw);\n};\n\nrunApp();\n\n```\n</TabItem>\n\n<TabItem value=\"py\" label=\"Python\">\n\n```py\nfrom moralis import evm_api\nimport json\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"block_number_or_hash\": \"15863321\",\n    \"chain\": \"eth\", \n    \"include\": \"internal_transactions\", \n}\n\nresult = evm_api.block.get_block(\n    api_key=api_key,\n    params=params,\n)\n\n# converting it to json because of unicode characters\nprint(json.dumps(result, indent=4))\n```\n</TabItem>\n</Tabs>\n\n#### Feature #2: Retrieve Block Number Using the Date\n\nYou can accomplish this with the [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block) endpoint. \n\nThe required parameters are:  \n`date`: Accepts a UNIX timestamp in seconds or a date string (any format accepted by moment.js)  \n`chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain.Check the supported chains [here](/web3-data-api/evm#supported-chains).  \n\nAfter obtaining the `date` and `chain`, add the following code to your existing codebase:\n\n<Tabs groupId=\"getDateToBlock\">\n<TabItem value=\"js\" label=\"JavaScript\">\n\n```js\nconst Moralis = require(\"moralis\").default;\nconst { EvmChain } = require(\"@moralisweb3/common-evm-utils\");\n\nconst runApp = async () => {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\",\n    // ...and any other configuration\n  });\n\n  const date = \"2023-07-05\";\n  const chain = EvmChain.ETHEREUM;\n\n  const response = await Moralis.EvmApi.block.getDateToBlock({\n    date,\n    chain,\n  });\n\n  console.log(response.raw);\n};\n\nrunApp();\n```\n</TabItem>\n\n<TabItem value=\"ts\" label=\"TypeScript\">\n\n```ts\nimport Moralis from \"moralis\";\nimport { EvmChain } from\"@moralisweb3/common-evm-utils\";\n\nconst runApp = async () => {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\",\n    // ...and any other configuration\n  });\n\n  const date = \"2023-07-05\";\n  const chain = EvmChain.ETHEREUM;\n\n  const response = await Moralis.EvmApi.block.getDateToBlock({\n    date,\n    chain,\n  });\n\n  console.log(response.raw);\n};\n\nrunApp();\n\n```\n</TabItem>\n\n<TabItem value=\"py\" label=\"Python\">\n\n```py\nfrom moralis import evm_api\nimport json\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"date\": \"2023-07-05\",\n    \"chain\": \"eth\",\n}\n\nresult = evm_api.block.get_date_to_block(\n    api_key=api_key,\n    params=params,\n)\n\n# Converting it to JSON because of unicode characters\nprint(json.dumps(result, indent=4))\n```\n</TabItem>\n\n</Tabs>\n\nWith these few lines of code, you can use the Moralis Block API to find the nearest block for a given date.\n\n### Step 3: Go Live!\n\nOnce you have integrated the [Moralis Block API](https://moralis.io/api/block/) into your app and can index block data, it's time to go live.\n\nBefore you do, ensure your API key is stored securely. Best practices include:\n\n- Storing your API key in an environment variable (secret) `process.env`.\n- Having your API called on the backend. Although you can call the Block API on the frontend, it is not recommended because it can easily reveal your API key in the browser.\n\nOnce all checks are complete, your app is ready to go live with the [Moralis Block API](https://moralis.io/api/block/)! 🚀\n",
+    "data": {
+      "title": "Block API - Full Guide & Walkthrough",
+      "slug": "/guides/block-api-full-guide-walkthrough",
+      "description": "This tutorial teaches you what an Block API is, what are some of its most common use cases, and how to use it within your tech stack.",
+      "tags": [
+        "Block API",
+        "Moralis",
+        "Blockchain Blocks",
+        "Blockchain API",
+        "Blockchain API Key",
+        "Blockchain Data API",
+        "Block Hash",
+        "Moralis SDK"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -16,7 +39,10 @@
       "title": "Blockchain Discord Bot",
       "slug": "/guides/blockchain-discord-bot",
       "description": "This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications.",
-      "tags": ["Streams", "Demos"]
+      "tags": [
+        "Streams",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -27,7 +53,10 @@
       "title": "Live Crypto Notifications",
       "slug": "/guides/live-crypto-notifications",
       "description": "This tutorial teaches you how to use the Streams API to display live desktop notifications for any USDT transfers.",
-      "tags": ["Streams", "Demos"]
+      "tags": [
+        "Streams",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -56,7 +85,10 @@
       "title": "Token Gating Website (NextJS)",
       "slug": "/guides/token-gating-website-nextjs",
       "description": "This tutorial teaches you how to add NFT gated functionality to your NextJS dapp. You can set the rules using `getServerSide` for each page you want to protect. This tutorial works on almost any blockchain, including Ethereum, Polygon, BNB Smart Chain, Avalanche, Cronos, and many more!",
-      "tags": ["NFT API", "Demos"]
+      "tags": [
+        "NFT API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -67,7 +99,11 @@
       "title": "Solana Micro Blogger Dapp",
       "slug": "/guides/solana-micro-blogger-dapp",
       "description": "This tutorial teaches you how to create your very own Micro Blogger Dapp powered by Solana Smart contract and Moralis",
-      "tags": ["Authentication API", "Solana API", "Demos"]
+      "tags": [
+        "Authentication API",
+        "Solana API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -78,7 +114,11 @@
       "title": "Solana Multiplayer Game - TicTacToe",
       "slug": "/guides/solana-multiplayer-game-tictactoe",
       "description": "This tutorial teaches you how to create your very own Multiplayer Tic Tac Toe game powered by Solana Smart contract and Moralis",
-      "tags": ["Solana API", "Authentication API", "Demos"]
+      "tags": [
+        "Solana API",
+        "Authentication API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -89,7 +129,11 @@
       "title": "Solana NFT Burner",
       "slug": "/guides/solana-nft-burner",
       "description": "This tutorial teaches you how to create your very own NFT burner dapp in NextJS using Metaplex JS SDK, and the Moralis API.",
-      "tags": ["Solana API", "NFT API", "Demos"]
+      "tags": [
+        "Solana API",
+        "NFT API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -100,7 +144,11 @@
       "title": "Solana NFT Explorer",
       "slug": "/guides/solana-nft-explorer",
       "description": "Solana NFT Explorer is an app powered by the Solana NFT API which lets you explore all the NFTs that any wallet is holding.",
-      "tags": ["Solana API", "NFT API", "Demos"]
+      "tags": [
+        "Solana API",
+        "NFT API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -111,7 +159,11 @@
       "title": "Solana NFT Minter",
       "slug": "/guides/solana-nft-minter",
       "description": "This tutorial teaches you how to create your very own NFT minter dapp in NextJS using Metaplex JavaScript SDK, and the Moralis API.",
-      "tags": ["Solana API", "NFT API", "Demos"]
+      "tags": [
+        "Solana API",
+        "NFT API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -122,7 +174,9 @@
       "title": "Streams API - Full Guide & Walkthrough",
       "slug": "/guides/streams-api-full-guide-walkthrough",
       "description": "This tutorial teaches you what the Streams API is, what are some of its most common use cases, and how to use it within your tech stack.",
-      "tags": ["Streams"]
+      "tags": [
+        "Streams"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -133,7 +187,11 @@
       "title": "Token Gating Website (Django)",
       "slug": "/guides/token-gating-website-django",
       "description": "This tutorial is a continuation of the previous tutorial on how to use Moralis' Auth API in Django. Now, in this tutorial, you will learn how to show content for a restricted page only when the currently authenticated user holds a specific NFT.",
-      "tags": ["Authentication API", "NFT API", "Demos"]
+      "tags": [
+        "Authentication API",
+        "NFT API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -144,7 +202,11 @@
       "title": "Unreal 5 Get Web3 Data",
       "slug": "/guides/unreal-5-get-web3-data",
       "description": "This tutorial shows you how to connect an **Unreal game** to a **Moralis backend**, in this case hosted on **AWS Lambda**. We will retrieve a wallet's **native balance** and its **NFTs**.\nBelow we provide a sample game to set everything up in a few minutes.",
-      "tags": ["NFT API", "Balance API", "Demos"]
+      "tags": [
+        "NFT API",
+        "Balance API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -155,7 +217,11 @@
       "title": "Web3 Social Media",
       "slug": "/guides/web3-social-media",
       "description": "This tutorial teaches you how to create your very own decentralized social profile using [Lens](https://www.lens.xyz/) and the Moralis API.",
-      "tags": ["NFT API", "Token API", "Demos"]
+      "tags": [
+        "NFT API",
+        "Token API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
@@ -166,7 +232,12 @@
       "title": "Zapper Clone",
       "slug": "/guides/zapper-clone",
       "description": "This tutorial teaches you how to build a Zapper-like application where you can check Token Balance, Transaction History and NFT balances.",
-      "tags": ["NFT API", "Token API", "Balance API", "Demos"]
+      "tags": [
+        "NFT API",
+        "Token API",
+        "Balance API",
+        "Demos"
+      ]
     },
     "isEmpty": false,
     "excerpt": ""
