@@ -44,9 +44,9 @@ Here are three initial features you can build using the [Block API](https://mora
 To fetch all transactions from a block, you can use the Moralis [getBlock](/web3-data-api/evm/reference/get-block) endpoint.
 
 Required parameters are:  
-`blockNumberOrHash`: Accepts the block number or block hash.  
-`chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain. Check the supported chains [here](/web3-data-api/evm#supported-chains).  
-`include`: Optional parameter that includes internal transactions if the value is set to 'internal_transactions'.  
+- `blockNumberOrHash`: Accepts the block number or block hash.  
+- `chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain. Check the supported chains [here](/web3-data-api/evm#supported-chains).  
+- `include`: Optional parameter that includes internal transactions if the value is set to 'internal_transactions'.  
 
 After retrieving the `blockNumberOrHash`, `chain`, and `include`, incorporate the following code into your existing codebase:
 
@@ -138,8 +138,8 @@ print(json.dumps(result, indent=4))
 You can accomplish this with the [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block) endpoint. 
 
 The required parameters are:  
-`date`: Accepts a UNIX timestamp in seconds or a date string (any format accepted by moment.js)  
-`chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain.Check the supported chains [here](/web3-data-api/evm#supported-chains).  
+- `date`: Accepts a UNIX timestamp in seconds or a date string (any format accepted by moment.js)  
+- `chain`: Optional parameter that accepts the name of the chain from which to query data. The default value is the 'eth' chain.Check the supported chains [here](/web3-data-api/evm#supported-chains).  
 
 After obtaining the `date` and `chain`, add the following code to your existing codebase:
 
