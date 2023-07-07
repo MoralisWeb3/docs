@@ -15,19 +15,26 @@ You can start this tutorial if you already have a NextJS dapp with [MetaMask sig
 ## RainbowKit Installation
 
 ```bash npm2yarn
-npm install @rainbow-me/rainbowkit
+npm install @rainbow-me/rainbowkit@latest wagmi viem
 ```
 
 ## RainbowKit Configuration
 
-Modify `pages/_app.jsx`:
+We are going to modify `pages/_app.jsx` and add the required code to set up RainbowKit Authentication.
+
+:::info
+
+You can get your project ID on the [WalletConnect Dashboard](https://cloud.walletconnect.com/).
+
+:::
+
 
 ```javascript
-import { createConfig, configureChains, WagmiConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
-import { mainnet } from "wagmi/chains";
-import { SessionProvider } from "next-auth/react";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { createConfig, configureChains, WagmiConfig } from "wagmi";
+import { mainnet } from "wagmi/chains";
+import { publicProvider } from "wagmi/providers/public";
+import { SessionProvider } from "next-auth/react";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
@@ -37,6 +44,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: "My RainbowKit App",
+  projectId: "WALLET_CONNECT_PROJECT_ID", // Get your project ID from https://cloud.walletconnect.com/
   chains,
 });
 
@@ -170,6 +178,33 @@ function SignIn() {
 
 export default SignIn;
 ```
+
+## Set Up RainbowKit with NextJS
+
+:::info
+
+The Webpack v5 bundler used by Next.js no longer provides Node polyfills, so you'll need to include these modules yourself to satisfy RainbowKit's peer dependencies.
+
+:::
+
+In previous versions of RainbowKit that relied on ethers, the fs, net, and tls modules were automatically polyfilled. This is no longer the case with RainbowKit v1 + wagmi v1, which are built on viem.
+
+Open `next.config.js` file in the root of your project and add the following code:
+
+```javascript 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, net: false, tls: false };
+    return config;
+  },
+};
+
+module.exports = nextConfig;
+```
+
+Read more about RainbowKit configuration on the [official documentation](https://www.rainbowkit.com/docs/installation#additional-build-tooling-setup).
 
 ## Testing the RainbowKit Connector
 

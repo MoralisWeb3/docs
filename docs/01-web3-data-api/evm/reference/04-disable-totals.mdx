@@ -6,6 +6,11 @@ description: "Learn more about what is Disable Totals feature from Moralis APIs 
 
 ## What is Disable Totals?
 
+:::caution Deprecating Feature
+
+For any API that has `disable_totals` as an input parameter and `total` as an output responses, this feature will be deprecated soon. For announcements, please subscribe to the [Changelog](/changelog) page.
+:::
+
 `disable_totals` is an optional input parameter that allows you to control whether the `total` field returned with your Moralis API responses. By default, `disable_totals` is set to `true` if not specified, which will result in the `total` having a `null` value. Therefore, if you need to have the `total` field in your responses, make sure to set `disable_totals` as `false` within each of your API calls.
 
 ### Use Cases

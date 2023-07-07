@@ -109,7 +109,7 @@ from django.contrib.auth.models import User
 from datetime import datetime, timedelta, timezone
 
 API_KEY = 'WEB3_API_KEY_HERE'
-# this is a check to make sure the the API key was set
+# this is a check to make sure the API key was set
 # you have to set the API key only in line 9 above
 # you don't have to change the next line
 if API_KEY == 'WEB3_API_KEY_HERE':

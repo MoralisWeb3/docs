@@ -5,8 +5,15 @@ slug: /web3-data-api/reference/get-erc20-transfers
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
 import config from "../../../../../configs/api-reference/configs.json";
+import Link from "@docusaurus/Link";
 
 # Get ERC20 token transfers
 
-<ApiReference {...config.token.getErc20Transfers} />
+<ApiReference {...config.token.getErc20Transfers}>
+  <Admonition type="caution" title="DEPRECATED ENDPOINT">
+    This API will be deprecated soon. Please subscribe to the{" "}
+    <Link href="/changelog">Changelog</Link> page for further announcements.
+  </Admonition>
+</ApiReference>
