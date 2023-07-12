@@ -13,6 +13,7 @@ This migration guide covers the following:
 - Deprecation of `total` and `disable_total`
 - Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
 - Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
+- Deprecation of endpoints
 
 ## Deprecation of `total` and `disable_total`
 
@@ -153,3 +154,83 @@ If you want all events/logs from a contract, you now need to make multiple calls
 ## Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 
 The `direction` parameter on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers) is deprecated. Remove this parameter from your request, and remove any usage of the `direction` from your code.
+
+## Deprecation of endpoints
+The following endpoints will be deprecated: 
+- [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts)
+- [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints)
+- [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
+- [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
+- [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
+
+#### [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
+If you are using [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers) then please start using [`getTokenTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-wallet-token-transfers) and/or [`getTokenAddressTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-transfers).
+
+#### [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
+If you are using [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance)
+
+Taking the following request on [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals):
+```js
+curl --request GET \
+     --url 'https://deep-index.moralis.io/api/v2/0xd8da6bf26964af9d7eed9e03e53415d37aa96045/erc20/transfers?chain=eth' \
+     --header 'accept: application/json' \
+     --header 'X-API-Key: YOUR_API_KEY' 
+```
+
+Returns the following response:
+```js
+{
+  "cursor": null,
+  "result": [
+    {
+      "token_name": "stETH",
+      "token_symbol": "stETH",
+      "token_logo": "https://cdn.moralis.io/eth/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png",
+      "token_decimals": "18",
+      "from_wallet": "0xcb1c1fde09f811b294172696404e88e658659905",
+      "from_wallet_label": null,
+      "to_wallet": "0x1111111254eeb25477b68fb85ed929f73a960582",
+      "to_wallet_label": "1inch v5: Aggregation Router",
+      "contract_address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+      "block_hash": "0xb0bfa1a5d52ed5abc15b5dcd1e4cb351f3cc3b35d4b8c3bf4e0e91ec78d76670",
+      "block_number": "17654765",
+      "block_timestamp": "2023-07-09T07:47:59.000Z",
+      "transaction_hash": "0x8ddc6e9cf29aac7b5d2d42e60d6452ca1874c05ca3f44d97bdf5007bc3e5cdce",
+      "transaction_index": "132",
+      "log_index": "559",
+      "value": "144999999999999999",
+      "possible_spam": false,
+      "value_decimal": "0.145"
+    }
+  ]
+}
+```
+
+To get the same allowance using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance), you would make the below request with the following inputs:
+
+Path parameters:
+- `address` = `0xae7ab96520de3a18e5e111b5eaab095312d7fe84`
+
+Query parameters:
+- `owner_address` = `0xcB1C1FdE09f811B294172696404e88E658659905`
+- `spender_address` = `0x1111111254eeb25477b68fb85ed929f73a960582`
+
+```js
+curl --request GET \
+     --url 'https://deep-index.moralis.io/api/v2/erc20/0xae7ab96520de3a18e5e111b5eaab095312d7fe84/allowance?chain=eth&owner_address=0xcB1C1FdE09f811B294172696404e88E658659905&spender_address=0x1111111254eeb25477b68fb85ed929f73a960582' \
+     --header 'accept: application/json' \
+     --header 'X-API-Key: YOUR_API_KEY' 
+```
+
+Will return the following response:
+
+```js
+{
+  "allowance": "144999999999999999"
+}
+```
+
+We then see that `allowance` returned mirrors `value` from the [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals).
+
+####  [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints), [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
+If you are using [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints) or [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns) please remove these endpoints from your code base.
