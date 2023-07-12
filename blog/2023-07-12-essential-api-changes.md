@@ -18,8 +18,6 @@ These changes are:
 
 If you are affected by these changes you can find a detailed [migration guide here](/web3-data-api/breaking-changes/migration-guide).
 
-These changes will improve the speed, consistency, and scalability of our API, making it easier for you to work with whilst laying the foundations for what’s coming next…
-
-These changes also pave the way for some highly anticipated features. In the short term, expect enhancements like **wallet net-worth**, **NFT prices** and **ERC20 holders**. Rest assured, more improvements are on the way very soon!
+These changes will improve the speed, consistency, and scalability of our API, making it easier for you to work with whilst laying the foundations for what’s coming next… In the short term, expect enhancements like **wallet net-worth**, **NFT prices** and **ERC20 holders**. Rest assured, more improvements are on the way very soon!
 
 Check out our [Roadmap](https://roadmap.moralis.io/) to stay up-to-date with all of the features we have coming soon.
