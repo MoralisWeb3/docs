@@ -1,17 +1,17 @@
 ---
-sidebar_position: 3
-sidebar_label: Get decoded transactions by wallet
-slug: /web3-data-api/evm/reference/get-decoded-wallet-transaction
+sidebar_position: 1
+sidebar_label: Get decoded transaction by hash
+slug: /web3-data-api/evm/reference/get-decoded-transaction
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
 
-# Get decoded transactions by wallet
+# Get decoded transaction by hash
 
-<ApiReference {...config.transaction.getWalletTransactionsVerbose}>
+<ApiReference {...config.transaction.getTransactionVerbose}>
   <Admonition type="info" title="Missing Decodings">
     <p>
       We only decode transactions from verified ABIs. We are continuously adding

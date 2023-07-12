@@ -7,6 +7,24 @@ description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 sidebar_class_name: "sidebar-api-reference"
 ---
 
+### Wallet API
+
+#### Get Wallet Details
+#### Get Native Balance
+#### Get NFTs
+#### Get Tokens
+#### Get Transactions
+#### Get Transfers
+
+- [Get NFT transfers by wallet](/web3-data-api/evm/reference/get-wallet-nft-transfers)
+
+#### Domains Lookups
+
+- [ENS Lookup by address](/web3-data-api/evm/reference/resolve-address)
+- [ENS Lookup by domain](/web3-data-api/evm/reference/resolve-ens-domain)
+- [Unstoppable Lookup by Address](/web3-data-api/evm/reference/resolve-address-to-domain)
+- [Unstoppable Lookup By Domain](/web3-data-api/evm/reference/resolve-domain)
+
 ### NFT API
 
 #### Get NFTs
@@ -56,10 +74,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
 - [Get ERC20 token allowance](/web3-data-api/evm/reference/get-token-allowance)
 
-#### Get Token Transactions
-
-- [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
-- [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
+#### Get Token Transactions ❌
 
 #### Get Token Metadata
 
@@ -86,10 +101,8 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get block by hash](/web3-data-api/evm/reference/get-block)
 - [Get block by date](/web3-data-api/evm/reference/get-date-to-block)
 
-### Resolve API
+### Resolve API ❌
 
-- [Resolve ENS domain](/web3-data-api/evm/reference/resolve-address)
-- [Resolve Unstoppable domain](/web3-data-api/evm/reference/resolve-domain)
 
 ### DeFi API
 
