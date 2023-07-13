@@ -94,7 +94,7 @@
   --docs-color-text: #000;
   --docs-color-background-100: #f8f8f8;
   --docs-color-background-200: #efefef;
-
+  --docusaurus-announcement-bar-height: auto !important;
   --ifm-hr-background-color: var(--ifm-toc-border-color);
 
   --ifm-z-index-fixed: 40;
