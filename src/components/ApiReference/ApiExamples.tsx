@@ -14,6 +14,7 @@ import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import usePageState from "@site/src/hooks/usePageState";
 import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
 import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
+import { bodyFixer } from "./utils";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -254,7 +255,6 @@ export const formatParamsByLang = (params: any, lang: string) => {
       params[key] = params[key]
         .filter((val) => val !== null && val !== undefined) // filter null or undefined values
         .map((childParams) => {
-          console.log(childParams);
           return formatParamsByLang(childParams, lang);
         });
     }
@@ -302,6 +302,7 @@ export const formatParamsByLang = (params: any, lang: string) => {
 };
 
 const customNodeSdkBody = (code: string, body: any) => {
+  console.log({ code, body });
   // For `requestChallengeEvm` and `requestChallengeSolana`
   if (code.includes("requestMessage")) {
     const { chainId, network } = body ?? {};
@@ -355,6 +356,7 @@ export const injectParamsToCode = (
   aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
+  const fixedBody = bodyFixer(code, body);
   switch (lang) {
     case "node":
       return code
@@ -364,8 +366,8 @@ export const injectParamsToCode = (
             removeEmpty({
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
-              ...formatParamsByLang({ ...body }, lang),
-              ...customNodeSdkBody(code, body),
+              ...formatParamsByLang({ ...fixedBody }, lang),
+              ...customNodeSdkBody(code, fixedBody),
               ...(network === "aptos" ? { network: aptosNetwork } : {}),
             }),
             true
@@ -441,7 +443,6 @@ const ApiExamples = ({
 
   const formattedValuesForQueryPath = useMemo(() => {
     const { body, path, query } = values ?? {};
-
     return {
       ...body,
       ...path,
