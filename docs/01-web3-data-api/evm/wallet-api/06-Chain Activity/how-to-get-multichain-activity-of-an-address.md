@@ -23,9 +23,9 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 In order to get the chain activity, Moralis provides you a [getWalletActiveChains](/web3-data-api/evm/reference/get-chain-activity-by-wallet) endpoint to do so.
 
-Here you'll need two parameters: `address` and `chain`.
+Here you'll need two parameters: `address` and `chains`.
 
-Once you've obtained both the `address` and `chain`, you can copy the following code:
+Once you've obtained both the `address` and `chains`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
