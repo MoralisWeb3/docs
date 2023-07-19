@@ -58,7 +58,7 @@ Give it a name and fill in the details as you want (press `enter` to use the def
 3. Install the required dependencies:
 
 ```bash npm2yarn
-npm install moralis @moralisweb3/next next-auth next react react-dom
+npm install moralis @moralisweb3/next next-auth next@12.3.4 react react-dom
 ```
 
 4. Open `package.json` and add the following scripts:
