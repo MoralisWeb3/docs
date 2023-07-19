@@ -139,7 +139,7 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳 You just got all ERC20 tokens owned by an address with just a few lines of code using the Moralis Token API!
+Congratulations 🥳 You just got all ERC20 tokens owned by an address with just a few lines of code using the Moralis Wallet API!
 
 ## API Reference
 
