@@ -1,7 +1,7 @@
 ---
 title: "How to get all the NFTs from a collection"
-slug: "../../how-to-get-all-the-nfts-from-a-collection"
-description: "Learn how to get all NFTs from a collection using Moralis NFT API."
+slug: "../how-to-get-all-the-nfts-from-a-collection"
+description: "Learn how to get all NFTs from a collection using Moralis Wallet API."
 sidebar_label: "Get NFTs by collection"
 ---
 
@@ -184,7 +184,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got all the NFTs from a collection with just a few lines of code using the Moralis NFT API!
+Congratulations 🥳 you just got all the NFTs from a collection with just a few lines of code using the Moralis Wallet API!
 
 ## Youtube Video
 
