@@ -1,7 +1,7 @@
 ---
 title: "How to get all ERC20 tokens owned by an address"
-slug: "../../how-to-get-all-erc20-tokens-owned-by-an-address"
-description: "Learn how to get all ERC20 tokens owned by an address by Moralis Token API."
+slug: "../how-to-get-all-erc20-tokens-owned-by-an-address"
+description: "Learn how to get all ERC20 tokens owned by an address by Moralis Wallet API."
 sidebar_label: "Get ERC20 tokens owned by address"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "How to get all transactions of an address"
 slug: "../how-to-get-all-transactions-of-an-address"
-description: "Learn how to get all the transactions of an address using the Moralis Transaction API."
+description: "Learn how to get all the transactions of an address using the Moralis Wallet API."
 sidebar_label: "Get transactions of address"
 sidebar_position: 4
 ---
@@ -147,7 +147,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got all the transactions for a wallet address with only a few lines of code using the Moralis Transaction API!
+Congratulations 🥳 you just got all the transactions for a wallet address with only a few lines of code using the Moralis Wallet API!
 
 ## Youtube Video
 
