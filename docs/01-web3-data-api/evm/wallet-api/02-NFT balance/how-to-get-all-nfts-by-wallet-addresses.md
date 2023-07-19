@@ -1,6 +1,6 @@
 ---
 title: "How to get all the NFTs by wallet addresses"
-slug: "../../how-to-get-all-nfts-by-wallet-addresses"
+slug: "../how-to-get-all-nfts-by-wallet-addresses"
 description: "Learn how to get all NFTs (with metadata) owned by a group of wallet addresses."
 sidebar_label: "Get NFTs by wallet addresses"
 ---
@@ -201,7 +201,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got all the NFTs owned by an address across chains with just a few lines of code using the Moralis NFT API!
+Congratulations 🥳 you just got all the NFTs owned by an address across chains with just a few lines of code using the Moralis Wallet API!
 
 ## API Reference
 

@@ -1,7 +1,7 @@
 ---
 title: "How to get the native balance of an address"
 slug: "../how-to-get-the-balance-of-a-wallet"
-description: "Learn how to get the native balance of an address using the Moralis Balance API."
+description: "Learn how to get the native balance of an address using the Moralis Wallet API."
 sidebar_label: "Get native balance of address"
 ---
 
@@ -125,7 +125,7 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳 You just got the native balance of a wallet address with just a few lines of code using the Moralis Balance API!
+Congratulations 🥳 You just got the native balance of a wallet address with just a few lines of code using the Moralis Wallet API!
 
 ## Youtube Video
 

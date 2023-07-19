@@ -1,7 +1,7 @@
 ---
 title: "How to get all the NFTs owned by an address cross chain"
-slug: "../../how-to-get-all-nfts-own-by-an-address-cross-chain"
-description: "Learn how to get all NFTs (with metadata) owned by an address cross chain using Moralis NFT API."
+slug: "../how-to-get-all-nfts-own-by-an-address-cross-chain"
+description: "Learn how to get all NFTs (with metadata) owned by an address cross chain using Moralis Wallet API."
 sidebar_label: "Get NFTs owned by address cross chain"
 sidebar_position: 2
 ---
@@ -202,7 +202,7 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got all the NFTs owned by an address across chains with just a few lines of code using the Moralis NFT API!
+Congratulations 🥳 you just got all the NFTs owned by an address across chains with just a few lines of code using the Moralis Wallet API!
 
 ## API Reference
 
