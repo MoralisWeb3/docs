@@ -5,15 +5,20 @@ description: "Learn how to setup streams secret key which is essential for webho
 sidebar_position: 1
 ---
 
-## What is a secert key in streams?
+## Introduction
 
-Streams `secret key` is unique string which can be used to identify the sender of webhook, through webhook signature verification.
+Welcome to the guide on setting up the Streams secret key for webhook signature verification. In this tutorial, we'll explore what the secret key is, how to update it, and its role in verifying the authenticity of incoming webhooks.
 
-## How to update the secret key? 
+## What is a Secret Key in Streams?
+
+The Streams `secret key` is a unique string used to identify the sender of a webhook through webhook signature verification.
+
+## Updating the Secret Key
 
 You can update the `secret key` by visiting the [Moralis settings page](https://admin.moralis.io/streams). 
 
-You can use any string as `secret key` but when you are using Moralis SDK to verify stream signature, it is recommended to use the `Web3 API key` that you are using in your code as the stream `sectet key`.
+<img width="700" alt="image" src="https://github.com/MoralisWeb3/docs/assets/15834299/51f4186e-afef-40e3-8753-b0d21a09fef1">
 
-Learn how to verify the Stream signature by visiting this [tutorial doc](/streams-api/evm/response-body#how-to-verify-the-signature-for-the-received-webhook-request).
+We recommend using the `Web3 API key` that you are using in your code as the stream `secret key` when using the Moralis SDK for webhook signature verification.
 
+To learn how to verify the Stream signature, check out the tutorial on how to [verify the signature for the received webhook request](/streams-api/evm/response-body#how-to-verify-the-signature-for-the-received-webhook-request).
