@@ -15,7 +15,7 @@ The Streams `secret key` is a unique string used to identify the sender of a web
 
 ## Updating the Secret Key
 
-You can edit the `secret key` by visiting the [Moralis settings page](https://admin.moralis.io/streams). Once edits use the Save Changes button to update the key.
+You can edit the `secret key` by visiting the [Moralis settings page](https://admin.moralis.io/streams). Once edited use the Save Changes button to update the key.
 
 ![Setting page](https://github.com/MoralisWeb3/docs/assets/15834299/51f4186e-afef-40e3-8753-b0d21a09fef1)
 
