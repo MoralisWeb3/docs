@@ -17,7 +17,7 @@ The Streams `secret key` is a unique string used to identify the sender of a web
 
 You can update the `secret key` by visiting the [Moralis settings page](https://admin.moralis.io/streams). 
 
-<img width="700" alt="image" src="https://github.com/MoralisWeb3/docs/assets/15834299/51f4186e-afef-40e3-8753-b0d21a09fef1">
+![Setting page](https://github.com/MoralisWeb3/docs/assets/15834299/51f4186e-afef-40e3-8753-b0d21a09fef1)
 
 We recommend using the `Web3 API key` that you are using in your code as the stream `secret key` when using the Moralis SDK for webhook signature verification.
 
