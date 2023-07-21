@@ -1,6 +1,6 @@
 ---
 title: "Setting up streams secret key"
-slug: "../using-webui"
+slug: "../setup-secret-key"
 description: "Learn how to setup streams secret key which is essential for webhook signature verification."
 sidebar_position: 1
 ---
