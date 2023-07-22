@@ -1,40 +1,56 @@
 ---
 title: "Wallet API"
-slug: "../wallet-api"
-description: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
-sidebar_position: 4
+description: "Boasting an array of features, exceptional flexibility, and unparalleled scalability, our Wallet API is the definitive solution for integrating wallet functionalities into your Web3 dapps."
+sidebar_position: 3
 sidebar_class_name: "sidebar-wallet-api"
 ---
 
-![](/img/content/bb36730-image.webp)
+![image](https://github.com/MoralisWeb3/docs/assets/13417464/15f7b5ff-cc8e-44ca-b745-86db96576349)
+
+
 
 ## What is the Wallet API?
 
-The Balance API helps Web3 developers get the native balance for a specific wallet address.
+Boasting an array of features, exceptional flexibility, and unparalleled scalability, our Wallet API is the definitive solution for integrating wallet functionalities into your Web3 dapps.
 
-### Wallet API features
+The Wallet API provides out-of-the-box functionality for the most popular features when building or adding wallet functionality to your dapp, including:
 
-The Balance API provides out-of-the-box functionality for the most popular features when working with native balance (ETH, BNB, MATIC, CRO, etc.), including:
+- [Fetch native balances for a wallet](/web3-data-api/evm/reference/get-wallet-native-balance): Access both current and historical native balances for any wallet.
+- [Fetch all NFTs in a wallet](/web3-data-api/evm/reference/get-nfts-by-wallet): Fetch all NFTs and collections held by a wallet, along with their enriched metadata and optimized images.
+- [Lookup ERC20 token balances in a wallet](/web3-data-api/evm/reference/get-token-balances-by-wallet): Lookup current ERC20 holdings including their real-time prices, as well as full historical holdings for any block number.
+- [Fetch all transactions for a wallet](/web3-data-api/evm/reference/get-decoded-transactions-by-wallet): Connect the dots and understand what's happening on the blockchain through our data decoding transaction labeling & method decoding.
+- Fetch [NFT transfers](/web3-data-api/evm/reference/get-wallet-nft-transfers) or [ERC20 transfers](/web3-data-api/evm/reference/get-wallet-token-transfers) for a wallet]: Retrieve real-time transfers, swaps and purchases across NFTs and ERC20 tokens.
+- [Get wallet age and cross-chain activity](/web3-data-api/evm/reference/get-chain-activity-by-wallet): Identify wallet age, chain activity, as well as support for domain lookups such as ENS and Unstoppable Domains.
 
-- Fetching native balance (native and USD)
-- Fetching ERC20 owned by a given wallet
-- Fetching ERC20 balances for a given wallet
-- Fetching ERC20 transfers for a given wallet
-- Support for all ERC20 tokens
-- Real-time ERC20 token price discovery and metadata
 
-Plus so much more!
+## Example use cases
 
-### Popular use cases
+The use cases for our Wallet API API are truly endless! Some popular use cases include:
 
-The Wallet API is extremely flexible, meaning it can support a wide range of use cases, including:
+- Web3 Wallets
+  - Current and historical token balances
+  - Real-time token prices & net-worth
+  - Detailed user activity
+  - Hide spam tokens
+- Decentralized Exchanges (DEXs)
+  - Fetch ERC20 balances
+  - Historical balances
+  - Real-time and historical token prices
+  - ERC20 transfers, swaps and trades
+- Portfolio Trackers
+  - Calculate wallet net-worth
+  - Track wallet returns
+  - Track token performance
+  - Historical balances and prices
+- NFT Marketplaces
+  - Fetch NFT balances
+  - Fetch owned collections
+  - ReDisplay NFT images and Metadata
+  - NFT transfers, swaps and purchase
+ 
+As well as Web3 Analytics tools, DAOs, Web3 gaming plus many more!
 
-- Live Price Feeds
-- Portfolio Dashboard
-- Transaction Monitoring
-- Ownership Verification
-
-## Supported Chains
+## Supported chains
 
 The Wallet API supports multiple EVM chains:
 

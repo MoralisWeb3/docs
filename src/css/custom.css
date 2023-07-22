@@ -487,12 +487,12 @@ li.sidebar-nft-api a.menu__link--active:before {
 }
 
 li.sidebar-wallet-api a.menu__link:before {
-  background-image: url(/img/sidebar-icons/balance-api.svg);
+  background-image: url(/img/sidebar-icons/wallet-api.svg);
 }
 
 li.sidebar-wallet-api a.menu__link:hover:before,
 li.sidebar-wallet-api a.menu__link--active:before {
-  background-image: url(/img/sidebar-icons/balance-api-active.svg);
+  background-image: url(/img/sidebar-icons/wallet-api-active.svg);
 }
 
 li.sidebar-token-api a.menu__link:before {

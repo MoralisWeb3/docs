@@ -18,7 +18,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get All NFTs Collections Owned By An Address
+## Step 2: Get All NFTs Transfers in a Block
 
 In order to get all the NFT transfers in a block, Moralis provides you with a `getNFTTransfersByBlock` endpoint to do so.
 
