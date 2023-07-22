@@ -2,7 +2,7 @@
 title: "Balance API"
 slug: "../balance-api"
 description: "Fetch real-time native token balance data into your applications with Moralis’s powerful cross-chain Balance API, providing seamless access to any addresses or smart contract native token balances."
-sidebar_position: 5
+sidebar_position: 7
 sidebar_class_name: "sidebar-balance-api"
 ---
 
