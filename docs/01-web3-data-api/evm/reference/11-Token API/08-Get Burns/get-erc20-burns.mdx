@@ -1,0 +1,38 @@
+---
+sidebar_position: 0
+sidebar_label: Get ERC20 token burns
+slug: /web3-data-api/evm/reference/get-erc20-burns
+---
+
+import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import Link from "@docusaurus/Link";
+import config from "../../../../../configs/api-reference/configs.json";
+
+# Get ERC20 token burns
+
+<ApiReference {...config.token.getErc20Burns}>
+  <Admonition type="caution" title="DEPRECATED ENDPOINT">
+    This API will be deprecated on 4th September 2023.  Please subscribe to the{" "}
+    <Link href="/changelog">Changelog</Link> page for further announcements.
+  </Admonition>
+  <Admonition title="Token Burns" icon="🔥">
+    <p>
+      This endpoint retrieves information about token burns for a specific
+      contract, where tokens have been burned by transferring them to a{" "}
+      <Link href="https://etherscan.io/address/0x0000000000000000000000000000000000000000">
+        null address
+      </Link>
+      .
+    </p>
+    <p>
+      Sending tokens to a{" "}
+      <Link href="https://etherscan.io/address/0x0000000000000000000000000000000000000000">
+        null address
+      </Link>
+      is a widely-used practice for decreasing the total supply of an ERC20
+      token. Tokens that have been burned cannot be utilized or accessed by
+      anyone.
+    </p>
+  </Admonition>
+</ApiReference>
