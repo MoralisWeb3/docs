@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Resolve Unstoppable Domain
 
-In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a [resolveDomain](/web3-data-api/evm/reference/resolve-domain) endpoint to do so.
+In order to resolve an Unstoppable domain to an ETH address, Moralis provides you a [resolveDomain](/web3-data-api/evm/reference/wallet-api/resolve-domain) endpoint to do so.
 
 Here you'll need one parameter: `address`.
 
@@ -126,7 +126,7 @@ https://www.youtube.com/watch?v=KgZuwI_A320
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveDomain](/web3-data-api/evm/reference/resolve-domain)
+- [resolveDomain](/web3-data-api/evm/reference/wallet-api/resolve-domain)
 
 ## Support
 

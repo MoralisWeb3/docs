@@ -16,9 +16,9 @@ Click [here](https://docs.ens.domains/dapp-developer-guide/resolving-names) to r
 
 The Resolve API provides the following functionality out of the box to power the dapps you are:
 
-- [Resolve an ETH address and lookup the ENS name](/web3-data-api/evm/reference/resolve-address)
-- [Reverse Resolve an ENS name and lookup the ETH address](/web3-data-api/evm/reference/resolve-ens-domain)
-- [Resolving an Unstoppable domain and lookup the address](/web3-data-api/evm/reference/resolve-domain)
+- [Resolve an ETH address and lookup the ENS name](/web3-data-api/evm/reference/wallet-api/resolve-address)
+- [Reverse Resolve an ENS name and lookup the ETH address](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)
+- [Resolving an Unstoppable domain and lookup the address](/web3-data-api/evm/reference/wallet-api/resolve-domain)
 
 ## Supported Chains
 
