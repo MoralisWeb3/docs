@@ -10,29 +10,53 @@ sidebar_class_name: "sidebar-api-reference"
 ### Wallet API
 
 #### Get Wallet Details
+
+- [Get chain activity by wallet](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet)
+
 #### Get Native Balance
+
+- [Get native balance by wallet](/web3-data-api/evm/reference/get-native-balance)
+- [Get native balance for multiple wallets](/web3-data-api/evm/reference/get-native-balances-for-addresses)
+
 #### Get NFTs
+
+- [Get NFTs by wallet](/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet)
+- [Get NFT collections by wallet](/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet)
+
 #### Get Tokens
+
+- [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)
+
 #### Get Transactions
+
+- [Get decoded transactions by wallet](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet)
+- [Get native transactions by wallet](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)
+
 #### Get Transfers
 
-- [Get NFT transfers by wallet](/web3-data-api/evm/reference/get-wallet-nft-transfers)
+- [Get NFT transfers by wallet](/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)
+- [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/wallet-api/get-wallet-token-transfers)
 
 #### Domains Lookups
 
-- [ENS Lookup by address](/web3-data-api/evm/reference/resolve-address)
-- [ENS Lookup by domain](/web3-data-api/evm/reference/resolve-ens-domain)
-- [Unstoppable Lookup by Address](/web3-data-api/evm/reference/resolve-address-to-domain)
-- [Unstoppable Lookup By Domain](/web3-data-api/evm/reference/resolve-domain)
+- [ENS Lookup by Address](/web3-data-api/evm/reference/wallet-api/resolve-address)
+- [ENS Lookup By Domain](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)
+- [Unstoppable Lookup by Address](/web3-data-api/evm/reference/wallet-api/resolve-address-to-domain)
+- [Unstoppable Lookup By Domain](/web3-data-api/evm/reference/wallet-api/resolve-domain)
 
 ### NFT API
 
 #### Get NFTs
 
-- [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 - [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
+- [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 - [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
 - [Search NFTs](/web3-data-api/evm/reference/search-nfts)
+
+#### Get NFT Metadata
+
+- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
+- [Resync NFT metadata](/web3-data-api/evm/reference/resync-metadata)
 
 #### Get NFT Transfers
 
@@ -58,58 +82,84 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
 - [Get NFT lowest price](/web3-data-api/evm/reference/get-nft-lowest-price)
 
-#### Get NFT Metadata
-
-- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
-- [Resync NFT metadata](/web3-data-api/evm/reference/resync-metadata)
-
 ### Token API
 
-#### Get Token Market Data
+#### Get Tokens
+
+- [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-token-balances-by-wallet)
+- [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-token-transfers-by-wallet)
+
+#### Get Price
 
 - [Get ERC20 token price](/web3-data-api/evm/reference/get-token-price)
+- [Get Multiple ERC20 token prices](/web3-data-api/evm/reference/get-multiple-token-prices)
 
-#### Get Token Balance
+#### Get Balance
 
 - [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
 - [Get ERC20 token allowance](/web3-data-api/evm/reference/get-token-allowance)
 
-#### Get Token Transactions ❌
+#### Get Transfers
 
-#### Get Token Metadata
+- [Get ERC20 token transfers](/web3-data-api/reference/get-erc20-transfers)
+- [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
+- [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
+
+#### Get Approvals
+
+- [Get ERC20 token approvals](/web3-data-api/evm/reference/get-erc20-approvals)
+
+#### Get Pairs & Liquidity
+
+- [Get DEX token pair reserves](/web3-data-api/evm/reference/get-pair-reserves)
+- [Get DEX token pair address](/web3-data-api/evm/reference/get-pair-address)
+
+#### Get Metadata
 
 - [Get ERC20 token metadata by contract](/web3-data-api/evm/reference/get-token-metadata)
 - [Get ERC20 token metadata by symbols](/web3-data-api/evm/reference/get-token-metadata-by-symbol)
 
-### Balance API
 
-- [Get native balance by wallet](/web3-data-api/evm/reference/get-native-balance)
+#### Get Burns
 
-### Transaction API
+- [Get ERC20 token burns](/web3-data-api/evm/reference/get-erc20-burns)
 
-- [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
-- [Get verbose transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
-- [Get transaction by hash](/web3-data-api/evm/reference/get-transaction)
+#### Get Mints
 
-### Events API
+- [Get ERC20 token mints](/web3-data-api/evm/reference/get-erc20-mints  )
 
-- [Get logs by contract](/web3-data-api/evm/reference/get-contract-logs)
-- [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
 
-### Block API
+### Market Data API
+
+- [Get the top ERC20 tokens by market cap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)
+- [Get the top ERC20 tokens by price change](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
+- [Get the top NFT collections by market cap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
+- [Get the top NFT collections by trading volume](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
+
+
+### Blockchain API
+
+#### Get Blocks
 
 - [Get block by hash](/web3-data-api/evm/reference/get-block)
 - [Get block by date](/web3-data-api/evm/reference/get-date-to-block)
 
-### Resolve API ❌
+#### Get Transactions
 
+- [Get decoded transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
+- [Get transaction by hash](/web3-data-api/evm/reference/get-transaction)
+- [Get decoded transaction by hash](/web3-data-api/evm/reference/get-decoded-transaction)
+- [Get internal transactions by transaction hash](/web3-data-api/evm/reference/get-internal-transactions)
+- [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
 
-### DeFi API
+#### Get Logs
 
-- [Get DEX token pair reserves](/web3-data-api/evm/reference/get-pair-reserves)
-- [Get DEX token pair address](/web3-data-api/evm/reference/get-pair-address)
+- [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
+
 
 ### Utils
 
 - [Get API version](/web3-data-api/evm/reference/web3-api-version)
 - [Get weights of endpoints](/web3-data-api/evm/reference/endpoint-weights)
+- [Run contract function](/web3-data-api/evm/reference/run-contract-function)
+- [Review contracts](/web3-data-api/evm/reference/contracts-review)
