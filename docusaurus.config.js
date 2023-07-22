@@ -432,6 +432,12 @@ const config = {
       };
     },
   ],
+  scripts: [
+    {
+      src: "/custom.js",
+      async: true,
+    },
+  ],
 };
 
 module.exports = config;
