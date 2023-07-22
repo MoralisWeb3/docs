@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Resolve ENS domain
 
-In order to resolve the ENS domain to an ETH address, Moralis provides you a [resolveENSDomain](/web3-data-api/evm/reference/resolve-ens-domain) endpoint to do so.
+In order to resolve the ENS domain to an ETH address, Moralis provides you a [resolveENSDomain](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain) endpoint to do so.
 
 Here you'll need one parameter: `domain`.
 
@@ -122,7 +122,7 @@ Congratulations 🥳 You just resolved the address to an ENS domain with just a 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveENSDomain](/web3-data-api/evm/reference/resolve-ens-domain)
+- [resolveENSDomain](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)
 
 ## Support
 

@@ -302,7 +302,6 @@ export const formatParamsByLang = (params: any, lang: string) => {
 };
 
 const customNodeSdkBody = (code: string, body: any) => {
-  console.log({ code, body });
   // For `requestChallengeEvm` and `requestChallengeSolana`
   if (code.includes("requestMessage")) {
     const { chainId, network } = body ?? {};

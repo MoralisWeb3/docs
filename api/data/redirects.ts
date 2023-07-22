@@ -1410,12 +1410,13 @@ export const redirects = [
   },
   {
     source: "/reference/resolveaddress",
-    destination: "/web3-data-api/evm/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-address",
     permanent: true,
   },
   {
     source: "/reference/resolvedomain",
-    destination: "/web3-data-api/evm/reference/resolve-domain",
+    destination:
+      "/web3-data-api/evm/reference/wallet-api/resolve-domainolve-domain",
     permanent: true,
   },
   {
@@ -3926,7 +3927,7 @@ export const redirects = [
   },
   {
     source: "/reference/resolve-web3-domain",
-    destination: "/web3-data-api/evm/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-address",
     permanent: true,
   },
   {
@@ -5795,13 +5796,13 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/reference/resolve-domain",
-    destination: "/web3-data-api/evm/reference/resolve-domain",
+    source: "/web3/web3-data-api/evm/reference/wallet-api/resolve-domain
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-domain",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/resolve-address",
-    destination: "/web3-data-api/evm/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-address",
     permanent: true,
   },
   {
@@ -6825,7 +6826,35 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/evm/reference/get-wallet-active-chains",
-    destination: "/web3-data-api/evm/reference/get-chain-activity-by-wallet",
+    destination:
+      "/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/resolve-ens-domain",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-ens-domain",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/get-nft-collections-by-wallet",
+    destination:
+      "/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/get-transactions-by-wallet",
+    destination:
+      "/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/resolve-address",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-address",
+    permanent: true,
+  },
+  {
+    source: "/web3-data-api/evm/reference/resolve-domain",
+    destination: "/web3-data-api/evm/reference/wallet-api/resolve-domain",
     permanent: true,
   },
 ];
