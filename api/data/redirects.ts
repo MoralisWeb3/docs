@@ -5796,7 +5796,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3/web3-data-api/evm/reference/wallet-api/resolve-domain
+    source: "/web3/web3-data-api/evm/reference/wallet-api/resolve-domain",
     destination: "/web3-data-api/evm/reference/wallet-api/resolve-domain",
     permanent: true,
   },
