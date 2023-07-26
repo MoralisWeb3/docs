@@ -1,8 +1,8 @@
 ---
-title: "How to get the price of an ERC20 token"
-slug: "../../how-to-get-the-price-of-an-erc20-token"
-description: "Learn how to get the price of an ERC20 token with Moralis Token API."
-sidebar_label: "Get ERC20 token price"
+title: "How to get lowest price of an NFT by Markeplace"
+slug: "../../how-to-get-lowest-price-of-nft-by-marketplace"
+description: "Learn how to get lowest price of an NFT by Markeplace using the Moralis NFT API."
+sidebar_label: "Get NFT lowest price"
 ---
 
 ## Prerequisites
@@ -18,13 +18,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the price of an ERC20 token
+## Step 2: Get All Transfers Of An NFT
 
-In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/evm/reference/get-token-price) endpoint.
+In order to get lowest price of an NFT, Moralis provides you with an [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) endpoint.
 
-Here you'll need two parameters: `address` and `chain`.
+Here you'll need three parameters: `address`, `marketplace`, and `chain`.
 
-Once you have obtained the `address` and `chain`, you can copy the following code:
+Once you have obtained the `address`, `marketplace` and `chain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -42,13 +42,16 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
+  const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 
   const chain = EvmChain.ETHEREUM;
+  
+  const marketplace = "opensea";
 
-  const response = await Moralis.EvmApi.token.getTokenPrice({
+  const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
     address,
     chain,
+    marketplace,
   });
 
   console.log(response.toJSON());
@@ -70,13 +73,16 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
+  const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 
   const chain = EvmChain.ETHEREUM;
+  
+  const marketplace = "opensea";
 
-  const response = await Moralis.EvmApi.token.getTokenPrice({
+  const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
     address,
     chain,
+    marketplace,
   });
 
   console.log(response.toJSON());
@@ -93,13 +99,14 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-    "chain": "eth"
+  "chain": "eth",
+  "marketplace": "opensea",
+  "address": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
 }
 
-result = evm_api.token.get_token_price(
-    api_key=api_key,
-    params=params,
+result = evm_api.nft.get_nft_lowest_price(
+  api_key=api_key,
+  params=params,
 )
 
 print(result)
@@ -118,37 +125,29 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "tokenName": "Wrapped BTC",
-  "tokenSymbol": "WBTC",
-  "tokenLogo": "https://cdn.moralis.io/eth/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png",
-  "tokenDecimals": "8",
-  "nativePrice": {
-    "value": "15844922382819160000",
-    "decimals": 18,
-    "name": "Ether",
-    "symbol": "ETH",
-    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
-  },
-  "usdPrice": 29012.967874240312,
-  "usdPriceFormatted": "29012.967874240312",
-  "24hrPercentChange": "8.125434468247821",
-  "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
-  "exchangeName": "Uniswap v3",
-  "tokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+  "transaction_hash": "0x7f144f0ba4a412b8b683b126e10962754d80f1010531f57f425e499c23983c9a",
+  "transaction_index": "47",
+  "token_ids": [
+    "3644"
+  ],
+  "seller_address": "0xdacc47d22370a3cc940160efbe62750c47900f44",
+  "buyer_address": "0x756dcf63d25ba456c492a892db61719e5861a872",
+  "token_address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+  "marketplace_address": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+  "price": "33460000000000000000",
+  "block_timestamp": "2023-07-23T13:58:47.000Z",
+  "block_number": "17756263",
+  "block_hash": "0x75706cd5532f12eaeeece29bbe926e2afd435fd6c9d71fc9c893094bd751dc14"
 }
 ```
 
-Congratulations 🥳 You just got the price of an ERC20 Token with just a few lines of code using the Moralis Token API!
-
-## Youtube Video
-
-https://www.youtube.com/watch?v=4OYm8LHBGOQ
+Congratulations 🥳 You just got lowest price of an NFT with just a few lines of code using the Moralis NFT API!
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
+- [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price)
 
 ## Support
 

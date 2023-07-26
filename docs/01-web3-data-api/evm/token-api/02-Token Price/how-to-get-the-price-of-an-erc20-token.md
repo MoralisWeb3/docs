@@ -1,8 +1,9 @@
 ---
-title: "How to get the native balance of an ERC20 token vault"
-slug: "../how-to-get-the-native-balance-of-a-smart-contract-vault"
-description: "Learn how to get the native balance of a ERC20 token vault using the Moralis Balance API."
-sidebar_label: "Get native balance of ERC20 token vault"
+title: "How to get the price of an ERC20 token"
+slug: "../../how-to-get-the-price-of-an-erc20-token"
+description: "Learn how to get the price of an ERC20 token with Moralis Token API."
+sidebar_label: "Get ERC20 token price"
+sidebar_position: 0
 ---
 
 ## Prerequisites
@@ -18,13 +19,13 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get the native balance of an address
+## Step 2: Get the price of an ERC20 token
 
-In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) API endpoint.
+In order to get the price of an ERC20 token, Moralis provides you with an [getTokenPrice](/web3-data-api/evm/reference/get-token-price) endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
-Once you have obtained both the `address` and `chain`, you can copy the following code:
+Once you have obtained the `address` and `chain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -36,24 +37,23 @@ import TabItem from '@theme/TabItem';
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const runApp = () => {
+const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
 
-  // address of ERC20 token vault, e.g. WETH token address
-  const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.balance.getNativeBalance({
+  const response = await Moralis.EvmApi.token.getTokenPrice({
     address,
     chain,
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -65,18 +65,17 @@ runApp();
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const runApp = () => {
+const runApp = async () => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
 
-  // address of ERC20 token vault, e.g. WETH token address
-  const address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
+  const address = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
   const chain = EvmChain.ETHEREUM;
 
-  const response = await Moralis.EvmApi.balance.getNativeBalance({
+  const response = await Moralis.EvmApi.token.getTokenPrice({
     address,
     chain,
   });
@@ -94,14 +93,12 @@ runApp();
 from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
-
 params = {
-    # address of ERC20 token vault, e.g. WETH token address
-    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    "chain": "eth",
+    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "chain": "eth"
 }
 
-result = evm_api.balance.get_native_balance(
+result = evm_api.token.get_token_price(
     api_key=api_key,
     params=params,
 )
@@ -121,24 +118,38 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
-[
-  {
-    "balance": "3989233490541891348056490"
-  }
-]
+{
+  "tokenName": "Wrapped BTC",
+  "tokenSymbol": "WBTC",
+  "tokenLogo": "https://cdn.moralis.io/eth/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png",
+  "tokenDecimals": "8",
+  "nativePrice": {
+    "value": "15844922382819160000",
+    "decimals": 18,
+    "name": "Ether",
+    "symbol": "ETH",
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+  },
+  "usdPrice": 29012.967874240312,
+  "usdPriceFormatted": "29012.967874240312",
+  "24hrPercentChange": "8.125434468247821",
+  "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+  "exchangeName": "Uniswap v3",
+  "tokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+}
 ```
 
-Congratulations 🥳 You just got the native balance of an ERC20 token vault with just a few lines of code using the Moralis Balance API!
+Congratulations 🥳 You just got the price of an ERC20 Token with just a few lines of code using the Moralis Token API!
 
 ## Youtube Video
 
-https://www.youtube.com/watch?v=sL5t07JE0aE
+https://www.youtube.com/watch?v=4OYm8LHBGOQ
 
 ## API Reference
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](/web3-data-api/evm/reference/get-native-balance)
+- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
 
 ## Support
 
