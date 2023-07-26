@@ -8,7 +8,7 @@ The body contains the data you are interested in. Logs is in array containing ra
 
 ## How to verify the signature for the received webhook request
 
-In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret is the web3api key for your account.
+In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret key is the streams secret which you can find in [setting](https://admin.moralis.io/settings) page.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,7 +37,7 @@ def verify_Signature(req, secret):
         raise TypeError("Signature not provided")
     
     data = req.data+secret.encode()
-    signature = Web3.sha3(data).hex()
+    signature = Web3.keccak(text=data.decode()).hex()
     
     if provided_signature != signature: 
         raise ValueError("Invalid Signature")
