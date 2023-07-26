@@ -19,7 +19,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
 
-## Step 2: Get multi-chain activity for a wallet address
+## Step 2: Get multi-chain activity of a wallet address
 
 In order to get the chain activity, Moralis provides you a [getWalletActiveChains](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) endpoint to do so.
 

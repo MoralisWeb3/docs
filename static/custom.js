@@ -1,6 +1,13 @@
 window.onload = function () {
   // List of sidebar page names where we need a 🔥 emoji
-  const pageList = ["Market Data API", "Wallet API", "API Reference"];
+  const pageList = [
+    "Market Data API",
+    "Wallet API",
+    "API Reference",
+    "Chain Activity",
+    "Get Wallet Details",
+    "Wallet Details",
+  ];
 
   // Function to update a link with an emoji
   function updateLink(link) {

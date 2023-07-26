@@ -1,8 +1,8 @@
 ---
-title: "How to get the native balance of a multi-signature wallet"
-slug: "../how-to-get-the-native-balance-of-a-smart-contract-wallet"
-description: "Learn how to get the native balance of a multi-signature wallet using the Moralis Balance API."
-sidebar_label: "Get native balance of multi-signature wallet"
+title: "How to get the native balance of an ERC20 token vault"
+slug: "../how-to-get-the-native-balance-of-a-smart-contract-vault"
+description: "Learn how to get the native balance of a ERC20 token vault using the Moralis Wallet API."
+sidebar_label: "Get native balance of ERC20 token vault"
 ---
 
 ## Prerequisites
@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get the native balance of an address
 
-In order to get the native balance of a multi-signature wallet, Moralis provides you the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) API endpoint.
+In order to get the native balance of an ERC20 token vault, Moralis provides you the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) API endpoint.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -42,7 +42,8 @@ const runApp = () => {
     // ...and any other configuration
   });
 
-  const address = '0x849D52316331967b6fF1198e5E32A0eB168D039d';
+  // address of ERC20 token vault, e.g. WETH token address
+  const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
 
   const chain = EvmChain.ETHEREUM;
 
@@ -70,7 +71,8 @@ const runApp = () => {
     // ...and any other configuration
   });
 
-  const address = "0x849D52316331967b6fF1198e5E32A0eB168D039d";
+  // address of ERC20 token vault, e.g. WETH token address
+  const address = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -94,7 +96,8 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0x849D52316331967b6fF1198e5E32A0eB168D039d",
+    # address of ERC20 token vault, e.g. WETH token address
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "chain": "eth",
 }
 
@@ -120,12 +123,12 @@ In your terminal, you should see the following JSON response:
 ```json
 [
   {
-    "balance": "970315108126866256970"
+    "balance": "3989233490541891348056490"
   }
 ]
 ```
 
-Congratulations 🥳 You just got the native balance of a multi-signature wallet address with just a few lines of code using the Moralis Balance API!
+Congratulations 🥳 You just got the native balance of an ERC20 token vault with just a few lines of code using the Moralis Wallet API!
 
 ## Youtube Video
 
