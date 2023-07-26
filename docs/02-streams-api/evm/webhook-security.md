@@ -15,7 +15,13 @@ The signature is sent in the request headers in `headers["x-signature"]` field, 
 
 ## How to verify the signature for the received webhook request
 
-In JavaScript you can use this function, for other programming languages you can adapt this code. The secret is the web3api key for your account.
+In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret key is the streams secret which you can find in [setting](https://admin.moralis.io/settings) page.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript
 const verifySignature = (req, secret) => {
@@ -27,3 +33,22 @@ const verifySignature = (req, secret) => {
 
 }
 ```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
+```python Python
+def verify_Signature(req, secret):
+    provided_signature = req.headers.get("x-signature")
+    if not provided_signature:
+        raise TypeError("Signature not provided")
+    
+    data = req.data+secret.encode()
+    signature = Web3.keccak(text=data.decode()).hex()
+    
+    if provided_signature != signature: 
+        raise ValueError("Invalid Signature")
+```
+
+</TabItem>
+</Tabs>
