@@ -149,30 +149,63 @@ const ApiReference = ({
             values.path[pathValue]
           );
         }
-        const response = await fetch(
-          [
-            hostUrl,
-            pathReplace,
-            qs.stringify(values.query || {}, { addQueryPrefix: true }),
-          ].join(""),
-          {
-            method,
+
+        let response;
+
+        // When user enters their own API key, make the request directly
+        if (token?.length > 0) {
+          response = await fetch(
+            [
+              hostUrl,
+              pathReplace,
+              qs.stringify(values.query || {}, { addQueryPrefix: true }),
+            ].join(""),
+            {
+              method,
+              headers: {
+                accept: "application/json",
+                "content-type": "application/json",
+                "X-API-Key": token,
+                Authorization: `Bearer ${token}`,
+                "x-moralis-source": `Moralis API docs`,
+                referer: "moralis.io",
+              },
+              body: JSON.stringify(
+                // temporary fix for runContractFunction
+                path === "/:address/function"
+                  ? values.body
+                  : filterOutEmpty(values.body)
+              ),
+            }
+          );
+        } else {
+          // Without user API key, make the request via the Vercel function
+          response = await fetch("/api/api-proxy", {
+            method: "POST",
             headers: {
-              accept: "application/json",
-              "content-type": "application/json",
-              "X-API-Key": `${token?.length > 0 ? token : "test"}`,
-              Authorization: `Bearer ${token?.length > 0 ? token : "test"}`,
-              "x-moralis-source": `api reference`,
-              referer: "moralis.io",
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(
-              // temporary fix for runContractFunction
-              path === "/:address/function"
-                ? values.body
-                : filterOutEmpty(values.body)
-            ),
-          }
-        );
+            body: JSON.stringify({
+              hostUrl,
+              path: pathReplace,
+              method,
+              headers: {
+                accept: "application/json",
+                "content-type": "application/json",
+                "X-API-Key": "test",
+                Authorization: `Bearer test`,
+                "x-moralis-source": `api reference`,
+                referer: "moralis.io",
+              },
+              query: values.query || {},
+              body:
+                // temporary fix for runContractFunction
+                path === "/:address/function"
+                  ? values.body
+                  : filterOutEmpty(values.body),
+            }),
+          });
+        }
 
         const fetchBody =
           path === "/nft/:address/sync" && response.status === 201
