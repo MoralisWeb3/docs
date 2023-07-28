@@ -8,6 +8,11 @@ const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {
     // Check if request is from a browser
+    console.log({
+      us: req.headers["user-agent"],
+      meth: req.method,
+      head: req.body.headers["x-moralis-source"],
+    });
     if (
       req.headers["user-agent"]?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) &&
       req.method === "POST" &&
