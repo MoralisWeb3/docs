@@ -194,7 +194,7 @@ const ApiReference = ({
                 "content-type": "application/json",
                 "X-API-Key": "test",
                 Authorization: `Bearer test`,
-                "x-moralis-source": `api reference`,
+                "x-moralis-source": `Moralis API docs`,
                 referer: "moralis.io",
               },
               query: values.query || {},
