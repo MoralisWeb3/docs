@@ -703,6 +703,12 @@
           "type": "boolean"
         },
         {
+          "name": "exclude_spam",
+          "description": "Should spam NFTs be excluded from the result?",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "token_addresses",
           "description": "The non-fungible token (NFT) addresses to get balances for",
           "required": false,
@@ -816,227 +822,77 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "name",
+                    "properties": {
+                      "name": {
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      {
-                        "name": "description",
+                      "description": {
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      {
-                        "name": "image",
+                      "image": {
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      {
-                        "name": "external_link",
+                      "external_link": {
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      {
-                        "name": "animation_url",
+                      "animation_url": {
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      {
-                        "name": "attributes",
+                      "attributes": {
                         "type": "array",
-                        "field": {
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "trait_type",
-                              "type": "string",
-                              "description": "The trait title or descriptor",
-                              "example": "Eye Color"
-                            },
-                            {
-                              "name": "value",
-                              "type": "string",
-                              "description": "The value of the attribute",
-                              "example": "hazel"
-                            },
-                            {
-                              "name": "display_type",
-                              "type": "string",
-                              "description": "The type the attribute value should be displayed as",
-                              "example": "string"
-                            },
-                            {
-                              "name": "max_value",
-                              "type": "number",
-                              "description": "For numeric values, the upper range",
-                              "example": 100
-                            },
-                            {
-                              "name": "trait_count",
-                              "type": "number",
-                              "description": "The number of possible values for this trait",
-                              "example": 7
-                            },
-                            {
-                              "name": "order",
-                              "type": "number",
-                              "description": "Order the trait should appear in the attribute list.",
-                              "example": 1
-                            }
-                          ]
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
                         }
                       }
-                    ]
+                    }
                   },
                   {
                     "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "mimetype",
+                    "properties": {
+                      "mimetype": {
                         "type": "string",
-                        "required": true,
                         "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
                       },
-                      {
-                        "name": "category",
-                        "type": "string",
-                        "required": true,
-                        "enum": ["image", "audio", "video"]
+                      "category": { "enum": ["image", "audio", "video"] },
+                      "status": {
+                        "enum": [
+                          "success",
+                          "processing",
+                          "unsupported_media",
+                          "invalid_url",
+                          "host_unavailable",
+                          "temporarily_unavailable"
+                        ],
+                        "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
                       },
-                      {
-                        "name": "original_media_url",
+                      "original_media_url": {
                         "type": "string",
-                        "required": true,
                         "description": "The url of the original media file."
                       },
-                      {
-                        "name": "parent_hash",
+                      "updatedAt": {
                         "type": "string",
-                        "required": true,
+                        "description": "The timestamp of the last update to this NFT media record."
+                      },
+                      "parent_hash": {
+                        "type": "string",
                         "description": "Hash value of the original media file."
                       },
-                      {
-                        "name": "media_collection",
-                        "required": true,
+                      "media_collection": {
                         "description": "Preview item associated with the original",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "original",
-                            "required": true,
-                            "description": "Information about the original media file",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "low",
-                            "required": true,
-                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "medium",
-                            "required": true,
-                            "description": "Preview media file, medium quality (for images 250px x 250px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "high",
-                            "required": true,
-                            "description": "Preview media file, highest quality (for images 500px x 500px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          }
-                        ]
+                        "$ref": "#/components/schemas/mediaCollection"
                       }
-                    ]
+                    }
                   },
                   {
                     "name": "amount",
@@ -1073,6 +929,18 @@
                     "type": "string",
                     "description": "When the metadata was last updated",
                     "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -1528,8 +1396,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -1554,16 +1422,16 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
-                    "name": "to_address",
-                    "type": "string",
-                    "description": "The address that received the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
                     "name": "from_address_label",
                     "type": "string",
                     "description": "The label of the from address",
                     "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
                     "name": "to_address_label",
@@ -1632,6 +1500,18 @@
                     "type": "string",
                     "description": "The operator present only for ERC1155 transfers",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               },
@@ -1726,6 +1606,12 @@
           "type": "boolean"
         },
         {
+          "name": "exclude_spam",
+          "description": "Should spam NFTs be excluded from the result?",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
@@ -1765,7 +1651,7 @@
               {
                 "name": "cursor",
                 "type": "string",
-                "description": "The cursor to get to the next page. ). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination)."
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -1794,6 +1680,18 @@
                     "type": "string",
                     "description": "The symbol of the NFT contract",
                     "example": "RARI"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -1940,8 +1838,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -2002,227 +1900,77 @@
                   {
                     "name": "normalized_metadata",
                     "description": "A normalized metadata version of the NFT's metadata.",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "name",
+                    "properties": {
+                      "name": {
                         "type": "string",
                         "description": "The name or title of the NFT",
                         "example": "Moralis Mug"
                       },
-                      {
-                        "name": "description",
+                      "description": {
                         "type": "string",
                         "description": "A detailed description of the NFT",
                         "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                       },
-                      {
-                        "name": "image",
+                      "image": {
                         "type": "string",
                         "description": "The URL of the NFT's image",
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
-                      {
-                        "name": "external_link",
+                      "external_link": {
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
-                      {
-                        "name": "animation_url",
+                      "animation_url": {
                         "type": "string",
                         "description": "An animated version of the NFT's image",
                         "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                       },
-                      {
-                        "name": "attributes",
+                      "attributes": {
                         "type": "array",
-                        "field": {
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "trait_type",
-                              "type": "string",
-                              "description": "The trait title or descriptor",
-                              "example": "Eye Color"
-                            },
-                            {
-                              "name": "value",
-                              "type": "string",
-                              "description": "The value of the attribute",
-                              "example": "hazel"
-                            },
-                            {
-                              "name": "display_type",
-                              "type": "string",
-                              "description": "The type the attribute value should be displayed as",
-                              "example": "string"
-                            },
-                            {
-                              "name": "max_value",
-                              "type": "number",
-                              "description": "For numeric values, the upper range",
-                              "example": 100
-                            },
-                            {
-                              "name": "trait_count",
-                              "type": "number",
-                              "description": "The number of possible values for this trait",
-                              "example": 7
-                            },
-                            {
-                              "name": "order",
-                              "type": "number",
-                              "description": "Order the trait should appear in the attribute list.",
-                              "example": 1
-                            }
-                          ]
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
                         }
                       }
-                    ]
+                    }
                   },
                   {
                     "name": "media",
                     "description": "A set of links to 'thumbnail / preview' media files",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "mimetype",
+                    "properties": {
+                      "mimetype": {
                         "type": "string",
-                        "required": true,
                         "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
                       },
-                      {
-                        "name": "category",
-                        "type": "string",
-                        "required": true,
-                        "enum": ["image", "audio", "video"]
+                      "category": { "enum": ["image", "audio", "video"] },
+                      "status": {
+                        "enum": [
+                          "success",
+                          "processing",
+                          "unsupported_media",
+                          "invalid_url",
+                          "host_unavailable",
+                          "temporarily_unavailable"
+                        ],
+                        "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
                       },
-                      {
-                        "name": "original_media_url",
+                      "original_media_url": {
                         "type": "string",
-                        "required": true,
                         "description": "The url of the original media file."
                       },
-                      {
-                        "name": "parent_hash",
+                      "updatedAt": {
                         "type": "string",
-                        "required": true,
+                        "description": "The timestamp of the last update to this NFT media record."
+                      },
+                      "parent_hash": {
+                        "type": "string",
                         "description": "Hash value of the original media file."
                       },
-                      {
-                        "name": "media_collection",
-                        "required": true,
+                      "media_collection": {
                         "description": "Preview item associated with the original",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "original",
-                            "required": true,
-                            "description": "Information about the original media file",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "low",
-                            "required": true,
-                            "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "medium",
-                            "required": true,
-                            "description": "Preview media file, medium quality (for images 250px x 250px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          },
-                          {
-                            "name": "high",
-                            "required": true,
-                            "description": "Preview media file, highest quality (for images 500px x 500px)",
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "width",
-                                "type": "integer",
-                                "description": "The width of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "height",
-                                "type": "integer",
-                                "description": "The height of the preview image.",
-                                "required": true
-                              },
-                              {
-                                "name": "url",
-                                "type": "string",
-                                "description": "The url of the preview file.",
-                                "required": true
-                              }
-                            ]
-                          }
-                        ]
+                        "$ref": "#/components/schemas/mediaCollection"
                       }
-                    ]
+                    }
                   },
                   {
                     "name": "minter_address",
@@ -2257,6 +2005,18 @@
                     "type": "string",
                     "description": "The symbol of the NFT contract",
                     "example": "RARI"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -2372,6 +2132,12 @@
             "type": "object",
             "fields": [
               {
+                "name": "status",
+                "type": "string",
+                "description": "The syncing status of the address [SYNCING/SYNCED]",
+                "example": "SYNCING"
+              },
+              {
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
@@ -2391,324 +2157,183 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
-                "type": "array",
-                "field": {
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "token_address",
-                      "type": "string",
-                      "description": "The address of the NFT contract",
-                      "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-                    },
-                    {
-                      "name": "token_id",
-                      "type": "string",
-                      "description": "The token ID of the NFT",
-                      "example": "15"
-                    },
-                    {
-                      "name": "contract_type",
-                      "type": "string",
-                      "description": "The type of NFT contract standard",
-                      "example": "ERC721"
-                    },
-                    {
-                      "name": "owner_of",
-                      "type": "string",
-                      "description": "The wallet address of the owner of the NFT",
-                      "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                    },
-                    {
-                      "name": "block_number",
-                      "type": "string",
-                      "description": "The block number when the amount or owner changed",
-                      "example": "88256"
-                    },
-                    {
-                      "name": "block_number_minted",
-                      "type": "string",
-                      "description": "The block number when the NFT was minted",
-                      "example": "88256"
-                    },
-                    {
-                      "name": "token_uri",
-                      "type": "string",
-                      "description": "The URI to the metadata of the token"
-                    },
-                    {
-                      "name": "metadata",
-                      "type": "string",
-                      "description": "The metadata of the token"
-                    },
-                    {
-                      "name": "normalized_metadata",
-                      "description": "A normalized metadata version of the NFT's metadata.",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "name",
-                          "type": "string",
-                          "description": "The name or title of the NFT",
-                          "example": "Moralis Mug"
-                        },
-                        {
-                          "name": "description",
-                          "type": "string",
-                          "description": "A detailed description of the NFT",
-                          "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
-                        },
-                        {
-                          "name": "image",
-                          "type": "string",
-                          "description": "The URL of the NFT's image",
-                          "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
-                        },
-                        {
-                          "name": "external_link",
-                          "type": "string",
-                          "description": "A link to additional information",
-                          "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
-                        },
-                        {
-                          "name": "animation_url",
-                          "type": "string",
-                          "description": "An animated version of the NFT's image",
-                          "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
-                        },
-                        {
-                          "name": "attributes",
-                          "type": "array",
-                          "field": {
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "trait_type",
-                                "type": "string",
-                                "description": "The trait title or descriptor",
-                                "example": "Eye Color"
-                              },
-                              {
-                                "name": "value",
-                                "type": "string",
-                                "description": "The value of the attribute",
-                                "example": "hazel"
-                              },
-                              {
-                                "name": "display_type",
-                                "type": "string",
-                                "description": "The type the attribute value should be displayed as",
-                                "example": "string"
-                              },
-                              {
-                                "name": "max_value",
-                                "type": "number",
-                                "description": "For numeric values, the upper range",
-                                "example": 100
-                              },
-                              {
-                                "name": "trait_count",
-                                "type": "number",
-                                "description": "The number of possible values for this trait",
-                                "example": 7
-                              },
-                              {
-                                "name": "order",
-                                "type": "number",
-                                "description": "Order the trait should appear in the attribute list.",
-                                "example": 1
-                              }
-                            ]
-                          }
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
                         }
-                      ]
-                    },
-                    {
-                      "name": "media",
-                      "description": "A set of links to 'thumbnail / preview' media files",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "mimetype",
-                          "type": "string",
-                          "required": true,
-                          "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
-                        },
-                        {
-                          "name": "category",
-                          "type": "string",
-                          "required": true,
-                          "enum": ["image", "audio", "video"]
-                        },
-                        {
-                          "name": "original_media_url",
-                          "type": "string",
-                          "required": true,
-                          "description": "The url of the original media file."
-                        },
-                        {
-                          "name": "parent_hash",
-                          "type": "string",
-                          "required": true,
-                          "description": "Hash value of the original media file."
-                        },
-                        {
-                          "name": "media_collection",
-                          "required": true,
-                          "description": "Preview item associated with the original",
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "original",
-                              "required": true,
-                              "description": "Information about the original media file",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "low",
-                              "required": true,
-                              "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "medium",
-                              "required": true,
-                              "description": "Preview media file, medium quality (for images 250px x 250px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "high",
-                              "required": true,
-                              "description": "Preview media file, highest quality (for images 500px x 500px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "name": "amount",
-                      "type": "string",
-                      "description": "The number of this item the user owns (used by ERC1155)",
-                      "example": "1"
-                    },
-                    {
-                      "name": "name",
-                      "type": "string",
-                      "description": "The name of the NFT contract",
-                      "example": "CryptoKitties"
-                    },
-                    {
-                      "name": "symbol",
-                      "type": "string",
-                      "description": "The symbol of the NFT contract",
-                      "example": "RARI"
-                    },
-                    {
-                      "name": "token_hash",
-                      "type": "string",
-                      "description": "The token hash",
-                      "example": "502cee781b0fb40ea02508b21d319ced"
-                    },
-                    {
-                      "name": "last_token_uri_sync",
-                      "type": "string",
-                      "description": "When the token_uri was last updated",
-                      "example": "2021-02-24T00:47:26.647Z"
-                    },
-                    {
-                      "name": "last_metadata_sync",
-                      "type": "string",
-                      "description": "When the metadata was last updated",
-                      "example": "2021-02-24T00:47:26.647Z"
+                      }
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "media",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "properties": {
+                      "mimetype": {
+                        "type": "string",
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      "category": { "enum": ["image", "audio", "video"] },
+                      "status": {
+                        "enum": [
+                          "success",
+                          "processing",
+                          "unsupported_media",
+                          "invalid_url",
+                          "host_unavailable",
+                          "temporarily_unavailable"
+                        ],
+                        "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
+                      },
+                      "original_media_url": {
+                        "type": "string",
+                        "description": "The url of the original media file."
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "description": "The timestamp of the last update to this NFT media record."
+                      },
+                      "parent_hash": {
+                        "type": "string",
+                        "description": "Hash value of the original media file."
+                      },
+                      "media_collection": {
+                        "description": "Preview item associated with the original",
+                        "$ref": "#/components/schemas/mediaCollection"
+                      }
+                    }
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of this item the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
@@ -2853,8 +2478,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -2879,16 +2504,16 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
-                    "name": "to_address",
-                    "type": "string",
-                    "description": "The address that received the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
                     "name": "from_address_label",
                     "type": "string",
                     "description": "The label of the from address",
                     "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
                     "name": "to_address_label",
@@ -2957,6 +2582,18 @@
                     "type": "string",
                     "description": "The operator present only for ERC1155 transfers",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               },
@@ -3108,8 +2745,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -3134,16 +2771,16 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
-                    "name": "to_address",
-                    "type": "string",
-                    "description": "The address that received the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
                     "name": "from_address_label",
                     "type": "string",
                     "description": "The label of the from address",
                     "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
                     "name": "to_address_label",
@@ -3212,6 +2849,18 @@
                     "type": "string",
                     "description": "The operator present only for ERC1155 transfers",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               },
@@ -3338,8 +2987,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -3364,16 +3013,16 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
-                    "name": "to_address",
-                    "type": "string",
-                    "description": "The address that received the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
                     "name": "from_address_label",
                     "type": "string",
                     "description": "The label of the from address",
                     "example": "Binance 1"
+                  },
+                  {
+                    "name": "to_address",
+                    "type": "string",
+                    "description": "The address that received the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
                     "name": "to_address_label",
@@ -3442,6 +3091,18 @@
                     "type": "string",
                     "description": "The operator present only for ERC1155 transfers",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               },
@@ -3924,227 +3585,77 @@
               {
                 "name": "normalized_metadata",
                 "description": "A normalized metadata version of the NFT's metadata.",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "name",
+                "properties": {
+                  "name": {
                     "type": "string",
                     "description": "The name or title of the NFT",
                     "example": "Moralis Mug"
                   },
-                  {
-                    "name": "description",
+                  "description": {
                     "type": "string",
                     "description": "A detailed description of the NFT",
                     "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
                   },
-                  {
-                    "name": "image",
+                  "image": {
                     "type": "string",
                     "description": "The URL of the NFT's image",
                     "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                   },
-                  {
-                    "name": "external_link",
+                  "external_link": {
                     "type": "string",
                     "description": "A link to additional information",
                     "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                   },
-                  {
-                    "name": "animation_url",
+                  "animation_url": {
                     "type": "string",
                     "description": "An animated version of the NFT's image",
                     "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
                   },
-                  {
-                    "name": "attributes",
+                  "attributes": {
                     "type": "array",
-                    "field": {
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "trait_type",
-                          "type": "string",
-                          "description": "The trait title or descriptor",
-                          "example": "Eye Color"
-                        },
-                        {
-                          "name": "value",
-                          "type": "string",
-                          "description": "The value of the attribute",
-                          "example": "hazel"
-                        },
-                        {
-                          "name": "display_type",
-                          "type": "string",
-                          "description": "The type the attribute value should be displayed as",
-                          "example": "string"
-                        },
-                        {
-                          "name": "max_value",
-                          "type": "number",
-                          "description": "For numeric values, the upper range",
-                          "example": 100
-                        },
-                        {
-                          "name": "trait_count",
-                          "type": "number",
-                          "description": "The number of possible values for this trait",
-                          "example": 7
-                        },
-                        {
-                          "name": "order",
-                          "type": "number",
-                          "description": "Order the trait should appear in the attribute list.",
-                          "example": 1
-                        }
-                      ]
+                    "items": {
+                      "$ref": "#/components/schemas/normalizedMetadataAttribute"
                     }
                   }
-                ]
+                }
               },
               {
                 "name": "media",
                 "description": "A set of links to 'thumbnail / preview' media files",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "mimetype",
+                "properties": {
+                  "mimetype": {
                     "type": "string",
-                    "required": true,
                     "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
                   },
-                  {
-                    "name": "category",
-                    "type": "string",
-                    "required": true,
-                    "enum": ["image", "audio", "video"]
+                  "category": { "enum": ["image", "audio", "video"] },
+                  "status": {
+                    "enum": [
+                      "success",
+                      "processing",
+                      "unsupported_media",
+                      "invalid_url",
+                      "host_unavailable",
+                      "temporarily_unavailable"
+                    ],
+                    "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
                   },
-                  {
-                    "name": "original_media_url",
+                  "original_media_url": {
                     "type": "string",
-                    "required": true,
                     "description": "The url of the original media file."
                   },
-                  {
-                    "name": "parent_hash",
+                  "updatedAt": {
                     "type": "string",
-                    "required": true,
+                    "description": "The timestamp of the last update to this NFT media record."
+                  },
+                  "parent_hash": {
+                    "type": "string",
                     "description": "Hash value of the original media file."
                   },
-                  {
-                    "name": "media_collection",
-                    "required": true,
+                  "media_collection": {
                     "description": "Preview item associated with the original",
-                    "type": "object",
-                    "fields": [
-                      {
-                        "name": "original",
-                        "required": true,
-                        "description": "Information about the original media file",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "width",
-                            "type": "integer",
-                            "description": "The width of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "height",
-                            "type": "integer",
-                            "description": "The height of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "url",
-                            "type": "string",
-                            "description": "The url of the preview file.",
-                            "required": true
-                          }
-                        ]
-                      },
-                      {
-                        "name": "low",
-                        "required": true,
-                        "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "width",
-                            "type": "integer",
-                            "description": "The width of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "height",
-                            "type": "integer",
-                            "description": "The height of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "url",
-                            "type": "string",
-                            "description": "The url of the preview file.",
-                            "required": true
-                          }
-                        ]
-                      },
-                      {
-                        "name": "medium",
-                        "required": true,
-                        "description": "Preview media file, medium quality (for images 250px x 250px)",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "width",
-                            "type": "integer",
-                            "description": "The width of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "height",
-                            "type": "integer",
-                            "description": "The height of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "url",
-                            "type": "string",
-                            "description": "The url of the preview file.",
-                            "required": true
-                          }
-                        ]
-                      },
-                      {
-                        "name": "high",
-                        "required": true,
-                        "description": "Preview media file, highest quality (for images 500px x 500px)",
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "width",
-                            "type": "integer",
-                            "description": "The width of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "height",
-                            "type": "integer",
-                            "description": "The height of the preview image.",
-                            "required": true
-                          },
-                          {
-                            "name": "url",
-                            "type": "string",
-                            "description": "The url of the preview file.",
-                            "required": true
-                          }
-                        ]
-                      }
-                    ]
+                    "$ref": "#/components/schemas/mediaCollection"
                   }
-                ]
+                }
               },
               {
                 "name": "minter_address",
@@ -4179,6 +3690,18 @@
                 "type": "string",
                 "description": "The symbol of the NFT contract",
                 "example": "RARI"
+              },
+              {
+                "name": "possible_spam",
+                "type": "boolean",
+                "description": "Indicates if a contract is possibly a spam contract",
+                "example": "false"
+              },
+              {
+                "name": "verified_collection",
+                "type": "boolean",
+                "description": "Indicates if a contract is verified",
+                "example": "false"
               }
             ]
           }
@@ -4306,8 +3829,8 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
@@ -4332,10 +3855,22 @@
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
+                    "name": "from_address_label",
+                    "type": "string",
+                    "description": "The label of the from address",
+                    "example": "Binance 1"
+                  },
+                  {
                     "name": "to_address",
                     "type": "string",
                     "description": "The address that received the NFT",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
                   },
                   {
                     "name": "value",
@@ -4398,6 +3933,18 @@
                     "type": "string",
                     "description": "The operator present only for ERC1155 transfers",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               },
@@ -4532,6 +4079,12 @@
             "type": "object",
             "fields": [
               {
+                "name": "status",
+                "type": "string",
+                "description": "The syncing status of the address [SYNCING/SYNCED]",
+                "example": "SYNCING"
+              },
+              {
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
@@ -4551,324 +4104,183 @@
               },
               {
                 "name": "cursor",
-                "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
-                "type": "string"
+                "type": "string",
+                "description": "The cursor to get to the next page"
               },
               {
                 "name": "result",
-                "type": "array",
-                "field": {
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "token_address",
-                      "type": "string",
-                      "description": "The address of the NFT contract",
-                      "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-                    },
-                    {
-                      "name": "token_id",
-                      "type": "string",
-                      "description": "The token ID of the NFT",
-                      "example": "15"
-                    },
-                    {
-                      "name": "contract_type",
-                      "type": "string",
-                      "description": "The type of NFT contract standard",
-                      "example": "ERC721"
-                    },
-                    {
-                      "name": "owner_of",
-                      "type": "string",
-                      "description": "The wallet address of the owner of the NFT",
-                      "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                    },
-                    {
-                      "name": "block_number",
-                      "type": "string",
-                      "description": "The block number when the amount or owner changed",
-                      "example": "88256"
-                    },
-                    {
-                      "name": "block_number_minted",
-                      "type": "string",
-                      "description": "The block number when the NFT was minted",
-                      "example": "88256"
-                    },
-                    {
-                      "name": "token_uri",
-                      "type": "string",
-                      "description": "The URI to the metadata of the token"
-                    },
-                    {
-                      "name": "metadata",
-                      "type": "string",
-                      "description": "The metadata of the token"
-                    },
-                    {
-                      "name": "normalized_metadata",
-                      "description": "A normalized metadata version of the NFT's metadata.",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "name",
-                          "type": "string",
-                          "description": "The name or title of the NFT",
-                          "example": "Moralis Mug"
-                        },
-                        {
-                          "name": "description",
-                          "type": "string",
-                          "description": "A detailed description of the NFT",
-                          "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
-                        },
-                        {
-                          "name": "image",
-                          "type": "string",
-                          "description": "The URL of the NFT's image",
-                          "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
-                        },
-                        {
-                          "name": "external_link",
-                          "type": "string",
-                          "description": "A link to additional information",
-                          "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
-                        },
-                        {
-                          "name": "animation_url",
-                          "type": "string",
-                          "description": "An animated version of the NFT's image",
-                          "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
-                        },
-                        {
-                          "name": "attributes",
-                          "type": "array",
-                          "field": {
-                            "type": "object",
-                            "fields": [
-                              {
-                                "name": "trait_type",
-                                "type": "string",
-                                "description": "The trait title or descriptor",
-                                "example": "Eye Color"
-                              },
-                              {
-                                "name": "value",
-                                "type": "string",
-                                "description": "The value of the attribute",
-                                "example": "hazel"
-                              },
-                              {
-                                "name": "display_type",
-                                "type": "string",
-                                "description": "The type the attribute value should be displayed as",
-                                "example": "string"
-                              },
-                              {
-                                "name": "max_value",
-                                "type": "number",
-                                "description": "For numeric values, the upper range",
-                                "example": 100
-                              },
-                              {
-                                "name": "trait_count",
-                                "type": "number",
-                                "description": "The number of possible values for this trait",
-                                "example": 7
-                              },
-                              {
-                                "name": "order",
-                                "type": "number",
-                                "description": "Order the trait should appear in the attribute list.",
-                                "example": 1
-                              }
-                            ]
-                          }
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
                         }
-                      ]
-                    },
-                    {
-                      "name": "media",
-                      "description": "A set of links to 'thumbnail / preview' media files",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "mimetype",
-                          "type": "string",
-                          "required": true,
-                          "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
-                        },
-                        {
-                          "name": "category",
-                          "type": "string",
-                          "required": true,
-                          "enum": ["image", "audio", "video"]
-                        },
-                        {
-                          "name": "original_media_url",
-                          "type": "string",
-                          "required": true,
-                          "description": "The url of the original media file."
-                        },
-                        {
-                          "name": "parent_hash",
-                          "type": "string",
-                          "required": true,
-                          "description": "Hash value of the original media file."
-                        },
-                        {
-                          "name": "media_collection",
-                          "required": true,
-                          "description": "Preview item associated with the original",
-                          "type": "object",
-                          "fields": [
-                            {
-                              "name": "original",
-                              "required": true,
-                              "description": "Information about the original media file",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "low",
-                              "required": true,
-                              "description": "Preview media file, lowest quality (for images 100px x 100px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "medium",
-                              "required": true,
-                              "description": "Preview media file, medium quality (for images 250px x 250px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "high",
-                              "required": true,
-                              "description": "Preview media file, highest quality (for images 500px x 500px)",
-                              "type": "object",
-                              "fields": [
-                                {
-                                  "name": "width",
-                                  "type": "integer",
-                                  "description": "The width of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "height",
-                                  "type": "integer",
-                                  "description": "The height of the preview image.",
-                                  "required": true
-                                },
-                                {
-                                  "name": "url",
-                                  "type": "string",
-                                  "description": "The url of the preview file.",
-                                  "required": true
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "name": "amount",
-                      "type": "string",
-                      "description": "The number of this item the user owns (used by ERC1155)",
-                      "example": "1"
-                    },
-                    {
-                      "name": "name",
-                      "type": "string",
-                      "description": "The name of the NFT contract",
-                      "example": "CryptoKitties"
-                    },
-                    {
-                      "name": "symbol",
-                      "type": "string",
-                      "description": "The symbol of the NFT contract",
-                      "example": "RARI"
-                    },
-                    {
-                      "name": "token_hash",
-                      "type": "string",
-                      "description": "The token hash",
-                      "example": "502cee781b0fb40ea02508b21d319ced"
-                    },
-                    {
-                      "name": "last_token_uri_sync",
-                      "type": "string",
-                      "description": "When the token_uri was last updated",
-                      "example": "2021-02-24T00:47:26.647Z"
-                    },
-                    {
-                      "name": "last_metadata_sync",
-                      "type": "string",
-                      "description": "When the metadata was last updated",
-                      "example": "2021-02-24T00:47:26.647Z"
+                      }
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "media",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "properties": {
+                      "mimetype": {
+                        "type": "string",
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      "category": { "enum": ["image", "audio", "video"] },
+                      "status": {
+                        "enum": [
+                          "success",
+                          "processing",
+                          "unsupported_media",
+                          "invalid_url",
+                          "host_unavailable",
+                          "temporarily_unavailable"
+                        ],
+                        "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
+                      },
+                      "original_media_url": {
+                        "type": "string",
+                        "description": "The url of the original media file."
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "description": "The timestamp of the last update to this NFT media record."
+                      },
+                      "parent_hash": {
+                        "type": "string",
+                        "description": "Hash value of the original media file."
+                      },
+                      "media_collection": {
+                        "description": "Preview item associated with the original",
+                        "$ref": "#/components/schemas/mediaCollection"
+                      }
+                    }
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The number of this item the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated",
+                    "example": "2021-02-24T00:47:26.647Z"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
+                  }
+                ]
               }
             ]
           }
@@ -5487,6 +4899,18 @@
                     "name": "updatedAt",
                     "type": "string",
                     "example": "2022-04-09T23:56:44.807Z"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -6016,6 +5440,26 @@
                 "type": "object",
                 "fields": [
                   {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
+                  {
                     "name": "transaction_hash",
                     "type": "string",
                     "description": "The transaction hash",
@@ -6052,6 +5496,12 @@
                     "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
                   },
                   {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The sender",
@@ -6064,15 +5514,9 @@
                     "example": "Binance 1"
                   },
                   {
-                    "name": "to_address_label",
-                    "type": "string",
-                    "description": "The label of the to address",
-                    "example": "Binance 2"
-                  },
-                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The value that was transferred (in wei)",
+                    "description": "The value that was transfered (in wei)",
                     "example": 650000000000000000
                   },
                   {
@@ -6086,6 +5530,18 @@
                     "type": "number",
                     "description": "The log index of the transfer within the block",
                     "example": 2
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -6452,6 +5908,26 @@
                 "type": "object",
                 "fields": [
                   {
+                    "name": "token_name",
+                    "type": "string",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "token_symbol",
+                    "type": "string",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "token_logo",
+                    "type": "string",
+                    "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
+                  },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
+                  {
                     "name": "transaction_hash",
                     "type": "string",
                     "description": "The transaction hash",
@@ -6488,6 +5964,12 @@
                     "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
                   },
                   {
+                    "name": "to_address_label",
+                    "type": "string",
+                    "description": "The label of the to address",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The sender",
@@ -6500,15 +5982,9 @@
                     "example": "Binance 1"
                   },
                   {
-                    "name": "to_address_label",
-                    "type": "string",
-                    "description": "The label of the to address",
-                    "example": "Binance 2"
-                  },
-                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The value that was transferred (in wei)",
+                    "description": "The value that was transfered (in wei)",
                     "example": 650000000000000000
                   },
                   {
@@ -6522,6 +5998,18 @@
                     "type": "number",
                     "description": "The log index of the transfer within the block",
                     "example": 2
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
                   }
                 ]
               }
@@ -6666,7 +6154,11 @@
                     "type": "string",
                     "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
                   },
-                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
                   {
                     "name": "contract_address",
                     "type": "string",
@@ -6680,10 +6172,10 @@
                   },
                   {
                     "name": "transaction_index",
-                    "type": "number",
-                    "example": 204
+                    "type": "string",
+                    "example": "204"
                   },
-                  { "name": "log_index", "type": "number", "example": 204 },
+                  { "name": "log_index", "type": "string", "example": "204" },
                   {
                     "name": "block_timestamp",
                     "type": "string",
@@ -6692,9 +6184,9 @@
                   },
                   {
                     "name": "block_number",
-                    "type": "number",
+                    "type": "string",
                     "description": "The block number",
-                    "example": 12386788
+                    "example": "12386788"
                   },
                   {
                     "name": "block_hash",
@@ -6709,16 +6201,28 @@
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "from_wallet_label",
+                    "type": "string",
+                    "description": "The label of the from wallet",
+                    "example": "Binance 1"
+                  },
+                  {
                     "name": "to_wallet",
                     "type": "string",
                     "description": "The address of the contract",
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "to_wallet_label",
+                    "type": "string",
+                    "description": "The label of the to wallet",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The address of the contract",
-                    "example": "1234"
+                    "description": "The value of the transfer",
+                    "example": "57732989482831651"
                   },
                   {
                     "name": "value_decimal",
@@ -6730,6 +6234,12 @@
                     "name": "possible_spam",
                     "type": "boolean",
                     "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
                     "example": "false"
                   }
                 ]
@@ -6875,7 +6385,11 @@
                     "type": "string",
                     "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
                   },
-                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
                   {
                     "name": "contract_address",
                     "type": "string",
@@ -6918,10 +6432,16 @@
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "to_wallet_label",
+                    "type": "string",
+                    "description": "The label of the to wallet",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The address of the contract",
-                    "example": "1234"
+                    "description": "The value of the transfer",
+                    "example": "57732989482831651"
                   },
                   {
                     "name": "value_decimal",
@@ -6933,6 +6453,12 @@
                     "name": "possible_spam",
                     "type": "boolean",
                     "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
                     "example": "false"
                   }
                 ]
@@ -7078,7 +6604,11 @@
                     "type": "string",
                     "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
                   },
-                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
                   {
                     "name": "contract_address",
                     "type": "string",
@@ -7121,10 +6651,16 @@
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "from_wallet_label",
+                    "type": "string",
+                    "description": "The label of the from wallet",
+                    "example": "Binance 1"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The address of the contract",
-                    "example": "1234"
+                    "description": "The value of the transfer",
+                    "example": "57732989482831651"
                   },
                   {
                     "name": "value_decimal",
@@ -7136,6 +6672,12 @@
                     "name": "possible_spam",
                     "type": "boolean",
                     "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
                     "example": "false"
                   }
                 ]
@@ -7281,7 +6823,11 @@
                     "type": "string",
                     "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
                   },
-                  { "name": "token_decimals", "type": "number", "example": 6 },
+                  {
+                    "name": "token_decimals",
+                    "type": "string",
+                    "example": "6"
+                  },
                   {
                     "name": "contract_address",
                     "type": "string",
@@ -7324,16 +6870,28 @@
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "from_wallet_label",
+                    "type": "string",
+                    "description": "The label of the from wallet",
+                    "example": "Binance 1"
+                  },
+                  {
                     "name": "to_wallet",
                     "type": "string",
                     "description": "The address of the contract",
                     "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
                   },
                   {
+                    "name": "to_wallet_label",
+                    "type": "string",
+                    "description": "The label of the to wallet",
+                    "example": "Binance 2"
+                  },
+                  {
                     "name": "value",
                     "type": "string",
-                    "description": "The address of the contract",
-                    "example": "1234"
+                    "description": "The value of the transfer",
+                    "example": "57732989482831651"
                   },
                   {
                     "name": "value_decimal",
@@ -7345,6 +6903,12 @@
                     "name": "possible_spam",
                     "type": "boolean",
                     "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
                     "example": "false"
                   }
                 ]
