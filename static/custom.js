@@ -46,8 +46,7 @@ window.onload = function () {
         menuLinks.forEach(updateLink);
         // for params
         const paramLinks = document.querySelectorAll(
-          ".paramName_src-components-ApiReference-styles-module",
-          ".paramName_Mm0f"
+          ".paramName_src-components-ApiReference-styles-module, .paramName_Mm0f"
         );
         paramLinks.forEach(updateParam);
       }
@@ -58,8 +57,7 @@ window.onload = function () {
   initialMenuLinks.forEach(updateLink);
 
   const initialParamLinks = document.querySelectorAll(
-    ".paramName_src-components-ApiReference-styles-module",
-    ".paramName_Mm0f"
+    ".paramName_src-components-ApiReference-styles-module, .paramName_Mm0f"
   );
   initialParamLinks.forEach(updateParam);
 
