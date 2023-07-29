@@ -1,18 +1,39 @@
 window.onload = function () {
   // List of sidebar page names where we need a 🔥 emoji
   const pageList = [
+    // For Market data API
     "Market Data API",
+    // For Wallert API tutorial and reference
     "Wallet API",
     "API Reference",
     "Chain Activity",
     "Get Wallet Details",
     "Wallet Details",
+    "Get chain activity by wallet",
+    // For NFT exclude spam
+    "Get NFT Collections",
+    "Get NFT collections by wallet",
+    "Get NFTs",
+    "Get NFTs by wallet",
+  ];
+
+  const paramList = [
+    // For NFT exclude spam
+    "exclude_spam",
   ];
 
   // Function to update a link with an emoji
   function updateLink(link) {
     if (pageList.includes(link.textContent) && !link.innerHTML.includes("🔥")) {
       link.innerHTML += " 🔥";
+    }
+  }
+  function updateParam(link) {
+    if (
+      paramList.includes(link.textContent) &&
+      !link.innerHTML.includes("🔥")
+    ) {
+      link.innerHTML = "🔥 " + link.innerHTML;
     }
   }
 
@@ -22,12 +43,21 @@ window.onload = function () {
       if (mutation.type === "childList") {
         const menuLinks = document.querySelectorAll(".menu__link");
         menuLinks.forEach(updateLink);
+        const paramLinks = document.querySelectorAll(
+          ".paramName_src-components-ApiReference-styles-module"
+        );
+        paramLinks.forEach(updateParam);
       }
     });
   });
 
   const initialMenuLinks = document.querySelectorAll(".menu__link");
   initialMenuLinks.forEach(updateLink);
+
+  const initialParamLinks = document.querySelectorAll(
+    ".paramName_src-components-ApiReference-styles-module"
+  );
+  initialParamLinks.forEach(updateParam);
 
   observer.observe(document.body, { childList: true, subtree: true });
 };
