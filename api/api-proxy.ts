@@ -11,9 +11,9 @@ const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {
     const userAgent = req.headers["user-agent"];
-    const method = req.method;
-    const hostUrl = req.body.hostUrl;
-    const path = req.body.path;
+    const apiMethod = req.method;
+
+    const { hostUrl, path, method, headers, body, query } = req.body;
 
     let clientIP: string;
     if (Array.isArray(req.headers["x-forwarded-for"])) {
@@ -24,11 +24,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
     if (
       userAgent?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) &&
-      method === "POST" &&
+      apiMethod === "POST" &&
       req.body.headers["x-moralis-source"] === "Moralis API docs"
     ) {
-      const { headers, body, query } = req.body;
-
       const newHeaders = {
         ...headers,
         "X-API-Key": MORALIS_API_KEY,
@@ -62,7 +60,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         await prisma.apiUsage.create({
           data: {
             userAgent,
-            method,
+            method: apiMethod,
             hostUrl,
             path,
             clientIP,
