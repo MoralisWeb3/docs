@@ -15,11 +15,11 @@ datasource db {
 model apiUsage {
   id         Int     @id @default(autoincrement())
   userAgent  String
-  clientIP   String
-  clientHost String
   method     String
   hostUrl    String
   path       String
+  clientIP   String
+  clientHost   String
   timestamp  DateTime @default(now())
 }
 
