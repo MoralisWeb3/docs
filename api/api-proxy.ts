@@ -104,7 +104,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           data: {
             userAgent,
             method: apiMethod,
-            hostUrl,
+            hostUrl: "401 Invalid Key",
             path,
             clientIP,
             clientHost,
