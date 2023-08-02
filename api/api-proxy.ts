@@ -12,6 +12,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   try {
     const userAgent = req.headers["user-agent"];
     const apiMethod = req.method;
+    const clientHost = req?.headers?.host;
 
     const { hostUrl, path, method, headers, body, query } = req.body;
 
@@ -21,6 +22,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     } else {
       clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
     }
+
+    console.log({
+      clientHost,
+      userAgent,
+      apiMethod,
+      hostUrl,
+      path,
+      clientIP,
+    });
 
     if (
       userAgent?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) &&
@@ -59,6 +69,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
               hostUrl,
               path,
               clientIP,
+              clientHost,
             },
           });
         } catch (dbError) {
@@ -78,6 +89,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
               hostUrl,
               path,
               clientIP,
+              clientHost,
             },
           });
         } catch (dbError) {
