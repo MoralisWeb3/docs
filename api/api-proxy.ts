@@ -5,7 +5,6 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// Replace PRIVATE_API_KEY with your private API key.
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
 export default async function (req: VercelRequest, res: VercelResponse) {
@@ -33,9 +32,10 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     });
 
     if (
-      userAgent?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) &&
+      // userAgent?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) && // disabled it temporarly
       apiMethod === "POST" &&
-      req.body.headers["x-moralis-source"] === "Moralis API docs"
+      req.body.headers["x-moralis-source"] === "Moralis API docs" &&
+      clientHost === "docs.moralis.io"
     ) {
       const newHeaders = {
         ...headers,
