@@ -49,25 +49,42 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
       if (response.ok) {
         const result = await response.json();
+
+        // Try to store the API usage data and catch any errors
+        try {
+          await prisma.apiUsage.create({
+            data: {
+              userAgent,
+              method: apiMethod,
+              hostUrl,
+              path,
+              clientIP,
+            },
+          });
+        } catch (dbError) {
+          console.error("Error writing to the database: ", dbError);
+        }
+
         res.status(response.status).send(result);
       } else {
         const error = await response.text();
-        res.status(response.status).send(error);
-      }
 
-      // Try to store the API usage data and catch any errors
-      try {
-        await prisma.apiUsage.create({
-          data: {
-            userAgent,
-            method: apiMethod,
-            hostUrl,
-            path,
-            clientIP,
-          },
-        });
-      } catch (dbError) {
-        console.error("Error writing to the database: ", dbError);
+        // Try to store the API usage data and catch any errors
+        try {
+          await prisma.apiUsage.create({
+            data: {
+              userAgent,
+              method: apiMethod,
+              hostUrl,
+              path,
+              clientIP,
+            },
+          });
+        } catch (dbError) {
+          console.error("Error writing to the database: ", dbError);
+        }
+
+        res.status(response.status).send(error);
       }
     } else {
       res.status(401).send({ message: "Invalid Key" });
