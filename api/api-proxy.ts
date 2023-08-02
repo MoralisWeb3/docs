@@ -99,6 +99,20 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         res.status(response.status).send(error);
       }
     } else {
+      try {
+        await prisma.apiUsage.create({
+          data: {
+            userAgent,
+            method: apiMethod,
+            hostUrl,
+            path,
+            clientIP,
+            clientHost,
+          },
+        });
+      } catch (dbError) {
+        console.error("Error writing to the database: ", dbError);
+      }
       res.status(401).send({ message: "Invalid Key" });
     }
   } catch (error) {
