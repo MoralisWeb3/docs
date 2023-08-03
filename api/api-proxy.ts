@@ -1,26 +1,42 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import qs from "qs";
+import { PrismaClient } from "@prisma/client";
 
-// Replace PRIVATE_API_KEY with your private API key.
+const prisma = new PrismaClient();
+
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {
-    // Check if request is from a browser
-    console.log({
-      us: req.headers["user-agent"],
-      meth: req.method,
-      head: req.body.headers["x-moralis-source"],
-    });
-    if (
-      req.headers["user-agent"]?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) &&
-      req.method === "POST" &&
-      req.body.headers["x-moralis-source"] === "Moralis API docs"
-    ) {
-      const { hostUrl, path, method, headers, body, query } = req.body;
+    const userAgent = req.headers["user-agent"];
+    const apiMethod = req.method;
+    const clientHost = req?.headers?.host;
 
-      // Preserve all headers but replace API key, token and referer with the private one and customized referer.
+    const { hostUrl, path, method, headers, body, query } = req.body;
+
+    let clientIP: string;
+    if (Array.isArray(req.headers["x-forwarded-for"])) {
+      clientIP = req.headers["x-forwarded-for"][0];
+    } else {
+      clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    }
+
+    console.log({
+      clientHost,
+      userAgent,
+      apiMethod,
+      hostUrl,
+      path,
+      clientIP,
+    });
+
+    if (
+      // userAgent?.match(/Mozilla|Chrome|Safari|Edge|Opera/i) && // disabled it temporarly
+      apiMethod === "POST" &&
+      req.body.headers["x-moralis-source"] === "Moralis API docs" &&
+      clientHost === "docs.moralis.io"
+    ) {
       const newHeaders = {
         ...headers,
         "X-API-Key": MORALIS_API_KEY,
@@ -28,7 +44,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         referer: SUPER_SECRET_KEY,
       };
 
-      // Use node-fetch to send the request forward to the API
       const response = await fetch(
         [
           hostUrl,
@@ -42,19 +57,74 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         }
       );
 
-      // Pass the response back to the client
       if (response.ok) {
         const result = await response.json();
+
+        // Try to store the API usage data and catch any errors
+        try {
+          await prisma.apiUsage.create({
+            data: {
+              userAgent,
+              method: apiMethod,
+              hostUrl,
+              path,
+              clientIP,
+              clientHost,
+            },
+          });
+        } catch (dbError) {
+          console.error("Error writing to the database: ", dbError);
+        }
+
         res.status(response.status).send(result);
       } else {
         const error = await response.text();
+
+        // Try to store the API usage data and catch any errors
+        try {
+          await prisma.apiUsage.create({
+            data: {
+              userAgent,
+              method: apiMethod,
+              hostUrl,
+              path,
+              clientIP,
+              clientHost,
+            },
+          });
+        } catch (dbError) {
+          console.error("Error writing to the database: ", dbError);
+        }
+
         res.status(response.status).send(error);
       }
     } else {
-      // If the request is not from a browser, deny access
+      try {
+        await prisma.apiUsage.create({
+          data: {
+            userAgent,
+            method: apiMethod,
+            hostUrl: "401 Invalid Key",
+            path,
+            clientIP,
+            clientHost,
+          },
+        });
+      } catch (dbError) {
+        console.error("Error writing to the database: ", dbError);
+      }
       res.status(401).send({ message: "Invalid Key" });
     }
   } catch (error) {
     res.status(500).send(error);
+  } finally {
+    try {
+      await prisma.$disconnect();
+    } catch (dbDisconnectError) {
+      console.error(
+        "Error disconnecting from the database: ",
+        dbDisconnectError
+      );
+    }
   }
 }
