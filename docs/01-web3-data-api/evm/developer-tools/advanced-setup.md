@@ -19,8 +19,8 @@ Available packages:
 - `@moralisweb3/auth`
 - `@moralisweb3/evm-api`
 - `@moralisweb3/sol-api`
-- `@moralisweb3/evm-utils`
-- `@moralisweb3/sol-utils`
+- `@moralisweb3/common-evm-utils`
+- `@moralisweb3/common-sol-utils`
 
 For example:
 

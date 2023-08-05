@@ -25,7 +25,7 @@ The most common use cases for the data types are:
 For many API calls, you can provide a `chain` or `address` parameter. In these cases, you can provide **any valid input value for an `EvmChain` or `EvmAddress`**. For example, these are all valid inputs:
 
 ```javascript
-import { EvmChain, EvmAddress } from "@moralisweb3/evm-utils";
+import { EvmChain, EvmAddress } from "@moralisweb3/common-evm-utils";
 
 Moralis.EvmApi.nft.getWalletNFTs({
   chain: "0x1",
@@ -50,12 +50,12 @@ Moralis.EvmApi.nft.getWalletNFTs({
 
 ## Creating New Instances Manually for Usage Within Your Dapp
 
-If you need to use any of the data types within your apps, then you can import them from `'@moralisweb3/evm-utils` or `'@moralisweb3/sol-utils`, and create your instance via the `.create()` method.
+If you need to use any of the data types within your apps, then you can import them from `'@moralisweb3/common-evm-utils` or `'@moralisweb3/common-sol-utils`, and create your instance via the `.create()` method.
 
 For example:
 
 ```javascript
-import { EvmNative } from "@moralisweb3/evm-utils";
+import { EvmNative } from "@moralisweb3/common-evm-utils";
 
 const oneEth = EvmNative.create(1, "ether");
 
@@ -63,7 +63,7 @@ oneEth.wei; // 1000000000000000000
 ```
 
 ```javascript
-import { EvmAddress } from "@moralisweb3/evm-utils";
+import { EvmAddress } from "@moralisweb3/common-evm-utils";
 
 const myAddress = EvmAddress.create(
   "0xa74476443119A942dE498590Fe1f2454d7D4aC0d"
@@ -94,7 +94,7 @@ Instead of handling EVM chains as decimal or hex string types, the Moralis SDK n
 ### Create EvmChain
 
 ```javascript
-import { EvmChain } from "@moralisweb3/evm-utils";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 //by name
 const chain = EvmChain.ETHEREUM;
@@ -153,7 +153,7 @@ console.log("check 4: ", chain.equals(EvmChain.create("0x1")));
 #### Create EvmAddress
 
 ```javascript
-import { EvmAddress } from "@moralisweb3/evm-utils";
+import { EvmAddress } from "@moralisweb3/common-evm-utils";
 
 // by lowercase address
 const address = EvmAddress.create("0xa9c4c85dd0495e32d08ef64d51fdeb35d200edfe");
