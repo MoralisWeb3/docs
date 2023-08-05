@@ -15,7 +15,7 @@ We will use Moralis SDK to create a stream, and you can install the Moralis SDK 
 
 ```javascript
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/evm-utils";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 Moralis.start({
   apiKey: "YOUR_API_KEY",

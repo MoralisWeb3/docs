@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ```javascript index.js
 const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/evm-utils");
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const runApp = async () => {
   await Moralis.start({
@@ -66,7 +66,7 @@ runApp();
 ```typescript index.ts
 import Moralis from "moralis";
 import Moralis from "moralis";
-import { EvmChain } from "@moralisweb3/evm-utils";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 const runApp = async () => {
   await Moralis.start({

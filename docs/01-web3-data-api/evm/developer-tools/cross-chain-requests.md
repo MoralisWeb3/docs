@@ -67,7 +67,7 @@ We have two networks for the Solana API, which you can configure similarly. You 
 
 ```typescript
 import Moralis from "moralis";
-import { SolNetwork } from "@moralisweb3/sol-utils";
+import { SolNetwork } from "@moralisweb3/common-sol-utils";
 
 Moralis.start({
   apiKey: "YOUR_API_KEY",
