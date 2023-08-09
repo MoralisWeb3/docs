@@ -11,14 +11,9 @@ import config from "../../../../../configs/api-reference/configs.json";
 # Get NFT transfers by wallet
 
 <ApiReference {...config.nft.getWalletNFTTransfers}>
-  <Admonition type="info" icon="💡" title="INDIRECT NFT TRANSFERS">
+  <Admonition type="caution" icon="⚠️" title="QUERY PARAMETER CHANGE">
     <p>
-      Note that this endpoint won't include transfers that are conducted through
-      a smart contract also known as indirect transfers.
-    </p>
-    <p>
-      For example using OpenSea to transfer NFTs is a indirect transfer as it
-      uses the OpenSea smart contract.
+      From the 4th September 2023, the <b>direction</b> query parameter will be removed. <a href="/changelog/essential-api-changes">Read more here</a>.
     </p>
   </Admonition>
 </ApiReference>
