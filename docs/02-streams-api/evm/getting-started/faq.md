@@ -1,5 +1,5 @@
 ---
-title: "FAQ"
+title: "🙋 FAQ"
 sidebar_position: 20
 description: "This FAQ page provides answers to common questions about our product. Learn more about features, compatibility, installation, and more."
 ---

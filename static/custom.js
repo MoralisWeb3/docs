@@ -10,17 +10,9 @@ window.onload = function () {
     "Get Wallet Details",
     "Wallet Details",
     "Get chain activity by wallet",
-    // For NFT exclude spam
-    "Get NFT Collections",
-    "Get NFT collections by wallet",
-    "Get NFTs",
-    "Get NFTs by wallet",
   ];
 
-  const paramList = [
-    // For NFT exclude spam
-    "exclude_spam",
-  ];
+  const paramList = [];
 
   // Function to update a link with an emoji
   function updateLink(link) {
