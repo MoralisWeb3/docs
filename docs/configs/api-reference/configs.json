@@ -3245,19 +3245,25 @@
                 "name": "total",
                 "type": "number",
                 "description": "The total number of matches for this query",
-                "example": "2000"
+                "example": 1
               },
               {
                 "name": "page",
                 "type": "number",
                 "description": "The current page of the result",
-                "example": "2"
+                "example": "0"
               },
               {
                 "name": "page_size",
                 "type": "number",
                 "description": "The number of results per page",
                 "example": "100"
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination",
+                "example": ""
               },
               {
                 "name": "result",
@@ -3267,61 +3273,80 @@
                     "name": "transaction_hash",
                     "type": "string",
                     "description": "The transaction hash",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    "example": "0x5eba5d8d84c20a7f30b92d74afaee764d9476b62a1637b017319c721269245ed"
                   },
                   {
                     "name": "transaction_index",
                     "type": "string",
-                    "description": "The transaction index"
+                    "description": "The transaction index",
+                    "example": "90"
                   },
                   {
                     "name": "token_ids",
                     "type": "array",
                     "description": "The token ID(s) traded",
-                    "example": ["15", "54"],
-                    "field": { "type": "string", "example": "15" }
+                    "example": ["1002", "7228", "1", "1"],
+                    "field": { "type": "string", "example": "1002" }
                   },
                   {
                     "name": "seller_address",
                     "type": "string",
                     "description": "The address that sold the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    "example": "0xe7f35f06a80a6a2a5edc823379fa147d9f9948a8"
                   },
                   {
                     "name": "buyer_address",
                     "type": "string",
                     "description": "The address that bought the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    "example": "0xd7c708080553068217a2fe6f44eccf9cac309915"
+                  },
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the token",
+                    "example": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb"
                   },
                   {
                     "name": "marketplace_address",
                     "type": "string",
                     "description": "The address of the contract that traded the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                    "example": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b"
                   },
                   {
                     "name": "price",
                     "type": "string",
                     "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
-                    "example": "1000000000000000"
+                    "example": "18980000000000000000"
+                  },
+                  {
+                    "name": "price_token_address",
+                    "type": "string",
+                    "description": "The address of the token used for the price",
+                    "example": "0x60e4d786628fea6478f785a6d7e704777c86a7c6"
                   },
                   {
                     "name": "block_timestamp",
                     "type": "string",
                     "description": "The block timestamp",
-                    "example": "2021-06-04T16:00:15"
+                    "example": "2022-03-18T22:21:07.000Z"
                   },
                   {
                     "name": "block_number",
                     "type": "string",
                     "description": "The block number of the transaction",
-                    "example": "13680123"
+                    "example": "14413068"
                   },
                   {
                     "name": "block_hash",
                     "type": "string",
                     "description": "The block hash",
-                    "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
+                    "example": "0x50e740dd733efc1e7252e3863e76368624d146e1a8447fab32c9697685cf581d"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if the collection is verified",
+                    "example": true
                   }
                 ]
               }
