@@ -5165,43 +5165,51 @@
               },
               {
                 "name": "nativePrice",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "value",
+                "required": ["value", "decimals", "name", "symbol", "address"],
+                "properties": {
+                  "value": {
                     "type": "string",
                     "description": "The native price of the token",
-                    "example": "8409770570506626",
-                    "required": true
+                    "example": "8409770570506626"
                   },
-                  {
-                    "name": "decimals",
+                  "decimals": {
                     "type": "integer",
                     "description": "The number of decimals on the token",
-                    "example": 18,
-                    "required": true
+                    "example": 18
                   },
-                  {
-                    "name": "name",
+                  "name": {
                     "type": "string",
                     "description": "The name of the token",
-                    "example": "Ether",
-                    "required": true
+                    "example": "Ether"
                   },
-                  {
-                    "name": "symbol",
+                  "symbol": {
                     "type": "string",
                     "description": "The symbol of the token",
-                    "example": "ETH",
-                    "required": true
+                    "example": "ETH"
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "The address of the native token"
                   }
-                ]
+                }
               },
               {
                 "name": "usdPrice",
                 "type": "number",
                 "description": "The price in USD for the token",
+                "example": 19.722370676
+              },
+              {
+                "name": "usdPriceFormatted",
+                "type": "string",
+                "description": "The price in USD for the token in string format",
                 "example": "19.722370676"
+              },
+              {
+                "name": "24hrPercentChange",
+                "type": "string",
+                "description": "The 24hr percent change of the token",
+                "example": "-0.8842730258590583"
               },
               {
                 "name": "exchangeAddress",
@@ -5220,6 +5228,12 @@
                 "type": "string",
                 "description": "The address of the token",
                 "example": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c"
+              },
+              {
+                "name": "toBlock",
+                "type": "string",
+                "description": "toBlock",
+                "example": "16314545"
               }
             ]
           }
