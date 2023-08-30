@@ -14,9 +14,9 @@ As outlined in an [earlier post](/changelog/planned-cu-increase-across-multiple-
 | [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)                    | 1                      | 5                 |
 | [`/{address}/logs`](/web3-data-api/evm/reference/get-contract-logs)                     | 2                      | 5                 |
 | [`/{address}/erc20`](/web3-data-api/evm/reference/get-wallet-token-balances)            | 5                      | 10                |
-| [`/erc20/mints`](/web3-data-api/evm/reference/get-erc20-mints)                          | 5                      | 10                |
-| [`/erc20/burns`](/web3-data-api/evm/reference/get-erc20-burns)                          | 5                      | 10                |
-| [`/erc20/approvals`](/web3-data-api/evm/reference/get-erc20-approvals)                  | 5                      | 10                |
+| [`/erc20/mints`](/2.0/web3-data-api/evm/reference/get-erc20-mints)                          | 5                      | 10                |
+| [`/erc20/burns`](/2.0/web3-data-api/evm/reference/get-erc20-burns)                          | 5                      | 10                |
+| [`/erc20/approvals`](/2.0/web3-data-api/evm/reference/get-erc20-approvals)                  | 5                      | 10                |
 | [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)               | 5                      | 10                |
 | [`/{address}/erc20/transfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) | 2                      | 5                 |
 | [`/erc20/{address}/transfers`](/web3-data-api/evm/reference/get-token-transfers)        | 2                      | 10                |
