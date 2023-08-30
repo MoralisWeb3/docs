@@ -195,6 +195,12 @@ const config = {
             label: "Authentication API",
           },
           {
+            type: "doc",
+            docId: "supported-chains/overview",
+            position: "left",
+            label: "Supported Chains",
+          },
+          {
             to: "changelog",
             position: "left",
             label: "Changelog",
