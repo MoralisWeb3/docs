@@ -43,7 +43,7 @@ If you rely on a `total` count value, you will need to explicitly set the `disab
 - [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
 - [Get NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 - [Get NFT owners token ID](/web3-data-api/evm/reference/get-nft-token-id-owners)
-- [Search NFTs](/web3-data-api/evm/reference/search-nfts)
+- [Search NFTs](/2.0/web3-data-api/evm/reference/search-nfts)
 - [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
 - [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
 - [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)

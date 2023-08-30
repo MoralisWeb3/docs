@@ -51,7 +51,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
 - [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 - [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
-- [Search NFTs](/web3-data-api/evm/reference/search-nfts)
+- [Search NFTs](/2.0/web3-data-api/evm/reference/search-nfts)
 
 #### Get NFT Metadata
 

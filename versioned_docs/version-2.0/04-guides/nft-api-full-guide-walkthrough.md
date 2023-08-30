@@ -34,7 +34,7 @@ This API category comprised of 4 APIs:
 | [getMultipleNFTs](/web3-data-api/evm/reference/get-multiple-nfts) | /nft/getMultipleNFTs | Fetch a complete stats of multiple NFTs (max 25 per call) in a given `tokens` array.                                       |
 | [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)     | /{address}/nft       | Fetch all NFTs in a given wallet `address`. This is ideal for displaying NFT balance for a portfolio dashboard.            |
 | [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts) | /nft/{address}       | Fetch all tokens in a given NFT collection `address`.                                                                      |
-| [searchNFTs](/web3-data-api/evm/reference/search-nfts)            | /nft/search          | Fetch all NFT that have metadata that contains a given `q` string. This is ideal for building an NFT search functionality. |
+| [searchNFTs](/2.0/web3-data-api/evm/reference/search-nfts)            | /nft/search          | Fetch all NFT that have metadata that contains a given `q` string. This is ideal for building an NFT search functionality. |
 
 ### Get NFT Transfers API
 

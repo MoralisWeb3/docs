@@ -1628,7 +1628,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -2574,7 +2574,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts-1",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -5626,7 +5626,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/search-nfts",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
