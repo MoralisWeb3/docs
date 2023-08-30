@@ -1,22 +1,35 @@
 window.onload = function () {
   // List of sidebar page names where we need a 🔥 emoji
-  const pageList = [
-    // For Market data API
-    "Market Data API",
-    // For Wallert API tutorial and reference
-    "Wallet API",
+  const pageList = [];
+  const referenceList = [
+    // For v2.2 Release
     "API Reference",
-    "Chain Activity",
-    "Get Wallet Details",
-    "Wallet Details",
-    "Get chain activity by wallet",
+    "Wallet API",
+    "Get Wallet Stats",
+    "NFT API",
+    "Get NFT Stats",
+    "Token API",
+    "Get Token Stats",
+    "Blockchain API",
+    "Get Stats",
   ];
 
   const paramList = [];
 
   // Function to update a link with an emoji
-  function updateLink(link) {
+  function updatePageLink(link) {
     if (pageList.includes(link.textContent) && !link.innerHTML.includes("🔥")) {
+      console.log(link);
+      link.innerHTML += " 🔥";
+    }
+  }
+  function updateRefLink(link) {
+    if (
+      referenceList.includes(link.textContent) &&
+      !link.innerHTML.includes("🔥") &&
+      link.href.includes("reference")
+    ) {
+      console.log(link);
       link.innerHTML += " 🔥";
     }
   }
@@ -33,9 +46,10 @@ window.onload = function () {
   const observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
       if (mutation.type === "childList") {
-        // for links
+        // for page links
         const menuLinks = document.querySelectorAll(".menu__link");
-        menuLinks.forEach(updateLink);
+        menuLinks.forEach(updatePageLink);
+        menuLinks.forEach(updateRefLink);
         // for params
         const paramLinks = document.querySelectorAll(
           ".paramName_src-components-ApiReference-styles-module, .paramName_Mm0f"
@@ -46,7 +60,8 @@ window.onload = function () {
   });
 
   const initialMenuLinks = document.querySelectorAll(".menu__link");
-  initialMenuLinks.forEach(updateLink);
+  initialMenuLinks.forEach(updatePageLink);
+  initialMenuLinks.forEach(updateRefLink);
 
   const initialParamLinks = document.querySelectorAll(
     ".paramName_src-components-ApiReference-styles-module, .paramName_Mm0f"
