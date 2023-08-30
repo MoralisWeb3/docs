@@ -1,61 +1,7 @@
 {
-  "nft": {
-    "swaggerPath": "https://swagger.moralis.io/nft/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/nft-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "token": {
-    "swaggerPath": "https://swagger.moralis.io/token/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/token-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "balance": {
-    "swaggerPath": "https://swagger.moralis.io/balance/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/balance-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "transaction": {
-    "swaggerPath": "https://swagger.moralis.io/transaction/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/transaction-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "events": {
-    "swaggerPath": "https://swagger.moralis.io/events/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/events-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "block": {
-    "swaggerPath": "https://swagger.moralis.io/block/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/block-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "utils": {
-    "swaggerPath": "https://swagger.moralis.io/utils/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/utils-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "resolve": {
-    "swaggerPath": "https://swagger.moralis.io/resolve/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/resolve-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "defi": {
-    "swaggerPath": "https://swagger.moralis.io/defi/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/defi-api",
-    "importPath": "../../../../configs/api-reference/configs.json",
-    "category": "web3-data-api"
-  },
-  "ipfs": {
-    "swaggerPath": "https://swagger.moralis.io/ipfs/v2.1/swagger.json",
-    "filePath": "./docs/reference/web3-data-api/evm-api/ipfs-api",
+  "evm-docs": {
+    "swaggerPath": "https://deep-index.moralis.io/api-docs-2.2/v2.2/swagger.json",
+    "filePath": "./docs/reference/web3-data-api/evm-api",
     "importPath": "../../../../configs/api-reference/configs.json",
     "category": "web3-data-api"
   },
