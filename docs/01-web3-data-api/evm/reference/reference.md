@@ -51,7 +51,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
 - [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 - [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
-- [Search NFTs](/web3-data-api/evm/reference/search-nfts)
+- [Search NFTs](/2.0/web3-data-api/evm/reference/search-nfts)
 
 #### Get NFT Metadata
 
@@ -101,13 +101,13 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Transfers
 
-- [Get ERC20 token transfers](/web3-data-api/reference/get-erc20-transfers)
+- [Get ERC20 token transfers](/2.0/web3-data-api/reference/get-erc20-transfers)
 - [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
 - [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
 
 #### Get Approvals
 
-- [Get ERC20 token approvals](/web3-data-api/evm/reference/get-erc20-approvals)
+- [Get ERC20 token approvals](/2.0/web3-data-api/evm/reference/get-erc20-approvals)
 
 #### Get Pairs & Liquidity
 
@@ -122,11 +122,11 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Burns
 
-- [Get ERC20 token burns](/web3-data-api/evm/reference/get-erc20-burns)
+- [Get ERC20 token burns](/2.0/web3-data-api/evm/reference/get-erc20-burns)
 
 #### Get Mints
 
-- [Get ERC20 token mints](/web3-data-api/evm/reference/get-erc20-mints  )
+- [Get ERC20 token mints](/2.0/web3-data-api/evm/reference/get-erc20-mints  )
 
 
 ### Market Data API

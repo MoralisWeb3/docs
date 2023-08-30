@@ -1416,16 +1416,7 @@
           "description": "The format of the token ID",
           "required": false,
           "example": "decimal",
-          "type": "string",
-          "enum": ["decimal", "hex"]
-        },
-        {
-          "name": "direction",
-          "description": "The transfer direction",
-          "required": false,
-          "example": "both",
-          "type": "string",
-          "enum": ["both", "from", "to"]
+          "type": "string"
         },
         {
           "name": "from_block",
@@ -1458,14 +1449,8 @@
           "type": "number"
         },
         {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
           "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
         }
       ],
@@ -1476,12 +1461,6 @@
           "body": {
             "type": "object",
             "fields": [
-              {
-                "name": "total",
-                "type": "number",
-                "description": "The total number of matches for this query",
-                "example": "2000"
-              },
               {
                 "name": "page",
                 "type": "number",
@@ -1523,7 +1502,6 @@
                   },
                   {
                     "name": "from_address_label",
-                    "type": "string",
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
@@ -1535,7 +1513,6 @@
                   },
                   {
                     "name": "to_address_label",
-                    "type": "string",
                     "description": "The label of the to address",
                     "example": "Binance 2"
                   },
@@ -1610,7 +1587,7 @@
                   {
                     "name": "verified_collection",
                     "type": "boolean",
-                    "description": "Indicates if a contract is verified. Currently supported for ethereum NFT contracts.",
+                    "description": "Indicates if a contract is verified",
                     "example": "false"
                   }
                 ]
