@@ -3174,10 +3174,10 @@
       "path": "/nft/:address/trades",
       "pathParams": [
         {
-          "name": "block_number_or_hash",
-          "description": "The block number or block hash",
+          "name": "address",
+          "description": "The address of the NFT contract",
           "required": true,
-          "example": "15846571",
+          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
           "type": "string"
         }
       ],
@@ -3216,21 +3216,53 @@
           ]
         },
         {
-          "name": "limit",
-          "description": "The desired page size of the result.",
+          "name": "from_block",
+          "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
           "required": false,
           "type": "number"
         },
         {
+          "name": "to_block",
+          "description": "The block number to get the trades from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "from_date",
+          "description": "The start date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "The end date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "marketplace",
+          "description": "Marketplace from which to get the trades (only OpenSea is supported at the moment)",
+          "required": false,
+          "example": "opensea",
+          "type": "string"
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
+          "required": false,
           "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
         }
       ],
       "responses": [
         {
           "status": "200",
-          "description": "Returns the contents of a block",
+          "description": "Returns the trades",
           "body": {
             "type": "object",
             "fields": [
@@ -3256,62 +3288,58 @@
                 "type": "object",
                 "fields": [
                   {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "token_ids",
+                    "type": "array",
+                    "description": "The token ID(s) traded",
+                    "example": ["15", "54"],
+                    "field": { "type": "string", "example": "15" }
+                  },
+                  {
+                    "name": "seller_address",
+                    "type": "string",
+                    "description": "The address that sold the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "buyer_address",
+                    "type": "string",
+                    "description": "The address that bought the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
                     "name": "token_address",
                     "type": "string",
                     "description": "The address of the NFT contract",
+                    "example": "0x4ad3785ec7eed7589fa86538244a4530f962434f"
+                  },
+                  {
+                    "name": "marketplace_address",
+                    "type": "string",
+                    "description": "The address of the contract that traded the NFT",
                     "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
                   },
                   {
-                    "name": "token_id",
+                    "name": "price_token_address",
                     "type": "string",
-                    "description": "The token ID of the NFT",
-                    "example": "15"
+                    "description": "The address of the token used to pay for the NFT",
+                    "example": "0x60e4d786628fea6478f785a6d7e704777c86a7c6"
                   },
                   {
-                    "name": "from_address",
-                    "type": "string",
-                    "description": "The address that sent the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "from_address_label",
-                    "description": "The label of the from address",
-                    "example": "Binance 1"
-                  },
-                  {
-                    "name": "to_address",
-                    "type": "string",
-                    "description": "The address that received the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "to_address_label",
-                    "description": "The label of the to address",
-                    "example": "Binance 2"
-                  },
-                  {
-                    "name": "value",
+                    "name": "price",
                     "type": "string",
                     "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
                     "example": "1000000000000000"
-                  },
-                  {
-                    "name": "amount",
-                    "type": "string",
-                    "description": "The number of tokens transferred",
-                    "example": "1"
-                  },
-                  {
-                    "name": "contract_type",
-                    "type": "string",
-                    "description": "The type of NFT contract standard",
-                    "example": "ERC721"
-                  },
-                  {
-                    "name": "block_number",
-                    "type": "string",
-                    "description": "The block number of the transaction",
-                    "example": "88256"
                   },
                   {
                     "name": "block_timestamp",
@@ -3320,62 +3348,18 @@
                     "example": "2021-06-04T16:00:15"
                   },
                   {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "13680123"
+                  },
+                  {
                     "name": "block_hash",
                     "type": "string",
-                    "description": "The block hash of the transaction"
-                  },
-                  {
-                    "name": "transaction_hash",
-                    "type": "string",
-                    "description": "The transaction hash",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "transaction_type",
-                    "type": "string",
-                    "description": "The transaction type"
-                  },
-                  {
-                    "name": "transaction_index",
-                    "type": "number",
-                    "description": "The transaction index"
-                  },
-                  {
-                    "name": "log_index",
-                    "type": "number",
-                    "description": "The log index"
-                  },
-                  {
-                    "name": "operator",
-                    "type": "string",
-                    "description": "The operator present only for ERC1155 transfers",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "possible_spam",
-                    "type": "boolean",
-                    "description": "Indicates if a contract is possibly a spam contract",
-                    "example": "false"
-                  },
-                  {
-                    "name": "verified_collection",
-                    "type": "boolean",
-                    "description": "Indicates if a contract is verified",
-                    "example": "false"
+                    "description": "The block hash",
+                    "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
                   }
                 ]
-              },
-              {
-                "name": "block_exists",
-                "type": "boolean",
-                "description": "Indicator if the block exists",
-                "example": true
-              },
-              {
-                "name": "index_complete",
-                "type": "boolean",
-                "description": "Indicator if the block is fully indexed",
-                "example": true
               }
             ]
           }
