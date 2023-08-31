@@ -289,7 +289,7 @@ li:has(
   display: none;
 }
 
-li:has(> a[href="/web3-data-api/evm/reference/run-contract-function"]),
+li:has(> a[href="/2.0/web3-data-api/evm/reference/run-contract-function"]),
 li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   display: none;
 }

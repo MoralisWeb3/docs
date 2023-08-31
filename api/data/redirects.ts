@@ -1436,7 +1436,7 @@ export const redirects = [
   },
   {
     source: "/reference/runcontractfunction",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3047,7 +3047,7 @@ export const redirects = [
   },
   {
     source: "/reference/utils",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3292,7 +3292,7 @@ export const redirects = [
   { source: "/introduction/readme", destination: "/", permanent: true },
   {
     source: "/reference/contract-1",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3990,7 +3990,7 @@ export const redirects = [
   { source: "/hosting", destination: "/", permanent: true },
   {
     source: "/reference/utils-1",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -4540,7 +4540,7 @@ export const redirects = [
   },
   {
     source: "/reference/run...",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -6169,7 +6169,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/run-contract-function",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
