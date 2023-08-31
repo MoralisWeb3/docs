@@ -5378,6 +5378,11 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/web3-data-api/evm/reference/get-nfts-for-contract",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
+    permanent: true,
+  },
+  {
     source: "/web3-data-api/reference/get-contract-nft-transfers",
     destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
