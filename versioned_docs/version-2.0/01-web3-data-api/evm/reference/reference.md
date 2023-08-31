@@ -161,5 +161,5 @@ sidebar_class_name: "sidebar-api-reference"
 
 - [Get API version](/web3-data-api/evm/reference/web3-api-version)
 - [Get weights of endpoints](/web3-data-api/evm/reference/endpoint-weights)
-- [Run contract function](/web3-data-api/evm/reference/run-contract-function)
+- [Run contract function](/2.0/web3-data-api/evm/reference/run-contract-function)
 - [Review contracts](/web3-data-api/evm/reference/contracts-review)
