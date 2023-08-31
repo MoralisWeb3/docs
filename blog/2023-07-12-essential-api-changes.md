@@ -1,12 +1,12 @@
 ---
-title: "⚠️ Coming September 4th: Essential API Changes"
+title: "⚠️ Coming September 11th: Essential API Changes"
 slug: "essential-api-changes"
 authors:
   name: Reuben Salisbury
 tags: [Web3 Data API]
 ---
 
-Beginning on **September 4th, 2023**, we're implementing a series of significant API changes, some of which are breaking changes, but will ultimately provide you with a faster, more reliable, and more consistent experience.
+Beginning on **September 11th, 2023**, we're implementing a series of significant API changes, some of which are breaking changes, but will ultimately provide you with a faster, more reliable, and more consistent experience.
 
 These changes are:
 
