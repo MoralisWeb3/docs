@@ -357,6 +357,12 @@ export const injectParamsToCode = (
   const { query = {}, path = {}, body = {} } = params ?? {};
 
   ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
+    (e) => delete query[e]
+  );
+  ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
+    (e) => delete path[e]
+  );
+  ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
     (e) => delete body[e]
   );
   const fixedBody = bodyFixer(code, body);
