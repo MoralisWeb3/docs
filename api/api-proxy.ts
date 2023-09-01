@@ -6,27 +6,7 @@ const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {
-    const userAgent = req.headers["user-agent"];
-    const apiMethod = req.method;
-    const clientHost = req?.headers?.host;
-
     const { hostUrl, path, method, headers, body, query } = req.body;
-
-    let clientIP: string;
-    if (Array.isArray(req.headers["x-forwarded-for"])) {
-      clientIP = req.headers["x-forwarded-for"][0];
-    } else {
-      clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-    }
-
-    console.log({
-      clientHost,
-      userAgent,
-      apiMethod,
-      hostUrl,
-      path,
-      clientIP,
-    });
 
     const newHeaders = {
       ...headers,
