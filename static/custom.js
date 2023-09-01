@@ -12,8 +12,6 @@ window.onload = function () {
     "Get Token Stats",
     "Blockchain API",
     "Get Stats",
-    "Get block stats",
-    "Get collection stats",
   ];
 
   const paramList = [];
@@ -21,7 +19,6 @@ window.onload = function () {
   // Function to update a link with an emoji
   function updatePageLink(link) {
     if (pageList.includes(link.textContent) && !link.innerHTML.includes("🔥")) {
-      console.log(link);
       link.innerHTML += " 🔥";
     }
   }
@@ -31,7 +28,6 @@ window.onload = function () {
       !link.innerHTML.includes("🔥") &&
       link.href.includes("reference")
     ) {
-      console.log(link);
       link.innerHTML += " 🔥";
     }
   }

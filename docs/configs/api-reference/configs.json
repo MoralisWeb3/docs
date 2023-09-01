@@ -642,7 +642,8 @@
           "name": "address",
           "description": "Wallet address",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
         }
       ],
       "queryParams": [
@@ -4643,7 +4644,8 @@
           "name": "address",
           "description": "The address of the NFT collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
         }
       ],
       "queryParams": [
@@ -4737,13 +4739,15 @@
           "name": "address",
           "description": "The address of the NFT collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
         },
         {
           "name": "token_id",
           "description": "The token id of the NFT collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": 1
         }
       ],
       "queryParams": [
@@ -5935,7 +5939,8 @@
           "name": "address",
           "description": "The address of the erc20 token",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xdac17f958d2ee523a2206206994597c13d831ec7"
         }
       ],
       "queryParams": [
@@ -8029,8 +8034,7 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "type": "string",
-          "example": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984"
+          "type": "string"
         }
       ],
       "queryParams": [
@@ -8094,8 +8098,7 @@
           "name": "topic",
           "description": "The topic of the event",
           "required": true,
-          "type": "string",
-          "example": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+          "type": "string"
         },
         {
           "name": "offset",
@@ -8104,47 +8107,21 @@
           "type": "number"
         },
         {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "type": "string"
         }
       ],
       "bodyParam": {
-        "required": false,
+        "required": true,
         "description": "ABI of the specific event",
-        "type": "json",
-        "example": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            }
-          ],
-          "name": "Transfer",
-          "type": "event"
-        }
+        "type": "json"
       },
       "responses": [
         {
@@ -8712,7 +8689,8 @@
           "name": "block_number_or_hash",
           "description": "The block number or hash",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": 1023323
         }
       ],
       "queryParams": [
