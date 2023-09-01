@@ -359,7 +359,6 @@ export const injectParamsToCode = (
   ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
     (e) => delete body[e]
   );
-  console.log({ body });
   const fixedBody = bodyFixer(code, body);
   switch (lang) {
     case "node":
