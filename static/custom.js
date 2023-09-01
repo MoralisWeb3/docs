@@ -12,6 +12,8 @@ window.onload = function () {
     "Get Token Stats",
     "Blockchain API",
     "Get Stats",
+    "Get block stats",
+    "Get collection stats",
   ];
 
   const paramList = [];
