@@ -355,16 +355,6 @@ export const injectParamsToCode = (
   aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
-
-  ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
-    (e) => delete query[e]
-  );
-  ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
-    (e) => delete path[e]
-  );
-  ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
-    (e) => delete body[e]
-  );
   const fixedBody = bodyFixer(code, body);
   switch (lang) {
     case "node":
@@ -444,7 +434,6 @@ const ApiExamples = ({
   const { token } = useContext(ApiReferenceTokenContext);
   const { network } = usePageState();
   const history = useHistory();
-
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []

@@ -18,13 +18,18 @@ window.onload = function () {
 
   // Function to update a link with an emoji
   function updatePageLink(link) {
-    if (pageList.includes(link.textContent) && !link.innerHTML.includes("🔥")) {
+    if (
+      pageList.includes(link.textContent) &&
+      link.href.includes("web3-data-api") &&
+      !link.innerHTML.includes("🔥")
+    ) {
       link.innerHTML += " 🔥";
     }
   }
   function updateRefLink(link) {
     if (
       referenceList.includes(link.textContent) &&
+      link.href.includes("web3-data-api") &&
       !link.innerHTML.includes("🔥") &&
       link.href.includes("reference")
     ) {
@@ -34,6 +39,7 @@ window.onload = function () {
   function updateParam(link) {
     if (
       paramList.includes(link.textContent) &&
+      link.href.includes("web3-data-api") &&
       !link.innerHTML.includes("🔥")
     ) {
       link.innerHTML = "🔥 " + link.innerHTML;
