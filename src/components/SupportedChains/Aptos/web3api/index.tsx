@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../Utils/index";
+import Table from "../../Utils/index";
 
 const AptosChainData = () => {
   const headers = ["Name", "AptosNetwork", "Type"] as const;

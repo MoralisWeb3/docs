@@ -5,10 +5,14 @@ const Table = ({
   data,
 }: {
   headers: readonly string[];
-  data: Record<(typeof headers)[number], string>[];
+  data: Record<(typeof headers)[number], string | number | null>[];
 }) => (
   <table>
-    <thead>
+    <thead
+      style={{
+        textAlign: "left",
+      }}
+    >
       <tr>
         {headers.map((header, index) => (
           <th key={index}>{header}</th>

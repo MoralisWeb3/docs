@@ -33,7 +33,6 @@ The Wallet API is extremely flexible, meaning it can support a wide range of use
 
 The Wallet API supports the following Aptos chains:
 
-| Name          | AptosNetwork                           | Type    |
-| :------------ | :------------------------------------- | :------ |
-| Aptos Mainnet | `https://mainnet-aptos-api.moralis.io` | Mainnet |
-| Aptos Testnet | `https://testnet-aptos-api.moralis.io` | Testnet |
+import { AptosChainData } from '@site/src/components/SupportedChains';
+
+<AptosChainData/>

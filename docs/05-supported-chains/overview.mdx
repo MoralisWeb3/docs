@@ -2,11 +2,13 @@
 title: "Supported Chains"
 slug: "/supported-chains"
 sidebar_position: 1
-hide_sidebar: false
+hide_sidebar: true
 hide_table_of_contents: true
 ---
 
-import { EVMChainData, SolanaChainData, AptosChainData } from '@site/src/components/SupportedChains';
+import { EVMChainData, EVMStreamChainData, EVMAuthChainData } from '@site/src/components/SupportedChains';
+import { SolanaChainData, SolanaStreamChainData, SolanaAuthChainData } from '@site/src/components/SupportedChains';
+import { AptosChainData, AptosStreamsChainData, AptosAuthChainData } from '@site/src/components/SupportedChains';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from '@site/src/components/SupportedChains/tabsStyles.module.css';
@@ -23,11 +25,11 @@ import styles from '@site/src/components/SupportedChains/tabsStyles.module.css';
 </TabItem>
 
 <TabItem value="streams" label="Streams API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for EVM Streams API --> */}
+<EVMStreamChainData/>
 </TabItem>
 
 <TabItem value="auth" label="Auth API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for EVM Auth API --> */}
+<EVMAuthChainData/>
 </TabItem>
 </Tabs>
 
@@ -42,11 +44,11 @@ import styles from '@site/src/components/SupportedChains/tabsStyles.module.css';
 </TabItem>
 
 <TabItem value="streams" label="Streams API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for Solana Streams API --> */}
+<SolanaStreamChainData/>
 </TabItem>
 
 <TabItem value="auth" label="Auth API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for Solana Auth API --> */}
+<SolanaAuthChainData/>
 </TabItem>
 </Tabs>
 
@@ -61,15 +63,14 @@ import styles from '@site/src/components/SupportedChains/tabsStyles.module.css';
 </TabItem>
 
 <TabItem value="streams" label="Streams API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for Aptos Streams API --> */}
+<AptosStreamsChainData/>
 </TabItem>
 
 <TabItem value="auth" label="Auth API" attributes={{className: styles.childTab}}>
-{/* <!-- Content for Aptos Auth API --> */}
+<AptosAuthChainData/>
 </TabItem>
 </Tabs>
 
 </TabItem> 
 </Tabs>
 
-Feel free to reach out if you have any questions about the supported chains!

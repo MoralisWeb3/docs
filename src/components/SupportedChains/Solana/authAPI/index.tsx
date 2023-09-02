@@ -1,7 +1,7 @@
 import React from "react";
-import Table from "../Utils/index";
+import Table from "../../Utils/index";
 
-const SolanaChainData = () => {
+const SolanaAuthChainData = () => {
   const headers = ["Name", "SolNetwork", "Type"] as const;
 
   const data: Record<(typeof headers)[number], string>[] = [
@@ -20,4 +20,4 @@ const SolanaChainData = () => {
   return <Table headers={headers} data={data} />;
 };
 
-export default SolanaChainData;
+export default SolanaAuthChainData;

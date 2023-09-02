@@ -68,10 +68,9 @@ Webhooks allow you to receive real-time notifications for events that are happen
 
 ## Supported chains
 
-| Chain         | Chain Id (HEX) | Internal Transaction Supported | Note   | Blocks until confirmed |
-| :------------ | :------------- | :----------------------------- | :----- | :--------------------- |
-| APTOS MAINNET | mainnet        | Not Applicable                 | 🔥 NEW | Not Applicable         |
-| APTOS TESTNET | testnet        | Not Applicable                 | 🔥 NEW | Not Applicable         |
+import { AptosStreamsChainData } from '@site/src/components/SupportedChains';
+
+<AptosStreamsChainData/>
 
 :::info Reorgnization Before Confirmation
 Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.

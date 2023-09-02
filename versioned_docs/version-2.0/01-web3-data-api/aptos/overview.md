@@ -43,7 +43,6 @@ The advanced feature set of our Web3 Data APIs means it can support any type of 
 
 Moralis Web3 Data APIs are continuously adding new chains and integrations. Our current supported Aptos chains include:
 
-| Name          | AptosNetwork                           | Type    |
-| :------------ | :------------------------------------- | :------ |
-| Aptos Mainnet | `https://mainnet-aptos-api.moralis.io` | Mainnet |
-| Aptos Testnet | `https://testnet-aptos-api.moralis.io` | Testnet |
+import { AptosChainData } from '@site/src/components/SupportedChains';
+
+<AptosChainData/>

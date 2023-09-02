@@ -195,12 +195,6 @@ const config = {
             label: "Authentication API",
           },
           {
-            type: "doc",
-            docId: "supported-chains/overview",
-            position: "left",
-            label: "Supported Chains",
-          },
-          {
             to: "changelog",
             position: "left",
             label: "Changelog",
@@ -225,6 +219,12 @@ const config = {
             position: "right",
             className: "navbar__item--linebreak",
             value: "<hr>",
+          },
+          {
+            type: "doc",
+            docId: "supported-chains/overview",
+            position: "right",
+            label: "Supported Chains",
           },
           {
             type: "doc",
