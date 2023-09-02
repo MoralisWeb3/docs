@@ -1,0 +1,19 @@
+---
+sidebar_position: 0
+sidebar_label: Get logs by contract
+slug: /web3-data-api/evm/reference/get-contract-logs
+---
+
+import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import config from "@site/docs/configs/api-reference/configsV2.json";
+
+# Get logs by contract
+
+<ApiReference {...config.events.getContractLogs} >
+  <Admonition type="caution" icon="⚠️" title="QUERY PARAMETER CHANGE">
+    <p>
+     From the 4th September 2023, the <b>topic0</b> field will now be required, and we will be removing the <b>topic1</b>, <b>topic2</b>, <b>and topic3</b> fields. <a href="/changelog/essential-api-changes">Read more here</a>.
+    </p>
+  </Admonition>
+</ApiReference>

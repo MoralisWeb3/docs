@@ -1436,7 +1436,7 @@ export const redirects = [
   },
   {
     source: "/reference/runcontractfunction",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -1628,7 +1628,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -2574,7 +2574,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts-1",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -3047,7 +3047,7 @@ export const redirects = [
   },
   {
     source: "/reference/utils",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3292,7 +3292,7 @@ export const redirects = [
   { source: "/introduction/readme", destination: "/", permanent: true },
   {
     source: "/reference/contract-1",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -3881,7 +3881,7 @@ export const redirects = [
   },
   {
     source: "/reference/searchnfts-2",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -3990,7 +3990,7 @@ export const redirects = [
   { source: "/hosting", destination: "/", permanent: true },
   {
     source: "/reference/utils-1",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -4540,7 +4540,7 @@ export const redirects = [
   },
   {
     source: "/reference/run...",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -5378,6 +5378,11 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/web3-data-api/evm/reference/get-nfts-for-contract",
+    destination: "/web3-data-api/evm/reference/get-contract-nfts",
+    permanent: true,
+  },
+  {
     source: "/web3-data-api/reference/get-contract-nft-transfers",
     destination: "/web3-data-api/evm/reference/get-nft-contract-transfers",
     permanent: true,
@@ -5626,7 +5631,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/search-nfts",
-    destination: "/web3-data-api/evm/reference/search-nfts",
+    destination: "/2.0/web3-data-api/evm/reference/search-nfts",
     permanent: true,
   },
   {
@@ -6169,7 +6174,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/run-contract-function",
-    destination: "/web3-data-api/evm/reference/run-contract-function",
+    destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
     permanent: true,
   },
   {
@@ -6396,17 +6401,17 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-erc20-mints",
-    destination: "/web3-data-api/evm/reference/get-erc20-mints",
+    destination: "/2.0/web3-data-api/evm/reference/get-erc20-mints",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-erc20-burns",
-    destination: "/web3-data-api/evm/reference/get-erc20-burns",
+    destination: "/2.0/web3-data-api/evm/reference/get-erc20-burns",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-erc20-approvals",
-    destination: "/web3-data-api/evm/reference/get-erc20-approvals",
+    destination: "/2.0/web3-data-api/evm/reference/get-erc20-approvals",
     permanent: true,
   },
   {

@@ -227,6 +227,9 @@ const ApiReference = ({
   );
 
   const initialValues = useMemo(() => {
+    ["utm_campaign", "utm_content", "utm_medium", "utm_source"].forEach(
+      (e) => delete initialQueryValues[e]
+    );
     if (Object.keys(initialQueryValues).length === 0) {
       const pathParam: ApiParam = pathParams && {
         type: "object",

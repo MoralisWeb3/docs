@@ -1,0 +1,22 @@
+---
+sidebar_position: 0
+sidebar_label: Get ERC20 token balance by wallet
+slug: /web3-data-api/evm/reference/get-wallet-token-balances
+---
+
+import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import ReactMarkdown from "react-markdown";
+import config from "@site/docs/configs/api-reference/configsV2.json";
+
+# Get ERC20 token balance by wallet
+
+<ApiReference {...config.token.getWalletTokenBalances}>
+  <Admonition type="info" icon="💡" title="Thumbnail ONLY for ETH">
+    <ReactMarkdown>
+      Currently, the `thumbnail` field is only available for ERC20 token that
+      exist on the Ethereum chain (`eth` or `0x1` chain input). Otherwise, the
+      `thumbnail` will be returned as `null`.
+    </ReactMarkdown>
+  </Admonition>
+</ApiReference>

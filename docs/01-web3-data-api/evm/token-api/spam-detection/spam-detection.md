@@ -32,7 +32,7 @@ Spam detection is available on the following endpoints:
 - [Get ERC20 token transfers by contract](https://docs.moralis.io/web3-data-api/reference/get-token-transfers)
 - [Get ERC20 token metadata by contract](https://docs.moralis.io/web3-data-api/reference/get-token-metadata)
 - [Get ERC20 token metadata by symbols](https://docs.moralis.io/web3-data-api/reference/get-token-metadata-by-symbol)
-- [Get ERC20 token transfers](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
+- [Get ERC20 token transfers](https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers)
 - [Get ERC20 token approvals](https://docs.moralis.io/web3-data-api/reference/get-erc20-approvals)
 
 ### What chains is this supported on?

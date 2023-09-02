@@ -159,19 +159,19 @@ The `direction` parameter on [`getNFTTransfers`](/web3-data-api/evm/reference/ge
 
 ## Deprecation of endpoints
 The following endpoints will be deprecated: 
-- [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts)
-- [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints)
-- [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
-- [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
-- [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
+- [`searchNFTs`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/search-nfts)
+- [`getErc20Mints`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-mints)
+- [`getErc20Burns`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-burns)
+- [`getErc20Transfers`](https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers)
+- [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals)
 
-#### Deprecation of [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
-If you are using [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers) then please start using [`getTokenTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-wallet-token-transfers) and/or [`getTokenAddressTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-transfers).
+#### Deprecation of [`getErc20Transfers`](https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers)
+If you are using [`getErc20Transfers`](https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers) then please start using [`getTokenTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-wallet-token-transfers) and/or [`getTokenAddressTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-transfers).
 
-#### Deprecation of [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
-If you are using [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance)
+#### Deprecation of [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals)
+If you are using [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance)
 
-Taking the following request on [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals):
+Taking the following request on [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals):
 ```js
 curl --request GET \
      --url 'https://deep-index.moralis.io/api/v2/0xd8da6bf26964af9d7eed9e03e53415d37aa96045/erc20/transfers?chain=eth' \
@@ -232,7 +232,7 @@ When making this request, we get the following response:
 }
 ```
 
-We then see that `allowance` returned mirrors `value` from the [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals).
+We then see that `allowance` returned mirrors `value` from the [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals).
 
-####  Deprecation of [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints), [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
-If you are using [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints) or [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns) please remove these endpoints from your code base.
+####  Deprecation of [`searchNFTs`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-mints), [`getErc20Burns`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-burns)
+If you are using [`searchNFTs`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-mints) or [`getErc20Burns`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-burns) please remove these endpoints from your code base.

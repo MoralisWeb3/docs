@@ -434,7 +434,6 @@ const ApiExamples = ({
   const { token } = useContext(ApiReferenceTokenContext);
   const { network } = usePageState();
   const history = useHistory();
-
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
