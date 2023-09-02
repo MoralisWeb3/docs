@@ -702,23 +702,47 @@
               },
               {
                 "name": "transactions",
-                "type": "json",
-                "description": "Transaction stats"
+                "type": "object",
+                "description": "Transaction stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transactions sent by a wallet",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "nft_transfers",
-                "type": "json",
-                "description": "NFT transfer stats"
+                "type": "object",
+                "description": "NFT transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of NFT transfers of a wallet",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "token_transfers",
-                "type": "json",
-                "description": "Token transfer stats"
+                "type": "object",
+                "description": "Token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of ERC20 token transfers of a wallet",
+                    "example": "1000"
+                  }
+                ]
               }
             ]
           }
         }
-      ],
+      ], 
       "codeSamples": [
         {
           "language": "node",
@@ -4698,18 +4722,42 @@
               },
               {
                 "name": "owners",
-                "type": "json",
-                "description": "NFT collection owner stats"
+                "type": "object",
+                "description": "NFT collection owner stats",
+                "fields": [
+                  {
+                    "name": "current",
+                    "type": "string",
+                    "description": "The number of current owners of the collection",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "transfers",
-                "type": "json",
-                "description": "NFT collection transfer stats"
+                "type": "object",
+                "description": "NFT collection transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transfers of the collection",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "trades",
-                "type": "json",
-                "description": "NFT collection trade stats"
+                "type": "object",
+                "description": "NFT collection trade stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of trades of the collection",
+                    "example": "1000"
+                  }
+                ]
               }
             ]
           }
@@ -4794,18 +4842,42 @@
             "fields": [
               {
                 "name": "owners",
-                "type": "json",
-                "description": "NFT token owner stats"
+                "type": "object",
+                "description": "NFT token owner stats",
+                "fields": [
+                  {
+                    "name": "current",
+                    "type": "string",
+                    "description": "The number of current owners of the nft token",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "transfers",
-                "type": "json",
-                "description": "NFT token transfer stats"
+                "type": "object",
+                "description": "NFT token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transfers of the nft token",
+                    "example": "1000"
+                  }
+                ]
               },
               {
                 "name": "trades",
-                "type": "json",
-                "description": "NFT token trade stats"
+                "type": "object",
+                "description": "NFT token trade stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of trades of the nft token",
+                    "example": "1000"
+                  }
+                ]
               }
             ]
           }
@@ -5987,8 +6059,16 @@
             "fields": [
               {
                 "name": "transfers",
-                "type": "json",
-                "description": "ERC20 Token transfer stats"
+                "type": "object",
+                "description": "ERC20 Token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transfers of the token",
+                    "example": "1000"
+                  }
+                ]
               }
             ]
           }
@@ -8731,8 +8811,51 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the stats for the block.",
-          "body": {}
+          "description": "Returns the stats for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "transactions",
+                "type": "object",
+                "description": "Transaction stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transactions sent by a wallet",
+                    "example": "1000"
+                  }
+                ]
+              },
+              {
+                "name": "nft_transfers",
+                "type": "object",
+                "description": "NFT transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of NFT transfers of a wallet",
+                    "example": "1000"
+                  }
+                ]
+              },
+              {
+                "name": "token_transfers",
+                "type": "object",
+                "description": "Token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of ERC20 token transfers of a wallet",
+                    "example": "1000"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ],
       "codeSamples": [
