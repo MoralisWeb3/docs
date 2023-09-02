@@ -63,11 +63,24 @@ const translateSchemaReference = (schemaRef) => {
               : { field: items }),
           };
         } else if (type === "object" && !items) {
+          const nestedProperties = properties[name].properties;
+          let fields = [];
+
+          if (nestedProperties && typeof nestedProperties === "object") {
+            fields = Object.keys(nestedProperties).map((key) => {
+              return {
+                name: key,
+                ...nestedProperties[key],
+              };
+            });
+          }
+
           return {
             name,
-            type: "json",
+            type: "object",
             description,
             example,
+            fields,
           };
         } else {
           return {
