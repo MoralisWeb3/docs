@@ -1,0 +1,20 @@
+/* Parent Tabs */
+.parentTab {
+    color: #007acc; /* Change this to your desired color for parent tabs */
+    font-weight: bold;
+  }
+  .parentTab[aria-selected='true'] {
+    border-bottom-color: #007acc; /* Underline color for active parent tab */
+  }
+  
+  /* Child Tabs */
+  .childTab {
+    color: #555; /* Darker text for child tabs */
+    font-weight: normal;
+    padding-top: 0%;
+    padding-bottom: 0%;
+  }
+  .childTab[aria-selected='true'] {
+    border-bottom-color: #555; /* Underline color for active child tab */
+  }
+  

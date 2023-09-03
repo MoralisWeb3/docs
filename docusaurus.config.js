@@ -222,6 +222,12 @@ const config = {
           },
           {
             type: "doc",
+            docId: "supported-chains/overview",
+            position: "right",
+            label: "Supported Chains",
+          },
+          {
+            type: "doc",
             docId: "guides/overview",
             position: "right",
             label: "Guides",

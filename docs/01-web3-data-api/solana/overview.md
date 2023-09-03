@@ -41,7 +41,6 @@ The advanced feature set of our Web3 Data APIs means it can support any type of 
 
 Moralis Web3 Data APIs are continuously adding new networks and integrations. Our current supported Solana networks include:
 
-| Name           | SolNetwork           | Type    |
-| :------------- | :------------------- | :------ |
-| Solana mainnet | `SolNetwork.MAINNET` | Mainnet |
-| Solana devnet  | `SolNetwork.DEVNET`  | Testnet |
+import { SolanaChainData } from '@site/src/components/SupportedChains';
+
+<SolanaChainData/>
