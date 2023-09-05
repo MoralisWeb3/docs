@@ -15,6 +15,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       referer: SUPER_SECRET_KEY,
     };
 
+    console.log({newHeaders})
+
     const response = await fetch(
       [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(
         ""
