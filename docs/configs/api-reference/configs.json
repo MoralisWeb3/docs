@@ -742,7 +742,7 @@
             ]
           }
         }
-      ], 
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -2416,7 +2416,7 @@
         }
       ]
     },
-    "getNFTContractTransfers": {  
+    "getNFTContractTransfers": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFT transfers by contract",
       "description": "Get transfers of NFTs for a given contract and other parameters.",
@@ -4362,7 +4362,7 @@
       "responses": [
         {
           "status": "201",
-          "description": "Contract address was triggered for index."
+          "description": "Request Initiated."
         }
       ],
       "codeSamples": [
