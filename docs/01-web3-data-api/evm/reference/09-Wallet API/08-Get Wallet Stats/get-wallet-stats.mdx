@@ -5,13 +5,17 @@ slug: /web3-data-api/evm/reference/wallet-api/get-wallet-stats
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import ReactMarkdown from "react-markdown";
 import config from "@site/docs/configs/api-reference/configs.json";
 
 
 # Get wallet stats
 
-:::note
-This endpoint is currently in beta and some of the totals are estimates. Totals will become fully accurate upon completion of our re-architecture, [currently scheduled for 11th September](https://docs.moralis.io/changelog/essential-api-changes).
-:::
-
-<ApiReference {...config.wallet.getWalletStats} />
+<ApiReference {...config.wallet.getWalletStats}>
+  <Admonition type="info" title="Beta - Early Launch Notice">
+    <ReactMarkdown>
+      This endpoint is currently in beta and some of the totals are estimates. Totals will become fully accurate upon completion of our re-architecture, [currently scheduled for 11th September](https://docs.moralis.io/changelog/essential-api-changes).
+    </ReactMarkdown>
+  </Admonition>
+</ApiReference>
