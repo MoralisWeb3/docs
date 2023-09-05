@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: "Migration Guide"
+title: "September 11th 2023: Migration Guide"
 sidebar_label: "Migration Guide"
 slug: "/web3-data-api/breaking-changes/migration-guide"
 ---
@@ -15,11 +15,13 @@ This migration guide covers the following:
 - Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - Deprecation of endpoints
 
+[Version `2.2` of our API is now available](/changelog/v2.2-released) with all breaking changes applied. Please migrate to this API if you are impacted by any of the breaking changes coming to `v2`.
+
 ## Deprecation of `total` and `disable_total`
 
 As outlined in an [earlier post](/web3-data-api/breaking-changes/disable-totals), we have been planning to remove the `total` counts from a number of endpoints for quite some time.
 
-As of 4th September, the `total` returned on the below endpoints will no longer be returned. This also means that we deprecate the `disable_total` (or `disableTotal` when using the Javascript SDK) parameter. Remove this parameter from your request, and remove any usage of the `total` from your code. This affects the following endpoints:
+As of 11th September, the `total` returned on the below endpoints will no longer be returned. This also means that we deprecate the `disable_total` (or `disableTotal` when using the Javascript SDK) parameter. Remove this parameter from your request, and remove any usage of the `total` from your code. This affects the following endpoints:
 
 - [`getTokenTransfers`](/web3-data-api/evm/reference/get-wallet-token-transfers)
 - [`getNFTs`](/web3-data-api/evm/reference/get-wallet-nfts)
@@ -37,19 +39,19 @@ As of 4th September, the `total` returned on the below endpoints will no longer 
 - [`getTransactions`](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)
 - [`getContractEvents`](/web3-data-api/evm/reference/get-contract-events)
 
-We plan to launch 5 new endpoints that will provide you with these totals. This will be launched mid-August, giving you 2-3 weeks to prepare your codebase prior to the breaking changes going live.
+We have launched 5 new endpoints that will provide you with these totals.
 
 The endpoints are:
 
 #### New: Get wallet stats
 - Endpoint: `/wallets/{address}/stats`
+- [View API reference](/web3-data-api/evm/reference/wallet-api/get-wallet-stats)
 - Example response:
 
 ```js
 {
 	"nfts": "14",
 	"collections": "3",
-	"tokens": "4",
 	"transactions": {
             "total": "5433"
         },
@@ -64,37 +66,46 @@ The endpoints are:
 
 #### New: Get NFT collection stats
 - Endpoint: `/nft/{address}/stats`
+- [View API reference](/web3-data-api/evm/reference/get-nft-collection-stats)
 - Example response:
 
 ```js
 {
-	"total_tokens": "1000",
-	"owners": {
-		"current": "511"
-	},
-	"transfers": {
-		"total": "5311"
-	}
+  "total_tokens": "10000",
+  "owners": {
+    "current": "10000"
+  },
+  "transfers": {
+    "total": "235936"
+  },
+  "trades": {
+    "total": "28711"
+  }
 }
 ```
 
 #### New: Get NFT token ID stats
 - Endpoint: `/nft/{address}/{token_id}/stats`
+- [View API reference](/web3-data-api/evm/reference/get-nft-token-stats)
 - Example response:
 
 ```js
 {
-	"owners": {
-		"current": "1"
-	},
-	"transfers": {
-		"total": "5311"
-	}
+  "owners": {
+    "current": "1"
+  },
+  "transfers": {
+    "total": "2"
+  },
+  "trades": {
+    "total": "0"
+  }
 }
 ```
 
 #### New: Get ERC20 token stats
 - Endpoint: `/erc20/{address}/stats`
+- [View API reference](/web3-data-api/evm/reference/get-token-stats)
 - Example response:
 
 ```js
@@ -107,13 +118,20 @@ The endpoints are:
 
 #### New: Get Block stats
 - Endpoint: `/block/{block_number_or_hash}/stats`
+- [View API reference](/web3-data-api/evm/reference/get-block-stats)
 - Example response:
 
 ```js
 {
-	"nft_transfers": {
-		"total": "511"
-	}
+  "transactions": {
+    "total": "152"
+  },
+  "nft_transfers": {
+    "total": "51"
+  },
+  "token_transfers": {
+    "total": "22"
+  }
 }
 ```
 
