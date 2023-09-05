@@ -32,10 +32,12 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       res.status(response.status).send(result);
     } else {
       const error = await response.text();
+      console.log({"API Error": error})
 
       res.status(response.status).send(error);
     }
   } catch (error) {
+    console.log({"Function Error": error})
     res.status(500).send(error);
   }
 }
