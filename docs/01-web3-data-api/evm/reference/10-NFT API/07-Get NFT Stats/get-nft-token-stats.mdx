@@ -6,11 +6,15 @@ slug: /web3-data-api/evm/reference/get-nft-token-stats
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../../configs/api-reference/configs.json";
+import Admonition from "@theme/Admonition";
+import ReactMarkdown from "react-markdown";
 
 # Get NFT stats
 
-:::note
-This endpoint is currently in beta and some of the totals are estimates. Totals will become fully accurate upon completion of our re-architecture, [currently scheduled for 11th September](https://docs.moralis.io/changelog/essential-api-changes).
-:::
-
-<ApiReference {...config.nft.getNFTTokenStats} />
+<ApiReference {...config.nft.getNFTTokenStats}>
+  <Admonition type="info" title="Beta - Early Launch Notice">
+    <ReactMarkdown>
+      This endpoint is currently in beta and some of the totals are estimates. Totals will become fully accurate upon completion of our re-architecture, [currently scheduled for 11th September](https://docs.moralis.io/changelog/essential-api-changes).
+    </ReactMarkdown>
+  </Admonition>
+</ApiReference>
