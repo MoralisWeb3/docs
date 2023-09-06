@@ -7,12 +7,6 @@
       "rateLimitCost": 5
     },
     {
-      "endpoint": "getDateToBlock",
-      "path": "/dateToBlock",
-      "price": 1,
-      "rateLimitCost": 1
-    },
-    {
       "endpoint": "getContractEvents",
       "path": "/{address}/events",
       "price": 2,
@@ -25,7 +19,13 @@
       "rateLimitCost": 3
     },
     {
-      "endpoint": "getDecodedTransaction",
+      "endpoint": "getTransactions",
+      "path": "/{address}",
+      "price": 5,
+      "rateLimitCost": 4
+    },
+    {
+      "endpoint": "getTransactionVerbose",
       "path": "/transaction/{transaction_hash}/verbose",
       "price": 5,
       "rateLimitCost": 5
@@ -39,7 +39,7 @@
       "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
     },
     {
-      "endpoint": "getDecodedWalletTransaction",
+      "endpoint": "getTransactionsVerbose",
       "path": "/{address}/verbose",
       "price": 10,
       "rateLimitCost": 10
@@ -83,12 +83,6 @@
       "rateLimitCost": 2
     },
     {
-      "endpoint": "searchNFTs",
-      "path": "/nft/search",
-      "price": 5,
-      "rateLimitCost": 5
-    },
-    {
       "endpoint": "getNFTs",
       "path": "/{address}/nft",
       "price": 5,
@@ -105,12 +99,6 @@
       "path": "/block/{block_number_or_hash}/nft/transfers",
       "price": 2,
       "rateLimitCost": 2
-    },
-    {
-      "endpoint": "getNFTsForContract",
-      "path": "/{address}/nft/{token_address}",
-      "price": 5,
-      "rateLimitCost": 5
     },
     {
       "endpoint": "getTokenMetadata",
@@ -131,15 +119,14 @@
       "rateLimitCost": 1
     },
     {
-      "endpoint": "getMultipleTokenPrices",
-      "path": "/erc20/prices",
-      "price": 10,
-      "rateLimitCost": 5,
-      "dynamic": true
-    },
-    {
       "endpoint": "getTokenPrice",
       "path": "/erc20/{address}/price",
+      "price": 10,
+      "rateLimitCost": 3
+    },
+    {
+      "endpoint": "getMultipleTokenPrices",
+      "path": "/erc20/prices",
       "price": 10,
       "rateLimitCost": 3
     },
@@ -148,30 +135,6 @@
       "path": "/erc20/{address}/allowance",
       "price": 1,
       "rateLimitCost": 1
-    },
-    {
-      "endpoint": "getErc20Transfers",
-      "path": "/erc20/transfers",
-      "price": 5,
-      "rateLimitCost": 5
-    },
-    {
-      "endpoint": "getErc20Mints",
-      "path": "/erc20/mints",
-      "price": 10,
-      "rateLimitCost": 5
-    },
-    {
-      "endpoint": "getErc20Burns",
-      "path": "/erc20/burns",
-      "price": 10,
-      "rateLimitCost": 5
-    },
-    {
-      "endpoint": "getErc20Approvals",
-      "path": "/erc20/approvals",
-      "price": 10,
-      "rateLimitCost": 5
     },
     {
       "endpoint": "getAllTokenIds",
@@ -240,6 +203,24 @@
       "rateLimitCost": 1
     },
     {
+      "endpoint": "resolveAddressToDomain",
+      "path": "/resolve/{address}/domain",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "resolveENSDomain",
+      "path": "/resolve/ens/{domain}",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "resolveAddress",
+      "path": "/resolve/{address}/reverse",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
       "endpoint": "getPairReserves",
       "path": "/{pair_address}/reserves",
       "price": 1,
@@ -270,41 +251,10 @@
       "rateLimitCost": 4
     },
     {
-      "endpoint": "runContractFunction",
-      "path": "/{address}/function",
-      "price": 2,
-      "rateLimitCost": 2
-    },
-    {
-      "endpoint": "getWalletTransactions",
-      "path": "/{address}",
-      "price": 5,
-      "rateLimitCost": 4
-    },
-    {
-      "endpoint": "resolveAddress",
-      "path": "/resolve/{address}/reverse",
-      "price": 1,
-      "rateLimitCost": 1
-    },
-    {
-      "endpoint": "uploadFolder",
-      "path": "/ipfs/uploadFolder",
-      "price": 25,
-      "rateLimitCost": 25
-    },
-    {
-      "endpoint": "endpointWeights",
-      "path": "/info/endpointWeights",
-      "price": 0,
-      "rateLimitCost": 1
-    },
-    {
-      "endpoint": "getNFTByWalletAddresses",
-      "path": "/wallets/nfts",
-      "price": 3,
-      "rateLimitCost": 3,
-      "dynamic": true
+      "endpoint": "getWalletActiveChains",
+      "path": "/wallets/{address}/chains",
+      "price": 10,
+      "rateLimitCost": 5
     },
     {
       "endpoint": "getTopERC20TokensByMarketCap",
@@ -325,17 +275,52 @@
       "rateLimitCost": 5
     },
     {
+      "endpoint": "getHottestNFTCollectionsByTradingVolume",
+      "path": "/market-data/nfts/hottest-collections",
+      "price": 20,
+      "rateLimitCost": 5
+    },
+    {
       "endpoint": "contractsReview",
       "path": "/contracts-review",
       "price": 0,
       "rateLimitCost": 1
     },
     {
-      "endpoint": "getWalletActiveChains",
-      "path": "/wallets/{address}/chains",
-      "price": 10,
-      "rateLimitCost": 5,
-      "dynamic": true
+      "endpoint": "endpointWeights",
+      "path": "/info/endpointWeights",
+      "price": 0,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getWalletStats",
+      "path": "/wallets/{address}/stats",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTCollectionStats",
+      "path": "/nft/{address}/stats",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getNFTTokenStats",
+      "path": "/nft/{address}/{token_id}/stats",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getTokenStats",
+      "path": "/erc20/{address}/stats",
+      "price": 5,
+      "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getBlockStats",
+      "path": "/block/{block_number_or_hash}/stats",
+      "price": 5,
+      "rateLimitCost": 5
     }
   ],
   "solana": [

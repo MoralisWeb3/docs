@@ -10,6 +10,29 @@ interface EndpointWeightResponse {
   dynamic?: boolean;
 }
 
+const fixedPath = {
+  "getWalletStats": "wallet-api/get-wallet-stats",
+  "getHottestNFTCollectionsByTradingVolume":"get-top-nft-collections-by-trading-volume",
+  "getWalletActiveChains": "wallet-api/get-chain-activity-by-wallet",
+  "resolveENSDomain": "wallet-api/resolve-address",
+  "resolveAddress": "wallet-api/resolve-ens-domain",
+  "getLogsByAddress": "get-contract-logs",
+  "resolveAddressToDomain": "wallet-api/resolve-address-to-domain",
+  "resolveDomain": "wallet-api/resolve-domain",
+  "reSyncMetadata": "resync-metadata",
+  "getTokenIdMetadata": "get-nft-metadata",
+  "getTokenIdOwners": "get-nft-token-id-owners",
+  "getWalletTokenIdTransfers": "get-nft-transfers",
+  "getContractNFTTransfers": "get-nft-contract-transfers",
+  "getAllTokenIds": "get-contract-nfts",
+  "getNFTs": "get-wallet-nfts",
+  "getTokenAddressTransfers": "get-token-transfers",
+  "getTokenBalances": "get-wallet-token-balances",
+  "getTransactionVerbose": "get-decoded-transaction",
+  "getTransactionsVerbose": "get-decoded-wallet-transaction",
+  "getTransactions": "get-wallet-transactions",
+};
+
 const DynamicPriceUnits = {
   getNativeBalancesForAddresses: "wallet addresses",
   getMultipleNFTs: "NFTs",
@@ -51,14 +74,13 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
       <tbody>
         {endpoints?.[chain]?.map((e: EndpointWeightResponse, index: number) => {
           const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
+          const hrefPath = fixedPath[endpoint]
+            ? fixedPath[endpoint]
+            : camelToSnakeCase(endpoint);
           return (
             <tr key={`${endpoint}-${index}`}>
               <td>
-                <a
-                  href={`/web3-data-api/${chain}/reference/${camelToSnakeCase(
-                    endpoint
-                  )}`}
-                >
+                <a href={`/web3-data-api/${chain}/reference/${hrefPath}`}>
                   {endpoint}
                 </a>
               </td>
