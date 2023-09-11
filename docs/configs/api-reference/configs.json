@@ -4657,112 +4657,56 @@
         }
       ]
     },
-    "getNFTCollectionStats": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get the nft collection stats",
-      "description": "Get the stats for a nft collection address.",
-      "method": "GET",
-      "path": "/nft/:address/stats",
-      "pathParams": [
-        {
-          "name": "address",
-          "description": "The address of the NFT collection",
-          "required": true,
-          "type": "string",
-          "example": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "goerli",
-            "0x5",
-            "sepolia",
-            "0xaa36a7",
-            "polygon",
-            "0x89",
-            "mumbai",
-            "0x13881",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-            "palm",
-            "0x2a15c308d",
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1"
-          ]
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the stats for the nft collection address.",
-          "body": {
-            "type": "object",
-            "fields": [
+    "getNFTCollectionStats":
+    {
+      "apiHost":"https://deep-index.moralis.io/api/v2.2",
+      "summary":"Get the nft collection stats",
+      "description":"Get the stats for a nft collection address.",
+      "method":"GET",
+      "path":"/nft/:address/stats",
+      "pathParams":[{
+        "name":"address",
+        "description":"The address of the NFT collection",
+        "required":true,
+        "type":"string"}],
+      "queryParams":[{
+        "name":"chain",
+        "description":"The chain to query",
+        "required":false,
+        "example":"eth",
+        "type":"string",
+        "enum":[
+          "eth","0x1","goerli","0x5","sepolia","0xaa36a7","polygon","0x89","mumbai","0x13881","bsc","0x38","bsc testnet","0x61","avalanche","0xa86a","fantom","0xfa","palm","0x2a15c308d","cronos","0x19","arbitrum","0xa4b1"]
+          }],
+      "responses":
+      [{
+        "status":"200",
+        "description":"Returns the stats for the nft token.",
+        "body":{
+          "type":"object",
+          "fields":[{
+            "name":"owners",
+            "type":"object",
+            "description":"NFT token owner stats",
+            "fields":[{
+              "name":"current",
+              "type":"string",
+              "description":"The number of current owners of the nft token",
+              "example":"1000"
+              }]},
               {
-                "name": "total_tokens",
-                "type": "string",
-                "description": "The number of tokens in the collection",
-                "example": "100"
-              },
-              {
-                "name": "owners",
-                "type": "object",
-                "description": "NFT collection owner stats",
-                "fields": [
-                  {
-                    "name": "current",
-                    "type": "string",
-                    "description": "The number of current owners of the collection",
-                    "example": "1000"
+                "name":"transfers",
+                "type":"object",
+                "description":"NFT token transfer stats",
+                "fields":[{
+                  "name":"total",
+                  "type":"string",
+                  "description":"The number of transfers of the nft token",
+                  "example":"1000"}]
                   }
-                ]
-              },
-              {
-                "name": "transfers",
-                "type": "object",
-                "description": "NFT collection transfer stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of transfers of the collection",
-                    "example": "1000"
-                  }
-                ]
-              },
-              {
-                "name": "trades",
-                "type": "object",
-                "description": "NFT collection trade stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of trades of the collection",
-                    "example": "1000"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ],
+                  ]
+                }
+                  }],
       "codeSamples": [
         {
           "language": "node",
@@ -4833,56 +4777,34 @@
           ]
         }
       ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the stats for the nft token.",
-          "body": {
-            "type": "object",
-            "fields": [
+      "responses":[{
+        "status":"200",
+        "description":"Returns the stats for the nft token.",
+        "body":{
+          "type":"object",
+          "fields":[{
+            "name":"owners",
+            "type":"object",
+            "description":"NFT token owner stats",
+            "fields":[{
+              "name":"current",
+              "type":"string",
+              "description":"The number of current owners of the nft token",
+              "example":"1000"}]},
               {
-                "name": "owners",
-                "type": "object",
-                "description": "NFT token owner stats",
-                "fields": [
-                  {
-                    "name": "current",
-                    "type": "string",
-                    "description": "The number of current owners of the nft token",
-                    "example": "1000"
+                "name":"transfers",
+                "type":"object",
+                "description":"NFT token transfer stats",
+                "fields":[{
+                  "name":"total",
+                  "type":"string",
+                  "description":"The number of transfers of the nft token",
+                  "example":"1000"}]
                   }
-                ]
-              },
-              {
-                "name": "transfers",
-                "type": "object",
-                "description": "NFT token transfer stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of transfers of the nft token",
-                    "example": "1000"
+                  ]
                   }
-                ]
-              },
-              {
-                "name": "trades",
-                "type": "object",
-                "description": "NFT token trade stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of trades of the nft token",
-                    "example": "1000"
                   }
-                ]
-              }
-            ]
-          }
-        }
-      ],
+                ],
       "codeSamples": [
         {
           "language": "node",
