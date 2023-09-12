@@ -822,12 +822,6 @@
           "type": "number"
         },
         {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
           "name": "exclude_spam",
           "description": "Should spam NFTs be excluded from the result?",
           "required": false,
@@ -2980,12 +2974,6 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
-        },
-        {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
         },
         {
           "name": "cursor",
@@ -5300,12 +5288,6 @@
           "type": "number"
         },
         {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
           "type": "string"
@@ -6335,12 +6317,6 @@
           "type": "string"
         },
         {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
           "name": "include",
           "description": "If the result should contain the internal transactions.",
           "required": false,
@@ -6670,12 +6646,6 @@
           "required": false,
           "type": "string",
           "enum": ["internal_transactions"]
-        },
-        {
-          "name": "disable_total",
-          "description": "⚠️ Deprecating soon. If the result should skip returning the total count (Improves performance). This parameter defaults to true.",
-          "required": false,
-          "type": "boolean"
         },
         {
           "name": "limit",
