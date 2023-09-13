@@ -19,7 +19,7 @@ ETH get logs are pivotal in the blockchain space, offering developers a powerful
 
 Ethereum event logs are stored in transaction receipts, capturing essential details such as gas used, transaction status, and more. Understanding the dynamics of storage enables us to explore how to efficiently retrieve this information using Moralis and other methods like `eth_getLogs`.
 
-## Unveiling the efficiency of Moralis' getContractLogs endpoint
+## Unveiling the Efficiency of Moralis' getContractLogs Endpoint
 
 The [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis stands as a hallmark of convenience, offering an effective way to access ETH get logs. Before diving into Moralis, let's comprehend how it fares against `eth_getLogs`.
 
@@ -33,7 +33,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics"
 
 It is essential to evaluate the comprehensive filtration options rendered by `eth_getLogs` against the simplified, user-friendly approach of Moralis, aligning with the project's necessities.
 
-### A practical approach: JavaScript example with Moralis
+### A Practical Approach: JavaScript Example using Moralis
 
 To facilitate a practical understanding of Moralis, we present a JavaScript script illustrating how to employ Moralis SDK for querying Ethereum contract logs:
 
@@ -69,11 +69,11 @@ In this segment, we dissect each part of the script to offer a deep understandin
 - **Log retrieval:** This part describes how to retrieve contract logs using defined parameters.
 - **Response and error handling:** This section underlines the response logging and error management process.
 
-## Creating real-world applications
+## Creating Real-World Applications
 
 Embark on a hands-on tutorial to build applications capable of querying Ethereum smart contract's event logs utilizing Moralis.
 
-### Step 1: cloning and setting up the project**
+### Step 1: Cloning and Setting Up the Project
 
 Embark on this hands-on section by using the Moralis events API to build a robust application capable of querying any Ethereum smart contract's event logs. The steps to setting up include cloning the project from a [GitHub repository](https://github.com/MoralisWeb3/youtube-tutorials/tree/main/get-contract-logs) and installing the necessary Node packages:
 
@@ -81,7 +81,7 @@ Embark on this hands-on section by using the Moralis events API to build a robus
 npm i moralis @moralisweb3/common-evm-utils dotenv express
 ```
 
-### Step 2: backend code breakdown
+### Step 2: Backend Code Breakdown
 
 Dive into the backend construction using Express and Moralis SDK. The code below outlines how to set up an Express server and define a route to handle the logs retrieval:
 
@@ -120,14 +120,14 @@ Moralis.start({
 });
 ```
 
-### Step 3: Frontend code breakdown
+### Step 3: Frontend Code Breakdown
 
 The frontend is constructed using vanilla JavaScript, and it connects to the backend to fetch and display the Ethereum event logs. The `handleSubmit` function plays a crucial role in initiating the logs retrieval process:
 
 ```javascript
 const handleSubmit = async () => {
   address = document.querySelector("#inputField").value;
-  const chain = chainValue.value
+  const chain = chainValue.value}
 ```
 
 In this step-by-step guide, you have learned how to create a NodeJS and NextJS application to query Ethereum smart contract's event logs with Moralis. Understanding the backend and frontend code breakdown helps in comprehending the overall structure and functionality of the application. You now possess the knowledge to build a more complex application by expanding upon this basic structure.

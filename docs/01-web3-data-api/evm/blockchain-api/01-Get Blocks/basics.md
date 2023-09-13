@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
 title: "Elevate Your DEX Development with Moralis: Navigating Blockchain Data Retrieval"
-slug: "../../overview"
+slug: "../../basics"
 sidebar_label: "Overview"
 ---
 
