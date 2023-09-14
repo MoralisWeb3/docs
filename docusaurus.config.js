@@ -124,14 +124,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      announcementBar: {
-        id: "support_us",
-        content:
-          '🚨 <a target="_blank" rel="noopener noreferrer" href="/changelog/essential-api-changes">Coming September 11th: Essential API Changes</a> 🚨',
-        backgroundColor: "#57a5ff",
-        textColor: "#fff",
-        isCloseable: true,
-      },
       image: "img/moralis-social-card.jpg",
       metadata: [
         {
