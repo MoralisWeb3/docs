@@ -4,9 +4,11 @@ slug: "get-native-balances"
 sidebar_position: 21
 ---
 
-There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses.
+There is an option `getNativeBalances` when creating or editing a Stream. It is a list of native balances calls for specific addresses. 
 
-You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to [Triggers](/streams-api/evm/triggers).
+You can get Native Balances (ETH/BNB/MATIC and many more) of addresses that appear in your Webhook. They are very similar to [Triggers](/streams-api/evm/triggers). 
+
+`getNativeBalances` trigger is currently available to use with a business plan or higher.
 
 # Native Balance Trigger
 
