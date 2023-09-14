@@ -407,11 +407,15 @@ const config = {
         indexName: "gold-iota",
         contextualSearch: true,
       },
+      hotjar: {
+        applicationId: "3650716",
+      },
     }),
   customFields: {
     specialApiKey: [],
   },
   plugins: [
+    "docusaurus-plugin-hotjar",
     [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
@@ -448,6 +452,10 @@ const config = {
       src: "/custom.js",
       async: true,
     },
+  {
+    src: "/js/index.js",
+    async: true,
+  },
   ],
 };
 
