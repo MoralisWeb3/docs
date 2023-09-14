@@ -52,7 +52,8 @@ try {
   // The "address" parameter specifies the contract address for fetching the logs.
   const response = await Moralis.EvmApi.events.getContractLogs({
     "chain": "0x1",
-    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
   });
 
   // Logging the response enables you to inspect and understand the structure of the data retrieved.
@@ -103,6 +104,7 @@ app.get("/getlogs", async (req, res) => {
     const response = await Moralis.EvmApi.events.getContractLogs({
       address: query.address,
       chain: query.chain,
+      topic0: query.topic0,
     });
     return res.status(200).json(response);
   } catch (e) {
