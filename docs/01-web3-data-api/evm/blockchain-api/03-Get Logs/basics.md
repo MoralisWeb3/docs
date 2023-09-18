@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: "Get Started with ETH Get Logs Through Moralis: A Comprehensive Guide"
+title: "Get Started with eth_getLogs Through Moralis: Complete Guide"
 slug: "../../overview"
 sidebar_label: "Overview"
 ---
@@ -13,19 +13,19 @@ This article provides a guide for developers demonstrating how to efficiently re
 For a step by step tutorial on obtaining contract logs using the Moralis Events API refer to the article [Get logs for contract](/web3-data-api/evm/how-to-get-the-logs-for-a-contract).
 :::
 
-## The Gateway to Ethereum Events with eth_getlogs
+## The Gateway to Ethereum Events with eth_getLogs
 
 The utilization of `eth_getLogs` plays a role in the blockchain industry as it empowers developers with a valuable tool to monitor and analyze events occurring on the Ethereum blockchain. Through our exploration we will delve into the functions and benefits of this tool well as the comparative advantages offered by Moralis.
 
 Transaction receipts serve as repositories for Ethereum event logs capturing details such as gas consumption, transaction status and more. Having an understanding of storage dynamics allows us to efficiently retrieve this information using methods like Moralis `eth_getLogs` along, with other alternatives.
 
-## Unveiling the Efficiency of Moralis' getContractLogs Endpoint
+## Unveiling the Efficiency of getContractLogs Endpoint
 
 The [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis stands as a hallmark of convenience, offering an effective way to access ETH get logs. Before diving into Moralis, let's comprehend how it fares against `eth_getLogs`.
 
 ### Comparative Analysis with eth_getLogs
 
-The `eth_getLogs` RPC call, akin to Moralis, allows fetching logs through filter objects which encapsulate parameters like fromBlock, toBlock, and address to define the range and source of logs. While potent, it entails a more detailed setup with JSON RPC calls, which might become intricate compared to the user-friendly single API call facilitated by Moralis. The setup for `eth_getLogs` involves parameter settings as illustrated:
+The `eth_getLogs` RPC call, akin to Moralis, allows fetching logs through filter objects which encapsulate parameters like `fromBlock`, `toBlock`, and `address` to define the range and source of logs. While potent, it entails a more detailed setup with JSON RPC calls, which might become intricate compared to the user-friendly single API call facilitated by Moralis. The setup for `eth_getLogs` involves parameter settings as illustrated:
 
 ```bash
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
@@ -146,4 +146,4 @@ fetch(endpoint, { method: 'GET' })
 
 ## Conclusion
 
-Having navigated through the potentials and the intricate workings of ETH get logs, you are now equipped with the knowledge and practical experience to integrate Moralis' *getContractLogs* endpoint into your projects. Leveraging Moralis not only simplifies the process but also enhances the efficiency, allowing you to focus on building stellar applications in the blockchain space.
+Having navigated through the potentials and the intricate workings of ETH get logs, you are now equipped with the knowledge and practical experience to integrate Moralis' `getContractLogs` endpoint into your projects. Leveraging Moralis not only simplifies the process but also enhances the efficiency, allowing you to focus on building stellar applications in the blockchain space.
