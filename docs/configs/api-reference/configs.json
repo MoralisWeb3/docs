@@ -3352,7 +3352,7 @@
                   {
                     "name": "verified_collection",
                     "type": "boolean",
-                    "description": "Indicates if a contract is verified. Currently supported for ethereum NFT contracts.",
+                    "description": "Indicates whether or not the collection has been verified on OpenSea. Currently supported for ethereum NFT contracts.",
                     "example": "true"
                   }
                 ]
