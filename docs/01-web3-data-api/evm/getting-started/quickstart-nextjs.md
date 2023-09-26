@@ -16,7 +16,7 @@ You can find the repository with the final code [here](https://github.com/Morali
 1. Create a NextJS (**recommend using NextJs version 12 project**)
 2. Import and set up the latest @moralis/next
 3. Integrate your application with Moralis services
-4. Read any blockchain data from any blockchain 
+4. Read any blockchain data from any blockchain
 
 ## Prerequisites
 
@@ -92,7 +92,16 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 
 ## Add Moralis to Your NextJS Dapp
 
-1. Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/) by going to one of your existing project > Settings > Secrets > Copy one of your secrests.
+1. Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.io/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
+
+:::info Secure Your API Key - Best Practices for Cybersecurity
+Protecting your API key is critical in safeguarding your sensitive account information. Adhere to these cybersecurity best practices to ensure optimal API security:
+
+- **Restrict Access:** Only grant access to authorized users, ensuring secure user management.
+- **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
+- **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
+- **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
+:::
 
 2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
 
