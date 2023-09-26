@@ -1,8 +1,8 @@
 ---
-title: "Using NodeJS SDK"
+title: "Using the SDK"
 slug: "../using-node-js-sdk"
-description: "Learn how to use the Moralis Streams API to monitor a wallet with NodeJS SDK. Create a stream, install the SDK, attach an address, and receive webhooks with transaction details."
-sidebar_position: 2
+description: "Learn how to use the Moralis Streams API to monitor a wallet with the SDK. Create a stream, install the SDK, attach an address, and receive webhooks with transaction details."
+sidebar_position: 1
 ---
 
 In these examples, we will learn how to create and manage a Stream.
