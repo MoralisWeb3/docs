@@ -124,14 +124,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      announcementBar: {
-        id: "support_us",
-        content:
-          '🚨 <a target="_blank" rel="noopener noreferrer" href="/changelog/essential-api-changes">Coming September 11th: Essential API Changes</a> 🚨',
-        backgroundColor: "#57a5ff",
-        textColor: "#fff",
-        isCloseable: true,
-      },
       image: "img/moralis-social-card.jpg",
       metadata: [
         {
@@ -407,11 +399,15 @@ const config = {
         indexName: "gold-iota",
         contextualSearch: true,
       },
+      hotjar: {
+        applicationId: "3650716",
+      },
     }),
   customFields: {
     specialApiKey: [],
   },
   plugins: [
+    "docusaurus-plugin-hotjar",
     [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
@@ -448,6 +444,10 @@ const config = {
       src: "/custom.js",
       async: true,
     },
+  {
+    src: "/js/index.js",
+    async: true,
+  },
   ],
 };
 

@@ -3348,6 +3348,12 @@
                     "type": "string",
                     "description": "The block hash",
                     "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates whether or not the collection has been verified on OpenSea. Currently supported for ethereum NFT contracts.",
+                    "example": "true"
                   }
                 ]
               }

@@ -84,7 +84,7 @@ import time
 
 def get_nft_owners(offset, cursor):
     print("offset", offset)
-    url = 'https://deep-index.moralis.io/api/v2/nft/<address_here>/owners?chain=polygon&format=decimal'
+    url = 'https://deep-index.moralis.io/api/v2.2/nft/<address_here>/owners?chain=polygon&format=decimal'
     if cursor:
       url = url + "&cursor=%s" % cursor
 
