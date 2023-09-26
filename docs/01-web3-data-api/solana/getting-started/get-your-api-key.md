@@ -13,14 +13,13 @@ Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Da
 
 ## Step 2: Get API Key
 
-Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/) by going to one of your existing project > Settings > Secrets > Copy one of your secrests.
+Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.io/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
 
-:::info Keep Your API Key Safe
+:::info Secure Your API Key - Best Practices for Cybersecurity
+Protecting your API key is critical in safeguarding your sensitive account information. Adhere to these cybersecurity best practices to ensure optimal API security:
 
-Your API key is linked to your private account. Keep your keys safe by following these best practices:
-
-- Provide access only to those who need it
-- Keep the key out of any version control system you might be using
-- Use a password manager or secret management service to control access to your key
-- Don't embed your secret API key in web applications or in other places where the key could be easily obtained
+- **Restrict Access:** Only grant access to authorized users, ensuring secure user management.
+- **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
+- **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
+- **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
 :::
