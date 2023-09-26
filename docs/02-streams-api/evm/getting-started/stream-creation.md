@@ -233,6 +233,70 @@ print(results)
 </TabItem>
 </Tabs>
 
+### Step 4: Add an Address to a Stream
+
+Now that we have a stream, we can add an address to it. You can either add individual addresses or a batch. In this example, we will add a list of addresses to the stream.
+
+We will make use of the [addAddress](/streams-api/evm/reference/add-address-to-stream) endpoint to do so.
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
+```javascript index.js
+const Moralis = require("moralis").default;
+const runApp = async () => {
+    await Moralis.start({
+        apiKey: "YOUR_API_KEY",
+    });
+
+    const list = [
+        "0xf3d8d9f1f1ccbc8f7e313b7e7cdaa1d6e5b2c2f2",
+        "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "0x6b175474e89094c44da98b954eedeac495271d0f",
+    ];
+    const response = await Moralis.Streams.addAddress({
+        id: "4f7dbfb3-42c9-4d8d-bbba-975ea2d2b1a1", // stream ID from the previous snippet,
+        address: list,
+    });
+
+    console.log(response.toJSON());
+};
+
+runApp();
+
+```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
+```python index.py
+from moralis import streams
+
+api_key = "YOUR_API_KEY"
+
+params = {
+    "id": "4f7dbfb3-42c9-4d8d-bbba-975ea2d2b1a1",
+}
+
+list = [
+    "0xf3d8d9f1f1ccbc8f7e313b7e7cdaa1d6e5b2c2f2",
+    "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+    "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "0x6b175474e89094c44da98b954eedeac495271d0f",
+]
+stream_body = {"address": list}
+
+results = streams.evm_streams.add_address_to_stream(
+    api_key=api_key, body=stream_body, params=params
+)
+print(results)
+
+```
+
+</TabItem>
+</Tabs>
+
 
 ## We are Live! 🎉
 ### Mandatory Test Webhook 🚨
@@ -291,7 +355,7 @@ If you want to know more details on the endpoint and optional parameters, check 
 
 Learn how to use the Moralis Streams API to build dapps:
 
-- [Manage Stream Addresses](/guides/token-gating-website-nextjs)
+- [Check our Tutorials](/streams-api/evm/tutorials)
 
 
 ## Support
