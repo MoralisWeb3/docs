@@ -3,7 +3,7 @@ title: "Stream creation and management"
 slug: "../../using-the-sdk"
 description: "Learn how to create and manage a Stream."
 sidebar_label: "Using the SDK"
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 In these examples, we will learn how to create and manage a Stream.
