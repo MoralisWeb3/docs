@@ -46,10 +46,14 @@ const useChatGPT = () => {
       if (!response.ok) {
         console.error(response.statusText);
       }
-      const { prompt } = await response.json();
-      console.log({ prompt });
 
-      const assistantMessage = { role: "assistant", content: prompt };
+      const { prompt, functionName } = await response.json();
+
+      const assistantMessage = {
+        role: "function",
+        name: functionName,
+        content: prompt,
+      };
       setMessages((prevMessages) => [...prevMessages, assistantMessage]);
 
       const answer = await fetch("/api/gpt-search", {
@@ -63,7 +67,6 @@ const useChatGPT = () => {
       });
 
       const data = answer.body;
-      console.log({ data });
       if (!data) {
         return;
       }

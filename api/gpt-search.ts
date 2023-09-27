@@ -25,7 +25,7 @@ const handler = async (req: Request): Promise<Response> => {
     //   .map((message) => `${message.role}: ${message.content}`)
     //   .join("\n");
 
-    console.log({ messages });
+    // console.log({ messages });
     const completionOptions = {
       model: "gpt-3.5-turbo",
       messages: messages,

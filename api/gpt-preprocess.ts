@@ -26,7 +26,7 @@ export const corsHeaders = {
 };
 
 const availableFunctions = {
-  get_answer_from_docs: getAnswerFromDocs,
+  what_is_moralis: getAnswerFromDocs,
 };
 
 const functionSchemas = [getAnswerFromDocsSchema];
@@ -65,7 +65,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     });
 
     const responseMessage = response.choices[0].message;
-    console.log({ responseMessage });
+    // console.log({ responseMessage });
 
     if (responseMessage.function_call) {
       const functionName = responseMessage.function_call.name;
@@ -77,7 +77,9 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
           functionArgs.context,
           functionArgs.query
         );
-        res.status(200).json({ prompt: functionResponse });
+        res
+          .status(200)
+          .json({ prompt: functionResponse, functionName: functionName });
       } else {
         res
           .status(200)
