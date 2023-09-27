@@ -11,6 +11,7 @@ import { useState } from "react";
 const useChatGPT = () => {
   const [answer, setAnswer] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [messages, setMessages] = useState<any[]>([]); // Store the conversation history
 
   /**
    * @title generateAnswer
@@ -28,6 +29,9 @@ const useChatGPT = () => {
       setAnswer("");
       setLoading(true);
 
+      const userMessage = { role: "user", content: query };
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
+
       const response = await fetch("/api/gpt-preprocess", {
         method: "POST",
         headers: {
@@ -41,8 +45,11 @@ const useChatGPT = () => {
       if (!response.ok) {
         console.error(response.statusText);
       }
-
       const { prompt } = await response.json();
+      console.log({ prompt });
+
+      const assistantMessage = { role: "assistant", content: prompt };
+      setMessages((prevMessages) => [...prevMessages, assistantMessage]);
 
       const answer = await fetch("/api/gpt-search", {
         method: "POST",
@@ -50,11 +57,12 @@ const useChatGPT = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          prompt,
+          messages, // Send the entire messages array to the gpt-search endpoint
         }),
       });
 
       const data = answer.body;
+      console.log({ data });
       if (!data) {
         return;
       }
