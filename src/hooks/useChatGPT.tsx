@@ -26,6 +26,7 @@ const useChatGPT = () => {
    */
   const generateAnswer = async (query: string) => {
     try {
+      setMessages([]);
       setAnswer("");
       setLoading(true);
 
