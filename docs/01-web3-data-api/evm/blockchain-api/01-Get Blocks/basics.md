@@ -15,6 +15,21 @@ Furthermore, this article also showcases how Moralis simplifies and streamlines 
 You can learn how to get a block by number using the Moralis Events API by following the [Get logs for contract](/web3-data-api/evm/how-to-get-block-content-by-block-number) article.
 :::
 
+## Understanding eth_call and eth_getBalance
+
+### Exploring eth_call
+
+While exploring contract interactions and blockchain data retrieval, it is important for DApp developers to use the `eth_call` method to simulate and execute message calls directly in the node’s Virtual Machine (VM), without making any modifications and without creating a transaction to the blockchain. This read-only interaction capability is quintessential for querying smart contract functions, such as retrieving ERC-20 token balances with the `balanceOf` function.
+
+Moralis offers a groundbreaking equivalent for `eth_call` with the [getBlock](/web3-data-api/evm/reference/get-block) RPC method, showcasing its innovative approach to data retrieval and blockchain interactions. This endpoint serves as a modern alternative, allowing developers to access extensive information about transactions, contract interactions, and more, all in a user-friendly manner.
+
+### Exploring eth_getBalance
+
+Developers use `eth_getBalance` to get the Ether balance of a given address or in other words to return account's balance of a given address. This method is a fundamental aspect for managing transactions and displaying real-time user balance information.
+
+Moralis presents the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) RPC method as the nearest equivalent to `eth_getBalance`. You can use it to obtain the native balance of an address which can be an important part in transaction management.
+
+
 ## Traditional vs. Modern: A Quick Comparison
 
 Historically, developers have used Ethereum's `eth_call` RPC method to interact with contracts without modifying the blockchain state. Here is an example:

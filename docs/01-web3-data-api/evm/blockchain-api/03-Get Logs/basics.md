@@ -15,6 +15,8 @@ For a step-by-step tutorial on obtaining contract logs using the Moralis Events 
 
 ## The Gateway to Ethereum Events with eth_getLogs
 
+The `eth_getLogs` is a JSON-RPC method in Ethereum that returns event data as an array of all logs matching a specified filter object. It is a fundamental method for querying and retrieving event logs from the Ethereum blockchain.
+
 The utilization of `eth_getLogs` plays a vital role in the blockchain industry as it empowers developers with a valuable tool to monitor and analyze events occurring on the Ethereum blockchain. Throughout this guide, we will delve into the functions and benefits of this tool and look at the advantages of using Moralis instead.
 
 Also, transaction receipts serve as repositories for Ethereum event logs, capturing details such as gas consumption, transaction status, and more. Understanding storage dynamics allows us to efficiently retrieve this information using methods like `eth_getLogs` along with other alternatives.
