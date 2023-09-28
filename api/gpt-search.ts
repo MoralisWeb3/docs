@@ -15,6 +15,7 @@ const handler = async (req: Request): Promise<Response> => {
     const { messages } = (await req.json()) as {
       messages?: Array<{ role: string; content: string }>;
     };
+    console.log({ messages });
 
     if (!messages || messages.length === 0) {
       return new Response("No messages in the request", { status: 400 });
