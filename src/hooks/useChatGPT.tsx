@@ -28,7 +28,15 @@ const useChatGPT = () => {
       setAnswer("");
       setLoading(true);
 
-      const localMessages = []; // Use a local variable instead of state
+      const localMessages = [
+        {
+          role: "system",
+          content:
+            "You are a helpful assistant. \
+You only use the data from the functions you have been provided with.\
+The end user is a beginner programmer so always try to keep it simple and always use short sentence and bullet points where required.",
+        },
+      ]; // Use a local variable instead of state
 
       const userMessage = { role: "user", content: query };
       localMessages.push(userMessage);

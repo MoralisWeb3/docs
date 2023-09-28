@@ -38,11 +38,18 @@ const handler = async (req: Request): Promise<Response> => {
     const stream = await OpenAIStream(completionOptions);
     return new Response(stream);
   } catch (err) {
-    return new Response(
-      JSON.stringify({
-        err,
-      })
-    );
+    console.error("Error in gpt-search:", err.message);
+
+    if (err.message === "Missing env var from OpenAI") {
+      // Configuration errors return a 500 Internal Server Error status
+      return new Response(err.message, { status: 500 });
+    } else if (err.message === "No messages in the request") {
+      // User-caused errors return a 400 Bad Request status
+      return new Response(err.message, { status: 400 });
+    } else {
+      // Unknown errors also return a 500 status
+      return new Response("An unexpected error occurred.", { status: 500 });
+    }
   }
 };
 

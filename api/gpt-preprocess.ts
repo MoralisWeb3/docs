@@ -90,8 +90,18 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
         .status(200)
         .json({ prompt: "Sorry, I don't know how to help with that." });
     }
-  } catch (err: unknown) {
-    console.error(err, res);
-    res.status(500).json({ error: err });
+  } catch (err) {
+    console.error("Error in gpt-preprocess:", err.message);
+
+    if (err instanceof UserError) {
+      // User-caused errors return a 400 Bad Request status
+      res.status(400).json({ error: err.message, data: err.data });
+    } else if (err instanceof ApplicationError) {
+      // General application errors return a 500 Internal Server Error status
+      res.status(500).json({ error: err.message, data: err.data });
+    } else {
+      // Unknown errors also return a 500 status
+      res.status(500).json({ error: "An unexpected error occurred." });
+    }
   }
 };
