@@ -3,7 +3,11 @@ import OpenAI from "openai";
 import {
   getAnswerFromDocs,
   getAnswerFromDocsSchema,
-} from "./functions/getAnswerFromDocs";
+  getArticlesByIds,
+  getArticlesByIdsSchema,
+  getArticlesList,
+  getArticlesListSchema,
+} from "../utils/ai_bot_functions";
 
 const openAiKey = process.env.OPENAI_KEY;
 
@@ -26,12 +30,19 @@ export const corsHeaders = {
 };
 
 const availableFunctions = {
-  what_is_moralis: getAnswerFromDocs,
+  // what_is_moralis: getAnswerFromDocs,
+  get_moralis_articles_list: getArticlesList,
+  get_moralis_articles_by_id: getArticlesByIds,
 };
 
-const functionSchemas = [getAnswerFromDocsSchema];
+const functionSchemas = [
+  // getAnswerFromDocsSchema,
+  getArticlesListSchema,
+  getArticlesByIdsSchema,
+];
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
+  console.log("Pre processing");
   try {
     // Handle CORS
     if (req.method === "OPTIONS") {
@@ -44,39 +55,34 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       throw new UserError("Missing request data");
     }
 
-    const { query } = requestData;
+    const { messages } = requestData;
 
-    if (!query) {
+    if (!messages) {
       throw new UserError("Missing query in request data");
     }
 
-    const sanitizedQuery = (query as any)?.trim();
+    // const sanitizedQuery = (messages as any)?.trim();
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "user",
-          content: sanitizedQuery,
-        },
-      ],
+      messages: messages,
       functions: functionSchemas, // Use the functionSchemas array here
       function_call: "auto",
     });
 
     const responseMessage = response.choices[0].message;
     // console.log({ responseMessage });
+    console.log({ response });
 
     if (responseMessage.function_call) {
+      console.log({ responseMessage });
       const functionName = responseMessage.function_call.name;
       const functionToCall = availableFunctions[functionName];
       const functionArgs = JSON.parse(responseMessage.function_call.arguments);
 
       if (functionToCall) {
-        const functionResponse = functionToCall(
-          functionArgs.context,
-          functionArgs.query
-        );
+        console.log(functionArgs);
+        const functionResponse = functionToCall(functionArgs);
         res
           .status(200)
           .json({ prompt: functionResponse, functionName: functionName });

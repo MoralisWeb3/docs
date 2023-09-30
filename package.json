@@ -18,6 +18,7 @@
     "generate-code": "node docs/configs/code/generate.ts",
     "generate-embeddings": "npx tsx docs/configs/scripts/generate-embeddings.ts",
     "generate-guides": "npx tsx docs/configs/scripts/generate-guides.ts",
+    "fetch-intercom-articles": "node utils/ai_bot_functions/helpers/generateArticles.ts",
     "algolia": "node ./utils/algoliaCrawlerReindex.ts",
     "lint": "npx eslint src",
     "lint:fix": "npm run lint -- --fix",
