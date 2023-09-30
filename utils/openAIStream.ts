@@ -38,6 +38,7 @@ export async function OpenAIStream(payload) {
             controller.enqueue(queue);
             counter++;
           } catch (e) {
+            console.error("Error parsing OpenAI stream:", e);
             controller.error(e);
           }
         }

@@ -58,14 +58,16 @@ const useChatGPT = () => {
         {
           role: "system",
           content:
-            "You are a helpful Moralis AI assistant who reads data from moralis articles. \
-You only use the data from the functions you have been provided with",
+            "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles. \
+You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement.",
         },
       ];
 
       const userMessage = {
         role: "user",
-        content: "Moralis question: " + query,
+        content:
+          "Moralis question: Can you check the moralis articles to get the closest answer for " +
+          query,
       } as const;
       localMessages.push(userMessage);
 
@@ -85,7 +87,7 @@ You only use the data from the functions you have been provided with",
         const newMessage: messages = {
           role: "function",
           name: functionName,
-          content: prompt,
+          content: JSON.stringify(prompt),
         };
         localMessages.push(newMessage);
       }
