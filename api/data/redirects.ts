@@ -5519,13 +5519,13 @@ export const redirects = [
   {
     source: "/admin-panel/user-account-creation-and-sign-in-methods",
     destination:
-      "https://intercom-help.eu/moralis/en/articles/33379-user-account-creation",
+      "https://api-help.moralis.io/en/articles/33379-user-account-creation-methods",
     permanent: true,
   },
   {
     source: "/admin-panel/permission-roles",
     destination:
-      "https://intercom-help.eu/moralis/en/articles/33348-permission-and-roles",
+      "https://api-help.moralis.io/en/articles/33348-permission-and-roles",
     permanent: true,
   },
   {
