@@ -71,7 +71,10 @@ You only use the data from the functions you have been provided with to avoid ou
       } as const;
       localMessages.push(userMessage);
 
-      let { prompt, functionName } = await preprocessQuery(localMessages);
+      let { prompt, functionName, usage } = await preprocessQuery(
+        localMessages
+      );
+      console.log({ usage });
 
       while (functionName === "get_moralis_articles_list") {
         const assistantMessage: messages = {
@@ -84,6 +87,8 @@ You only use the data from the functions you have been provided with to avoid ou
         const newResponse = await preprocessQuery(localMessages);
         prompt = newResponse.prompt;
         functionName = newResponse.functionName;
+        usage = newResponse.usage;
+        console.log({ usage });
         const newMessage: messages = {
           role: "function",
           name: functionName,

@@ -1,3 +1,4 @@
+import OpenAI from "openai";
 import { OpenAIStream } from "../utils/openAIStream";
 
 export const config = {
@@ -12,8 +13,14 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Missing env var from OpenAI");
     }
 
+    type chatCompletionMessages = {
+      role: "function" | "system" | "user" | "assistant";
+      name?: string;
+      content: string;
+    };
+
     const { messages } = (await req.json()) as {
-      messages?: Array<{ role: string; content: string }>;
+      messages?: Array<chatCompletionMessages>;
     };
     console.log({ messages });
 
@@ -25,15 +32,15 @@ const handler = async (req: Request): Promise<Response> => {
     // const conversationHistory = messages
     //   .map((message) => `${message.role}: ${message.content}`)
     //   .join("\n");
-
     // console.log({ messages });
-    const completionOptions = {
-      model: "gpt-3.5-turbo",
-      messages: messages,
-      // max_tokens: 2048,
-      // temperature: 0,
-      stream: true,
-    };
+    const completionOptions: OpenAI.Chat.Completions.ChatCompletionCreateParamsStreaming =
+      {
+        model: "gpt-3.5-turbo",
+        messages: messages,
+        // max_tokens: 2048,
+        // temperature: 0,
+        stream: true,
+      };
 
     const stream = await OpenAIStream(completionOptions);
     return new Response(stream);

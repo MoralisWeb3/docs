@@ -73,6 +73,10 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const responseMessage = response.choices[0].message;
     // console.log({ responseMessage });
     console.log({ response });
+    console.log({
+      choices: response.choices[0],
+      mnessage: response.choices[0].message,
+    });
 
     if (responseMessage.function_call) {
       console.log({ responseMessage });
@@ -83,9 +87,11 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
       if (functionToCall) {
         console.log(functionArgs);
         const functionResponse = functionToCall(functionArgs);
-        res
-          .status(200)
-          .json({ prompt: functionResponse, functionName: functionName });
+        res.status(200).json({
+          prompt: functionResponse,
+          functionName: functionName,
+          usage: response.usage,
+        });
       } else {
         res
           .status(200)
