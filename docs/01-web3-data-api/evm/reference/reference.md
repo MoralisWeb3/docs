@@ -80,7 +80,6 @@ Select what you want to achieve:
 | 12   | `resolveENSDomain`               | ENS Lookup By Domain                  | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)                                            | [https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain](https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain)                                                                            |
 | 13   | `resolveAddressToDomain`         | Unstoppable Lookup by Address          | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-address-to-domain)                                      | [https://deep-index.moralis.io/api/v2.2/resolve/:address/domain](https://deep-index.moralis.io/api/v2.2/resolve/:address/domain)                                                                    |
 | 14   | `resolveDomain`                  | Unstoppable Lookup By Domain           | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-domain)                                                | [https://deep-index.moralis.io/api/v2.2/resolve/:domain](https://deep-index.moralis.io/api/v2.2/resolve/:domain)                                                                                |
-
 | 15 | `getWalletStats` | Get wallet stats | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-stats) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/stats](https://deep-index.moralis.io/api/v2.2/wallets/:address/stats) |
 
 ## NFT API
