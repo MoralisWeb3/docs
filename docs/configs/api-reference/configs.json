@@ -4651,56 +4651,92 @@
         }
       ]
     },
-    "getNFTCollectionStats":
-    {
-      "apiHost":"https://deep-index.moralis.io/api/v2.2",
-      "summary":"Get the nft collection stats",
-      "description":"Get the stats for a nft collection address.",
-      "method":"GET",
-      "path":"/nft/:address/stats",
-      "pathParams":[{
-        "name":"address",
-        "description":"The address of the NFT collection",
-        "required":true,
-        "type":"string"}],
-      "queryParams":[{
-        "name":"chain",
-        "description":"The chain to query",
-        "required":false,
-        "example":"eth",
-        "type":"string",
-        "enum":[
-          "eth","0x1","goerli","0x5","sepolia","0xaa36a7","polygon","0x89","mumbai","0x13881","bsc","0x38","bsc testnet","0x61","avalanche","0xa86a","fantom","0xfa","palm","0x2a15c308d","cronos","0x19","arbitrum","0xa4b1"]
-          }],
-      "responses":
-      [{
-        "status":"200",
-        "description":"Returns the stats for the nft token.",
-        "body":{
-          "type":"object",
-          "fields":[{
-            "name":"owners",
-            "type":"object",
-            "description":"NFT token owner stats",
-            "fields":[{
-              "name":"current",
-              "type":"string",
-              "description":"The number of current owners of the nft token",
-              "example":"1000"
-              }]},
+    "getNFTCollectionStats": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get the nft collection stats",
+      "description": "Get the stats for a nft collection address.",
+      "method": "GET",
+      "path": "/nft/:address/stats",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT collection",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the stats for the nft token.",
+          "body": {
+            "type": "object",
+            "fields": [
               {
-                "name":"transfers",
-                "type":"object",
-                "description":"NFT token transfer stats",
-                "fields":[{
-                  "name":"total",
-                  "type":"string",
-                  "description":"The number of transfers of the nft token",
-                  "example":"1000"}]
+                "name": "owners",
+                "type": "object",
+                "description": "NFT token owner stats",
+                "fields": [
+                  {
+                    "name": "current",
+                    "type": "string",
+                    "description": "The number of current owners of the nft token",
+                    "example": "1000"
                   }
-                  ]
-                }
-                  }],
+                ]
+              },
+              {
+                "name": "transfers",
+                "type": "object",
+                "description": "NFT token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transfers of the nft token",
+                    "example": "1000"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -4771,34 +4807,43 @@
           ]
         }
       ],
-      "responses":[{
-        "status":"200",
-        "description":"Returns the stats for the nft token.",
-        "body":{
-          "type":"object",
-          "fields":[{
-            "name":"owners",
-            "type":"object",
-            "description":"NFT token owner stats",
-            "fields":[{
-              "name":"current",
-              "type":"string",
-              "description":"The number of current owners of the nft token",
-              "example":"1000"}]},
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the stats for the nft token.",
+          "body": {
+            "type": "object",
+            "fields": [
               {
-                "name":"transfers",
-                "type":"object",
-                "description":"NFT token transfer stats",
-                "fields":[{
-                  "name":"total",
-                  "type":"string",
-                  "description":"The number of transfers of the nft token",
-                  "example":"1000"}]
+                "name": "owners",
+                "type": "object",
+                "description": "NFT token owner stats",
+                "fields": [
+                  {
+                    "name": "current",
+                    "type": "string",
+                    "description": "The number of current owners of the nft token",
+                    "example": "1000"
                   }
-                  ]
+                ]
+              },
+              {
+                "name": "transfers",
+                "type": "object",
+                "description": "NFT token transfer stats",
+                "fields": [
+                  {
+                    "name": "total",
+                    "type": "string",
+                    "description": "The number of transfers of the nft token",
+                    "example": "1000"
                   }
-                  }
-                ],
+                ]
+              }
+            ]
+          }
+        }
+      ],
       "codeSamples": [
         {
           "language": "node",
@@ -5199,7 +5244,66 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns token balances for a specific address"
+          "description": "Returns ERC20 token balance and details for a specific address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "token_address",
+                "type": "string",
+                "description": "The address of the token contract",
+                "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "description": "The name of the token contract",
+                "example": "Kylin Network"
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "description": "The symbol of the NFT contract",
+                "example": "KYL"
+              },
+              {
+                "name": "logo",
+                "type": "string",
+                "description": "The logo of the token",
+                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+              },
+              {
+                "name": "thumbnail",
+                "type": "string",
+                "description": "The thumbnail of the logo",
+                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+              },
+              {
+                "name": "decimals",
+                "type": "integer",
+                "description": "The number of decimals on the token",
+                "example": 18
+              },
+              {
+                "name": "balance",
+                "type": "string",
+                "description": "Timestamp of when the contract was last synced with the node",
+                "example": "123456789"
+              },
+              {
+                "name": "possible_spam",
+                "type": "boolean",
+                "description": "Indicates if a contract is possibly a spam contract",
+                "example": false
+              },
+              {
+                "name": "verified_collection",
+                "type": "boolean",
+                "description": "Indicates if a contract is verified",
+                "example": false
+              }
+            ]
+          }
         }
       ],
       "codeSamples": [
@@ -5503,7 +5607,81 @@
       "responses": [
         {
           "status": "200",
-          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo)."
+          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "description": "The block number when the token was created or last updated",
+                  "example": "12526958"
+                },
+                {
+                  "name": "validated",
+                  "type": "string",
+                  "description": "Indicates if the token details have been validated",
+                  "example": "true"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": false
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                }
+              ]
+            }
+          }
         }
       ],
       "codeSamples": [
@@ -5571,7 +5749,81 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo)."
+          "description": "Get the metadata for a list of token symbols (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "description": "The block number when the token was created or last updated",
+                  "example": "12526958"
+                },
+                {
+                  "name": "validated",
+                  "type": "string",
+                  "description": "Indicates if the token details have been validated",
+                  "example": "true"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": false
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                }
+              ]
+            }
+          }
         }
       ],
       "codeSamples": [
@@ -5598,7 +5850,8 @@
           "name": "address",
           "description": "The address of the token contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0xdac17f958d2ee523a2206206994597c13d831ec7"
         }
       ],
       "queryParams": [
@@ -5639,13 +5892,15 @@
           "name": "owner_address",
           "description": "The address of the token owner",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x0cBee687015d5151BA084806E00A59A8e6F206c2"
         },
         {
           "name": "spender_address",
           "description": "The address of the token spender",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x75e89d5979E4f6Fba9F97c104c2F0AFB3F1dcB88"
         }
       ],
       "responses": [
@@ -5658,7 +5913,8 @@
               {
                 "name": "allowance",
                 "type": "string",
-                "description": "The allowance"
+                "description": "The allowance",
+                "example": "0"
               }
             ]
           }
