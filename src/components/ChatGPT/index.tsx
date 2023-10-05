@@ -21,7 +21,14 @@ import remarkGfm from "remark-gfm";
 export default function ChatGPT() {
   const [query, setQuery] = useState<string>("");
   const { answer, generateAnswer, loading } = useChatGPT();
+  const [rows, setRows] = useState(1);
 
+  const handleTextChange = (e) => {
+    setQuery(e.target.value);
+    const numOfLineBreaks = (e.target.value.match(/\n/g) || []).length;
+    // Minimum rows = 1, Maximum rows = 6
+    setRows(Math.min(Math.max(numOfLineBreaks + 1, 1), 6));
+  };
   const suggetions = [
     "How do I get started with Moralis in NodeJS?",
     "What chains does Moralis support?",
@@ -43,7 +50,7 @@ export default function ChatGPT() {
           <AvatarImage src={ChatGPTLogo} alt="ChatGPT" />
         </Avatar>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[768px] sm:min-h-[400px] sm:max-h-screen">
+      <DialogContent className="min-w-[60vw] h-[80vh] sm:max-h-screen">
         <div className="flex flex-col h-full">
           <div className="flex-none">
             <form
@@ -59,17 +66,17 @@ export default function ChatGPT() {
                 Search
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <div className="absolute inset-y-0 left-0  p-4 flex items-start pointer-events-none">
                   <Bot className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 </div>
-                <input
-                  type="search"
+                <textarea
                   id="search"
-                  className="block mb-4 w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block mb-4 w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
                   placeholder="Ask any question about Moralis"
                   required
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={handleTextChange}
+                  rows={rows}
                 />
                 <button
                   type="submit"
@@ -80,7 +87,7 @@ export default function ChatGPT() {
               </div>
             </form>
           </div>
-          <div className="sm:min-h-[300px] sm:max-h-[300px] w-full mb-4">
+          <div className="sm:min-h-[75%] sm:max-h-[300px] w-full mb-4">
             {!query && (
               <div className="mb-4">
                 <p className="text-sm text-gray-500 mb-4">
@@ -133,19 +140,18 @@ export default function ChatGPT() {
               </ScrollArea>
             )}
           </div>
-          <div className="flex-none">
-            <Alert>
-              <Microscope className="h-4 w-4" />
-              <AlertTitle>
-                Moralis AI is experimental and may produce incorrect answers.
-              </AlertTitle>
-              <AlertDescription>
-                Always verify the output before executing.
-              </AlertDescription>
-            </Alert>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+      <div className="flex-none p-4">
+        <Alert>
+          <Microscope className="h-4 w-4" />
+          <AlertTitle>
+            Moralis AI is experimental and may produce incorrect answers.
+          </AlertTitle>
+          <AlertDescription>
+            Always verify the output before executing.
+          </AlertDescription>
+        </Alert>
+      </div>
+    </DialogContent>
+  </Dialog>
   );
 }
