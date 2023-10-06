@@ -9,7 +9,9 @@ The [Moralis Token API](/web3-data-api/evm/token-api) seamlessly integrates with
 
 ## DEX Support by Chain
 
-Below, you will find a list of supported chains on the [Moralis Token API](/web3-data-api/evm/token-api), along with the corresponding decentralized exchanges (DEXs) available on each chain. Simply click on a chain's name to jump to its respective section for more details:
+The following tables show you how to find a list of supported chains on the [Moralis Token API](/web3-data-api/evm/token-api), along with the corresponding decentralized exchanges (DEXs) available on each chain.
+
+Simply click on a chain's name to jump to its respective section for more details:
 
 * [Ethereum](#ethereum)
 * [Polygon](#polygon)

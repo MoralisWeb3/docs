@@ -4947,12 +4947,15 @@
                     "sushiswapv2",
                     "pancakeswapv1",
                     "pancakeswapv2",
+                    "pancakeswapv3",
                     "quickswap",
                     "quickswapv2",
                     "traderjoe",
                     "pangolin",
                     "spookyswap",
                     "vvs",
+                    "mm",
+                    "crodex",
                     "camelotv2"
                   ]
                 },
@@ -5042,12 +5045,15 @@
             "sushiswapv2",
             "pancakeswapv1",
             "pancakeswapv2",
+            "pancakeswapv3",
             "quickswap",
             "quickswapv2",
             "traderjoe",
             "pangolin",
             "spookyswap",
             "vvs",
+            "mm",
+            "crodex",
             "camelotv2"
           ]
         },
