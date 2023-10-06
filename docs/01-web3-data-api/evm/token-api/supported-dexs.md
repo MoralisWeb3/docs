@@ -25,55 +25,55 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 
 | Supported DEX(s)     |
 | -------------------- |
-| Uniswap v3           |
-| Uniswap v2           |
-| Sushiswap v2         |
+| [Uniswap v3](https://app.uniswap.org/)           |
+| [Uniswap v2](https://uniswap.org/)           |
+| [Sushiswap v2](https://sushi.com/)         |
 
 ## Polygon
 
 | Supported DEX(s)     |
 | -------------------- |
-| Quickswap v2         |
-| Uniswap v3           |
-| Uniswap v2           |
-| MM Finance           |
+| [Quickswap v2](https://quickswap.exchange/)         |
+| [Uniswap v3](https://app.uniswap.org/)           |
+| [Uniswap v2](https://uniswap.org/)           |
+| [MM Finance](https://mm.finance/)           |
 
 ## Binance Smart Chain (BSC)
 
 | Supported DEX(s)     |
 | -------------------- |
-| PancakeSwap v2       |
-| PancakeSwap v3       |
-| PancakeSwap v1       |
-| Uniswap v3           |
+| [PancakeSwap v2](https://pancakeswap.finance/)       |
+| [PancakeSwap v3](https://pancakeswap.finance/v3)       |
+| [PancakeSwap v1](https://pancakeswap.finance/v1)       |
+| [Uniswap v3](https://app.uniswap.org/)           |
 
 ## Avalanche
 
 | Supported DEX(s)     |
 | -------------------- |
-| TraderJoe            |
-| Pangolin             |
+| [TraderJoe](https://www.traderjoexyz.com/)           |
+| [Pangolin](https://pangolin.exchange/)             |
 
 ## Fantom Opera
 
 | Supported DEX(s)     |
 | -------------------- |
-| SpookySwap           |
+| [SpookySwap](https://spookyswap.finance/)         |
 
 ## Cronos
 
 | Supported DEX(s)     |
 | -------------------- |
-| VVS Finance          |
-| MM Finance           |
-| Crodex               |
+| [VVS Finance](https://vvs.finance/)           |
+| [MM Finance](https://mm.finance/)           |
+| [Crodex](https://crodex.exchange/)               |
 
 ## Arbitrum
 
 | Supported DEX(s)     |
 | -------------------- |
-| Uniswap v3           |
-| Camelot V2           |
+| [Uniswap v3](https://app.uniswap.org/)           |
+| [Camelot V2](https://www.camelotsix.com/)           |
 
 # Endpoints DEXs integration
 
