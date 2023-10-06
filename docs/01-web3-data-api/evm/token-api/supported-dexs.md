@@ -7,7 +7,7 @@ sidebar_position: 5
 
 The Moralis Token API seamlessly integrates with leading decentralized exchanges (DEXs) across multiple EVM blockchains, providing comprehensive support for token-related data.
 
-# DEX Support by Chain
+## DEX Support by Chain
 
 If you do not specify a particular `exchange`, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.
 
@@ -21,7 +21,7 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 * [Cronos](#cronos)
 * [Arbitrum](#arbitrum)
 
-## Ethereum
+### Ethereum
 
 | Supported DEX(s)     |
 | -------------------- |
@@ -29,7 +29,7 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 | [Uniswap v2](https://uniswap.org/)           |
 | [Sushiswap v2](https://sushi.com/)         |
 
-## Polygon
+### Polygon
 
 | Supported DEX(s)     |
 | -------------------- |
@@ -38,7 +38,7 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 | [Uniswap v2](https://uniswap.org/)           |
 | [MM Finance](https://mm.finance/)           |
 
-## Binance Smart Chain (BSC)
+### Binance Smart Chain (BSC)
 
 | Supported DEX(s)     |
 | -------------------- |
@@ -47,20 +47,20 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 | [PancakeSwap v1](https://pancakeswap.finance/v1)       |
 | [Uniswap v3](https://app.uniswap.org/)           |
 
-## Avalanche
+### Avalanche
 
 | Supported DEX(s)     |
 | -------------------- |
 | [TraderJoe](https://www.traderjoexyz.com/)           |
 | [Pangolin](https://pangolin.exchange/)             |
 
-## Fantom Opera
+### Fantom Opera
 
 | Supported DEX(s)     |
 | -------------------- |
 | [SpookySwap](https://spookyswap.finance/)         |
 
-## Cronos
+### Cronos
 
 | Supported DEX(s)     |
 | -------------------- |
@@ -68,14 +68,14 @@ Below, you will find a list of supported chains on the Moralis Token API, along 
 | [MM Finance](https://mm.finance/)           |
 | [Crodex](https://crodex.exchange/)               |
 
-## Arbitrum
+### Arbitrum
 
 | Supported DEX(s)     |
 | -------------------- |
 | [Uniswap v3](https://app.uniswap.org/)           |
 | [Camelot V2](https://www.camelotsix.com/)           |
 
-# Endpoints DEXs integration
+## Endpoints DEXs integration
 
 The table shows the list of endpoints that are integrated with the supported DEXs:
 
