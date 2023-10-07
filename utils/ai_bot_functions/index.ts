@@ -12,3 +12,13 @@ export {
   getArticlesByIds,
   getArticlesByIdsSchema,
 } from "./getMoralisArticlesData";
+
+export {
+  getAllApiEndpointsList,
+  getAllApiEndpointsListSchema,
+} from "./getMoralisApiEndpointsList";
+
+export {
+  getMoralisApiEndpointsData,
+  getMoralisApiEndpointsDataSchema,
+} from "./getMoralisApiEndpointsData";

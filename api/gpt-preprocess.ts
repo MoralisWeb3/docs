@@ -7,6 +7,10 @@ import {
   getArticlesByIdsSchema,
   getArticlesList,
   getArticlesListSchema,
+  getAllApiEndpointsList,
+  getAllApiEndpointsListSchema,
+  getMoralisApiEndpointsData,
+  getMoralisApiEndpointsDataSchema,
 } from "../utils/ai_bot_functions";
 
 const openAiKey = process.env.OPENAI_KEY;
@@ -33,12 +37,16 @@ const availableFunctions = {
   // what_is_moralis: getAnswerFromDocs,
   get_moralis_articles_list: getArticlesList,
   get_moralis_articles_by_id: getArticlesByIds,
+  get_moralis_api_endpoints_list: getAllApiEndpointsList,
+  get_moralis_api_endpoints_data: getMoralisApiEndpointsData,
 };
 
 const functionSchemas = [
   // getAnswerFromDocsSchema,
   getArticlesListSchema,
   getArticlesByIdsSchema,
+  getAllApiEndpointsListSchema,
+  getMoralisApiEndpointsDataSchema,
 ];
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
