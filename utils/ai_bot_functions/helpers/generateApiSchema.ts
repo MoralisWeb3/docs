@@ -130,6 +130,7 @@ const apiUrls = {
   SolApi: "https://solana-gateway.moralis.io/api-json",
   AptosApi: "https://mainnet-aptos-api.moralis.io/swagger-json",
   Auth: "https://authapi.moralis.io/api-docs-json",
+  // Streams: "https://api.moralis-streams.com/api-docs/swagger.json",
 };
 
 function groupBySdkTag(processedData) {
@@ -156,7 +157,8 @@ function groupBySdkTag(processedData) {
 }
 
 function generateCodeSamples(apiPath, params) {
-  const jsParams = params ? `{ ${params.join(", ")} }` : "{}";
+  const camleCaseParams = params.map((p) => snakeToCamel(p));
+  const jsParams = params ? `{ ${camleCaseParams.join(", ")} }` : "{}";
   const pyParams = params.map((param) => {
     return camelCase(param);
   });
@@ -186,7 +188,7 @@ await Moralis.start({
     apiKey: "YOUR_API_KEY"
     });
 const response = await Moralis.${jsFunctionPath}({ 
-    //params key values goes here 
+  ${jsParams}
 });    
 console.log(response.raw);
 } catch (e) {
@@ -245,6 +247,13 @@ function camelCase(str) {
       .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
   );
 }
+
+const snakeToCamel = (str) =>
+  str
+    .toLowerCase()
+    .replace(/([-_][a-z])/g, (group) =>
+      group.toUpperCase().replace("-", "").replace("_", "")
+    );
 
 // Fetch and process API data
 async function fetchAndProcessApiData(apiUrls) {
