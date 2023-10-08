@@ -55,131 +55,136 @@ const useChatGPT = () => {
    * // => "Hello"
    */
   const generateAnswer = async (query: string) => {
-    try {
-      setAnswer("");
-      setLoading(true);
-      setError(null);
+    const helpWith = localStorage.getItem("helpWith");
+    const issueRelatedTo = localStorage.getItem("issueRelatedTo");
 
-      type messages = {
-        role: "function" | "system" | "user" | "assistant";
-        name?: string;
-        content: string;
-      };
+    console.log({ helpWith, issueRelatedTo });
 
-      const localMessages: messages[] = [
-        {
-          role: "system",
-          content:
-            "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles or moralis API endpoints data whichever can answer the question. \
-You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement.",
-        },
-      ];
+    //     try {
+    //       setAnswer("");
+    //       setLoading(true);
+    //       setError(null);
 
-      const userMessage = {
-        role: "user",
-        content:
-          "Moralis question: Can you check the moralis articles and Moralis API endpoints to get the closest answer for " +
-          query +
-          ". While answering API endpoint related question try proving a simple code example.",
-      } as const;
-      localMessages.push(userMessage);
+    //       type messages = {
+    //         role: "function" | "system" | "user" | "assistant";
+    //         name?: string;
+    //         content: string;
+    //       };
 
-      let { prompt, functionName, usage } = await preprocessQuery(
-        localMessages
-      );
-      console.log({ usage });
+    //       const localMessages: messages[] = [
+    //         {
+    //           role: "system",
+    //           content:
+    //             "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles or moralis API endpoints data whichever can answer the question. \
+    // You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement.",
+    //         },
+    //       ];
 
-      while (
-        functionName === "get_moralis_articles_list" ||
-        functionName === "get_moralis_api_endpoints_list"
-      ) {
-        const assistantMessage: messages = {
-          role: "function",
-          name: functionName,
-          content: JSON.stringify(prompt),
-        };
-        localMessages.push(assistantMessage);
+    //       const userMessage = {
+    //         role: "user",
+    //         content:
+    //           "Moralis question: Can you check the moralis articles and Moralis API endpoints to get the closest answer for " +
+    //           query +
+    //           ". While answering API endpoint related question try proving a simple code example.",
+    //       } as const;
+    //       localMessages.push(userMessage);
 
-        // Create a copy of localMessages and remove duplicates from the copy
-        console.log("local messages lenght: ", localMessages.length);
-        const uniqueLocalMessages = removeDuplicateMessages([...localMessages]);
-        console.log("unique messages lenght: ", uniqueLocalMessages.length);
-        console.log(uniqueLocalMessages);
+    //       let { prompt, functionName, usage } = await preprocessQuery(
+    //         localMessages
+    //       );
+    //       console.log({ usage });
 
-        // const index_of_article = uniqueLocalMessages.indexOf(
-        //   uniqueLocalMessages.find((i) => {
-        //     return i.name === "get_moralis_articles_list";
-        //   })
-        // );
-        // const index_of_api = uniqueLocalMessages.indexOf(
-        //   uniqueLocalMessages.find((i) => {
-        //     return i.name === "get_moralis_api_endpoints_list";
-        //   })
-        // );
+    //       while (
+    //         functionName === "get_moralis_articles_list" ||
+    //         functionName === "get_moralis_api_endpoints_list"
+    //       ) {
+    //         const assistantMessage: messages = {
+    //           role: "function",
+    //           name: functionName,
+    //           content: JSON.stringify(prompt),
+    //         };
+    //         localMessages.push(assistantMessage);
 
-        // if (index_of_article !== -1 && index_of_api !== -1) {
-        //   uniqueLocalMessages.splice(
-        //     Math.min(index_of_article, index_of_api),
-        //     1
-        //   );
-        // }
+    //         // Create a copy of localMessages and remove duplicates from the copy
+    //         console.log("local messages lenght: ", localMessages.length);
+    //         const uniqueLocalMessages = removeDuplicateMessages([...localMessages]);
+    //         console.log("unique messages lenght: ", uniqueLocalMessages.length);
+    //         console.log(uniqueLocalMessages);
 
-        // Use the copy (uniqueLocalMessages) as a parameter
-        const newResponse = await preprocessQuery(uniqueLocalMessages);
-        prompt = newResponse.prompt;
-        functionName = newResponse.functionName;
-        usage = newResponse.usage;
-        console.log({ usage });
-        const newMessage: messages = {
-          role: "function",
-          name: functionName,
-          content: JSON.stringify(prompt),
-        };
-        localMessages.push(newMessage);
-      }
-      // Remove the response of get_moralis_articles_list and get_moralis_api_endpoints_list from the localMessages array
-      const filteredMessages = localMessages.filter(
-        (message) =>
-          message.name !== "get_moralis_articles_list" &&
-          message.name !== "get_moralis_api_endpoints_list"
-      );
+    //         // const index_of_article = uniqueLocalMessages.indexOf(
+    //         //   uniqueLocalMessages.find((i) => {
+    //         //     return i.name === "get_moralis_articles_list";
+    //         //   })
+    //         // );
+    //         // const index_of_api = uniqueLocalMessages.indexOf(
+    //         //   uniqueLocalMessages.find((i) => {
+    //         //     return i.name === "get_moralis_api_endpoints_list";
+    //         //   })
+    //         // );
 
-      const answer = await fetch("/api/gpt-search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: filteredMessages,
-        }),
-      });
-      console.log({ answer });
-      if (!answer.ok) {
-        throw new Error("Failed to get an answer from GPT.");
-      }
+    //         // if (index_of_article !== -1 && index_of_api !== -1) {
+    //         //   uniqueLocalMessages.splice(
+    //         //     Math.min(index_of_article, index_of_api),
+    //         //     1
+    //         //   );
+    //         // }
 
-      const data = answer.body;
-      if (!data) {
-        throw new Error("No data received from GPT.");
-      }
+    //         // Use the copy (uniqueLocalMessages) as a parameter
+    //         const newResponse = await preprocessQuery(uniqueLocalMessages);
+    //         prompt = newResponse.prompt;
+    //         functionName = newResponse.functionName;
+    //         usage = newResponse.usage;
+    //         console.log({ usage });
+    //         const newMessage: messages = {
+    //           role: "function",
+    //           name: functionName,
+    //           content: JSON.stringify(prompt),
+    //         };
+    //         localMessages.push(newMessage);
+    //       }
+    //       // Remove the response of get_moralis_articles_list and get_moralis_api_endpoints_list from the localMessages array
+    //       const filteredMessages = localMessages.filter(
+    //         (message) =>
+    //           message.name !== "get_moralis_articles_list" &&
+    //           message.name !== "get_moralis_api_endpoints_list"
+    //       );
 
-      const reader = data.getReader();
-      const decoder = new TextDecoder();
-      let done = false;
+    //       const answer = await fetch("/api/gpt-search", {
+    //         method: "POST",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //           messages: filteredMessages,
+    //         }),
+    //       });
+    //       console.log({ answer });
+    //       if (!answer.ok) {
+    //         throw new Error("Failed to get an answer from GPT.");
+    //       }
 
-      while (!done) {
-        const { value, done: doneReading } = await reader.read();
-        done = doneReading;
-        const chunkValue = decoder.decode(value);
-        setAnswer((prev) => prev + chunkValue);
-      }
-      console.log(prompt);
-    } catch (e) {
-      console.error(e);
-      setError(e.message);
-    } finally {
-      setLoading(false);
-    }
+    //       const data = answer.body;
+    //       if (!data) {
+    //         throw new Error("No data received from GPT.");
+    //       }
+
+    //       const reader = data.getReader();
+    //       const decoder = new TextDecoder();
+    //       let done = false;
+
+    //       while (!done) {
+    //         const { value, done: doneReading } = await reader.read();
+    //         done = doneReading;
+    //         const chunkValue = decoder.decode(value);
+    //         setAnswer((prev) => prev + chunkValue);
+    //       }
+    //       console.log(prompt);
+    //     } catch (e) {
+    //       console.error(e);
+    //       setError(e.message);
+    //     } finally {
+    //       setLoading(false);
+    //     }
   };
 
   return { answer, generateAnswer, loading, error };
