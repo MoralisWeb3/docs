@@ -95,16 +95,31 @@ function transformSchema(field) {
   //   return {};
 }
 
-function transformSchemaToField(schema, globalSchemas) {
+function transformSchemaToField(
+  schema,
+  globalSchemas,
+  processedReferences = new Set()
+) {
   if (schema.$ref) {
     // Handle references to global schemas
     const refName = schema.$ref.split("/").pop();
+
+    // Check if we have processed this reference before to prevent infinite recursion
+    if (processedReferences.has(refName)) {
+      return { type: "circularReference", refName }; // or however you want to handle this case
+    }
+
+    processedReferences.add(refName);
     schema = globalSchemas[refName];
   }
 
   if (schema.type === "object" && schema.properties) {
     const fields = Object.entries(schema.properties).map(([name, property]) => {
-      const field = transformSchemaToField(property, globalSchemas);
+      const field = transformSchemaToField(
+        property,
+        globalSchemas,
+        new Set(processedReferences)
+      );
       field.name = name;
       field.description = (property as any).description;
       field.required = schema.required?.includes(name) || false;
@@ -112,12 +127,13 @@ function transformSchemaToField(schema, globalSchemas) {
     });
     return { type: "object", fields };
   } else if (schema.type === "array" && schema.items) {
-    const field = transformSchemaToField(schema.items, globalSchemas);
+    const field = transformSchemaToField(
+      schema.items,
+      globalSchemas,
+      new Set(processedReferences)
+    );
     return { type: "array", field };
   } else if (schema.type === "string") {
-    return { type: "string", field: schema };
-  } else if (schema.type === "array") {
-    console.log("here");
     return { type: "string", field: schema };
   } else {
     return { type: "object", fields: transformSchema(schema) };
@@ -130,7 +146,7 @@ const apiUrls = {
   SolApi: "https://solana-gateway.moralis.io/api-json",
   AptosApi: "https://mainnet-aptos-api.moralis.io/swagger-json",
   Auth: "https://authapi.moralis.io/api-docs-json",
-  // Streams: "https://api.moralis-streams.com/api-docs/swagger.json",
+  Streams: "https://api.moralis-streams.com/api-docs/swagger.json",
 };
 
 function groupBySdkTag(processedData) {

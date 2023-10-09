@@ -14,11 +14,21 @@ export {
 } from "./getMoralisArticlesData";
 
 export {
-  getAllApiEndpointsList,
-  getAllApiEndpointsListSchema,
+  getMoralisApiEndpointsList,
+  getMoralisApiEndpointsListSchema,
 } from "./getMoralisApiEndpointsList";
 
 export {
   getMoralisApiEndpointsData,
   getMoralisApiEndpointsDataSchema,
 } from "./getMoralisApiEndpointsData";
+
+export {
+  getMoralisApiArticlesList,
+  getMoralisApiArticlesListSchema,
+} from "./getMoralisApiArticlesList";
+
+export {
+  getMoralisApiArticlesByIds,
+  getMoralisApiArticlesDataSchema,
+} from "./getMoralisApiArticlesData";

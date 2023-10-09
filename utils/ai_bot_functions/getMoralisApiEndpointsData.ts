@@ -7,7 +7,7 @@ export function getMoralisApiEndpointsData({ apiGroupName, endpointNames }) {
   const apiGroup = ApiSchema[apiGroupName];
 
   if (!apiGroup) {
-    throw new Error(`API group '${apiGroupName}' not found.`);
+    return `API group '${apiGroupName}' is not found. Try again.`;
   }
 
   // Iterate through each endpoint category (nft, token, etc.)
@@ -31,7 +31,9 @@ export function getMoralisApiEndpointsData({ apiGroupName, endpointNames }) {
 export const getMoralisApiEndpointsDataSchema = {
   name: "get_moralis_api_endpoints_data",
   description:
-    "Retrieve API schema data for specified API endpoint within a specific API group. Can be used to get more details on the API endpoint when we have the endpoint names from get_moralis_api_endpoints_list function.",
+    "Retrieve API schema data for specified API endpoint within a specific API group. Can be used to get more details on the API endpoint when we have the endpoint names from get_moralis_api_endpoints_list function. In case if user asks the endpoint details by sharing the code we can identify the apiGroupName and endpointNames using the code. \
+Example: If function in javascript code is Moralis.EvmApi.nft.getMultipleNFTs then apiGroupName is EvmApi and endpointNames name is getMultipleNFTs.\
+Similarly from python code evm_api.nft.get_multiple_nfts apiGroupName is EvmApi and endpointNames name is getMultipleNFTs. The text format will be in camlecase.",
   parameters: {
     type: "object",
     properties: {

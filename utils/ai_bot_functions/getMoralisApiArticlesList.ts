@@ -1,7 +1,7 @@
-import { IntercomArticles } from "./helpers/generatedIntercomArticles";
+import { IntercomApiArticles } from "./helpers/generatedIntercomApiArticles";
 
-export const getArticlesList = () => {
-  const articlesList = IntercomArticles.map((a) => {
+export const getMoralisApiArticlesList = () => {
+  const articlesList = IntercomApiArticles.map((a) => {
     return {
       title: a.title,
       id: a.id,
@@ -11,10 +11,10 @@ export const getArticlesList = () => {
   return articlesList;
 };
 
-export const getArticlesListSchema = {
-  name: "get_moralis_articles_list",
+export const getMoralisApiArticlesListSchema = {
+  name: "get_moralis_api_articles_list",
   description:
-    "Fetches a list of moralis articles with their titles and IDs. Can be used for a quick reference on what articles are available.",
+    "Fetches a list of moralis API articles with their titles and IDs. Can be used for a quickreference on what API articles are available.",
   parameters: { type: "object", properties: {} },
   returns: {
     type: "array",

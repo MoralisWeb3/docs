@@ -7,10 +7,14 @@ import {
   getArticlesByIdsSchema,
   getArticlesList,
   getArticlesListSchema,
-  getAllApiEndpointsList,
-  getAllApiEndpointsListSchema,
+  getMoralisApiEndpointsList,
+  getMoralisApiEndpointsListSchema,
   getMoralisApiEndpointsData,
   getMoralisApiEndpointsDataSchema,
+  getMoralisApiArticlesList,
+  getMoralisApiArticlesListSchema,
+  getMoralisApiArticlesByIds,
+  getMoralisApiArticlesDataSchema,
 } from "../utils/ai_bot_functions";
 
 const openAiKey = process.env.OPENAI_KEY;
@@ -37,16 +41,20 @@ const availableFunctions = {
   // what_is_moralis: getAnswerFromDocs,
   get_moralis_articles_list: getArticlesList,
   get_moralis_articles_by_id: getArticlesByIds,
-  get_moralis_api_endpoints_list: getAllApiEndpointsList,
+  get_moralis_api_endpoints_list: getMoralisApiEndpointsList,
   get_moralis_api_endpoints_data: getMoralisApiEndpointsData,
+  get_moralis_api_articles_list: getMoralisApiArticlesList,
+  get_moralis_api_articles_by_id: getMoralisApiArticlesByIds,
 };
 
 const functionSchemas = [
   // getAnswerFromDocsSchema,
   getArticlesListSchema,
   getArticlesByIdsSchema,
-  getAllApiEndpointsListSchema,
+  getMoralisApiEndpointsListSchema,
   getMoralisApiEndpointsDataSchema,
+  getMoralisApiArticlesListSchema,
+  getMoralisApiArticlesDataSchema,
 ];
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
@@ -105,6 +113,12 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
           .status(200)
           .json({ prompt: "Sorry, I don't know how to help with that." });
       }
+    } else if (response.choices[0]) {
+      res.status(200).json({
+        prompt: response.choices[0].message,
+        functionName: "assistant",
+        usage: response.usage,
+      });
     } else {
       res
         .status(200)

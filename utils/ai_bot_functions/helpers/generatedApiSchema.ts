@@ -21361,4 +21361,4915 @@ export const ApiSchema = {
       },
     },
   },
+  Streams: {
+    history: {
+      GetHistory: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get history",
+        description: "Get all history",
+        sdkTag: "history",
+        tags: ["History"],
+        method: "GET",
+        path: "/history",
+        pathParams: [],
+        queryParams: [
+          {
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+          {
+            in: "query",
+            name: "excludePayload",
+            required: false,
+            schema: {
+              type: "boolean",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "uuid",
+                          description:
+                            "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                          pattern:
+                            "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                        },
+                        name: "id",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "date-time",
+                        },
+                        name: "date",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "payload",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "chainId",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "confirmed",
+                            required: true,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "block",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "records",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "retries",
+                            required: true,
+                          },
+                        ],
+                        name: "tinyPayload",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "errorMessage",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "webhookUrl",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "streamId",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "tag",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "cursor",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "total",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.getHistory({ \n  { limit, cursor, excludepayload }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.history._get_history(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      ReplayHistory: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Replay history",
+        description: "Replay a specific history.",
+        sdkTag: "history",
+        tags: ["History"],
+        method: "POST",
+        path: "/history/replay/{streamId}/{id}",
+        pathParams: [
+          {
+            description: "The id of the stream the history will be replayed",
+            in: "path",
+            name: "streamId",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamTypes.UUID",
+            },
+          },
+          {
+            description: "The id of the history to replay",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/historyTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                  },
+                  name: "date",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "payload",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      type: "string",
+                      field: {
+                        type: "string",
+                      },
+                      name: "chainId",
+                      required: true,
+                    },
+                    {
+                      type: "object",
+                      name: "confirmed",
+                      required: true,
+                    },
+                    {
+                      type: "string",
+                      field: {
+                        type: "string",
+                      },
+                      name: "block",
+                      required: true,
+                    },
+                    {
+                      type: "object",
+                      name: "records",
+                      required: true,
+                    },
+                    {
+                      type: "object",
+                      name: "retries",
+                      required: true,
+                    },
+                  ],
+                  name: "tinyPayload",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "errorMessage",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "webhookUrl",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "streamId",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "tag",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.replayHistory({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.history._replay_history(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+    logs: {
+      GetLogs: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get logs",
+        description: "get all failed logs",
+        sdkTag: "logs",
+        tags: ["History"],
+        method: "GET",
+        path: "/history/logs",
+        pathParams: [],
+        queryParams: [
+          {
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "uuid",
+                          description:
+                            "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                          pattern:
+                            "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                        },
+                        name: "id",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "streamId",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "chain",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "webhookUrl",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "tag",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "retries",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: ["failed", "success"],
+                        },
+                        name: "deliveryStatus",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "blockNumber",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "errorMessage",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: ["evm", "aptos"],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "date-time",
+                        },
+                        name: "createdAt",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "cursor",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "total",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.logs.getLogs({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.logs._get_logs(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+    project: {
+      SetSettings: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Set project settings",
+        description:
+          "Set the settings for the current project based on the project api-key.",
+        sdkTag: "project",
+        tags: ["Project"],
+        method: "POST",
+        path: "/settings",
+        pathParams: [],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    enum: [
+                      "us-east-1",
+                      "us-west-2",
+                      "eu-central-1",
+                      "ap-southeast-1",
+                    ],
+                    type: "string",
+                  },
+                  name: "region",
+                  description:
+                    "The region from where all the webhooks will be posted for this project",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "The secret key to validate the webhooks",
+                  },
+                  name: "secretKey",
+                  description: "The secret key to validate the webhooks",
+                  required: false,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.setSettings({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.project._set_settings(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      GetSettings: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get project settings",
+        description:
+          "Get the settings for the current project based on the project api-key.",
+        sdkTag: "project",
+        tags: ["Project"],
+        method: "GET",
+        path: "/settings",
+        pathParams: [],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    enum: [
+                      "us-east-1",
+                      "us-west-2",
+                      "eu-central-1",
+                      "ap-southeast-1",
+                    ],
+                    type: "string",
+                  },
+                  name: "region",
+                  description:
+                    "The region from where all the webhooks will be posted for this project",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "The secret key to validate the webhooks",
+                  },
+                  name: "secretKey",
+                  description: "The secret key to validate the webhooks",
+                  required: false,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.getSettings({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.project._get_settings(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+    stats: {
+      GetStats: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get project stats",
+        description: "Get the global stats for the account.",
+        sdkTag: "stats",
+        tags: ["Stats"],
+        method: "GET",
+        path: "/stats",
+        pathParams: [],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "object",
+                  name: "totalWebhooksDelivered",
+                  description:
+                    "The total amount of webhooks delivered across all streams",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalWebhooksFailed",
+                  description:
+                    "The total amount of failed webhooks across all streams",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalLogsProcessed",
+                  description:
+                    "The total amount of logs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalTxsProcessed",
+                  description:
+                    "The total amount of txs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalTxsInternalProcessed",
+                  description:
+                    "The total amount of internal txs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "object",
+                        name: "totalWebhooksDelivered",
+                        description:
+                          "The total amount of webhooks delivered across all streams",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalWebhooksFailed",
+                        description:
+                          "The total amount of failed webhooks across all streams",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalLogsProcessed",
+                        description:
+                          "The total amount of logs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalTxsProcessed",
+                        description:
+                          "The total amount of txs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalTxsInternalProcessed",
+                        description:
+                          "The total amount of internal txs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description: "The stream id",
+                        },
+                        name: "streamId",
+                        description: "The stream id",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "streams",
+                  description: "Array of stream stats",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    description: "The date since this stats are being counted",
+                  },
+                  name: "createdAt",
+                  description: "The date since this stats are being counted",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    description: "The date since this stats were last updated",
+                  },
+                  name: "updatedAt",
+                  description: "The date since this stats were last updated",
+                  required: false,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStats({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.stats._get_stats(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      GetStatsByStreamId: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get project stats by Stream ID",
+        description: "Get the stats for the streamId specified",
+        sdkTag: "stats",
+        tags: ["Stats"],
+        method: "GET",
+        path: "/stats/{streamId}",
+        pathParams: [
+          {
+            description: "The id of the stream to get the stats",
+            in: "path",
+            name: "streamId",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "object",
+                  name: "totalWebhooksDelivered",
+                  description:
+                    "The total amount of webhooks delivered across all streams",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalWebhooksFailed",
+                  description:
+                    "The total amount of failed webhooks across all streams",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalLogsProcessed",
+                  description:
+                    "The total amount of logs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalTxsProcessed",
+                  description:
+                    "The total amount of txs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "totalTxsInternalProcessed",
+                  description:
+                    "The total amount of internal txs processed across all streams, this includes failed webhooks",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "object",
+                        name: "totalWebhooksDelivered",
+                        description:
+                          "The total amount of webhooks delivered across all streams",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalWebhooksFailed",
+                        description:
+                          "The total amount of failed webhooks across all streams",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalLogsProcessed",
+                        description:
+                          "The total amount of logs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalTxsProcessed",
+                        description:
+                          "The total amount of txs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "totalTxsInternalProcessed",
+                        description:
+                          "The total amount of internal txs processed across all streams, this includes failed webhooks",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description: "The stream id",
+                        },
+                        name: "streamId",
+                        description: "The stream id",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "streams",
+                  description: "Array of stream stats",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    description: "The date since this stats are being counted",
+                  },
+                  name: "createdAt",
+                  description: "The date since this stats are being counted",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    description: "The date since this stats were last updated",
+                  },
+                  name: "updatedAt",
+                  description: "The date since this stats were last updated",
+                  required: false,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStatsByStreamId({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.stats._get_stats_by_stream_id(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+    "evm-streams": {
+      GetStreams: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get streams",
+        description:
+          "Get all the evm streams for the current project based on the project api-key.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "GET",
+        path: "/streams/evm",
+        pathParams: [],
+        queryParams: [
+          {
+            description: "Limit response results max value 100",
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            description: "Cursor for fetching next page",
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description:
+                            "Webhook URL where moralis will send the POST request.",
+                        },
+                        name: "webhookUrl",
+                        description:
+                          "Webhook URL where moralis will send the POST request.",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description: "A description for this stream",
+                        },
+                        name: "description",
+                        description: "A description for this stream",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description:
+                            "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                        },
+                        name: "tag",
+                        description:
+                          "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "topic0",
+                        description:
+                          "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "allAddresses",
+                        description:
+                          "Include events for all addresses (only applied when abi and topic0 is provided)",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        description:
+                          "Include or not native transactions defaults to false",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeContractLogs",
+                        description:
+                          "Include or not logs of contract interactions defaults to false",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeInternalTxs",
+                        description:
+                          "Include or not include internal transactions defaults to false",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeAllTxLogs",
+                        description:
+                          "Include all logs if atleast one value in tx or log matches stream config",
+                        required: false,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                          fields: [
+                            {
+                              type: "array",
+                              field: {
+                                type: "string",
+                                field: {
+                                  type: "string",
+                                },
+                              },
+                              name: "selectors",
+                              required: true,
+                            },
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                                enum: [
+                                  "tx",
+                                  "log",
+                                  "erc20transfer",
+                                  "erc20approval",
+                                  "nfttransfer",
+                                  "internalTx",
+                                ],
+                              },
+                              name: "type",
+                              required: true,
+                            },
+                          ],
+                        },
+                        name: "getNativeBalances",
+                        description:
+                          "Include native balances for each address in the webhook",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "abi",
+                        required: false,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                          fields: [
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                              },
+                              name: "topic0",
+                              required: true,
+                            },
+                            {
+                              type: "object",
+                              fields: [],
+                              name: "filter",
+                              required: false,
+                            },
+                            {
+                              type: "object",
+                              name: "includeNativeTxs",
+                              required: false,
+                            },
+                          ],
+                        },
+                        name: "advancedOptions",
+                        required: false,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "chainIds",
+                        description:
+                          'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "demo",
+                        description: "Indicator if it is a demo stream",
+                        required: false,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                          fields: [
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                                enum: [
+                                  "tx",
+                                  "log",
+                                  "erc20transfer",
+                                  "erc20approval",
+                                  "nfttransfer",
+                                ],
+                              },
+                              name: "type",
+                              required: true,
+                            },
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                              },
+                              name: "contractAddress",
+                              required: true,
+                            },
+                            {
+                              type: "array",
+                              field: {
+                                type: "object",
+                              },
+                              name: "inputs",
+                              required: false,
+                            },
+                            {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "object",
+                                  name: "anonymous",
+                                  required: false,
+                                },
+                                {
+                                  type: "object",
+                                  name: "constant",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "object",
+                                    fields: [
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "name",
+                                        required: true,
+                                      },
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "type",
+                                        required: true,
+                                      },
+                                      {
+                                        type: "object",
+                                        name: "indexed",
+                                        required: false,
+                                      },
+                                      {
+                                        type: "array",
+                                        field: {
+                                          type: "circularReference",
+                                          refName: "AbiInput",
+                                        },
+                                        name: "components",
+                                        required: false,
+                                      },
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "internalType",
+                                        required: false,
+                                      },
+                                    ],
+                                  },
+                                  name: "inputs",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "object",
+                                    fields: [
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "name",
+                                        required: true,
+                                      },
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "type",
+                                        required: true,
+                                      },
+                                      {
+                                        type: "array",
+                                        field: {
+                                          type: "circularReference",
+                                          refName: "AbiOutput",
+                                        },
+                                        name: "components",
+                                        required: false,
+                                      },
+                                      {
+                                        type: "string",
+                                        field: {
+                                          type: "string",
+                                        },
+                                        name: "internalType",
+                                        required: false,
+                                      },
+                                    ],
+                                  },
+                                  name: "outputs",
+                                  required: false,
+                                },
+                                {
+                                  type: "object",
+                                  name: "payable",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "stateMutability",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "gas",
+                                  required: false,
+                                },
+                              ],
+                              name: "functionAbi",
+                              required: true,
+                            },
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                              },
+                              name: "topic0",
+                              required: false,
+                            },
+                            {
+                              type: "string",
+                              field: {
+                                type: "string",
+                              },
+                              name: "callFrom",
+                              required: false,
+                            },
+                          ],
+                        },
+                        name: "triggers",
+                        description: "triggers",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "uuid",
+                          description:
+                            "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                          pattern:
+                            "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                        },
+                        name: "id",
+                        description: "The unique uuid of the stream",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          description:
+                            "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                          enum: ["active", "paused", "error", "terminated"],
+                          type: "string",
+                        },
+                        name: "status",
+                        description: "The status of the stream.",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description:
+                            "Description of current status of stream.",
+                        },
+                        name: "statusMessage",
+                        description: "Description of current status of stream.",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  description: "Array of project Streams",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Cursor for fetching next page",
+                  },
+                  name: "cursor",
+                  description: "Cursor for fetching next page",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "total",
+                  description: "Total count of streams on the project",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStreams({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._get_streams(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      CreateStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Create stream",
+        description: "Creates a new evm stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "PUT",
+        path: "/streams/evm",
+        pathParams: [],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "Webhook URL where moralis will send the POST request.",
+                  },
+                  name: "webhookUrl",
+                  description:
+                    "Webhook URL where moralis will send the POST request.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "A description for this stream",
+                  },
+                  name: "description",
+                  description: "A description for this stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  },
+                  name: "tag",
+                  description:
+                    "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "topic0",
+                  description:
+                    "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  description:
+                    "Include events for all addresses (only applied when abi and topic0 is provided)",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeNativeTxs",
+                  description:
+                    "Include or not native transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeContractLogs",
+                  description:
+                    "Include or not logs of contract interactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeInternalTxs",
+                  description:
+                    "Include or not include internal transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeAllTxLogs",
+                  description:
+                    "Include all logs if atleast one value in tx or log matches stream config",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "selectors",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                            "internalTx",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "getNativeBalances",
+                  description:
+                    "Include native balances for each address in the webhook",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "abi",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        fields: [],
+                        name: "filter",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "advancedOptions",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "chainIds",
+                  description:
+                    'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  description: "Indicator if it is a demo stream",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "contractAddress",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                        },
+                        name: "inputs",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "object",
+                            name: "anonymous",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "constant",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "indexed",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiInput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "inputs",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "name",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiOutput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "outputs",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "payable",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "stateMutability",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "type",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "gas",
+                            required: false,
+                          },
+                        ],
+                        name: "functionAbi",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "callFrom",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "triggers",
+                  description: "triggers",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  description: "The unique uuid of the stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  description: "The status of the stream.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Description of current status of stream.",
+                  },
+                  name: "statusMessage",
+                  description: "Description of current status of stream.",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.createStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._create_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      GetStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get a specific evm stream.",
+        description: "Get a specific evm stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "GET",
+        path: "/streams/evm/{id}",
+        pathParams: [
+          {
+            description: "The id of the stream to get",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "Webhook URL where moralis will send the POST request.",
+                  },
+                  name: "webhookUrl",
+                  description:
+                    "Webhook URL where moralis will send the POST request.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "A description for this stream",
+                  },
+                  name: "description",
+                  description: "A description for this stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  },
+                  name: "tag",
+                  description:
+                    "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "topic0",
+                  description:
+                    "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  description:
+                    "Include events for all addresses (only applied when abi and topic0 is provided)",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeNativeTxs",
+                  description:
+                    "Include or not native transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeContractLogs",
+                  description:
+                    "Include or not logs of contract interactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeInternalTxs",
+                  description:
+                    "Include or not include internal transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeAllTxLogs",
+                  description:
+                    "Include all logs if atleast one value in tx or log matches stream config",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "selectors",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                            "internalTx",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "getNativeBalances",
+                  description:
+                    "Include native balances for each address in the webhook",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "abi",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        fields: [],
+                        name: "filter",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "advancedOptions",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "chainIds",
+                  description:
+                    'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  description: "Indicator if it is a demo stream",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "contractAddress",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                        },
+                        name: "inputs",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "object",
+                            name: "anonymous",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "constant",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "indexed",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiInput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "inputs",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "name",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiOutput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "outputs",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "payable",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "stateMutability",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "type",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "gas",
+                            required: false,
+                          },
+                        ],
+                        name: "functionAbi",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "callFrom",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "triggers",
+                  description: "triggers",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  description: "The unique uuid of the stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  description: "The status of the stream.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Description of current status of stream.",
+                  },
+                  name: "statusMessage",
+                  description: "Description of current status of stream.",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._get_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      UpdateStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Update stream",
+        description: "Updates a specific evm stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "POST",
+        path: "/streams/evm/{id}",
+        pathParams: [
+          {
+            description: "The id of the stream to update",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "Webhook URL where moralis will send the POST request.",
+                  },
+                  name: "webhookUrl",
+                  description:
+                    "Webhook URL where moralis will send the POST request.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "A description for this stream",
+                  },
+                  name: "description",
+                  description: "A description for this stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  },
+                  name: "tag",
+                  description:
+                    "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "topic0",
+                  description:
+                    "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  description:
+                    "Include events for all addresses (only applied when abi and topic0 is provided)",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeNativeTxs",
+                  description:
+                    "Include or not native transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeContractLogs",
+                  description:
+                    "Include or not logs of contract interactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeInternalTxs",
+                  description:
+                    "Include or not include internal transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeAllTxLogs",
+                  description:
+                    "Include all logs if atleast one value in tx or log matches stream config",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "selectors",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                            "internalTx",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "getNativeBalances",
+                  description:
+                    "Include native balances for each address in the webhook",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "abi",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        fields: [],
+                        name: "filter",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "advancedOptions",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "chainIds",
+                  description:
+                    'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  description: "Indicator if it is a demo stream",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "contractAddress",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                        },
+                        name: "inputs",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "object",
+                            name: "anonymous",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "constant",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "indexed",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiInput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "inputs",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "name",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiOutput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "outputs",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "payable",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "stateMutability",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "type",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "gas",
+                            required: false,
+                          },
+                        ],
+                        name: "functionAbi",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "callFrom",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "triggers",
+                  description: "triggers",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  description: "The unique uuid of the stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  description: "The status of the stream.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Description of current status of stream.",
+                  },
+                  name: "statusMessage",
+                  description: "Description of current status of stream.",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._update_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      DeleteStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Delete stream",
+        description: "Delete a specific evm stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "DELETE",
+        path: "/streams/evm/{id}",
+        pathParams: [
+          {
+            description: "The id of the stream to delete",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "Webhook URL where moralis will send the POST request.",
+                  },
+                  name: "webhookUrl",
+                  description:
+                    "Webhook URL where moralis will send the POST request.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "A description for this stream",
+                  },
+                  name: "description",
+                  description: "A description for this stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  },
+                  name: "tag",
+                  description:
+                    "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "topic0",
+                  description:
+                    "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  description:
+                    "Include events for all addresses (only applied when abi and topic0 is provided)",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeNativeTxs",
+                  description:
+                    "Include or not native transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeContractLogs",
+                  description:
+                    "Include or not logs of contract interactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeInternalTxs",
+                  description:
+                    "Include or not include internal transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeAllTxLogs",
+                  description:
+                    "Include all logs if atleast one value in tx or log matches stream config",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "selectors",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                            "internalTx",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "getNativeBalances",
+                  description:
+                    "Include native balances for each address in the webhook",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "abi",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        fields: [],
+                        name: "filter",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "advancedOptions",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "chainIds",
+                  description:
+                    'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  description: "Indicator if it is a demo stream",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "contractAddress",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                        },
+                        name: "inputs",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "object",
+                            name: "anonymous",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "constant",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "indexed",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiInput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "inputs",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "name",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiOutput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "outputs",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "payable",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "stateMutability",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "type",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "gas",
+                            required: false,
+                          },
+                        ],
+                        name: "functionAbi",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "callFrom",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "triggers",
+                  description: "triggers",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  description: "The unique uuid of the stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  description: "The status of the stream.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Description of current status of stream.",
+                  },
+                  name: "statusMessage",
+                  description: "Description of current status of stream.",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._delete_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      UpdateStreamStatus: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Update stream status",
+        description: "Updates the status of specific evm stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "POST",
+        path: "/streams/evm/{id}/status",
+        pathParams: [
+          {
+            description: "The id of the stream to update",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "Webhook URL where moralis will send the POST request.",
+                  },
+                  name: "webhookUrl",
+                  description:
+                    "Webhook URL where moralis will send the POST request.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "A description for this stream",
+                  },
+                  name: "description",
+                  description: "A description for this stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description:
+                      "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  },
+                  name: "tag",
+                  description:
+                    "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "topic0",
+                  description:
+                    "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  description:
+                    "Include events for all addresses (only applied when abi and topic0 is provided)",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeNativeTxs",
+                  description:
+                    "Include or not native transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeContractLogs",
+                  description:
+                    "Include or not logs of contract interactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeInternalTxs",
+                  description:
+                    "Include or not include internal transactions defaults to false",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "includeAllTxLogs",
+                  description:
+                    "Include all logs if atleast one value in tx or log matches stream config",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "selectors",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                            "internalTx",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "getNativeBalances",
+                  description:
+                    "Include native balances for each address in the webhook",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "abi",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        fields: [],
+                        name: "filter",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        name: "includeNativeTxs",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "advancedOptions",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "chainIds",
+                  description:
+                    'The ids of the chains for this stream in hex Ex: ["0x1","0x38"]',
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  description: "Indicator if it is a demo stream",
+                  required: false,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          enum: [
+                            "tx",
+                            "log",
+                            "erc20transfer",
+                            "erc20approval",
+                            "nfttransfer",
+                          ],
+                        },
+                        name: "type",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "contractAddress",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "object",
+                        },
+                        name: "inputs",
+                        required: false,
+                      },
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            type: "object",
+                            name: "anonymous",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "constant",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "object",
+                                  name: "indexed",
+                                  required: false,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiInput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "inputs",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "name",
+                            required: false,
+                          },
+                          {
+                            type: "array",
+                            field: {
+                              type: "object",
+                              fields: [
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "name",
+                                  required: true,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "type",
+                                  required: true,
+                                },
+                                {
+                                  type: "array",
+                                  field: {
+                                    type: "circularReference",
+                                    refName: "AbiOutput",
+                                  },
+                                  name: "components",
+                                  required: false,
+                                },
+                                {
+                                  type: "string",
+                                  field: {
+                                    type: "string",
+                                  },
+                                  name: "internalType",
+                                  required: false,
+                                },
+                              ],
+                            },
+                            name: "outputs",
+                            required: false,
+                          },
+                          {
+                            type: "object",
+                            name: "payable",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "stateMutability",
+                            required: false,
+                          },
+                          {
+                            type: "string",
+                            field: {
+                              type: "string",
+                            },
+                            name: "type",
+                            required: true,
+                          },
+                          {
+                            type: "object",
+                            name: "gas",
+                            required: false,
+                          },
+                        ],
+                        name: "functionAbi",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "topic0",
+                        required: false,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "callFrom",
+                        required: false,
+                      },
+                    ],
+                  },
+                  name: "triggers",
+                  description: "triggers",
+                  required: false,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "uuid",
+                    description:
+                      "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    pattern:
+                      "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}",
+                  },
+                  name: "id",
+                  description: "The unique uuid of the stream",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  description: "The status of the stream.",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Description of current status of stream.",
+                  },
+                  name: "statusMessage",
+                  description: "Description of current status of stream.",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStreamStatus({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._update_stream_status(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      GetAddresses: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get addresses by stream",
+        description: "Get all addresses associated with a specific stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "GET",
+        path: "/streams/evm/{id}/address",
+        pathParams: [
+          {
+            description: "the id of the stream to get the addresses from",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/addressesTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [
+          {
+            description: "Limit response results max value 100",
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            description: "Cursor for fetching next page",
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          description: "Address",
+                        },
+                        name: "address",
+                        description: "Address",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  description: "Array of project Streams",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "Cursor for fetching next page",
+                  },
+                  name: "cursor",
+                  description: "Cursor for fetching next page",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "total",
+                  description: "Total count of streams on the project",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._get_addresses(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      AddAddressToStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Add address to stream",
+        description: "Adds an address to a Stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "POST",
+        path: "/streams/evm/{id}/address",
+        pathParams: [
+          {
+            description: "The id of the stream to add the address to",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "The streamId",
+                  },
+                  name: "streamId",
+                  description: "The streamId",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "address",
+                  description: "Address",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.addAddressToStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._add_address_to_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      DeleteAddressFromStream: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Delete address from stream",
+        description: "Deletes an address from a Stream.",
+        sdkTag: "evm-streams",
+        tags: ["EVM Streams"],
+        method: "DELETE",
+        path: "/streams/evm/{id}/address",
+        pathParams: [
+          {
+            description: "The id of the stream to delete the address from",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    description: "The streamId",
+                  },
+                  name: "streamId",
+                  description: "The streamId",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "address",
+                  description: "Address",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteAddressFromStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.evm-streams._delete_address_from_stream(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+    "aptos-streams": {
+      aptosStreamsGetAll: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Gets all aptos streams.",
+        description: "Get all aptos streams.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "GET",
+        path: "/streams/aptos",
+        pathParams: [],
+        queryParams: [
+          {
+            description: "Limit response results max value 100",
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            description: "Cursor for fetching next page",
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "object",
+                  name: "total",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "id",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "allAddresses",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "demo",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "description",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "includeChanges",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "includeEvents",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "includePayload",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                          format: "date-time",
+                          nullable: true,
+                        },
+                        name: "isErrorSince",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                            enum: ["mainnet", "testnet"],
+                          },
+                        },
+                        name: "network",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          description:
+                            "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                          enum: ["active", "paused", "error", "terminated"],
+                          type: "string",
+                        },
+                        name: "status",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "statusMessage",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "events",
+                        required: true,
+                      },
+                      {
+                        type: "array",
+                        field: {
+                          type: "string",
+                          field: {
+                            type: "string",
+                          },
+                        },
+                        name: "functions",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "tag",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        field: {
+                          type: "string",
+                        },
+                        name: "webhookUrl",
+                        required: true,
+                      },
+                      {
+                        type: "object",
+                        name: "amountOfAddresses",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAll({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_get_all(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsCreate: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Create stream",
+        description: "Creates a new aptos stream.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "PUT",
+        path: "/streams/aptos",
+        pathParams: [],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "id",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "description",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeChanges",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeEvents",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includePayload",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    nullable: true,
+                  },
+                  name: "isErrorSince",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                      enum: ["mainnet", "testnet"],
+                    },
+                  },
+                  name: "network",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "statusMessage",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "events",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "functions",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "tag",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "webhookUrl",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "amountOfAddresses",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsCreate({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_create(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsGet: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get a specific aptos stream.",
+        description: "Get a specific aptos stream.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "GET",
+        path: "/streams/aptos/{id}",
+        pathParams: [
+          {
+            description: "The id of the stream to get",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "id",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "description",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeChanges",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeEvents",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includePayload",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    nullable: true,
+                  },
+                  name: "isErrorSince",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                      enum: ["mainnet", "testnet"],
+                    },
+                  },
+                  name: "network",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "statusMessage",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "events",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "functions",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "tag",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "webhookUrl",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "amountOfAddresses",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGet({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_get(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsUpdate: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Update stream",
+        description: "Updates a new aptos stream.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "POST",
+        path: "/streams/aptos/{id}",
+        pathParams: [
+          {
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "id",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "allAddresses",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "demo",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "description",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeChanges",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includeEvents",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "includePayload",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                    format: "date-time",
+                    nullable: true,
+                  },
+                  name: "isErrorSince",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                      enum: ["mainnet", "testnet"],
+                    },
+                  },
+                  name: "network",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "statusMessage",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "events",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "string",
+                    field: {
+                      type: "string",
+                    },
+                  },
+                  name: "functions",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "tag",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "webhookUrl",
+                  required: true,
+                },
+                {
+                  type: "object",
+                  name: "amountOfAddresses",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdate({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_update(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsDelete: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Delete a stream",
+        description: "Deletes a aptos stream.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "DELETE",
+        path: "/streams/aptos/{id}",
+        pathParams: [
+          {
+            description: "the id of the aptos stream to delete",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDelete({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_delete(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsAddAddresses: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Add addresses to an aptos stream",
+        description: "Adds addresses to an existing aptos stream",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "POST",
+        path: "/streams/aptos/{id}/address",
+        pathParams: [
+          {
+            description: "the id of the aptos stream to get the addresses from",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "object",
+                  name: "address",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "streamId",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsAddAddresses({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_add_addresses(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsDeleteAddresses: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Delete addresses of an aptos stream",
+        description: "Deletes addresses of an existing aptos stream",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "DELETE",
+        path: "/streams/aptos/{id}/address",
+        pathParams: [
+          {
+            description: "the id of the aptos stream to get the addresses from",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "object",
+                  name: "address",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "streamId",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDeleteAddresses({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_delete_addresses(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsGetAddresses: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Get addresses by aptos stream id",
+        description:
+          "Get all addresses associated with a specific aptos stream.",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "GET",
+        path: "/streams/aptos/{id}/address",
+        pathParams: [
+          {
+            description: "the id of the aptos stream to get the addresses from",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [
+          {
+            description: "Limit response results max value 100",
+            in: "query",
+            name: "limit",
+            required: true,
+            schema: {
+              format: "double",
+              type: "number",
+            },
+          },
+          {
+            description: "Cursor for fetching next page",
+            in: "query",
+            name: "cursor",
+            required: false,
+            schema: {
+              type: "string",
+            },
+          },
+        ],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "cursor",
+                  required: false,
+                },
+                {
+                  type: "object",
+                  name: "total",
+                  required: true,
+                },
+                {
+                  type: "array",
+                  field: {
+                    type: "object",
+                    fields: [
+                      {
+                        type: "object",
+                        name: "address",
+                        required: true,
+                      },
+                    ],
+                  },
+                  name: "result",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_get_addresses(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+      aptosStreamsUpdateStatus: {
+        apiHost: "https://api.moralis-streams.com",
+        summary: "Update a Stream Status",
+        description: "Update a Stream Status",
+        sdkTag: "aptos-streams",
+        tags: ["Aptos Streams"],
+        method: "POST",
+        path: "/streams/aptos/{id}/status",
+        pathParams: [
+          {
+            description: "the id of the aptos stream to update the status",
+            in: "path",
+            name: "id",
+            required: true,
+            schema: {
+              $ref: "#/components/schemas/streamsTypes.UUID",
+            },
+          },
+        ],
+        queryParams: [],
+        responses: [
+          {
+            status: "200",
+            description: "Ok",
+            body: {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  field: {
+                    description:
+                      "The stream status:\n[active] The Stream is healthy and processing blocks\n[paused] The Stream is paused and is not processing blocks\n[error] The Stream has encountered an error and is not processing blocks",
+                    enum: ["active", "paused", "error", "terminated"],
+                    type: "string",
+                  },
+                  name: "status",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  field: {
+                    type: "string",
+                  },
+                  name: "statusMessage",
+                  required: true,
+                },
+              ],
+            },
+          },
+        ],
+        codeSamples: [
+          {
+            language: "node",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdateStatus({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            name: "Moralis NodeJS SDK",
+          },
+          {
+            language: "python",
+            code: 'from moralis import streams\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = streams.aptos-streams.aptos_streams_update_status(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            name: "Moralis Python SDK",
+          },
+        ],
+      },
+    },
+  },
 };

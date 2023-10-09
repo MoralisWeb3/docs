@@ -12,7 +12,7 @@ if (!IntercomApiKey) throw "Add INTERCOM_API_KEY in .env";
 const INTERCOM_API_VERSION = "2.10";
 const AUTHORIZATION_HEADER = `Bearer ${IntercomApiKey}`;
 
-const IGNORE_PARENT_IDS = [12941, 12951, 12946, 5662, 120120];
+const ACCEPTABLE_PARENT_IDS = [12941, 12951, 12946, 5662, 120120, 5654];
 
 async function fetchAllData(url) {
   let results = [];
@@ -39,11 +39,9 @@ async function fetchArticles() {
 
   const filteredArticles = allArticles.filter(
     (article) =>
-      !IGNORE_PARENT_IDS.includes(article.parent_id) ||
-      !(
-        article.parent_ids &&
-        article.parent_ids.some((id) => IGNORE_PARENT_IDS.includes(id))
-      )
+      ACCEPTABLE_PARENT_IDS.includes(article.parent_id) ||
+      (article.parent_ids &&
+        article.parent_ids.some((id) => ACCEPTABLE_PARENT_IDS.includes(id)))
   );
 
   return filteredArticles;
@@ -103,13 +101,15 @@ async function aggregateData() {
 aggregateData()
   .then((data) => {
     fs.writeFileSync(
-      "utils/ai_bot_functions/helpers/generatedIntercomArticles.ts",
-      `export const IntercomArticles = 
+      "utils/ai_bot_functions/helpers/generatedIntercomApiArticles.ts",
+      `export const IntercomApiArticles = 
 ${JSON.stringify(data, null, 2)}
       `
     );
-    console.log("Data saved to generatedIntercomArticles.ts");
+    console.log("Data saved to generatedIntercomApiArticles.ts");
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
+
+export {};
