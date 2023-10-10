@@ -1,5 +1,6 @@
 import { set } from "lodash";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // Create JSDoc for useChatGPT hook
 /**
@@ -12,6 +13,8 @@ const useChatGPT = () => {
   const [answer, setAnswer] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [userQuery, setUserQuery] = useState<string>("");
+  const [done, setDone] = useState<boolean>(false);
 
   const preprocessQuery = async (messages: any[]) => {
     const response = await fetch("/api/gpt-preprocess", {
@@ -43,6 +46,34 @@ const useChatGPT = () => {
     });
   };
 
+  const sendToSlack = async ({
+    title,
+    description,
+    error,
+  }: {
+    title: string;
+    description: string;
+    error?: string;
+  }) => {
+    try {
+      const slackResponse = await fetch("/api/postMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          description,
+          error,
+        }),
+      });
+
+      if (!slackResponse.ok) {
+        throw new Error("Error sending message to Slack");
+      }
+    } catch (err) {
+      console.error("Error in sending message to Slack:", err.message);
+    }
+  };
+
   /**
    * @title generateAnswer
    * @description generateAnswer function
@@ -60,7 +91,8 @@ const useChatGPT = () => {
     const apiGroup = localStorage.getItem("apiGroup");
 
     console.log({ helpWith, issueRelatedTo });
-
+    setDone(false);
+    setUserQuery(query);
     try {
       setAnswer("");
       setLoading(true);
@@ -164,7 +196,7 @@ If you did not find the required answer you convey that to the user and ask them
             message.name !== "get_moralis_api_articles_list"
         );
 
-        const answer = await fetch("/api/gpt-search", {
+        const gptAnswer = await fetch("/api/gpt-search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -173,12 +205,12 @@ If you did not find the required answer you convey that to the user and ask them
             messages: filteredMessages,
           }),
         });
-        console.log({ answer });
-        if (!answer.ok) {
+        console.log({ gptAnswer });
+        if (!gptAnswer.ok) {
           throw new Error("Failed to get an answer from GPT.");
         }
 
-        const data = answer.body;
+        const data = gptAnswer.body;
         if (!data) {
           throw new Error("No data received from GPT.");
         }
@@ -193,18 +225,36 @@ If you did not find the required answer you convey that to the user and ask them
           const chunkValue = decoder.decode(value);
           setAnswer((prev) => prev + chunkValue);
         }
+        setDone(true);
       } else {
-        console.log("here");
         console.log({ prompt });
         setAnswer(prompt.content);
+        await sendToSlack({
+          title: query,
+          description: prompt.content,
+        });
       }
     } catch (e) {
       console.error(e);
       setError(e.message);
+      await sendToSlack({
+        title: query,
+        description: "",
+        error: e.message,
+      });
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (done) {
+      sendToSlack({
+        title: userQuery,
+        description: answer,
+      });
+    }
+  }, [done]);
 
   return { answer, generateAnswer, loading, error };
 };

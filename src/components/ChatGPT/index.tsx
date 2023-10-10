@@ -90,17 +90,23 @@ export default function ChatGPT() {
           <AvatarImage src={ChatGPTLogo} alt="ChatGPT" />
         </Avatar>
       </DialogTrigger>
-      <DialogContent className="min-w-[60vw] h-[80vh] flex flex-col">
+      <DialogContent
+        className={` ${
+          showInput ? "min-w-[60vw] h-[80vh]" : "min-w-[40vw] h-[80vh]"
+        }  flex flex-col items-stretch`}
+      >
         {!showInput ? (
           // Preliminary Questions Section
-          <div className="flex flex-col items-center justify-center h-full">
-            <h2 className="text-lg font-semibold mb-4">
+          // <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pointer-events-none">
+          <div className="bg-slate-900 p-8 rounded-lg shadow-lg w-full max-w-2xl pointer-events-auto h-full">
+            <h2 className="text-2xl font-semibold mb-4 text-white">
               Moralis AI bot here to help!
             </h2>
+            <br />
             <div className="mb-4">
               <label
                 htmlFor="helpWith"
-                className="block text-sm font-medium mb-2"
+                className="block text-lg font-medium mb-2 text-white"
               >
                 What do you need help with?
               </label>
@@ -108,7 +114,7 @@ export default function ChatGPT() {
                 id="helpWith"
                 value={helpWith}
                 onChange={(e) => setHelpWith(e.target.value)}
-                className="w-full p-2 border rounded"
+                className="w-full p-3 border rounded text-lg"
               >
                 <option value="">Select...</option>
                 <option value="Moralis">Moralis</option>
@@ -120,7 +126,7 @@ export default function ChatGPT() {
               <div className="mb-4">
                 <label
                   htmlFor="issueRelatedTo"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-lg font-medium mb-2 text-white"
                 >
                   What is the issue related to?
                 </label>
@@ -128,7 +134,7 @@ export default function ChatGPT() {
                   id="issueRelatedTo"
                   value={issueRelatedTo}
                   onChange={(e) => setIssueRelatedTo(e.target.value)}
-                  className="w-full p-2 border rounded"
+                  className="w-full p-3 border rounded text-lg"
                 >
                   <option value="">Select...</option>
                   <option value="account">Account</option>
@@ -143,7 +149,7 @@ export default function ChatGPT() {
               <div className="mb-4">
                 <label
                   htmlFor="issueRelatedTo"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-lg font-medium mb-2 text-white"
                 >
                   What is the API category?
                 </label>
@@ -151,7 +157,7 @@ export default function ChatGPT() {
                   id="issueRelatedTo"
                   value={apiGroup}
                   onChange={(e) => setApiGroup(e.target.value)}
-                  className="w-full p-2 border rounded"
+                  className="w-full p-3 border rounded text-lg"
                 >
                   <option value="">Select...</option>
                   <option value="EvmApi">EVM API</option>
@@ -163,15 +169,19 @@ export default function ChatGPT() {
               </div>
             )}
             {((issueRelatedTo && issueRelatedTo !== "API") || apiGroup) && (
-              <button
-                onClick={handleSubmit}
-                className="bg-blue-500 text-white p-2 rounded"
-              >
-                Continue
-              </button>
+              <div className="flex items-center justify-center">
+                <button
+                  onClick={handleSubmit}
+                  className="bg-blue-500 text-white py-2 px-4 rounded text-lg"
+                >
+                  Continue
+                </button>
+              </div>
             )}
           </div>
         ) : (
+          // </div>
+
           <>
             {/* Main Question Input Section */}
             <div className="flex flex-col h-full">
@@ -184,10 +194,9 @@ export default function ChatGPT() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-0">
                     Issue Related To: <strong>{issueRelatedTo}</strong>
                   </p>
-                  &emsp;
                   {apiGroup && (
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-0">
-                      API Category: <strong>{apiGroup}</strong>
+                      &emsp; API Category: <strong>{apiGroup}</strong>
                     </p>
                   )}
                 </div>
@@ -225,10 +234,12 @@ export default function ChatGPT() {
                     value={query}
                     onChange={handleTextChange}
                     rows={rows}
+                    disabled={!showInput}
                   />
                   <button
                     type="submit"
                     className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    disabled={!showInput}
                   >
                     Ask
                   </button>
