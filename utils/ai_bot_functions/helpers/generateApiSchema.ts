@@ -255,11 +255,14 @@ function addCodeSamplesToProcessedData(processedData: schema) {
 }
 
 function camelCase(str) {
-  str.replace("NFT", "Nft");
+  // str.replace("NFT", "Nft");
   return (
     str[0].toLowerCase() +
     str
       .slice(1, str.length)
+      .replace("NFT", "Nft")
+      .replace("ERC", "Erc")
+      .replace("ENS", "Ens")
       .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
   );
 }

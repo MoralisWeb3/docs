@@ -191,7 +191,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_n_f_ts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_nfts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -397,7 +397,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_multiple_n_f_ts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_multiple_nfts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -596,7 +596,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_n_f_t_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_nft_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -746,7 +746,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_n_f_t_collections(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_wallet_nft_collections(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -930,7 +930,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_contract_n_f_ts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_contract_nfts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1102,7 +1102,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1302,7 +1302,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_contract_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_contract_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1491,7 +1491,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_transfers_from_to_block(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_transfers_from_to_block(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1638,7 +1638,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_transfers_by_block(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_transfers_by_block(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1824,7 +1824,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_trades(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_trades(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -1961,7 +1961,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_contract_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_contract_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -2224,7 +2224,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -2392,7 +2392,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -2575,7 +2575,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_token_id_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_token_id_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -2668,7 +2668,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.sync_n_f_t_contract(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.sync_nft_contract(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -3026,7 +3026,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_lowest_price(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_lowest_price(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -3130,7 +3130,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_collection_stats(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_collection_stats(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -3236,7 +3236,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_n_f_t_token_stats(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.nft.get_nft_token_stats(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -7456,7 +7456,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.resolve.resolve_e_n_s_domain(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.resolve.resolve_ens_domain(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -8069,7 +8069,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_e_r_c20_tokens_by_market_cap(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_erc20_tokens_by_market_cap(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -8266,7 +8266,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_e_r_c20_tokens_by_price_movers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_erc20_tokens_by_price_movers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -8366,7 +8366,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_n_f_t_collections_by_market_cap(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_top_nft_collections_by_market_cap(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -8460,7 +8460,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_hottest_n_f_t_collections_by_trading_volume(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.market_data.get_hottest_nft_collections_by_trading_volume(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -8989,7 +8989,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import sol_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = sol_api.account.get_n_f_ts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import sol_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = sol_api.account.get_nfts(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -9325,7 +9325,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import sol_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = sol_api.nft.get_n_f_t_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import sol_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = sol_api.nft.get_nft_metadata(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -9793,7 +9793,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_ts_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nfts_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -10199,7 +10199,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_ts_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nfts_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -10612,7 +10612,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_ts_by_creators(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nfts_by_creators(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -10936,7 +10936,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_owners_by_tokens(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_owners_by_tokens(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -11286,7 +11286,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_owners_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_owners_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -11449,7 +11449,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_owners_of_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_owners_of_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -11879,7 +11879,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_transfers_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_transfers_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -12304,7 +12304,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_transfers_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_transfers_by_collection(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -12728,7 +12728,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_transfers_by_creators(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_transfers_by_creators(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -13152,7 +13152,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_n_f_t_transfers_by_wallets(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.nfts.get_nft_transfers_by_wallets(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -13491,7 +13491,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_n_f_t_collections(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_nft_collections(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -13749,7 +13749,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_n_f_t_collections_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_nft_collections_by_ids(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -14073,7 +14073,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_n_f_t_collections_by_creator(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.collections.get_nft_collections_by_creator(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -18294,7 +18294,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.wallets.get_n_f_t_by_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.wallets.get_nft_by_owners(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
@@ -18718,7 +18718,7 @@ export const ApiSchema = {
           },
           {
             language: "python",
-            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.wallets.get_wallets_n_f_t_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
+            code: 'from moralis import aptos_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = aptos_api.wallets.get_wallets_nft_transfers(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
             name: "Moralis Python SDK",
           },
         ],
