@@ -14,6 +14,7 @@ const useChatGPT = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [userQuery, setUserQuery] = useState<string>("");
+  const [userTags, setUserTags] = useState<Array<string>>();
   const [done, setDone] = useState<boolean>(false);
 
   const preprocessQuery = async (messages: any[]) => {
@@ -49,10 +50,12 @@ const useChatGPT = () => {
   const sendToSlack = async ({
     title,
     description,
+    tags,
     error,
   }: {
     title: string;
     description: string;
+    tags: Array<string>;
     error?: string;
   }) => {
     try {
@@ -62,6 +65,7 @@ const useChatGPT = () => {
         body: JSON.stringify({
           title,
           description,
+          tags,
           error,
         }),
       });
@@ -89,7 +93,7 @@ const useChatGPT = () => {
     const helpWith = localStorage.getItem("helpWith");
     const issueRelatedTo = localStorage.getItem("issueRelatedTo");
     const apiGroup = localStorage.getItem("apiGroup");
-
+    setUserTags([helpWith, issueRelatedTo, apiGroup]);
     console.log({ helpWith, issueRelatedTo });
     setDone(false);
     setUserQuery(query);
@@ -232,6 +236,7 @@ If you did not find the required answer you convey that to the user and ask them
         await sendToSlack({
           title: query,
           description: prompt.content,
+          tags: userTags,
         });
       }
     } catch (e) {
@@ -240,6 +245,7 @@ If you did not find the required answer you convey that to the user and ask them
       await sendToSlack({
         title: query,
         description: "",
+        tags: userTags,
         error: e.message,
       });
     } finally {
@@ -255,6 +261,7 @@ If you did not find the required answer you convey that to the user and ask them
       sendToSlack({
         title: userQuery,
         description: answer,
+        tags: userTags,
       });
     }
   }, [done]);

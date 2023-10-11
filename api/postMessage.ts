@@ -15,7 +15,7 @@ const handler = async (req: Request): Promise<Response> => {
       return new Response("Method Not Allowed", { status: 405 });
     }
 
-    const { title, description, error } = await req.json();
+    const { title, description, tags, error } = await req.json();
     // Slack message with blocks
     const messagePayload = {
       attachments: [
@@ -37,6 +37,17 @@ const handler = async (req: Request): Promise<Response> => {
                   ? `Error Response: \n${error}`
                   : `AI Response: \n${description}`,
               },
+            },
+            {
+              type: "context",
+              elements: [
+                {
+                  type: "mrkdwn",
+                  text: `*Selected Options: * ${(
+                    tags as Array<"">
+                  ).toString()}`,
+                },
+              ],
             },
           ],
         },
