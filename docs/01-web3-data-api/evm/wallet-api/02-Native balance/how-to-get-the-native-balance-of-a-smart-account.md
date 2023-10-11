@@ -5,7 +5,7 @@ description: "How to get the native balance from a smart account using Moralis W
 sidebar_label: "Get native balance of a smart contract account"
 ---
 
-Moralis simplifies the process of getting the native balance of an ERC20 token vault associated with a smart contract account.
+Moralis simplifies the process of getting the native balance of a smart contract account.
 
 This article provides a comprehensive guide on using Moralis Wallet API to retrieve the native balance from a smart account associated with an ERC20 token vault, simplifying the process and offering code examples in multiple programming languages.
 
@@ -121,7 +121,7 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳! You have successfully retrieved the native balance of an ERC20 token vault associated with a smart account using the Moralis Wallet API.
+Congratulations 🥳! You have successfully retrieved the native balance of a smart account using the Moralis Wallet API.
 
 ## Video Tutorial: Get Any Wallet Native Crypto Balance
 
