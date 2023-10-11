@@ -1,10 +1,9 @@
 import * as React from "react";
 import { VariantProps, cva } from "class-variance-authority";
-
 import { cn } from "./utils";
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11",
+  "relative flex justify-between items-top w-full rounded-lg border p-4",
   {
     variants: {
       variant: {
@@ -21,14 +20,18 @@ const alertVariants = cva(
 
 const Alert = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> &
+    VariantProps<typeof alertVariants> & { button?: React.ReactNode }
+>(({ className, variant, button, ...props }, ref) => (
   <div
     ref={ref}
     role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props}
-  />
+  >
+    <div className="flex-1 flex items-top">{props.children}</div>
+    {button && <div className="ml-4">{button}</div>}
+  </div>
 ));
 Alert.displayName = "Alert";
 

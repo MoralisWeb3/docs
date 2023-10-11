@@ -20,12 +20,13 @@ import remarkGfm from "remark-gfm";
 
 export default function ChatGPT() {
   const [query, setQuery] = useState<string>("");
-  const { answer, generateAnswer, loading } = useChatGPT();
+  const { answer, generateAnswer, loading, error, reset } = useChatGPT();
   const [rows, setRows] = useState(1);
   const [helpWith, setHelpWith] = useState("");
   const [issueRelatedTo, setIssueRelatedTo] = useState("");
   const [apiGroup, setApiGroup] = useState("");
   const [showInput, setShowInput] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleTextChange = (e) => {
     setQuery(e.target.value);
@@ -73,6 +74,7 @@ export default function ChatGPT() {
     setIssueRelatedTo("");
     setApiGroup("");
     setShowInput(false);
+    reset();
   };
 
   const handleSubmit = () => {
@@ -84,7 +86,7 @@ export default function ChatGPT() {
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Avatar>
           <AvatarImage src={ChatGPTLogo} alt="ChatGPT" />
@@ -161,8 +163,8 @@ export default function ChatGPT() {
                 >
                   <option value="">Select...</option>
                   <option value="EvmApi">EVM API</option>
-                  <option value="SolApi">Aptos API</option>
-                  <option value="AptosApi">Solana API</option>
+                  <option value="AptosApi">Aptos API</option>
+                  <option value="SolApi">Solana API</option>
                   <option value="Auth">Auth API</option>
                   <option value="Streams">Streams API</option>
                 </select>
@@ -229,7 +231,7 @@ export default function ChatGPT() {
                   <textarea
                     id="search"
                     className="block mb-4 w-full p-4 pl-10 pr-15 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
-                    placeholder="Type your question.."
+                    placeholder="Type precise question of what you want.."
                     required
                     value={query}
                     onChange={handleTextChange}
@@ -294,21 +296,41 @@ export default function ChatGPT() {
                       </div>
                     )}
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {answer}
+                      {!error ? answer : error}
                     </ReactMarkdown>
                   </ScrollArea>
                 )}
               </div>
-              <div className="flex-none p-4">
-                <Alert>
+              <div className="flex justify-between items-center p-4">
+                <Alert
+                  button={
+                    <button
+                      className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={() => {
+                        setOpen(false);
+                        document
+                          .getElementsByClassName("intercom-launcher")[0]
+                          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                          //@ts-ignore
+                          .click();
+                      }}
+                    >
+                      Contact
+                    </button>
+                  }
+                >
                   <Microscope className="h-4 w-4" color="yellow" />
-                  <AlertTitle>
-                    Moralis AI is experimental and may produce incorrect
-                    answers.
-                  </AlertTitle>
-                  <AlertDescription>
-                    Always verify the output before executing.
-                  </AlertDescription>
+                  &emsp;
+                  <div>
+                    <AlertTitle>
+                      Moralis AI is experimental and may produce incorrect
+                      answers.
+                    </AlertTitle>
+                    <AlertDescription>
+                      Always verify the output before executing or contact
+                      customer support if you are not sure.
+                    </AlertDescription>
+                  </div>
                 </Alert>
               </div>
             </div>

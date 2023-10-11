@@ -206,7 +206,7 @@ await Moralis.start({
 const response = await Moralis.${jsFunctionPath}({ 
   ${jsParams}
 });    
-console.log(response.raw);
+console.log(response.result);
 } catch (e) {
     console.error(e);
 }`,

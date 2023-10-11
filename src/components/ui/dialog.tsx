@@ -10,6 +10,8 @@ const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
 
+const CloseTrigger = DialogPrimitive.Close;
+
 const DialogPortal = ({
   className,
   children,
@@ -121,4 +123,5 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  CloseTrigger,
 };

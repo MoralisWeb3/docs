@@ -109,7 +109,7 @@ const useChatGPT = () => {
           role: "system",
           content:
             "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles or moralis API endpoints data. \
-You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement. \
+You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement. Most importanly dont ever mention about depriciated service like Moralis serverUrl, appId. The latest way is to use apiKey.  \
 If you did not find the required answer you convey that to the user and ask them to contact hello@moralis.io.",
         },
       ];
@@ -247,6 +247,9 @@ If you did not find the required answer you convey that to the user and ask them
     }
   };
 
+  const reset = () => {
+    setAnswer("");
+  };
   useEffect(() => {
     if (done) {
       sendToSlack({
@@ -256,7 +259,7 @@ If you did not find the required answer you convey that to the user and ask them
     }
   }, [done]);
 
-  return { answer, generateAnswer, loading, error };
+  return { answer, generateAnswer, loading, error, reset };
 };
 
 export default useChatGPT;

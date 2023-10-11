@@ -186,7 +186,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTs({ \n  { chain, format, limit, excludeSpam, tokenAddresses, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTs({ \n  { chain, format, limit, excludeSpam, tokenAddresses, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -392,7 +392,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getMultipleNFTs({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getMultipleNFTs({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -591,7 +591,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTTransfers({ \n  { chain, format, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTTransfers({ \n  { chain, format, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -741,7 +741,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTCollections({ \n  { chain, limit, excludeSpam, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getWalletNFTCollections({ \n  { chain, limit, excludeSpam, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -925,7 +925,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getContractNFTs({ \n  { chain, format, limit, totalranges, range, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getContractNFTs({ \n  { chain, format, limit, totalranges, range, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1097,7 +1097,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTOwners({ \n  { chain, format, limit, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTOwners({ \n  { chain, format, limit, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1297,7 +1297,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTContractTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, format, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTContractTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, format, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1486,7 +1486,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfersFromToBlock({ \n  { chain, fromBlock, toBlock, fromDate, toDate, format, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfersFromToBlock({ \n  { chain, fromBlock, toBlock, fromDate, toDate, format, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1633,7 +1633,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfersByBlock({ \n  { chain, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfersByBlock({ \n  { chain, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1819,7 +1819,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTrades({ \n  { chain, fromBlock, toBlock, fromDate, toDate, marketplace, cursor, limit }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTrades({ \n  { chain, fromBlock, toBlock, fromDate, toDate, marketplace, cursor, limit }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -1956,7 +1956,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTContractMetadata({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTContractMetadata({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -2219,7 +2219,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTMetadata({ \n  { chain, format, normalizemetadata, mediaItems }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTMetadata({ \n  { chain, format, normalizemetadata, mediaItems }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -2387,7 +2387,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfers({ \n  { chain, format, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTransfers({ \n  { chain, format, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -2570,7 +2570,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTokenIdOwners({ \n  { chain, format, limit, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTokenIdOwners({ \n  { chain, format, limit, cursor, normalizemetadata, mediaItems }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -2663,7 +2663,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.syncNFTContract({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.syncNFTContract({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -2823,7 +2823,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.reSyncMetadata({ \n  { chain, flag, mode }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.reSyncMetadata({ \n  { chain, flag, mode }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3021,7 +3021,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTLowestPrice({ \n  { chain, days, marketplace }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTLowestPrice({ \n  { chain, days, marketplace }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3125,7 +3125,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTCollectionStats({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTCollectionStats({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3231,7 +3231,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTokenStats({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.nft.getNFTTokenStats({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3438,7 +3438,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenPrice({ \n  { chain, exchange, toBlock, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenPrice({ \n  { chain, exchange, toBlock, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3615,7 +3615,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getMultipleTokenPrices({ \n  { chain, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getMultipleTokenPrices({ \n  { chain, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3794,7 +3794,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getWalletTokenBalances({ \n  { chain, toBlock, tokenAddresses }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getWalletTokenBalances({ \n  { chain, toBlock, tokenAddresses }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -3967,7 +3967,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getWalletTokenTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getWalletTokenTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4140,7 +4140,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenMetadata({ \n  { chain, addresses }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenMetadata({ \n  { chain, addresses }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4313,7 +4313,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenMetadataBySymbol({ \n  { chain, symbols }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenMetadataBySymbol({ \n  { chain, symbols }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4423,7 +4423,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenAllowance({ \n  { chain, ownerAddress, spenderAddress }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenAllowance({ \n  { chain, ownerAddress, spenderAddress }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4596,7 +4596,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenTransfers({ \n  { chain, fromBlock, toBlock, fromDate, toDate, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4686,7 +4686,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenStats({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.token.getTokenStats({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -4790,7 +4790,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.balance.getNativeBalance({ \n  { chain, toBlock }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.balance.getNativeBalance({ \n  { chain, toBlock }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -5001,7 +5001,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.balance.getNativeBalancesForAddresses({ \n  { chain, toBlock, walletAddresses }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.balance.getNativeBalancesForAddresses({ \n  { chain, toBlock, walletAddresses }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -5190,7 +5190,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getWalletTransactions({ \n  { chain, fromBlock, toBlock, fromDate, toDate, cursor, limit, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getWalletTransactions({ \n  { chain, fromBlock, toBlock, fromDate, toDate, cursor, limit, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -5377,7 +5377,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({ \n  { chain, fromBlock, toBlock, fromDate, toDate, include, cursor, limit }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getWalletTransactionsVerbose({ \n  { chain, fromBlock, toBlock, fromDate, toDate, include, cursor, limit }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -5544,7 +5544,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getInternalTransactions({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getInternalTransactions({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -5788,7 +5788,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getTransaction({ \n  { chain, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getTransaction({ \n  { chain, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6035,7 +6035,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getTransactionVerbose({ \n  { chain, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.transaction.getTransactionVerbose({ \n  { chain, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6275,7 +6275,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getBlock({ \n  { chain, include }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getBlock({ \n  { chain, include }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6403,7 +6403,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getDateToBlock({ \n  { chain, date }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getDateToBlock({ \n  { chain, date }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6500,7 +6500,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getBlockStats({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.block.getBlockStats({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6692,7 +6692,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.events.getContractLogs({ \n  { chain, blockNumber, fromBlock, toBlock, fromDate, toDate, topic0, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.events.getContractLogs({ \n  { chain, blockNumber, fromBlock, toBlock, fromDate, toDate, topic0, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -6921,7 +6921,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.events.getContractEvents({ \n  { chain, fromBlock, toBlock, fromDate, toDate, topic, offset, limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.events.getContractEvents({ \n  { chain, fromBlock, toBlock, fromDate, toDate, topic, offset, limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7017,7 +7017,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.runContractFunction({ \n  { chain, functionName }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.runContractFunction({ \n  { chain, functionName }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7058,7 +7058,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.web3ApiVersion({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.web3ApiVersion({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7125,7 +7125,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.endpointWeights({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.endpointWeights({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7207,7 +7207,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.reviewContracts({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.reviewContracts({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7261,7 +7261,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveAddress({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveAddress({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7333,7 +7333,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveDomain({ \n  { currency }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveDomain({ \n  { currency }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7392,7 +7392,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveAddressToDomain({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveAddressToDomain({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7451,7 +7451,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveENSDomain({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.resolve.resolveENSDomain({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7574,7 +7574,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.defi.getPairReserves({ \n  { chain, toBlock, toDate }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.defi.getPairReserves({ \n  { chain, toBlock, toDate }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7906,7 +7906,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.defi.getPairAddress({ \n  { chain, toBlock, toDate, exchange }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.defi.getPairAddress({ \n  { chain, toBlock, toDate, exchange }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -7954,7 +7954,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.ipfs.uploadFolder({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.ipfs.uploadFolder({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8064,7 +8064,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopERC20TokensByMarketCap({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopERC20TokensByMarketCap({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8261,7 +8261,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopERC20TokensByPriceMovers({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopERC20TokensByPriceMovers({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8361,7 +8361,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopNFTCollectionsByMarketCap({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getTopNFTCollectionsByMarketCap({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8455,7 +8455,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getHottestNFTCollectionsByTradingVolume({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.marketData.getHottestNFTCollectionsByTradingVolume({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8556,7 +8556,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.wallets.getWalletActiveChains({ \n  { chains }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.wallets.getWalletActiveChains({ \n  { chains }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8675,7 +8675,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.wallets.getWalletStats({ \n  { chain }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.wallets.getWalletStats({ \n  { chain }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8762,7 +8762,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.balance({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.balance({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8884,7 +8884,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getSPL({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getSPL({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -8984,7 +8984,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getNFTs({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getNFTs({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -9177,7 +9177,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getPortfolio({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getPortfolio({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -9320,7 +9320,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.nft.getNFTMetadata({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.nft.getNFTMetadata({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -9445,7 +9445,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.token.getTokenPrice({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.token.getTokenPrice({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -9788,7 +9788,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByIds({ \n  { tokenIds }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByIds({ \n  { tokenIds }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -10194,7 +10194,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByCollection({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByCollection({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -10607,7 +10607,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByCreators({ \n  { limit, offset, cursor, creatorAddresses }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTsByCreators({ \n  { limit, offset, cursor, creatorAddresses }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -10931,7 +10931,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersByTokens({ \n  { limit, offset, cursor, tokenIds }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersByTokens({ \n  { limit, offset, cursor, tokenIds }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -11281,7 +11281,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersByCollection({ \n  { limit, offset, cursor, walletBlacklist, walletWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersByCollection({ \n  { limit, offset, cursor, walletBlacklist, walletWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -11444,7 +11444,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersOfCollection({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTOwnersOfCollection({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -11874,7 +11874,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByIds({ \n  { limit, offset, cursor, walletBlacklist, walletWhitelist, tokenIds }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByIds({ \n  { limit, offset, cursor, walletBlacklist, walletWhitelist, tokenIds }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -12299,7 +12299,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByCollection({ \n  { limit, offset, cursor, walletWhitelist, walletBlacklist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByCollection({ \n  { limit, offset, cursor, walletWhitelist, walletBlacklist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -12723,7 +12723,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByCreators({ \n  { limit, offset, cursor, creatorAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByCreators({ \n  { limit, offset, cursor, creatorAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -13147,7 +13147,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByWallets({ \n  { limit, offset, cursor, walletAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.nfts.getNFTTransfersByWallets({ \n  { limit, offset, cursor, walletAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -13486,7 +13486,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollections({ \n  { limit, offset, cursor, fromname, toname }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollections({ \n  { limit, offset, cursor, fromname, toname }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -13744,7 +13744,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollectionsByIds({ \n  { ids }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollectionsByIds({ \n  { ids }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -14068,7 +14068,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollectionsByCreator({ \n  { limit, offset, cursor, creatorAddress }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.collections.getNFTCollectionsByCreator({ \n  { limit, offset, cursor, creatorAddress }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -14304,7 +14304,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinInfoByCoinTypeHashes({ \n  { coinTypeHashes }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinInfoByCoinTypeHashes({ \n  { coinTypeHashes }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -14590,7 +14590,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getLatestCoins({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getLatestCoins({ \n  { limit, offset, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -14902,7 +14902,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsByNameRange({ \n  { limit, offset, cursor, fromName, toName }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsByNameRange({ \n  { limit, offset, cursor, fromName, toName }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -15214,7 +15214,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsBySymbolRange({ \n  { limit, offset, cursor, fromSymbol, toSymbol }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsBySymbolRange({ \n  { limit, offset, cursor, fromSymbol, toSymbol }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -15517,7 +15517,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsByCreators({ \n  { limit, offset, cursor, creatorAddresses }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinsByCreators({ \n  { limit, offset, cursor, creatorAddresses }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -15916,7 +15916,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({ \n  { limit, offset, cursor, ownerAddresses, fromDate, toDate, coinTypeBlacklist, coinTypeWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({ \n  { limit, offset, cursor, ownerAddresses, fromDate, toDate, coinTypeBlacklist, coinTypeWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -16265,7 +16265,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByBlockHeights({ \n  { limit, offset, cursor, blockHeights }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByBlockHeights({ \n  { limit, offset, cursor, blockHeights }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -16639,7 +16639,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByCoinType({ \n  { limit, offset, cursor, fromDate, toDate }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getCoinTransfersByCoinType({ \n  { limit, offset, cursor, fromDate, toDate }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -16956,7 +16956,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getTopHoldersByCoin({ \n  { limit, offset, cursor, minAmount, minVersion, walletBlacklist, walletWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.coins.getTopHoldersByCoin({ \n  { limit, offset, cursor, minAmount, minVersion, walletBlacklist, walletWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -17245,7 +17245,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getCoinBalancesByWallets({ \n  { limit, offset, cursor, ownerAddresses, coinTypeHashBlacklist, coinTypeHashWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getCoinBalancesByWallets({ \n  { limit, offset, cursor, ownerAddresses, coinTypeHashBlacklist, coinTypeHashWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -17531,7 +17531,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getHistoricalCoinBalancesByWallets({ \n  { limit, offset, cursor, ownerAddresses, coinTypeHashBlacklist, coinTypeHashWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getHistoricalCoinBalancesByWallets({ \n  { limit, offset, cursor, ownerAddresses, coinTypeHashBlacklist, coinTypeHashWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -17930,7 +17930,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getCoinTransfersByWalletAddresses({ \n  { limit, offset, cursor, ownerAddresses, fromDate, toDate, coinTypeBlacklist, coinTypeWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getCoinTransfersByWalletAddresses({ \n  { limit, offset, cursor, ownerAddresses, fromDate, toDate, coinTypeBlacklist, coinTypeWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -18289,7 +18289,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getNFTByOwners({ \n  { limit, offset, cursor, ownerAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getNFTByOwners({ \n  { limit, offset, cursor, ownerAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -18713,7 +18713,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getWalletsNFTTransfers({ \n  { limit, offset, cursor, walletAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.wallets.getWalletsNFTTransfers({ \n  { limit, offset, cursor, walletAddresses, collectionBlacklist, collectionWhitelist }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -18799,7 +18799,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccount({ \n  { ledgerVersion }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccount({ \n  { ledgerVersion }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -18907,7 +18907,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountResources({ \n  { ledgerVersion, limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountResources({ \n  { ledgerVersion, limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19014,7 +19014,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountModules({ \n  { ledgerVersion, limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountModules({ \n  { ledgerVersion, limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19099,7 +19099,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountResource({ \n  { ledgerVersion }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountResource({ \n  { ledgerVersion }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19183,7 +19183,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountModule({ \n  { ledgerVersion }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getAccountModule({ \n  { ledgerVersion }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19318,7 +19318,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getEventsByCreationNumber({ \n  { limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getEventsByCreationNumber({ \n  { limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19462,7 +19462,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getEventsByEventHandle({ \n  { limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.accounts.getEventsByEventHandle({ \n  { limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19525,7 +19525,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactions({ \n  { limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactions({ \n  { limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19647,7 +19647,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.submitTransaction({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.submitTransaction({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19690,7 +19690,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactionByHash({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactionByHash({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19732,7 +19732,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactionByVersion({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getTransactionByVersion({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19805,7 +19805,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getAccountTransactions({ \n  { limit, start }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.getAccountTransactions({ \n  { limit, start }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19857,7 +19857,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.submitBatchTransactions({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.submitBatchTransactions({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19898,7 +19898,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.simulateTransaction({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.simulateTransaction({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19944,7 +19944,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.encodeSubmission({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.encodeSubmission({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -19997,7 +19997,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.estimateGasPrice({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.transactions.estimateGasPrice({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20123,7 +20123,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.blocks.getBlockByHeight({ \n  { withTransactions }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.blocks.getBlockByHeight({ \n  { withTransactions }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20247,7 +20247,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.blocks.getBlockByVersion({ \n  { withTransactions }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.AptosApi.blocks.getBlockByVersion({ \n  { withTransactions }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20329,7 +20329,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeEvm({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeEvm({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20539,7 +20539,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeEvm({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeEvm({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20617,7 +20617,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeSolana({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeSolana({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20813,7 +20813,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeSolana({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeSolana({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -20891,7 +20891,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeAptos({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.requestChallengeAptos({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21102,7 +21102,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeAptos({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.challenge.verifyChallengeAptos({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21154,7 +21154,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.profile.getAddresses({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.profile.getAddresses({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21205,7 +21205,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.requestBind({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.requestBind({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21253,7 +21253,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.verifyRequestBind({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.verifyRequestBind({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21301,7 +21301,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.removeBind({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.removeBind({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21349,7 +21349,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.verifyRemoveBind({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Auth.bind.verifyRemoveBind({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21533,7 +21533,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.getHistory({ \n  { limit, cursor, excludepayload }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.getHistory({ \n  { limit, cursor, excludepayload }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21683,7 +21683,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.replayHistory({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.history.replayHistory({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21850,7 +21850,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.logs.getLogs({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.logs.getLogs({ \n  { limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21913,7 +21913,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.setSettings({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.setSettings({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -21974,7 +21974,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.getSettings({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.project.getSettings({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -22123,7 +22123,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStats({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStats({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -22280,7 +22280,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStatsByStreamId({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.stats.getStatsByStreamId({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -22775,7 +22775,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStreams({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStreams({ \n  { limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -23219,7 +23219,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.createStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.createStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -23673,7 +23673,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -24127,7 +24127,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -24581,7 +24581,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25035,7 +25035,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStreamStatus({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.updateStreamStatus({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25136,7 +25136,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.getAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25196,7 +25196,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.addAddressToStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.addAddressToStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25256,7 +25256,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteAddressFromStream({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.evm-streams.deleteAddressFromStream({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25452,7 +25452,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAll({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAll({ \n  { limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25611,7 +25611,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsCreate({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsCreate({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25780,7 +25780,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGet({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGet({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25948,7 +25948,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdate({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdate({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -25990,7 +25990,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDelete({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDelete({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -26047,7 +26047,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsAddAddresses({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsAddAddresses({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -26104,7 +26104,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDeleteAddresses({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsDeleteAddresses({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -26197,7 +26197,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsGetAddresses({ \n  { limit, cursor }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
@@ -26260,7 +26260,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdateStatus({ \n  {  }\n});    \nconsole.log(response.raw);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.Streams.aptos-streams.aptosStreamsUpdateStatus({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
