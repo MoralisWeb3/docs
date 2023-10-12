@@ -1,13 +1,25 @@
 ---
 title: "Understanding Account Abstraction: How to Get Native Balances from Smart Accounts"
-slug: "../how-to-get-the-native-balance-of-a-smart-account"
-description: "How to get the native balance from a smart account using Moralis Wallet API."
+slug: "../how-to-get-the-native-balance-of-a-smart-contract-account"
+description: "How to get the native balance from a smart contract account using Moralis Wallet API."
 sidebar_label: "Get native balance of a smart contract account"
 ---
 
-Moralis simplifies the process of getting the native balance of a smart contract account.
+There are two primary account types:
+* Contract Accounts
+* Token Accounts
 
-This article provides a comprehensive guide on using Moralis Wallet API to retrieve the native balance from a smart account associated with an ERC20 token vault, simplifying the process and offering code examples in multiple programming languages.
+**Token Accounts** provide users direct control over their tokens via private keys, enabling transactions and interaction with dApps.
+
+**Contract Accounts** function autonomously, controlled by pre-defined smart contract code without private keys.
+
+:::note
+As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
+:::
+
+Now, let's explore how Moralis simplifies the process of getting the native balance of a smart contract account.
+
+This step-by-step tutorial shows how to retrieve the native balance from a smart account, simplifying the process and offering code examples in multiple programming languages.
 
 ## Step 1: Setup Moralis
 
@@ -29,27 +41,35 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript
+// Import the Moralis library and necessary modules
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const runApp = () => {
+// Define an asynchronous function runApp to retrieve the native balance of a smart contract account
+const runApp = async() => {
+  // Initialize the Moralis SDK with your API key and other configurations
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
-    // ...and any other configuration
+    // ...add any other relevant configuration options
   });
 
-  const address = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045';
+  // Define the address of a smart contract account for which you want to fetch the native balance
+  const address = '0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5';
 
+  // Specify the blockchain that you are working with (e.g., Ethereum)
   const chain = EvmChain.ETHEREUM;
 
+  // Use the Moralis getNativeBalance method to request the native balance
   const response = await Moralis.EvmApi.balance.getNativeBalance({
     address,
     chain,
   });
 
-	console.log(response.toJSON());
+  // Log the JSON response containing the native balance to the console
+  console.log(response.toJSON());
 }
 
+// Invoke the runApp function to start the process
 runApp();
 ```
 
@@ -57,27 +77,35 @@ runApp();
 <TabItem value="typescript" label="index.ts (TypeScript)">
 
 ```typescript
+// Import the Moralis library and necessary modules
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const runApp = () => {
+// Define an asynchronous function runApp to retrieve the native balance of a smart contract account
+const runApp = async () => {
+  // Initialize the Moralis SDK with your API key and other configurations
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
-    // ...and any other configuration
+    // ...and any other configuration options
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  // Define the address of a smart contract account for which you want to fetch the native balance
+  const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
 
+  // Specify the blockchain that you are working with (e.g., Ethereum)
   const chain = EvmChain.ETHEREUM;
 
+  // Use the Moralis getNativeBalance method to request the native balance
   const response = await Moralis.EvmApi.balance.getNativeBalance({
     address,
     chain,
   });
 
+  // Log the response as a JSON object, which contains the native balance information
   console.log(response.toJSON());
 };
 
+// Execute the runApp function to start the process
 runApp();
 ```
 
@@ -85,20 +113,28 @@ runApp();
 <TabItem value="python" label="index.py (Python)">
 
 ```python
+# Import the necessary modules from the Moralis library
 from moralis import evm_api
 
+# Replace "YOUR_API_KEY" with your actual API key
 api_key = "YOUR_API_KEY"
 
+# Define the parameters required for fetching the native balance
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    # Replace with the target address of smart contract account
+    "address": "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5",
+
+    # Specify the blockchain you are working with (e.g., Ethereum)
     "chain": "eth",
 }
 
+# Use the Moralis get_native_balance method to retrieve the native balance
 result = evm_api.balance.get_native_balance(
     api_key=api_key,
     params=params,
 )
 
+# Print the result, which contains the native balance information
 print(result)
 ```
 

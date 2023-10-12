@@ -7,7 +7,7 @@ sidebar_position: 2
 
 Whether you are new to blockchain development or a seasoned developer, this guide serves as your gateway to unlocking the potential of seamless blockchain development.
 
-This comprehensive guide explains how to set up your Moralis account, get your Moralis API Key, and install the Moralis SDK in your project.
+This step-by-step tutorial shows how to set up your Moralis account, get your Moralis API Key, and install the Moralis SDK in your project.
 
 ## Prerequisites
 
@@ -16,13 +16,13 @@ Make sure that you have the installed all the following prerequisites:
 - [Node.js](https://nodejs.org/) v14+ or [Python](https://www.python.org/downloads/)
 - [NPM](https://www.npmjs.com/)/[Yarn](https://classic.yarnpkg.com/en/) or [Pip](https://pip.pypa.io/en/stable/)
 
-## Step 1: Create your account
+## Step 1: Create Your Account
 
 To begin, create your **free Moralis account** by visiting the [Moralis Dashboard](https://admin.moralis.io/register).
 
 <img loading="eager" alt="Moralis Admin (Sign Up)" src="/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp" width="1024" height="582" />
 
-## Step 2: Get API key
+## Step 2: Get API Key
 
 To begin, you need to get your Web3 Api Key, which serves as your access pass to Moralis's suite of services:
 
@@ -38,11 +38,11 @@ Protecting your API key is critical in safeguarding your sensitive account infor
 - **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
 :::
 
-## Step 3: Install the Moralis SDK
+## Step 3: Installing Moralis SDK
 
 With your Moralis API Key in hand, it's time to install the Moralis SDK in your project. The Moralis SDK acts as the bridge connecting your application to Moralis services, unlocking a world of possibilities for blockchain development.
 
-Use one of the following commands:
+You can install the Moralis SDK via one of the following commands:
 
 ### NPM
 

@@ -11,23 +11,14 @@ In order to use the Moralis Streams API, you can either use the SDK (programmati
 
 ## Using the SDK
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
-
-
-
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps.
 
 ### Step 1: Create a Stream
 
 In order to create a stream, Moralis provides you with a [add](/streams-api/evm/reference/create-stream) endpoint to do so.
 
-Here you'll need 5 initial required parameters to create a stream, you can update these parameters later on or add additional ones: 
-- `webhookUrl`: Webhook URL where moralis will send the POST request. 
+Here you'll need 5 initial required parameters to create a stream, you can update these parameters later on or add additional ones:
+- `webhookUrl`: Webhook URL where moralis will send the POST request.
 - `description`: A description for this stream.
 - `tag`: A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present.
 - `chains`: An array of chains to monitor.
@@ -205,7 +196,7 @@ const runApp = async () => {
         id: "4f7dbfb3-42c9-4d8d-bbba-975ea2d2b1a1", // stream ID from the previous snippet
     });
 
-    console.log(response.toJSON()); 
+    console.log(response.toJSON());
 };
 
 runApp();
