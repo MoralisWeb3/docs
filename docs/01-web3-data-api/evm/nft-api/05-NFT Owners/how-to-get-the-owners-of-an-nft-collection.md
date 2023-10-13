@@ -4,24 +4,16 @@ slug: "../../how-to-get-the-owners-of-an-nft-collection"
 description: "Learn how to get the owners of NFT collection by its contract address using the Moralis NFT API."
 sidebar_label: "Get NFT owners by collection"
 ---
-## Prerequisites
-
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get All NFTs Owned By An Address
 
 In order to get all the owners of a collection, Moralis provides you with a [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners) endpoint to do so.
 
-Here you'll need two parameters: (a contract)address` and `chain`.
+Here you will need two parameters: `(a contract)address` and `chain`.
 
 Once you've obtained both the `address` and `chain`, you can copy the following code:
 
@@ -40,7 +32,7 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
 	const chain = EvmChain.ETHEREUM;
@@ -49,7 +41,7 @@ const runApp = async () => {
       address,
       chain,
   });
-  
+
   console.log(response.toJSON());
 }
 
@@ -68,7 +60,7 @@ const runApp = async () => {
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
-  
+
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
 	const chain = EvmChain.ETHEREUM;
@@ -77,7 +69,7 @@ const runApp = async () => {
       address,
       chain,
   });
-  
+
   console.log(response.toJSON());
 }
 
@@ -92,12 +84,12 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xa186d739ca2b3022b966194004c6b01855d59571", 
-    "chain": "eth", 
-    "format": "decimal", 
-    "limit": 100, 
-    "cursor": "", 
-    "normalizeMetadata": True, 
+    "address": "0xa186d739ca2b3022b966194004c6b01855d59571",
+    "chain": "eth",
+    "format": "decimal",
+    "limit": 100,
+    "cursor": "",
+    "normalizeMetadata": True,
 }
 
 result = evm_api.nft.get_nft_owners(

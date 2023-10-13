@@ -5,18 +5,9 @@ description: "Learn how to get NFT trades by Markeplace using the Moralis NFT AP
 sidebar_label: "Get NFT trades by Markeplace"
 ---
 
-## Prerequisites
-
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
-
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get All Transfers Of An NFT
 
@@ -76,7 +67,7 @@ const runApp = async () => {
   const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
   const chain = EvmChain.ETHEREUM;
-  
+
   const marketplace = "opensea";
 
   const response = await Moralis.EvmApi.nft.getNFTTrades({
