@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-const runApp = () => {
+const runApp = async() => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
@@ -56,7 +56,7 @@ runApp();
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const runApp = () => {
+const runApp = async() => {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
