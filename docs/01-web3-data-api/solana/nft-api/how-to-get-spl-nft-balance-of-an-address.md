@@ -5,18 +5,9 @@ description: "Learn how to get SPL NFT balance of an address using Moralis Solan
 sidebar_label: "Get SPL NFT balance of address"
 ---
 
-## Prerequisites
-
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
-
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-sol-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/solana/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get SPL NFT balance of an address
 
