@@ -1,13 +1,14 @@
 ---
 sidebar_position: 0
 title: "Blockchain Data Retrieval Using the eth_call RPC Method"
-slug: "../../basics"
-sidebar_label: "Overview"
+slug: "../../eth_call-and-getblock"
+sidebar_label: "eth_call and getBlock"
+description: "How to read from the blockchain and how to call read-only functions of a smart contract using eth_call and Moralis getBlock RPC methods"
 ---
 
 In the rapidly evolving realm of decentralized exchanges (DEXs), blockchain data retrieval is the lifeblood of security, transparency, and control. Traditional approaches like Ethereum's [`eth_call`](https://web3js.readthedocs.io/en/v3.0.0-rc.5/web3-eth.html?highlight=eth.call#call) are giving way to innovative solutions like [Moralis](https://moralis.io/).
 
-Decentralized exchanges (DEXs) are the backbone of blockchain's decentralization promise, offering security, transparency, and control. These platforms rely heavily on efficient data retrieval systems for functions like wallet balance display and contract detail fetching. This article explores how Moralis revolutionizes DEX development and why it's a compelling choice over the traditional [eth_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_call) RPC method.
+Decentralized exchanges (DEXs) are the backbone of blockchain's decentralization promise, offering security, transparency, and control. These platforms rely heavily on efficient data retrieval systems for functions like wallet balance display and contract detail fetching. This article explores how Moralis revolutionizes DEX development and why it is a compelling choice over the traditional [eth_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_call) RPC method.
 
 Furthermore, this article also showcases how Moralis simplifies and streamlines ETH data retrieval and blockchain interactions for DEX developers.
 
