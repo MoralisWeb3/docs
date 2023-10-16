@@ -35,6 +35,8 @@ The use cases for our NFT API are truly endless! Some popular use cases include:
 
 ## Supported chains
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
+Moralis NFT APIs are continuously adding new chains and integrations.
 
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::

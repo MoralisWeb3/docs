@@ -47,13 +47,13 @@ The use cases for our Wallet API API are truly endless! Some popular use cases i
   - Fetch owned collections
   - ReDisplay NFT images and Metadata
   - NFT transfers, swaps and purchase
- 
+
 As well as Web3 Analytics tools, DAOs, Web3 gaming plus many more!
 
 ## Supported chains
 
-The Wallet API supports multiple EVM chains:
+Moralis Wallet APIs are continuously adding new chains and integrations.
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
-
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::
