@@ -41,8 +41,8 @@ Our advanced feature set of Web3 Data APIs are best for those that are building 
 
 ## Supported Chains
 
-Moralis Web3 Data APIs are continuously adding new chains and integrations. Our current supported EVM chains include:
+Moralis Web3 Data APIs are continuously adding new chains and integrations.
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
-
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::

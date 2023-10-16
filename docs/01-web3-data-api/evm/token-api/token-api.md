@@ -36,6 +36,8 @@ The Token API is extremely flexible, meaning it can support a wide range of use 
 
 ## Supported chains
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
+Moralis Token APIs are continuously adding new chains and integrations.
 
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::

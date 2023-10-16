@@ -30,8 +30,8 @@ The Blockchain API is extremely flexible, meaning it can support a wide range of
 
 ## Supported chains
 
-The Blockchain API supports multiple EVM chains:
+Moralis Blockchain APIs are continuously adding new chains and integrations.
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
-
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::
