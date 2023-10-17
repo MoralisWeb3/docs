@@ -33,15 +33,15 @@ headers: {
 
 Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-charged': ‘0’ `
 
-### Records determine usage
+### Records pricing
 
-Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your [billing page](https://admin.moralis.io/account/billing).
+For each record you consume, your account will be charged 15 compute units. Each Moralis plan has a certain number of included compute units. 
 
-For each transaction, you get two webhooks (read more [here](/streams-api/evm/webhooks-transactions)), records are only counted towards your usage for webhooks with Confirmed status True.
+For each transaction, you will get two webhooks (read more [here](/streams-api/evm/webhooks-transactions)), one once the transaction is added to a block and one once the transaction is confirmed. Records are only counted towards your usage for webhooks with Confirmed status True.
 
 ### Check your total consumed record for a period
 
-By using /status (see API [reference](/streams-api/evm/reference/get-stats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
+By using /status (see API [reference](/streams-api/evm/reference/get-stats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period. Add those together and you will see your total record consumtion. 
 
 **Example:**
 
@@ -57,7 +57,7 @@ By using /status (see API [reference](/streams-api/evm/reference/get-stats)) you
 
 Where your total consumed records for the current billing period would be `"totalLogsProcessed": 4257` + `"totalTxsProcessed": 0` + `"totalTxsInternalProcessed": 0`. In this case total consumption is 4257.
 
-### Check one streams total consumed records for a period
+### Check total records consumed for a specific stream
 
 By using /stats/{streamId} (see API [reference](/streams-api/evm/reference/get-stats-by-streamid)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
 
