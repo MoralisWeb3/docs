@@ -1,8 +1,10 @@
 ---
 title: "🙋 FAQ"
 sidebar_position: 20
-description: "This FAQ page provides answers to common questions about our product. Learn more about features, compatibility, installation, and more."
+description: "This FAQ page helps you to get answers about our Web3 API, Streams, and product features, enhancing your API integration experience."
 ---
+
+This article is a Frequently Asked Questions (FAQ) page providing answers to common questions about the Moralis Streams API and its pricing, covering topics such as production status, pricing, configurations, and usage details.
 
 ## Is Streams API in production?
 
@@ -10,7 +12,7 @@ Yes, our Streams API is in production now.
 
 ## How are Streams priced?
 
-Streams consume Compute Units similar to our other APIs. Please see [Records and pricing](/streams-api/evm/records-and-pricing) for more details.
+Streams consume [Compute Units](/web3-data-api/evm/reference/compute-units-cu) similar to our other APIs. You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
 
 ## Can I disable the unconfirmed webhook requests?
 
@@ -36,11 +38,11 @@ Enterprise plans can have fully customized limits with no hard caps - the Stream
 
 ## How many separate streams can I create?
 
-On our paid plans you can have up to 200 active streams, and each stream can support listening to millions of addresses in a single configuration.  
+On Moralis' paid plans, you can have up to 200 active streams, and each stream can support listening to millions of addresses in a single configuration.
 
 The free plan is limited to 1 active stream.
 
-You can contact our support team at [hello@moralis.io](mailto:hello@moralis.io) if you need a higher limit, we can support an unlimited number of streams.
+If you require more streams than your current plan allows, reach out to our support team at [hello@moralis.io](mailto:hello@moralis.io), as we can support an unlimited number of streams to suit your needs.
 
 ## Are there any events lost when a stream or the filters for a stream get updated?
 
@@ -91,32 +93,27 @@ If you still require support, please contact us in your Slack channel, or drop a
 
 ## What is a record?
 
-**Summary**
+Records are the basic unit for calculating your Streams usage, with charges applied only to webhooks with the field `confirmed:true`. Webhooks set to `withconfirmed:false` and decoded logs are both free of charge.
 
-- A record is either a transaction (`txs`), log (`logs`) or internal transactions (`txsInternal`) in the webhook response.
-- Records is the base for usage of Streams
-- Records are only counted towards your usage for webhooks with `confirmed:true` so webhooks `withconfirmed:false` are **free**
-- Decoded logs are also free they do NOT count as `Records`.
+In Moralis Streams, a **record** refers to either a transaction (`txs` in response), a log (`logs` in response), or an internal transaction (`txsInternal` in response). The total number of records within a webhook is calculated as the sum of `txs + logs + txsInternal`.
 
-## What is a record?
+For every record within a webhook, your account will be charged 15 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
 
-A record is either a transaction (`txsin` response), log (`logs`in response) or internal transaction (`txsInternalin` response). The number of records in a webhook is the sum of `txs + logs + txsInternal`.
+:::tip
+Please note that only confirmed blocks will require charges, with unconfirmed blocks having `'x-records-charged': '0'`.
+:::
 
-For each record your account will be charged 15 compute units.
-
-In the header of a webhook, you can find the total number of records in that webhook in the header `x-records-charged`.
-
-In this example, the `x-records-charged` is `20` so the webhook contains 20 records.
+In the following code example, `x-records-charged` is set to `20`, indicating the presence of 20 records:
 
 ```json
 headers: {
     'x-region': 'us-west-2',
     'x-queue-size': '0',
-    'x-records-charged': ‘20’
+    'x-records-charged': '20',
     'x-signature': '0xdf49163b5273b50a8da48e82b7254b45d81aeee9a02f1909a45d7aaea240e9c2',
-  }
+}
 ```
 
-Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-charged': ‘0’`.
-
-You can read more about pricing on the [Records and pricing](/streams-api/evm/records-and-pricing) page.
+:::tip
+You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
+:::
