@@ -1,8 +1,10 @@
 ---
 title: "🙋 FAQ"
 sidebar_position: 20
-description: "This FAQ page provides answers to common questions about our product. Learn more about features, compatibility, installation, and more."
+description: "This FAQ page helps you to get answers about our Web3 API, Streams, and product features, enhancing your API integration experience."
 ---
+
+This article is a Frequently Asked Questions (FAQ) page providing answers to common questions about the Moralis Streams API and its pricing, covering topics such as production status, pricing, configurations, and usage details.
 
 ## Is Streams API in production?
 
@@ -10,7 +12,7 @@ Yes, our Streams API is in production now.
 
 ## How are Streams priced?
 
-Please see [Records and pricing](/streams-api/evm/records-and-pricing)
+Streams consume [Compute Units](/web3-data-api/evm/reference/compute-units-cu) similar to our other APIs. You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
 
 ## Can I disable the unconfirmed webhook requests?
 
@@ -36,9 +38,11 @@ Enterprise plans can have fully customized limits with no hard caps - the Stream
 
 ## How many separate streams can I create?
 
-You can create up to 20 streams on a Free account and up to 200 streams with an upgraded account, and multiple addresses can be added to a single stream config, "listen to all addresses" feature can also be used with a single stream config for Business and Enterprise plans.
+On Moralis' paid plans, you can have up to 200 active streams, and each stream can support listening to millions of addresses in a single configuration.
 
-You can contact our support team at [hello@moralis.io](mailto:hello@moralis.io) if you need a higher limit, we can support an unlimited number of streams.
+The free plan is limited to 1 active stream.
+
+If you require more streams than your current plan allows, reach out to our support team at [hello@moralis.io](mailto:hello@moralis.io), as we can support an unlimited number of streams to suit your needs.
 
 ## Are there any events lost when a stream or the filters for a stream get updated?
 
@@ -89,100 +93,27 @@ If you still require support, please contact us in your Slack channel, or drop a
 
 ## What is a record?
 
-**Summary**
+Records are the basic unit for calculating your Streams usage, with charges applied only to webhooks with the field `confirmed:true`. Webhooks set to `withconfirmed:false` and decoded logs are both free of charge.
 
-- A record is either a transaction (`txs`), log (`logs`) or internal transactions (`txsInternal`) in the webhook response.
-- Records is the base for usage of Streams
-- Records are only counted towards your usage for webhooks with `confirmed:true` so webhooks `withconfirmed:false` are **free**
-- Decoded logs are also free they do NOT count as `Records`.
+In Moralis Streams, a **record** refers to either a transaction (`txs` in response), a log (`logs` in response), or an internal transaction (`txsInternal` in response). The total number of records within a webhook is calculated as the sum of `txs + logs + txsInternal`.
 
-## What is a record?
+For every record within a webhook, your account will be charged 15 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
 
-A record is either a transaction (`txsin` response), log (`logs`in response) or internal transaction (`txsInternalin` response). The number of records in a webhook is the sum of `txs + logs + txsInternal`.
+:::tip
+Please note that only confirmed blocks will require charges, with unconfirmed blocks having `'x-records-charged': '0'`.
+:::
 
-In the header of a webhook, you can find the total number of records in that webhook in the header `x-records-charged`.
-
-In this example, the `x-records-charged` is `20` so the webhook contains 20 records.
+In the following code example, `x-records-charged` is set to `20`, indicating the presence of 20 records:
 
 ```json
 headers: {
     'x-region': 'us-west-2',
     'x-queue-size': '0',
-    'x-records-charged': ‘20’
+    'x-records-charged': '20',
     'x-signature': '0xdf49163b5273b50a8da48e82b7254b45d81aeee9a02f1909a45d7aaea240e9c2',
-  }
-```
-
-Only confirmed blocks will be charged, unconfirmed blocks will have `'x-records-charged': ‘0’`
-
-**Records determine usage**
-
-Records handle the usage of Streams API. In your plan, you have an included amount of records for free. You can find your included limits under your [billing page](https://admin.moralis.io/account/billing).
-
-For each transaction, you get two webhooks (read more [here](/streams-api/evm)), records are only counted towards your usage for webhooks with Confirmed status True.
-
-**Check your total consumed record for a period**
-
-By using /status ([see API reference](/streams-api/evm/reference/get-stats)) you will get a summary of `totalLogsProcessed`, `totalTxsProcessed`, and `totalTxsInternalProcessed` for your current billing period.
-
-**Example:**
-
-```json
-{
-  "totalWebhooksDelivered": 1288,
-  "totalWebhooksFailed": 17,
-  "totalLogsProcessed": 4257,
-  "totalTxsProcessed": 0,
-  "totalTxsInternalProcessed": 0
 }
 ```
 
-Where your total consumed records for the current billing period would be `"totalLogsProcessed": 4257`+`"totalTxsProcessed": 0`+`"totalTxsInternalProcessed": 0`. In this case total consumption is 4257.
-
-**Check one streams total consumed records for a period**
-
-By using /stats/{streamId} (see [API reference](/streams-api/evm/reference/get-stats-by-streamid)) you will get a summary of `totalLogsProcessed`,`totalTxsProcessed`, and `totalTxsInternalProcessed` for that specific stream.
-
-**Example:**
-
-```json
-{
-  "totalWebhooksDelivered": 0,
-  "totalWebhooksFailed": 0,
-  "totalLogsProcessed": 0,
-  "totalTxsProcessed": 0,
-  "totalTxsInternalProcessed": 0,
-  "createdAt": "2022-10-25T08:21:00.877Z",
-  "updatedAt": "2022-10-25T08:21:00.877Z"
-}
-```
-
-Where your total consumed records for the current billing period would be `totalLogsProcessed`+`totalTxsProcessed`+`totalTxsInternalProcessed`.
-
-**Records per transaction type**
-
-It depends on the selected address activity how many records will be charged
-
-- Contract Interactions (logs)
-- Native Transactions (txs)
-- Internal Transactions (txsInternal)
-
-| Description                                                                                 | Number of records\* |
-| :------------------------------------------------------------------------------------------ | :------------------ |
-| Stream with txs, logs and a erc20 transfer event is emitted                                 | 2                   |
-| Stream with txs, logs and 10 NFT Tokens (ERC721) were transferred in one transaction        | 11                  |
-| Stream with txs, logs and 30 NFT Tokens (ERC1155 Batch) were transferred in one transaction | 2                   |
-| Stream with logs and a ERC721 NFT is minted with 100 Tokens                                 | 100                 |
-| Stream with txs and a native transfer takes place                                           | 1                   |
-
-\*The number of records for logs depends on the contract emitting the events, more complex contracts could emit more records
-
-**Decoded logs**
-
-Moralis will decode and enrich standardized contracts (ERC20/ERC721/ERC1155), for each log that matches one of those contracts, a decoded log will be generated, currently, the decoded logs are:
-
-- erc20Transfers
-- erc20Approvals
-- nftTransfers
-
-Decoded logs are **free** they do NOT count as `Records`.
+:::tip
+You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
+:::
