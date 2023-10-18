@@ -93,7 +93,7 @@ Below is a breakdown of the number of records typically charged for various tran
 | Stream with logs and the minting of an ERC721 NFT with 100 Tokens                           | 100                 |
 | Stream with txs and a native transfer                                                      | 1                   |
 
-### Decoded logs
+### Decoded Logs
 
 Moralis decodes and enhances standardized contracts such as ERC20, ERC721, and ERC1155. Whenever a log matches one of these contracts, Moralis generates a decoded log.
 
