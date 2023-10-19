@@ -8,7 +8,7 @@ description: "How to read from the blockchain and how to call read-only function
 
 In the rapidly evolving realm of decentralized exchanges (DEXs), blockchain data retrieval is the lifeblood of security, transparency, and control. Traditional approaches like Ethereum's [`eth_call`](https://web3js.readthedocs.io/en/v3.0.0-rc.5/web3-eth.html?highlight=eth.call#call) are giving way to innovative solutions like [Moralis](https://moralis.io/).
 
-Decentralized exchanges (DEXs) are the backbone of blockchain's decentralization promise, offering security, transparency, and control. These platforms rely heavily on efficient data retrieval systems for functions like wallet balance display and contract detail fetching. This article explores how Moralis revolutionizes DEX development and why it is a compelling choice over the traditional [eth_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_call) RPC method.
+Decentralized exchanges (DEXs) are the backbone of blockchain's decentralization promise, offering security, transparency, and control. These platforms rely heavily on efficient data retrieval systems for functions like wallet balance display and contract detail fetching. This article explores how Moralis revolutionizes DEX development and why it's a compelling choice over the traditional [eth_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_call) RPC method.
 
 Furthermore, this article also showcases how Moralis simplifies and streamlines ETH data retrieval and blockchain interactions for DEX developers.
 
@@ -30,10 +30,10 @@ Developers use `eth_getBalance` to get the Ether balance of a given address or i
 
 Moralis presents the [getNativeBalance](/web3-data-api/evm/reference/get-native-balance) RPC method as the nearest equivalent to `eth_getBalance`. You can use it to obtain the native balance of an address which can be an important part in transaction management.
 
+## Traditional vs. Modern: eth_call RPC Method Review and Comparison
 
-## Traditional vs. Modern: A Quick Comparison
+Historically, developers have used Ethereum's `eth_call` method to interact with contracts without modifying the blockchain state. Here's an example:
 
-Historically, developers have used Ethereum's `eth_call` RPC method to interact with contracts without modifying the blockchain state. Here is an example:
 
 
 ```javascript
@@ -73,8 +73,7 @@ runApp();
 
 ## Why DEX Developers Should Choose Moralis
 
-Seamless user experiences are the essence of DEXs, and the `eth_call` RPC method has been instrumental in laying the foundation. However, the current landscape demands tools that combine speed with efficiency. Moralis stands as a pioneer in this regard, ushering in the next era of DEX development with advanced features using single lines of code, faster data retrieval, and enhanced security protocols.
-
+Seamless user experiences are the essence of DEXs, and the `eth_call` function has been instrumental in laying the foundation. However, the current landscape demands tools that combine speed with efficiency. Moralis stands as a pioneer in this regard, ushering in the next era of DEX development with advanced features using single lines of code, faster data retrieval, and enhanced security protocols.
 
 ## ETH Blockchain Data Retrieval Using the eth_call RPC Method: Conclusion
 
