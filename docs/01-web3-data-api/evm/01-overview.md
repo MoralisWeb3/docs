@@ -13,7 +13,7 @@ sidebar_class_name: "sidebar-overview"
 ![23_04_EVM-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769157-f47b85bf-7930-4d14-ad22-7f1e630f94d9.jpg)
 
 
-## What are the Web3 Data APIs?
+## What are the Web3 Data API?
 
 The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers.
 
