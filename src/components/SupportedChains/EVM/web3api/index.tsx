@@ -109,6 +109,20 @@ const EVMChainData = () => {
       EvmChain: "EvmChain.GNOSIS_CHIADO",
       Type: "Testnet",
     },
+    {
+      Name: "Chiliz",
+      "Chain Id (Int)": "88888",
+      "Chain Id (Hex)": "0x15b38",
+      EvmChain: "EvmChain.CHILIZ",
+      Type: "Mainnet",
+    },
+    {
+      Name: "Chiliz Spicy",
+      "Chain Id (Int)": "88882",
+      "Chain Id (Hex)": "0x15b32",
+      EvmChain: "EvmChain.CHILIZ_SPICY",
+      Type: "Testnet",
+    },
   ];
 
   return <Table headers={headers} data={data} />;
