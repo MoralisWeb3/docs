@@ -2,7 +2,7 @@
 title: "How to Get Transaction History for an Address of a Smart Account"
 slug: "../how-to-get-transactions-of-smart-contract-account"
 description: "Understanding Account Abstraction and how to get all transactions from a smart contract account using Moralis Wallet API."
-sidebar_label: Get transactions of a smart contract account"
+sidebar_label: Get transactions of a smart contract account
 ---
 
 :::tip
@@ -157,7 +157,7 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 
-Code example pf the JSON response:
+Code example of the JSON response:
 
 ```json
 {
