@@ -1,7 +1,7 @@
 ---
 title: "How to Get Transaction History for an Address of a Smart Account"
 slug: "../how-to-get-transactions-of-smart-contract-account"
-description: "Understanding Account Abstraction and how to get all transactions from a smart contract account using Moralis Wallet API."
+description: "Understanding account abstraction and how to get all transactions from a smart contract account using the Moralis Wallet API."
 sidebar_label: Get transactions of a smart contract account
 ---
 
@@ -9,7 +9,7 @@ sidebar_label: Get transactions of a smart contract account
 As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
-Moralis Wallet API streamlines the retrieval of transaction history, making it easier for developers to access and use transaction data for various purposes.
+The Moralis Wallet API streamlines the retrieval of transaction history, making it easier for developers to access and use transaction data for various purposes.
 
 **Why Retrieve Address Transaction History?**
 
@@ -28,23 +28,23 @@ Learn the most efficient method for obtaining and getting a complete transaction
 This step-by-step tutorial shows how to retrieve transactions from a smart account, simplifying the process and offering code examples in multiple programming languages.
 
 :::tip
-This tutorial uses Moralis [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions) RPC method.
+This tutorial uses Moralis' [`getWalletTransactions`](/web3-data-api/evm/reference/get-wallet-transactions) RPC method.
 :::
 
-## Step 1: Setup Moralis
+## Step 1: Set Up Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+Read our article, [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key), and make sure to finish all the steps. Only after that can you go ahead to complete this guide.
 
 ## Step 2: Method to Get and Retrieve Transactions for a Given Smart Account Address
 
-You can use the API endpoint [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions) to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
+You can use the [`getWalletTransactions`](/web3-data-api/evm/reference/get-wallet-transactions) API endpoint to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
 
 You will need two essential parameters:
 
 * `address`
 * `chain`
 
-Once you have obtained both the `address` and `chain`, you can use the code snippets below to retrieve the transactions:
+Once you have obtained both `address` and `chain`, you can use the code snippets below to retrieve the transactions:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -65,7 +65,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  // Define the Smart account address you want to retrieve transactions for
+  // Define the smart account address you want to retrieve transactions for
   const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
 
   // Specify the Ethereum chain (e.g., ETHEREUM) for the transactions
@@ -101,7 +101,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  // Define the Smart account address you want to retrieve transactions for
+  // Define the smart account address you want to retrieve transactions for
   const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
 
   // Specify the Ethereum chain (e.g., ETHEREUM) for the transactions
@@ -188,9 +188,9 @@ Code example of the JSON response:
 }
 ```
 
-Congratulations 🥳! You have successfully fetched transactions for a given smart account address on Ethereum using the Moralis Wallet API.
+Congratulations! 🥳 You have successfully fetched transactions for a given smart account address on Ethereum using the Moralis Wallet API.
 
-## Video Tutorial: Get All Transactions For Any Wallet
+## Video Tutorial: Get All Transactions for Any Wallet
 
 For a visual guide, you can check out our YouTube tutorial:
 
@@ -198,11 +198,11 @@ For a visual guide, you can check out our YouTube tutorial:
 
 ## Get 24/7 Developer Support
 
-Should you encounter any challenges while following this tutorial, our community engineers are here to assist you. Reach out to us on [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to receive 24/7 developer support. Your success is our priority!
+Should you encounter any challenges while following this tutorial, our community engineers are here to assist you. Reach out to us on [Discord](https://moralis.io/discord) or our [Moralis forum](https://forum.moralis.io) to receive 24/7 developer support. Your success is our priority!
 
 ## API Reference
 
-If you want to explore more details about other wallet endpoints and optional parameters, refer to the [API Reference](/web3-data-api/evm/reference#wallet-api).
+If you want to explore more details about other wallet endpoints and optional parameters, check out our [API Reference](/web3-data-api/evm/reference#wallet-api) page.
 
 ## See Also
 
