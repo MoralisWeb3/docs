@@ -157,7 +157,7 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳! You have successfully retrieved the native balance of a smart account using the Moralis Wallet API.
+Congratulations 🥳! You have successfully retrieved the native balance of a smart account using the Moralis [Wallet API](https://moralis.io/api/wallet/).
 
 ## Video Tutorial: Get Any Wallet Native Crypto Balance
 

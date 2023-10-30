@@ -9,7 +9,7 @@ sidebar_label: Get transactions of a smart contract account
 As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
-The Moralis Wallet API streamlines the retrieval of transaction history, making it easier for developers to access and use transaction data for various purposes.
+The Moralis [Wallet API](https://moralis.io/api/wallet/) streamlines the retrieval of transaction history, making it easier for developers to access and use transaction data for various purposes.
 
 **Why Retrieve Address Transaction History?**
 
