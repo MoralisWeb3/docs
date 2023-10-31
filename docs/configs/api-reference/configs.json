@@ -526,7 +526,9 @@
               "arbitrum",
               "0xa4b1",
               "gnosis",
-              "0x64"
+              "0x64",
+              "chiliz",
+              "0x15b38"
             ]
           }
         }
@@ -681,7 +683,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -810,7 +818,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -1126,7 +1140,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -1437,7 +1457,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -1698,7 +1724,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -1856,7 +1888,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -2170,7 +2208,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -2474,7 +2518,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -2727,7 +2777,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -2988,7 +3044,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -3226,7 +3288,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -3446,7 +3514,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -3558,7 +3632,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -3835,7 +3915,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -4079,7 +4165,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -4383,7 +4475,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -4461,7 +4559,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -4588,7 +4692,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -4736,7 +4846,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -4845,7 +4961,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -4941,7 +5063,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5069,7 +5197,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5278,7 +5412,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5421,7 +5561,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5651,7 +5797,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5795,7 +5947,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -5947,7 +6105,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -6043,7 +6207,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -6278,7 +6448,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -6369,7 +6545,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -6449,7 +6631,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -6619,7 +6807,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -6945,7 +7139,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -7408,7 +7608,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -7479,7 +7685,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -7790,7 +8002,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -8177,7 +8395,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -8386,7 +8610,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -8510,7 +8740,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -8930,7 +9166,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -9048,7 +9290,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -9164,7 +9412,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -9318,7 +9572,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         }
       ],
@@ -9624,7 +9884,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
@@ -9710,7 +9976,13 @@
             "arbitrum",
             "0xa4b1",
             "gnosis",
-            "0x64"
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32"
           ]
         },
         {
