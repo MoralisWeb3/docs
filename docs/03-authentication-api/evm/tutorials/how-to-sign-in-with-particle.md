@@ -1,7 +1,7 @@
 ---
 title: "How to Authenticate Users with Particle Network"
 slug: "../how-to-sign-in-with-particle"
-description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of creating a full-stack Web3 authentication solution using the popular NextJS framework."
+description: "Learn how to add secure Web3 Moralis authentication to your NextJS application by creating a full-stack Web3 authentication solution using NextJS framework."
 ---
 
 <video controls>
@@ -10,37 +10,63 @@ description: "This tutorial will teach you how to add secure Web3 Moralis authen
 
 ## What is Particle Network?
 
-:::info
-
-Visit [Particle Network docs](https://docs.particle.network/) to get more information.
-
+:::tip
+Check the Particle Network [documentation website](https://docs.particle.network/) to get more information.
 :::
 
-**Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
+The **Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
 
-## Before Starting
+## Prerequisites
 
-You can start this tutorial if you already have a NextJS dapp with [MetaMask sign-in](/authentication-api/evm/how-to-sign-in-with-metamask) functionality.
+### Next.js Dapp with MetaMask Sign-In
 
-## Installing Particle Connect & associated dependencies
+Before you begin this tutorial, make sure you have set up a Next.js decentralized application (Dapp) that includes MetaMask sign-in functionality. If you haven't integrated MetaMask sign-in yet, refer to the guide [How to Authenticate Users with MetaMask](/authentication-api/evm/how-to-sign-in-with-metamask).
 
-Install the `@particle-network/connect-react-ui` dependency:
-```bash npm2yarn
-npm install @particle-network/connext-react-ui
-```
+### Install Dependencies
 
-Install the `@particle-network/connect` dependency:
-```bash npm2yarn
-npm install @particle-network/connect
-```
+To prepare for this tutorial, you'll need to install the following dependencies for Particle Connect:
 
-Install the `@particle-network/chains` dependency:
-```bash npm2yarn
-npm install @particle-network/chains
-```
+- **@particle-network/connect-react-ui**: This package provides React UI components for Particle Connect. You can install it using npm or yarn.
 
-## Configuring Particle Connect
-1. Open the `pages/signin.jsx` file and structure your code to instead use Particle Connect's `ModalProvider` for handling initial connection, along with `useAccount` and `useConnectKit` for handling wallet interaction.
+  ```bash
+  npm install @particle-network/connect-react-ui
+  ```
+
+  or
+
+  ```bash
+  yarn add @particle-network/connect-react-ui
+  ```
+
+- **@particle-network/connect**: This package is essential for integrating Particle Connect into your Dapp. Install it using npm or yarn.
+
+  ```bash
+  npm install @particle-network/connect
+  ```
+
+  or
+
+  ```bash
+  yarn add @particle-network/connect
+  ```
+
+- **@particle-network/chains**: This dependency is required for handling blockchain chains within Particle Connect. You can install it using npm or yarn.
+
+  ```bash
+  npm install @particle-network/chains
+  ```
+
+  or
+
+  ```bash
+  yarn add @particle-network/chains
+  ```
+
+With these prerequisites organized, you'll be fully prepared to smoothly integrate Particle Connect into your Next.js Dapp.
+
+## Configure Particle Connect
+
+Open the `pages/signin.jsx` file and restructure your code as shown below. This code utilizes Particle Connect's components and hooks for handling the connection process and wallet interactions.
 
 ```javascript
 import { useRouter } from 'next/router';
@@ -65,7 +91,7 @@ export default function SignIn() {
           address: account,
           chainId: '0x1',
         });
-        
+
         const signature = await connect.particle.evm.personalSign(`0x${Buffer.from(message).toString('hex')}`); // Conversion to hex, then signing with connected Particle account (whether that be through Particle Auth or otherwise)
 
         const result = await signIn("moralis-auth", {
@@ -101,24 +127,26 @@ export default function SignIn() {
 }
 ```
 
-### Testing Particle Connect
-Visit [`http://localhost:3000/signin`](http://localhost:3000/signin) to test authentication.
+## Test Particle Connect
 
-1. Click on `Connect Wallet`
-This leverages Particle Connect; login can be initiated through either a social login with Particle Auth, or a supported Web3 (EVM) wallet.
+To test the authentication process with Particle Connect, follow these steps:
 
-![Connect Wallet](/img/content/particle-connect.webp)
+1. **Visit Sign-In Page**: Go to [`http://localhost:3000/signin`](http://localhost:3000/signin).
 
-2. Choose a sign-in method
+2. **Connect Wallet**: Click the "Connect Wallet" button to initiate the login process. You can choose to log in through Particle Auth or a supported Web3 (EVM) wallet.
 
-![Sign In](/img/content/particle-page.webp)
+   ![Connect Wallet](/img/content/particle-connect.webp)
 
-3. After successful authentication, the `/user` page will be opened
+3. **Select Sign-In Method**: Choose your preferred sign-in method from the options provided.
 
-![Completed Authentication](/img/content/particle-user.webp)
+   ![Sign In](/img/content/particle-page.webp)
 
-4. Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the user session's functionality:
+4. **Successful Authentication**: After successful authentication, you will be automatically redirected to the `/user` page.
 
-- When a user is authenticated, we show the user's info on the page.
-- When a user is not authenticated, we redirect to the `/signin` page.
-- When a user is authenticated, we show the user's info on the page, even refreshing after the page. (_**Explanation:** After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted [JWT](https://jwt.io/introduction) [JWE] stored inside. It contains session info [such as an address and signed message] in the user's browser._)
+   ![Completed Authentication](/img/content/particle-user.webp)
+
+5. **Test User Session**: Visit [`http://localhost:3000/user`](http://localhost:3000/user) to test the functionality of the user session:
+
+   - When a user is authenticated, their information will be displayed on the page.
+   - If a user is not authenticated, they will be redirected to the `/signin` page.
+   - Even after refreshing the page, the user's information will still be displayed. (_**Explanation:** After Web3 wallet authentication, the `next-auth` library creates a session cookie with an encrypted [JWT] containing session information, stored in the user's browser._)
