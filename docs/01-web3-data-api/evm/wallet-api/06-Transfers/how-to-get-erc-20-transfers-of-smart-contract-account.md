@@ -14,16 +14,16 @@ When you're working with ERC-20 tokens, it can be beneficial to track and analyz
 This step-by-step tutorial shows how to track, retrieve, and query an ERC-20 token in a smart account using the account address and the token contract, simplifying the process and offering code examples in multiple programming languages.
 
 :::tip
-This tutorial uses Moralis' [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) RPC method.
+This tutorial uses Moralis' [`getWalletTokenTransfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) RPC method.
 :::
 
 ## Step 1: Set Up Moralis
 
 Read our article, [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key), and make sure to finish all the steps. Only after that can you go ahead to complete this guide.
 
-## Step 2: Method to Get and Retrieve ERC-20 Tokens for a Given Smart Account Address
+## Step 2: Method to Get and Retrieve ERC-20 Transfers for a Given Smart Account Address
 
-You can use the [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) API endpoint to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
+You can use the [`getWalletTokenTransfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) API endpoint to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
 
 You will need two essential parameters:
 
