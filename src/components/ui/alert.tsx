@@ -29,8 +29,10 @@ const Alert = React.forwardRef<
     className={cn(alertVariants({ variant }), className)}
     {...props}
   >
-    <div className="flex-1 flex items-top">{props.children}</div>
-    {button && <div className="ml-4">{button}</div>}
+    <div className="flex-1 flex items-center justify-between">
+      {props.children}
+      {button && <div className="ml-4">{button}</div>}
+    </div>
   </div>
 ));
 Alert.displayName = "Alert";
