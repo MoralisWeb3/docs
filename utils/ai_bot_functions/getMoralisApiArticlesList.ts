@@ -14,7 +14,7 @@ export const getMoralisApiArticlesList = () => {
 export const getMoralisApiArticlesListSchema = {
   name: "get_moralis_api_articles_list",
   description:
-    "Fetches a list of moralis API articles with their titles and IDs. Can be used for a quickreference on what API articles are available.",
+    "Fetches a list of moralis API articles with their titles and IDs. Can be used for a quickreference on what API articles are available. Helpful in answering moralis web3 blockchain non coding API related questions.",
   parameters: { type: "object", properties: {} },
   returns: {
     type: "array",

@@ -11,7 +11,7 @@ const useChatGPTBot = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [userQuery, setUserQuery] = useState<string>("");
-  const [userTags, setUserTags] = useState<Array<string>>();
+  const [userTags, setUserTags] = useState<Array<string>>([""]);
   const [done, setDone] = useState<boolean>(false);
 
   const sendToSlack = async ({
@@ -45,6 +45,18 @@ const useChatGPTBot = () => {
     }
   };
 
+  type Message = {
+    role: "system" | "user" | "assistant";
+    content: string;
+  };
+
+  const chatHistoryKey = "chatHistory";
+
+  const reset = () => {
+    setAnswer("");
+    localStorage.removeItem(chatHistoryKey); // Clear chat history from local storage
+  };
+
   /**
    * @title generateAnswer
    * @description generateAnswer function
@@ -62,30 +74,47 @@ const useChatGPTBot = () => {
     // const apiGroup = localStorage.getItem("apiGroup");
     // setUserTags([helpWith, issueRelatedTo, apiGroup]);
     // console.log({ helpWith, issueRelatedTo });
-    setDone(false);
-    setUserQuery(query);
-    setLoading(true);
-    setAnswer("");
-    setError(null);
-
-    type Message = {
-      role: "system" | "user" | "assistant";
-      content: string;
-    };
+    const storedMessagesString = localStorage.getItem(chatHistoryKey);
+    const storedMessages: Message[] = storedMessagesString
+      ? JSON.parse(storedMessagesString)
+      : [];
 
     const localMessages: Message[] = [
       {
         role: "system",
         content:
           "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles or moralis API endpoints data. \
-You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement. Most importanly dont ever mention about depriciated service like Moralis serverUrl, appId. The latest way is to use apiKey.  \
+Before answering any questions always changes the available related articles to get more updated data. This is a strict requirement.\
+If the question is related to Moralis account then look into articles list and articles data for more information. If the question is related to Moralis API or anything technial then first look into API articles and get more information accordingly.\
+When answering dont mention that you are referring the data from somewhere. Answer it like you know about it.\
+Dont mention about something that user did not ask.\
+Most importanly dont ever mention about depriciated service like Moralis serverUrl, appId. The latest way is to use apiKey. Dont mention to user anything about the internal functions used. \
 If you did not find the required answer you convey that to the user and ask them to contact hello@moralis.io.",
       },
-      {
-        role: "user",
-        content: query,
-      },
+      // {
+      //   role: "user",
+      //   content: query,
+      // },
     ];
+
+    const userMessage: Message = {
+      role: "user",
+      content:
+        "Can you answer " +
+        query +
+        ". check the articles list and read the article data to get the correct and updated details. If you find an article data only provide relavent data from the article after reading it carefully.",
+    };
+    storedMessages.push(userMessage); // Add the user's message to the history
+    storedMessages.length > 4
+      ? localMessages.push(...[storedMessages[0], ...storedMessages.slice(-3)])
+      : localMessages.push(...storedMessages); // Add the user's message to the history
+
+    console.log({ localMessages });
+    setDone(false);
+    setUserQuery(query);
+    setLoading(true);
+    setAnswer("");
+    setError(null);
 
     try {
       const gptResponse = await fetch("/api/gpt-moralis-bot", {
@@ -142,10 +171,6 @@ If you did not find the required answer you convey that to the user and ask them
     }
   };
 
-  const reset = () => {
-    setAnswer("");
-  };
-
   useEffect(() => {
     if (done) {
       sendToSlack({
@@ -154,7 +179,7 @@ If you did not find the required answer you convey that to the user and ask them
         tags: userTags,
       });
     }
-  }, [done, userQuery, answer, userTags]);
+  }, [done]);
 
   return { answer, generateAnswer, loading, error, reset };
 };

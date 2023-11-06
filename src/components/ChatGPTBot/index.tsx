@@ -16,6 +16,8 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@site/src/components/ui/alert";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Message = {
   role: "user" | "assistant";
@@ -28,8 +30,39 @@ export default function ChatGPTBot() {
   const [query, setQuery] = useState("");
   const { answer, generateAnswer, loading, reset } = useChatGPTBot();
   const [messages, setMessages] = useState<Message[]>([]);
+  const [helpWith, setHelpWith] = useState("");
+  const [issueRelatedTo, setIssueRelatedTo] = useState("");
+  const [apiGroup, setApiGroup] = useState("");
 
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (answer) {
+      setMessages((currentMessages) => {
+        const isLastMessageBot =
+          currentMessages.length > 0 &&
+          currentMessages[currentMessages.length - 1].role === "assistant";
+
+        // Check if the last bot message already has the same text
+        const isDuplicate =
+          isLastMessageBot &&
+          currentMessages[currentMessages.length - 1].content === answer;
+
+        if (isLastMessageBot && loading && !isDuplicate) {
+          // Update the last message if it's not a duplicate
+          return currentMessages
+            .slice(0, -1)
+            .concat([{ content: answer, role: "assistant" }]);
+        } else if (!isLastMessageBot && !isDuplicate) {
+          // Add a new message if the last message isn't from the bot and it's not a duplicate
+          return [...currentMessages, { content: answer, role: "assistant" }];
+        }
+        // If it's a duplicate, return the current messages without any change
+        localStorage.setItem(chatHistoryKey, JSON.stringify(messages));
+        return currentMessages;
+      });
+    }
+  }, [answer, loading]);
 
   // Load chat history from local storage
   useEffect(() => {
@@ -51,26 +84,13 @@ export default function ChatGPTBot() {
     localStorage.setItem(chatHistoryKey, JSON.stringify(messages));
   }, [messages]);
 
-  useEffect(() => {
-    if (answer) {
-      // Replace 'bot' with 'assistant' and 'text' with 'content'
-      setMessages((currentMessages) => {
-        const newMessage: Message = {
-          role: "assistant",
-          content: answer,
-        };
-        return [...currentMessages, newMessage];
-      });
-    }
-  }, [answer]);
-
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
   const handleReset = () => {
     reset();
-    localStorage.removeItem(chatHistoryKey); // Clear the chat history in local storage
+    // localStorage.removeItem(chatHistoryKey); // Clear the chat history in local storage
     setQuery("");
     const welcomeMessage: Message = {
       role: "assistant",
@@ -126,7 +146,7 @@ export default function ChatGPTBot() {
                   }`}
                 >
                   {message.role === "assistant" ? (
-                    <div className="flex items-start">
+                    <div className="flex items-start w-5/6">
                       <Avatar className="flex-shrink-0">
                         <AvatarImage
                           src={ChatGPTLogo}
@@ -136,13 +156,19 @@ export default function ChatGPTBot() {
                       </Avatar>
                       <div className="ml-4 bg-slate-300 dark:bg-slate-600 p-2 rounded-lg">
                         <p className="text-sm dark:text-white mb-0">
-                          {message.content}
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {message.content}
+                          </ReactMarkdown>
                         </p>
                       </div>
                     </div>
                   ) : (
                     <div className="bg-blue-500 p-2 rounded-lg">
-                      <p className="text-white mb-0">{message.content}</p>
+                      <p className="text-white mb-0">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                          {message.content}
+                        </ReactMarkdown>
+                      </p>
                     </div>
                   )}
                 </div>

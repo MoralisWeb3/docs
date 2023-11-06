@@ -32,3 +32,13 @@ export {
   getMoralisApiArticlesByIds,
   getMoralisApiArticlesDataSchema,
 } from "./getMoralisApiArticlesData";
+
+export {
+  getMoralisSaaSPricingArticlesList,
+  getMoralisSaaSPricingArticlesSchema,
+} from "./getMoralisSaaSPricingArticlesList";
+
+export {
+  getMoralisSaaSPricingArticlesDataById,
+  getMoralisSaaSPricingArticlesDataSchema,
+} from "./getMoralisSaaSPricingArticlesData";

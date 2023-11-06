@@ -1,7 +1,7 @@
-import { VercelRequest, VercelResponse } from "@vercel/node";
+// import { VercelRequest, VercelResponse } from "@vercel/node";
 import OpenAI from "openai";
 import {
-  getAnswerFromDocs,
+  // getAnswerFromDocs,
   getAnswerFromDocsSchema,
   getArticlesByIds,
   getArticlesByIdsSchema,
@@ -15,13 +15,22 @@ import {
   getMoralisApiArticlesListSchema,
   getMoralisApiArticlesByIds,
   getMoralisApiArticlesDataSchema,
+  // getMoralisSaaSPricingArticlesList,
+  // getMoralisSaaSPricingArticlesSchema,
+  // getMoralisSaaSPricingArticlesDataById,
+  // getMoralisSaaSPricingArticlesDataSchema,
 } from "../utils/ai_bot_functions";
+import { Stream } from "openai/streaming";
 
 const openAiKey = process.env.OPENAI_KEY;
 
 const openai = new OpenAI({
   apiKey: openAiKey,
 });
+
+// const { OPENAI_TUNED_MODEL } = process.env;
+// if (!OPENAI_TUNED_MODEL)
+//   throw new Error("OPENAI_TUNED_MODEL Id is missing in env");
 
 export const config = {
   runtime: "edge",
@@ -46,20 +55,25 @@ const availableFunctions = {
   // what_is_moralis: getAnswerFromDocs,
   get_moralis_articles_list: getArticlesList,
   get_moralis_articles_by_id: getArticlesByIds,
-  get_moralis_api_endpoints_list: getMoralisApiEndpointsList,
-  get_moralis_api_endpoints_data: getMoralisApiEndpointsData,
   get_moralis_api_articles_list: getMoralisApiArticlesList,
   get_moralis_api_articles_by_id: getMoralisApiArticlesByIds,
+  get_moralis_api_endpoints_list: getMoralisApiEndpointsList,
+  get_moralis_api_endpoints_data: getMoralisApiEndpointsData,
+  // get_moralis_saas_pricing_articles_list: getMoralisSaaSPricingArticlesList,
+  // get_moralis_saas_pricing_articles_data_by_id:
+  //   getMoralisSaaSPricingArticlesDataById,
 };
 
 const functionSchemas = [
   // getAnswerFromDocsSchema,
   getArticlesListSchema,
   getArticlesByIdsSchema,
-  getMoralisApiEndpointsListSchema,
-  getMoralisApiEndpointsDataSchema,
   getMoralisApiArticlesListSchema,
   getMoralisApiArticlesDataSchema,
+  // getMoralisApiEndpointsListSchema,
+  // getMoralisApiEndpointsDataSchema,
+  // getMoralisSaaSPricingArticlesSchema,
+  // getMoralisSaaSPricingArticlesDataSchema,
 ];
 
 const removeDuplicateMessages = (messages) => {
@@ -88,12 +102,30 @@ const processMessages = async function* (messages) {
     console.log({ messages });
     // Create the streaming completion
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-16k",
       messages: messages,
       functions: functionSchemas,
       function_call: "auto",
       stream: true,
     });
+
+    // const { body: completion } = await fetch(
+    //   "https://api.openai.com/v1/chat/completions",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: `Bearer ${openAiKey}`,
+    //     },
+    //     body: JSON.stringify({
+    //       model: OPENAI_TUNED_MODEL,
+    //       messages: messages,
+    //       functions: functionSchemas,
+    //       function_call: "auto",
+    //       stream: true,
+    //     }),
+    //   }
+    // );
 
     let functionCall = {
       name: "",
@@ -102,7 +134,19 @@ const processMessages = async function* (messages) {
 
     for await (const chunk of completion) {
       const content = chunk.choices[0].delta.content;
+      // console.log(content);
+      // let emptyCount = 0;
+      // if (content === " ") {
+      //   console.log({ empty: content });
+      //   emptyCount += 1;
+      //   if (emptyCount > 1) {
+      //     shouldContinue = false;
+      //     console.log("empty content");
+      //     break;
+      //   }
+      // }
       if (content) {
+        // emptyCount = 0;
         // stitchedResponse += content;
         yield content;
       }
@@ -139,7 +183,7 @@ const processMessages = async function* (messages) {
 
       console.log({ functionArgs });
       const functionResponse = functionToCall(functionArgs);
-
+      console.log({ functionResponse });
       messages.push({
         role: "function",
         name: functionName,

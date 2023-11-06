@@ -1,7 +1,7 @@
-import { IntercomArticles } from "./helpers/generatedIntercomArticles";
+import { IntercomSaaSPricingArticles } from "./helpers/generatedIntercomArticles";
 
-export const getArticlesList = () => {
-  const articlesList = IntercomArticles.map((a) => {
+export const getMoralisSaaSPricingArticlesList = () => {
+  const articlesList = IntercomSaaSPricingArticles.map((a) => {
     return {
       title: a.title,
       id: a.id,
@@ -11,10 +11,10 @@ export const getArticlesList = () => {
   return articlesList;
 };
 
-export const getArticlesListSchema = {
-  name: "get_moralis_articles_list",
+export const getMoralisSaaSPricingArticlesSchema = {
+  name: "get_moralis_saas_pricing_articles_list",
   description:
-    "Fetches a list of moralis articles with their titles and IDs. Can be used for a quick reference on what articles are available. Helpful in answering about Moralis, moralis account, billing related questions.",
+    "Fetches a list of moralis pricing articles with their titles and IDs. Can be used for a quick reference on the available pricing and plan limits related articles.",
   parameters: { type: "object", properties: {} },
   returns: {
     type: "array",
