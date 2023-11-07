@@ -55,11 +55,11 @@ import TabItem from '@theme/TabItem';
         // ...and any other configuration
       });
 
-      // Define the Ethereum smart account address you want to retrieve ERC-20 tokens for
-      const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
+      // Define the smart account address you want to retrieve ERC-20 tokens for
+      const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
-      // Specify the Ethereum chain (EVM) you are working with
-      const chain = EvmChain.ETHEREUM;
+      // Specify the (EVM) you are working with
+      const chain = EvmChain.POLYGON;
 
       // Use Moralis EvmApi to get wallet token balances for the address and chain
       const response = await Moralis.EvmApi.token.getWalletTokenBalances({
@@ -92,11 +92,11 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  // Define the Ethereum smart account address you want to retrieve ERC-20 tokens for
-  const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
+  // Define the smart account address you want to retrieve ERC-20 tokens for
+  const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
-  // Specify the Ethereum chain (EVM) you are working with
-  const chain = EvmChain.ETHEREUM;
+  // Specify the chain (EVM) you are working with
+  const chain = EvmChain.POLYGON;
 
   // Use Moralis EvmApi to get wallet token balances for the address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenBalances({
@@ -122,10 +122,10 @@ from moralis import evm_api
 # Define your Moralis API key
 api_key = "YOUR_API_KEY"
 
-# Create a dictionary of parameters with the Ethereum smart account address and chain
+# Create a dictionary of parameters with the smart account address and chain
 params = {
-    "address": "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5",
-    "chain": "eth",
+    "address": "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9",
+    "chain": "polygon",
 }
 
 # Use the Moralis evm_api to get wallet token balances
