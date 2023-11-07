@@ -1,21 +1,21 @@
 ---
-title: "How to Get ERC-20 tokens of a Smart Account"
+title: "How to Get ERC-20 Tokens of a Smart Account"
 slug: "../how-to-get-erc-20-token-of-smart-contract-account"
-description: "Learn how to query and get ERC-20 tokens smart contract using the Moralis Wallet API."
+description: "Learn how to query and get tokens smart contracts using the Moralis Wallet API."
 sidebar_label: Get ERC-20 tokens of a smart contract account
 ---
 
 :::tip
-As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
+If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
-The Moralis [Wallet API](https://moralis.io/api/wallet/) streamlines the retrieval of ERC-20 tokens, it allows developers to access tokens data for various purposes.
+The Moralis [Wallet API](https://moralis.io/api/wallet/) streamlines the retrieval of ERC-20 tokens, allowing developers to access token data for various purposes.
 
-When you make a new token on the Ethereum network, it usually has the ERC-20 specification. For an Ethereum token to align with the ERC-20 standard, it must possess an array of diverse methods and attributes. These elements collectively form the essential building blocks that enable smart contracts to function seamlessly within the Ethereum network as tokens.
+When you create a new token on the Ethereum network, it usually follows ERC-20 specifications. For an Ethereum token to align with the ERC-20 standard, it must possess an array of diverse methods and attributes. Collectively, these elements form the essential building blocks that enable smart contracts to function seamlessly as tokens within the Ethereum network.
 
-The ERC-20 standard serves as a universal blueprint and interface, providing a common set of guidelines for smart contracts to adhere to when operating as tokens on the Ethereum blockchain. This standardized framework fosters interoperability, consistency, and compatibility, making ERC-20 tokens the cornerstone of decentralized finance (DeFi) and blockchain-based ecosystems.
+The ERC-20 standard serves as a universal blueprint and interface. Further, the standard provides a common set of guidelines for smart contracts to adhere to when operating as tokens on the Ethereum blockchain. This standardized framework fosters interoperability, consistency, and compatibility, making ERC-20 tokens the cornerstone of decentralized finance (DeFi) and blockchain-based ecosystems.
 
-This step-by-step tutorial shows how to retrieve and query an ERC-20 token in a smart account using the account address and the token contract, simplifying the process and offering code examples in multiple programming languages.
+This step-by-step tutorial shows how to easily retrieve and query an ERC-20 token in a smart account using an account address and token contract. What's more, this tutorial offers code examples in multiple programming languages.
 
 :::tip
 This tutorial uses Moralis' [`getWalletTokenBalances`](/web3-data-api/evm/reference/get-wallet-token-balances) RPC method.
@@ -23,7 +23,7 @@ This tutorial uses Moralis' [`getWalletTokenBalances`](/web3-data-api/evm/refere
 
 ## Step 1: Set Up Moralis
 
-Read our article, [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key), and make sure to finish all the steps. Only after that can you go ahead to complete this guide.
+Read our [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) article and finish all of its steps. Only after that can you go ahead to complete this guide.
 
 ## Step 2: Method to Get and Retrieve ERC-20 Tokens for a Given Smart Account Address
 
@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript
-// Import Moralis and EvmChain from Moralis and Common EVM Utils respectively
+// Import Moralis and EvmChain from Moralis and common EVM utils respectively
     const Moralis = require("moralis").default;
     const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
@@ -81,7 +81,7 @@ import TabItem from '@theme/TabItem';
 ```typescript
 // Import the Moralis module for TypeScript
 import Moralis from "moralis";
-// Import EvmChain from Common EVM Utils
+// Import EvmChain from common EVM utils
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
 // Define an asynchronous function runApp
