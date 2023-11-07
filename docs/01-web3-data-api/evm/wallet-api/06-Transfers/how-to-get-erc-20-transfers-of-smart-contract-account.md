@@ -57,7 +57,7 @@ const runApp = async () => {
   // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
-  // Use Moralis' EVM API to get wallet token transfers for the specified address and chain
+  // Use Moralis' EvmApi to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
     address,
     chain,
@@ -93,7 +93,7 @@ const runApp = async () => {
   // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
-  // Use Moralis' EVM API to get wallet token transfers for the specified address and chain
+  // Use Moralis' EvmApi to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
     address,
     chain,
