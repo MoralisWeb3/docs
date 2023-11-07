@@ -54,7 +54,7 @@ const runApp = async () => {
   // Define the smart account address you want to retrieve erc20 transfers for
   const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
-  // Specify the blockchain chain you want to interact with (Ethereum in this case)
+  // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
   // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
@@ -87,10 +87,10 @@ const runApp = async () => {
     // ...other configuration options
   });
 
-    // Define the Ethereum smart account address you want to retrieve erc20 tokens transfers for
+    // Define the smart account address you want to retrieve erc20 tokens transfers for
   const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
-  // Specify the blockchain chain you want to interact with (Ethereum in this case)
+  // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
   // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
