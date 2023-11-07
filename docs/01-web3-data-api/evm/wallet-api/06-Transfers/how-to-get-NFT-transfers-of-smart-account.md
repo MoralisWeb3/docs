@@ -1,17 +1,17 @@
 ---
-title: "How to Get NFT transfers of a Smart Account"
+title: "How to Get NFT Transfers of a Smart Account"
 slug: "../how-to-get-nft-transfers-of-smart-contract-account"
-description: "Learn how to query and get NFT transfers in smart contract using the Moralis Wallet API."
+description: "Learn how to query and get NFT transfers of a smart contract using the Moralis Wallet API."
 sidebar_label: Get NFT transfers of a smart contract account
 ---
 
 :::tip
-As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
+If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
-Gaining access to the historical transfer data of a Non-Fungible Token (NFT) opens up a world of possibilities for developers and enthusiasts alike. This data treasure trove provides a comprehensive and transparent record of an NFT's journey through various smart contracts, showcasing crucial information such as previous owners, sale prices, and the exact moments of transfer. [Wallet API](https://moralis.io/api/wallet/) offers a convenient solution to retrieve all the transfers of NFT efficiently.
+Gaining access to the historical transfer data of a non-fungible token (NFT) opens up a world of possibilities for developers. This data provides a comprehensive and transparent record of an NFT's journey through various smart contracts, showcasing crucial information such as previous owners, sale prices, and the exact moments of a transfer. And the Moralis [Wallet API](https://moralis.io/api/wallet/) offers a convenient solution to retrieve all transfers of an NFT efficiently.
 
-This step-by-step tutorial shows how to track, retrieve, and query NFT transfers in a smart account using the account address and the token contract, simplifying the process and offering code examples in multiple programming languages.
+This step-by-step tutorial shows how to easily track, retrieve, and query NFT transfers in a smart account using an account address and token contract. What's more, the tutorial includes multiple code examples in various programming languages.
 
 :::tip
 This tutorial uses Moralis' [`getWalletNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers) RPC method.
@@ -19,13 +19,13 @@ This tutorial uses Moralis' [`getWalletNFTTransfers`](/web3-data-api/evm/referen
 
 ## Step 1: Set Up Moralis
 
-Read our article, [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key), and make sure to finish all the steps. Only after that can you go ahead to complete this guide.
+Read our [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) article and finish all of its steps. Only after that can you go ahead to complete this guide.
 
 ## Step 2: Method to Get and Retrieve NFT transfers for a Given Smart Account Address
 
 To transfer an NFT to another user, the current owner initiates the transfer process. This typically involves interacting with the NFT smart contract and specifying the recipient's wallet address. The transfer request is then broadcast to the blockchain network.
 
-You can use the [`getWalletNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers) API endpoint to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
+You can use the [`getWalletNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers) API endpoint to get all transactions for an address of a smart account. Moreover, this endpoint allows you to fetch transactions for a given address of a smart account.
 
 You will need two essential parameters:
 
@@ -59,7 +59,7 @@ const runApp = async () => {
   // Specify the Ethereum chain (in this case, ETHEREUM)
   const chain = EvmChain.ETHEREUM;
 
-  // Retrieve NFT transfer data using Moralis's EvmApi
+  // Retrieve NFT transfer data using Moralis' EvmApi
   const response = await Moralis.EvmApi.nft.getWalletNFTTransfers({
     address,
     chain,
@@ -95,7 +95,7 @@ const runApp = async () => {
   // Specify the Ethereum chain (in this case, ETHEREUM)
   const chain = EvmChain.ETHEREUM;
 
-  // Retrieve NFT transfer data using Moralis's EvmApi
+  // Retrieve NFT transfer data using Moralis' EvmApi
   const response = await Moralis.EvmApi.nft.getWalletNFTTransfers({
     address,
     chain,
@@ -125,7 +125,7 @@ params = {
     "chain": "eth"
 }
 
-# Use Moralis's EvmApi to retrieve NFT transfer data
+# Use Moralis' EvmApi to retrieve NFT transfer data
 result = evm_api.nft.get_wallet_nft_transfers(
     api_key=api_key,
     params=params,
