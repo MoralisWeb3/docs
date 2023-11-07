@@ -6,7 +6,7 @@ sidebar_label: Get ERC-20 transfers of a smart contract account
 ---
 
 :::tip
-If you'd like examples of account types, read the [Ethereum accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
+If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
 When you're working with ERC-20 tokens, it can be beneficial to track and analyze token transfers associated with a specific contract address. The [Wallet API](https://moralis.io/api/wallet/) offers a convenient solution to retrieve all the transfers of an ERC-20 token efficiently.
