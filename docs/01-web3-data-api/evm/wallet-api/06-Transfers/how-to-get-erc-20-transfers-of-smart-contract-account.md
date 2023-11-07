@@ -52,10 +52,10 @@ const runApp = async () => {
   });
 
   // Define the smart account address you want to retrieve erc20 transfers for
-  const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
+  const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
   // Specify the blockchain chain you want to interact with (Ethereum in this case)
-  const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.POLYGON;
 
   // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
@@ -87,11 +87,11 @@ const runApp = async () => {
     // ...other configuration options
   });
 
-    // Define the Ethereum smart account address you want to retrieve ERC20 tokens transfers for
-  const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
+    // Define the Ethereum smart account address you want to retrieve erc20 tokens transfers for
+  const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
   // Specify the blockchain chain you want to interact with (Ethereum in this case)
-  const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.POLYGON;
 
   // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
@@ -119,8 +119,8 @@ api_key = "YOUR_API_KEY"
 
 # Define the parameters for the API request
 params = {
-    "address": "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5",
-    "chain": "eth"
+    "address": "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9",
+    "chain": "polygon"
 }
 
 # Make an API request to get wallet token transfers for the specified address and chain
@@ -193,7 +193,7 @@ Code example of the JSON response:
 
 Congratulations! 🥳 You have successfully fetched ERC-20 transfers for a given smart account address on Ethereum using the Moralis Wallet API.
 
-## Video Tutorial: How to Get All ERC20 Transfers by Wallet Using Next.js & Node.js
+## Video Tutorial: How to Get All ERC-20 Transfers by Wallet Using Next.js & Node.js
 
 For a visual guide, you can check out our YouTube tutorial:
 
