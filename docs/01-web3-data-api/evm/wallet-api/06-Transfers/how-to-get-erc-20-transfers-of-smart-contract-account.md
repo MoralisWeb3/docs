@@ -1,15 +1,15 @@
 ---
-title: "How to Get ERC-20 transfers of a Smart Account"
+title: "How to Get ERC-20 Transfers of a Smart Account"
 slug: "../how-to-get-erc-20-transfers-of-smart-contract-account"
 description: "Learn how to query and get ERC-20 transfers in smart contract using the Moralis Wallet API."
 sidebar_label: Get ERC-20 transfers of a smart contract account
 ---
 
 :::tip
-As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
+If you'd like examples of account types, read the [Ethereum accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
-When you're working with ERC-20 tokens, it can be beneficial to track and analyze the token transfers associated with a specific contract address. [Wallet API](https://moralis.io/api/wallet/) offers a convenient solution to retrieve all the transfers of an ERC-20 token efficiently.
+When you're working with ERC-20 tokens, it can be beneficial to track and analyze token transfers associated with a specific contract address. The [Wallet API](https://moralis.io/api/wallet/) offers a convenient solution to retrieve all the transfers of an ERC-20 token efficiently.
 
 This step-by-step tutorial shows how to track, retrieve, and query an ERC-20 token in a smart account using the account address and the token contract, simplifying the process and offering code examples in multiple programming languages.
 
@@ -19,11 +19,11 @@ This tutorial uses Moralis' [`getWalletTokenTransfers`](/web3-data-api/evm/refer
 
 ## Step 1: Set Up Moralis
 
-Read our article, [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key), and make sure to finish all the steps. Only after that can you go ahead to complete this guide.
+Please read our [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) article and finish all of its steps. Only after that can you go ahead and complete this guide.
 
 ## Step 2: Method to Get and Retrieve ERC-20 Transfers for a Given Smart Account Address
 
-You can use the [`getWalletTokenTransfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) API endpoint to get all transactions for an address of a smart account. This endpoint allows you to fetch transactions for a given address of a smart account.
+You can use the [`getWalletTokenTransfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) API endpoint to get all transactions from a specific address of a smart account. Moreover, this endpoint allows you to fetch transactions for a given address of a smart account.
 
 You will need two essential parameters:
 
@@ -51,13 +51,13 @@ const runApp = async () => {
     // ...other configuration options
   });
 
-  // Define the smart account address you want to retrieve erc20 transfers for
+  // Define the smart account address you want to retrieve ERC-20 transfers for
   const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
   // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
-  // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
+  // Use Moralis' EVM API to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
     address,
     chain,
@@ -87,13 +87,13 @@ const runApp = async () => {
     // ...other configuration options
   });
 
-    // Define the smart account address you want to retrieve erc20 tokens transfers for
+    // Define the smart account address you want to retrieve ERC-20 token transfers for
   const address = "0x9b722B2aA4Cc119aCf8c95bBF5244092Be6880b9";
 
   // Specify the chain you want to interact with (Polygon in this case)
   const chain = EvmChain.POLYGON;
 
-  // Use Moralis's EvmApi to get wallet token transfers for the specified address and chain
+  // Use Moralis' EVM API to get wallet token transfers for the specified address and chain
   const response = await Moralis.EvmApi.token.getWalletTokenTransfers({
     address,
     chain,
