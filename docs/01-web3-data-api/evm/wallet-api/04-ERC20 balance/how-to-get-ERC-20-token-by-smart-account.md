@@ -1,5 +1,5 @@
 ---
-title: "How to Get ERC20 tokens of a Smart Account"
+title: "How to Get ERC-20 tokens of a Smart Account"
 slug: "../how-to-get-erc-20-token-of-smart-contract-account"
 description: "Learn how to query and get ERC-20 tokens smart contract using the Moralis Wallet API."
 sidebar_label: Get ERC-20 tokens of a smart contract account
