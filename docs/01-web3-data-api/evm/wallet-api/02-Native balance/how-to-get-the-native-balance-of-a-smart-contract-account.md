@@ -13,7 +13,7 @@ There are two primary account types:
 
 **Contract Accounts** function autonomously, controlled by pre-defined smart contract code without private keys.
 
-:::note
+:::tip
 As an example of account types, you can read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
 
@@ -54,7 +54,7 @@ const runApp = async() => {
   });
 
   // Define the address of a smart contract account for which you want to fetch the native balance
-  const address = '0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5';
+  const address = "0x350845DD3f03F1355233a3A7CEBC24b5aAD05eC5";
 
   // Specify the blockchain that you are working with (e.g., Ethereum)
   const chain = EvmChain.ETHEREUM;
@@ -157,7 +157,7 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳! You have successfully retrieved the native balance of a smart account using the Moralis Wallet API.
+Congratulations 🥳! You have successfully retrieved the native balance of a smart account using the Moralis [Wallet API](https://moralis.io/api/wallet/).
 
 ## Video Tutorial: Get Any Wallet Native Crypto Balance
 
@@ -172,3 +172,7 @@ Should you encounter any challenges while following this tutorial, our community
 ## API Reference
 
 If you want to explore more details about other wallet endpoints and optional parameters, refer to the [API Reference](/web3-data-api/evm/reference#wallet-api).
+
+## See Also
+
+* [How to Get Transaction History for an Address of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-transactions-of-smart-contract-account)
