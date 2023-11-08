@@ -10,7 +10,7 @@ sidebar_class_name: "sidebar-overview"
 
 # EVM Web3 Data API
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.js";
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
