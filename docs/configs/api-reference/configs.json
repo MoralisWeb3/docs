@@ -528,7 +528,9 @@
               "gnosis",
               "0x64",
               "chiliz",
-              "0x15b38"
+              "0x15b38",
+              "base",
+              "0x2105"
             ]
           }
         }
@@ -689,7 +691,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -824,7 +830,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -1146,7 +1156,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -1463,7 +1477,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -1730,7 +1748,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -1894,7 +1916,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -2214,7 +2240,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -2524,7 +2554,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -2783,7 +2817,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -3050,7 +3088,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -3294,7 +3336,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -3520,7 +3566,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -3638,7 +3688,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -3921,7 +3975,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -4171,7 +4229,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -4481,7 +4543,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -4565,7 +4631,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -4698,7 +4768,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -4852,7 +4926,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -4967,7 +5045,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -5069,7 +5151,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -5203,7 +5289,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -5418,7 +5508,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -5567,7 +5661,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -5803,7 +5901,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -5953,7 +6055,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -6111,7 +6217,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -6213,7 +6323,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -6454,7 +6568,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -6551,7 +6669,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -6637,7 +6759,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -6813,7 +6939,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -7145,7 +7275,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -7614,7 +7748,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -7691,7 +7829,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -8008,7 +8150,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -8401,7 +8547,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -8616,7 +8766,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -8746,7 +8900,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -9172,7 +9330,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -9296,7 +9458,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -9418,7 +9584,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -9578,7 +9748,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         }
       ],
@@ -9890,7 +10064,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
@@ -9982,7 +10160,11 @@
             "chiliz",
             "0x15b38",
             "chiliz testnet",
-            "0x15b32"
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33"
           ]
         },
         {
