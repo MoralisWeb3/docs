@@ -6,6 +6,10 @@ sidebar_position: 3
 sidebar_class_name: "sidebar-nft-api"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.js";
+
+<ApiBanner />
+
 ![](/img/content/0d1bb91-image.webp)
 
 ## What is the NFT API?
