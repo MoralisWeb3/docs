@@ -191,7 +191,7 @@ Code example of the JSON response:
 }
 ```
 
-Congratulations! 🥳 You have successfully fetched ERC-20 transfers for a given smart account address on Ethereum using the Moralis Wallet API.
+Congratulations! 🥳 You have successfully fetched ERC-20 transfers for a given smart account address on Polygon using the Moralis Wallet API.
 
 ## Video Tutorial: How to Get All ERC-20 Transfers by Wallet Using Next.js & Node.js
 
