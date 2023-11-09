@@ -5,11 +5,9 @@ sidebar_position: 2
 sidebar_class_name: "sidebar-wallet-api"
 ---
 
-![image](https://github.com/MoralisWeb3/docs/assets/13417464/15f7b5ff-cc8e-44ca-b745-86db96576349)
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
-## What is the Wallet API?
+<ApiBanner />
 
 Boasting an array of features, exceptional flexibility, and unparalleled scalability, our Wallet API is the definitive solution for integrating wallet functionalities into your Web3 dapps.
 

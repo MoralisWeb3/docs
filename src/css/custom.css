@@ -725,25 +725,36 @@ li.sidebar-developer-tools a.menu__link--active:before {
   margin: 20px 0;
 }
 
+.api-banner > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 .api-banner h1 {
-  font-size: 24px;
-  margin-bottom: 0; /* No bottom margin needed for h1 here */
+  font-size: 24px; /* Adjust the font size as needed */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2; /* Adjust line-height as needed */
 }
 
 .api-banner p {
-  font-size: 18px;
-  margin-top: 4px; /* Small top margin for the paragraph */
+  font-size: 18px; /* Adjust the font size as needed */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2; /* Adjust line-height as needed */
 }
 
 .api-banner .cta-button {
   padding: 10px 25px;
   background-color: #5865F2;
-  color: #ffffff;
+  color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  text-decoration: none; /* As we'll use an <a> tag for the button */
-  display: inline-block; /* To enable the use of padding and width/height */
+  text-decoration: none;
+  display: inline-block;
   text-align: center;
   transition: background-color 0.3s ease;
 }

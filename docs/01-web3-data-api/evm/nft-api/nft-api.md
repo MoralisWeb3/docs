@@ -10,8 +10,6 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
-![](/img/content/0d1bb91-image.webp)
-
 ## What is the NFT API?
 
 The Moralis NFT API enables Web3 developers to build and scale any NFT dapp effortlessly. Access all the information you need for any NFT from multiple blockchains.

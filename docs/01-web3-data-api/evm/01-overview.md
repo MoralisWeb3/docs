@@ -8,13 +8,9 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# EVM Web3 Data API
-
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
-
-![23_04_EVM-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769157-f47b85bf-7930-4d14-ad22-7f1e630f94d9.jpg)
 
 ## What are the Web3 Data APIs?
 
