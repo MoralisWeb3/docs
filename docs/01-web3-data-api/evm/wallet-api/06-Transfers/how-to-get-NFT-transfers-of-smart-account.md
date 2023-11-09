@@ -180,7 +180,7 @@ Code example of the JSON response:
 }
 ```
 
-Congratulations! 🥳 You have successfully fetched ERC-20 transfers for a given smart account address on Ethereum using the Moralis Wallet API.
+Congratulations! 🥳 You have successfully fetched NFT transfers for a given smart account address on Ethereum using the Moralis Wallet API.
 
 ## Video Tutorial: Get All NFT Transfers by a Contract Address
 
