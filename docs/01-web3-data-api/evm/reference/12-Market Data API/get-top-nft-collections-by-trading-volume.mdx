@@ -11,6 +11,10 @@ import config from "../../../../configs/api-reference/configs.json";
 
 # Get the top NFT collections by trading volume
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 <ApiReference
   {...config["market-data"].getHottestNFTCollectionsByTradingVolume}
 >

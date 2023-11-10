@@ -4,9 +4,11 @@ sidebar_label: "Overview"
 slug: "/authentication-api/solana"
 sidebar_position: 1
 description: "Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp."
---- 
+---
 
-![](/img/content/594b455-image.webp)
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
 
 ## What is the Auth API?
 
@@ -19,7 +21,7 @@ The Auth API provides out-of-the-box all the necessary APIs you need to authenti
 - Requesting challenge message for wallet signature on both [EVM](/authentication-api/evm/reference/request-challenge-evm) and [Solana](/authentication-api/solana/reference/request-challenge-solana)
 - Verifying signed challenge message signature on both [EVM](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeEvm) and [Solana](https://swagger.moralis.io/auth/#/Challenge/verifyChallengeSolana)
 
-:::info 
+:::info
 
 The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) signature. Therefore, authentication using the Auth API with smart contract wallet is impossible.
 
