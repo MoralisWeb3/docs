@@ -496,7 +496,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5"
         }
       ],
       "queryParams": [
@@ -644,7 +644,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -1273,7 +1273,7 @@
           "name": "address",
           "description": "The wallet address of the sender or recipient of the transfers",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -1555,7 +1555,7 @@
           "name": "address",
           "description": "The wallet address of the owner of NFTs in the collections",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -5370,7 +5370,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -7228,7 +7228,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -7558,7 +7558,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
@@ -10054,7 +10054,7 @@
           "name": "address",
           "description": "The address to be resolved",
           "required": true,
-          "example": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],

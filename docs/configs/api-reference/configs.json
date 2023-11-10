@@ -8857,7 +8857,7 @@
           "name": "block_number_or_hash",
           "description": "The block number or block hash",
           "required": true,
-          "example": "12526958",
+          "example": "18541416",
           "type": "string"
         }
       ],
