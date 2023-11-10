@@ -787,7 +787,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326",
+          "example": "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e",
           "type": "string"
         }
       ],
@@ -6626,7 +6626,7 @@
           "name": "address",
           "description": "The address from which the native balance will be checked",
           "required": true,
-          "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e",
+          "example": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
           "type": "string"
         }
       ],
@@ -8857,7 +8857,7 @@
           "name": "block_number_or_hash",
           "description": "The block number or block hash",
           "required": true,
-          "example": "15863321",
+          "example": "18541416",
           "type": "string"
         }
       ],
