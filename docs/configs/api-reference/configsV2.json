@@ -5288,7 +5288,7 @@
           "name": "address",
           "description": "The address from which token balances will be checked",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
           "type": "string"
         }
       ],
