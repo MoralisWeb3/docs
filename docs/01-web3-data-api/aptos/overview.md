@@ -1,5 +1,5 @@
 ---
-title: "Web3 Data API"
+title: "Aptos Web3 Data API"
 sidebar_label: "Overview"
 slug: "/web3-data-api/aptos"
 sidebar_position: 1
@@ -8,9 +8,9 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# Aptos Web3 Data API
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-![23_04_Aptos-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769407-b8a10c03-03c6-4f8c-b328-b1555c623aa3.jpg)
+<ApiBanner />
 
 ## What are the Web3 Data APIs?
 

@@ -8,7 +8,9 @@ image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.webp"
 sidebar_class_name: "sidebar-overview"
 ---
 
-![](/img/content/d06bbe5-Moralis-Streams-API.webp)
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
 
 :::tip
 You can learn by [watching the Streams API Demo](#demos).

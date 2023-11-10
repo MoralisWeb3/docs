@@ -1,5 +1,5 @@
 ---
-title: "Web3 Data API"
+title: "Solana Web3 Data API"
 sidebar_label: "Overview"
 slug: "/web3-data-api/solana"
 sidebar_position: 1
@@ -8,10 +8,9 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# Solana Web3 Data API
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-![23_04_Solana-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769900-094e347c-0113-4b96-94be-13d6d5cd5415.jpg)
-
+<ApiBanner />
 
 ## What are the Web3 Data APIs?
 
