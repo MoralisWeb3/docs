@@ -124,7 +124,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth",
 }
 
@@ -169,7 +169,7 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth",
     "format": "decimal",
     "limit": 100,
@@ -195,7 +195,7 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth",
     "format": "decimal",
     "limit": 1,
@@ -250,7 +250,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth",
     "limit": 100,
     "cursor": "",

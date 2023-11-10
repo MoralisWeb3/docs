@@ -42,7 +42,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -70,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -93,7 +93,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth"
 }
 
@@ -135,7 +135,7 @@ In your terminal, you should see the following JSON response:
       "transaction_type": "Single",
       "token_address": "0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401",
       "token_id": "32861001645432232115677216693187330961962340035243999304845689030250465478890",
-      "from_address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "from_address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "from_address_label": null,
       "to_address": "0xea97bb00daa1880e0a575b38e723066a398595ea",
       "to_address_label": null,
