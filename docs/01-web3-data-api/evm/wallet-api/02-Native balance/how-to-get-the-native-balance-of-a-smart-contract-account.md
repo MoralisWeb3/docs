@@ -21,6 +21,10 @@ Now, let's explore how Moralis simplifies the process of getting the native bala
 
 This step-by-step tutorial shows how to retrieve the native balance from a smart account, simplifying the process and offering code examples in multiple programming languages.
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -176,3 +180,6 @@ If you want to explore more details about other wallet endpoints and optional pa
 ## See Also
 
 * [How to Get Transaction History for an Address of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-transactions-of-smart-contract-account)
+* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-ERC-20-token-by-smart-account)
+* [How to Get NFT Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-NFT-transfers-of-smart-account)
+* [How to Get ERC-20 Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-transfers-of-smart-contract-account)

@@ -5,6 +5,10 @@ description: "Learn how to query and get NFT transfers of a smart contract using
 sidebar_label: Get NFT transfers of a smart contract account
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 :::tip
 If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
@@ -200,4 +204,5 @@ If you want to explore more details about other wallet endpoints and optional pa
 
 * [Understanding Account Abstraction: How to Get Native Balances from Smart Accounts](/web3-data-api/evm/wallet-api/how-to-get-the-native-balance-of-a-smart-contract-account)
 * [How to Get Transaction History for an Address of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-transactions-of-smart-contract-account)
-* [Get All NFT Transfers – How to Get All NFT Transfers for Any Wallet](https://moralis.io/get-all-nft-transfers-how-to-get-all-nft-transfers-for-any-wallet/)
+* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-ERC-20-token-by-smart-account)
+* [How to Get ERC-20 Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-transfers-of-smart-contract-account)

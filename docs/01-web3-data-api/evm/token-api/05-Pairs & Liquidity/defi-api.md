@@ -6,6 +6,10 @@ sidebar_position: 9
 sidebar_class_name: "sidebar-defi-api"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## What is the DeFi API?
 
 The DeFi API enables Web3 developers to quickly get liquidity reserves and pair data across multiple blockchains, in order to help them build and scale their dapps efficiently.

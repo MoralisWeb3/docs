@@ -5,6 +5,10 @@ description: "The Moralis NFT API makes working with NFT Metadata easier by supp
 sidebar_position: 2
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 For all collections that have metadata on IPFS we automatically refresh token metadata each time those tokens are requested on any NFT endpoint.
 
 Each time a token is requested, it will be queued for metadata refresh.

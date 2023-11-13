@@ -5,6 +5,10 @@ description: "Learn how to get the native balance of a ERC20 token vault using t
 sidebar_label: "Get native balance of ERC20 token vault"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.

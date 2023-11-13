@@ -5,6 +5,10 @@ description: "Learn how to query and get ERC-20 transfers in smart contract usin
 sidebar_label: Get ERC-20 transfers of a smart contract account
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 :::tip
 If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.
 :::
@@ -211,3 +215,5 @@ If you want to explore more details about other wallet endpoints and optional pa
 
 * [Understanding Account Abstraction: How to Get Native Balances from Smart Accounts](/web3-data-api/evm/wallet-api/how-to-get-the-native-balance-of-a-smart-contract-account)
 * [How to Get Transaction History for an Address of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-transactions-of-smart-contract-account)
+* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-ERC-20-token-by-smart-account)
+* [How to Get NFT Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-NFT-transfers-of-smart-account)

@@ -6,6 +6,10 @@ sidebar_label: "eth_call and getBlock"
 description: "How to read from the blockchain and how to call read-only functions of a smart contract using eth_call and Moralis getBlock RPC methods"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 In the rapidly evolving realm of Web3, blockchain data retrieval is the lifeblood of security, transparency, and control. Traditional approaches like Ethereum's [`eth_call`](https://web3js.readthedocs.io/en/v3.0.0-rc.5/web3-eth.html?highlight=eth.call#call) are giving way to innovative solutions like [Moralis](https://moralis.io/).
 
 Decentralized applications (dapps) span a wide spectrum of use cases, from decentralized exchanges (DEXs) to DeFi platforms, gaming, NFT marketplaces, and beyond. Regardless of the specific application, efficient data retrieval is a common requirement for tasks like querying on-chain information, checking token balances, and interacting with smart contracts. Not only will this article demonstrate how blockchain data retrieval works using `eth_call`, but also how Moralis revolutionizes Ethereum data retrieval and why it's a compelling choice for developers working on a diverse range of dapp-related projects.

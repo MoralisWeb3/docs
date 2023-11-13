@@ -5,6 +5,10 @@ description: "Learn how to get SPL NFT balance of an address using Moralis Solan
 sidebar_label: "Get SPL NFT balance of address"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/solana/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.

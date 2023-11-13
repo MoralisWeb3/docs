@@ -4,6 +4,10 @@ slug: "../../query-from-evm-or-solana"
 description: "It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type."
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 It's possible to read responses from `EvmApi` and `SolApi` in three different ways: `.toJson()`, `.raw`, `.result`, or using `.format()` for default formatting type.
 
 :::info Complete API Reference
