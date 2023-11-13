@@ -33,6 +33,7 @@ export default function ChatGPTBot() {
   const [helpWith, setHelpWith] = useState("");
   const [issueRelatedTo, setIssueRelatedTo] = useState("");
   const [apiGroup, setApiGroup] = useState("");
+  const [showInitialOptions, setShowInitialOptions] = useState(true);
 
   const [open, setOpen] = useState(false);
 
@@ -77,6 +78,43 @@ export default function ChatGPTBot() {
       };
       setMessages([welcomeMessage]);
     }
+    if (!storedMessages) {
+      setShowInitialOptions(true);
+    }
+  }, []);
+
+  // Effect to handle option selection changes
+  useEffect(() => {
+    if (helpWith === "account" || helpWith === "billing") {
+      // Enable input for 'account' or 'billing'
+      setShowInitialOptions(false);
+      // Possibly show input box here or handle it where the form is rendered
+    } else if (helpWith === "API") {
+      // Ask about the API
+      const apiQuestion: Message = {
+        role: "assistant",
+        content: "Which API do you have an issue with?",
+      };
+      setMessages([...messages, apiQuestion]);
+      // You would then handle the selection of these APIs in a similar manner to the initial options
+    }
+  }, [helpWith]);
+
+  // Save selections to local storage
+  useEffect(() => {
+    localStorage.setItem("helpWith", helpWith);
+    localStorage.setItem("apiGroup", apiGroup);
+  }, [helpWith, apiGroup]);
+
+  // Restore selections from local storage
+  useEffect(() => {
+    const storedHelpWith = localStorage.getItem("helpWith");
+    const storedApiGroup = localStorage.getItem("apiGroup");
+    if (storedHelpWith) {
+      setHelpWith(storedHelpWith);
+      setShowInitialOptions(false); // Hide initial options if there's a stored selection
+    }
+    if (storedApiGroup) setApiGroup(storedApiGroup);
   }, []);
 
   // Save chat history to local storage
@@ -169,10 +207,37 @@ export default function ChatGPTBot() {
                           {message.content}
                         </ReactMarkdown>
                       </p>
+                      {!helpWith && (
+                        <>
+                          <p className="text-white mb-0">I need help with:</p>
+                          <div className="flex space-x-2 mt-2 justify-end">
+                            {/* Options aligned to the right */}
+                            <button
+                              onClick={() => setHelpWith("Account")}
+                              className="btn"
+                            >
+                              Account
+                            </button>
+                            <button
+                              onClick={() => setHelpWith("Billing")}
+                              className="btn"
+                            >
+                              Billing
+                            </button>
+                            <button
+                              onClick={() => setHelpWith("API")}
+                              className="btn"
+                            >
+                              API
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </div>
                   )}
                 </div>
               ))}
+
               {loading && (
                 <div className="flex justify-center">
                   <div>Loading...</div>
@@ -180,25 +245,27 @@ export default function ChatGPTBot() {
               )}
             </div>
           </ScrollArea>
-          <div className="p-4 flex-none">
-            <form onSubmit={handleUserSubmit} className="flex items-center">
-              <input
-                type="text"
-                className="w-full p-3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Type your message here..."
-                value={query}
-                onChange={handleTextChange}
-                required
-                style={{ minHeight: "50px" }}
-              />
-              <button
-                type="submit"
-                className="ml-4 bg-blue-500 text-white py-2 px-4 rounded text-lg"
-              >
-                Send
-              </button>
-            </form>
-          </div>
+          {!showInitialOptions && (
+            <div className="p-4 flex-none">
+              <form onSubmit={handleUserSubmit} className="flex items-center">
+                <input
+                  type="text"
+                  className="w-full p-3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Type your message here..."
+                  value={query}
+                  onChange={handleTextChange}
+                  required
+                  style={{ minHeight: "50px" }}
+                />
+                <button
+                  type="submit"
+                  className="ml-4 bg-blue-500 text-white py-2 px-4 rounded text-lg"
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          )}
           <div className="p-4 flex-none">
             <Alert className="flex items-center justify-between">
               <div className="flex items-center">

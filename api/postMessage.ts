@@ -43,9 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
               elements: [
                 {
                   type: "mrkdwn",
-                  text: `*Selected Options: * ${(
-                    tags as Array<"">
-                  ).toString()}`,
+                  text: `*Thread Id: * ${(tags as Array<"">).toString()}`,
                 },
               ],
             },
