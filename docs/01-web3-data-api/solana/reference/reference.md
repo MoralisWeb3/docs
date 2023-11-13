@@ -7,6 +7,10 @@ sidebar_position: 6
 sidebar_class_name: "sidebar-api-reference"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ### NFT API
 
 - [Get NFTs by wallet](/web3-data-api/solana/reference/get-sol-nfts)

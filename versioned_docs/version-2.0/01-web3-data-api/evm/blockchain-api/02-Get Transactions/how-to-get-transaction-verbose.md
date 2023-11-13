@@ -43,7 +43,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -72,7 +72,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -96,7 +96,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
   "chain": "eth"
 }
 
@@ -129,7 +129,7 @@ In your terminal, you should see the following JSON response:
       "hash": "0x1e67156f8cef5668c69392876f9ff99ca655d43ec366c6cf62217dd633e809b4",
       "nonce": "949",
       "transaction_index": "74",
-      "from_address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "from_address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "to_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
       "value": "0",
       "gas": "66163",

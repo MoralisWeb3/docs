@@ -112,7 +112,7 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "address": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+  "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5"
 }
 ```
 
