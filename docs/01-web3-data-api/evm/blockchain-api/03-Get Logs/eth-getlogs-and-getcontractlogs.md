@@ -6,6 +6,10 @@ sidebar_label: "eth_getLogs and getContractLogs"
 description: "How to get, view, and analyze event logs on Ethereum using eth_getLogs RPC method and Moralis getContractLogs RPC method"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 Insights into events occurring on the Ethereum blockchain are crucial for blockchain developers. Accessing this valuable data is made simpler with eth_getLogs, and one of the tools for this purpose is the [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis.
 
 Thanks to the Moralis SDK, fetching and analyzing event logs on Ethereum is easy, and if you want to learn how to retrieve and analyze Ethereum event logs using the SDK, this guide will be highly beneficial. It includes practical JavaScript examples, and compares Moralis' [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint with the [eth_getLogs](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getlogs) RPC call to help you make informed decisions.

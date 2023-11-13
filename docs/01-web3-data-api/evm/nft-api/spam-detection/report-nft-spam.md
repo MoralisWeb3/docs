@@ -5,6 +5,10 @@ description: "NFT spam detection is designed to provide an extra layer of protec
 sidebar_position: 1
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.

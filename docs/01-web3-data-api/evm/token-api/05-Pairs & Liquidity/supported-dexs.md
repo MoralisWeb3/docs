@@ -4,6 +4,10 @@ slug: "../supported-dexs-defi-api"
 sidebar_position: 5
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 The Moralis DeFi API is integrated with an extensive range of Decentralized Exchanges (DEXs), operating across numerous EVM blockchains. A comprehensive list of these supported DEXs is presented in the subsequent table for your reference.
 
 | Chain       | Supported DEX(s)                          |

@@ -5,6 +5,10 @@ description: "Get to know the difference between normalized and non-normalized m
 sidebar_position: 1
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 The Moralis NFT API has the option to take the original source metadata and output it into a clean, predictable object - making it much easier for you to work with.
 
 You'll find a query parameter named `normalizeMetadata` on the endpoints listed below. When this is set to true, we normalize and transform the source metadata into a standardized structure (based on ERC721, CryptoPunks, OpenSea, etc) and output this in a new object called normalized_metadata.

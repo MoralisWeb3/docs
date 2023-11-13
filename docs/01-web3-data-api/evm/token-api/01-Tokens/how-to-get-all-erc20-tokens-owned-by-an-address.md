@@ -5,6 +5,10 @@ description: "Learn how to get all ERC20 tokens owned by an address by Moralis T
 sidebar_label: "Get ERC20 tokens owned by address"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.

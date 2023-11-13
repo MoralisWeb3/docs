@@ -4,7 +4,9 @@ slug: "../../internal-transactions"
 sidebar_position: 1
 ---
 
-# Internal Transactions
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
 
 Internal transactions on the Ethereum ecosystem are transactions that occur within a contract, as opposed to transactions that are initiated by an external EVM address.
 

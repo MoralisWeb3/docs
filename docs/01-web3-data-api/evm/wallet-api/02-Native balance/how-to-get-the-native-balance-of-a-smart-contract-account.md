@@ -5,6 +5,10 @@ description: "How to get the native balance from a smart contract account using 
 sidebar_label: "Get native balance of a smart contract account"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 There are two primary account types:
 * Contract Accounts
 * Token Accounts
@@ -176,3 +180,6 @@ If you want to explore more details about other wallet endpoints and optional pa
 ## See Also
 
 * [How to Get Transaction History for an Address of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-transactions-of-smart-contract-account)
+* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-token-of-smart-contract-account)
+* [How to Get NFT Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-nft-transfers-of-smart-contract-account)
+* [How to Get ERC-20 Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-transfers-of-smart-contract-account)
