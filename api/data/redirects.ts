@@ -6,6 +6,11 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/docs/sign-in-with-particle",
+    destination: "/authentication-api/how-to-sign-in-with-particle",
+    permanent: true,
+  },
+  {
     source: "/docs/sign-in-with-magiclink",
     destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,

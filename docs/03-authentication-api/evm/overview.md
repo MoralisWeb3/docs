@@ -42,3 +42,4 @@ The use cases for our Auth API are truly endless! Some popular use cases include
 - [How to Authenticate Users with Coinbase Wallet](/authentication-api/evm/how-to-sign-in-with-coinbase-wallet)
 - [How to Authenticate Users with Web3Auth](/authentication-api/evm/how-to-sign-in-with-web3authio)
 - [How to Authenticate Users with Magic.Link](/authentication-api/evm/how-to-sign-in-with-magiclink)
+- [How to Authenticate Users with Particle Network](/authentication-api/evm/how-to-sign-in-with-particle)
