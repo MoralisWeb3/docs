@@ -211,6 +211,6 @@ If you want to explore more details about other wallet endpoints and optional pa
 ## See Also
 
 * [Understanding Account Abstraction: How to Get Native Balances from Smart Accounts](/web3-data-api/evm/wallet-api/how-to-get-the-native-balance-of-a-smart-contract-account)
-* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-ERC-20-token-by-smart-account)
-* [How to Get NFT Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-NFT-transfers-of-smart-account)
+* [How to Get ERC-20 Tokens of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-token-of-smart-contract-account)
+* [How to Get NFT Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-nft-transfers-of-smart-contract-account)
 * [How to Get ERC-20 Transfers of a Smart Account](/web3-data-api/evm/wallet-api/how-to-get-erc-20-transfers-of-smart-contract-account)
