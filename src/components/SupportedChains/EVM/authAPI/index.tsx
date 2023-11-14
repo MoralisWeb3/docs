@@ -95,34 +95,6 @@ const EVMAuthChainData = () => {
       EvmChain: "EvmChain.ARBITRUM",
       Type: "Mainnet",
     },
-    {
-      Name: "Gnosis",
-      "Chain Id (Int)": "100",
-      "Chain Id (Hex)": "0x64",
-      EvmChain: "EvmChain.GNOSIS",
-      Type: "Mainnet",
-    },
-    {
-      Name: "Gnosis Chiado",
-      "Chain Id (Int)": "10200",
-      "Chain Id (Hex)": "0x27d8",
-      EvmChain: "EvmChain.GNOSIS_CHIADO",
-      Type: "Testnet",
-    },
-    {
-      Name: "Chiliz",
-      "Chain Id (Int)": "88888",
-      "Chain Id (Hex)": "0x15b38",
-      EvmChain: "EvmChain.CHILIZ",
-      Type: "Mainnet",
-    },
-    {
-      Name: "Chiliz Spicy",
-      "Chain Id (Int)": "88882",
-      "Chain Id (Hex)": "0x15b32",
-      EvmChain: "EvmChain.CHILIZ_SPICY",
-      Type: "Testnet",
-    },
   ];
 
   return <Table headers={headers} data={data} />;
