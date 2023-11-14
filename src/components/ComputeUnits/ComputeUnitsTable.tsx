@@ -73,39 +73,36 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
         </tr>
       </thead>
       <tbody>
-        {endpoints?.[chain]?.map((e: EndpointWeightResponse, index: number) => {
-          const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
-          const hrefPath = fixedPath[endpoint]
-            ? fixedPath[endpoint]
-            : camelToSnakeCase(endpoint);
-          let additionalInfo = dynamic
-            ? `+${price} CU${price > 1 ? "s" : ""} per ${
-                DynamicPriceUnits?.[endpoint]
-              }`
-            : "0";
+  {endpoints?.[chain]?.map((e: EndpointWeightResponse, index: number) => {
+    const { endpoint, path, price, rateLimitCost, dynamic } = e ?? {};
+    const hrefPath = fixedPath[endpoint]
+      ? fixedPath[endpoint]
+      : camelToSnakeCase(endpoint);
+    let additionalInfo = dynamic
+      ? `+${price} CU${price > 1 ? "s" : ""} per ${
+          DynamicPriceUnits?.[endpoint]
+        }`
+      : "0";
 
-          if (endpoint === "getMultipleTokenPrices") {
-            additionalInfo = "+5, if you add the query parameter include=perecent_change";
-          }
+    if (endpoint === "getMultipleTokenPrices") {
+      additionalInfo = "+5, if you add the query parameter include=perecent_change";
+    }
 
-          return (
-            <tr key={`${endpoint}-${index}`}>
-              <td>
-                <a href={`/web3-data-api/${chain}/reference/${hrefPath}`}>
-                  {endpoint}
-                </a>
-              </td>
-              <td>{path}</td>
-              <td>{price}</td>
-              <td>
-                {additionalInfo}
-              </td>
-              <td>{rateLimitCost}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-
+    return (
+      <tr key={`${endpoint}-${index}`}>
+        <td>
+          <a href={`/web3-data-api/${chain}/reference/${hrefPath}`}>
+            {endpoint}
+          </a>
+        </td>
+        <td>{path}</td>
+        <td>{price}</td>
+        <td>{additionalInfo}</td> {/* Removed unnecessary newlines */}
+        <td>{rateLimitCost}</td>
+      </tr>
+    );
+  })}
+</tbody>
     </table>
   );
 };
