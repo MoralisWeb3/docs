@@ -78,6 +78,16 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
           const hrefPath = fixedPath[endpoint]
             ? fixedPath[endpoint]
             : camelToSnakeCase(endpoint);
+          let additionalInfo = dynamic
+            ? `+${price} CU${price > 1 ? "s" : ""} per ${
+                DynamicPriceUnits?.[endpoint]
+              }`
+            : "0";
+
+          if (endpoint === "getMultipleTokenPrices") {
+            additionalInfo =
+              "+5, if you add the query parameter include=perecent_change";
+          }
           return (
             <tr key={`${endpoint}-${index}`}>
               <td>
@@ -87,13 +97,7 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
               </td>
               <td>{path}</td>
               <td>{price}</td>
-              <td>
-                {dynamic
-                  ? `+${price} CU${price > 1 ? "s" : ""} per ${
-                      DynamicPriceUnits?.[endpoint]
-                    }`
-                  : 0}
-              </td>
+              <td>{additionalInfo}</td>
               <td>{rateLimitCost}</td>
             </tr>
           );

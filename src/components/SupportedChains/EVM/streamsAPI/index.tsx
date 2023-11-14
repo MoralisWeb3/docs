@@ -137,48 +137,6 @@ const EVMStreamChainData = () => {
       "Blocks until confirmed": "",
       Note: "🔥 NEW",
     },
-    {
-      Chain: "Gnosis",
-      "Chain Id (Hex)": "0x64",
-      "Internal Transaction Supported": "❌ NO",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
-    {
-      Chain: "Gnosis Chiado TEST",
-      "Chain Id (Hex)": "0x27d8",
-      "Internal Transaction Supported": "❌ NO",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
-    {
-      Chain: "Chiliz",
-      "Chain Id (Hex)": "0x15b38",
-      "Internal Transaction Supported": "✅ YES",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
-    {
-      Chain: "Chiliz Spicy TEST",
-      "Chain Id (Hex)": "0x15b32",
-      "Internal Transaction Supported": "✅ YES",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
-    {
-      Chain: "BASE",
-      "Chain Id (Hex)": "0x2105",
-      "Internal Transaction Supported": "✅ YES",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
-    {
-      Chain: "Base Goerli TEST",
-      "Chain Id (Hex)": "0x14a33",
-      "Internal Transaction Supported": "✅ YES",
-      "Blocks until confirmed": "100",
-      Note: "🔥 NEW",
-    },
   ];
 
   return <Table headers={headers} data={data} />;
