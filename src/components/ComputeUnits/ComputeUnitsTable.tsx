@@ -78,11 +78,12 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
           const hrefPath = fixedPath[endpoint]
             ? fixedPath[endpoint]
             : camelToSnakeCase(endpoint);
-          let additionalInfo = dynamic
-            ? `+${price} CU${price > 1 ? "s" : ""} per ${
-                DynamicPriceUnits?.[endpoint]
-              }`
-            : "0";
+            let additionalInfo = dynamic
+              ? `+${price} CU${price > 1 ? "s" : ""} per ${
+                  // The line break and indentation that Prettier is expecting:
+                  DynamicPriceUnits?.[endpoint]
+                }`
+              : "0";
 
           if (endpoint === "getMultipleTokenPrices") {
             additionalInfo = '+5, if you add the query parameter include=perecent_change';
