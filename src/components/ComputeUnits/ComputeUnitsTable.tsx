@@ -84,9 +84,10 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
               }`
             : "0";
 
-          if (endpoint === "getMultipleTokenPrices") {
-            additionalInfo = "+5, if you add the query parameter include=perecent_change";
-          }
+            if (endpoint === "getMultipleTokenPrices") {
+              additionalInfo =
+                "+5, if you add the query parameter include=perecent_change";
+            }
           return (
             <tr key={`${endpoint}-${index}`}>
               <td>
@@ -96,9 +97,7 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
               </td>
               <td>{path}</td>
               <td>{price}</td>
-              <td>
-                {additionalInfo}
-              </td>
+              <td>{additionalInfo}</td>
               <td>{rateLimitCost}</td>
             </tr>
           );
