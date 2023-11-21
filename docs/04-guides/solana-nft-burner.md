@@ -51,7 +51,7 @@ yarn install
 - Rename `.env.local.example` file to `.env.local` and add the required environment secrets.
 
 ```shell .env.local
-# devent is used for chain Id as we will be testing the app on devnet chain
+# devnet is used for chain Id as we will be testing the app on devnet chain
 APP_CHAIN_ID=devnet
 APP_DOMAIN=ethereum.boilerplate 
 
@@ -98,7 +98,7 @@ Once the wallet connection is successful, visit the`/nftBurner` page, and we can
 
 The first step of the app is to connect the Metaplex SDK with the wallet and the devnet cluster.
 
-> Only partical code is shown here to keep it clean. Visit  `src/components/templates/nftBurner` to view the entire code.
+> Only partial code is shown here to keep it clean. Visit  `src/components/templates/nftBurner` to view the entire code.
 
 ```typescript NFTMinter.tsx
 /* 
