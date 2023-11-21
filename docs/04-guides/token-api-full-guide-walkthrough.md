@@ -1,11 +1,11 @@
 ---
 title: "Token API - Full Guide & Walkthrough"
 slug: "/guides/token-api-full-guide-walkthrough"
-description: "This tutorial teaches you what an Token API is, what are some of its most common use cases, and how to use it within your tech stack."
+description: "This tutorial teaches you what a Token API is, what are some of its most common use cases, and how to use it within your tech stack."
 tags: [Token API, Ethereum, Polygon, EVM]
 ---
 
-## What is an Token API?
+## What is a Token API?
 
 An [Token API](https://moralis.io/api/token/) is a collection of APIs that can be used to index ERC20 token-related data, e.g. ERC20 token balance, ERC20 token metadata, from multiple [EVM chains](/web3-data-api/evm#supported-chains) that we support.
 
