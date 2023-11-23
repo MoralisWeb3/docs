@@ -1,6 +1,6 @@
 ---
 title: "Webhook Security"
-slug: "webhook-security"
+slug: "../webhook-security"
 sidebar_position: 9
 description: "Keep your webhook requests secure with our implementation that signs every request with the web3api key. The signature is included in the request headers and can be easily verified by using our provided JavaScript function or adapting it for your preferred programming language."
 ---
@@ -42,11 +42,11 @@ def verify_Signature(req, secret):
     provided_signature = req.headers.get("x-signature")
     if not provided_signature:
         raise TypeError("Signature not provided")
-    
+
     data = req.data+secret.encode()
     signature = Web3.keccak(text=data.decode()).hex()
-    
-    if provided_signature != signature: 
+
+    if provided_signature != signature:
         raise ValueError("Invalid Signature")
 ```
 

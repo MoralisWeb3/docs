@@ -1,6 +1,6 @@
 ---
 title: "Mandatory Test Webhook"
-slug: "mandatory-test-webhook"
+slug: "../mandatory-test-webhook"
 sidebar_position: 7
 ---
 

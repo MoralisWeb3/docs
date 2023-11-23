@@ -1,6 +1,6 @@
 ---
 title: "Error handling"
-slug: "error-handling"
+slug: "../error-handling"
 sidebar_position: 14
 ---
 

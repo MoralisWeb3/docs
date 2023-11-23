@@ -1,6 +1,6 @@
 ---
 title: "Response body"
-slug: "response-body"
+slug: "../response-body"
 sidebar_position: 10
 ---
 
@@ -35,11 +35,11 @@ def verify_Signature(req, secret):
     provided_signature = req.headers.get("x-signature")
     if not provided_signature:
         raise TypeError("Signature not provided")
-    
+
     data = req.data+secret.encode()
     signature = Web3.keccak(text=data.decode()).hex()
-    
-    if provided_signature != signature: 
+
+    if provided_signature != signature:
         raise ValueError("Invalid Signature")
 ```
 
@@ -55,7 +55,7 @@ For native transaction you have to set `Native Transactions (txs)` in admin inte
    "confirmed":false,
    "chainId":"0x1",
    "abi":[
-      
+
    ],
    "streamId":"c28d9e2e-ae9d-4fe6-9fc0-5fcde2dcdd17",
    "tag":"native_transactions",
@@ -66,7 +66,7 @@ For native transaction you have to set `Native Transactions (txs)` in admin inte
       "timestamp":"1668676247"
    },
    "logs":[
-      
+
    ],
    "txs":[
       {
@@ -91,24 +91,24 @@ For native transaction you have to set `Native Transactions (txs)` in admin inte
       }
    ],
    "txsInternal":[
-      
+
    ],
    "erc20Transfers":[
-      
+
    ],
    "erc20Approvals":[
-      
+
    ],
    "nftApprovals":{
       "ERC1155":[
-         
+
       ],
       "ERC721":[
-         
+
       ]
    },
    "nftTransfers":[
-      
+
    ]
 }
 ```
@@ -122,7 +122,7 @@ For native transactions there is also the option to get automatically the logs/e
    "confirmed":true,
    "chainId":"0x1",
    "abi":[
-      
+
    ],
    "streamId":"c28d9e2e-ae9d-4fe6-9fc0-5fcde2dcdd17",
    "tag":"native_transactions_with_logs",
@@ -167,10 +167,10 @@ For native transactions there is also the option to get automatically the logs/e
       }
    ],
    "txsInternal":[
-      
+
    ],
    "erc20Transfers":[
-      
+
    ],
    "erc20Approvals":[
       {
@@ -188,14 +188,14 @@ For native transactions there is also the option to get automatically the logs/e
    ],
    "nftApprovals":{
       "ERC1155":[
-         
+
       ],
       "ERC721":[
-         
+
       ]
    },
    "nftTransfers":[
-      
+
    ]
 }
 ```
@@ -393,27 +393,27 @@ For smart contract events (logs) you select `Contract interactions (logs)` and `
       }
    ],
    "txs":[
-      
+
    ],
    "txsInternal":[
-      
+
    ],
    "erc20Transfers":[
-      
+
    ],
    "erc20Approvals":[
-      
+
    ],
    "nftApprovals":{
       "ERC1155":[
-         
+
       ],
       "ERC721":[
-         
+
       ]
    },
    "nftTransfers":[
-      
+
    ]
 }
 ```
@@ -427,7 +427,7 @@ For internal transactions you select `Internal Transactions (txsInternal)` in Ad
    "confirmed":false,
    "chainId":"0x1",
    "abi":[
-      
+
    ],
    "streamId":"c28d9e2e-ae9d-4fe6-9fc0-5fcde2dcdd17",
    "tag":"internal transactions",
@@ -438,10 +438,10 @@ For internal transactions you select `Internal Transactions (txsInternal)` in Ad
       "timestamp":"1668672659"
    },
    "logs":[
-      
+
    ],
    "txs":[
-      
+
    ],
    "txsInternal":[
       {
@@ -453,21 +453,21 @@ For internal transactions you select `Internal Transactions (txsInternal)` in Ad
       }
    ],
    "erc20Transfers":[
-      
+
    ],
    "erc20Approvals":[
-      
+
    ],
    "nftApprovals":{
       "ERC1155":[
-         
+
       ],
       "ERC721":[
-         
+
       ]
    },
    "nftTransfers":[
-      
+
    ]
 }
 ```
