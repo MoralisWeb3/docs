@@ -1,6 +1,6 @@
 ---
-title: "Listen to all addresses"
-slug: "listen-to-all-addresses"
+title: "Listen to all Addresses"
+slug: "../listen-to-all-addresses"
 description: "Learn how to listen to all addresses, NFT contract transfers, events from new contracts specific to a contract factory, NFT contracts transfers where sender is a specific address."
 sidebar_position: 5
 ---

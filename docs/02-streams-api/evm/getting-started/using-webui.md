@@ -1,5 +1,5 @@
 ---
-title: "Using the Admin Panel"
+title: "Manage Streams via Admin Panel"
 slug: "../using-webui"
 description: "Learn how to create a new stream on the Admin Panel of Moralis.io. Follow the step-by-step instructions to monitor your chosen address and receive data through a webhook URL."
 sidebar_position: 1

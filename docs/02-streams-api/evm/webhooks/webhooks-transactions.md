@@ -1,8 +1,8 @@
 ---
-title: "Webhooks Transactions"
+title: "Transactions"
 slug: "../webhooks-transactions"
 description: "Now whenever an ingoing or outgoing transaction involving the address you are monitoring occurs, you will receive a webhook with the transaction details."
-sidebar_position: 8
+sidebar_position: 1
 ---
 
 Now whenever an ingoing or outgoing transaction involving the address you are monitoring occurs, you will receive a webhook with the transaction details.

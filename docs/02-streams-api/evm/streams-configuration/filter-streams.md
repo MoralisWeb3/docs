@@ -1,7 +1,7 @@
 ---
-title: "Filter Streams"
+title: "Filters"
 slug: "filter-streams"
-sidebar_position: 12
+sidebar_position: 3
 description: "In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream."
 ---
 

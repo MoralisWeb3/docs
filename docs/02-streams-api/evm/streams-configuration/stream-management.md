@@ -1,7 +1,7 @@
 ---
-title: "Stream Management"
-slug: "stream-management"
-sidebar_position: 13
+title: "Monitor, Update, & Pause"
+slug: "../stream-management"
+sidebar_position: 2
 description: "Moralis Stream Management allows you to monitor, update, and pause streams with ease. Programmatically or via the web UI, you can get a list of all your streams, set settings, and update the status of a stream. Get started with Moralis Stream Management today!"
 ---
 
