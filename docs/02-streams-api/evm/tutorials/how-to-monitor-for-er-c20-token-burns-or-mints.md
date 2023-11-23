@@ -1,12 +1,12 @@
 ---
-title: "How to monitor for ERC20 token burns or mints"
+title: "Track ERC20 Token Burns and Mints"
 slug: "../how-to-monitor-for-erc20-token-burns-or-mints"
 description: "Learn how to monitor ERC20 token burns or mints using Moralis Streams API."
 ---
 
 Lets check all USDC transfers but filter transaction where the recipient or the sender is the zero address and if the amount is greater or equal to 10000 USDC.
 
-### Programatically
+## Programatically
 
 ```javascript JavaScript
 const transferUsdcAbi = [
@@ -82,7 +82,7 @@ await Moralis.Streams.addAddress({
 });
 ```
 
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form

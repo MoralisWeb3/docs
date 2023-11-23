@@ -1,23 +1,20 @@
 ---
-title: "How to listen all events from a contract factory"
+title: "Track Smart Contract Events in Real-Time with Web3"
 slug: "../how-to-listen-all-events-from-a-contract-factory"
-description: "Learn how to listen all events from a contract factory using Moralis Streams API."
+description: "Learn how to listen to all events from a contract factory using Moralis Streams API."
 ---
+
 Let's create a stream that monitors all the events specific to a contract factory.
 
-:::info 
-
+:::tip
 This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
-
 :::
 
-:::info 
-
+:::tipe
 You will need an ABI that is used only on your contracts in order to not receive the events from other contracts that use the same ABI.
-
 :::
 
-### Programmatically
+## Programmatically: How to Listen to event from a contract factory
 
 ```javascript
 const Contract_Factory_ABI = [{
@@ -43,13 +40,9 @@ const options = {
 };
 
 const stream = await Moralis.Streams.add(options);
-
-
 ```
 
-
-
-### Via WebUI
+## WebUI: How to Listen to event from a contract factory 
 
 1. Create a new Stream
 2. Fill out the form
