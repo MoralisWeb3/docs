@@ -5926,11 +5926,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/integrations/firebase-advanced-nodejs",
-    destination: "/web3-data-api/evm/integrations/firebase-advanced-nodejs",
-    permanent: true,
-  },
-  {
     source: "/web3-data-api/integrations/firebase-nodejs",
     destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
