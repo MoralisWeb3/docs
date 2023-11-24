@@ -6541,7 +6541,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/integrations/firebase",
-    destination: "/streams-api/evm/integrations/firebase",
+    destination: "/streams-api/evm/streams-configuration/firebase",
     permanent: true,
   },
   {
