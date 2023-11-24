@@ -63,7 +63,7 @@ When a transaction occurs on the wallet it will appear on the right hand termina
 
 ![](/img/content/211853590-a71f84ab-ab8c-40ca-9d28-452ba64e1de6.webp)
 
-4. Select the events you want to track by selecting from options `Contract Interaction`, `Native Transactions`, `Internal Transactions` under `Stream Options`. To read more on each options take a look at Streams options in our [documentation](/streams-configuration/useful-streams-options).
+4. Select the events you want to track by selecting from options `Contract Interaction`, `Native Transactions`, `Internal Transactions` under `Stream Options`. To read more on each options take a look at Streams options in our [documentation](/useful-streams-options).
 
 ![](/img/content/211854294-e4507fe0-6995-4bfe-a995-a0c815b3da9d.webp)
 
