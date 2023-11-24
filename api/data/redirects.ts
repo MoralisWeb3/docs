@@ -6326,7 +6326,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/useful-streams-options",
-    destination: "/streams-api/evm/useful-streams-options",
+    destination: "/streams-configuration/useful-streams-options",
     permanent: true,
   },
   {
@@ -6361,7 +6361,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/filter-streams",
-    destination: "/streams-api/evm/filter-streams",
+    destination: "/streams-api/evm/streams-configuration/filter-streams",
     permanent: true,
   },
   {
