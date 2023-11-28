@@ -1,15 +1,19 @@
 ---
-title: "How to listen all NFT transfers"
+title: "Track NFT transfers"
 slug: "../how-to-listen-all-nft-transfers"
 description: "Learn how to listen to all NFT transfers using Moralis Streams API."
 ---
 Lets create a stream that monitors all the NFT contract transfers.
 
-Note: This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::tip
+This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::
 
-Note: There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::tip
+There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::
 
-### Programmatically
+## Programmatically
 
 ```javascript
 const NFT_transfer_ABI = [{
@@ -41,7 +45,7 @@ const stream = await Moralis.Streams.add(options);
 
 
 
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form

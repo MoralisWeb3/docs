@@ -1,11 +1,9 @@
 ---
-title: "Moralis Triggers"
-slug: "triggers"
-sidebar_position: 10
+title: "Triggers"
+slug: "../triggers"
+sidebar_position: 2
 description: "Moralis Streams Triggers. Run smart contract functions against Blockchain Events."
 ---
-
-## Introduction
 
 With Moralis Triggers you can run (read-only) smart contract functions and have the result be part of your Webhook.
 

@@ -5926,11 +5926,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/integrations/firebase-advanced-nodejs",
-    destination: "/web3-data-api/evm/integrations/firebase-advanced-nodejs",
-    permanent: true,
-  },
-  {
     source: "/web3-data-api/integrations/firebase-nodejs",
     destination: "/web3-data-api/evm/integrations/firebase-nodejs",
     permanent: true,
@@ -6326,7 +6321,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/useful-streams-options",
-    destination: "/streams-api/evm/useful-streams-options",
+    destination: "/streams-configuration/useful-streams-options",
     permanent: true,
   },
   {
@@ -6361,7 +6356,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/filter-streams",
-    destination: "/streams-api/evm/filter-streams",
+    destination: "/streams-api/evm/streams-configuration/filter-streams",
     permanent: true,
   },
   {
@@ -6541,7 +6536,7 @@ export const redirects = [
   },
   {
     source: "/streams-api/integrations/firebase",
-    destination: "/streams-api/evm/integrations/firebase",
+    destination: "/streams-api/evm/streams-configuration/firebase",
     permanent: true,
   },
   {

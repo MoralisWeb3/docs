@@ -1,8 +1,8 @@
 ---
-title: "Parse data"
-slug: "parse-data"
-sidebar_position: 15
-description: "Moralis makes it easy to parse data from ERC20 Transfers and Approvals, NFT Transfers and Approvals, and Smart Contract Events. Stream your smart contract events and use our code as a guide to quickly and accurately extract the data into a typed data structure." 
+title: "Parse Data"
+slug: "../parse-data"
+sidebar_position: 1
+description: "Moralis makes it easy to parse data from ERC20 Transfers and Approvals, NFT Transfers and Approvals, and Smart Contract Events. Stream your smart contract events and use our code as a guide to quickly and accurately extract the data into a typed data structure."
 ---
 
 Moralis makes it easy to parse data from ERC20 Transfers and Approvals, NFT Transfers and Approvals, and Smart Contract Events. Stream your smart contract events and use our code as a guide to quickly and accurately extract the data into a typed data structure.

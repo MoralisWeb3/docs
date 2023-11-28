@@ -192,7 +192,7 @@ const config = {
             label: "Changelog",
           },
           {
-            to: "streams-api/evm/getting-started/faq",
+            to: "streams-api/evm/faq",
             position: "left",
             label: "FAQ",
           },

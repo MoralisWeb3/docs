@@ -14,7 +14,7 @@ description: "Learn how to add secure Web3 Moralis authentication to your NextJS
 Check the Particle Network [documentation website](https://docs.particle.network/) to get more information.
 :::
 
-The **Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
+**Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's [Smart Wallet-as-a-Service](https://blog.particle.network/announcing-our-smart-wallet-as-a-service-modular-stack-upgrading-waas-with-erc-4337/), developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ To prepare for this tutorial, you'll need to install the following dependencies 
   yarn add @particle-network/connect
   ```
 
-- **@particle-network/chains**: This dependency is required for handling blockchain chains within Particle Connect. You can install it using npm or yarn.
+- **@particle-network/chains**: This optional dependency is leveraged for handling blockchain chains within Particle Connect. You can install it using npm or yarn.
 
   ```bash
   npm install @particle-network/chains
