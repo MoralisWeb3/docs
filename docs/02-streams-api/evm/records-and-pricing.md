@@ -1,7 +1,7 @@
 ---
-title: "Records and Pricing"
+title: "Pricing & Records"
 slug: "records-and-pricing"
-sidebar_position: 4
+sidebar_position: 8
 description: "How Records are used in Streams API to determine usage and pricing. Records are either a transaction, log, or internal transactions in the webhook response."
 ---
 

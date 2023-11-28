@@ -1,5 +1,5 @@
 ---
-title: "Useful Streams options"
+title: "Advanced Options"
 slug: "useful-streams-options"
 sidebar_position: 6
 description: "This page provides information about the various options available when creating a stream with Useful Streams. Learn more about the includeContractLogs, includeInternalTxs, and advanced options to customize your stream."

@@ -5,13 +5,7 @@ description: "Learn how to set up the Streams secret key, essential for webhook 
 sidebar_position: 0
 ---
 
-## Introduction
-
-Welcome to the guide on setting up the Streams secret key.
-
-## What is a Secret Key in Streams?
-
-The Streams `secret key` is a unique string used to identify the sender of a webhook through webhook signature verification.
+The Streams `secret key` is a unique string that is used to identify the sender of a webhook through webhook signature verification.
 
 ## Updating the Secret Key
 

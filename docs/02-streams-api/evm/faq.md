@@ -1,6 +1,6 @@
 ---
-title: "🙋 FAQ"
-sidebar_position: 20
+title: "FAQ"
+sidebar_position: 21
 description: "This FAQ page helps you to get answers about our Web3 API, Streams, and product features, enhancing your API integration experience."
 ---
 

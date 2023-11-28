@@ -1,17 +1,21 @@
 ---
-title: "How to listen to all NFT transfers sent from a specific address"
+title: "Monitoring NFT Transfers from Specific Wallet Addresses"
 slug: "../how-to-listen-to-all-nft-transfers-sent-from-a-specific-address"
 description: "Learn how to listen to all NFT transfers sent from a specific address using Moralis Streams API."
 ---
+
 Lets create a stream that monitors all the NFT contract transfers from a specific sender address.
 
-Note: This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::tip
+This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::
 
-Note: There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::tip
+You will use the ABI specific to NFT transfers, the one that has indexed for tokenId
+:::
 
-Note: You will use the ABI specific to NFT transfers, the one that has indexed for tokenId
-
-### Programmatically
+## Programmatically
 
 ```javascript
 const NFT_transfer_ABI = [{
@@ -42,13 +46,9 @@ const options = {
 };
 
 const stream = await Moralis.Streams.add(options);
-
-
 ```
 
-
-
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form

@@ -316,7 +316,7 @@ streams.evm_streams.add_address_to_stream(
 
 Once the code has been added, you can run the script to create a second [Streams](https://moralis.io/streams/). This will be reflected on your Moralis Dashboard as well. From here, you shall receive new real-time responses on your attached webhook for any new USDT transfers occuring on either Ethereum.
 
-For listening to smart contracts, you can also add the [Filters feature](/streams-api/evm/filter-streams) to filter out results that only fulfills certain criteria. This can be relevant in more specific use cases, such as whale monitoring, and can simply be supplemented to our existing code.
+For listening to smart contracts, you can also add the [Filters feature](/streams-api/evm/streams-configuration/filter-streams) to filter out results that only fulfills certain criteria. This can be relevant in more specific use cases, such as whale monitoring, and can simply be supplemented to our existing code.
 
 For example, we'd like to monitor all USDT transaction on Ethereum that is over $1M, then we can modify our code as follows:
 

@@ -1,17 +1,15 @@
 ---
-title: "How to listen to all ERC20 contract transfers over certain amount sent by specific address"
+title: "Monitor High-Value ERC20 Transfers by Address"
 slug: "../how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address"
-description: "Learn how to listen all ERC20 token transfers over certain amount sent by specific address using Moralis Streams API."
+description: "Learn how to listen to all ERC20 token transfers over certain amount sent by specific address using Moralis Streams API."
 ---
 Let's create a stream that monitors all the ERC20 contract transfers where sender is a specific address and the number of coins transferred is over 1000.
 
-Note: This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::tip
+This stream uses listen to all addresses feature that is available only on Business and Enterprise plans. There could be few ERC20 contracts that don't follow the standards, and they may use a different ABI for transfers. You will use the ABI specific to ERC20 transfers, the one that doesn't have indexed for third parameter.
+:::
 
-Note: There could be few ERC20 contracts that don't follow the standards, and they may use a different ABI for transfers.
-
-Note: You will use the ABI specific to ERC20 transfers, the one that doesn't have indexed for third parameter.
-
-### Programmatically
+## Programmatically
 
 ```javascript
 const ERC20_transfer_ABI = [{
@@ -28,7 +26,7 @@ const ERC20_transfer_ABI = [{
 const filter_ERC20 = {  
   "and": \[  
     { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] },  
-    { "gt": ["value", "1000000000"] }, // Example of USDT (6 Decimals) 
+    { "gt": ["value", "1000000000"] }, // Example of USDT (6 Decimals)
   ],  
 }; // only receive ERC20 contract transfers where sender is a specific address and the number of coins transferred is over 1000
 
@@ -53,9 +51,7 @@ const stream = await Moralis.Streams.add(options);
 
 ```
 
-
-
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form
@@ -69,7 +65,7 @@ const stream = await Moralis.Streams.add(options);
        "filter": {  
          "and": [  
            { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] },  
-           { "gt": ["value", "1000000000"] }   // Example of USDT (6 Decimals) 
+           { "gt": ["value", "1000000000"] }   // Example of USDT (6 Decimals)
          ]  
        }  
      }  
