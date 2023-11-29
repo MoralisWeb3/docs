@@ -62,6 +62,33 @@
   border-radius: var(--ifm-global-radius);
 }
 
+.apiParamButton {
+  background-color: #5865F2; /* Adjust the color to match the 'Get your free API key' button */
+  color: white;
+  border: none;
+  padding: 10px 25px; /* Adjust padding to match the size of the 'Get your free API key' button */
+  border-radius: 20px; /* Adjust border-radius to match */
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Assuming it's a link, otherwise remove this line */
+  font-weight: bold; /* If the text should be bold */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: if there is a shadow */
+}
+
+.apiParamButton:hover {
+  background-color: #5865F2; /* Adjust the hover color to match */
+}
+
+.apiParamButtonDisabled {
+  background-color: #cccccc; /* Grey out when disabled */
+  cursor: not-allowed;
+  /* Add other styles for disabled state if needed */
+}
+
+
 .paramTitle:last-child {
   padding: 0.3rem 0;
 }

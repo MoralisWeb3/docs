@@ -402,12 +402,14 @@ const ApiReference = ({
                       (disabled || loading)
                     }
                     className={
-                      !(specialApiKey as string[]).includes(token) || disabled
-                        ? "cursor-not-allowed"
+                      `${styles.apiParamButton} ${
+                        !(specialApiKey as string[]).includes(token) || disabled
+                        ? styles.apiParamButtonDisabled
                         : ""
+                      }`
                     }
                   >
-                    {loading ? <LoadingCircle /> : "Try It"}
+                    {loading ? <LoadingCircle /> : "Test Live API"}
                   </ApiParamButton>
                 </div>
                 <ApiExamples
