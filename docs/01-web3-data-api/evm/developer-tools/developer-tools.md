@@ -1,6 +1,6 @@
 ---
 title: "Developer tools"
-sidebar_position: 3000
+sidebar_position: 4
 slug: "../../developer-tools"
 sidebar_class_name: "sidebar-developer-tools"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "API Reference"
 sidebar_label: "API Reference"
-sidebar_position: 1000
+sidebar_position: 6
 slug: "/web3-data-api/evm/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 sidebar_class_name: "sidebar-api-reference"
@@ -40,34 +40,34 @@ Select what you want to achieve:
 
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 1   | `getChainActivityByWallet`       | Get chain activity by wallet          | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet)                                 | [https://deep-index.moralis.io/api/v2.2/wallets/:address/chains](https://deep-index.moralis.io/api/v2.2/wallets/:address/chains)                                                                       |
+| 1   | `getWalletActiveChains`       | Get chain activity by wallet          | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet)                                 | [https://deep-index.moralis.io/api/v2.2/wallets/:address/chains](https://deep-index.moralis.io/api/v2.2/wallets/:address/chains)                                                                       |
 
 ### Get Native Balance
 
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 2   | `getNativeBalanceByWallet`       | Get native balance by wallet          | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                                                       | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance)                                                                       |
+| 2   | `getNativeBalance`       | Get native balance by wallet          | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                                                       | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance)                                                                       |
 | 3   | `getNativeBalancesForAddresses`  | Get native balance for multiple wallets | [Method Documentation](/web3-data-api/evm/reference/get-native-balances-for-addresses)                                     | [https://deep-index.moralis.io/api/v2.2/wallets/balances](https://deep-index.moralis.io/api/v2.2/wallets/balances)                                                                  |
 
 ### Get NFTs
 
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 4   | `getNFTsByWallet`                | Get NFTs by wallet                    | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet)                                           | [https://deep-index.moralis.io/api/v2.2/:address/nft](https://deep-index.moralis.io/api/v2.2/:address/nft)                                                                                |
-| 5   | `getNFTCollectionsByWallet`      | Get NFT collections by wallet         | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet)                                 | [https://deep-index.moralis.io/api/v2.2/:address/nft/collections](https://deep-index.moralis.io/api/v2.2/:address/nft/collections)                                                                      |
+| 4   | `getWalletNFTs`                | Get NFTs by wallet                    | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet)                                           | [https://deep-index.moralis.io/api/v2.2/:address/nft](https://deep-index.moralis.io/api/v2.2/:address/nft)                                                                                |
+| 5   | `getWalletNFTCollections`      | Get NFT collections by wallet         | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet)                                 | [https://deep-index.moralis.io/api/v2.2/:address/nft/collections](https://deep-index.moralis.io/api/v2.2/:address/nft/collections)                                                                      |
 
 ### Get Tokens
 
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 6   | `getTokenBalancesByWallet`       | Get ERC20 token balance by wallet     | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)                                   | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                                                                      |
+| 6   | `getWalletNFTCollections`       | Get ERC20 token balance by wallet     | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)                                   | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                                                                      |
 
 ### Get Transactions
 
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 7   | `getDecodedTransactionsByWallet` | Get decoded transactions by wallet    | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet)                             | [https://deep-index.moralis.io/api/v2.2/:address/verbose](https://deep-index.moralis.io/api/v2.2/:address/verbose)                                                                |
-| 8   | `getNativeTransactionsByWallet`   | Get native transactions by wallet      | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)                                     | [https://deep-index.moralis.io/api/v2.2/:address](https://deep-index.moralis.io/api/v2.2/:address)                                                                 |
+| 7   | `getWalletTransactionsVerbose` | Get decoded transactions by wallet    | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet)                             | [https://deep-index.moralis.io/api/v2.2/:address/verbose](https://deep-index.moralis.io/api/v2.2/:address/verbose)                                                                |
+| 8   | `getWalletTransactions`   | Get native transactions by wallet      | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)                                     | [https://deep-index.moralis.io/api/v2.2/:address](https://deep-index.moralis.io/api/v2.2/:address)                                                                 |
 
 ### Get Transfers
 

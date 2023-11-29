@@ -1,6 +1,6 @@
 ---
 title: "Integrations"
-sidebar_position: 2000
+sidebar_position: 5
 slug: "../integrations"
 sidebar_class_name: "sidebar-integrations"
 ---
