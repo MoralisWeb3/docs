@@ -397,17 +397,12 @@ const ApiReference = ({
 
                   <ApiParamButton
                     type="submit"
-                    disabled={
-                      !(specialApiKey as string[]).includes(token) &&
-                      (disabled || loading)
-                    }
-                    className={
-                    `${styles.apiParamButton} ${
-                    !(specialApiKey as string[]).includes(token) || disabled
+                    disabled={!(specialApiKey as string[]).includes(token) && (disabled || loading)}
+                    className={`${styles.apiParamButton} ${
+                      !(specialApiKey as string[]).includes(token) || disabled
                         ? styles.apiParamButtonDisabled
                         : ""
-                    }`
-                    }
+                    }`}
                   >
                     {loading ? <LoadingCircle /> : "Test Live API"}
                   </ApiParamButton>
