@@ -1,7 +1,7 @@
 ---
-title: "API Reference"
-sidebar_label: "API Reference"
-sidebar_position: 10
+title: "All Web3 Data Endpoints"
+sidebar_label: "Overview"
+sidebar_position: 1
 slug: "/web3-data-api/evm/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 sidebar_class_name: "sidebar-api-reference"

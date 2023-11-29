@@ -1,6 +1,6 @@
 ---
-title: "NFT API Reference"
-sidebar_label: "NFT API Reference"
+title: "NFT API"
+sidebar_label: "NFT API"
 slug: "../nft-api"
 sidebar_class_name: "sidebar-nft-api"
 sidebar_position: 2

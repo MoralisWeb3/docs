@@ -1,6 +1,6 @@
 ---
-title: "Token API Reference"
-sidebar_label: "Token API Reference"
+title: "Token API"
+sidebar_label: "Token API"
 slug: "../token-api"
 sidebar_class_name: "sidebar-token-api"
 sidebar_position: 3

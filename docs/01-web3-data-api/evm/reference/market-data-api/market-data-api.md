@@ -1,6 +1,6 @@
 ---
-title: "Market Data API Reference"
-sidebar_label: "Market API Reference"
+title: "Market Data API"
+sidebar_label: "Market API"
 slug: "../market-data--api"
 sidebar_class_name: "sidebar-market-data-api"
 sidebar_position: 4

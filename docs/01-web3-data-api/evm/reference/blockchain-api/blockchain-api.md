@@ -1,6 +1,6 @@
 ---
-title: "Blockchain API Reference"
-sidebar_label: "Blockchain API Reference"
+title: "Blockchain API"
+sidebar_label: "Blockchain API"
 slug: "../blockchain-api"
 sidebar_class_name: "sidebar-blockchain-api"
 sidebar_position: 5

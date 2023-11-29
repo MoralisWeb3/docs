@@ -1,6 +1,6 @@
 ---
-title: "Utils Reference"
-sidebar_label: "Utils Reference"
+title: "Utils"
+sidebar_label: "Utils"
 slug: "../utils"
 sidebar_class_name: "sidebar-utils"
 sidebar_position: 6
