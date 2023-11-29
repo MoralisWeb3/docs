@@ -37,12 +37,13 @@ const options = {
   abi: ERC20_transfer_ABI,
   includeContractLogs: true,
   allAddresses: true,
-  topic0: ["transfer(address,address,uint256)"], // topic of the event
+  topic0: ["Transfer(address,address,uint256)"], // topic of the event
   advancedOptions: [
     {
-      topic0: "transfer(address,address,uint256)",
+      topic0: "Transfer(address,address,uint256)",
       filter: filter_ERC20
     },
+  ],
   webhookUrl: "https://YOUR_WEBHOOK_URL", // webhook url to receive events,
 };
 
@@ -61,7 +62,7 @@ const stream = await Moralis.Streams.add(options);
 6. ```
    [  
      {  
-       "topic0": "transfer(address,address,uint256)",  
+       "topic0": "Transfer(address,address,uint256)",  
        "filter": {  
          "and": [  
            { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] },  
