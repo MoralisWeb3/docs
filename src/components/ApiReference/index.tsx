@@ -397,7 +397,10 @@ const ApiReference = ({
 
                   <ApiParamButton
                     type="submit"
-                    disabled={!(specialApiKey as string[]).includes(token) && (disabled || loading)}
+                    disabled={
+                      !(specialApiKey as string[]).includes(token) &&
+                      (disabled || loading)
+                    }
                     className={`${styles.apiParamButton} ${
                       !(specialApiKey as string[]).includes(token) || disabled
                         ? styles.apiParamButtonDisabled
