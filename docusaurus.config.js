@@ -201,14 +201,14 @@ const config = {
             type: "html",
             position: "right",
             value:
-              '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
+              '<a href="https://admin.moralis.io/register" target="_blank">Get API Key</a>',
             className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
             position: "right",
             value:
-              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
+              '<a class="button button--md button--outline button--primary" href="https://docs.moralis.io/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet" target="_blank">Test API Live</a>',
             className: "navbar__item--hide-on-mobile navbar__item--login",
           },
           {
@@ -407,7 +407,6 @@ const config = {
     specialApiKey: [],
   },
   plugins: [
-    "docusaurus-plugin-hotjar",
     [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },

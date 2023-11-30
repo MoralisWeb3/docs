@@ -20,7 +20,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                     <p className="hero__subtitle">Integrate Web3 into any tech stack by following easy guides, recipes, and API references!</p>
                     <div>
                     <a href="/web3-data-api/evm/getting-started/" className="button button--primary button--outline button--lg">
-                        Get Started
+                        Test API Live
                     </a>
                     </div>
                 </div>
