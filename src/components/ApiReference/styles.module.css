@@ -63,29 +63,28 @@
 }
 
 .apiParamButton {
-  background-color: #5865F2; /* Adjust the color to match the 'Get your free API key' button */
+  background: #0F7FFF;
   color: white;
+  padding: 0.9rem;
   border: none;
-  padding: 10px 25px; /* Adjust padding to match the size of the 'Get your free API key' button */
-  border-radius: 20px; /* Adjust border-radius to match */
+  border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
   display: inline-block;
   transition: background-color 0.3s ease;
-  text-decoration: none; /* Assuming it's a link, otherwise remove this line */
-  font-weight: bold; /* If the text should be bold */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: if there is a shadow */
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .apiParamButton:hover {
-  background-color: #5865F2; /* Adjust the hover color to match */
+  background-color: #005AC2;
 }
 
 .apiParamButtonDisabled {
-  background-color: #cccccc; /* Grey out when disabled */
+  background-color: #cccc;
   cursor: not-allowed;
-  /* Add other styles for disabled state if needed */
 }
 
 

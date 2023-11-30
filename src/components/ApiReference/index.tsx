@@ -401,13 +401,11 @@ const ApiReference = ({
                       !(specialApiKey as string[]).includes(token) &&
                       (disabled || loading)
                     }
-                    className={
-                      `${styles.apiParamButton} ${
-                        !(specialApiKey as string[]).includes(token) || disabled
-                          ? styles.apiParamButtonDisabled
-                          : ""
-                      }`
-                    }
+                    className={`${styles.apiParamButton} ${
+                      !(specialApiKey as string[]).includes(token) || disabled
+                        ? styles.apiParamButtonDisabled
+                        : ""
+                    }`}
                   >
                     {loading ? <LoadingCircle /> : "Test Live API"}
                   </ApiParamButton>
