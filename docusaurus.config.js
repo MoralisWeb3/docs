@@ -399,9 +399,6 @@ const config = {
         indexName: "gold-iota",
         contextualSearch: true,
       },
-      hotjar: {
-        applicationId: "3650716",
-      },
     }),
   customFields: {
     specialApiKey: [],
