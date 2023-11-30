@@ -208,7 +208,7 @@ const config = {
             type: "html",
             position: "right",
             value:
-              '<a class="button button--md button--outline button--primary" href="https://docs.moralis.io/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet" target="_blank">Test API Live</a>',
+              '<a class="button button--md button--outline button--primary" href="/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet" target="_blank">Test API Live</a>',
             className: "navbar__item--hide-on-mobile navbar__item--login",
           },
           {

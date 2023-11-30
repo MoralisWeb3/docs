@@ -63,30 +63,30 @@
 }
 
 .apiParamButton {
-  background: #0F7FFF;
+  background-color: #0F7FFF;
   color: white;
-  padding: 0.9rem;
   border: none;
+  padding: 0.9rem;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
   display: inline-block;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .apiParamButton:hover {
-  background-color: #005AC2;
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .apiParamButtonDisabled {
-  background-color: #cccc;
+  background-color: #cccccc;
   cursor: not-allowed;
+  box-shadow: none;
 }
-
 
 .paramTitle:last-child {
   padding: 0.3rem 0;
