@@ -62,7 +62,7 @@
   border-radius: var(--ifm-global-radius);
 }
 
-.apiParamButton {
+button.apiParamButton {
   background-color: #0F7FFF;
   color: white;
   border: none;
@@ -77,15 +77,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.apiParamButton:hover {
+button.apiParamButton:hover {
   background-color: #0056b3;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.apiParamButtonDisabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-  box-shadow: none;
 }
 
 .paramTitle:last-child {
