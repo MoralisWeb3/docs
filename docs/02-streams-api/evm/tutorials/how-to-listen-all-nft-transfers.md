@@ -34,7 +34,7 @@ const options = {
   abi: NFT_transfer_ABI,
   includeContractLogs: true,
   allAddresses: true,
-  topic0: ["transfer(address,address,uint256)"], // topic of the event
+  topic0: ["Transfer(address,address,uint256)"], // topic of the event
   webhookUrl: "https://YOUR_WEBHOOK_URL", // webhook url to receive events,
 };
 

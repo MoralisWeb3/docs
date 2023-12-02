@@ -1,5 +1,5 @@
 ---
-title: "Market Data API"
+title: "Guides to Market Data API"
 description: "Fetch trending NFT collections, top ERC20s by market cap, top movers, and much more with the most popular cross-chain Market Data API in Web3."
 sidebar_position: 5
 sidebar_class_name: "sidebar-market-data-api"

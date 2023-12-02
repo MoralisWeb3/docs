@@ -70,7 +70,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -200,7 +200,7 @@ export const redirects = [
   },
   {
     source: "/docs/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: true,
   },
   {
@@ -264,7 +264,7 @@ export const redirects = [
   },
   {
     source: "/docs/token-api",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -339,7 +339,7 @@ export const redirects = [
   },
   {
     source: "/docs/transaction-api",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -360,12 +360,12 @@ export const redirects = [
   },
   {
     source: "/docs/events-api",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
     source: "/docs/block-api",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -390,7 +390,7 @@ export const redirects = [
   },
   {
     source: "/docs/defi-api",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -2147,7 +2147,7 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains-for-nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: true,
   },
   {
@@ -2288,7 +2288,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -2335,7 +2335,7 @@ export const redirects = [
   },
   {
     source: "/introduction/pre-requisites",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -2398,7 +2398,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projects",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -2648,7 +2648,7 @@ export const redirects = [
   },
   {
     source: "/reference/token",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -2679,7 +2679,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -2737,7 +2737,7 @@ export const redirects = [
   },
   {
     source: "/reference/token-4",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -2752,7 +2752,7 @@ export const redirects = [
   },
   {
     source: "/guides/build",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -2808,7 +2808,7 @@ export const redirects = [
   },
   {
     source: "/moralis-sdk/historical-transactions",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -2864,7 +2864,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/boilerplate-projects",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3011,7 +3011,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/snippets",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3026,7 +3026,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/demos",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3042,7 +3042,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3069,7 +3069,7 @@ export const redirects = [
   },
   {
     source: "/pre-requisites",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3116,7 +3116,7 @@ export const redirects = [
   },
   {
     source: "/reference/token-1",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -3223,7 +3223,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutesVyper",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3234,7 +3234,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/demos",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3291,7 +3291,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   { source: "/introduction/readme", destination: "/", permanent: true },
@@ -3358,7 +3358,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-d",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3368,7 +3368,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/quick-start",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3465,7 +3465,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projectsMoralis",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3562,7 +3562,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3578,7 +3578,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/pre-requisites",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3609,7 +3609,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutes",
-    destination: "/web3-data-api/evm/getting-started/",
+    destination: "/web3-data-api/getting-started/",
     permanent: true,
   },
   {
@@ -3625,7 +3625,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/defi-new",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -3677,7 +3677,7 @@ export const redirects = [
   },
   {
     source: "/reference/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: false,
   },
   {
@@ -3968,7 +3968,7 @@ export const redirects = [
   },
   {
     source: "/moralis-web3-rest/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: true,
   },
   {
@@ -4215,7 +4215,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/token",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -4861,7 +4861,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: true,
   },
   {
@@ -4911,7 +4911,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk/token",
-    destination: "/web3-data-api/evm/token-api",
+    destination: "/web3-data-api/token-api",
     permanent: true,
   },
   {
@@ -5254,7 +5254,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/defi-new",
-    destination: "/web3-data-api/evm/blockchain-api",
+    destination: "/web3-data-api/blockchain-api",
     permanent: true,
   },
   {
@@ -5479,7 +5479,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/nft-api",
-    destination: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/nft-api",
     permanent: true,
   },
   {
@@ -6547,22 +6547,22 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm/token-api/erc20-spam-detection",
+    source: "/web3-data-api/token-api/erc20-spam-detection",
     destination: "/web3-data-api/evm/erc20-spam-detection",
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm/token-api/report-erc20-spam",
+    source: "/web3-data-api/token-api/report-erc20-spam",
     destination: "/web3-data-api/evm/report-erc20-spam",
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm/nft-api/nft-spam-detection",
+    source: "/web3-data-api/nft-api/nft-spam-detection",
     destination: "/web3-data-api/evm/nft-spam-detection",
     permanent: true,
   },
   {
-    source: "/web3-data-api/evm/nft-api/report-nft-spam",
+    source: "/web3-data-api/nft-api/report-nft-spam",
     destination: "/web3-data-api/evm/report-nft-spam",
     permanent: true,
   },

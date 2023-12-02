@@ -62,6 +62,26 @@
   border-radius: var(--ifm-global-radius);
 }
 
+button.apiParamButton {
+  background-color: #0F7FFF;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.apiParamButton:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
 .paramTitle:last-child {
   padding: 0.3rem 0;
 }

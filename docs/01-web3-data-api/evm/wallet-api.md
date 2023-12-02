@@ -1,5 +1,5 @@
 ---
-title: "Wallet API"
+title: "Guides to Wallet API"
 description: "Boasting an array of features, exceptional flexibility, and unparalleled scalability, our Wallet API is the definitive solution for integrating wallet functionalities into your Web3 dapps."
 sidebar_position: 2
 sidebar_class_name: "sidebar-wallet-api"
