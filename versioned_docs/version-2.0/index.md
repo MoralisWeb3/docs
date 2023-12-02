@@ -19,7 +19,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                     <h1 className="hero__title">Moralis Web3 Documentation</h1>
                     <p className="hero__subtitle">Integrate Web3 into any tech stack by following easy guides, recipes, and API references!</p>
                     <div>
-                    <a href="/web3-data-api/evm/getting-started/" className="button button--primary button--outline button--lg">
+                    <a href="/web3-data-api/getting-started/" className="button button--primary button--outline button--lg">
                         Get Started
                     </a>
                     </div>
@@ -104,7 +104,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
                     <p>Access all the information you need for any ERC20 tokens.</p>
                 </a>

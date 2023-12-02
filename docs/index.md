@@ -104,7 +104,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
                     <p>Access all the information you need for any ERC20 tokens.</p>
                 </a>
@@ -120,7 +120,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/blockchain-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/blockchain-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" clip-path="url(#a)"><path stroke="#279B4F" d="M30.6 23.584v-11.2c0-.994-.532-1.918-1.4-2.422l-9.8-5.6a2.782 2.782 0 0 0-2.8 0l-9.8 5.6a2.804 2.804 0 0 0-1.4 2.422v11.2c0 .994.532 1.918 1.4 2.422l9.8 5.6a2.782 2.782 0 0 0 2.8 0l9.8-5.6a2.804 2.804 0 0 0 1.4-2.422Z"></path><path stroke="#279B4F" d="M5.777 10.928 18 17.998l12.222-7.07M18 32.096V17.984"></path><path stroke="#6DE983" d="m9.026 23.332 5.32-3.08M21.445 20.252l5.32 3.08"></path></g><defs><clipPath id="a"><path fill="#fff" d="M4 2.584h28v30.912H4z"></path></clipPath></defs></svg>&nbsp;&nbsp;Blockchain API</h3>
                     <p>Get the Blocks, Transactions and logs data of a blockchain.</p>
                 </a>
