@@ -14,7 +14,7 @@
     "typescriptreact",
     "markdown"
   ],
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
   "grammarly.startTextCheckInPausedState": true,
   "grammarly.config.suggestions.OxfordComma": true,
