@@ -24,54 +24,67 @@ Every request will return a cursor that can be used to get the next result until
 
 ```javascript
 const Moralis = require("moralis").default;
+const fs = require("fs");
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const init = async () => {
-  const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
-  const chain = EvmChain.ETHEREUM;
-  await Moralis.start({
-    apiKey: "MORALIS_API_KEY",
-    // ...and any other configuration
-  });
+    const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
+    const chain = EvmChain.ETHEREUM;
 
-  let cursor = null;
-  let owners = {};
-  do {
-    const response = await Moralis.EvmApi.nft.getNFTOwners({
-      address,
-      chain,
-      limit: 100,
-      cursor: cursor,
-      disableTotal: false,
+    await Moralis.start({
+        apiKey: "YOUR_API_KEY",
+        // ...and any other configuration
     });
-    console.log(
-      `Got page ${response.pagination.page} of ${Math.ceil(
-        response.pagination.total / response.pagination.pageSize
-      )}, ${response.pagination.total} total`
-    );
-    for (const NFT of response.result) {
-      if (NFT.ownerOf.checksum in owners) {
-        owners[NFT.ownerOf.checksum].push({
-          amount: NFT.amount,
-          owner: NFT.ownerOf,
-          tokenId: NFT.tokenId,
-          tokenAddress: NFT.tokenAddress,
-        });
-      } else {
-        owners[NFT.ownerOf.checksum] = [
-          {
-            amount: NFT.amount,
-            owner: NFT.ownerOf,
-            tokenId: NFT.tokenId,
-            tokenAddress: NFT.tokenAddress,
-          },
-        ];
-      }
-    }
-    cursor = response.pagination.cursor;
-  } while (cursor != "" && cursor != null);
 
-  console.log("owners:", owners, "total owners:", Object.keys(owners).length);
+    const planRateLimit = 150; // find throughput based on your plan here: https://moralis.io/pricing/#compare
+    const endpointRateLimit = 5; // find endpoint rate limit here: https://docs.moralis.io/web3-data-api/evm/reference/compute-units-cu#rate-limit-cost
+    let allowedRequests = planRateLimit / endpointRateLimit;
+    let cursor = null;
+    let owners = {};
+
+    do {
+        if (allowedRequests <= 0) {
+            // wait 1.1 seconds
+            await new Promise((r) => setTimeout(r, 1100));
+            allowedRequests = planRateLimit / endpointRateLimit;
+        }
+
+        const response = await Moralis.EvmApi.nft.getNFTOwners({
+            address,
+            chain,
+            limit: 100,
+            cursor: cursor,
+        });
+
+        console.log(`On page ${response.pagination.page}`);
+
+        for (const NFT of response.result) {
+            if (NFT.ownerOf.checksum in owners) {
+                owners[NFT.ownerOf.checksum].push({
+                    amount: NFT.amount,
+                    owner: NFT.ownerOf,
+                    tokenId: NFT.tokenId,
+                    tokenAddress: NFT.tokenAddress,
+                });
+            } else {
+                owners[NFT.ownerOf.checksum] = [
+                    {
+                        amount: NFT.amount,
+                        owner: NFT.ownerOf,
+                        tokenId: NFT.tokenId,
+                        tokenAddress: NFT.tokenAddress,
+                    },
+                ];
+            }
+        }
+        cursor = response.pagination.cursor;
+        allowedRequests--;
+    } while (cursor != "" && cursor != null);
+
+    //save owners in a json file
+    fs.writeFileSync("owners.json", JSON.stringify(owners));
+
+    console.log("total owners:", Object.keys(owners).length);
 };
 
 init();
