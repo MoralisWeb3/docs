@@ -4,6 +4,7 @@ slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 sidebar_position: 9
 ---
+
 ## What Is Pagination?
 
 Pagination is the process of dividing the responses from an API into multiple pages of results. This allows for faster response times for end users by reducing the amount of data that needs to be returned with each request.
@@ -93,40 +94,101 @@ init();
 ## Python example
 
 ```python
-import requests
+import json
 import time
+from moralis import evm_api
 
-def get_nft_owners(offset, cursor):
-    print("offset", offset)
-    url = 'https://deep-index.moralis.io/api/v2.2/nft/<address_here>/owners?chain=polygon&format=decimal'
-    if cursor:
-      url = url + "&cursor=%s" % cursor
-
-    print("api_url", url)
-    headers = {
-        "Content-Type": "application/json",
-        "X-API-Key": "API_KEY_HERE"
-    }
-    statusResponse = requests.request("GET", url, headers=headers)
-    data = statusResponse.json()
-    print("HTTP headers:", statusResponse.headers)
-    try:
-        print("nr results", len(data['result']))
-    except:
-        print(repr(data))
-        print("exiting")
-        raise SystemExit
-
-    cursor = data['cursor']
-    print(data['page'], data['total'])
-    return cursor
+api_key = "YOUR_API_KEY"
+address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+chain = "0x1"
 
 
-cursor = None
-for j in range(0, 10):
-    cursor = get_nft_owners(j*500, cursor)
-    print()
-    time.sleep(1.1)
+def get_all_nft_owners(chain, address):
+    plan_rate_limit = 150
+    endpoint_rate_limit = 5
+    allowed_requests = plan_rate_limit / endpoint_rate_limit
+
+    cursor = ""
+    owners = {}
+
+    response = evm_api.nft.get_nft_owners(
+        api_key=api_key,
+        params={
+            "chain": chain,
+            "address": address,
+            "cursor": cursor,
+        },
+    )
+
+    cursor = response["cursor"]
+    print(f"On page {response['page']}")
+
+    for nft in response["result"]:
+        if nft["owner_of"] in owners:
+            owners[nft["owner_of"]].append(
+                {
+                    "amount": nft["amount"],
+                    "owner": nft["owner_of"],
+                    "token_id": nft["token_id"],
+                    "token_address": nft["token_address"],
+                }
+            )
+        else:
+            owners[nft["owner_of"]] = [
+                {
+                    "amount": nft["amount"],
+                    "owner": nft["owner_of"],
+                    "token_id": nft["token_id"],
+                    "token_address": nft["token_address"],
+                }
+            ]
+
+    while cursor != "" and cursor is not None:
+        if allowed_requests <= 1:
+            time.sleep(1.1)
+            allowed_requests = plan_rate_limit / endpoint_rate_limit
+
+        response = evm_api.nft.get_nft_owners(
+            api_key=api_key,
+            params={
+                "chain": chain,
+                "address": address,
+                "cursor": cursor,
+            },
+        )
+        print(f"On page {response['page']}")
+        for nft in response["result"]:
+            if nft["owner_of"] in owners:
+                owners[nft["owner_of"]].append(
+                    {
+                        "amount": nft["amount"],
+                        "owner": nft["owner_of"],
+                        "token_id": nft["token_id"],
+                        "token_address": nft["token_address"],
+                    }
+                )
+            else:
+                owners[nft["owner_of"]] = [
+                    {
+                        "amount": nft["amount"],
+                        "owner": nft["owner_of"],
+                        "token_id": nft["token_id"],
+                        "token_address": nft["token_address"],
+                    }
+                ]
+
+        cursor = response["cursor"]
+        allowed_requests -= 1
+
+    print(f"Total owners: {len(owners)}")
+    return owners
+
+
+owners = get_all_nft_owners(chain=chain, address=address)
+
+# save owners in a json file
+with open("owners.json", "w") as file:
+    json.dump(owners, file)
 ```
 
 :::info Limit param
