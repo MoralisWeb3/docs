@@ -2,6 +2,7 @@
 title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
+sidebar_position: 11
 ---
 ## What Is Pagination?
 
@@ -11,7 +12,7 @@ API pagination is used to control the amount of data that is returned for each r
 
 ## What Is Cursor Pagination?
 
-Cursor pagination uses a pointer, or cursor, to identify a specific item in the dataset. This pointer is sent with requests to the server, and in response, it sends back the data after the given item. 
+Cursor pagination uses a pointer, or cursor, to identify a specific item in the dataset. This pointer is sent with requests to the server, and in response, it sends back the data after the given item.
 
 It’s ideal if you want to pull a long list of records from the API since its performance remains constant.
 

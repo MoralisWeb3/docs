@@ -1,5 +1,5 @@
 ---
-title: "Coin API"
+title: "Coin"
 slug: "../coin-api"
 description: "The Coin API is a tool that allows Web3 developers to easily access coin data from Aptos blockchains."
 sidebar_position: 4

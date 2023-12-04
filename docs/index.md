@@ -72,7 +72,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos/reference">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" id="a" width="36" height="36"  viewBox="0 0 500 500"><path fill="#51e7c1" d="M400.14 163.42h-42.4c-4.94 0-9.64-2.12-12.91-5.81l-17.2-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.45 25.45 0 0 1-19.04 8.58H41.53c-6.61 18.84-10.92 38.74-12.64 59.38h219.1c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56L316.48 217c3.27 3.7 7.97 5.81 12.91 5.81h178.84c-1.72-20.65-6.03-40.55-12.64-59.38h-95.46ZM161.48 347.67c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.55l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h242.36c9.08-18.76 15.73-38.89 19.69-59.98H272.3c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58H32.19c3.96 21.09 10.62 41.22 19.69 59.98h109.59ZM333.42 98.52c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h46.09C417.02 40.18 347.21 2.44 268.57 2.44S120.12 40.18 76.22 98.52h257.2ZM240.84 407.11h-63.03c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58h-.98c43.91 47.05 106.44 76.5 175.87 76.5s131.95-29.45 175.87-76.5H240.84Z" className="b"/></svg>&nbsp;&nbsp;Aptos API</h3>
                     <p>Fetch user and token data from the Aptos blockchain.</p>
                 </a>
@@ -80,7 +80,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/solana">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/reference">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;Solana API</h3>
                     <p>Fetch user and token data from the Solana blockchain.</p>
                 </a>

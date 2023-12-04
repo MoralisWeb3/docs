@@ -70,7 +70,7 @@ export const redirects = [
   },
   {
     source: "/docs/your-first-dapp",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2288,7 +2288,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2335,7 +2335,7 @@ export const redirects = [
   },
   {
     source: "/introduction/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2398,7 +2398,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2679,7 +2679,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/connect-the-sdk/connect-with-js",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2752,7 +2752,7 @@ export const redirects = [
   },
   {
     source: "/guides/build",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -2864,7 +2864,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/connect-the-sdk/boilerplate-projects",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3011,7 +3011,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/snippets",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3026,7 +3026,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3042,7 +3042,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3069,7 +3069,7 @@ export const redirects = [
   },
   {
     source: "/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3223,7 +3223,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutesVyper",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3234,7 +3234,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/demos",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3291,7 +3291,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   { source: "/introduction/readme", destination: "/", permanent: true },
@@ -3358,7 +3358,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-d",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3368,7 +3368,7 @@ export const redirects = [
   },
   {
     source: "/getting-started/quick-start",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3465,7 +3465,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/boilerplate-projectsMoralis",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3562,7 +3562,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/getting-started/create-a-moralis-server",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3578,7 +3578,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/getting-started/pre-requisites",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -3609,7 +3609,7 @@ export const redirects = [
   },
   {
     source: "/guides/build-a-simple-dapp-in-3-minutes",
-    destination: "/web3-data-api/getting-started/",
+    destination: "/web3-data-api/evm/getting-started/",
     permanent: true,
   },
   {
@@ -6395,7 +6395,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/getting-started/",
+    source: "/web3-data-api/evm/getting-started/",
     destination: "/web3-data-api/evm/getting-started",
     permanent: true,
   },
