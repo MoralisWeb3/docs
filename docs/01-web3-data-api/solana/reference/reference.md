@@ -1,5 +1,5 @@
 ---
-title: "All Web3 Data Endpoints"
+title: "All Web3 Data Endpoints - Solana"
 sidebar_label: "Overview"
 slug: "/web3-data-api/solana/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference for Solana."
@@ -12,7 +12,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 <ApiBanner />
 
 
-This section contains a full list of all methods within the EVM Web3 data.
+This section contains a full list of all methods within the Solana Web3 data.
 
 ## Full List of APIs by Category
 

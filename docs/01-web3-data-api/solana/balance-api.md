@@ -1,5 +1,5 @@
 ---
-title: "Balance API"
+title: "Balance"
 slug: "../balance-api"
 sidebar_position: 5
 sidebar_class_name: "sidebar-balance-api"

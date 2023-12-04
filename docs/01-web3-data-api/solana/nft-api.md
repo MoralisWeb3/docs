@@ -1,5 +1,5 @@
 ---
-title: "NFT API"
+title: "NFT"
 slug: "../nft-api"
 sidebar_position: 3
 sidebar_class_name: "sidebar-nft-api"
