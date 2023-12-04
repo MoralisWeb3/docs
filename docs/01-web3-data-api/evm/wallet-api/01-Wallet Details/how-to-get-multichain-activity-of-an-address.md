@@ -6,26 +6,25 @@ sidebar_label: "Get chain activity of address"
 sidebar_position: 4
 ---
 
-## Prerequisites
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
+<ApiBanner />
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get multi-chain activity of a wallet address
 
 In order to get the chain activity, Moralis provides you a [getWalletActiveChains](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) endpoint to do so.
 
-Here you'll need two parameters: `address` and `chains`.
+To use the `getWalletActiveChains` endpoint, you'll primarily need the parameter `address`. Optionally, you can also specify the parameter `chains` to filter the activity for specific blockchain networks.
 
-Once you've obtained both the `address` and `chains`, you can copy the following code:
+:::tip
+Providing the `chains` parameter is optional. This endpoint primarily requires the `address` parameter. If you choose not to specify `chains`, the endpoint will return activity across all supported chains for the given address.
+:::
+
+Once you've obtained the `address` you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -43,7 +42,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chains = [EvmChain.ETHEREUM, EvmChain.BSC, EvmChain.POLYGON];
 
@@ -51,7 +50,7 @@ const runApp = async () => {
     address,
     chains,
   });
-  
+
   console.log(response.toJSON());
 }
 
@@ -71,7 +70,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chains = [EvmChain.ETHEREUM, EvmChain.BSC, EvmChain.POLYGON];
 
@@ -79,7 +78,7 @@ const runApp = async () => {
     address,
     chains,
   });
-  
+
   console.log(response.toJSON());
 }
 
@@ -95,7 +94,7 @@ from moralis import evm_api
 api_key = "YOUR_API_KEY"
 
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chains": ["eth", "bsc", "polygon"],
 }
 
@@ -120,7 +119,7 @@ In your terminal, you should see the following JSON response with the data about
 
 ```json
 {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
   "active_chains": [
     {
       "chain": "eth",

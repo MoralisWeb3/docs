@@ -10,10 +10,10 @@ This tutorial teaches you how to build a Zapper-like application where you can c
 
 ## Prerequisites
 
-Before getting started, make sure you have the following ready:
+Make sure that you have the installed all the following prerequisites:
 
-- NodeJS v14+
-- A package manager: NPM, Yarn, PNPM
+- [Node.js](https://nodejs.org/) v14+ or [Python](https://www.python.org/downloads/)
+- [NPM](https://www.npmjs.com/)/[Yarn](https://classic.yarnpkg.com/en/) or [Pip](https://pip.pypa.io/en/stable/)
 
 ## Step 1: Backend setup
 
@@ -241,13 +241,13 @@ app.get("/tokenTransfers", async (req, res) => {
       address: address,
       chain: chain,
     });
-    
+
     const userTrans = response.data.result;
 
     let userTransDetails = [];
-    
+
     for (let i = 0; i < userTrans.length; i++) {
-      
+
       try {
         const metaResponse = await Moralis.EvmApi.token.getTokenMetadata({
           addresses: [userTrans[i].address],
@@ -368,7 +368,7 @@ function NativeTokens({
   return (
     <>
       <div className="tabHeading">Native Balance <Reload onClick={getNativeBalance}/></div>
-      {(nativeBalance >0 && nativeValue >0) && 
+      {(nativeBalance >0 && nativeValue >0) &&
       <Table
       pageSize={1}
       noPagination={true}
@@ -382,7 +382,7 @@ function NativeTokens({
       ]}
     />
       }
-      
+
     </>
   );
 }
@@ -487,13 +487,13 @@ function Nfts({ chain, wallet, filteredNfts, setFilteredNfts, nfts, setNfts }) {
         </div>
         <div className="nftList">
         {filteredNfts.length > 0 &&
-        
+
           filteredNfts.map((e) => {
             return (
               <>
                 <div className="nftInfo">
                 {e.image && <img src={e.image} width={200} />}
-                
+
                 <div>Name: {e.name}, </div>
                 <div>(ID: {e.token_id.slice(0,5)})</div>
                 </div>
@@ -502,7 +502,7 @@ function Nfts({ chain, wallet, filteredNfts, setFilteredNfts, nfts, setNfts }) {
           })
           }
           </div>
-      
+
     </>
   );
 }
@@ -575,7 +575,7 @@ function Tokens({ wallet, chain, tokens, setTokens }) {
 
   function tokenProcessing(t) {
 
-    
+
     for (let i = 0; i < t.length; i++) {
       t[i].bal = (Number(t[i].balance) / Number(`1E${t[i].decimals}`)).toFixed(3); //1E18
       t[i].val = ((Number(t[i].balance) / Number(`1E${t[i].decimals}`)) *Number(t[i].usd)).toFixed(2);
@@ -583,7 +583,7 @@ function Tokens({ wallet, chain, tokens, setTokens }) {
 
     setTokens(t);
 
-    
+
   }
 
   return (
@@ -797,17 +797,17 @@ function App() {
             />
           </Tab>
           <Tab tabKey={2} tabName={"Transfers"}>
-            <TransferHistory 
-              chain={chain} 
-              wallet={wallet} 
+            <TransferHistory
+              chain={chain}
+              wallet={wallet}
               transfers={transfers}
               setTransfers={setTransfers}
             />
           </Tab>
           <Tab tabKey={3} tabName={"NFT's"}>
-            <Nfts 
-              wallet={wallet} 
-              chain={chain} 
+            <Nfts
+              wallet={wallet}
+              chain={chain}
               nfts={nfts}
               setNfts={setNfts}
               filteredNfts={filteredNfts}
@@ -878,7 +878,7 @@ We will now add the required CSS style for our app.
 .totalValue {
   width: 350px;
   height: 150px;
-  padding: 10px 30px; 
+  padding: 10px 30px;
   border-radius: 20px;
   background-color: rgba(33, 33, 38, 0.6);
   display: flex;

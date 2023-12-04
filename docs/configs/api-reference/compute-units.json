@@ -254,7 +254,9 @@
       "endpoint": "getWalletActiveChains",
       "path": "/wallets/{address}/chains",
       "price": 10,
-      "rateLimitCost": 5
+      "rateLimitCost": 5,
+      "dynamic": true,
+      "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
     },
     {
       "endpoint": "getTopERC20TokensByMarketCap",

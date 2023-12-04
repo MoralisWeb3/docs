@@ -1,10 +1,12 @@
 ---
-title: "How to monitor ENS Domain Registrations"
+title: "Monitor High-Value ENS Domain Registrations"
 slug: "../how-to-monitor-ens-domain-registrations"
 description: "Learn how to monitor ENS domain registrations that costs higher than 1 ETH using Moralis Streams API."
 ---
 
-### Programatically
+Learn how to monitor ENS domain registrations that costs higher than 1 ETH using Moralis Streams API.
+
+## Programatically
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -193,7 +195,7 @@ print(result)
 </TabItem>
 </Tabs>
 
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form

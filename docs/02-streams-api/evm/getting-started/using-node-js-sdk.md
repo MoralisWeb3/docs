@@ -1,5 +1,5 @@
 ---
-title: "Using the SDK"
+title: "Manage Streams via SDK"
 slug: "../using-node-js-sdk"
 description: "Learn how to use the Moralis Streams API to monitor a wallet with the SDK. Create a stream, install the SDK, attach an address, and receive webhooks with transaction details."
 sidebar_position: 1
@@ -9,25 +9,16 @@ In these examples, we will learn how to create and manage a Stream.
 
 In order to use the Moralis Streams API, you can either use the SDK (programmatically) or via our UI dashboard.
 
-## Using the SDK
+:::tip
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps.
+:::
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
-
-
-
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis" python="moralis" />
-
-### Step 1: Create a Stream
+## Step 1: Create a Stream
 
 In order to create a stream, Moralis provides you with a [add](/streams-api/evm/reference/create-stream) endpoint to do so.
 
-Here you'll need 5 initial required parameters to create a stream, you can update these parameters later on or add additional ones: 
-- `webhookUrl`: Webhook URL where moralis will send the POST request. 
+Here you'll need 5 initial required parameters to create a stream, you can update these parameters later on or add additional ones:
+- `webhookUrl`: Webhook URL where moralis will send the POST request.
 - `description`: A description for this stream.
 - `tag`: A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present.
 - `chains`: An array of chains to monitor.
@@ -86,7 +77,7 @@ print(results["id"]) # print the stream id
 </TabItem>
 </Tabs>
 
-### Step 2: Update a Stream
+## Step 2: Update a Stream
 
 Now that we have the stream id from the previous step, we can update the stream with additional parameters.
 In this example, we will add the `includeContractLogs` parameter to the stream and make it listen for ERC20 transfers, but you can add any other parameter you want.
@@ -187,7 +178,7 @@ print(results)
 </Tabs>
 
 
-### Step 3: Delete a Stream
+## Step 3: Delete a Stream
 
 If you want to delete a stream, you can use the [delete](/streams-api/evm/reference/delete-stream) endpoint.
 
@@ -205,7 +196,7 @@ const runApp = async () => {
         id: "4f7dbfb3-42c9-4d8d-bbba-975ea2d2b1a1", // stream ID from the previous snippet
     });
 
-    console.log(response.toJSON()); 
+    console.log(response.toJSON());
 };
 
 runApp();
@@ -232,7 +223,7 @@ print(results)
 </TabItem>
 </Tabs>
 
-### Step 4: Add an Address to a Stream
+## Step 4: Add an Address to a Stream
 
 Now that we have a stream, we can add an address to it. You can either add individual addresses or a batch. In this example, we will add a list of addresses to the stream.
 

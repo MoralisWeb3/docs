@@ -3,7 +3,9 @@ title: "Address Labels"
 slug: "../address-labels"
 sidebar_position: 0
 ---
-![address-labels-docs](https://github.com/MoralisWeb3/docs/assets/13417464/a3d91857-a3fa-4625-84f2-4405ac51c70b)
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
 
 # Address Labels
 

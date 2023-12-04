@@ -6,18 +6,13 @@ sidebar_label: "Get NFTs owned by address"
 sidebar_position: 1
 ---
 
-## Prerequisites
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
+<ApiBanner />
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get All NFTs Owned By An Address
 
@@ -43,7 +38,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -71,7 +66,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -95,7 +90,7 @@ import json
 
 api_key = "YOUR_API_KEY"
 params = {
-    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
     "chain": "eth",
     "format": "decimal",
     "limit": 100,
@@ -135,7 +130,7 @@ In your terminal, you should see the following JSON response:
       "token_address": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
       "token_id": "4765809967066625256798886812262830659450023020194524584471225959000376492819",
       "amount": "1",
-      "owner_of": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "owner_of": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "token_hash": "ba6d44b5f16be94283cecffeb784b7ca",
       "block_number_minted": "15572796",
       "block_number": "15573017",
@@ -152,7 +147,7 @@ In your terminal, you should see the following JSON response:
       "token_address": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
       "token_id": "84453794918345416145331514647027903846664455083247396107154093349515123913389",
       "amount": "1",
-      "owner_of": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "owner_of": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "token_hash": "7c0212cd3daf1b6b64f193c6dc102fb4",
       "block_number_minted": "15572811",
       "block_number": "15573017",
@@ -169,7 +164,7 @@ In your terminal, you should see the following JSON response:
       "token_address": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
       "token_id": "16476931145019337030786748713476010946621971075817308111460324192065814192354",
       "amount": "1",
-      "owner_of": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "owner_of": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "token_hash": "627ffc76405a90ee940cb91f7e90b294",
       "block_number_minted": "15572818",
       "block_number": "15573017",

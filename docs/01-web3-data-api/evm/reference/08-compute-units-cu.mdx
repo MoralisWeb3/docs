@@ -3,6 +3,7 @@ title: "EVM Compute Units"
 slug: "compute-units-cu"
 sidebar_label: "Compute Units (CU)"
 description: "Learn more about what is Compute Units and how does it affects your pricing."
+sidebar_position: 13
 ---
 
 All Moralis plans have generous limits on the number of requests you can make per month. How many included requests you have depends on the plan you have, check the [pricing page](https://moralis.io/pricing) for more details.
@@ -120,3 +121,11 @@ Your output for the API request will be as follows:
 ```
 
 where `price` refers to how much CU does the API request cost in terms of billing and `rateLimitCost` refers to how much CU does the API request cost in terms of rate limits.
+
+## Streams and Compute Units
+
+For [Moralis Streams](/streams-api/evm#what-is-the-streams-api), it is important to note that each [record](/streams-api/evm/records-and-pricing#what-is-the-record) has a fixed cost of 15 Compute Units.
+
+:::tip
+You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
+:::

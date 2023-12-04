@@ -1,12 +1,12 @@
 ---
-title: "How to monitor specific NFTs"
+title: "Track Specific CryptoPunk NFTs by Token IDs"
 slug: "../how-to-monitor-specific-nfts"
 description: "Learn how to monitor specific CryptoPunk NFTs Based on an array of Token IDs using Moralis Streams API."
 ---
 
 Lets create a stream that monitor specific CryptoPunk NFTs based on an array of Token IDs.
 
-### Programmatically
+## Programmatically
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -103,7 +103,7 @@ print(result)
 </TabItem>
 </Tabs>
 
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form

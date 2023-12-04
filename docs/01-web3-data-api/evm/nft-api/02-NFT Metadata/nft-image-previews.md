@@ -5,6 +5,10 @@ description: "All NFTs served through our API include low, medium and high resol
 sidebar_position: 5
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 The Moralis NFT API allows for the generation of low, medium, and high-resolution thumbnails for NFT images, improving the user experience by offering optimized image sizes for various use cases. This allows developers to easily integrate faster-loading images into their applications, reducing page load times and enhancing the overall user experience.
 
 ### What formats are supported?
@@ -13,7 +17,7 @@ We currently support popular image types such as JPG, JPEG, PNG, GIFs, TIFF etc.
 ### What endpoints does this affect?
 NFT thumbnail previews are added across all endpoints that currently return NFTs today. Media items will be included when the query paramter, `media_items` is set to `true`, across the following endpoints:
 
-* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts) 
+* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 * [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
 * [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
 * [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)

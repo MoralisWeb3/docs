@@ -1,17 +1,21 @@
 ---
-title: "How to listen to all NFT transfers sent from a specific address"
+title: "Monitoring NFT Transfers from Specific Wallet Addresses"
 slug: "../how-to-listen-to-all-nft-transfers-sent-from-a-specific-address"
 description: "Learn how to listen to all NFT transfers sent from a specific address using Moralis Streams API."
 ---
+
 Lets create a stream that monitors all the NFT contract transfers from a specific sender address.
 
-Note: This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+:::tip
+This stream uses listen to all addresses feature that is available only on Business and Enterprise plans.
+There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::
 
-Note: There will be few NFT contracts that don't follow the standards like CryptoPunks that have a different ABI and you will not receive webhook requests from those non standard NFT contracts.
+:::tip
+You will use the ABI specific to NFT transfers, the one that has indexed for tokenId
+:::
 
-Note: You will use the ABI specific to NFT transfers, the one that has indexed for tokenId
-
-### Programmatically
+## Programmatically
 
 ```javascript
 const NFT_transfer_ABI = [{
@@ -32,23 +36,20 @@ const options = {
   abi: NFT_transfer_ABI,
   includeContractLogs: true,
   allAddresses: true,
-  topic0: ["transfer(address,address,uint256)"], // topic of the event
+  topic0: ["Transfer(address,address,uint256)"], // topic of the event
   advancedOptions: [
     {
-      topic0: "transfer(address,address,uint256)",
+      topic0: "Transfer(address,address,uint256)",
       filter: { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] }, // only receive NFT transfer events from this address
     },
+  ],
   webhookUrl: "https://YOUR_WEBHOOK_URL", // webhook url to receive events,
 };
 
 const stream = await Moralis.Streams.add(options);
-
-
 ```
 
-
-
-### Via WebUI
+## Via WebUI
 
 1. Create a new Stream
 2. Fill out the form
@@ -57,7 +58,7 @@ const stream = await Moralis.Streams.add(options);
 5. Add below value to advanced options
 6. ```json
    [{
-         "topic0": "transfer(address,address,uint256)",
+         "topic0": "Transfer(address,address,uint256)",
          "filter": { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] }
    }]
    ```

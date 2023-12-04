@@ -6,18 +6,13 @@ sidebar_label: "Get verbose transactions of address"
 sidebar_position: 2
 ---
 
-## Prerequisites
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
+<ApiBanner />
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get the verbose transaction of an address
 
@@ -43,7 +38,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -72,7 +67,7 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const address = "0xd8da6bf26964af9d7eed9e03e53415d37aa96045";
+  const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
 
   const chain = EvmChain.ETHEREUM;
 
@@ -96,7 +91,7 @@ from moralis import evm_api
 
 api_key = "YOUR_API_KEY"
 params = {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
   "chain": "eth"
 }
 
@@ -129,7 +124,7 @@ In your terminal, you should see the following JSON response:
       "hash": "0x1e67156f8cef5668c69392876f9ff99ca655d43ec366c6cf62217dd633e809b4",
       "nonce": "949",
       "transaction_index": "74",
-      "from_address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "from_address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
       "to_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
       "value": "0",
       "gas": "66163",

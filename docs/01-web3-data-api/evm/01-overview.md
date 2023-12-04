@@ -8,10 +8,9 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-# EVM Web3 Data API
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-![23_04_EVM-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769157-f47b85bf-7930-4d14-ad22-7f1e630f94d9.jpg)
-
+<ApiBanner />
 
 ## What are the Web3 Data APIs?
 
@@ -41,8 +40,8 @@ Our advanced feature set of Web3 Data APIs are best for those that are building 
 
 ## Supported Chains
 
-Moralis Web3 Data APIs are continuously adding new chains and integrations. Our current supported EVM chains include:
+Moralis Web3 Data APIs are continuously adding new chains and integrations.
 
-import { EVMChainData } from '@site/src/components/SupportedChains';
-
-<EVMChainData/>
+:::tip
+Please, check the [full list of supported chains](/supported-chains).
+:::

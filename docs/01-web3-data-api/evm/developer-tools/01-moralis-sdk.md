@@ -4,6 +4,10 @@ slug: "../moralis-sdk"
 description: "Quickly and easily integrate Moralis' products into your backend with the Moralis SDK."
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## What is the Moralis SDK?
 
 With the Moralis SDK, you can implement all of Moralis' products quickly and easily in your backend. The SDK comes with numerous features, such as:

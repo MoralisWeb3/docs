@@ -6,6 +6,10 @@ sidebar_position: 3
 sidebar_class_name: "sidebar-nft-api"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 ## What is the NFT API?
 
 The NFT API enables Web3 developers to quickly get all NFT data on the Aptos blockchains, in order to help them build and scale their dapps efficiently.

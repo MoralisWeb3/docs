@@ -5,18 +5,13 @@ description: "Learn how to resolve the ENS domain using the Moralis Resolve API.
 sidebar_label: "Get address by ENS domain"
 ---
 
-## Prerequisites
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-Before getting started, make sure you have the following ready:
-
-- Node v.14+ or Python
-- NPM/Yarn or Pip
+<ApiBanner />
 
 ## Step 1: Setup Moralis
 
-import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
-
-<SetupMoralis node="moralis @moralisweb3/common-evm-utils" python="moralis" />
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Resolve ENS domain
 
@@ -112,7 +107,7 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "address": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+  "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5"
 }
 ```
 

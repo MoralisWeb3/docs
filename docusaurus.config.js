@@ -170,7 +170,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "web3-data-api/evm/overview",
+            docId: "web3-data-api/evm/reference/reference",
             position: "left",
             label: "Web3 Data API",
           },
@@ -192,7 +192,7 @@ const config = {
             label: "Changelog",
           },
           {
-            to: "streams-api/evm/getting-started/faq",
+            to: "streams-api/evm/faq",
             position: "left",
             label: "FAQ",
           },
@@ -201,14 +201,14 @@ const config = {
             type: "html",
             position: "right",
             value:
-              '<a href="https://admin.moralis.io/register" target="_blank">Create account</a>',
+              '<a href="https://admin.moralis.io/register" target="_blank">Get API Key</a>',
             className: "navbar__item--hide-on-mobile",
           },
           {
             type: "html",
             position: "right",
             value:
-              '<a class="button button--md button--outline button--primary" href="https://admin.moralis.io/" target="_blank">Login</a>',
+              '<a class="button button--md button--outline button--primary" href="/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet" target="_blank">Test API Live</a>',
             className: "navbar__item--hide-on-mobile navbar__item--login",
           },
           {
@@ -399,15 +399,11 @@ const config = {
         indexName: "gold-iota",
         contextualSearch: true,
       },
-      hotjar: {
-        applicationId: "3650716",
-      },
     }),
   customFields: {
     specialApiKey: [],
   },
   plugins: [
-    "docusaurus-plugin-hotjar",
     [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
