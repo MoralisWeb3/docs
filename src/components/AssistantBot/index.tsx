@@ -211,10 +211,10 @@ export default function AssistantBot() {
     }
   }
   useEffect(() => {
-    if (threadId) {
+    if (threadId && open) {
       fetchMessages();
     }
-  }, [threadId]);
+  }, [threadId, open]);
 
   // Save chat history to local storage
   useEffect(() => {
