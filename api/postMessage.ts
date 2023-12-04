@@ -43,7 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
               elements: [
                 {
                   type: "mrkdwn",
-                  text: `*Thread Id: * ${(tags as Array<"">).toString()}`,
+                  text: `*User Details: * ${(tags as Array<"">).toString()}`,
                 },
               ],
             },

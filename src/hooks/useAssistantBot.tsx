@@ -99,7 +99,8 @@ const useAssistantBot = () => {
    */
   const generateAnswer = async (query: string) => {
     const threadId = localStorage.getItem("thread_id");
-    setUserTags([threadId]);
+    const emailId = localStorage.getItem("userEmail");
+    setUserTags([emailId, threadId]);
     setDone(false);
     setUserQuery(query);
     setLoading(true);
