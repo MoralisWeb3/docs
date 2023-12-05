@@ -19,6 +19,7 @@ The Moralis DeFi API is integrated with an extensive range of Decentralized Exch
 | Fantom      | `spookyswap`                              |
 | Cronos      | `vvs`                                     |
 | Arbitrum    | `uniswapv3`, `camelotv2`                  |
+| Base    | `uniswapv3`, `sharkswap`, `aerodrome`, `baseswap`, `pancakeswap`, `sushiswap` |
 
 In the event that no `exchange` value is specified, the API will proceed to systematically evaluate each exchange. It continues this process until it successfully locates a price, strategically bypassing any exchanges or pairs that are characterized by low liquidity.
 
@@ -27,7 +28,7 @@ In the event that no `exchange` value is specified, the API will proceed to syst
 We have integrated the supported DEXs on an endpoint:
 
 | Name | Endpoint |
-| :--- | :------- |
-
-| [Get DEX token pair address
-](/web3-data-api/evm/reference/get-pair-address) | `/:token0_address/:token1_address/pairAddress` |
+| ----------- | ----------------------------------------- |
+| [Get ERC20 token price](/web3-data-api/evm/reference/get-token-price) | `/erc20/:address/price` |
+| [Get multiple ERC20 token prices](/web3-data-api/evm/reference/get-multiple-token-prices) | `/erc20/prices` |
+| [Get DEX token pair address](/web3-data-api/evm/reference/get-pair-address) | `/:token0_address/:token1_address/pairAddress` |
