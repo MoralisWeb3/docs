@@ -1,6 +1,6 @@
 ---
 title: "Token"
-slug: "../token-api"
+slug: "/web3-data-api/solana/token-api"
 sidebar_position: 4
 sidebar_class_name: "sidebar-token-api"
 ---

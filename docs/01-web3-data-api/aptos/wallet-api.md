@@ -1,6 +1,6 @@
 ---
 title: "Wallet"
-slug: "../wallet-api"
+slug: "/web3-data-api/aptos/wallet-api"
 description: "The Wallet API is a tool that allows Web3 developers to easily access wallet activity data from Aptos blockchains."
 sidebar_position: 5
 sidebar_class_name: "sidebar-balance-api"

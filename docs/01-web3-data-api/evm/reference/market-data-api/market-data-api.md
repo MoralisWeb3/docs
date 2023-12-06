@@ -1,7 +1,7 @@
 ---
 title: "Market Data API"
 sidebar_label: "Market Data API"
-slug: "../market-data--api"
+slug: "../market-data-api"
 sidebar_class_name: "sidebar-market-data-api"
 sidebar_position: 4
 ---

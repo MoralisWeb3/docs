@@ -1,6 +1,6 @@
 ---
 title: "Balance"
-slug: "../balance-api"
+slug: "/web3-data-api/solana/balance-api"
 sidebar_position: 5
 sidebar_class_name: "sidebar-balance-api"
 ---

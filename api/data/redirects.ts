@@ -200,7 +200,7 @@ export const redirects = [
   },
   {
     source: "/docs/nft-api",
-    destination: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
@@ -264,7 +264,7 @@ export const redirects = [
   },
   {
     source: "/docs/token-api",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -339,7 +339,7 @@ export const redirects = [
   },
   {
     source: "/docs/transaction-api",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -360,12 +360,12 @@ export const redirects = [
   },
   {
     source: "/docs/events-api",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
     source: "/docs/block-api",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -390,7 +390,7 @@ export const redirects = [
   },
   {
     source: "/docs/defi-api",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -2147,7 +2147,7 @@ export const redirects = [
   },
   {
     source: "/reference/supported-chains-for-nft-api",
-    destination: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
@@ -2648,7 +2648,7 @@ export const redirects = [
   },
   {
     source: "/reference/token",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -2737,7 +2737,7 @@ export const redirects = [
   },
   {
     source: "/reference/token-4",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -2808,7 +2808,7 @@ export const redirects = [
   },
   {
     source: "/moralis-sdk/historical-transactions",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -3116,7 +3116,7 @@ export const redirects = [
   },
   {
     source: "/reference/token-1",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -3625,7 +3625,7 @@ export const redirects = [
   },
   {
     source: "/moralis-server/web3-sdk/defi-new",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -3677,7 +3677,7 @@ export const redirects = [
   },
   {
     source: "/reference/nft-api",
-    destination: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: false,
   },
   {
@@ -3968,7 +3968,7 @@ export const redirects = [
   },
   {
     source: "/moralis-web3-rest/nft-api",
-    destination: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
@@ -4215,7 +4215,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/token",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -4861,7 +4861,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/nft-api",
-    destination: "/web3-data-api/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
@@ -4911,7 +4911,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-sdk/token",
-    destination: "/web3-data-api/token-api",
+    destination: "/web3-data-api/evm/token-api",
     permanent: true,
   },
   {
@@ -5254,7 +5254,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/defi-new",
-    destination: "/web3-data-api/blockchain-api",
+    destination: "/web3-data-api/evm/blockchain-api",
     permanent: true,
   },
   {
@@ -5478,8 +5478,8 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/nft-api",
-    destination: "/web3-data-api/nft-api",
+    source: "/web3-data-api/evm/nft-api",
+    destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
   {
@@ -6547,22 +6547,22 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/token-api/erc20-spam-detection",
+    source: "/web3-data-api/evm/token-api/erc20-spam-detection",
     destination: "/web3-data-api/evm/erc20-spam-detection",
     permanent: true,
   },
   {
-    source: "/web3-data-api/token-api/report-erc20-spam",
+    source: "/web3-data-api/evm/token-api/report-erc20-spam",
     destination: "/web3-data-api/evm/report-erc20-spam",
     permanent: true,
   },
   {
-    source: "/web3-data-api/nft-api/nft-spam-detection",
+    source: "/web3-data-api/evm/nft-api/nft-spam-detection",
     destination: "/web3-data-api/evm/nft-spam-detection",
     permanent: true,
   },
   {
-    source: "/web3-data-api/nft-api/report-nft-spam",
+    source: "/web3-data-api/evm/nft-api/report-nft-spam",
     destination: "/web3-data-api/evm/report-nft-spam",
     permanent: true,
   },
