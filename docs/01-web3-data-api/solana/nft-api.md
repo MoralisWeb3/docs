@@ -1,6 +1,6 @@
 ---
 title: "NFT"
-slug: "../nft-api"
+slug: "/web3-data-api/solana/nft-api"
 sidebar_position: 3
 sidebar_class_name: "sidebar-nft-api"
 ---

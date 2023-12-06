@@ -1,6 +1,6 @@
 ---
 title: "Coin"
-slug: "../coin-api"
+slug: "/web3-data-api/aptos/coin-api"
 description: "The Coin API is a tool that allows Web3 developers to easily access coin data from Aptos blockchains."
 sidebar_position: 4
 sidebar_class_name: "sidebar-token-api"
