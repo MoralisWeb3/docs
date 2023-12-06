@@ -6,7 +6,7 @@ authors:
 tags: [Streams API]
 ---
 
-Up until now, Streams and API pricing has been separate. And all accounts on Moralis have had a certain number of Stream records included in their plan. 
+Up until now, Streams and API pricing have been separate. And all accounts on Moralis have had a certain number of Stream records included in their plan. 
 
 Today we're announcing the streamlining of Streams and API pricing. Both Streams and API moving forward will be priced in Compute Units. 
 

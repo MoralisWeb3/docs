@@ -45,7 +45,7 @@ yarn install
 - Rename `.env.local.example` file to `.env.local` and add the required environment secrets.
 
 ```shell .env.local
-# devent is used for chain Id as we will be testing the app on devnet chain
+# devnet is used for chain Id as we will be testing the app on devnet chain
 APP_CHAIN_ID=devnet
 APP_DOMAIN=ethereum.boilerplate 
 

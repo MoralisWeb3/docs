@@ -10,7 +10,7 @@ This tutorial teaches you how to build a Zapper-like application where you can c
 
 ## Prerequisites
 
-Make sure that you have the installed all the following prerequisites:
+Make sure that you have installed all the following prerequisites:
 
 - [Node.js](https://nodejs.org/) v14+ or [Python](https://www.python.org/downloads/)
 - [NPM](https://www.npmjs.com/)/[Yarn](https://classic.yarnpkg.com/en/) or [Pip](https://pip.pypa.io/en/stable/)
