@@ -83,8 +83,6 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Base
 
-`uniswapv3`, `sharkswap`, `aerodrome`, `baseswap`, `pancakeswap`, `sushiswap`
-
 | Supported DEX(s)     |
 | -------------------- |
 | [Uniswap v3](https://app.uniswap.org/)           |
