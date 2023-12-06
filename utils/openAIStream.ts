@@ -10,7 +10,7 @@ export async function OpenAIStream(payload) {
 
   let counter = 0;
 
-  const res = await fetch("https://api.openai.com/v1/completions", {
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.OPENAI_KEY ?? ""}`,
@@ -30,7 +30,7 @@ export async function OpenAIStream(payload) {
           }
           try {
             const json = JSON.parse(data);
-            const text = json.choices[0].text;
+            const text = json.choices[0].delta.content;
             if (counter < 2 && (text.match(/\n/) || []).length) {
               return;
             }
@@ -38,6 +38,7 @@ export async function OpenAIStream(payload) {
             controller.enqueue(queue);
             counter++;
           } catch (e) {
+            console.error("Error parsing OpenAI stream:", e);
             controller.error(e);
           }
         }

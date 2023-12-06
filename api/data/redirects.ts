@@ -5478,7 +5478,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/nft-api",
+    source: "/web3-data-api/evm/nft-api",
     destination: "/web3-data-api/evm/nft-api",
     permanent: true,
   },
@@ -6395,7 +6395,7 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/getting-started/",
+    source: "/web3-data-api/evm/getting-started/",
     destination: "/web3-data-api/evm/getting-started",
     permanent: true,
   },

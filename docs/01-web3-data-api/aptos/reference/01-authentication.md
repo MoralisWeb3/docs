@@ -1,6 +1,7 @@
 ---
 title: "Aptos API – Authentication"
 sidebar_label: "Authentication"
+sidebar_position: 9
 ---
 
 # Authentication
@@ -15,5 +16,5 @@ Authentication to the API is performed via API Keys. Provide your API key as an 
 curl --request GET \
      --url 'https://deep-index.moralis.io/api/v2.2/block/15863321?chain=eth&include=internal_transactions' \
      --header 'accept: application/json' \
-     --header 'X-API-Key: YOUR_API_KEY' 
+     --header 'X-API-Key: YOUR_API_KEY'
 ```

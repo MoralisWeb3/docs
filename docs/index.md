@@ -19,8 +19,8 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
                     <h1 className="hero__title">Moralis Web3 Documentation</h1>
                     <p className="hero__subtitle">Integrate Web3 into any tech stack by following easy guides, recipes, and API references!</p>
                     <div>
-                    <a href="/web3-data-api/evm/getting-started/" className="button button--primary button--outline button--lg">
-                        Get Started
+                    <a href="/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet" className="button button--primary button--outline button--lg">
+                        Test API Live
                     </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos/reference">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" id="a" width="36" height="36"  viewBox="0 0 500 500"><path fill="#51e7c1" d="M400.14 163.42h-42.4c-4.94 0-9.64-2.12-12.91-5.81l-17.2-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.45 25.45 0 0 1-19.04 8.58H41.53c-6.61 18.84-10.92 38.74-12.64 59.38h219.1c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56L316.48 217c3.27 3.7 7.97 5.81 12.91 5.81h178.84c-1.72-20.65-6.03-40.55-12.64-59.38h-95.46ZM161.48 347.67c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.55l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h242.36c9.08-18.76 15.73-38.89 19.69-59.98H272.3c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58H32.19c3.96 21.09 10.62 41.22 19.69 59.98h109.59ZM333.42 98.52c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h46.09C417.02 40.18 347.21 2.44 268.57 2.44S120.12 40.18 76.22 98.52h257.2ZM240.84 407.11h-63.03c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58h-.98c43.91 47.05 106.44 76.5 175.87 76.5s131.95-29.45 175.87-76.5H240.84Z" className="b"/></svg>&nbsp;&nbsp;Aptos API</h3>
                     <p>Fetch user and token data from the Aptos blockchain.</p>
                 </a>
@@ -80,7 +80,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/solana">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/solana/reference">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#B5A3FF" strokeWidth="2" d="M7.402 25.305c.19-.189.45-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947Z"/><path stroke="#00E9F1" strokeWidth="2" d="M7.402 6.836c.198-.189.458-.3.727-.3h25.055c.458 0 .687.553.363.876l-4.95 4.947c-.189.19-.45.3-.726.3H2.816a.513.513 0 0 1-.363-.876l4.95-4.947ZM28.598 16.248a1.042 1.042 0 0 0-.727-.292H2.816c-.458 0-.687.538-.363.853l4.95 4.82c.189.185.45.292.726.292h25.055c.458 0 .687-.538.363-.853l-4.95-4.82Z"/></svg>&nbsp;&nbsp;Solana API</h3>
                     <p>Fetch user and token data from the Solana blockchain.</p>
                 </a>
@@ -88,7 +88,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/market-data-api">
                     <h3><svg id="Layer_24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 23.78 23.78"><line className="cls-1" x1="1.68" y1="21.66" x2="21.87" y2="21.66" fill="#6fc276"/><rect className="cls-4" x="3.59" y="17.65" width="2.58" height="3.99" fill="#6fc276"/><rect className="cls-4" x="10.53" y="15.76" width="2.58" height="5.88" fill="#6fc276"/><rect className="cls-4" x="17.48" y="12.68" width="2.58" height="8.96" fill="#6fc276"/><polyline className="cls-3" points="2.55 12.45 9.07 6.01 13.2 10.14 20.62 2.72" fill="#6fc276"/><polyline className="cls-2" points="16.42 2.01 21.75 2.01 21.75 7.05" fill="#6fc276"/></svg>&nbsp;&nbsp;<span>Market Data API</span></h3>
                     <p>Explore the latest market trends for ERC20 tokens and NFTs.</p>
                 </a>
@@ -96,7 +96,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/nft-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/nft-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>NFT API</span></h3>
                     <p>Summon all NFT transfers, prices, and metadata in realtime.</p>
                 </a>
@@ -104,7 +104,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/token-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
                     <p>Access all the information you need for any ERC20 tokens.</p>
                 </a>
@@ -112,7 +112,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/wallet-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/wallet-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><g clip-path="url(#clip0_9467_365051)"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.86492 7.21751C5.96092 7.21751 5.22808 7.94751 5.22808 8.84801V23.152C5.22808 24.0525 5.96092 24.7825 6.86492 24.7825H24.1882C25.0922 24.7825 25.8251 24.0525 25.8251 23.152V20.8112C25.8251 20.0608 26.4358 19.4525 27.1891 19.4525C27.9424 19.4525 28.5531 20.0608 28.5531 20.8112V23.152C28.5531 25.5533 26.5989 27.5 24.1882 27.5H6.86492C4.45424 27.5 2.5 25.5533 2.5 23.152V8.84801C2.5 6.44667 4.45424 4.5 6.86492 4.5H24.1882C26.5989 4.5 28.5531 6.44667 28.5531 8.84801V11.1888C28.5531 11.9392 27.9424 12.5475 27.1891 12.5475C26.4358 12.5475 25.8251 11.9392 25.8251 11.1888V8.84801C25.8251 7.94751 25.0922 7.21751 24.1882 7.21751H6.86492Z" fill="#57A5FF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19.724 13.7146C19.6076 13.7146 19.5132 13.8086 19.5132 13.9246V18.0626C19.5132 18.1786 19.6076 18.2726 19.724 18.2726H27.5735C27.6899 18.2726 27.7843 18.1786 27.7843 18.0626V13.9246C27.7843 13.8086 27.6899 13.7146 27.5735 13.7146H19.724ZM16.7852 13.9246C16.7852 12.3078 18.1009 10.9971 19.724 10.9971H27.5735C29.1966 10.9971 30.5123 12.3078 30.5123 13.9246V18.0626C30.5123 19.6794 29.1966 20.9901 27.5735 20.9901H19.724C18.1009 20.9901 16.7852 19.6794 16.7852 18.0626V13.9246Z" fill="#57A5FF"></path><path d="M22.6874 15.9999C22.6874 15.4336 22.2266 14.9746 21.6581 14.9746C21.0897 14.9746 20.6289 15.4336 20.6289 15.9999C20.6289 16.5661 21.0897 17.0251 21.6581 17.0251C22.2266 17.0251 22.6874 16.5661 22.6874 15.9999Z" fill="#57A5FF"></path></g><defs><clipPath id="clip0_9467_365051"><rect width="28" height="23" fill="white" transform="translate(2.5 4.5)"></rect></clipPath></defs></svg>&nbsp;&nbsp;Wallet API</h3>
                     <p>Get all the balances and transactions for a specific wallet address.</p>
                 </a>
@@ -120,7 +120,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/blockchain-api">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/blockchain-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" clip-path="url(#a)"><path stroke="#279B4F" d="M30.6 23.584v-11.2c0-.994-.532-1.918-1.4-2.422l-9.8-5.6a2.782 2.782 0 0 0-2.8 0l-9.8 5.6a2.804 2.804 0 0 0-1.4 2.422v11.2c0 .994.532 1.918 1.4 2.422l9.8 5.6a2.782 2.782 0 0 0 2.8 0l9.8-5.6a2.804 2.804 0 0 0 1.4-2.422Z"></path><path stroke="#279B4F" d="M5.777 10.928 18 17.998l12.222-7.07M18 32.096V17.984"></path><path stroke="#6DE983" d="m9.026 23.332 5.32-3.08M21.445 20.252l5.32 3.08"></path></g><defs><clipPath id="a"><path fill="#fff" d="M4 2.584h28v30.912H4z"></path></clipPath></defs></svg>&nbsp;&nbsp;Blockchain API</h3>
                     <p>Get the Blocks, Transactions and logs data of a blockchain.</p>
                 </a>

@@ -1,6 +1,7 @@
 ---
 title: "EVM API – Authentication"
 sidebar_label: "Authentication"
+sidebar_position: 7
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

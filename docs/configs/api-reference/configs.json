@@ -3513,107 +3513,121 @@
       ]
     },
     "getNFTContractMetadata": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get NFT collection metadata",
-      "description": "Get the collection / contract level metadata for a given contract (name, symbol, and contract type).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
-      "method": "GET",
-      "path": "/nft/:address/metadata",
-      "pathParams": [
+      "apiHost":"https://deep-index.moralis.io/api/v2.2",
+      "summary":"Get NFT collection metadata",
+      "description":"Get the collection / contract level metadata for a given contract (name, symbol, base token URI).\n* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection\n",
+      "method":"GET",
+      "path":"/nft/:address/metadata",
+      "pathParams":[
         {
-          "name": "address",
-          "description": "The address of the NFT contract",
-          "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
-          "type": "string"
+        "name":"address",
+        "description":"The address of the NFT contract",
+        "required":true,
+        "example":"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+        "type":"string"
         }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "goerli",
-            "0x5",
-            "sepolia",
-            "0xaa36a7",
-            "polygon",
-            "0x89",
-            "mumbai",
-            "0x13881",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-            "palm",
-            "0x2a15c308d",
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
-            "chiliz",
-            "0x15b38",
-            "chiliz testnet",
-            "0x15b32",
-            "base",
-            "0x2105",
-            "base testnet",
-            "0x14a33"
-          ]
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the metadata for an NFT collection.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "token_address",
-                "type": "string",
-                "description": "The address of the token contract",
-                "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "description": "The name of the token contract",
-                "example": "KryptoKitties"
-              },
-              {
-                "name": "synced_at",
-                "type": "string",
-                "description": "Timestamp of when the contract was last synced with the node"
-              },
-              {
-                "name": "symbol",
-                "type": "string",
-                "description": "The symbol of the NFT contract",
-                "example": "RARI"
-              },
-              {
-                "name": "contract_type",
-                "type": "string",
-                "description": "The type of NFT contract",
-                "example": "ERC721"
+        ],
+        "queryParams":[
+          {
+            "name":"chain",
+            "description":"The chain to query",
+            "required":false,
+            "example":"eth",
+            "type":"string",
+            "enum":[
+              "eth",
+              "0x1",
+              "goerli",
+              "0x5",
+              "sepolia",
+              "0xaa36a7",
+              "polygon",
+              "0x89",
+              "mumbai",
+              "0x13881",
+              "bsc",
+              "0x38",
+              "bsc testnet",
+              "0x61",
+              "avalanche",
+              "0xa86a",
+              "fantom",
+              "0xfa",
+              "palm",
+              "0x2a15c308d",
+              "cronos",
+              "0x19",
+              "arbitrum",
+              "0xa4b1",
+              "chiliz",
+              "0x15b38",
+              "chiliz testnet",
+              "0x15b32",
+              "gnosis",
+              "0x64",
+              "gnosis testnet",
+              "0x27d8",
+              "base",
+              "0x2105",
+              "base testnet",
+              "0x14a33"
+              ]
               }
-            ]
-          }
-        }
-      ],
+              ],
+              "responses":[
+                {
+                  "status":"200",
+                  "description":"Returns the metadata for an NFT collection.",
+                  "body":
+                  {
+                    "type":"object",
+                    "fields":[
+                      {
+                        "name":"token_address",
+                        "type":"string",
+                        "description":"The address of the token contract",
+                        "example":"0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                        },
+                        {
+                          "name":"name",
+                          "type":"string",
+                          "description":"The name of the token contract",
+                          "example":"KryptoKitties"
+                          },
+                          {
+                            "name":"synced_at",
+                            "type":"string",
+                            "description":"Timestamp of when the contract was last synced with the node",
+                            "example":"2017-07-22T19:40:00.000Z"
+                            },
+                            {
+                              "name":"symbol",
+                              "type":"string",
+                              "description":"The symbol of the NFT contract",
+                              "example":"RARI"
+                              },
+                              {
+                                "name":"contract_type",
+                                "type":"string",
+                                "description":"The type of NFT contract",
+                                "example":"ERC721"
+                                },
+                                {
+                                  "name":"possible_spam",
+                                  "type":"boolean",
+                                  "description":"Indicates if a contract is possibly a spam contract",
+                                  "example":"false"
+                                  },
+                                  {
+                                    "name":"verified_collection",
+                                    "type":"boolean",
+                                    "description":"Indicates if a contract is verified",
+                                    "example":"false"
+                                    }
+                                    ]
+                                    }
+                                    }
+                                    ],
       "codeSamples": [
         {
           "language": "node",
