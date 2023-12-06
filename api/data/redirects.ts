@@ -1,6 +1,10 @@
 export const redirects = [
   { source: "/undefined", destination: "/", permanent: true },
   {
+    source: "/web3-data-api/evm/token-api/supported-dexs-defi-api",
+    destination: "/web3-data-api/evm/supported-dexs-token-api",
+  }
+  {
     source: "/docs/sign-in-with-web3authio",
     destination: "/authentication-api/how-to-sign-in-with-web3authio",
     permanent: true,
