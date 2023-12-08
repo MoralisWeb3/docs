@@ -179,12 +179,6 @@
       "rateLimitCost": 25
     },
     {
-      "endpoint": "getTokenIdMetadata",
-      "path": "/nft/{address}/{token_id}",
-      "price": 2,
-      "rateLimitCost": 2
-    },
-    {
       "endpoint": "getTokenIdOwners",
       "path": "/nft/{address}/{token_id}/owners",
       "price": 5,
