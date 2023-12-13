@@ -8762,7 +8762,7 @@ export const ApiSchema = {
         codeSamples: [
           {
             language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.balance({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
+            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.SolApi.account.getBalance({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
             name: "Moralis NodeJS SDK",
           },
           {
