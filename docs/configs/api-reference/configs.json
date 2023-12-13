@@ -14345,7 +14345,7 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.balance({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.account.getBalance({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
