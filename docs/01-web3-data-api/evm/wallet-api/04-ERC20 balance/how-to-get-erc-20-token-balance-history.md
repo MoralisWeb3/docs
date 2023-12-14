@@ -24,7 +24,7 @@ This tutorial unlocks deep insights into token balance trends and changes, essen
 
 ## Full Example Script
 
-Below is the complete script that will serve as our basis for the tutorial. This script is designed to fetch the current token balances and past transfers, allowing us to calculate the historical balance of each token:
+Below is the complete script that will serve as our basis for the tutorial. This script allows users to fetch and view historical token balances of a specific address at a given block number:
 
 :::tip
 Please replace `"YOUR_API_KEY"` with your actual Moralis API key before running the script.
@@ -37,62 +37,40 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
+// Import Moralis and EvmChain for Ethereum blockchain interaction
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
+// The main function to run the script
 const runApp = async () => {
+  // Initialize Moralis with your API key
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY",
+  });
+
+  // Define the wallet address and blockchain details
+  const address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
+  const chain = EvmChain.ETHEREUM; // Ethereum mainnet
+  const toBlock = "16310000"; // Block number for historical data
+
   try {
-    await Moralis.start({
-      apiKey: "YOUR_API_KEY"
+    // Get token balances at the specified block
+    const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+      address,
+      chain,
+      toBlock
     });
 
-    const address = "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326";
-    const chain = "0x1"; // Ethereum mainnet
-
-    // Fetch current token balances
-    const currentBalancesResponse = await Moralis.EvmApi.token.getWalletTokenBalances({ chain, address });
-    const currentBalances = currentBalancesResponse.raw;
-    let balanceHistory = {};
-    let tokenMapping = {};
-
-    // Initialize balance history with current balances and create token mapping
-    currentBalances.forEach(token => {
-      balanceHistory[token.token_address] = BigInt(token.balance);
-      tokenMapping[token.token_address] = { name: token.name, symbol: token.symbol };
-    });
-
-    // Fetch token transfers
-    const transfersResponse = await Moralis.EvmApi.token.getWalletTokenTransfers({ chain, address });
-    const transfers = transfersResponse.result ? transfersResponse.result : [];
-
-    // Adjust historical balances based on transfers
-    transfers.forEach(transfer => {
-      const tokenAddress = transfer.address;
-      const value = BigInt(transfer.value);
-      const isSender = transfer.from_address ? transfer.from_address.toLowerCase() === address.toLowerCase() : false;
-
-      if (!balanceHistory[tokenAddress]) {
-        balanceHistory[tokenAddress] = BigInt(0);
-      }
-
-      balanceHistory[tokenAddress] += isSender ? -value : value;
-    });
-
-    // Map the balances to include token identifiers and addresses
-    let mappedBalances = {};
-    for (const [address, balance] of Object.entries(balanceHistory)) {
-      const tokenInfo = tokenMapping[address];
-      const tokenSymbol = tokenInfo ? tokenInfo.symbol : 'Unknown';
-      const tokenName = tokenInfo ? tokenInfo.name : 'Unknown';
-      mappedBalances[`${tokenName} (${tokenSymbol}) [${address}]`] = balance.toString();
-    }
-
-    console.log("Historical Balances with Token Identifiers and Addresses: ", mappedBalances);
-  } catch (e) {
-    console.error(e);
+    // Output the history of token balances at the specified block
+    console.log("Token Balances at Block:", toBlock);
+    console.log(JSON.stringify(response, null, 2)); // formatted JSON output
+  } catch (error) {
+    // Error handling
+    console.error("Error fetching token balances:", error);
   }
 };
 
+// Execute the function
 runApp();
 ```
 
@@ -103,57 +81,30 @@ runApp();
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
+// The main function to run the script
 const runApp = async (): Promise<void> => {
+  // Initialize Moralis with your API key
+  await Moralis.start({ apiKey: "YOUR_API_KEY" });
+
+  // Define the wallet address and blockchain details
+  const address: string = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
+  const chain: EvmChain = EvmChain.ETHEREUM; // Ethereum mainnet
+  const toBlock: string = "16310000"; // Block number for historical data
+
   try {
-    await Moralis.start({ apiKey: "YOUR_API_KEY" });
+    // Get token balances at the specified block
+    const response = await Moralis.EvmApi.token.getWalletTokenBalances({ address, chain, toBlock });
 
-    const address = "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326";
-    const chain = EvmChain.ETHEREUM; // Ethereum mainnet
-
-    // Fetch current token balances
-    const currentBalancesResponse = await Moralis.EvmApi.token.getWalletTokenBalances({ chain, address });
-    const currentBalances = currentBalancesResponse.raw;
-    const balanceHistory: Record<string, bigint> = {};
-    const tokenMapping: Record<string, { name: string; symbol: string }> = {};
-
-    // Initialize balance history with current balances and create token mapping
-    currentBalances.forEach(token => {
-      balanceHistory[token.token_address] = BigInt(token.balance);
-      tokenMapping[token.token_address] = { name: token.name, symbol: token.symbol };
-    });
-
-    // Fetch token transfers
-    const transfersResponse = await Moralis.EvmApi.token.getWalletTokenTransfers({ chain, address });
-    const transfers = transfersResponse.result ? transfersResponse.result : [];
-
-    // Adjust historical balances based on transfers
-    transfers.forEach(transfer => {
-      const tokenAddress = transfer.address;
-      const value = BigInt(transfer.value);
-      const isSender = transfer.from_address ? transfer.from_address.toLowerCase() === address.toLowerCase() : false;
-
-      if (!balanceHistory[tokenAddress]) {
-        balanceHistory[tokenAddress] = BigInt(0);
-      }
-
-      balanceHistory[tokenAddress] += isSender ? -value : value;
-    });
-
-    // Map the balances to include token identifiers and addresses
-    const mappedBalances: Record<string, string> = {};
-    for (const [address, balance] of Object.entries(balanceHistory)) {
-      const tokenInfo = tokenMapping[address];
-      const tokenSymbol = tokenInfo ? tokenInfo.symbol : 'Unknown';
-      const tokenName = tokenInfo ? tokenInfo.name : 'Unknown';
-      mappedBalances[`${tokenName} (${tokenSymbol}) [${address}]`] = balance.toString();
-    }
-
-    console.log("Historical Balances with Token Identifiers and Addresses: ", mappedBalances);
-  } catch (e) {
-    console.error(e);
+    // Output the history of token balances at the specified block
+    console.log("Token Balances at Block:", toBlock);
+    console.log(JSON.stringify(response, null, 2)); // formatted JSON output
+  } catch (error) {
+    // Error handling
+    console.error("Error fetching token balances:", error);
   }
 };
 
+// Execute the function
 runApp();
 ```
 
@@ -162,66 +113,42 @@ runApp();
 
 ```python index.py
 from moralis import evm_api
-import asyncio
 
-async def runApp():
-    try:
-        api_key = "YOUR_API_KEY"
-        address = "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326"
-        chain = "eth" # Ethereum mainnet
+# Initialize with your Moralis API key
+api_key = "YOUR_API_KEY"
 
-        # Fetch current token balances
-        current_balances_response = await evm_api.token.get_wallet_token_balances(api_key=api_key, params={"chain": chain, "address": address})
-        current_balances = current_balances_response['result']
-        balance_history = {}
-        token_mapping = {}
+# Define the wallet address, blockchain, and block number
+address = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+chain = "eth"  # Ethereum mainnet
+to_block = "16310000"  # Block number for historical data
 
-        # Initialize balance history with current balances and create token mapping
-        for token in current_balances:
-            balance_history[token['token_address']] = int(token['balance'])
-            token_mapping[token['token_address']] = {'name': token['name'], 'symbol': token['symbol']}
+# Fetch token balances at the specified block
+result = evm_api.token.get_wallet_token_balances(
+    api_key=api_key,
+    params={
+        "address": address,
+        "chain": chain,
+        "toBlock": to_block
+    },
+)
 
-        # Fetch token transfers
-        transfers_response = await evm_api.token.get_wallet_token_transfers(api_key=api_key, params={"chain": chain, "address": address})
-        transfers = transfers_response['result']
-
-        # Adjust historical balances based on transfers
-        for transfer in transfers:
-            token_address = transfer['address']
-            value = int(transfer['value'])
-            is_sender = (transfer['from_address'].lower() == address.lower()) if 'from_address' in transfer else False
-
-            if token_address not in balance_history:
-                balance_history[token_address] = 0
-            balance_history[token_address] += (-value if is_sender else value)
-
-        # Map the balances to include token identifiers and addresses
-        mapped_balances = {}
-        for address, balance in balance_history.items():
-            token_info = token_mapping.get(address, {})
-            token_symbol = token_info.get('symbol', 'Unknown')
-            token_name = token_info.get('name', 'Unknown')
-            mapped_balances[f"{token_name} ({token_symbol}) [{address}]"] = balance
-
-        print("Historical Balances with Token Identifiers and Addresses: ", mapped_balances)
-    except Exception as e:
-        print(e)
-
-asyncio.run(runApp())
+# Print the result
+print(result)
 ```
-
 </TabItem>
 </Tabs>
 
 ## Step-by-Step Explanation:
 
-1. **Start Moralis Session**: Initialize Moralis with an API key.
-2. **Define Address & Chain**: Set user's Ethereum address and chain (Ethereum mainnet).
-3. **Fetch Current Token Balances**: Retrieve the latest token balances for the address.
-4. **Initialize Balance History & Token Mapping**: Store each token's balance and map token addresses to their symbols and names.
-5. **Fetch Token Transfers**: Get the history of token transactions for the address.
-6. **Calculate Historical Balances**: Iterate over transactions, adjusting token balances based on whether the address sent or received tokens.
-7. **Display Results with Identifiers**: Log each token's historical balance alongside its name, symbol, and contract address.
+1. **Import Libraries**: The script starts by importing the required Moralis and EvmChain libraries for interacting with the Ethereum blockchain.
+
+2. **Initialization**: Moralis is initialized with an API key to start interacting with blockchain data.
+
+3. **Setting Parameters**: The script defines the wallet address (`address`), the blockchain (`chain` as Ethereum mainnet), and a specific block number (`toBlock`) to fetch historical data.
+
+4. **Fetching Data**: Using Moralis' `getWalletTokenBalances` function, the script requests token balance information of the specified address at the specified block number.
+
+5. **Output**: If successful, the script logs the token balances at the specified block number in a readable JSON format. In case of errors, it catches and logs the error details.
 
 ## Step 3: Run the script
 
@@ -232,11 +159,197 @@ import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 In your terminal, you should see the following JSON response:
 
 ```json
+Token Balances at Block: 16310000
 {
-  "USDTOKEN (USDT) [0x3c978fc9a42c80a127863d786d8883614b01b3cd]": "10000000000000000000000",
-  "Tether USD (USDT) [0xdac17f958d2ee523a2206206994597c13d831ec7]": "209355461",
-  "Unknown (Unknown) [[object Object]]": "100019179134743501073338793"
-}
+   "token_address": "0x7d5a90346fad353750e5c5e3af3bb7302efba35d",
+   "name": "FuckSBF",
+   "symbol": "FuckSBF",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "169000000000",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+   "name": "SHIBA INU",
+   "symbol": "SHIB",
+   "logo": "https://cdn.moralis.io/eth/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce.png",
+   "thumbnail": "https://cdn.moralis.io/eth/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce_thumb.png",
+   "decimals": 18,
+   "balance": "1090512540894220000000000",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+   "name": "USD Coin",
+   "symbol": "USDC",
+   "logo": "https://cdn.moralis.io/eth/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.png",
+   "thumbnail": "https://cdn.moralis.io/eth/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48_thumb.png",
+   "decimals": 6,
+   "balance": "50000000",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0xe0a189c975e4928222978a74517442239a0b86ff",
+   "name": "Keys",
+   "symbol": "KEYS",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "101850000000",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+   "name": "Matic Token",
+   "symbol": "MATIC",
+   "logo": "https://cdn.moralis.io/eth/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png",
+   "thumbnail": "https://cdn.moralis.io/eth/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0_thumb.png",
+   "decimals": 18,
+   "balance": "29909485670000000000",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0xc1ab5157309d0ab5ee9588de50b09f5028c15fcb",
+   "name": "FLOKI SUPER SAIYAN",
+   "symbol": "FLOKISUPER",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "3357237141806264396",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x5ae3e46c7012f55ab37c48df95fd491f73a688f0",
+   "name": "FTTCash",
+   "symbol": "FTTCash.com",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "1000000000",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0xf168d4f47a973a65f61bfb46f924fe7489c74576",
+   "name": "APEBORG",
+   "symbol": "APEBORG",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "89721403782255930",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x9da458800bb0fea8e0734ecf4ba9d0e13dde7118",
+   "name": "APE.claims",
+   "symbol": "Wrapped ApeCoin (ape.claims)",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 18,
+   "balance": "10000000000000000000000",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0xd6716b294d13b0f2536590154f4d323bbe716c6b",
+   "name": "CRO Next",
+   "symbol": "CRO Next",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "1601688615252862",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x8eca24ed7e36cf4ba3a7a01bc51bcd086b2c6597",
+   "name": "Otherdeed",
+   "symbol": "OTHR",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 18,
+   "balance": "6001422153884096219100404",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0xe1e49f82cc3427e058be0fda0d1fcae8ddf3f504",
+   "name": "Fuck SBF",
+   "symbol": "Fuck SBF",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "2668000000000",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x913e4e33f8b7c03042b8451f825030c850c61324",
+   "name": "ApeCoin",
+   "symbol": "APE",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "15051173991571342",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x2292776fdb71e1188e20b8338114a27440fd804f",
+   "name": "Stephen Curry",
+   "symbol": "CURRY",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 18,
+   "balance": "23554219102136232741196079",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0x4d224452801aced8b2f0aebe155379bb5d594381",
+   "name": "ApeCoin",
+   "symbol": "APE",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 18,
+   "balance": "36760986138747428417",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0x23f53515befb57b67b31eccee08dbdd47dfe794f",
+   "name": "FTX Sucks",
+   "symbol": "FTX Sucks",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 9,
+   "balance": "6000000000",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0xdacd69347de42babfaecd09dc88958378780fb62",
+   "name": "AtariToken",
+   "symbol": "ATRI",
+   "logo": "https://cdn.moralis.io/eth/0xdacd69347de42babfaecd09dc88958378780fb62.png",
+   "thumbnail": "https://cdn.moralis.io/eth/0xdacd69347de42babfaecd09dc88958378780fb62_thumb.png",
+   "decimals": 0,
+   "balance": "88",
+   "possible_spam": false
+ },
+ {
+   "token_address": "0xefd6c64533602ac55ab64442307f6fe2c9307305",
+   "name": "APE",
+   "symbol": "APE",
+   "logo": null,
+   "thumbnail": null,
+   "decimals": 18,
+   "balance": "101715701444169451516503179",
+   "possible_spam": true
+ },
+ {
+   "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+   "name": "Wrapped Ether",
+   "symbol": "WETH",
+   "logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+   "thumbnail": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_thumb.png",
+   "decimals": 18,
+   "balance": "85000000000000000",
+   "possible_spam": false
+ }
 ```
 
 Congratulations 🥳 You just got all ERC20 Token Balance History owned by an address with just a few lines of code using the Moralis Wallet API!
