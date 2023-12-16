@@ -58,17 +58,20 @@ const useAssistantBot = () => {
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Network response was not ok");
     }
 
     return response.json();
   }
+
   async function getMessage(threadId, messageId) {
     const response = await fetch(
       `/api/moralis-assistant-message?thread_id=${threadId}&message_id=${messageId}`
     );
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Network response was not ok");
     }
     const data = await response.json();
     return data;
@@ -115,15 +118,15 @@ const useAssistantBot = () => {
           messageId
         )) as OpenAI.Beta.Threads.Messages.ThreadMessage;
 
-        console.log(message);
-        console.log({ content: message.content[0]["text"]["value"] });
+        // console.log(message);
+        // console.log({ content: message.content[0]["text"]["value"] });
         setAnswer(message.content[0]["text"]["value"]);
         setDone(true);
       } else {
         setError("Something went wrong. Try again");
       }
     } catch (e) {
-      console.error(e);
+      // console.error(e);
       setError(e.message);
       await sendToSlack({
         title: query,

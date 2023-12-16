@@ -58,7 +58,7 @@ const handler = async (req: Request): Promise<Response> => {
       );
       runLoopStatus = updatedRunResponse;
       runStatus = runLoopStatus.status;
-      console.log({ runStatus });
+      // console.log({ runStatus });
     }
 
     const runStepList = await openai.beta.threads.runs.steps.list(
