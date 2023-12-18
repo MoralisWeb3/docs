@@ -91,6 +91,7 @@ export default function AssistantBot() {
       setStatus("Setting up new conversation...");
       const response = await fetch("/api/moralis-assistant-thread");
       if (!response.ok) {
+        console.log(response.json());
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
