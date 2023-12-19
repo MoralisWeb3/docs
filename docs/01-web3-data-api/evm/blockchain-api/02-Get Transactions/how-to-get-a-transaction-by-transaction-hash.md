@@ -24,11 +24,12 @@ The guide focuses on filtering these transactions to identify a particular trans
 
 The article concludes by emphasizing the effectiveness and simplicity of Moralis API for blockchain queries, making it a valuable tool for accurate and quick transaction identification on the blockchain.
 
-### Full Example Script
-
 :::tip
-If you do not have the transaction hash, then you use [getWalletTransactions](/web3-data-api/evm/how-to-get-all-transactions-of-an-address) endpoint to find transaction hash id.
+If you don't have the transaction hash, you can use the [getWalletTransactions](/web3-data-api/evm/how-to-get-all-transactions-of-an-address) endpoint to find it. In the provided example response, you can easily find the transaction hash within the `hash` field.
+Alternatively, you can use [Etherscan](https://etherscan.io/). On Etherscan, selecting any transaction reveals the Transaction Hash prominently at the top of the page.
 :::
+
+### Full Example Script
 
 Below is the complete script that will serve as our basis for retrieving blockchain transaction with hash ID.
 
