@@ -1,20 +1,27 @@
 ---
-title: "Guides to Market Data API"
-description: "Fetch trending NFT collections, top ERC20s by market cap, top movers, and much more with the most popular cross-chain Market Data API in Web3."
-sidebar_position: 5
-sidebar_class_name: "sidebar-market-data-api"
+title: "Market Insights API"
+sidebar_label: "Overview"
+slug: "/market-insights"
+sidebar_position: 1
+sidebar_class_name: "sidebar-overview"
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
+## What is the Market Insights API?
+
+
+
+## What is the Market Data API?
+
 The **Market Data API** allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers. We're introducing four new endpoints with this launch, including:
 
-- [ERC20 top movers](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)
-- [ERC20 top 50 tokens](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
-- [Top NFT collections by market cap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
-- [Hot NFT collections by trading volume](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
+- [ERC20 top movers](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap)
+- [ERC20 top 50 tokens](/market-insights-api/get-top-erc20-tokens-by-price-movers)
+- [Top NFT collections by market cap](/market-insights-api/get-top-nft-collections-by-market-cap)
+- [Hot NFT collections by trading volume](/market-insights-api/get-top-nft-collections-by-trading-volume)
 
 ## Example use cases
 

@@ -40287,5 +40287,139 @@
         }
       ]
     }
-  }
+  },
+
+"market" : {
+  "news": {
+    "summary":"Returns all news between 2 dates, sorted by date, descending",
+    "method":"GET",
+    "path":"/api/v1/news",
+    "pathParams":[],
+    "queryParams":[
+      {
+      "name":"from_date",
+      "required":false,
+      "type":"string"
+    },
+      {
+        "name":"to_date",
+        "required":false,
+        "type":"string"
+        },
+        {
+          "name":"cursor",
+          "required":false,
+          "type":"string"
+          },
+          {
+            "name":"limit",
+            "required":false,
+            "type":"number"
+            }
+            ],
+            "responses":[
+              {
+              "status":"200",
+              "description":"",
+              "body":
+              {
+                "type":"object",
+                "fields":[
+                  {
+                    "name":"page_size",
+                    "type":"string",
+                    "description":"The size of the page being returned",
+                    "example":"100"
+                    },
+                    {
+                      "name":"cursor",
+                      "type":"string",
+                      "description":"Cursor pointing to the next page of results",
+                      "example":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaW1pdCI6IjIwIiwicGFnZSI6MiwiaW5kZXgiOjM4LCJ0b3RhbCI6ODIsImlhdCI6MTcwMDEzMzY2MiwiZXhwIjoxNzAwMTM3MjYyfQ.85l7ZTSj6xi3J5UZrhVd-gscOhV1T_hoodoue1ihUsk"
+                      },
+                      {
+                        "name":"page",
+                        "type":"string",
+                        "description":"Current page of results",
+                        "example":"1"
+                        },
+                        {
+                          "name":"result",
+                          "type":"object",
+                          "description":"Contains the result of the news query",
+                          "fields":[
+                            {
+                            "name":"id",
+                            "type":"number",
+                            "description":"Unique id of the document in the database",
+                            "example":1
+                            },
+                            {
+                              "name":"token_address",
+                              "type":"string",
+                              "description":"Address of the token",
+                              "example":"0x046eee2cc3188071c02bfc1745a6b17c656e3f3d"
+                              },
+                              {
+                                "name":"token_symbol",
+                                "type":"string",
+                                "description":"Abbreviation of the token name",
+                                "example":"RLB"
+                                },
+                                {
+                                  "name":"token_name",
+                                  "type":"string",
+                                  "description":"Name of the token",
+                                  "example":"Rollbit Coin"
+                                  },
+                                  {
+                                    "name":"chain",
+                                    "type":"string",
+                                    "description":"Name of the chain the token is on",
+                                    "example":"ETH"
+                                  },
+                                    {
+                                      "name":"change_in_percent",
+                                      "type":"number",
+                                      "description":"How much the token moved in percent",
+                                      "example":11
+                                      },
+                                      {
+                                        "name":"headline",
+                                        "type":"string",
+                                        "description":"A description of the news event",
+                                        "example":"On-chain volume shows heavy wallets accumulating RLB, leading to an 11% increase today."
+                                        },
+                                        {
+                                          "name":"time_of_price_movement",
+                                          "type":"string",
+                                          "description":"When the event happened",
+                                          "example":"2023-10-13T12:00:00.000Z"
+                                          },
+                                          {
+                                            "name":"movement",
+                                            "type":"string",
+                                            "description":"If the event was positive or negative",
+                                            "example":"Positive"
+                                            },
+                                            {
+                                              "name":"updated_at",
+                                              "type":"string",
+                                              "description":"When the news was last updated in the database",
+                                              "example":"2021-10-11T00:00:00.000Z"
+                                              },
+                                              {
+                                                "name":"created_at",
+                                                "type":"string",
+                                                "description":"When the news was added to the database",
+                                                "example":"2021-10-11T00:00:00.000Z"
+                                                }
+                                                ]
+                                                }
+                                                ]
+                                                }
+                                                }
+                                                ]
+                                                }
+                                                }
 }
