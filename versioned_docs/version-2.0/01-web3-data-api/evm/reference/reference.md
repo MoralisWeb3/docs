@@ -131,10 +131,10 @@ sidebar_class_name: "sidebar-api-reference"
 
 ### Market Data API
 
-- [Get the top ERC20 tokens by market cap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)
-- [Get the top ERC20 tokens by price change](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers)
-- [Get the top NFT collections by market cap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
-- [Get the top NFT collections by trading volume](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume)
+- [Get the top ERC20 tokens by market cap](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap)
+- [Get the top ERC20 tokens by price change](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers)
+- [Get the top NFT collections by market cap](/market-insights-api/reference/get-top-nft-collections-by-market-cap)
+- [Get the top NFT collections by trading volume](/market-insights-api/reference/get-top-nft-collections-by-trading-volume)
 
 
 ### Blockchain API
