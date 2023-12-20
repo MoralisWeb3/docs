@@ -285,31 +285,31 @@ const ApiReference = ({
         />
       </Head>
       <div>
-      {apiHost && apiHost.includes("aptos") && (
-        <ToggleGroup.Root
-          className={styles.ToggleGroup}
-          type="single"
-          defaultValue="mainnet"
-          orientation="horizontal"
-          value={network}
-          onValueChange={(value: "mainnet" | "testnet") => {
-            if (value) setNetwork(value);
-          }}
-        >
-          <ToggleGroup.Item
-            className={styles.ToggleGroupItem}
-            value="mainnet"
+        {apiHost && apiHost.includes("aptos") && (
+          <ToggleGroup.Root
+            className={styles.ToggleGroup}
+            type="single"
+            defaultValue="mainnet"
+            orientation="horizontal"
+            value={network}
+            onValueChange={(value: "mainnet" | "testnet") => {
+              if (value) setNetwork(value);
+            }}
           >
-            Mainnet
-          </ToggleGroup.Item>
-          <ToggleGroup.Item
-            className={styles.ToggleGroupItem}
-            value="testnet"
-          >
-            Testnet
-          </ToggleGroup.Item>
-        </ToggleGroup.Root>
-      )}
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="mainnet"
+            >
+              Mainnet
+            </ToggleGroup.Item>
+            <ToggleGroup.Item
+              className={styles.ToggleGroupItem}
+              value="testnet"
+            >
+              Testnet
+            </ToggleGroup.Item>
+          </ToggleGroup.Root>
+        )}
       </div>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
         <Form autoComplete="off" className={styles.form}>
