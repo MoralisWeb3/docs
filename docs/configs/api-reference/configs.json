@@ -40291,7 +40291,8 @@
 
 "market" : {
   "news": {
-    "summary":"Returns all news between 2 dates, sorted by date, descending",
+    "summary":"news",
+    "description": "Returns all news between 2 dates, sorted by date, descending.",
     "method":"GET",
     "path":"/api/v1/news",
     "pathParams":[],
