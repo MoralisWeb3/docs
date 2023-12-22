@@ -7,18 +7,22 @@ import styles from "./styles.module.css";
 
 export interface ApiResponse {
   status: number;
-  description: string;
+  description: string | undefined;
   body?: ApiParam;
 }
 
 export const buildResponse = (field: ApiParam) => {
+  if (!field) {
+    return ""; // Return an appropriate default value or an empty string when 'field' is undefined
+  }
+
   if (PRIMITIVE_TYPES.includes(field?.type)) {
-    return field?.example;
+    return field?.example || ""; // Add a null check for 'example' property
   }
 
   if (field.type === "array") {
     if (field.field?.type === "oneOf") {
-      return [...field.field.options.map((option) => buildResponse(option))];
+      return [...(field.field.options || []).map((option) => buildResponse(option))];
     }
 
     return [buildResponse(field.field)];
@@ -29,7 +33,7 @@ export const buildResponse = (field: ApiParam) => {
   }
 
   if (field?.type === "object") {
-    return field?.fields?.reduce(
+    return (field?.fields || []).reduce(
       (obj, objField) => ({
         ...obj,
         [objField.name]: buildResponse(objField),
@@ -49,9 +53,15 @@ const ApiResponseField = ({
   field,
   collapsible,
 }: {
-  field: ApiParam;
+  field?: ApiParam; // Make 'field' optional by using '?'
   collapsible?: boolean;
 }) => {
+  // Check if 'field' is defined and has a 'type' property before accessing it
+  if (!field || typeof field.type === 'undefined') {
+    return null; // Return null or a placeholder element if 'field' is undefined or has no 'type'
+  }
+
+  // Rest of your component code
   const [collapsed, setCollapsed] = useState(!!collapsible);
   const [expandedIndex, setExpandedIndex] = useState(0);
 

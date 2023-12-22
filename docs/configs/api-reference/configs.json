@@ -40421,5 +40421,590 @@
                                                 }
                                                 ]
                                                 }
+                                              },
+                                              "discovery" : {
+                                                "getRisingLiquidityTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with rising liquidity",
+                                                  "description": "Get tokens with rising liquidity",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/rising-liquidity",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "one_month_liquidity_change_usd",
+                                                      "description": "The minimum one month liquidity change in usd of a token",
+                                                      "required": false,
+                                                      "example": 500000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "min_market_cap",
+                                                      "description": "The minimum market cap in usd of a token",
+                                                      "required": false,
+                                                      "example": 100000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "twitter_followers",
+                                                      "description": "The minimum twitter followers of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 70,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getBuyingPressureTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with buying pressure",
+                                                  "description": "Get tokens with buying pressure",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/buying-pressure",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "one_month_net_volume_change_usd",
+                                                      "description": "The minimum one month net volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 1000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "min_market_cap",
+                                                      "description": "The minimum market cap in usd of a token",
+                                                      "required": false,
+                                                      "example": 100000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "twitter_followers",
+                                                      "description": "The minimum twitter followers of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 70,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getSolidPerformersTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with solid performance",
+                                                  "description": "Get tokens with solid performance",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/solid-performers",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "one_month_net_volume_change_usd",
+                                                      "description": "The minimum one month net volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 100000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_week_net_volume_change_usd",
+                                                      "description": "The minimum one week net volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_day_net_volume_change_usd",
+                                                      "description": "The minimum one day net volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 80,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getExperiencedBuyersTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with experienced buyers",
+                                                  "description": "Get tokens with experienced buyers",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/experienced-buyers",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "one_week_experienced_net_buyers_change",
+                                                      "description": "The minimum one week experienced buyers change of a token",
+                                                      "required": false,
+                                                      "example": 10,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "min_market_cap",
+                                                      "description": "The minimum market cap in usd of a token",
+                                                      "required": false,
+                                                      "example": 100000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "twitter_followers",
+                                                      "description": "The minimum twitter followers of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 70,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getRiskyBetsTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with risky bets",
+                                                  "description": "Get tokens with risky bets",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/risky-bets",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "max_market_cap",
+                                                      "description": "The maximum market cap in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_week_holders_change",
+                                                      "description": "The minimum one week holders change of a token",
+                                                      "required": false,
+                                                      "example": 25,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_week_net_volume_change_usd",
+                                                      "description": "The minimum one week net volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 500,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 70,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getBlueChipTokens": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get tokens with blue chip",
+                                                  "description": "Get tokens with blue chip",
+                                                  "method": "GET",
+                                                  "path": "/discovery/tokens/blue-chip",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": false,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "min_market_cap",
+                                                      "description": "The minimum market cap in usd of a token",
+                                                      "required": false,
+                                                      "example": 250000000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_week_price_percent_change_usd",
+                                                      "description": "The minimum one week price percentage change of a token",
+                                                      "required": false,
+                                                      "example": 2,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_day_price_percent_change_usd",
+                                                      "description": "The minimum one day price percentage change of a token",
+                                                      "required": false,
+                                                      "example": 2,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_volume_change_usd",
+                                                      "description": "The minimum one month volume change in usd of a token",
+                                                      "required": false,
+                                                      "example": 10000,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "security_score",
+                                                      "description": "The minimum security score of a token",
+                                                      "required": false,
+                                                      "example": 70,
+                                                      "type": "number"
+                                                    },
+                                                    {
+                                                      "name": "one_month_price_percent_change_usd",
+                                                      "description": "The minimum one month price percent change of a token",
+                                                      "required": false,
+                                                      "example": 0,
+                                                      "type": "number"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "array"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "getDiscoveryToken": {
+                                                  "apiHost": "https://deep-index.moralis.io/api/v2.2",
+                                                  "summary": "Get token details",
+                                                  "description": "Get token details",
+                                                  "method": "GET",
+                                                  "path": "/discovery/token",
+                                                  "pathParams": [],
+                                                  "queryParams": [
+                                                    {
+                                                      "name": "chain",
+                                                      "description": "The chain to query",
+                                                      "required": true,
+                                                      "example": "eth",
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "eth",
+                                                        "mainnet",
+                                                        "0x1",
+                                                        "matic",
+                                                        "0x89",
+                                                        "polygon",
+                                                        "bsc",
+                                                        "binance",
+                                                        "0x38",
+                                                        "fantom",
+                                                        "ftm",
+                                                        "0xfa",
+                                                        "arbitrum",
+                                                        "0xa4b1",
+                                                        "optimism",
+                                                        "0xa",
+                                                        "pulsechain",
+                                                        "0x171"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "token_address",
+                                                      "description": "The address of the token",
+                                                      "required": true,
+                                                      "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                      "type": "string"
+                                                    }
+                                                  ],
+                                                  "responses": [
+                                                    {
+                                                      "status": "200",
+                                                      "description": "Returns the token details",
+                                                      "body": {
+                                                        "type": "object"
+                                                      }
+                                                    }
+                                                  ]
                                                 }
+                                              }
+
+
 }
