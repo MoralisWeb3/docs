@@ -22,7 +22,9 @@ export const buildResponse = (field: ApiParam) => {
 
   if (field.type === "array") {
     if (field.field?.type === "oneOf") {
-      return [...(field.field.options || []).map((option) => buildResponse(option))];
+      return [
+        ...(field.field.options || []).map((option) => buildResponse(option)),
+      ];
     }
 
     return [buildResponse(field.field)];
@@ -57,7 +59,7 @@ const ApiResponseField = ({
   collapsible?: boolean;
 }) => {
   // Check if 'field' is defined and has a 'type' property before accessing it
-  if (!field || typeof field.type === 'undefined') {
+  if (!field || typeof field.type === "undefined") {
     return null; // Return null or a placeholder element if 'field' is undefined or has no 'type'
   }
 
