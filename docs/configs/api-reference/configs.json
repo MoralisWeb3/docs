@@ -40504,12 +40504,303 @@
                                                   ],
                                                   "responses": [
                                                     {
-                                                      "status": "200",
-                                                      "description": "Returns the token details",
-                                                      "body": {
-                                                        "type": "array"
+                                                        "status": "200",
+                                                        "description": "Returns market data for the specified token addresses, including metrics and statistics.",
+                                                        "body": {
+                                                          "type": "array",
+                                                          "field": {
+                                                            "type": "object",
+                                                            "fields": [
+                                                              {
+                                                                "name": "chain_id",
+                                                                "type": "string",
+                                                                "example": "0x1",
+                                                                "description": "The blockchain identifier the token is on",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "token_address",
+                                                                "type": "string",
+                                                                "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                                "description": "The contract address of the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "token_name",
+                                                                "type": "string",
+                                                                "example": "Maker",
+                                                                "description": "The official name of the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "token_symbol",
+                                                                "type": "string",
+                                                                "example": "MKR",
+                                                                "description": "The abbreviated symbol of the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "token_logo",
+                                                                "type": "string",
+                                                                "example": "string",
+                                                                "description": "URL to the token's logo image",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "price_usd",
+                                                                "type": "number",
+                                                                "example": 0,
+                                                                "description": "Current price of the token in USD",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "security_score",
+                                                                "type": "number",
+                                                                "example": 88,
+                                                                "description": "Security score assigned to the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "market_cap",
+                                                                "type": "number",
+                                                                "example": 1351767630.85,
+                                                                "description": "Market capitalization of the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "fully_diluted_valuation",
+                                                                "type": "number",
+                                                                "example": 1363915420.28,
+                                                                "description": "Fully diluted market cap of the token",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "twitter_followers",
+                                                                "type": "number",
+                                                                "example": 255217,
+                                                                "description": "Number of followers for the token's official Twitter account",
+                                                                "required": true
+                                                              },
+                                                              {
+                                                                "name": "holders_change",
+                                                                "type": "object",
+                                                                "description": "Changes in the number of token holders over various time periods",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "name": "liquidity_change_usd",
+                                                                "type": "object",
+                                                                "description": "Changes in liquidity over various time periods, in USD",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in liquidity in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in liquidity in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in liquidity in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in liquidity in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "name": "experienced_net_buyers_change",
+                                                                "type": "object",
+                                                                "description": "Changes in the count of experienced net buyers over various time periods",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in experienced net buyers in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in experienced net buyers in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in experienced net buyers in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in experienced net buyers in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "name": "volume_change_usd",
+                                                                "type": "object",
+                                                                "description": "Changes in trading volume over various time periods, in USD",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in volume in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in volume in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in volume in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in volume in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "name": "net_volume_change_usd",
+                                                                "type": "object",
+                                                                "description": "Changes in net trading volume over various time periods, in USD",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in net volume in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Change in net volume in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in net volume in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Change in net volume in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "name": "price_percent_change_usd",
+                                                                "type": "object",
+                                                                "description": "Percentage changes in token price over various time periods",
+                                                                "required": true,
+                                                                "fields": [
+                                                                  {
+                                                                    "name": "1h",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Percentage price change in the last hour",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1d",
+                                                                    "type": "number",
+                                                                    "example": 14,
+                                                                    "description": "Percentage price change in the last day",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1w",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Percentage price change in the last week",
+                                                                    "required": true
+                                                                  },
+                                                                  {
+                                                                    "name": "1M",
+                                                                    "type": "number",
+                                                                    "example": 162,
+                                                                    "description": "Percentage price change in the last month",
+                                                                    "required": true
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
                                                       }
-                                                    }
                                                   ]
                                                 },
                                                 "getBuyingPressureTokens": {
@@ -40593,9 +40884,300 @@
                                                   "responses": [
                                                     {
                                                       "status": "200",
-                                                      "description": "Returns the token details",
+                                                      "description": "Returns market data for the specified token addresses, including metrics and statistics.",
                                                       "body": {
-                                                        "type": "array"
+                                                        "type": "array",
+                                                        "field": {
+                                                          "type": "object",
+                                                          "fields": [
+                                                            {
+                                                              "name": "chain_id",
+                                                              "type": "string",
+                                                              "example": "0x1",
+                                                              "description": "The blockchain identifier the token is on",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_address",
+                                                              "type": "string",
+                                                              "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                              "description": "The contract address of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_name",
+                                                              "type": "string",
+                                                              "example": "Maker",
+                                                              "description": "The official name of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_symbol",
+                                                              "type": "string",
+                                                              "example": "MKR",
+                                                              "description": "The abbreviated symbol of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_logo",
+                                                              "type": "string",
+                                                              "example": "string",
+                                                              "description": "URL to the token's logo image",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "price_usd",
+                                                              "type": "number",
+                                                              "example": 0,
+                                                              "description": "Current price of the token in USD",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "security_score",
+                                                              "type": "number",
+                                                              "example": 88,
+                                                              "description": "Security score assigned to the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "market_cap",
+                                                              "type": "number",
+                                                              "example": 1351767630.85,
+                                                              "description": "Market capitalization of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "fully_diluted_valuation",
+                                                              "type": "number",
+                                                              "example": 1363915420.28,
+                                                              "description": "Fully diluted market cap of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "twitter_followers",
+                                                              "type": "number",
+                                                              "example": 255217,
+                                                              "description": "Number of followers for the token's official Twitter account",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "holders_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the number of token holders over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "liquidity_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in liquidity over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "experienced_net_buyers_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the count of experienced net buyers over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "net_volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in net trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "price_percent_change_usd",
+                                                              "type": "object",
+                                                              "description": "Percentage changes in token price over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
                                                       }
                                                     }
                                                   ]
@@ -40681,9 +41263,300 @@
                                                   "responses": [
                                                     {
                                                       "status": "200",
-                                                      "description": "Returns the token details",
+                                                      "description": "Returns market data for the specified token addresses, including metrics and statistics.",
                                                       "body": {
-                                                        "type": "array"
+                                                        "type": "array",
+                                                        "field": {
+                                                          "type": "object",
+                                                          "fields": [
+                                                            {
+                                                              "name": "chain_id",
+                                                              "type": "string",
+                                                              "example": "0x1",
+                                                              "description": "The blockchain identifier the token is on",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_address",
+                                                              "type": "string",
+                                                              "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                              "description": "The contract address of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_name",
+                                                              "type": "string",
+                                                              "example": "Maker",
+                                                              "description": "The official name of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_symbol",
+                                                              "type": "string",
+                                                              "example": "MKR",
+                                                              "description": "The abbreviated symbol of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_logo",
+                                                              "type": "string",
+                                                              "example": "string",
+                                                              "description": "URL to the token's logo image",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "price_usd",
+                                                              "type": "number",
+                                                              "example": 0,
+                                                              "description": "Current price of the token in USD",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "security_score",
+                                                              "type": "number",
+                                                              "example": 88,
+                                                              "description": "Security score assigned to the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "market_cap",
+                                                              "type": "number",
+                                                              "example": 1351767630.85,
+                                                              "description": "Market capitalization of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "fully_diluted_valuation",
+                                                              "type": "number",
+                                                              "example": 1363915420.28,
+                                                              "description": "Fully diluted market cap of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "twitter_followers",
+                                                              "type": "number",
+                                                              "example": 255217,
+                                                              "description": "Number of followers for the token's official Twitter account",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "holders_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the number of token holders over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "liquidity_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in liquidity over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "experienced_net_buyers_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the count of experienced net buyers over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "net_volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in net trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "price_percent_change_usd",
+                                                              "type": "object",
+                                                              "description": "Percentage changes in token price over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
                                                       }
                                                     }
                                                   ]
@@ -40769,9 +41642,300 @@
                                                   "responses": [
                                                     {
                                                       "status": "200",
-                                                      "description": "Returns the token details",
+                                                      "description": "Returns market data for the specified token addresses, including metrics and statistics.",
                                                       "body": {
-                                                        "type": "array"
+                                                        "type": "array",
+                                                        "field": {
+                                                          "type": "object",
+                                                          "fields": [
+                                                            {
+                                                              "name": "chain_id",
+                                                              "type": "string",
+                                                              "example": "0x1",
+                                                              "description": "The blockchain identifier the token is on",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_address",
+                                                              "type": "string",
+                                                              "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                              "description": "The contract address of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_name",
+                                                              "type": "string",
+                                                              "example": "Maker",
+                                                              "description": "The official name of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_symbol",
+                                                              "type": "string",
+                                                              "example": "MKR",
+                                                              "description": "The abbreviated symbol of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_logo",
+                                                              "type": "string",
+                                                              "example": "string",
+                                                              "description": "URL to the token's logo image",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "price_usd",
+                                                              "type": "number",
+                                                              "example": 0,
+                                                              "description": "Current price of the token in USD",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "security_score",
+                                                              "type": "number",
+                                                              "example": 88,
+                                                              "description": "Security score assigned to the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "market_cap",
+                                                              "type": "number",
+                                                              "example": 1351767630.85,
+                                                              "description": "Market capitalization of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "fully_diluted_valuation",
+                                                              "type": "number",
+                                                              "example": 1363915420.28,
+                                                              "description": "Fully diluted market cap of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "twitter_followers",
+                                                              "type": "number",
+                                                              "example": 255217,
+                                                              "description": "Number of followers for the token's official Twitter account",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "holders_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the number of token holders over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "liquidity_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in liquidity over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "experienced_net_buyers_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the count of experienced net buyers over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "net_volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in net trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "price_percent_change_usd",
+                                                              "type": "object",
+                                                              "description": "Percentage changes in token price over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
                                                       }
                                                     }
                                                   ]
@@ -40857,9 +42021,300 @@
                                                   "responses": [
                                                     {
                                                       "status": "200",
-                                                      "description": "Returns the token details",
+                                                      "description": "Returns market data for the specified token addresses, including metrics and statistics.",
                                                       "body": {
-                                                        "type": "array"
+                                                        "type": "array",
+                                                        "field": {
+                                                          "type": "object",
+                                                          "fields": [
+                                                            {
+                                                              "name": "chain_id",
+                                                              "type": "string",
+                                                              "example": "0x1",
+                                                              "description": "The blockchain identifier the token is on",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_address",
+                                                              "type": "string",
+                                                              "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                              "description": "The contract address of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_name",
+                                                              "type": "string",
+                                                              "example": "Maker",
+                                                              "description": "The official name of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_symbol",
+                                                              "type": "string",
+                                                              "example": "MKR",
+                                                              "description": "The abbreviated symbol of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_logo",
+                                                              "type": "string",
+                                                              "example": "string",
+                                                              "description": "URL to the token's logo image",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "price_usd",
+                                                              "type": "number",
+                                                              "example": 0,
+                                                              "description": "Current price of the token in USD",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "security_score",
+                                                              "type": "number",
+                                                              "example": 88,
+                                                              "description": "Security score assigned to the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "market_cap",
+                                                              "type": "number",
+                                                              "example": 1351767630.85,
+                                                              "description": "Market capitalization of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "fully_diluted_valuation",
+                                                              "type": "number",
+                                                              "example": 1363915420.28,
+                                                              "description": "Fully diluted market cap of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "twitter_followers",
+                                                              "type": "number",
+                                                              "example": 255217,
+                                                              "description": "Number of followers for the token's official Twitter account",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "holders_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the number of token holders over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "liquidity_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in liquidity over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "experienced_net_buyers_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the count of experienced net buyers over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "net_volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in net trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "price_percent_change_usd",
+                                                              "type": "object",
+                                                              "description": "Percentage changes in token price over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
                                                       }
                                                     }
                                                   ]
@@ -40945,9 +42400,300 @@
                                                   "responses": [
                                                     {
                                                       "status": "200",
-                                                      "description": "Returns the token details",
+                                                      "description": "Returns market data for the specified token addresses, including metrics and statistics.",
                                                       "body": {
-                                                        "type": "array"
+                                                        "type": "array",
+                                                        "field": {
+                                                          "type": "object",
+                                                          "fields": [
+                                                            {
+                                                              "name": "chain_id",
+                                                              "type": "string",
+                                                              "example": "0x1",
+                                                              "description": "The blockchain identifier the token is on",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_address",
+                                                              "type": "string",
+                                                              "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+                                                              "description": "The contract address of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_name",
+                                                              "type": "string",
+                                                              "example": "Maker",
+                                                              "description": "The official name of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_symbol",
+                                                              "type": "string",
+                                                              "example": "MKR",
+                                                              "description": "The abbreviated symbol of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "token_logo",
+                                                              "type": "string",
+                                                              "example": "string",
+                                                              "description": "URL to the token's logo image",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "price_usd",
+                                                              "type": "number",
+                                                              "example": 0,
+                                                              "description": "Current price of the token in USD",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "security_score",
+                                                              "type": "number",
+                                                              "example": 88,
+                                                              "description": "Security score assigned to the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "market_cap",
+                                                              "type": "number",
+                                                              "example": 1351767630.85,
+                                                              "description": "Market capitalization of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "fully_diluted_valuation",
+                                                              "type": "number",
+                                                              "example": 1363915420.28,
+                                                              "description": "Fully diluted market cap of the token",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "twitter_followers",
+                                                              "type": "number",
+                                                              "example": 255217,
+                                                              "description": "Number of followers for the token's official Twitter account",
+                                                              "required": true
+                                                            },
+                                                            {
+                                                              "name": "holders_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the number of token holders over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "liquidity_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in liquidity over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in liquidity in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in liquidity in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "experienced_net_buyers_change",
+                                                              "type": "object",
+                                                              "description": "Changes in the count of experienced net buyers over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in experienced net buyers in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in experienced net buyers in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "net_volume_change_usd",
+                                                              "type": "object",
+                                                              "description": "Changes in net trading volume over various time periods, in USD",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Change in net volume in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Change in net volume in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "price_percent_change_usd",
+                                                              "type": "object",
+                                                              "description": "Percentage changes in token price over various time periods",
+                                                              "required": true,
+                                                              "fields": [
+                                                                {
+                                                                  "name": "1h",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last hour",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1d",
+                                                                  "type": "number",
+                                                                  "example": 14,
+                                                                  "description": "Percentage price change in the last day",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1w",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last week",
+                                                                  "required": true
+                                                                },
+                                                                {
+                                                                  "name": "1M",
+                                                                  "type": "number",
+                                                                  "example": 162,
+                                                                  "description": "Percentage price change in the last month",
+                                                                  "required": true
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
                                                       }
                                                     }
                                                   ]
