@@ -8,13 +8,19 @@ slug: "/market-insights-api/reference/market-data-api/overview"
 
 The **Market Data API** allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers. We're introducing four new endpoints with this launch, including:
 
+## Top ERC-20 tokens
+
 | No. | Method                                   | Description                                | API Reference                                                                                                                             | URL                                                                       |
 |-----|------------------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | 1   | `getTopERC20TokensByMarketCap`           | Get the top ERC20 tokens by market cap     | [Method Documentation](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap) | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens)                     |
 | 2   | `getTopERC20TokensByPriceChange`         | Get the top ERC20 tokens by price change   | [Method Documentation](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers) | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-movers](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-movers)                     |
+
+## Top NFTs
+
+| No. | Method                                   | Description                                | API Reference                                                                                                                             | URL                                                                       |
+|-----|------------------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | 3   | `getTopNFTCollectionsByMarketCap`        | Get the top NFT collections by market cap  | [Method Documentation](/market-insights-api/reference/get-top-nft-collections-by-market-cap) | [https://deep-index.moralis.io/api/v2.2/market-data/nfts/top-collections](https://deep-index.moralis.io/api/v2.2/market-data/nfts/top-collections)                     |
 | 4   | `getTopNFTCollectionsByTradingVolume`    | Get the top NFT collections by trading volume | [Method Documentation](/market-insights-api/reference/get-top-nft-collections-by-trading-volume) | [https://deep-index.moralis.io/api/v2.2/market-data/nfts/hottest-collections](https://deep-index.moralis.io/api/v2.2/market-data/nfts/hottest-collections)                     |
-
 
 ## Example use cases
 

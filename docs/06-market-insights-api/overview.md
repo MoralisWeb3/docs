@@ -18,8 +18,8 @@ The [Market Data API](/market-insights-api/reference/market-data-api/overview) p
 
 ## Discovery API
 
-The Discovery API is tailored for uncovering new trends, insightful tokens, and hidden gems within the market, offering data and insights that standard market overview data might not reveal.
+The [Discovery API](/market-insights-api/reference/discovery-api/overview) is tailored for uncovering new trends, insightful tokens, and hidden gems within the market, offering data and insights that standard market overview data might not reveal.
 
 ## Why Did It Move API
 
-The Why Did It Move API offers a focused look at the causative factors behind market movements, giving users clarity on why certain tokens or collections are experiencing significant changes in value.
+The [Why Did It Move API](/market-insights-api/reference/why-did-it-move-api/overview) offers a focused look at the causative factors behind market movements, giving users clarity on why certain tokens or collections are experiencing significant changes in value.
