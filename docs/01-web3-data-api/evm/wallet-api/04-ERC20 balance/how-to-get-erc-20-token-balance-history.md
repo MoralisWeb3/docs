@@ -1,7 +1,7 @@
 ---
 title: "How to Get ERC-20 Token Balance History"
 slug: "../how-to-get-erc-20-token-balance-history"
-description: "Learn how to get historical ERC-20 token balance using Moralis Wallet API."
+description: "Learn how to get historical ERC-20 token balance using the Moralis Wallet API."
 sidebar_label: "Get ERC-20 token balance history"
 ---
 
@@ -9,18 +9,18 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
-## Step 1: Setup Moralis
+## Step 1: Set Up Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.
 
 
 # Step 2: Get ERC-20 Token Balance History
 
-Discover how to track ERC-20 token balance history with Moralis Web3 API, an essential skill for blockchain developers.
+Discover how to track ERC-20 token balance history with Moralis' Web3 API, an essential skill for blockchain developers.
 
-Our tutorial utilizes Moralis' robust functions, [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) and [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers), to reveal both current and historical token balances. This guide is perfect for those seeking insights into ERC-20 token movements and trends.
+Our tutorial utilizes Moralis' robust functions, including [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) and [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers), to display both current and historical token balances. This guide is perfect for those seeking insights into ERC-20 token movements and trends, which is key for effective blockchain data management and analysis.
 
-This tutorial unlocks deep insights into token balance trends and changes, essential for effective blockchain data management and analysis. The provided code example illustrates the seamless integration and versatility of Moralis [Wallet API](https://moralis.io/api/wallet/) in tracking and understanding token movements over time.
+The provided code examples illustrate the seamless integration and versatility of Moralis' [Wallet API](https://moralis.io/api/wallet/) in tracking and understanding token movements over time.
 
 ## Full Example Script
 
@@ -138,7 +138,7 @@ print(result)
 </TabItem>
 </Tabs>
 
-## Step-by-Step Explanation:
+## Step-by-Step Explanation
 
 1. **Import Libraries**: The script starts by importing the required Moralis and EvmChain libraries for interacting with the Ethereum blockchain.
 
@@ -150,7 +150,7 @@ print(result)
 
 5. **Output**: If successful, the script logs the token balances at the specified block number in a readable JSON format. In case of errors, it catches and logs the error details.
 
-## Step 3: Run the script
+## Step 3: Run the Script
 
 import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
@@ -352,7 +352,7 @@ Token Balances at Block: 16310000
  }
 ```
 
-Congratulations 🥳 You just got all ERC20 Token Balance History owned by an address with just a few lines of code using the Moralis Wallet API!
+Congratulations 🥳 You just got the entire ERC-20 token balance history owned by an address with just a few lines of code using the Moralis Wallet API!
 
 ## Conclusion
 
