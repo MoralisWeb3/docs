@@ -1,7 +1,7 @@
 ---
 title: "Market Insights API"
+slug: "/market-insights-api"
 sidebar_label: "Overview"
-slug: "/market-insights"
 sidebar_position: 1
 sidebar_class_name: "sidebar-overview"
 ---

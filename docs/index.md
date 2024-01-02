@@ -88,7 +88,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         </div>
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/market-insights">
+                <a className="card padding--lg card--homepage" href="/market-insights-api">
                     <h3><svg id="Layer_24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 23.78 23.78"><line className="cls-1" x1="1.68" y1="21.66" x2="21.87" y2="21.66" fill="#6fc276"/><rect className="cls-4" x="3.59" y="17.65" width="2.58" height="3.99" fill="#6fc276"/><rect className="cls-4" x="10.53" y="15.76" width="2.58" height="5.88" fill="#6fc276"/><rect className="cls-4" x="17.48" y="12.68" width="2.58" height="8.96" fill="#6fc276"/><polyline className="cls-3" points="2.55 12.45 9.07 6.01 13.2 10.14 20.62 2.72" fill="#6fc276"/><polyline className="cls-2" points="16.42 2.01 21.75 2.01 21.75 7.05" fill="#6fc276"/></svg>&nbsp;&nbsp;<span>Market Insights API</span></h3>
                     <p>Explore the latest market trends for ERC20 tokens and NFTs.</p>
                 </a>
