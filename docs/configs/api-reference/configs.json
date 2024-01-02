@@ -40294,7 +40294,8 @@
     "summary":"news",
     "description": "Returns all news between 2 dates, sorted by date, descending.",
     "method":"GET",
-    "path":"/api/v1/news",
+    "apiHost": "https://wdim.moralis.io/api/v1",
+    "path":"/news",
     "pathParams":[],
     "queryParams":[
       {
