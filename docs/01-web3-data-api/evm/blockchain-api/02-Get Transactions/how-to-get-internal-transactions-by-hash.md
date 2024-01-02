@@ -1,5 +1,5 @@
 ---
-title: "How to get internal transactions by hash"
+title: "How to Get Internal Transactions by Hash"
 slug: "../../how-to-get-internal-transactions-by-hash"
 description: "Learn how to get internal transactions by hash using the Moralis Transaction API."
 sidebar_label: "Get internal transactions by hash"
@@ -10,32 +10,32 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
-## Step 1: Setup Moralis
+## Step 1: Set Up Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.
 
 ## Step 2: Get Internal Transactions by Hash
 
-In this tutorial, you will explore how to check [internal transaction](/web3-data-api/evm/internal-transactions) details by hash ID using Moralis Web3 API.
+In this tutorial, you will explore how to check [internal transaction](/web3-data-api/evm/internal-transactions) details by hash ID using the Moralis Web3 API.
 
 To include [internal transactions](/web3-data-api/evm/internal-transactions) in the API response, you have two options:
 
-1. **Specific Endpoint**: You can use a dedicated endpoint called [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions) endpoint. This endpoint is designed specifically to retrieve details of internal transactions. By using this endpoint, you can directly fetch information related to internal transactions without the need for additional query parameters.
+1. **Specific Endpoint**: You can use a dedicated endpoint called [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions). This endpoint is designed specifically to retrieve details of internal transactions. By using this endpoint, you can directly fetch information related to internal transactions without the need for additional query parameters.
 
 2. **Query Parameter Inclusion**: Alternatively, you can include a specific query parameter, such as `include=internal_transactions`, when making requests to relevant endpoints. This instructs the Moralis API to include details of internal transactions in the response along with external transactions.
 
 :::tip
 If you don't have the transaction hash, you can use the [getWalletTransactions](/web3-data-api/evm/how-to-get-all-transactions-of-an-address) endpoint to find it. In the provided example response, you can easily find the transaction hash within the `hash` field.
-Alternatively, you can use [Etherscan](https://etherscan.io/). On Etherscan, selecting any transaction reveals the Transaction Hash prominently at the top of the page.
+Alternatively, you can use [Etherscan](https://etherscan.io/). On Etherscan, selecting any transaction will reveal the transaction hash at the top of the page.
 :::
 
 ### Full Example Script
 
-Our script, written in JavaScript, TypeScript, and Python, demonstrates finding an [internal transaction](/web3-data-api/evm/internal-transactions) by hash id on blockchain using Moralis' [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions) endpoint.
+Our script, written in JavaScript, TypeScript, and Python, demonstrates how to find an [internal transaction](/web3-data-api/evm/internal-transactions) by hash ID on the blockchain using Moralis' [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions) endpoint.
 
-Here you'll need two parameters: `transactionHash` and `chain`.
+Here, you'll need two parameters: `transactionHash` and `chain`.
 
-Once you've obtained both the `transactionHash` and `chain`, you can copy the following code:
+Once you've obtained both `transactionHash` and `chain`, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -60,10 +60,10 @@ const runApp = async () => {
   const transactionHash =
     "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071";
 
-  // Set the blockchain chain (e.g., Ethereum)
+  // Set the blockchain (e.g., Ethereum)
   const chain = EvmChain.ETHEREUM;
 
-  // Use Moralis API to get internal transactions associated with the specified hash
+  // Use the Moralis API to get internal transactions associated with the specified hash
   const response = await Moralis.EvmApi.transaction.getInternalTransactions({
     transactionHash,
     chain,
@@ -97,10 +97,10 @@ const runApp = async () => {
   const transactionHash =
     "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071";
 
-  // Set the blockchain chain (e.g., Ethereum)
+  // Set the blockchain (e.g., Ethereum)
   const chain = EvmChain.ETHEREUM;
 
-  // Use Moralis API to get internal transactions associated with the specified hash
+  // Use the Moralis API to get internal transactions associated with the specified hash
   const response = await Moralis.EvmApi.transaction.getInternalTransactions({
     transactionHash,
     chain,
@@ -124,13 +124,13 @@ from moralis import evm_api
 # Replace "YOUR_API_KEY" with your actual Moralis API key
 api_key = "YOUR_API_KEY"
 
-# Specify parameters including the transaction hash and blockchain chain (e.g., Ethereum)
+# Specify parameters, including the transaction hash and blockchain (e.g., Ethereum)
 params = {
     "transaction_hash": "0xae5f9a43f424624376ea7479ce7b0ab25e9eba11f1c4791ec4e68f0206b5e071",
     "chain": "eth",
 }
 
-# Use Moralis EVM API to get internal transactions associated with the specified hash
+# Use the Moralis EVM API to get internal transactions associated with the specified hash
 result = evm_api.transaction.get_internal_transactions(
     api_key=api_key,
     params=params,
@@ -145,17 +145,17 @@ print(result)
 
 ### Step-by-Step Explanation: How to Check Internal Transactions with Hash ID
 
-1. **Initialize Moralis**: Commence by initializing Moralis in your preferred programming language—be it JavaScript, TypeScript, or Python—using your unique API key. This foundational step establishes the connection with Moralis services.
+1. **Initialize Moralis**: Using your unique API key, initialize Moralis in your preferred programming language - such as JavaScript, TypeScript, or Python. This foundational step establishes the connection with Moralis services.
 
 2. **Specify Wallet Address**: Identify the wallet address for which you intend to retrieve internal transactions by hash ID. This address is directly associated with the transactions you aim to explore.
 
-3. **Set Blockchain Chain**: Define the blockchain chain on which the transactions occurred. Specify the appropriate chain parameter, such as "eth" for Ethereum, ensuring accurate retrieval of relevant data.
+3. **Set Blockchain**: Define the blockchain on which the transactions occurred. Specify the appropriate chain parameter, such as "eth" for Ethereum, ensuring accurate retrieval of relevant data.
 
 4. **Extract Transaction by Hash ID**: Utilize the `getInternalTransactions` endpoint to retrieve comprehensive details of the specified transaction. This may encompass vital information such as sender, receiver, amount, and timestamp.
 
-5. **Print or Process Hash IDs**: Once the internal transactions are fetched, print the extracted hash IDs or process them based on your specific requirements. This step is crucial for developers integrating this functionality into their applications.
+5. **Print or Process Hash IDs**: Once the internal transactions are fetched, print the extracted hash IDs or process them based on your specific requirements. This step is crucial for developers who want to integrate this functionality into their applications.
 
-## Step 3: Run the script
+## Step 3: Run the Script
 
 import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
@@ -194,12 +194,12 @@ In your terminal, you should see the following JSON response:
 ]
 ```
 
-Congratulations 🥳! You have successfully retrieved blockchain internal transaction with hash ID using the Moralis [Wallet API](https://moralis.io/api/wallet/).
+Congratulations 🥳! You have successfully retrieved the internal blockchain transaction with hash ID using the Moralis [Wallet API](https://moralis.io/api/wallet/).
 
 ## Get 24/7 Developer Support
 
-Should you encounter any challenges while following this tutorial, our community engineers are here to assist you. Reach out to us on [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to receive 24/7 developer support. Your success is our priority!
+Should you encounter any challenges while following this tutorial, our community engineers are here to assist you. Reach out to us on [Discord](https://moralis.io/discord) or in our [forum](https://forum.moralis.io) to receive 24/7 developer support. Your success is our priority!
 
 ## API Reference
 
-If you want to explore more details about other blockchain endpoints and optional parameters, refer to the [API Reference](/web3-data-api/evm/reference#blockchain-api).
+If you want to explore more details about other blockchain endpoints and optional parameters, refer to our [API Reference](/web3-data-api/evm/reference#blockchain-api) page.
