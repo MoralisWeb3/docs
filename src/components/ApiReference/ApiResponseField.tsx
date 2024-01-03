@@ -53,16 +53,16 @@ const ApiResponseField = ({
   isInsideArray?: boolean;
 }) => {
   const initialCollapsedState = !(
-    (isInsideObject || isInsideArray) && field?.type === "object"
+    (isInsideObject || isInsideArray) &&
+    field?.type === "object"
   );
+
   const [collapsed, setCollapsed] = useState(initialCollapsedState);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    if (
-      (isInsideObject || isInsideArray) &&
-      field?.type === "object"
-    ) {
+    // Error 62:9 fixed
+    if ((isInsideObject || isInsideArray) && field?.type === "object") {
       setCollapsed(false);
     }
   }, [isInsideObject, isInsideArray, field]);
@@ -124,7 +124,11 @@ const ApiResponseField = ({
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          <button type="button" className={styles.groupHeader} onClick={toggleCollapsed}>
+          <button
+            type="button"
+            className={styles.groupHeader}
+            onClick={toggleCollapsed}
+          >
             <ApiParamInfo param={field} />
           </button>
           {!collapsed && field.field && (
