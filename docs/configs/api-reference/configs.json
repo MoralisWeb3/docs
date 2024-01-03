@@ -40427,8 +40427,8 @@
                                               "discovery" : {
                                                 "getRisingLiquidityTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with rising liquidity",
-                                                  "description": "Get tokens with rising liquidity",
+                                                  "summary": "Identifies the top tokens with rising liquidity.",
+                                                  "description": "Identifies the top tokens with rising liquidity.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/rising-liquidity",
                                                   "pathParams": [],
@@ -40806,8 +40806,8 @@
                                                 },
                                                 "getBuyingPressureTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with buying pressure",
-                                                  "description": "Get tokens with buying pressure",
+                                                  "summary": "Identifies the top tokens with buying pressure.",
+                                                  "description": "Identifies the top tokens with buying pressure.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/buying-pressure",
                                                   "pathParams": [],
@@ -41185,8 +41185,8 @@
                                                 },
                                                 "getSolidPerformersTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with solid performance",
-                                                  "description": "Get tokens with solid performance",
+                                                  "summary": "Identifies solid-performing tokens.",
+                                                  "description": "Identifies solid-performing tokens.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/solid-performers",
                                                   "pathParams": [],
@@ -41564,8 +41564,8 @@
                                                 },
                                                 "getExperiencedBuyersTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with experienced buyers",
-                                                  "description": "Get tokens with experienced buyers",
+                                                  "summary": "Identifies tokens that experienced buyers are purchasing.",
+                                                  "description": "Identifies tokens that experienced buyers are purchasing.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/experienced-buyers",
                                                   "pathParams": [],
@@ -41943,8 +41943,8 @@
                                                 },
                                                 "getRiskyBetsTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with risky bets",
-                                                  "description": "Get tokens with risky bets",
+                                                  "summary": "Identifies tokens with risky characteristics.",
+                                                  "description": "Identifies tokens with risky characteristics.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/risky-bets",
                                                   "pathParams": [],
@@ -42322,8 +42322,8 @@
                                                 },
                                                 "getBlueChipTokens": {
                                                   "apiHost": "https://deep-index.moralis.io/api/v2.2",
-                                                  "summary": "Get tokens with blue chip",
-                                                  "description": "Get tokens with blue chip",
+                                                  "summary": "Identifies blue-chip tokens.",
+                                                  "description": "Identifies blue-chip tokens.",
                                                   "method": "GET",
                                                   "path": "/discovery/tokens/blue-chip",
                                                   "pathParams": [],

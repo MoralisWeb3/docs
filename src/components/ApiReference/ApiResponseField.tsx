@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
+// Replace these imports with the actual path in your project
 import { ApiParam, PRIMITIVE_TYPES } from "./ApiParamField";
 import ApiParamInfo from "./ApiParamInfo";
-
 import styles from "./styles.module.css";
 
 export interface ApiResponse {
@@ -13,20 +13,14 @@ export interface ApiResponse {
 
 export const buildResponse = (field: ApiParam) => {
   if (!field) {
-    return ""; // Return an appropriate default value or an empty string when 'field' is undefined
+    return "";
   }
 
   if (PRIMITIVE_TYPES.includes(field?.type)) {
-    return field?.example || ""; // Add a null check for 'example' property
+    return field?.example || "";
   }
 
   if (field.type === "array") {
-    if (field.field?.type === "oneOf") {
-      return [
-        ...(field.field.options || []).map((option) => buildResponse(option)),
-      ];
-    }
-
     return [buildResponse(field.field)];
   }
 
@@ -53,67 +47,62 @@ export const buildResponse = (field: ApiParam) => {
 
 const ApiResponseField = ({
   field,
-  collapsible,
+  parentType = '',
+  isInsideObject = false, // Indicates if this component is inside an object
+  isInsideArray = false, // Indicates if this component is directly inside an array
 }: {
-  field?: ApiParam; // Make 'field' optional by using '?'
-  collapsible?: boolean;
+  field?: ApiParam;
+  parentType?: string;
+  isInsideObject?: boolean;
+  isInsideArray?: boolean;
 }) => {
-  // Check if 'field' is defined and has a 'type' property before accessing it
-  if (!field || typeof field.type === "undefined") {
-    return null; // Return null or a placeholder element if 'field' is undefined or has no 'type'
+  // Define the initial collapsed state based on whether it's inside an object or an array and its type
+  const initialCollapsedState = !((isInsideObject || isInsideArray) && field?.type === 'object');
+
+  const [collapsed, setCollapsed] = useState(initialCollapsedState);
+
+  useEffect(() => {
+    // Automatically expand if this is an object and it's inside an object or an array
+    if ((isInsideObject || isInsideArray) && field?.type === 'object') {
+      setCollapsed(false);
+    }
+  }, [isInsideObject, isInsideArray, field]);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+
+  const renderFields = (fields, parentType, isInsideObject, isInsideArray) => {
+    // Make sure to pass down the isInsideObject and isInsideArray flags to all children
+    return fields.map((field, index) => (
+      <ApiResponseField
+        key={index}
+        field={field}
+        parentType={parentType}
+        isInsideObject={isInsideObject || parentType === 'object'}  // Update the flag if the current level or any ancestor is an object
+        isInsideArray={isInsideArray || parentType === 'array'}  // Update the flag if the current level or any ancestor is an array
+      />
+    ));
+  };
+
+  if (!field) {
+    return null;
   }
-
-  // Rest of your component code
-  const [collapsed, setCollapsed] = useState(!!collapsible);
-  const [expandedIndex, setExpandedIndex] = useState(0);
-
-  const toggleCollapsed = useCallback(
-    () => setCollapsed((collapsed) => !collapsed),
-    []
-  );
 
   if (PRIMITIVE_TYPES.includes(field?.type)) {
-    const enums =
-      field.type === "string" && field.enum
-        ? `*[${field.enum.join(" | ")}]*`
-        : "";
-
-    return (
-      <div className={styles.field}>
-        <ApiParamInfo
-          param={{
-            ...field,
-            description: [enums, field.description].filter(Boolean).join(" "),
-          }}
-        />
-      </div>
-    );
+    return <div className={styles.field}><ApiParamInfo param={field} /></div>;
   }
 
-  if (field.type === "object") {
+  if (field.type === 'object') {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          {field.name &&
-            (collapsible ? (
-              <button
-                type="button"
-                className={styles.groupHeader}
-                onClick={toggleCollapsed}
-              >
-                <ApiParamInfo param={field} />
-              </button>
-            ) : (
-              <div className={styles.groupHeader}>
-                <ApiParamInfo param={{ ...field, type: "" as any }} />
-              </div>
-            ))}
-
-          {collapsed ? null : (
+          <button type="button" className={styles.groupHeader} onClick={toggleCollapsed}>
+            <ApiParamInfo param={field} />
+          </button>
+          {!collapsed && field.fields && (
             <div className={styles.group}>
-              {field.fields?.map((arrayField, index) => (
-                <ApiResponseField key={index} field={arrayField} />
-              ))}
+              {renderFields(field.fields, 'object', isInsideObject, isInsideArray)}
             </div>
           )}
         </div>
@@ -121,23 +110,28 @@ const ApiResponseField = ({
     );
   }
 
-  if (field.type === "array") {
+  if (field.type === 'array') {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          {field.name && (
-            <div className={styles.groupHeader}>
-              <ApiParamInfo param={field} />
+          <button type="button" className={styles.groupHeader} onClick={toggleCollapsed}>
+            <ApiParamInfo param={field} />
+          </button>
+          {!collapsed && field.field && (
+            <div className={styles.group}>
+              <ApiResponseField
+                field={field.field}
+                parentType='array'
+                isInsideArray={true}  // Direct children of an array are inside an array
+                isInsideObject={isInsideObject}  // Inherit the isInsideObject flag from the parent
+              />
             </div>
           )}
-
-          <div className={styles.group}>
-            <ApiResponseField field={field.field} />
-          </div>
         </div>
       </div>
     );
   }
+
 
   if (field.type === "record") {
     return (
