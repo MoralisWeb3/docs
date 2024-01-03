@@ -61,6 +61,9 @@ const ApiResponseField = ({
 
   const [collapsed, setCollapsed] = useState(initialCollapsedState);
 
+  // Add a new state to keep track of which item is expanded
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   useEffect(() => {
     // Automatically expand if this is an object and it's inside an object or an array
     if ((isInsideObject || isInsideArray) && field?.type === 'object') {
@@ -181,7 +184,6 @@ const ApiResponseField = ({
                       `Option ${index + 1}`}
                   </button>
                 )}
-
                 {expandedIndex === index && (
                   <ApiResponseField key={index} field={fieldParam} />
                 )}
