@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-// Replace these imports with the actual path in your project
-import { ApiParam, PRIMITIVE_TYPES } from './ApiParamField';
-import ApiParamInfo from './ApiParamInfo';
-import styles from './styles.module.css';
+import { ApiParam, PRIMITIVE_TYPES } from "./ApiParamField";
+import ApiParamInfo from "./ApiParamInfo";
+import styles from "./styles.module.css";
 
 export interface ApiResponse {
   status: number;
@@ -13,52 +12,52 @@ export interface ApiResponse {
 
 export const buildResponse = (field: ApiParam) => {
   if (!field) {
-    return '';
+    return "";
   }
 
-  if (PRIMITIVE_TYPES.includes(field?.type)) {
-    return field?.example || '';
+  if (PRIMITIVE_TYPES.includes(field.type)) {
+    return field.example || "";
   }
 
-  if (field.type === 'array') {
+  if (field.type === "array") {
     return [buildResponse(field.field)];
   }
 
-  if (field?.type === 'record') {
-    return { '{KEY}': buildResponse(field.field) };
+  if (field.type === "record") {
+    return { "{KEY}": buildResponse(field.field) };
   }
 
-  if (field?.type === 'object') {
-    return (field?.fields || []).reduce((obj, objField) => ({
+  if (field.type === "object") {
+    return field.fields?.reduce((obj, objField) => ({
       ...obj,
       [objField.name]: buildResponse(objField),
     }), {});
   }
 
-  if (field?.type === 'oneOf') {
+  if (field.type === "oneOf") {
     return buildResponse(field.options[0]);
   }
 
-  return '';
+  return "";
 };
 
 const ApiResponseField = ({
   field,
-  parentType = '',
-  isInsideObject = false,
-  isInsideArray = false,
+  parentType = "",
+  isInsideObject = false, // Indicates if this component is inside an object
+  isInsideArray = false, // Indicates if this component is directly inside an array
 }: {
   field?: ApiParam;
   parentType?: string;
   isInsideObject?: boolean;
   isInsideArray?: boolean;
 }) => {
-  const initialCollapsedState = !((isInsideObject || isInsideArray) && field?.type === 'object');
+  const initialCollapsedState = !((isInsideObject || isInsideArray) && field?.type === "object");
   const [collapsed, setCollapsed] = useState(initialCollapsedState);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    if ((isInsideObject || isInsideArray) && field?.type === 'object') {
+    if ((isInsideObject || isInsideArray) && field?.type === "object") {
       setCollapsed(false);
     }
   }, [isInsideObject, isInsideArray, field]);
@@ -73,8 +72,8 @@ const ApiResponseField = ({
         key={index}
         field={field}
         parentType={parentType}
-        isInsideObject={isInsideObject || parentType === 'object'}
-        isInsideArray={isInsideArray || parentType === 'array'}
+        isInsideObject={isInsideObject || parentType === "object"}
+        isInsideArray={isInsideArray || parentType === "array"}
       />
     ));
   };
@@ -83,11 +82,11 @@ const ApiResponseField = ({
     return null;
   }
 
-  if (PRIMITIVE_TYPES.includes(field?.type)) {
+  if (PRIMITIVE_TYPES.includes(field.type)) {
     return <div className={styles.field}><ApiParamInfo param={field} /></div>;
   }
 
-  if (field.type === 'object') {
+  if (field.type === "object") {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -96,7 +95,7 @@ const ApiResponseField = ({
           </button>
           {!collapsed && field.fields && (
             <div className={styles.group}>
-              {renderFields(field.fields, 'object', isInsideObject, isInsideArray)}
+              {renderFields(field.fields, "object", isInsideObject, isInsideArray)}
             </div>
           )}
         </div>
@@ -104,7 +103,7 @@ const ApiResponseField = ({
     );
   }
 
-  if (field.type === 'array') {
+  if (field.type === "array") {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -115,7 +114,7 @@ const ApiResponseField = ({
             <div className={styles.group}>
               <ApiResponseField
                 field={field.field}
-                parentType='array'
+                parentType="array"
                 isInsideArray={true}
                 isInsideObject={isInsideObject}
               />
@@ -126,7 +125,7 @@ const ApiResponseField = ({
     );
   }
 
-  if (field.type === 'record') {
+  if (field.type === "record") {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -135,7 +134,6 @@ const ApiResponseField = ({
               <ApiParamInfo param={field} />
             </div>
           )}
-
           <div className={styles.group}>
             <ApiResponseField field={field.field} />
           </div>
@@ -144,7 +142,7 @@ const ApiResponseField = ({
     );
   }
 
-  if (field.type === 'oneOf') {
+  if (field.type === "oneOf") {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -153,7 +151,6 @@ const ApiResponseField = ({
               <ApiParamInfo param={field} />
             </div>
           )}
-
           <div className={styles.group}>
             {field.options.map((fieldParam, index) => (
               <React.Fragment key={index}>
