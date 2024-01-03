@@ -28,10 +28,13 @@ export const buildResponse = (field: ApiParam) => {
   }
 
   if (field.type === "object") {
-    return field.fields?.reduce((obj, objField) => ({
-      ...obj,
-      [objField.name]: buildResponse(objField),
-    }), {});
+    return field.fields?.reduce(
+      (obj, objField) => ({
+        ...obj,
+        [objField.name]: buildResponse(objField),
+      }),
+      {}
+    );
   }
 
   if (field.type === "oneOf") {
@@ -57,10 +60,13 @@ const ApiResponseField = ({
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    if ((isInsideObject || isInsideArray) && field?.type === "object") {
+    if (
+      (isInsideObject || isInsideArray) &&
+      field?.type === "object"
+    ) {
       setCollapsed(false);
     }
-  }, [isInsideObject, isInsideArray, field]);
+  }, [isInsideObject, isInsideArray, field]);s
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -83,19 +89,32 @@ const ApiResponseField = ({
   }
 
   if (PRIMITIVE_TYPES.includes(field.type)) {
-    return <div className={styles.field}><ApiParamInfo param={field} /></div>;
+    return (
+  <div className={styles.field}>
+    <ApiParamInfo param={field} />
+  </div>
+);
   }
 
   if (field.type === "object") {
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          <button type="button" className={styles.groupHeader} onClick={toggleCollapsed}>
+          <button
+            type="button"
+            className={styles.groupHeader}
+            onClick={toggleCollapsed}
+          >
             <ApiParamInfo param={field} />
           </button>
           {!collapsed && field.fields && (
             <div className={styles.group}>
-              {renderFields(field.fields, "object", isInsideObject, isInsideArray)}
+              {renderFields(
+                field.fields,
+                "object",
+                isInsideObject,
+                isInsideArray
+              )}
             </div>
           )}
         </div>
@@ -156,7 +175,9 @@ const ApiResponseField = ({
               <React.Fragment key={index}>
                 {expandedIndex === index ? (
                   <div className={styles.groupHeader}>
-                    {fieldParam.displayName || fieldParam.name || `Option ${index + 1}`}
+                    {fieldParam.displayName ||
+                      fieldParam.name ||
+                      `Option ${index + 1}`}
                   </div>
                 ) : (
                   <button
@@ -164,7 +185,9 @@ const ApiResponseField = ({
                     onClick={() => setExpandedIndex(index)}
                     className={styles.groupHeader}
                   >
-                    {fieldParam.displayName || fieldParam.name || `Option ${index + 1}`}
+                    {fieldParam.displayName ||
+                      fieldParam.name ||
+                      `Option ${index + 1}`}
                   </button>
                 )}
                 {expandedIndex === index && (
