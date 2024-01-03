@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { ApiParam, PRIMITIVE_TYPES } from "./ApiParamField";
 import ApiParamInfo from "./ApiParamInfo";
 import styles from "./styles.module.css";
@@ -46,16 +45,16 @@ export const buildResponse = (field: ApiParam) => {
 
 const ApiResponseField = ({
   field,
-  parentType = "",
   isInsideObject = false, // Indicates if this component is inside an object
   isInsideArray = false, // Indicates if this component is directly inside an array
 }: {
   field?: ApiParam;
-  parentType?: string;
   isInsideObject?: boolean;
   isInsideArray?: boolean;
 }) => {
-  const initialCollapsedState = !((isInsideObject || isInsideArray) && field?.type === "object");
+  const initialCollapsedState = !(
+    (isInsideObject || isInsideArray) && field?.type === "object"
+  );
   const [collapsed, setCollapsed] = useState(initialCollapsedState);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -66,7 +65,7 @@ const ApiResponseField = ({
     ) {
       setCollapsed(false);
     }
-  }, [isInsideObject, isInsideArray, field]);s
+  }, [isInsideObject, isInsideArray, field]);
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -77,7 +76,6 @@ const ApiResponseField = ({
       <ApiResponseField
         key={index}
         field={field}
-        parentType={parentType}
         isInsideObject={isInsideObject || parentType === "object"}
         isInsideArray={isInsideArray || parentType === "array"}
       />
@@ -90,10 +88,10 @@ const ApiResponseField = ({
 
   if (PRIMITIVE_TYPES.includes(field.type)) {
     return (
-  <div className={styles.field}>
-    <ApiParamInfo param={field} />
-  </div>
-);
+      <div className={styles.field}>
+        <ApiParamInfo param={field} />
+      </div>
+    );
   }
 
   if (field.type === "object") {
