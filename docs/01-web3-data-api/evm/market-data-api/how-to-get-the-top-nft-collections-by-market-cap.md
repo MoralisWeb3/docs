@@ -16,7 +16,7 @@ Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-yo
 
 ## Step 2: Get the top NFT collections by market cap
 
-In order to get the top NFT collections by market cap, Moralis provides you with a [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top NFT collections by market cap, Moralis provides you with a [getTopNFTCollectionsByMarketCap](/market-insights-api/reference/get-top-nft-collections-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -131,7 +131,7 @@ Congratulations 🥳 you just got the top NFT collections by market cap using Ma
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopNFTCollectionsByMarketCap](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)
+- [getTopNFTCollectionsByMarketCap](/market-insights-api/reference/get-top-nft-collections-by-market-cap)
 
 ## Support
 

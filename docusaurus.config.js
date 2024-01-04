@@ -182,9 +182,9 @@ const config = {
           },
           {
             type: "doc",
-            docId: "authentication-api/evm/overview",
+            docId: "market-insights-api/overview",
             position: "left",
-            label: "Authentication API",
+            label: "Market Insights API",
           },
           {
             to: "changelog",

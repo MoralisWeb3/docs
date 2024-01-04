@@ -58,12 +58,7 @@ const ApiParamBaseInput = ({
 
   const fieldProps = {
     ...field,
-    value:
-      field.value == null
-        ? ""
-        : valueToString
-        ? valueToString(field.value)
-        : String(field.value),
+    value: field.value ?? "",
     onChange: handleChange,
   };
 
@@ -82,7 +77,9 @@ const ApiParamBaseInput = ({
         >
           <option />
           {options.map((option, index) => (
-            <option key={index}>{String(option)}</option>
+            <option key={index} value={String(option)}>
+              {String(option)}
+            </option>
           ))}
         </select>
       ) : multiline ? (

@@ -400,55 +400,55 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   width: auto;
 }
 
+/* General Styles for Sidebar */
 .web3-data-api .menu__list,
+.market-insights-api .menu__list,
 .streams-api .menu__list {
-  background-color: var(--ifm-background-surface-color);
-  border-radius: 4px;
+  background-color: var(--ifm-background-surface-color); /* Sets the background color of the sidebar */
+  border-radius: 4px; /* Rounds the corners of the sidebar */
 }
 
+/* Top-level Category Item Styling in Sidebar */
 .web3-data-api .menu__list-item.theme-doc-sidebar-item-category-level-1,
+.market-insights-api .menu__list-item.theme-doc-sidebar-item-category-level-1,
 .streams-api .menu__list-item.theme-doc-sidebar-item-category-level-1 {
-  margin-top: 6px;
+  margin-top: 6px; /* Adds spacing above each top-level category */
 }
 
-.web3-data-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link,
-.streams-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link,
+/* Styling for Links in Top-level Categories */
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
+.market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
+.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link,
+.market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link {
-  font-family: var(--ifm-heading-font-family);
-  font-size: 15px;
-  padding-left: 10px;
-  padding-right: 6px;
+  font-family: var(--ifm-heading-font-family); /* Sets the font family for the category links */
+  font-size: 15px; /* Sets the font size for the category links to 15px for uniformity */
+  padding-left: 10px; /* Adds padding to the left of the category links */
+  padding-right: 6px; /* Adds padding to the right of the category links */
 }
 
+/* Icon Styling Before the Links in Top-level Categories */
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
+.market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.web3-data-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link:before,
-.streams-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link:before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 12px;
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before,
+.market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before,
+.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
+  content: ""; /* Clears existing content */
+  width: 16px; /* Sets width of the icon */
+  height: 16px; /* Sets height of the icon */
+  background-size: 16px; /* Ensures the background (icon) fits the container */
+  background-repeat: no-repeat; /* Ensures the icon doesn't repeat */
+  background-position: center; /* Centers the icon */
+  margin-right: 12px; /* Adds spacing to the right of the icon */
 }
 
+/* Submenu Styling in Sidebar */
 .web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
 .streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
-  padding-left: 30px;
+  padding-left: 30px; /* Indents the submenu items for better hierarchy visualization */
 }
 
 a.menu__link {

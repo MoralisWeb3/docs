@@ -13,6 +13,8 @@ const ApiParamArrayField = ({
   field,
   form,
 }: FieldComponentProps<"array">) => {
+  const arrayValues = Array.isArray(field.value) ? [...field.value] : [];
+
   return (
     <div className={styles.groupContainer}>
       {param.name && (
@@ -22,8 +24,8 @@ const ApiParamArrayField = ({
       )}
 
       <div className={styles.group}>
-        {(Array.isArray(field.value) ? [...field.value] : []).map(
-          (value, index) => (
+        {arrayValues.length > 0 ? (
+          arrayValues.map((value, index) => (
             <div key={index} className={styles.field}>
               <div className={styles.group}>
                 <div className={styles.groupHeader}>
@@ -31,12 +33,12 @@ const ApiParamArrayField = ({
                     type="button"
                     onClick={() =>
                       form.setFieldValue(field.name, [
-                        ...field.value.slice(0, index),
-                        ...field.value.slice(index + 1),
+                        ...arrayValues.slice(0, index),
+                        ...arrayValues.slice(index + 1),
                       ])
                     }
                   >
-                    -
+                    Remove
                   </button>{" "}
                   {param.name}[{index}]
                 </div>
@@ -47,20 +49,22 @@ const ApiParamArrayField = ({
                 />
               </div>
             </div>
-          )
+          ))
+        ) : (
+          <div className={styles.emptyArray}>No items in the array</div>
         )}
 
         <button
           type="button"
           onClick={() => {
             form.setFieldValue(field.name, [
-              ...field.value,
+              ...arrayValues,
               apiParamInitialValue(param.field),
             ]);
           }}
           className={styles.groupHeader}
         >
-          + ADD
+          Add Item
         </button>
       </div>
     </div>
