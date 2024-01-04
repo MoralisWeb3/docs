@@ -285,7 +285,7 @@ const ApiReference = ({
         />
       </Head>
       <div>
-        {apiHost.includes("aptos") && (
+        {apiHost && apiHost.includes("aptos") && (
           <ToggleGroup.Root
             className={styles.ToggleGroup}
             type="single"

@@ -29,5 +29,11 @@
     "filePath": "./docs/reference/web3-data-api/aptos-api",
     "importPath": "../../../configs/api-reference/configs.json",
     "category": "web3-data-api"
+  },
+  "market-insights": {
+    "swaggerPath": "https://wdim.moralis.io/swagger-json",
+    "filePath": "./docs/reference/market-insights-api",
+    "importPath": "../../../configs/api-reference/configs.json",
+    "category": "market-insights-api"
   }
 }

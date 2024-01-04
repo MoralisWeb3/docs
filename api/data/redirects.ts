@@ -6793,7 +6793,7 @@ export const redirects = [
     source:
       "/web3-data-api/evm/reference/get-hottest-nft-collections-by-trading-volume",
     destination:
-      "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
+      "/market-insights-api/reference/get-top-nft-collections-by-trading-volume",
     permanent: true,
   },
   {
@@ -6828,9 +6828,30 @@ export const redirects = [
   },
   {
     source:
-      "/web3-data-api/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
+      "/web3-data-api/market-insights-api/reference/get-top-nft-collections-by-trading-volume",
     destination:
-      "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
+      "/market-insights-api/reference/get-top-nft-collections-by-trading-volume",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/reference/how-to-get-the-top-nft-collections-by-market-cap",
+    destination:
+      "/market-insights-api/reference/how-to-get-the-top-nft-collections-by-market-cap",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/reference/how-to-get-the-top-erc20-tokens-by-market-cap",
+    destination:
+      "/market-insights-api/reference/how-to-get-the-top-erc20-tokens-by-market-cap",
+    permanent: true,
+  },
+  {
+    source:
+      "/web3-data-api/evm/reference/how-to-get-the-top-erc20-tokens-by-price-change",
+    destination:
+      "/market-insights-api/reference/how-to-get-the-top-erc20-tokens-by-price-change",
     permanent: true,
   },
   {

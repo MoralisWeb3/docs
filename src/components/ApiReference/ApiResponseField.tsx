@@ -1,35 +1,33 @@
-import React, { useState, useCallback } from "react";
-
+import React, { useState, useEffect } from "react";
 import { ApiParam, PRIMITIVE_TYPES } from "./ApiParamField";
 import ApiParamInfo from "./ApiParamInfo";
-
 import styles from "./styles.module.css";
 
 export interface ApiResponse {
   status: number;
-  description: string;
+  description: string | undefined;
   body?: ApiParam;
 }
 
 export const buildResponse = (field: ApiParam) => {
-  if (PRIMITIVE_TYPES.includes(field?.type)) {
-    return field?.example;
+  if (!field) {
+    return "";
+  }
+
+  if (PRIMITIVE_TYPES.includes(field.type)) {
+    return field.example || "";
   }
 
   if (field.type === "array") {
-    if (field.field?.type === "oneOf") {
-      return [...field.field.options.map((option) => buildResponse(option))];
-    }
-
     return [buildResponse(field.field)];
   }
 
-  if (field?.type === "record") {
+  if (field.type === "record") {
     return { "{KEY}": buildResponse(field.field) };
   }
 
-  if (field?.type === "object") {
-    return field?.fields?.reduce(
+  if (field.type === "object") {
+    return field.fields?.reduce(
       (obj, objField) => ({
         ...obj,
         [objField.name]: buildResponse(objField),
@@ -38,7 +36,7 @@ export const buildResponse = (field: ApiParam) => {
     );
   }
 
-  if (field?.type === "oneOf") {
+  if (field.type === "oneOf") {
     return buildResponse(field.options[0]);
   }
 
@@ -47,33 +45,51 @@ export const buildResponse = (field: ApiParam) => {
 
 const ApiResponseField = ({
   field,
-  collapsible,
+  isInsideObject = false, // Indicates if this component is inside an object
+  isInsideArray = false, // Indicates if this component is directly inside an array
 }: {
-  field: ApiParam;
-  collapsible?: boolean;
+  field?: ApiParam;
+  isInsideObject?: boolean;
+  isInsideArray?: boolean;
 }) => {
-  const [collapsed, setCollapsed] = useState(!!collapsible);
-  const [expandedIndex, setExpandedIndex] = useState(0);
-
-  const toggleCollapsed = useCallback(
-    () => setCollapsed((collapsed) => !collapsed),
-    []
+  const initialCollapsedState = !(
+    (isInsideObject || isInsideArray) &&
+    field?.type === "object"
   );
 
-  if (PRIMITIVE_TYPES.includes(field?.type)) {
-    const enums =
-      field.type === "string" && field.enum
-        ? `*[${field.enum.join(" | ")}]*`
-        : "";
+  const [collapsed, setCollapsed] = useState(initialCollapsedState);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    // Error 62:9 fixed
+    if ((isInsideObject || isInsideArray) && field?.type === "object") {
+      setCollapsed(false);
+    }
+  }, [isInsideObject, isInsideArray, field]);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+
+  const renderFields = (fields, parentType, isInsideObject, isInsideArray) => {
+    return fields.map((field, index) => (
+      <ApiResponseField
+        key={index}
+        field={field}
+        isInsideObject={isInsideObject || parentType === "object"}
+        isInsideArray={isInsideArray || parentType === "array"}
+      />
+    ));
+  };
+
+  if (!field) {
+    return null;
+  }
+
+  if (PRIMITIVE_TYPES.includes(field.type)) {
     return (
       <div className={styles.field}>
-        <ApiParamInfo
-          param={{
-            ...field,
-            description: [enums, field.description].filter(Boolean).join(" "),
-          }}
-        />
+        <ApiParamInfo param={field} />
       </div>
     );
   }
@@ -82,26 +98,21 @@ const ApiResponseField = ({
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          {field.name &&
-            (collapsible ? (
-              <button
-                type="button"
-                className={styles.groupHeader}
-                onClick={toggleCollapsed}
-              >
-                <ApiParamInfo param={field} />
-              </button>
-            ) : (
-              <div className={styles.groupHeader}>
-                <ApiParamInfo param={{ ...field, type: "" as any }} />
-              </div>
-            ))}
-
-          {collapsed ? null : (
+          <button
+            type="button"
+            className={styles.groupHeader}
+            onClick={toggleCollapsed}
+          >
+            <ApiParamInfo param={field} />
+          </button>
+          {!collapsed && field.fields && (
             <div className={styles.group}>
-              {field.fields?.map((arrayField, index) => (
-                <ApiResponseField key={index} field={arrayField} />
-              ))}
+              {renderFields(
+                field.fields,
+                "object",
+                isInsideObject,
+                isInsideArray
+              )}
             </div>
           )}
         </div>
@@ -113,15 +124,23 @@ const ApiResponseField = ({
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
-          {field.name && (
-            <div className={styles.groupHeader}>
-              <ApiParamInfo param={field} />
+          <button
+            type="button"
+            className={styles.groupHeader}
+            onClick={toggleCollapsed}
+          >
+            <ApiParamInfo param={field} />
+          </button>
+          {!collapsed && field.field && (
+            <div className={styles.group}>
+              <ApiResponseField
+                field={field.field}
+                parentType="array"
+                isInsideArray={true}
+                isInsideObject={isInsideObject}
+              />
             </div>
           )}
-
-          <div className={styles.group}>
-            <ApiResponseField field={field.field} />
-          </div>
         </div>
       </div>
     );
@@ -136,7 +155,6 @@ const ApiResponseField = ({
               <ApiParamInfo param={field} />
             </div>
           )}
-
           <div className={styles.group}>
             <ApiResponseField field={field.field} />
           </div>
@@ -154,7 +172,6 @@ const ApiResponseField = ({
               <ApiParamInfo param={field} />
             </div>
           )}
-
           <div className={styles.group}>
             {field.options.map((fieldParam, index) => (
               <React.Fragment key={index}>
@@ -175,7 +192,6 @@ const ApiResponseField = ({
                       `Option ${index + 1}`}
                   </button>
                 )}
-
                 {expandedIndex === index && (
                   <ApiResponseField key={index} field={fieldParam} />
                 )}
