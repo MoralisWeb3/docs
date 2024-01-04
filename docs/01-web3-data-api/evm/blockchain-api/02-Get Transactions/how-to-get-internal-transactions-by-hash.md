@@ -3,7 +3,7 @@ title: "How to Get Internal Transactions by Hash"
 slug: "../../how-to-get-internal-transactions-by-hash"
 description: "Learn how to get internal transactions by hash using the Moralis Transaction API."
 sidebar_label: "Get internal transactions by hash"
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

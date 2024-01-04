@@ -1,7 +1,7 @@
 ---
 title: "Address Labels"
 slug: "../address-labels"
-sidebar_position: 0
+sidebar_position: 6
 ---
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 

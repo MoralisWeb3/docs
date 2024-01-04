@@ -1,8 +1,8 @@
 ---
-title: "How to Get Internal Transactions by Hash"
-slug: "../../how-to-get-internal-transactions-by-hash"
-description: "Learn how to get internal transactions by hash using the Moralis Transaction API."
-sidebar_label: "Get internal transactions by hash"
+title: "How to Get all Internal Transactions of an address"
+slug: "../../how-to-get-all-internal-transactions-of-an-address"
+description: "Learn how to get internal transactions of an address using the Moralis Transaction API."
+sidebar_label: "Get internal transactions of address"
 sidebar_position: 3
 ---
 
@@ -14,7 +14,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.
 
-## Step 2: Get Internal Transactions by Hash
+## Step 2: Get Internal Transactions
 
 In this tutorial, you will explore how to get and check details of all [internal transactions](/web3-data-api/evm/internal-transactions) using the Moralis Web3 API.
 
@@ -139,17 +139,19 @@ print(result)
 </TabItem>
 </Tabs>
 
-### Step-by-Step Explanation: How to Check Internal Transactions with Hash ID
+### Step-by-Step Explanation: How to Check Internal Transactions
 
 1. **Initialize Moralis**: Using your unique API key, initialize Moralis in your preferred programming language - such as JavaScript, TypeScript, or Python. This foundational step establishes the connection with Moralis services.
 
-2. **Specify the Wallet Address**: Identify the wallet address for which you intend to retrieve internal transactions by hash ID. This address is directly associated with the transactions you aim to explore.
+2. **Specify the Wallet Address**: Identify the wallet address for which you intend to retrieve internal transactions. This address is directly associated with the transactions you aim to explore.
 
 3. **Set Blockchain**: Define the blockchain on which the transactions occurred. Specify the appropriate chain parameter, such as "eth" for Ethereum, ensuring accurate retrieval of relevant data.
 
-4. **Extract Transaction by Hash ID**: Utilize the `getInternalTransactions` endpoint to retrieve details of the specified transaction. This may encompass vital information such as sender, receiver, amount, and timestamp.
+4. **Extract Transactions from Wallet**: Utilize the `getWalletTransactions` endpoint to retrieve details of all transaction. This may encompass vital information such as sender, receiver, amount, and timestamp.
 
-5. **Print or Process Hash IDs**: Once internal transactions are fetched, print the extracted hash IDs or process them based on your specific requirements. This step is crucial for developers who want to integrate this functionality into their applications.
+5. **Include Internal Transactions**: Specify the parameter `include` with the value `internal_transactions`.
+
+5. **Print Results**: Once internal transactions are fetched, print the response or process it based on your specific requirements.
 
 ## Step 3: Run the Script
 

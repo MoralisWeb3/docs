@@ -3,7 +3,7 @@ title: "How to Get Transaction Hash"
 slug: "../../how-to-find-transaction-hash-id-on-blockchain"
 description: "Learn how to get transaction content by a given transaction hash using the Moralis API."
 sidebar_label: "Get a transaction by hash"
-sidebar_position: 5
+sidebar_position: 1
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
