@@ -1,7 +1,7 @@
 ---
-title: "How to get a transaction by transaction hash"
-slug: "../../how-to-get-a-transaction-by-transaction-hash"
-description: "Learn how to get a transaction content by a given transaction hash with Moralis Transaction API."
+title: "How to Get Transaction Hash"
+slug: "../../how-to-find-transaction-hash-id-on-blockchain"
+description: "Learn how to get transaction content by a given transaction hash using the Moralis API."
 sidebar_label: "Get a transaction by hash"
 sidebar_position: 5
 ---
@@ -10,15 +10,30 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
-## Step 1: Setup Moralis
+## Step 1: Set Up Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.
 
-## Step 2: Get a transaction by transaction hash
+## Step 2: Get Blockchain Transaction Hash
 
-In order to get a transaction by hash, Moralis provides you a [getTransaction](/web3-data-api/evm/reference/get-transaction) endpoint to do so.
+In this tutorial, you will explore how to check transaction details by hash ID using the Moralis Web3 API.
 
-Here you'll need two parameters: `transactionHash` and `chain`.
+Whether you want to check, get, or confirm a transaction hash ID, this guide provides essential insights and code examples. Our script, written in JavaScript, TypeScript, and Python, demonstrates finding a transaction by hash ID on a blockchain using Moralis' [getTransaction](/web3-data-api/evm/reference/get-transaction) endpoint.
+
+The guide focuses on filtering transactions to identify a particular transaction by its hash ID. This method is vital for blockchain developers needing to track or confirm specific transactions.
+
+The guide concludes by emphasizing the effectiveness and simplicity of Moralis' API for blockchain queries, making it a valuable tool for accurate and quick transaction identification on the blockchain.
+
+:::tip
+If you don't have the transaction hash, you can use the [getWalletTransactions](/web3-data-api/evm/how-to-get-all-transactions-of-an-address) endpoint to find it. In the provided example response, you can easily find the transaction hash within the `hash` field.
+Alternatively, you can use [Etherscan](https://etherscan.io/). On Etherscan, selecting any transaction reveals the Transaction Hash prominently at the top of the page.
+:::
+
+### Full Example Script
+
+Below is the complete script that will serve as our basis for retrieving the blockchain transaction with the hash ID.
+
+Here, you'll need two parameters: `transactionHash` and `chain`.
 
 Once you've obtained both the `transactionHash` and `chain`, you can copy the following code:
 
@@ -29,28 +44,36 @@ import TabItem from '@theme/TabItem';
   <TabItem value="javascript" label="index.js (JavaScript)" default>
 
 ```javascript index.js
+// Import the Moralis library and EvmChain module
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
+// Define the main function to run the application
 const runApp = async () => {
+  // Initialize Moralis with your API key and other configurations
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
 
+  // Specify the transaction hash to retrieve details
   const transactionHash =
     "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
 
+  // Specify the blockchain (Ethereum in this case)
   const chain = EvmChain.ETHEREUM;
 
+  // Fetch details of the specified transaction using the Moralis API
   const response = await Moralis.EvmApi.transaction.getTransaction({
     transactionHash,
     chain,
   });
 
+  // Log the response details to the console in JSON format
   console.log(response.toJSON());
 };
 
+// Execute the application by calling the main function
 runApp();
 ```
 
@@ -58,28 +81,36 @@ runApp();
 <TabItem value="typescript" label="index.ts (TypeScript)">
 
 ```typescript index.ts
+// Import Moralis library and EvmChain module from the specified paths
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const runApp = async () => {
+// Define the main function to run the application
+const runApp = async (): Promise<void> => {
+  // Initialize Moralis with your API key and other configurations
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
     // ...and any other configuration
   });
 
+  // Specify the transaction hash to retrieve details
   const transactionHash =
     "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875";
 
+  // Specify the blockchain (Ethereum in this case)
   const chain = EvmChain.ETHEREUM;
 
+  // Fetch details of the specified transaction using the Moralis API
   const response = await Moralis.EvmApi.transaction.getTransaction({
     transactionHash,
     chain,
   });
 
+  // Log the response details to the console in JSON format
   console.log(response.toJSON());
 };
 
+// Execute the application by calling the main function
 runApp();
 ```
 
@@ -87,27 +118,44 @@ runApp();
 <TabItem value="python" label="index.py (Python)">
 
 ```python index.py
+# Import the necessary module from the Moralis library
 from moralis import evm_api
 
+# Specify your Moralis API key for authentication
 api_key = "YOUR_API_KEY"
 
+# Define parameters, including the transaction hash and blockchain (Ethereum in this case)
 params = {
     "transaction_hash": "0xaae93882e8a9fe9ff30151853db20e4cd161940757a01744465ab83b751c5875",
     "chain": "eth",
 }
 
+# Use the Moralis API to fetch details of the specified transaction
 result = evm_api.transaction.get_transaction(
     api_key=api_key,
     params=params,
 )
 
+# Print the result, which contains information about the transaction
 print(result)
 ```
 
 </TabItem>
 </Tabs>
 
-## Step 3: Run the script
+### Step-by-Step Explanation: How to Get and Check Transaction by Hash ID
+
+1. **Initialize Moralis**: Start by initializing Moralis in your preferred programming language (JavaScript, TypeScript, or Python) using your unique API key.
+
+2. **Specify Transaction Hash**: Identify the transaction you want to explore by specifying its hash ID. This alphanumeric code uniquely represents a transaction on the blockchain.
+
+3. **Set Blockchain Chain**: Define the blockchain network on which the transaction occurred. For instance, for Ethereum, the chain parameter would be set to "eth."
+
+4. **Fetch Transaction Details**: Utilize the Moralis API's `get_transaction` or similar endpoint to retrieve details of the specified transaction. This may include information such as sender, receiver, amount, and timestamp.
+
+5. **Print or Process Results**: Print the fetched results or process them as needed for your application. This step is crucial for developers who want to integrate this functionality into their projects.
+
+## Step 3: Run the Script
 
 import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
@@ -156,18 +204,18 @@ In your terminal, you should see the following JSON response:
 }
 ```
 
-Congratulations 🥳 you just got the transaction content of a transaction by its transaction hash with only a few lines of code using the Moralis Transaction API!
+Congratulations 🥳! You have successfully retrieved a blockchain transaction with hash ID using the Moralis [Wallet API](https://moralis.io/api/wallet/).
 
-## Youtube Video
+## Video Tutorial: How to Get Transaction Content By Hash ID Using Next.js & Node.js
 
-https://www.youtube.com/watch?v=AbGDqxtL6XM
+For a visual guide, check out our YouTube tutorial:
+
+[Watch the Tutorial](https://www.youtube.com/watch?v=AbGDqxtL6XM)
+
+## Get 24/7 Developer Support
+
+Should you encounter any challenges while following this tutorial, our community engineers are here to assist you. Reach out to us on [Discord](https://moralis.io/discord) or in our [forum](https://forum.moralis.io) to receive 24/7 developer support. Your success is our priority!
 
 ## API Reference
 
-If you want to know more details on the endpoint and optional parameters, check out:
-
-- [getTransaction](/web3-data-api/evm/reference/get-transaction)
-
-## Support
-
-If you face any trouble following the tutorial, feel free to reach out to our community engineers in our [Discord](https://moralis.io/discord) or [Forum](https://forum.moralis.io) to get 24/7 developer support.
+If you want to explore more details about other blockchain endpoints and optional parameters, refer to the [API Reference](/web3-data-api/evm/reference#blockchain-api).
