@@ -8,11 +8,15 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
+Internal transactions in the context of blockchain refer to transactions that occur between smart contracts rather than involving the transfer of funds between external addresses. Unlike regular transactions initiated by users, internal transactions are interactions between different functionalities within the blockchain network.
+
 Internal transactions on the Ethereum ecosystem are transactions that occur within a contract, as opposed to transactions that are initiated by an external EVM address.
 
 These transactions are initiated by the contract itself when certain events or conditions are met, and they can be used to transfer Ether or other assets from one part of the contract to another (as well as external addresses).
 
 One transaction on a smart contract can lead to many internal transactions that interact with different smart contracts or distribute value to several web3 wallets through an airdrop.
+
+By default, when fetching transaction details using Moralis API, internal transactions may not be included in the response. This default behavior is designed to provide a more streamlined response that focuses on external transactions.
 
 ## What chains currently support Internal Transactions through the API?
 
