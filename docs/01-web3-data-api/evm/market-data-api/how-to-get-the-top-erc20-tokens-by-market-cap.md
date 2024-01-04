@@ -16,7 +16,7 @@ Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-yo
 
 ## Step 2: Get The Top ERC20 Tokens By Market Cap
 
-In order to get the top ERC20 tokens by market cap, Moralis provides you with a [getTopERC20TokensByMarketCap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top ERC20 tokens by market cap, Moralis provides you with a [getTopERC20TokensByMarketCap](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap) endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -163,7 +163,7 @@ Congratulations 🥳 you just got the top ERC20 tokens by market cap using Marke
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopERC20TokensByMarketCap](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)
+- [getTopERC20TokensByMarketCap](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap)
 
 ## Support
 
