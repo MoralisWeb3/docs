@@ -15,4 +15,4 @@ Transaction labeling can be found on the following two endpoints:
 - [Get decoded transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
 - [Get decoded transaction by hash](/web3-data-api/evm/reference/get-decoded-transaction)
 
-[Head over to our docs](/web3-data-api/evm/transaction-labelling) for more information about how this works.
+[Head over to our docs](/web3-data-api/evm/resources/transaction-labelling) for more information about how this works.

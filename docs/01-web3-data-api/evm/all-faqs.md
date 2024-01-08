@@ -5,7 +5,7 @@ description: "Discover quick answers to frequently asked questions about our Web
 ---
 
 For immediate support and insights, our FAQ section provides concise answers and resources:
-- [Explore Web3 Data API Resources and FAQs](/web3-data-api/evm/resources)
+- [Explore Web3 Data API Resources and FAQs](/resources)
 - [Explore Streams API Resources and FAQs](/streams-api/evm/faq)
 
 If your question remains unanswered, or you require personalized assistance, please reach out to our customer support team for further help:

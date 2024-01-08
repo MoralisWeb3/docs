@@ -16,7 +16,7 @@ Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-yo
 
 ## Step 2: Get Internal Transactions
 
-In this tutorial, you will explore how to get and check details of all [internal transactions](/web3-data-api/evm/resources/internal-transactions) using the Moralis Web3 API.
+In this tutorial, you will explore how to get and check details of all [internal transactions](/web3-data-api/evm/internal-transactions) using the Moralis Web3 API.
 
 :::tip
 If you don't have the transaction hash, you can use the [getWalletTransactions](/web3-data-api/evm/how-to-get-all-transactions-of-an-address) endpoint to find it. In the provided example response, you can easily find the transaction hash within the `hash` field.
@@ -25,7 +25,7 @@ Alternatively, you can use [Etherscan](https://etherscan.io/). On Etherscan, sel
 
 ### Full Example Script
 
-Our script, written in JavaScript, TypeScript, and Python, demonstrates how to find all [internal transactions](/web3-data-api/evm/resources/internal-transactions) on a blockchain using Moralis' [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions) endpoint. By default, internal transactions will not be included using this endpoint. However, using the `include` parameter with a value of `internal_transactions`, each transaction returned will include an additional `internal_transactions` array containing all internal transactions per transaction.
+Our script, written in JavaScript, TypeScript, and Python, demonstrates how to find all [internal transactions](/web3-data-api/evm/internal-transactions) on a blockchain using Moralis' [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions) endpoint. By default, internal transactions will not be included using this endpoint. However, using the `include` parameter with a value of `internal_transactions`, each transaction returned will include an additional `internal_transactions` array containing all internal transactions per transaction.
 
 Here, you'll need the following parameters: `address`, `chain`, and `include`.
 
