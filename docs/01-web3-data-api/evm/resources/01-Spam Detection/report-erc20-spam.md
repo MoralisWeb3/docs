@@ -1,8 +1,8 @@
 ---
-title: "Report Spam"
-slug: "../../report-nft-spam"
-description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
-sidebar_position: 1
+title: "Report ERC20 Spam"
+slug: "../../evm/report-erc20-spam"
+description: "ERC20 spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
+sidebar_position: 2
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
@@ -13,7 +13,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
-## Step 2: Report spam NFT contracts
+## Step 2: Report spam ERC20 contracts
 
 In order to run smart contract function, Moralis provides you a [contractsReview](/web3-data-api/evm/reference/contracts-review) endpoint to do so.
 
@@ -54,7 +54,7 @@ const runApp = async () => {
           reason,
           contractAddress,
           reportType: "spam",
-          contractType: "NFT",
+          contractType: "ERC20",
         },
       ],
     }
@@ -96,7 +96,7 @@ const runApp = async () => {
           reason,
           contractAddress,
           reportType: "spam",
-          contractType: "NFT",
+          contractType: "ERC20",
         },
       ],
     }
@@ -122,7 +122,7 @@ body = {
             "contract_address": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
             "reason": "My Reason",
             "report_type": "spam",
-            "contract_type": "NFT"
+            "contract_type": "ERC20"
         }
     ]
 }
@@ -155,7 +155,7 @@ In your terminal, you should see the following JSON response:
 { "message": "Submission successful" }
 ```
 
-Congratulations 🥳 You just report spam NFT contracts with just a few lines of code using the Moralis Utils API!
+Congratulations 🥳 You just report spam ERC20 contracts with just a few lines of code using the Moralis Utils API!
 
 ## API Reference
 

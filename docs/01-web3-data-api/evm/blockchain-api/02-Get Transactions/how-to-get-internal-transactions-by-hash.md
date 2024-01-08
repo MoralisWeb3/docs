@@ -18,7 +18,7 @@ Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-yo
 
 In this tutorial, you will explore how to check [internal transaction](/web3-data-api/evm/internal-transactions) details by hash ID using the Moralis Web3 API.
 
-To include [internal transactions](/web3-data-api/evm/internal-transactions) in the API response, you have two options:
+To include [internal transactions](/web3-data-api/evm/resources/internal-transactions) in the API response, you have two options:
 
 1. **Specific Endpoint**: You can use a dedicated endpoint called [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions). This endpoint is designed specifically to retrieve details of internal transactions. By using this endpoint, you can directly fetch information related to internal transactions without the need for additional query parameters.
 

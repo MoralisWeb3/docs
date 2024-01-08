@@ -1,8 +1,8 @@
 ---
 title: "Extensive DEX Support for Enhanced API Functionality"
-slug: "../supported-dexs-token-api"
+slug: "../../evm/supported-dexs-token-api"
 sidebar_label: "Supported DEXs"
-sidebar_position: 5
+sidebar_position: 0
 ---
 
 The [Moralis Token API](/web3-data-api/evm/token-api) seamlessly integrates with leading decentralized exchanges (DEXs) across multiple EVM blockchains, providing comprehensive support for token-related data.
