@@ -127,7 +127,7 @@
     {
       "endpoint": "getMultipleTokenPrices",
       "path": "/erc20/prices",
-      "price": 10,
+      "price": "10 per token",
       "rateLimitCost": 3
     },
     {
