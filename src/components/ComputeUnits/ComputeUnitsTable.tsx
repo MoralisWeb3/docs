@@ -86,7 +86,7 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
 
           if (endpoint === "getMultipleTokenPrices") {
             additionalInfo =
-              "+5, if you add the query parameter include=perecent_change";
+              "+5 per token, if you add the query parameter include=percent_change";
           }
           return (
             <tr key={`${endpoint}-${index}`}>
