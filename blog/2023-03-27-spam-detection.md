@@ -12,4 +12,4 @@ Our latest update adds a new field called **`possible_spam`** to all ERC20s and 
 
 This feature is currently available on our EVM API and will soon be launching on our Streams API 🔥 Stay tuned!
 
-[Check out our docs](/web3-data-api/evm/resource/nft-spam-detection) for more information about this feature including which endpoints it's active on.
+[Check out our docs](/web3-data-api/evm/resources/nft-spam-detection) for more information about this feature including which endpoints it's active on.
