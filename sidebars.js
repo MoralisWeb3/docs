@@ -145,7 +145,7 @@ const sidebars = {
     label: "Resources & FAQs",
     link: {
       type: "generated-index",
-      slug: "../resources",
+      slug: "web3-data-api/evm/resources",
     },
     items: [
       {
