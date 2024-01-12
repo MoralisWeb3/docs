@@ -1,6 +1,6 @@
 ---
 title: "Normalized vs Non-Normalized"
-slug: "../../evm/normalized-vs-non-normalized-metadata"
+slug: "../../normalized-vs-non-normalized-metadata"
 description: "How to find the difference between normalized and non-normalized metadata to know which one suits your needs."
 sidebar_position: 1
 ---

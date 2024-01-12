@@ -23,6 +23,6 @@ This feature is now live across the following EVM endpoints, when using the new 
 * [Get NFT owners by token id](/web3-data-api/evm/reference/get-nft-token-id-owners)
 * [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
 
-For more information about this feature, including how it impacts pricing, [check out our docs](/web3-data-api/evm/resources/nft-image-previews).
+For more information about this feature, including how it impacts pricing, [check out our docs](/web3-data-api/evm/nft-image-previews).
 
 Happy optimizing! ✨

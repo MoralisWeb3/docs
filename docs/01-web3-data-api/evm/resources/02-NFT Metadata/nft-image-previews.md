@@ -1,6 +1,6 @@
 ---
 title: "NFT Image Previews"
-slug: "../../evm/nft-image-previews"
+slug: "../../nft-image-previews"
 description: "All NFTs served through our API include low, medium and high resolution images. Read more about how it works here."
 sidebar_position: 4
 ---
