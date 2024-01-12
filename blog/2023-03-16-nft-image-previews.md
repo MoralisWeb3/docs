@@ -6,7 +6,7 @@ authors:
 tags: [Web3 Data API]
 ---
 
-Time to optimize your NFTs! 
+Time to optimize your NFTs!
 
 All NFTs served through our API now include an optional `media` object that includes `low`, `medium` and `high` resolution thumbnails, along with the original image 🎉
 
@@ -16,7 +16,7 @@ This makes it super easy to build apps and webpages that are optimized for speed
 
 This feature is now live across the following EVM endpoints, when using the new query parameter `media_items=true`:
 
-* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts) 
+* [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
 * [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
 * [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
 * [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)

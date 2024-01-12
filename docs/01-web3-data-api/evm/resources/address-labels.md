@@ -1,13 +1,11 @@
 ---
 title: "Address Labels"
-slug: "../address-labels"
-sidebar_position: 6
+slug: "../../evm/blockchain-api/address-labels"
+sidebar_position: 1
 ---
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
-
-# Address Labels
 
 The Moralis API automatically enriches all transactions, NFT transfers and ERC20 transfers with user-friendly labels for the sender and the receiver. Any transaction or transfer that includes a `to_address` or `from_address` will also include `to_address_label` and `from_address` labels respectively.
 

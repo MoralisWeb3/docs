@@ -1,7 +1,7 @@
 ---
-title: "Normalized vs Non-Normalized NFT Metadata"
+title: "Normalized vs Non-Normalized"
 slug: "../../normalized-vs-non-normalized-metadata"
-description: "Get to know the difference between normalized and non-normalized metadata to know which one suits your needs."
+description: "How to find the difference between normalized and non-normalized metadata to know which one suits your needs."
 sidebar_position: 1
 ---
 
@@ -13,7 +13,7 @@ The Moralis NFT API has the option to take the original source metadata and outp
 
 You'll find a query parameter named `normalizeMetadata` on the endpoints listed below. When this is set to true, we normalize and transform the source metadata into a standardized structure (based on ERC721, CryptoPunks, OpenSea, etc) and output this in a new object called normalized_metadata.
 
-### Endpoints
+## Endpoints
 
 - [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts) - /{address}/nft
 - [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts) - /nft/{address}

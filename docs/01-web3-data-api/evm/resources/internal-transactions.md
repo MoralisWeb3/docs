@@ -1,7 +1,7 @@
 ---
 title: "Internal Transactions"
-slug: "../../internal-transactions"
-sidebar_position: 5
+slug: "../../evm/internal-transactions"
+sidebar_position: 2
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

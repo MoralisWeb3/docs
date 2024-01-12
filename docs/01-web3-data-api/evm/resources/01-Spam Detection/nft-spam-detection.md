@@ -1,8 +1,8 @@
 ---
-title: "Spam Detection"
-slug: "../../nft-spam-detection"
+title: "NFT Spam Detection"
+slug: "../../../evm/nft-spam-detection"
 description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

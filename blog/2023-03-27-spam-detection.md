@@ -6,7 +6,7 @@ authors:
 tags: [Web3 Data API]
 ---
 
-We're excited to announce the launch of our new spam detection feature across our EVM APIs! 
+We're excited to announce the launch of our new spam detection feature across our EVM APIs!
 
 Our latest update adds a new field called **`possible_spam`** to all ERC20s and NFTs. This field returns **`true`** or **`false`**, depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
 
