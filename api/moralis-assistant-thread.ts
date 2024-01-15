@@ -1,5 +1,5 @@
-import OpenAI from "openai";
-
+// import OpenAI from "openai";
+const OpenAI = require("openai");
 const openAiKey = process.env.OPENAI_KEY;
 
 const openai = new OpenAI({
