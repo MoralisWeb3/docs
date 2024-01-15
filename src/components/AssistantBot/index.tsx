@@ -116,7 +116,8 @@ export default function AssistantBot() {
         );
         if (!response.ok) {
           setStatus("Failed to reset. Please reload the page.");
-          throw new Error("Network response was not ok");
+          handleReset();
+          // throw new Error("Network response was not ok");
         }
       }
       await fetchThreadId();
