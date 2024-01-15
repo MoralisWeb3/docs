@@ -1,5 +1,6 @@
 // import { VercelRequest, VercelResponse } from "@vercel/node";
-import OpenAI from "openai";
+// import OpenAI from "openai";
+const OpenAI = require("openai");
 
 const assistantId = process.env.ASSISTANT_ID;
 if (!assistantId) throw new Error("ASSISTANT_ID is missing in env");
