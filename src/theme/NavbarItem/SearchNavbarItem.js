@@ -23,7 +23,7 @@ export default function SearchNavbarItem({ mobile, className }) {
           <SearchBar />
           {/* <ChatGPT /> */}
           {/* <ChatGPTBot /> */}
-          <AssistantBot />
+          {/* <AssistantBot /> */}
         </div>
       </NavbarSearch>
     </>
