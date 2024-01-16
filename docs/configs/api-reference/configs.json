@@ -5252,7 +5252,7 @@
     "getTokenPrice": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get ERC20 token price",
-      "description": "Get the token price denominated in the blockchain's native token and USD. [View supported exchanges here](/web3-data-api/evm/resources/supported-dexs-token-api",
+      "description": "Get the token price denominated in the blockchain's native token and USD. [View supported exchanges here](/web3-data-api/evm/supported-dexs-token-api)",
       "method": "GET",
       "path": "/erc20/:address/price",
       "pathParams": [
