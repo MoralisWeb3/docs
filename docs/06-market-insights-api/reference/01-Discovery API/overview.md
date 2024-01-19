@@ -6,6 +6,14 @@ sidebar_position: 0
 slug: "/market-insights-api/reference/discovery-api/overview"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner
+  customText="Get access to the Discovery API"
+  customButtonText="Contact Sales"
+  customButtonLink="https://moralis.io/api/discovery/"
+/>
+
 The Discovery API provides a comprehensive suite of endpoints designed to uncover new trends, insightful tokens, and hidden gems within the cryptocurrency market. It goes beyond standard market data by analyzing patterns, liquidity movements, buying pressures, and other critical factors that indicate a token's potential.
 
 ## Token Insights
