@@ -13,6 +13,10 @@ import config from "../../../../configs/api-reference/configs.json";
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+<ApiBanner
+  customText="Get access to the Discovery API"
+  customButtonText="Contact Sales"
+  customButtonLink="https://moralis.io/api/discovery/"
+/>
 
 <ApiReference {...config.discovery.getBuyingPressureTokens} />

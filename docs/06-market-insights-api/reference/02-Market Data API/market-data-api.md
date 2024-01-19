@@ -6,6 +6,10 @@ sidebar_position: 0
 slug: "/market-insights-api/reference/market-data-api/overview"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 The **Market Data API** allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers. We're introducing four new endpoints with this launch, including:
 
 ## Top ERC-20 tokens
