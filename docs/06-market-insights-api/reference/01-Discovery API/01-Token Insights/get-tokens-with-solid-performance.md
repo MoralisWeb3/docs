@@ -7,6 +7,8 @@ slug: /market-insights-api/reference/get-tokens-with-solid-performance
 import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
 
+# Get Solid Performance Tokens
+
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner
@@ -14,7 +16,5 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
   customButtonText="Contact Sales"
   customButtonLink="https://moralis.io/api/discovery/"
 />
-
-# Get Solid Performance Tokens
 
 <ApiReference {...config["discovery"].getSolidPerformersTokens}/>
