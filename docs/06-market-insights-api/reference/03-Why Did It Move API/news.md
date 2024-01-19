@@ -11,6 +11,10 @@ import config from "@site/docs/configs/api-reference/configs.json";
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+<ApiBanner
+  customText="Get access to the Why did it move API"
+  customButtonText="Contact Sales"
+  customButtonLink="https://moralis.io/api/why-did-it-move/"
+/>
 
 <ApiReference {...config.market.news} />
