@@ -6,6 +6,14 @@ sidebar_position: 0
 slug: "/market-insights-api/reference/why-did-it-move-api/overview"
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner
+  customText="Get access to the Why did it move API"
+  customButtonText="Contact Sales"
+  customButtonLink="https://moralis.io/api/why-did-it-move/"
+/>
+
 The **Why Did It Move API (WDIM)** is a specialized tool designed to unravel the mystery behind the volatility of tokens and collections, providing users with in-depth insights into the causative factors of market trends.
 
 ## News Endpoint
