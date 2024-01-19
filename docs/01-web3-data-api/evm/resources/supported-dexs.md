@@ -28,57 +28,57 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Ethereum
 
-| Supported DEX(s)     |
-| -------------------- |
-| [Uniswap v3](https://app.uniswap.org/)           |
-| [Uniswap v2](https://uniswap.org/)           |
-| [Sushiswap v2](https://sushi.com/)         |
+| Supported DEX(s)     |  Query Parameter Value |
+| -------------------- | -------------------- |
+| [Uniswap v3](https://app.uniswap.org/)           | uniswapv3 |
+| [Uniswap v2](https://uniswap.org/)           | uniswapv2 |
+| [Sushiswap v2](https://sushi.com/)         | sushiswapv2 |
 
 ### Polygon
 
-| Supported DEX(s)     |
-| -------------------- |
-| [Quickswap v2](https://quickswap.exchange/)         |
-| [Uniswap v3](https://app.uniswap.org/)           |
-| [Uniswap v2](https://uniswap.org/)           |
-| [MM Finance](https://mm.finance/)           |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- | --------------------|
+| [Quickswap v2](https://quickswap.exchange/)         |quickswapv2|
+| [Uniswap v3](https://app.uniswap.org/)           | uniswapv3 |
+| [Uniswap v2](https://uniswap.org/)           |uniswapv2 |
+| [MM Finance](https://mm.finance/)           |mm finance|
 
 ### Binance Smart Chain (BSC)
 
-| Supported DEX(s)     |
-| -------------------- |
-| [PancakeSwap v2](https://pancakeswap.finance/)       |
-| [PancakeSwap v3](https://pancakeswap.finance/v3)       |
-| [PancakeSwap v1](https://pancakeswap.finance/v1)       |
-| [Uniswap v3](https://app.uniswap.org/)           |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- | --------------------|
+| [PancakeSwap v2](https://pancakeswap.finance/)       |pancakeswapv2|
+| [PancakeSwap v3](https://pancakeswap.finance/v3)       |pancakeswapv3|
+| [PancakeSwap v1](https://pancakeswap.finance/v1)       |pancakeswapv1|
+| [Uniswap v3](https://app.uniswap.org/)           |uniswapv3|
 
 ### Avalanche
 
-| Supported DEX(s)     |
-| -------------------- |
-| [TraderJoe](https://www.traderjoexyz.com/)           |
-| [Pangolin](https://pangolin.exchange/)             |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- |--------------------|
+| [TraderJoe](https://www.traderjoexyz.com/)           |traderjoe|
+| [Pangolin](https://pangolin.exchange/)             |pangolin|
 
 ### Fantom Opera
 
-| Supported DEX(s)     |
-| -------------------- |
-| [SpookySwap](https://spookyswap.finance/)         |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- |--------------------|
+| [SpookySwap](https://spookyswap.finance/)         |spookyswap|
 
 ### Cronos
 
-| Supported DEX(s)     |
-| -------------------- |
-| [VVS Finance](https://vvs.finance/)           |
-| [MM Finance](https://mm.finance/)           |
-| [Crodex](https://crodex.exchange/)               |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- |--------------------|
+| [VVS Finance](https://vvs.finance/)           |vvs|
+| [MM Finance](https://mm.finance/)           |mm finance|
+| [Crodex](https://crodex.exchange/)               |crodex|
 
 ### Arbitrum
 
-| Supported DEX(s)     |
-| -------------------- |
-| [Uniswap v3](https://app.uniswap.org/)           |
-| [Camelot V2](https://www.camelotsix.com/)           |
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- |--------------------|
+| [Uniswap v3](https://app.uniswap.org/)           |uniswapv3|
+| [Camelot V2](https://www.camelotsix.com/)           |camelotv2|
 
 
 ### Base
@@ -90,7 +90,7 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | [Aerodrome](https://aerodrome.finance)           |
 | [Baseswap](https://baseswap.fi)           |
 | [PancakeSwap](https://pancakeswap.finance/)           |
-| [Sushiswap](https://sushi.com/)           |
+| [Sushiswap](https://sushi.com/)           |  
 
 
 ## Endpoints DEXs integration
