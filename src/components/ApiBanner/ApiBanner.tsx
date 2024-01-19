@@ -7,7 +7,10 @@ interface ApiBannerProps {
   customButtonLink?: string;
 }
 
-function ApiBanner({ customText, customButtonText, customButtonLink }: ApiBannerProps) {
+function ApiBanner({
+  customText,  
+  customButtonText,
+  customButtonLink }: ApiBannerProps) {
   // Default values
   const text = customText || "Start using this API for your project today.";
   const buttonText = customButtonText || "Get your free API key";
