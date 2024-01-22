@@ -8855,19 +8855,19 @@
         }
       ]
     },
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.events.getContractEvents({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.events.get_contract_events(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
-        }
-      ]
-    },
+    "codeSamples": [
+      {
+        "language": "node",
+        "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.events.getContractEvents({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+        "name": "Moralis NodeJS SDK"
+      },
+      {
+        "language": "python",
+        "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.events.get_contract_logs(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+        "name": "Moralis Python SDK"
+      }
+    ]
+  },
 
   "block": {
     "getBlock": {
