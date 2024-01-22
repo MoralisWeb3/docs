@@ -405,6 +405,12 @@ const config = {
   },
   plugins: [
     [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'GTM-WD3V6LS6',
+      },
+    ],
+    [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
     ],
