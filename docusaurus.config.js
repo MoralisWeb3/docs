@@ -407,7 +407,7 @@ const config = {
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'GTM-WD3V6LS6',
+        trackingID: 'GTM-T5T6X6FS',
       },
     ],
     [
