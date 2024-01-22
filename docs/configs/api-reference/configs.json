@@ -8727,28 +8727,26 @@
         }
       ]
     },
-    "getContractEvents": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get events by contract",
-      "description": "Get events for a contract ordered by block number in descending order. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Events/getContractEvents).",
-      "method": "POST",
-      "path": "/:address/events",
-      "pathParams": [
-        {
-          "name": "address",
-          "description": "The address of the contract",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
+
+    "getContractEvents":{
+      "apiHost":"https://deep-index.moralis.io/api/v2.2",
+      "summary":"Get events by contract",
+      "description":"Get events for a contract ordered by block number in descending order. [Try it with Swagger](https://deep-index.moralis.io/api-docs-2.1/#/Events/getContractEvents).",
+      "method":"POST",
+      "path":"/:address/events",
+      "pathParams":[{
+        "name":"address",
+        "description":"The address of the contract",
+        "required":true,
+        "type":"string"
+        }],
+        "queryParams":[{
+          "name":"chain",
+          "description":"The chain to query",
+          "required":false,
+          "example":"eth",
+          "type":"string",
+          "enum":[
             "eth",
             "0x1",
             "goerli",
@@ -8773,78 +8771,90 @@
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
             "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
           ]
         },
         {
-          "name": "from_block",
-          "description": "The minimum block number from which to get the logs\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "number"
+          "name":"from_block",
+          "description":"The minimum block number from which to get the logs\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required":false,
+          "type":"number"
         },
         {
-          "name": "to_block",
-          "description": "The maximum block number from which to get the logs.\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
-          "required": false,
-          "type": "number"
+          "name":"to_block",
+          "description":"The maximum block number from which to get the logs.\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required":false,
+          "type":"number"
         },
         {
-          "name": "from_date",
-          "description": "The start date from which to get the logs (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "string"
+          "name":"from_date",
+          "description":"The start date from which to get the logs (format in seconds or datestring accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required":false,
+          "type":"string"
         },
         {
-          "name": "to_date",
-          "description": "Get the logs up to this date (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
-          "type": "string"
+          "name":"to_date",
+          "description":"Get the logs up to this date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "type":"string"
         },
         {
-          "name": "topic",
-          "description": "The topic of the event",
-          "required": true,
-          "type": "string"
+          "name":"topic",
+          "description":"The topic of the event",
+          "required":true,
+          "type":"string"
         },
         {
-          "name": "offset",
-          "description": "offset",
-          "required": false,
-          "type": "number"
+          "name":"offset",
+          "description":"offset",
+          "required":false,
+          "type":"number"
         },
         {
-          "name": "limit",
-          "description": "The desired page size of the result.",
-          "required": false,
-          "type": "number"
+          "name":"limit",
+          "description":"The desired page size of the result.",
+          "required":false,
+          "type":"number"
         },
         {
-          "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "type": "string"
+          "name":"order",
+          "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+          "required":false,
+          "example":"DESC",
+          "type":"string",
+          "enum":[
+            "ASC",
+            "DESC"
+          ]
+        },
+        {
+          "name":"cursor",
+          "description":"The cursor returned in the previous response (used for getting the next page).",
+          "type":"string"
         }
       ],
-      "bodyParam": {
-        "required": true,
-        "description": "ABI of the specific event",
-        "type": "json"
-      },
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns a collection of events by topic"
+      "bodyParam":{
+        "required":true,
+        "description":"ABI of the specific event",
+        "type":"json"},
+        "responses":[{
+          "status":"200",
+          "description":"Returns a collection of events by topic"
         }
-      ],
+      ]
+    },
       "codeSamples": [
         {
           "language": "node",
@@ -8857,8 +8867,8 @@
           "name": "Moralis Python SDK"
         }
       ]
-    }
-  },
+    },
+
   "block": {
     "getBlock": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
