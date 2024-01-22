@@ -407,7 +407,7 @@ const config = {
     [
       '@docusaurus/plugin-google-gtag',
       {
-        containerId: 'GTM-T5T6X6FS',
+        trackingID: 'GTM-T5T6X6FS',
         anonymizeIP: true,
       },
     ],
