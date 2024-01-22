@@ -346,7 +346,7 @@ function removeEmpty(jsonData) {
  * @param auth
  * @returns
  */
-export const injectParamsToCode = (
+ export const injectParamsToCode = (
   code: string,
   lang: string,
   params: any,
@@ -356,41 +356,30 @@ export const injectParamsToCode = (
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   const fixedBody = bodyFixer(code, body);
+
+  const formattedParams = removeEmpty({
+    ...formatParamsByLang({ ...query }, lang),
+    ...formatParamsByLang({ ...path }, lang),
+    ...formatParamsByLang({ ...fixedBody }, lang),
+    ...customNodeSdkBody(code, fixedBody),
+    ...(network === "aptos" ? { network: aptosNetwork } : {}),
+  });
+
+  // Handle special case for 'getContractEvents' where 'address' is a path param
+  if (code.includes("getContractEvents") && path.address) {
+    formattedParams.address = path.address;
+  }
+
   switch (lang) {
     case "node":
       return code
-        .replace(
-          "{}",
-          stringifyJSON(
-            removeEmpty({
-              ...formatParamsByLang({ ...query }, lang),
-              ...formatParamsByLang({ ...path }, lang),
-              ...formatParamsByLang({ ...fixedBody }, lang),
-              ...customNodeSdkBody(code, fixedBody),
-              ...(network === "aptos" ? { network: aptosNetwork } : {}),
-            }),
-            true
-          ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-        )
+        .replace("{}", stringifyJSON(formattedParams, true).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`))
         .replace(/YOUR_API_KEY/, auth);
     case "python":
     default:
       return code
-        .replace(
-          "{}",
-          stringifyJSON(
-            removeEmpty({
-              ...formatParamsByLang({ ...query }, lang),
-              ...formatParamsByLang({ ...path }, lang),
-              ...(network === "aptos" ? { network: aptosNetwork } : {}),
-            }),
-            true
-          )
-        )
-        .replace(
-          "[]",
-          stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
-        )
+        .replace("{}", stringifyJSON(formattedParams, true))
+        .replace("[]", stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true))
         .replace("true", "True")
         .replace("false", "False")
         .replace(/YOUR_API_KEY/, auth);
@@ -426,17 +415,21 @@ const ApiExamples = ({
   path,
   codeSamples,
   aptosNetwork,
-}: Pick<
-  ApiReferenceProps,
-  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
->) => {
+}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork">) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
   const { network } = usePageState();
   const history = useHistory();
+
+  // Ensure that path parameters include 'address' if required
+  const pathParams = {
+    ...values.path,
+    ...(path.includes('/:address') && !values.path.address ? { address: '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB' } : {}),
+  };
+
   const defaultPathParams = useMemo(
-    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
-    []
+    () => mapValues(pathParams, (_: any, key: number) => `:${key}`),
+    [pathParams]
   );
 
   const formattedValuesForQueryPath = useMemo(() => {
@@ -451,14 +444,23 @@ const ApiExamples = ({
   useEffect(() => {
     const newQueryParams = objectToQueryParams(formattedValuesForQueryPath);
     history.replace({ search: newQueryParams });
-  }, [formattedValuesForQueryPath]);
+  }, [formattedValuesForQueryPath, history]);
 
   return (
     <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
       {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code = "" } =
-          codeSamples?.find((sample) => sample?.language === lang) ?? {};
+        const { code = "" } = codeSamples?.find((sample) => sample?.language === lang) ?? {};
         const auth = token.length > 0 ? token : "YOUR_API_KEY";
+
+        const builtPath = new Path(path).build({
+          ...defaultPathParams,
+          ...omitBy(pathParams, (value) => value == null),
+        }, {
+          urlParamsEncoding: "uriComponent",
+        });
+
+        const url = apiHost + (builtPath || "") + qs.stringify(values.query || {}, { addQueryPrefix: true });
+
         return (
           <TabItem key={index} value={lang} label={title}>
             <CodeBlock className={`language-${langCode}`}>
@@ -468,7 +470,7 @@ const ApiExamples = ({
                       injectParamsToCode(
                         code,
                         lang,
-                        values,
+                        { ...values, path: pathParams },
                         auth,
                         network,
                         aptosNetwork
@@ -477,27 +479,9 @@ const ApiExamples = ({
                   ])
                 : template({
                     method,
-                    url: [
-                      apiHost,
-                      new Path(path).build(
-                        {
-                          ...defaultPathParams,
-                          ...omitBy(values.path, (value) => value == null),
-                        },
-                        {
-                          urlParamsEncoding: "uriComponent",
-                        }
-                      ),
-                      qs.stringify(values.query || {}, {
-                        addQueryPrefix: true,
-                      }),
-                    ].join(""),
+                    url: url,
                     auth: auth,
-                    body:
-                      // temporary fix for runContractFunction
-                      path === "/:address/function"
-                        ? values.body
-                        : filterOutEmpty(values.body),
+                    body: filterOutEmpty(values.body),
                     authField: "X-API-Key",
                   })}
             </CodeBlock>
