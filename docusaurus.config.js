@@ -405,6 +405,12 @@ const config = {
   },
   plugins: [
     [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-T5T6X6FS',
+      },
+    ],
+    [
       "./src/plugins/docusaurus-plugin-segment",
       { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
     ],
@@ -440,10 +446,10 @@ const config = {
       src: "/custom.js",
       async: true,
     },
-  {
-    src: "/js/index.js",
-    async: true,
-  },
+  ],
+
+  clientModules: [
+    require.resolve('./src/noscript-gtm.js'),
   ],
 };
 
