@@ -407,7 +407,7 @@ const config = {
     [
       '@docusaurus/plugin-google-tag-manager',
       {
-        containerId: 'GTM-T5T6X6FS',
+        containerId: 'GTM-WD3V6LS6',
       },
     ],
     [
