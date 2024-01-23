@@ -1,6 +1,6 @@
 // src/noscript-gtm.js
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var noscript = document.createElement("noscript");
   var iframe = document.createElement("iframe");
 
