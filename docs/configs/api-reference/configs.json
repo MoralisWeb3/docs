@@ -14657,8 +14657,81 @@
           "name": "Moralis Python SDK"
         }
       ]
-    }
-  },
+    },
+    "getTokenMetadata":{
+      "apiHost":"https://solana-gateway.moralis.io",
+      "summary":"Get Token metadata",
+      "description":"Get the global token metadata for a given network and contract (mint, standard, name, symbol, metaplex).",
+      "method":"GET",
+      "path":"/token/:network/:address/metadata",
+      "pathParams":[{
+        "name":"network",
+        "description":"The network to query",
+        "required":true,
+        "type":"string"
+        },
+        {
+          "name":"address",
+          "description":"The address of the contract",
+          "required":true,
+          "type":"string"
+          }],
+          "queryParams":[],
+          "responses":[{
+            "status":"200",
+            "description":"",
+            "body":{
+              "type":"object",
+              "fields":[{
+                "name":"mint",
+                "type":"string"
+                },
+                {
+                  "name":"standard",
+                  "type":"string"
+                  },
+                  {
+                    "name":"name",
+                    "type":"string"
+                    },
+                    {
+                      "name":"symbol",
+                      "type":"string"
+                      },
+                      {
+                        "name":"metaplex",
+                        "type":"object",
+                        "properties":{
+                          "metadataUri":{
+                            "type":"string"
+                            },
+                            "masterEdition":{
+                              "type":"boolean"
+                              },
+                              "isMutable":{
+                                "type":"boolean"
+                                },
+                                "primarySaleHappened":{
+                                  "type":"number"
+                                  },
+                                  "sellerFeeBasisPoints":{
+                                    "type":"number"
+                                    },
+                                    "updateAuthority":{
+                                      "type":"string"
+                                      }},
+                                      "required":["metadataUri","masterEdition","isMutable","primarySaleHappened","sellerFeeBasisPoints","updateAuthority"]
+                                      }
+                                      ]
+                                      }
+                                      },
+                                      {
+                                        "status":"400",
+                                        "description":""
+                                        }
+                                        ]
+                                        }
+                                      },
   "aptos-web3": {
     "getNFTsByIds": {
       "apiHost": "https://mainnet-aptos-api.moralis.io",
