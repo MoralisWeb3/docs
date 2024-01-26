@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Get token metadata
-slug: /web3-data-api/solana/reference/get-sol-nft-metadata
+slug: /web3-data-api/solana/reference/get-token-metadata
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
