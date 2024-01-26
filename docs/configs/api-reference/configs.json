@@ -5119,6 +5119,177 @@
     }
   },
   "token": {
+    "getTokenPairOhlc":{
+      "apiHost":"https://deep-index.moralis.io/api/v2.2",
+      "summary":"Get OHLC candle sticks of token pair",
+      "description":"Get OHLC candle sticks of token pair.",
+      "method":"GET",
+      "path":"/:token0/:token1/ohlc",
+      "pathParams":[{
+        "name":"token0",
+        "description":"The base token address",
+        "required":true,
+        "example":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "type":"string"
+        },
+        {
+          "name":"token1",
+          "description":"The quote token address",
+          "required":true,
+          "example":"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "type":"string"
+          }],
+          "queryParams":[{
+            "name":"chain",
+            "description":"The chain to query",
+            "required":false,
+            "example":"eth",
+            "type":"string",
+            "enum":[
+              "eth",
+              "0x1",
+              "goerli",
+              "0x5",
+              "sepolia",
+              "0xaa36a7",
+              "polygon",
+              "0x89",
+              "mumbai",
+              "0x13881",
+              "bsc",
+              "0x38",
+              "bsc testnet",
+              "0x61",
+              "avalanche",
+              "0xa86a",
+              "fantom",
+              "0xfa",
+              "palm",
+              "0x2a15c308d",
+              "cronos",
+              "0x19",
+              "arbitrum",
+              "0xa4b1",
+              "chiliz",
+              "0x15b38",
+              "chiliz testnet",
+              "0x15b32",
+              "gnosis","0x64",
+              "gnosis testnet",
+              "0x27d8",
+              "base",
+              "0x2105",
+              "base testnet",
+              "0x14a33",
+              "optimism",
+              "0xa"
+              ]},
+              {
+                "name":"exchange",
+                "description":"The factory name or address of the token exchange",
+                "required":true,
+                "type":"string"
+                },
+                {
+                  "name":"interval",
+                  "description":"The interval of the ohlc candles",
+                  "required":true,
+                  "example":"1h",
+                  "type":"string",
+                  "enum":["10m","30m","1h","4h","12h","1d","7d","30d"]
+                },
+                  {
+                    "name":"price_format",
+                    "description":"The price format of the ohlc candles (usd, native)",
+                    "required":true,
+                    "type":"string"
+                    },
+                    {
+                      "name":"from_date",
+                      "description":"The date from where to get the ohlc candles (format in seconds or datestring accepted by momentjs).",
+                      "required":true,
+                      "type":"string"
+                      },
+                      {
+                        "name":"to_date",
+                        "description":"Get ohlc candles up until this date (format in seconds or datestring accepted by momentjs).",
+                        "required":true,
+                        "type":"string"
+                        },
+                        {
+                          "name":"limit",
+                          "description":"The maximum number of ohlc candles to return (max 100)",
+                          "required":false,
+                          "type":"number"
+                          },
+                          {
+                            "name":"cursor",
+                            "description":"The cursor returned in the previous response (used for getting the next page).",
+                            "required":false,
+                            "type":"string"
+                            }
+                            ],
+                            "responses":[{
+                              "status":"200",
+                              "description":"Returns ohlc candles for the token pair.",
+                              "body":{
+                                "type":"object",
+                                "fields":[{
+                                  "name":"page",
+                                  "type":"number",
+                                  "description":"The current page of the result",
+                                  "example":"2"
+                                  },
+                                  {
+                                    "name":"page_size",
+                                    "type":"number",
+                                    "description":"The number of results per page",
+                                    "example":"100"
+                                    },
+                                    {
+                                      "name":"cursor",
+                                      "type":"string",
+                                      "description":"The cursor to get to the next page"
+                                      },
+                                      {
+                                        "name":"result",
+                                        "type":"object",
+                                        "required":["pair_address","pair_label","exchange","quote_currency","interval","candles"],
+                                        "properties":{
+                                          "pair_address":{
+                                            "type":"string",
+                                            "description":"The address of the pair",
+                                            "example":"0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852"},
+                                            "pair_label":{
+                                              "type":"string",
+                                              "description":"The label of the pair",
+                                              "example":"WETH/USDT"
+                                              },
+                                              "exchange":{
+                                                "type":"string",
+                                                "description":"The exchange of the pair",
+                                                "example":"Uniswap v2"
+                                                },
+                                                "quote_currency":{
+                                                  "type":"string",
+                                                  "description":"The quote currency of the pair",
+                                                  "example":"USD"
+                                                  },
+                                                  "interval":{
+                                                    "type":"string",
+                                                    "description":"The interval of the candles",
+                                                    "example":"1h"
+                                                    },
+                                                    "candles":{
+                                                      "$ref":"#/components/schemas/ohlcCandles"
+                                                      }
+                                                      }
+                                                      }
+                                                      ]
+                                                      }
+                                                      }
+                                                      ]
+                                                    },
     "getMultipleTokenPrices": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get Multiple ERC20 token prices",
