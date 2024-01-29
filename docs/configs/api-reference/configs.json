@@ -5129,14 +5129,14 @@
         "name":"token0",
         "description":"The base token address",
         "required":true,
-        "example":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "example":"0x6982508145454ce325ddbe47a25d4ec3d2311933",
         "type":"string"
         },
         {
           "name":"token1",
           "description":"The quote token address",
           "required":true,
-          "example":"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "example":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
           "type":"string"
           }],
           "queryParams":[{
@@ -5188,13 +5188,14 @@
                 "name":"exchange",
                 "description":"The factory name or address of the token exchange",
                 "required":true,
-                "type":"string"
+                "type":"string",
+                "example":"uniswapv2"
                 },
                 {
                   "name":"interval",
                   "description":"The interval of the ohlc candles",
                   "required":true,
-                  "example":"1h",
+                  "example":"1d",
                   "type":"string",
                   "enum":["10m","30m","1h","4h","12h","1d","7d","30d"]
                 },
@@ -5202,19 +5203,22 @@
                     "name":"price_format",
                     "description":"The price format of the ohlc candles (usd, native)",
                     "required":true,
-                    "type":"string"
+                    "type":"string",
+                    "example":"usd"
                     },
                     {
                       "name":"from_date",
                       "description":"The date from where to get the ohlc candles (format in seconds or datestring accepted by momentjs).",
                       "required":true,
-                      "type":"string"
+                      "type":"string",
+                      "example":"2023-01-01"
                       },
                       {
                         "name":"to_date",
                         "description":"Get ohlc candles up until this date (format in seconds or datestring accepted by momentjs).",
                         "required":true,
-                        "type":"string"
+                        "type":"string",
+                        "example":"2024-01-01"
                         },
                         {
                           "name":"limit",
