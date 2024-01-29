@@ -530,7 +530,9 @@
               "chiliz",
               "0x15b38",
               "base",
-              "0x2105"
+              "0x2105",
+              "op mainnet",
+              "0xa"
             ]
           }
         }
@@ -695,7 +697,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -834,7 +840,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -1160,7 +1170,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -1481,7 +1495,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -1752,7 +1770,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -1920,7 +1942,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -2244,7 +2270,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -2558,7 +2588,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -2821,7 +2855,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -3092,7 +3130,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -3340,7 +3382,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -3570,7 +3616,11 @@
               "base",
               "0x2105",
               "base testnet",
-              "0x14a33"
+              "0x14a33",
+              "op mainnet",
+              "0xa",
+              "op sepolia",
+              "0xaa37dc"
               ]
               }
               ],
@@ -3706,7 +3756,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -3993,7 +4047,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -4247,7 +4305,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -4561,7 +4623,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -4649,7 +4715,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -4786,7 +4856,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -4944,7 +5018,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -5063,7 +5141,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -5169,7 +5251,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -5307,7 +5393,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -5526,7 +5616,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -5679,7 +5773,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -5919,7 +6017,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6073,7 +6175,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6235,7 +6341,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6341,7 +6451,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6586,7 +6700,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -6687,7 +6805,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6777,7 +6899,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -6957,7 +7083,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -7293,7 +7423,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -7766,7 +7900,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -7847,7 +7985,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -8168,7 +8310,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -8565,7 +8711,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -8785,7 +8935,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -8919,7 +9073,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -9349,7 +9507,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -9477,7 +9639,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -9603,7 +9769,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -9767,7 +9937,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         }
       ],
@@ -10083,7 +10257,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {
@@ -10179,7 +10357,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "op mainnet",
+            "0xa",
+            "op sepolia",
+            "0xaa37dc"
           ]
         },
         {

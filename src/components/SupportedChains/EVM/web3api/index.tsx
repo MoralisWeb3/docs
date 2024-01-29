@@ -123,6 +123,20 @@ const EVMChainData = () => {
       EvmChain: "EvmChain.BASE_GOERLI",
       Type: "Testnet",
     },
+    {
+      Name: "OP Mainnet",
+      "Chain Id (Int)": "10",
+      "Chain Id (Hex)": "0xa",
+      EvmChain: "EvmChain.OP",
+      Type: "Mainnet",
+    },
+    {
+      Name: "OP Sepolia",
+      "Chain Id (Int)": "11155420",
+      "Chain Id (Hex)": "0xaa37dc",
+      EvmChain: "EvmChain.OP_SEPOLIA",
+      Type: "Mainnet",
+    },
   ];
 
   return <Table headers={headers} data={data} />;

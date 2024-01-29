@@ -165,6 +165,20 @@ const EVMStreamChainData = () => {
       "Blocks until confirmed": "100",
       Note: "🔥 NEW",
     },
+    {
+      Name: "OP Mainnet",
+      "Chain Id (Hex)": "0xa",
+      "Internal Transaction Supported": "✅ YES",
+      "Blocks until confirmed": "100",
+      Note: "🔥 NEW",
+    },
+    {
+      Name: "OP Sepolia",
+      "Chain Id (Hex)": "0xaa37dc",
+      "Internal Transaction Supported": "✅ YES",
+      "Blocks until confirmed": "100",
+      Note: "🔥 NEW",
+    },
   ];
 
   return <Table headers={headers} data={data} />;
