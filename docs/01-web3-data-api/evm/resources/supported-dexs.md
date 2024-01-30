@@ -80,6 +80,12 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | [Uniswap v3](https://app.uniswap.org/)           |uniswapv3|
 | [Camelot V2](https://www.camelotsix.com/)           |camelotv2|
 
+### Optimism
+
+| Supported DEX(s)     |Query Parameter Value|
+| -------------------- |--------------------|
+| [Uniswap v3](https://app.uniswap.org/)           |uniswapv3|
+
 
 ### Base
 
