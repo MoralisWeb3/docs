@@ -530,7 +530,9 @@
               "chiliz",
               "0x15b38",
               "base",
-              "0x2105"
+              "0x2105",
+              "optimism",
+              "0xa"
             ]
           }
         }
@@ -695,7 +697,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -834,7 +840,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -1160,7 +1170,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -1481,7 +1495,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -1752,7 +1770,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -1920,7 +1942,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -2244,7 +2270,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -2558,7 +2588,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -2821,7 +2855,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -3092,7 +3130,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -3340,7 +3382,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -3570,7 +3616,11 @@
               "base",
               "0x2105",
               "base testnet",
-              "0x14a33"
+              "0x14a33",
+              "optimism",
+              "0xa"
+
+
               ]
               }
               ],
@@ -3706,7 +3756,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -3993,7 +4047,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -4247,7 +4305,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -4561,7 +4623,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -4649,7 +4715,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -4786,7 +4856,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -4944,7 +5018,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -5063,7 +5141,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -5344,7 +5426,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -5482,7 +5568,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -5701,7 +5791,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -5854,7 +5948,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6094,7 +6192,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6248,7 +6350,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6410,7 +6516,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6516,7 +6626,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6761,7 +6875,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -6862,7 +6980,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -6952,7 +7074,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -7132,7 +7258,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -7468,7 +7598,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -7941,7 +8075,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -8022,7 +8160,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -8343,7 +8485,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -8740,7 +8886,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -8960,7 +9110,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -9094,7 +9248,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -9524,7 +9682,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -9652,7 +9814,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -9778,7 +9944,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -9942,7 +10112,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         }
       ],
@@ -10258,7 +10432,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
@@ -10354,7 +10532,11 @@
             "base",
             "0x2105",
             "base testnet",
-            "0x14a33"
+            "0x14a33",
+            "optimism",
+            "0xa"
+
+
           ]
         },
         {
