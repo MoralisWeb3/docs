@@ -123,6 +123,13 @@ const EVMChainData = () => {
       EvmChain: "EvmChain.BASE_GOERLI",
       Type: "Testnet",
     },
+    {
+      Name: "Optimism",
+      "Chain Id (Int)": "10",
+      "Chain Id (Hex)": "0xa",
+      EvmChain: "EvmChain.OPTIMISM",
+      Type: "Mainnet",
+    },
   ];
 
   return <Table headers={headers} data={data} />;
