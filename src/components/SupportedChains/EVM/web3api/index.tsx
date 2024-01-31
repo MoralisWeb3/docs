@@ -124,11 +124,11 @@ const EVMChainData = () => {
       Type: "Testnet",
     },
     {
-      Name: "Optimism",
-      "Chain Id (Int)": "10",
+      Chain: "OPTIMISM",
       "Chain Id (Hex)": "0xa",
-      EvmChain: "EvmChain.OPTIMISM",
-      Type: "Mainnet",
+      "Internal Transaction Supported": "",
+      "Blocks until confirmed": 100,
+      Note: "🔥 NEW",
     },
   ];
 

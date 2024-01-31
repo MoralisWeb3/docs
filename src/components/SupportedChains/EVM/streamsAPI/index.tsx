@@ -124,13 +124,6 @@ const EVMStreamChainData = () => {
       Note: "🔥 NEW",
     },
     {
-      Chain: "OPTIMISM",
-      "Chain Id (Hex)": "0xa",
-      "Internal Transaction Supported": "",
-      "Blocks until confirmed": 100,
-      Note: "🔥 NEW",
-    },
-    {
       Chain: "PALM",
       "Chain Id (Hex)": "0x2a15c308d",
       "Internal Transaction Supported": "",
@@ -166,10 +159,10 @@ const EVMStreamChainData = () => {
       Note: "🔥 NEW",
     },
     {
-      Name: "Optimism",
+      Chain: "OPTIMISM",
       "Chain Id (Hex)": "0xa",
-      "Internal Transaction Supported": "✅ YES",
-      "Blocks until confirmed": "100",
+      "Internal Transaction Supported": "",
+      "Blocks until confirmed": 100,
       Note: "🔥 NEW",
     },
   ];
