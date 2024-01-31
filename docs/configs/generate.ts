@@ -17,8 +17,18 @@ const swaggerOAS = {};
  * @description This function translate a schema in OAS to its JSON format
  */
 const translateSchemaReference = (schemaRef) => {
+  if (typeof schemaRef !== 'string') {
+  console.error('schemaRef must be a string');
+  return {};
+}
   const schemaName = schemaRef.replace("#/components/schemas/", "");
   const schemaJSON = swaggerSchemas[schemaName];
+
+
+  if (!schemaJSON) {
+    console.error(`Schema ${schemaName} not found.`);
+    return {};
+  }
 
   const { type, example, enum: schemaEnum, properties } = schemaJSON ?? {};
   if (type && !properties) {

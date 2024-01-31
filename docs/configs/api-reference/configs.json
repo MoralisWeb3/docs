@@ -40548,7 +40548,7 @@
 "market" : {
   "news": {
     "summary":"news",
-    "description": "Returns all news between 2 dates, sorted by date, descending.",
+    "description": "Returns all news between 2 dates, sorted by date, oldest to newest",
     "method":"GET",
     "apiHost": "https://wdim.moralis.io/api/v1",
     "path":"/news",
@@ -40573,7 +40573,13 @@
             "name":"limit",
             "required":false,
             "type":"number"
-            }
+          },
+          {
+          "name":"order",
+          "required":false,
+          "type":"string",
+          "description":"Order the news by date"
+          }
             ],
             "responses":[
               {
