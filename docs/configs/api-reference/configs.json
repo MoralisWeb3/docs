@@ -5585,7 +5585,7 @@
         },
         {
           "name": "exchange",
-          "description": "The factory name or address of the token exchange. [View supported exchanges here](/web3-data-api/evm/resources/supported-dexs)",
+          "description": "The factory name or address of the token exchange. [View supported exchanges here](/web3-data-api/evm/supported-dexs-token-api)",
           "required": false,
           "type": "string",
           "enum": [
