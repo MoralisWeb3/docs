@@ -161,7 +161,7 @@ const EVMStreamChainData = () => {
     {
       Chain: "OPTIMISM",
       "Chain Id (Hex)": "0xa",
-      "Internal Transaction Supported": "",
+      "Internal Transaction Supported": "✅ YES",
       "Blocks until confirmed": 100,
       Note: "🔥 NEW",
     },
