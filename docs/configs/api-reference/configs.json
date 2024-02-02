@@ -40723,7 +40723,7 @@
 "market" : {
   "news": {
     "summary":"news",
-    "description": "Returns all news between 2 dates, sorted by date, descending.",
+    "description": "Returns all news between 2 dates, sorted by date, oldest to newest",
     "method":"GET",
     "apiHost": "https://wdim.moralis.io/api/v1",
     "path":"/news",
@@ -40731,24 +40731,40 @@
     "queryParams":[
       {
       "name":"from_date",
+      "description":"The first date to fetch news for",
       "required":false,
-      "type":"string"
+      "type":"string",
+      "example":"2021-10-11T00:00:00.000Z"
     },
       {
         "name":"to_date",
+        "description":"The last date to fetch news for",
         "required":false,
-        "type":"string"
+        "type":"string",
+        "example":"2021-10-15T00:00:00.000Z"
         },
         {
           "name":"cursor",
+          "description":"Cursor pointing to the next page of results",
           "required":false,
-          "type":"string"
+          "type":"string",
+          "example":"jwt token"
           },
           {
             "name":"limit",
+            "description":"How many results to return in each page",
             "required":false,
-            "type":"number"
-            }
+            "type":"number",
+            "example":20
+          },
+          {
+          "name":"order",
+          "required":false,
+          "type":"string",
+          "description":"Order the news by date",
+          "example":"asc_date",
+          "enum":["asc_date", "desc_date"]
+          }
             ],
             "responses":[
               {
