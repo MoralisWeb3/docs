@@ -86,7 +86,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Tokens
 
-- [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-token-balances-by-wallet)
+- [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
 - [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
 
 #### Get Price

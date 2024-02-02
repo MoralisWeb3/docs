@@ -5558,6 +5558,110 @@
         }
       ]
     },
+    "getWalletTokenBalancesPrice":{
+      "apiHost":"https://deep-index.moralis.io/api/v2.2",
+      "summary":"Get ERC20 token balances with prices by wallet",
+      "description":"Get token balances for a specific wallet address and their token prices in USD.",
+      "method":"GET",
+      "path":"/wallets/:address/tokens",
+      "pathParams":[{
+        "name":"address",
+        "description":"The address from which token balances will be checked",
+        "required":true,
+        "example":"0xcB1C1FdE09f811B294172696404e88E658659905",
+        "type":"string"
+        }],
+        "queryParams":[{
+          "name":"chain",
+          "description":"The chain to query",
+          "required":false,
+          "example":"eth",
+          "type":"string",
+          "enum":[
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33",
+            "optimism",
+            "0xa"
+            ]},
+            {
+              "name":"to_block",
+              "description":"The block number up to which the balances will be checked.",
+              "required":false,
+              "type":"number"
+              },
+              {
+                "name":"token_addresses",
+                "description":"The addresses to get balances for (optional)",
+                "required":false,
+                "type":"array",
+                "field":{
+                  "type":"string"
+                }
+                  },
+                  {
+                    "name":"exclude_spam",
+                    "description":"Exclude spam tokens from the result",
+                    "required":false,
+                    "type":"boolean"
+                    },
+                    {
+                      "name":"cursor",
+                      "description":"The cursor returned in the previous response (used for getting the next page).",
+                      "type":"string"
+                      },
+                      {
+                        "name":"limit",
+                        "description":"The desired page size of the result.",
+                        "required":false,
+                        "type":"number"
+                      },
+                      {
+                        "name":"exclude_native",
+                        "description":"Exclude native balance from the result",
+                        "required":false,
+                        "type":"boolean"
+                        }
+                        ],
+                        "responses":[{
+                          "status":"200",
+                          "description":"Returns token balances with prices for a specific address"
+                          }
+                          ]
+                        },
     "getWalletTokenBalances": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get ERC20 token balance by wallet",
