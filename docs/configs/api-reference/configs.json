@@ -5568,7 +5568,7 @@
         "name":"address",
         "description":"The address from which token balances will be checked",
         "required":true,
-        "example":"0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+        "example":"0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326",
         "type":"string"
         }],
         "queryParams":[{
@@ -5622,7 +5622,8 @@
               "description":"The block number up to which the balances will be checked.",
               "required":false,
               "type":"number"
-              },{
+              },
+              {
                 "name":"token_addresses",
                 "description":"The addresses to get balances for (optional)",
                 "required":false,
@@ -5647,6 +5648,12 @@
                         "description":"The desired page size of the result.",
                         "required":false,
                         "type":"number"
+                      },
+                      {
+                        "name":"exclude_native",
+                        "description":"Exclude native balance from the result",
+                        "required":false,
+                        "type":"boolean"
                         }
                         ],
                         "responses":[{
