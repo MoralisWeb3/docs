@@ -15,6 +15,11 @@ export const redirects = [
     permanent: true,
   },
   {
+  source:"/web3-data-api/evm/reference/get-token-balances-by-wallet",
+  destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
+  permanent: true,
+  },
+  {
     source: "/docs/sign-in-with-magiclink",
     destination: "/authentication-api/how-to-sign-in-with-magiclink",
     permanent: true,
