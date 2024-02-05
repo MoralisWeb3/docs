@@ -18,10 +18,10 @@ Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-yo
 
 In order to get the chain activity, Moralis provides you a [getWalletActiveChains](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) endpoint to do so.
 
-To use the `getWalletActiveChains` endpoint, you'll primarily need the parameter `address`. Optionally, you can also specify the parameter `chains` to filter the activity for specific blockchain networks.
+To use the `getWalletActiveChains` endpoint, you'll primarily need the parameter `address`. Optionally, you can also specify the `chains` parameter to filter the activity for specific blockchain networks.
 
 :::tip
-Providing the `chains` parameter is optional. This endpoint primarily requires the `address` parameter. If you choose not to specify `chains`, the endpoint will return activity across all supported chains for the given address.
+The `chains` parameter in this endpoint is optional. By default, if you don't specify a `chains` value, the endpoint will provide the activity for the Ethereum chain. To get insights into the activity across all supported chains, please ensure to include the respective chain identifiers in the `chains` parameter.
 :::
 
 Once you've obtained the `address` you can copy the following code:

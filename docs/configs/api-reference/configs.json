@@ -14694,13 +14694,16 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
         },
         {
           "name": "address",
           "description": "The address of the contract",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "DDy5QHKEDgg5ZyWmwi1rJKwYHe7ZR5udGQfJkc8EPfLM"
         }
       ],
       "queryParams": [],
@@ -14954,13 +14957,16 @@
         "name":"network",
         "description":"The network to query",
         "required":true,
-        "type":"string"
+        "type":"string",
+        "enum": ["mainnet", "devnet"],
+        "example": "mainnet"
         },
         {
           "name":"address",
           "description":"The address of the contract",
           "required":true,
-          "type":"string"
+          "type":"string",
+          "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
           }],
           "queryParams":[],
           "responses":[{
