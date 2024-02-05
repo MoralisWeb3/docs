@@ -1503,6 +1503,13 @@
           ]
         },
         {
+          "name":"contract_addresses",
+          "description":"List of contract addresses of transfers",
+          "required":false,
+          "type":"array",
+          "field":{"type":"string"}
+        },
+        {
           "name": "format",
           "description": "The format of the token ID",
           "required": false,
@@ -1538,6 +1545,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
@@ -1784,6 +1799,12 @@
           "type": "number"
         },
         {
+          "name":"token_counts",
+          "description":"Should token counts per collection be included in the response?",
+          "required":false,
+          "type":"boolean"
+        },
+        {
           "name": "exclude_spam",
           "description": "Should spam NFTs be excluded from the result?",
           "required": false,
@@ -1864,6 +1885,24 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name":"count",
+                    "type":"number",
+                    "description":"The number of tokens the wallet holds in this collection",
+                    "example":5
+                  },
+                  {
+                    "name":"collection_logo",
+                    "type":"string",
+                    "description":"The logo of the collection",
+                    "example":"https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                  },
+                  {
+                    "name":"collection_banner_image",
+                    "type":"string",
+                    "description":"The banner image of the collection",
+                    "example":"https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
                   }
                 ]
               }
@@ -2591,8 +2630,6 @@
             "0x14a33",
             "optimism",
             "0xa"
-
-
           ]
         },
         {
@@ -2631,6 +2668,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC).",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
@@ -2900,6 +2945,14 @@
           "type": "number"
         },
         {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (for getting the next page)\n",
           "type": "string"
@@ -3142,6 +3195,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
@@ -3673,7 +3734,61 @@
                                     "type":"boolean",
                                     "description":"Indicates if a contract is verified",
                                     "example":"false"
-                                    }
+                                  },
+                                  {
+                                    "name":"collection_logo",
+                                    "type":"string",
+                                    "description":"The logo of the collection",
+                                    "example":"https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                                  },
+                                  {
+                                    "name":"collection_banner_image",
+                                    "type":"string",
+                                    "description":"The banner image of the collection",
+                                    "example":"https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                                  },
+                                  {
+                                    "name":"collection_category",
+                                    "type":"string",
+                                    "description":"The category of the collection",
+                                    "example":"Art"
+                                  },
+                                  {
+                                    "name":"project_url",
+                                    "type":"string",
+                                    "description":"The project url of the collection",
+                                    "example":"https://www.cryptokitties.co/"
+                                  },
+                                  {
+                                    "name":"wiki_url",
+                                    "type":"string",
+                                    "description":"The wiki url of the collection",
+                                    "example":"https://en.wikipedia.org/wiki/CryptoKitties"
+                                  },
+                                  {
+                                    "name":"discord_url",
+                                    "type":"string",
+                                    "description":"The discord url of the collection",
+                                    "example":"https://discord.com/invite/cryptokitties"
+                                  },
+                                  {
+                                    "name":"telegram_url",
+                                    "type":"string",
+                                    "description":"The telegram url of the collection",
+                                    "example":"https://t.me/cryptokitties"
+                                  },
+                                  {
+                                    "name":"twitter_username",
+                                    "type":"string",
+                                    "description":"The twitter username of the collection",
+                                    "example":"CryptoKitties"
+                                  },
+                                  {
+                                    "name":"instagram_username",
+                                    "type":"string",
+                                    "description":"The instagram username of the collection",
+                                    "example":"cryptokitties"
+                                  }
                                     ]
                                     }
                                     }
@@ -4066,6 +4181,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
@@ -5735,8 +5858,6 @@
             "0x14a33",
             "optimism",
             "0xa"
-
-
           ]
         },
         {
@@ -5751,6 +5872,12 @@
           "required": false,
           "type": "array",
           "field": { "type": "string" }
+        },
+        {
+          "name":"exclude_spam",
+          "description":"Exclude spam tokens from the result",
+          "required":false,
+          "type":"boolean"
         }
       ],
       "responses": [
@@ -5897,6 +6024,13 @@
           ]
         },
         {
+          "name":"contract_addresses",
+          "description":"List of contract addresses of transfers",
+          "required":false,
+          "type":"array",
+          "field":{"type":"string"}
+        },
+        {
           "name": "from_block",
           "description": "The minimum block number from which to get the transactions\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
           "required": false,
@@ -5924,6 +6058,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
@@ -6604,6 +6746,14 @@
           "type": "number"
         },
         {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
@@ -7246,6 +7396,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         }
       ],
       "responses": [
@@ -7586,6 +7744,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         }
       ],
       "responses": [
@@ -8877,6 +9043,14 @@
           "type": "number"
         },
         {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
@@ -9098,6 +9272,14 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+        "name":"order",
+        "required":false,
+        "type":"string",
+        "description":"The order of the result, in ascending (ASC) or descending (DESC)",
+        "example":"DESC",
+        "enum":["ASC", "DESC"]
         },
         {
           "name": "cursor",
