@@ -61,6 +61,7 @@ Select what you want to achieve:
 | No. | Method                           | Description                           | API Reference                                                                                                                   | URL                                                                                                                             |
 |-----|----------------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | 6   | `getWalletTokenBalances`       | Get ERC20 token balance by wallet     | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)                                   | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                                                                      |
+| 7   | `getWalletTokenBalancesPrices`       | Get ERC20 token balances with prices by wallet     | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price)                                   | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens)                                                                      |
 
 ### Get Transactions
 
