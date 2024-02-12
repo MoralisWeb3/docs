@@ -5529,12 +5529,12 @@
       "codeSamples": [
         {
           "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getMultipleTokenPrices({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({ apiKey: \"YOUR_API_KEY\" });\n  const tokens = [{ to_block: 16314545, token_address: \"0xae7ab96520de3a18e5e111b5eaab095312d7fe84\", exchange: \"uniswapv2\" }];\n  const response = await Moralis.EvmApi.token.getMultipleTokenPrices({ chain: 'eth', include: 'percent_change', body: { tokens } });\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
           "name": "Moralis NodeJS SDK"
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_multiple_token_prices(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nbody = []\n\nparams = {}\n\nresult = evm_api.token.get_multiple_token_prices(\n  api_key=api_key,\n  body=body,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
