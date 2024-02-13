@@ -17,7 +17,7 @@ For an in-depth understanding of Moralis's compute unit costs per method, chain,
 ## Feature Comparison Across Moralis Plans
 
 :::tip
-Note that all paid plans are billed annually
+Note that all paid plans are billed annually.
 :::
 
 * **Starter:** Free to get started
@@ -25,7 +25,7 @@ Note that all paid plans are billed annually
 * **Business:** $249 per month
 * **Enterprise:** individual prices
 
-The following tables summarize the key features and support options available in each Moralis pricing plan:
+The following table summarize the key features and support options available in each Moralis pricing plan:
 
 ### Moralis API
 
