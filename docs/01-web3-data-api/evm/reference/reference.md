@@ -224,7 +224,9 @@ Select what you want to achieve:
 
 ### Get NFT Prices
 
-Coming Soon...
+| No. | Method                                   | Description                | API Reference                                                                                                       | URL                                                                       |
+|-----|------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| 1   | `getNFTLowestPrice`                          | Get NFT Lowest Price     | [Method Documentation](/web3-data-api/evm/reference/price/get-nft-lowest-price) | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice)                     |
 
 ## Blockchain API
 
