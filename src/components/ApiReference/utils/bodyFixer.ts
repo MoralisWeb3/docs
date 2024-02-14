@@ -5,6 +5,14 @@ const bodyFixer = (code: string, body: {}) => {
       fixedBody = { abi: body };
       break;
 
+    case code.includes("getMultipleTokenPrices"):
+      fixedBody = { tokens: (body as any).tokens };
+      break;
+
+    case code.includes("getMultipleNFTs"):
+      fixedBody = { tokens: (body as any).tokens };
+      break;
+
     default:
       break;
   }
