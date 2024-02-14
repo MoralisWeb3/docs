@@ -86,7 +86,7 @@ export const apiParamInitialValue = (param) => {
         {}
       )
     : param.type === "array" && param.field
-    ? param.example.map((item) => item)
+    ? (param.example || []).map((item) => item)
     : param.type === "record"
     ? {}
     : undefined;
