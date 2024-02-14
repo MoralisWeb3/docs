@@ -1,7 +1,7 @@
 const bodyFixer = (code: string, body: {}) => {
   let fixedBody;
   switch (true) {
-    case code.includes("getContractEvents"):
+    case code.includes("getContractEvents"): // test
       fixedBody = { abi: body };
       break;
 
