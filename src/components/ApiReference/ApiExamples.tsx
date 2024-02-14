@@ -291,6 +291,28 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0x19";
           case "arbitrum":
             return "0xa4b1";
+          case "fantom test":
+            return "0xfa2";
+          case "avax":
+            return "0xa86a";
+          case "avax test":
+            return "0xa869";
+          case "cronos test":
+            return "0x152";
+          case "ronin":
+            return "0x7e4";
+          case "arbitrum test":
+            return "0x66eed";
+          case "gnosis":
+            return "0x64";
+          case "gnosis chiado test":
+            return "0x27d8";
+          case "base":
+            return "0x2105";
+          case "base goerli test":
+            return "0x14a33";
+          case "optimism":
+            return "0xa";
           default:
             return chain;
         }
@@ -358,21 +380,46 @@ export const injectParamsToCode = (
   const fixedBody = bodyFixer(code, body);
   switch (lang) {
     case "node":
-      return code
-        .replace(
-          "{}",
-          stringifyJSON(
-            removeEmpty({
-              ...formatParamsByLang({ ...query }, lang),
-              ...formatParamsByLang({ ...path }, lang),
-              ...formatParamsByLang({ ...fixedBody }, lang),
-              ...customNodeSdkBody(code, fixedBody),
-              ...(network === "aptos" ? { network: aptosNetwork } : {}),
-            }),
-            true
-          ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-        )
-        .replace(/YOUR_API_KEY/, auth);
+      if (code.includes("getMultipleTokenPrices")) {
+        return code
+          .replace("{}", "{},{}")
+          .replace(
+            "{}",
+            stringifyJSON(
+              removeEmpty({
+                ...formatParamsByLang({ ...query }, lang),
+                ...formatParamsByLang({ ...path }, lang),
+              }),
+              true
+            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+          )
+          .replace(
+            "{}",
+            stringifyJSON(
+              removeEmpty({
+                ...formatParamsByLang({ ...fixedBody }, lang),
+              }),
+              true
+            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+          )
+          .replace(/YOUR_API_KEY/, auth);
+      } else {
+        return code
+          .replace(
+            "{}",
+            stringifyJSON(
+              removeEmpty({
+                ...formatParamsByLang({ ...query }, lang),
+                ...formatParamsByLang({ ...path }, lang),
+                ...formatParamsByLang({ ...fixedBody }, lang),
+                ...customNodeSdkBody(code, fixedBody),
+                ...(network === "aptos" ? { network: aptosNetwork } : {}),
+              }),
+              true
+            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+          )
+          .replace(/YOUR_API_KEY/, auth);
+      }
     case "python":
     default:
       return code

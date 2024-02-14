@@ -72,7 +72,7 @@ interface ApiParamFieldProps {
   param: ApiParam;
 }
 
-export const apiParamInitialValue = (param: ApiParam) => {
+export const apiParamInitialValue = (param) => {
   if (param.type === "oneOf") {
     return {};
   }
@@ -85,8 +85,8 @@ export const apiParamInitialValue = (param: ApiParam) => {
         (obj, field) => ({ ...obj, ...apiParamInitialValue(field) }),
         {}
       )
-    : param.type === "array"
-    ? []
+    : param.type === "array" && param.field
+    ? param.example.map((item) => item)
     : param.type === "record"
     ? {}
     : undefined;
@@ -95,7 +95,7 @@ export const apiParamInitialValue = (param: ApiParam) => {
     return { [path]: value };
   }
 
-  return value;
+  return param.name ? { [param.name]: value } : value;
 };
 
 const validateField = (param: ApiParam) => (value: string) => {
