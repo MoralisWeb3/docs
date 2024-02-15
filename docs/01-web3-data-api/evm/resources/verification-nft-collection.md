@@ -1,6 +1,6 @@
 ---
 title: "Verification For NFT Collections"
-slug: "../../evm/verification-nft-collection"
+slug: "../../evm/verification-nft-collections"
 sidebar_position: 2
 ---
 
