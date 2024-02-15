@@ -5803,6 +5803,12 @@
           "type": "boolean"
         },
         {
+          "name":"exclude_unverified_contracts",
+          "description":"Exclude unverified contracts from the result",
+          "required":false,
+          "type":"boolean"
+        },
+        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
