@@ -29,4 +29,5 @@ The verification feature is currently available for NFT collections on the follo
 - BNB Smart Chain
 - Arbitrum
 - Avalanche
+- Base
 - Optimism

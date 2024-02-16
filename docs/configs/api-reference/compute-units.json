@@ -71,6 +71,12 @@
       "rateLimitCost": 5
     },
     {
+      "endpoint": "getWalletTokenBalancesPrice",
+      "path": "/{address}/tokens",
+      "price": 10,
+      "rateLimitCost": 5
+    },
+    {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
       "price": 5,
