@@ -38,7 +38,7 @@ const sidebars = {
         label: "API Reference",
         link: {
           type: "generated-index",
-          slug: "../api-reference",
+          slug: "web3-data-api/evm/api-reference",
           },
         items: [
           {
@@ -182,7 +182,7 @@ const sidebars = {
         label: "API Reference",
         link: {
           type: "generated-index",
-          slug: "../aptos/reference",
+          slug: "web3-data-api/aptos/api-reference",
         },
         items: [
           {
@@ -243,7 +243,7 @@ const sidebars = {
       label: "API Reference",
       link: {
         type: "generated-index",
-        slug: "../solana/reference",
+        slug: "web3-data-api/solana/api-reference",
       },
       items: [
         {
