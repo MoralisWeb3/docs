@@ -42,6 +42,21 @@ export const redirects = [
     permanent: true,
   },
   {
+    source: "/evm/reference",
+    destination: "/web3-data-api/evm/api-reference",
+    permanent: true,
+  },
+  {
+    source: "/solana/reference",
+    destination: "/web3-data-api/solana/api-reference",
+    permanent: true,
+  },
+  {
+    source: "/aptos/reference",
+    destination: "/web3-data-api/aptos/api-reference",
+    permanent: true,
+  },
+  {
     source: "/docs/sign-in-with-metamask",
     destination: "/authentication-api/how-to-sign-in-with-metamask",
     permanent: true,
