@@ -777,6 +777,94 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getWalletNetWorth": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get wallet net worth",
+      "description": "Get the net worth of a wallet in USD. We recommend to filter out spam tokens and unverified contracts to get a more accurate result.",
+      "method": "GET",
+      "path": "/wallets/:address/net-worth",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The wallet address",
+          "required": true,
+          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chains",
+          "description": "The chains to query",
+          "required": false,
+          "type": "array",
+          "fields": {
+            "type": "string",
+            "example": "eth",
+            "enum": [
+              "eth",
+              "0x1",
+              "goerli",
+              "0x5",
+              "sepolia",
+              "0xaa36a7",
+              "polygon",
+              "0x89",
+              "mumbai",
+              "0x13881",
+              "bsc",
+              "0x38",
+              "bsc testnet",
+              "0x61",
+              "avalanche",
+              "0xa86a",
+              "fantom",
+              "0xfa",
+              "palm",
+              "0x2a15c308d",
+              "cronos",
+              "0x19",
+              "arbitrum",
+              "0xa4b1",
+              "chiliz",
+              "0x15b38",
+              "chiliz testnet",
+              "0x15b32",
+              "gnosis",
+              "0x64",
+              "gnosis testnet",
+              "0x27d8",
+              "base",
+              "0x2105",
+              "base testnet",
+              "0x14a33",
+              "optimism",
+              "0xa"
+            ]
+          }
+        },
+        {
+          "name": "exclude_spam",
+          "description": "Exclude spam tokens from the result",
+          "required": false,
+          "example": true,
+          "type": "boolean"
+        },
+        {
+          "name": "exclude_unverified_contracts",
+          "description": "Exclude unverified contracts from the result",
+          "required": false,
+          "example": true,
+          "type": "boolean"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns token balances with prices for a specific address"
+        }
+      ]
     }
   },
   "nft": {
@@ -5803,10 +5891,10 @@
           "type": "boolean"
         },
         {
-          "name":"exclude_unverified_contracts",
-          "description":"Exclude unverified contracts from the result",
-          "required":false,
-          "type":"boolean"
+          "name": "exclude_unverified_contracts",
+          "description": "Exclude unverified contracts from the result",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "cursor",
