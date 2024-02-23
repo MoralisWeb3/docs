@@ -34,7 +34,7 @@ npm i
 To start a local development server, run the following command.
 
 ```sh
-npm start
+npm run start
 ```
 
 This command opens up a browser window and most changes are reflected live without having to restart the server.
