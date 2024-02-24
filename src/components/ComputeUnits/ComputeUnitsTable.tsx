@@ -11,6 +11,7 @@ interface EndpointWeightResponse {
 }
 
 const fixedPath = {
+  getWalletNetWorth: "wallet-api/get-wallet-net-worth",
   getWalletStats: "wallet-api/get-wallet-stats",
   getHottestNFTCollectionsByTradingVolume:
     "get-top-nft-collections-by-trading-volume",
@@ -35,6 +36,7 @@ const fixedPath = {
 };
 
 const DynamicPriceUnits = {
+  getWalletNetWorth: "chains",
   getNativeBalancesForAddresses: "wallet addresses",
   getMultipleNFTs: "NFTs",
   getNFTsById: "token_ids",
