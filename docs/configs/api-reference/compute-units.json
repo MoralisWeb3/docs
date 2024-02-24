@@ -643,6 +643,13 @@
       "price": 5,
       "rateLimitCost": 5,
       "dynamic": true
-    }
+    },
+    {
+      "endpoint": "getWalletNetWorth",
+      "path": "/wallets/{address}/net-worth",
+      "price": 50,
+      "rateLimitCost": 5,
+      "dynamic": true
+   }
   ]
 }
