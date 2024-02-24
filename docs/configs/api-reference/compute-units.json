@@ -323,6 +323,13 @@
       "path": "/block/{block_number_or_hash}/stats",
       "price": 5,
       "rateLimitCost": 5
+    },
+    {
+      "endpoint": "getWalletNetWorth",
+      "path": "/wallets/{address}/net-worth",
+      "price": 50,
+      "rateLimitCost": 5,
+      "dynamic": true
     }
   ],
   "solana": [
@@ -643,13 +650,6 @@
       "price": 5,
       "rateLimitCost": 5,
       "dynamic": true
-    },
-    {
-      "endpoint": "getWalletNetWorth",
-      "path": "/wallets/{address}/net-worth",
-      "price": 50,
-      "rateLimitCost": 5,
-      "dynamic": true
-   }
+    }
   ]
 }
