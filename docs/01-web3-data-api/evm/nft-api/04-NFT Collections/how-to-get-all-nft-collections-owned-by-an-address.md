@@ -115,37 +115,52 @@ In your terminal, you should see the following JSON response:
 
 ```json
 {
-  "total": 503,
+  "status": "SYNCED",
   "page": 1,
+  "cursor": null,
   "page_size": 100,
-  "cursor": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21QYXJhbXMiOnsid2FsbGV0QWRkcmVzcyI6IjB4ZDhkYTZiZjI2OTY0YWY5ZDdlZWQ5ZTAzZTUzNDE1ZDM3YWE5NjA0NSJ9LCJrZXlzIjpbIjE2NTg2ODUyMDMuNzExIl0sIndoZXJlIjp7Im93bmVyX29mIjoiMHhkOGRhNmJmMjY5NjRhZjlkN2VlZDllMDNlNTM0MTVkMzdhYTk2MDQ1In0sImxpbWl0IjoxMDAsIm9mZnNldCI6MCwib3JkZXIiOltdLCJ0b3RhbCI6NTAzLCJwYWdlIjoxLCJ0YWlsT2Zmc2V0IjoxLCJpYXQiOjE2NjY4MDE3OTV9.wdLubHbqnGg36awXqwlJ7cnsdIX5DHDDnArnva72W5I",
   "result": [
     {
-      "token_address": "0xff8852a5f77c20094f0fabc7b225b417e0797907",
-      "contract_type": "ERC721",
-      "name": "VictoriasSecret",
-      "symbol": "VS"
+      "token_address": "0xfbc6f43c1d382da5f4dda34ae542bdd460423be5",
+      "possible_spam": true,
+      "contract_type": "ERC1155",
+      "name": "Toy Booger NFT",
+      "symbol": "Toy Booger NFT",
+      "verified_collection": false,
+      "collection_logo": "https://i.seadn.io/gae/eQ_ObnigEZr8aalXL71GO_3Cs6xGrIiNKRKtbvPS9d-OAIgQeBkqGyjtKZMcu4DuVaknkuk0_E4TtIpjs0UIe3cFBJmHXV5-mitjrw?w=500&auto=format",
+      "collection_banner_image": "https://i.seadn.io/gae/YjIHBPaMmBU1m-CHjZwcLNGhxhgDoJrSrXZCZi3xvBaGJKM-FQISrKzsWHdFoLifl-IzEWuVZ8uJLelUSE6oOjoxaizyswbI5wmkjFg?w=500&auto=format"
     },
     {
-      "token_address": "0xff66f3c087b0e8e0d1349cadb218efd7bcf0ac99",
-      "contract_type": "ERC721",
-      "name": "Flower Shoppe",
-      "symbol": "FLWRSHP"
+      "token_address": "0xedc79f027bba6cfac31e21dc8b4c2c0b20866e31",
+      "possible_spam": true,
+      "contract_type": "ERC1155",
+      "name": "Bulls on Block",
+      "symbol": "Bulls on Block",
+      "verified_collection": false,
+      "collection_logo": "https://i.seadn.io/gae/WD6FfHhFGcmBlLsXlzFgq4Za8TlC5065GRUJwXjnRgUpkMrLLr8-SMcVgRzUnuxtKZ8mXcwvG_iydceIDJ2_NGxMTil0uWnB8i4IFg?w=500&auto=format",
+      "collection_banner_image": "https://i.seadn.io/gae/-zlLbVdkSG_IA9p_fJxajDyBA6SyzQ1_Q4lwFkpan_NM51rk7NsEM6Drs6sMaCkZP7QEfVNRYOLl7o-GLQzd4ShDWNZiTf6BHx-m?w=500&auto=format"
     },
     {
-      "token_address": "0xfeddc1448eb4480714a9942ba28a27b16caf9ce4",
+      "token_address": "0xe786b5596a792d7beafcf08eaf9de711c7b7b14b",
+      "possible_spam": true,
       "contract_type": "ERC721",
-      "name": "Impervious Registry",
-      "symbol": "IR"
+      "name": "Gutter Punks - Otherside",
+      "symbol": "GPO",
+      "verified_collection": false,
+      "collection_logo": "https://i.seadn.io/gae/gqgi2DFDHPBBjsshtyPe2cN019JZmML8gBfy1Hg5LhOEckX-BRPLqWfQf_xqGyWB9YtFefq5jh35JIp-YSadq8fN9rlZKS-N6TK8?w=500&auto=format",
+      "collection_banner_image": null
     },
     {
-      "token_address": "0xfec64651c8b441f2526b1a54febb2122124bf041",
-      "contract_type": "ERC721",
-      "name": "Porsche",
-      "symbol": "Porsche"
-    }
-  ],
-  "status": "SYNCED"
+      "token_address": "0xe7198926b9f9b4ca0c7b2cc0cfb25b36f0dc7e45",
+      "possible_spam": true,
+      "contract_type": "ERC1155",
+      "name": "ZED RUN",
+      "symbol": "ZED RUN",
+      "verified_collection": false,
+      "collection_logo": "https://i.seadn.io/gae/jLDu2mpSekG6RxJI_XgVi4Uhf3NFZ5thkJrNwVXkbL3c7fKwQoxJSGiiolCjIijUPBf8_QtoDMLPla6PyDEo4mcDIysTp1LVp5s3tlU?w=500&auto=format",
+      "collection_banner_image": "https://i.seadn.io/gae/zSwvUVqzZpMjyOTiAQCtkb9Uw-G3O-j4Iilmb_QfcMSMMS4V9rNUjBs4icxxDzEfk1kMiwijCiT3tDxWBXDs-gI1TFyT6I6KaG20P70?w=500&auto=format"
+    },
+    ...
 }
 ```
 
