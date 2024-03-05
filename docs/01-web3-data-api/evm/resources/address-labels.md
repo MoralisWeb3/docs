@@ -1,7 +1,7 @@
 ---
 title: "Address Labels"
 slug: "../../evm/blockchain-api/address-labels"
-sidebar_position: 3
+sidebar_position: 4
 ---
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 

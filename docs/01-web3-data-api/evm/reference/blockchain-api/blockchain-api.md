@@ -6,6 +6,10 @@ sidebar_class_name: "sidebar-blockchain-api"
 sidebar_position: 5
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 Select what you want to achieve:
 
 * [Get Blocks](#get-blocks)
