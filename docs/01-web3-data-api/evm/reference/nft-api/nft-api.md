@@ -6,6 +6,10 @@ sidebar_class_name: "sidebar-nft-api"
 sidebar_position: 2
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 Select what you want to achieve:
 
 * [Get NFTs](#get-nfts)
