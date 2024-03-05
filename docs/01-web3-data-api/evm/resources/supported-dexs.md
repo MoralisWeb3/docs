@@ -89,14 +89,14 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Base
 
-| Supported DEX(s)     |
-| -------------------- |
-| [Uniswap v3](https://app.uniswap.org/)           |
-| [Sharkswap](https://www.sharkswap.finance/swap)          |
-| [Aerodrome](https://aerodrome.finance)           |
-| [Baseswap](https://baseswap.fi)           |
-| [PancakeSwap](https://pancakeswap.finance/)           |
-| [Sushiswap](https://sushi.com/)           |  
+| Supported DEX(s)     |  Query Parameter Value |
+| -------------------- | -------------------- |
+| [Uniswap v3](https://app.uniswap.org/)           | uniswapv3 |
+| [Sharkswap](https://www.sharkswap.finance/swap)           | sharkswap |
+| [Aerodrome](https://aerodrome.finance)         | aerodrome |
+| [Baseswap](https://baseswap.fi)         | baseswap |
+| [PancakeSwap](https://pancakeswap.finance/)         | pancakeswap |
+| [Sushiswap](https://sushi.com/)          | sushiswap |
 
 
 ## Endpoints DEXs integration
