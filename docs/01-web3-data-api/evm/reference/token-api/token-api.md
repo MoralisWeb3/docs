@@ -6,6 +6,10 @@ sidebar_class_name: "sidebar-token-api"
 sidebar_position: 3
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+<ApiBanner />
+
 Select what you want to achieve:
 
 * [Get Tokens](#get-tokens)
