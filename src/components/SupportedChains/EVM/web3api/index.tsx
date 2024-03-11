@@ -117,10 +117,10 @@ const EVMChainData = () => {
       Type: "Mainnet",
     },
     {
-      Name: "Base Goerli",
-      "Chain Id (Int)": "84531",
-      "Chain Id (Hex)": "0x14a33",
-      EvmChain: "EvmChain.BASE_GOERLI",
+      Name: "Base Sepolia",
+      "Chain Id (Int)": "84532",
+      "Chain Id (Hex)": "0x14a34",
+      EvmChain: "EvmChain.BASE_SEPOLIA",
       Type: "Testnet",
     },
     {
