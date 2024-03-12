@@ -10,7 +10,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiBanner />
 
-The **Market Data API** provides popular market overview and trends data, such as the top cryptocurrencies by market cap, popular NFT collections, leading ERC20 tokens and much more.. We're introducing four new endpoints with this launch, including:
+The **Market Data API** provides popular market overview and trends data, such as the top cryptocurrencies by market cap, popular NFT collections, leading ERC20 tokens and much more. We're introducing four new endpoints with this launch, including:
 
 ## Top ERC-20 tokens
 
