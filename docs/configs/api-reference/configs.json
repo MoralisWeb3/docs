@@ -674,8 +674,8 @@
               "fields": [
                 {
                   "name": "rank",
-                  "type": "string",
-                  "example": "1",
+                  "type": "number",
+                  "example": 1,
                   "description": "The rank",
                   "required": true
                 },
@@ -733,6 +733,24 @@
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
                   "required": true
+                }, {
+                  "name": "collection_address",
+                  "type": "string",
+                  "example": "0x123",
+                  "description": "The collection address",
+                  "required": true
+                }, {
+                  "name": "floor_price",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price",
+                  "required": true
+                }, {
+                  "name": "floor_price_usd_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 24hr percent change",
+                  "required": true
                 }
               ]
             }
@@ -771,8 +789,8 @@
               "fields": [
                 {
                   "name": "rank",
-                  "type": "string",
-                  "example": "1",
+                  "type": "number",
+                  "example": 1,
                   "description": "The rank",
                   "required": true
                 },
@@ -822,6 +840,54 @@
                   "type": "string",
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
+                  "required": true
+                }, {
+                  "name": "collection_address",
+                  "type": "string",
+                  "example": "0x123",
+                  "description": "The collection address",
+                  "required": true
+                }, {
+                  "name": "average_price",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The average price",
+                  "required": true
+                }, {
+                  "name": "floor_price",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price",
+                  "required": true
+                }, {
+                  "name": "floor_price_usd_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 24hr percent change",
+                  "required": true
+                }, {
+                  "name": "floor_price_7d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 7d percent change",
+                  "required": true
+                }, {
+                  "name": "floor_price_usd_7d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 7d percent change",
+                  "required": true
+                }, {
+                  "name": "floor_price_30d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 30d percent change",
+                  "required": true
+                }, {
+                  "name": "floor_price_usd_30d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The floor price 30d percent change",
                   "required": true
                 }
               ]
