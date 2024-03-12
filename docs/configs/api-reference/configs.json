@@ -1,5 +1,365 @@
 {
   "market-data": {
+    "getTopCryptoCurrenciesByTradingVolume": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get top Crypto Currencies tokens by trading volume",
+      "description": "Get the top Crypto Currencies by trading volume",
+      "method": "GET",
+      "path": "/market-data/global/volume",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the top Crypto Currencies by trading volume",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "example": "ETH",
+                  "description": "The token symbol",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "example": "Ethereum",
+                  "description": "The token name",
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "example": "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880",
+                  "description": "The token logo",
+                  "required": true
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The circulating supply",
+                  "required": true
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The total supply",
+                  "required": true
+                },
+                {
+                  "name": "max_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The max supply",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap in USD",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_rank",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap rank",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_24hr_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The market cap change in the last 24h",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The market cap percent change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "total_volume",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The total volume",
+                  "required": true
+                },
+                {
+                  "name": "usd_price",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price in USD",
+                  "required": true
+                },
+                {
+                  "name": "usd_price_24hr_high",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The 24h high price in USD",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_low",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The 24h low price in USD",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price percent change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "usd_price_ath",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high price in USD",
+                  "required": true
+                }, {
+                  "name": "ath_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high percent change",
+                  "required": true
+                }, {
+                  "name": "ath_date",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high date",
+                  "required": true
+                }, 
+                {
+                  "name": "usd_price_1hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 1h",
+                  "required": true
+                }, {
+                  "name": "usd_price_7d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 7d",
+                  "required": true
+                }, {
+                  "name": "usd_price_30d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 30d",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getTopCryptoCurrenciesByMarketCap({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_top_crypto_currencies_by_market_cap(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getTopCryptoCurrenciesByMarketCap": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get top Crypto Currencies tokens by market cap",
+      "description": "Get the top Crypto Currencies by market cap",
+      "method": "GET",
+      "path": "/market-data/global/market-cap",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the top Crypto Currencies by market cap",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "example": "ETH",
+                  "description": "The token symbol",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "example": "Ethereum",
+                  "description": "The token name",
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "example": "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880",
+                  "description": "The token logo",
+                  "required": true
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The circulating supply",
+                  "required": true
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The total supply",
+                  "required": true
+                },
+                {
+                  "name": "max_supply",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The max supply",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_usd",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap in USD",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_rank",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The market cap rank",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_24hr_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The market cap change in the last 24h",
+                  "required": true
+                },
+                {
+                  "name": "market_cap_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0285",
+                  "description": "The market cap percent change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "total_volume",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The total volume",
+                  "required": true
+                },
+                {
+                  "name": "usd_price",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price in USD",
+                  "required": true
+                },
+                {
+                  "name": "usd_price_24hr_high",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The 24h high price in USD",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_low",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The 24h low price in USD",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "usd_price_24hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price percent change in the last 24h",
+                  "required": true
+                }, {
+                  "name": "usd_price_ath",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high price in USD",
+                  "required": true
+                }, {
+                  "name": "ath_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high percent change",
+                  "required": true
+                }, {
+                  "name": "ath_date",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The all time high date",
+                  "required": true
+                }, 
+                {
+                  "name": "usd_price_1hr_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 1h",
+                  "required": true
+                }, {
+                  "name": "usd_price_7d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 7d",
+                  "required": true
+                }, {
+                  "name": "usd_price_30d_percent_change",
+                  "type": "string",
+                  "example": "0.0",
+                  "description": "The price change in the last 30d",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.marketData.getTopCryptoCurrenciesByMarketCap({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nresult = evm_api.market_data.get_top_crypto_currencies_by_market_cap(\n  api_key=api_key,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
     "getTopERC20TokensByMarketCap": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get top ERC20 tokens",
