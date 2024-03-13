@@ -43,6 +43,7 @@ Select what you want to achieve:
 | 1   | `getWalletActiveChains` | Get chain activity by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/chains](https://deep-index.moralis.io/api/v2.2/wallets/:address/chains)       |
 | 2   | `getWalletNetWorth`     | Get wallet net worth         | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth)         | [https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth](https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth) |
 | 3   | `getWalletStats`        | Get wallet stats             | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-stats)             | [https://deep-index.moralis.io/api/v2.2/wallets/:address/stats](https://deep-index.moralis.io/api/v2.2/wallets/:address/stats)         |
+| 4   | `getWalletHistory`        | Get wallet history             | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)             | [https://deep-index.moralis.io/api/v2.2/wallets/:address/history](https://deep-index.moralis.io/api/v2.2/wallets/:address/history)       
 
 ### Get Native Balance
 

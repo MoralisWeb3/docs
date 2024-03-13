@@ -7,6 +7,7 @@ window.onload = function () {
     "Wallet API",
     "Get Wallet Details",
     "Get wallet net worth",
+    "Get wallet history",
   ];
 
   const paramList = [];
