@@ -1616,6 +1616,178 @@
         }
       ]
     },
+    "getWalletHistory": {
+    "apiHost": "https://deep-index.moralis.io/api/v2.2",
+    "summary": "Get the complete history of a wallet",
+    "description": "Retrieve the full transaction history of a specified wallet address, including sends, receives, token and NFT transfers, and contract interactions.",
+    "method": "GET",
+    "path": "/wallets/:address/history",
+    "pathParams": [
+      {
+        "name": "address",
+        "description": "The address of the wallet",
+        "required": true,
+        "type": "string",
+        "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+      }
+    ],
+    "queryParams": [
+      {
+        "name": "chain",
+        "description": "The chain to query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "eth",
+          "0x1",
+          "goerli",
+          "0x5",
+          "sepolia",
+          "0xaa36a7",
+          "polygon",
+          "0x89",
+          "mumbai",
+          "0x13881",
+          "bsc",
+          "0x38",
+          "bsc testnet",
+          "0x61",
+          "avalanche",
+          "0xa86a",
+          "fantom",
+          "0xfa",
+          "palm",
+          "0x2a15c308d",
+          "cronos",
+          "0x19",
+          "arbitrum",
+          "0xa4b1",
+          "gnosis",
+          "0x64",
+          "gnosis testnet",
+          "0x27d8",
+          "chiliz",
+          "0x15b38",
+          "chiliz testnet",
+          "0x15b32",
+          "base",
+          "0x2105",
+          "base testnet",
+          "0x14a33",
+          "optimism",
+          "0xa"
+        ],
+        "example": "eth"
+      },
+      {
+        "name": "from_block",
+        "description": "The minimum block number from which to get the transactions",
+        "required": false,
+        "type": "integer"
+      },
+      {
+        "name": "to_block",
+        "description": "The maximum block number up to which to get the transactions",
+        "required": false,
+        "type": "integer"
+      },
+      {
+        "name": "from_date",
+        "description": "The start date from which to get the transactions",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "name": "to_date",
+        "description": "The end date up to which to get the transactions",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "name": "internal_transactions",
+        "description": "Include internal transactions in the results",
+        "required": false,
+        "type": "boolean"
+      },
+      {
+        "name": "nft_metadata",
+        "description": "Include NFT metadata in the results",
+        "required": false,
+        "type": "boolean"
+      },
+      {
+        "name": "cursor",
+        "description": "Cursor for pagination",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "name": "order",
+        "description": "Order of the result, ASC or DESC",
+        "required": false,
+        "type": "string",
+        "enum": ["ASC", "DESC"],
+        "example": "DESC"
+      },
+      {
+        "name": "limit",
+        "description": "Page size of the result",
+        "required": false,
+        "type": "integer",
+        "example": 100
+      }
+    ],
+    "responses": [
+      {
+        "status": "200",
+        "description": "Returns wallet history of a wallet address",
+        "body": {
+          "type": "object",
+          "fields": [
+            {
+              "name": "page",
+              "type": "integer",
+              "description": "Current page number",
+              "example": 2
+            },
+            {
+              "name": "page_size",
+              "type": "integer",
+              "description": "Number of items per page",
+              "example": 100
+            },
+            {
+              "name": "cursor",
+              "type": "string",
+              "description": "Cursor for next page of results"
+            },
+            {
+              "name": "result",
+              "type": "array",
+              "description": "Array of transaction objects",
+              "items": {
+                "type": "object"
+              }
+            }
+
+
+          ]
+        }
+      }
+    ],
+    "codeSamples": [
+      {
+        "language": "node",
+        "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletHistory({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+        "name": "Moralis NodeJS SDK"
+      },
+      {
+        "language": "python",
+        "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_history(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+        "name": "Moralis Python SDK"
+      }
+    ]
+    },
     "getMultipleNFTs": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get Multiple NFTs",
