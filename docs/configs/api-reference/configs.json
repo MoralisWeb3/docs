@@ -1616,7 +1616,7 @@
         }
       ]
     },
-    "getWalletHistory": {
+  "getWalletHistory": {
     "apiHost": "https://deep-index.moralis.io/api/v2.2",
     "summary": "Get the complete history of a wallet",
     "description": "Retrieve the full transaction history of a specified wallet address, including sends, receives, token and NFT transfers, and contract interactions.",
@@ -1738,42 +1738,198 @@
       }
     ],
     "responses": [
-      {
-        "status": "200",
-        "description": "Returns wallet history of a wallet address",
-        "body": {
-          "type": "object",
-          "fields": [
-            {
-              "name": "page",
-              "type": "integer",
-              "description": "Current page number",
-              "example": 2
-            },
-            {
-              "name": "page_size",
-              "type": "integer",
-              "description": "Number of items per page",
-              "example": 100
-            },
-            {
-              "name": "cursor",
-              "type": "string",
-              "description": "Cursor for next page of results"
-            },
-            {
-              "name": "result",
-              "type": "array",
-              "description": "Array of transaction objects",
-              "items": {
-                "type": "object"
+        {
+          "status": "200",
+          "description": "Returns wallet history of a wallet address",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "integer",
+                "description": "Current page number",
+                "example": 2
+              },
+              {
+                "name": "page_size",
+                "type": "integer",
+                "description": "Number of items per page",
+                "example": 100
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for next page of results"
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "Array of transaction objects",
+                "items": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "hash",
+                      "type": "string",
+                      "description": "The transaction hash",
+                      "example": "0x1ed85b3757a6d31d01a4d6677fc52fd3911d649a0af21fe5ca3f886b153773ed"
+                    },
+                    {
+                      "name": "nonce",
+                      "type": "string",
+                      "description": "Transaction nonce",
+                      "example": "1848059"
+                    },
+                    {
+                      "name": "transaction_index",
+                      "type": "string",
+                      "description": "The transaction's index position in the block",
+                      "example": "108"
+                    },
+                    {
+                      "name": "from_address",
+                      "type": "string",
+                      "description": "Sender's address",
+                      "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
+                    },
+                    {
+                      "name": "from_address_label",
+                      "type": "string",
+                      "description": "Label of sender's address if available",
+                      "example": "Binance 1"
+                    },
+                    {
+                      "name": "to_address",
+                      "type": "string",
+                      "description": "Recipient's address",
+                      "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
+                    },
+                    {
+                      "name": "to_address_label",
+                      "type": "string",
+                      "description": "Label of recipient's address if available",
+                      "example": "Binance 2"
+                    },
+                    {
+                      "name": "value",
+                      "type": "string",
+                      "description": "Value transferred in the transaction",
+                      "example": "115580000000000000"
+                    },
+                    {
+                      "name": "gas",
+                      "type": "string",
+                      "description": "Gas provided by the sender",
+                      "example": "30000"
+                    },
+                    {
+                      "name": "gas_price",
+                      "type": "string",
+                      "description": "Gas price set by the sender",
+                      "example": "52500000000"
+                    },
+                    {
+                      "name": "input",
+                      "type": "string",
+                      "description": "Data sent along with the transaction",
+                      "example": "0x"
+                    },
+                    {
+                      "name": "receipt_cumulative_gas_used",
+                      "type": "string",
+                      "description": "The total amount of gas used when this transaction was executed in the block",
+                      "example": "4923073"
+                    },
+                    {
+                      "name": "receipt_gas_used",
+                      "type": "string",
+                      "description": "The amount of gas used by this specific transaction alone",
+                      "example": "21000"
+                    },
+                    {
+                      "name": "receipt_status",
+                      "type": "string",
+                      "description": "The status of the transaction",
+                      "example": "1"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the block",
+                      "example": "2021-05-07T11:08:35.000Z"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "description": "Block number",
+                      "example": "12386788"
+                    },
+                    {
+                      "name": "block_hash",
+                      "type": "string",
+                      "description": "Hash of the block",
+                      "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
+                    },
+                    {
+                      "name": "logs",
+                      "type": "array",
+                      "description": "Array of log objects generated by this transaction",
+                      "items": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "log_index",
+                            "type": "string",
+                            "description": "Index of the log in the block",
+                            "example": "273"
+                          },
+                          {
+                            "name": "transaction_hash",
+                            "type": "string",
+                            "description": "Transaction hash of the log",
+                            "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "internal_transactions",
+                      "type": "array",
+                      "description": "Array of internal transactions generated by this transaction",
+                      "items": {
+                        "type": "object",
+                      }
+                    },
+                    {
+                      "name": "category",
+                      "type": "string",
+                      "description": "Category of the transaction",
+                      "example": "send"
+                    },
+                    {
+                      "name": "possible_spam",
+                      "type": "boolean",
+                      "description": "Indicates if the transaction is possibly spam",
+                      "example": false
+                    },
+                    {
+                      "name": "method_label",
+                      "type": "string",
+                      "description": "Label of the executed method, if applicable",
+                      "example": "transfer"
+                    },
+                    {
+                      "name": "summary",
+                      "type": "string",
+                      "description": "Summary of the transaction",
+                      "example": "transfer"
+                    }
+                  ]
+                }
               }
+            ]
             }
-
-
-          ]
-        }
-      }
+          }
     ],
     "codeSamples": [
       {
@@ -1787,7 +1943,7 @@
         "name": "Moralis Python SDK"
       }
     ]
-    },
+  },
     "getMultipleNFTs": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get Multiple NFTs",
