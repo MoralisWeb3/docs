@@ -3,7 +3,7 @@ export const redirects = [
   {
     source: "/web3-data-api/evm/token-api/supported-dexs-defi-api",
     destination: "/web3-data-api/evm/supported-dexs-token-api",
-  }
+  },
   {
     source: "/docs/sign-in-with-web3authio",
     destination: "/authentication-api/how-to-sign-in-with-web3authio",
@@ -15,9 +15,9 @@ export const redirects = [
     permanent: true,
   },
   {
-  source:"/web3-data-api/evm/reference/get-token-balances-by-wallet",
-  destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
-  permanent: true,
+    source: "/web3-data-api/evm/reference/get-token-balances-by-wallet",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
+    permanent: true,
   },
   {
     source: "/docs/sign-in-with-magiclink",
@@ -4870,7 +4870,7 @@ export const redirects = [
   },
   {
     source: "/moralis-dapp/web3-api/account",
-    destination: "https://v1docs.moralis.io/moralis-dapp/web3-api/account",
+    destination: "/web3-data-api/evm/reference/get-wallet-token-balances-price",
     permanent: true,
   },
   {
