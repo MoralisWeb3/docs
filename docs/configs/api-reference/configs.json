@@ -7114,7 +7114,154 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns token balances with prices for a specific address"
+          "description": "Returns ERC20 token balance, details, and additional financial information for a specific address, including pagination details.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "A pointer to the next page of results (if any), for pagination purposes.",
+                "example": ""
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page number in the paginated result set",
+                "example": 2
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of items per page in the paginated result set",
+                "example": 100
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "An array of objects, each representing a token's detailed information and financial data.",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The address of the token contract",
+                      "example": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the token contract",
+                      "example": "ETH"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the token",
+                      "example": "Ether"
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "The URL to the token's logo image",
+                      "example": "https://cdn.moralis.io/eth/0x.png"
+                    },
+                    {
+                      "name": "thumbnail",
+                      "type": "string",
+                      "description": "The URL to the token's thumbnail image",
+                      "example": "https://cdn.moralis.io/eth/0x_thumb.png"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "integer",
+                      "description": "The number of decimal places the token uses",
+                      "example": 18
+                    },
+                    {
+                      "name": "balance",
+                      "type": "string",
+                      "description": "The current token balance of the address",
+                      "example": "360659174684349604"
+                    },
+                    {
+                      "name": "possible_spam",
+                      "type": "boolean",
+                      "description": "Flag indicating if the token is considered possible spam",
+                      "example": false
+                    },
+                    {
+                      "name": "verified_contract",
+                      "type": "boolean",
+                      "description": "Flag indicating if the contract is verified",
+                      "example": true
+                    },
+                    {
+                      "name": "balance_formatted",
+                      "type": "string",
+                      "description": "The formatted string representation of the token balance",
+                      "example": "0.360659174684349604"
+                    },
+                    {
+                      "name": "usd_price",
+                      "type": "number",
+                      "description": "The current USD price of the token",
+                      "example": 3725.2775921204284
+                    },
+                    {
+                      "name": "usd_price_24hr_percent_change",
+                      "type": "number",
+                      "description": "The 24-hour percentage change in the token's USD price",
+                      "example": 1.2028612707326054
+                    },
+                    {
+                      "name": "usd_price_24hr_usd_change",
+                      "type": "number",
+                      "description": "The USD amount change in the token's price over the last 24 hours",
+                      "example": 44.80992138289679
+                    },
+                    {
+                      "name": "usd_value",
+                      "type": "number",
+                      "description": "The current USD value of the token balance",
+                      "example": 1343.5555418442548
+                    },
+                    {
+                      "name": "usd_value_24hr_usd_change",
+                      "type": "number",
+                      "description": "The USD value change of the token balance over the last 24 hours",
+                      "example": 16.161109263626145
+                    },
+                    {
+                      "name": "native_token",
+                      "type": "boolean",
+                      "description": "Flag indicating if this token is the native cryptocurrency of its blockchain",
+                      "example": true
+                    },
+                    {
+                      "name": "portfolio_percentage",
+                      "type": "number",
+                      "description": "The percentage of the token's value relative to the total portfolio value",
+                      "example": 55.7292
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletTokenBalancesPrice({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_token_balances_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
