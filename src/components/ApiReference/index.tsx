@@ -180,7 +180,7 @@ const ApiReference = ({
           );
         } else {
           // Without user API key, make the request via the Vercel function
-          response = await fetch("/api/api-proxy", {
+          response = await fetch("/api/api-vercel", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

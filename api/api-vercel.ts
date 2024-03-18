@@ -15,7 +15,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       referer: SUPER_SECRET_KEY,
     };
 
-    console.log({newHeaders})
+    console.log({ newHeaders });
 
     const response = await fetch(
       [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(
@@ -34,12 +34,12 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       res.status(response.status).send(result);
     } else {
       const error = await response.text();
-      console.log({"API Error": error})
+      console.log({ "API Error": error });
 
       res.status(response.status).send(error);
     }
   } catch (error) {
-    console.log({"Function Error": error})
+    console.log({ "Function Error": error });
     res.status(500).send(error);
   }
 }
