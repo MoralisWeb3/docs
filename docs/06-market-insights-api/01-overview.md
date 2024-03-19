@@ -14,7 +14,7 @@ The Market Insights API is a comprehensive suite designed to provide you with in
 
 ## Market Data API
 
-The [Market Data API](/market-insights-api/reference/market-data-api/overview) provides general market overview data, such as the top NFT collections and the leading ERC20 tokens, which are widely available elsewhere, often at low cost or even for free.
+The [Market Data API](/market-insights-api/reference/market-data-api/overview) provides popular market overview and trends data, such as the top cryptocurrencies by market cap, popular NFT collections, leading ERC20 tokens and much more.
 
 ## Discovery API
 

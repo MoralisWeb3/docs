@@ -1,7 +1,7 @@
 ---
 title: "Verification for NFT Collections"
 slug: "../../evm/verification-nft-collections"
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
