@@ -12,7 +12,6 @@ interface EndpointWeightResponse {
 
 const fixedPath = {
   getWalletNetWorth: "wallet-api/get-wallet-net-worth",
-  getWalletHistory: "wallet-api/get-wallet-history",
   getWalletStats: "wallet-api/get-wallet-stats",
   getHottestNFTCollectionsByTradingVolume:
     "get-top-nft-collections-by-trading-volume",

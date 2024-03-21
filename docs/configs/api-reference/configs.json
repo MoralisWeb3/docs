@@ -86,8 +86,7 @@
                   "example": "0.0285",
                   "description": "The market cap percent change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "total_volume",
                   "type": "string",
                   "example": "0.0",
@@ -107,64 +106,56 @@
                   "example": "0.0",
                   "description": "The 24h high price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_low",
                   "type": "string",
                   "example": "0.0",
                   "description": "The 24h low price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price percent change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_ath",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "ath_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "ath_date",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high date",
                   "required": true
-                },
+                }, 
                 {
                   "name": "usd_price_1hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 1h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 7d",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -275,8 +266,7 @@
                   "example": "0.0285",
                   "description": "The market cap percent change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "total_volume",
                   "type": "string",
                   "example": "0.0",
@@ -296,64 +286,56 @@
                   "example": "0.0",
                   "description": "The 24h high price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_low",
                   "type": "string",
                   "example": "0.0",
                   "description": "The 24h low price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price percent change in the last 24h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_ath",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high price in USD",
                   "required": true
-                },
-                {
+                }, {
                   "name": "ath_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "ath_date",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high date",
                   "required": true
-                },
+                }, 
                 {
                   "name": "usd_price_1hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 1h",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 7d",
                   "required": true
-                },
-                {
+                }, {
                   "name": "usd_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -751,22 +733,19 @@
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "collection_address",
                   "type": "string",
                   "example": "0x123",
                   "description": "The collection address",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_usd_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -862,57 +841,49 @@
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "collection_address",
                   "type": "string",
                   "example": "0x123",
                   "description": "The collection address",
                   "required": true
-                },
-                {
+                }, {
                   "name": "average_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The average price",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_usd_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 24hr percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 7d percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_usd_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 7d percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 30d percent change",
                   "required": true
-                },
-                {
+                }, {
                   "name": "floor_price_usd_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -1303,763 +1274,7 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the net worth and chain balance data.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "total_networth_usd",
-                "type": "string",
-                "description": "The total net worth in USD",
-                "example": "3879851.41"
-              },
-              {
-                "name": "chains",
-                "type": "array",
-                "description": "An array of chain balance objects",
-                "field": {
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "chain",
-                      "type": "string",
-                      "description": "The identifier for the blockchain (e.g., 'eth' for Ethereum)",
-                      "example": "eth"
-                    },
-                    {
-                      "name": "native_balance",
-                      "type": "string",
-                      "description": "The balance of the native currency on the chain in its smallest unit (e.g., wei for Ethereum)",
-                      "example": "1085513807021271641379"
-                    },
-                    {
-                      "name": "native_balance_formatted",
-                      "type": "string",
-                      "description": "The formatted balance of the native currency on the chain",
-                      "example": "1085.513807021271641379"
-                    },
-                    {
-                      "name": "native_balance_usd",
-                      "type": "string",
-                      "description": "The USD value of the native currency balance",
-                      "example": "3158392.48"
-                    },
-                    {
-                      "name": "token_balance_usd",
-                      "type": "string",
-                      "description": "The USD value of the token balance on the chain",
-                      "example": "721458.93"
-                    },
-                    {
-                      "name": "networth_usd",
-                      "type": "string",
-                      "description": "The total net worth in USD associated with this chain",
-                      "example": "3879851.41"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletNetWorth({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_net_worth(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
-        }
-      ]
-    },
-    "getWalletHistory": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get the complete history of a wallet",
-      "description": "Retrieve the full transaction history of a specified wallet address, including sends, receives, token and NFT transfers, and contract interactions.",
-      "method": "GET",
-      "path": "/wallets/:address/history",
-      "pathParams": [
-        {
-          "name": "address",
-          "description": "The address of the wallet",
-          "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-          "type": "string"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "goerli",
-            "0x5",
-            "sepolia",
-            "0xaa36a7",
-            "polygon",
-            "0x89",
-            "mumbai",
-            "0x13881",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-            "palm",
-            "0x2a15c308d",
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1",
-            "chiliz",
-            "0x15b38",
-            "chiliz testnet",
-            "0x15b32",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
-            "base",
-            "0x2105",
-            "base testnet",
-            "0x14a33",
-            "base sepolia",
-            "0x14a34",
-            "optimism",
-            "0xa"
-          ]
-        },
-        {
-          "name": "from_block",
-          "description": "The minimum block number from which to get the transactions\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "number"
-        },
-        {
-          "name": "to_block",
-          "description": "The maximum block number from which to get the transactions.\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
-          "required": false,
-          "type": "number"
-        },
-        {
-          "name": "from_date",
-          "description": "The start date from which to get the transactions (format in seconds or datestring accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "to_date",
-          "description": "Get the transactions up to this date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
-          "type": "string"
-        },
-        {
-          "name": "internal_transactions",
-          "description": "If the result should contain the internal transactions.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
-          "name": "nft_metadata",
-          "description": "If the result should contain the nft metadata.",
-          "required": false,
-          "type": "boolean"
-        },
-        {
-          "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "order",
-          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
-          "required": false,
-          "example": "DESC",
-          "type": "string",
-          "enum": ["ASC", "DESC"]
-        },
-        {
-          "name": "limit",
-          "description": "The desired page size of the result.",
-          "required": false,
-          "type": "number"
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the transaction data.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "page",
-                "type": "number",
-                "description": "The current page number in the paginated result set",
-                "example": "2"
-              },
-              {
-                "name": "page_size",
-                "type": "number",
-                "description": "The number of items per page in the paginated result set",
-                "example": "100"
-              },
-              {
-                "name": "cursor",
-                "type": "string",
-                "description": "A cursor for use in pagination",
-                "example": ""
-              },
-              {
-                "name": "result",
-                "type": "array",
-                "description": "An array of transaction objects",
-                "field": {
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "hash",
-                      "type": "string",
-                      "description": "The hash of the transaction",
-                      "example": "0x1ed85b3757a6d31d01a4d6677fc52fd3911d649a0af21fe5ca3f886b153773ed"
-                    },
-                    {
-                      "name": "nonce",
-                      "type": "string",
-                      "description": "The nonce of the transaction",
-                      "example": "1848059"
-                    },
-                    {
-                      "name": "transaction_index",
-                      "type": "string",
-                      "description": "The position of the transaction in the block",
-                      "example": "108"
-                    },
-                    {
-                      "name": "from_address",
-                      "type": "string",
-                      "description": "The address sending the transaction",
-                      "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
-                    },
-                    {
-                      "name": "from_address_label",
-                      "type": "string",
-                      "description": "Label for the from address",
-                      "example": "Binance 1"
-                    },
-                    {
-                      "name": "to_address",
-                      "type": "string",
-                      "description": "The address receiving the transaction",
-                      "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
-                    },
-                    {
-                      "name": "to_address_label",
-                      "type": "string",
-                      "description": "Label for the to address",
-                      "example": "Binance 2"
-                    },
-                    {
-                      "name": "value",
-                      "type": "string",
-                      "description": "The value transferred in the transaction",
-                      "example": "115580000000000000"
-                    },
-                    {
-                      "name": "gas",
-                      "type": "string",
-                      "description": "The gas limit provided by the sender",
-                      "example": "30000"
-                    },
-                    {
-                      "name": "gas_price",
-                      "type": "string",
-                      "description": "The gas price set for the transaction",
-                      "example": "52500000000"
-                    },
-                    {
-                      "name": "input",
-                      "type": "string",
-                      "description": "The input data of the transaction",
-                      "example": "0x"
-                    },
-                    {
-                      "name": "receipt_cumulative_gas_used",
-                      "type": "string",
-                      "description": "The total gas used in the block up until this transaction",
-                      "example": "4923073"
-                    },
-                    {
-                      "name": "receipt_gas_used",
-                      "type": "string",
-                      "description": "The gas used by this transaction alone",
-                      "example": "21000"
-                    },
-                    {
-                      "name": "receipt_contract_address",
-                      "type": "string",
-                      "description": "The contract address created by the transaction, if any",
-                      "example": null
-                    },
-                    {
-                      "name": "receipt_root",
-                      "type": "string",
-                      "description": "The receipt root of the transaction",
-                      "example": null
-                    },
-                    {
-                      "name": "receipt_status",
-                      "type": "string",
-                      "description": "The status of the transaction (1 for success, 0 for failure)",
-                      "example": "1"
-                    },
-                    {
-                      "name": "block_timestamp",
-                      "type": "string",
-                      "description": "The timestamp for the block containing the transaction",
-                      "example": "2021-05-07T11:08:35.000Z"
-                    },
-                    {
-                      "name": "block_number",
-                      "type": "string",
-                      "description": "The block number containing the transaction",
-                      "example": "12386788"
-                    },
-                    {
-                      "name": "block_hash",
-                      "type": "string",
-                      "description": "The hash of the block containing the transaction",
-                      "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-                    },
-                    {
-                      "name": "logs",
-                      "type": "array",
-                      "description": "An array of logs generated by the transaction",
-                      "items": {
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "log_index",
-                            "type": "string",
-                            "description": "The index of the log in the block",
-                            "example": "273"
-                          },
-                          {
-                            "name": "transaction_hash",
-                            "type": "string",
-                            "description": "The hash of the transaction generating the log",
-                            "example": "0xdd9006489e46670e0e85d1fb88823099e7f596b08aeaac023e9da0851f26fdd5"
-                          },
-                          {
-                            "name": "transaction_index",
-                            "type": "string",
-                            "description": "The index of the transaction in the block",
-                            "example": "204"
-                          },
-                          {
-                            "name": "address",
-                            "type": "string",
-                            "description": "The address that generated the log",
-                            "example": "0x3105d328c66d8d55092358cf595d54608178e9b5"
-                          },
-                          {
-                            "name": "data",
-                            "type": "string",
-                            "description": "The data contained in the log",
-                            "example": "0x00000000000000000000000000000000000000000000000de05239bccd4d537400000000000000000000000000024dbc80a9f80e3d5fc0a0ee30e2693781a443"
-                          },
-                          {
-                            "name": "topic0",
-                            "type": "string",
-                            "description": "The first topic of the log",
-                            "example": "0x2caecd17d02f56fa897705dcc740da2d237c373f70686f4e0d9bd3bf0400ea7a"
-                          },
-                          {
-                            "name": "topic1",
-                            "type": "string",
-                            "description": "The second topic of the log",
-                            "example": "0x000000000000000000000000031002d15b0d0cd7c9129d6f644446368deae391"
-                          },
-                          {
-                            "name": "topic2",
-                            "type": "string",
-                            "description": "The third topic of the log",
-                            "example": "0x000000000000000000000000d25943be09f968ba740e0782a34e710100defae9"
-                          },
-                          {
-                            "name": "topic3",
-                            "type": "string",
-                            "description": "The fourth topic of the log, if any",
-                            "example": null
-                          },
-                          {
-                            "name": "block_timestamp",
-                            "type": "string",
-                            "description": "The timestamp for the block containing the log",
-                            "example": "2021-05-07T11:08:35.000Z"
-                          },
-                          {
-                            "name": "block_number",
-                            "type": "string",
-                            "description": "The block number containing the log",
-                            "example": "12386788"
-                          },
-                          {
-                            "name": "block_hash",
-                            "type": "string",
-                            "description": "The hash of the block containing the log",
-                            "example": "0x9b559aef7ea858608c2e554246fe4a24287e7aeeb976848df2b9a2531f4b9171"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "name": "internal_transactions",
-                      "type": "array",
-                      "description": "An array of internal transactions triggered by the transaction",
-                      "field": {
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "transaction_hash",
-                            "type": "string",
-                            "description": "The hash of the internal transaction",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "block_number",
-                            "type": "string",
-                            "description": "The block number in which the internal transaction was included",
-                            "example": "12526958"
-                          },
-                          {
-                            "name": "block_hash",
-                            "type": "string",
-                            "description": "The hash of the block containing the internal transaction",
-                            "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
-                          },
-                          {
-                            "name": "type",
-                            "type": "string",
-                            "description": "The type of internal transaction (e.g., CALL, CREATE)",
-                            "example": "CALL"
-                          },
-                          {
-                            "name": "from",
-                            "type": "string",
-                            "description": "The address initiating the internal transaction",
-                            "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
-                          },
-                          {
-                            "name": "to",
-                            "type": "string",
-                            "description": "The address the internal transaction was directed to",
-                            "example": "0xa71db868318f0a0bae9411347cd4a6fa23d8d4ef"
-                          },
-                          {
-                            "name": "value",
-                            "type": "string",
-                            "description": "The value transferred in the internal transaction",
-                            "example": "650000000000000000"
-                          },
-                          {
-                            "name": "gas",
-                            "type": "string",
-                            "description": "The gas provided for the internal transaction",
-                            "example": "6721975"
-                          },
-                          {
-                            "name": "gas_used",
-                            "type": "string",
-                            "description": "The gas used by the internal transaction",
-                            "example": "6721975"
-                          },
-                          {
-                            "name": "input",
-                            "type": "string",
-                            "description": "The input data for the internal transaction",
-                            "example": "0x"
-                          },
-                          {
-                            "name": "output",
-                            "type": "string",
-                            "description": "The output of the internal transaction",
-                            "example": "0x"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "name": "nft_transfers",
-                      "type": "array",
-                      "description": "An array of NFT transfers triggered by the transaction",
-                      "field": {
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "token_address",
-                            "type": "string",
-                            "description": "The address of the NFT contract",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "token_id",
-                            "type": "string",
-                            "description": "The unique identifier of the NFT",
-                            "example": "15"
-                          },
-                          {
-                            "name": "from_address",
-                            "type": "string",
-                            "description": "The address from which the NFT was transferred",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "from_address_label",
-                            "type": "string",
-                            "description": "Label for the from address of the NFT transfer",
-                            "example": "Binance 1"
-                          },
-                          {
-                            "name": "to_address",
-                            "type": "string",
-                            "description": "The address to which the NFT was transferred",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "to_address_label",
-                            "type": "string",
-                            "description": "Label for the to address of the NFT transfer",
-                            "example": "Binance 2"
-                          },
-                          {
-                            "name": "value",
-                            "type": "string",
-                            "description": "The value of the NFT transferred",
-                            "example": "1000000000000000"
-                          },
-                          {
-                            "name": "amount",
-                            "type": "string",
-                            "description": "The amount of the NFT transferred",
-                            "example": "1"
-                          },
-                          {
-                            "name": "contract_type",
-                            "type": "string",
-                            "description": "The contract type of the NFT (e.g., ERC721)",
-                            "example": "ERC721"
-                          },
-                          {
-                            "name": "block_number",
-                            "type": "string",
-                            "description": "The block number in which the NFT transfer occurred",
-                            "example": "88256"
-                          },
-                          {
-                            "name": "block_timestamp",
-                            "type": "string",
-                            "description": "The timestamp for the block containing the NFT transfer",
-                            "example": "2021-06-04T16:00:15"
-                          },
-                          {
-                            "name": "block_hash",
-                            "type": "string",
-                            "description": "The hash of the block containing the NFT transfer",
-                            "example": "string"
-                          },
-                          {
-                            "name": "transaction_hash",
-                            "type": "string",
-                            "description": "The hash of the transaction containing the NFT transfer",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "transaction_type",
-                            "type": "string",
-                            "description": "The type of transaction",
-                            "example": "string"
-                          },
-                          {
-                            "name": "transaction_index",
-                            "type": "number",
-                            "description": "The index of the transaction in the block",
-                            "example": 0
-                          },
-                          {
-                            "name": "log_index",
-                            "type": "number",
-                            "description": "The index of the log in the block",
-                            "example": 0
-                          },
-                          {
-                            "name": "operator",
-                            "type": "string",
-                            "description": "The operator executing the NFT transfer",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "possible_spam",
-                            "type": "boolean",
-                            "description": "Flag indicating if the transfer might be spam",
-                            "example": false
-                          },
-                          {
-                            "name": "verified_collection",
-                            "type": "boolean",
-                            "description": "Flag indicating if the NFT is from a verified collection",
-                            "example": false
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "name": "erc20_transfer",
-                      "type": "array",
-                      "description": "An array of ERC20 token transfers triggered by the transaction",
-                      "field": {
-                        "type": "object",
-                        "fields": [
-                          {
-                            "name": "token_name",
-                            "type": "string",
-                            "description": "The name of the ERC20 token",
-                            "example": "Tether USD"
-                          },
-                          {
-                            "name": "token_symbol",
-                            "type": "string",
-                            "description": "The symbol of the ERC20 token",
-                            "example": "USDT"
-                          },
-                          {
-                            "name": "token_logo",
-                            "type": "string",
-                            "description": "The logo URL of the ERC20 token",
-                            "example": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707"
-                          },
-                          {
-                            "name": "token_decimals",
-                            "type": "string",
-                            "description": "The decimals of the ERC20 token",
-                            "example": "6"
-                          },
-                          {
-                            "name": "transaction_hash",
-                            "type": "string",
-                            "description": "The hash of the transaction containing the ERC20 transfer",
-                            "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
-                          },
-                          {
-                            "name": "address",
-                            "type": "string",
-                            "description": "The address of the ERC20 contract",
-                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                          },
-                          {
-                            "name": "block_timestamp",
-                            "type": "string",
-                            "description": "The timestamp for the block containing the ERC20 transfer",
-                            "example": "2021-04-02T10:07:54.000Z"
-                          },
-                          {
-                            "name": "block_number",
-                            "type": "string",
-                            "description": "The block number in which the ERC20 transfer occurred",
-                            "example": "12526958"
-                          },
-                          {
-                            "name": "block_hash",
-                            "type": "string",
-                            "description": "The hash of the block containing the ERC20 transfer",
-                            "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
-                          },
-                          {
-                            "name": "to_address",
-                            "type": "string",
-                            "description": "The address to which the ERC20 token was transferred",
-                            "example": "0x62AED87d21Ad0F3cdE4D147Fdcc9245401Af0044"
-                          },
-                          {
-                            "name": "to_address_label",
-                            "type": "string",
-                            "description": "Label for the to address of the ERC20 transfer",
-                            "example": "Binance 2"
-                          },
-                          {
-                            "name": "from_address",
-                            "type": "string",
-                            "description": "The address from which the ERC20 token was transferred",
-                            "example": "0xd4a3BebD824189481FC45363602b83C9c7e9cbDf"
-                          },
-                          {
-                            "name": "from_address_label",
-                            "type": "string",
-                            "description": "Label for the from address of the ERC20 transfer",
-                            "example": "Binance 1"
-                          },
-                          {
-                            "name": "value",
-                            "type": "string",
-                            "description": "The value of the ERC20 token transferred",
-                            "example": "650000000000000000"
-                          },
-                          {
-                            "name": "transaction_index",
-                            "type": "number",
-                            "description": "The index of the transaction in the block",
-                            "example": 12
-                          },
-                          {
-                            "name": "log_index",
-                            "type": "number",
-                            "description": "The index of the log in the block",
-                            "example": 2
-                          },
-                          {
-                            "name": "possible_spam",
-                            "type": "boolean",
-                            "description": "Flag indicating if the transfer might be spam",
-                            "example": false
-                          },
-                          {
-                            "name": "verified_contract",
-                            "type": "boolean",
-                            "description": "Flag indicating if the ERC20 contract is verified",
-                            "example": false
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletHistory({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_history(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
+          "description": "Returns token balances with prices for a specific address"
         }
       ]
     }
