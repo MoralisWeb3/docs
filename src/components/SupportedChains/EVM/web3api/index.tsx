@@ -113,7 +113,7 @@ const EVMChainData = () => {
       Name: "Gnosis Chiado",
       "Chain Id (Int)": "10200",
       "Chain Id (Hex)": "0x27d8",
-      EvmChain: "EvmChain.GNOSIS_CHIADO",
+      EvmChain: "EvmChain.GNOSIS_TESTNET",
       Type: "Testnet",
     },
     {
