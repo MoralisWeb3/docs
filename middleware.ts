@@ -1,18 +1,51 @@
 import { ipAddress, next } from "@vercel/edge";
-import Redis from "ioredis";
 
-const REDIS_URL = process.env.KV_REST_API_URL;
-if (!REDIS_URL) throw new Error("Missing ENV variable");
-const redis = new Redis(REDIS_URL, {
-  tls: {},
-});
+const KV_REST_API_URL = process.env.REDIS_REST_API_URL;
+const KV_REST_API_TOKEN = process.env.REDIS_REST_API_TOKEN;
+
+if (!KV_REST_API_URL || !KV_REST_API_TOKEN) {
+  throw new Error("Missing ENV variables for Redis connection");
+}
+
+const RATE_LIMIT = 2; // The maximum number of requests allowed
+const WINDOW_SIZE = 10; // The window size in seconds
+
+async function incrementKey(key) {
+  const response = await fetch(`${KV_REST_API_URL}/incr`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${KV_REST_API_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ key }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to increment key");
+  }
+
+  const result = await response.json();
+  return result.result;
+}
+
+async function setKeyExpiration(key, seconds) {
+  const response = await fetch(`${KV_REST_API_URL}/expire`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${KV_REST_API_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ key, seconds }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to set key expiration");
+  }
+}
 
 export const config = {
   matcher: "/api/api-vercel",
 };
-
-const RATE_LIMIT = 2;
-const WINDOW_SIZE = 10;
 
 export default async function middleware(request: Request) {
   const ip = ipAddress(request) || "127.0.0.1";
@@ -20,24 +53,16 @@ export default async function middleware(request: Request) {
   try {
     console.time("ratelimit-check");
     const currentWindow = Math.floor(Date.now() / 1000 / WINDOW_SIZE);
-    const windowKey = `${ip}-${currentWindow}`;
+    const windowKey = `rate-limit:${ip}:${currentWindow}`;
 
-    const pipeline = redis
-      .multi()
-      .incr(windowKey) // Increment the count for the IP in the current window
-      .expire(windowKey, WINDOW_SIZE); // Set expiration for the window key
+    const count = await incrementKey(windowKey);
 
-    const requestCount = await pipeline.exec();
-
-    if (!requestCount) {
-      throw new Error("Redis exec returned null");
+    // Set the expiration of the key if this is the first request in the current window
+    if (count === 1) {
+      await setKeyExpiration(windowKey, WINDOW_SIZE);
     }
-
-    // Assuming the structure [error, response][] where response is of the shape [null, number]
-    const count = requestCount[0][1] as number;
-    console.log(count);
+    console.log({ count });
     console.timeEnd("ratelimit-check");
-
     if (count > RATE_LIMIT) {
       return new Response("Rate limit exceeded", { status: 429 });
     }
@@ -45,7 +70,6 @@ export default async function middleware(request: Request) {
     return next();
   } catch (error) {
     console.error("Error in rate limiting:", error);
-
     return new Response("Internal Server Error", { status: 500 });
   }
 }
