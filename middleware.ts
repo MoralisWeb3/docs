@@ -11,12 +11,12 @@ export const config = {
   matcher: "/api/api-vercel",
 };
 
-const RATE_LIMIT = 2; // The maximum number of requests allowed
+const RATE_LIMIT = 10; // The maximum number of requests allowed
 const WINDOW_SIZE = 10; // The window size in seconds
 
 export default async function middleware(request: Request) {
   const ip = ipAddress(request) || "127.0.0.1";
-  const currentWindow = Math.floor(Date.now() / 1000 / WINDOW_SIZE);
+  const currentWindow = Math.floor(Date.now() / 1000 / 30);
   const windowKey = `rate-limit:${ip}:${currentWindow}`;
   console.time("ratelimit-check");
 
