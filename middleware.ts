@@ -16,7 +16,9 @@ export default async function middleware(request: Request) {
   // Limiting only the specific API path
   const ip = ipAddress(request) || "127.0.0.1";
 
+  console.time("ratelimit-check"); // Start timing before rate limit check
   const { success } = await ratelimit.limit(ip);
+  console.timeEnd("ratelimit-check"); // End timing after rate limit check
 
   // If rate limit is exceeded, respond with a custom error or status code
   if (!success) {
