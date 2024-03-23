@@ -330,12 +330,6 @@
       "price": 50,
       "rateLimitCost": 5,
       "dynamic": true
-    },
-    {
-      "endpoint": "getWalletHistory",
-      "path": "/wallets/{address}/history",
-      "price": 15,
-      "rateLimitCost": 3
     }
   ],
   "solana": [

@@ -19,6 +19,13 @@ const EVMChainData = () => {
       Type: "Mainnet",
     },
     {
+      Name: "Ethereum Holesky",
+      "Chain Id (Int)": "17000",
+      "Chain Id (Hex)": "0x4268",
+      EvmChain: "EvmChain.HOLESKY",
+      Type: "Testnet",
+    },
+    {
       Name: "Ethereum Görli",
       "Chain Id (Int)": "5",
       "Chain Id (Hex)": "0x5",
@@ -106,7 +113,7 @@ const EVMChainData = () => {
       Name: "Gnosis Chiado",
       "Chain Id (Int)": "10200",
       "Chain Id (Hex)": "0x27d8",
-      EvmChain: "EvmChain.GNOSIS_CHIADO",
+      EvmChain: "EvmChain.GNOSIS_TESTNET",
       Type: "Testnet",
     },
     {
@@ -121,6 +128,13 @@ const EVMChainData = () => {
       "Chain Id (Int)": "84531",
       "Chain Id (Hex)": "0x14a33",
       EvmChain: "EvmChain.BASE_GOERLI",
+      Type: "Testnet",
+    },
+    {
+      Name: "Base Sepolia",
+      "Chain Id (Int)": "84532",
+      "Chain Id (Hex)": "0x14a34",
+      EvmChain: "EvmChain.BASE_SEPOLIA",
       Type: "Testnet",
     },
     {
