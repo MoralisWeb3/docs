@@ -86,7 +86,8 @@
                   "example": "0.0285",
                   "description": "The market cap percent change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "total_volume",
                   "type": "string",
                   "example": "0.0",
@@ -106,56 +107,64 @@
                   "example": "0.0",
                   "description": "The 24h high price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_low",
                   "type": "string",
                   "example": "0.0",
                   "description": "The 24h low price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price percent change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_ath",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "ath_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "ath_date",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high date",
                   "required": true
-                }, 
+                },
                 {
                   "name": "usd_price_1hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 1h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 7d",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -266,7 +275,8 @@
                   "example": "0.0285",
                   "description": "The market cap percent change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "total_volume",
                   "type": "string",
                   "example": "0.0",
@@ -286,56 +296,64 @@
                   "example": "0.0",
                   "description": "The 24h high price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_low",
                   "type": "string",
                   "example": "0.0",
                   "description": "The 24h low price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price percent change in the last 24h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_ath",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high price in USD",
                   "required": true
-                }, {
+                },
+                {
                   "name": "ath_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "ath_date",
                   "type": "string",
                   "example": "0.0",
                   "description": "The all time high date",
                   "required": true
-                }, 
+                },
                 {
                   "name": "usd_price_1hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 1h",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The price change in the last 7d",
                   "required": true
-                }, {
+                },
+                {
                   "name": "usd_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -733,19 +751,22 @@
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "collection_address",
                   "type": "string",
                   "example": "0x123",
                   "description": "The collection address",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_usd_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -841,49 +862,57 @@
                   "example": "0.0",
                   "description": "The volume 24hr percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "collection_address",
                   "type": "string",
                   "example": "0x123",
                   "description": "The collection address",
                   "required": true
-                }, {
+                },
+                {
                   "name": "average_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The average price",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_usd_24hr_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 24hr percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 7d percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_usd_7d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 7d percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
                   "description": "The floor price 30d percent change",
                   "required": true
-                }, {
+                },
+                {
                   "name": "floor_price_usd_30d_percent_change",
                   "type": "string",
                   "example": "0.0",
@@ -15533,7 +15562,7 @@
         },
         {
           "name": "address",
-          "description": "The address of the contract",
+          "description": "The address of the wallet",
           "required": true,
           "type": "string",
           "example": "DDy5QHKEDgg5ZyWmwi1rJKwYHe7ZR5udGQfJkc8EPfLM"
