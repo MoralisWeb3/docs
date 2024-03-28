@@ -187,6 +187,12 @@ const config = {
             label: "Market Insights API",
           },
           {
+            type: "doc",
+            docId: "rpc-nodes/overview",
+            position: "left",
+            label: "RPC Nodes",
+          },
+          {
             to: "changelog",
             position: "left",
             label: "Changelog",
@@ -405,9 +411,9 @@ const config = {
   },
   plugins: [
     [
-      '@docusaurus/plugin-google-tag-manager',
+      "@docusaurus/plugin-google-tag-manager",
       {
-        containerId: 'GTM-WD3V6LS6',
+        containerId: "GTM-WD3V6LS6",
       },
     ],
     [
@@ -448,9 +454,7 @@ const config = {
     },
   ],
 
-  clientModules: [
-    require.resolve('./src/noscript-gtm.js'),
-  ],
+  clientModules: [require.resolve("./src/noscript-gtm.js")],
 };
 
 module.exports = config;
