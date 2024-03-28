@@ -41542,22 +41542,19 @@
           "name": "from_date",
           "description": "The first date to fetch news for",
           "required": false,
-          "type": "string",
-          "example": "2021-10-11T00:00:00.000Z"
+          "type": "string"
         },
         {
           "name": "to_date",
           "description": "The last date to fetch news for",
           "required": false,
-          "type": "string",
-          "example": "2021-10-15T00:00:00.000Z"
+          "type": "string"
         },
         {
           "name": "cursor",
           "description": "Cursor pointing to the next page of results",
           "required": false,
-          "type": "string",
-          "example": "jwt token"
+          "type": "string"
         },
         {
           "name": "limit",
@@ -41571,7 +41568,7 @@
           "required": false,
           "type": "string",
           "description": "Order the news by date",
-          "example": "asc_date",
+          "example": "desc_date",
           "enum": ["asc_date", "desc_date"]
         }
       ],
