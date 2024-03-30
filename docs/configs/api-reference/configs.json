@@ -44007,5 +44007,89 @@
         }
       ]
     }
+  },
+  "rpc": {
+    "ethAccounts": {
+      "apiHost": "https://test-rpc.example.com",
+      "summary": "Retrieve Ethereum Accounts",
+      "description": "Returns an array of Ethereum account addresses that are available on the node.\n* This method does not require any parameters.\n* It is useful for retrieving all accounts that the node knows about, which can include externally owned accounts (EOAs) and contracts.",
+      "method": "POST",
+      "path": "/rpc/eth_accounts",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "params",
+            "type": "array",
+            "required": true,
+            "description": "Parameters for the RPC method. The `eth_accounts` method does not require any parameters, so this must be an empty array.",
+            "example": [],
+            "field": {
+              "type": "string",
+              "fields": ""
+            }
+          },
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "Version of the JSON-RPC protocol. Must be exactly \"2.0\".",
+            "example": "2.0"
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The name of the RPC method to be invoked.",
+            "example": "eth_accounts"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "Identifier for the request, which can be used to match responses with requests. Must be a unique integer.",
+            "example": 1
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns an array of Ethereum account addresses available on the node.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "description": "Version of the JSON-RPC protocol. Will be \"2.0\".",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "integer",
+                "description": "Identifier for the response, matching the request id.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "An array of Ethereum account addresses in hex format.",
+                "field": {
+                  "type": "string",
+                  "description": "An Ethereum account address in hex format.",
+                  "example": "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    }
   }
 }

@@ -16,13 +16,8 @@ To put it simply, RPC nodes are nodes (servers) that access a blockchain network
 
 Moralis runs Ethereum RPC endpoints, supported by several APIs like Ethereum JSON-RPC, Beacon, Trace, Debug, Otterscan, Token, NFT APIs, and more.
 
-## Ethereum Network Support
+## Supported chains
 
-- MAINNET: WSS ✔️, HTTPS ✔️
-- GOERLI: WSS ✔️, HTTPS ✔️
-- SEPOLIA: WSS ✔️, HTTPS ✔️
-- HOLSEY: WSS ✔️, HTTPS ✔️
+import { EVMRpcChainData } from '@site/src/components/SupportedChains';
 
-## Making Ethereum API Requests
-
-See example requests in various programming languages and Web3 SDKs in the documentation.
+<EVMRpcChainData/>

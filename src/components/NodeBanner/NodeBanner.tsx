@@ -14,7 +14,7 @@ function NodeBanner({
 }: NodeBannerProps) {
   // Default values
   const text = customText || "Start using RPC Nodes in your project today.";
-  const buttonText = customButtonText || "Get your free RPC Node url.";
+  const buttonText = customButtonText || "Get your free RPC Node";
   const buttonLink = customButtonLink || "https://admin.moralis.io/nodes";
 
   return (
