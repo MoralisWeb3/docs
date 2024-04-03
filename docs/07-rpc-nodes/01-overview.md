@@ -2,7 +2,7 @@
 title: "RPC Nodes Docs"
 slug: "/rpc-nodes"
 sidebar_label: "Overview"
-sidebar_position: 1
+sidebar_position: 0
 sidebar_class_name: "sidebar-overview"
 ---
 
