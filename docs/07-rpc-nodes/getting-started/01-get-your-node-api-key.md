@@ -16,6 +16,8 @@ Moralis simplifies the process of accessing data from nodes across various block
 ## Step 1: Create a Moralis Account
 
 To start, sign up for a complimentary Moralis account by navigating to the [Moralis Dashboard](https://admin.moralis.io/).
+![image](https://github.com/MoralisWeb3/docs/assets/15834299/3d1c58e5-e084-41c0-8e9a-0a548935a64a)
+
 
 ## Step 2: Access your Node URL
 
@@ -23,6 +25,7 @@ To begin using Nodes, you must generate your unique node URL by following these 
 
 - Log in to your Moralis Dashboard.
 - On the sidebar menu, click on the "Nodes" tab, then select "Create a new node." Choose your preferred blockchain and specify whether you want access to the mainnet or testnet.
+![image](https://github.com/MoralisWeb3/docs/assets/15834299/eb489c87-64d5-459d-ab1e-4cd9422e0f46)
 
 ## Step 3: Start using your node from your application
 
