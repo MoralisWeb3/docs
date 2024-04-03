@@ -154,7 +154,10 @@ const ApiReference = ({
         let response;
 
         // When user enters their own API key, make the request directly
-        if (token?.length > 0) {
+        if (
+          token?.length > 0 ||
+          hostUrl === "https://site1.moralis-nodes.com"
+        ) {
           response = await fetch(
             [
               hostUrl,
@@ -387,14 +390,18 @@ const ApiReference = ({
             <div className="col col--7">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
-                  <div className={styles.sectionTitle}>API KEY</div>
+                  {hostUrl !== "https://site1.moralis-nodes.com" && (
+                    <>
+                      <div className={styles.sectionTitle}>API KEY</div>
 
-                  <input
-                    value={token}
-                    onChange={onChangeToken}
-                    placeholder="YOUR_API_KEY (Optional)"
-                    className={styles.input}
-                  />
+                      <input
+                        value={token}
+                        onChange={onChangeToken}
+                        placeholder="YOUR_API_KEY (Optional)"
+                        className={styles.input}
+                      />
+                    </>
+                  )}
 
                   <ApiParamButton
                     type="submit"
@@ -407,6 +414,12 @@ const ApiReference = ({
                         ? styles.apiParamButtonDisabled
                         : ""
                     }`}
+                    style={{
+                      width:
+                        hostUrl === "https://site1.moralis-nodes.com"
+                          ? "100%"
+                          : "initial",
+                    }}
                   >
                     {loading ? <LoadingCircle /> : "Test Live API"}
                   </ApiParamButton>

@@ -504,7 +504,9 @@ const ApiExamples = ({
       {tabs.map(({ lang, langCode, template, title }, index) => {
         const { code = "" } =
           codeSamples?.find((sample) => sample?.language === lang) ?? {};
-        const auth = token.length > 0 ? token : "YOUR_API_KEY";
+        const auth =
+          apiHost !== "https://site1.moralis-nodes.com" &&
+          (token.length > 0 ? token : "YOUR_API_KEY");
         return (
           <TabItem key={index} value={lang} label={title}>
             <CodeBlock className={`language-${langCode}`}>

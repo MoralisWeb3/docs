@@ -9,14 +9,10 @@ const RpcParamArrayField = ({
   form,
   param,
 }: FieldComponentProps<"rpcArray">) => {
-  // Determine the initial value of the textarea. If `field.value` is an array, use it.
-  // Otherwise, use `param.example` if it exists. If neither is available, default to an empty string.
   const getInitialValue = () => {
     if (Array.isArray(field.value)) {
       return JSON.stringify(field.value, null, 2);
-    }
-    if (param.example) {
-      // Set the initial form value to the example if no value is already set
+    } else if (param.example) {
       if (!field.value) {
         form.setFieldValue(field.name, param.example);
       }
@@ -27,29 +23,23 @@ const RpcParamArrayField = ({
 
   const [textAreaValue, setTextAreaValue] = useState(getInitialValue);
 
-  // A handler to update the formik state when the textarea content changes.
   const handleInputChange = (event) => {
-    const inputValue = event.target.value;
-    setTextAreaValue(inputValue);
+    setTextAreaValue(event.target.value);
     try {
-      // Parse the input value to ensure it is a valid JSON array.
-      const parsedValue = JSON.parse(inputValue);
+      const parsedValue = JSON.parse(event.target.value);
       if (Array.isArray(parsedValue)) {
         form.setFieldValue(field.name, parsedValue);
-        //Clear any existing errors if parsing succeeds.
         form.setErrors({
           ...form.errors,
           [field.name]: undefined,
         });
       } else {
-        // Set an error if the parsed value is not an array.
         form.setErrors({
           ...form.errors,
           [field.name]: "Input is not a valid JSON array",
         });
       }
     } catch (error) {
-      // Set an error if parsing fails.
       form.setErrors({
         ...form.errors,
         [field.name]: "Input is not a valid JSON",
@@ -57,7 +47,16 @@ const RpcParamArrayField = ({
     }
   };
 
-  // Similar styling as other input fields to ensure consistent UI.
+  const handleBlur = () => {
+    try {
+      // On blur, attempt to format the JSON text.
+      const formattedText = JSON.stringify(JSON.parse(textAreaValue), null, 2);
+      setTextAreaValue(formattedText);
+    } catch (error) {
+      // If the current text is not valid JSON, don't change the formatting.
+    }
+  };
+
   const inputClassName = `${styles.input} ${styles.textarea}`;
 
   return (
@@ -67,6 +66,7 @@ const RpcParamArrayField = ({
         className={inputClassName}
         value={textAreaValue}
         onChange={handleInputChange}
+        onBlur={handleBlur}
         placeholder='Enter array data in JSON format, e.g., [1, "two", true]'
       />
       {form.touched[field.name] && form.errors[field.name] && (
