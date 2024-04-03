@@ -44009,59 +44009,117 @@
     }
   },
   "rpc": {
-    "ethAccounts": {
-      "apiHost": "https://test-rpc.example.com",
+    "evmRpc": {
+      "apiHost": "https://site1.moralis-nodes.com",
       "summary": "Retrieve Ethereum Accounts",
-      "description": "Returns an array of Ethereum account addresses that are available on the node.\n* This method does not require any parameters.\n* It is useful for retrieving all accounts that the node knows about, which can include externally owned accounts (EOAs) and contracts.",
+      "description": "Executes a JSON-RPC 2.0 call to retrieve Ethereum account addresses that are available on the node. This method does not require any additional parameters.",
       "method": "POST",
-      "path": "/rpc/eth_accounts",
-      "pathParams": [],
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "binance",
+            "base",
+            "arbitrum",
+            "optimism"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "your_api_key_here"
+        }
+      ],
       "queryParams": [],
       "bodyParam": {
         "required": true,
-        "description": "Body",
+        "description": "JSON-RPC 2.0 request body",
         "type": "object",
         "fields": [
-          {
-            "name": "params",
-            "type": "array",
-            "required": true,
-            "description": "Parameters for the RPC method. The `eth_accounts` method does not require any parameters, so this must be an empty array.",
-            "example": [],
-            "field": {
-              "type": "string",
-              "fields": ""
-            }
-          },
           {
             "name": "jsonrpc",
             "type": "string",
             "required": true,
-            "description": "Version of the JSON-RPC protocol. Must be exactly \"2.0\".",
+            "description": "Version of the JSON-RPC protocol.",
             "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "Identifier for the request, must be unique for each request.",
+            "example": 1
           },
           {
             "name": "method",
             "type": "string",
             "required": true,
             "description": "The name of the RPC method to be invoked.",
-            "example": "eth_accounts"
+            "example": "eth_estimateGas",
+            "enum": [
+              "eth_blockNumber",
+              "eth_call",
+              "eth_chainId",
+              "eth_createAccessList",
+              "eth_estimateGas",
+              "eth_feeHistory",
+              "eth_gasPrice",
+              "eth_getBalance",
+              "eth_getBlockByHash",
+              "eth_getBlockByNumber",
+              "eth_getBlockTransactionCountByHash",
+              "eth_getBlockTransactionCountByNumber",
+              "eth_getBlockReceipts",
+              "eth_getCode",
+              "eth_getLogs",
+              "eth_getProof",
+              "eth_getStorageAt",
+              "eth_getTransactionByHash",
+              "eth_getTransactionByBlockHashAndIndex",
+              "eth_getTransactionByBlockNumberAndIndex",
+              "eth_getTransactionCount",
+              "eth_getTransactionReceipt",
+              "eth_getUncleByBlockHashAndIndex",
+              "eth_getUncleByBlockNumberAndIndex",
+              "eth_getUncleCountByBlockHash",
+              "eth_getUncleCountByBlockNumber",
+              "eth_maxPriorityFeePerGas",
+              "eth_sendRawTransaction"
+            ]
           },
           {
-            "name": "id",
-            "type": "number",
+            "name": "params",
+            "type": "rpcArray",
             "required": true,
-            "description": "Identifier for the request, which can be used to match responses with requests. Must be a unique integer.",
-            "example": 1
+            "description": "Parameters for the RPC method.",
+            "example": [
+              {
+                "from": "0x8D97689C9818892B700e27F316cc3E41e17fBeb9",
+                "to": "0xd3CdA913deB6f67967B99D67aCDFa1712C293601",
+                "value": "0x186a0"
+              }
+            ]
           }
         ]
       },
       "responses": [
         {
           "status": "200",
-          "description": "Returns an array of Ethereum account addresses available on the node.",
+          "description": "Returns the response from RPC nodes.",
           "body": {
             "type": "object",
+            "description": "Refer to the RPC schema docs for more details on the resposne definitions of each RPC method.",
             "fields": [
               {
                 "name": "jsonrpc",
@@ -44077,13 +44135,9 @@
               },
               {
                 "name": "result",
-                "type": "array",
+                "type": "string",
                 "description": "An array of Ethereum account addresses in hex format.",
-                "field": {
-                  "type": "string",
-                  "description": "An Ethereum account address in hex format.",
-                  "example": "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
-                }
+                "example": "0x12a97df"
               }
             ]
           }

@@ -89,16 +89,17 @@ const queryParamsToObject = (search) => {
         .split("&")
         .reduce((acc, item) => {
           const [key, value] = item.split("=");
-          if (isValidJsonString(value)) {
-            acc[key] = JSON.parse(value);
+          const decodedValue = decodeURIComponent(value);
+
+          // Directly handle 'jsonrpc' to ensure it remains a fixed string
+          if (key === "jsonrpc") {
+            acc[key] = decodedValue; // Keep it as a string, no conversion
+          } else if (isValidJsonString(decodedValue)) {
+            acc[key] = JSON.parse(decodedValue);
           } else {
-            const decodedValue = decodeURIComponent(value);
-            if (isValidJsonString(decodedValue)) {
-              acc[key] = JSON.parse(decodedValue);
-            } else {
-              acc[key] = decodedValue;
-            }
+            acc[key] = decodedValue;
           }
+
           return acc;
         }, {})
     : {};

@@ -478,6 +478,7 @@ const ApiExamples = ({
   "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
 >) => {
   const { values } = useFormikContext<FormValues>();
+  console.log({ values });
   const { token } = useContext(ApiReferenceTokenContext);
   const { network } = usePageState();
   const history = useHistory();
@@ -485,7 +486,6 @@ const ApiExamples = ({
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
     []
   );
-
   const formattedValuesForQueryPath = useMemo(() => {
     const { body, path, query } = values ?? {};
     return {
@@ -497,6 +497,7 @@ const ApiExamples = ({
 
   useEffect(() => {
     const newQueryParams = objectToQueryParams(formattedValuesForQueryPath);
+    console.log({ newQueryParams });
     history.replace({ search: newQueryParams });
   }, [formattedValuesForQueryPath]);
 
