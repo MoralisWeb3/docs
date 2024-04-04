@@ -44135,9 +44135,8 @@
               },
               {
                 "name": "result",
-                "type": "string",
-                "description": "An array of Ethereum account addresses in hex format.",
-                "example": "0x12a97df"
+                "type": "array",
+                "description": "Refer to RPC schema docs for more details on the resposne definitions of each RPC method."
               }
             ]
           }
