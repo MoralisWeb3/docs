@@ -44038,7 +44038,7 @@
           "type": "string",
           "required": true,
           "description": "Your API key for authentication.",
-          "example": "your_api_key_here"
+          "example": "YOUR_API_KEY"
         }
       ],
       "queryParams": [],

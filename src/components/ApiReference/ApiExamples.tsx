@@ -449,7 +449,13 @@ const objectToQueryParams = (params) => {
     "?" +
     Object.keys(params)
       .map((key) => {
-        const value = params[key];
+        let value = params[key];
+
+        // Check if the key is 'apiKey' and replace its value with 'YOUR_API_KEY'
+        if (key === "apiKey") {
+          value = "YOUR_API_KEY";
+        }
+
         if (value !== null && value !== undefined) {
           const serializedValue =
             typeof value === "object"
@@ -460,9 +466,7 @@ const objectToQueryParams = (params) => {
 
         return null;
       })
-      .filter((value) => {
-        return value !== null && value !== undefined;
-      })
+      .filter((value) => value !== null && value !== undefined)
       .join("&")
   );
 };
