@@ -16,11 +16,5 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 <ApiBanner />
 
 <ApiReference {...config.token.getWalletTokenBalances}>
-  <Admonition type="info" icon="💡" title="Thumbnail ONLY for ETH">
-    <ReactMarkdown>
-      Currently, the `thumbnail` field is only available for ERC20 token that
-      exist on the Ethereum chain (`eth` or `0x1` chain input). Otherwise, the
-      `thumbnail` will be returned as `null`.
-    </ReactMarkdown>
-  </Admonition>
+
 </ApiReference>
