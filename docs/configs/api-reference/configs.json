@@ -8466,6 +8466,181 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getTokenOwners": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get ERC20 token owners by contract",
+      "description": "Identify the major holders of an ERC20 token and understand their ownership percentages",
+      "method": "GET",
+      "path": "/erc20/:token_address/owners",
+      "pathParams": [
+        {
+          "name": "token_address",
+          "description": "The address of the token contract",
+          "required": true,
+          "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "goerli",
+            "0x5",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "mumbai",
+            "0x13881",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base testnet",
+            "0x14a33",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "order",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "required": false,
+          "example": "DESC",
+          "type": "string",
+          "enum": ["ASC", "DESC"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of owners of an ERC20 token",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page"
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "owner_address",
+                    "type": "string",
+                    "description": "The address of the erc20 token owner",
+                    "example": "0x244..."
+                  },
+                  {
+                    "name": "owner_address_label",
+                    "type": "string",
+                    "description": "The label of the owner_address",
+                    "example": "Coinbase 1"
+                  },
+                  {
+                    "name": "balance",
+                    "type": "string",
+                    "description": "The amount holding of the ERC20 token",
+                    "example": "57888888888888888888880"
+                  },
+                  {
+                    "name": "balance_formatted",
+                    "type": "string",
+                    "description": "The amount holding of the ERC20 token in decimaal",
+                    "example": "5.78"
+                  },
+                  {
+                    "name": "usd_value",
+                    "type": "string",
+                    "description": "The USD value of the balance",
+                    "example": "57888888888888888888880"
+                  },
+                  {
+                    "name": "is_contract",
+                    "type": "boolean",
+                    "description": "Indicates if the token address is for a contract or not"
+                  },
+                  {
+                    "name": "percentage_relative_to_total_supply",
+                    "type": "number",
+                    "description": "The percentage of total supply held by the owner"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getTokenOwners({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_owners(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     }
   },
   "balance": {
