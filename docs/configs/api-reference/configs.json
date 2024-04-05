@@ -1438,7 +1438,9 @@
             "base sepolia",
             "0x14a34",
             "optimism",
-            "0xa"
+            "0xa",
+            "holesky",
+            "0x4268"
           ]
         },
         {
@@ -1465,8 +1467,14 @@
           "type": "string"
         },
         {
-          "name": "internal_transactions",
+          "name": "include_internal_transactions",
           "description": "If the result should contain the internal transactions.",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "include_input_data",
+          "description": "Set the input data from the result",
           "required": false,
           "type": "boolean"
         },
@@ -2039,6 +2047,76 @@
                             "type": "boolean",
                             "description": "Flag indicating if the ERC20 contract is verified",
                             "example": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "native_transfers",
+                      "type": "array",
+                      "description": "An array of native currency transfers triggered by the transaction",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "from_address",
+                            "type": "string",
+                            "description": "The address from which the native currency was transferred",
+                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                          },
+                          {
+                            "name": "from_address_label",
+                            "type": "string",
+                            "description": "Label for the from address of the native transfer",
+                            "example": "Binance 1"
+                          },
+                          {
+                            "name": "to_address",
+                            "type": "string",
+                            "description": "The address to which the native currency was transferred",
+                            "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                          },
+                          {
+                            "name": "to_address_label",
+                            "type": "string",
+                            "description": "Label for the to address of the native transfer",
+                            "example": "Binance 2"
+                          },
+                          {
+                            "name": "value",
+                            "type": "string",
+                            "description": "The value of the native currency transferred",
+                            "example": "1000000000000000"
+                          },
+                          {
+                            "name": "value_formatted",
+                            "type": "string",
+                            "description": "The formatted value of the native currency transferred",
+                            "example": "0.1"
+                          },
+                          {
+                            "name": "direction",
+                            "type": "string",
+                            "description": "The direction of the transfer (incoming or outgoing)",
+                            "example": "outgoing"
+                          },
+                          {
+                            "name": "internal_transaction",
+                            "type": "boolean",
+                            "description": "Flag indicating if the transfer was an internal transaction",
+                            "example": false
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the native currency",
+                            "example": "ETH"
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the native currency",
+                            "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
                           }
                         ]
                       }
