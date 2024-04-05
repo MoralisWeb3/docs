@@ -313,6 +313,12 @@
       "rateLimitCost": 5
     },
     {
+      "endpoint": "getTokenOwners",
+      "path": "/erc20/{token_address}/owners",
+      "price": 10,
+      "rateLimitCost": 2
+    },
+    {
       "endpoint": "getTokenStats",
       "path": "/erc20/{address}/stats",
       "price": 5,
