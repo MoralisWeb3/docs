@@ -18,15 +18,15 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x1",
       EvmChain: "EvmChain.ETHEREUM",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/eth/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/eth/{apiKey}, \n\nhttps://site2.moralis-nodes.com/eth/{apiKey}",
     },
     {
-      Name: "Eth Holesky (testnet)",
+      Name: "Eth Holesky",
       "Chain Id (Int)": "17000",
       "Chain Id (Hex)": "0x4268",
       EvmChain: "EvmChain.HOLESKY",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/holesky/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/holesky/{apiKey}, \n\nhttps://site2.moralis-nodes.com/holesky/{apiKey}",
     },
     {
       Name: "Polygon Mainnet",
@@ -34,7 +34,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x89",
       EvmChain: "EvmChain.POLYGON",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/polygon/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/polygon/{apiKey}, \n\nhttps://site2.moralis-nodes.com/polygon/{apiKey}",
     },
     {
       Name: "Polygon Amoy",
@@ -42,7 +42,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x13882",
       EvmChain: "EvmChain.AMOY",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/amoy/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/amoy/{apiKey}, \n\nhttps://site2.moralis-nodes.com/amoy/{apiKey}",
     },
     {
       Name: "BSC Mainnet",
@@ -50,7 +50,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x38",
       EvmChain: "EvmChain.BSC",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/bsc/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/bsc/{apiKey}, \n\nhttps://site2.moralis-nodes.com/bsc/{apiKey}",
     },
     {
       Name: "BSC Testnet",
@@ -58,7 +58,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x61",
       EvmChain: "EvmChain.BSC_TESTNET",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/bsc testnet/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/bsc testnet/{apiKey}, \n\nhttps://site2.moralis-nodes.com/bsc testnet/{apiKey}",
     },
     {
       Name: "Arbitrum Mainnet",
@@ -66,7 +66,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0xa4b1",
       EvmChain: "EvmChain.ARBITRUM",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/arbitrum/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/arbitrum/{apiKey}, \n\nhttps://site2.moralis-nodes.com/arbitrum/{apiKey}",
     },
     {
       Name: "Arbitrum Sepolia",
@@ -74,7 +74,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x66eee",
       EvmChain: "EvmChain.ARBITRUM_SEPOLIA",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/arbitrum sepolia/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/arbitrum sepolia/{apiKey}, \n\nhttps://site2.moralis-nodes.com/arbitrum sepolia/{apiKey}",
     },
     {
       Name: "Optimism Mainnet",
@@ -82,7 +82,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0xa",
       EvmChain: "EvmChain.OPTIMISM",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/optimism/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/optimism/{apiKey}, \n\nhttps://site2.moralis-nodes.com/optimism/{apiKey}",
     },
     {
       Name: "Optimism Testnet",
@@ -90,7 +90,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x45",
       EvmChain: "EvmChain.OPTIMISM_TESTNET",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/optimism testnet/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/optimism testnet/{apiKey}, \n\nhttps://site2.moralis-nodes.com/optimism testnet/{apiKey}",
     },
     {
       Name: "Base Mainnet",
@@ -98,7 +98,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x2105",
       EvmChain: "EvmChain.BASE",
       Type: "Mainnet",
-      URL: "https://site1.moralis-nodes.com/base/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/base/{apiKey}, \n\nhttps://site2.moralis-nodes.com/base/{apiKey}",
     },
     {
       Name: "Base Sepolia",
@@ -106,7 +106,7 @@ const RpcChainData = () => {
       "Chain Id (Hex)": "0x14a34",
       EvmChain: "EvmChain.BASE_SEPOLIA",
       Type: "Testnet",
-      URL: "https://site1.moralis-nodes.com/base sepolia/{apiKey}",
+      URL: "https://site1.moralis-nodes.com/base sepolia/{apiKey}, \n\nhttps://site2.moralis-nodes.com/base sepolia/{apiKey}",
     },
   ];
 
