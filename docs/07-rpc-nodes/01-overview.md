@@ -1,5 +1,5 @@
 ---
-title: "RPC Nodes Docs"
+title: "RPC Nodes"
 slug: "/rpc-nodes"
 sidebar_label: "Overview"
 sidebar_position: 0
