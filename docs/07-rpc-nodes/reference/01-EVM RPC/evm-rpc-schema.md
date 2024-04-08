@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 98
 sidebar_label: EVM RPC Schema
 slug: /rpc-nodes/reference/evm-rpc-schema
 ---

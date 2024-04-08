@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 99
 sidebar_label: EVM RPC Methods
 slug: /rpc-nodes/reference/evm-rpc-methods
 ---
