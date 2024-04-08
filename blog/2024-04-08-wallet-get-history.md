@@ -6,7 +6,9 @@ authors:
 tags: [Web3 Data API]
 ---
 
-We’ve just launched our [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-history), allowing you to fetch the wallet's full transaction history, including sends, receives, token transfers, contract interactions, and potential spam, with sorting capability, with a **single API call** 🤯
+We’ve just launched our [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-history), allowing you to fetch a wallet's full transaction history, fully decoded, labelled and enriched with a **single API call** 🤯
+
+With support for over 15 categories, such as Token Swap, NFT Sale, Mint, Burn and many more, this endpoint is a total game-changer for anyone building a wallet or activity feed 🔥
 
 This endpoint includes several query parameters:
 
