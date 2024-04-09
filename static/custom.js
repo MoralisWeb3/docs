@@ -5,8 +5,10 @@ window.onload = function () {
     // For v2.2 Release
     "API Reference",
     "Wallet API",
-    "Get Wallet Details",
-    "Get wallet net worth",
+    "Get Wallet Transactions",
+    "Get wallet history",
+    "Get ERC20 token owners",
+    "Token API",
   ];
 
   const paramList = [];

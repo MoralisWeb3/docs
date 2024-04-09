@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Whenever you create or update a stream, you will receive a test webhook.
 
-You have to return status code 200 for the stream to start.
+You have to return status code 200 for the stream to start. Alternatively, you can return any 20x status code (e.g., 200, 201, 202, etc.) for the stream to start.
 
 The test body will look like this:
 

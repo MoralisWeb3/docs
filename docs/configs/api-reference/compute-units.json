@@ -313,6 +313,12 @@
       "rateLimitCost": 5
     },
     {
+      "endpoint": "getTokenOwners",
+      "path": "/erc20/{token_address}/owners",
+      "price": 10,
+      "rateLimitCost": 2
+    },
+    {
       "endpoint": "getTokenStats",
       "path": "/erc20/{address}/stats",
       "price": 5,
@@ -330,6 +336,12 @@
       "price": 50,
       "rateLimitCost": 5,
       "dynamic": true
+    },
+    {
+      "endpoint": "getWalletHistory",
+      "path": "/wallets/{address}/history",
+      "price": 15,
+      "rateLimitCost": 3
     }
   ],
   "solana": [
