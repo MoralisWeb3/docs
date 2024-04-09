@@ -6575,7 +6575,7 @@ export const ApiSchema = {
             in: "query",
             name: "block_number",
             description:
-              "The block number\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will will be used\n",
+              "The block number\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will be used\n",
             required: false,
             schema: {
               type: "string",
@@ -6585,7 +6585,7 @@ export const ApiSchema = {
             in: "query",
             name: "from_block",
             description:
-              "The minimum block number from which to get the logs\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will will be used\n",
+              "The minimum block number from which to get the logs\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will be used\n",
             required: false,
             schema: {
               type: "string",
@@ -6595,7 +6595,7 @@ export const ApiSchema = {
             in: "query",
             name: "to_block",
             description:
-              "The maximum block number from which to get the logs\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will will be used\n",
+              "The maximum block number from which to get the logs\n* Provide the param 'block_numer' or ('from_block' and / or 'to_block')\n* If 'block_numer' is provided in combination with 'from_block' and / or 'to_block', 'block_number' will be used\n",
             required: false,
             schema: {
               type: "string",
