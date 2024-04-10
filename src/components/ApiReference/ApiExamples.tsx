@@ -493,7 +493,7 @@ const ApiExamples = ({
     const { body, path, query } = values ?? {};
     const pathVal = path;
     if ((path as any)?.apiKey) {
-      (pathVal as any).apiKey = window.localStorage.getItem("rpcApiKey");
+      (pathVal as any).apiKey = localStorage.getItem("rpcApiKey");
     }
     return {
       ...body,
