@@ -156,6 +156,7 @@ const ApiReference = ({
         // When user enters their own API key, make the request directly
         if (
           token?.length > 0 ||
+          hostUrl === "https://api.moralis-streams.com" ||
           hostUrl === "https://site1.moralis-nodes.com"
         ) {
           response = await fetch(
