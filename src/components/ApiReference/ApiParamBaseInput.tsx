@@ -46,7 +46,7 @@ const ApiParamBaseInput = ({
     (event) => {
       const value = event.currentTarget.value;
       if (event.currentTarget.name === "path.apiKey") {
-        localStorage.setItem("rpcApiKey", value);
+        window.localStorage.setItem("rpcApiKey", value);
       }
       form.setFieldValue(
         event.currentTarget.name,
