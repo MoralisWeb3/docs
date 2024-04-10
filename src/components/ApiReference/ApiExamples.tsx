@@ -491,9 +491,13 @@ const ApiExamples = ({
   );
   const formattedValuesForQueryPath = useMemo(() => {
     const { body, path, query } = values ?? {};
+    const pathVal = path;
+    if ((path as any)?.apiKey) {
+      (pathVal as any).apiKey = localStorage.getItem("rpcApiKey");
+    }
     return {
       ...body,
-      ...path,
+      ...pathVal,
       ...query,
     };
   }, [values]);
