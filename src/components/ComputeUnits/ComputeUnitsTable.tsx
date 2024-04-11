@@ -30,7 +30,7 @@ const fixedPath = {
   getAllTokenIds: "get-contract-nfts",
   getNFTs: "get-wallet-nfts",
   getTokenAddressTransfers: "get-token-transfers",
-  getTokenBalances: "get-wallet-token-balances",
+  getWalletTokenBalances: "get-wallet-token-balances",
   getTransactionVerbose: "get-decoded-transaction",
   getTransactionsVerbose: "get-decoded-wallet-transaction",
   getTransactions: "get-wallet-transactions",
