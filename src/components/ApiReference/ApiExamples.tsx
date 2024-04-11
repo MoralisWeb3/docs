@@ -280,7 +280,7 @@ export const formatParamsByLang = (params: any, lang: string) => {
           case "mumbai":
             return "0x13881";
           case "amoy":
-            return "0x13881";
+            return "0x13882";
           case "bsc":
             return "0x38";
           case "bsc testnet":
