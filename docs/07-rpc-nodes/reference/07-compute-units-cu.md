@@ -43,12 +43,12 @@ Request price refers to the amount of compute units that will be calculated towa
 | `eth_getStorageAt`                        | 3         | 12                                |
 | `eth_getTransactionByHash`                | 12        | 12                                |
 | `eth_getTransactionByBlockHashAndIndex`   | 12        | 12                                |
-| `eth_getTransactionByBlockNumberAndIndex` | 3         | 8                                 |
+| `eth_getTransactionByBlockNumberAndIndex` | 3         | 12                                |
 | `eth_getTransactionCount`                 | 2         | 8                                 |
 | `eth_getTransactionReceipt`               | 8         | 8                                 |
-| `eth_getUncleByBlockHashAndIndex`         | 2         | 8                                 |
-| `eth_getUncleByBlockNumberAndIndex`       | 8         | 8                                 |
-| `eth_getUncleCountByBlockHash`            | 2         | 8                                 |
+| `eth_getUncleByBlockHashAndIndex`         | 8         | 8                                 |
+| `eth_getUncleByBlockNumberAndIndex`       | 2         | 8                                 |
+| `eth_getUncleCountByBlockHash`            | 8         | 8                                 |
 | `eth_getUncleCountByBlockNumber`          | 2         | 8                                 |
 | `eth_maxPriorityFeePerGas`                | 2         | 2                                 |
 | `eth_sendRawTransaction`                  | 3         | 3                                 |
