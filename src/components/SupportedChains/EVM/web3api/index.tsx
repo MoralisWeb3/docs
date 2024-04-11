@@ -19,17 +19,17 @@ const EVMChainData = () => {
       Type: "Mainnet",
     },
     {
-      Name: "Ethereum Holesky",
-      "Chain Id (Int)": "17000",
-      "Chain Id (Hex)": "0x4268",
-      EvmChain: "EvmChain.HOLESKY",
-      Type: "Testnet",
-    },
-    {
       Name: "Ethereum Sepolia",
       "Chain Id (Int)": "11155111",
       "Chain Id (Hex)": "0xaa36a7",
       EvmChain: "EvmChain.SEPOLIA",
+      Type: "Testnet",
+    },
+    {
+      Name: "Ethereum Holesky",
+      "Chain Id (Int)": "17000",
+      "Chain Id (Hex)": "0x4268",
+      EvmChain: "EvmChain.HOLESKY",
       Type: "Testnet",
     },
     {

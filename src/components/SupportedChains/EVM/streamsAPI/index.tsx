@@ -26,6 +26,13 @@ const EVMStreamChainData = () => {
       Note: "",
     },
     {
+      Chain: "ETH HOLESKY",
+      "Chain Id (Hex)": "0x4268",
+      "Internal Transaction Supported": "✅ YES",
+      "Blocks until confirmed": 18,
+      Note: "",
+    },
+    {
       Chain: "BSC",
       "Chain Id (Hex)": "0x38",
       "Internal Transaction Supported": "✅ YES",
