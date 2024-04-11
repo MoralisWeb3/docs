@@ -45195,5 +45195,4072 @@
         }
       ]
     }
+  },
+  "rpc": {
+    "evmRpc": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Retrieve Ethereum Accounts",
+      "description": "Executes a JSON-RPC 2.0 call to retrieve Ethereum account addresses that are available on the node. This method does not require any additional parameters.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "JSON-RPC 2.0 request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "Version of the JSON-RPC protocol.",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "Identifier for the request, must be unique for each request.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The name of the RPC method to be invoked.",
+            "example": "eth_estimateGas",
+            "enum": [
+              "eth_blockNumber",
+              "eth_call",
+              "eth_chainId",
+              "eth_createAccessList",
+              "eth_estimateGas",
+              "eth_feeHistory",
+              "eth_gasPrice",
+              "eth_getBalance",
+              "eth_getBlockByHash",
+              "eth_getBlockByNumber",
+              "eth_getBlockTransactionCountByHash",
+              "eth_getBlockTransactionCountByNumber",
+              "eth_getBlockReceipts",
+              "eth_getCode",
+              "eth_getLogs",
+              "eth_getProof",
+              "eth_getStorageAt",
+              "eth_getTransactionByHash",
+              "eth_getTransactionByBlockHashAndIndex",
+              "eth_getTransactionByBlockNumberAndIndex",
+              "eth_getTransactionCount",
+              "eth_getTransactionReceipt",
+              "eth_getUncleByBlockHashAndIndex",
+              "eth_getUncleByBlockNumberAndIndex",
+              "eth_getUncleCountByBlockHash",
+              "eth_getUncleCountByBlockNumber",
+              "eth_maxPriorityFeePerGas",
+              "eth_sendRawTransaction"
+            ]
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the RPC method.",
+            "example": [
+              {
+                "from": "0x4838B106FCe9647Bdf1E7877BF73cE8B0BAD5f97",
+                "to": "0xd4E96eF8eee8678dBFf4d535E033Ed1a4F7605b7",
+                "value": "0x132a0"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the response from RPC nodes.",
+          "body": {
+            "type": "object",
+            "description": "Refer to the RPC schema docs for more details on the resposne definitions of each RPC method.",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "description": "Version of the JSON-RPC protocol. Will be \"2.0\".",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "integer",
+                "description": "Identifier for the response, matching the request id.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "Refer to RPC schema docs for more details on the resposne definitions of each RPC method."
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_blockNumber": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Current Block Number",
+      "description": "Returns the number of the most recent block on the chain.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for the eth_blockNumber method.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_blockNumber"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters to be passed to the method (empty for eth_blockNumber).",
+            "example": []
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the current block number as a hex code.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The current block number in hexadecimal.",
+                "example": "0x5b8d80"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_call": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Executes a new message call immediately without creating a transaction on the block chain.",
+      "description": "The eth_call method allows for the execution of a message call to a contract. It can be used to call functions on contracts without sending a transaction. This means it doesn't alter the blockchain and is executed only locally to return a response.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for the eth_call method.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_call"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the call, including the transaction call object and optionally the block number.",
+            "example": [
+              {
+                "to": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
+                "data": "0x06fdde03"
+              },
+              "latest"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the result of the contract function call.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The returned data from the contract function, encoded.",
+                "example": "0x"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_chainId": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get the current chain ID",
+      "description": "Returns the current chain ID, identifying the current blockchain. The chain ID is a unique identifier for each blockchain and is used for transaction signing to prevent replay attacks across chains.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for the eth_chainId method.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_chainId"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method (empty for eth_chainId).",
+            "example": []
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the chain ID of the current blockchain.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The current chain ID, as a hexadecimal.",
+                "example": "0x1"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_createAccessList": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Create Access List",
+      "description": "This example demonstrates generating an access list for a hypothetical transaction that interacts with a contract. The access list helps in optimizing gas costs for transactions by pre-specifying accounts and storage keys the transaction intends to access.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with. In this example, 'eth' is used to denote Ethereum Mainnet.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication. Replace 'YOUR_API_KEY' with your actual Moralis API key.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for generating an access list based on a transaction object.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "Specifies the JSON-RPC protocol version, which is 2.0 for this example.",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "A unique identifier for the request.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being called. For creating an access list, 'eth_createAccessList' is used.",
+            "example": "eth_createAccessList"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "An array containing the transaction object for which to generate the access list, and optionally the block number.",
+            "example": [
+              {
+                "from": "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe",
+                "to": "0x4e6f6D7edB5CBD081670C1F898BBF721c4a24695",
+                "gas": "0x76c0",
+                "gasPrice": "0x9184e72a000",
+                "value": "0x0",
+                "data": "0x3c11dde50000000000000000000000000000000000000000000000000000000000000003"
+              },
+              "latest"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response with the generated access list and gas used.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC protocol version.",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier matching the request.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "Contains the access list and the gas used for the transaction.",
+                "fields": [
+                  {
+                    "name": "accessList",
+                    "type": "array",
+                    "description": "Generated access list detailing accounts and storage keys the transaction will access.",
+                    "example": [
+                      {
+                        "address": "0x4e6f6D7edB5CBD081670C1F898BBF721c4a24695",
+                        "storageKeys": [
+                          "0x0000000000000000000000000000000000000000000000000000000000000000"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "gasUsed",
+                    "type": "string",
+                    "description": "The gas used for generating the access list.",
+                    "example": "0x5208"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_estimateGas": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Estimate Gas",
+      "description": "Estimates the amount of gas required to execute a transaction. This method does not execute the transaction but simulates its execution to estimate the gas amount. It's useful for adjusting gas limits before sending transactions to ensure they succeed without running out of gas.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for estimating gas required for a transaction.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_estimateGas"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the transaction to estimate gas for, including details like the sender, receiver, gas price, and value.",
+            "example": [
+              {
+                "from": "0xa83114A443dA1CecEFC50368531cACE9F37fCCcb",
+                "to": "0x354f3eD35Ae1a182aF933b793e49d3c86CFcDc63",
+                "gasPrice": "0x4a817c800",
+                "value": "0x0",
+                "data": "0xa9059cbb000000000000000000000000407d73d8a49eeb85d32cf465507dd71d507100c10000000000000000000000000000000000000000000000000000000000000064"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the estimated gas required for the transaction.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The estimated gas amount as a hexadecimal.",
+                "example": "0x5208"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_feeHistory": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Retrieve Fee History",
+      "description": "Retrieves historical data about transaction fees. The method returns the base fee per gas and reward (priority fee) ranges paid in each block for the requested block range. Useful for estimating appropriate fees for future transactions.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving fee history.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_feeHistory"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the fee history request, including the number of blocks to include, the target block, and the percentile ranges of transaction fees.",
+            "example": ["0x10", "latest", [25, 50, 75]]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns historical fee data for the requested block range.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "Contains the fee history data.",
+                "fields": [
+                  {
+                    "name": "oldestBlock",
+                    "type": "string",
+                    "description": "The oldest block (in hexadecimal) in the requested range.",
+                    "example": "0x9cace7"
+                  },
+                  {
+                    "name": "baseFeePerGas",
+                    "type": "array",
+                    "field": {
+                      "type": "string",
+                      "description": "Base fee per gas for each block, in hexadecimal.",
+                      "example": "0x4c4b40"
+                    },
+                    "description": "Array of base fee per gas for each block, in hexadecimal."
+                  },
+                  {
+                    "name": "gasUsedRatio",
+                    "type": "array",
+                    "field": {
+                      "type": "number",
+                      "description": "Ratio of gas used to gas limit for the block.",
+                      "example": 0.5
+                    },
+                    "description": "Array of ratios of gas used to gas limit for each block."
+                  },
+                  {
+                    "name": "reward",
+                    "type": "array",
+                    "field": {
+                      "type": "array",
+                      "field": {
+                        "type": "string",
+                        "description": "Reward (priority fee) paid for the percentile.",
+                        "example": "0x34630b8a00"
+                      },
+                      "description": "Array containing the reward (priority fee) paid for each percentile."
+                    },
+                    "description": "Array of arrays containing the reward (priority fee) paid for each percentile."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_gasPrice": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Current Gas Price",
+      "description": "Returns the current gas price in wei, which is the median gas price of the latest blocks. This value can be used to set the gas price for new transactions.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the current gas price.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_gasPrice"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the gas price request (empty for eth_gasPrice).",
+            "example": []
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the current gas price in wei.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The current gas price in wei, as a hexadecimal.",
+                "example": "0x3b9aca00"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBalance": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Account Balance",
+      "description": "Returns the balance of the account of a given address at a specific block number.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the account balance.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBalance"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the balance request, including the address and the block number.",
+            "example": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the balance of the account in wei.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The balance of the account in wei, as a hexadecimal.",
+                "example": "0xde0b6b3a7640000"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBlockByHash": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Block by Hash",
+      "description": "Returns information about a block by hash. Optionally, it can also return the full transaction objects if the second parameter is set to `true`; otherwise, only the transaction hashes are returned.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving block information by hash.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBlockByHash"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the block query, including the block hash and a boolean indicating whether to return full transaction objects.",
+            "example": [
+              "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f",
+              true
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns detailed information about the requested block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "Object containing the block information.",
+                "fields": [
+                  {
+                    "name": "number",
+                    "type": "string",
+                    "description": "The block number.",
+                    "example": "0x10d4f"
+                  },
+                  {
+                    "name": "hash",
+                    "type": "string",
+                    "description": "The hash of the block.",
+                    "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+                  },
+                  {
+                    "name": "transactions",
+                    "type": "array",
+                    "description": "Array of transaction objects or hashes included in the block.",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "blockHash",
+                          "type": "string",
+                          "description": "The hash of the block.",
+                          "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+                        },
+                        {
+                          "name": "blockNumber",
+                          "type": "string",
+                          "description": "The number of the block.",
+                          "example": "0x15df"
+                        },
+                        {
+                          "name": "from",
+                          "type": "string",
+                          "description": "The sender address.",
+                          "example": "0x354f3eD35Ae1a182aF933b793e49d3c86CFcDc63"
+                        },
+                        {
+                          "name": "to",
+                          "type": "string",
+                          "description": "The receiver address.",
+                          "example": "0x354f3eD35Ae1a182aF933b793e49d3c86CFcDc63"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "parentHash",
+                    "type": "string",
+                    "description": "The hash of the parent block.",
+                    "example": "0xd584c5509e3a3d4b2d3bbde4c8e8c0adec7f5c560e9d42b8f12f3c039dd40e92"
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce that was used to generate the block.",
+                    "example": "0x0000000000000000"
+                  },
+                  {
+                    "name": "sha3Uncles",
+                    "type": "string",
+                    "description": "SHA3 of the uncles data in the block.",
+                    "example": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+                  },
+                  {
+                    "name": "logsBloom",
+                    "type": "string",
+                    "description": "The bloom filter for the logs of the block.",
+                    "example": "0x00000000..."
+                  },
+                  {
+                    "name": "transactionsRoot",
+                    "type": "string",
+                    "description": "The root of the transaction trie of the block.",
+                    "example": "0x3a1b2c..."
+                  },
+                  {
+                    "name": "stateRoot",
+                    "type": "string",
+                    "description": "The root of the final state trie of the block.",
+                    "example": "0xf1132b..."
+                  },
+                  {
+                    "name": "receiptsRoot",
+                    "type": "string",
+                    "description": "The root of the receipts trie of the block.",
+                    "example": "0x140f3e..."
+                  },
+                  {
+                    "name": "miner",
+                    "type": "string",
+                    "description": "The address of the miner who mined the block.",
+                    "example": "0x4e65fda2159562a496f9f3522f89122a3088497a"
+                  },
+                  {
+                    "name": "difficulty",
+                    "type": "string",
+                    "description": "The difficulty level of the block.",
+                    "example": "0xffffffff"
+                  },
+                  {
+                    "name": "totalDifficulty",
+                    "type": "string",
+                    "description": "The total difficulty of the chain up to this block.",
+                    "example": "0x222e4800"
+                  },
+                  {
+                    "name": "extraData",
+                    "type": "string",
+                    "description": "Extra data related to the block.",
+                    "example": "0xd783010703846765746887676f312e392e34856c696e7578"
+                  },
+                  {
+                    "name": "size",
+                    "type": "string",
+                    "description": "The size of the block in bytes.",
+                    "example": "0x280"
+                  },
+                  {
+                    "name": "gasLimit",
+                    "type": "string",
+                    "description": "The maximum gas allowed in this block.",
+                    "example": "0x47e7c4"
+                  },
+                  {
+                    "name": "gasUsed",
+                    "type": "string",
+                    "description": "The total used gas by all transactions in this block.",
+                    "example": "0x45f3"
+                  },
+                  {
+                    "name": "timestamp",
+                    "type": "string",
+                    "description": "The timestamp for when the block was collated.",
+                    "example": "0x5a5b8d80"
+                  },
+                  {
+                    "name": "uncles",
+                    "type": "array",
+                    "description": "List of uncle hashes.",
+                    "field": {
+                      "type": "string",
+                      "description": "The hash of each uncle.",
+                      "example": "0x1602e3..."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBlockByNumber": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Block by Number",
+      "description": "Retrieves information about a block by its block number. The method can optionally return full transaction objects within the block if the second parameter is set to true; otherwise, it returns only the transaction hashes.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving block information by number.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBlockByNumber"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the block query, including the block number (in hexadecimal or predefined tags like 'latest', 'earliest', 'pending') and a boolean indicating whether to return full transaction objects.",
+            "example": ["latest", true]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns detailed information about the requested block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "Object containing detailed block information.",
+                "fields": [
+                  {
+                    "name": "number",
+                    "type": "string",
+                    "description": "The block number.",
+                    "example": "0x10d4f"
+                  },
+                  {
+                    "name": "hash",
+                    "type": "string",
+                    "description": "The hash of the block.",
+                    "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+                  },
+                  {
+                    "name": "transactions",
+                    "type": "array",
+                    "description": "Array of transaction objects or hashes included in the block.",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "blockHash",
+                          "type": "string",
+                          "description": "The hash of the block.",
+                          "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+                        },
+                        {
+                          "name": "blockNumber",
+                          "type": "string",
+                          "description": "The number of the block.",
+                          "example": "0x15df"
+                        },
+                        {
+                          "name": "from",
+                          "type": "string",
+                          "description": "The sender address.",
+                          "example": "0x354f3eD35Ae1a182aF933b793e49d3c86CFcDc63"
+                        },
+                        {
+                          "name": "to",
+                          "type": "string",
+                          "description": "The receiver address.",
+                          "example": "0x354f3eD35Ae1a182aF933b793e49d3c86CFcDc63"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "parentHash",
+                    "type": "string",
+                    "description": "The hash of the parent block.",
+                    "example": "0xd584c5509e3a3d4b2d3bbde4c8e8c0adec7f5c560e9d42b8f12f3c039dd40e92"
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce that was used to generate the block.",
+                    "example": "0x0000000000000000"
+                  },
+                  {
+                    "name": "sha3Uncles",
+                    "type": "string",
+                    "description": "SHA3 of the uncles data in the block.",
+                    "example": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+                  },
+                  {
+                    "name": "logsBloom",
+                    "type": "string",
+                    "description": "The bloom filter for the logs of the block.",
+                    "example": "0x00000000..."
+                  },
+                  {
+                    "name": "transactionsRoot",
+                    "type": "string",
+                    "description": "The root of the transaction trie of the block.",
+                    "example": "0x3a1b2c..."
+                  },
+                  {
+                    "name": "stateRoot",
+                    "type": "string",
+                    "description": "The root of the final state trie of the block.",
+                    "example": "0xf1132b..."
+                  },
+                  {
+                    "name": "receiptsRoot",
+                    "type": "string",
+                    "description": "The root of the receipts trie of the block.",
+                    "example": "0x140f3e..."
+                  },
+                  {
+                    "name": "miner",
+                    "type": "string",
+                    "description": "The address of the miner who mined the block.",
+                    "example": "0x4e65fda2159562a496f9f3522f89122a3088497a"
+                  },
+                  {
+                    "name": "difficulty",
+                    "type": "string",
+                    "description": "The difficulty level of the block.",
+                    "example": "0xffffffff"
+                  },
+                  {
+                    "name": "totalDifficulty",
+                    "type": "string",
+                    "description": "The total difficulty of the chain up to this block.",
+                    "example": "0x222e4800"
+                  },
+                  {
+                    "name": "extraData",
+                    "type": "string",
+                    "description": "Extra data related to the block.",
+                    "example": "0xd783010703846765746887676f312e392e34856c696e7578"
+                  },
+                  {
+                    "name": "size",
+                    "type": "string",
+                    "description": "The size of the block in bytes.",
+                    "example": "0x280"
+                  },
+                  {
+                    "name": "gasLimit",
+                    "type": "string",
+                    "description": "The maximum gas allowed in this block.",
+                    "example": "0x47e7c4"
+                  },
+                  {
+                    "name": "gasUsed",
+                    "type": "string",
+                    "description": "The total used gas by all transactions in this block.",
+                    "example": "0x45f3"
+                  },
+                  {
+                    "name": "timestamp",
+                    "type": "string",
+                    "description": "The timestamp for when the block was collated.",
+                    "example": "0x5a5b8d80"
+                  },
+                  {
+                    "name": "uncles",
+                    "type": "array",
+                    "description": "List of uncle hashes.",
+                    "field": {
+                      "type": "string",
+                      "description": "The hash of each uncle.",
+                      "example": "0x1602e3..."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBlockTransactionCountByHash": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Block Transaction Count by Hash",
+      "description": "Returns the number of transactions in a block from a block matching the given hash.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the transaction count by block hash.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBlockTransactionCountByHash"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block hash.",
+            "example": [
+              "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the number of transactions in the specified block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The number of transactions in the block, as a hexadecimal.",
+                "example": "0x5"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBlockTransactionCountByNumber": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Block Transaction Count by Number",
+      "description": "Returns the number of transactions in a block from a block matching the given number. The block number can be specified as a hexadecimal value or as one of the special strings 'latest', 'earliest', or 'pending'.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the transaction count by block number.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBlockTransactionCountByNumber"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block number.",
+            "example": ["latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the number of transactions in the specified block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The number of transactions in the block, as a hexadecimal.",
+                "example": "0xa"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getBlockReceipts": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction Receipts by Block",
+      "description": "Hypothetically retrieves all transaction receipts for a given block. This method would return detailed receipt information for each transaction contained within the specified block.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving transaction receipts by block.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getBlockReceipts"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block identifier (number or hash).",
+            "example": ["latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns all transaction receipts for the specified block.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "blockHash",
+                  "type": "string",
+                  "description": "Hash of the block where the transaction was included.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "blockNumber",
+                  "type": "string",
+                  "description": "Block number where the transaction was included.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "contractAddress",
+                  "type": "string",
+                  "description": "The contract address created, if the transaction was a contract creation, otherwise null.",
+                  "example": null
+                },
+                {
+                  "name": "cumulativeGasUsed",
+                  "type": "string",
+                  "description": "The total amount of gas used when this transaction was executed in the block.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "effectiveGasPrice",
+                  "type": "string",
+                  "description": "The effective gas price paid by the transaction.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "from",
+                  "type": "string",
+                  "description": "Address of the sender.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "gasUsed",
+                  "type": "string",
+                  "description": "The amount of gas used by this transaction alone.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "logs",
+                  "type": "array",
+                  "description": "Array of log objects, which this transaction generated.",
+                  "field": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "Address from which the log originated.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "topics",
+                        "type": "array",
+                        "description": "Array of topics associated with the log.",
+                        "field": {
+                          "type": "string",
+                          "description": "Specific log topic.",
+                          "example": "0x..."
+                        }
+                      },
+                      {
+                        "name": "data",
+                        "type": "string",
+                        "description": "The data contained in the log.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "blockNumber",
+                        "type": "string",
+                        "description": "The block number where this log was in.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "transactionHash",
+                        "type": "string",
+                        "description": "Hash of the transactions this log was created from.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "transactionIndex",
+                        "type": "string",
+                        "description": "Integer of the transaction's index position in the block.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "blockHash",
+                        "type": "string",
+                        "description": "Hash of the block where this log was in.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "logIndex",
+                        "type": "string",
+                        "description": "Integer of the log's index position in the block.",
+                        "example": "0x..."
+                      },
+                      {
+                        "name": "removed",
+                        "type": "boolean",
+                        "description": "Indicates if the log was removed due to a chain reorganization.",
+                        "example": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "logsBloom",
+                  "type": "string",
+                  "description": "The bloom filter for the logs of the block.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "status",
+                  "type": "string",
+                  "description": "The status of the transaction (0x1 for success, 0x0 for failure).",
+                  "example": "0x1"
+                },
+                {
+                  "name": "to",
+                  "type": "string",
+                  "description": "Address of the receiver. null when its a contract creation transaction.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "transactionHash",
+                  "type": "string",
+                  "description": "Hash of the transaction.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "transactionIndex",
+                  "type": "string",
+                  "description": "Integer of the transaction's index position in the block.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "type",
+                  "type": "string",
+                  "description": "EIP-2718 type of the transaction.",
+                  "example": "0x2"
+                }
+              ]
+            },
+            "description": "Array of transaction receipt objects."
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getCode": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Code at Address",
+      "description": "Returns the code stored at a given address. This method is commonly used to inspect the bytecode of smart contracts. The block number can be specified to retrieve the code at the time of that block.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the code at a given address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getCode"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the code retrieval request, including the address of the account and the block number.",
+            "example": ["0xd5677cf67b5aa051bb40496e68ad359eb97cfbf8", "latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the bytecode of the contract at the specified address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The bytecode of the contract at the given address, or 0x if the address has no code (e.g., an EOA).",
+                "example": "0x608060405234801561001057600080fd5b506040516101..."
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getLogs": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Logs",
+      "description": "Returns an array of logs matching a specified filter condition. This can include logs for specific addresses, block number ranges, or topics. Logs are used by smart contracts to record events and can be queried to retrieve historical state or transaction outcomes.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving logs based on a filter.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getLogs"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "A single object representing the filter options for the logs. This can include `fromBlock`, `toBlock`, `address`, and `topics`.",
+            "example": [
+              {
+                "fromBlock": "0x12b39a9",
+                "toBlock": "latest",
+                "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+                "topics": [
+                  "0x0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns logs matching the filter condition.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "Address from which this log originated.",
+                  "example": "0x8888f1f195afa192cfee860698584c030f4c9db1"
+                },
+                {
+                  "name": "topics",
+                  "type": "array",
+                  "description": "Array of topics associated with the log.",
+                  "field": {
+                    "type": "string",
+                    "description": "Specific log topic.",
+                    "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "data",
+                  "type": "string",
+                  "description": "The data associated with the log entry.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "blockNumber",
+                  "type": "string",
+                  "description": "The block number where this log was in.",
+                  "example": "0x1a4"
+                },
+                {
+                  "name": "transactionHash",
+                  "type": "string",
+                  "description": "Hash of the transactions this log was created from.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "transactionIndex",
+                  "type": "string",
+                  "description": "Integer of the transaction's index position in the block.",
+                  "example": "0x3"
+                },
+                {
+                  "name": "blockHash",
+                  "type": "string",
+                  "description": "Hash of the block where this log was in.",
+                  "example": "0x..."
+                },
+                {
+                  "name": "logIndex",
+                  "type": "string",
+                  "description": "Integer of the log's index position in the block.",
+                  "example": "0x1"
+                },
+                {
+                  "name": "removed",
+                  "type": "boolean",
+                  "description": "Indicates if the log was removed due to a chain reorganization.",
+                  "example": false
+                }
+              ]
+            },
+            "description": "Array of log entry objects."
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getProof": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Merkle Proof for Account and Storage",
+      "description": "Returns the account and storage values of the specified account address, as well as the Merkle-proof. This allows verification of account and storage data within the current state without needing the entire state.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the proof.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getProof"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the proof request, including the address, storage keys as an array, and the block number.",
+            "example": [
+              "0x1234567890123456789012345678901234567890",
+              [
+                "0x0000000000000000000000000000000000000000000000000000000000000000"
+              ],
+              "latest"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the requested proof data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "Contains the account proof, balance, code hash, nonce, storage hash, and storage proof.",
+                "fields": [
+                  {
+                    "name": "accountProof",
+                    "type": "array",
+                    "description": "Array of hashes used to generate the Merkle proof.",
+                    "field": {
+                      "type": "string",
+                      "description": "Individual hash part of the Merkle proof.",
+                      "example": "0x..."
+                    }
+                  },
+                  {
+                    "name": "balance",
+                    "type": "string",
+                    "description": "The balance of the account in wei.",
+                    "example": "0x1bc16d674ec80000"
+                  },
+                  {
+                    "name": "codeHash",
+                    "type": "string",
+                    "description": "Hash of the code of the account.",
+                    "example": "0x..."
+                  },
+                  {
+                    "name": "nonce",
+                    "type": "string",
+                    "description": "The nonce of the account.",
+                    "example": "0x0"
+                  },
+                  {
+                    "name": "storageHash",
+                    "type": "string",
+                    "description": "Hash of the storage root.",
+                    "example": "0x..."
+                  },
+                  {
+                    "name": "storageProof",
+                    "type": "array",
+                    "description": "Proofs for each requested storage key.",
+                    "field": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "key",
+                          "type": "string",
+                          "description": "The requested storage key.",
+                          "example": "0x..."
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "description": "The value associated with the storage key.",
+                          "example": "0x..."
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getStorageAt": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Storage At Address",
+      "description": "Returns the value from a storage position at a given address. This method can be used to inspect the storage of smart contracts at specific slots.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for querying storage at a specific address and slot.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getStorageAt"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the storage query, including the address of the account, the index of the storage slot, and the block number to query against.",
+            "example": [
+              "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
+              "0x0",
+              "latest"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the value from the specified storage slot of the contract.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The data stored at the requested storage slot, in hexadecimal format.",
+                "example": "0x..."
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTransactionByHash": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction by Hash",
+      "description": "Retrieves a transaction by its hash. This method provides detailed information about the transaction, including the sender, receiver, gas used, and whether the transaction has been confirmed in a block.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving a transaction by its hash.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactionByHash"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the transaction query, including the transaction hash.",
+            "example": [
+              "0xd4b2e80202cc55517c328412a7792772e1bdd925ac1a2120aeafe84316206ad3"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the specified transaction details.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "The transaction object, including details such as `from`, `to`, `gas`, `gasPrice`, `nonce`, `value`, `data`, `hash`, and, if applicable, `blockHash`, `blockNumber`, and `transactionIndex`.",
+                "fields": [
+                  {
+                    "name": "blockHash",
+                    "type": "string",
+                    "description": "Hash of the block where this transaction was in. null when its pending.",
+                    "example": "0x..."
+                  },
+                  {
+                    "name": "blockNumber",
+                    "type": "string",
+                    "description": "Block number where this transaction was in. null when its pending.",
+                    "example": "0x..."
+                  },
+                  {
+                    "name": "from",
+                    "type": "string",
+                    "description": "Address of the sender.",
+                    "example": "0x..."
+                  },
+                  {
+                    "name": "to",
+                    "type": "string",
+                    "description": "Address of the receiver. null when its a contract creation transaction.",
+                    "example": "0x..."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTransactionByBlockHashAndIndex": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction by Block Hash and Index",
+      "description": "Retrieves a single transaction by its block hash and index position within the block. This allows for precise querying of transactions when the block hash and transaction's index are known.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving a transaction by block hash and transaction index.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactionByBlockHashAndIndex"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block hash and the transaction index.",
+            "example": [
+              "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f",
+              "0x0"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the transaction at the specified index in the given block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "blockHash",
+                "type": "string",
+                "description": "Hash of the block where this transaction was included.",
+                "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+              },
+              {
+                "name": "blockNumber",
+                "type": "string",
+                "description": "Block number where this transaction was included.",
+                "example": "0x12b39a9"
+              },
+              {
+                "name": "from",
+                "type": "string",
+                "description": "Address of the sender.",
+                "example": "0xbb936e46099df268a2c6537299b75cf3609a0541"
+              },
+              {
+                "name": "gas",
+                "type": "string",
+                "description": "Gas provided by the sender.",
+                "example": "0x2bace"
+              },
+              {
+                "name": "gasPrice",
+                "type": "string",
+                "description": "Gas price provided by the sender in wei.",
+                "example": "0x3bb9d4fcb"
+              },
+              {
+                "name": "maxPriorityFeePerGas",
+                "type": "string",
+                "description": "Maximum priority fee per gas provided by the sender in wei.",
+                "example": "0x4c4b40"
+              },
+              {
+                "name": "maxFeePerGas",
+                "type": "string",
+                "description": "Maximum fee per gas provided by the sender in wei.",
+                "example": "0x5666e04ce"
+              },
+              {
+                "name": "hash",
+                "type": "string",
+                "description": "Hash of the transaction.",
+                "example": "0x6e760d4b659e9c68b943829b0f4adaa07f3e3c043ee8d4f4787045909ba63090"
+              },
+              {
+                "name": "input",
+                "type": "string",
+                "description": "Data sent along with the transaction.",
+                "example": "0xa76dfc3b..."
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "description": "Number of transactions made by the sender prior to this one.",
+                "example": "0x1b00"
+              },
+              {
+                "name": "to",
+                "type": "string",
+                "description": "Address of the receiver. Null when it's a contract creation transaction.",
+                "example": "0x111111125421ca6dc452d289314280a0f8842a65"
+              },
+              {
+                "name": "transactionIndex",
+                "type": "string",
+                "description": "Integer of the transaction's index position in the block.",
+                "example": "0x0"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "Value transferred in wei.",
+                "example": "0x214e8348c4f0000"
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "description": "EIP-2718 type of the transaction.",
+                "example": "0x2"
+              },
+              {
+                "name": "accessList",
+                "type": "array",
+                "description": "EIP-2930 access list.",
+                "field": {
+                  "type": "object",
+                  "fields": []
+                }
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "description": "Chain ID of the transaction.",
+                "example": "0x1"
+              },
+              {
+                "name": "v",
+                "type": "string",
+                "description": "ECDSA recovery id.",
+                "example": "0x1"
+              },
+              {
+                "name": "r",
+                "type": "string",
+                "description": "ECDSA signature r.",
+                "example": "0xf611431e6b44cbc02c4278915d979c9034b6d37b139b8c55ae428abbe9d52d4b"
+              },
+              {
+                "name": "s",
+                "type": "string",
+                "description": "ECDSA signature s.",
+                "example": "0x1bc0fcf547e60d54daf313f840db039c3c1904c5b9724b9d7a8ec1f2abb46b53"
+              }
+            ],
+            "description": "Details of the transaction at the specified index in the given block."
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTransactionByBlockNumberAndIndex": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction by Block Number and Index",
+      "description": "Retrieves a specific transaction by its block number (which can be specified as a hexadecimal or as one of the special strings 'latest', 'earliest', 'pending') and its index position within the block.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving a transaction by block number and transaction index.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactionByBlockNumberAndIndex"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block number and the transaction index.",
+            "example": ["latest", "0x0"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the transaction at the specified index in the given block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "blockHash",
+                "type": "string",
+                "description": "Hash of the block where this transaction was included.",
+                "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+              },
+              {
+                "name": "blockNumber",
+                "type": "string",
+                "description": "Block number where this transaction was included.",
+                "example": "0x12b39a9"
+              },
+              {
+                "name": "from",
+                "type": "string",
+                "description": "Address of the sender.",
+                "example": "0xbb936e46099df268a2c6537299b75cf3609a0541"
+              },
+              {
+                "name": "gas",
+                "type": "string",
+                "description": "Gas provided by the sender.",
+                "example": "0x2bace"
+              },
+              {
+                "name": "gasPrice",
+                "type": "string",
+                "description": "Gas price provided by the sender in wei.",
+                "example": "0x3bb9d4fcb"
+              },
+              {
+                "name": "maxPriorityFeePerGas",
+                "type": "string",
+                "description": "Maximum priority fee per gas provided by the sender in wei.",
+                "example": "0x4c4b40"
+              },
+              {
+                "name": "maxFeePerGas",
+                "type": "string",
+                "description": "Maximum fee per gas provided by the sender in wei.",
+                "example": "0x5666e04ce"
+              },
+              {
+                "name": "hash",
+                "type": "string",
+                "description": "Hash of the transaction.",
+                "example": "0x6e760d4b659e9c68b943829b0f4adaa07f3e3c043ee8d4f4787045909ba63090"
+              },
+              {
+                "name": "input",
+                "type": "string",
+                "description": "Data sent along with the transaction.",
+                "example": "0xa76dfc3b..."
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "description": "Number of transactions made by the sender prior to this one.",
+                "example": "0x1b00"
+              },
+              {
+                "name": "to",
+                "type": "string",
+                "description": "Address of the receiver. Null when it's a contract creation transaction.",
+                "example": "0x111111125421ca6dc452d289314280a0f8842a65"
+              },
+              {
+                "name": "transactionIndex",
+                "type": "string",
+                "description": "Integer of the transaction's index position in the block.",
+                "example": "0x0"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "Value transferred in wei.",
+                "example": "0x214e8348c4f0000"
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "description": "EIP-2718 type of the transaction.",
+                "example": "0x2"
+              },
+              {
+                "name": "accessList",
+                "type": "array",
+                "description": "EIP-2930 access list.",
+                "field": {
+                  "type": "object",
+                  "fields": []
+                }
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "description": "Chain ID of the transaction.",
+                "example": "0x1"
+              },
+              {
+                "name": "v",
+                "type": "string",
+                "description": "ECDSA recovery id.",
+                "example": "0x1"
+              },
+              {
+                "name": "r",
+                "type": "string",
+                "description": "ECDSA signature r.",
+                "example": "0xf611431e6b44cbc02c4278915d979c9034b6d37b139b8c55ae428abbe9d52d4b"
+              },
+              {
+                "name": "s",
+                "type": "string",
+                "description": "ECDSA signature s.",
+                "example": "0x1bc0fcf547e60d54daf313f840db039c3c1904c5b9724b9d7a8ec1f2abb46b53"
+              }
+            ],
+            "description": "Details of the transaction at the specified index in the given block."
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTransactionCount": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction Count",
+      "description": "Retrieves the number of transactions sent from the specified address. This includes all transactions up to the specified block number, allowing for nonce determination for new transactions.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the transaction count (nonce) for an address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactionCount"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the address to query and the block number ('latest', 'earliest', 'pending').",
+            "example": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the number of transactions sent from the specified address, as a hexadecimal.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The number of transactions sent from the address, represented as a hexadecimal value.",
+                "example": "0x15"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTransactionReceipt": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Transaction Receipt",
+      "description": "Retrieves the receipt of a transaction by its hash. Transaction receipts contain details about the transaction's execution, including the status (success or failure), gas used, and event logs.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving a transaction receipt.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactionReceipt"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the transaction hash.",
+            "example": [
+              "0xd4b2e80202cc55517c328412a7792772e1bdd925ac1a2120aeafe84316206ad3"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the transaction at the specified index in the given block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "blockHash",
+                "type": "string",
+                "description": "Hash of the block where this transaction was included.",
+                "example": "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+              },
+              {
+                "name": "blockNumber",
+                "type": "string",
+                "description": "Block number where this transaction was included.",
+                "example": "0x12b39a9"
+              },
+              {
+                "name": "from",
+                "type": "string",
+                "description": "Address of the sender.",
+                "example": "0xbb936e46099df268a2c6537299b75cf3609a0541"
+              },
+              {
+                "name": "gas",
+                "type": "string",
+                "description": "Gas provided by the sender.",
+                "example": "0x2bace"
+              },
+              {
+                "name": "gasPrice",
+                "type": "string",
+                "description": "Gas price provided by the sender in wei.",
+                "example": "0x3bb9d4fcb"
+              },
+              {
+                "name": "maxPriorityFeePerGas",
+                "type": "string",
+                "description": "Maximum priority fee per gas provided by the sender in wei.",
+                "example": "0x4c4b40"
+              },
+              {
+                "name": "maxFeePerGas",
+                "type": "string",
+                "description": "Maximum fee per gas provided by the sender in wei.",
+                "example": "0x5666e04ce"
+              },
+              {
+                "name": "hash",
+                "type": "string",
+                "description": "Hash of the transaction.",
+                "example": "0x6e760d4b659e9c68b943829b0f4adaa07f3e3c043ee8d4f4787045909ba63090"
+              },
+              {
+                "name": "input",
+                "type": "string",
+                "description": "Data sent along with the transaction.",
+                "example": "0xa76dfc3b..."
+              },
+              {
+                "name": "nonce",
+                "type": "string",
+                "description": "Number of transactions made by the sender prior to this one.",
+                "example": "0x1b00"
+              },
+              {
+                "name": "to",
+                "type": "string",
+                "description": "Address of the receiver. Null when it's a contract creation transaction.",
+                "example": "0x111111125421ca6dc452d289314280a0f8842a65"
+              },
+              {
+                "name": "transactionIndex",
+                "type": "string",
+                "description": "Integer of the transaction's index position in the block.",
+                "example": "0x0"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "description": "Value transferred in wei.",
+                "example": "0x214e8348c4f0000"
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "description": "EIP-2718 type of the transaction.",
+                "example": "0x2"
+              },
+              {
+                "name": "accessList",
+                "type": "array",
+                "description": "EIP-2930 access list.",
+                "field": {
+                  "type": "object",
+                  "fields": []
+                }
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "description": "Chain ID of the transaction.",
+                "example": "0x1"
+              },
+              {
+                "name": "v",
+                "type": "string",
+                "description": "ECDSA recovery id.",
+                "example": "0x1"
+              },
+              {
+                "name": "r",
+                "type": "string",
+                "description": "ECDSA signature r.",
+                "example": "0xf611431e6b44cbc02c4278915d979c9034b6d37b139b8c55ae428abbe9d52d4b"
+              },
+              {
+                "name": "s",
+                "type": "string",
+                "description": "ECDSA signature s.",
+                "example": "0x1bc0fcf547e60d54daf313f840db039c3c1904c5b9724b9d7a8ec1f2abb46b53"
+              }
+            ],
+            "description": "Details of the transaction at the specified index in the given block."
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getUncleByBlockHashAndIndex": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Uncle by Block Hash and Index",
+      "description": "Retrieves details of an uncle block by specifying the hash of the parent block and the uncle's index position. This method is useful for examining the uncles of a given block, providing insights into block reorganizations and network security.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving an uncle by block hash and index.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getUncleByBlockHashAndIndex"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block hash and the uncle's index.",
+            "example": [
+              "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f",
+              "0x0"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the specified uncle block details.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "The uncle block object, including details such as `parentHash`, `sha3Uncles`, `miner`, `stateRoot`, `transactionsRoot`, `receiptsRoot`, `logsBloom`, `difficulty`, `number`, `gasLimit`, `gasUsed`, `timestamp`, and more.",
+                "fields": []
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getUncleByBlockNumberAndIndex": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Uncle by Block Number and Index",
+      "description": "Retrieves details of an uncle block by specifying the block number (which can be a hexadecimal value or one of the special strings 'latest', 'earliest', 'pending') and the uncle's index position within the uncle list of the block.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving an uncle by block number and index.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getUncleByBlockNumberAndIndex"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block number and the uncle's index.",
+            "example": ["latest", "0x0"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the specified uncle block details.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "The uncle block object, including details such as `parentHash`, `sha3Uncles`, `miner`, `stateRoot`, `transactionsRoot`, `receiptsRoot`, `logsBloom`, `difficulty`, `number`, `gasLimit`, `gasUsed`, `timestamp`, and other relevant block information.",
+                "fields": []
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getUncleCountByBlockHash": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Uncle Count by Block Hash",
+      "description": "Returns the number of uncle blocks included in a block, identified by the block hash. This method provides insights into the block's contributions to the network security and the overall branching behavior of the blockchain.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the number of uncles by block hash.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getUncleCountByBlockHash"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block hash.",
+            "example": [
+              "0x18173058d45f8aa984181fdfbfece01a93a971ea63e008231b2e15f151e0903f"
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the number of uncle blocks included in the specified block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The number of uncle blocks included in the block, represented as a hexadecimal value.",
+                "example": "0x1"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getUncleCountByBlockNumber": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Uncle Count by Block Number",
+      "description": "Returns the number of uncle blocks included in a block, identified by the block number. This method sheds light on the blockchain's branching behavior and the role of uncle blocks in enhancing network security.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the number of uncles by block number.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getUncleCountByBlockNumber"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the block number. The block number can be specified as a hexadecimal value or using the tags 'latest', 'earliest', or 'pending'.",
+            "example": ["latest"]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the number of uncle blocks included in the specified block.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The number of uncle blocks included in the block, represented as a hexadecimal value.",
+                "example": "0x2"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_maxPriorityFeePerGas": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Max Priority Fee Per Gas",
+      "description": "Returns the maximum priority fee per gas a user is willing to pay on top of the base fee. This fee is used to expedite the transaction's inclusion in a block by compensating miners, especially during times of high network demand.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the maximum priority fee per gas.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_maxPriorityFeePerGas"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": false,
+            "description": "No parameters are needed for this call.",
+            "example": []
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the maximum priority fee per gas.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The maximum priority fee per gas, in wei, represented as a hexadecimal value.",
+                "example": "0x3B9ACA00"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_sendRawTransaction": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Send Raw Transaction",
+      "description": "Submits a pre-signed transaction to the network. This method is essential for executing transactions on the Ethereum blockchain, including transfers, contract interactions, and contract deployments. The transaction must be signed with the sender's private key before submission.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "holesky",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc testnet",
+            "arbitrum",
+            "arbitrum sepolia",
+            "optimism",
+            "optimism testnet",
+            "base",
+            "base sepolia"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for submitting a raw, pre-signed transaction.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_sendRawTransaction"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the raw transaction data.",
+            "example": ["0xf904808000831cfde080..."]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the hash of the transaction once it has been sent.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "string",
+                "required": true,
+                "description": "The hash of the submitted transaction.",
+                "example": "0x..."
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    }
   }
 }
