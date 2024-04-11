@@ -269,16 +269,12 @@ export const formatParamsByLang = (params: any, lang: string) => {
         switch (chain) {
           case "eth":
             return "0x1";
-          case "goerli":
-            return "0x5";
           case "sepolia":
             return "0xaa36a7";
           case "holesky":
             return "0x4268";
           case "polygon":
             return "0x89";
-          case "mumbai":
-            return "0x13881";
           case "amoy":
             return "0x13882";
           case "bsc":
