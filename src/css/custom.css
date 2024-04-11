@@ -404,7 +404,9 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 .web3-data-api .menu__list,
 .market-insights-api .menu__list,
 .streams-api .menu__list {
-  background-color: var(--ifm-background-surface-color); /* Sets the background color of the sidebar */
+  background-color: var(
+    --ifm-background-surface-color
+  ); /* Sets the background color of the sidebar */
   border-radius: 4px; /* Rounds the corners of the sidebar */
 }
 
@@ -416,13 +418,24 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 }
 
 /* Styling for Links in Top-level Categories */
-.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
-.market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
-.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
+.web3-data-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
+.market-insights-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
+.streams-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link {
-  font-family: var(--ifm-heading-font-family); /* Sets the font family for the category links */
+  font-family: var(
+    --ifm-heading-font-family
+  ); /* Sets the font family for the category links */
   font-size: 15px; /* Sets the font size for the category links to 15px for uniformity */
   padding-left: 10px; /* Adds padding to the left of the category links */
   padding-right: 6px; /* Adds padding to the right of the category links */
@@ -432,9 +445,18 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
 .market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before,
-.market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before,
-.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link:before {
+.web3-data-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link:before,
+.market-insights-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link:before,
+.streams-api
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link:before {
   content: ""; /* Clears existing content */
   width: 16px; /* Sets width of the icon */
   height: 16px; /* Sets height of the icon */
@@ -719,7 +741,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background-color: #2B3A67;
+  background-color: #2b3a67;
   color: white;
   border-radius: 8px;
   margin: 20px 0;
@@ -748,7 +770,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .api-banner .cta-button {
   padding: 10px 25px;
-  background-color: #5865F2;
+  background-color: #5865f2;
   color: white;
   border: none;
   border-radius: 20px;
@@ -760,5 +782,5 @@ li.sidebar-developer-tools a.menu__link--active:before {
 }
 
 .api-banner .cta-button:hover {
-  background-color: #404EED;
+  background-color: #404eed;
 }
