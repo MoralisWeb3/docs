@@ -26,13 +26,6 @@ const EVMChainData = () => {
       Type: "Testnet",
     },
     {
-      Name: "Ethereum Görli",
-      "Chain Id (Int)": "5",
-      "Chain Id (Hex)": "0x5",
-      EvmChain: "EvmChain.GOERLI",
-      Type: "Testnet",
-    },
-    {
       Name: "Ethereum Sepolia",
       "Chain Id (Int)": "11155111",
       "Chain Id (Hex)": "0xaa36a7",
@@ -47,10 +40,10 @@ const EVMChainData = () => {
       Type: "Mainnet",
     },
     {
-      Name: "Polygon Mumbai",
-      "Chain Id (Int)": "80001",
+      Name: "Polygon Amoy",
+      "Chain Id (Int)": "80002",
       "Chain Id (Hex)": "0x13881",
-      EvmChain: "EvmChain.MUMBAI",
+      EvmChain: "EvmChain.POLYGON_AMOY",
       Type: "Testnet",
     },
     {
@@ -124,13 +117,6 @@ const EVMChainData = () => {
       Type: "Mainnet",
     },
     {
-      Name: "Base Goerli",
-      "Chain Id (Int)": "84531",
-      "Chain Id (Hex)": "0x14a33",
-      EvmChain: "EvmChain.BASE_GOERLI",
-      Type: "Testnet",
-    },
-    {
       Name: "Base Sepolia",
       "Chain Id (Int)": "84532",
       "Chain Id (Hex)": "0x14a34",
@@ -143,6 +129,27 @@ const EVMChainData = () => {
       "Chain Id (Hex)": "0xa",
       EvmChain: "EvmChain.OPTIMISM",
       Type: "Mainnet",
+    },
+    {
+      Name: "Optimism Sepolia",
+      "Chain Id (Int)": "11155420",
+      "Chain Id (Hex)": "0xaa37dc",
+      EvmChain: "EvmChain.OPTIMISM_SEPOLIA",
+      Type: "Testnet",
+    },
+    {
+      Name: "Linea",
+      "Chain Id (Int)": "59144",
+      "Chain Id (Hex)": "0xe708",
+      EvmChain: "EvmChain.LINEA",
+      Type: "Mainnet",
+    },
+    {
+      Name: "Linea Sepolia",
+      "Chain Id (Int)": "59141",
+      "Chain Id (Hex)": "0xe705",
+      EvmChain: "EvmChain.LINEA_SEPOLIA",
+      Type: "Testnet",
     },
   ];
 

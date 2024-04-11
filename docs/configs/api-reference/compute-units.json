@@ -65,7 +65,7 @@
       "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
     },
     {
-      "endpoint": "getTokenBalances",
+      "endpoint": "getWalletTokenBalances",
       "path": "/{address}/erc20",
       "price": 10,
       "rateLimitCost": 5
