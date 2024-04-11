@@ -7,6 +7,7 @@ import ApiParamNumberField from "./ApiParamNumberField";
 import ApiParamBooleanField from "./ApiParamBooleanField";
 import ApiParamJSONField from "./ApiParamJSONField";
 import ApiParamArrayField from "./ApiParamArrayField";
+import RpcParamArrayField from "./RpcParamArrayField";
 import ApiParamRecordField from "./ApiParamRecordField";
 import ApiParamObjectField from "./ApiParamObjectField";
 import ApiParamOneOfField from "./ApiParamOneOfField";
@@ -29,6 +30,7 @@ export type ApiParam =
   | ApiBaseParam<"boolean", boolean>
   | ApiBaseParam<"json", string | object>
   | (ApiBaseParam<"array"> & { field: ApiParam })
+  | (ApiBaseParam<"rpcArray"> & { field: ApiParam })
   | (ApiBaseParam<"record"> & { field: ApiParam })
   | (ApiBaseParam<"object"> & { fields: ApiParam[] })
   | (ApiBaseParam<"oneOf"> & { options: ApiParam[] });
@@ -50,6 +52,7 @@ const apiParamComponents: Record<
   boolean: ApiParamBooleanField,
   json: ApiParamJSONField,
   array: ApiParamArrayField,
+  rpcArray: RpcParamArrayField,
   record: ApiParamRecordField,
   object: ApiParamObjectField,
   oneOf: ApiParamOneOfField,
@@ -99,7 +102,7 @@ export const apiParamInitialValue = (param) => {
 };
 
 const validateField = (param: ApiParam) => (value: string) => {
-  console.log(param); // Add this line to check the param object
+  // console.log(param); // Add this line to check the param object
   if (!param || !param.type || !PRIMITIVE_TYPES.includes(param.type)) return;
 
   if (param.type === "json" && value != null) {

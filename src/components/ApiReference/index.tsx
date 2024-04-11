@@ -89,16 +89,17 @@ const queryParamsToObject = (search) => {
         .split("&")
         .reduce((acc, item) => {
           const [key, value] = item.split("=");
-          if (isValidJsonString(value)) {
-            acc[key] = JSON.parse(value);
+          const decodedValue = decodeURIComponent(value);
+
+          // Directly handle 'jsonrpc' to ensure it remains a fixed string
+          if (key === "jsonrpc") {
+            acc[key] = decodedValue; // Keep it as a string, no conversion
+          } else if (isValidJsonString(decodedValue)) {
+            acc[key] = JSON.parse(decodedValue);
           } else {
-            const decodedValue = decodeURIComponent(value);
-            if (isValidJsonString(decodedValue)) {
-              acc[key] = JSON.parse(decodedValue);
-            } else {
-              acc[key] = decodedValue;
-            }
+            acc[key] = decodedValue;
           }
+
           return acc;
         }, {})
     : {};
@@ -390,14 +391,18 @@ const ApiReference = ({
             <div className="col col--7">
               <div className={styles.runner}>
                 <div className={styles.inlineForm}>
-                  <div className={styles.sectionTitle}>API KEY</div>
+                  {hostUrl !== "https://site1.moralis-nodes.com" && (
+                    <>
+                      <div className={styles.sectionTitle}>API KEY</div>
 
-                  <input
-                    value={token}
-                    onChange={onChangeToken}
-                    placeholder="YOUR_API_KEY (Optional)"
-                    className={styles.input}
-                  />
+                      <input
+                        value={token}
+                        onChange={onChangeToken}
+                        placeholder="YOUR_API_KEY (Optional)"
+                        className={styles.input}
+                      />
+                    </>
+                  )}
 
                   <ApiParamButton
                     type="submit"
@@ -410,6 +415,12 @@ const ApiReference = ({
                         ? styles.apiParamButtonDisabled
                         : ""
                     }`}
+                    style={{
+                      width:
+                        hostUrl === "https://site1.moralis-nodes.com"
+                          ? "100%"
+                          : "initial",
+                    }}
                   >
                     {loading ? <LoadingCircle /> : "Test Live API"}
                   </ApiParamButton>
