@@ -273,9 +273,13 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0x5";
           case "sepolia":
             return "0xaa36a7";
+          case "holesky":
+            return "0x4268";
           case "polygon":
             return "0x89";
           case "mumbai":
+            return "0x13881";
+          case "amoy":
             return "0x13881";
           case "bsc":
             return "0x38";
@@ -291,28 +295,38 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0x19";
           case "arbitrum":
             return "0xa4b1";
-          case "fantom test":
+          case "fantom testnet":
             return "0xfa2";
           case "avax":
             return "0xa86a";
-          case "avax test":
+          case "avax testnet":
             return "0xa869";
-          case "cronos test":
+          case "cronos testnet":
             return "0x152";
           case "ronin":
             return "0x7e4";
-          case "arbitrum test":
+          case "arbitrum testnet":
             return "0x66eed";
           case "gnosis":
             return "0x64";
-          case "gnosis chiado test":
+          case "gnosis testnet":
             return "0x27d8";
           case "base":
             return "0x2105";
-          case "base goerli test":
+          case "base sepolia":
             return "0x14a33";
           case "optimism":
             return "0xa";
+          case "optimism sepolia":
+            return "0xaa37dc";
+          case "chiliz":
+            return "0x15b38";
+          case "chiliz testnet":
+            return "0x15b32";
+          case "linea":
+            return "0xe705";
+          case "linea sepolia":
+            return "0xe705";
           default:
             return chain;
         }
