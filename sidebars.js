@@ -385,7 +385,7 @@ const sidebars = {
       label: "API Reference",
       link: {
         type: "generated-index",
-        slug: "../rpc-nodes/reference",
+        slug: "rpc-nodes/reference",
       },
       items: [
         {
