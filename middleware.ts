@@ -8,7 +8,7 @@ if (!KV_REST_API_URL || !KV_REST_API_TOKEN) {
 }
 
 export const config = {
-  matcher: "/api/api-vercel",
+  matcher: "/api/api-backend",
 };
 
 const RATE_LIMIT = 10; // The maximum number of requests allowed
