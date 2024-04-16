@@ -13,7 +13,7 @@ Records are the basic unit for calculating your Streams usage, with charges appl
 
 In Moralis Streams, a **record** refers to either a transaction (`txs` in response), a log (`logs` in response), or an internal transaction (`txsInternal` in response). The total number of records within a webhook is calculated as the sum of `txs + logs + txsInternal`.
 
-For every record within a webhook, your account will be charged 15 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
+For every record within a webhook, your account will be charged 150 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
 
 :::tip
 Please note that only confirmed blocks will require charges, with unconfirmed blocks having `'x-records-charged': '0'`.
@@ -32,7 +32,7 @@ headers: {
 
 ## Records Pricing
 
-For each record you consume, your account will be charged 15 compute units.
+For each record you consume, your account will be charged 150 compute units.
 
 :::note
 Note that each Moralis plan has a certain number of included compute units.
@@ -40,8 +40,8 @@ Note that each Moralis plan has a certain number of included compute units.
 
 For each transaction, you will get two webhooks:
 
-* One once the transaction is added to a block
-* One once the transaction is confirmed
+-   One once the transaction is added to a block
+-   One once the transaction is confirmed
 
 Records are only counted towards your usage for webhooks with the field `confirmed:true`. Webhooks set to `withconfirmed:false` and decoded logs are both free of charge.
 
@@ -57,11 +57,11 @@ The following code example is a response of using the [getStats](/streams-api/ev
 
 ```json
 {
-  "totalWebhooksDelivered": 1288,
-  "totalWebhooksFailed": 17,
-  "totalLogsProcessed": 4257,
-  "totalTxsProcessed": 0,
-  "totalTxsInternalProcessed": 0
+    "totalWebhooksDelivered": 1288,
+    "totalWebhooksFailed": 17,
+    "totalLogsProcessed": 4257,
+    "totalTxsProcessed": 0,
+    "totalTxsInternalProcessed": 0
 }
 ```
 
@@ -75,9 +75,9 @@ Make sure to refer to the [getStats API reference](/streams-api/evm/reference/ge
 
 The number of records charged depends on the type of transaction activity associated with the selected address. Records are categorized into three transaction types:
 
-- **Contract Interactions (logs)**
-- **Native Transactions (txs)**
-- **Internal Transactions (txsInternal)**
+-   **Contract Interactions (logs)**
+-   **Native Transactions (txs)**
+-   **Internal Transactions (txsInternal)**
 
 :::tip
 The number of records for logs can vary based on the complexity of the contract emitting the events, with more complex contracts potentially generating additional records.
@@ -87,11 +87,11 @@ Below is a breakdown of the number of records typically charged for various tran
 
 | Description                                                                                 | Number of Records\* |
 | :------------------------------------------------------------------------------------------ | :------------------ |
-| Stream with txs, logs, and an ERC20 transfer event                                         | 2                   |
+| Stream with txs, logs, and an ERC20 transfer event                                          | 2                   |
 | Stream with txs, logs, and the transfer of 10 NFT Tokens (ERC721) in one transaction        | 11                  |
 | Stream with txs, logs, and the transfer of 30 NFT Tokens (ERC1155 Batch) in one transaction | 2                   |
 | Stream with logs and the minting of an ERC721 NFT with 100 Tokens                           | 100                 |
-| Stream with txs and a native transfer                                                      | 1                   |
+| Stream with txs and a native transfer                                                       | 1                   |
 
 ### Decoded Logs
 
@@ -99,10 +99,10 @@ Moralis decodes and enhances standardized contracts such as ERC20, ERC721, and E
 
 The current Decoded Logs are:
 
-* erc20Transfers
-* erc20Approvals
-* nftTransfers
+-   erc20Transfers
+-   erc20Approvals
+-   nftTransfers
 
-::note
+:::note
 Decoded logs are **free** they do NOT count as `Records`.
 :::

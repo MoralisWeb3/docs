@@ -27,7 +27,7 @@ Request price refers to the amount of compute units that will be calculated towa
 #### Dynamic Prices
 
 Some endpoints have a dynamically priced CU cost based on the number of resources being requested. The more resources being requested, the higher the CU cost for that particular request.
-Taking [getNativeBalancesForAddresses](/web3-data-api/evm/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 1 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 5 CU.
+Taking [getNativeBalancesForAddresses](/web3-data-api/evm/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 10 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 50 CU.
 
 ### Rate limit Cost
 
@@ -41,6 +41,8 @@ Let's take the function [getMultipleTokenPrices](/web3-data-api/evm/reference/ge
 
 By taking a moment to consult the table before making a call, you can avoid unexpected CU charges and keep your API interactions smooth and efficient.
 
+### Compute Units and Rate Limit prices
+
 import ComputeUnitsTable from "@site/src/components/ComputeUnits/ComputeUnitsTable.tsx";
 
 <ComputeUnitsTable chain="evm" />
@@ -51,11 +53,9 @@ In addition to having compute units charged on each API request, there are addit
 
 | Query parameter                                                                                                      | CU Cost |
 | -------------------------------------------------------------------------------------------------------------------- | ------- |
-| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)              | 5       |
-| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 3       |
-| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 10      |
-| `media_items=true`                                                                                                   | 2       |
-| `include=percent_change` on [`/erc20/prices`](/web3-data-api/evm/reference/get-multiple-token-prices)                                                                                       | 5       |
+| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)              | 50      |
+| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 30      |
+| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 100     |
 
 ## How to Check Compute Units?
 
@@ -71,8 +71,8 @@ import TabItem from "@theme/TabItem";
 const Moralis = require("moralis").default;
 
 await Moralis.start({
-  apiKey: "YOUR_API_KEY",
-  // ...and any other configuration
+    apiKey: "YOUR_API_KEY",
+    // ...and any other configuration
 });
 
 const response = await Moralis.EvmApi.utils.endpointWeights();
@@ -87,8 +87,8 @@ console.log(response?.toJSON());
 import Moralis from "moralis";
 
 await Moralis.start({
-  apiKey: "YOUR_API_KEY",
-  // ...and any other configuration
+    apiKey: "YOUR_API_KEY",
+    // ...and any other configuration
 });
 
 const response = await Moralis.EvmApi.utils.web3ApiVersion();
@@ -103,24 +103,24 @@ Your output for the API request will be as follows:
 
 ```json
 [
-  {
-    "endpoint": "getBlock",
-    "path": "/block/{block_number_or_hash}",
-    "price": 5,
-    "rateLimitCost": 5
-  },
-  {
-    "endpoint": "getContractEvents",
-    "path": "/{address}/events",
-    "price": 2,
-    "rateLimitCost": 2
-  },
-  {
-    "endpoint": "getTransactions",
-    "path": "/transaction/{transaction_hash}",
-    "price": 1,
-    "rateLimitCost": 3
-  }
+    {
+        "endpoint": "getBlock",
+        "path": "/block/{block_number_or_hash}",
+        "price": 100,
+        "rateLimitCost": 20
+    },
+    {
+        "endpoint": "getContractEvents",
+        "path": "/{address}/events",
+        "price": 20,
+        "rateLimitCost": 20
+    },
+    {
+        "endpoint": "getTransaction",
+        "path": "/transaction/{transaction_hash}",
+        "price": 10,
+        "rateLimitCost": 10
+    }
 ]
 ```
 
@@ -128,7 +128,7 @@ where `price` refers to how much CU does the API request cost in terms of billin
 
 ## Streams and Compute Units
 
-For [Moralis Streams](/streams-api/evm#what-is-the-streams-api), it is important to note that each [record](/streams-api/evm/records-and-pricing#what-is-the-record) has a fixed cost of 15 Compute Units.
+For [Moralis Streams](/streams-api/evm#what-is-the-streams-api), it is important to note that each [record](/streams-api/evm/records-and-pricing#what-is-the-record) has a fixed cost of 150 Compute Units.
 
 :::tip
 You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
