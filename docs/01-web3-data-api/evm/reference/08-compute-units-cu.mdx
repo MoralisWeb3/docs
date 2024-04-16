@@ -37,8 +37,6 @@ CUs play a big role in determining how frequently you can send API requests, tha
 When you're setting up a function call, remember to factor in the query parameters as well! These can sometimes add to the CU cost. To stay on top of it, always check the individual query parameter costs in the [query parameters table](#query-parameters) to have a clear picture of the total CU cost your call will incur. This way, you can make well-informed decisions and prevent any unexpected surprises in your CU usage.
 :::
 
-Let's take the function [getMultipleTokenPrices](/web3-data-api/evm/reference/get-multiple-token-prices) as an example. It has two query parameters: chain and include=percent_change. While specifying chain is essential, adding include=percent_change will cost an extra 5 CU according to the rate limit cost table. So, it's wise to consult the table to have a clear understanding of the potential costs involved and manage your CU allocation effectively.
-
 By taking a moment to consult the table before making a call, you can avoid unexpected CU charges and keep your API interactions smooth and efficient.
 
 ### Compute Units and Rate Limit prices
