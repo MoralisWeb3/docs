@@ -24,20 +24,21 @@ By default, when fetching transaction details using Moralis API, internal transa
 | :--------------- | :-------- | :-------------- |
 | Ethereum Mainnet | ✅        | ✅ Full history |
 | Ethereum Sepolia | ✅        | ✅ Full history |
-| Polygon Mainnet  | ✅        | Partial         |
-| Polygon Mumbai   | ✅        | ✅ Full history |
-| BNB Mainnet      | ✅        | Partial         |
+| Ethereum Holesky | ✅        | ✅ Full history |
+| Polygon Mainnet  | ✅        | ✅ Full history         |
+| Polygon Amoy   | ✅        | ✅ Full history |
+| BNB Mainnet      | ✅        | ✅ Full history         |
 | BNB Testnet      | ✅        | ✅ Full history |
+| Arbitrum      | ✅        | ✅ Full history |
+| Avalanche      | ✅        | ✅ Full history |
+| Base      | ✅        | ✅ Full history |
+| Base Sepolia      | ✅        | ✅ Full history |
+| Chiliz      | ✅        | ✅ Full history |
+| Chiliz Testnet      | ✅        | ✅ Full history |
+| Fantom      | ✅        | ✅ Full history |
+| Linea      | ✅        | ✅ Full history |
+| Optimism      | ✅        | ✅ Full history |
 
-## Will you be adding Internal Transactions to more chains?
-
-Yes, absolutely! We plan to add internal transactions across our other EVM chains such as Avalanche, Palm, Fantom and Cronos. Submit and vote on which chains we should focus on first [by visiting our Roadmap](https://roadmap.moralis.io/b/feature-requests/)!
-
-## Are real-time and historical Internal Transactions supported?
-
-Currently internal transactions will be processed in real-time across Ethereum, Sepolia, Polygon, Mumbai, BNB and BNB testnet. This means for all new transactions, where internal transactions exist, they will be available through the API.
-
-All historical internal transactions for Ethereum, Sepolia, Mumbai and BNB testnet are also available, meaning every single internal transaction back to Block 0 is available on these blockchains. For BNB and Polygon, these blockchains are still syncing and will fully complete in Q1.
 
 ## Why are Internal Transactions used?
 
