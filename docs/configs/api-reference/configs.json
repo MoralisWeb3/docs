@@ -7551,63 +7551,86 @@
           "status": "200",
           "description": "Returns ERC20 token balance and details for a specific address",
           "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "token_address",
-                "type": "string",
-                "description": "The address of the token contract",
-                "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "description": "The name of the token contract",
-                "example": "Kylin Network"
-              },
-              {
-                "name": "symbol",
-                "type": "string",
-                "description": "The symbol of the NFT contract",
-                "example": "KYL"
-              },
-              {
-                "name": "logo",
-                "type": "string",
-                "description": "The logo of the token",
-                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
-              },
-              {
-                "name": "thumbnail",
-                "type": "string",
-                "description": "The thumbnail of the logo",
-                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
-              },
-              {
-                "name": "decimals",
-                "type": "integer",
-                "description": "The number of decimals on the token",
-                "example": 18
-              },
-              {
-                "name": "balance",
-                "type": "string",
-                "description": "Timestamp of when the contract was last synced with the node",
-                "example": "123456789"
-              },
-              {
-                "name": "possible_spam",
-                "type": "boolean",
-                "description": "Indicates if a contract is possibly a spam contract",
-                "example": false
-              },
-              {
-                "name": "verified_collection",
-                "type": "boolean",
-                "description": "Indicates if a contract is verified",
-                "example": false
-              }
-            ]
+            "name": "result",
+            "type": "array",
+            "description": "An array of objects, each representing a token balances.",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "description": "The number of decimals on the token",
+                  "example": 6
+                },
+                {
+                  "name": "balance",
+                  "type": "string",
+                  "description": "Timestamp of when the contract was last synced with the node",
+                  "example": "123456789"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": false
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total supply of the token",
+                  "example": "10000000000000000"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "boolean",
+                  "description": "Total supply of the token formatted",
+                  "example": "10000000000"
+                },
+                {
+                  "name": "percentage_relative_to_total_supply",
+                  "type": "number",
+                  "description": "The percentage relative to total token supply",
+                  "example": 0.0035
+                }
+              ]
+            }
           }
         }
       ],
