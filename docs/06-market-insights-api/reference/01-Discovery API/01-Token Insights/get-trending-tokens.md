@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 9
 sidebar_label: Get trending tokens
 
 slug: /market-insights-api/reference/get-trending-tokens
