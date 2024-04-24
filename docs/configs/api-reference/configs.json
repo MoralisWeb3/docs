@@ -1127,7 +1127,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -1164,7 +1164,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -1419,7 +1423,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -1456,7 +1460,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -2190,7 +2198,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -2227,7 +2235,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -2526,7 +2538,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -2563,7 +2575,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -2857,7 +2873,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -2894,7 +2910,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -3153,7 +3173,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -3190,7 +3210,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -3355,7 +3379,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -3392,7 +3416,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -3689,7 +3717,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -3726,7 +3754,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -4013,7 +4045,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -4050,7 +4082,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -4294,7 +4330,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -4331,7 +4367,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -4583,7 +4623,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -4620,7 +4660,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -4849,7 +4893,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -4886,7 +4930,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -5089,7 +5137,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -5126,7 +5174,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -5288,7 +5340,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -5325,7 +5377,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -5570,7 +5626,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -5607,7 +5663,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -5661,7 +5721,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -5698,7 +5758,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -5933,7 +5997,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -5970,7 +6034,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -6257,7 +6325,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -6294,7 +6362,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -6355,7 +6427,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -6392,7 +6464,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -6502,7 +6578,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -6539,7 +6615,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -6670,7 +6750,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -6707,7 +6787,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -6799,7 +6883,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -6836,7 +6920,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -6934,7 +7022,11 @@
             "linea",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -7076,7 +7168,11 @@
             "linea",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -7268,7 +7364,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -7305,7 +7401,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -7538,7 +7638,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -7575,7 +7675,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -7730,7 +7834,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -7767,7 +7871,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -7995,7 +8103,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -8032,7 +8140,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -8159,7 +8271,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -8196,7 +8308,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -8427,7 +8543,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -8464,7 +8580,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -8690,7 +8810,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -8727,7 +8847,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -8799,7 +8923,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -8836,7 +8960,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -8980,7 +9108,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -9017,7 +9145,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -9080,7 +9212,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -9117,7 +9249,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -9270,7 +9406,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -9307,7 +9443,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -9624,7 +9764,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -9661,7 +9801,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -10115,7 +10259,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -10152,7 +10296,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -10206,7 +10354,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -10243,7 +10391,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -10537,7 +10689,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -10574,7 +10726,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -10944,7 +11100,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -10981,7 +11137,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -11182,7 +11342,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -11219,7 +11379,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -11334,7 +11498,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -11371,7 +11535,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -11774,7 +11942,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -11811,7 +11979,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -11912,7 +12084,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -11949,7 +12121,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -12048,7 +12224,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -12085,7 +12261,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -12222,7 +12402,7 @@
             "0x4268",
             "polygon",
             "0x89",
-            "amoy",
+            "polygon amoy",
             "0x13882",
             "bsc",
             "0x38",
@@ -12259,7 +12439,11 @@
             "linea sepolia",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         }
       ],
@@ -12567,7 +12751,11 @@
             "linea",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -12655,7 +12843,11 @@
             "linea",
             "0xe705",
             "moonbeam",
-            "0x504"
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
           ]
         },
         {
@@ -47238,7 +47430,7 @@
             "eth",
             "holesky",
             "polygon",
-            "amoy",
+            "polygon amoy",
             "bsc",
             "bsc testnet",
             "arbitrum",
