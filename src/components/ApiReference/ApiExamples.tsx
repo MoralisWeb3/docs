@@ -277,6 +277,8 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0x89";
           case "amoy":
             return "0x13882";
+          case "polygon amoy":
+            return "0x13882";
           case "bsc":
             return "0x38";
           case "bsc testnet":
@@ -323,6 +325,12 @@ export const formatParamsByLang = (params: any, lang: string) => {
             return "0xe705";
           case "linea sepolia":
             return "0xe705";
+          case "moonbeam":
+            return "0x504";
+          case "moonriver":
+            return "0x505";
+          case "moonbase":
+            return "0x507";
           default:
             return chain;
         }

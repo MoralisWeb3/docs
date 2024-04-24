@@ -151,6 +151,27 @@ const EVMChainData = () => {
       EvmChain: "EvmChain.LINEA_SEPOLIA",
       Type: "Testnet",
     },
+    {
+      Name: "moonbeam",
+      "Chain Id (Int)": "1284",
+      "Chain Id (Hex)": "0x504",
+      EvmChain: "EvmChain.MOONBEAM",
+      Type: "Mainnet",
+    },
+    {
+      Name: "moonriver",
+      "Chain Id (Int)": "1285",
+      "Chain Id (Hex)": "0x505",
+      EvmChain: "EvmChain.MOONRIVER",
+      Type: "Testnet",
+    },
+    {
+      Name: "moonbase",
+      "Chain Id (Int)": "1287",
+      "Chain Id (Hex)": "0x507",
+      EvmChain: "EvmChain.MOONBASE",
+      Type: "Testnet",
+    },
   ];
 
   return <Table headers={headers} data={data} />;
