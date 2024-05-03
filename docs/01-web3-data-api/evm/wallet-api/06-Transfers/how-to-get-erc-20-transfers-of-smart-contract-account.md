@@ -7,7 +7,7 @@ sidebar_label: Get ERC-20 transfers of a smart contract account
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 :::tip
 If you'd like examples of account types, read the [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/#types-of-account) article.

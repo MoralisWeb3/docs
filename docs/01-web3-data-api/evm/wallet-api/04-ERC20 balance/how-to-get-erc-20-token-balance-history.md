@@ -7,7 +7,7 @@ sidebar_label: "Get ERC-20 token balance history"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Set Up Moralis
 

@@ -4,10 +4,6 @@ sidebar_label: "Authentication"
 sidebar_position: 7
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 # Authentication
 
 The Moralis API uses API keys to authenticate requests. You can view your API key in the Moralis [Admin panel](https://admin.moralis.io/).

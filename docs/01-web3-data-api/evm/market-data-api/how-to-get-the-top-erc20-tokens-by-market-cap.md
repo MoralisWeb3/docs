@@ -6,10 +6,6 @@ sidebar_label: "Get the top ERC20 tokens by market cap"
 sidebar_position: 0
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.

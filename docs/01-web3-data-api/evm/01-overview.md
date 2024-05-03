@@ -8,10 +8,6 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## What are the Web3 Data APIs?
 
 The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers.

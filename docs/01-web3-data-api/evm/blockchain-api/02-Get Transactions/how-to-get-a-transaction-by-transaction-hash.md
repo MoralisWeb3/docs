@@ -6,10 +6,6 @@ sidebar_label: "Get a transaction by hash"
 sidebar_position: 1
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Set Up Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.

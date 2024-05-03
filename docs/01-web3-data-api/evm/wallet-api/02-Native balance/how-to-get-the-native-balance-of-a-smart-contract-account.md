@@ -7,7 +7,7 @@ sidebar_label: "Get native balance of a smart contract account"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 There are two primary account types:
 * Contract Accounts

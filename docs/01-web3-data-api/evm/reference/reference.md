@@ -7,10 +7,6 @@ description: "Get started on Moralis Enterprise-Grade Web3 API Reference."
 sidebar_class_name: "sidebar-api-reference"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 This section contains a full list of all methods within the EVM Web3 data.
 
 ## Full List of APIs by Category

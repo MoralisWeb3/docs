@@ -5,10 +5,6 @@ sidebar_position: 7
 sidebar_class_name: "sidebar-block-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 The **Blockchain API** enables Web3 developers to quickly get data on specific blocks across multiple blockchains, in order to help them build and scale their dapps efficiently.
 
 ## Block API Features

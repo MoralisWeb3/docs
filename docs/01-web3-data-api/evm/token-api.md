@@ -6,10 +6,6 @@ sidebar_position: 1
 sidebar_class_name: "sidebar-token-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 The **Moralis Token API** enables Web3 developers to build and scale dapps quickly and efficiently. Access all the information you need for any ERC20 tokens from multiple blockchains.
 
 ## Token API features

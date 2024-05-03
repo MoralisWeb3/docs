@@ -9,7 +9,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 
 This section contains a full list of all methods within the Solana Web3 data.

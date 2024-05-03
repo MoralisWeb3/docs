@@ -6,7 +6,7 @@ sidebar_position: 5
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Endpoint Overview
 The [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-history) provides a single API call solution to fetch a comprehensive, chronological history of a wallet's activity. This endpoint consolidates all transaction types, including transfers, token swaps, NFT sales, token operations, and interactions with smart contracts, simplifying the data retrieval process for developers.

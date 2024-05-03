@@ -5,10 +5,6 @@ description: "Learn how to get lowest price of an NFT by Markeplace using the Mo
 sidebar_label: "Get NFT lowest price"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -122,9 +118,7 @@ In your terminal, you should see the following JSON response:
 {
   "transaction_hash": "0x7f144f0ba4a412b8b683b126e10962754d80f1010531f57f425e499c23983c9a",
   "transaction_index": "47",
-  "token_ids": [
-    "3644"
-  ],
+  "token_ids": ["3644"],
   "seller_address": "0xdacc47d22370a3cc940160efbe62750c47900f44",
   "buyer_address": "0x756dcf63d25ba456c492a892db61719e5861a872",
   "token_address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",

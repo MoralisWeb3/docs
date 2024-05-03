@@ -6,10 +6,6 @@ sidebar_label: "Get internal transactions of address"
 sidebar_position: 3
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Set Up Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that can you go ahead and complete this guide.
@@ -60,7 +56,7 @@ const runApp = async () => {
   const response = await Moralis.EvmApi.transaction.getWalletTransactions({
     address: walletAddress,
     chain,
-    include: "internal_transactions"
+    include: "internal_transactions",
   });
 
   // Print the response in JSON format
@@ -91,7 +87,7 @@ const chain: EvmChain = EvmChain.ETHEREUM;
 const params = {
   address: walletAddress,
   chain,
-  include: "internal_transactions"
+  include: "internal_transactions",
 };
 
 // Initialize Moralis with your API key
@@ -151,7 +147,7 @@ print(result)
 
 5. **Include Internal Transactions**: Specify the parameter `include` with the value `internal_transactions`.
 
-5. **Print Results**: Once internal transactions are fetched, print the response or process it based on your specific requirements.
+6. **Print Results**: Once internal transactions are fetched, print the response or process it based on your specific requirements.
 
 ## Step 3: Run the Script
 

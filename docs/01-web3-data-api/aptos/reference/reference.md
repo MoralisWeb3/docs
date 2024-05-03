@@ -7,23 +7,19 @@ sidebar_class_name: "sidebar-api-reference"
 sidebar_position: 1
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 This section contains a full list of all methods within the Aptos Web3 data.
 
 ## Full List of APIs by Category
 
-Find your favorite method by selecting one of the following categories:  
+Find your favorite method by selecting one of the following categories:
 
-* [NFT API](#nft-api)
-* [Coin API](#coin-api)
-* [Wallet API](#wallet-api)
-* [Accounts API](#accounts-api)
-* [Events API](#events-api)
-* [Transactions API](#transactions-api)
-* [Blocks API](#blocks-api)
+- [NFT API](#nft-api)
+- [Coin API](#coin-api)
+- [Wallet API](#wallet-api)
+- [Accounts API](#accounts-api)
+- [Events API](#events-api)
+- [Transactions API](#transactions-api)
+- [Blocks API](#blocks-api)
 
 ## NFT API
 

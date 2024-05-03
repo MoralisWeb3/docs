@@ -6,10 +6,6 @@ sidebar_position: 1
 sidebar_class_name: "sidebar-nft-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## What is the NFT API?
 
 The Moralis NFT API enables Web3 developers to build and scale any NFT dapp effortlessly. Access all the information you need for any NFT from multiple blockchains.
