@@ -19,7 +19,7 @@ function ApiBanner({
   const text =
     customText ||
     "Sign-up to Moralis to get your free API key and start building today.";
-  const buttonText = customButtonText || "Get your free API key";
+  const buttonText = customButtonText || "Get Your Free API Key";
   const buttonLink = customButtonLink || "https://admin.moralis.io/register";
 
   return (
