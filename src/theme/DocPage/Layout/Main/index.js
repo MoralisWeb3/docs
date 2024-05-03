@@ -3,15 +3,15 @@ import clsx from "clsx";
 import { useDocsSidebar } from "@docusaurus/theme-common/internal";
 import styles from "./styles.module.css";
 import ApiBanner from "../../../../components/ApiBanner/ApiBanner";
+import { useLocation } from "@docusaurus/router";
 export default function DocPageLayoutMain({
   hiddenSidebarContainer,
   children,
 }) {
   const sidebar = useDocsSidebar();
-  const path = window.location.pathname;
+  const location = useLocation();
+  const path = location.pathname;
   const reversedPath = path.split("/").reverse().join("/");
-
-  console.log("path", path);
 
   return (
     <main
