@@ -7,7 +7,7 @@ sidebar_position: 2
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 Whether you are new to blockchain development or a seasoned developer, this guide serves as your gateway to unlocking the potential of seamless blockchain development.
 

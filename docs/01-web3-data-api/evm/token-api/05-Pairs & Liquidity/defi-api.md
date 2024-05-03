@@ -8,7 +8,7 @@ sidebar_class_name: "sidebar-defi-api"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## What is the DeFi API?
 

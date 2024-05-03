@@ -6,10 +6,6 @@ sidebar_position: 5
 sidebar_class_name: "sidebar-balance-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## What is the Wallet API?
 
 The Wallet API enables Web3 developers to quickly get all wallet activity data on the Aptos blockchains, in order to help them build and scale their dapps efficiently.

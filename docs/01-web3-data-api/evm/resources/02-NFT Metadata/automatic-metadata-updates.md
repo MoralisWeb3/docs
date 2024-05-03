@@ -7,7 +7,7 @@ sidebar_position: 2
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 For all collections that have metadata on IPFS we automatically refresh token metadata each time those tokens are requested on any NFT endpoint.
 

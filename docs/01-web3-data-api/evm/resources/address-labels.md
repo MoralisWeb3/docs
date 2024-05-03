@@ -5,7 +5,7 @@ sidebar_position: 4
 ---
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 The Moralis API automatically enriches all transactions, NFT transfers and ERC20 transfers with user-friendly labels for the sender and the receiver. Any transaction or transfer that includes a `to_address` or `from_address` will also include `to_address_label` and `from_address` labels respectively.
 

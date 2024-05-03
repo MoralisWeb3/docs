@@ -10,7 +10,7 @@ sidebar_class_name: "sidebar-overview"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 :::tip
 You can learn by [watching the Streams API Demo](#demos).

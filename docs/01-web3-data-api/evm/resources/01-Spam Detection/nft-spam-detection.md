@@ -7,7 +7,7 @@ sidebar_position: 3
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 NFT spam detection is designed to provide an extra layer of protection and help you easily identify possible spam contracts.
 

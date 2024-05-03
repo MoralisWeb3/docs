@@ -6,7 +6,7 @@ sidebar_position: 1
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 In this guide, you will explore the various tiers and features of [Moralis's pricing plans](https://moralis.io/pricing/) to find the perfect fit for your web3 development needs.
 

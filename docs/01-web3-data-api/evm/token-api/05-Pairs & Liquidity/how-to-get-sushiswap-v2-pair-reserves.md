@@ -7,7 +7,7 @@ sidebar_label: "Get Sushiswap V2 pair reserves"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

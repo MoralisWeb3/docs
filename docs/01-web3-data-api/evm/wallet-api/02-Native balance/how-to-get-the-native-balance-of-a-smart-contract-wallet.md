@@ -7,7 +7,7 @@ sidebar_label: "Get native balance of multi-signature wallet"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

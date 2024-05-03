@@ -2,25 +2,30 @@ import React from "react";
 
 // Define the shape of your props
 interface ApiBannerProps {
+  customTitle?: string;
   customText?: string;
   customButtonText?: string;
   customButtonLink?: string;
 }
 
 function ApiBanner({
+  customTitle,
   customText,
   customButtonText,
   customButtonLink,
 }: ApiBannerProps) {
   // Default values
-  const text = customText || "Start using this API for your project today.";
-  const buttonText = customButtonText || "Get your free API key";
+  const title = customTitle || "Don't have an API key yet?";
+  const text =
+    customText ||
+    "Sign-up to Moralis to get your free API key and start building today.";
+  const buttonText = customButtonText || "Get Your Free API Key";
   const buttonLink = customButtonLink || "https://admin.moralis.io/register";
 
   return (
     <div className="api-banner">
       <div>
-        <h1>Don't have an API key yet?</h1>
+        <h1>{title}</h1>
         <p>{text}</p>
       </div>
       <a

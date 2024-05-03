@@ -7,7 +7,7 @@ sidebar_label: "Get Pancakeswap V1 pair address"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

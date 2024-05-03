@@ -5,10 +5,6 @@ sidebar_position: 2
 sidebar_class_name: "sidebar-wallet-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 Boasting an array of features, exceptional flexibility, and unparalleled scalability, our Wallet API is the definitive solution for integrating wallet functionalities into your Web3 dapps.
 
 The Wallet API provides out-of-the-box functionality for the most popular features when building or adding wallet functionality to your dapp, including:
@@ -19,7 +15,6 @@ The Wallet API provides out-of-the-box functionality for the most popular featur
 - [Fetch all transactions for a wallet](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet): Connect the dots and understand what's happening on the blockchain through our data decoding transaction labeling & method decoding.
 - Fetch [NFT transfers](/web3-data-api/evm/reference/get-wallet-nft-transfers) or [ERC20 transfers](/web3-data-api/evm/reference/get-wallet-token-transfers) for a wallet]: Retrieve real-time transfers, swaps and purchases across NFTs and ERC20 tokens.
 - [Get wallet age and cross-chain activity](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet): Identify wallet age, chain activity, as well as support for domain lookups such as ENS and Unstoppable Domains.
-
 
 ## Example use cases
 
