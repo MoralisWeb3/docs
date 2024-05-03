@@ -5,11 +5,6 @@ description: "How to set up your Moralis account and get started"
 sidebar_position: 2
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
-
 Whether you are new to blockchain development or a seasoned developer, this guide serves as your gateway to unlocking the potential of seamless blockchain development.
 
 This step-by-step tutorial shows how to set up your Moralis account, get your Moralis API Key, and install the Moralis SDK in your project.
@@ -41,7 +36,7 @@ Protecting your API key is critical in safeguarding your sensitive account infor
 - **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
 - **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
 - **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
-:::
+  :::
 
 ## Step 3: Installing Moralis SDK
 

@@ -7,7 +7,7 @@ sidebar_position: 2
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

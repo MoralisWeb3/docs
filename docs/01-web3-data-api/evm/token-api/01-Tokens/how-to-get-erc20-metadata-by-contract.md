@@ -7,7 +7,7 @@ sidebar_label: "Get ERC20 metadata by contract"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

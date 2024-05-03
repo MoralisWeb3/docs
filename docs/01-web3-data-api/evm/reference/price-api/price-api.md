@@ -8,7 +8,7 @@ sidebar_position: 4
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 Select what you want to achieve:
 

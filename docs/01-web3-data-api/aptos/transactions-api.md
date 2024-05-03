@@ -6,10 +6,6 @@ sidebar_position: 6
 sidebar_class_name: "sidebar-transaction-api"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## What is the Transaction API?
 
 The Transaction API enables Web3 developers to quickly get all transaction data on the Aptos blockchains, in order to help them build and scale their dapps efficiently.

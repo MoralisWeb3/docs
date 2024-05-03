@@ -5,10 +5,6 @@ description: "Learn how to get NFT trades by Markeplace using the Moralis NFT AP
 sidebar_label: "Get NFT trades by Markeplace"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -128,12 +124,7 @@ In your terminal, you should see the following JSON response:
     {
       "transaction_hash": "0x5eba5d8d84c20a7f30b92d74afaee764d9476b62a1637b017319c721269245ed",
       "transaction_index": "90",
-      "token_ids": [
-        "1002",
-        "7228",
-        "1",
-        "1"
-      ],
+      "token_ids": ["1002", "7228", "1", "1"],
       "seller_address": "0xe7f35f06a80a6a2a5edc823379fa147d9f9948a8",
       "buyer_address": "0xd7c708080553068217a2fe6f44eccf9cac309915",
       "token_address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb",

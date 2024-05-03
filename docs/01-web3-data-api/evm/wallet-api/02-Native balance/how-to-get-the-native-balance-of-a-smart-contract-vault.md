@@ -7,7 +7,7 @@ sidebar_label: "Get native balance of ERC20 token vault"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

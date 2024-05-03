@@ -4,10 +4,6 @@ slug: "../moralis-sdk"
 description: "Quickly and easily integrate Moralis' products into your backend with the Moralis SDK."
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## What is the Moralis SDK?
 
 With the Moralis SDK, you can implement all of Moralis' products quickly and easily in your backend. The SDK comes with numerous features, such as:
@@ -29,7 +25,7 @@ For other programming languages, you can call our API as you would for a normal 
 
 To install Moralis SDK, use one of the following commands:
 
-import SetupMoralis from '/docs/partials/_install-moralis-sdk.mdx';
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 <SetupMoralis node="moralis" python="moralis" />
 
@@ -95,10 +91,10 @@ You can set the configuration for your Moralis instance when you call `Moralis.s
 ```javascript
 Moralis.start({
   apiKey: "YOUR_API_KEY",
-  formatEvmAddress: 'checksum',
-  formatEvmChainId: 'decimal',
-  logLevel: 'verbose'
-})
+  formatEvmAddress: "checksum",
+  formatEvmChainId: "decimal",
+  logLevel: "verbose",
+});
 ```
 
 Below, you can find the possible options for the configuration:

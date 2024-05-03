@@ -7,7 +7,7 @@ sidebar_label: "Get SPL token price"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

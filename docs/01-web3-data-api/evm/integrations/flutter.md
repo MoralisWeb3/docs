@@ -6,10 +6,6 @@ sidebar_label: "Flutter"
 sidebar_position: 5
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 This tutorial integrates a Flutter frontend with a Flask backend using the Moralis API to get NFT data.
 
 ## Video Tutorial: Get Any Wallet NFTs Using Flutter and the Moralis API
@@ -18,15 +14,14 @@ For a visual guide, check out our YouTube tutorial:
 
 https://www.youtube.com/watch?v=7tb47eTkshk
 
-
 ## NFT Application Structure
 
 The application is composed of the following:
 
-* A backend server
-* A login page
-* An NFT list component
-* A main application file
+- A backend server
+- A login page
+- An NFT list component
+- A main application file
 
 ### Backend Server
 

@@ -5,10 +5,6 @@ description: "Learn how to get coin transfers by wallet(s) using Moralis Wallet 
 sidebar_label: "Get Coin Transfers By Wallet(s)"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -38,14 +34,16 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const ownerAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  const ownerAddresses = [
+    "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50",
+  ];
 
   const network = "mainnet";
 
   const response = Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({
     limit,
     walletAddresses,
-    network
+    network,
   });
 
   console.log(response.result);
@@ -68,14 +66,16 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const ownerAddresses = ["0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50"];
+  const ownerAddresses = [
+    "0x274c398a921b8e2ba345feac3039e1c8b196a7eb1395cdd3584af3a85eb9ec50",
+  ];
 
   const network = "mainnet";
 
   const response = Moralis.AptosApi.coins.getCoinTransfersByOwnerAddresses({
     limit,
     walletAddresses,
-    network
+    network,
   });
 
   console.log(response.result);

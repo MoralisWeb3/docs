@@ -13,6 +13,6 @@ import config from "../../../../../configs/api-reference/configs.json";
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 <ApiReference {...config.token.getWalletTokenBalancesPrice} />
