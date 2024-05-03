@@ -152,7 +152,7 @@ Back in our server directory we will update our server's `index.js` for the code
 1. Install the required dependencies for our server:
 
 ```shell
-npm install cookie-parser jsonwebtoken dotenv
+npm install cookie-parser jsonwebtoken dotenv cors
 ```
 
 2. Create a file called `.env` in your server's root directory (where `package.json` is):
