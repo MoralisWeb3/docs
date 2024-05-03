@@ -7,7 +7,7 @@ sidebar_label: "Get ENS name by address"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

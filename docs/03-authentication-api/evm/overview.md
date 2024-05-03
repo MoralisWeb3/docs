@@ -9,7 +9,7 @@ sidebar_class_name: "sidebar-overview"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## What is the Auth API?
 

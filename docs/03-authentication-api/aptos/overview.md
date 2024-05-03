@@ -8,7 +8,7 @@ description: "Auth API allows your user to authenticate and verify signed messag
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## What is the Auth API?
 

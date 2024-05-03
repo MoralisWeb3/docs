@@ -5,10 +5,6 @@ description: "Learn how to get top coin holders using Moralis Coin API."
 sidebar_label: Get Top Coin Holders
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -38,7 +34,8 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const coinTypeHash = "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
+  const coinTypeHash =
+    "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
 
   const network = "mainnet";
 
@@ -68,7 +65,8 @@ const runApp = async () => {
 
   const limit = 10;
 
-  const coinTypeHash = "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
+  const coinTypeHash =
+    "91ceb1308a98389691e05158b07ed5f079ab78461a6bb8d5a4054b1bb5cb8bb6";
 
   const network = "mainnet";
 

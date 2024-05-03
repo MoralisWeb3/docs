@@ -8,8 +8,6 @@ sidebar_class_name: "sidebar-overview"
 
 import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
 
-<NodeBanner />
-
 To put it simply, RPC nodes are nodes (servers) that access a blockchain network (for example Ethereum), which enable you to interact with the network without running your own node.
 
 ## Overview

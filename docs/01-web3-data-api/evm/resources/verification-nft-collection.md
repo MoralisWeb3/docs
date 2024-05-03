@@ -6,7 +6,7 @@ sidebar_position: 3
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ### What are Verified NFT Collections?
 

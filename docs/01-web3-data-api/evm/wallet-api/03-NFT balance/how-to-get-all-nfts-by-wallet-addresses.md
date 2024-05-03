@@ -7,7 +7,7 @@ sidebar_label: "Get NFTs by wallet addresses"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

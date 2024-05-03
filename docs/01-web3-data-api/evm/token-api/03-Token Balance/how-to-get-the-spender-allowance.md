@@ -7,7 +7,7 @@ sidebar_label: "Get ERC20 token spender allowance"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

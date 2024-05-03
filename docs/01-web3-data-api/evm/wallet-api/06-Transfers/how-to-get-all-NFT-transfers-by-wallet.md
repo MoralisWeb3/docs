@@ -7,7 +7,7 @@ sidebar_label: "Get NFT transfers by wallet"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

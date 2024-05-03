@@ -6,10 +6,6 @@ description: "Learn more about what is Compute Units and how does it affects you
 sidebar_position: 13
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 All [Moralis plans](/web3-data-api/evm/pricing-plans) have generous limits on the number of requests you can make per month. How many included requests you have depends on the plan you have, check the [pricing page](https://moralis.io/pricing) for more details.
 
 Some requests are more expensive than others. By giving some heavy requests higher weight, we ensure that you only pay for what you use and not a cent more.
@@ -69,8 +65,8 @@ import TabItem from "@theme/TabItem";
 const Moralis = require("moralis").default;
 
 await Moralis.start({
-    apiKey: "YOUR_API_KEY",
-    // ...and any other configuration
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
 });
 
 const response = await Moralis.EvmApi.utils.endpointWeights();
@@ -85,8 +81,8 @@ console.log(response?.toJSON());
 import Moralis from "moralis";
 
 await Moralis.start({
-    apiKey: "YOUR_API_KEY",
-    // ...and any other configuration
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
 });
 
 const response = await Moralis.EvmApi.utils.web3ApiVersion();
@@ -101,24 +97,24 @@ Your output for the API request will be as follows:
 
 ```json
 [
-    {
-        "endpoint": "getBlock",
-        "path": "/block/{block_number_or_hash}",
-        "price": 100,
-        "rateLimitCost": 20
-    },
-    {
-        "endpoint": "getContractEvents",
-        "path": "/{address}/events",
-        "price": 20,
-        "rateLimitCost": 20
-    },
-    {
-        "endpoint": "getTransaction",
-        "path": "/transaction/{transaction_hash}",
-        "price": 10,
-        "rateLimitCost": 10
-    }
+  {
+    "endpoint": "getBlock",
+    "path": "/block/{block_number_or_hash}",
+    "price": 100,
+    "rateLimitCost": 20
+  },
+  {
+    "endpoint": "getContractEvents",
+    "path": "/{address}/events",
+    "price": 20,
+    "rateLimitCost": 20
+  },
+  {
+    "endpoint": "getTransaction",
+    "path": "/transaction/{transaction_hash}",
+    "price": 10,
+    "rateLimitCost": 10
+  }
 ]
 ```
 

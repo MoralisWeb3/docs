@@ -6,10 +6,6 @@ sidebar_label: "eth_getLogs and getContractLogs"
 description: "How to get, view, and analyze event logs on Ethereum using eth_getLogs RPC method and Moralis getContractLogs RPC method"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 Insights into events occurring on the Ethereum blockchain are crucial for blockchain developers. Accessing this valuable data is made simpler with eth_getLogs, and one of the tools for this purpose is the [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis.
 
 Thanks to the Moralis SDK, fetching and analyzing event logs on Ethereum is easy, and if you want to learn how to retrieve and analyze Ethereum event logs using the SDK, this guide will be highly beneficial. It includes practical JavaScript examples, and compares Moralis' [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint with the [eth_getLogs](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getlogs) RPC call to help you make informed decisions.
@@ -47,12 +43,12 @@ It is essential to evaluate the comprehensive filtration options rendered by `et
 To highlight how to get started with Moralis, we present a JS script below illustrating how to employ the Moralis SDK for querying Ethereum contract logs:
 
 ```javascript
-import Moralis from 'moralis';
+import Moralis from "moralis";
 
 try {
   // Initializing the Moralis SDK with your unique API key
   await Moralis.start({
-    apiKey: "YOUR_API_KEY"
+    apiKey: "YOUR_API_KEY",
   });
 
   // Executing the getContractLogs method to retrieve contract logs
@@ -60,9 +56,10 @@ try {
   // You can modify this parameter to target other networks as per your requirements.
   // The "address" parameter specifies the contract address for fetching the logs.
   const response = await Moralis.EvmApi.events.getContractLogs({
-    "chain": "0x1",
-    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
-    "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+    chain: "0x1",
+    address: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    topic0:
+      "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
   });
 
   // Logging the response enables you to inspect and understand the structure of the data retrieved.
@@ -75,6 +72,7 @@ try {
 
 **Deciphering the Script:**
 In this segment, we dissect each part of the script to offer a deep understanding of utilizing the Moralis library effectively:
+
 - **Import and initialization:** Start by importing the Moralis library and initializing the SDK using your API key.
 - **Log retrieval:** This part describes how to retrieve contract logs using defined parameters.
 - **Response and error handling:** This section underlines the response logging and error management process.
@@ -141,14 +139,15 @@ The following example shows how to send a request to the backend localhost API:
 const API_URL = "http://localhost:5001/getlogs";
 const ADDRESS = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 const CHAIN = "0x1";
-const TOPIC0 = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+const TOPIC0 =
+  "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
 
 const endpoint = `${API_URL}?address=${ADDRESS}&chain=${CHAIN}&topic0=${TOPIC0}`;
 
-fetch(endpoint, { method: 'GET' })
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('Error:', error.message));
+fetch(endpoint, { method: "GET" })
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.log("Error:", error.message));
 ```
 
 You now possess the knowledge to build a more complex application by expanding upon this basic structure.

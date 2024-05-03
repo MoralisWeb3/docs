@@ -5,10 +5,6 @@ description: "Learn how to get the owners of NFT collection by its contract addr
 sidebar_label: "Get NFT owners by collection"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-<ApiBanner />
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
@@ -39,15 +35,15 @@ const runApp = async () => {
 
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTOwners({
-      address,
-      chain,
+    address,
+    chain,
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -67,15 +63,15 @@ const runApp = async () => {
 
   const address = "0xa186d739ca2b3022b966194004c6b01855d59571";
 
-	const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.ETHEREUM;
 
   const response = await Moralis.EvmApi.nft.getNFTOwners({
-      address,
-      chain,
+    address,
+    chain,
   });
 
   console.log(response.toJSON());
-}
+};
 
 runApp();
 ```
@@ -110,7 +106,7 @@ print(result)
 
 ## Step 3: Run the script
 
-import RunTheScript from '/docs/partials/_run-the-script.mdx';
+import RunTheScript from '/docs/partials/\_run-the-script.mdx';
 
 <RunTheScript />
 

@@ -7,7 +7,7 @@ sidebar_position: 4
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 The Moralis NFT API allows for the generation of low, medium, and high-resolution thumbnails for NFT images, improving the user experience by offering optimized image sizes for various use cases. This allows developers to easily integrate faster-loading images into their applications, reducing page load times and enhancing the overall user experience.
 

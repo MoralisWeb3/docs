@@ -7,7 +7,7 @@ sidebar_label: "Get ERC20 token metadata by token addresses"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 ## Step 1: Setup Moralis
 

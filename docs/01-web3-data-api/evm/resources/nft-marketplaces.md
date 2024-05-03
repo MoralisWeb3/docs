@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiBanner />
+
 
 This articles includes a growing list of supported NFT marketplaces within [Moralis NFT API](/web3-data-api/evm/reference/nft-api) to provide you with extensive access to NFT trade data across different marketplaces and chains.
 
