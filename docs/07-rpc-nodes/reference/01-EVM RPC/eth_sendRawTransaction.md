@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Send raw transaction
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Send Raw Transaction
 
 <ApiReference {...config.rpc.eth_sendRawTransaction} >
 <Admonition type="info" title="Note">

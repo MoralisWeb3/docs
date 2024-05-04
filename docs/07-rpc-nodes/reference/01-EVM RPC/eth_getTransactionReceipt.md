@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Get transaction receipt
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Get Transaction Receipt
 
 <ApiReference {...config.rpc.eth_getTransactionReceipt} >
 <Admonition type="info" title="Note">

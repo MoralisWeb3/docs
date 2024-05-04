@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Estimate Gas
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Estimate Gas
 
 <ApiReference {...config.rpc.eth_estimateGas} >
 <Admonition type="info" title="Note">
