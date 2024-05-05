@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Get proof
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Get Proof
 
 <ApiReference {...config.rpc.eth_getProof} >
 <Admonition type="info" title="Note">
