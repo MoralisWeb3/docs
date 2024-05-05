@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Create Access List
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Create Access List
 
 <ApiReference {...config.rpc.eth_createAccessList} >
 <Admonition type="info" title="Note">

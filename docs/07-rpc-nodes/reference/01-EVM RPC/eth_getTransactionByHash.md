@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Get transaction by hash
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Get Transaction By Hash
 
 <ApiReference {...config.rpc.eth_getTransactionByHash} >
 <Admonition type="info" title="Note">

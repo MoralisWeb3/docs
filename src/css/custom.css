@@ -103,6 +103,9 @@
   --api-banner-background-color: #f8f8f8;
   --api-banner-text-color: #3f3f3f;
   --api-banner-border-color: #e3e3e3;
+
+  /* Home Search */
+  --home-search-box-background-color:rgb(234,237,240);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -128,6 +131,9 @@
   --api-banner-background-color: #1c212f;
   --api-banner-text-color: white;
   --api-banner-border-color: #444950;
+
+  /* Home Search */
+  --home-search-box-background-color:#1C212F;
 }
 
 /* You can override the default shadcn/ui variables here. */
@@ -243,8 +249,6 @@ video {
 
 .menu__link {
   min-height: 30px;
-  font-size: 0.85rem;
-  font-weight: 400;
   align-items: center;
   justify-content: flex-start;
   overflow-wrap: anywhere;
@@ -255,16 +259,22 @@ video {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
 
+.theme-doc-sidebar-item-category-level-1 .menu__link--sublist-caret:after {
+  margin-right:6px;
+}
+
+.theme-doc-sidebar-item-category-level-2 .menu__caret:before {
+  margin-right:-6px;
+}
+
+.theme-doc-sidebar-item-category-level-3 .menu__link--sublist-caret:after {
+  margin-right:-10px;
+}
+
 .DocSearch-Button {
   width: 300px;
 }
 
-/** Mobile view */
-@media screen and (max-width: 996px) {
-  .DocSearch-Button {
-    width: auto;
-  }
-}
 
 .card h3 {
   display: flex;
@@ -304,15 +314,7 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   display: none;
 }
 
-@media (max-width: 996px) {
-  .hero__title {
-    font-size: var(--ifm-h1-font-size);
-  }
 
-  .footer__link-item {
-    height: 48px;
-  }
-}
 .sections-menu-trigger {
   align-items: center;
   background-color: var(--docs-color-background-100);
@@ -418,13 +420,11 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
     --ifm-background-surface-color
   ); /* Sets the background color of the sidebar */
   border-radius: 4px; /* Rounds the corners of the sidebar */
+  padding: 5px !important;
 }
 
-/* Top-level Category Item Styling in Sidebar */
-.web3-data-api .menu__list-item.theme-doc-sidebar-item-category-level-1,
-.market-insights-api .menu__list-item.theme-doc-sidebar-item-category-level-1,
-.streams-api .menu__list-item.theme-doc-sidebar-item-category-level-1 {
-  margin-top: 6px; /* Adds spacing above each top-level category */
+nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module {
+  border-right: 1px solid var(--docs-color-border);
 }
 
 /* Styling for Links in Top-level Categories */
@@ -446,35 +446,10 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   font-family: var(
     --ifm-heading-font-family
   ); /* Sets the font family for the category links */
-  font-size: 15px; /* Sets the font size for the category links to 15px for uniformity */
-  padding-left: 10px; /* Adds padding to the left of the category links */
+  padding-left: 15px; /* Adds padding to the left of the category links */
   padding-right: 6px; /* Adds padding to the right of the category links */
 }
 
-/* Icon Styling Before the Links in Top-level Categories */
-.web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.streams-api .theme-doc-sidebar-item-link-level-1 .menu__link:before,
-.web3-data-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link:before,
-.market-insights-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link:before,
-.streams-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link:before {
-  content: ""; /* Clears existing content */
-  width: 16px; /* Sets width of the icon */
-  height: 16px; /* Sets height of the icon */
-  background-size: 16px; /* Ensures the background (icon) fits the container */
-  background-repeat: no-repeat; /* Ensures the icon doesn't repeat */
-  background-position: center; /* Centers the icon */
-  margin-right: 12px; /* Adds spacing to the right of the icon */
-}
 
 /* Submenu Styling in Sidebar */
 .web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
@@ -483,8 +458,31 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   padding-left: 30px; /* Indents the submenu items for better hierarchy visualization */
 }
 
+.menu-list>.menu__list, .streams-api .theme-doc-sidebar-item-category-level-1>.menu__list, .web3-data-api .theme-doc-sidebar-item-category-level-1>.menu__list {
+  padding-left: unset;
+}
+
+/*Second level*/
+.menu-list>.menu__list, .streams-api .theme-doc-sidebar-item-category-level-2>.menu__list, .web3-data-api .theme-doc-sidebar-item-category-level-2>.menu__list {
+  padding-left: unset;
+}
+
+.menu__list-item ul.menu__list {
+  border-left: 1px solid var(--docs-color-border);
+  border-radius: 0;
+  margin-left: 15px;
+  padding-left: 10px;
+  margin-top:0;
+}
+
+.menu__list-item {
+  margin-top: unset;
+}
+
 a.menu__link {
   transition: all 0.2s ease-in;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 a.menu__link:hover {
@@ -648,21 +646,12 @@ li.sidebar-developer-tools a.menu__link--active:before {
   display: none;
 }
 
-@media (max-width: 996px) {
-  .navbar__item--hide-on-mobile {
-    display: none;
-  }
-}
+
 
 @media screen and (min-width: 997px) {
   :root {
     --ifm-navbar-height: 7rem;
   }
-
-  nav.menu {
-    padding-top: 20px;
-  }
-
   .navbar {
     padding-bottom: 0;
     padding-top: 10px;
@@ -686,7 +675,8 @@ li.sidebar-developer-tools a.menu__link--active:before {
   }
 
   .navbar__items > .navbar__link--active {
-    border-bottom: 1px solid var(--ifm-navbar-link-hover-color);
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color);
+    font-weight: 600;
   }
 
   .navbar__items--right > :last-child {
@@ -712,18 +702,69 @@ li.sidebar-developer-tools a.menu__link--active:before {
   .navbar__items > .navbar__item--login {
     margin-right: 0;
   }
+
+
+  #home h1 {
+    font-size:4rem;
+  }
 }
 
-/* styles for phones */
+#home {
+  padding:50px 0;
+}
+#home .intro {
+  text-align: center;
+}
 
-@media (max-width: 560px) {
-  .api-banner h1 {
-    font-size: 24px;
-  }
+#home h1 {
+  font-weight:800;
+  letter-spacing: -0.05rem;
+}
 
-  .api-banner p {
-    font-size: 14px;
-  }
+#home p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 550px;
+  margin: 0 auto 20px;
+}
+
+#home button.DocSearch.DocSearch-Button {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 50px;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--home-search-box-background-color);
+}
+
+.popular-searches {
+  text-align: center;
+  max-width: 800px;
+  margin: 15px auto 0;
+  font-weight: 500;
+}
+
+.popular-searches ul {
+  padding: 0;
+  margin-top:10px;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.popular-searches ul li {
+  margin: 5px 10px 5px 0;
+}
+
+.popular-searches a {
+  margin-top: 0;
+  margin-right: 10px;
+  background-color: var(--api-banner-background-color);
+  padding: 6px 15px;
+  border-radius: 40px;
+  font-size:0.9rem;
+  text-decoration: none;
 }
 
 .markdown h1:first-child {
@@ -789,6 +830,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
 .api-banner h1 {
   font-weight: 700;
   color: #0f7fff;
+  font-size: 2rem;
 }
 
 .api-banner p {
@@ -812,4 +854,44 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .api-banner .cta-button:hover {
   background-color: #0056b3;
+}
+
+
+/* Styles for smaller screens - keep this at the end of the file so that the styles get applied last */
+
+@media (max-width: 560px) {
+  .api-banner h1 {
+    font-size: 24px;
+  }
+
+  .api-banner p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .api-banner {
+    display: block;
+  }
+
+  .api-banner .cta-button {
+    margin-top:10px;
+  }
+}
+
+@media (max-width: 996px) {
+  .navbar__item--hide-on-mobile {
+    display: none;
+  }
+  .DocSearch-Button {
+    width: auto;
+  }
+  .hero__title {
+    font-size: var(--ifm-h1-font-size);
+  }
+
+  .footer__link-item {
+    height: 48px;
+  }
 }

@@ -1,5 +1,5 @@
 ---
-title: "All Web3 Data Endpoints - EVM"
+title: "EVM API"
 sidebar_label: "Overview"
 sidebar_position: 1
 slug: "/web3-data-api/evm/reference"
