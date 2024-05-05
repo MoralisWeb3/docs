@@ -14,18 +14,10 @@ import config from "@site/docs/configs/api-reference/configs.json";
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 
-
 <ApiReference {...config.transaction.getWalletTransactionsVerbose}>
-  <Admonition type="info" title="Note">
+  <Admonition type="info" title="New Endpoint Available 🤩">
     <p>
-      We only decode transactions from verified ABIs. We are continuously adding
-      to our repository of verified contract ABIs.
-    </p>
-    <p>
-      To add new ABIs for decoding, please submit them on our{" "}
-      <Link href="https://roadmap.moralis.io/b/submit-contract-abis-for-decoding/">
-        ABI requests board.
-      </Link>
+      Check-out our newest transactions endpoint, <b><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-history">Wallet History</a></b>, to fetch decoded transactions by wallet, fully enriched with metadata, labels and categories (such as Mints, Burns, Swaps etc).
     </p>
   </Admonition>
 </ApiReference>

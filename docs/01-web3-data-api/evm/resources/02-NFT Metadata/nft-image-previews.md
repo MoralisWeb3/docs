@@ -25,7 +25,7 @@ NFT thumbnail previews are added across all endpoints that currently return NFTs
 * [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
 
 ## Does this cost additional CUs?
-Yes, the use of `media_items=true` will increase the cost of that API request by an additional 2 CUs. This is regardless of how many NFTs are returned on that particular request. If no image previews are found or served, then the additional 2 CUs will not be charged.
+No, as of April 2024, the use of `media_items=true` is now free 🥳.
 
 
 ## I'm using the query parameter, but I'm not receiving any previews, why?

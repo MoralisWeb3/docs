@@ -32,9 +32,8 @@ import SearchBar from "@site/src/theme/SearchBar";
     </div>
 </div>
 
-## Popular APIs
-
 <div className="container">
+    <h2>Popular APIs</h2>
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
@@ -88,9 +87,8 @@ import SearchBar from "@site/src/theme/SearchBar";
 </div>
 
 
-## Explore by Chain
-
 <div className="container">
+    <h2>Explore by Chain</h2>
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
@@ -119,9 +117,8 @@ import SearchBar from "@site/src/theme/SearchBar";
     </div>
 </div>
 
-## Integrations
-
 <div className="container">
+    <h2>Integrations</h2>
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
