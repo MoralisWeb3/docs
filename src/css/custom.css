@@ -709,9 +709,11 @@ li.sidebar-developer-tools a.menu__link--active:before {
   }
 
   /* Home hero style */
-  .docPage_src-theme-DocPage-Layout-styles-module {
+  .docs-doc-id-index .docPage_src-theme-DocPage-Layout-styles-module, 
+  .docs-doc-id-index #docusaurus_skipToContent_fallback {
     background-position: 0px -100px !important;
   }
+  
 }
 
 /* Homepage styles */
@@ -730,7 +732,14 @@ li.sidebar-developer-tools a.menu__link--active:before {
   background-position: 0px -10px;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(/img/content/home-bg.png);
+  background-image: url(/img/content/home-bg-1.png);
+}
+
+.docs-doc-id-index #docusaurus_skipToContent_fallback {
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/img/content/home-bg-2.png);
 }
 
 #home {
