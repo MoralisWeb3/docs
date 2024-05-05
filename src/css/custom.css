@@ -105,7 +105,7 @@
   --api-banner-border-color: #e3e3e3;
 
   /* Home Search */
-  --home-search-box-background-color:rgb(234,237,240);
+  --home-search-box-background-color:white;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -707,6 +707,39 @@ li.sidebar-developer-tools a.menu__link--active:before {
   #home h1 {
     font-size:4rem;
   }
+
+  /* Home hero style */
+  .docs-doc-id-index .docPage_src-theme-DocPage-Layout-styles-module, 
+  .docs-doc-id-index #docusaurus_skipToContent_fallback {
+    background-position: 0px -100px !important;
+  }
+  
+}
+
+/* Homepage styles */
+.docs-doc-id-index .row {
+  margin:unset;
+}
+
+.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
+.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module .row {
+  max-width:100%;
+}
+
+/* Homepage hero section */
+
+.docs-doc-id-index .docPage_src-theme-DocPage-Layout-styles-module {
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/img/content/home-bg-1.png);
+}
+
+.docs-doc-id-index #docusaurus_skipToContent_fallback {
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/img/content/home-bg-2.png);
 }
 
 #home {
@@ -734,6 +767,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   height: 50px;
   width: 100%;
   padding: 30px;
+  border:1px solid var(--api-banner-border-color);
   background-color: var(--home-search-box-background-color);
 }
 
@@ -741,7 +775,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   text-align: center;
   max-width: 800px;
   margin: 15px auto 0;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .popular-searches ul {
@@ -751,6 +785,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  font-weight:500;
 }
 
 .popular-searches ul li {
@@ -769,6 +804,12 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
+}
+
+.markdown > h2, h2 {
+  --ifm-h2-font-size: 2rem;
+  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom)* var(--ifm-leading));
+  margin-top: calc(var(--ifm-h2-vertical-rhythm-top)* var(--ifm-leading));
 }
 .cls-1 {
   stroke-width: 1.4px;
@@ -877,6 +918,10 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
   .api-banner .cta-button {
     margin-top:10px;
+  }
+
+  #home .DocSearch-Button-Placeholder {
+    display: block;
   }
 }
 

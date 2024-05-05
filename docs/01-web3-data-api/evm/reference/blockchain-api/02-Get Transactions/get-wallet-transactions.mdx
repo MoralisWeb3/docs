@@ -6,7 +6,14 @@ slug: /web3-data-api/evm/reference/get-wallet-transactions
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
+import Admonition from "@theme/Admonition";
 
 # Get native transactions by wallet
 
-<ApiReference {...config.transaction.getWalletTransactions} />
+<ApiReference {...config.transaction.getWalletTransactions}>
+    <Admonition type="info" title="New Endpoint Available 🤩">
+        <p>
+        Check-out our newest transactions endpoint, <b><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-history">Wallet History</a></b>, to fetch decoded transactions by wallet, fully enriched with metadata, labels and categories (such as Mints, Burns, Swaps etc).
+        </p>
+    </Admonition>
+</ApiReference>
