@@ -18,7 +18,7 @@ export default async function middleware(request: Request) {
   const ip = ipAddress(request) || "127.0.0.1";
   const currentWindow = Math.floor(Date.now() / 1000 / 30);
   const windowKey = `rate-limit:${ip}:${currentWindow}`;
-  console.time("ratelimit-check");
+  // console.time("ratelimit-check");
 
   const pipelineResponse = await fetch(`${KV_REST_API_URL}/pipeline`, {
     method: "POST",
@@ -46,7 +46,7 @@ export default async function middleware(request: Request) {
     console.timeEnd("ratelimit-check");
     return new Response("Rate limit exceeded", { status: 429 });
   }
-  console.timeEnd("ratelimit-check");
+  // console.timeEnd("ratelimit-check");
 
   return next();
 }
