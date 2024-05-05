@@ -25,37 +25,40 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           qs.stringify(query || {}, { addQueryPrefix: true }),
         ].join("")
       );
-      return res.status(200).json({
-        status: "SYNCED",
-        page: 1,
-        page_size: 100,
-        cursor: null,
-        result: [
-          {
-            amount: "1",
-            token_id: "5021",
-            token_address: "0xfff54e6fe44fd47c8814c4b1d62c924c54364ad3",
-            contract_type: "ERC721",
-            owner_of: "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e",
-            last_metadata_sync: "2024-05-05T07:14:07.611Z",
-            last_token_uri_sync: "2024-05-05T07:13:57.595Z",
-            metadata: null,
-            block_number: "14647390",
-            block_number_minted: "14647390",
-            name: "Youtopia",
-            symbol: "Youtopia",
-            token_hash: "d4719eaf84eabcf443065b0a463f5886",
-            token_uri: "http://api.youtopia-official.xyz/ipfs/5021",
-            minter_address: "0x13f11fd2c7c7be94674651386370d02b7aac9653",
-            verified_collection: false,
-            possible_spam: true,
-            collection_logo:
-              "https://i.seadn.io/gae/e3uNxyaqT0FfnhcF9SuMqCZd3pdF36wgcnpRJ0VDjLOP71g_LwrFRgLweNNCMvsMqR5ZZ4dh5Wble12PBzvncmpLbtmdVdjr5zMy8w?w=500&auto=format",
-            collection_banner_image:
-              "https://i.seadn.io/gae/n9j18OhplkvqP5SOtuYDwpUVkJSwF6WkIV6vZMWjcm0D5qCpbd12cAaVlfZS8-3gjxjYsnjL_tIlVIsjXz28KejPB3D19Jc_MZ9Z?w=500&auto=format",
-          },
-        ],
-      });
+      return res.status(200).json(
+        []
+        //   {
+        //   status: "SYNCED",
+        //   page: 1,
+        //   page_size: 100,
+        //   cursor: null,
+        //   result: [
+        //     {
+        //       amount: "1",
+        //       token_id: "5021",
+        //       token_address: "0xfff54e6fe44fd47c8814c4b1d62c924c54364ad3",
+        //       contract_type: "ERC721",
+        //       owner_of: "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e",
+        //       last_metadata_sync: "2024-05-05T07:14:07.611Z",
+        //       last_token_uri_sync: "2024-05-05T07:13:57.595Z",
+        //       metadata: null,
+        //       block_number: "14647390",
+        //       block_number_minted: "14647390",
+        //       name: "Youtopia",
+        //       symbol: "Youtopia",
+        //       token_hash: "d4719eaf84eabcf443065b0a463f5886",
+        //       token_uri: "http://api.youtopia-official.xyz/ipfs/5021",
+        //       minter_address: "0x13f11fd2c7c7be94674651386370d02b7aac9653",
+        //       verified_collection: false,
+        //       possible_spam: true,
+        //       collection_logo:
+        //         "https://i.seadn.io/gae/e3uNxyaqT0FfnhcF9SuMqCZd3pdF36wgcnpRJ0VDjLOP71g_LwrFRgLweNNCMvsMqR5ZZ4dh5Wble12PBzvncmpLbtmdVdjr5zMy8w?w=500&auto=format",
+        //       collection_banner_image:
+        //         "https://i.seadn.io/gae/n9j18OhplkvqP5SOtuYDwpUVkJSwF6WkIV6vZMWjcm0D5qCpbd12cAaVlfZS8-3gjxjYsnjL_tIlVIsjXz28KejPB3D19Jc_MZ9Z?w=500&auto=format",
+        //     },
+        //   ],
+        // }
+      );
     }
 
     const newHeaders = {
