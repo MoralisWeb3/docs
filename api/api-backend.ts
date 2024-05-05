@@ -8,15 +8,23 @@ const restrictedIPs = ["171.248.175.163"];
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {
+    const { hostUrl, path, method, headers, body, query } = req.body;
+
     // Check if the client IP is in the restricted list
     const forwardedIps =
       (req.headers["x-forwarded-for"] as string) ||
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
-    console.log({ clientIp });
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
-      console.log("Request from banned IP");
+      console.log(`Request from banned IP: ${clientIp}`);
+      console.log(
+        [
+          hostUrl,
+          path,
+          qs.stringify(query || {}, { addQueryPrefix: true }),
+        ].join("")
+      );
       return res.status(200).json({
         status: "SYNCED",
         page: 1,
@@ -49,8 +57,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         ],
       });
     }
-
-    const { hostUrl, path, method, headers, body, query } = req.body;
 
     const newHeaders = {
       ...headers,
