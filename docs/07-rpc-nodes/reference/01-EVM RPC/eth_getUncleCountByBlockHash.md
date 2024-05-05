@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Get uncle count by block hash
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Get Uncle Count By Block Hash
 
 <ApiReference {...config.rpc.eth_getUncleCountByBlockHash} >
 <Admonition type="info" title="Note">

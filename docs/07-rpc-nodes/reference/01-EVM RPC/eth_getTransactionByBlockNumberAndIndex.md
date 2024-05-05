@@ -9,11 +9,7 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
 
-# Get transaction by block number and index
-
-import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
-
-<NodeBanner />
+## Get Transaction By Block Number And Index
 
 <ApiReference {...config.rpc.eth_getTransactionByBlockNumberAndIndex} >
 <Admonition type="info" title="Note">
