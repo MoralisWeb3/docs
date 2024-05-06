@@ -722,17 +722,19 @@ li.sidebar-developer-tools a.menu__link--active:before {
 }
 
 .docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
-.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module .row {
+.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module .row,
+.docs-doc-id-index .docMainContainerEnhanced_u7bj, .docs-doc-id-index .docMainContainerEnhanced_u7bj .row  {
   max-width:100%;
 }
 
 /* Homepage hero section */
 
-.docs-doc-id-index .docPage_src-theme-DocPage-Layout-styles-module {
+.docs-doc-id-index main {
   background-position: 0px -10px;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/img/content/home-bg-1.png");
+  max-width:100%;
 }
 
 .docs-doc-id-index #docusaurus_skipToContent_fallback {
