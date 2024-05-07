@@ -11,7 +11,7 @@ export const config = {
   matcher: "/api/api-backend",
 };
 
-const RATE_LIMIT = 10; // The maximum number of requests allowed
+const RATE_LIMIT = 5; // The maximum number of requests allowed
 const WINDOW_SIZE = 10; // The window size in seconds
 
 export default async function middleware(request: Request) {
@@ -43,7 +43,7 @@ export default async function middleware(request: Request) {
   const count = pipelineResult[0].result;
   console.log({ count, ip });
   if (count > RATE_LIMIT) {
-    console.timeEnd("ratelimit-check");
+    // console.timeEnd("ratelimit-check");
     return new Response("Rate limit exceeded", { status: 429 });
   }
   // console.timeEnd("ratelimit-check");
