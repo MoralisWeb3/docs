@@ -1,4 +1,4 @@
-export { default as EVMChainData } from "./EVM/web3api"; 
+export { default as EVMChainData } from "./EVM/web3api";
 export { default as EVMStreamChainData } from "./EVM/streamsAPI";
 // export { default as EVMAuthChainData } from "./EVM/authAPI"; // Currently not used, we need to add a page for this in Auth API
 export { default as EVMRpcChainData } from "./EVM/rpc";
