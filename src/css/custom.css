@@ -709,7 +709,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   }
 
   /* Home hero style */
-  .docs-doc-id-index .docPage_src-theme-DocPage-Layout-styles-module, 
+  .docs-doc-id-index main,
   .docs-doc-id-index #docusaurus_skipToContent_fallback {
     background-position: 0px -100px !important;
   }
@@ -806,6 +806,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
+  font-weight:700;
 }
 
 .markdown > h2, h2 {
@@ -899,6 +900,45 @@ li.sidebar-developer-tools a.menu__link--active:before {
   background-color: #0056b3;
 }
 
+
+/* Tooltip */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #7d7c84; /* Optional: adds underline to indicate it's hoverable */
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+span.new-chain {
+  background: #117fff;
+  color: white;
+  padding: 0px 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  margin-right: 10px;
+}
 
 /* Styles for smaller screens - keep this at the end of the file so that the styles get applied last */
 

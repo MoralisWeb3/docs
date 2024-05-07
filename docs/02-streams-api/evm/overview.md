@@ -66,21 +66,21 @@ Webhooks allow you to receive real-time notifications for events that are happen
 
 - Get Native Balances for addresses! [Read more here!](/streams-api/evm/get-native-balances)
 
-## High reliability
+## High Reliability
 
 - Moralis guarantees 100% delivery of Webhooks
 - If your service is down Moralis will retry to send the webhook in intervals
 - If your service fails to receive the webhooks you can manually replay
 
-## Supported chains
+## Supported Chains
 
 import { EVMStreamChainData } from '@site/src/components/SupportedChains';
-
-<EVMStreamChainData/>
 
 :::info Reorgnization Before Confirmation
 Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
 :::
+
+<EVMStreamChainData/>
 
 ## To get started, check the following tutorials:
 
