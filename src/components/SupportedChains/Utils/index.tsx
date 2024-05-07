@@ -5,7 +5,7 @@ const Table = ({
   data,
 }: {
   headers: readonly string[];
-  data: Record<(typeof headers)[number], string | number | null>[];
+  data: Record<(typeof headers)[number], any>[];
 }) => (
   <table>
     <thead

@@ -22,87 +22,30 @@ import {
   AptosStreamsChainData,
   AptosAuthChainData,
 } from "@site/src/components/SupportedChains";
+import { EVMChainsCombined, SolanaCombined, AptosCombined } from "@site/src/components/SupportedChains";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/src/components/SupportedChains/tabsStyles.module.css";
 
-# Supported Chains Overview
+# Supported Chains
 
 <Tabs groupId="list" queryString>
-<TabItem value="evm" label="EVM" attributes={{className: styles.parentTab}}>
 
-<Tabs groupId="api">
-<TabItem value="web3" label="Web3 Data API" attributes={{className: styles.childTab}} default>
+  <TabItem value="evm" label="EVM" attributes={{className: styles.parentTab}}>
+    <div>
+      <EVMChainsCombined />
+    </div>
+  </TabItem>
 
-<EVMChainData />
-</TabItem>
+  <TabItem value="solana" label="Solana" attributes={{className: styles.parentTab}}>
+    <div>
+      <SolanaCombined />
+    </div>
+  </TabItem>
 
-<TabItem
-  value="streams"
-  label="Streams API"
-  attributes={{ className: styles.childTab }}
->
-  <EVMStreamChainData />
-</TabItem>
-
-<TabItem
-  value="auth"
-  label="Auth API"
-  attributes={{ className: styles.childTab }}
->
-  <EVMAuthChainData />
-</TabItem>
-
-<TabItem value="rpc" label="RPC Nodes" attributes={{className: styles.childTab}}>
-<EVMRpcChainData/>
-</TabItem>
-</Tabs>
-
-</TabItem>
-
-<TabItem value="solana" label="Solana" attributes={{className: styles.parentTab}}>
-
-<Tabs groupId="api">
-<TabItem value="web3" label="Web3 Data API" attributes={{className: styles.childTab}} default>
-
-<SolanaChainData />
-</TabItem>
-
-<TabItem
-  value="streams"
-  label="Streams API"
-  attributes={{ className: styles.childTab }}
->
-  <SolanaStreamChainData />
-</TabItem>
-
-<TabItem value="auth" label="Auth API" attributes={{className: styles.childTab}}>
-<SolanaAuthChainData/>
-</TabItem>
-</Tabs>
-
-</TabItem>
-
-<TabItem value="aptos" label="Aptos" attributes={{className: styles.parentTab}}>
-
-<Tabs groupId="api">
-<TabItem value="web3" label="Web3 Data API" attributes={{className: styles.childTab}} default>
-
-<AptosChainData />
-</TabItem>
-
-<TabItem
-  value="streams"
-  label="Streams API"
-  attributes={{ className: styles.childTab }}
->
-  <AptosStreamsChainData />
-</TabItem>
-
-<TabItem value="auth" label="Auth API" attributes={{className: styles.childTab}}>
-<AptosAuthChainData/>
-</TabItem>
-</Tabs>
-
-</TabItem> 
+  <TabItem value="aptos" label="Aptos" attributes={{className: styles.parentTab}}>
+    <div>
+      <AptosCombined />
+    </div>
+  </TabItem> 
 </Tabs>

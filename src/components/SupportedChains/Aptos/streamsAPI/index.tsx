@@ -3,27 +3,18 @@ import Table from "../../Utils/index";
 
 const AptosStreamsChainData = () => {
   const headers = [
-    "Chain",
-    "Chain Id (HEX)",
-    "Internal Transaction Supported",
-    "Blocks until confirmed",
-    "Note",
+    "Name",
+    "Type"
   ] as const;
 
   const data: Record<(typeof headers)[number], string>[] = [
     {
-      Chain: "APTOS MAINNET",
-      "Chain Id (HEX)": "mainnet",
-      "Internal Transaction Supported": "Not Applicable",
-      "Blocks until confirmed": "Not Applicable",
-      Note: "🔥 NEW",
+      "Name": "Aptos Mainnet",
+      "Type": "Mainnet"
     },
     {
-      Chain: "APTOS TESTNET",
-      "Chain Id (HEX)": "testnet",
-      "Internal Transaction Supported": "Not Applicable",
-      "Blocks until confirmed": "Not Applicable",
-      Note: "🔥 NEW",
+      "Name": "Aptos Testnet",
+      "Type": "Testnet"
     },
   ];
 
