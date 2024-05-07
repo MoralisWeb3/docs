@@ -22,7 +22,11 @@ import {
   AptosStreamsChainData,
   AptosAuthChainData,
 } from "@site/src/components/SupportedChains";
-import { EVMChainsCombined, SolanaCombined, AptosCombined } from "@site/src/components/SupportedChains";
+import {
+  EVMChainsCombined,
+  SolanaCombined,
+  AptosCombined,
+} from "@site/src/components/SupportedChains";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/src/components/SupportedChains/tabsStyles.module.css";
@@ -31,17 +35,23 @@ import styles from "@site/src/components/SupportedChains/tabsStyles.module.css";
 
 <Tabs groupId="list" queryString>
 
-  <TabItem value="evm" label="EVM" attributes={{className: styles.parentTab}}>
-    <div>
-      <EVMChainsCombined />
-    </div>
-  </TabItem>
+{" "}
+<TabItem value="evm" label="EVM" attributes={{ className: styles.parentTab }}>
+  <div>
+    <EVMChainsCombined />
+  </div>
+</TabItem>
 
-  <TabItem value="solana" label="Solana" attributes={{className: styles.parentTab}}>
-    <div>
-      <SolanaCombined />
-    </div>
-  </TabItem>
+{" "}
+<TabItem
+  value="solana"
+  label="Solana"
+  attributes={{ className: styles.parentTab }}
+>
+  <div>
+    <SolanaCombined />
+  </div>
+</TabItem>
 
   <TabItem value="aptos" label="Aptos" attributes={{className: styles.parentTab}}>
     <div>
