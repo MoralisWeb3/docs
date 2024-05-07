@@ -34,28 +34,27 @@ import styles from "@site/src/components/SupportedChains/tabsStyles.module.css";
 # Supported Chains
 
 <Tabs groupId="list" queryString>
-
-{" "}
-<TabItem value="evm" label="EVM" attributes={{ className: styles.parentTab }}>
-  <div>
-    <EVMChainsCombined />
-  </div>
-</TabItem>
-
-{" "}
-<TabItem
-  value="solana"
-  label="Solana"
-  attributes={{ className: styles.parentTab }}
->
-  <div>
-    <SolanaCombined />
-  </div>
-</TabItem>
-
-  <TabItem value="aptos" label="Aptos" attributes={{className: styles.parentTab}}>
+  <TabItem value="evm" label="EVM" attributes={{ className: styles.parentTab }}>
+    <div>
+      <EVMChainsCombined />
+    </div>
+  </TabItem>
+  <TabItem
+    value="solana"
+    label="Solana"
+    attributes={{ className: styles.parentTab }}
+  >
+    <div>
+      <SolanaCombined />
+    </div>
+  </TabItem>
+  <TabItem
+    value="aptos"
+    label="Aptos"
+    attributes={{ className: styles.parentTab }}
+  >
     <div>
       <AptosCombined />
     </div>
-  </TabItem> 
+  </TabItem>
 </Tabs>
