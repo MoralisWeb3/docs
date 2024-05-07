@@ -367,6 +367,10 @@ const sidebars = {
       id: "rpc-nodes/overview",
     },
     {
+      type: "doc",
+      id: "rpc-nodes/public-node-endpoints",
+    },
+    {
       type: "category",
       label: "Getting Started",
       link: {
