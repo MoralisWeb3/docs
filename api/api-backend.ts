@@ -15,16 +15,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       (req.headers["x-forwarded-for"] as string) ||
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
+    console.log(
+      [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(
+        ""
+      )
+    );
+    console.log({ hostUrl, path, method, headers, body, query });
+    console.log(headers["Authorization"]);
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
       console.log(`Request from banned IP: ${clientIp}`);
-      console.log(
-        [
-          hostUrl,
-          path,
-          qs.stringify(query || {}, { addQueryPrefix: true }),
-        ].join("")
-      );
       return res.status(200).json(
         []
         //   {
