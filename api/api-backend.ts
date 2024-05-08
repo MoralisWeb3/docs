@@ -16,7 +16,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
 
-    console.log({ hostUrl, path, method, headers, body, query });
     if (headers["Authorization"] === "Bearer test") {
       console.log(`Request from Spammer: ${clientIp}`);
       return res.status(200).json({
@@ -27,6 +26,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         result: [],
       });
     }
+    console.log({ hostUrl, path, method, headers, body, query });
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
       console.log(`Request from banned IP: ${clientIp}`);
