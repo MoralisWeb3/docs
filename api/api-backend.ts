@@ -22,9 +22,26 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     );
     console.log({ hostUrl, path, method, headers, body, query });
     console.log(headers["Authorization"]);
+    if (headers["Authorization"] === "Bearer test") {
+      console.log(`Request from Spammer: ${clientIp}`);
+      return res.status(200).json({
+        status: "SYNCED",
+        page: 1,
+        page_size: 100,
+        cursor: null,
+        result: [],
+      });
+    }
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
       console.log(`Request from banned IP: ${clientIp}`);
+      console.log(
+        [
+          hostUrl,
+          path,
+          qs.stringify(query || {}, { addQueryPrefix: true }),
+        ].join("")
+      );
       return res.status(200).json(
         []
         //   {
