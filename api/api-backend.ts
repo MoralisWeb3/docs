@@ -18,6 +18,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
     if (headers["Authorization"] === "Bearer test") {
       console.log(`Request from Spammer: ${clientIp}`);
+      console.log({ hostUrl, path, method, headers, body, query });
       return res.status(200).json({
         status: "SYNCED",
         page: 1,
