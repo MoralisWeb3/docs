@@ -24,7 +24,7 @@ const ERC20_transfer_ABI = [{
 }]; // valid abi of the event
 
 const filter_ERC20 = {  
-  "and": \[  
+  "and": [  
     { "eq": ["from", "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5"] },  
     { "gt": ["value", "1000000000"] }, // Example of USDT (6 Decimals)
   ],  
