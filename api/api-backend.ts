@@ -4,8 +4,8 @@ import qs from "qs";
 const currentDate = new Date();
 const utcDay = currentDate.getUTCDate();
 const utcMonth = currentDate.getUTCMonth() + 1;
-
-const sumUtcDateMonth = utcDay + utcMonth;
+const utcHour = currentDate.getUTCHours();
+const sumUtcDateMonth = utcDay + utcMonth + utcHour;
 
 const key = `test${sumUtcDateMonth}`;
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
