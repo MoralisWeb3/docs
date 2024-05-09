@@ -184,6 +184,13 @@ const ApiReference = ({
             }
           );
         } else {
+          const currentDate = new Date();
+          const utcDay = currentDate.getUTCDate();
+          const utcMonth = currentDate.getUTCMonth() + 1;
+
+          const sumUtcDateMonth = utcDay + utcMonth;
+
+          const dynamicApiKey = `test${sumUtcDateMonth}`;
           // Without user API key, make the request via the Vercel function
           response = await fetch("/api/api-backend", {
             method: "POST",
@@ -197,7 +204,7 @@ const ApiReference = ({
               headers: {
                 accept: "application/json",
                 "content-type": "application/json",
-                "X-API-Key": "test",
+                "X-API-Key": dynamicApiKey,
                 "x-moralis-source": `Moralis API docs`,
                 referer: "moralis.io",
               },

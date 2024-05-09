@@ -1,7 +1,13 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import qs from "qs";
+const currentDate = new Date();
+const utcDay = currentDate.getUTCDate();
+const utcMonth = currentDate.getUTCMonth() + 1;
 
+const sumUtcDateMonth = utcDay + utcMonth;
+
+const key = `test${sumUtcDateMonth}`;
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
 const restrictedIPs = ["171.248.175.163"];
@@ -16,7 +22,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
 
-    if (headers["Authorization"] === "Bearer test") {
+    if (headers["X-API-Key"] !== key) {
       console.log(`Request from Spammer: ${clientIp}`);
       console.log({ hostUrl, path, method, headers, body, query });
       return res.status(200).json({
