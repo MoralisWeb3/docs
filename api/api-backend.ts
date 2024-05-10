@@ -22,6 +22,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       (req.headers["x-forwarded-for"] as string) ||
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
+    console.log({ utcDay, utcMonth, key });
     if (
       headers["X-API-Key"] !== key
       // &&
