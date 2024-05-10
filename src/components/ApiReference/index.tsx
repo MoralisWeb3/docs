@@ -187,8 +187,8 @@ const ApiReference = ({
           const currentDate = new Date();
           const utcDay = currentDate.getUTCDate();
           const utcMonth = currentDate.getUTCMonth() + 1;
-          const utcHour = currentDate.getUTCHours();
-          const sumUtcDateMonth = utcDay + utcMonth + utcHour;
+          // const utcHour = currentDate.getUTCHours();
+          const sumUtcDateMonth = utcDay + utcMonth;
 
           const dynamicApiKey = `test${sumUtcDateMonth}`;
           // Without user API key, make the request via the Vercel function

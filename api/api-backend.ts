@@ -4,12 +4,11 @@ import qs from "qs";
 const currentDate = new Date();
 const utcDay = currentDate.getUTCDate();
 const utcMonth = currentDate.getUTCMonth() + 1;
-const utcHour = currentDate.getUTCHours();
-const sumUtcDateMonth = utcDay + utcMonth + utcHour;
+// const utcHour = currentDate.getUTCHours();
+const sumUtcDateMonth = utcDay + utcMonth;
 
 const key = `test${sumUtcDateMonth}`;
-const key0 = `test${sumUtcDateMonth - 1}`;
-const key2 = `test${sumUtcDateMonth + 1}`;
+
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
 const restrictedIPs = ["171.248.175.163"];
@@ -23,22 +22,22 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       (req.headers["x-forwarded-for"] as string) ||
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
-    console.log({ utcDay, utcMonth, utcHour, key });
-    // if (
-    //   headers["X-API-Key"] !== key &&
-    //   headers["X-API-Key"] !== key0 &&
-    //   headers["X-API-Key"] !== key2
-    // ) {
-    //   console.log(`Request from Spammer: ${clientIp}`);
-    //   console.log({ hostUrl, path, method, headers, body, query });
-    //   return res.status(200).json({
-    //     status: "SYNCED",
-    //     page: 1,
-    //     page_size: 100,
-    //     cursor: null,
-    //     result: [],
-    //   });
-    // }
+    if (
+      headers["X-API-Key"] !== key
+      // &&
+      // headers["X-API-Key"] !== key0 &&
+      // headers["X-API-Key"] !== key2
+    ) {
+      console.log(`Request from Spammer: ${clientIp}`);
+      console.log({ hostUrl, path, method, headers, body, query });
+      return res.status(200).json({
+        status: "SYNCED",
+        page: 1,
+        page_size: 100,
+        cursor: null,
+        result: [],
+      });
+    }
     console.log({ hostUrl, path, method, headers, body, query });
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
