@@ -26,7 +26,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     console.log({ utcDay, utcMonth, utcHour, key });
     if (
       headers["X-API-Key"] !== key ||
-      // headers["X-API-Key"] !== key0 ||
+      headers["X-API-Key"] !== key0 ||
       headers["X-API-Key"] !== key2
     ) {
       console.log(`Request from Spammer: ${clientIp}`);
