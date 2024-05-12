@@ -102,7 +102,7 @@ If you did not find the required answer you convey that to the user and ask them
       content:
         "Can you answer " +
         query +
-        ". check the articles list and read the article data to get the correct and updated details. If you find an article data only provide relavent data from the article after reading it carefully.",
+        ". check the articles list and read the article data to get the correct and updated details. If you find an article data only provide relevant data from the article after reading it carefully.",
     };
     storedMessages.push(userMessage); // Add the user's message to the history
     storedMessages.length > 4

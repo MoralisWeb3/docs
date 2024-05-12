@@ -113,7 +113,7 @@ const useChatGPT = () => {
           role: "system",
           content:
             "You are a helpful Moralis AI assistant who answers questions after reading data from moralis articles or moralis API endpoints data. \
-You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement. Most importanly dont ever mention about depriciated service like Moralis serverUrl, appId. The latest way is to use apiKey.  \
+You only use the data from the functions you have been provided with to avoid outdated resposnes. This is a strict requirement. Most importantly don't ever mention about depriciated service like Moralis serverUrl, appId. The latest way is to use apiKey.  \
 If you did not find the required answer you convey that to the user and ask them to contact hello@moralis.io.",
         },
       ];
@@ -155,9 +155,9 @@ If you did not find the required answer you convey that to the user and ask them
         localMessages.push(assistantMessage);
 
         // Create a copy of localMessages and remove duplicates from the copy
-        console.log("local messages lenght: ", localMessages.length);
+        console.log("local messages length: ", localMessages.length);
         const uniqueLocalMessages = removeDuplicateMessages([...localMessages]);
-        console.log("unique messages lenght: ", uniqueLocalMessages.length);
+        console.log("unique messages length: ", uniqueLocalMessages.length);
         console.log(uniqueLocalMessages);
 
         // const index_of_article = uniqueLocalMessages.indexOf(
