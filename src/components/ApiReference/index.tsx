@@ -206,7 +206,7 @@ const ApiReference = ({
                 "content-type": "application/json",
                 "X-API-Key": dynamicApiKey,
                 "x-moralis-source": `Moralis API docs`,
-                referer: "moralis.io",
+                referer: "moralis io",
               },
               query: values.query || {},
               body:

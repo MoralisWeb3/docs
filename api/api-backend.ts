@@ -24,20 +24,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
     console.log({ utcDay, utcMonth, key });
     if (
-      headers["X-API-Key"] !== key
+      headers["X-API-Key"] !== key &&
       // &&
       // headers["X-API-Key"] !== key0 &&
       // headers["X-API-Key"] !== key2
+      headers["referer"] !== "moralis io"
     ) {
       console.log(`Request from Spammer: ${clientIp}`);
       console.log({ hostUrl, path, method, headers, body, query });
-      return res.status(200).json({
-        status: "SYNCED",
-        page: 1,
-        page_size: 100,
-        cursor: null,
-        result: [],
-      });
+      return res.status(200).json({});
     }
     console.log({ hostUrl, path, method, headers, body, query });
     if (restrictedIPs.includes(clientIp)) {
