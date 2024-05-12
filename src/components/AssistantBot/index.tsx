@@ -372,7 +372,7 @@ export default function AssistantBot() {
                     <div className="ml-4 bg-slate-300 dark:bg-slate-600 p-2 rounded-lg">
                       <p className="text-sm dark:text-orange-400 mb-0">
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                          Error occured in answering. Please refresh the page or
+                          Error occurred in answering. Please refresh the page or
                           contact customer support.
                         </ReactMarkdown>
                       </p>
