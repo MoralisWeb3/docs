@@ -4,10 +4,14 @@ import qs from "qs";
 const currentDate = new Date();
 const utcDay = currentDate.getUTCDate();
 const utcMonth = currentDate.getUTCMonth() + 1;
-// const utcHour = currentDate.getUTCHours();
-const sumUtcDateMonth = utcDay + utcMonth;
+const currentUTCHour = currentDate.getUTCHours();
 
-const key = `test${sumUtcDateMonth}`;
+// Calculate the current 3-hour segment of the day
+const threeHourSegment = Math.floor(currentUTCHour / 2);
+
+// Form the key using the day, month, and the current 3-hour segment
+const sumUtcDateMonthSegment = utcDay + utcMonth + threeHourSegment;
+const key = `test${sumUtcDateMonthSegment}`;
 
 const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
 
