@@ -187,14 +187,10 @@ const ApiReference = ({
           const currentDate = new Date();
           const utcDay = currentDate.getUTCDate();
           const utcMonth = currentDate.getUTCMonth() + 1;
-          const currentUTCHour = currentDate.getUTCHours();
+          // const utcHour = currentDate.getUTCHours();
+          const sumUtcDateMonth = utcDay + utcMonth;
 
-          // Calculate the current 3-hour segment of the day
-          const threeHourSegment = Math.floor(currentUTCHour / 2);
-
-          // Form the key using the day, month, and the current 3-hour segment
-          const sumUtcDateMonthSegment = utcDay + utcMonth + threeHourSegment;
-          const key = `test${sumUtcDateMonthSegment}`;
+          const dynamicApiKey = `test${sumUtcDateMonth}`;
           // Without user API key, make the request via the Vercel function
           response = await fetch("/api/api-backend", {
             method: "POST",
@@ -208,7 +204,7 @@ const ApiReference = ({
               headers: {
                 accept: "application/json",
                 "content-type": "application/json",
-                "X-API-Key": key,
+                "X-API-Key": dynamicApiKey,
                 "x-moralis-source": `Moralis API docs`,
                 referer: "moralis.io",
               },
