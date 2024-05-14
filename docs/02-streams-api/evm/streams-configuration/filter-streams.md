@@ -5,6 +5,28 @@ sidebar_position: 3
 description: "In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream."
 ---
 
+### Filtering Out Possible Spam Transactions
+
+Some contract addresses are associated with spam, phishing attempts, or other suspicious activities. We identify these addresses and label them as `possibleSpam = true`. You can read more about our spam detection process [here](/streams-api/evm/spam-detection#how-does-it-work).
+
+To prevent transactions related to these suspicious contracts from triggering webhooks, you can enable the `filterPossibleSpamAddresses` property. By setting `filterPossibleSpamAddresses` to `true`, any transactions (including native transactions, internal transactions, and contract events) involving contracts labeled as `possibleSpam = true` will be excluded from your stream. This means these transactions will not trigger a webhook and will not consume your usage.
+
+By default, `filterPossibleSpamAddresses` is set to `false`.
+
+Example of spam transactions that would be excluded:
+- https://polygonscan.com/tx/0x01709e31d9072a87c606a1a439ec34ef8e0ce2a4117ddad1c9f5a289f4033791
+- https://polygonscan.com/tx/0xb9780d586c524195c64f080709f54d76764144a6c05872e32974d192a9ca1de3
+- https://polygonscan.com/tx/0x5a879e9a244db9e82de812f17a9bcc9329f4c28cd32fe54f5d9f9138991739a6
+
+When using the UI, you can easily exclude possible spam by following these steps:
+
+1. Go to Step 1: Events - Select which event(s) to track.
+2. Check the "Exclude Possible Spam Events" option.
+
+![Screenshot_2024-05-14_at_13 34 26](https://github.com/MoralisWeb3/docs/assets/122364197/8bbdff26-99e2-4523-babb-bd2242651108)
+
+### Filter Out Contract Events
+
 In some cases you might want to filter the data you receive from the webhook. You can do this by adding a filter to the stream.
 
 | Filter | Function                          | Note                    | Example                                  | Demo                                                                                           |
