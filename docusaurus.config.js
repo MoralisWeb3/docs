@@ -192,16 +192,6 @@ const config = {
             position: "left",
             label: "RPC Nodes🔥",
           },
-          {
-            to: "changelog",
-            position: "left",
-            label: "Changelog",
-          },
-          {
-            to: "web3-data-api/evm/all-faqs",
-            position: "left",
-            label: "FAQ",
-          },
           // position: Right
           {
             type: "html",
@@ -224,30 +214,59 @@ const config = {
             value: "<hr>",
           },
           {
-            type: "doc",
-            docId: "supported-chains/overview",
+            to: "changelog",
+            position: "right",
+            label: "Changelog",
+          },
+          {
+            to: "supported-chains",
             position: "right",
             label: "Supported Chains",
           },
           {
-            type: "doc",
-            docId: "guides/overview",
-            position: "right",
-            label: "Guides",
-          },
-          {
             type: "dropdown",
-            label: "References",
+            label: "Resources",
             position: "right",
             items: [
               {
                 type: "html",
-                value: "API References",
+                value: "Getting Started",
+                className: "dropdown-divider",
               },
               {
-                label: "Web3 Data API",
+                label: "Tutorials",
+                type: "doc",
+                docId: "web3-data-api/evm/tutorials",
+              },
+              {
+                label: "Guides",
+                type: "doc",
+                docId: "guides/overview",
+              },
+              {
+                label: "FAQs",
+                type: "doc",
+                docId: "web3-data-api/evm/all-faqs",
+              },
+              {
+                type: "html",
+                value: "API References",
+                className: "dropdown-divider",
+              },
+              {
+                label: "EVM API",
                 type: "doc",
                 docId: "web3-data-api/evm/reference/reference",
+              },
+              {
+                label: "Solana API",
+                type: "doc",
+                docId: "web3-data-api/solana/reference/reference",
+              },
+              {
+                label: "Aptos API",
+                type: "doc",
+                docId: "web3-data-api/aptos/reference/reference",
               },
               {
                 label: "Streams API",
@@ -255,13 +274,14 @@ const config = {
                 docId: "streams-api/evm/reference/reference",
               },
               {
-                label: "Authentication API",
+                label: "Auth API API",
                 type: "doc",
                 docId: "authentication-api/evm/reference/reference",
               },
               {
                 type: "html",
                 value: "SDK References",
+                className: "dropdown-divider",
               },
               {
                 label: "JS SDK",
@@ -271,6 +291,36 @@ const config = {
               {
                 label: "Python SDK",
                 href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
+                target: "_blank",
+              },
+              {
+                type: "html",
+                value: "Swagger",
+                className: "dropdown-divider",
+              },
+              {
+                label: "EVM API Swagger",
+                href: "https://deep-index.moralis.io/api-docs-2.2/",
+                target: "_blank",
+              },
+              {
+                label: "Solana API Swagger",
+                href: "https://solana-gateway.moralis.io/api/#/",
+                target: "_blank",
+              },
+              {
+                label: "Aptos API Swagger",
+                href: "https://mainnet-aptos-api.moralis.io/swagger",
+                target: "_blank",
+              },
+              {
+                label: "Streams API Swagger",
+                href: "https://api.moralis-streams.com/api-docs/",
+                target: "_blank",
+              },
+              {
+                label: "Auth API Swagger",
+                href: "https://authapi.moralis.io/api-docs/",
                 target: "_blank",
               },
             ],
