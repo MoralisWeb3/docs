@@ -105,7 +105,7 @@
   --api-banner-border-color: #e3e3e3;
 
   /* Home Search */
-  --home-search-box-background-color:white;
+  --home-search-box-background-color: white;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -133,7 +133,7 @@
   --api-banner-border-color: #444950;
 
   /* Home Search */
-  --home-search-box-background-color:#1C212F;
+  --home-search-box-background-color: #1c212f;
 }
 
 /* You can override the default shadcn/ui variables here. */
@@ -260,21 +260,20 @@ video {
 }
 
 .theme-doc-sidebar-item-category-level-1 .menu__link--sublist-caret:after {
-  margin-right:6px;
+  margin-right: 6px;
 }
 
 .theme-doc-sidebar-item-category-level-2 .menu__caret:before {
-  margin-right:-6px;
+  margin-right: -6px;
 }
 
 .theme-doc-sidebar-item-category-level-3 .menu__link--sublist-caret:after {
-  margin-right:-10px;
+  margin-right: -10px;
 }
 
 .DocSearch-Button {
   width: 300px;
 }
-
 
 .card h3 {
   display: flex;
@@ -313,7 +312,6 @@ li:has(> a[href="/2.0/web3-data-api/evm/reference/run-contract-function"]),
 li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
   display: none;
 }
-
 
 .sections-menu-trigger {
   align-items: center;
@@ -450,7 +448,6 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
   padding-right: 6px; /* Adds padding to the right of the category links */
 }
 
-
 /* Submenu Styling in Sidebar */
 .web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
 .market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
@@ -458,12 +455,16 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
   padding-left: 30px; /* Indents the submenu items for better hierarchy visualization */
 }
 
-.menu-list>.menu__list, .streams-api .theme-doc-sidebar-item-category-level-1>.menu__list, .web3-data-api .theme-doc-sidebar-item-category-level-1>.menu__list {
+.menu-list > .menu__list,
+.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
   padding-left: unset;
 }
 
 /*Second level*/
-.menu-list>.menu__list, .streams-api .theme-doc-sidebar-item-category-level-2>.menu__list, .web3-data-api .theme-doc-sidebar-item-category-level-2>.menu__list {
+.menu-list > .menu__list,
+.streams-api .theme-doc-sidebar-item-category-level-2 > .menu__list,
+.web3-data-api .theme-doc-sidebar-item-category-level-2 > .menu__list {
   padding-left: unset;
 }
 
@@ -472,7 +473,7 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
   border-radius: 0;
   margin-left: 15px;
   padding-left: 10px;
-  margin-top:0;
+  margin-top: 0;
 }
 
 .menu__list-item {
@@ -646,8 +647,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
   display: none;
 }
 
-
-
 @media screen and (min-width: 997px) {
   :root {
     --ifm-navbar-height: 7rem;
@@ -703,9 +702,8 @@ li.sidebar-developer-tools a.menu__link--active:before {
     margin-right: 0;
   }
 
-
   #home h1 {
-    font-size:4rem;
+    font-size: 4rem;
   }
 
   /* Home hero style */
@@ -713,18 +711,21 @@ li.sidebar-developer-tools a.menu__link--active:before {
   .docs-doc-id-index #docusaurus_skipToContent_fallback {
     background-position: 0px -100px !important;
   }
-  
 }
 
 /* Homepage styles */
 .docs-doc-id-index .row {
-  margin:unset;
+  margin: unset;
 }
 
-.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
-.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module .row,
-.docs-doc-id-index .docMainContainerEnhanced_u7bj, .docs-doc-id-index .docMainContainerEnhanced_u7bj .row  {
-  max-width:100%;
+.docs-doc-id-index
+  .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
+.docs-doc-id-index
+  .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module
+  .row,
+.docs-doc-id-index .docMainContainerEnhanced_u7bj,
+.docs-doc-id-index .docMainContainerEnhanced_u7bj .row {
+  max-width: 100%;
 }
 
 /* Homepage hero section */
@@ -734,7 +735,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/img/content/home-bg-1.webp");
-  max-width:100%;
+  max-width: 100%;
 }
 
 .docs-doc-id-index #docusaurus_skipToContent_fallback {
@@ -745,14 +746,14 @@ li.sidebar-developer-tools a.menu__link--active:before {
 }
 
 #home {
-  padding:50px 0;
+  padding: 50px 0;
 }
 #home .intro {
   text-align: center;
 }
 
 #home h1 {
-  font-weight:800;
+  font-weight: 800;
   letter-spacing: -0.05rem;
 }
 
@@ -769,7 +770,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
   height: 50px;
   width: 100%;
   padding: 30px;
-  border:1px solid var(--api-banner-border-color);
+  border: 1px solid var(--api-banner-border-color);
   background-color: var(--home-search-box-background-color);
 }
 
@@ -782,12 +783,12 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 .popular-searches ul {
   padding: 0;
-  margin-top:10px;
+  margin-top: 10px;
   display: flex;
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
-  font-weight:500;
+  font-weight: 500;
 }
 
 .popular-searches ul li {
@@ -800,19 +801,22 @@ li.sidebar-developer-tools a.menu__link--active:before {
   background-color: var(--api-banner-background-color);
   padding: 6px 15px;
   border-radius: 40px;
-  font-size:0.9rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
-  font-weight:700;
+  font-weight: 700;
 }
 
-.markdown > h2, h2 {
+.markdown > h2,
+h2 {
   --ifm-h2-font-size: 2rem;
-  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom)* var(--ifm-leading));
-  margin-top: calc(var(--ifm-h2-vertical-rhythm-top)* var(--ifm-leading));
+  margin-bottom: calc(
+    var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading)
+  );
+  margin-top: calc(var(--ifm-h2-vertical-rhythm-top) * var(--ifm-leading));
 }
 .cls-1 {
   stroke-width: 1.4px;
@@ -900,7 +904,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
   background-color: #0056b3;
 }
 
-
 /* Tooltip */
 .tooltip-container {
   position: relative;
@@ -940,6 +943,30 @@ span.new-chain {
   margin-right: 10px;
 }
 
+h2.text--truncate.cardTitle_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+li.dropdown-divider {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.navbar__inner {
+  flex-wrap: nowrap;
+}
+
+.navbar__items.navbar__items--right {
+  max-width: 48%;
+}
+
+.navbar__items > .navbar__item,
+.navbar__item.dropdown.dropdown--hoverable.dropdown--right .navbar__link {
+  font-size: 13px;
+}
+
 /* Styles for smaller screens - keep this at the end of the file so that the styles get applied last */
 
 @media (max-width: 560px) {
@@ -953,13 +980,12 @@ span.new-chain {
 }
 
 @media (max-width: 768px) {
-
   .api-banner {
     display: block;
   }
 
   .api-banner .cta-button {
-    margin-top:10px;
+    margin-top: 10px;
   }
 
   #home .DocSearch-Button-Placeholder {
@@ -980,5 +1006,27 @@ span.new-chain {
 
   .footer__link-item {
     height: 48px;
+  }
+}
+.navbar__items--right .navbar__item,
+.dropdown--right {
+  margin-top: 4px;
+}
+@media screen and (min-width: 1050px) {
+  .navbar__items > .navbar__item,
+  .navbar__item.dropdown.dropdown--hoverable.dropdown--right .navbar__link {
+    font-size: 14px;
+  }
+
+  .navbar__items--right .navbar__item,
+  .dropdown--right {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .navbar__items > .navbar__item,
+  .navbar__item.dropdown.dropdown--hoverable.dropdown--right .navbar__link {
+    font-size: 1rem;
   }
 }

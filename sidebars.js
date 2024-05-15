@@ -81,10 +81,14 @@ const sidebars = {
     {
       type: "category",
       label: "Tutorials",
+      link: {
+        type: "doc",
+        id: "web3-data-api/evm/tutorials",
+      },
       items: [
         {
           type: "category",
-          label: "Wallet",
+          label: "Wallet API Tutorials",
           link: {
             type: "doc",
             id: "web3-data-api/evm/wallet-api",
@@ -98,7 +102,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "NFT",
+          label: "NFT API Tutorials",
           link: {
             type: "doc",
             id: "web3-data-api/evm/nft-api",
@@ -112,7 +116,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Token",
+          label: "Token API Tutorials",
           link: {
             type: "doc",
             id: "web3-data-api/evm/token-api",
@@ -126,7 +130,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Blockchain",
+          label: "Blockchain API Tutorials",
           link: {
             type: "doc",
             id: "web3-data-api/evm/blockchain-api",
