@@ -84,7 +84,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     const newHeaders = {
       ...headers,
       "X-API-Key": MORALIS_API_KEY,
-      Authorization: `Bearer ${MORALIS_API_KEY}`,
+      // Authorization: `Bearer ${MORALIS_API_KEY}`,
       referer: SUPER_SECRET_KEY,
     };
 
