@@ -557,6 +557,7 @@ Returns an array of all logs matching a given filter object.
 | Field     | Type          | Description                                                                    |
 | --------- | ------------- | ------------------------------------------------------------------------------ |
 | fromBlock | string/number | (optional) The number of the earliest block (hexadecimal or block number).     |
+| blockHash | string        | (optional) The hash of the block.                                              |
 | toBlock   | string/number | (optional) The number of the latest block (hexadecimal or block number).       |
 | address   | string/array  | (optional) An address or a list of addresses from which logs should originate. |
 | topics    | array         | (optional) Array of 32-byte DATA topics. Order-dependent.                      |
