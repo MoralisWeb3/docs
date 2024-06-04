@@ -828,6 +828,316 @@ const chainData = [
       supported: true,
     },
   },
+  {
+    name: "Blast",
+    logo: "/img/content/blast.png",
+    type: "Mainnet",
+    chainID: "0x13e31 (81457)",
+    evmChain: "EvmChain.BLAST",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/blast/",
+        "https://site2.moralis-nodes.com/blast/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Blast Sepolia",
+    logo: "/img/content/blast.png",
+    type: "Testnet",
+    chainID: "0xa0c71fd (168587773)",
+    evmChain: "EvmChain.BLAST_SEPOLIA",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/blast-sepolia/",
+        "https://site2.moralis-nodes.com/blast-sepolia/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "zkSync",
+    logo: "/img/content/zksync.png",
+    type: "Mainnet",
+    chainID: "0x144 (324)",
+    evmChain: "EvmChain.ZKSYNC",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/zksync/",
+        "https://site2.moralis-nodes.com/zksync/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "zkSync Sepolia",
+    logo: "/img/content/zksync.png",
+    type: "Testnet",
+    chainID: "0x12c (300)",
+    evmChain: "EvmChain.ZKSYNC_SEPOLIA",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/zksync-sepolia/",
+        "https://site2.moralis-nodes.com/zksync-sepolia/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Mantle",
+    logo: "/img/content/mantle.png",
+    type: "Mainnet",
+    chainID: "0x1388 (5000)",
+    evmChain: "EvmChain.MANTLE",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/mantle/",
+        "https://site2.moralis-nodes.com/mantle/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Mantle Sepolia",
+    logo: "/img/content/mantle.png",
+    type: "Testnet",
+    chainID: "0x138b (5003)",
+    evmChain: "EvmChain.MANTLE_SEPOLIA",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/mantle-sepolia/",
+        "https://site2.moralis-nodes.com/mantle-sepolia/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Polygon zkEVM",
+    logo: "/img/content/polygon-zkevm.png",
+    type: "Mainnet",
+    chainID: "0x44d (1101)",
+    evmChain: "EvmChain.POLYGON_ZKEVM",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/polygon-zkevm/",
+        "https://site2.moralis-nodes.com/polygon-zkevm/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Polygon zkEVM Cardona",
+    logo: "/img/content/polygon-zkevm.png",
+    type: "Testnet",
+    chainID: "0x98a (2442)",
+    evmChain: "EvmChain.POLYGON_ZKEVM_CARDONA",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/polygon-zkevm-cardona/",
+        "https://site2.moralis-nodes.com/polygon-zkevm-cardona/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Zetachain",
+    logo: "/img/content/zetachain.png",
+    type: "Mainnet",
+    chainID: "0x1b58 (7000)",
+    evmChain: "EvmChain.ZETACHAIN",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/zetachain/",
+        "https://site2.moralis-nodes.com/zetachain/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
+    name: "Zetachain Testnet",
+    logo: "/img/content/zetachain.png",
+    type: "Testnet",
+    chainID: "0x1b59 (7001)",
+    evmChain: "EvmChain.ZETACHAIN_TESTNET",
+    isNew: true,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/zetachain-testnet/",
+        "https://site2.moralis-nodes.com/zetachain-testnet/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
 ];
 
 export default chainData;
