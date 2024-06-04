@@ -11,7 +11,7 @@ This articles includes a growing list of supported NFT marketplaces within [Mora
 
 | Marketplace | Query Parameter | Supported Chains |
 |--------------|---------|---------|
-| OpenSea | `opensea` | - Ethereum <br>- Polygon <br>- Binance <br>- Arbitrum <br>- Avalanche <br>- Optimism <br>- Base       |
+| OpenSea | `opensea` | - Ethereum <br/>- Polygon <br/>- Binance <br/>- Arbitrum <br/>- Avalanche <br/>- Optimism <br/>- Base       |
 | Blur | `blur` | - Ethereum |
 | LooksRare | `looksrare` | - Ethereum |
 | X2Y2 | `x2y2` | - Ethereum |
