@@ -13,7 +13,8 @@ Select what you want to achieve:
 - [Get NFT Transfers](#get-nft-transfers)
 - [Get NFT Collections](#get-nft-collections)
 - [Get NFT Owners](#get-nft-owners)
-- [Get NFT Market Data](#get-nft-market-data)
+- [Get NFT Prices](#get-nft-prices)
+- [Get NFT Trades](#get-nft-trades)
 - [Get NFT Stats](#get-nft-stats)
 
 ### Get NFTs
@@ -56,16 +57,25 @@ Select what you want to achieve:
 | 14  | `getNFTOwners`        | Get NFT owners      | [Method Documentation](/web3-data-api/evm/reference/get-nft-owners)          | [https://deep-index.moralis.io/api/v2.2/nft/:address/owners](https://deep-index.moralis.io/api/v2.2/nft/:address/owners)                     | ✅             |
 | 15  | `getNFTTokenIdOwners` | Get token ID owners | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-id-owners) | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/owners](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/owners) | ✅             |
 
-### Get NFT Market Data
+### Get NFT Prices
 
-| No. | Method              | Description      | API Reference                                                             | URL                                                                                                                                | Spam Detection |
-| --- | ------------------- | ---------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 16  | `getNFTTrades`      | Get NFT trades   | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades)       | [https://deep-index.moralis.io/api/v2.2/nft/:address/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/trades)           | ✅             |
-| 17  | `getNFTLowestPrice` | Get lowest price | [Method Documentation](/web3-data-api/evm/reference/get-nft-lowest-price) | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice) |                |
+| No. | Method                     | Description              | API Reference                                                                     | URL                                                                                                                                        | Spam Detection |
+| --- | -------------------------- | ------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| 18  | `getNFTContractSalePrices` | Get contract sale prices | [Method Documentation](/web3-data-api/evm/reference/get-nft-contract-sale-prices) | [https://deep-index.moralis.io/api/v2.2/nft/:address/price](https://deep-index.moralis.io/api/v2.2/nft/:address/price)                     |                |
+| 19  | `getNFTSalePrices`         | Get sale prices          | [Method Documentation](/web3-data-api/evm/reference/get-nft-sale-prices)          | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price) |                |
+| 20  | `getNFTLowestPrice`        | Get lowest price         | [Method Documentation](/web3-data-api/evm/reference/get-nft-lowest-price)         | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice)         |                |
+
+### Get NFT Trades
+
+| No. | Method                 | Description          | API Reference                                                                 | URL                                                                                                                                          | Spam Detection |
+| --- | ---------------------- | -------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 21  | `getNFTTrades`         | Get NFT trades       | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades)           | [https://deep-index.moralis.io/api/v2.2/nft/:address/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/trades)                     | ✅             |
+| 22  | `getNFTTradesByToken`  | Get trades by token  | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades-by-token)  | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/trades) |                |
+| 23  | `getNFTTradesByWallet` | Get trades by wallet | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades-by-wallet) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades](https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades)   |                |
 
 ### Get NFT Stats
 
 | No. | Method                  | Description          | API Reference                                                                 | URL                                                                                                                                        | Spam Detection |
 | --- | ----------------------- | -------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| 18  | `getNFTCollectionStats` | Get collection stats | [Method Documentation](/web3-data-api/evm/reference/get-nft-collection-stats) | [https://deep-index.moralis.io/api/v2.2/nft/:address/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/stats)                     |                |
-| 19  | `getNFTTokenStats`      | Get token stats      | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-stats)      | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats) |
+| 24  | `getNFTCollectionStats` | Get collection stats | [Method Documentation](/web3-data-api/evm/reference/get-nft-collection-stats) | [https://deep-index.moralis.io/api/v2.2/nft/:address/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/stats)                     |                |
+| 25  | `getNFTTokenStats`      | Get token stats      | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-stats)      | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats) |
