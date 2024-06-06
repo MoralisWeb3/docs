@@ -251,10 +251,34 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "getNFTTradesByToken",
+      "path": "/nft/{address}/{token_id}/trades",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTradesByWallet",
+      "path": "/wallets/{address}/nfts/trades",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "getNFTLowestPrice",
       "path": "/nft/{address}/lowestprice",
       "price": 40,
       "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTContractSalePrices",
+      "path": "/nft/{address}/price",
+      "price": 30,
+      "rateLimitCost": 30
+    },
+    {
+      "endpoint": "getNFTSalePrices",
+      "path": "/nft/{address}/{token_id}/price",
+      "price": 30,
+      "rateLimitCost": 30
     },
     {
       "endpoint": "getWalletActiveChains",

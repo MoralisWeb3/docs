@@ -24,7 +24,7 @@ Find your favorite method by selecting one of the following categories:
 
 Select what you want to achieve:
 
-- [Get Wallet Transactions](#get-wallet-transactions)
+- [Get Wallet History](#get-wallet-history)
 - [Get Wallet Net-worth](#get-wallet-net-worth)
 - [Get Wallet Balance](#get-wallet-balance)
 - [Get Wallet NFTs](#get-wallet-nfts)
@@ -32,58 +32,59 @@ Select what you want to achieve:
 - [Get Wallet Details](#get-wallet-details)
 - [Domain Lookups](#domain-lookups)
 
-### Get Wallet Transactions
+### Get Wallet History
 
-| No. | Method                         | Description                        | API Reference                                                                                      | URL                                                                                                                                |
-| --- | ------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | `getWalletHistory`             | Get full wallet history            | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)                 |                                                                                                                                    |
-| 2   | `getWalletTransactions`        | Get native transactions by wallet  | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)         | [https://deep-index.moralis.io/api/v2.2/:address](https://deep-index.moralis.io/api/v2.2/:address)                                 |
-| 3   | `getWalletTransactionsVerbose` | Get decoded transactions by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet) | [https://deep-index.moralis.io/api/v2.2/:address/verbose](https://deep-index.moralis.io/api/v2.2/:address/verbose)                 |
-| 4   | `getWalletTokenTransfers`      | Get ERC20 transfers by wallet      | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-transfers)         | [https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers](https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers) |
-| 5   | `getWalletNFTTransfers`        | Get NFT transfers by wallet        | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)           | [https://deep-index.moralis.io/api/v2.2/:address/nft/transfers](https://deep-index.moralis.io/api/v2.2/:address/nft/transfers)     |
+| No. | Method                         | Description                        | API Reference                                                                                      | URL                                                                                                                                        |
+| --- | ------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getWalletHistory`             | Get full wallet history            | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)                 |                                                                                                                                            |
+| 2   | `getWalletTransactions`        | Get native transactions by wallet  | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)         | [https://deep-index.moralis.io/api/v2.2/:address](https://deep-index.moralis.io/api/v2.2/:address)                                         |
+| 3   | `getWalletTransactionsVerbose` | Get decoded transactions by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet) | [https://deep-index.moralis.io/api/v2.2/:address/verbose](https://deep-index.moralis.io/api/v2.2/:address/verbose)                         |
+| 4   | `getWalletTokenTransfers`      | Get ERC20 transfers by wallet      | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-transfers)         | [https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers](https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers)         |
+| 5   | `getWalletNFTTransfers`        | Get NFT transfers by wallet        | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)           | [https://deep-index.moralis.io/api/v2.2/:address/nft/transfers](https://deep-index.moralis.io/api/v2.2/:address/nft/transfers)             |
+| 6   | `getNFTTradesByWallet`         | Get NFT trades by wallet           | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nft-trades-by-wallet)           | [https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades](https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades) |
 
 ### Get Wallet Net-worth
 
 | No. | Method              | Description          | API Reference                                                                        | URL                                                                                                                                    |
 | --- | ------------------- | -------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 6   | `getWalletNetWorth` | Get wallet net-worth | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth](https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth) |
+| 7   | `getWalletNetWorth` | Get wallet net-worth | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth](https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth) |
 
 ### Get Wallet Balance
 
 | No. | Method                          | Description                             | API Reference                                                                          | URL                                                                                                                |
 | --- | ------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| 7   | `getNativeBalance`              | Get native balance by wallet            | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance) |
-| 8   | `getNativeBalancesForAddresses` | Get native balance for multiple wallets | [Method Documentation](/web3-data-api/evm/reference/get-native-balances-for-addresses) | [https://deep-index.moralis.io/api/v2.2/wallets/balances](https://deep-index.moralis.io/api/v2.2/wallets/balances) |
+| 8   | `getNativeBalance`              | Get native balance by wallet            | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance) |
+| 9   | `getNativeBalancesForAddresses` | Get native balance for multiple wallets | [Method Documentation](/web3-data-api/evm/reference/get-native-balances-for-addresses) | [https://deep-index.moralis.io/api/v2.2/wallets/balances](https://deep-index.moralis.io/api/v2.2/wallets/balances) |
 
 ### Get Wallet NFTs
 
 | No. | Method                    | Description                   | API Reference                                                                                 | URL                                                                                                                                |
 | --- | ------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 9   | `getWalletNFTs`           | Get NFTs by wallet            | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet)            | [https://deep-index.moralis.io/api/v2.2/:address/nft](https://deep-index.moralis.io/api/v2.2/:address/nft)                         |
-| 10  | `getWalletNFTCollections` | Get NFT collections by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet) | [https://deep-index.moralis.io/api/v2.2/:address/nft/collections](https://deep-index.moralis.io/api/v2.2/:address/nft/collections) |
+| 10  | `getWalletNFTs`           | Get NFTs by wallet            | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet)            | [https://deep-index.moralis.io/api/v2.2/:address/nft](https://deep-index.moralis.io/api/v2.2/:address/nft)                         |
+| 11  | `getWalletNFTCollections` | Get NFT collections by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet) | [https://deep-index.moralis.io/api/v2.2/:address/nft/collections](https://deep-index.moralis.io/api/v2.2/:address/nft/collections) |
 
 ### Get Wallet Tokens
 
 | No. | Method                         | Description                                 | API Reference                                                                                   | URL                                                                                                                              |
 | --- | ------------------------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 11  | `getWalletTokenBalances`       | Get ERC20 token balance by wallet           | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)    | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                   |
-| 12  | `getWalletTokenBalancesPrices` | Get ERC20 token balances & prices by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens) |
+| 12  | `getWalletTokenBalances`       | Get ERC20 token balance by wallet           | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)    | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                   |
+| 13  | `getWalletTokenBalancesPrices` | Get ERC20 token balances & prices by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens) |
 
 ### Get Wallet Details
 
 | No. | Method                  | Description                  | API Reference                                                                                | URL                                                                                                                              |
 | --- | ----------------------- | ---------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 13  | `getWalletActiveChains` | Get chain activity by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/chains](https://deep-index.moralis.io/api/v2.2/wallets/:address/chains) |
-| 14  | `getWalletStats`        | Get wallet stats             | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-stats)             | [https://deep-index.moralis.io/api/v2.2/wallets/:address/stats](https://deep-index.moralis.io/api/v2.2/wallets/:address/stats)   |
+| 14  | `getWalletActiveChains` | Get chain activity by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/chains](https://deep-index.moralis.io/api/v2.2/wallets/:address/chains) |
+| 15  | `getWalletStats`        | Get wallet stats             | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-stats)             | [https://deep-index.moralis.io/api/v2.2/wallets/:address/stats](https://deep-index.moralis.io/api/v2.2/wallets/:address/stats)   |
 
 ### Domain Lookups
 
 | No. | Method                   | Description                   | API Reference                                                                             | URL                                                                                                                                |
 | --- | ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 15  | `resolveAddress`         | ENS Lookup by Address         | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-address)           | [https://deep-index.moralis.io/api/v2.2/resolve/:address/reverse](https://deep-index.moralis.io/api/v2.2/resolve/:address/reverse) |
-| 16  | `resolveENSDomain`       | ENS Lookup by Domain          | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)        | [https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain](https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain)           |
-| 17  | `resolveAddressToDomain` | Unstoppable Lookup by Address | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-address-to-domain) | [https://deep-index.moralis.io/api/v2.2/resolve/:address/domain](https://deep-index.moralis.io/api/v2.2/resolve/:address/domain)   |
-| 18  | `resolveDomain`          | Unstoppable Lookup by Domain  | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-domain)            | [https://deep-index.moralis.io/api/v2.2/resolve/:domain](https://deep-index.moralis.io/api/v2.2/resolve/:domain)                   |
+| 16  | `resolveAddress`         | ENS Lookup by Address         | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-address)           | [https://deep-index.moralis.io/api/v2.2/resolve/:address/reverse](https://deep-index.moralis.io/api/v2.2/resolve/:address/reverse) |
+| 17  | `resolveENSDomain`       | ENS Lookup by Domain          | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)        | [https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain](https://deep-index.moralis.io/api/v2.2/resolve/ens/:domain)           |
+| 18  | `resolveAddressToDomain` | Unstoppable Lookup by Address | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-address-to-domain) | [https://deep-index.moralis.io/api/v2.2/resolve/:address/domain](https://deep-index.moralis.io/api/v2.2/resolve/:address/domain)   |
+| 19  | `resolveDomain`          | Unstoppable Lookup by Domain  | [Method Documentation](/web3-data-api/evm/reference/wallet-api/resolve-domain)            | [https://deep-index.moralis.io/api/v2.2/resolve/:domain](https://deep-index.moralis.io/api/v2.2/resolve/:domain)                   |
 
 ## NFT API
 
@@ -94,7 +95,8 @@ Select what you want to achieve:
 - [Get NFT Transfers](#get-nft-transfers)
 - [Get NFT Collections](#get-nft-collections)
 - [Get NFT Owners](#get-nft-owners)
-- [Get NFT Market Data](#get-nft-market-data)
+- [Get NFT Prices](#get-nft-prices)
+- [Get NFT Trades](#get-nft-trades)
 - [Get NFT Stats](#get-nft-stats)
 
 ### Get NFTs
@@ -137,19 +139,28 @@ Select what you want to achieve:
 | 14  | `getNFTOwners`        | Get NFT owners      | [Method Documentation](/web3-data-api/evm/reference/get-nft-owners)          | [https://deep-index.moralis.io/api/v2.2/nft/:address/owners](https://deep-index.moralis.io/api/v2.2/nft/:address/owners)                     | ✅             |
 | 15  | `getNFTTokenIdOwners` | Get token ID owners | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-id-owners) | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/owners](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/owners) | ✅             |
 
-### Get NFT Market Data
+### Get NFT Prices
 
-| No. | Method              | Description      | API Reference                                                             | URL                                                                                                                                | Spam Detection |
-| --- | ------------------- | ---------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 16  | `getNFTTrades`      | Get NFT trades   | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades)       | [https://deep-index.moralis.io/api/v2.2/nft/:address/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/trades)           | ✅             |
-| 17  | `getNFTLowestPrice` | Get lowest price | [Method Documentation](/web3-data-api/evm/reference/get-nft-lowest-price) | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice) |                |
+| No. | Method                     | Description              | API Reference                                                                     | URL                                                                                                                                        | Spam Detection |
+| --- | -------------------------- | ------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| 18  | `getNFTContractSalePrices` | Get contract sale prices | [Method Documentation](/web3-data-api/evm/reference/get-nft-contract-sale-prices) | [https://deep-index.moralis.io/api/v2.2/nft/:address/price](https://deep-index.moralis.io/api/v2.2/nft/:address/price)                     |                |
+| 19  | `getNFTSalePrices`         | Get sale prices          | [Method Documentation](/web3-data-api/evm/reference/get-nft-sale-prices)          | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price) |                |
+| 20  | `getNFTLowestPrice`        | Get lowest price         | [Method Documentation](/web3-data-api/evm/reference/get-nft-lowest-price)         | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice)         |                |
+
+### Get NFT Trades
+
+| No. | Method                 | Description          | API Reference                                                                 | URL                                                                                                                                          | Spam Detection |
+| --- | ---------------------- | -------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 21  | `getNFTTrades`         | Get NFT trades       | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades)           | [https://deep-index.moralis.io/api/v2.2/nft/:address/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/trades)                     | ✅             |
+| 22  | `getNFTTradesByToken`  | Get trades by token  | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades-by-token)  | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/trades](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/trades) |                |
+| 23  | `getNFTTradesByWallet` | Get trades by wallet | [Method Documentation](/web3-data-api/evm/reference/get-nft-trades-by-wallet) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades](https://deep-index.moralis.io/api/v2.2/wallets/:address/nfts/trades)   |                |
 
 ### Get NFT Stats
 
 | No. | Method                  | Description          | API Reference                                                                 | URL                                                                                                                                        | Spam Detection |
 | --- | ----------------------- | -------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| 18  | `getNFTCollectionStats` | Get collection stats | [Method Documentation](/web3-data-api/evm/reference/get-nft-collection-stats) | [https://deep-index.moralis.io/api/v2.2/nft/:address/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/stats)                     |                |
-| 19  | `getNFTTokenStats`      | Get token stats      | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-stats)      | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats) |
+| 24  | `getNFTCollectionStats` | Get collection stats | [Method Documentation](/web3-data-api/evm/reference/get-nft-collection-stats) | [https://deep-index.moralis.io/api/v2.2/nft/:address/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/stats)                     |                |
+| 25  | `getNFTTokenStats`      | Get token stats      | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-stats)      | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/stats) |
 
 ## Token API
 
@@ -225,11 +236,11 @@ Select what you want to achieve:
 | 1   | `getTokenPrice`          | Get ERC20 token price     | [Method Documentation](/web3-data-api/evm/reference/price/get-token-price)           | [https://deep-index.moralis.io/api/v2.2/erc20/:address/price](https://deep-index.moralis.io/api/v2.2/erc20/:address/price) |
 | 2   | `getMultipleTokenPrices` | Get multiple token prices | [Method Documentation](/web3-data-api/evm/reference/price/get-multiple-token-prices) | [https://deep-index.moralis.io/api/v2.2/erc20/prices](https://deep-index.moralis.io/api/v2.2/erc20/prices)                 |
 
-### Get NFT Prices
-
-| No. | Method              | Description          | API Reference                                                                   | URL                                                                                                                                |
-| --- | ------------------- | -------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | `getNFTLowestPrice` | Get NFT Lowest Price | [Method Documentation](/web3-data-api/evm/reference/price/get-nft-lowest-price) | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice) |
+| No. | Method                     | Description              | API Reference                                                                           | URL                                                                                                                                        | Spam Detection |
+| --- | -------------------------- | ------------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| 3   | `getNFTContractSalePrices` | Get contract sale prices | [Method Documentation](/web3-data-api/evm/reference/price/get-nft-contract-sale-prices) | [https://deep-index.moralis.io/api/v2.2/nft/:address/price](https://deep-index.moralis.io/api/v2.2/nft/:address/price)                     |                |
+| 4   | `getNFTSalePrices`         | Get sale prices          | [Method Documentation](/web3-data-api/evm/reference/price/get-nft-sale-prices)          | [https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price](https://deep-index.moralis.io/api/v2.2/nft/:address/:token_id/price) |                |
+| 5   | `getNFTLowestPrice`        | Get lowest price         | [Method Documentation](/web3-data-api/evm/reference/price/get-nft-lowest-price)         | [https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice](https://deep-index.moralis.io/api/v2.2/nft/:address/lowestprice)         |                |
 
 ## Blockchain API
 
