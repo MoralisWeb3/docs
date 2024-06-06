@@ -81,7 +81,7 @@ const ComputeUnitsTable = ({ chain }): JSX.Element => {
           const hrefPath = fixedPath[endpoint]
             ? fixedPath[endpoint]
             : camelToSnakeCase(endpoint);
-          let additionalInfo = dynamic
+          const additionalInfo = dynamic
             ? `+${price} CU${price > 1 ? "s" : ""} per ${
                 DynamicPriceUnits?.[endpoint]
               }`
