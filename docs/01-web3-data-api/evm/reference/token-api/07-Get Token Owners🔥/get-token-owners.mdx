@@ -13,8 +13,12 @@ import ReactMarkdown from "react-markdown";
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 <ApiReference {...config.token.getTokenOwners}>
-
+  <Admonition type="info" title="Known Issue">
+    <p>
+      We are aware of an ordering issue impacting all chains other than Ethereum
+      Mainnet. We are working on a fix for these chains which will be launched
+      in the coming weeks.
+    </p>
+  </Admonition>
 </ApiReference>
