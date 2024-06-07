@@ -12,11 +12,11 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-- [Get Token Metadata](#get-tokens)
-- [Get Token Price](#get-price)
-- [Get Token Balances](#get-balance)
-- [Get Token Transfers](#get-transfers)
-- [Get Token Pairs & Liquidity](#get-pairs-&-liquidity)
+- [Get Token Metadata](#get-token-metadata)
+- [Get Token Price](#get-token-price)
+- [Get Token Balances](#get-token-balance)
+- [Get Token Transfers](#get-token-transfers)
+- [Get Token Pairs & Liquidity](#get-token-pairs-&-liquidity)
 - [Get Token Stats](#get-token-stats)
 - [Get Token Owners](#get-token-owners)
 
