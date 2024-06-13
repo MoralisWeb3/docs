@@ -58,7 +58,11 @@ const ApiParamBaseInput = ({
 
   const fieldProps = {
     ...field,
-    value: field.value ?? "",
+    value: valueToString
+      ? field.value
+        ? valueToString(field.value)
+        : ""
+      : field.value ?? "",
     onChange: handleChange,
   };
 

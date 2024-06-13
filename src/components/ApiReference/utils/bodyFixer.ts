@@ -13,6 +13,10 @@ const bodyFixer = (code: string, body: {}) => {
       fixedBody = { tokens: (body as any).tokens };
       break;
 
+    case code.includes("getNFTBulkContractMetadata"):
+      fixedBody = { addresses: (body as any).addresses };
+      break;
+
     default:
       break;
   }

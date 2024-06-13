@@ -5661,12 +5661,137 @@
       "bodyParam": {
         "required": true,
         "description": "Body",
-        "type": "json"
+        "type": "json",
+        "example": {
+          "addresses": ["0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"]
+        }
       },
       "responses": [
         {
           "status": "200",
-          "description": "Returns the metadata for the requested NFT collections."
+          "description": "Returns the metadata for the requested NFT collections.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the NFT contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the NFT collection",
+                  "example": "KryptoKitties",
+                  "required": true
+                },
+                {
+                  "name": "synced_at",
+                  "type": "string",
+                  "description": "The timestamp of the last sync",
+                  "example": "string"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT collection",
+                  "example": "RARI",
+                  "required": true
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract standard",
+                  "example": "ERC721",
+                  "required": true
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicator if the collection is marked as possible spam",
+                  "example": false,
+                  "required": true
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicator if the collection is verified",
+                  "example": false,
+                  "required": true
+                },
+                {
+                  "name": "collection_logo",
+                  "type": "string",
+                  "description": "The URL of the collection's logo image",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_banner_image",
+                  "type": "string",
+                  "description": "The URL of the collection's banner image",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_category",
+                  "type": "string",
+                  "description": "The category of the NFT collection",
+                  "example": "Art"
+                },
+                {
+                  "name": "project_url",
+                  "type": "string",
+                  "description": "The URL of the project's website",
+                  "example": "https://www.cryptokitties.co/"
+                },
+                {
+                  "name": "wiki_url",
+                  "type": "string",
+                  "description": "The URL of the project's wiki page",
+                  "example": "https://en.wikipedia.org/wiki/CryptoKitties"
+                },
+                {
+                  "name": "discord_url",
+                  "type": "string",
+                  "description": "The URL of the project's Discord page",
+                  "example": "https://discord.com/invite/cryptokitties"
+                },
+                {
+                  "name": "telegram_url",
+                  "type": "string",
+                  "description": "The URL of the project's Telegram page",
+                  "example": "https://t.me/cryptokitties"
+                },
+                {
+                  "name": "twitter_username",
+                  "type": "string",
+                  "description": "The Twitter username of the project",
+                  "example": "CryptoKitties"
+                },
+                {
+                  "name": "instagram_username",
+                  "type": "string",
+                  "description": "The Instagram username of the project",
+                  "example": "cryptokitties"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTBulkContractMetadata({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_bulk_contract_metadata(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
         }
       ]
     },
