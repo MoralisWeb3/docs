@@ -8678,32 +8678,40 @@
               },
               {
                 "name": "nativePrice",
-                "required": ["value", "decimals", "name", "symbol", "address"],
+                "type": "object",
+                "description": "The native price of the token",
                 "properties": {
                   "value": {
                     "type": "string",
-                    "description": "The native price of the token",
+                    "description": "The native price value of the token",
                     "example": "8409770570506626"
                   },
                   "decimals": {
                     "type": "integer",
-                    "description": "The number of decimals on the token",
+                    "description": "The number of decimals of the native price value",
                     "example": 18
                   },
                   "name": {
                     "type": "string",
-                    "description": "The name of the token",
+                    "description": "The name of the native token",
                     "example": "Ether"
                   },
                   "symbol": {
                     "type": "string",
-                    "description": "The symbol of the token",
+                    "description": "The symbol of the native token",
                     "example": "ETH"
                   },
                   "address": {
                     "type": "string",
                     "description": "The address of the native token"
                   }
+                },
+                "example": {
+                  "value": "177523326178386",
+                  "decimals": 18,
+                  "name": "Ether",
+                  "symbol": "ETH",
+                  "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
                 }
               },
               {
@@ -8747,6 +8755,30 @@
                 "type": "string",
                 "description": "toBlock",
                 "example": "16314545"
+              },
+              {
+                "name": "possibleSpam",
+                "type": "boolean",
+                "description": "Indicates if a contract is possibly a spam contract",
+                "example": "false"
+              },
+              {
+                "name": "verifiedContract",
+                "type": "boolean",
+                "description": "Indicates if the contract is verified",
+                "example": true
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The address of the pair",
+                "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+              },
+              {
+                "name": "pairTotalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD of the pair",
+                "example": "123.45"
               }
             ]
           }
