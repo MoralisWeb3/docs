@@ -1258,7 +1258,7 @@
           "name": "address",
           "description": "The wallet address",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326",
           "type": "string"
         }
       ],
