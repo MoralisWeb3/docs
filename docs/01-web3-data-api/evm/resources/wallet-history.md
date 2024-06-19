@@ -35,6 +35,8 @@ We are continuously extending support for categories. We currently support:
 - NFT Purchase
 - NFT Sale
 - Borrow
+- Approve
+- Revoke
 - Contract Interaction
 
 ## What Query Parameters Are Supported?
