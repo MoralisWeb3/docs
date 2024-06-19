@@ -1904,13 +1904,13 @@
                             "name": "transaction_index",
                             "type": "number",
                             "description": "The index of the transaction in the block",
-                            "example": 0
+                            "example": 1
                           },
                           {
                             "name": "log_index",
                             "type": "number",
                             "description": "The index of the log in the block",
-                            "example": 0
+                            "example": 1
                           },
                           {
                             "name": "operator",
@@ -9247,7 +9247,7 @@
                   "name": "percentage_relative_to_total_supply",
                   "type": "number",
                   "description": "The percentage relative to total token supply",
-                  "example": 0.0035
+                  "example": 1.0035
                 }
               ]
             }
@@ -10535,6 +10535,984 @@
         {
           "language": "python",
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_owners(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getDefiSummary": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get the defi summary of a wallet",
+      "description": "Get the defi summary of a wallet address.",
+      "method": "GET",
+      "path": "/wallets/:address/defi/summary",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Wallet address",
+          "required": true,
+          "type": "string",
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the defi summary for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "active_protocols",
+                "type": "number",
+                "description": "The number of active protocols",
+                "example": "10"
+              },
+              {
+                "name": "total_positions",
+                "type": "number",
+                "description": "The number of total positions",
+                "example": "100"
+              },
+              {
+                "name": "total_usd_value",
+                "type": "number",
+                "description": "The total USD value of the wallet",
+                "example": "1000000"
+              },
+              {
+                "name": "total_unclaimed_usd_value",
+                "type": "number",
+                "description": "The total unclaimed USD value of the wallet",
+                "example": "1000000"
+              },
+              {
+                "name": "protocols",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "total_usd_value",
+                    "type": "number",
+                    "description": "The total USD value of the protocol",
+                    "example": "1000000"
+                  },
+                  {
+                    "name": "total_unclaimed_usd_value",
+                    "type": "number",
+                    "description": "The total unclaimed USD value of the protocol",
+                    "example": "1000000"
+                  },
+                  {
+                    "name": "positions",
+                    "type": "number",
+                    "description": "The number of positions",
+                    "example": "100"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getDefiSummary({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_defi_summary(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getDefiPositionsSummary": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get the positions summary of a wallet",
+      "description": "Get the positions summary of a wallet address.",
+      "method": "GET",
+      "path": "/wallets/:address/defi/positions",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Wallet address",
+          "required": true,
+          "type": "string",
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns all defi positions for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "protocol_name",
+                "type": "string",
+                "description": "The name of the DeFi protocol",
+                "example": "Uniswap v2",
+                "required": true
+              },
+              {
+                "name": "protocol_id",
+                "type": "string",
+                "description": "The ID of the DeFi protocol",
+                "example": "uniswap-v2",
+                "required": true
+              },
+              {
+                "name": "protocol_url",
+                "type": "string",
+                "description": "The URL of the DeFi protocol",
+                "example": "https://app.uniswap.org/pools/v2"
+              },
+              {
+                "name": "protocol_logo",
+                "type": "string",
+                "description": "The URL of the protocol's logo",
+                "example": "https://cdn.moralis.io/defi/uniswap.png"
+              },
+              {
+                "name": "total_usd_value",
+                "type": "number",
+                "description": "The total USD value of the protocol's positions",
+                "example": 47754.14278954011
+              },
+              {
+                "name": "total_unclaimed_usd_value",
+                "type": "number",
+                "description": "The total USD value of unclaimed rewards",
+                "example": null
+              },
+              {
+                "name": "positions",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    {
+                      "name": "tokens",
+                      "type": "array",
+                      "description": "The tokens associated with the position",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_type",
+                            "type": "string",
+                            "description": "The type of the token",
+                            "example": "defi-token"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the token",
+                            "example": "Wrapped Ether"
+                          },
+                          {
+                            "name": "symbol",
+                            "type": "string",
+                            "description": "The symbol of the token",
+                            "example": "WETH"
+                          },
+                          {
+                            "name": "contract_address",
+                            "type": "string",
+                            "description": "The contract address of the token",
+                            "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                          },
+                          {
+                            "name": "decimals",
+                            "type": "number",
+                            "description": "The number of decimals of the token",
+                            "example": 18
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The URL of the token's logo",
+                            "example": "https://logos.covalenthq.com/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "thumbnail",
+                            "type": "string",
+                            "description": "The URL of the token's thumbnail image",
+                            "example": "https://logos.covalenthq.com/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "balance",
+                            "type": "string",
+                            "description": "The balance of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "balance_formatted",
+                            "type": "string",
+                            "description": "The formatted balance of the token",
+                            "example": "1.000000"
+                          },
+                          {
+                            "name": "usd_price",
+                            "type": "number",
+                            "description": "The USD price of the token",
+                            "example": 1000000
+                          },
+                          {
+                            "name": "usd_value",
+                            "type": "number",
+                            "description": "The USD value of the token balance",
+                            "example": 1000000
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    {
+                      "name": "balance_usd",
+                      "type": "number",
+                      "description": "The USD balance of the position",
+                      "example": 1000000
+                    },
+                    {
+                      "name": "total_unclaimed_usd_value",
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": 1000000
+                    },
+                    {
+                      "name": "position_details",
+                      "type": "object",
+                      "description": "Details of the position",
+                      "fields": [
+                        {
+                          "name": "fee_tier",
+                          "type": "number",
+                          "description": "The fee tier of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "range_tnd",
+                          "type": "number",
+                          "description": "The range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "reserves",
+                          "type": "array",
+                          "description": "The reserves of the position",
+                          "field": {
+                            "type": "string",
+                            "example": "string"
+                          }
+                        },
+                        {
+                          "name": "current_price",
+                          "type": "number",
+                          "description": "The current price of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "is_in_range",
+                          "type": "boolean",
+                          "description": "Indicator if the position is in range",
+                          "example": true
+                        },
+                        {
+                          "name": "price_upper",
+                          "type": "number",
+                          "description": "The upper price range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "price_lower",
+                          "type": "number",
+                          "description": "The lower price range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "price_label",
+                          "type": "string",
+                          "description": "The label for the price",
+                          "example": "string"
+                        },
+                        {
+                          "name": "liquidity",
+                          "type": "number",
+                          "description": "The liquidity of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "range_start",
+                          "type": "number",
+                          "description": "The start of the range",
+                          "example": 1
+                        },
+                        {
+                          "name": "pool_address",
+                          "type": "string",
+                          "description": "The address of the pool",
+                          "example": "string"
+                        },
+                        {
+                          "name": "position_key",
+                          "type": "string",
+                          "description": "The key of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "nft_metadata",
+                          "type": "object",
+                          "description": "Additional metadata for the NFT",
+                          "fields": [
+                            {
+                              "name": "additionalProp1",
+                              "type": "object",
+                              "description": "Additional property 1"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "asset_standard",
+                          "type": "string",
+                          "description": "The asset standard",
+                          "example": "string"
+                        },
+                        {
+                          "name": "apy",
+                          "type": "number",
+                          "description": "The annual percentage yield",
+                          "example": 1
+                        },
+                        {
+                          "name": "is_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a debt",
+                          "example": true
+                        },
+                        {
+                          "name": "is_variable_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a variable debt",
+                          "example": true
+                        },
+                        {
+                          "name": "is_stable_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a stable debt",
+                          "example": true
+                        },
+                        {
+                          "name": "shares",
+                          "type": "string",
+                          "description": "The shares of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "reserve0",
+                          "type": "string",
+                          "description": "The reserve 0 of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "reserve1",
+                          "type": "string",
+                          "description": "The reserve 1 of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "factory",
+                          "type": "string",
+                          "description": "The factory of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "pair",
+                          "type": "string",
+                          "description": "The pair of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "share_of_pool",
+                          "type": "number",
+                          "description": "The share of the pool",
+                          "example": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getDefiSummary({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_defi_summary(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getDefiPositionsByProtocol": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get detailed defi positions by protocol for a wallet",
+      "description": "Get the detailed defi positions by protocol for a wallet address.",
+      "method": "GET",
+      "path": "/wallets/:address/defi/:protocol/positions",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "Wallet address",
+          "required": true,
+          "type": "string",
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+        },
+        {
+          "name": "protocol",
+          "description": "The protocol to query",
+          "required": true,
+          "example": "uniswap-v3",
+          "type": "string",
+          "enum": [
+            "uniswap-v2",
+            "uniswap-v3",
+            "pancakeswap-v2",
+            "pancakeswap-v3",
+            "quickswap-v2",
+            "sushiswap-v2",
+            "aave-v2",
+            "aave-v3",
+            "fraxswap-v1",
+            "fraxswap-v2",
+            "lido",
+            "makerdao",
+            "eigenlayer"
+          ]
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the defi positions by protocol for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "protocol_name",
+                "type": "string",
+                "description": "The name of the DeFi protocol",
+                "example": "Uniswap v2",
+                "required": true
+              },
+              {
+                "name": "protocol_id",
+                "type": "string",
+                "description": "The ID of the DeFi protocol",
+                "example": "uniswap-v2",
+                "required": true
+              },
+              {
+                "name": "protocol_url",
+                "type": "string",
+                "description": "The URL of the DeFi protocol",
+                "example": "https://app.uniswap.org/pools/v2"
+              },
+              {
+                "name": "protocol_logo",
+                "type": "string",
+                "description": "The URL of the protocol's logo",
+                "example": "https://cdn.moralis.io/defi/uniswap.png"
+              },
+              {
+                "name": "total_usd_value",
+                "type": "number",
+                "description": "The total USD value of the protocol's positions",
+                "example": 47754.14278954011
+              },
+              {
+                "name": "total_unclaimed_usd_value",
+                "type": "number",
+                "description": "The total USD value of unclaimed rewards",
+                "example": null
+              },
+              {
+                "name": "positions",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    {
+                      "name": "tokens",
+                      "type": "array",
+                      "description": "The tokens associated with the position",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_type",
+                            "type": "string",
+                            "description": "The type of the token",
+                            "example": "defi-token"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the token",
+                            "example": "Wrapped Ether"
+                          },
+                          {
+                            "name": "symbol",
+                            "type": "string",
+                            "description": "The symbol of the token",
+                            "example": "WETH"
+                          },
+                          {
+                            "name": "contract_address",
+                            "type": "string",
+                            "description": "The contract address of the token",
+                            "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                          },
+                          {
+                            "name": "decimals",
+                            "type": "number",
+                            "description": "The number of decimals of the token",
+                            "example": 18
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The URL of the token's logo",
+                            "example": "https://logos.covalenthq.com/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "thumbnail",
+                            "type": "string",
+                            "description": "The URL of the token's thumbnail image",
+                            "example": "https://logos.covalenthq.com/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "balance",
+                            "type": "string",
+                            "description": "The balance of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "balance_formatted",
+                            "type": "string",
+                            "description": "The formatted balance of the token",
+                            "example": "1.000000"
+                          },
+                          {
+                            "name": "usd_price",
+                            "type": "number",
+                            "description": "The USD price of the token",
+                            "example": 1000000
+                          },
+                          {
+                            "name": "usd_value",
+                            "type": "number",
+                            "description": "The USD value of the token balance",
+                            "example": 1000000
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    {
+                      "name": "balance_usd",
+                      "type": "number",
+                      "description": "The USD balance of the position",
+                      "example": 1000000
+                    },
+                    {
+                      "name": "total_unclaimed_usd_value",
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": 1000000
+                    },
+                    {
+                      "name": "position_details",
+                      "type": "object",
+                      "description": "Details of the position",
+                      "fields": [
+                        {
+                          "name": "fee_tier",
+                          "type": "number",
+                          "description": "The fee tier of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "range_tnd",
+                          "type": "number",
+                          "description": "The range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "reserves",
+                          "type": "array",
+                          "description": "The reserves of the position",
+                          "field": {
+                            "type": "string",
+                            "example": "string"
+                          }
+                        },
+                        {
+                          "name": "current_price",
+                          "type": "number",
+                          "description": "The current price of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "is_in_range",
+                          "type": "boolean",
+                          "description": "Indicator if the position is in range",
+                          "example": true
+                        },
+                        {
+                          "name": "price_upper",
+                          "type": "number",
+                          "description": "The upper price range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "price_lower",
+                          "type": "number",
+                          "description": "The lower price range of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "price_label",
+                          "type": "string",
+                          "description": "The label for the price",
+                          "example": "string"
+                        },
+                        {
+                          "name": "liquidity",
+                          "type": "number",
+                          "description": "The liquidity of the position",
+                          "example": 1
+                        },
+                        {
+                          "name": "range_start",
+                          "type": "number",
+                          "description": "The start of the range",
+                          "example": 1
+                        },
+                        {
+                          "name": "pool_address",
+                          "type": "string",
+                          "description": "The address of the pool",
+                          "example": "string"
+                        },
+                        {
+                          "name": "position_key",
+                          "type": "string",
+                          "description": "The key of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "nft_metadata",
+                          "type": "object",
+                          "description": "Additional metadata for the NFT",
+                          "fields": [
+                            {
+                              "name": "additionalProp1",
+                              "type": "object",
+                              "description": "Additional property 1"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "asset_standard",
+                          "type": "string",
+                          "description": "The asset standard",
+                          "example": "string"
+                        },
+                        {
+                          "name": "apy",
+                          "type": "number",
+                          "description": "The annual percentage yield",
+                          "example": 1
+                        },
+                        {
+                          "name": "is_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a debt",
+                          "example": true
+                        },
+                        {
+                          "name": "is_variable_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a variable debt",
+                          "example": true
+                        },
+                        {
+                          "name": "is_stable_debt",
+                          "type": "boolean",
+                          "description": "Indicator if the position is a stable debt",
+                          "example": true
+                        },
+                        {
+                          "name": "shares",
+                          "type": "string",
+                          "description": "The shares of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "reserve0",
+                          "type": "string",
+                          "description": "The reserve 0 of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "reserve1",
+                          "type": "string",
+                          "description": "The reserve 1 of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "factory",
+                          "type": "string",
+                          "description": "The factory of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "pair",
+                          "type": "string",
+                          "description": "The pair of the position",
+                          "example": "string"
+                        },
+                        {
+                          "name": "share_of_pool",
+                          "type": "number",
+                          "description": "The share of the pool",
+                          "example": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getDefiSummary({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_defi_summary(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -37731,19 +38709,19 @@
                 "name": "deprioritized_gas_estimate",
                 "type": "number",
                 "description": "The deprioritized estimate for the gas unit price",
-                "example": 0
+                "example": 1
               },
               {
                 "name": "gas_estimate",
                 "type": "number",
                 "description": "The current estimate for the gas unit price",
-                "example": 0
+                "example": 1
               },
               {
                 "name": "prioritized_gas_estimate",
                 "type": "number",
                 "description": "The prioritized estimate for the gas unit price",
-                "example": 0
+                "example": 1
               }
             ]
           }
@@ -45870,7 +46848,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -45921,7 +46899,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -46249,7 +47227,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -46300,7 +47278,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -46607,7 +47585,7 @@
           "name": "one_day_net_volume_change_usd",
           "description": "The minimum one day net volume change in usd of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         },
         {
@@ -46628,7 +47606,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -46679,7 +47657,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -47007,7 +47985,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -47058,7 +48036,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -47386,7 +48364,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -47437,7 +48415,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -47765,7 +48743,7 @@
           "name": "one_month_price_percent_change_usd",
           "description": "The minimum one month price percent change of a token",
           "required": false,
-          "example": 0,
+          "example": 1,
           "type": "number"
         }
       ],
@@ -47816,7 +48794,7 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
@@ -48169,21 +49147,21 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
                 {
                   "name": "token_age_in_days",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Age of the token in days",
                   "required": true
                 },
                 {
                   "name": "on_chain_strength_index",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Index representing the on-chain strength of the token",
                   "required": true
                 },
@@ -48529,21 +49507,21 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
                 {
                   "name": "token_age_in_days",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Age of the token in days",
                   "required": true
                 },
                 {
                   "name": "on_chain_strength_index",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Index representing the on-chain strength of the token",
                   "required": true
                 },
@@ -48904,21 +49882,21 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
                 {
                   "name": "token_age_in_days",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Age of the token in days",
                   "required": true
                 },
                 {
                   "name": "on_chain_strength_index",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Index representing the on-chain strength of the token",
                   "required": true
                 },
@@ -49279,21 +50257,21 @@
                 {
                   "name": "price_usd",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Current price of the token in USD",
                   "required": true
                 },
                 {
                   "name": "token_age_in_days",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Age of the token in days",
                   "required": true
                 },
                 {
                   "name": "on_chain_strength_index",
                   "type": "number",
-                  "example": 0,
+                  "example": 1,
                   "description": "Index representing the on-chain strength of the token",
                   "required": true
                 },
@@ -50383,7 +51361,7 @@
                     "field": {
                       "type": "number",
                       "description": "Ratio of gas used to gas limit for the block.",
-                      "example": 0.5
+                      "example": 1.5
                     },
                     "description": "Array of ratios of gas used to gas limit for each block."
                   },

@@ -4,13 +4,11 @@ window.onload = function () {
   const referenceList = [
     // For v2.2 Release
     "API Reference",
-    "NFT API",
-    "Get NFT Prices",
-    "Get NFT Sale Prices by Collection",
-    "Get NFT Sale Prices by Token ID",
-    "Get NFT Trades",
-    "Get NFT trades by token",
-    "Get NFT trades by wallet",
+    "DeFi API",
+    "Get Wallet DeFi Positions",
+    "Get DeFi protocols by wallet",
+    "Get DeFi positions by wallet",
+    "Get detailed DeFi positions by wallet and protocol",
   ];
 
   const paramList = [];

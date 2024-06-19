@@ -76,6 +76,24 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "getDefiSummary",
+      "path": "/wallets/{address}/defi/summary",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getDefiPositionsByProtocol",
+      "path": "/wallets/:address/defi/:protocol/positions",
+      "price": 15,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getDefiPositionsSummary",
+      "path": "/wallets/{address}/defi/positions",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
       "price": 50,
