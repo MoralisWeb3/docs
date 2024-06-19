@@ -19,6 +19,7 @@ This article provides a comprehensive and continually expanding list of supporte
 | Uniswap v3 | `uniswap-v3` | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon|
 | Aave v2 | `aave-v2` | - Ethereum <br/>- Polygon|
 | Aave v3 | `aave-v3` | - Base <br/>- Ethereum <br/>- Polygon|
+| Eigenlayer | `eigenlayer` | - Ethereum|
 | Lido | `lido` | - Ethereum|
 | MakerDAO | `makerdao` | - Ethereum|
 | Pancakeswap v2 | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea|
