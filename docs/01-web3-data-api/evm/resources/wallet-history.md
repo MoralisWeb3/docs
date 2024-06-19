@@ -17,7 +17,7 @@ The [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet
 - Reduced Complexity: Eliminates the need to aggregate data from multiple API calls, reducing complexity and potential data inconsistency.
 - Comprehensive Data: Provides detailed insights into all transactions, token transfers, and NFT activities associated with a wallet address.
 
-## What Categories Are Supported?
+## Wallet History Categories
 We are continuously extending support for categories. We currently support:
 
 - Send
@@ -39,6 +39,43 @@ We are continuously extending support for categories. We currently support:
 - Revoke
 - Contract Interaction
 
+### Approvals and Revokes
+Detailed approval or revoke information can be accessed within the `contract_interactions` object. Currently, the `contract_interactions` decodes `setApprovalForAll` and `approve` transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
+
+Here's an example of an `approve` transaction:
+
+```
+"category": "approve",
+"summary": "Approved 0.000123 USDT",
+"contract_interactions": {
+    "approvals": [
+        {
+            "value": "1230000000000000",
+            "value_formatted": "0.000123",
+            "token": {
+                "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "address_label": "Tether USD (USDT)",
+                "token_name": "Tether USD",
+                "token_logo": "https://cdn.moralis.io/eth/0xdac17f958d2ee523a2206206994597c13d831ec7.png",
+                "token_symbol": "USDT"
+            },
+            "spender": {
+                "address": "0x111111125421ca6dc452d289314280a0f8842a65",
+                "address_label": null
+            }
+        }
+    ]
+}
+```
+
+| Method | Category | Decoded Payload |
+|-----|------|----|
+| `approve` > 0 | `approve` | `contract_interactions.approvals:[]` |
+| `setApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
+| `approve` = 0 | `revoke` | `contract_interactions.revokes:[]` |
+| `setApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
+
+
 ## What Query Parameters Are Supported?
 
 - `chain`: Choose the blockchain to query
@@ -49,6 +86,6 @@ We are continuously extending support for categories. We currently support:
 - `include_input_data`: Includes the raw transaction input data when set to `true`. This also decodes the transaction to populate the `method_label`.
 - `cursor`: Use this to paginate through results, utilizing the cursor provided in the previous response.
 - `order`: Sort the results in ascending (ASC) or descending (DESC) order.
-- `limit`: Adjust the page size of your results to your preference .
+- `limit`: Adjust the page size of your results to your preference.
 
 Start building with the most powerful [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-history) today 🚀
