@@ -10793,12 +10793,6 @@
                 "example": "https://cdn.moralis.io/defi/uniswap.png"
               },
               {
-                "name": "total_usd_value",
-                "type": "number",
-                "description": "The total USD value of the protocol's positions",
-                "example": 47754.14278954011
-              },
-              {
                 "name": "total_unclaimed_usd_value",
                 "type": "number",
                 "description": "The total USD value of unclaimed rewards",
