@@ -15,7 +15,7 @@ Our DeFi Positions feature is now fully live! 🚀 We're excited to announce the
 
 ### Protocols & Chains
 This initial release sees support for the following:
-- **Protocols:** Uniswap (v2 & v3), Aave (v2 & v3), Lido, MakerDAO, PancakeSwap, SushiSwap and many more, with even more coming very soon.
+- **Protocols:** Uniswap (v2 & v3), Aave (v2 & v3), Eigenlayer, Lido, MakerDAO, PancakeSwap, SushiSwap and many more, with even more coming very soon.
 - **Chains:** Ethereum, Polygon, Binance, Base, Optimism, Arbitrum, Avalanche and Linea
 
 For a detailed breakdown of supported protocols per chain, check out the [Supported DeFi Protocols page](/web3-data-api/evm/defi-protocols-and-chains).
