@@ -40,7 +40,7 @@ We are continuously extending support for categories. We currently support:
 - Contract Interaction
 
 ### Approvals and Revokes
-Detailed approval or revoke information can be accessed within the `contract_interactions` object. Currently, the `contract_interactions` decodes `setApprovalForAll` and `approve` transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
+Detailed approval or revoke information can be accessed within the `contract_interactions` object. Currently, the `contract_interactions` decodes `setApprovalForAll` (log event `ApprovalForAll`) and `approve` (log event `Approval`) transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
 
 Here's an example of an `approve` transaction:
 
@@ -68,12 +68,12 @@ Here's an example of an `approve` transaction:
 }
 ```
 
-| Method | Category | Decoded Payload |
+| Log Event | Category | Decoded Payload |
 |-----|------|----|
-| `approve` > 0 | `approve` | `contract_interactions.approvals:[]` |
-| `setApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
-| `approve` = 0 | `revoke` | `contract_interactions.revokes:[]` |
-| `setApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
+| `Approval` > 0 | `approve` | `contract_interactions.approvals:[]` |
+| `ApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
+| `Approval` = 0 | `revoke` | `contract_interactions.revokes:[]` |
+| `ApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
 
 
 ## What Query Parameters Are Supported?
