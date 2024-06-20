@@ -36,13 +36,4 @@ Spam detection is available on the following endpoints:
 - [Get ERC20 token approvals](https://docs.moralis.io/web3-data-api/reference/get-erc20-approvals)
 
 ### What chains is this supported on?
-This feature is supported on all EVMs, however, our initial classification includes contracts from:
-
-- Ethereum mainet
-- Polygon mainnet
-- Avalance mainnet
-- Fantom mainnet
-- Binance mainnet
-- Cronos mainnet
-- Arbitrum mainnet
-- Optimism mainnet
+This feature is supported on all EVM chains.
