@@ -36,14 +36,14 @@ Detailed approval or revoke information can now be accessed within the `contract
 }
 ```
 
-Currently, the `contract_interactions` decodes `setApprovalForAll` and `approve` transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
+Currently, the `contract_interactions` decodes `setApprovalForAll` (log event `ApprovalForAll`) and `approve` (log event `Approval`) transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
 
-| Method | Category | Decoded Payload |
+| Log Event | Category | Decoded Payload |
 |-----|------|----|
-| `approve` > 0 | `approve` | `contract_interactions.approvals:[]` |
-| `setApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
-| `approve` = 0 | `revoke` | `contract_interactions.revokes:[]` |
-| `setApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
+| `Approval` > 0 | `approve` | `contract_interactions.approvals:[]` |
+| `ApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
+| `Approval` = 0 | `revoke` | `contract_interactions.revokes:[]` |
+| `ApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
 
 For a complete list of all supported categories, please visit the [Wallet History resource page](/web3-data-api/evm/wallet-history).
 
