@@ -159,6 +159,13 @@ const ApiReference = ({
           hostUrl === "https://api.moralis-streams.com" ||
           hostUrl === "https://site1.moralis-nodes.com"
         ) {
+          const authHeaderKey = hostUrl.includes("wdim.moralis.io")
+            ? "Authorization"
+            : "X-API-Key";
+          const authHeaderValue = hostUrl.includes("wdim.moralis.io")
+            ? `Bearer ${token}`
+            : token;
+
           response = await fetch(
             [
               hostUrl,
@@ -170,8 +177,7 @@ const ApiReference = ({
               headers: {
                 accept: "application/json",
                 "content-type": "application/json",
-                "X-API-Key": token,
-                // Authorization: `Bearer ${token}`,
+                [authHeaderKey]: authHeaderValue,
                 "x-moralis-source": `Moralis API docs`,
                 referer: "moralis.io",
               },
