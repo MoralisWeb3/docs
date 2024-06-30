@@ -36,8 +36,14 @@ const tabs = [
     lang: "node",
     langCode: "js",
     title: "Node.js",
-    template: ({ method, url, auth, body, authField }) =>
-      buildTemplate([
+    template: ({ method, url, auth, body, authField }) => {
+      const authHeader = url.includes("wdim.moralis.io")
+        ? "Authorization"
+        : authField;
+      const authValue = url.includes("wdim.moralis.io")
+        ? `Bearer ${auth}`
+        : auth;
+      return buildTemplate([
         line("// Dependencies to install:"),
         line("// $ npm install node-fetch --save"),
         line(`// add "type": "module" to package.json`),
@@ -51,7 +57,7 @@ const tabs = [
         body
           ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2)
           : null,
-        auth ? line(`'${authField}': '${auth}'`, 2) : null,
+        auth ? line(`'${authHeader}': '${authValue}'`, 2) : null,
         line("},", 1),
         body
           ? line(
@@ -65,14 +71,21 @@ const tabs = [
         line(".then(response => response.json())", 1),
         line(".then(response => console.log(response))", 1),
         line(".catch(err => console.error(err));", 1),
-      ]),
+      ]);
+    },
   },
   {
     lang: "python",
     langCode: "python",
     title: "Python",
-    template: ({ method, url, auth, body, authField }) =>
-      buildTemplate([
+    template: ({ method, url, auth, body, authField }) => {
+      const authHeader = url.includes("wdim.moralis.io")
+        ? "Authorization"
+        : authField;
+      const authValue = url.includes("wdim.moralis.io")
+        ? `Bearer ${auth}`
+        : auth;
+      return buildTemplate([
         line("# Dependencies to install:\n"),
         line("# $ python -m pip install requests"),
         line(""),
@@ -86,7 +99,7 @@ const tabs = [
         body
           ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1)
           : null,
-        auth ? line(`"${authField}": "${auth}"`, 1) : null,
+        auth ? line(`"${authHeader}": "${authValue}"`, 1) : null,
         line(`}`),
         line(""),
         line(
@@ -96,13 +109,20 @@ const tabs = [
         ),
         line(""),
         line("print(response.text)"),
-      ]),
+      ]);
+    },
   },
   {
     lang: "bash",
     langCode: "bash",
     title: "cURL",
     template: ({ method, url, auth, body, authField }) => {
+      const authHeader = url.includes("wdim.moralis.io")
+        ? "Authorization"
+        : authField;
+      const authValue = url.includes("wdim.moralis.io")
+        ? `Bearer ${auth}`
+        : auth;
       const indent = " ".repeat("curl ".length);
 
       return buildTemplate([
@@ -115,7 +135,9 @@ const tabs = [
         ),
         auth
           ? line(
-              `${indent}--header '${authField}: ${auth}' ${body ? "\\" : ""}`
+              `${indent}--header '${authHeader}: ${authValue}' ${
+                body ? "\\" : ""
+              }`
             )
           : null,
         body
@@ -131,8 +153,14 @@ const tabs = [
     lang: "go",
     langCode: "go",
     title: "Go",
-    template: ({ method, url, auth, body, authField }) =>
-      buildTemplate([
+    template: ({ method, url, auth, body, authField }) => {
+      const authHeader = url.includes("wdim.moralis.io")
+        ? "Authorization"
+        : authField;
+      const authValue = url.includes("wdim.moralis.io")
+        ? `Bearer ${auth}`
+        : auth;
+      return buildTemplate([
         line("package main"),
         line(""),
         line("import ("),
@@ -162,7 +190,9 @@ const tabs = [
         body
           ? line('req.Header.Add("Content-Type", "application/json")', 1)
           : null,
-        auth ? line(`req.Header.Add("${authField}", "${auth}")`, 1) : null,
+        auth
+          ? line(`req.Header.Add("${authHeader}", "${authValue}")`, 1)
+          : null,
         line(""),
         line("res, _ := http.DefaultClient.Do(req)", 1),
         line(""),
@@ -173,14 +203,21 @@ const tabs = [
         line("fmt.Println(string(body))", 1),
         line(""),
         line("}"),
-      ]),
+      ]);
+    },
   },
   {
     lang: "php",
     langCode: "php",
     title: "PHP",
-    template: ({ method, url, auth, body, authField }) =>
-      buildTemplate([
+    template: ({ method, url, auth, body, authField }) => {
+      const authHeader = url.includes("wdim.moralis.io")
+        ? "Authorization"
+        : authField;
+      const authValue = url.includes("wdim.moralis.io")
+        ? `Bearer ${auth}`
+        : auth;
+      return buildTemplate([
         line("<?php"),
         line("// Dependencies to install:"),
         line("// $ composer require guzzlehttp/guzzle"),
@@ -195,13 +232,14 @@ const tabs = [
           : null,
         line("'headers' => [", 1),
         line("'Accept' => 'application/json',", 2),
-        auth ? line(`'${authField}' => '${auth}',`, 2) : null,
+        auth ? line(`'${authHeader}' => '${authValue}',`, 2) : null,
         body ? line("'Content-Type' => 'application/json',", 2) : null,
         line("],", 1),
         line("]);"),
         line(""),
         line("echo $response->getBody();"),
-      ]),
+      ]);
+    },
   },
 ];
 
