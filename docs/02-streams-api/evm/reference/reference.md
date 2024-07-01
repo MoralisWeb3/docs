@@ -13,6 +13,8 @@ https://api.moralis-streams.com/api-docs/
 ## History
 
 - [Get history](/streams-api/evm/reference/get-history)
+- [Replay history](/streams-api/evm/reference/replay-history)
+- [Get logs](/streams-api/evm/reference/get-logs)
 
 ## Project
 

@@ -16902,6 +16902,130 @@
         }
       ]
     },
+    "ReplayHistory": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Replay history",
+      "description": "Replay a specific history.",
+      "method": "POST",
+      "path": "/history/replay/:streamId/:id",
+      "pathParams": [
+        {
+          "name": "streamId",
+          "description": "The id of the stream the history will be replayed",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "description": "The id of the history to replay",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                "format": "uuid",
+                "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+              },
+              { "name": "date", "type": "string" },
+              { "name": "payload" },
+              {
+                "name": "tinyPayload",
+                "type": "object",
+                "properties": {
+                  "chainId": { "type": "string" },
+                  "confirmed": { "type": "boolean" },
+                  "block": { "type": "string" },
+                  "records": { "type": "number", "format": "double" },
+                  "retries": { "type": "number", "format": "double" }
+                },
+                "required": [
+                  "chainId",
+                  "confirmed",
+                  "block",
+                  "records",
+                  "retries"
+                ],
+                "additionalProperties": false
+              },
+              { "name": "errorMessage", "type": "string" },
+              { "name": "webhookUrl", "type": "string" },
+              { "name": "streamId", "type": "string" },
+              { "name": "tag", "type": "string" }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from \"moralis\";\n\ntry {\n  await Moralis.start({\n    apiKey: 'YOUR_API_KEY',\n    // ...and any other configuration\n  });\n  \nconst id = \"id-1\";\nconst streamId = \"stream-1\";\n\n  const { result } = await Moralis.Streams.retry({\n  id,\n  streamId,\n});\n\n  console.log(result);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import streams\n\napi_key = \"YOUR_API_KEY\"\nparams = {\n    \"streamId\": \"\", \n    \"id\": \"\", \n}\n\nresult = streams.history.replay_history(\n    api_key=api_key,\n    params=params,\n)\n\nprint(result)\n"
+        }
+      ]
+    },
+    "GetLogs": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Get logs",
+      "description": "get all failed logs",
+      "method": "GET",
+      "path": "/history/logs",
+      "pathParams": [],
+      "queryParams": [
+        { "name": "limit", "required": true, "type": "number" },
+        { "name": "cursor", "required": false, "type": "string" }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "description": "Stringified UUIDv4.\nSee [RFC 4112](https://tools.ietf.org/html/rfc4122)",
+                    "format": "uuid",
+                    "pattern": "[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+                  },
+                  { "name": "streamId", "type": "string" },
+                  { "name": "chain", "type": "string" },
+                  { "name": "webhookUrl", "type": "string" },
+                  { "name": "tag", "type": "string" },
+                  { "name": "retries", "type": "number" },
+                  { "name": "deliveryStatus", "type": "string" },
+                  { "name": "blockNumber", "type": "number" },
+                  { "name": "errorMessage", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "createdAt", "type": "string" }
+                ]
+              },
+              { "name": "cursor", "type": "string" },
+              { "name": "total", "type": "number" }
+            ]
+          }
+        }
+      ]
+    },
     "SetSettings": {
       "apiHost": "https://api.moralis-streams.com",
       "summary": "Set project settings",
