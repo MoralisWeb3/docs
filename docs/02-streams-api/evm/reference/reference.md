@@ -6,6 +6,10 @@ sidebar_class_name: "sidebar-api-reference"
 sidebar_position: 20
 ---
 
+:::tip Swagger Interface
+https://api.moralis-streams.com/api-docs/
+:::
+
 ## History
 
 - [Get history](/streams-api/evm/reference/get-history)

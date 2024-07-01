@@ -9,6 +9,10 @@ sidebar_class_name: "sidebar-api-reference"
 
 This section contains a full list of all methods within the EVM Web3 data.
 
+:::tip Swagger Interface
+https://deep-index.moralis.io/api-docs-2.2/
+:::
+
 ## Full List of APIs by Category
 
 Find your favorite method by selecting one of the following categories:
