@@ -19651,6 +19651,150 @@
         }
       ]
     },
+    "GetStreamBlockDataByNumber": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Get webhook data returned on the block number with provided stream config",
+      "description": "Get webhook data returned on the block number with provided stream config.",
+      "method": "POST",
+      "path": "/streams/evm/:chainId/block/:blockNumber",
+      "pathParams": [
+        {
+          "name": "chainId",
+          "required": true,
+          "description": "The chain ID, as a hexadecimal.",
+          "type": "string",
+          "example": "0x1"
+        },
+        {
+          "name": "blockNumber",
+          "required": true,
+          "description": "The block number",
+          "type": "number",
+          "example": 20226240
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "streams config and block number",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tag",
+            "type": "string",
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "my-tag"
+          },
+          {
+            "name": "topic0",
+            "type": "array",
+            "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "field": { "type": "string" }
+          },
+          {
+            "name": "allAddresses",
+            "type": "boolean",
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)",
+            "example": false
+          },
+          {
+            "name": "includeNativeTxs",
+            "type": "boolean",
+            "description": "Include or not native transactions defaults to false",
+            "example": true
+          },
+          {
+            "name": "includeContractLogs",
+            "type": "boolean",
+            "description": "Include or not logs of contract interactions defaults to false",
+            "example": false
+          },
+          {
+            "name": "includeInternalTxs",
+            "type": "boolean",
+            "description": "Include or not include internal transactions defaults to false",
+            "example": false
+          },
+          {
+            "name": "includeAllTxLogs",
+            "type": "boolean",
+            "description": "Include all logs if atleast one value in tx or log matches stream config",
+            "example": true
+          },
+          { "name": "filterPossibleSpamAddresses", "type": "boolean" },
+          {
+            "name": "abi",
+            "type": "object",
+            "fields": [
+              { "name": "anonymous", "type": "boolean" },
+              { "name": "constant", "type": "boolean" },
+              {
+                "name": "inputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "indexed", "type": "boolean" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "name", "type": "string" },
+              {
+                "name": "outputs",
+                "type": "object",
+                "fields": [
+                  { "name": "name", "type": "string" },
+                  { "name": "type", "type": "string" },
+                  { "name": "components", "type": "json" },
+                  { "name": "internalType", "type": "string" }
+                ]
+              },
+              { "name": "payable", "type": "boolean" },
+              { "name": "stateMutability", "type": "string" },
+              { "name": "type", "type": "string" },
+              { "name": "gas", "type": "number" }
+            ]
+          },
+          {
+            "name": "advancedOptions",
+            "type": "object",
+            "fields": [
+              { "name": "topic0", "type": "string" },
+              {
+                "name": "filter",
+                "type": "json",
+                "description": "The filter object for the topic0\nhttps://docs.moralis.io/docs/filter-streams",
+                "example": {}
+              },
+              { "name": "includeNativeTxs", "type": "boolean" }
+            ]
+          },
+          {
+            "name": "addresses",
+            "type": "array",
+            "required": true,
+            "field": { "type": "string" },
+            "example": ["0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5"]
+          }
+        ]
+      },
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
+    "GetStreamBlockDataToWebhookByNumber": {
+      "apiHost": "https://api.moralis-streams.com",
+      "summary": "Send webhook based on a specific block number using stream config and addresses.",
+      "description": "Send webhook based on a specific block number using stream config and addresses.",
+      "method": "POST",
+      "path": "/streams/evm/:chainId/block-to-webhook/:blockNumber/:streamId",
+      "pathParams": [
+        { "name": "chainId", "required": true, "type": "string" },
+        { "name": "blockNumber", "required": true, "type": "number" },
+        { "name": "streamId", "required": true, "type": "string" }
+      ],
+      "queryParams": [],
+      "responses": [{ "status": "200", "description": "Ok" }]
+    },
     "aptosStreamsGetAll": {
       "apiHost": "https://api.moralis-streams.com",
       "summary": "Gets all aptos streams.",
