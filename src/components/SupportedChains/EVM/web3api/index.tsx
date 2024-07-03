@@ -8,7 +8,6 @@ const headers = [
   { key: "type", label: "Type" },
   { key: "chainID", label: "Chain ID" },
   { key: "evmChain", label: "EvmChain" },
-  { key: "internalTxsWeb3API", label: "Internal Transaction Support" },
   { key: "queryParams", label: "<code>chain</code> Query Parameters" },
 ];
 

@@ -65,31 +65,6 @@ const TableCell = ({ header, rowData }) => {
     ) : (
       <span>No Confirmation Data</span>
     );
-  } else if (header === "internalTxs") {
-    return (
-      rowData.streamsApi &&
-      rowData.streamsApi.supported && (
-        <span>
-          {rowData.streamsApi.internalTxs ? (
-            <SupportedIcon />
-          ) : (
-            <UnsupportedIcon reason={"Unsupported"} />
-          )}
-        </span>
-      )
-    );
-  } else if (header === "internalTxsWeb3API") {
-    return (
-      rowData.evmApi && (
-        <span>
-          {rowData.evmApi.internalTxs ? (
-            <SupportedIcon />
-          ) : (
-            <UnsupportedIcon reason={"Unsupported"} />
-          )}
-        </span>
-      )
-    );
   } else if (header === "queryParams") {
     const queryParams = rowData.evmApi && rowData.evmApi.queryParams;
     return queryParams && queryParams.length > 0 ? (
