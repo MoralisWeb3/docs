@@ -601,6 +601,35 @@ const chainData = [
     },
   },
   {
+    name: "Ronin",
+    logo: "/img/content/ronin.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.RONIN",
+    isNew: false,
+    type: "Mainnet",
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["ronin", "0x7e4"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: false,
+      reason: "Unsupported",
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Unsupported",
+      urls: [],
+    },
+    authApi: {
+      supported: true,
+    },
+  },
+  {
     name: "Gnosis",
     logo: "/img/content/gnosis.png",
     chainID: "0x64 (100)",
@@ -767,6 +796,7 @@ const chainData = [
       supported: true,
       internalTxs: false,
       reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -797,6 +827,7 @@ const chainData = [
       supported: true,
       internalTxs: false,
       reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -827,6 +858,7 @@ const chainData = [
       supported: true,
       internalTxs: false,
       reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -1159,6 +1191,6 @@ const chainData = [
       reason: "Coming soon",
     },
   },
-];
+] as const;
 
 export default chainData;

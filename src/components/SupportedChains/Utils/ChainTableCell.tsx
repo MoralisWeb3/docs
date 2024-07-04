@@ -73,19 +73,7 @@ const TableCell = ({ header, rowData }) => {
           {rowData.streamsApi.internalTxs ? (
             <SupportedIcon />
           ) : (
-            <UnsupportedIcon reason={"Unsupported"} />
-          )}
-        </span>
-      )
-    );
-  } else if (header === "internalTxsWeb3API") {
-    return (
-      rowData.evmApi && (
-        <span>
-          {rowData.evmApi.internalTxs ? (
-            <SupportedIcon />
-          ) : (
-            <UnsupportedIcon reason={"Unsupported"} />
+            <UnsupportedIcon reason={rowData.streamsApi.reason} />
           )}
         </span>
       )
