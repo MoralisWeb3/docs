@@ -9635,6 +9635,12 @@
                   "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
                 },
                 {
+                  "name": "address_label",
+                  "type": "string",
+                  "description": "The label of the address",
+                  "example": "Binance 1"
+                },
+                {
                   "name": "name",
                   "type": "string",
                   "description": "The name of the token contract",
@@ -9671,6 +9677,24 @@
                   "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
                 },
                 {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned",
+                  "example": "420689899999994793099999999997400"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                  "example": "420689899999994.7930999999999974"
+                },
+                {
+                  "name": "fully_diluted_valuation",
+                  "type": "string",
+                  "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                  "example": "3407271444.05"
+                },
+                {
                   "name": "block_number",
                   "type": "string",
                   "description": "The block number when the token was created or last updated",
@@ -9683,16 +9707,50 @@
                   "example": "true"
                 },
                 {
+                  "name": "created_at",
+                  "type": "string",
+                  "description": "The timestamp of when the erc20 token was created"
+                },
+                {
                   "name": "possible_spam",
                   "type": "boolean",
                   "description": "Indicates if a contract is possibly a spam contract",
                   "example": false
                 },
                 {
-                  "name": "verified_collection",
+                  "name": "verified_contract",
                   "type": "boolean",
                   "description": "Indicates if a contract is verified",
                   "example": false
+                },
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Categories of the token",
+                  "example": ["stablecoin"]
+                },
+                {
+                  "name": "links",
+                  "type": "json",
+                  "description": "Social links of the token",
+                  "example": {
+                    "discord": "https://discord.com/invite/0xPolygon",
+                    "medium": "https://polygontech.medium.com",
+                    "reddit": "https://www.reddit.com/r/polygonnetwork",
+                    "telegram": "https://t.me/channelholo",
+                    "twitter": "https://twitter.com/0xPolygon",
+                    "website": "https://polygon.technology",
+                    "github": "https://github.com/maticnetwork/contracts",
+                    "bitbucket": "https://bitbucket.org",
+                    "facebook": "https://www.facebook.com/holohost",
+                    "instagram": "https://www.instagram.com/0xpolygon",
+                    "linkedin": "https://linkedin.com/company/polygonlabs",
+                    "tiktok": "https://tiktok.com",
+                    "youtube": "https://www.youtube.com/channel/UCvjEq17wWLHFVYwU3OOXPtQ"
+                  }
                 }
               ]
             }
