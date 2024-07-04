@@ -167,7 +167,6 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "18",
-      internalTxs: true,
     },
     rpcNodes: {
       supported: true,
@@ -558,7 +557,6 @@ const chainData = [
       supported: true,
       blockConfirmations: "100",
       internalTxs: false,
-      reason: "Unsupported",
       erc20Swaps: true,
       nftTrades: false,
     },
@@ -589,7 +587,6 @@ const chainData = [
       supported: true,
       blockConfirmations: "36",
       internalTxs: false,
-      reason: "Unsupported",
     },
     rpcNodes: {
       supported: false,
@@ -646,8 +643,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: false,
-      reason: "Unsupported",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: true,
@@ -677,8 +673,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: false,
-      reason: "Unsupported",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: true,
@@ -708,7 +703,6 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: true,
     },
     rpcNodes: {
       supported: false,
@@ -736,7 +730,6 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: true,
     },
     rpcNodes: {
       supported: false,
@@ -765,8 +758,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: false,
-      reason: "Unsupported",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: false,
@@ -889,7 +881,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -921,7 +912,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -953,7 +943,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -985,7 +974,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1017,7 +1005,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1049,7 +1036,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1081,7 +1067,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1113,7 +1098,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1145,7 +1129,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1177,7 +1160,6 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
-      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
