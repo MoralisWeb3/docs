@@ -167,6 +167,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "18",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: true,
@@ -557,6 +558,7 @@ const chainData = [
       supported: true,
       blockConfirmations: "100",
       internalTxs: false,
+      reason: "Unsupported",
       erc20Swaps: true,
       nftTrades: false,
     },
@@ -587,6 +589,36 @@ const chainData = [
       supported: true,
       blockConfirmations: "36",
       internalTxs: false,
+      reason: "Unsupported",
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Unsupported",
+      urls: [],
+    },
+    authApi: {
+      supported: true,
+    },
+  },
+  {
+    name: "Ronin",
+    logo: "/img/content/ronin.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.RONIN",
+    isNew: false,
+    type: "Mainnet",
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["ronin", "0x7e4"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: false,
+      reason: "Unsupported",
     },
     rpcNodes: {
       supported: false,
@@ -614,7 +646,8 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: true,
+      internalTxs: false,
+      reason: "Unsupported",
     },
     rpcNodes: {
       supported: true,
@@ -644,7 +677,8 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: true,
+      internalTxs: false,
+      reason: "Unsupported",
     },
     rpcNodes: {
       supported: true,
@@ -674,6 +708,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: false,
@@ -701,6 +736,7 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
+      internalTxs: true,
     },
     rpcNodes: {
       supported: false,
@@ -729,7 +765,8 @@ const chainData = [
     streamsApi: {
       supported: true,
       blockConfirmations: "100",
-      internalTxs: true,
+      internalTxs: false,
+      reason: "Unsupported",
     },
     rpcNodes: {
       supported: false,
@@ -756,8 +793,10 @@ const chainData = [
       queryParams: ["moonbeam", "0x504"],
     },
     streamsApi: {
-      supported: false,
-      reason: "Coming soon",
+      supported: true,
+      internalTxs: false,
+      reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -785,8 +824,10 @@ const chainData = [
       queryParams: ["moonriver", "0x505"],
     },
     streamsApi: {
-      supported: false,
-      reason: "Coming soon",
+      supported: true,
+      internalTxs: false,
+      reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -814,8 +855,10 @@ const chainData = [
       queryParams: ["moonbase", "0x507"],
     },
     streamsApi: {
-      supported: false,
-      reason: "Coming soon",
+      supported: true,
+      internalTxs: false,
+      reason: "Unsupported",
+      blockConfirmations: "100",
     },
     rpcNodes: {
       supported: true,
@@ -846,6 +889,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -877,6 +921,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -908,6 +953,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -939,6 +985,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -970,6 +1017,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1001,6 +1049,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1032,6 +1081,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1063,6 +1113,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1094,6 +1145,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1125,6 +1177,7 @@ const chainData = [
     streamsApi: {
       supported: false,
       reason: "Coming soon",
+      internalTxs: false,
     },
     rpcNodes: {
       supported: true,
@@ -1138,6 +1191,6 @@ const chainData = [
       reason: "Coming soon",
     },
   },
-];
+] as const;
 
 export default chainData;
