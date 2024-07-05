@@ -15,7 +15,7 @@ This article provides a comprehensive and continually expanding list of supporte
 
 | Protocol | Query Parameter | Supported Chains |
 |--------------|---------|---------|
-| Uniswap v2* | `uniswap-v2` | - Base <br/>- BSC <br/>- Ethereum <br/>- Polygon|
+| Uniswap v2* | `uniswap-v2` | - Arbitrum (new)<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea (new) <br/>- Polygon|
 | Uniswap v3 | `uniswap-v3` | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon|
 | Aave v2 | `aave-v2` | - Ethereum <br/>- Polygon|
 | Aave v3 | `aave-v3` | - Base <br/>- Ethereum <br/>- Polygon|
@@ -24,6 +24,7 @@ This article provides a comprehensive and continually expanding list of supporte
 | MakerDAO | `makerdao` | - Ethereum|
 | Pancakeswap v2 | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea|
 | Pancakeswap v3 | `pancakeswap-v3` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea|
+| Pendle (new) | `pendle` | - Ethereum|
 | SushiSwap v2 | `sushiswap-v2` | - Base <br/>- BSC <br/>- Ethereum <br/>- Polygon|
 | QuickSwap v2 | `quickswap-v2` | - Polygon |
 | QuickSwap v3 | `quickswap-v3` | - Polygon |
