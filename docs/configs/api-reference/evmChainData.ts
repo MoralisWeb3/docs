@@ -515,7 +515,7 @@ const chainData = [
   {
     name: "Fantom Testnet",
     logo: "/img/content/fantom.png",
-    type: "Mainnet",
+    type: "Testnet",
     chainID: "0xfa2 (4002)",
     evmChain: "EvmChain.FANTOM_TESTNET",
     isNew: false,
