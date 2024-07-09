@@ -25,9 +25,9 @@ We utilize a method closely resembling the weighted average cost method. Here’
 In essence, our method ensures that the profit or loss is determined by subtracting the average cost of the tokens sold from the average selling price, and then multiplying by the total number of tokens sold. This approach effectively employs a weighted average cost to calculate PNL.
 
 ### How are token trades (buys and sells) matched together?
-Token swaps are tracked based on their specific pairings. For instance, when you buy UNI with WETH, a trade record for **UNI <> WETH** is initiated. Subsequent purchases of UNI with WETH or sales of UNI for WETH will update this trade accordingly.
+Token swaps are tracked based on their specific pairings. For instance, when you buy UNI with WETH, a trade record for **UNI/WETH** is initiated. Subsequent purchases of UNI with WETH or sales of UNI for WETH will update this trade accordingly.
 
-However, if you initially buy UNI with WETH and later sell UNI for PEPE, the original **UNI <> WETH** trade remains unchanged. Instead, this transaction is treated as a new trade for **UNI <> PEPE**.
+However, if you initially buy UNI with WETH and later sell UNI for PEPE, the original **UNI/WETH** trade remains unchanged. Instead, this transaction is treated as a new trade for **UNI/PEPE**.
 
 ### How does your API determine token prices and trade histories?
 We index all of the supported swap events for a given token. We derive the swap price for a given trade from the swap log event and convert it to USD to return the token price. This is then used in the relevant data points within our PnL formula.
