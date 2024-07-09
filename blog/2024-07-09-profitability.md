@@ -1,5 +1,5 @@
 ---
-title: "Wallet & Token Profitability"
+title: "Wallet & Token Profitability (PnL)"
 slug: "profitability"
 authors:
   name: Reuben Salisbury
