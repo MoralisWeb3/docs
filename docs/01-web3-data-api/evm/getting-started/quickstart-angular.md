@@ -55,7 +55,7 @@ npm install axios
 ng generate component balances
 ```
 
-6. Open `src/app/app-routing.module.ts` and add this component as a route:
+6. Open `src/app/app.routes.ts` and add this component as a route:
 
 ```typescript TypeScript
 import { BalancesComponent } from "./balances/balances.component";
