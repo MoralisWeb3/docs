@@ -20,6 +20,7 @@ This article provides a comprehensive and continually expanding list of supporte
 | Aave v2 | `aave-v2` | - Ethereum <br/>- Polygon|
 | Aave v3 | `aave-v3` | - Base <br/>- Ethereum <br/>- Polygon|
 | Eigenlayer | `eigenlayer` | - Ethereum|
+| Etherfi | `etherfi` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea <br/>- Optimism|
 | Lido | `lido` | - Ethereum|
 | MakerDAO | `makerdao` | - Ethereum|
 | Pancakeswap v2 | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea|
