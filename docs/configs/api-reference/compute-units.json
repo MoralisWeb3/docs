@@ -94,6 +94,18 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "getWalletProfitabilitySummary",
+      "path": "/wallets/{address}/profitability/summary",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletProfitability",
+      "path": "/wallets/{address}/profitability",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
       "price": 50,
@@ -104,6 +116,12 @@
       "path": "/erc20/{address}/transfers",
       "price": 50,
       "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTopProfitableWalletPerToken",
+      "path": "/erc20/{address}/top-gainers",
+      "price": 50,
+      "rateLimitCost": 50
     },
     {
       "endpoint": "getNFTs",

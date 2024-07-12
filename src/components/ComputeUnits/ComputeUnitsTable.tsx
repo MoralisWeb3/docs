@@ -34,6 +34,8 @@ const fixedPath = {
   getTransactionVerbose: "get-decoded-transaction",
   getTransactionsVerbose: "get-decoded-wallet-transaction",
   getTransactions: "get-wallet-transactions",
+  getWalletProfitabilitySummary: "wallet-api/get-wallet-profitability-summary",
+  getWalletProfitability: "wallet-api/get-wallet-profitability",
 };
 
 const DynamicPriceUnits = {
