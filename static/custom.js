@@ -4,11 +4,10 @@ window.onload = function () {
   const referenceList = [
     // For v2.2 Release
     "API Reference",
-    "DeFi API",
-    "Get Wallet DeFi Positions",
-    "Get DeFi protocols by wallet",
-    "Get DeFi positions by wallet",
-    "Get detailed DeFi positions by wallet and protocol",
+    "Token API",
+    "Get Token PnL",
+    "Wallet API",
+    "Get Wallet PnL",
   ];
 
   const paramList = [];

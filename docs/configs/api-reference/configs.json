@@ -2140,6 +2140,325 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getWalletProfitabilitySummary": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Wallet Profitability Summary",
+      "description": "Retrieves a summary of wallet profitability based on specified parameters including optional token addresses.",
+      "method": "GET",
+      "path": "/wallets/:address/profitability/summary",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The wallet address for which profitability summary is to be retrieved.",
+          "required": true,
+          "type": "string",
+          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "days",
+          "description": "Timeframe in days for the profitability summary. Options include 'all', '7', '30', '60', '90' default is 'all'.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "mainnet",
+            "0x1",
+            "matic",
+            "0x89",
+            "polygon",
+            "bsc",
+            "binance",
+            "0x38",
+            "fantom",
+            "ftm",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "optimism",
+            "0xa",
+            "pulsechain",
+            "0x171",
+            "base",
+            "0x2105",
+            "linea",
+            "0xe708"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response with the profitability summary.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total_count_of_trades",
+                "type": "number",
+                "description": "Total count of trades executed by the wallet.",
+                "example": 1
+              },
+              {
+                "name": "total_trade_volume",
+                "type": "string",
+                "description": "Total trade volume managed by the wallet."
+              },
+              {
+                "name": "total_realized_profit_usd",
+                "type": "string",
+                "description": "Total realized profit in USD for the wallet."
+              },
+              {
+                "name": "total_realized_profit_percentage",
+                "type": "number",
+                "description": "Total realized profit as a percentage.",
+                "example": 1
+              },
+              {
+                "name": "total_buys",
+                "type": "number",
+                "description": "Total number of buy transactions.",
+                "example": 1
+              },
+              {
+                "name": "total_sells",
+                "type": "number",
+                "description": "Total number of sell transactions.",
+                "example": 1
+              },
+              {
+                "name": "total_sold_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens sold by the wallet."
+              },
+              {
+                "name": "total_bought_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens bought by the wallet."
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletProfitabilitySummary({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_profitability_summary(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getWalletProfitability": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Wallet Profitability",
+      "description": "Retrieves profitability information for a specific wallet address. Can be filtered by one or more tokens.",
+      "method": "GET",
+      "path": "/wallets/:address/profitability",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The wallet address for which profitability is to be retrieved.",
+          "required": true,
+          "type": "string",
+          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "days",
+          "description": "Timeframe in days for which profitability is calculated, Options include 'all', '7', '30', '60', '90' default is 'all'.",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "mainnet",
+            "0x1",
+            "matic",
+            "0x89",
+            "polygon",
+            "bsc",
+            "binance",
+            "0x38",
+            "fantom",
+            "ftm",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "optimism",
+            "0xa",
+            "pulsechain",
+            "0x171",
+            "base",
+            "0x2105",
+            "linea",
+            "0xe708"
+          ]
+        },
+        {
+          "name": "token_addresses",
+          "description": "The token addresses list to filter the result with",
+          "required": false,
+          "type": "array",
+          "field": { "type": "string" }
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response with profitability data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "object",
+                "description": "List of tokens traded with their respective profitability data.",
+                "fields": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the traded token."
+                  },
+                  {
+                    "name": "avg_buy_price_usd",
+                    "type": "string",
+                    "description": "Average buy price in USD."
+                  },
+                  {
+                    "name": "avg_sell_price_usd",
+                    "type": "string",
+                    "description": "Average sell price in USD."
+                  },
+                  {
+                    "name": "total_usd_invested",
+                    "type": "string",
+                    "description": "Total USD invested."
+                  },
+                  {
+                    "name": "total_tokens_sold",
+                    "type": "string",
+                    "description": "Total tokens sold."
+                  },
+                  {
+                    "name": "total_tokens_bought",
+                    "type": "string",
+                    "description": "Total tokens bought."
+                  },
+                  {
+                    "name": "total_sold_usd",
+                    "type": "string",
+                    "description": "Total USD received from selling tokens."
+                  },
+                  {
+                    "name": "avg_cost_of_quantity_sold",
+                    "type": "string",
+                    "description": "Average cost of sold quantity."
+                  },
+                  {
+                    "name": "count_of_trades",
+                    "type": "number",
+                    "description": "Count of trades for the token.",
+                    "example": 1
+                  },
+                  {
+                    "name": "realized_profit_usd",
+                    "type": "string",
+                    "description": "Realized profit in USD for the token."
+                  },
+                  {
+                    "name": "realized_profit_percentage",
+                    "type": "number",
+                    "description": "Realized profit percentage for the token.",
+                    "example": 1
+                  },
+                  {
+                    "name": "total_buys",
+                    "type": "number",
+                    "description": "Total number of buys.",
+                    "example": 1
+                  },
+                  {
+                    "name": "total_sells",
+                    "type": "number",
+                    "description": "Total number of sells.",
+                    "example": 1
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "Name of the token."
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "Symbol of the token."
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "string",
+                    "description": "Decimals of the token."
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "description": "Logo URL of the token."
+                  },
+                  {
+                    "name": "logo_hash",
+                    "type": "string",
+                    "description": "Logo hash of the token."
+                  },
+                  {
+                    "name": "thumbnail",
+                    "type": "string",
+                    "description": "Thumbnail image URL of the token."
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates whether the token is possibly spam.",
+                    "example": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.wallets.getWalletProfitability({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_wallet_profitability(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     }
   },
   "nft": {
@@ -11565,6 +11884,148 @@
         {
           "language": "python",
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.wallets.get_defi_positions_by_protocol(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getTopProfitableWalletPerToken": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Top Profitable Wallets for a Token",
+      "description": "Retrieves a list of the top profitable wallets for a specific ERC20 token.",
+      "method": "GET",
+      "path": "/erc20/:address/top-gainers",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The ERC20 token address.",
+          "required": true,
+          "type": "string",
+          "example": "0x7c9f4c87d911613fe9ca58b579f737911aad2d43"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "days",
+          "description": "Timeframe in days for which profitability is calculated, can be 'all', '7d' or '30d'",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "mainnet",
+            "0x1",
+            "matic",
+            "0x89",
+            "polygon",
+            "bsc",
+            "binance",
+            "0x38",
+            "fantom",
+            "ftm",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "optimism",
+            "0xa",
+            "pulsechain",
+            "0x171",
+            "base",
+            "0x2105",
+            "linea",
+            "0xe708"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response with top profitable wallets.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "wallets",
+                "type": "object",
+                "description": "List of top profitable wallets per token.",
+                "fields": [
+                  {
+                    "name": "avg_buy_price_usd",
+                    "type": "string",
+                    "description": "Average buy price in USD."
+                  },
+                  {
+                    "name": "avg_cost_of_quantity_sold",
+                    "type": "string",
+                    "description": "Average cost of quantity sold."
+                  },
+                  {
+                    "name": "avg_sell_price_usd",
+                    "type": "string",
+                    "description": "Average sell price in USD."
+                  },
+                  {
+                    "name": "count_of_trades",
+                    "type": "number",
+                    "description": "Total number of trades.",
+                    "example": 1
+                  },
+                  {
+                    "name": "realized_profit_percentage",
+                    "type": "number",
+                    "description": "Realized profit as a percentage.",
+                    "example": 1
+                  },
+                  {
+                    "name": "realized_profit_usd",
+                    "type": "string",
+                    "description": "Realized profit in USD."
+                  },
+                  {
+                    "name": "total_sold_usd",
+                    "type": "string",
+                    "description": "Total amount in USD for sold tokens."
+                  },
+                  {
+                    "name": "total_tokens_bought",
+                    "type": "string",
+                    "description": "Total number of tokens bought."
+                  },
+                  {
+                    "name": "total_tokens_sold",
+                    "type": "string",
+                    "description": "Total number of tokens sold."
+                  },
+                  {
+                    "name": "total_usd_invested",
+                    "type": "string",
+                    "description": "Total amount of USD invested."
+                  },
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The wallet address."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getTopProfitableWalletPerToken({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_top_profitable_wallet_per_token(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
