@@ -11950,7 +11950,37 @@
             "type": "object",
             "fields": [
               {
-                "name": "wallets",
+                "name": "name",
+                "type": "string",
+                "description": "The name of the token contract",
+                "example": "Kylin Network"
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "description": "The symbol of the NFT contract",
+                "example": "KYL"
+              },
+              {
+                "name": "decimals",
+                "type": "number",
+                "description": "The number of decimals on the token",
+                "example": 18
+              },
+              {
+                "name": "logo",
+                "type": "string",
+                "description": "The logo of the token",
+                "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+              },
+              {
+                "name": "possible_spam",
+                "type": "boolean",
+                "description": "Indicates if a contract is possibly a spam contract",
+                "example": true
+              },
+              {
+                "name": "result",
                 "type": "object",
                 "description": "List of top profitable wallets per token.",
                 "fields": [
@@ -11973,7 +12003,7 @@
                     "name": "count_of_trades",
                     "type": "number",
                     "description": "Total number of trades.",
-                    "example": 1
+                    "example": 2
                   },
                   {
                     "name": "realized_profit_percentage",
