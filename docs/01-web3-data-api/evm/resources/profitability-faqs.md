@@ -7,9 +7,9 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This article provides a set of FAQs for the following wallet and token PnL endpoints:
 
-- [Wallet PnL Summary](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getWalletProfitabilitySummary)
-- [Wallet PnL](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getWalletProfitability)
-- [Top Profitable Wallets by Token](https://deep-index.moralis.io/api-docs-2.2/#/Token/getTopProfitableWalletPerToken)
+- [Wallet PnL Summary](/web3-data-api/evm/reference/wallet-api/get-wallet-profitability-summary?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth)
+- [Wallet PnL Breakdown](/web3-data-api/evm/reference/wallet-api/get-wallet-profitability?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth&token_addresses=[])
+- [Top Profitable Wallets by Token](/web3-data-api/evm/reference/get-top-profitable-wallet-per-token?address=0x7c9f4c87d911613fe9ca58b579f737911aad2d43&chain=eth)
 
 ### What type of PnL (Profit and Loss) is supported?
 Currently we support realized PnL. This means that we calculate profits and losses based on actual token swaps. We do not include unrealized gains, which are based on market value fluctuations of tokens held in a wallet and have not been realized through a trade.
@@ -48,8 +48,7 @@ We currently support the following topics:
 Our PnL endpoints update in near real-time. On average you can expect wallet or token PnL to be updated within 10 seconds on a trade being settled on-chain.
 
 ### What ERC20 tokens are supported?
-all ERC20 tokens that have swaps on the supported dexes/topics?
-A: Yes except Token tagged as Stable (not all stable) that are used to calculate Pnl for native token
+All ERC20 tokens that have been involved in a Swap involving either of the topics above are supported.
 
 ### Do you track wallet PnL for stablecoins?
 No, we do not track wallet PnL for stablecoins.
