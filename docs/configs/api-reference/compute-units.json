@@ -148,12 +148,6 @@
       "rateLimitCost": 20
     },
     {
-      "endpoint": "web3ApiVersion",
-      "path": "/web3/version",
-      "price": 1,
-      "rateLimitCost": 1
-    },
-    {
       "endpoint": "getTokenMetadataBySymbol",
       "path": "/erc20/metadata/symbols",
       "price": 10,
