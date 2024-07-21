@@ -119,15 +119,13 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get ERC20 token metadata by contract](/web3-data-api/evm/reference/get-token-metadata)
 - [Get ERC20 token metadata by symbols](/web3-data-api/evm/reference/get-token-metadata-by-symbol)
 
-
 #### Get Burns
 
 - [Get ERC20 token burns](/2.0/web3-data-api/evm/reference/get-erc20-burns)
 
 #### Get Mints
 
-- [Get ERC20 token mints](/2.0/web3-data-api/evm/reference/get-erc20-mints  )
-
+- [Get ERC20 token mints](/2.0/web3-data-api/evm/reference/get-erc20-mints)
 
 ### Market Data API
 
@@ -135,7 +133,6 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get the top ERC20 tokens by price change](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers)
 - [Get the top NFT collections by market cap](/market-insights-api/reference/get-top-nft-collections-by-market-cap)
 - [Get the top NFT collections by trading volume](/market-insights-api/reference/get-top-nft-collections-by-trading-volume)
-
 
 ### Blockchain API
 
@@ -156,10 +153,8 @@ sidebar_class_name: "sidebar-api-reference"
 
 - [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
 
-
 ### Utils
 
-- [Get API version](/web3-data-api/evm/reference/web3-api-version)
 - [Get weights of endpoints](/web3-data-api/evm/reference/endpoint-weights)
 - [Run contract function](/2.0/web3-data-api/evm/reference/run-contract-function)
 - [Review contracts](/web3-data-api/evm/reference/contracts-review)

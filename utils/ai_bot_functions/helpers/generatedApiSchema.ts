@@ -7027,47 +7027,6 @@ export const ApiSchema = {
           },
         ],
       },
-      web3ApiVersion: {
-        apiHost: "https://deep-index.moralis.io/api/v2.2",
-        summary: "Get API version",
-        description: "Get the current version of the Moralis Web3 API.",
-        sdkTag: "utils",
-        tags: ["Utils"],
-        method: "GET",
-        path: "/web3/version",
-        pathParams: [],
-        queryParams: [],
-        responses: [
-          {
-            status: "200",
-            description: "Get the current version of the Moralis Web3 API.",
-            body: {
-              type: "object",
-              fields: [
-                {
-                  name: "version",
-                  type: "string",
-                  description: "The version of the API",
-                  example: "1.0.0",
-                  required: true,
-                },
-              ],
-            },
-          },
-        ],
-        codeSamples: [
-          {
-            language: "node",
-            code: "import Moralis from 'moralis';\ntry {\nawait Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n    });\nconst response = await Moralis.EvmApi.utils.web3ApiVersion({ \n  {  }\n});    \nconsole.log(response.result);\n} catch (e) {\n    console.error(e);\n}",
-            name: "Moralis NodeJS SDK",
-          },
-          {
-            language: "python",
-            code: 'from moralis import evm_api\napi_key = "YOUR_API_KEY"\nparams = {\n    # params key values goes here\n}\nresult = evm_api.utils.web3_api_version(\n    params=params,\n    api_key=api_key,\n    )\nprint(result)',
-            name: "Moralis Python SDK",
-          },
-        ],
-      },
       endpointWeights: {
         apiHost: "https://deep-index.moralis.io/api/v2.2",
         summary: "Get weights of endpoints",

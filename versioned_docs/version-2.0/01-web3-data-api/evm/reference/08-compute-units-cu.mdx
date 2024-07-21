@@ -42,7 +42,7 @@ In addition to having compute units charged on each API request, there are addit
 | `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 3       |
 | `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 10      |
 | `media_items=true`                                                                                                   | 2       |
-| `include=percent_change` on [`/erc20/prices`](/web3-data-api/evm/reference/get-multiple-token-prices)                                                                                       | 5       |
+| `include=percent_change` on [`/erc20/prices`](/web3-data-api/evm/reference/get-multiple-token-prices)                | 5       |
 
 ## How to Check Compute Units?
 
@@ -78,7 +78,7 @@ await Moralis.start({
   // ...and any other configuration
 });
 
-const response = await Moralis.EvmApi.utils.web3ApiVersion();
+const response = await Moralis.EvmApi.utils.endpointWeights();
 
 console.log(response?.toJSON());
 ```
