@@ -7841,7 +7841,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_contract_sale_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_contract_sale_prices(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -8283,7 +8283,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_sale_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_sale_prices(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
