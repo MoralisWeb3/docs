@@ -18,7 +18,7 @@ This article provides a comprehensive and continually expanding list of supporte
 | Aave v2 | `aave-v2` | - Ethereum <br/>- Polygon|
 | Aave v3 | `aave-v3` | - Base <br/>- Ethereum <br/>- Polygon|
 | Eigenlayer | `eigenlayer` | - Ethereum|
-| Etherfi **(new)** | `etherfi`    |  - Ethereum<br/>- Arbitrum<br/>- Base<br/>- Binance<br/>- Linea<br/>- Optimism  |
+| Etherfi* **(new)** | `etherfi`    |  - Ethereum<br/>- Arbitrum<br/>- Base<br/>- Binance<br/>- Linea<br/>- Optimism  |
 | FraxSwap v1 | `fraxswap-v1` | - BSC<br/>- Ethereum<br/>- Polygon |
 | FraxSwap v2 | `fraxswap-v2` | - BSC<br/>- Ethereum<br/>- Polygon |
 | Lido | `lido` | - Ethereum|
@@ -31,10 +31,11 @@ This article provides a comprehensive and continually expanding list of supporte
 | Rocket Pool **(new)**| `rocketpool` | - Ethereum<br/>- Arbitrum<br/>- Base<br/>- Polygon<br/>- Optimism |
 | Spark **(new)**| `sparkfi`      |  - Ethereum |
 | SushiSwap v2 | `sushiswap-v2` | - Base <br/>- BSC <br/>- Ethereum <br/>- Polygon|
-| Uniswap v2* | `uniswap-v2` | - Arbitrum (new)<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea (new) <br/>- Polygon|
+| Uniswap v2** | `uniswap-v2` | - Arbitrum (new)<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea (new) <br/>- Polygon|
 | Uniswap v3 | `uniswap-v3` | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon|
 
+_*Etherfi currently only supports Staking positions. Yield positions are not yet supported._
 
-_*By default, we track all forked Uniswap v2 protocols. If a particular protocol has not yet been decoded, it will appear as `unknown` within the API responses. Please reach out to our support team, and we will prioritize decoding these protocols._
+_**By default, we track all forked Uniswap v2 protocols. If a particular protocol has not yet been decoded, it will appear as `unknown` within the API responses. Please reach out to our support team, and we will prioritize decoding these protocols._
 
 Many more protocols are on the way as we prioritize the top protocols and chains based on Total Value Locked (TVL).
