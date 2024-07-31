@@ -104,10 +104,12 @@ After fetch all the token data you want, you can use openai API or another LLM t
 
 ## Gotchas
 - Each strategy returns a maximum of 200 tokens.
-- There is no pagination on the results - coming soon.
-- Custom endpoint to build custom searches - coming soon.
+- There is no pagination on the results - new endpoint coming soon.
+- Custom endpoint to build custom searches - new endpoint coming soon.
 - Token categories - coming soon.
 - If you need a token's total holders, you can use the owners API.
+- Discovery API endpoints support ERC20 tokens only [similar to Moralis Money].
+- The Discovery API doesn't return alpha metrics such as liquidity, total volume, buy pressure or net volume for the following token types: Stablecoins such as Tether and USDC or wrapped Native Tokens such as WETH
 
 ## How Can I Get Access?
 Speak to our sales team. It's only available within our Enterprise plans. Let's discuss your use case and requirements and we can enable trial access for you to explore the data. Email success@moralis.io to arrange a demo.
