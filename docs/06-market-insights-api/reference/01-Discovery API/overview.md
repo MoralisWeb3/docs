@@ -14,7 +14,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
   customButtonLink="https://moralis.io/api/discovery/"
 />
 
-The Discovery API provides a comprehensive suite of endpoints designed to uncover new trends, insightful tokens, and hidden gems within the cryptocurrency market. It goes beyond standard market data by analyzing patterns, liquidity movements, buying pressures, and other critical factors that indicate a token's potential.
+The Discovery API provides a comprehensive suite of endpoints designed to uncover new trends, insightful tokens, and hidden gems within the cryptocurrency market. It goes beyond standard market data by analyzing patterns, liquidity movements, buying pressures, and other critical factors that indicate a token's potential. Similar to Moralis Money, Discovery API endpoints support ERC20 tokens only. 
 
 ## Token Insights
 
