@@ -8,7 +8,8 @@ if (!KV_REST_API_URL || !KV_REST_API_TOKEN) {
 }
 
 export const config = {
-  matcher: "/api/api-backend",
+  // matcher: "/api/api-backend",
+  matcher: "/not_using_it_anymore",
 };
 
 const RATE_LIMIT = 5; // The maximum number of requests allowed
