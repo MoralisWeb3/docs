@@ -8,26 +8,19 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Entities and Labeling
 
-We’ve introduced “Entities” into our API to represent companies, organizations, and individuals (e.g., OpenSea, UniSwap, BlackRock, Elon Musk). This enhancement builds on our existing address labels feature by enriching API responses with entity-level metadata and enabling new discovery features.
+Our API now supports Entities—representations of companies, organizations, and individuals (e.g., OpenSea, UniSwap, BlackRock, Elon Musk). This enhancement builds on our existing address labels feature, adding rich metadata and enabling advanced discovery capabilities.
 
-- This will enable:
-  - **Greater API Enrichment:** API responses can now be enriched with entity-level metadata, including logos.
-  - **New Features:** Discover and query Entities and address labels in a way similar to platforms like Arkham.
+## Why Entities Matter
 
-## Problem
+Previously, our API focused solely on address labels, mapping blockchain addresses to recognizable names (e.g., Coinbase, Uniswap). While useful, this approach lacked depth—users couldn't access detailed information about the entities behind these addresses or effectively query for entities and their related addresses.
 
-Our previous API offering focused on address labels, mapping blockchain addresses to human-readable names (e.g., Coinbase, Uniswap). However, it lacked detailed information about the entities behind these addresses, such as companies, organizations, and individuals. This limitation restricted the depth of insights our users could gain from the API, and it didn’t support querying entities or associated addresses effectively.
+## What’s New?
 
-## Solution
+With the introduction of Entities, our API delivers a more comprehensive view of blockchain activity:
 
-We have introduced "Entities" into our API, representing companies, organizations, and individuals. Each entity is enriched with metadata such as name, logo, description, and website, and is linked to multiple blockchain addresses. This new structure enhances our API responses and enables powerful new features for discovering and querying both entities and address labels.
-
-## Value & Benefits
-
-- **Enhanced Data Enrichment:** Users now receive more comprehensive information with entity-level metadata, improving the overall value of our API.
-- **Improved User Experience:** The inclusion of logos and descriptions adds visual richness to the data, enhancing the user interface of applications using our API.
-- **Competitive Edge:** Offering features similar to market leaders like Arkham ensures we stay competitive in the market.
-- **Increased Engagement:** Detailed and contextual information drives higher user engagement and retention.
+- In-Depth Insights: Entities come with enriched metadata, including names, logos, descriptions, and websites, offering a deeper understanding of blockchain participants.
+- Advanced Querying: Users can now discover and search for entities and their associated addresses, unlocking new ways to analyze and interact with data.
+- Contextualized Data: By linking multiple addresses to a single entity, our API provides a more complete picture of how entities operate across different networks.
 
 ## Example of Entity-Enriched Response
 
