@@ -31,14 +31,14 @@ Here’s an example of a transaction enriched with entity data:
   "hash": "0x70c30285a9a4cc1c147cc94e5d0cefebe693fffd5fd5cbf727e2f86b6829d71b",
   "nonce": "6810858",
   "transaction_index": "72",
-  "from_address": "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
-  "from_address_label": "Binance 15",
-  "from_address_entity": "Binance",
-  "from_address_entity_logo": "https://example.com/logos/binance.png",
-  "to_address": "0x514910771af9ca656af840dff83e8264ecf986ca",
-  "to_address_label": "ChainLink Token",
-  "to_address_entity": "ChainLink",
-  "to_address_entity_logo": "https://example.com/logos/chainlink.png",
+  "from_address": "Oxa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+  "from_address_label": "Coinbase: Hot Wallet",
+  "from_address_entity": "Coinbase",
+  "from_address_entity_logo": "https://entities-logos.s3.us-east-1.amazonaws.com/coinbase.png",
+  "to_address": "Oxa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+  "to_address_label": "Blackrock Wallet",
+  "to_address_entity": "Blackrock, Inc",
+  "to_address_entity_logo": "https://entities-logos.s3.us-east-1.amazonaws.com/blackrock.png",
   "value": "0",
   "gas": "207128",
   "gas_price": "32393720336",
@@ -131,6 +131,6 @@ We are committed to continuously improving and expanding our entity and label co
 - New endpoints for searching entities by name, address, and type.
 - Stay tuned for more updates as we continue to enhance our API with even more powerful features.
 
-## Will you continue to add new enties and lebels?
+## Will you continue to add new entities and labels?
 
-Yes, absolutely! We plan to continue adding fresh entities labels as new contracts and projects emerge. If you would like a specific address added, please add your submissions to our [feature requests board](https://roadmap.moralis.io/b/feature-requests/).
+Yes, absolutely! We plan to continue adding fresh entities and labels as new contracts and projects emerge. If you would like a specific address added, please add your submissions to our [feature requests board](https://roadmap.moralis.io/b/feature-requests/).
