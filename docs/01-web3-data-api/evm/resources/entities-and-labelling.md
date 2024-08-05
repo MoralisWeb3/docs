@@ -1,12 +1,12 @@
 ---
 title: "Entities and Labelling"
-slug: "../../evm/blockchain-api/entity-labels"
+slug: "../../evm/blockchain-api/entities-and-labelling"
 sidebar_position: 4
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-# Entity and Address Labeling
+# Entities and Labeling
 
 We’ve introduced “Entities” into our API to represent companies, organizations, and individuals (e.g., OpenSea, UniSwap, BlackRock, Elon Musk). This enhancement builds on our existing address labels feature by enriching API responses with entity-level metadata and enabling new discovery features.
 
