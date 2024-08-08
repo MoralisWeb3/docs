@@ -57,71 +57,62 @@ Here’s an example of a transaction enriched with entity data:
 
 ## Which endpoints support Entity and Address labeling?
 
-Any endpoint that includes a `to_address` and `from_address`! This list currently includes:
+Any endpoint that includes a `to_address` and `from_address`, the endpoints are listed in the table below:
 
-| Name                                      | Endpoint                                 |
-| :---------------------------------------- | :--------------------------------------- |
-| Get native transactions by wallet         | `/:address`                              |
-| Get decoded transactions by wallet        | `/:address/verbose`                      |
-| Get transaction by hash                   | `/transaction/:transaction_hash`         |
-| Get decoded transaction by hash           | `/transaction/:transaction_hash/verbose` |
-| Get NFT transfers by wallet               | `/:address/nft/transfers`                |
-| Get NFT transfers by contract             | `/nft/:address/transfers`                |
-| Get NFT transfers from a block to a block | `/nft/transfers`                         |
-| Get NFT transfers by block                | `/block/:block_hash/nft/transfers`       |
-| Get NFT transfers by token id             | `/nft/:address/transfers`                |
-| Get ERC20 transfers by wallet             | `/:address/erc20/transfers`              |
-| Get ERC20 transfers by contract           | `/erc20/:address/transfers`              |
-| Get ERC20 mints                           | `/erc20/mints`                           |
-| Get ERC20 burns                           | `/erc20/burns`                           |
-| Get ERC20 approvals                       | `/erc20/approvals`                       |
-| Get ERC20 metadata by contract            | `/erc20/metadata`                        |
-| Get ERC20 metadata by symbol              | `/erc20/metadata/symbol`                 |
+| Name                               | Endpoint                               | API Reference                                                                        |
+| ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
+| Get Wallet History                 | /:address/history                      | [Method Documentation](/web3-data-api/evm/reference/get-wallet-history)              |
+| Get Native Transactions by Wallet  | /:address                              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-transactions)         |
+| Get Decoded Transactions by Wallet | /:address/verbose                      | [Method Documentation](/web3-data-api/evm/reference/get-decoded-wallet-transaction)  |
+| Get Transaction by Hash            | /transaction/:transaction_hash         | [Method Documentation](/web3-data-api/evm/reference/get-transaction)                 |
+| Get Decoded Transaction by Hash    | /transaction/:transaction_hash/verbose | [Method Documentation](/web3-data-api/evm/reference/get-decoded-transaction)         |
+| Get NFT Transfers by Wallet        | /:address/nft/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nft-transfers)        |
+| Get NFT Transfers by Contract      | /nft/:address/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-nft-contract-transfers)      |
+| Get NFT Transfers From a Block     | /nft/transfers                         | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers-from-to-block) |
+| Get NFT Transfers by Block         | /block/:block_hash/nft/transfers       | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers-by-block)      |
+| Get NFT Transfers by Token ID      | /nft/:address/:token_id/transfers      | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers)               |
+| Get ERC20 Transfers by Wallet      | /:address/erc20/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
+| Get ERC20 Transfers by Contract    | /erc20/:address/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
 
 ## How many entities are supported?
 
-We currently support over 500 entities and around 6,000 address labels, with the highest coverage across Ethereum, Polygon, Binance, Optimism, Base, and Arbitrum. The supported entities include:
+We currently support over 500 entities and around 6,000 address labels, with the highest coverage across Ethereum, Polygon, Binance, Optimism, Base, and Arbitrum. The supported categories include:
 
-**Centralized Exchanges**
-
-- Coinbase
-- Kraken
-- Binance
-- Bittrex
-- Bitfinex
-- ...plus many more
-
-**Decentralized Exchanges**
-
-- Uniswap
-- Aave
-- 1inch
-- Pancakeswap
-- Sushiswap
-- ...plus many more
-
-**NFT Marketplaces**
-
-- OpenSea
-- Blur
-- Rarible
-- Sorare
-- LooksRare
-- ...plus many more
-
-As well as all ERC20 token and cryptocurrency contract labels.
-
-## What chains currently support entity labeling?
-
-Entity and address labeling are currently supported on the following chains:
-
-- Ethereum
-- Polygon
-- Binance Chain
-- Avalanche
-- Arbitrum
-- Optimism
-- Fantom
+- NFT Marketplace
+- Influencer
+- Decentralized Exchange
+- Centralized Exchange
+- DEX Aggregator
+- Individual
+- Bridge
+- Gaming
+- Meme
+- Staking
+- CDP
+- Derivatives
+- TradFi
+- DeFi
+- NFT Collection
+- NFT Lending
+- Lending
+- Borrowing
+- L2
+- Smart Contract Platform
+- DAO
+- Decentralized Lending
+- Yield
+- Liquid Staking
+- Restaking
+- Fund
+- Real World Assets
+- Privacy
+- MEV
+- Stablecoin
+- Crosschain Interoperability
+- Gambling
+- Wallet
+- Crypto Tax
+- Misc
 
 ## Future Enhancements
 
