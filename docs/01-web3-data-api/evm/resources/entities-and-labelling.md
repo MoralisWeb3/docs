@@ -61,7 +61,7 @@ Any endpoint that includes a `to_address` and `from_address`, the endpoints are 
 
 | Name                               | Endpoint                               | API Reference                                                                        |
 | ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| Get Wallet History                 | /:address/history                      | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
+| Get Wallet History                 | /wallets/:address/history              | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
 | Get Native Transactions by Wallet  | /:address                              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-transactions)         |
 | Get Decoded Transactions by Wallet | /:address/verbose                      | [Method Documentation](/web3-data-api/evm/reference/get-decoded-wallet-transaction)  |
 | Get Transaction by Hash            | /transaction/:transaction_hash         | [Method Documentation](/web3-data-api/evm/reference/get-transaction)                 |
