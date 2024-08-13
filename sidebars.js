@@ -389,6 +389,10 @@ const sidebars = {
       ],
     },
     {
+      type: "doc",
+      id: "rpc-nodes/extended-rpc-methods",
+    },
+    {
       type: "category",
       label: "API Reference",
       link: {
