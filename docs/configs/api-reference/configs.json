@@ -56018,6 +56018,2184 @@
         }
       ],
       "codeSamples": []
+    },
+    "eth_getTransactions": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Native Transactions by Wallet Address",
+      "description": "Retrieves native transactions for a specified wallet address. Optional parameters allow filtering by block range, limiting the number of results, and paginating through transactions using a cursor.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving transactions by wallet address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTransactions"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the wallet address and optional filters.",
+            "example": [
+              {
+                "address": "0x357C52eBaDAd41B68C0950E2c103576e38D06BcC",
+                "fromBlock": 19943515,
+                "toBlock": 19943536,
+                "limit": 100,
+                "cursor": "eyJhbGciOiJIUzI1NiJ9..."
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the list of transactions and pagination details.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "The transaction details and pagination data.",
+                "fields": [
+                  {
+                    "name": "cursor",
+                    "type": "string",
+                    "required": false,
+                    "description": "Cursor for paginating to the next set of transactions.",
+                    "example": "eyJhbGciOiJIUzI1NiJ9..."
+                  },
+                  {
+                    "name": "page_size",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of transactions returned in the current page.",
+                    "example": 100
+                  },
+                  {
+                    "name": "page",
+                    "type": "number",
+                    "required": true,
+                    "description": "Current page number.",
+                    "example": 0
+                  },
+                  {
+                    "name": "result",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "description": "Details of a single transaction.",
+                      "fields": [
+                        {
+                          "name": "hash",
+                          "type": "string",
+                          "required": true,
+                          "description": "The transaction hash.",
+                          "example": "0x3a2d5156ceb80e717443cb23baebf47823a31b4ec4a96415436649af9cde0070"
+                        },
+                        {
+                          "name": "nonce",
+                          "type": "string",
+                          "required": true,
+                          "description": "Transaction nonce.",
+                          "example": "10132"
+                        },
+                        {
+                          "name": "transaction_index",
+                          "type": "string",
+                          "required": true,
+                          "description": "Index of the transaction within the block.",
+                          "example": "19"
+                        },
+                        {
+                          "name": "from_address",
+                          "type": "string",
+                          "required": true,
+                          "description": "Address of the sender.",
+                          "example": "0x357c52ebadad41b68c0950e2c103576e38d06bcc"
+                        },
+                        {
+                          "name": "to_address",
+                          "type": "string",
+                          "required": true,
+                          "description": "Address of the recipient.",
+                          "example": "0x7bcf15e64797bcf97f2dccaa5e83fe62cd2ed2b1"
+                        },
+                        {
+                          "name": "value",
+                          "type": "string",
+                          "required": true,
+                          "description": "Value transferred in the transaction.",
+                          "example": "0"
+                        },
+                        {
+                          "name": "gas",
+                          "type": "string",
+                          "required": true,
+                          "description": "Gas limit provided by the sender.",
+                          "example": "460671"
+                        },
+                        {
+                          "name": "gas_price",
+                          "type": "string",
+                          "required": true,
+                          "description": "Gas price provided by the sender in wei.",
+                          "example": "10570000000"
+                        },
+                        {
+                          "name": "input",
+                          "type": "string",
+                          "required": true,
+                          "description": "The data sent along with the transaction.",
+                          "example": "0x17c071910000000000000000000000000000000000000000000000000000000000000020..."
+                        },
+                        {
+                          "name": "receipt_cumulative_gas_used",
+                          "type": "string",
+                          "required": true,
+                          "description": "Total gas used when this transaction was included in the block.",
+                          "example": "8032769"
+                        },
+                        {
+                          "name": "receipt_gas_used",
+                          "type": "string",
+                          "required": true,
+                          "description": "The amount of gas used by this specific transaction.",
+                          "example": "460671"
+                        },
+                        {
+                          "name": "receipt_status",
+                          "type": "string",
+                          "required": true,
+                          "description": "Status of the transaction (1 = success, 0 = failure).",
+                          "example": "1"
+                        },
+                        {
+                          "name": "block_timestamp",
+                          "type": "string",
+                          "required": true,
+                          "description": "Timestamp when the block was mined.",
+                          "example": "1709214105000"
+                        },
+                        {
+                          "name": "block_number",
+                          "type": "string",
+                          "required": true,
+                          "description": "Number of the block that contains the transaction.",
+                          "example": "8491447"
+                        },
+                        {
+                          "name": "block_hash",
+                          "type": "string",
+                          "required": true,
+                          "description": "Hash of the block that contains the transaction.",
+                          "example": "0x3c9c8a47d2b3203bc181e493ee6caa8f6e34192646cc567303ad79aa10675b28"
+                        },
+                        {
+                          "name": "transaction_fee",
+                          "type": "string",
+                          "required": true,
+                          "description": "The fee paid for the transaction in ether.",
+                          "example": "0.00486929247"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getDecodedTransactions": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get Decoded Wallet Transactions by Wallet Address",
+      "description": "Retrieves the transaction history of a specified wallet address with decoded transaction data. Optional parameters allow for including NFT metadata and specifying the order of results.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving decoded transactions by wallet address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getDecodedTransactions"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the wallet address, NFT metadata option, and result order.",
+            "example": [
+              {
+                "address": "0x737Aa707Cbca71C849e230485cAF2a7BB0ad29B8",
+                "nft_metadata": true,
+                "order": "desc"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the decoded transaction history for the specified wallet.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "An array of decoded transactions associated with the specified wallet address.",
+                "items": {
+                  "type": "object",
+                  "description": "Details of a single decoded transaction.",
+                  "fields": [
+                    {
+                      "name": "hash",
+                      "type": "string",
+                      "required": true,
+                      "description": "The transaction hash.",
+                      "example": "0x3a2d5156ceb80e717443cb23baebf47823a31b4ec4a96415436649af9cde0070"
+                    },
+                    {
+                      "name": "nonce",
+                      "type": "string",
+                      "required": true,
+                      "description": "Transaction nonce.",
+                      "example": "10132"
+                    },
+                    {
+                      "name": "from_address",
+                      "type": "string",
+                      "required": true,
+                      "description": "Address of the sender.",
+                      "example": "0x737Aa707Cbca71C849e230485cAF2a7BB0ad29B8"
+                    },
+                    {
+                      "name": "to_address",
+                      "type": "string",
+                      "required": true,
+                      "description": "Address of the recipient.",
+                      "example": "0x7bcf15e64797bcf97f2dccaa5e83fe62cd2ed2b1"
+                    },
+                    {
+                      "name": "value",
+                      "type": "string",
+                      "required": true,
+                      "description": "Value transferred in the transaction.",
+                      "example": "0"
+                    },
+                    {
+                      "name": "gas",
+                      "type": "string",
+                      "required": true,
+                      "description": "Gas limit provided by the sender.",
+                      "example": "460671"
+                    },
+                    {
+                      "name": "gas_price",
+                      "type": "string",
+                      "required": true,
+                      "description": "Gas price provided by the sender in wei.",
+                      "example": "10570000000"
+                    },
+                    {
+                      "name": "input",
+                      "type": "string",
+                      "required": true,
+                      "description": "The data sent along with the transaction.",
+                      "example": "0x17c071910000000000000000000000000000000000000000000000000000000000000020..."
+                    },
+                    {
+                      "name": "receipt_status",
+                      "type": "string",
+                      "required": true,
+                      "description": "Status of the transaction (1 = success, 0 = failure).",
+                      "example": "1"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "required": true,
+                      "description": "Timestamp when the block was mined.",
+                      "example": "1709214105000"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "required": true,
+                      "description": "Number of the block that contains the transaction.",
+                      "example": "8491447"
+                    },
+                    {
+                      "name": "block_hash",
+                      "type": "string",
+                      "required": true,
+                      "description": "Hash of the block that contains the transaction.",
+                      "example": "0x3c9c8a47d2b3203bc181e493ee6caa8f6e34192646cc567303ad79aa10675b28"
+                    },
+                    {
+                      "name": "transaction_fee",
+                      "type": "string",
+                      "required": true,
+                      "description": "The fee paid for the transaction in ether.",
+                      "example": "0.00486929247"
+                    },
+                    {
+                      "name": "nft_metadata",
+                      "type": "object",
+                      "required": false,
+                      "description": "Optional metadata related to NFTs involved in the transaction, if requested.",
+                      "fields": [
+                        {
+                          "name": "token_id",
+                          "type": "string",
+                          "description": "The ID of the NFT token.",
+                          "example": "12345"
+                        },
+                        {
+                          "name": "token_uri",
+                          "type": "string",
+                          "description": "The URI pointing to the NFT metadata.",
+                          "example": "https://metadata.example.com/token/12345"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the NFT.",
+                          "example": "CryptoKitty #12345"
+                        },
+                        {
+                          "name": "image",
+                          "type": "string",
+                          "description": "The image URI of the NFT.",
+                          "example": "https://images.example.com/token/12345.png"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTokenBalances": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get ERC20 Token Balances by Wallet",
+      "description": "Retrieves the balances of ERC20 tokens for a specified wallet address. Optional parameters include filtering by specific token addresses, excluding spam tokens, and setting a specific block number.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving ERC20 token balances by wallet address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTokenBalances"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the wallet address, optional token addresses, exclusion of spam tokens, and block number.",
+            "example": [
+              {
+                "address": "0xcB1C1FdE09f811B294172696404e88E658659905",
+                "tokenAddresses": [],
+                "excludeSpam": true,
+                "toBlock": 12321
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the ERC20 token balances for the specified wallet.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "An array of ERC20 token balances associated with the specified wallet address.",
+                "items": {
+                  "type": "object",
+                  "description": "Details of a single ERC20 token balance.",
+                  "fields": [
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "required": true,
+                      "description": "The contract address of the ERC20 token.",
+                      "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true,
+                      "description": "The name of the ERC20 token.",
+                      "example": "Kylin Network"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "required": true,
+                      "description": "The symbol of the ERC20 token.",
+                      "example": "KYL"
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "required": true,
+                      "description": "The URL to the logo image of the token.",
+                      "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                    },
+                    {
+                      "name": "thumbnail",
+                      "type": "string",
+                      "required": true,
+                      "description": "The URL to the thumbnail image of the token.",
+                      "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "number",
+                      "required": true,
+                      "description": "The number of decimals the token uses.",
+                      "example": 18
+                    },
+                    {
+                      "name": "balance",
+                      "type": "string",
+                      "required": true,
+                      "description": "The balance of the token in the wallet, as a string representation of the integer value.",
+                      "example": "123456789"
+                    },
+                    {
+                      "name": "possible_spam",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Indicates if the token is flagged as possible spam.",
+                      "example": false
+                    },
+                    {
+                      "name": "verified_contract",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Indicates if the token contract is verified.",
+                      "example": false
+                    }
+                  ]
+                },
+                "example": [
+                  {
+                    "token_address": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09",
+                    "name": "Kylin Network",
+                    "symbol": "KYL",
+                    "logo": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png",
+                    "thumbnail": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png",
+                    "decimals": 18,
+                    "balance": "123456789",
+                    "possible_spam": false,
+                    "verified_contract": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "eth_getTokenPrice": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get ERC20 Token Price by Token Address",
+      "description": "Retrieves the current price of an ERC20 token based on its contract address. Optional parameters include specifying an exchange address, retrieving data at a specific block number, and including percentage change in price over the last 24 hours.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving the price of an ERC20 token by its contract address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTokenPrice"
+          },
+          {
+            "name": "params",
+            "type": "rpcArray",
+            "required": true,
+            "description": "Parameters for the method, including the token address, optional exchange address, block number, and additional data options.",
+            "example": [
+              {
+                "address": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+                "exchange": "0x123",
+                "toBlock": 12321,
+                "include": "percent_change"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the price data for the specified ERC20 token.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "An object containing price information about the ERC20 token.",
+                "fields": [
+                  {
+                    "name": "tokenName",
+                    "type": "string",
+                    "required": true,
+                    "description": "The name of the token.",
+                    "example": "Kylin Network"
+                  },
+                  {
+                    "name": "tokenSymbol",
+                    "type": "string",
+                    "required": true,
+                    "description": "The symbol of the token.",
+                    "example": "KYL"
+                  },
+                  {
+                    "name": "tokenLogo",
+                    "type": "string",
+                    "required": true,
+                    "description": "The URL to the token's logo image.",
+                    "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                  },
+                  {
+                    "name": "tokenDecimals",
+                    "type": "string",
+                    "required": true,
+                    "description": "The number of decimals the token uses.",
+                    "example": "18"
+                  },
+                  {
+                    "name": "nativePrice",
+                    "type": "object",
+                    "required": true,
+                    "description": "An object containing the token's price in native currency.",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true,
+                        "description": "The value of the token in the native currency.",
+                        "example": "8409770570506626"
+                      },
+                      {
+                        "name": "decimals",
+                        "type": "number",
+                        "required": true,
+                        "description": "The number of decimals for the native currency.",
+                        "example": 18
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "required": true,
+                        "description": "The name of the native currency.",
+                        "example": "Ether"
+                      },
+                      {
+                        "name": "symbol",
+                        "type": "string",
+                        "required": true,
+                        "description": "The symbol of the native currency.",
+                        "example": "ETH"
+                      },
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "required": true,
+                        "description": "The contract address of the native currency.",
+                        "example": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "usdPrice",
+                    "type": "number",
+                    "required": true,
+                    "description": "The price of the token in USD.",
+                    "example": 19.722370676
+                  },
+                  {
+                    "name": "usdPriceFormatted",
+                    "type": "string",
+                    "required": true,
+                    "description": "The formatted USD price of the token.",
+                    "example": "19.722370676"
+                  },
+                  {
+                    "name": "24hrPercentChange",
+                    "type": "string",
+                    "required": true,
+                    "description": "The percentage change in price over the last 24 hours.",
+                    "example": "-0.8842730258590583"
+                  },
+                  {
+                    "name": "exchangeAddress",
+                    "type": "string",
+                    "required": true,
+                    "description": "The address of the exchange where the token is traded.",
+                    "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                  },
+                  {
+                    "name": "exchangeName",
+                    "type": "string",
+                    "required": true,
+                    "description": "The name of the exchange where the token is traded.",
+                    "example": "Uniswap v3"
+                  },
+                  {
+                    "name": "tokenAddress",
+                    "type": "string",
+                    "required": true,
+                    "description": "The contract address of the token.",
+                    "example": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c"
+                  },
+                  {
+                    "name": "toBlock",
+                    "type": "string",
+                    "required": true,
+                    "description": "The block number at which the price was retrieved.",
+                    "example": "16314545"
+                  },
+                  {
+                    "name": "possibleSpam",
+                    "type": "boolean",
+                    "required": true,
+                    "description": "Indicates if the token is flagged as possible spam.",
+                    "example": false
+                  },
+                  {
+                    "name": "verifiedContract",
+                    "type": "boolean",
+                    "required": true,
+                    "description": "Indicates if the token contract is verified.",
+                    "example": true
+                  },
+                  {
+                    "name": "pairAddress",
+                    "type": "string",
+                    "required": true,
+                    "description": "The address of the liquidity pair.",
+                    "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                  },
+                  {
+                    "name": "pairTotalLiquidityUsd",
+                    "type": "string",
+                    "required": true,
+                    "description": "The total liquidity of the token pair in USD.",
+                    "example": "123.45"
+                  }
+                ],
+                "example": {
+                  "tokenName": "Kylin Network",
+                  "tokenSymbol": "KYL",
+                  "tokenLogo": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png",
+                  "tokenDecimals": "18",
+                  "nativePrice": {
+                    "value": "8409770570506626",
+                    "decimals": 18,
+                    "name": "Ether",
+                    "symbol": "ETH",
+                    "address": "string"
+                  },
+                  "usdPrice": 19.722370676,
+                  "usdPriceFormatted": "19.722370676",
+                  "24hrPercentChange": "-0.8842730258590583",
+                  "exchangeAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+                  "exchangeName": "Uniswap v3",
+                  "tokenAddress": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c",
+                  "toBlock": "16314545",
+                  "possibleSpam": false,
+                  "verifiedContract": true,
+                  "pairAddress": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+                  "pairTotalLiquidityUsd": "123.45"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "eth_getTokenMetadata": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get ERC20 Token Metadata by Token Address",
+      "description": "Retrieves metadata information about ERC20 tokens based on their contract addresses. This includes details such as the token's name, symbol, logo, total supply, and various social media links.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving metadata of ERC20 tokens by their contract addresses.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getTokenMetadata"
+          },
+          {
+            "name": "params",
+            "type": "object",
+            "required": true,
+            "description": "Parameters for the method, including the addresses of the tokens.",
+            "fields": [
+              {
+                "name": "addresses",
+                "type": "array",
+                "required": true,
+                "description": "An array of ERC20 token contract addresses.",
+                "items": {
+                  "type": "string",
+                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the metadata information for the specified ERC20 tokens.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "An array containing metadata information about the ERC20 tokens.",
+                "items": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "required": true,
+                      "description": "The contract address of the token.",
+                      "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                    },
+                    {
+                      "name": "address_label",
+                      "type": "string",
+                      "required": true,
+                      "description": "A label for the token address.",
+                      "example": "Binance 1"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true,
+                      "description": "The name of the token.",
+                      "example": "Kylin Network"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "required": true,
+                      "description": "The symbol of the token.",
+                      "example": "KYL"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "required": true,
+                      "description": "The number of decimals the token uses.",
+                      "example": "18"
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "required": true,
+                      "description": "The URL to the token's logo image.",
+                      "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                    },
+                    {
+                      "name": "logo_hash",
+                      "type": "string",
+                      "required": true,
+                      "description": "A hash of the logo image for verification.",
+                      "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                    },
+                    {
+                      "name": "thumbnail",
+                      "type": "string",
+                      "required": true,
+                      "description": "The URL to a thumbnail image of the token.",
+                      "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                    },
+                    {
+                      "name": "total_supply",
+                      "type": "string",
+                      "required": true,
+                      "description": "The total supply of the token.",
+                      "example": "420689899999994793099999999997400"
+                    },
+                    {
+                      "name": "total_supply_formatted",
+                      "type": "string",
+                      "required": true,
+                      "description": "The formatted total supply of the token.",
+                      "example": "420689899999994.7930999999999974"
+                    },
+                    {
+                      "name": "fully_diluted_valuation",
+                      "type": "string",
+                      "required": true,
+                      "description": "The fully diluted valuation of the token.",
+                      "example": "3407271444.05"
+                    },
+                    {
+                      "name": "block_number",
+                      "type": "string",
+                      "required": true,
+                      "description": "The block number at which the metadata was retrieved.",
+                      "example": "string"
+                    },
+                    {
+                      "name": "validated",
+                      "type": "number",
+                      "required": true,
+                      "description": "Indicates if the token metadata is validated (0 or 1).",
+                      "example": 0
+                    },
+                    {
+                      "name": "created_at",
+                      "type": "string",
+                      "required": true,
+                      "description": "The date and time when the token metadata was created.",
+                      "example": "string"
+                    },
+                    {
+                      "name": "possible_spam",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Indicates if the token is flagged as possible spam.",
+                      "example": false
+                    },
+                    {
+                      "name": "verified_contract",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Indicates if the token contract is verified.",
+                      "example": false
+                    },
+                    {
+                      "name": "categories",
+                      "type": "array",
+                      "required": true,
+                      "description": "Categories the token belongs to.",
+                      "items": {
+                        "type": "string",
+                        "example": "stablecoin"
+                      }
+                    },
+                    {
+                      "name": "links",
+                      "type": "object",
+                      "required": true,
+                      "description": "Social media and other relevant links for the token.",
+                      "fields": [
+                        {
+                          "name": "discord",
+                          "type": "string",
+                          "required": false,
+                          "description": "Discord link.",
+                          "example": "https://discord.com/invite/0xPolygon"
+                        },
+                        {
+                          "name": "medium",
+                          "type": "string",
+                          "required": false,
+                          "description": "Medium blog link.",
+                          "example": "https://polygontech.medium.com"
+                        },
+                        {
+                          "name": "reddit",
+                          "type": "string",
+                          "required": false,
+                          "description": "Reddit link.",
+                          "example": "https://www.reddit.com/r/polygonnetwork"
+                        },
+                        {
+                          "name": "telegram",
+                          "type": "string",
+                          "required": false,
+                          "description": "Telegram link.",
+                          "example": "https://t.me/channelholo"
+                        },
+                        {
+                          "name": "twitter",
+                          "type": "string",
+                          "required": false,
+                          "description": "Twitter link.",
+                          "example": "https://twitter.com/0xPolygon"
+                        },
+                        {
+                          "name": "website",
+                          "type": "string",
+                          "required": false,
+                          "description": "Official website.",
+                          "example": "https://polygon.technology"
+                        },
+                        {
+                          "name": "github",
+                          "type": "string",
+                          "required": false,
+                          "description": "GitHub link.",
+                          "example": "https://github.com/maticnetwork/contracts"
+                        },
+                        {
+                          "name": "bitbucket",
+                          "type": "string",
+                          "required": false,
+                          "description": "Bitbucket link.",
+                          "example": "https://bitbucket.org"
+                        },
+                        {
+                          "name": "facebook",
+                          "type": "string",
+                          "required": false,
+                          "description": "Facebook link.",
+                          "example": "https://www.facebook.com/holohost"
+                        },
+                        {
+                          "name": "instagram",
+                          "type": "string",
+                          "required": false,
+                          "description": "Instagram link.",
+                          "example": "https://www.instagram.com/0xpolygon"
+                        },
+                        {
+                          "name": "linkedin",
+                          "type": "string",
+                          "required": false,
+                          "description": "LinkedIn link.",
+                          "example": "https://linkedin.com/company/polygonlabs"
+                        },
+                        {
+                          "name": "tiktok",
+                          "type": "string",
+                          "required": false,
+                          "description": "TikTok link.",
+                          "example": "https://tiktok.com"
+                        },
+                        {
+                          "name": "youtube",
+                          "type": "string",
+                          "required": false,
+                          "description": "YouTube link.",
+                          "example": "https://www.youtube.com/channel/UCvjEq17wWLHFVYwU3OOXPtQ"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": "400",
+          "description": "Bad Request. The request was invalid or missing parameters.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32602
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Invalid params"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "500",
+          "description": "Internal Server Error. An error occurred on the server side.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32603
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Internal server error"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "eth_getNFTBalances": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get NFTs by Wallet Address",
+      "description": "Retrieves the list of NFTs owned by a specific wallet address, with options to limit the number of results and paginate through them.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving NFTs owned by a wallet address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getNFTBalances"
+          },
+          {
+            "name": "params",
+            "type": "object",
+            "required": true,
+            "description": "Parameters for the method, including the wallet address, limit, and cursor for pagination.",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "required": true,
+                "description": "The wallet address for which to retrieve NFTs.",
+                "example": "0xBCF1b029350E61D1Bd7fCCb69e545495A508dc80"
+              },
+              {
+                "name": "limit",
+                "type": "number",
+                "required": false,
+                "description": "The maximum number of NFTs to return in the response.",
+                "example": 10
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "required": false,
+                "description": "A pagination cursor to fetch the next set of results.",
+                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWdlIjoyLCJ0b2tlbkFkZHJlc3MiOiIweGEyOGU5ZjVhNzE4OTAzNDBjNTFjZmEwOGUwOGQ3MDVkOGM4MjMzZjgiLCJ0b2tlbklkIjoiMjMwMSIsImlhdCI6MTcyMDE2MDYzNH0.ZCdxcBvP_tvTg4K-N0otTtmwQPNSEZduWTTlaf_8j1o"
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the list of NFTs owned by the specified wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "An object containing the NFT balances.",
+                "fields": [
+                  {
+                    "name": "nfts",
+                    "type": "array",
+                    "required": true,
+                    "description": "An array of NFTs owned by the wallet address.",
+                    "items": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "token_id",
+                          "type": "string",
+                          "required": true,
+                          "description": "The token ID of the NFT.",
+                          "example": "1"
+                        },
+                        {
+                          "name": "contract_address",
+                          "type": "string",
+                          "required": true,
+                          "description": "The contract address of the NFT.",
+                          "example": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcdef"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "required": true,
+                          "description": "The name of the NFT.",
+                          "example": "Cool NFT"
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "required": true,
+                          "description": "The symbol of the NFT (if applicable).",
+                          "example": "CNFT"
+                        },
+                        {
+                          "name": "metadata",
+                          "type": "object",
+                          "required": true,
+                          "description": "Metadata associated with the NFT.",
+                          "fields": [
+                            {
+                              "name": "image",
+                              "type": "string",
+                              "required": false,
+                              "description": "URL to the image of the NFT.",
+                              "example": "https://example.com/image.png"
+                            },
+                            {
+                              "name": "attributes",
+                              "type": "array",
+                              "required": false,
+                              "description": "Attributes of the NFT.",
+                              "items": {
+                                "type": "object",
+                                "fields": [
+                                  {
+                                    "name": "trait_type",
+                                    "type": "string",
+                                    "required": true,
+                                    "description": "The type of attribute.",
+                                    "example": "Background"
+                                  },
+                                  {
+                                    "name": "value",
+                                    "type": "string",
+                                    "required": true,
+                                    "description": "The value of the attribute.",
+                                    "example": "Blue"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "cursor",
+                    "type": "string",
+                    "required": false,
+                    "description": "The pagination cursor for fetching additional results.",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWdlIjoyLCJ0b2tlbkFkZHJlc3MiOiIweGEyOGU5ZjVhNzE4OTAzNDBjNTFjZmEwOGUwOGQ3MDVkOGM4MjMzZjgiLCJ0b2tlbklkIjoiMjMwMiIsImlhdCI6MTcyMDE2MDYzNH0.ZCdxcBvP_tvTg4K-N0otTtmwQPNSEZduWTTlaf_8j1o"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": "400",
+          "description": "Bad Request. The request was invalid or missing parameters.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32602
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Invalid params"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "500",
+          "description": "Internal Server Error. An error occurred on the server side.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32603
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Internal server error"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "eth_getNFTCollections": {
+      "apiHost": "https://site1.moralis-nodes.com",
+      "summary": "Get NFT Collections by Wallet Address",
+      "description": "Retrieves the list of NFT collections owned by a specific wallet address. Includes collection details such as the logo and count of NFTs.",
+      "method": "POST",
+      "path": "/:chain/:apiKey",
+      "pathParams": [
+        {
+          "name": "chain",
+          "type": "string",
+          "required": true,
+          "description": "The blockchain to interact with.",
+          "example": "eth",
+          "enum": [
+            "eth",
+            "sepolia",
+            "holesky",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "amoy",
+            "bsc",
+            "bsc-testnet",
+            "arbitrum",
+            "arbitrum-sepolia",
+            "optimism",
+            "optimism-sepolia",
+            "gnosis",
+            "gnosis-testnet",
+            "linea",
+            "linea-sepolia",
+            "avalanche",
+            "moonbeam",
+            "moonriver",
+            "moonbase",
+            "blast",
+            "blast-sepolia",
+            "mantle",
+            "mantle-sepolia",
+            "polygon-zkevm",
+            "polygon-zkevm-cardona",
+            "zksync",
+            "zksync-sepolia",
+            "zetachain",
+            "zetachain-testnet",
+            "fantom",
+            "opbnb"
+          ]
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "required": true,
+          "description": "Your API key for authentication.",
+          "example": "YOUR_API_KEY"
+        }
+      ],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for retrieving NFT collections owned by a wallet address.",
+        "type": "object",
+        "fields": [
+          {
+            "name": "jsonrpc",
+            "type": "string",
+            "required": true,
+            "description": "JSON-RPC version (typically 2.0).",
+            "example": "2.0"
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "The request identifier.",
+            "example": 1
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "required": true,
+            "description": "The JSON-RPC method being invoked.",
+            "example": "eth_getNFTCollections"
+          },
+          {
+            "name": "params",
+            "type": "object",
+            "required": true,
+            "description": "Parameters for the method, including the wallet address and optional limit.",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "required": true,
+                "description": "The wallet address for which to retrieve NFT collections.",
+                "example": "0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5"
+              },
+              {
+                "name": "limit",
+                "type": "number",
+                "required": false,
+                "description": "The maximum number of NFT collections to return in the response.",
+                "example": 10
+              }
+            ]
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the list of NFT collections owned by the specified wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "required": true,
+                "description": "An object containing the NFT collections.",
+                "fields": [
+                  {
+                    "name": "status",
+                    "type": "string",
+                    "required": true,
+                    "description": "Status of the request.",
+                    "example": "SYNCING"
+                  },
+                  {
+                    "name": "page",
+                    "type": "number",
+                    "required": true,
+                    "description": "Current page number of the result.",
+                    "example": 2
+                  },
+                  {
+                    "name": "page_size",
+                    "type": "number",
+                    "required": true,
+                    "description": "Size of each page of results.",
+                    "example": 100
+                  },
+                  {
+                    "name": "cursor",
+                    "type": "string",
+                    "required": false,
+                    "description": "Pagination cursor for fetching additional results.",
+                    "example": "string"
+                  },
+                  {
+                    "name": "result",
+                    "type": "array",
+                    "required": true,
+                    "description": "Array of NFT collections owned by the wallet address.",
+                    "items": {
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "token_address",
+                          "type": "string",
+                          "required": true,
+                          "description": "The contract address of the NFT collection.",
+                          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                        },
+                        {
+                          "name": "contract_type",
+                          "type": "string",
+                          "required": true,
+                          "description": "Type of contract (e.g., ERC721).",
+                          "example": "ERC721"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "required": true,
+                          "description": "The name of the NFT collection.",
+                          "example": "CryptoKitties"
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "required": true,
+                          "description": "The symbol of the NFT collection.",
+                          "example": "RARI"
+                        },
+                        {
+                          "name": "possible_spam",
+                          "type": "boolean",
+                          "required": true,
+                          "description": "Indicates if the collection might be spam.",
+                          "example": false
+                        },
+                        {
+                          "name": "verified_collection",
+                          "type": "boolean",
+                          "required": true,
+                          "description": "Indicates if the collection is verified.",
+                          "example": false
+                        },
+                        {
+                          "name": "count",
+                          "type": "number",
+                          "required": true,
+                          "description": "Number of NFTs in the collection owned by the wallet address.",
+                          "example": 5
+                        },
+                        {
+                          "name": "collection_logo",
+                          "type": "string",
+                          "required": true,
+                          "description": "URL to the logo image of the NFT collection.",
+                          "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                        },
+                        {
+                          "name": "collection_banner_image",
+                          "type": "string",
+                          "required": true,
+                          "description": "URL to the banner image of the NFT collection.",
+                          "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": "400",
+          "description": "Bad Request. The request was invalid or missing parameters.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32602
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Invalid params"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "status": "500",
+          "description": "Internal Server Error. An error occurred on the server side.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "jsonrpc",
+                "type": "string",
+                "required": true,
+                "description": "JSON-RPC version (typically 2.0).",
+                "example": "2.0"
+              },
+              {
+                "name": "id",
+                "type": "number",
+                "required": true,
+                "description": "The request identifier.",
+                "example": 1
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "required": true,
+                "description": "Error details.",
+                "fields": [
+                  {
+                    "name": "code",
+                    "type": "number",
+                    "required": true,
+                    "description": "Error code.",
+                    "example": -32603
+                  },
+                  {
+                    "name": "message",
+                    "type": "string",
+                    "required": true,
+                    "description": "Error message.",
+                    "example": "Internal server error"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
