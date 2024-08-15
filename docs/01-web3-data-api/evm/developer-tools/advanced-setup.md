@@ -25,7 +25,7 @@ Available packages:
 For example:
 
 ```bash npm2yarn
-npm i @moralisweb3/core @moralisweb3/evm-api
+npm i @moralisweb3/core @moralisweb3/api-utils @moralisweb3/evm-api
 ```
 
 ### Set Up Moralis
@@ -34,11 +34,12 @@ To set up Moralis, you must register the modules to the core package at the top 
 
 ```javascript
 import MoralisCore from "@moralisweb3/core";
+import MoralisApiUtils from "@moralisweb3/api-utils"; // required for authentication with apiKey
 import MoralisEvmApi from "@moralisweb3/evm-api";
 
 const core = MoralisCore.create();
 // Register all imported modules to the @moralisweb3/core module
-core.registerModules([MoralisEvmApi]);
+core.registerModules([MoralisApiUtils, MoralisEvmApi]);
 ```
 
 Then, initialize the app similarly to when using the umbrella `moralis` package. You only need to provide a configuration that is required by the packages. So, if you don't include an API package, you might not need to include the `apiKey`:
@@ -56,7 +57,7 @@ Now you can use any functionality from the installed modules. The only differenc
 import MoralisEvmApi from "@moralisweb3/evm-api";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const evmApi = core.getModule < MoralisEvmApi > MoralisEvmApi.moduleName;
+const evmApi = core.getModule<MoralisEvmApi>(MoralisEvmApi.moduleName);
 evmApi.block.getBlock({
   chain: EvmChain.ETHEREUM,
   blockNumberOrHash: "",
