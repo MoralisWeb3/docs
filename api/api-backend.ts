@@ -22,7 +22,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       (req.headers["x-forwarded-for"] as string) ||
       req.connection.remoteAddress;
     const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
-    console.log({ utcDay, utcMonth, key });
+    // console.log({ utcDay, utcMonth, key });
     // if (
     //   headers["X-API-Key"] !== key ||
     //   // &&
@@ -34,17 +34,17 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     //   console.log({ hostUrl, path, method, headers, body, query });
     //   return res.status(200).json({});
     // }
-    console.log({ hostUrl, path, method, headers, body, query });
+    // console.log({ hostUrl, path, method, headers, body, query });
     if (restrictedIPs.includes(clientIp)) {
       // Return the dummy response immediately if the IP matches
-      console.log(`Request from banned IP: ${clientIp}`);
-      console.log(
-        [
-          hostUrl,
-          path,
-          qs.stringify(query || {}, { addQueryPrefix: true }),
-        ].join("")
-      );
+      // console.log(`Request from banned IP: ${clientIp}`);
+      // console.log(
+      //   [
+      //     hostUrl,
+      //     path,
+      //     qs.stringify(query || {}, { addQueryPrefix: true }),
+      //   ].join("")
+      // );
       return res.status(200).json([]);
     }
 
