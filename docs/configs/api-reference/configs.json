@@ -57166,19 +57166,12 @@
           },
           {
             "name": "params",
-            "type": "object",
+            "type": "rpcArray",
             "required": true,
-            "description": "Parameters for the method, including the addresses of the tokens.",
-            "fields": [
+            "description": "Parameters for the method, including the addresses of the tokens",
+            "example": [
               {
-                "name": "addresses",
-                "type": "array",
-                "required": true,
-                "description": "An array of ERC20 token contract addresses.",
-                "items": {
-                  "type": "string",
-                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
-                }
+                "addresses": ["0x6982508145454ce325ddbe47a25d4ec3d2311933"]
               }
             ]
           }
@@ -57360,14 +57353,14 @@
                           "type": "string",
                           "required": false,
                           "description": "Reddit link.",
-                          "example": "https://www.reddit.com/r/polygonnetwork"
+                          "example": "https://www.reddit.com/r/Polygon"
                         },
                         {
                           "name": "telegram",
                           "type": "string",
                           "required": false,
                           "description": "Telegram link.",
-                          "example": "https://t.me/channelholo"
+                          "example": "https://t.me/0xPolygon"
                         },
                         {
                           "name": "twitter",
@@ -57375,159 +57368,11 @@
                           "required": false,
                           "description": "Twitter link.",
                           "example": "https://twitter.com/0xPolygon"
-                        },
-                        {
-                          "name": "website",
-                          "type": "string",
-                          "required": false,
-                          "description": "Official website.",
-                          "example": "https://polygon.technology"
-                        },
-                        {
-                          "name": "github",
-                          "type": "string",
-                          "required": false,
-                          "description": "GitHub link.",
-                          "example": "https://github.com/maticnetwork/contracts"
-                        },
-                        {
-                          "name": "bitbucket",
-                          "type": "string",
-                          "required": false,
-                          "description": "Bitbucket link.",
-                          "example": "https://bitbucket.org"
-                        },
-                        {
-                          "name": "facebook",
-                          "type": "string",
-                          "required": false,
-                          "description": "Facebook link.",
-                          "example": "https://www.facebook.com/holohost"
-                        },
-                        {
-                          "name": "instagram",
-                          "type": "string",
-                          "required": false,
-                          "description": "Instagram link.",
-                          "example": "https://www.instagram.com/0xpolygon"
-                        },
-                        {
-                          "name": "linkedin",
-                          "type": "string",
-                          "required": false,
-                          "description": "LinkedIn link.",
-                          "example": "https://linkedin.com/company/polygonlabs"
-                        },
-                        {
-                          "name": "tiktok",
-                          "type": "string",
-                          "required": false,
-                          "description": "TikTok link.",
-                          "example": "https://tiktok.com"
-                        },
-                        {
-                          "name": "youtube",
-                          "type": "string",
-                          "required": false,
-                          "description": "YouTube link.",
-                          "example": "https://www.youtube.com/channel/UCvjEq17wWLHFVYwU3OOXPtQ"
                         }
                       ]
                     }
                   ]
                 }
-              }
-            ]
-          }
-        }
-      ],
-      "errorResponses": [
-        {
-          "status": "400",
-          "description": "Bad Request. The request was invalid or missing parameters.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "jsonrpc",
-                "type": "string",
-                "required": true,
-                "description": "JSON-RPC version (typically 2.0).",
-                "example": "2.0"
-              },
-              {
-                "name": "id",
-                "type": "number",
-                "required": true,
-                "description": "The request identifier.",
-                "example": 1
-              },
-              {
-                "name": "error",
-                "type": "object",
-                "required": true,
-                "description": "Error details.",
-                "fields": [
-                  {
-                    "name": "code",
-                    "type": "number",
-                    "required": true,
-                    "description": "Error code.",
-                    "example": -32602
-                  },
-                  {
-                    "name": "message",
-                    "type": "string",
-                    "required": true,
-                    "description": "Error message.",
-                    "example": "Invalid params"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "status": "500",
-          "description": "Internal Server Error. An error occurred on the server side.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "jsonrpc",
-                "type": "string",
-                "required": true,
-                "description": "JSON-RPC version (typically 2.0).",
-                "example": "2.0"
-              },
-              {
-                "name": "id",
-                "type": "number",
-                "required": true,
-                "description": "The request identifier.",
-                "example": 1
-              },
-              {
-                "name": "error",
-                "type": "object",
-                "required": true,
-                "description": "Error details.",
-                "fields": [
-                  {
-                    "name": "code",
-                    "type": "number",
-                    "required": true,
-                    "description": "Error code.",
-                    "example": -32603
-                  },
-                  {
-                    "name": "message",
-                    "type": "string",
-                    "required": true,
-                    "description": "Error message.",
-                    "example": "Internal server error"
-                  }
-                ]
               }
             ]
           }
@@ -57620,30 +57465,14 @@
           },
           {
             "name": "params",
-            "type": "object",
+            "type": "rpcArray",
             "required": true,
-            "description": "Parameters for the method, including the wallet address, limit, and cursor for pagination.",
-            "fields": [
+            "description": "Parameters for the method, including the wallet address and optional filters.",
+            "example": [
               {
-                "name": "address",
-                "type": "string",
-                "required": true,
-                "description": "The wallet address for which to retrieve NFTs.",
-                "example": "0xBCF1b029350E61D1Bd7fCCb69e545495A508dc80"
-              },
-              {
-                "name": "limit",
-                "type": "number",
-                "required": false,
-                "description": "The maximum number of NFTs to return in the response.",
-                "example": 10
-              },
-              {
-                "name": "cursor",
-                "type": "string",
-                "required": false,
-                "description": "A pagination cursor to fetch the next set of results.",
-                "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWdlIjoyLCJ0b2tlbkFkZHJlc3MiOiIweGEyOGU5ZjVhNzE4OTAzNDBjNTFjZmEwOGUwOGQ3MDVkOGM4MjMzZjgiLCJ0b2tlbklkIjoiMjMwMSIsImlhdCI6MTcyMDE2MDYzNH0.ZCdxcBvP_tvTg4K-N0otTtmwQPNSEZduWTTlaf_8j1o"
+                "address": "0xBCF1b029350E61D1Bd7fCCb69e545495A508dc80",
+                "limit": 10,
+                "cursor": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
               }
             ]
           }
@@ -57688,67 +57517,35 @@
                           "name": "token_id",
                           "type": "string",
                           "required": true,
-                          "description": "The token ID of the NFT.",
-                          "example": "1"
+                          "description": "The unique identifier for the NFT.",
+                          "example": "12345"
                         },
                         {
                           "name": "contract_address",
                           "type": "string",
                           "required": true,
-                          "description": "The contract address of the NFT.",
-                          "example": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcdef"
-                        },
-                        {
-                          "name": "name",
-                          "type": "string",
-                          "required": true,
-                          "description": "The name of the NFT.",
-                          "example": "Cool NFT"
-                        },
-                        {
-                          "name": "symbol",
-                          "type": "string",
-                          "required": true,
-                          "description": "The symbol of the NFT (if applicable).",
-                          "example": "CNFT"
+                          "description": "The contract address of the NFT collection.",
+                          "example": "0x7bcf15e64797bcf97f2dccaa5e83fe62cd2ed2b1"
                         },
                         {
                           "name": "metadata",
                           "type": "object",
-                          "required": true,
+                          "required": false,
                           "description": "Metadata associated with the NFT.",
                           "fields": [
+                            {
+                              "name": "name",
+                              "type": "string",
+                              "required": false,
+                              "description": "The name of the NFT.",
+                              "example": "CryptoPunk #1234"
+                            },
                             {
                               "name": "image",
                               "type": "string",
                               "required": false,
-                              "description": "URL to the image of the NFT.",
-                              "example": "https://example.com/image.png"
-                            },
-                            {
-                              "name": "attributes",
-                              "type": "array",
-                              "required": false,
-                              "description": "Attributes of the NFT.",
-                              "items": {
-                                "type": "object",
-                                "fields": [
-                                  {
-                                    "name": "trait_type",
-                                    "type": "string",
-                                    "required": true,
-                                    "description": "The type of attribute.",
-                                    "example": "Background"
-                                  },
-                                  {
-                                    "name": "value",
-                                    "type": "string",
-                                    "required": true,
-                                    "description": "The value of the attribute.",
-                                    "example": "Blue"
-                                  }
-                                ]
-                              }
+                              "description": "The image URL of the NFT.",
+                              "example": "https://ipfs.io/ipfs/Qm..."
                             }
                           ]
                         }
@@ -57759,8 +57556,22 @@
                     "name": "cursor",
                     "type": "string",
                     "required": false,
-                    "description": "The pagination cursor for fetching additional results.",
-                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWdlIjoyLCJ0b2tlbkFkZHJlc3MiOiIweGEyOGU5ZjVhNzE4OTAzNDBjNTFjZmEwOGUwOGQ3MDVkOGM4MjMzZjgiLCJ0b2tlbklkIjoiMjMwMiIsImlhdCI6MTcyMDE2MDYzNH0.ZCdxcBvP_tvTg4K-N0otTtmwQPNSEZduWTTlaf_8j1o"
+                    "description": "Cursor for paginating to the next set of NFTs.",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                  },
+                  {
+                    "name": "page_size",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of NFTs returned in the current page.",
+                    "example": 10
+                  },
+                  {
+                    "name": "page",
+                    "type": "number",
+                    "required": true,
+                    "description": "Current page number.",
+                    "example": 0
                   }
                 ]
               }
@@ -57768,98 +57579,7 @@
           }
         }
       ],
-      "errorResponses": [
-        {
-          "status": "400",
-          "description": "Bad Request. The request was invalid or missing parameters.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "jsonrpc",
-                "type": "string",
-                "required": true,
-                "description": "JSON-RPC version (typically 2.0).",
-                "example": "2.0"
-              },
-              {
-                "name": "id",
-                "type": "number",
-                "required": true,
-                "description": "The request identifier.",
-                "example": 1
-              },
-              {
-                "name": "error",
-                "type": "object",
-                "required": true,
-                "description": "Error details.",
-                "fields": [
-                  {
-                    "name": "code",
-                    "type": "number",
-                    "required": true,
-                    "description": "Error code.",
-                    "example": -32602
-                  },
-                  {
-                    "name": "message",
-                    "type": "string",
-                    "required": true,
-                    "description": "Error message.",
-                    "example": "Invalid params"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "status": "500",
-          "description": "Internal Server Error. An error occurred on the server side.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "jsonrpc",
-                "type": "string",
-                "required": true,
-                "description": "JSON-RPC version (typically 2.0).",
-                "example": "2.0"
-              },
-              {
-                "name": "id",
-                "type": "number",
-                "required": true,
-                "description": "The request identifier.",
-                "example": 1
-              },
-              {
-                "name": "error",
-                "type": "object",
-                "required": true,
-                "description": "Error details.",
-                "fields": [
-                  {
-                    "name": "code",
-                    "type": "number",
-                    "required": true,
-                    "description": "Error code.",
-                    "example": -32603
-                  },
-                  {
-                    "name": "message",
-                    "type": "string",
-                    "required": true,
-                    "description": "Error message.",
-                    "example": "Internal server error"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
+      "codeSamples": []
     },
     "eth_getNFTCollections": {
       "apiHost": "https://site1.moralis-nodes.com",
@@ -57947,23 +57667,14 @@
           },
           {
             "name": "params",
-            "type": "object",
+            "type": "rpcArray",
             "required": true,
-            "description": "Parameters for the method, including the wallet address and optional limit.",
-            "fields": [
+            "description": "Parameters for the method, including the wallet address and optional filters.",
+            "example": [
               {
-                "name": "address",
-                "type": "string",
-                "required": true,
-                "description": "The wallet address for which to retrieve NFT collections.",
-                "example": "0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5"
-              },
-              {
-                "name": "limit",
-                "type": "number",
-                "required": false,
-                "description": "The maximum number of NFT collections to return in the response.",
-                "example": 10
+                "address": "0x357C52eBaDAd41B68C0950E2c103576e38D06BcC",
+                "limit": 100,
+                "cursor": "eyJhbGciOiJIUzI1NiJ9..."
               }
             ]
           }
@@ -58136,14 +57847,14 @@
                     "type": "number",
                     "required": true,
                     "description": "Error code.",
-                    "example": -32602
+                    "example": -32600
                   },
                   {
                     "name": "message",
                     "type": "string",
                     "required": true,
                     "description": "Error message.",
-                    "example": "Invalid params"
+                    "example": "Invalid parameters"
                   }
                 ]
               }
@@ -58152,7 +57863,7 @@
         },
         {
           "status": "500",
-          "description": "Internal Server Error. An error occurred on the server side.",
+          "description": "Internal Server Error. An unexpected error occurred on the server.",
           "body": {
             "type": "object",
             "fields": [
@@ -58181,7 +57892,7 @@
                     "type": "number",
                     "required": true,
                     "description": "Error code.",
-                    "example": -32603
+                    "example": -32000
                   },
                   {
                     "name": "message",
