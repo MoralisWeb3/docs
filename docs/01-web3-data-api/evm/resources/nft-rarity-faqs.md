@@ -50,15 +50,16 @@ The following new endpoints are available:
 | Name                               | Endpoint                               | API Reference                                                                        |
 | ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
 | Get NFT Traits by Collection  (single response, limited to 5,000 traits)  | `/nft/:address/traits`              | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/getNFTTraitsByCollection)   |
-| Get NFT Traits by Collection (paginated, no limit)      | `/nft/:address/traits/paginate`              | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/getNFTTraitsByCollectionPaginate)      |
-| Get NFTs by Traits    | `/nft/:address/nfts-by-traits`              | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/getNFTByContractTraits)             |
-| Resync NFT Traits by Collection                    | `/nft/:address/traits/resync`              | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/resyncNFTRarity)             |
+| Get NFT Traits by Collection (paginated, no limit) | `/nft/:address/traits/paginate`  | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/getNFTTraitsByCollectionPaginate) |
+| Get NFTs by Traits                                 | `/nft/:address/nfts-by-traits`   | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/getNFTByContractTraits)           |
+| Resync NFT Traits by Collection                    | `/nft/:address/traits/resync`    | [Method Documentation](https://deep-index.moralis.io/api-docs-2.2/#/NFT/resyncNFTRarity)                  |
 
 NFT rarity data has been added to the following endpoints:
+
 | Name                               | Endpoint                               | API Reference                                                                        |
 | ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| Get NFTs by Wallet  | `/:address/nfts`              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nfts)   |
-| Get NFTs by Collection      | `/nft/:address`              | [Method Documentation](/web3-data-api/evm/reference/get-contract-nfts)      |
-| Get NFT Owners by Collection    | `/nft/:address/owners`              | [Method Documentation](/web3-data-api/evm/reference/get-nft-owners)             |
-| Get NFT Owners by Token Id                    | `/nft/:address/:token_id/owners`              | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-id-owners)             |
-| Get NFT Metadata                    | `/nft/:address/:token_id`              | [Method Documentation](/web3-data-api/evm/reference/get-nft-metadata)             |
+| Get NFTs by Wallet                 | `/:address/nfts`                       | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nfts)                 |
+| Get NFTs by Collection             | `/nft/:address`                        | [Method Documentation](/web3-data-api/evm/reference/get-contract-nfts)               |
+| Get NFT Owners by Collection       | `/nft/:address/owners`                 | [Method Documentation](/web3-data-api/evm/reference/get-nft-owners)                  |
+| Get NFT Owners by Token Id         | `/nft/:address/:token_id/owners`       | [Method Documentation](/web3-data-api/evm/reference/get-nft-token-id-owners)         |
+| Get NFT Metadata                   | `/nft/:address/:token_id`              | [Method Documentation](/web3-data-api/evm/reference/get-nft-metadata)                |
