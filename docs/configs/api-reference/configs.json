@@ -1403,7 +1403,7 @@
           "name": "address",
           "description": "The address of the wallet",
           "required": true,
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905",
           "type": "string"
         }
       ],
