@@ -28,6 +28,7 @@ Our latest update enhances our NFT Traits feature and introduces NFT Rarity, all
 
 ### Rarity Enrichment
 NFT rarity data has been added to the following endpoints:
+
 | Name                               | Endpoint                               | API Reference                                                                        |
 | ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
 | Get NFTs by Wallet  | `/:address/nfts`              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nfts)   |
