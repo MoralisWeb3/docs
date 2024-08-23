@@ -9,13 +9,13 @@ sidebar_position: 1
 This is the second half of a two-part tutorial. Make sure that you have gone through [part 1](/web3-data-api/evm/integrations/build-dapp-with-axelar-part-1) first. You can find the complete code for this tutorial on [GitHub](https://github.com/benjamin852/moralis-axelar/tree/main).
 :::
 
-In the [first part](/web3-data-api/evm/integrations/build-dapp-with-axelar-part-1) of this tutorial, you wrote a Solidity-based smart contract and deployed it on the Ethereum and Polygon blockchains. Now it’s time to build a decentralized application frontend that will link to that contract with [NextJS](https://nextjs.org/) - a ReactJS framework that uses server-side rendering. This frontend will allow a user to send a transaction and view it on [Axelarscan](https://axelarscan.io/).
+In the [first part](/web3-data-api/evm/integrations/Axelar/build-dapp-with-axelar-part-1) of this tutorial, you wrote a Solidity-based smart contract and deployed it on the Ethereum and Polygon blockchains. Now it’s time to build a decentralized application frontend that will link to that contract with [NextJS](https://nextjs.org/) - a ReactJS framework that uses server-side rendering. This frontend will allow a user to send a transaction and view it on [Axelarscan](https://axelarscan.io/).
 
 ## Prerequisites
 
 You will need a MetaMask wallet connected to the Ethereum and Polygon testnets and enough ETH, MATIC, and aUSDC to complete transactions with gas fees. If you do not have funds, you can get some at the [Ethereum Goerli](https://goerlifaucet.com/) (ETH), [Polygon Mumbai](https://mumbaifaucet.com/) (MATIC), and [Axelar Discord](https://discord.com/channels/770814806105128977/1002423218772136056) faucets.
 
-- WAGMI is installed: ```npm i wagmi```
+- WAGMI is installed: `npm i wagmi`
 
 ## Clone the Dapp Starter Code
 
@@ -260,7 +260,7 @@ useEffect(() => {
       });
     }
   }, [isSuccess]);
-  ```
+```
 
 This hook is called immediately after the transaction is submitted to the blockchain. It waits for the user to sign the transaction, and if the transaction is successful, it will set the `pendingTx` of the corresponding token’s key in the table of tokens to `true`, thus showing the **View Transaction** button:
 
@@ -360,6 +360,6 @@ Building this kind of dapp is just the tip of the iceberg.
 
 Check out the following to continue learning about Axelar and its interchain possibilities:
 
-* [Axelar docs](https://docs.axelar.dev/)
-* [Axelar examples](https://github.com/axelarnetwork/axelar-examples)
-* [Axelar developer tutorials](https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2)
+- [Axelar docs](https://docs.axelar.dev/)
+- [Axelar examples](https://github.com/axelarnetwork/axelar-examples)
+- [Axelar developer tutorials](https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2)
