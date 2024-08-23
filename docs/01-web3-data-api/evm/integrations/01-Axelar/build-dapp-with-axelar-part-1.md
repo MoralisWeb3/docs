@@ -607,4 +607,4 @@ The following screenshots show an example of a successful transaction:
 
 ## Next: Connect to the Frontend
 
-So far, we’ve written a Solidity-based contract and deployed it on Ethereum and Polygon. In [part 2](/web3-data-api/evm/integrations/build-dapp-with-axelar-part-2) of this tutorial, we’ll build a dapp frontend with [NextJS](https://nextjs.org/), a ReactJS framework.
+So far, we’ve written a Solidity-based contract and deployed it on Ethereum and Polygon. In [part 2](/web3-data-api/evm/integrations/Axelar/build-dapp-with-axelar-part-2) of this tutorial, we’ll build a dapp frontend with [NextJS](https://nextjs.org/), a ReactJS framework.
