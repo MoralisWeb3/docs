@@ -17,7 +17,7 @@ Currently, Web3 development primarily centers around deploying a smart contract 
 
 **In part 1**, you will write a smart contract that transfers an ERC-20 token along with a [GMP](https://docs.axelar.dev/dev/general-message-passing/overview) message between the Ethereum and Polygon blockchains.
 
-[In part 2](/web3-data-api/evm/integrations/build-dapp-with-axelar-part-2), you will connect that smart contract with a frontend application built with Moralis and [WAGMI](https://wagmi.sh/).
+[In part 2](/web3-data-api/evm/integrations/Axelar/build-dapp-with-axelar-part-2), you will connect that smart contract with a frontend application built with Moralis and [WAGMI](https://wagmi.sh/).
 
 ## Prerequisites
 
@@ -123,7 +123,6 @@ Now you can add logic to `sendToMany()`. The function will need to do the follow
 - Send funds to another address.
 - Approve the gateway to spend funds.
 - Encode the recipient addresses on the destination chain to ensure that they are `byte`s, since GMP messages must be of this type.
-
 
 ```javascript
 pragma solidity ^0.8.19;
@@ -343,7 +342,7 @@ contract GMPDistribution is AxelarExecutable {
             _symbol,
             _amount,
             msg.sender
-        );  
+        );
 
         gateway.callContractWithToken(
             _destChain,
@@ -478,7 +477,7 @@ contract GMPDistribution is AxelarExecutable {
             _symbol,
             _amount,
             msg.sender
-        );  
+        );
 
         gateway.callContractWithToken(
             _destChain,
@@ -509,13 +508,14 @@ contract GMPDistribution is AxelarExecutable {
 }
 ```
 
-Test compile by running ```npx hardhat compile``` in the terminal.
+Test compile by running `npx hardhat compile` in the terminal.
 
 ## Deploy the Contract
 
 Now you’re ready to deploy `GMPDistribution` on two EVM chains! Make sure that your connected wallet has enough funds to pay for gas costs.
 
 To deploy the contract, go to your terminal window and run the `scripts/deploy.ts`:
+
 ```
 hh run scripts/deploy.ts
 ```
@@ -569,6 +569,7 @@ The `[approve()](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/4e4
 ```
 await aUSDCToken.approve(gmpDistribution.address, "1234567895");
 ```
+
 :::tip
 This function is called on the ERC-20 token itself at the registered aUSDC address. There are many ways to interact with this contract including through Remix, the Hardhat console, or a script.
 :::tip
@@ -606,4 +607,4 @@ The following screenshots show an example of a successful transaction:
 
 ## Next: Connect to the Frontend
 
-So far, we’ve written a Solidity-based contract and deployed it on Ethereum and Polygon. In [part 2](/web3-data-api/evm/integrations/build-dapp-with-axelar-part-2) of this tutorial, we’ll build a dapp frontend with [NextJS](https://nextjs.org/), a ReactJS framework.
+So far, we’ve written a Solidity-based contract and deployed it on Ethereum and Polygon. In [part 2](/web3-data-api/evm/integrations/Axelar/build-dapp-with-axelar-part-2) of this tutorial, we’ll build a dapp frontend with [NextJS](https://nextjs.org/), a ReactJS framework.
