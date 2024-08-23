@@ -38,9 +38,13 @@ To quickly set up your development environment, clone this [project on GitHub](h
 
 Next, change the directory into the cloned folder and install the project dependencies locally using yarn with the following command:
 
+```bash
     cd  bridge-existing-ERC20-token-with-ITS  &&  yarn  install
+```
 
+```bash
     yarn  run  dev
+```
 
 yarn run dev will start a Next.js hot-reloading development environment accessible by default at [http://localhost:3000](http://localhost:3000).
 
@@ -91,311 +95,197 @@ On the navigation bar, you'll see an option for Interchain Tokens. Clicking on i
 
 Navigate to the src/components/interchain/register-token folder and open the register-token.tsx file, then add the following code:
 
-    //...
+```javascript
+//...
 
+import interchainTokenFactoryContractABI from "../../../../../contracts/InterchainTokenFactoryABI.json";
 
+const interchainTokenFactoryContractAddress =
+  "0x83a93500d23Fbc3e82B410aD07A6a9F7A0670D66";
 
-    import  interchainTokenFactoryContractABI  from  '../../../../../contracts/InterchainTokenFactoryABI.json';
-
-    const  interchainTokenFactoryContractAddress  =  '0x83a93500d23Fbc3e82B410aD07A6a9F7A0670D66';
-
-
-
-    const  RegisterExistingToken:  React.FC  =  ()  =>  {
-
-    //...
-
-    }
+const RegisterExistingToken: React.FC = () => {
+  //...
+};
+```
 
 ### Create state variables to save the token info from the UI
 
 Add the following code to set up state variables to collect token information from the UI. This data will be used to interact with the contract.
 
-    //...
+```javascript
+//...
 
+const RegisterExistingToken: React.FC = () => {
+  //...
 
+  const [tokenAddress, setTokenAddress] = useState < string > "";
 
-    const  RegisterExistingToken:  React.FC  =  ()  =>  {
-
-    //...
-
-    const  [tokenAddress,  setTokenAddress]  =  useState<string>('');
-
-
-
-    //...
-
-    }
+  //...
+};
+```
 
 ### Implement register canonical token functionality
 
 wagmi is already installed in the cloned project. Use useContractWrite() and useWaitForTransaction() to interact with the InterchainTokenFactory contract:
 
-    //...
-
-
-
-    const  RegisterExistingToken:  React.FC  =  ()  =>  {
-
-    //...
-
-
-
-    // Register existing token
-
-    const  {  data:  registerToken,  write  }  =  useContractWrite({
-
-    address:  interchainTokenFactoryContractAddress,
-
-    abi:  interchainTokenFactoryContractABI,
-
-    functionName:  'registerCanonicalInterchainToken',
-
-    args:  [
-
-    tokenAddress,  // your token address
-
+```javascript
+//...
+const RegisterExistingToken: React.FC = () = >{
+  //...
+  // Register existing token
+  const {
+    data: registerToken,
+    write
+  } = useContractWrite({
+    address: interchainTokenFactoryContractAddress,
+    abi: interchainTokenFactoryContractABI,
+    functionName: 'registerCanonicalInterchainToken',
+    args: [tokenAddress, // your token address
     ],
-
-    mode:  'recklesslyUnprepared',
-
-    });
-
-    const  {
-
-    data:  useWaitForDeployTokenTransactionData,
-
+    mode: 'recklesslyUnprepared',
+  });
+  const {
+    data: useWaitForDeployTokenTransactionData,
     isSuccess,
-
     isError,
-
     isLoading,
-
-    }  =  useWaitForTransaction({
-
-    hash:  registerToken?.hash,
-
-    });
-
-    // Method to handle token registration to be used in the 'Register' button
-
-    // onClick event
-
-    const  handleRegisterToken  =  async  ()  =>  {
-
-    if  (!tokenAddress  )  {
-
-    toast({
-
-    title:  'Invalid Input',
-
-    description:  'Please fill the field correctly.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-    return;
-
+  } = useWaitForTransaction({
+    hash: registerToken ? .hash,
+  });
+  // Method to handle token registration to be used in the 'Register' button
+  // onClick event
+  const handleRegisterToken = async() = >{
+    if (!tokenAddress) {
+      toast({
+        title: 'Invalid Input',
+        description: 'Please fill the field correctly.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
     }
-
     write();
-
     toast({
-
-    title:  'Transaction Submitted',
-
-    description:  'Please confirm the transaction in MetaMask.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
+      title: 'Transaction Submitted',
+      description: 'Please confirm the transaction in MetaMask.',
+      status: 'info',
+      duration: 5000,
+      isClosable: true,
     });
-
-    };
-
-    return  (
-
-    //...
-
-    )
-
-    }
+  };
+  return (
+  //...
+  )
+}
+```
 
 ### Track transaction status and update the UI
 
 Add the following code to track the transaction status after triggering the registerCanonicalInterchainToken() method. To do this, you will need to add the following code in another useEffect hook:
 
-/
-
-    /...
-
-    const  RegisterExistingToken:  React.FC  =  ()  =>  {
-
-    //...
-
-    useEffect(()  =>  {
-
-    if  (isSuccess)  {
-
-    setDisplayTransactionHash(registerToken?.hash  ??  '');
-
-
-
-    toast({
-
-    title:  'Token Registration Successful',
-
-    status:  'success',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-
-
-    // Clear only the input fields
-
-    setTokenAddress('');
-
-    setShowNextStep(true);
-
+```javascript
+ //...
+const RegisterExistingToken: React.FC = () = >{
+  //...
+  useEffect(() = >{
+    if (isSuccess) {
+      setDisplayTransactionHash(registerToken ? .hash ? ?'');
+      toast({
+        title: 'Token Registration Successful',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
+      // Clear only the input fields
+      setTokenAddress('');
+      setShowNextStep(true);
     }
-
-
-
-    if  (isError)  {
-
-    toast({
-
-    title:  'Transaction Error',
-
-    description:  'There was an error submitting your transaction.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isError) {
+      toast({
+        title: 'Transaction Error',
+        description: 'There was an error submitting your transaction.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isLoading)  {
-
-    toast({
-
-    title:  'Transaction Pending',
-
-    description:  'Your transaction is pending.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isLoading) {
+      toast({
+        title: 'Transaction Pending',
+        description: 'Your transaction is pending.',
+        status: 'info',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-    },  [registerToken,  isSuccess,  isError,  isLoading,  useWaitForDeployTokenTransactionData]);
-
-    return  (
-
-    //...
-
-    )
-
-    }
+  },
+  [registerToken, isSuccess, isError, isLoading, useWaitForDeployTokenTransactionData]);
+  return (
+  //...
+  )
+}
+```
 
 ### Update UI to implement the register token functionality
 
 Thus far, you have successfully implemented the interaction to the registerCanonicalInterchainToken()function on the InterchainTokenFactory contract. The next step is to connect this function to the user interface you cloned earlier by updating the code with the following snippet:
 
-    //...
+```javascript
+//...
 
+const RegisterExistingToken: React.FC = () => {
+  //...
 
-
-    const  RegisterExistingToken:  React.FC  =  ()  =>  {
-
-    //...
-
-
-
-    return  (
-
-    <Box  padding="7"  maxW="xxl"  borderWidth="1px"  borderRadius="lg"  overflow="hidden"  margin="auto"  marginTop="-20">
-
-    <Heading  size="lg"  marginBottom="6"  textAlign="center">
-
-    Register  Canonical  Interchain  Token
-
-    </Heading>
-
-    <VStack  spacing={5}  align="stretch">
-
-    <FormControl>
-
-    <FormLabel>Token  Address  </FormLabel>
-
-    <Input
-
-    placeholder="Enter token address"
-
-    value={tokenAddress}  // updated
-
-    onChange={(e)  =>  setTokenAddress(e.target.value)}  // updated
-
-    />
-
-    <FormHelperText>Enter  your  existing  token  address  you  already  deployed</FormHelperText>
-
-    </FormControl>
-
-    <div  style={{  display:  'flex',  justifyContent:  'space-between'  }}>
-
-    <Button
-
-    colorScheme="cyan"
-
-    loadingText="Creating Token"
-
-    w="sm"  variant="solid"
-
-    onClick={handleRegisterToken}  // update here
-
+  return (
+    <Box
+      padding="7"
+      maxW="xxl"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      margin="auto"
+      marginTop="-20"
     >
+      <Heading size="lg" marginBottom="6" textAlign="center">
+        Register Canonical Interchain Token
+      </Heading>
 
-    Register  Token
+      <VStack spacing={5} align="stretch">
+        <FormControl>
+          <FormLabel>Token Address </FormLabel>
 
-    </Button>
+          <Input
+            placeholder="Enter token address"
+            value={tokenAddress} // updated
+            onChange={(e) => setTokenAddress(e.target.value)} // updated
+          />
 
-    {/*  ...  */}
+          <FormHelperText>
+            Enter your existing token address you already deployed
+          </FormHelperText>
+        </FormControl>
 
-    </div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Button
+            colorScheme="cyan"
+            loadingText="Creating Token"
+            w="sm"
+            variant="solid"
+            onClick={handleRegisterToken} // update here
+          >
+            Register Token
+          </Button>
 
-    {/*  ...  */}
+          {/*  ...  */}
+        </div>
 
-    </VStack>
-
+        {/*  ...  */}
+      </VStack>
     </Box>
-
-    );
-
-    };
+  );
+};
+```
 
 Ensure you replace {/_ ... _/} with the actual code. This placeholder prevents the repetition of existing code in the codebase.
 
@@ -429,25 +319,16 @@ Navigate to the src/components/interchain/deploy-token folder and open the deplo
 
 You need to create state variables to collect token information from the UI. This data will be used to interact with the contract and deploy your token remotely. Use the following code to create these variables:
 
-    //...
-
-
-
-    const  DeployTokenRemotely  =  ()  =>  {
-
-    //...
-
-    const  [sourceChain,  setSourceChain]  =  useState<string>('');
-
-    const  [destinationChain,  setDestinationChain]  =  useState<string>('');
-
-    const  [tokenAddress,  setTokenAddress]  =  useState<string>('');
-
-
-
-    //...
-
-    }
+```javascript
+//...
+const DeployTokenRemotely = () = >{
+  //...
+  const[sourceChain, setSourceChain] = useState < string > "";
+  const[destinationChain, setDestinationChain] = useState < string > "";
+  const[tokenAddress, setTokenAddress] = useState < string > "";
+  //...
+};
+```
 
 ### Estimate gas fees
 
@@ -455,377 +336,219 @@ To remotely deploy a remote canonical Interchain Token, you need to [estimate th
 
     Update the deploy-token.js file:
 
-    //...
-
-
-
-    const  DeployTokenRemotely  =  ()  =>  {
-
-    //...
-
-
-
-    const  api:  AxelarQueryAPI  =  new  AxelarQueryAPI({  environment:  Environment.TESTNET  });
-
-    const  [gasAmount,  setGasAmount]  =  useState<number>(0);
-
-
-
-    // Estimate Gas
-
-    const  gasEstimator  =  async  ()  =>  {
-
-    try  {
-
-    const  gas  =  await  api.estimateGasFee(sourceChain,  destinationChain,  GasToken.FTM,  700000,  2);
-
-
-
-    setGasAmount(Number(gas));
-
-    }  catch  (error)  {
-
-    console.error('Error estimating gas fee: ',  error);
-
+```javascript
+//...
+const DeployTokenRemotely = () = >{
+  //...
+  const api: AxelarQueryAPI = new AxelarQueryAPI({
+    environment: Environment.TESTNET
+  });
+  const[gasAmount, setGasAmount] = useState < number > (0);
+  // Estimate Gas
+  const gasEstimator = async() = >{
+    try {
+      const gas = await api.estimateGasFee(sourceChain, destinationChain, GasToken.FTM, 700000, 2);
+      setGasAmount(Number(gas));
+    } catch(error) {
+      console.error('Error estimating gas fee: ', error);
     }
-
-    };
-
-    return(
-
-    //..
-
-    )
-
-    }
+  };
+  return (
+  //..
+  )
+}
+```
 
 ### Implement remote token deployment
 
 Next, implement the remote token deployment functionality. Do this by invoking the deployRemoteCanonicalInterchainToken() function on the InterchainTokenFactory contract. Use the following code and specify the required parameters: sourceChain, tokenAddress, address, destinationChain, gasValue, and the cross-chain gas value:
 
-    //...
-
-    const  DeployTokenRemotely  =  ()  =>  {
-
-    //...
-
-    // Deploy a token remotely
-
-    const  {  data:  deployTokenRemotely,  write  }  =  useContractWrite({
-
-    address:  interchainTokenFactoryContractAddress,
-
-    abi:  interchainTokenFactoryContractABI,
-
-    functionName:  'deployRemoteCanonicalInterchainToken',
-
-    args:  [sourceChain,  tokenAddress,  destinationChain,  ethers.BigNumber.from(gasAmount.toString())],
-
-    overrides:  {
-
-    value:  ethers.BigNumber.from(gasAmount.toString()),
-
+```javascript
+ //...
+const DeployTokenRemotely = () = >{
+  //...
+  // Deploy a token remotely
+  const {
+    data: deployTokenRemotely,
+    write
+  } = useContractWrite({
+    address: interchainTokenFactoryContractAddress,
+    abi: interchainTokenFactoryContractABI,
+    functionName: 'deployRemoteCanonicalInterchainToken',
+    args: [sourceChain, tokenAddress, destinationChain, ethers.BigNumber.from(gasAmount.toString())],
+    overrides: {
+      value: ethers.BigNumber.from(gasAmount.toString()),
     },
-
-    mode:  'recklesslyUnprepared',
-
-    });
-
-
-
-    const  {
-
-    data:  useWaitForDeployTokenRemotelyTransactionData,
-
+    mode: 'recklesslyUnprepared',
+  });
+  const {
+    data: useWaitForDeployTokenRemotelyTransactionData,
     isSuccess,
-
     isError,
-
     isLoading,
-
-    }  =  useWaitForTransaction({
-
+  } = useWaitForTransaction({
     // Calling a hook to wait for the transaction to be mined
-
-    hash:  deployTokenRemotely?.hash,
-
-    });
-
-
-
-    const  handleDeployToken  =  async  ()  =>  {
-
-    if  (write)  {
-
-    write();
-
-    toast({
-
-    title:  'Transaction Submitted',
-
-    description:  'Please confirm the transaction in MetaMask.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    hash: deployTokenRemotely ? .hash,
+  });
+  const handleDeployToken = async() = >{
+    if (write) {
+      write();
+      toast({
+        title: 'Transaction Submitted',
+        description: 'Please confirm the transaction in MetaMask.',
+        status: 'info',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isError)  {
-
-    toast({
-
-    title:  'Transaction Error',
-
-    description:  'There was an error submitting your transaction.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isError) {
+      toast({
+        title: 'Transaction Error',
+        description: 'There was an error submitting your transaction.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-    };
-
-    return(
-
-    //..
-
-    )
-
-    }
+  };
+  return (
+  //..
+  )
+}
+```
 
 ### Track transaction status and update the UI
 
 Add the following code to track the transaction status after triggering the deployRemoteCanonicalInterchainToken() method. To do this, you will need to add the following code in useEffect hook:
 
-    //...
-
-    const  DeployTokenRemotely  =  ()  =>  {
-
-    //...
-
-    useEffect(()  =>  {
-
+```javascript
+//...
+const DeployTokenRemotely = () = >{
+  //...
+  useEffect(() = >{
     gasEstimator();
-
-    if  (isSuccess)  {
-
-    setDisplayTransactionHash(deployTokenRemotely?.hash  ??  '');
-
-    toast({
-
-    title:  'Token Deployed Remotely',
-
-    status:  'success',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-
-
-    setShowNextStep(true);
-
+    if (isSuccess) {
+      setDisplayTransactionHash(deployTokenRemotely ? .hash ? ?'');
+      toast({
+        title: 'Token Deployed Remotely',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
+      setShowNextStep(true);
     }
-
-
-
-    if  (isError)  {
-
-    toast({
-
-    title:  'Transaction Error',
-
-    description:  'There was an error submitting your transaction.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isError) {
+      toast({
+        title: 'Transaction Error',
+        description: 'There was an error submitting your transaction.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isLoading)  {
-
-    toast({
-
-    title:  'Transaction Pending',
-
-    description:  'Your transaction is pending.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isLoading) {
+      toast({
+        title: 'Transaction Pending',
+        description: 'Your transaction is pending.',
+        status: 'info',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-    },  [deployTokenRemotely,  isSuccess,  isError,  isLoading,  useWaitForDeployTokenRemotelyTransactionData]);
-
-    return(
-
-    //..
-
-    )
-
-    }
+  },
+  [deployTokenRemotely, isSuccess, isError, isLoading, useWaitForDeployTokenRemotelyTransactionData]);
+  return (
+  //..
+  )
+}
+```
 
 ### Update the UI to implement the remote token deployment functionality
 
 So far, you have successfully implemented the interaction for the deployRemoteCanonicalInterchainToken() function on the InterchainTokenFactory contract. Now connect this function to the user interface you cloned earlier by updating your code with the following snippet:
 
-    //...
+```javascript
+return (
+  <Box
+    padding="7"
+    maxW="xxl"
+    borderWidth="1px"
+    borderRadius="lg"
+    overflow="hidden"
+    margin="auto"
+    marginTop="-20"
+  >
+    {/* ... */}
+    <VStack spacing={5} align="stretch">
+      <FormControl>
+        <FormLabel>Source chain</FormLabel>
+        <Stack spacing={3}>
+          <Select
+            placeholder="Select source chain"
+            size="md"
+            onChange={(e) => {
+              setSourceChain(e.target.value);
+            }}
+            value={sourceChain}
+          >
+            {/* ... */}
+          </Select>
+        </Stack>
+        <FormHelperText>
+          Source chain for your token e.g., Fantom, Binance, Polygon, etc.
+        </FormHelperText>
+      </FormControl>
 
+      <FormControl>
+        <FormLabel>Token Address</FormLabel>
+        <Input
+          placeholder="Enter your token address"
+          value={tokenAddress}
+          onChange={(e) => setTokenAddress(e.target.value)}
+        />
+        <FormHelperText>
+          Enter the token address you already deployed
+        </FormHelperText>
+      </FormControl>
 
+      <FormControl>
+        <FormLabel>Destination chain</FormLabel>
+        <Stack spacing={3}>
+          <Select
+            placeholder="Select Destination chain"
+            size="md"
+            onChange={(e) => {
+              setDestinationChain(e.target.value);
+            }}
+            value={destinationChain}
+          >
+            {/* ... */}
+          </Select>
+        </Stack>
+        <FormHelperText>
+          Destination chain for your token e.g., Fantom, Binance, Polygon, etc.
+        </FormHelperText>
+      </FormControl>
 
-    return  (
-
-    <Box  padding="7"  maxW="xxl"  borderWidth="1px"  borderRadius="lg"  overflow="hidden"  margin="auto"  marginTop="-20">
-
-    {/*  ...  */}
-
-    <VStack  spacing={5}  align="stretch">
-
-    <FormControl>
-
-    <FormLabel>Source  chain</FormLabel>
-
-    <Stack  spacing={3}>
-
-    <Select
-
-    placeholder="Select source chain"
-
-    size="md"
-
-    onChange={(e)  =>  {
-
-    setSourceChain(e.target.value);
-
-    }}
-
-    value={sourceChain}
-
-    >
-
-    {/*  ...  */}
-
-    </Select>
-
-    </Stack>
-
-    <FormHelperText>Source  chain  for  your  token  eg.  Fantom,  binance,  Polygon  etc.</FormHelperText>
-
-    </FormControl>
-
-    <FormControl>
-
-    <FormLabel>Token  Address</FormLabel>
-
-    <Input
-
-    placeholder="Enter your token address"
-
-    value={tokenAddress}
-
-    onChange={(e)  =>  setTokenAddress(e.target.value)}
-
-    />
-
-    <FormHelperText>Enter  your  token  address  you  already  deployed</FormHelperText>
-
-    </FormControl>
-
-    <FormControl>
-
-    <FormLabel>Destination  chain</FormLabel>
-
-    <Stack  spacing={3}>
-
-    <Select
-
-    placeholder="Select Destination chain"
-
-    size="md"
-
-    onChange={(e)  =>  {
-
-    setDestinationChain(e.target.value);
-
-    }}
-
-    value={destinationChain}
-
-    >
-
-    {/*  ...  */}
-
-    </Select>
-
-    </Stack>
-
-    <FormHelperText>Destination  chain  for  your  token  eg.  Fantom,  binance,  Polygon  etc.</FormHelperText>
-
-    </FormControl>
-
-    <div  style={{  display:  'flex',  justifyContent:  'space-between'  }}>
-
-    <Button
-
-    colorScheme="cyan"
-
-    loadingText="Deploying Token Remotely..."
-
-    w="sm"
-
-    variant="solid"
-
-    onClick={handleDeployToken}
-
-    isLoading={isLoading}
-
-    disabled={isLoading}
-
-    >
-
-    Deploy  Token
-
-    </Button>
-
-    {/*  ...  */}
-
-    </div>
-
-    {/*  ...  */}
-
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Button
+          colorScheme="cyan"
+          loadingText="Deploying Token Remotely..."
+          w="sm"
+          variant="solid"
+          onClick={handleDeployToken}
+          isLoading={isLoading}
+          disabled={isLoading}
+        >
+          Deploy Token
+        </Button>
+        {/* ... */}
+      </div>
+      {/* ... */}
     </VStack>
-
-    </Box>
-
-    );
-
-    };
+  </Box>
+);
+```
 
 💡 Make sure to replace {/_ ... _/} with the actual code. This placeholder prevents the repetition of existing code in the codebase.
 
@@ -853,39 +576,22 @@ Navigate to the src/components/interchain/transfer-token folder and open the tra
 
 You need to create state variables to collect token information from the UI and also set buttons visibility:
 
-    //...
-
-
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-    const  [sourceChain,  setSourceChain]  =  useState<string>('');
-
-    const  [destinationChain,  setDestinationChain]  =  useState<string>('');
-
-    const  [receiverAddress,  setReceiverAddress]  =  useState<string>('');
-
-    const  [amountToTransfer,  setAmountToTransfer]  =  useState<number>(0);
-
-    const  [interchainTokenContractAddress,  setInterchainTokenContractAddress]  =  useState<string>('');
-
-
-
-    const  [approveButonVisibility,  setApproveButtonVisibility]  =  useState<boolean>(true);
-
-    const  [formVisibility,  setFormVisibility]  =  useState<boolean>(false);
-
-
-
-    return  (
-
-    //...
-
-    )
-
-    }
+```javascript
+  //...
+const TransferToken = () = >{
+  //...
+  const[sourceChain, setSourceChain] = useState < string > ('');
+  const[destinationChain, setDestinationChain] = useState < string > ('');
+  const[receiverAddress, setReceiverAddress] = useState < string > ('');
+  const[amountToTransfer, setAmountToTransfer] = useState < number > (0);
+  const[interchainTokenContractAddress, setInterchainTokenContractAddress] = useState < string > ('');
+  const[approveButonVisibility, setApproveButtonVisibility] = useState < boolean > (true);
+  const[formVisibility, setFormVisibility] = useState < boolean > (false);
+  return (
+  //...
+  )
+}
+```
 
 ### Approve the token to be spent by the Interchain Token Service(ITS) contract
 
@@ -893,151 +599,84 @@ Canonical (pre-existing) token requires approval due to locking, so you need to 
 
 Update transfer-token.js file with the following code snippet:
 
-    // transfer-token.js
-
-
-
-    //...
-
-
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-    // Approve token to be spent by the contract
-
-    const  {  data:  useContractWriteSpendData,  write:  approveWrite  }  =  useContractWrite({
-
-    address:  '0x6f1205e4A044b03251292ac7278E150F26e00592',  // Address of the token contract on Fantom
-
-    abi:  erc20ABI,
-
-    functionName:  'approve',
-
-    args:  [interchainTokenServiceContractAddress,  ethers.utils.parseUnits(amountToTransfer.toString(),  18)],
-
-    mode:  'recklesslyUnprepared',
-
-    });
-
-
-
-    const  {
-
-    data:  useWaitForTransactionSpendData,
-
-    isSuccess:  isSpendSuccess,
-
-    isLoading:  isSpendLoading,
-
-    }  =  useWaitForTransaction({
-
-    hash:  useContractWriteSpendData?.hash,
-
-    });
-
-    // Handle Approval
-
-    const  handleApprove  =  ()  =>  {
-
-    if  (!amountToTransfer)  {
-
-    toast({
-
-    title:  'Please enter amount',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-    return;
-
+```javascript
+// transfer-token.js
+//...
+const TransferToken = () = >{
+  //...
+  // Approve token to be spent by the contract
+  const {
+    data: useContractWriteSpendData,
+    write: approveWrite
+  } = useContractWrite({
+    address: '0x6f1205e4A044b03251292ac7278E150F26e00592',
+    // Address of the token contract on Fantom
+    abi: erc20ABI,
+    functionName: 'approve',
+    args: [interchainTokenServiceContractAddress, ethers.utils.parseUnits(amountToTransfer.toString(), 18)],
+    mode: 'recklesslyUnprepared',
+  });
+  const {
+    data: useWaitForTransactionSpendData,
+    isSuccess: isSpendSuccess,
+    isLoading: isSpendLoading,
+  } = useWaitForTransaction({
+    hash: useContractWriteSpendData ? .hash,
+  });
+  // Handle Approval
+  const handleApprove = () = >{
+    if (!amountToTransfer) {
+      toast({
+        title: 'Please enter amount',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
     }
-
     approveWrite();
-
-
-
     toast({
-
-    title:  'Approving Token...',
-
-    description:  'Please confirm the transaction in Metamask.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
+      title: 'Approving Token...',
+      description: 'Please confirm the transaction in Metamask.',
+      status: 'info',
+      duration: 5000,
+      isClosable: true,
     });
-
-    };
-
-    return(
-
-    //..
-
-    )
-
-    }
+  };
+  return (
+  //..
+  )
+}
+```
 
     ### Estimate gas fees
 
     You’ll need to estimate the gas fee for the cross-chain call to transfer tokens remotely. You can use the Axelar JS SDK to estimate this fee. Update the transfer-token.js file using the following:
 
-    // transfer-token.js
-
-    ****
-
-    //...
-
-
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-
-
-    const  api:  AxelarQueryAPI  =  new  AxelarQueryAPI({  environment:  Environment.TESTNET  });
-
-    const  [gasAmount,  setGasAmount]  =  useState<number>(0);
-
-
-
-    // Estimate Gas
-
-    const  gasEstimator  =  async  ()  =>  {
-
-    try  {
-
-    const  gas  =  await  api.estimateGasFee(sourceChain,  destinationChain,  GasToken.FTM,  700000,  2);
-
-
-
-    setGasAmount(Number(gas));
-
-    }  catch  (error)  {
-
-    console.error('Error estimating gas fee: ',  error);
-
+```javascript
+// transfer-token.js
+* ***
+//...
+const TransferToken = () = >{
+  //...
+  const api: AxelarQueryAPI = new AxelarQueryAPI({
+    environment: Environment.TESTNET
+  });
+  const[gasAmount, setGasAmount] = useState < number > (0);
+  // Estimate Gas
+  const gasEstimator = async() = >{
+    try {
+      const gas = await api.estimateGasFee(sourceChain, destinationChain, GasToken.FTM, 700000, 2);
+      setGasAmount(Number(gas));
+    } catch(error) {
+      console.error('Error estimating gas fee: ', error);
     }
-
-    };
-
-    return(
-
-    //..
-
-    )
-
-    }
+  };
+  return (
+  //..
+  )
+}
+```
 
 ### Implement token transfer
 
@@ -1047,461 +686,251 @@ Remember the token ID you saved earlier in this tutorial when you registered you
 
     Add `0x` in front of the tokenID like this 0x<yourtokenid>.
 
-    //...
-
-
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-    // Token Transfer
-
-    const  {  data:  tokenTransfer,  write  }  =  useContractWrite({
-
-    address:  interchainTokenServiceContractAddress,
-
-    abi:  interchainTokenServiceContractABI,
-
-    functionName:  'interchainTransfer',
-
-    args:  [
-
-    ethers.utils.arrayify('0x43DAE7E25FE1E690EEE852A3701C3DB8F0A76CD24E2A3A20AF011D552F08D82A'),
-
-    destinationChain,
-
-    receiverAddress,
-
-    ethers.utils.parseEther(amountToTransfer.toString()),
-
-    '0x',
-
-    ethers.BigNumber.from(gasAmount.toString()),
-
-    ],
-
-    overrides:  {
-
-    value:  ethers.BigNumber.from(gasAmount.toString()),
-
+```javascript
+//...
+const TransferToken = () = >{
+  //...
+  // Token Transfer
+  const {
+    data: tokenTransfer,
+    write
+  } = useContractWrite({
+    address: interchainTokenServiceContractAddress,
+    abi: interchainTokenServiceContractABI,
+    functionName: 'interchainTransfer',
+    args: [ethers.utils.arrayify('0x43DAE7E25FE1E690EEE852A3701C3DB8F0A76CD24E2A3A20AF011D552F08D82A'), destinationChain, receiverAddress, ethers.utils.parseEther(amountToTransfer.toString()), '0x', ethers.BigNumber.from(gasAmount.toString()), ],
+    overrides: {
+      value: ethers.BigNumber.from(gasAmount.toString()),
     },
-
-    mode:  'recklesslyUnprepared',
-
-    });
-
-
-
-    const  {
-
-    data:  useWaitForTokenTransferTransactionData,
-
+    mode: 'recklesslyUnprepared',
+  });
+  const {
+    data: useWaitForTokenTransferTransactionData,
     isSuccess,
-
     isError,
-
     isLoading,
-
-    }  =  useWaitForTransaction({
-
+  } = useWaitForTransaction({
     // Call a hook to wait for the transaction to be mined
-
-    hash:  tokenTransfer?.hash,
-
-    });
-
-
-
-    // token transfer
-
-    const  handleTokenTransfer  =  async  ()  =>  {
-
-    if  (!sourceChain  ||  !destinationChain  ||  !receiverAddress  ||  !amountToTransfer)  {
-
-    toast({
-
-    title:  'Invalid Input',
-
-    description:  'Please fill all the fields correctly.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-    return;
-
+    hash: tokenTransfer ? .hash,
+  });
+  // token transfer
+  const handleTokenTransfer = async() = >{
+    if (!sourceChain || !destinationChain || !receiverAddress || !amountToTransfer) {
+      toast({
+        title: 'Invalid Input',
+        description: 'Please fill all the fields correctly.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
     }
-
-
-
-    if  (write)  {
-
-    write();
-
-    toast({
-
-    title:  'Transaction Submitted',
-
-    description:  'Please confirm the transaction in Metamask.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (write) {
+      write();
+      toast({
+        title: 'Transaction Submitted',
+        description: 'Please confirm the transaction in Metamask.',
+        status: 'info',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isError)  {
-
-    toast({
-
-    title:  'Transaction Error',
-
-    description:  'There was an error submitting your transaction.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isError) {
+      toast({
+        title: 'Transaction Error',
+        description: 'There was an error submitting your transaction.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-    };
-
-    return  (
-
-    //...
-
-    );
-
-    };
+  };
+  return (
+  //...
+  );
+};
+```
 
     ### Track transaction status and update the UI
 
     Add the following code to track the transaction status after triggering the interchainTransfer() method. To do this, you will need to add the following code in useEffect hook:
 
-    //...
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-    useEffect(()  =>  {
-
+```javascript
+//...
+const TransferToken = () = >{
+  //...
+  useEffect(() = >{
     gasEstimator();
-
-    if  (isSuccess)  {
-
-    setDisplayTransactionHash(tokenTransfer?.hash  ??  '');
-
-    toast({
-
-    title:  'Token Transfer Initiated',
-
-    status:  'success',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isSuccess) {
+      setDisplayTransactionHash(tokenTransfer ? .hash ? ?'');
+      toast({
+        title: 'Token Transfer Initiated',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isError)  {
-
-    toast({
-
-    title:  'Transaction Error',
-
-    description:  'There was an error submitting your transaction.',
-
-    status:  'error',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
+    if (isError) {
+      toast({
+        title: 'Transaction Error',
+        description: 'There was an error submitting your transaction.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
     }
-
-
-
-    if  (isLoading)  {
-
-    toast({
-
-    title:  'Transaction Pending',
-
-    description:  'Your transaction is pending.',
-
-    status:  'info',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-    if  (isSpendSuccess)  {
-
-    toast({
-
-    title:  'Token Approved',
-
-    status:  'success',
-
-    duration:  5000,
-
-    isClosable:  true,
-
-    });
-
-    setApproveButtonVisibility(false);
-
-    setFormVisibility(true);
-
+    if (isLoading) {
+      toast({
+        title: 'Transaction Pending',
+        description: 'Your transaction is pending.',
+        status: 'info',
+        duration: 5000,
+        isClosable: true,
+      });
+      if (isSpendSuccess) {
+        toast({
+          title: 'Token Approved',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+        setApproveButtonVisibility(false);
+        setFormVisibility(true);
+      }
     }
-
-    }
-
-    },  [tokenTransfer,
-
-    isSuccess,
-
-    isError,
-
-    isLoading,
-
-    useWaitForTokenTransferTransactionData,
-
-    useWaitForTransactionSpendData,
-
-    ]);
-
-    return(
-
-    //..
-
-    )
-
-    }
+  },
+  [tokenTransfer, isSuccess, isError, isLoading, useWaitForTokenTransferTransactionData, useWaitForTransactionSpendData, ]);
+  return (
+  //..
+  )
+}
+```
 
 ### Update the UI to implement the token transfer functionality
 
 To connect the token transfer implementation to the UI, update the code using the following snippet:
 
-    //...
+```javascript
+const TransferToken = () => {
+  //...
 
-
-
-    const  TransferToken  =  ()  =>  {
-
-    //...
-
-    return  (
-
-    <Box  padding="7"  maxW="xxl"  borderWidth="1px"  borderRadius="lg"  overflow="hidden"  margin="auto"  marginTop="-20">
-
-    {/*  ...  */}
-
-    <VStack  spacing={5}  align="stretch">
-
-    {formVisibility  &&  (
-
-    <>
-
-    <FormControl>
-
-    <FormLabel>Source  Chain  Name</FormLabel>
-
-    <Stack  spacing={3}>
-
-    <Select
-
-    placeholder="Select source chain"
-
-    value={sourceChain}
-
-    onChange={(e)  =>  setSourceChain(e.target.value)}
-
-    size="md"
-
+  return (
+    <Box
+      padding="7"
+      maxW="xxl"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      margin="auto"
+      marginTop="-20"
     >
-
-    {/*  ...  */}
-
-    </Select>
-
-    </Stack>
-
-    <FormHelperText>Source  chain  for  your  token  eg.  Fantom,  binance,  Polygon  etc.</FormHelperText>
-
-    </FormControl>
-
-    <FormControl>
-
-    <FormLabel>Token  Contract  Address</FormLabel>
-
-    <Input
-
-    placeholder="Enter Token Contract Address"
-
-    value={interchainTokenContractAddress}
-
-    onChange={(e)  =>  setInterchainTokenContractAddress(e.target.value)}
-
-    />
-
-    <FormHelperText>Contract  address  of  the  token  you  want  to  transfer.</FormHelperText>
-
-    </FormControl>
-
-    <FormControl>
-
-    <FormLabel>Destination  Chain</FormLabel>
-
-    <Stack  spacing={3}>
-
-    <Select
-
-    placeholder="Select Destination chain"
-
-    value={destinationChain}
-
-    onChange={(e)  =>  setDestinationChain(e.target.value)}
-
-    size="md"
-
-    >
-
-    {/*  ...  */}
-
-    </Select>
-
-    </Stack>
-
-    <FormHelperText>Destination  chain  for  your  token  eg.  Fantom,  binance,  Polygon  etc.</FormHelperText>
-
-    </FormControl>
-
-    <FormControl>
-
-    <FormLabel>Receiver  Address</FormLabel>
-
-    <Input
-
-    placeholder="Enter Receiver Address"
-
-    value={receiverAddress}
-
-    onChange={(e)  =>  setReceiverAddress(e.target.value)}
-
-    />
-
-    <FormHelperText>Receiver  address  for  your  token.</FormHelperText>
-
-    </FormControl>
-
-    </>
-
-    )}
-
-    <FormControl>
-
-    <FormLabel>Amount  to  Transfer</FormLabel>
-
-    <Input
-
-    placeholder="Enter Amount to Transfer"
-
-    value={amountToTransfer}
-
-    onChange={(e)  =>  setAmountToTransfer(Number(e.target.value))}
-
-    />
-
-    <FormHelperText>Amount  to  transfer  to  the  receiver  address.</FormHelperText>
-
-    </FormControl>
-
-    {approveButonVisibility  &&  (
-
-    <Button
-
-    colorScheme="blue"
-
-    onClick={handleApprove}
-
-    isLoading={isSpendLoading}
-
-    loadingText="Approving Token..."
-
-    w="sm"
-
-    variant="solid"
-
-    disabled={isSpendLoading}
-
-    >
-
-    Approve
-
-    </Button>
-
-    )}
-
-    <Button
-
-    colorScheme="cyan"
-
-    onClick={handleTokenTransfer}
-
-    isLoading={isLoading}
-
-    loadingText="Transferring Token..."
-
-    w="sm"
-
-    variant="solid"
-
-    disabled={isLoading}
-
-    >
-
-    Transfer  Token
-
-    </Button>
-
-    </div>
-
-
-
-    {/*  ...  */}
-
-    </VStack>
-
+      {/* ... */}
+      <VStack spacing={5} align="stretch">
+        {formVisibility && (
+          <>
+            <FormControl>
+              <FormLabel>Source Chain Name</FormLabel>
+              <Stack spacing={3}>
+                <Select
+                  placeholder="Select source chain"
+                  value={sourceChain}
+                  onChange={(e) => setSourceChain(e.target.value)}
+                  size="md"
+                >
+                  {/* ... */}
+                </Select>
+              </Stack>
+              <FormHelperText>
+                Source chain for your token e.g., Fantom, Binance, Polygon, etc.
+              </FormHelperText>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Token Contract Address</FormLabel>
+              <Input
+                placeholder="Enter Token Contract Address"
+                value={interchainTokenContractAddress}
+                onChange={(e) =>
+                  setInterchainTokenContractAddress(e.target.value)
+                }
+              />
+              <FormHelperText>
+                Contract address of the token you want to transfer.
+              </FormHelperText>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Destination Chain</FormLabel>
+              <Stack spacing={3}>
+                <Select
+                  placeholder="Select Destination chain"
+                  value={destinationChain}
+                  onChange={(e) => setDestinationChain(e.target.value)}
+                  size="md"
+                >
+                  {/* ... */}
+                </Select>
+              </Stack>
+              <FormHelperText>
+                Destination chain for your token e.g., Fantom, Binance, Polygon,
+                etc.
+              </FormHelperText>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Receiver Address</FormLabel>
+              <Input
+                placeholder="Enter Receiver Address"
+                value={receiverAddress}
+                onChange={(e) => setReceiverAddress(e.target.value)}
+              />
+              <FormHelperText>Receiver address for your token.</FormHelperText>
+            </FormControl>
+          </>
+        )}
+
+        <FormControl>
+          <FormLabel>Amount to Transfer</FormLabel>
+          <Input
+            placeholder="Enter Amount to Transfer"
+            value={amountToTransfer}
+            onChange={(e) => setAmountToTransfer(Number(e.target.value))}
+          />
+          <FormHelperText>
+            Amount to transfer to the receiver address.
+          </FormHelperText>
+        </FormControl>
+
+        {approveButonVisibility && (
+          <Button
+            colorScheme="blue"
+            onClick={handleApprove}
+            isLoading={isSpendLoading}
+            loadingText="Approving Token..."
+            w="sm"
+            variant="solid"
+            disabled={isSpendLoading}
+          >
+            Approve
+          </Button>
+        )}
+
+        <Button
+          colorScheme="cyan"
+          onClick={handleTokenTransfer}
+          isLoading={isLoading}
+          loadingText="Transferring Token..."
+          w="sm"
+          variant="solid"
+          disabled={isLoading}
+        >
+          Transfer Token
+        </Button>
+      </VStack>
     </Box>
-
-    );
-
-    };
+  );
+};
+```
 
 Ensure you replace {/_ ... _/} with the actual code. This placeholder prevents the repetition of existing code in the codebase.
 
@@ -1558,3 +987,7 @@ You can also explore other functionalities of the Interchain Token Service, such
 - [Interchain Token Service Documentation](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/intro)
 - [Interchain Tokens GitHub Repository](https://github.com/axelarnetwork/interchain-token-service/tree/main)
 - [AxelarJS SDK](https://github.com/axelar-network/axelarjs-sdk)
+
+```
+
+```
