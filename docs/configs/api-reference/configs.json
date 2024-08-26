@@ -2676,6 +2676,24 @@
                     "example": "502cee781b0fb40ea02508b21d319ced"
                   },
                   {
+                    "name": "rarity_rank",
+                    "type": "number",
+                    "description": "The rarity rank",
+                    "example": 21669
+                  },
+                  {
+                    "name": "rarity_label",
+                    "type": "string",
+                    "description": "The rarity label",
+                    "example": "Top 98%"
+                  },
+                  {
+                    "name": "rarity_percentage",
+                    "type": "number",
+                    "description": "The rarity percentage",
+                    "example": 98
+                  },
+                  {
                     "name": "last_token_uri_sync",
                     "type": "string",
                     "description": "When the token_uri was last updated",
@@ -3871,6 +3889,134 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "rarity_rank",
+                    "type": "number",
+                    "description": "The rarity rank",
+                    "example": 21669
+                  },
+                  {
+                    "name": "rarity_label",
+                    "type": "string",
+                    "description": "The rarity label",
+                    "example": "Top 98%"
+                  },
+                  {
+                    "name": "rarity_percentage",
+                    "type": "number",
+                    "description": "The rarity percentage",
+                    "example": 98
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "string"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "string"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "string",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -4177,6 +4323,24 @@
                     "type": "string",
                     "description": "The token hash",
                     "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "rarity_rank",
+                    "type": "number",
+                    "description": "The rarity rank",
+                    "example": 21669
+                  },
+                  {
+                    "name": "rarity_label",
+                    "type": "string",
+                    "description": "The rarity label",
+                    "example": "Top 98%"
+                  },
+                  {
+                    "name": "rarity_percentage",
+                    "type": "number",
+                    "description": "The rarity percentage",
+                    "example": 98
                   },
                   {
                     "name": "last_token_uri_sync",
@@ -5797,6 +5961,134 @@
                 "type": "boolean",
                 "description": "Indicates if a contract is verified. Currently supported for ethereum NFT contracts.",
                 "example": "false"
+              },
+              {
+                "name": "rarity_rank",
+                "type": "number",
+                "description": "The rarity rank",
+                "example": 21669
+              },
+              {
+                "name": "rarity_label",
+                "type": "string",
+                "description": "The rarity label",
+                "example": "Top 98%"
+              },
+              {
+                "name": "rarity_percentage",
+                "type": "number",
+                "description": "The rarity percentage",
+                "example": 98
+              },
+              {
+                "name": "last_sale",
+                "type": "object",
+                "description": "Details of the last sale of the NFT",
+                "fields": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The hash of the transaction",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The timestamp of the block",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "buyer_address",
+                    "type": "string",
+                    "description": "The wallet address of the buyer",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "seller_address",
+                    "type": "string",
+                    "description": "The wallet address of the seller",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "price",
+                    "type": "string",
+                    "description": "The price of the NFT in the sale",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "price_formatted",
+                    "type": "string",
+                    "description": "The formatted price of the NFT in the sale",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "usd_price_at_sale",
+                    "type": "string",
+                    "description": "The USD price at the time of sale",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "current_usd_value",
+                    "type": "string",
+                    "description": "The current USD value of the NFT",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "payment_token",
+                    "type": "object",
+                    "description": "Details of the payment token used in the sale",
+                    "fields": [
+                      {
+                        "name": "token_name",
+                        "type": "string",
+                        "description": "The name of the payment token",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "token_symbol",
+                        "type": "string",
+                        "description": "The symbol of the payment token",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "token_logo",
+                        "type": "string",
+                        "description": "The logo URL of the payment token",
+                        "example": "string"
+                      },
+                      {
+                        "name": "token_decimals",
+                        "type": "string",
+                        "description": "The number of decimals for the payment token",
+                        "example": "string"
+                      },
+                      {
+                        "name": "token_address",
+                        "type": "string",
+                        "description": "The address of the payment token contract",
+                        "example": "string",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -6613,6 +6905,24 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "rarity_rank",
+                    "type": "number",
+                    "description": "The rarity rank",
+                    "example": 21669
+                  },
+                  {
+                    "name": "rarity_label",
+                    "type": "string",
+                    "description": "The rarity label",
+                    "example": "Top 98%"
+                  },
+                  {
+                    "name": "rarity_percentage",
+                    "type": "number",
+                    "description": "The rarity percentage",
+                    "example": 98
                   }
                 ]
               }
@@ -8628,6 +8938,853 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getNFTTraitsByCollection": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFT traits for a given collection",
+      "description": "Get NFT traits for a given collection",
+      "method": "GET",
+      "path": "/nft/:address/traits",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the traits",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "trait_type",
+                "type": "string",
+                "description": "The trait type",
+                "example": "Background",
+                "required": true
+              },
+              {
+                "name": "values",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "trait_value",
+                      "type": "string",
+                      "description": "The trait value",
+                      "example": "Lavendar",
+                      "required": true
+                    },
+                    {
+                      "name": "count",
+                      "type": "number",
+                      "description": "The total NFT in the collection with this trait",
+                      "example": 18593
+                    },
+                    {
+                      "name": "percentage",
+                      "type": "number",
+                      "description": "The rarity percentage of the trait",
+                      "example": 85.8
+                    },
+                    {
+                      "name": "rarity_label",
+                      "type": "string",
+                      "description": "The rarity label of the trait",
+                      "example": "Top 4% trait",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "getNFTTraitsByCollectionPaginate": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFT traits for a given collection",
+      "description": "Get NFT traits for a given collection",
+      "method": "GET",
+      "path": "/nft/:address/traits/paginate",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page). Learn more on cursor pagination [here](/web3-data-api/evm/reference/pagination).",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the traits",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "A pointer to the next page of results (if any), for pagination purposes.",
+                "example": ""
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page number in the paginated result set",
+                "example": 2
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of items per page in the paginated result set",
+                "example": 100
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "trait_type",
+                      "type": "string",
+                      "description": "The trait type",
+                      "example": "Background",
+                      "required": true
+                    },
+                    {
+                      "name": "trait_value",
+                      "type": "string",
+                      "description": "The trait value",
+                      "example": "Lavendar",
+                      "required": true
+                    },
+                    {
+                      "name": "count",
+                      "type": "number",
+                      "description": "The total NFT in the collection with this trait",
+                      "example": 18593
+                    },
+                    {
+                      "name": "percentage",
+                      "type": "number",
+                      "description": "The rarity percentage of the trait",
+                      "example": 85.8
+                    },
+                    {
+                      "name": "rarity_label",
+                      "type": "string",
+                      "description": "The rarity label of the trait",
+                      "example": "Top 4% trait",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "resyncNFTTrait": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Resync NFT Trait",
+      "description": "Resync the NFT Trait for a given contract",
+      "method": "GET",
+      "path": "/nft/:address/traits/resync",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "The resync request was received and will be executed.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "status",
+                "type": "string",
+                "description": "The status of the resync request",
+                "example": "string"
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
+    },
+    "getNFTsbyTraits": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFTs by traits",
+      "description": "Get NFTs by traits for a given contract.",
+      "method": "POST",
+      "path": "/nft/:address/nfts-by-traits",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "optimism sepolia",
+            "0xaa37dc",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
+          ]
+        },
+        {
+          "name": "format",
+          "description": "The format of the token ID",
+          "required": false,
+          "example": "decimal",
+          "type": "string",
+          "enum": ["decimal", "hex"]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "type": "string"
+        },
+        {
+          "name": "normalizeMetadata",
+          "description": "The option to enable metadata normalization. Learn more about metadata normalization [here](/web3-data-api/evm/normalized-vs-non-normalized-metadata).",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "media_items",
+          "type": "boolean",
+          "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
+          "example": false
+        }
+      ],
+
+      "bodyParam": {
+        "description": "traits",
+        "type": "json",
+        "required": true,
+        "example": {
+          "traits": {
+            "body": "astronaut",
+            "skin": "purple"
+          }
+        }
+      },
+
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of NFTs",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page"
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                  },
+                  {
+                    "name": "token_id",
+                    "type": "string",
+                    "description": "The token ID of the NFT",
+                    "example": "15"
+                  },
+                  {
+                    "name": "owner_of",
+                    "type": "string",
+                    "description": "The wallet address of the owner of the NFT",
+                    "example": "0x9c83ff0f1c8924da96cb2fcb7e093f78eb2e316b"
+                  },
+                  {
+                    "name": "token_hash",
+                    "type": "string",
+                    "description": "The token hash",
+                    "example": "502cee781b0fb40ea02508b21d319ced"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number when the amount or owner changed",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "block_number_minted",
+                    "type": "string",
+                    "description": "The block number when the NFT was minted",
+                    "example": "88256"
+                  },
+                  {
+                    "name": "contract_type",
+                    "type": "string",
+                    "description": "The type of NFT contract standard",
+                    "example": "ERC721"
+                  },
+                  {
+                    "name": "token_uri",
+                    "type": "string",
+                    "description": "The URI to the metadata of the token"
+                  },
+                  {
+                    "name": "metadata",
+                    "type": "string",
+                    "description": "The metadata of the token"
+                  },
+                  {
+                    "name": "normalized_metadata",
+                    "description": "A normalized metadata version of the NFT's metadata.",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name or title of the NFT",
+                        "example": "Moralis Mug"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A detailed description of the NFT",
+                        "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "The URL of the NFT's image",
+                        "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                      },
+                      "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "animation_url": {
+                        "type": "string",
+                        "description": "An animated version of the NFT's image",
+                        "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "name": "media",
+                    "description": "A set of links to 'thumbnail / preview' media files",
+                    "properties": {
+                      "mimetype": {
+                        "type": "string",
+                        "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                      },
+                      "category": {
+                        "enum": ["image", "audio", "video"]
+                      },
+                      "status": {
+                        "enum": [
+                          "success",
+                          "processing",
+                          "unsupported_media",
+                          "invalid_url",
+                          "host_unavailable",
+                          "temporarily_unavailable"
+                        ],
+                        "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
+                      },
+                      "original_media_url": {
+                        "type": "string",
+                        "description": "The url of the original media file."
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "description": "The timestamp of the last update to this NFT media record."
+                      },
+                      "parent_hash": {
+                        "type": "string",
+                        "description": "Hash value of the original media file."
+                      },
+                      "media_collection": {
+                        "description": "Preview item associated with the original",
+                        "$ref": "#/components/schemas/mediaCollection"
+                      }
+                    }
+                  },
+                  {
+                    "name": "minter_address",
+                    "type": "string",
+                    "description": "The address that minted the NFT",
+                    "example": "0x9c83ff0f1c8924da96cb2fcb7e093f78eb2e316b"
+                  },
+                  {
+                    "name": "last_token_uri_sync",
+                    "type": "string",
+                    "description": "When the token_uri was last updated"
+                  },
+                  {
+                    "name": "last_metadata_sync",
+                    "type": "string",
+                    "description": "When the metadata was last updated"
+                  },
+                  {
+                    "name": "amount",
+                    "type": "string",
+                    "description": "The quantity of this item that the user owns (used by ERC1155)",
+                    "example": "1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the NFT contract",
+                    "example": "CryptoKitties"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "RARI"
+                  },
+                  {
+                    "name": "possible_spam",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": "false"
+                  },
+                  {
+                    "name": "rarity_rank",
+                    "type": "number",
+                    "description": "The rarity rank",
+                    "example": 21669
+                  },
+                  {
+                    "name": "rarity_label",
+                    "type": "string",
+                    "description": "The rarity label",
+                    "example": "Top 98%"
+                  },
+                  {
+                    "name": "rarity_percentage",
+                    "type": "number",
+                    "description": "The rarity percentage",
+                    "example": 98
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "string"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "string"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "string",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
     }
   },
   "token": {
