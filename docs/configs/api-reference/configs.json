@@ -1550,6 +1550,18 @@
                       "example": "108"
                     },
                     {
+                      "name": "from_address_entity",
+                      "type": "string",
+                      "description": "The from address entity",
+                      "example": "Opensea"
+                    },
+                    {
+                      "name": "from_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the from address entity",
+                      "example": "https://opensea.io/favicon.ico"
+                    },
+                    {
                       "name": "from_address",
                       "type": "string",
                       "description": "The address sending the transaction",
@@ -1560,6 +1572,18 @@
                       "type": "string",
                       "description": "Label for the from address",
                       "example": "Binance 1"
+                    },
+                    {
+                      "name": "to_address_entity",
+                      "type": "string",
+                      "description": "The to address entity",
+                      "example": "Beaver Build"
+                    },
+                    {
+                      "name": "to_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the to address entity",
+                      "example": "https://beaverbuild.com/favicon.ico"
                     },
                     {
                       "name": "to_address",
@@ -1735,6 +1759,18 @@
                             "example": "15"
                           },
                           {
+                            "name": "from_address_entity",
+                            "type": "string",
+                            "description": "The from address entity",
+                            "example": "Opensea"
+                          },
+                          {
+                            "name": "from_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the from address entity",
+                            "example": "https://opensea.io/favicon.ico"
+                          },
+                          {
                             "name": "from_address",
                             "type": "string",
                             "description": "The address from which the NFT was transferred",
@@ -1745,6 +1781,18 @@
                             "type": "string",
                             "description": "Label for the from address of the NFT transfer",
                             "example": "Binance 1"
+                          },
+                          {
+                            "name": "to_address_entity",
+                            "type": "string",
+                            "description": "The to address entity",
+                            "example": "Beaver Build"
+                          },
+                          {
+                            "name": "to_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the to address entity",
+                            "example": "https://beaverbuild.com/favicon.ico"
                           },
                           {
                             "name": "to_address",
@@ -1901,6 +1949,18 @@
                             "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
                           },
                           {
+                            "name": "to_address_entity",
+                            "type": "string",
+                            "description": "The to address entity",
+                            "example": "Beaver Build"
+                          },
+                          {
+                            "name": "to_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the to address entity",
+                            "example": "https://beaverbuild.com/favicon.ico"
+                          },
+                          {
                             "name": "to_address",
                             "type": "string",
                             "description": "The address to which the ERC20 token was transferred",
@@ -1911,6 +1971,18 @@
                             "type": "string",
                             "description": "Label for the to address of the ERC20 transfer",
                             "example": "Binance 2"
+                          },
+                          {
+                            "name": "from_address_entity",
+                            "type": "string",
+                            "description": "The from address entity",
+                            "example": "Opensea"
+                          },
+                          {
+                            "name": "from_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the from address entity",
+                            "example": "https://opensea.io/favicon.ico"
                           },
                           {
                             "name": "from_address",
@@ -1965,6 +2037,18 @@
                         "type": "object",
                         "fields": [
                           {
+                            "name": "from_address_entity",
+                            "type": "string",
+                            "description": "The from address entity",
+                            "example": "Opensea"
+                          },
+                          {
+                            "name": "from_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the from address entity",
+                            "example": "https://opensea.io/favicon.ico"
+                          },
+                          {
                             "name": "from_address",
                             "type": "string",
                             "description": "The address from which the native currency was transferred",
@@ -1975,6 +2059,18 @@
                             "type": "string",
                             "description": "Label for the from address of the native transfer",
                             "example": "Binance 1"
+                          },
+                          {
+                            "name": "to_address_entity",
+                            "type": "string",
+                            "description": "The to address entity",
+                            "example": "Beaver Build"
+                          },
+                          {
+                            "name": "to_address_entity_logo",
+                            "type": "string",
+                            "description": "The logo of the to address entity",
+                            "example": "https://beaverbuild.com/favicon.ico"
                           },
                           {
                             "name": "to_address",
@@ -3237,6 +3333,19 @@
                     "example": "15"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The address that sent the NFT",
@@ -3247,6 +3356,20 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -4552,6 +4675,19 @@
                     "example": "15"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The address that sent the NFT",
@@ -4562,6 +4698,19 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -4837,6 +4986,19 @@
                     "example": "15"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The address that sent the NFT",
@@ -4847,6 +5009,19 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -5105,6 +5280,19 @@
                     "example": "15"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The address that sent the NFT",
@@ -5116,6 +5304,19 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -6462,6 +6663,19 @@
                     "example": "15"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The address that sent the NFT",
@@ -6472,6 +6686,20 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -10886,6 +11114,20 @@
                     "description": "The block hash",
                     "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
                   },
+
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -10898,6 +11140,19 @@
                     "description": "The label of the to address",
                     "example": "Binance 2"
                   },
+                  {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
                   {
                     "name": "from_address",
                     "type": "string",
@@ -11645,6 +11900,20 @@
                     "description": "The block hash",
                     "example": "0x0372c302e3c52e8f2e15d155e2c545e6d802e479236564af052759253b20fd86"
                   },
+
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address",
                     "type": "string",
@@ -11656,6 +11925,19 @@
                     "description": "The label of the to address",
                     "example": "Binance 2"
                   },
+                  {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
                   {
                     "name": "from_address",
                     "type": "string",
@@ -13643,11 +13925,37 @@
                       "required": true
                     },
                     {
+                      "name": "from_address_entity",
+                      "type": "string",
+                      "description": "The from address entity",
+                      "example": "Opensea"
+                    },
+                    {
+                      "name": "from_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the from address entity",
+                      "example": "https://opensea.io/favicon.ico"
+                    },
+
+                    {
                       "name": "from_address_label",
                       "type": "string",
                       "description": "Label for the address sending the transaction",
                       "example": "Binance 1"
                     },
+                    {
+                      "name": "to_address_entity",
+                      "type": "string",
+                      "description": "The to address entity",
+                      "example": "Beaver Build"
+                    },
+                    {
+                      "name": "to_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the to address entity",
+                      "example": "https://beaverbuild.com/favicon.ico"
+                    },
+
                     {
                       "name": "to_address",
                       "type": "string",
@@ -14014,6 +14322,19 @@
                     "example": "108"
                   },
                   {
+                    "name": "from_address_entity",
+                    "type": "string",
+                    "description": "The from address entity",
+                    "example": "Opensea"
+                  },
+                  {
+                    "name": "from_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the from address entity",
+                    "example": "https://opensea.io/favicon.ico"
+                  },
+
+                  {
                     "name": "from_address",
                     "type": "string",
                     "description": "The from address",
@@ -14031,6 +14352,20 @@
                     "description": "The label of the from address",
                     "example": "Binance 1"
                   },
+
+                  {
+                    "name": "to_address_entity",
+                    "type": "string",
+                    "description": "The to address entity",
+                    "example": "Beaver Build"
+                  },
+                  {
+                    "name": "to_address_entity_logo",
+                    "type": "string",
+                    "description": "The logo of the to address entity",
+                    "example": "https://beaverbuild.com/favicon.ico"
+                  },
+
                   {
                     "name": "to_address_label",
                     "type": "string",
@@ -14562,22 +14897,49 @@
                 "example": "108"
               },
               {
+                "name": "from_address_entity",
+                "type": "string",
+                "description": "The from address entity",
+                "example": "Opensea"
+              },
+              {
+                "name": "from_address_entity_logo",
+                "type": "string",
+                "description": "The logo of the from address entity",
+                "example": "https://opensea.io/favicon.ico"
+              },
+
+              {
                 "name": "from_address",
                 "type": "string",
                 "description": "The from address",
                 "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
               },
               {
-                "name": "to_address",
-                "type": "string",
-                "description": "The to address",
-                "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
-              },
-              {
                 "name": "from_address_label",
                 "type": "string",
                 "description": "The label of the from address",
                 "example": "Binance 1"
+              },
+
+              {
+                "name": "to_address_entity",
+                "type": "string",
+                "description": "The to address entity",
+                "example": "Beaver Build"
+              },
+              {
+                "name": "to_address_entity_logo",
+                "type": "string",
+                "description": "The logo of the to address entity",
+                "example": "https://beaverbuild.com/favicon.ico"
+              },
+
+              {
+                "name": "to_address",
+                "type": "string",
+                "description": "The to address",
+                "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
               },
               {
                 "name": "to_address_label",
@@ -14921,22 +15283,48 @@
                 "example": "108"
               },
               {
+                "name": "from_address_entity",
+                "type": "string",
+                "description": "The from address entity",
+                "example": "Opensea"
+              },
+              {
+                "name": "from_address_entity_logo",
+                "type": "string",
+                "description": "The logo of the from address entity",
+                "example": "https://opensea.io/favicon.ico"
+              },
+
+              {
                 "name": "from_address",
                 "type": "string",
                 "description": "The from address",
                 "example": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0"
               },
               {
-                "name": "to_address",
-                "type": "string",
-                "description": "The to address",
-                "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
-              },
-              {
                 "name": "from_address_label",
                 "type": "string",
                 "description": "The label of the from address",
                 "example": "Binance 1"
+              },
+              {
+                "name": "to_address_entity",
+                "type": "string",
+                "description": "The to address entity",
+                "example": "Beaver Build"
+              },
+              {
+                "name": "to_address_entity_logo",
+                "type": "string",
+                "description": "The logo of the to address entity",
+                "example": "https://beaverbuild.com/favicon.ico"
+              },
+
+              {
+                "name": "to_address",
+                "type": "string",
+                "description": "The to address",
+                "example": "0x003dde3494f30d861d063232c6a8c04394b686ff"
               },
               {
                 "name": "to_address_label",
