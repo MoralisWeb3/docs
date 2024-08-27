@@ -36,5 +36,5 @@ The use cases for our NFT API are truly endless! Some popular use cases include:
 Moralis NFT APIs are continuously adding new chains and integrations.
 
 :::tip
-Please, check the [full list of supported chains](/supported-chains).
+Please, check the [full list of supported chains](/supported-chains)
 :::
