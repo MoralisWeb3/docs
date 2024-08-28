@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_getTransactionByBlockHashAndIndex
 description: eth_getTransactionByBlockHashAndIndex returns information about a transaction given a block hash and transaction index position.
 ---
 
-<head>
-    <title>eth_getTransactionByBlockHashAndIndex RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getTransactionByBlockHashAndIndex RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Transaction By Hash And Index
 

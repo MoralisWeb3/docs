@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_getUncleByBlockNumberAndIndex
 description: eth_getUncleByBlockNumberAndIndex returns information about an uncle of a by block number and index. Useful for accessing specific uncle block data.
 ---
 
-<head>
-    <title>eth_getUncleByBlockNumberAndIndex RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getUncleByBlockNumberAndIndex RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Uncle By Block Number And Index
 

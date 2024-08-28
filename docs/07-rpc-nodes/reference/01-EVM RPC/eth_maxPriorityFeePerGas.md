@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_maxPriorityFeePerGas
 description: eth_maxPriorityFeePerGas returns an estimate of the maximum priority fee, in wei, you need to be included in a block. Useful for optimizing transaction costs.
 ---
 
-<head>
-    <title>eth_maxPriorityFeePerGas RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_maxPriorityFeePerGas RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Max Priority Fee Per Gas
 

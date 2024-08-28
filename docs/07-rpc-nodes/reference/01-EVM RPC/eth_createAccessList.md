@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_createAccessList
 description: eth_createAccessList generates an access list for transactions through specifying addresses and storage keys. Useful for optimizing gas costs.
 ---
 
-<head>
-    <title>eth_createAccessList RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_createAccessList RPC Method - Moralis Documentation</title>
+</head>
 
 ## Create Access List
 

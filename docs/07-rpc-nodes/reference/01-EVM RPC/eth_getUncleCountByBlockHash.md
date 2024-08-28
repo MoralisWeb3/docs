@@ -5,13 +5,14 @@ slug: /rpc-nodes/reference/eth_getUncleCountByBlockHash
 description: eth_getUncleCountByBlockHash returns the number of uncles for a block matching the given block hash. Useful for analyzing block composition.
 ---
 
-<head>
-    <title>eth_getUncleCountByBlockHash RPC Method - Moralis Documentation</title>
-</head>
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getUncleCountByBlockHash RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Uncle Count By Block Hash
 

@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_getLogs
 description: eth_getLogs returns an array of all the logs matching a given filter object. Useful for filtering and monitoring specific contract events.
 ---
 
-<head>
-    <title>eth_getLogs RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getLogs RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Logs
 

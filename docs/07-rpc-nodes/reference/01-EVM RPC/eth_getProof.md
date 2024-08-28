@@ -5,14 +5,14 @@ slug: /rpc-nodes/reference/eth_getProof
 description: eth_getProof returns the account or storage values - including the Merkle proof - for a specified account. Useful for verifying a contract or account's state.
 ---
 
-<head>
-    <title>eth_getProof RPC Method - Moralis Documentation</title>
-</head>
-
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getProof RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Proof
 
