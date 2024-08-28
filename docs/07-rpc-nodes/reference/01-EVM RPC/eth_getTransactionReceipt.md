@@ -2,7 +2,12 @@
 sidebar_position: 21
 sidebar_label: eth_getTransactionReceipt
 slug: /rpc-nodes/reference/eth_getTransactionReceipt
+description: eth_getTransactionReceipt returns the receipt of transactions given the transaction hash. Includes details like status, gas used, and logs.
 ---
+
+<head>
+    <title>eth_getTransactionReceipt RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

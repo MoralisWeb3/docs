@@ -2,7 +2,12 @@
 sidebar_position: 8
 sidebar_label: eth_getBlockByHash
 slug: /rpc-nodes/reference/eth_getBlockByHash
+description: eth_getBlockByHash returns block details matching the given block hash. Useful for retrieving information about a specific block on the blockchain.
 ---
+
+<head>
+    <title>eth_getBlockByHash RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

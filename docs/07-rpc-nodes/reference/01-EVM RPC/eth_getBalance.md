@@ -2,7 +2,12 @@
 sidebar_position: 7
 sidebar_label: eth_getBalance
 slug: /rpc-nodes/reference/eth_getBalance
+description: eth_getBalance returns the account balance of a given address in wei. Useful for checking the native chain currency balance of an address.
 ---
+
+<head>
+    <title>eth_getBalance RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

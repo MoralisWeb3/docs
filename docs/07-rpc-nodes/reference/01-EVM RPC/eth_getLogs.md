@@ -2,7 +2,12 @@
 sidebar_position: 14
 sidebar_label: eth_getLogs
 slug: /rpc-nodes/reference/eth_getLogs
+description: eth_getLogs returns an array of all the logs matching a given filter object. Useful for filtering and monitoring specific contract events.
 ---
+
+<head>
+    <title>eth_getLogs RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

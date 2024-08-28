@@ -2,7 +2,12 @@
 sidebar_position: 10
 sidebar_label: eth_getBlockTransactionCountByHash
 slug: /rpc-nodes/reference/eth_getBlockTransactionCountByHash
+description: eth_getBlockTransactionCountByHash returns the number of transactions for a block matching the given block hash. Useful for analyzing transaction activity.
 ---
+
+<head>
+    <title>eth_getBlockTransactionCountByHash RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

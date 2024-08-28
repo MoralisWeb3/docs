@@ -2,7 +2,12 @@
 sidebar_position: 0
 sidebar_label: eth_blockNumber
 slug: /rpc-nodes/reference/eth_blockNumber
+description: eth_blockNumber returns the latest block number of the blockchain. Useful for monitoring the network's state, fetching historical data & checking for new blocks.
 ---
+
+<head>
+    <title>eth_blockNumber RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

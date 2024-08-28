@@ -2,7 +2,12 @@
 sidebar_position: 19
 sidebar_label: eth_getTransactionByBlockNumberAndIndex
 slug: /rpc-nodes/reference/eth_getTransactionByBlockNumberAndIndex
+description: eth_getTransactionByBlockNumberAndIndex returns information about a transaction given a block number and transaction index position.
 ---
+
+<head>
+    <title>eth_getTransactionByBlockNumberAndIndex RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

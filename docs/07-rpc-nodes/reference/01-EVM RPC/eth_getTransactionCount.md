@@ -2,7 +2,12 @@
 sidebar_position: 20
 sidebar_label: eth_getTransactionCount
 slug: /rpc-nodes/reference/eth_getTransactionCount
+description: eth_getTransactionCount returns the number of transactions sent from a given address. Useful for determining the nonce or activity level of accounts.
 ---
+
+<head>
+    <title>eth_getTransactionCount RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

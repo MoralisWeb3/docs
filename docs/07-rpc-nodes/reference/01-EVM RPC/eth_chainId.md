@@ -2,7 +2,12 @@
 sidebar_position: 2
 sidebar_label: eth_chainId
 slug: /rpc-nodes/reference/eth_chainId
+description: eth_chainId returns the currently configured network/chain ID. Useful for ensuring your application connects to the correct blockchain network.
 ---
+
+<head>
+    <title>eth_chainId RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

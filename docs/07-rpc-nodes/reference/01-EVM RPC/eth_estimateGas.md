@@ -2,7 +2,12 @@
 sidebar_position: 4
 sidebar_label: eth_estimateGas
 slug: /rpc-nodes/reference/eth_estimateGas
+description: eth_estimateGas generates and returns an estimate of how much gas a transaction requires. Useful for predicting gas costs and preventing failed transactions.
 ---
+
+<head>
+    <title>eth_estimateGas RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";

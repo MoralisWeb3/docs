@@ -2,7 +2,12 @@
 sidebar_position: 5
 sidebar_label: eth_feeHistory
 slug: /rpc-nodes/reference/eth_feeHistory
+description: eth_feeHistory provides historical gas fee data. Useful for tracking and analyzing gas trends over time.
 ---
+
+<head>
+    <title>eth_feeHistory RPC Method - Moralis Documentation</title>
+</head>
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
