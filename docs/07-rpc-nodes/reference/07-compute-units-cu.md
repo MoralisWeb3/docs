@@ -1,6 +1,6 @@
 ---
 title: "RPC Node Compute Units"
-slug: "/rpc-nodes/compute-units-cu"
+slug: "compute-units-cu"
 sidebar_label: "Compute Units (CU)"
 description: "Learn more about what is Compute Units and how does it affects your pricing."
 sidebar_position: 8
