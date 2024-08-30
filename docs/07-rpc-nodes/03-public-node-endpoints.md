@@ -1,7 +1,7 @@
 ---
-title: "RPC Node Endpoints"
+title: "Supported Networks"
 slug: "/public-rpc-node-endpoints"
-sidebar_label: "RPC Node Endpoints"
+sidebar_label: "Supported Networks"
 sidebar_position: 3
 sidebar_class_name: "sidebar-overview"
 hide_table_of_contents: true
