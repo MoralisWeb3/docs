@@ -2,7 +2,7 @@
 title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
-sidebar_position: 9
+sidebar_position: 1
 ---
 
 ## What Is Pagination?
@@ -29,63 +29,63 @@ const fs = require("fs");
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const init = async () => {
-    const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
-    const chain = EvmChain.ETHEREUM;
+  const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"; //Cryptopunks contract address
+  const chain = EvmChain.ETHEREUM;
 
-    await Moralis.start({
-        apiKey: "YOUR_API_KEY",
-        // ...and any other configuration
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY",
+    // ...and any other configuration
+  });
+
+  const planRateLimit = 150; // find throughput based on your plan here: https://moralis.io/pricing/#compare
+  const endpointRateLimit = 5; // find endpoint rate limit here: https://docs.moralis.io/web3-data-api/evm/reference/compute-units-cu#rate-limit-cost
+  let allowedRequests = planRateLimit / endpointRateLimit;
+  let cursor = null;
+  let owners = {};
+
+  do {
+    if (allowedRequests <= 0) {
+      // wait 1.1 seconds
+      await new Promise((r) => setTimeout(r, 1100));
+      allowedRequests = planRateLimit / endpointRateLimit;
+    }
+
+    const response = await Moralis.EvmApi.nft.getNFTOwners({
+      address,
+      chain,
+      limit: 100,
+      cursor: cursor,
     });
 
-    const planRateLimit = 150; // find throughput based on your plan here: https://moralis.io/pricing/#compare
-    const endpointRateLimit = 5; // find endpoint rate limit here: https://docs.moralis.io/web3-data-api/evm/reference/compute-units-cu#rate-limit-cost
-    let allowedRequests = planRateLimit / endpointRateLimit;
-    let cursor = null;
-    let owners = {};
+    console.log(`On page ${response.pagination.page}`);
 
-    do {
-        if (allowedRequests <= 0) {
-            // wait 1.1 seconds
-            await new Promise((r) => setTimeout(r, 1100));
-            allowedRequests = planRateLimit / endpointRateLimit;
-        }
-
-        const response = await Moralis.EvmApi.nft.getNFTOwners({
-            address,
-            chain,
-            limit: 100,
-            cursor: cursor,
+    for (const NFT of response.result) {
+      if (NFT.ownerOf.checksum in owners) {
+        owners[NFT.ownerOf.checksum].push({
+          amount: NFT.amount,
+          owner: NFT.ownerOf,
+          tokenId: NFT.tokenId,
+          tokenAddress: NFT.tokenAddress,
         });
+      } else {
+        owners[NFT.ownerOf.checksum] = [
+          {
+            amount: NFT.amount,
+            owner: NFT.ownerOf,
+            tokenId: NFT.tokenId,
+            tokenAddress: NFT.tokenAddress,
+          },
+        ];
+      }
+    }
+    cursor = response.pagination.cursor;
+    allowedRequests--;
+  } while (cursor != "" && cursor != null);
 
-        console.log(`On page ${response.pagination.page}`);
+  //save owners in a json file
+  fs.writeFileSync("owners.json", JSON.stringify(owners));
 
-        for (const NFT of response.result) {
-            if (NFT.ownerOf.checksum in owners) {
-                owners[NFT.ownerOf.checksum].push({
-                    amount: NFT.amount,
-                    owner: NFT.ownerOf,
-                    tokenId: NFT.tokenId,
-                    tokenAddress: NFT.tokenAddress,
-                });
-            } else {
-                owners[NFT.ownerOf.checksum] = [
-                    {
-                        amount: NFT.amount,
-                        owner: NFT.ownerOf,
-                        tokenId: NFT.tokenId,
-                        tokenAddress: NFT.tokenAddress,
-                    },
-                ];
-            }
-        }
-        cursor = response.pagination.cursor;
-        allowedRequests--;
-    } while (cursor != "" && cursor != null);
-
-    //save owners in a json file
-    fs.writeFileSync("owners.json", JSON.stringify(owners));
-
-    console.log("total owners:", Object.keys(owners).length);
+  console.log("total owners:", Object.keys(owners).length);
 };
 
 init();

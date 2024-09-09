@@ -1,7 +1,7 @@
 ---
 title: "Pricing Plans"
 slug: "../../evm/pricing-plans"
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

@@ -1,13 +1,11 @@
 ---
-title: "Extensive DEX Support for Enhanced API Functionality"
+title: "Supported DEXs"
 slug: "../../evm/supported-dexs-token-api"
 sidebar_label: "Supported DEXs"
-sidebar_position: 0
+sidebar_position: 4
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-
 
 The [Moralis Token API](/web3-data-api/evm/token-api) seamlessly integrates with leading decentralized exchanges (DEXs) across multiple EVM blockchains, providing comprehensive support for token-related data.
 
@@ -17,15 +15,15 @@ The following tables show you how to find a list of supported chains on the [Mor
 
 Simply click on a chain's name to jump to its respective section for more details:
 
--   [Ethereum](#ethereum)
--   [Polygon](#polygon)
--   [Binance Smart Chain (BSC)](#binance-smart-chain-bsc)
--   [Avalanche](#avalanche)
--   [Fantom Opera](#fantom-opera)
--   [Cronos](#cronos)
--   [Arbitrum](#arbitrum)
--   [Base](#base)
--   [Linea](#linea)
+- [Ethereum](#ethereum)
+- [Polygon](#polygon)
+- [Binance Smart Chain (BSC)](#binance-smart-chain-bsc)
+- [Avalanche](#avalanche)
+- [Fantom Opera](#fantom-opera)
+- [Cronos](#cronos)
+- [Arbitrum](#arbitrum)
+- [Base](#base)
+- [Linea](#linea)
 
 :::note
 If you do not specify a particular `exchange`, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.

@@ -1,12 +1,10 @@
 ---
-title: "Verification for NFT Collections"
+title: "NFT Collection Verification FAQs"
 slug: "../../evm/verification-nft-collections"
 sidebar_position: 3
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-
 
 ### What are Verified NFT Collections?
 

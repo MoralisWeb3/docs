@@ -1,23 +1,24 @@
 ---
-title: "Wallet History"
+title: "Wallet History FAQs"
 slug: "../../evm/wallet-history"
 sidebar_position: 5
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 ## Endpoint Overview
+
 The [Wallet History endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-history) provides a single API call solution to fetch a comprehensive, chronological history of a wallet's activity. This endpoint consolidates all transaction types, including transfers, token swaps, NFT sales, token operations, and interactions with smart contracts, simplifying the data retrieval process for developers.
 
 **Features**
+
 - Single API Request: Retrieve a full timeline of a wallet’s activities with one API call.
 - Automatic Categorization: Each transaction is automatically categorized into types such as Send, Receive, NFT Send/Receive, Token Send/Receive, Deposit, Withdraw, Token Swap, Airdrop, Mint, Burn, NFT Purchase, NFT Sale, Borrow, and Contract Interaction.
 - Reduced Complexity: Eliminates the need to aggregate data from multiple API calls, reducing complexity and potential data inconsistency.
 - Comprehensive Data: Provides detailed insights into all transactions, token transfers, and NFT activities associated with a wallet address.
 
 ## Wallet History Categories
+
 We are continuously extending support for categories. We currently support:
 
 - Send
@@ -40,6 +41,7 @@ We are continuously extending support for categories. We currently support:
 - Contract Interaction
 
 ### Approvals and Revokes
+
 Detailed approval or revoke information can be accessed within the `contract_interactions` object. Currently, the `contract_interactions` decodes `setApprovalForAll` (log event `ApprovalForAll`) and `approve` (log event `Approval`) transactions, while `revoke` categories are defined as approvals with a value of 0 or where `setApprovalForAll` is `false`.
 
 Here's an example of an `approve` transaction:
@@ -68,13 +70,12 @@ Here's an example of an `approve` transaction:
 }
 ```
 
-| Log Event | Category | Decoded Payload |
-|-----|------|----|
-| `Approval` > 0 | `approve` | `contract_interactions.approvals:[]` |
-| `ApprovalForAll` = `true` | `approve` | `contract_interactions.set_approvals_all:[]` |
-| `Approval` = 0 | `revoke` | `contract_interactions.revokes:[]` |
-| `ApprovalForAll` = `false` | `revoke` | `contract_interactions.set_revokes_all:[]` |
-
+| Log Event                  | Category  | Decoded Payload                              |
+| -------------------------- | --------- | -------------------------------------------- |
+| `Approval` > 0             | `approve` | `contract_interactions.approvals:[]`         |
+| `ApprovalForAll` = `true`  | `approve` | `contract_interactions.set_approvals_all:[]` |
+| `Approval` = 0             | `revoke`  | `contract_interactions.revokes:[]`           |
+| `ApprovalForAll` = `false` | `revoke`  | `contract_interactions.set_revokes_all:[]`   |
 
 ## What Query Parameters Are Supported?
 

@@ -1,12 +1,10 @@
 ---
-title: "Internal Transactions"
+title: "Internal Transactions FAQs"
 slug: "../../evm/internal-transactions"
 sidebar_position: 5
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-
 
 Internal transactions in the context of blockchain refer to transactions that occur between smart contracts rather than involving the transfer of funds between external addresses. Unlike regular transactions initiated by users, internal transactions are interactions between different functionalities within the blockchain network.
 
@@ -25,20 +23,19 @@ By default, when fetching transaction details using Moralis API, internal transa
 | Ethereum Mainnet | ✅        | ✅ Full history |
 | Ethereum Sepolia | ✅        | ✅ Full history |
 | Ethereum Holesky | ✅        | ✅ Full history |
-| Polygon Mainnet  | ✅        | ✅ Full history         |
-| Polygon Amoy   | ✅        | ✅ Full history |
-| BNB Mainnet      | ✅        | ✅ Full history         |
+| Polygon Mainnet  | ✅        | ✅ Full history |
+| Polygon Amoy     | ✅        | ✅ Full history |
+| BNB Mainnet      | ✅        | ✅ Full history |
 | BNB Testnet      | ✅        | ✅ Full history |
-| Arbitrum      | ✅        | ✅ Full history |
-| Avalanche      | ✅        | ✅ Full history |
-| Base      | ✅        | ✅ Full history |
-| Base Sepolia      | ✅        | ✅ Full history |
-| Chiliz      | ✅        | ✅ Full history |
-| Chiliz Testnet      | ✅        | ✅ Full history |
-| Fantom      | ✅        | ✅ Full history |
-| Linea      | ✅        | ✅ Full history |
-| Optimism      | ✅        | ✅ Full history |
-
+| Arbitrum         | ✅        | ✅ Full history |
+| Avalanche        | ✅        | ✅ Full history |
+| Base             | ✅        | ✅ Full history |
+| Base Sepolia     | ✅        | ✅ Full history |
+| Chiliz           | ✅        | ✅ Full history |
+| Chiliz Testnet   | ✅        | ✅ Full history |
+| Fantom           | ✅        | ✅ Full history |
+| Linea            | ✅        | ✅ Full history |
+| Optimism         | ✅        | ✅ Full history |
 
 ## Why are Internal Transactions used?
 

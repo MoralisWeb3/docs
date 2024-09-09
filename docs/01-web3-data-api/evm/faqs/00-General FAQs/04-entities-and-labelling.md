@@ -1,7 +1,7 @@
 ---
-title: "Entities and Labelling"
+title: "Entities and Labelling FAQs"
 slug: "../../evm/blockchain-api/entities-and-labelling"
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";

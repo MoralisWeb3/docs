@@ -1,7 +1,7 @@
 ---
 title: "EVM API – Authentication"
 sidebar_label: "Authentication"
-sidebar_position: 7
+sidebar_position: 0
 ---
 
 # Authentication
