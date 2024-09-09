@@ -52,18 +52,18 @@ Select what you want to achieve:
 
 ### Get Wallet Token Balances
 
-| No. | Method                          | Description                                 | API Reference                                                                                   | URL                                                                                                                              |
-| --- | ------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 7   | `getWalletTokenBalances`        | Get ERC20 token balance by wallet           | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)    | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                   |
-| 8   | `getWalletTokenBalancesPrices`  | Get ERC20 token balances & prices by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens) |
-| 9   | `getNativeBalance`              | Get native balance by wallet                | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                         | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance)               |
-| 10  | `getNativeBalancesForAddresses` | Get native balance for multiple wallets     | [Method Documentation](/web3-data-api/evm/reference/get-native-balances-for-addresses)          | [https://deep-index.moralis.io/api/v2.2/wallets/balances](https://deep-index.moralis.io/api/v2.2/wallets/balances)               |
+| No. | Method                          | Description                                          | API Reference                                                                                   | URL                                                                                                                              |
+| --- | ------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 7   | `getWalletTokenBalances`        | Get ERC20 token balance by wallet                    | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)    | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                   |
+| 8   | `getWalletTokenBalancesPrices`  | Get Native & ERC20 token balances & prices by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens) |
+| 9   | `getNativeBalance`              | Get native balance by wallet                         | [Method Documentation](/web3-data-api/evm/reference/get-native-balance)                         | [https://deep-index.moralis.io/api/v2.2/:address/balance](https://deep-index.moralis.io/api/v2.2/:address/balance)               |
+| 10  | `getNativeBalancesForAddresses` | Get native balance for multiple wallets              | [Method Documentation](/web3-data-api/evm/reference/get-native-balances-for-addresses)          | [https://deep-index.moralis.io/api/v2.2/wallets/balances](https://deep-index.moralis.io/api/v2.2/wallets/balances)               |
 
 ### Get Wallet Token Approvals
 
-| No. | Method               | Description                   | API Reference                                                                              | URL                                                                                                            |
-| --- | -------------------- | ----------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| 11  | `getWalletApprovals` | Get ERC20 approvals by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals) | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20) |
+| No. | Method               | Description                   | API Reference                                                                              | URL                                                                                                                                          |
+| --- | -------------------- | ----------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | `getWalletApprovals` | Get ERC20 approvals by wallet | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals) | [https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getWalletApprovals](https://deep-index.moralis.io/api/v2.2/wallets/:address/approvals) |
 
 ### Get Wallet NFT Balances
 
@@ -197,8 +197,6 @@ Select what you want to achieve:
 
 ## Token API
 
-Select what you want to achieve:
-
 - [Get Token Metadata](#get-token-metadata)
 - [Get Token Price](#get-token-price)
 - [Get Token Balances](#get-token-balances)
@@ -226,49 +224,50 @@ Select what you want to achieve:
 
 ### Get Token Balances
 
-| No. | Method                   | Description                       | API Reference                                                                  | URL                                                                                                                                |
-| --- | ------------------------ | --------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 6   | `getWalletTokenBalances` | Get ERC20 token balance by wallet | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances) | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                     |
-| 7   | `getTokenAllowance`      | Get ERC20 token allowance         | [Method Documentation](/web3-data-api/evm/reference/get-token-allowance)       | [https://deep-index.moralis.io/api/v2.2/erc20/:address/allowance](https://deep-index.moralis.io/api/v2.2/erc20/:address/allowance) |
+| No. | Method                         | Description                                          | API Reference                                                                        | URL                                                                                                                                |
+| --- | ------------------------------ | ---------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 6   | `getWalletTokenBalances`       | Get ERC20 token balance by wallet                    | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances)       | [https://deep-index.moralis.io/api/v2.2/:address/erc20](https://deep-index.moralis.io/api/v2.2/:address/erc20)                     |
+| 7   | `getWalletTokenBalancesPrices` | Get Native & ERC20 token balances & prices by wallet | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens](https://deep-index.moralis.io/api/v2.2/wallets/:address/tokens)   |
+| 8   | `getTokenAllowance`            | Get ERC20 token allowance                            | [Method Documentation](/web3-data-api/evm/reference/get-token-allowance)             | [https://deep-index.moralis.io/api/v2.2/erc20/:address/allowance](https://deep-index.moralis.io/api/v2.2/erc20/:address/allowance) |
 
 ### Get Token Approvals
 
 | No. | Method               | Description                   | API Reference                                                                   | URL                                                                                                                                          |
 | --- | -------------------- | ----------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 8   | `getWalletApprovals` | Get ERC20 approvals by wallet | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-approvals) | [https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getWalletApprovals](https://deep-index.moralis.io/api/v2.2/wallets/:address/approvals) |
+| 9   | `getWalletApprovals` | Get ERC20 approvals by wallet | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-approvals) | [https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getWalletApprovals](https://deep-index.moralis.io/api/v2.2/wallets/:address/approvals) |
 
 ### Get Token Transfers
 
 | No. | Method                    | Description                           | API Reference                                                                   | URL                                                                                                                                |
 | --- | ------------------------- | ------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 9   | `getWalletTokenTransfers` | Get ERC20 token transfers by wallet   | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers) | [https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers](https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers) |
-| 10  | `getTokenTransfers`       | Get ERC20 token transfers by contract | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)        | [https://deep-index.moralis.io/api/v2.2/erc20/:address/transfers](https://deep-index.moralis.io/api/v2.2/erc20/:address/transfers) |
+| 10  | `getWalletTokenTransfers` | Get ERC20 token transfers by wallet   | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers) | [https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers](https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers) |
+| 11  | `getTokenTransfers`       | Get ERC20 token transfers by contract | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)        | [https://deep-index.moralis.io/api/v2.2/erc20/:address/transfers](https://deep-index.moralis.io/api/v2.2/erc20/:address/transfers) |
 
 ### Get Token Transfers
 
 | No.                                                                                      | Method                                                                                                                                 | Description                         | API Reference | URL |
 | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------- | --- |
-| 11                                                                                       | `getTopProfitableWalletPerToken`                                                                                                       | Get Top Profitable Wallets by Token |
+| 12                                                                                       | `getTopProfitableWalletPerToken`                                                                                                       | Get Top Profitable Wallets by Token |
 | [Method Documentation](/web3-data-api/evm/reference/get-top-profitable-wallet-per-token) | [https://deep-index.moralis.io/api/v2.2/erc20/:address/top-gainers](https://deep-index.moralis.io/api/v2.2/erc20/:address/top-gainers) |
 
 ### Get Token Pairs & Liquidity
 
 | No. | Method            | Description                 | API Reference                                                          | URL                                                                                                                                                                    |
 | --- | ----------------- | --------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 12  | `getPairReserves` | Get DEX token pair reserves | [Method Documentation](/web3-data-api/evm/reference/get-pair-reserves) | [https://deep-index.moralis.io/api/v2.2/:pair_address/reserves](https://deep-index.moralis.io/api/v2.2/:pair_address/reserves)                                         |
-| 13  | `getPairAddress`  | Get DEX token pair address  | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)  | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres) |
+| 13  | `getPairReserves` | Get DEX token pair reserves | [Method Documentation](/web3-data-api/evm/reference/get-pair-reserves) | [https://deep-index.moralis.io/api/v2.2/:pair_address/reserves](https://deep-index.moralis.io/api/v2.2/:pair_address/reserves)                                         |
+| 14  | `getPairAddress`  | Get DEX token pair address  | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)  | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres) |
 
 ### Get Token Stats
 
 | No. | Method          | Description           | API Reference                                                        | URL                                                                                                                        |
 | --- | --------------- | --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| 14  | `getTokenStats` | Get ERC20 token stats | [Method Documentation](/web3-data-api/evm/reference/get-token-stats) | [https://deep-index.moralis.io/api/v2.2/erc20/:address/stats](https://deep-index.moralis.io/api/v2.2/erc20/:address/stats) |
+| 15  | `getTokenStats` | Get ERC20 token stats | [Method Documentation](/web3-data-api/evm/reference/get-token-stats) | [https://deep-index.moralis.io/api/v2.2/erc20/:address/stats](https://deep-index.moralis.io/api/v2.2/erc20/:address/stats) |
 
 ### Get Token Owners
 
 | No. | Method           | Description            | API Reference                                                         | URL                                                                                                                                      |
 | --- | ---------------- | ---------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 15  | `getTokenOwners` | Get ERC20 token owners | [Method Documentation](/web3-data-api/evm/reference/get-token-owners) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners) |
+| 16  | `getTokenOwners` | Get ERC20 token owners | [Method Documentation](/web3-data-api/evm/reference/get-token-owners) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners) |
 
 # DeFi API
 
@@ -346,9 +345,9 @@ Select what you want to achieve:
 
 ### Get Latest Block Number
 
-| No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                 |
-| --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 11  | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/{chain}](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |
+| No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                |
+| --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |
 
 ## Utils
 

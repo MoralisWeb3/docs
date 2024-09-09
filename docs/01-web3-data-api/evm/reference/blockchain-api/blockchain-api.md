@@ -46,6 +46,6 @@ Select what you want to achieve:
 
 ### Get Latest Block Number
 
-| No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                 |
-| --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 11  | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/{chain}](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |
+| No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                |
+| --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |
