@@ -7608,7 +7608,8 @@
           "name": "address",
           "description": "The address of the NFT collection",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "example": "0x8821bee2ba0df28761afff119d66390d594cd280"
         }
       ],
       "queryParams": [
@@ -7679,6 +7680,12 @@
           "body": {
             "type": "object",
             "fields": [
+              {
+                "name": "total_tokens",
+                "type": "string",
+                "description": "The number of tokens in the collection",
+                "example": "100"
+              },
               {
                 "name": "owners",
                 "type": "object",
