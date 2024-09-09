@@ -42,7 +42,7 @@ const BreakingChanges = () => {
               <Link href="https://forum.moralis.io/">Forum</Link>
             </li>
             <li>
-              <Link href="https://twitter.com/MoralisWeb3">Twitter</Link>
+              <Link href="https://x.com/moralisdevs">Twitter</Link>
             </li>
             <li>Intercom</li>
             <li>Discord</li>

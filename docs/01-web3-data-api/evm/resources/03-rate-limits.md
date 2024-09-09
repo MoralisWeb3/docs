@@ -2,7 +2,7 @@
 title: "Rate Limits"
 slug: "/web3-data-api/evm/reference/rate-limits"
 description: "Learn more about rate limits and how it can affect your API usage."
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 Moralis API has rate limit mechanism placed on each of the Moralis API offered. Depending on the [plans](https://moralis.io/pricing/) that you have on your Moralis account, you will have different throughput which will determine how many API calls you can make before getting rate limited.
