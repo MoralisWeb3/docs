@@ -20,7 +20,7 @@ Breaking changes are typically any changes that might require action from our cu
 
 - [Changelog](/changelog)
 - [Forum](https://forum.moralis.io/)
-- [Twitter](https://x.com/moralisdevs)
+- <a href="https://x.com/moralisdevs">Twitter</a>
 - Intercom
 - Discord
 - Product Emails
