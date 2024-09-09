@@ -12,6 +12,7 @@ Select what you want to achieve:
 - [Get Transactions](#get-transactions)
 - [Get Logs](#get-logs)
 - [Get Stats](#get-stats)
+- [Get Latest Block Number](#get-latest-block-number)
 
 ### Get Blocks
 
@@ -42,3 +43,9 @@ Select what you want to achieve:
 | No. | Method          | Description     | API Reference                                                        | URL                                                                                                                                                  |
 | --- | --------------- | --------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 10  | `getBlockStats` | Get block stats | [Method Documentation](/web3-data-api/evm/reference/get-block-stats) | [https://deep-index.moralis.io/api/v2.2/block/:block_number_or_hash/stats](https://deep-index.moralis.io/api/v2.2/block/:block_number_or_hash/stats) |
+
+### Get Latest Block Number
+
+| No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                 |
+| --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/{chain}](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |

@@ -17072,6 +17072,97 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getLatestBlockNumber": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get latest block number.",
+      "description": "Returns the latest block number for the given chain.",
+      "method": "GET",
+      "path": "/latestBlockNumber/:chain",
+      "pathParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "optimism sepolia",
+            "0xaa37dc",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507"
+          ]
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the latest block number.",
+          "body": {
+            "type": "string",
+            "example": "15863321"
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.block.getLatestBlockNumber({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.block.getLatestBlockNumber(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     }
   },
   "utils": {
