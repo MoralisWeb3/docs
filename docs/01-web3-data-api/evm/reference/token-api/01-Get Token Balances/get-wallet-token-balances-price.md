@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 0
 sidebar_label: Get Native & ERC20 Token Balances by Wallet
 slug: /web3-data-api/evm/reference/get-wallet-token-balances-price
 ---
