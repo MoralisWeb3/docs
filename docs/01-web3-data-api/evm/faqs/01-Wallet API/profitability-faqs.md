@@ -1,6 +1,6 @@
 ---
 title: "Profitability FAQs"
-slug: "../../evm/profitability-faqs"
+slug: "/web3-data-api/evm/profitability-faqs"
 sidebar_position: 2
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Supported NFT Marketplaces"
-slug: "../../evm/nft-marketplaces"
+slug: "/web3-data-api/evm/nft-marketplaces"
 sidebar_position: 6
 ---
 

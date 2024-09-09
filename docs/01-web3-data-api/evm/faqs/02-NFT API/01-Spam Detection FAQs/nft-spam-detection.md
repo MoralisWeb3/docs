@@ -1,17 +1,16 @@
 ---
 title: "NFT Spam Detection"
-slug: "../../../evm/nft-spam-detection"
+slug: "/web3-data-api/evm/nft-spam-detection"
 description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
 sidebar_position: 3
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 NFT spam detection is designed to provide an extra layer of protection and help you easily identify possible spam contracts.
 
 ### How does it work?
+
 Our latest update adds a new field called `possible_spam` to all NFTs. This field returns `true` or `false`, depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
 
 With this feature you can effortlessly identify and hide suspicious contracts or notify your customers about potential risks associated with them.
@@ -46,4 +45,5 @@ Spam detection is available on the following endpoints:
 - [Get NFT transfers by block](https://docs.moralis.io/web3-data-api/evm/reference/get-nft-transfers-by-block)
 
 ### What chains is this supported on?
+
 This feature is supported on all EVM chains.

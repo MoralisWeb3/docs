@@ -1,18 +1,15 @@
 ---
 title: "Automatic Metadata Updates"
-slug: "../../../evm/automatic-metadata-updates"
+slug: "/web3-data-api/evm/automatic-metadata-updates"
 description: "The Moralis NFT API makes working with NFT Metadata easier by supporting automatic refreshes of NFT metadata."
 sidebar_position: 2
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 For all collections that have metadata on IPFS we automatically refresh token metadata each time those tokens are requested on any NFT endpoint.
 
 Each time a token is requested, it will be queued for metadata refresh.
-
 
 ## Cool-off period
 

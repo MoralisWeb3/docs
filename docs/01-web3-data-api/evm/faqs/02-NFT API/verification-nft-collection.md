@@ -1,6 +1,6 @@
 ---
 title: "NFT Collection Verification FAQs"
-slug: "../../evm/verification-nft-collections"
+slug: "/web3-data-api/evm/verification-nft-collections"
 sidebar_position: 3
 ---
 

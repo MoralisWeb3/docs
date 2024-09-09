@@ -1,6 +1,6 @@
 ---
 title: "Internal Transactions FAQs"
-slug: "../../evm/internal-transactions"
+slug: "/web3-data-api/evm/internal-transactions"
 sidebar_position: 5
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Token Security Score FAQs"
-slug: "../../evm/token-security-score-faqs"
+slug: "/web3-data-api/evm/token-security-score-faqs"
 sidebar_position: 4
 ---
 
@@ -8,17 +8,17 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Moralis Token Security Score
 
-Our Token Security Score is a bespoke metric designed to evaluate the security of ERC-20 tokens by analyzing multiple aspects of the token's smart contract. 
+Our Token Security Score is a bespoke metric designed to evaluate the security of ERC-20 tokens by analyzing multiple aspects of the token's smart contract.
 
-This comprehensive score leverages over 35 different factors, incorporating both on-chain and off-chain data to provide a thorough assessment of a token's security. These factors range from contract vulnerabilities and audit results to transaction patterns and liquidity metrics. 
+This comprehensive score leverages over 35 different factors, incorporating both on-chain and off-chain data to provide a thorough assessment of a token's security. These factors range from contract vulnerabilities and audit results to transaction patterns and liquidity metrics.
 
 The Token Security Score is regularly updated to ensure it reflects the most current information and trends, providing an up-to-date security assessment for users.
 
 ## How can the Security Score be used?
 
-The Token Security Score plays a crucial role in safeguarding users in the crypto ecosystem. For traders, wallets, and decentralized exchanges (DEXs), displaying this score on token pages provides an immediate and transparent indicator of a token's security status, helping users make informed decisions before engaging with a token. 
+The Token Security Score plays a crucial role in safeguarding users in the crypto ecosystem. For traders, wallets, and decentralized exchanges (DEXs), displaying this score on token pages provides an immediate and transparent indicator of a token's security status, helping users make informed decisions before engaging with a token.
 
-Additionally, the score is invaluable when receiving unknown assets, as wallets can display the score to alert users to potential risks associated with newly received tokens. 
+Additionally, the score is invaluable when receiving unknown assets, as wallets can display the score to alert users to potential risks associated with newly received tokens.
 
 By integrating the Token Security Score into user interfaces, platforms can enhance trust and security, ultimately protecting users from engaging with potentially harmful tokens.
 
@@ -48,13 +48,11 @@ These metrics, along with many others, are combined to form a holistic view of a
 
 For a full comprehensive breakdown of all metrics we consider, as well as to get access to this detailed data, please contact our enterprise sales team.
 
-
 ## What criteria must a token meet to receive a security score?
 
 As soon as a token begins trading, it qualifies for analysis and will be assigned a security score based on the available data.
 
 Depending on the availability of data, the token will typically be scored within a few minutes of its first trade.
-
 
 ## How do you handle tokens with insufficient data for a security score?
 
@@ -64,23 +62,24 @@ If a supported token cannot be fully analyzed due to insufficient data, it will 
 
 Yes, a token’s security score is dynamic and can change over time. After a token is initially analyzed and assigned a score, this score remains valid for one week. After this period, the token will be re-analyzed upon its next trade. If the token is not traded for another month, it will not be re-analyzed until a new trade occurs.
 
-
 ## Can I access a detailed breakdown of the factors contributing to a token's security score?
+
 Yes, users can access a comprehensive breakdown of all the metrics that contribute to a token's security score. To view this detailed data, please contact our enterprise sales team.
 
 ## What chains are supported?
+
 All mainnet chains are supported.
 
 ## Which endpoints are supported?
 
-| Name                               | Endpoint                               | API Reference                                                                        |
-| ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| Get Wallet History                 | `/wallets/:address/history`              | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
-| Get ERC20 Transfers by Wallet      | `/:address/erc20/transfers`              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
-| Get ERC20 Transfers by Contract    | `/erc20/:address/transfers`              | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
-| Get ERC20 Price                    | `/erc20/:address/price`              | [Method Documentation](/web3-data-api/evm/reference/get-token-price)             |
-| Get Multiple ERC20 Prices          | `/erc20/prices`              | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices)             |
-| Get Wallet Token Balances          | `/:address/erc20`              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances)             |
-| Get Wallet Token Balances with Prices | `/wallets/{address}/tokens`              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price)             |
-| Get ERC20 Metadata by Contract     | `/erc20/metadata`              | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)             |
-| Get ERC20 Metadata by Symbol       | `/erc20/metadata/symbols`              | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)             |
+| Name                                  | Endpoint                    | API Reference                                                                        |
+| ------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ |
+| Get Wallet History                    | `/wallets/:address/history` | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
+| Get ERC20 Transfers by Wallet         | `/:address/erc20/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
+| Get ERC20 Transfers by Contract       | `/erc20/:address/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
+| Get ERC20 Price                       | `/erc20/:address/price`     | [Method Documentation](/web3-data-api/evm/reference/get-token-price)                 |
+| Get Multiple ERC20 Prices             | `/erc20/prices`             | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices)       |
+| Get Wallet Token Balances             | `/:address/erc20`           | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances)       |
+| Get Wallet Token Balances with Prices | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
+| Get ERC20 Metadata by Contract        | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
+| Get ERC20 Metadata by Symbol          | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |

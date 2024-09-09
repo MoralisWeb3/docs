@@ -1,6 +1,6 @@
 ---
 title: "EVM Response codes"
-slug: "api-response"
+slug: "/web3-data-api/evm/reference/api-response"
 sidebar_label: "Response codes"
 sidebar_position: 3
 ---

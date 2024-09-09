@@ -1,6 +1,6 @@
 ---
 title: "Rate Limits"
-slug: "rate-limits"
+slug: "/web3-data-api/evm/reference/rate-limits"
 description: "Learn more about rate limits and how it can affect your API usage."
 sidebar_position: 1
 ---

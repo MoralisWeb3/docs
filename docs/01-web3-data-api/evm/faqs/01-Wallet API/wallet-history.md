@@ -1,6 +1,6 @@
 ---
 title: "Wallet History FAQs"
-slug: "../../evm/wallet-history"
+slug: "/web3-data-api/evm/wallet-history"
 sidebar_position: 5
 ---
 

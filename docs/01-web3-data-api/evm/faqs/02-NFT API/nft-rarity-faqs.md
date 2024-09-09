@@ -1,6 +1,6 @@
 ---
 title: "NFT Rarity FAQs"
-slug: "../../evm/nft-rarity-faqs"
+slug: "/web3-data-api/evm/nft-rarity-faqs"
 sidebar_position: 2
 ---
 

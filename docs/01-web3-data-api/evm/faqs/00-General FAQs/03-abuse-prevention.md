@@ -1,6 +1,6 @@
 ---
 title: "Abuse Prevention"
-slug: "abuse-prevention"
+slug: "/web3-data-api/evm/reference/abuse-prevention"
 sidebar_position: 2
 ---
 

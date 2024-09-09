@@ -1,13 +1,11 @@
 ---
 title: "Report NFT Spam"
-slug: "../../evm/report-nft-spam"
+slug: "/web3-data-api/evm/report-nft-spam"
 description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
 sidebar_position: 4
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
-
-
 
 ## Step 1: Setup Moralis
 

@@ -1,6 +1,6 @@
 ---
 title: "Supported DEXs"
-slug: "../../evm/supported-dexs-token-api"
+slug: "/web3-data-api/evm/supported-dexs-token-api"
 sidebar_label: "Supported DEXs"
 sidebar_position: 4
 ---

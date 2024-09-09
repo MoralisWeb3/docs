@@ -1,6 +1,6 @@
 ---
 title: "Pagination"
-slug: "pagination"
+slug: "/web3-data-api/evm/reference/pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
 sidebar_position: 1
 ---

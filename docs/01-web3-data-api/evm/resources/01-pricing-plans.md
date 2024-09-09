@@ -1,6 +1,6 @@
 ---
 title: "Pricing Plans"
-slug: "../../evm/pricing-plans"
+slug: "/web3-data-api/evm/pricing-plans"
 sidebar_position: 0
 ---
 

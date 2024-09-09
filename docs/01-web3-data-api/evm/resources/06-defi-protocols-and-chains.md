@@ -1,6 +1,6 @@
 ---
 title: "Supported DeFi Protocols"
-slug: "../../evm/defi-protocols-and-chains"
+slug: "/web3-data-api/evm/defi-protocols-and-chains"
 sidebar_position: 5
 ---
 

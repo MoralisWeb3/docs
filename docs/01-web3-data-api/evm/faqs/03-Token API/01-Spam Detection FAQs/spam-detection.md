@@ -1,6 +1,6 @@
 ---
 title: "ERC20 Spam Detection"
-slug: "../../evm/erc20-spam-detection"
+slug: "/web3-data-api/evm/erc20-spam-detection"
 description: "NFT spam detection is designed to provide an extra layer of protection and help you easily identify potentially harmful contracts."
 sidebar_position: 0
 ---
@@ -36,4 +36,5 @@ Spam detection is available on the following endpoints:
 - [Get ERC20 token approvals](https://docs.moralis.io/web3-data-api/reference/get-erc20-approvals)
 
 ### What chains is this supported on?
+
 This feature is supported on all EVM chains.
