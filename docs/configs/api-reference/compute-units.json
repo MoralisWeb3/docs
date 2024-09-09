@@ -106,6 +106,12 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "getWalletApprovals",
+      "path": "/wallets/{address}/approvals",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
       "price": 50,
@@ -236,6 +242,30 @@
       "endpoint": "getWalletTokenIdTransfers",
       "path": "/nft/{address}/{token_id}/transfers",
       "price": 20,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTraitsByCollection",
+      "path": "/nft/{address}/traits",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTraitsByCollectionPaginate",
+      "path": "/nft/{address}/nfts-by-traits",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "resyncNFTRarity",
+      "path": "/nft/{address}/traits/resync",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNFTByContractTraits",
+      "path": "/nft/{address}/nfts-by-traits",
+      "price": 50,
       "rateLimitCost": 20
     },
     {

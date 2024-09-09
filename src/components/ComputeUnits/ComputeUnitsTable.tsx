@@ -36,6 +36,9 @@ const fixedPath = {
   getTransactions: "get-wallet-transactions",
   getWalletProfitabilitySummary: "wallet-api/get-wallet-profitability-summary",
   getWalletProfitability: "wallet-api/get-wallet-profitability",
+  resyncNFTRarity: "resync-nft-traits-by-collection",
+  getNFTByContractTraits: "get-nfts-by-traits",
+  getWalletApprovals: "wallet-api/get-wallet-token-approvals",
 };
 
 const DynamicPriceUnits = {
