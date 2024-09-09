@@ -1,6 +1,6 @@
 ---
 title: "EVM API – Authentication"
-sidebar_label: "/web3-data-api/evm/reference/Authentication"
+slug: "/web3-data-api/evm/reference/Authentication"
 sidebar_position: 0
 ---
 
