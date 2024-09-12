@@ -1034,7 +1034,7 @@ li.dropdown-divider {
 /* Ethereum */
 .menu__link[href$="ethereum-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/eth.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/eth.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1047,7 +1047,7 @@ li.dropdown-divider {
 /* Polygon */
 .menu__link[href$="polygon-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/polygon.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/polygon.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1060,7 +1060,7 @@ li.dropdown-divider {
 /* Binance Smart Chain */
 .menu__link[href$="binance-smart-chain-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/bsc.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/bsc.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1073,7 +1073,7 @@ li.dropdown-divider {
 /* Arbitrum */
 .menu__link[href$="arbitrum-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/arbitrum.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/arbitrum.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1086,7 +1086,7 @@ li.dropdown-divider {
 /* Base */
 .menu__link[href$="base-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/base.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/base.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1099,7 +1099,7 @@ li.dropdown-divider {
 /* Optimism */
 .menu__link[href$="optimism-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/optimism.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/optimism.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1112,7 +1112,7 @@ li.dropdown-divider {
 /* Linea */
 .menu__link[href$="linea-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/linea.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/linea.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1125,7 +1125,7 @@ li.dropdown-divider {
 /* Avalanche */
 .menu__link[href$="avalanche-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/avalanche.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/avalanche.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1138,7 +1138,7 @@ li.dropdown-divider {
 /* Gnosis */
 .menu__link[href$="gnosis-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/gnosis.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/gnosis.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1151,7 +1151,7 @@ li.dropdown-divider {
 /* Moonbeam */
 .menu__link[href$="moonbeam-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/moonbeam.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/moonbeam.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1164,7 +1164,7 @@ li.dropdown-divider {
 /* Blast */
 .menu__link[href$="blast-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/blast.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/blast.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1177,7 +1177,7 @@ li.dropdown-divider {
 /* zkSync */
 .menu__link[href$="zksync-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/zksync.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/zksync.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1190,7 +1190,7 @@ li.dropdown-divider {
 /* Mantle */
 .menu__link[href$="mantle-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/mantle.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/mantle.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1203,7 +1203,7 @@ li.dropdown-divider {
 /* Polygon zkEVM */
 .menu__link[href$="polygon-zkevm-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/polygon-zkevm.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/polygon-zkevm.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1216,7 +1216,7 @@ li.dropdown-divider {
 /* Zetachain */
 .menu__link[href$="zetachain-json-rpc-api"]::before {
   content: "";
-  background-image: url("/img/content/zetachain.png");
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/zetachain.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
