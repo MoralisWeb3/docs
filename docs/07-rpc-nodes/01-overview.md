@@ -78,7 +78,7 @@ To learn more about the available methods, visit the [Standard vs Extended RPC M
 
 ## Rate Limiting and Usage Limits
 
-Moralis enforces rate limits at the **account level** to ensure fair usage across all users. Each account has a set number of allowed requests per minute, based on your plan. For more information on rate limits and how to optimize your usage, visit our [FAQ](./resources/rpc-faqs) page.
+Moralis enforces rate limits at the **account level** to ensure fair usage across all users. Each account has a set number of allowed requests per minute, based on your plan. For more information on rate limits and how to optimize your usage, visit our [FAQ](/rpc-faqs) page.
 
 ---
 
@@ -92,7 +92,7 @@ Moralis enforces rate limits at the **account level** to ensure fair usage acros
 
 ## Need Help?
 
-If you have any questions or need further assistance, check out our [FAQ](./resources/rpc-faqs) or reach out to our support team.
+If you have any questions or need further assistance, check out our [FAQ](/rpc-faqs) or reach out to our support team.
 
 ---
 
