@@ -2,21 +2,31 @@
 title: "RPC Node Compute Units"
 slug: "/rpc-nodes/reference/compute-units-cu"
 sidebar_label: "Compute Units (CU)"
-description: "Learn more about what is Compute Units and how does it affects your pricing."
-sidebar_position: 8
+description: "Learn more about what Compute Units are and how they affect your pricing."
+sidebar_position: 0
 ---
 
-All [Moralis plans](/web3-data-api/evm/pricing-plans) have generous limits on the number of requests you can make per month. How many included requests you have depends on the plan you have, check the [pricing page](https://moralis.io/pricing) for more details.
+import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
 
-Some requests are more expensive than others. By giving some heavy requests higher weight, we ensure that you only pay for what you use and not a cent more.
+# RPC Node Compute Units (CU)
+
+All [Moralis plans](https://moralis.io/pricing) come with generous monthly limits on the number of requests you can make. The specific number of included requests depends on the plan you choose. Please check the [pricing page](https://moralis.io/pricing) for details on the different plans.
+
+Some API requests are more computationally expensive than others. To ensure fair usage and pricing, heavier requests are assigned higher **Compute Unit (CU) weights**, meaning you only pay for what you use.
+
+---
 
 ## What is a Compute Unit (CU)?
 
-A compute unit is a measure of the requests needed to query computationally expensive API endpoints. Each request has both **CU Weight** and **Archive CU Weight** that are measured in terms of compute units.
+A **Compute Unit (CU)** is a measure of computational load assigned to different API requests. Each request is assigned a **CU Weight** and an optional **Archive CU Weight** (if you're querying historical data or archive nodes). The weight of the request will be deducted from your total available CUs.
 
-### Price
+---
 
-Request price refers to the amount of compute units that will be calculated towards your API usage billing.
+## CU Pricing Overview
+
+Each RPC method has a specific **CU Weight** that reflects the computational cost of the request. Heavier operations consume more CUs, and this affects the total number of requests you can make within your plan. Archive requests (queries made to archive nodes) are often more expensive, and thus, have a higher **Archive CU Weight**.
+
+Here’s a detailed breakdown of the CU pricing for different standard RPC methods:
 
 | RPC Method                                | CU Weight | Archive CU Weight (if applicable) |
 | ----------------------------------------- | --------- | --------------------------------- |
@@ -48,3 +58,45 @@ Request price refers to the amount of compute units that will be calculated towa
 | `eth_getUncleCountByBlockNumber`          | 2         | 8                                 |
 | `eth_maxPriorityFeePerGas`                | 2         | 2                                 |
 | `eth_sendRawTransaction`                  | 3         | 3                                 |
+
+---
+
+## Extended RPC Methods and Compute Units
+
+Moralis also provides **Extended RPC Methods** that offer more advanced data retrieval options. These methods are more computationally intensive, and therefore have higher CU weights associated with them. Below is a list of the available **Extended RPC Methods** and their corresponding CU weights:
+
+| Custom Method                | Description                                | API Mapping                   | CU Weight |
+| ---------------------------- | ------------------------------------------ | ----------------------------- | --------- |
+| `eth_getTransactions`        | Get native transactions by wallet address. | `getWalletTransactions`       | 15        |
+| `eth_getDecodedTransactions` | Get wallet history by wallet address.      | `getWalletHistory`            | 30        |
+| `eth_getTokenBalances`       | Get ERC20 token balances by wallet.        | `getWalletTokenBalancesPrice` | 25        |
+| `eth_getTokenPrice`          | Get ERC20 token price by token address.    | `getTokenPrice`               | 25        |
+| `eth_getTokenMetadata`       | Get ERC20 token metadata by token address. | `getTokenMetadata`            | 8         |
+| `eth_getNFTBalances`         | Get NFTs by wallet address.                | `getWalletNFTs`               | 20        |
+| `eth_getNFTCollections`      | Get NFT collections by wallet address.     | `getWalletNFTCollections`     | 20        |
+
+---
+
+## Archive Nodes and CU Weight
+
+**Archive Nodes** store historical blockchain data that extends far beyond the most recent blocks. Because of the additional computational and storage resources required to maintain archive nodes, querying these nodes comes with a higher **Archive CU Weight**. If your use case involves accessing deep historical data, be mindful of the increased CU cost.
+
+---
+
+## Optimize Your CU Usage
+
+To maximize your CU allocation, you can:
+
+- **Batch Requests**: Where possible, batch multiple requests into a single API call. Just note that batch requests have a maximum size of 20.
+- **Limit Block Range**: The default block range for queries is 100 blocks. Requesting larger block ranges or querying archive data will result in higher CU consumption.
+- **Monitor Usage**: Regularly track your CU usage in the Moralis dashboard to avoid hitting your rate limits unexpectedly.
+
+---
+
+## Need Higher Limits?
+
+If you find that your use case requires more CUs than your current plan offers, consider upgrading to a higher plan or reaching out to our support team for custom solutions.
+
+For more information on rate limits and usage caps, visit our [FAQ](./rpc-faqs).
+
+---

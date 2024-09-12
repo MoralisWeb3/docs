@@ -1,7 +1,7 @@
 ---
 title: "Setting Up RPC Nodes"
-slug: "./get-your-node-api-key"
-description: "How to set up your RPC Nodex and get started."
+slug: "/get-your-node-api-key"
+description: "How to set up your RPC Nodes and get started."
 sidebar_position: 0
 ---
 
@@ -9,29 +9,50 @@ import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
 
 # Getting Started with Moralis Nodes
 
-Moralis simplifies the process of accessing data from nodes across various blockchains, and this guide is designed to walk you through the steps to get started with Moralis Nodes.
+Moralis simplifies the process of accessing blockchain data from nodes across various blockchains. This guide will walk you through the steps to set up your Moralis RPC node and get started quickly.
 
 ## Step 1: Create a Moralis Account
 
-To start, sign up for a complimentary Moralis account by navigating to the [Moralis Dashboard](https://admin.moralis.io/).
-![image](https://github.com/MoralisWeb3/docs/assets/15834299/3d1c58e5-e084-41c0-8e9a-0a548935a64a)
+To begin, you’ll need a Moralis account. Sign up for a free account by heading to the [Moralis Dashboard](https://admin.moralis.io/).
 
-## Step 2: Access your Node URL
+![Sign Up for Moralis](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/moralis-login.png)
 
-To begin using Nodes, you must generate your unique node URL by following these steps:
+---
 
-- Log in to your Moralis Dashboard.
-- On the sidebar menu, click on the "Nodes" tab, then select "Create a new node." Choose your preferred blockchain and specify whether you want access to the mainnet or testnet.
-  ![image](https://github.com/MoralisWeb3/docs/assets/15834299/eb489c87-64d5-459d-ab1e-4cd9422e0f46)
+## Step 2: Access Your Node URL
 
-## Step 3: Start using your node from your application
+After signing up, the next step is to generate your unique **Node URL**. Follow these steps:
 
-Once you have set up your Node, you're all set to begin utilizing it by making RPC calls from your application. Simply copy one of the two provided URLs (either site 1 or site 2), each of which contains your Node API key. Integrate this URL into your application, and you're ready to start interacting with the Node.
+1. **Log in** to your Moralis Dashboard.
+2. From the sidebar, click on the **"Nodes"** tab.
+3. Select **"Create a New Node"**.
+
+Here, you can choose the blockchain network you want to connect to (e.g., Ethereum, Binance Smart Chain, Polygon) and specify whether you want access to the **mainnet** or **testnet**.
+
+Once you’ve selected your network and environment, click **"Create Node"** to generate your node.
+
+![Create a New Node](https://raw.githubusercontent.com/MoralisWeb3/docs/c2006ab6719517818f25809615535ac6575c8f95/static/img/content/moralis-create-node.png)
+
+---
+
+## Step 3: Copy Your Node URL
+
+Once your node is created, you will be provided with two URLs—one for **site 1** and another for **site 2**. Both URLs include your **Node API Key**.
+
+Simply copy one of these URLs. This is your unique **Node URL**, which you'll use to interact with the blockchain in your application.
+
+Make sure to keep your Node URL safe, as it contains your API key, which is essential for connecting to the blockchain.
+
+![Copy Node URL](https://raw.githubusercontent.com/MoralisWeb3/docs/c2006ab6719517818f25809615535ac6575c8f95/static/img/content/moralis-copy-node-url.png)
+
+---
 
 ## Next Steps
 
-Congratulations! You've successfully created your Moralis account, acquired your Moralis Node URL along with your Node API Key, and begun making calls to your Moralis Node.
+Congratulations! You've successfully created your Moralis account and generated your unique Node URL. You’re now ready to start making RPC calls using your node.
 
-You're now prepared to delve further into Moralis and discover its extensive features. For those interested in learning more about the Moralis Node and the various RPC Requests it supports, you can find detailed information on this [here (link to RPC methods Compute unit page)].
+To move forward and learn how to make your first RPC call, check out the next guide in the series: [Making Your First RPC Call](#).
+
+---
 
 Happy coding with Moralis!

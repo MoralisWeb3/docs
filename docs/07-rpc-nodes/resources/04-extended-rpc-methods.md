@@ -1,7 +1,7 @@
 ---
 title: "Extended RPC Methods"
 slug: "/extended-rpc-methods"
-sidebar_position: 0
+sidebar_position: 2
 ---
 
 import NodeBanner from "@site/src/components/NodeBanner/NodeBanner.tsx";
