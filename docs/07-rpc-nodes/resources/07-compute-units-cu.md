@@ -97,6 +97,6 @@ To maximize your CU allocation, you can:
 
 If you find that your use case requires more CUs than your current plan offers, consider upgrading to a higher plan or reaching out to our support team for custom solutions.
 
-For more information on rate limits and usage caps, visit our [FAQ](./rpc-faqs).
+For more information on rate limits and usage caps, visit our [FAQ](/rpc-faqs).
 
 ---

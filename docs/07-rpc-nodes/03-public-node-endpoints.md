@@ -1,6 +1,6 @@
 ---
 title: "Supported Networks"
-slug: "/public-rpc-node-endpoints"
+slug: "/supported-networks"
 sidebar_label: "Supported Networks"
 sidebar_position: 3
 sidebar_class_name: "sidebar-overview"

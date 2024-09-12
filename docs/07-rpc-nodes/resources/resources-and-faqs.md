@@ -1,6 +1,6 @@
 ---
 title: "RPC Node FAQs"
-slug: "/resources/rpc-faqs"
+slug: "/rpc-faqs"
 sidebar_position: 3
 ---
 
