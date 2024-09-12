@@ -10,15 +10,13 @@ sidebar_class_name: "sidebar-overview"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 :::tip
 You can learn by [watching the Streams API Demo](#demos).
 :::
 
 ## What is the Streams API?
 
-With Streams API you can listen for real time events on chain, you can listen for when a new event is emitted in your contract or for when a walltet address does an NFT transfer or a transaction. You can also get notifications for native and internal transactions. You will receive webhook requests for those events specific to your stream configuration.
+With Streams API you can listen for real time events on chain, you can listen for when a new event is emitted in your contract or for when a wallet address does an NFT transfer or a transaction. You can also get notifications for native and internal transactions. You will receive webhook requests for those events specific to your stream configuration.
 
 ```mermaid
 graph TD;

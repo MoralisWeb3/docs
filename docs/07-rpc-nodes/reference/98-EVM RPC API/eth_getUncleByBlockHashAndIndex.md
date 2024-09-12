@@ -2,12 +2,17 @@
 sidebar_position: 22
 sidebar_label: eth_getUncleByBlockHashAndIndex
 slug: /rpc-nodes/reference/eth_getUncleByBlockHashAndIndex
+description: eth_getUncleByBlockHashAndIndex returns information about an uncle of a block given the block hash and the uncle index position. Useful to analyze uncle blocks.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getUncleByBlockHashAndIndex RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Uncle By Block Hash And Index
 

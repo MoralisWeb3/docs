@@ -2,12 +2,17 @@
 sidebar_position: 13
 sidebar_label: eth_getCode
 slug: /rpc-nodes/reference/eth_getCode
+description: eth_getCode returns the compiled bytecode of a smart contract, if any, at a given address. Useful for inspecting or verifying the code of deployed contracts.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_getCode RPC Method - Moralis Documentation</title>
+</head>
 
 ## Get Code
 

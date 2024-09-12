@@ -2,12 +2,17 @@
 sidebar_position: 27
 sidebar_label: eth_sendRawTransaction
 slug: /rpc-nodes/reference/eth_sendRawTransaction
+description: eth_sendRawTransaction creates a new message call transaction or a contract creation for signed transactions. Useful for sending signed transactions.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../configs/api-reference/configs.json";
+
+<head>
+    <title>eth_sendRawTransaction RPC Method - Moralis Documentation</title>
+</head>
 
 ## Send Raw Transaction
 
