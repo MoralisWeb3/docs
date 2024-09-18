@@ -43,24 +43,22 @@ Moralis provides an easy-to-use endpoint for getting token approvals for a given
 Below is an example of how to fetch token approvals using the Moralis API in JavaScript:
 
 ```javascript
-const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-utils");
+import Moralis from "moralis";
 
-const runApp = async () => {
+try {
   await Moralis.start({
     apiKey: "YOUR_API_KEY",
   });
 
-  const address = "0xYourWalletAddress";
-
-  // Fetching token approvals across multiple chains
-  const response = await Moralis.EvmApi.wallets.getWalletApprovals({
-    address,
-    chain: EvmChain.ETHEREUM,
+  const response = await Moralis.EvmApi.token.getWalletApprovals({
+    chain: "0x1",
+    address: "0xcB1C1FdE09f811B294172696404e88E658659905",
   });
 
-  console.log(response.toJSON());
-};
+  console.log(response.raw);
+} catch (e) {
+  console.error(e);
+}
 
 runApp();
 ```
