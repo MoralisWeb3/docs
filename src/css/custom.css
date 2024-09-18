@@ -1225,3 +1225,9 @@ li.dropdown-divider {
   margin-right: 8px;
   vertical-align: middle;
 }
+
+.navbar__logo img {
+  height: 3rem;
+  width: 13rem;
+  margin-top: -10px;
+}
