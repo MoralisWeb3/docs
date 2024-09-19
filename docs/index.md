@@ -1,5 +1,5 @@
 ---
-title: "Moralis API Documentation - Step-by-Step Web3 API Tutorials"
+title: "Moralis API Documentation - Web3 API Tutorials for Developers"
 slug: "/"
 sidebar_position: 1
 hide_table_of_contents: true
@@ -8,7 +8,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
 ---
 
 <head>
-  <title>Moralis API Documentation - Step-by-Step Web3 API Tutorials</title>
+  <title>Moralis API Documentation - Web3 API Tutorials for Developers</title>
 </head>
 
 import SearchBar from "@site/src/theme/SearchBar";
