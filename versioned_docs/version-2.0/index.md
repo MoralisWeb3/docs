@@ -1,5 +1,5 @@
 ---
-title: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials"
+title: "Moralis API Documentation - Web3 API Tutorials for Developers"
 slug: "/"
 sidebar_position: 1
 hide_table_of_contents: true
@@ -8,7 +8,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
 ---
 
 <head>
-  <title>Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials</title>
+  <title>Moralis API Documentation - Web3 API Tutorials for Developers</title>
 </head>
 
 <div className="hero shadow--lw">
@@ -16,7 +16,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
         <div className="row">
             <div className="col col--6 margin-bottom--xl">
                 <div className="col-demo">
-                    <h1 className="hero__title">Moralis Web3 Documentation</h1>
+                    <h1 className="hero__title">Moralis API Documentation</h1>
                     <p className="hero__subtitle">Integrate Web3 into any tech stack by following easy guides, recipes, and API references!</p>
                     <div>
                     <a href="/web3-data-api/evm/getting-started/" className="button button--primary button--outline button--lg">
@@ -27,7 +27,7 @@ description: "Integrate Web3 into any tech stack. Follow Moralis’ documentatio
             </div>
             <div className="col col--6">
                 <div className="col-demo">
-                    <img src="/img/content/scaleWebApi3.svg" width="580" height="422" loading="eager" alt="Moralis Web3 Documentation" />
+                    <img src="/img/content/scaleWebApi3.svg" width="580" height="422" loading="eager" alt="Moralis API Documentation" />
                 </div>
             </div>
         </div>

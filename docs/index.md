@@ -1,16 +1,15 @@
 ---
-title: "Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials"
+title: "Moralis API Documentation - Step-by-Step Web3 API Tutorials"
 slug: "/"
 sidebar_position: 1
 hide_table_of_contents: true
 hide_title: true
-description: "Integrate Web3 into any tech stack. Follow Moralis’ documentation for step-by-step guides, tutorials, and API references for our powerful Web3 APIs."
+description: "Moralis API Documentation offers Web3 API tutorials for developers. Integrate Web3 into any tech stack with powerful APIs and step-by-step guides."
 ---
 
 <head>
-  <title>Moralis Web3 Documentation - Step-by-Step Web3 API Tutorials</title>
+  <title>Moralis API Documentation - Step-by-Step Web3 API Tutorials</title>
 </head>
-
 
 import SearchBar from "@site/src/theme/SearchBar";
 
@@ -85,7 +84,6 @@ import SearchBar from "@site/src/theme/SearchBar";
         </div>
     </div>
 </div>
-
 
 <div className="container">
     <h2>Explore by Chain</h2>
