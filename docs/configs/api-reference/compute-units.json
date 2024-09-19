@@ -112,6 +112,30 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "searchEntities",
+      "path": "/entities/search",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntity",
+      "path": "/entities/{entityId}",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntityCategories",
+      "path": "/entities/categories",
+      "price": 10,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntitiesByCategory",
+      "path": "/entities/categories/{categoryId}",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "getTokenTransfers",
       "path": "/{address}/erc20/transfers",
       "price": 50,
