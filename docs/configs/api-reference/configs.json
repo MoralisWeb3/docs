@@ -2734,6 +2734,521 @@
       ]
     }
   },
+  "entities": {
+    "getEntity": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Entity By ID",
+      "description": "Retrieve detailed information about a specific entity by its ID",
+      "method": "GET",
+      "path": "/entities/:entityId",
+      "pathParams": [
+        {
+          "name": "entityId",
+          "description": "The ID of the entity",
+          "required": true,
+          "example": "uniswap",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns detailed information about the entity",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "description": "The name of the entity",
+                "example": "Uniswap"
+              },
+              {
+                "name": "id",
+                "type": "string",
+                "description": "The ID of the entity",
+                "example": "uniswap"
+              },
+              {
+                "name": "logo",
+                "type": "string",
+                "description": "The URL to the entity's logo",
+                "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+              },
+              {
+                "name": "bio",
+                "type": "string",
+                "description": "A short bio or description of the entity",
+                "example": "Uniswap is the pioneering Ethereum-powered decentralized exchange (DEX) facilitating the exchange of ERC-20 tokens through liquidity pools."
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "A detailed description of the entity",
+                "example": null
+              },
+              {
+                "name": "website",
+                "type": "string",
+                "description": "The official website of the entity",
+                "example": "https://uniswap.org"
+              },
+              {
+                "name": "twitter",
+                "type": "string",
+                "description": "The Twitter handle of the entity",
+                "example": "https://twitter.com/Uniswap"
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "description": "The type of entity (e.g., decentralized exchange, centralized exchange)",
+                "example": "Decentralized Exchange"
+              },
+              {
+                "name": "addresses",
+                "type": "array",
+                "description": "An array of addresses associated with the entity",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "description": "The blockchain address of the entity",
+                      "example": "0x54f1acac26b10cdffc8a43904713aa0ad67a33f9"
+                    },
+                    {
+                      "name": "chain",
+                      "type": "string",
+                      "description": "The chain ID where the address is located",
+                      "example": "0x1"
+                    },
+                    {
+                      "name": "is_multi_chain",
+                      "type": "boolean",
+                      "description": "Indicates if the entity operates across multiple chains",
+                      "example": "false"
+                    },
+                    {
+                      "name": "primary_label",
+                      "type": "string",
+                      "description": "The primary label associated with the address",
+                      "example": "Uniswap: V3 Pool"
+                    },
+                    {
+                      "name": "additional_labels",
+                      "type": "array",
+                      "description": "Any additional labels associated with the address",
+                      "field": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.entities.getEntity({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.entities.get_entity(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+
+    "getEntitiesByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Entities By Category",
+      "description": "Get Entities By Category",
+      "method": "GET",
+      "path": "/entities/categories/:categoryId",
+      "pathParams": [
+        {
+          "name": "categoryId",
+          "description": "",
+          "required": true,
+          "example": "centralized_exchange",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the entities belonging to the category.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the entity",
+                      "example": "Uniswap"
+                    },
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "description": "The id of the entity",
+                      "example": "uniswap"
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "The logo of the entity",
+                      "example": "https://uniswap.io/favicon.ico"
+                    },
+                    {
+                      "name": "bio",
+                      "type": "string",
+                      "description": "The bio of the entity",
+                      "example": "Uniswap is a decentralized finance protocol that is used to exchange cryptocurrencies."
+                    },
+                    {
+                      "name": "description",
+                      "type": "string",
+                      "description": "The description of the entity",
+                      "example": "Uniswap is a decentralized finance protocol that is used to exchange cryptocurrencies."
+                    },
+                    {
+                      "name": "website",
+                      "type": "string",
+                      "description": "The website of the entity",
+                      "example": "https://uniswap.io"
+                    },
+                    {
+                      "name": "twitter",
+                      "type": "string",
+                      "description": "The Twitter handle of the entity",
+                      "example": "https://twitter.com/uniswap"
+                    },
+                    {
+                      "name": "type",
+                      "type": "string",
+                      "description": "The type of the entity",
+                      "example": "exchange"
+                    },
+                    {
+                      "name": "total_addresses",
+                      "type": "number",
+                      "description": "The total number of addresses",
+                      "example": 100
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.entities.getEntitiesByCategory({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.entities.get_entities_by_category(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+
+    "getEntityCategories": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get Entity Categories",
+      "description": "Get Entity Categories",
+      "method": "GET",
+      "path": "/entities/categories",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the entities belonging to the category.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the entity",
+                      "example": "Uniswap"
+                    },
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "description": "The id of the entity",
+                      "example": "uniswap"
+                    },
+                    {
+                      "name": "total_entities",
+                      "type": "number",
+                      "description": "The total number of entities",
+                      "example": 100
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.entities.getEntityCategories({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.entities.get_entity_categories(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+
+    "searchEntities": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Search Entities",
+      "description": "Search for entities, addresses and categories",
+      "method": "GET",
+      "path": "/entities/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "query",
+          "description": "The search query",
+          "required": true,
+          "type": "string",
+          "example": "uniswap"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the search results.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "entities",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the entity",
+                            "example": "Uniswap"
+                          },
+                          {
+                            "name": "id",
+                            "type": "string",
+                            "description": "The id of the entity",
+                            "example": "uniswap"
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The logo of the entity",
+                            "example": "https://uniswap.io/favicon.ico"
+                          },
+                          {
+                            "name": "bio",
+                            "type": "string",
+                            "description": "The bio of the entity",
+                            "example": "Uniswap is a decentralized finance protocol that is used to exchange cryptocurrencies."
+                          },
+                          {
+                            "name": "description",
+                            "type": "string",
+                            "description": "The description of the entity",
+                            "example": "Uniswap is a decentralized finance protocol that is used to exchange cryptocurrencies."
+                          },
+                          {
+                            "name": "website",
+                            "type": "string",
+                            "description": "The website of the entity",
+                            "example": "https://uniswap.io"
+                          },
+                          {
+                            "name": "twitter",
+                            "type": "string",
+                            "description": "The Twitter handle of the entity",
+                            "example": "https://twitter.com/uniswap"
+                          },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "description": "The type of the entity",
+                            "example": "exchange"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "addresses",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "address",
+                            "type": "string",
+                            "description": "The blockchain address of the entity",
+                            "example": "0x54f1acac26b10cdffc8a43904713aa0ad67a33f9"
+                          },
+                          {
+                            "name": "chain",
+                            "type": "string",
+                            "description": "The chain ID where the address is located",
+                            "example": "0x1"
+                          },
+                          {
+                            "name": "is_multi_chain",
+                            "type": "boolean",
+                            "description": "Indicates if the entity operates across multiple chains",
+                            "example": "false"
+                          },
+                          {
+                            "name": "primary_label",
+                            "type": "string",
+                            "description": "The primary label associated with the address",
+                            "example": "Uniswap: V3 Pool"
+                          },
+                          {
+                            "name": "entity",
+                            "type": "array",
+                            "field": {
+                              "type": "object",
+                              "fields": [
+                                {
+                                  "name": "name",
+                                  "type": "string",
+                                  "description": "The name of the entity",
+                                  "example": "Uniswap"
+                                },
+                                {
+                                  "name": "id",
+                                  "type": "string",
+                                  "description": "The id of the entity",
+                                  "example": "uniswap"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.entities.searchEntities({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.entities.search_entities(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    }
+  },
+
   "nft": {
     "getWalletNFTs": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",

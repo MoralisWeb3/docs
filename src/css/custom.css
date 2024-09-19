@@ -517,6 +517,15 @@ li.sidebar-nft-api a.menu__link--active:before {
   background-image: url(/img/sidebar-icons/nft-api-active.svg);
 }
 
+li.sidebar-entity-api a.menu__link:before {
+  background-image: url(/img/sidebar-icons/nft-api.svg);
+}
+
+li.sidebar-entity-api a.menu__link:hover:before,
+li.sidebar-entity-api a.menu__link--active:before {
+  background-image: url(/img/sidebar-icons/nft-api-active.svg);
+}
+
 li.sidebar-wallet-api a.menu__link:before {
   background-image: url(/img/sidebar-icons/wallet-api.svg);
 }

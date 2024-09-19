@@ -9,7 +9,7 @@ dotenv.config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Moralis Web3 Documentation",
+  title: "Moralis API Documentation",
   url: "https://docs.moralis.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -132,7 +132,7 @@ const config = {
         },
         {
           name: "og:site_name",
-          content: "Moralis Web3 Documentation",
+          content: "Moralis API Documentation",
         },
       ],
       docs: {

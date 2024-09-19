@@ -39,6 +39,10 @@ const fixedPath = {
   resyncNFTRarity: "resync-nft-traits-by-collection",
   getNFTByContractTraits: "get-nfts-by-traits",
   getWalletApprovals: "wallet-api/get-wallet-token-approvals",
+  getEntitiesByCategory: "entity-api/get-entities-by-category",
+  getEntity: "entity-api/get-entity-by-id",
+  getEntityCategories: "entity-api/get-entity-categories",
+  searchEntities: "entity-api/search-entities",
 };
 
 const DynamicPriceUnits = {

@@ -9,7 +9,7 @@ sidebar_position: 0
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <head>
-    <title>How to Build a Revoke.Cash Clone Using Moralis | Moralis Web3 Documentation</title>
+    <title>How to Build a Revoke.Cash Clone Using Moralis | Moralis API Documentation</title>
 </head>
 
 ## Watch the Full Video Tutorial
