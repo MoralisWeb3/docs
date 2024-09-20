@@ -3006,7 +3006,7 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the entities belonging to the category.",
+          "description": "Returns the entity categories.",
           "body": {
             "type": "object",
             "fields": [
@@ -3032,13 +3032,13 @@
                       "name": "name",
                       "type": "string",
                       "description": "The name of the entity",
-                      "example": "Uniswap"
+                      "example": "Centralized Exchange"
                     },
                     {
                       "name": "id",
                       "type": "string",
                       "description": "The id of the entity",
-                      "example": "uniswap"
+                      "example": "centralized_exchange"
                     },
                     {
                       "name": "total_entities",
