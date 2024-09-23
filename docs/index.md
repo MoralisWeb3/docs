@@ -9,6 +9,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
 
 <head>
   <title>Moralis API Documentation - Web3 API Tutorials for Developers</title>
+  <meta name="google-site-verification" content="QZyujgj641snkG6ghbv9VJq5lDJkTkino1N4bIZmSos" />
 </head>
 
 import SearchBar from "@site/src/theme/SearchBar";
