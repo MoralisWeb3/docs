@@ -18,7 +18,7 @@ The following endpoints will sunset in **30 days**:
 | [`/ipfs/uploadFolder`](https://deep-index.moralis.io/api-docs-2.2/#/IPFS/uploadFolder) | We recommend exploring other providers. |
 
 ### Palm: Confirmed Deprecation (60 Days Notice)
-Support for Palm mainnet will be discontinued on 22nd November. Please update your dapps and integrations accordingly. For alternative solutions we recommend visiting https://docs.palm.io/howto/use-supported-tools/tools
+Palm mainnet will be discontinued on 22nd November. Please update your dapps and integrations accordingly. We recommend exploring alternative providers, which you can find at https://docs.palm.io/howto/use-supported-tools/tools.
 
-### Aptos: Planned Deprecation
-We plan to sunset Aptos support in alignment with the network’s deprecation of their v1 Indexers. The timing remains tentative, but we aim to provide ample notice to our users. We encourage you to explore alternative providers and will offer guidance to ensure a smooth transition.
+### Aptos: Confirmed Deprecation (60 Days Notice)
+Aptos mainnet and testnet will be discontinued on November 22nd, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at https://aptos.dev/en/build/apis.
