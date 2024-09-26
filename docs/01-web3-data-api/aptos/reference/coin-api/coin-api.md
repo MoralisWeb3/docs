@@ -6,6 +6,14 @@ sidebar_class_name: "sidebar-coin-api"
 sidebar_position: 3
 ---
 
+import Admonition from "@theme/Admonition";
+
+<Admonition type="warning" icon="🚨" title="Aptos: Confirmed Deprecation (60 Days Notice)">
+  <p>
+    Aptos mainnet and testnet will be discontinued on <strong>November 22nd</strong>, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at <a href="https://aptos.dev/en/build/apis">Aptos APIs</a>.
+  </p>
+</Admonition>
+
 ### Get Coins
 
 - [Get latest deployed coins](/web3-data-api/aptos/reference/get-latest-coins)

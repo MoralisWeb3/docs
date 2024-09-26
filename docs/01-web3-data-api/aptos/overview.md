@@ -8,6 +8,14 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
+import Admonition from "@theme/Admonition";
+
+<Admonition type="warning" icon="🚨" title="Aptos: Confirmed Deprecation (60 Days Notice)">
+  <p>
+    Aptos mainnet and testnet will be discontinued on <strong>November 22nd</strong>, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at <a href="https://aptos.dev/en/build/apis">Aptos APIs</a>.
+  </p>
+</Admonition>
+
 ## What are the Web3 Data APIs?
 
 The Moralis Web3 Data APIs are a set of highly scalable APIs that solve popular Web3 challenges. By indexing blockchain data in a structured way, Moralis is able to expose APIs that make querying, fetching and understanding this data a breeze for developers.

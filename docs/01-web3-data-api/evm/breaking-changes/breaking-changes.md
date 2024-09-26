@@ -1,7 +1,7 @@
 ---
 title: "Breaking Changes"
 sidebar_label: "Breaking Changes"
-slug: "/web3-data-api/evm/breaking-changes"
+slug: "/web3-data-api/evm/breaking-changes-main"
 sidebar_class_name: "sidebar-breaking-changes"
 sidebar_position: 0
 ---
