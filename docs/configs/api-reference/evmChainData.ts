@@ -1191,6 +1191,66 @@ const chainData = [
       reason: "Coming soon",
     },
   },
+  {
+    name: "Flow",
+    logo: "/img/content/flow.png",
+    type: "Mainnet",
+    chainID: "0x2eb (747)",
+    evmChain: "EvmChain.FLOW",
+    isNew: true,
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["flow", "0x2eb"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      urls: [
+        "https://site1.moralis-nodes.com/flow/",
+        "https://site2.moralis-nodes.com/flow/",
+      ],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
+  {
+    name: "Flow Testnet",
+    logo: "/img/content/flow.png",
+    type: "Testnet",
+    chainID: "0x221 (545)",
+    evmChain: "EvmChain.FLOW_TESTNET",
+    isNew: true,
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["flow-testnet", "0x221"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      urls: [
+        "https://site1.moralis-nodes.com/flow/",
+        "https://site2.moralis-nodes.com/flow/",
+      ],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
 ] as const;
 
 export default chainData;
