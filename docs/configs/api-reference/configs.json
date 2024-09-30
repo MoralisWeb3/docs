@@ -10139,7 +10139,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.getNFTTraitsByCollection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_traits_by_collection(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -10316,7 +10316,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.getNFTTraitsByCollectionPaginate(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_traits_by_collection_paginate(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -10420,7 +10420,7 @@
         },
         {
           "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.resyncNFTRarity(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.resync_nft_rarity(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -10885,6 +10885,511 @@
         }
       ],
       "codeSamples": []
+    },
+    "getNFTFloorPriceByContract": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFT floor price by contract",
+      "description": "Get floor price for a given contract.",
+      "method": "GET",
+      "path": "/nft/:address/floor-price",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the contract's floor price",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "description": "The address of the NFT contract",
+                "example": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+                "required": true
+              },
+              {
+                "name": "floor_price",
+                "type": "string",
+                "description": "The floor price of the contract",
+                "example": "0.2176"
+              },
+              {
+                "name": "floor_price_usd",
+                "type": "string",
+                "description": "The floor price of the contract in USD",
+                "example": "564.24"
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "description": "The currency of the floor price",
+                "example": "eth"
+              },
+              {
+                "name": "marketplace",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the marketplace",
+                      "example": "blur",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "The logo of the marketplace",
+                      "example": "https://cdn.moralis.io/marketplaces/blur.png"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "last_updated",
+                "type": "string",
+                "description": "The timestamp of when the floor price was last updated",
+                "example": "2024-08-21T15:59:11.000Z",
+                "required": true
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTFloorPriceByContract({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_floor_price_by_contract(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getNFTFloorPriceByToken": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFT floor price by token",
+      "description": "Get floor price for a given token.",
+      "method": "GET",
+      "path": "/nft/:address/:token_id/floor-price",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        },
+        {
+          "name": "token_id",
+          "description": "The token ID of the NFT",
+          "required": true,
+          "example": "2441",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token's floor price",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "description": "The address of the NFT contract",
+                "example": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+                "required": true
+              },
+              {
+                "name": "token_id",
+                "type": "string",
+                "description": "The token ID of the NFT",
+                "example": "2441",
+                "required": true
+              },
+              {
+                "name": "floor_price",
+                "type": "string",
+                "description": "The floor price of the contract",
+                "example": "0.2176"
+              },
+              {
+                "name": "floor_price_usd",
+                "type": "string",
+                "description": "The floor price of the contract in USD",
+                "example": "564.24"
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "description": "The currency of the floor price",
+                "example": "eth"
+              },
+              {
+                "name": "marketplace",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the marketplace",
+                      "example": "blur",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "The logo of the marketplace",
+                      "example": "https://cdn.moralis.io/marketplaces/blur.png"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "last_updated",
+                "type": "string",
+                "description": "The timestamp of when the floor price was last updated",
+                "example": "2024-08-21T15:59:11.000Z",
+                "required": true
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTFloorPriceByToken({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_floor_price_by_token(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getNFTHistoricalFloorPriceByContract": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get historical NFT floor price by contract",
+      "description": "Get historical floor price for a given contract.",
+      "method": "GET",
+      "path": "/nft/:address/floor-price/historical",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705"
+          ]
+        },
+        {
+          "name": "interval",
+          "description": "The duration to query",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d", "60d", "90d", "1y", "all"]
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "example": "",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the contract's historical floor price",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page number in the paginated result set",
+                "example": 2
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of items per page in the paginated result set",
+                "example": 100
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "A pointer to the next page of results (if any), for pagination purposes.",
+                "example": ""
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "An array of objects, each representing a token's detailed information and financial data.",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "floor_price",
+                      "type": "string",
+                      "description": "The floor price of the contract",
+                      "example": "0.2176"
+                    },
+                    {
+                      "name": "floor_price_usd",
+                      "type": "string",
+                      "description": "The floor price of the contract in USD",
+                      "example": "564.24"
+                    },
+                    {
+                      "name": "currency",
+                      "type": "string",
+                      "description": "The currency of the floor price",
+                      "example": "eth"
+                    },
+                    {
+                      "name": "marketplace",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the marketplace",
+                            "example": "blur",
+                            "required": true
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The logo of the marketplace",
+                            "example": "https://cdn.moralis.io/marketplaces/blur.png"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "The timestamp of when the floor price was last updated",
+                      "example": "2024-08-21T15:59:11.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTHistoricalFloorPriceByContract({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_historical_floor_price_by_(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     }
   },
   "token": {
