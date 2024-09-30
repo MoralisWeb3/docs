@@ -1212,6 +1212,7 @@ const chainData = [
     },
     rpcNodes: {
       supported: false,
+      reason: "Coming soon",
       urls: [
         "https://site1.moralis-nodes.com/flow/",
         "https://site2.moralis-nodes.com/flow/",
@@ -1242,6 +1243,7 @@ const chainData = [
     },
     rpcNodes: {
       supported: false,
+      reason: "Coming soon",
       urls: [
         "https://site1.moralis-nodes.com/flow/",
         "https://site2.moralis-nodes.com/flow/",
