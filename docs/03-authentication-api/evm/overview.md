@@ -25,7 +25,7 @@ This approach allows us to design a backend where users are identified by their 
 
 If your application needs to support multiple blockchains and wallets, the Auth API could be a valuable solution.
 
-## Can you use Auth API with Magic.link, Privy, Web3Auth and other MPC wallets?
+## Can you use Auth API with Magic.link, Privy, Web3Auth and other MPC wallets/Web3 Authentication methods?
 
 Yes, as long as you can sign a message using the user's private key, you can use any type of web3 wallet or authentication method.
 
