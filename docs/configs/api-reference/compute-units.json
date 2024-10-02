@@ -293,6 +293,24 @@
       "rateLimitCost": 20
     },
     {
+      "endpoint": "getNFTFloorPriceByContract",
+      "path": "/nft/{address}/floor-price",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTFloorPriceByToken",
+      "path": "/nft/{address}/{token_id}/floor-price",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTHistoricalFloorPriceByContract",
+      "path": "/nft/{address}/floor-price/historical",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
       "endpoint": "resolveDomain",
       "path": "/resolve/{domain}",
       "price": 10,
@@ -459,7 +477,7 @@
     {
       "endpoint": "getWalletNetWorth",
       "path": "/wallets/{address}/net-worth",
-      "price": 500,
+      "price": 250,
       "rateLimitCost": 50,
       "dynamic": true
     },

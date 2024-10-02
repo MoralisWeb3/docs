@@ -29,6 +29,10 @@ const fixedPath = {
   getContractNFTTransfers: "get-nft-contract-transfers",
   getAllTokenIds: "get-contract-nfts",
   getNFTs: "get-wallet-nfts",
+  getNFTFloorPriceByContract: "get-nft-floor-price-by-contract",
+  getNFTFloorPriceByToken: "get-nft-floor-price-by-token",
+  getNFTHistoricalFloorPriceByContract:
+    "get-nft-historical-floor-price-by-contract",
   getTokenAddressTransfers: "get-token-transfers",
   getWalletTokenBalances: "get-wallet-token-balances",
   getTransactionVerbose: "get-decoded-transaction",
