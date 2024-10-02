@@ -25,6 +25,17 @@ This approach allows us to design a backend where users are identified by their 
 
 If your application needs to support multiple blockchains and wallets, the Auth API could be a valuable solution.
 
+## Can you use Auth API with Magic.link, Privy, Web3Auth and other MPC wallets?
+
+Yes, as long as you can sign a message using the user's private key, you can use any type of web3 wallet or authentication method.
+
+At moralis.com, we offer Magic.link as an option for users to log in, and to facilitate that we use the Auth API in exactly the same way as we would in order to support Metamask or any other wallet.
+
+Here are some tutorials on this topic:
+
+- [How to Authenticate Users with Web3Auth](/authentication-api/evm/how-to-sign-in-with-web3authio)
+- [How to Authenticate Users with Magic.Link](/authentication-api/evm/how-to-sign-in-with-magiclink)
+
 ## Auth API Features
 
 The Auth API provides out-of-the-box all the necessary APIs you need to authenticate your user wallet to your dapp, which includes:
