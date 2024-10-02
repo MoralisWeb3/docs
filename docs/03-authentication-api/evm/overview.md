@@ -15,6 +15,16 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Auth API allows your user to authenticate and verify signed messages with their web3 wallets when using your dapp. Built accordingly to the [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361) standard, enables your user to do off-chain authentication with their EVM or Solana-compatible wallets to establish user sessions with your dapp.
 
+## What are the benefits of the Auth API?
+
+We developed the Auth API to simplify the process of managing different wallets and blockchain networks when building the backend for moralis.com.
+
+With the Auth API, every user is assigned a unique `profileId`, regardless of which wallet or blockchain they use to log in.
+
+This approach allows us to design a backend where users are identified by their `profileId`, making it easier to add support for additional blockchains and wallets without modifying the backend.
+
+If your application needs to support multiple blockchains and wallets, the Auth API could be a valuable solution.
+
 ## Auth API Features
 
 The Auth API provides out-of-the-box all the necessary APIs you need to authenticate your user wallet to your dapp, which includes:
