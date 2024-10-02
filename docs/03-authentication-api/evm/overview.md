@@ -29,7 +29,7 @@ If your application needs to support multiple blockchains and wallets, the Auth 
 
 Yes, as long as you can sign a message using the user's private key, you can use any type of web3 wallet or authentication method.
 
-At moralis.com, we offer Magic.link as an option for users to log in, and to facilitate that we use the Auth API in exactly the same way as we would in order to support Metamask or any other wallet.
+At moralis.com, we offer Magic.link as an option for users to log in. To support Magic.link we use the Auth API in exactly the same way as we would in order to support Metamask or any other wallet.
 
 Here are some tutorials on this topic:
 
