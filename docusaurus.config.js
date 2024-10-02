@@ -192,6 +192,12 @@ const config = {
             position: "left",
             label: "RPC Nodes🔥",
           },
+          {
+            type: "doc",
+            docId: "authentication-api/evm/overview",
+            position: "left",
+            label: "Auth API",
+          },
           // position: Right
           {
             type: "html",
