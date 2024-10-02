@@ -28,8 +28,4 @@ With the **NFT Floor Price APIs**, you can now:
 
 These new APIs make it easier to build powerful NFT tools and applications. Whether you’re creating dashboards, market analysis tools, or NFT portfolio trackers, our new NFT Floor Price APIs give you the data you need to make informed decisions.
 
-### Who Can Access It?
-
-These endpoints are available to all users on our Business and Enterprise plans.
-
 We’re excited to see the innovative applications you’ll build with this new feature! 🚀
