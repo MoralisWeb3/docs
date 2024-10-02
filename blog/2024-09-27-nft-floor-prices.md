@@ -25,7 +25,6 @@ With the **NFT Floor Price APIs**, you can now:
 - **Track NFT Market Trends:** Easily monitor the floor price of any NFT contract in real-time.
 - **Analyze Individual Token Prices:** Retrieve floor prices for specific NFTs within a collection.
 - **Access Historical Data:** Get historical floor prices to analyze trends over time.
-- **Cross-Chain Support:** Supported across major blockchains like Ethereum, Polygon, BSC, and more.
 
 These new APIs make it easier to build powerful NFT tools and applications. Whether you’re creating dashboards, market analysis tools, or NFT portfolio trackers, our new NFT Floor Price APIs give you the data you need to make informed decisions.
 
