@@ -6,7 +6,7 @@
     <a href="https://discord.gg/moralis" target="_blank">
       <img alt="Join the Moralis DAO on Discord" src="https://img.shields.io/discord/819584798443569182?color=7289DA&label=Discord&logo=discord&logoColor=ffffff" />
     </a>
-    <a href="https://docs.moralis.io" target="_blank">
+    <a href="https://docs.moralis.com" target="_blank">
       <img alt="Check the docs" src="https://img.shields.io/badge/Docs-Full Documentation-21BF96?style=flat&logo=gitbook&logoColor=ffffff" />
     </a>
     <a href="https://forum.moralis.io" target="_blank">
@@ -18,7 +18,7 @@
   <p>
   </p>
   <p>
-    The official repository of <a href="https://docs.moralis.io">Moralis Documentation</a>.
+    The official repository of <a href="https://docs.moralis.com">Moralis Documentation</a>.
   </p>
   <br/>
 </div>
