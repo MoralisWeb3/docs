@@ -9,7 +9,7 @@ The Streams `secret key` is a unique string that is used to identify the sender 
 
 ## Updating the Secret Key
 
-If you visit the [Moralis settings page](https://admin.moralis.io/streams), you can find a default `secret key` under the stream settings option. However, if you are using streams for the first time, make sure to edit this key to match the API key used in your code. Once edited, click on the Save Changes button to update the key.
+If you visit the [Moralis settings page](https://admin.moralis.com/streams), you can find a default `secret key` under the stream settings option. However, if you are using streams for the first time, make sure to edit this key to match the API key used in your code. Once edited, click on the Save Changes button to update the key.
 
 ![Setting page](https://github.com/MoralisWeb3/docs/assets/15834299/51f4186e-afef-40e3-8753-b0d21a09fef1)
 

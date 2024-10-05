@@ -7,7 +7,7 @@ This tutorial covers how to create full-stack Web3 authentication for the Solana
 
 ## Introduction
 
-This tutorial shows you how to create a NextJS application that allows users to log in using any wallet that uses the Solana wallet adapter. 
+This tutorial shows you how to create a NextJS application that allows users to log in using any wallet that uses the Solana wallet adapter.
 
 After Web3 wallet authentication, the **[next-auth](https://next-auth.js.org/)** library creates a session cookie with an encrypted **[JWT](https://jwt.io/introduction)** (**JWE**) stored inside. It contains session info (such as an address, signed message, and expiration time) in the user's browser. It's a secure way to store users' info without a database, and it's impossible to read/modify the **JWT** without a [secret key](https://next-auth.js.org/configuration/options#secret).
 
@@ -43,15 +43,15 @@ npm install bs58 tweetnacl \
     @solana/wallet-adapter-react \
     @solana/wallet-adapter-react-ui \
     @solana/wallet-adapter-wallets \
-    @solana/web3.js 
+    @solana/web3.js
 ```
 
 3. Add new environment variables in your `.env.local` file in the app root:
 
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
-- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
+- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.com/account/profile).
 - **NEXTAUTH_URL**: Your app address. In the development stage, use [`http://localhost:3000`](http://localhost:3000).
-- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example: 
+- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example:
 
 ```text .env.local
 APP_DOMAIN=amazing.finance
@@ -109,10 +109,9 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
 ```
 
-:::info 
+:::info
 NextJS uses the `App` component to initialize pages. You can override it and control the page initialization. Check out the [NextJS docs](https://nextjs.org/docs/advanced-features/custom-app).
 :::
 
@@ -127,8 +126,8 @@ import TabItem from '@theme/TabItem';
 <TabItem value="typescript" label="[...nextauth].ts" default>
 
 ```typescript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -152,8 +151,8 @@ export default NextAuth({
 <TabItem value="javascript" label="[...nextauth].js">
 
 ```javascript Javascript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -176,13 +175,12 @@ export default NextAuth({
 </TabItem>
 </Tabs>
 
-
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
 <Tabs groupId="programming-language">
 <TabItem value="typescript" label="[...moralis].ts" default>
 
-```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].ts
+```typescript \\\\\\\\\\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -207,13 +205,12 @@ export default MoralisNextApi({
     statement: "Sign message to authenticate.",
   },
 });
-
 ```
 
 </TabItem>
 <TabItem value="javascript" label="[...moralis].js">
 
-```typescript \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[...moralis].js
+```typescript \\\\\\\\\\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -238,7 +235,6 @@ export default MoralisNextApi({
     statement: "Sign message to authenticate.",
   },
 });
-
 ```
 
 </TabItem>
@@ -317,7 +313,6 @@ export default function WalletAdaptor() {
 
   return <WalletMultiButton />;
 }
-
 ```
 
 </TabItem>
@@ -389,17 +384,14 @@ export default function WalletAdaptor() {
 
   return <WalletMultiButton />;
 }
-
 ```
 
 </TabItem>
 </Tabs>
 
-
-
 ## Create Page to Sign-In
 
-8. Create a new page file, `pages/index.jsx`, with the following content: 
+8. Create a new page file, `pages/index.jsx`, with the following content:
 
 - You can get the app CSS from [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth/styles) to style the app.
 
@@ -450,14 +442,11 @@ export default function Home() {
     </div>
   );
 }
-
 ```
-
-
 
 ## Logout and User Profile Component
 
-8. Create components to perform the logout operation and to show the user data. 
+8. Create components to perform the logout operation and to show the user data.
 
 <Tabs groupId="programming-language">
 <TabItem value="typescript" label="logoutBtn.js" default>
@@ -475,7 +464,6 @@ export default function LogoutBtn() {
     <Button text="Logout" theme="outline" onClick={() => signOut()}></Button>
   );
 }
-
 ```
 
 </TabItem>
@@ -529,16 +517,14 @@ export default function UserData() {
     );
   }
 }
-
 ```
 
 </TabItem>
 </Tabs>
 
-
 ## Showing the User Profile
 
-9. Let's create a `user.jsx` page to view user data when the user is logged in. 
+9. Let's create a `user.jsx` page to view user data when the user is logged in.
 
 ```javascript
 import React, { useEffect, useTransition } from "react";
@@ -549,7 +535,6 @@ import LogoutBtn from "../app/components/logoutBtn/logoutBtn";
 import { WalletDisconnectButton } from "@solana/wallet-adapter-react-ui";
 import { useWallet } from "@solana/wallet-adapter-react";
 require("@solana/wallet-adapter-react-ui/styles.css");
-
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -606,10 +591,7 @@ export default function Home({ userSession }) {
     );
   }
 }
-
 ```
-
-
 
 ## Testing with any Solana Wallet
 

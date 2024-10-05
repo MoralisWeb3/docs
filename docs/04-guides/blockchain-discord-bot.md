@@ -4,6 +4,7 @@ slug: "/guides/blockchain-discord-bot"
 description: "This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications."
 tags: [Streams, Demos]
 ---
+
 ## Introduction
 
 This tutorial teaches you how to create a web3 discord bot that listens to blockchain events and sends real-time notifications.
@@ -13,7 +14,6 @@ We will use discord.js, express and Moralis Streams API.
 ### YouTube Tutorial
 
 https://www.youtube.com/watch?v=GiDXKT_AAIs
-
 
 ## Project Setup
 
@@ -31,21 +31,18 @@ This will initiate the project and create a `package.json` file containing the f
 
 ```json package.json
 {
-    "name": "blockchainbot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "MIT"
+  "name": "blockchainbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
 }
-
 ```
-
-
 
 2. ### Install the required dependencies.
 
@@ -65,18 +62,15 @@ app.use(express.json());
 app.post("/webhook", async (req, res) => {
   const { body, headers } = req;
 
-	console.log(body);
+  console.log(body);
 
-	res.status(200).json();
+  res.status(200).json();
 });
 
 app.listen(port, () => {
-	console.log(`Listening to streams`);
+  console.log(`Listening to streams`);
 });
-
 ```
-
-
 
 4. ### Setup an `ngrok` tunnel to our express app that will be running locally
 
@@ -86,15 +80,11 @@ app.listen(port, () => {
 npm i -g ngrok
 ```
 
-
-
 - In a new terminal window run `ngrok http` to create a tunnel to our express app using the same port that we specified inside `index.js`
 
 ```shell Shell
 ngrok http 3000
 ```
-
-
 
 This will give us an address where out express app will be running and where we can setup webhooks for streams api.
 
@@ -106,28 +96,25 @@ Back inside `package.json` add a start script that will start our express app an
 
 ```json package.json
 {
-    "name": "blockchainbot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "nodemon index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "discord.js": "^14.6.0",
-        "dotenv": "^16.0.3",
-        "express": "^4.18.2",
-        "moralis": "^2.6.7",
-        "nodemon": "^2.0.20"
-    }
+  "name": "blockchainbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moralis": "^2.6.7",
+    "nodemon": "^2.0.20"
+  }
 }
-
 ```
-
-
 
 Run the start command.
 
@@ -139,7 +126,7 @@ npm run start
 
 We will use Moralis Streams API to get real-time events and send notifications
 
- Inside our admin panel access [streams section](https://admin.moralis.io/streams) and create a new stream.
+Inside our admin panel access [streams section](https://admin.moralis.com/streams) and create a new stream.
 
 ![](/img/content/1a3f153-Screenshot_2022-11-24_at_15.54.14.webp)
 
@@ -150,16 +137,44 @@ Select **Create From Scratch**
 For this example we will use this simple donation contract, but you can use any smart contract of your choice:
 
 - Contract Address : `OxbD317B46A004CCF0e1773DBFcEE89E77e32D2dB9`
-- Abi: 
+- Abi:
   ```json Abi
-  [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"from","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Donate","type":"event"},{"inputs":[],"name":"newDonation","outputs":[],"stateMutability":"payable","type":"function"}]
+  [
+    { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Donate",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "newDonation",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ]
   ```
 
 For the webhook url have to use the url provided previously by ngrok, followed by our `/webhook` endpoint from our express app
 
 ![](/img/content/3083fdd-Screenshot_2022-11-24_at_16.05.02.webp)
 
-Our contract is deployed on mumbai testnet, so here you will select the network that your smart contract is deployed on: 
+Our contract is deployed on mumbai testnet, so here you will select the network that your smart contract is deployed on:
 
 ![](/img/content/89031d2-Screenshot_2022-11-24_at_16.07.14.webp)
 
@@ -183,7 +198,7 @@ To stop this from causing any errors, what we have to do now is to verify that t
 
 Back to our express endpoint, we can add logic that allows only request coming from Moralis to go through.
 
-1. ### Go to [Moralis Admin Panel](https://admin.moralis.io/web3apis) and copy your web3 api key.
+1. ### Go to [Moralis Admin Panel](https://admin.moralis.com/web3apis) and copy your web3 api key.
 
 ![](/img/content/a254a4d-Screenshot_2022-11-24_at_16.29.26.webp)
 
@@ -192,8 +207,6 @@ Back to our express endpoint, we can add logic that allows only request coming f
 ```shell .env
 APIKEY = 'YOUR_API_KEY'
 ```
-
-
 
 3. ### Verify the request.
 
@@ -214,7 +227,7 @@ app.post("/webhook", async (req, res) => {
       body,
       signature: headers["x-signature"],
     });
-    
+
     return res.status(200).json();
   } catch (e) {
     console.log("Not Moralis");
@@ -230,8 +243,6 @@ Moralis.start({
   });
 });
 ```
-
-
 
 ## Discord Bot Setup
 
@@ -267,8 +278,6 @@ PASS = 'YOUR_BOT_TOKEN'
 CHANNEL = 'CHANNEL_ID'
 ```
 
-
-
 7. Add the discord client to your `index.js` and setup the login to send messages.
 
 ```javascript index.js
@@ -280,7 +289,7 @@ const app = express();
 const port = 3000;
 
 const client = new discord.Client({
-    intents: [],
+  intents: [],
 });
 
 client.login(process.env.PASS);
@@ -296,12 +305,13 @@ app.post("/webhook", async (req, res) => {
       signature: headers["x-signature"],
     });
 
-
     let from = body.txs[0].fromAddress;
-    let amount = Number(body.txs[0].value / 1E18);
+    let amount = Number(body.txs[0].value / 1e18);
 
     const channel = await client.channels.fetch(process.env.CHANNEL);
-    channel.send(`New Donation submitted by ${from}, for ${amount.toFixed(2)} MATIC!!!!`);
+    channel.send(
+      `New Donation submitted by ${from}, for ${amount.toFixed(2)} MATIC!!!!`
+    );
 
     return res.status(200).json();
   } catch (e) {
@@ -319,8 +329,6 @@ Moralis.start({
 });
 ```
 
-
-
 ## Testing the bot
 
 1. Run your bot.
@@ -329,13 +337,9 @@ Moralis.start({
 node index.js
 ```
 
-
-
 2. To test our bot, We can now call the donation function from our contract.
 
 ![](/img/content/604fd4b-image.webp)
-
-
 
 3. We should see a new notification sent by our bot.
 

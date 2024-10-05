@@ -18,8 +18,8 @@ For an in-depth understanding of Moralis's compute unit costs per method, chain,
 Note that all paid plans are billed annually.
 :::
 
-- **[Starter](https://admin.moralis.io/account/billing):** Free to get started
-- **[Pro](https://admin.moralis.io/payments/checkout/pro-plan?isMonthly=false):** $49 per month, billed annually
+- **[Starter](https://admin.moralis.com/account/billing):** Free to get started
+- **[Pro](https://admin.moralis.com/payments/checkout/pro-plan?isMonthly=false):** $49 per month, billed annually
 - **[Enterprise](https://moralis.io/scale/#salesForm):** Individual prices billed annually
 
 The following table summarizes the key features and support options available in each Moralis pricing plan:

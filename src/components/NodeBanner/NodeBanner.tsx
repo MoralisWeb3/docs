@@ -15,7 +15,7 @@ function NodeBanner({
   // Default values
   const text = customText || "Start using RPC Nodes in your project today.";
   const buttonText = customButtonText || "Get your free RPC Node";
-  const buttonLink = customButtonLink || "https://admin.moralis.io/nodes";
+  const buttonLink = customButtonLink || "https://admin.moralis.com/nodes";
 
   return (
     <div className="api-banner">

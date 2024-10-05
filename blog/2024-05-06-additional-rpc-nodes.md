@@ -18,6 +18,6 @@ As we continue to expand our RPC Node offering, the following new chains have be
 - Moonriver
 - Moonbase
 
-All of these can now be configured via your [Admin dashboard](https://admin.moralis.io/nodes) for immediate use 🚀
+All of these can now be configured via your [Admin dashboard](https://admin.moralis.com/nodes) for immediate use 🚀
 
 Check-out the full list of our [supported chains here](/supported-chains), and stay tuned for many more chain integrations coming over the next few weeks and months.

@@ -42,15 +42,15 @@ npm install @moralisweb3/next next-auth @web3uikit/core
 2. To process data like the signature of a Solana Web3 wallet (e.g., Phantom), we need the `bs58` package to encode and decode data from the wallet. Let's install the `bs58` package:
 
 ```bash npm2yarn
-npm install bs58 
+npm install bs58
 ```
 
 3. Add new environment variables in your `.env.local` file in the app root:
 
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
-- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
+- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.com/account/profile).
 - **NEXTAUTH_URL**: Your app address. In the development stage, use [`http://localhost:3000`](http://localhost:3000).
-- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example: 
+- **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example:
 
 ```text .env.local
 APP_DOMAIN=amazing.finance
@@ -76,16 +76,14 @@ import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 
 function MyApp({ Component, pageProps }) {
- 
   return (
     <SessionProvider session={pageProps.session}>
-            <Component {...pageProps} />
+      <Component {...pageProps} />
     </SessionProvider>
   );
 }
 
 export default MyApp;
-
 ```
 
 :::info
@@ -103,8 +101,8 @@ import TabItem from '@theme/TabItem';
 <TabItem value="typescript" label="index.ts (TypeScript)" default>
 
 ```typescript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -128,8 +126,8 @@ export default NextAuth({
 <TabItem value="javascript" label="index.js (JavaScript)">
 
 ```javascript Javascript
-import NextAuth from 'next-auth';
-import { MoralisNextAuthProvider } from '@moralisweb3/next';
+import NextAuth from "next-auth";
+import { MoralisNextAuthProvider } from "@moralisweb3/next";
 
 export default NextAuth({
   providers: [MoralisNextAuthProvider()],
@@ -152,13 +150,12 @@ export default NextAuth({
 </TabItem>
 </Tabs>
 
-
 6. Add an authenticating config to the `pages/api/moralis/[...moralis].ts`:
 
 <Tabs groupId="programming-language">
 <TabItem value="typescript" label="[...moralis].ts" default>
 
-```typescript \\\\\\\\\\\\\\\[...moralis].ts
+```typescript \\\\\\\[...moralis].ts
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -183,13 +180,12 @@ export default MoralisNextApi({
     statement: "Sign message to authenticate.",
   },
 });
-
 ```
 
 </TabItem>
 <TabItem value="javascript" label="[...moralis].js">
 
-```typescript \\\\\\\\\\\\\\\[...moralis].js
+```typescript \\\\\\\[...moralis].js
 import { MoralisNextApi } from "@moralisweb3/next";
 
 const DATE = new Date();
@@ -214,7 +210,6 @@ export default MoralisNextApi({
     statement: "Sign message to authenticate.",
   },
 });
-
 ```
 
 </TabItem>
@@ -280,7 +275,6 @@ export default function PhantomBtn() {
     />
   );
 }
-
 ```
 
 </TabItem>
@@ -339,7 +333,6 @@ export default function PhantomBtn() {
     />
   );
 }
-
 ```
 
 </TabItem>
@@ -347,7 +340,7 @@ export default function PhantomBtn() {
 
 ## Create Page to Sign-In
 
-8. Create a new page file, `pages/index.jsx`, with the following content: 
+8. Create a new page file, `pages/index.jsx`, with the following content:
 
 - You can get the app CSS from [GitHub](https://github.com/JohnVersus/nextjs_solana_auth_api/tree/moralisweb3-next-client-auth/styles) to style the app.
 
@@ -398,14 +391,11 @@ export default function Home() {
     </div>
   );
 }
-
 ```
-
-
 
 ## Logout and User Profile Component
 
-8. Create components to perform the logout operation and to show the user data. 
+8. Create components to perform the logout operation and to show the user data.
 
 <Tabs groupId="programming-language">
 <TabItem value="javascript" label="logoutBtn.js">
@@ -423,7 +413,6 @@ export default function LogoutBtn() {
     <Button text="Logout" theme="outline" onClick={() => signOut()}></Button>
   );
 }
-
 ```
 
 </TabItem>
@@ -477,16 +466,14 @@ export default function UserData() {
     );
   }
 }
-
 ```
 
 </TabItem>
 </Tabs>
 
-
 ## Showing the User Profile
 
-9. Let's create a `user.jsx` page to view user data when the user is logged in. 
+9. Let's create a `user.jsx` page to view user data when the user is logged in.
 
 ```javascript
 import React, { useEffect, useTransition } from "react";
@@ -494,7 +481,6 @@ import styles from "../styles/User.module.css";
 import { getSession, signOut } from "next-auth/react";
 import UserData from "../app/components/userData/userData";
 import LogoutBtn from "../app/components/logoutBtn/logoutBtn";
-
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -507,7 +493,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ userSession }) {
-
   if (userSession) {
     return (
       <div className={styles.body}>
@@ -516,7 +501,7 @@ export default function Home({ userSession }) {
             <>
               <UserData />
               <div className={styles.buttonsRow}>
-                  <LogoutBtn />
+                <LogoutBtn />
               </div>
             </>
           </div>
@@ -525,7 +510,6 @@ export default function Home({ userSession }) {
     );
   }
 }
-
 ```
 
 ## Testing with Phantom Wallet

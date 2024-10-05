@@ -3,6 +3,7 @@ title: "Quickstart NextJS"
 slug: "../quickstart-nextjs"
 description: "This tutorial will teach you how to set up a NextJS dapp that can query blockchain data such as NFTs, tokens, balances, transfers, transactions, and more from any NextJS application. \n\nThis tutorial dapp works on almost any blockchain, including Ethereum, Polygon, BNB Chain, Avalanche, Cronos, and many more!"
 ---
+
 ## Introduction
 
 This tutorial shows you how to create a basic NextJS dapp that uses the [@moralisweb3/next](https://www.npmjs.com/package/@moralisweb3/next) to display native balance.
@@ -35,8 +36,6 @@ For this part of the tutorial, we will create a dapp that displays the native ba
 npm init
 ```
 
-
-
 Give it a name and fill in the details as you want (press `enter` to use the default options). You should now have a `package.json` file that looks something like this:
 
 ```json
@@ -52,8 +51,6 @@ Give it a name and fill in the details as you want (press `enter` to use the def
   "license": "ISC"
 }
 ```
-
-
 
 3. Install the required dependencies:
 
@@ -72,16 +69,14 @@ npm install moralis @moralisweb3/next next-auth next@12.3.4 react react-dom
 }
 ```
 
-
-
 5. Create a `pages` directory at the root of your application and add the `index.jsx` file with the following content:
 
 ```javascript
 function HomePage() {
-  return <div>Welcome to my Next.js dApp!</div>
+  return <div>Welcome to my Next.js dApp!</div>;
 }
 
-export default HomePage
+export default HomePage;
 ```
 
 :::info
@@ -92,7 +87,7 @@ NextJS is built around the concept of [pages](https://nextjs.org/docs/basic-fea
 
 ## Add Moralis to Your NextJS Dapp
 
-1. Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.io/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
+1. Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.com/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
 
 :::info Secure Your API Key - Best Practices for Cybersecurity
 Protecting your API key is critical in safeguarding your sensitive account information. Adhere to these cybersecurity best practices to ensure optimal API security:
@@ -101,15 +96,13 @@ Protecting your API key is critical in safeguarding your sensitive account infor
 - **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
 - **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
 - **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
-:::
+  :::
 
 2. Create a `.env.local` file at the root and add a new environment variable, `MORALIS_API_KEY`; enter your API key as the value:
 
 ```text .env.local
 MORALIS_API_KEY=replace_me
 ```
-
-
 
 :::info
 
@@ -122,8 +115,6 @@ NextJS `.env.local` variables are accessible to the entire application and are n
 ```shell
 npm run dev
 ```
-
-
 
 :::caution
 
@@ -148,25 +139,21 @@ You can provide a configuration object to the MoralisNextApi.
 1. Let's fetch Evm native balance! Add `useEvmNativeBalance` hook to `pages/index.jsx`:
 
 ```javascript
-import { useEvmNativeBalance } from '@moralisweb3/next';
+import { useEvmNativeBalance } from "@moralisweb3/next";
 
 function HomePage() {
-    const address = '0x1...';
-    const { data: nativeBalance } = useEvmNativeBalance({ address });
-    return (
-        <div>
-            <h3>Wallet: {address}</h3>
-            <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
-        </div>
-    );
+  const address = "0x1...";
+  const { data: nativeBalance } = useEvmNativeBalance({ address });
+  return (
+    <div>
+      <h3>Wallet: {address}</h3>
+      <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
+    </div>
+  );
 }
 
 export default HomePage;
-
-
 ```
-
-
 
 2. Now, let's receive and use the props in our server-side Visit the [http://localhost:3000](http://localhost:3000/native) page to see the results:
 

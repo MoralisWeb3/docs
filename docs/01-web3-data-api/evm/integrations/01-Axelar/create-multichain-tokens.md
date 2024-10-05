@@ -57,11 +57,11 @@ The cloned project includes several folders:
 - pages: This folder contains different pages within the application.
 - cypress: This folder contains basic Cypress tests.
 
-Rename .env.local.example to .env.local and provide required data. Get your Web3 API Key from the [Moralis dashboard](https://admin.moralis.io/).
+Rename .env.local.example to .env.local and provide required data. Get your Web3 API Key from the [Moralis dashboard](https://admin.moralis.com/).
 
 Fill the environment variables in your .env.local file in the app root:
 
-    -   MORALIS_API_KEY: You can get it [here](https://admin.moralis.io/web3apis).
+    -   MORALIS_API_KEY: You can get it [here](https://admin.moralis.com/web3apis).
 
     -   NEXTAUTH_URL: Your app address. In the development stage, use [http://localhost:3000](http://localhost:3000).
 

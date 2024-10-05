@@ -7,13 +7,13 @@ sidebar_position: 2
 
 ## Step 1: Create Your Free Moralis Account
 
-Go to the <a href="https://admin.moralis.io/register" target="_blank">Moralis Dashboard</a> to create your Moralis account.
+Go to the <a href="https://admin.moralis.com/register" target="_blank">Moralis Dashboard</a> to create your Moralis account.
 
 <img loading="eager" alt="Moralis Admin (Sign Up)" src="/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp" width="1024" height="582" />
 
 ## Step 2: Get API Key
 
-Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.io/) by going to one of your existing project > Settings > Secrets > Copy one of your secrets.
+Get your Web3 API key from the [Moralis dashboard](https://admin.moralis.com/) by going to one of your existing project > Settings > Secrets > Copy one of your secrets.
 
 :::info Keep Your API Key Safe
 
@@ -23,4 +23,4 @@ Your API key is linked to your private account. Keep your keys safe by following
 - Keep the key out of any version control system you might be using
 - Use a password manager or secret management service to control access to your key
 - Don't embed your secret API key in web applications or in other places where the key could be easily obtained
-:::
+  :::

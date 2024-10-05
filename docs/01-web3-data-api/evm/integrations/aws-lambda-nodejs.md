@@ -22,7 +22,7 @@ It's an all-in-one development solution for auto-scaling apps on AWS Lambda. [Mo
 
 ## Prerequisites
 
-- Create a [Moralis account](https://admin.moralis.io/register)
+- Create a [Moralis account](https://admin.moralis.com/register)
 - Install and set up your editor of choice (we will use [Visual Studio Code](https://code.visualstudio.com/) in this tutorial)
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)

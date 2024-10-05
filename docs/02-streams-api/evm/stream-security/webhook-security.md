@@ -15,7 +15,7 @@ The signature is sent in the request headers in `headers["x-signature"]` field, 
 
 ## How to verify the signature for the received webhook request
 
-In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret key is the streams secret which you can find in [setting](https://admin.moralis.io/settings) page.
+In JavaScript or python, you can use this function, for other programming languages you can adapt this code. The secret key is the streams secret which you can find in [setting](https://admin.moralis.com/settings) page.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,13 +25,12 @@ import TabItem from '@theme/TabItem';
 
 ```javascript
 const verifySignature = (req, secret) => {
-
-    const providedSignature = req.headers["x-signature"]
-    if(!providedSignature) throw new Error("Signature not provided")
-    const generatedSignature= web3.utils.sha3(JSON.stringify(req.body)+secret)
-    if(generatedSignature !== providedSignature) throw new Error("Invalid Signature")
-
-}
+  const providedSignature = req.headers["x-signature"];
+  if (!providedSignature) throw new Error("Signature not provided");
+  const generatedSignature = web3.utils.sha3(JSON.stringify(req.body) + secret);
+  if (generatedSignature !== providedSignature)
+    throw new Error("Invalid Signature");
+};
 ```
 
 </TabItem>

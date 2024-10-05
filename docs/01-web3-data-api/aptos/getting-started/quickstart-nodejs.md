@@ -4,11 +4,11 @@ slug: "../quickstart-nodejs"
 description: "Welcome to the Node.js Quickstart! Here we will walk through the process of getting your API keys, installing the SDK, and making your first API call with Node.js. "
 ---
 
-Welcome to the Node.js Quickstart! Here we will walk through the process of getting your API keys, installing the SDK, and making your first API call with Node.js. 
+Welcome to the Node.js Quickstart! Here we will walk through the process of getting your API keys, installing the SDK, and making your first API call with Node.js.
 
 ## Prerequisites
 
-1. [Sign up for Moralis](https://admin.moralis.io/register)
+1. [Sign up for Moralis](https://admin.moralis.com/register)
 2. Install and set up your editor of choice (we will use [Visual Studio Code](https://code.visualstudio.com/) in this tutorial)
 3. Install the latest version of [Node.js](https://nodejs.org/en/download/)
 4. [Get Your Moralis API Key](/web3-data-api/aptos/get-your-api-key)
@@ -25,7 +25,7 @@ npm install moralis
 
 ### Get Account Transactions
 
-Now, we can get data by using the Moralis SDK. Let's use the `getAccountTransactions` function to get Account Transactions. Replace `YOUR_API_KEY` with your own [API Key](https://admin.moralis.io/web3apis) and run `node index.js`.
+Now, we can get data by using the Moralis SDK. Let's use the `getAccountTransactions` function to get Account Transactions. Replace `YOUR_API_KEY` with your own [API Key](https://admin.moralis.com/web3apis) and run `node index.js`.
 
 ```javascript showLineNumbers title="index.js"
 const Moralis = require("moralis").default;
@@ -41,8 +41,8 @@ const runApp = async () => {
   try {
     const response = await Moralis.AptosApi.transactions.getAccountTransactions(
       {
-        "network": "mainnet",
-        "address": address
+        network: "mainnet",
+        address: address,
       }
     );
     console.log(response);

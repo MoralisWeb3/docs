@@ -52,7 +52,7 @@ After installing the necessary package, create a `.env` file to store your [Mora
   <TabItem value="env" label=".env" default>
 
 ```shell .env
-# Get your Moralis API Key at https://admin.moralis.io/web3apis
+# Get your Moralis API Key at https://admin.moralis.com/web3apis
 MORALIS_API_KEY=xxx
 ```
 

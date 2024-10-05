@@ -53,7 +53,7 @@ npm install wagmi viem
 3. Add new environment variables in your `.env.local` file in the app root:
 
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
-- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
+- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.com/account/profile).
 - **NEXTAUTH_URL**: Your app address. In the development stage, use [`http://localhost:3000`](http://localhost:3000).
 - **NEXTAUTH_SECRET**: Used for encrypting JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env.local` example:
 
@@ -99,7 +99,6 @@ const config = createConfig({
 
 function MyApp({ Component, pageProps }) {
   return (
-    
     <WagmiConfig config={config}>
       <SessionProvider session={pageProps.session} refetchInterval={0}>
         <Component {...pageProps} />
@@ -174,6 +173,7 @@ export default NextAuth({
   },
 });
 ```
+
 </TabItem>
 </Tabs>
 

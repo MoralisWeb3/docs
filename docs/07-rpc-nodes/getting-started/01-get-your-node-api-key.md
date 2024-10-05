@@ -13,7 +13,7 @@ Moralis simplifies the process of accessing blockchain data from nodes across va
 
 ## Step 1: Create a Moralis Account
 
-To begin, you’ll need a Moralis account. Sign up for a free account by heading to the [Moralis Dashboard](https://admin.moralis.io/).
+To begin, you’ll need a Moralis account. Sign up for a free account by heading to the [Moralis Dashboard](https://admin.moralis.com/).
 
 ![Sign Up for Moralis](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/moralis-login.png)
 
