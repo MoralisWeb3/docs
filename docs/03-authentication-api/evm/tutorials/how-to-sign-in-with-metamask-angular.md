@@ -131,7 +131,7 @@ npm install cookie-parser jsonwebtoken dotenv
 2. Create a file called `.env` in your server's root directory (where `package.json` is):
 
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
-- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
+- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.com/account/profile).
 - **ANGULAR_URL**: Your app address. By default Angular uses [`http://localhost:4200`](http://localhost:4200/).
 - **AUTH_SECRET**: Used for signing JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env` example:
 

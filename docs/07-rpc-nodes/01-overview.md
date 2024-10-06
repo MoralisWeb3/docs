@@ -40,7 +40,7 @@ Here are some key benefits of using Moralis RPC Nodes:
 
 Ready to start using Moralis RPC Nodes? Here’s what you need to do:
 
-1. **Create a Moralis Account**: [Sign up](https://admin.moralis.io/) for free and access your RPC nodes.
+1. **Create a Moralis Account**: [Sign up](https://admin.moralis.com/) for free and access your RPC nodes.
 2. **Set Up Your Node**: Visit our [Setting Up RPC Nodes](./get-your-node-api-key) guide to create and configure your RPC node.
 3. **Make Your First RPC Call**: Once you have your node set up, follow our [tutorial](./make-your-first-rpc-call) to make your first JSON-RPC call using `ethers.js`.
 

@@ -532,7 +532,7 @@ Now we will set up a stream to send webhooks to our server every time a USDT amo
 
 ![](/img/content/eaa0626-Notifications_3.webp)
 
-You should be redirected to [`https://admin.moralis.io/streams`](https://admin.moralis.io/streams). If not, check your server's terminal, you should start seeing some webhook data:
+You should be redirected to [`https://admin.moralis.com/streams`](https://admin.moralis.com/streams). If not, check your server's terminal, you should start seeing some webhook data:
 
 ![](/img/content/bf1b009-Notifications_4.webp)
 

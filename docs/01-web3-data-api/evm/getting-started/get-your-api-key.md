@@ -18,7 +18,7 @@ Make sure that you have the installed all the following prerequisites:
 
 ## Step 1: Create Your Account
 
-To begin, create your **free Moralis account** by visiting the [Moralis Dashboard](https://admin.moralis.io/register).
+To begin, create your **free Moralis account** by visiting the [Moralis Dashboard](https://admin.moralis.com/register).
 
 <img loading="eager" alt="Moralis Admin (Sign Up)" src="/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp" width="1024" height="582" />
 
@@ -26,7 +26,7 @@ To begin, create your **free Moralis account** by visiting the [Moralis Dashboar
 
 To begin, you need to get your Web3 Api Key, which serves as your access pass to Moralis's suite of services:
 
-1. Log in to your [Moralis dashboard](https://admin.moralis.io/)
+1. Log in to your [Moralis dashboard](https://admin.moralis.com/)
 2. Navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
 
 :::info Secure Your API Key - Best Practices for Cybersecurity

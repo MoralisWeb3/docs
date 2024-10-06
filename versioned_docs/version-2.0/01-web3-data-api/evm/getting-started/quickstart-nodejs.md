@@ -81,7 +81,7 @@ app.listen(port, () => {
 
 ## Add Moralis to Your Dapp
 
-1. Get your `Web3 Api Key` from the [Moralis dashboard](https://admin.moralis.io/):
+1. Get your `Web3 Api Key` from the [Moralis dashboard](https://admin.moralis.com/):
 
 ![](/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp "4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp")
 

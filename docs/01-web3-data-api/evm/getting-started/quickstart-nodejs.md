@@ -81,7 +81,7 @@ app.listen(port, () => {
 
 ## Add Moralis to Your NodeJS Dapp
 
-1. Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.io/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
+1. Get your `Web3 Api Key`: Log in to your [Moralis dashboard](https://admin.moralis.com/), navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
 
 :::info Secure Your API Key - Best Practices for Cybersecurity
 Protecting your API key is critical in safeguarding your sensitive account information. Adhere to these cybersecurity best practices to ensure optimal API security:
@@ -90,7 +90,7 @@ Protecting your API key is critical in safeguarding your sensitive account infor
 - **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
 - **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
 - **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
-:::
+  :::
 
 2. Import `moralis` and initialize it with your API key in `index.js`:  
    Replace the `address` with the address where you want to get crypto data from. Accordingly, replace the `chain` with the corresponding chain (you can use `EvmChain.ETHEREUM`, `EvmChain.ROPSTEN`, `EvmChain.BSC`, `EvmChain.POLYGON`, etc.). See more info on: [Data Types](/web3-data-api/moralis-data-types) and [Supported Chains](/web3-data-api/cross-chain-requests).

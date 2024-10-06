@@ -7,8 +7,6 @@ sidebar_position: 2
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 Whether you are new to blockchain development or a seasoned developer, this guide serves as your gateway to unlocking the potential of seamless blockchain development.
 
 This step-by-step tutorial shows how to set up your Moralis account, get your Moralis API Key, and install the Moralis SDK in your project.
@@ -22,7 +20,7 @@ Make sure that you have the installed all the following prerequisites:
 
 ## Step 1: Create Your Account
 
-To begin, create your **free Moralis account** by visiting the [Moralis Dashboard](https://admin.moralis.io/register).
+To begin, create your **free Moralis account** by visiting the [Moralis Dashboard](https://admin.moralis.com/register).
 
 <img loading="eager" alt="Moralis Admin (Sign Up)" src="/img/content/d8b5b3d-Screen_Shot_2022-10-24_at_14.45.21.webp" width="1024" height="582" />
 
@@ -30,7 +28,7 @@ To begin, create your **free Moralis account** by visiting the [Moralis Dashboar
 
 To begin, you need to get your Web3 Api Key, which serves as your access pass to Moralis's suite of services:
 
-1. Log in to your [Moralis dashboard](https://admin.moralis.io/)
+1. Log in to your [Moralis dashboard](https://admin.moralis.com/)
 2. Navigate to your project’s **Settings > Secrets**, and copy the value from **Web3 API Key - Default**.
 
 :::info Secure Your API Key - Best Practices for Cybersecurity
@@ -40,7 +38,7 @@ Protecting your API key is critical in safeguarding your sensitive account infor
 - **Avoid Version Control Exposure:** Exclude the key from any version control systems to prevent unauthorized access and potential data breaches.
 - **Leverage Secret Management Services:** Utilize reputable password managers or secret management services for enhanced security.
 - **Prevent Public Exposure:** Do not embed the secret API key in publicly accessible web applications or forums, mitigating the risk of unauthorized access.
-:::
+  :::
 
 ## Step 3: Installing Moralis SDK
 

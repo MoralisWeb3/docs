@@ -203,7 +203,7 @@ const config = {
             type: "html",
             position: "right",
             value:
-              '<a href="https://admin.moralis.io/register" target="_blank">Get API Key</a>',
+              '<a href="https://admin.moralis.com/register" target="_blank">Get API Key</a>',
             className: "navbar__item--hide-on-mobile",
           },
           {

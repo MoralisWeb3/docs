@@ -149,7 +149,7 @@ npm run start
 
 We will use Moralis Streams API to get real-time events and send notifications
 
-Inside our admin panel access [streams section](https://admin.moralis.io/streams) and create a new stream.
+Inside our admin panel access [streams section](https://admin.moralis.com/streams) and create a new stream.
 
 ![](/img/content/step1.webp)
 

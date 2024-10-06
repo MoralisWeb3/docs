@@ -30,12 +30,10 @@ npm install @wagmi/core@0.5.8 ethers@^5 axios
 
 ```typescript
 export const environment = {
-  production: false,
-  SERVER_URL: 'http://localhost:3000',
+  production: false,
+  SERVER_URL: "http://localhost:3000",
 };
 ```
-
-
 
 3. We will generate two components (pages) - `/signin` (to authenticate) and `/user` (to show the user profile):
 
@@ -44,21 +42,17 @@ ng generate component signin
 ng generate component user
 ```
 
-
-
 4. Open `src/app/app-routing.module.ts`, add these two components as routes:
 
 ```typescript
-import { SigninComponent } from './signin/signin.component';
-import { UserComponent } from './user/user.component';
+import { SigninComponent } from "./signin/signin.component";
+import { UserComponent } from "./user/user.component";
 
 const routes: Routes = [
-  { path: 'signin', component: SigninComponent },
-  { path: 'user', component: UserComponent },
+  { path: "signin", component: SigninComponent },
+  { path: "user", component: UserComponent },
 ];
 ```
-
-
 
 ## Initial Setup
 
@@ -71,8 +65,6 @@ We will do an initial setup of our `/signin` and `/user` pages to make sure they
 <button type="button" (click)="handleAuth()">Authenticate via MetaMask</button>
 ```
 
-
-
 2. Open `src/app/signin/signin.component.ts` and add an empty `handleAuth` function below `ngOnInit(): void {}`:
 
 ```typescript
@@ -80,8 +72,6 @@ ngOnInit(): void {}
 
 async handleAuth() {}
 ```
-
-
 
 3. Run `npm run start` and open [`http://localhost:4200/signin`](http://localhost:4200/signin) in your browser. It should look like:
 
@@ -97,8 +87,6 @@ async handleAuth() {}
 </div>
 ```
 
-
-
 5. Open `src/app/user/user.component.ts` and add the variable we used above and an empty `signOut()` function:
 
 ```typescript
@@ -108,8 +96,6 @@ ngOnInit(): void {}
 
 async signOut() {}
 ```
-
-
 
 6. Open [`http://localhost:4200/user`](http://localhost:4200/user) in your browser. It should look like:
 
@@ -125,12 +111,10 @@ Now we will update our server's `index.js` for the code we need for authenticati
 npm install cookie-parser jsonwebtoken dotenv
 ```
 
-
-
 2. Create a file called `.env` in your server's root directory (where `package.json` is):
 
 - **APP_DOMAIN**: RFC 4501 DNS authority that is requesting the signing.
-- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.io/account/profile).
+- **MORALIS_API_KEY**: You can get it [here](https://admin.moralis.com/account/profile).
 - **ANGULAR_URL**: Your app address. By default Angular uses [`http://localhost:4200`](http://localhost:4200/).
 - **AUTH_SECRET**: Used for signing JWT tokens of users. You can put any value here or generate it on [`https://generate-secret.now.sh/32`](https://generate-secret.now.sh/32). Here's an `.env` example:
 
@@ -141,26 +125,24 @@ ANGULAR_URL=http://localhost:4200
 AUTH_SECRET=1234
 ```
 
-
-
 3. Open `index.js`. We will create a `/request-message` endpoint for making requests to `Moralis.Auth` to generate a unique message (Angular will use this endpoint on the `/signin` page):
 
 ```javascript
 // to use our .env variables
-require('dotenv').config(); 
+require("dotenv").config();
 
 // for our server's method of setting a user session
-const cookieParser = require('cookie-parser');
-const jwt = require('jsonwebtoken');
+const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
 
 const config = {
   domain: process.env.APP_DOMAIN,
-  statement: 'Please sign this message to confirm your identity.',
+  statement: "Please sign this message to confirm your identity.",
   uri: process.env.ANGULAR_URL,
   timeout: 60,
 };
 
-app.post('/request-message', async (req, res) => {
+app.post("/request-message", async (req, res) => {
   const { address, chain, network } = req.body;
 
   try {
@@ -179,12 +161,10 @@ app.post('/request-message', async (req, res) => {
 });
 ```
 
-
-
 4. We will create a `/verify` endpoint for verifying the signed message from the user. After the user successfully verifies, they will be redirected to the `/user` page where their info will be displayed.
 
 ```javascript
-app.post('/verify', async (req, res) => {
+app.post("/verify", async (req, res) => {
   try {
     const { message, signature } = req.body;
 
@@ -192,7 +172,7 @@ app.post('/verify', async (req, res) => {
       await Moralis.Auth.verify({
         message,
         signature,
-        networkType: 'evm',
+        networkType: "evm",
       })
     ).raw;
 
@@ -202,7 +182,7 @@ app.post('/verify', async (req, res) => {
     const token = jwt.sign(user, process.env.AUTH_SECRET);
 
     // set JWT cookie
-    res.cookie('jwt', token, {
+    res.cookie("jwt", token, {
       httpOnly: true,
     });
 
@@ -214,12 +194,10 @@ app.post('/verify', async (req, res) => {
 });
 ```
 
-
-
 5. We will create an `/authenticate` endpoint for checking the JWT cookie we previously set to allow the user access to the `/user` page:
 
 ```javascript
-app.get('/authenticate', async (req, res) => {
+app.get("/authenticate", async (req, res) => {
   const token = req.cookies.jwt;
   if (!token) return res.sendStatus(403); // if the user did not send a jwt token, they are unauthorized
 
@@ -232,14 +210,12 @@ app.get('/authenticate', async (req, res) => {
 });
 ```
 
-
-
 6. Lastly we will create a `/logout` endpoint for removing the cookie.
 
 ```javascript
-app.get('/logout', async (req, res) => {
+app.get("/logout", async (req, res) => {
   try {
-    res.clearCookie('jwt');
+    res.clearCookie("jwt");
     return res.sendStatus(200);
   } catch {
     return res.sendStatus(403);
@@ -247,19 +223,17 @@ app.get('/logout', async (req, res) => {
 });
 ```
 
-
-
 Your final `index.js` should look like this:
 
 ```javascript
-const Moralis = require('moralis').default;
+const Moralis = require("moralis").default;
 
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const jwt = require('jsonwebtoken');
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
@@ -277,13 +251,13 @@ app.use(
 
 const config = {
   domain: process.env.APP_DOMAIN,
-  statement: 'Please sign this message to confirm your identity.',
+  statement: "Please sign this message to confirm your identity.",
   uri: process.env.ANGULAR_URL,
   timeout: 60,
 };
 
 // request message to be signed by client
-app.post('/request-message', async (req, res) => {
+app.post("/request-message", async (req, res) => {
   const { address, chain, network } = req.body;
 
   try {
@@ -302,7 +276,7 @@ app.post('/request-message', async (req, res) => {
 });
 
 // verify message signed by client
-app.post('/verify', async (req, res) => {
+app.post("/verify", async (req, res) => {
   try {
     const { message, signature } = req.body;
 
@@ -310,7 +284,7 @@ app.post('/verify', async (req, res) => {
       await Moralis.Auth.verify({
         message,
         signature,
-        networkType: 'evm',
+        networkType: "evm",
       })
     ).raw;
 
@@ -320,7 +294,7 @@ app.post('/verify', async (req, res) => {
     const token = jwt.sign(user, process.env.AUTH_SECRET);
 
     // set JWT cookie
-    res.cookie('jwt', token, {
+    res.cookie("jwt", token, {
       httpOnly: true,
     });
 
@@ -332,7 +306,7 @@ app.post('/verify', async (req, res) => {
 });
 
 // verify JWT cookie to allow access
-app.get('/authenticate', async (req, res) => {
+app.get("/authenticate", async (req, res) => {
   const token = req.cookies.jwt;
   if (!token) return res.sendStatus(403); // if the user did not send a jwt token, they are unauthorized
 
@@ -345,9 +319,9 @@ app.get('/authenticate', async (req, res) => {
 });
 
 // remove JWT cookie
-app.get('/logout', async (req, res) => {
+app.get("/logout", async (req, res) => {
   try {
-    res.clearCookie('jwt');
+    res.clearCookie("jwt");
     return res.sendStatus(200);
   } catch {
     return res.sendStatus(403);
@@ -365,10 +339,7 @@ const startServer = async () => {
 };
 
 startServer();
-
 ```
-
-
 
 7. Run `npm run start` to make sure your server runs without immediate errors.
 
@@ -380,12 +351,12 @@ Now we will finish setting up our Angular pages to integrate with our server.
 
 ```typescript
 // for navigating to other routes
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 // for making HTTP requests
-import axios from 'axios';
+import axios from "axios";
 
-import { getDefaultProvider } from 'ethers';
+import { getDefaultProvider } from "ethers";
 import {
   createClient,
   connect,
@@ -393,12 +364,10 @@ import {
   getAccount,
   signMessage,
   InjectedConnector,
-} from '@wagmi/core';
+} from "@wagmi/core";
 
-import { environment } from '../../environments/environment';
+import { environment } from "../../environments/environment";
 ```
-
-
 
 2. Add this code to set up the Wagmi client:
 
@@ -408,8 +377,6 @@ const client = createClient({
   provider: getDefaultProvider(),
 });
 ```
-
-
 
 3. Replace our empty `handleAuth()` function with the following:
 
@@ -450,19 +417,15 @@ async handleAuth() {
   }
 ```
 
-
-
 4. Open `src/app/user/user.component.ts`. Add our required imports:
 
 ```typescript
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
-import axios from 'axios';
+import axios from "axios";
 
-import { environment } from '../../environments/environment';
+import { environment } from "../../environments/environment";
 ```
-
-
 
 5. Replace `ngOnInit(): void {}` with:
 
@@ -486,8 +449,6 @@ async ngOnInit() {
 }
 ```
 
-
-
 6. Replace our empty `signOut()` function with the following:
 
 ```typescript
@@ -499,8 +460,6 @@ async signOut() {
 }
 ```
 
-
-
 If you get errors related to default imports, open your `tsconfig.app.json` file and add `"allowSyntheticDefaultImports": true` under `compilerOptions`:
 
 ```json
@@ -510,8 +469,6 @@ If you get errors related to default imports, open your `tsconfig.app.json` file
   "types": []
 }
 ```
-
-
 
 ## Testing the MetaMask Wallet Connector
 
@@ -530,5 +487,5 @@ Visit [`http://localhost:4200/signin`](http://localhost:4200/signin) to test the
 ![User Page](/img/content/8c884b1-Angular_Sign_In_With_MetaMask_4.webp)
 
 - When a user authenticates, we show the user's info on the page.
-- When a user is not authenticated, we redirect to the `/signin` page. 
+- When a user is not authenticated, we redirect to the `/signin` page.
 - When a user is authenticated, we show the user's info on the page, even refreshing after the page.

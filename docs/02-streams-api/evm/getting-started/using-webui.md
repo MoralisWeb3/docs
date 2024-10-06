@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Start
 
-1. Go to [http://admin.moralis.io/streams](http://admin.moralis.io/streams).
+1. Go to [http://admin.moralis.com/streams](http://admin.moralis.com/streams).
 2. Click on **Create a new Stream** button.
 3. Select **Create it from Admin** following page will open.
 
