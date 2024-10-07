@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: "February 1st 2023: Disable Totals"
 sidebar_label: "2023/02/01"
 slug: "/web3-data-api/breaking-changes/disable-totals"

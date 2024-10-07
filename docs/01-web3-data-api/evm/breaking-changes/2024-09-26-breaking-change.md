@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: "September 26 2024: Upcoming Changes - Endpoint and Network Deprecations"
 sidebar_label: "2024/09/26"
 slug: /web3-data-api/breaking-changes/planned-deprecations
