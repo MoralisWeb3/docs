@@ -5,8 +5,19 @@ slug: /web3-data-api/evm/reference/get-contract-events
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
 import config from "@site/docs/configs/api-reference/configs.json";
 
 # Get events by contract
+
+<Admonition type="warning" icon="🚨" title="Deprecating Endpoint Notice">
+  <p>
+    This endpoint will be deprecated soon. Please use the
+    <a href="/rpc-nodes/reference/eth_getLogs"> eth_getLogs</a> method through our
+    RPC nodes for retrieving contract logs. For more details and updates, please
+    check the
+    <a href="/changelog/endpoint-deprecations"> changelog</a>.
+  </p>
+</Admonition>
 
 <ApiReference {...config.events.getContractEvents} />
