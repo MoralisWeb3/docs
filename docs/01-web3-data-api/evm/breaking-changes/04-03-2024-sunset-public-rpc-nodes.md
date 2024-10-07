@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "March 4 2024: JS SDK v1: Sunsetting Public RPC URLs"
-sidebar_label: "Sunsetting Public RPC URLs"
+sidebar_label: "2024/03/04"
 slug: "/web3-data-api/breaking-changes/sunset-public-rpc-nodes"
 ---
 
