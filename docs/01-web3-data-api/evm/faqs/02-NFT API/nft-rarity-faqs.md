@@ -42,7 +42,7 @@ Yes, rarity scores can be updated in the event of NFT reveals, new mints, or col
 
 ## How does the sync/resync process work?
 
-Initially, no traits or rarity data is available. When a collection is first queried via `getNFTTraitsByCollection`, it is placed in a processing queue. The system will first sync all traits, then calculate the rarity. During this processing period, any attempt to fetch traits using `getNFTTraitsByCollection` will return a `404` response with the message: `Contract is being resynced at the moment. Please try again later.`
+Initially, no traits or rarity data is available. When a collection is first queried via `getNFTTraitsByCollection`, it is placed in a processing queue. The system will first sync all traits, then calculate the rarity. During this processing period, any attempt to fetch traits using `getNFTTraitsByCollection` will return a `202` response with the message: `Contract is being resynced at the moment. Please try again later.`
 
 Typically, traits and rarity information should be available within 5 to 60 seconds, depending on the collection size and queue. Larger collections (20,000+ NFTs) may take longer to process. If the collection hasn't been processed after 5 minutes, please reach out to our support team.
 
