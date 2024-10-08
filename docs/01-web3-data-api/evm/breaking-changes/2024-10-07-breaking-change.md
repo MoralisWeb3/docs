@@ -42,6 +42,9 @@ We will be removing all NFT APIs on Gnosis Mainnet and Gnosis Testnet due to ong
 - `/nft/{address}/traits/resync`
 - `/nft/{address}/{token_id}/stats`
 - `/nft/{address}/stats`
+- `/{address}/nft`
+- `/{address}/nft/collections`
+- `/{address}/nft/transfers`
 
 **Recommendation:** Explore alternative NFT data solutions at [Gnosis Tools](https://docs.gnosischain.com/tools/).
 
