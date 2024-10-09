@@ -23,6 +23,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "@docusaurus/router";
 import chainData from "../../../../../docs/configs/api-reference/evmChainData";
 import GenericTable from "../../Utils/ChainTable";
+import styles from "../../tabsStyles.module.css";
 
 const baseHeaders = [
   { key: "name", label: "Name" },
@@ -101,7 +102,11 @@ const EVMChainsCombined = () => {
   return (
     <div>
       {showDropdown && (
-        <select value={service} onChange={handleServiceChange}>
+        <select
+          className={styles.serviceSelect}
+          value={service}
+          onChange={handleServiceChange}
+        >
           <option value="">All Services</option>
           <option value="web3api">Web3 API</option>
           <option value="streamsapi">Streams API</option>

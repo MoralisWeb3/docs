@@ -1,20 +1,29 @@
 /* Parent Tabs */
 .parentTab {
-    color: #007acc; /* Change this to your desired color for parent tabs */
-    font-weight: bold;
-  }
-  .parentTab[aria-selected='true'] {
-    border-bottom-color: #007acc; /* Underline color for active parent tab */
-  }
-  
-  /* Child Tabs */
-  .childTab {
-    color: #555; /* Darker text for child tabs */
-    font-weight: normal;
-    padding-top: 0%;
-    padding-bottom: 0%;
-  }
-  .childTab[aria-selected='true'] {
-    border-bottom-color: #555; /* Underline color for active child tab */
-  }
-  
+  color: #007acc; /* Change this to your desired color for parent tabs */
+  font-weight: bold;
+}
+.parentTab[aria-selected="true"] {
+  border-bottom-color: #007acc; /* Underline color for active parent tab */
+}
+
+/* Child Tabs */
+.childTab {
+  color: #555; /* Darker text for child tabs */
+  font-weight: normal;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+.childTab[aria-selected="true"] {
+  border-bottom-color: #555; /* Underline color for active child tab */
+}
+
+.serviceSelect {
+  background: #f7f7f7;
+  padding: 8px 20px;
+  border-radius: 3px;
+  text-align: left;
+  margin-bottom: 15px;
+  border: 1px solid #d9ddde;
+  cursor: pointer;
+}
