@@ -48,13 +48,20 @@ const allHeaders = [
 
 const EVMChainsCombined = () => {
   const [service, setService] = useState("");
+  const [list, setList] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
+    const listParam = params.get("list");
     const serviceParam = params.get("service");
-    if (serviceParam) {
-      setService(serviceParam);
+
+    setList(listParam || "");
+
+    if (!listParam || listParam === "evm") {
+      setService(serviceParam || "");
+    } else {
+      setService("");
     }
   }, [location]);
 
@@ -79,6 +86,9 @@ const EVMChainsCombined = () => {
     } else {
       searchParams.delete("service");
     }
+    if (list === "evm") {
+      searchParams.set("list", "evm");
+    }
     window.history.pushState(
       {},
       "",
@@ -86,15 +96,19 @@ const EVMChainsCombined = () => {
     );
   };
 
+  const showDropdown = !list || list === "evm";
+
   return (
     <div>
-      <select value={service} onChange={handleServiceChange}>
-        <option value="">All Services</option>
-        <option value="web3api">Web3 API</option>
-        <option value="streamsapi">Streams API</option>
-        <option value="authapi">Auth API</option>
-        <option value="rpc">RPC Nodes</option>
-      </select>
+      {showDropdown && (
+        <select value={service} onChange={handleServiceChange}>
+          <option value="">All Services</option>
+          <option value="web3api">Web3 API</option>
+          <option value="streamsapi">Streams API</option>
+          <option value="authapi">Auth API</option>
+          <option value="rpc">RPC Nodes</option>
+        </select>
+      )}
       <GenericTable data={getFilteredData()} headers={getHeaders()} />
     </div>
   );
