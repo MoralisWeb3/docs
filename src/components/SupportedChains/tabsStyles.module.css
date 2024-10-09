@@ -18,12 +18,22 @@
   border-bottom-color: #555; /* Underline color for active child tab */
 }
 
+[data-theme="light"] {
+  --service-select-background: #f7f7f7;
+  --service-select-border: 1px solid #d9ddde;
+}
+
+[data-theme="dark"] {
+  --service-select-background: rgba(255, 255, 255, 0.07);
+  --service-select-border: 1px solid rgb(100, 110, 119);
+}
+
 .serviceSelect {
-  background: #f7f7f7;
+  background: var(--service-select-background);
   padding: 8px 20px;
   border-radius: 3px;
   text-align: left;
   margin-bottom: 15px;
-  border: 1px solid #d9ddde;
+  border: var(--service-select-border);
   cursor: pointer;
 }
