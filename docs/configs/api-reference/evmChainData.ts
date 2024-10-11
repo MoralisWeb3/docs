@@ -601,35 +601,6 @@ const chainData = [
     },
   },
   {
-    name: "Ronin",
-    logo: "/img/content/ronin.png",
-    chainID: "0x7e4 (2020)",
-    evmChain: "EvmChain.RONIN",
-    isNew: false,
-    type: "Mainnet",
-    evmApi: {
-      supported: false,
-      internalTxs: false,
-      erc20Swaps: false,
-      nftTrades: false,
-      queryParams: ["ronin", "0x7e4"],
-    },
-    streamsApi: {
-      supported: true,
-      blockConfirmations: "100",
-      internalTxs: false,
-      reason: "Unsupported",
-    },
-    rpcNodes: {
-      supported: false,
-      reason: "Unsupported",
-      urls: [],
-    },
-    authApi: {
-      supported: true,
-    },
-  },
-  {
     name: "Gnosis",
     logo: "/img/content/gnosis.png",
     chainID: "0x64 (100)",
@@ -783,7 +754,7 @@ const chainData = [
     logo: "/img/content/moonbeam.png",
     chainID: "0x504 (1284)",
     evmChain: "EvmChain.MOONBEAM",
-    isNew: true,
+    isNew: false,
     type: "Mainnet",
     evmApi: {
       supported: true,
@@ -815,7 +786,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x505 (1285)",
     evmChain: "EvmChain.MOONRIVER",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: true,
       internalTxs: true,
@@ -846,7 +817,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x507 (1287)",
     evmChain: "EvmChain.MOONBASE",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: true,
       internalTxs: true,
@@ -877,7 +848,7 @@ const chainData = [
     type: "Mainnet",
     chainID: "0x13e31 (81457)",
     evmChain: "EvmChain.BLAST",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -909,7 +880,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0xa0c71fd (168587773)",
     evmChain: "EvmChain.BLAST_SEPOLIA",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -941,7 +912,7 @@ const chainData = [
     type: "Mainnet",
     chainID: "0x144 (324)",
     evmChain: "EvmChain.ZKSYNC",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -973,7 +944,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x12c (300)",
     evmChain: "EvmChain.ZKSYNC_SEPOLIA",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1005,7 +976,7 @@ const chainData = [
     type: "Mainnet",
     chainID: "0x1388 (5000)",
     evmChain: "EvmChain.MANTLE",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1037,7 +1008,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x138b (5003)",
     evmChain: "EvmChain.MANTLE_SEPOLIA",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1069,7 +1040,7 @@ const chainData = [
     type: "Mainnet",
     chainID: "0x44d (1101)",
     evmChain: "EvmChain.POLYGON_ZKEVM",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1101,7 +1072,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x98a (2442)",
     evmChain: "EvmChain.POLYGON_ZKEVM_CARDONA",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1133,7 +1104,7 @@ const chainData = [
     type: "Mainnet",
     chainID: "0x1b58 (7000)",
     evmChain: "EvmChain.ZETACHAIN",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1165,7 +1136,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0x1b59 (7001)",
     evmChain: "EvmChain.ZETACHAIN_TESTNET",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: false,
       internalTxs: false,
@@ -1248,6 +1219,118 @@ const chainData = [
         "https://site1.moralis-nodes.com/flow/",
         "https://site2.moralis-nodes.com/flow/",
       ],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
+  {
+    name: "Ronin",
+    logo: "/img/content/ronin.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.RONIN",
+    isNew: true,
+    type: "Mainnet",
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["ronin", "0x7e4"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Coming soon",
+      urls: [],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
+  {
+    name: "Ronin Saigon Testnet",
+    logo: "/img/content/ronin.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.RONIN_TESTNET",
+    isNew: true,
+    type: "Testnet",
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["ronin-testnet", "0x7e5"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Coming soon",
+      urls: [],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
+  {
+    name: "Lisk",
+    logo: "/img/content/lisk.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.LISK",
+    isNew: true,
+    type: "Mainnet",
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["lisk", "0x4ef"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Coming soon",
+      urls: [],
+    },
+    authApi: {
+      supported: false,
+    },
+  },
+  {
+    name: "Lisk Sepolia Testnet",
+    logo: "/img/content/lisk.png",
+    chainID: "0x7e4 (2020)",
+    evmChain: "EvmChain.LISK_SEPOLIA",
+    isNew: true,
+    type: "Mainnet",
+    evmApi: {
+      supported: true,
+      internalTxs: true,
+      erc20Swaps: false,
+      nftTrades: false,
+      queryParams: ["lisk-sepolia", "0x106a"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: true,
+    },
+    rpcNodes: {
+      supported: false,
+      reason: "Coming soon",
+      urls: [],
     },
     authApi: {
       supported: false,
