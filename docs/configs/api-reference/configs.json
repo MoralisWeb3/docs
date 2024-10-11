@@ -14662,6 +14662,412 @@
           "name": "Moralis Python SDK"
         }
       ]
+    },
+    "getTokenPairs": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token pairs by address",
+      "description": "Get the supported pairs for a specific token address.",
+      "method": "GET",
+      "path": "/erc20/:token_address/pairs",
+      "pathParams": [
+        {
+          "name": "token_address",
+          "description": "The address of the token contract",
+          "required": true,
+          "example": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the supported pairs for the token.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor for the next page of results",
+                "example": "string"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page number",
+                "example": 2,
+                "required": true
+              },
+              {
+                "name": "pairs",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "exchange_address",
+                      "type": "string",
+                      "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                    },
+                    {
+                      "name": "exchange_name",
+                      "type": "string",
+                      "example": "Uniswap v3"
+                    },
+                    {
+                      "name": "exchange_logo",
+                      "type": "string",
+                      "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+                    },
+                    {
+                      "name": "pair_label",
+                      "type": "string",
+                      "example": "USDC/WETH"
+                    },
+                    {
+                      "name": "pair_address",
+                      "type": "string",
+                      "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+                    },
+                    {
+                      "name": "from_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the from address entity",
+                      "example": "https://opensea.io/favicon.ico"
+                    },
+
+                    {
+                      "name": "usd_price",
+                      "type": "number",
+                      "example": 1.0006209353320241
+                    },
+                    {
+                      "name": "usd_price_24hr_percent_change",
+                      "type": "number",
+                      "example": -0.060345507380585806
+                    },
+                    {
+                      "name": "usd_price_24hr_usd_change",
+                      "type": "number",
+                      "example": -0.0006041943845493947
+                    },
+                    {
+                      "name": "liquidity_usd",
+                      "type": "number",
+                      "example": 147124866.6
+                    },
+                    {
+                      "name": "base_token",
+                      "type": "string",
+                      "example": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                    },
+                    {
+                      "name": "quote_token",
+                      "type": "string",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                    },
+                    {
+                      "name": "pair",
+                      "type": "array",
+                      "fields": {
+                        "type": "object",
+                        "field": [
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "example": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                          },
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "USD Coin"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "USDC"
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "example": "https://logo.moralis.io/0x1_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48_d021d841dc113e213b32a0cb11ec2f86"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "example": "6"
+                          },
+                          {
+                            "name": "pair_token_type",
+                            "type": "string",
+                            "example": "token0"
+                          },
+                          {
+                            "name": "liquidity_usd",
+                            "type": "number",
+                            "example": 81480213.24
+                          }
+                        ]
+                      },
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "example": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                          },
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "USD Coin"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "USDC"
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "example": "https://logo.moralis.io/0x1_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48_d021d841dc113e213b32a0cb11ec2f86"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "example": "6"
+                          },
+                          {
+                            "name": "pair_token_type",
+                            "type": "string",
+                            "example": "token0"
+                          },
+                          {
+                            "name": "liquidity_usd",
+                            "type": "number",
+                            "example": 81480213.24
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getTokenPairs({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_pairs(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getAggregatedTokenPairStats": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get aggregated token pair statistics by address",
+      "description": "Get aggregated statistics across supported pairs of a token.",
+      "method": "GET",
+      "path": "/erc20/:token_address/pairs/stats",
+      "pathParams": [
+        {
+          "name": "token_address",
+          "description": "The address of the token contract",
+          "required": true,
+          "example": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the statistics for supported pairs of the token.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total_liquidity_usd",
+                "type": "number",
+                "example": 1184543489313.2297
+              },
+              {
+                "name": "total_active_pairs",
+                "type": "number",
+                "example": 217
+              },
+              {
+                "name": "total_active_dexes",
+                "type": "number",
+                "example": 163
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getAggregatedTokenPairStats({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_aggregated_token_pair_stats(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
     }
   },
   "balance": {
@@ -24034,6 +24440,295 @@
         {
           "language": "python",
           "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_token_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getTokenPairs": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get token pairs by address",
+      "description": "Get the supported pairs for a specific token address.",
+      "method": "GET",
+      "path": "/token/:network/:address/pairs",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "address",
+          "description": "The address of the contract",
+          "required": true,
+          "type": "string",
+          "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+        },
+        {
+          "name": "limit",
+          "description": "The limit per page",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor to use for getting the next page",
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the supported pairs for the token.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor for the next page of results",
+                "example": "string"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page number",
+                "example": 2,
+                "required": true
+              },
+              {
+                "name": "pairs",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "exchange_address",
+                      "type": "string",
+                      "example": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+                    },
+                    {
+                      "name": "exchange_name",
+                      "type": "string",
+                      "example": "Raydium AMM v4"
+                    },
+                    {
+                      "name": "exchange_logo",
+                      "type": "string",
+                      "example": "https://entities-logos.s3.amazonaws.com/raydium.png"
+                    },
+                    {
+                      "name": "pair_label",
+                      "type": "string",
+                      "example": "SRM/USDT"
+                    },
+                    {
+                      "name": "pair_address",
+                      "type": "string",
+                      "example": "af8HJg2ffWoKJ6vKvkWJUJ9iWbRR83WgXs8HPs26WGr"
+                    },
+                    {
+                      "name": "usd_price",
+                      "type": "number",
+                      "example": 0.031079
+                    },
+                    {
+                      "name": "usd_price_24hr_percent_change",
+                      "type": "number",
+                      "example": 5.0889294650706685
+                    },
+                    {
+                      "name": "usd_price_24hr_usd_change",
+                      "type": "number",
+                      "example": 5.0889294650706685
+                    },
+                    {
+                      "name": "liquidity_usd",
+                      "type": "number",
+                      "example": 1.259524
+                    },
+                    {
+                      "name": "base_token",
+                      "type": "string",
+                      "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+                    },
+                    {
+                      "name": "quote_token",
+                      "type": "string",
+                      "example": "USDT"
+                    },
+                    {
+                      "name": "pair",
+                      "type": "array",
+                      "fields": {
+                        "type": "object",
+                        "field": [
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+                          },
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "Serum"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "SRM"
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "example": null
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "example": "6"
+                          },
+                          {
+                            "name": "pair_token_type",
+                            "type": "string",
+                            "example": "token0"
+                          },
+                          {
+                            "name": "liquidity_usd",
+                            "type": "number",
+                            "example": 0.635072
+                          }
+                        ]
+                      },
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+                          },
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "Serum"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "SRM"
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "example": null
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "example": "6"
+                          },
+                          {
+                            "name": "pair_token_type",
+                            "type": "string",
+                            "example": "token0"
+                          },
+                          {
+                            "name": "liquidity_usd",
+                            "type": "number",
+                            "example": 0.635072
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.token.getTokenPairs({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_token_pairs(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
+    "getAggregatedTokenPairStats": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get aggregated token pair statistics by address",
+      "description": "Get aggregated statistics across supported pairs of a token.",
+      "method": "GET",
+      "path": "/token/:network/:address/pairs/stats",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "address",
+          "description": "The address of the contract",
+          "required": true,
+          "type": "string",
+          "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the statistics for supported pairs of the token.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total_liquidity_usd",
+                "type": "number",
+                "example": 1184543489313.2297
+              },
+              {
+                "name": "total_active_pairs",
+                "type": "number",
+                "example": 217
+              },
+              {
+                "name": "total_active_dexes",
+                "type": "number",
+                "example": 163
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.token.getAggregatedTokenPairStats({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_aggregated_token_pair_stats(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
