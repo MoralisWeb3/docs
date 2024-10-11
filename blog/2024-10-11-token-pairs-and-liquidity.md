@@ -25,7 +25,7 @@ We’re excited to announce the addition of new **Token Pairs** and **Liquidity 
 
 | Name                                | Description                                             | API Reference                                                                        |
 | ----------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **Get Token Pairs by Address**      | Retrieve the supported token pairs for a given address. | [Method Documentation](/web3-data-api/evm/reference/get-token-pairs-by-address)      |
+| **Get Token Pairs by Address**      | Retrieve the supported token pairs for a given address. | [Method Documentation](/web3-data-api/evm/reference/get-token-pairs)                 |
 | **Get Aggregated Token Pair Stats** | Retrieve aggregated stats for a token across all pairs. | [Method Documentation](/web3-data-api/evm/reference/get-aggregated-token-pair-stats) |
 
 ### What Can You Do?
