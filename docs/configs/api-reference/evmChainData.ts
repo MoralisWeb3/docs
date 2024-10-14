@@ -1255,7 +1255,7 @@ const chainData = [
   {
     name: "Ronin Saigon Testnet",
     logo: "/img/content/ronin.png",
-    chainID: "0x7e4 (2020)",
+    chainID: "0x7e5 (2021)",
     evmChain: "EvmChain.RONIN_TESTNET",
     isNew: true,
     type: "Testnet",
@@ -1264,7 +1264,7 @@ const chainData = [
       internalTxs: true,
       erc20Swaps: false,
       nftTrades: false,
-      queryParams: ["ronin-testnet", "0x7e5"],
+      queryParams: ["ronin-testnet", "2021"],
     },
     streamsApi: {
       supported: true,
@@ -1283,7 +1283,7 @@ const chainData = [
   {
     name: "Lisk",
     logo: "/img/content/lisk.png",
-    chainID: "0x7e4 (2020)",
+    chainID: "0x4ef (1263)",
     evmChain: "EvmChain.LISK",
     isNew: true,
     type: "Mainnet",
@@ -1311,10 +1311,10 @@ const chainData = [
   {
     name: "Lisk Sepolia Testnet",
     logo: "/img/content/lisk.png",
-    chainID: "0x7e4 (2020)",
+    chainID: "0x106a (4202)",
     evmChain: "EvmChain.LISK_SEPOLIA",
     isNew: true,
-    type: "Mainnet",
+    type: "Testnet",
     evmApi: {
       supported: true,
       internalTxs: true,
