@@ -1292,7 +1292,7 @@ const chainData = [
       internalTxs: true,
       erc20Swaps: false,
       nftTrades: false,
-      queryParams: ["lisk", "0x4ef"],
+      queryParams: ["lisk", "0x46f"],
     },
     streamsApi: {
       supported: true,
