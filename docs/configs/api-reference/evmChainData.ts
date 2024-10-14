@@ -1283,7 +1283,7 @@ const chainData = [
   {
     name: "Lisk",
     logo: "/img/content/lisk.png",
-    chainID: "0x4ef (1263)",
+    chainID: "0x46f (1135)",
     evmChain: "EvmChain.LISK",
     isNew: true,
     type: "Mainnet",
