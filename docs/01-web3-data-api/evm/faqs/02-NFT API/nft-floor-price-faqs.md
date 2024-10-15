@@ -51,7 +51,7 @@ No, historical floor price data is not automatically back-filled. There is no wa
 
 You can specify the following intervals for historical/time series data:
 
-- 1d interval: Data is returned every 15 minutes.
+- 1d interval: Data is returned every 30 minutes.
 - 7d interval: Data is returned hourly.
 - 30d interval: Data is returned hourly.
 - Greater than 30d intervals: Data is returned daily.
