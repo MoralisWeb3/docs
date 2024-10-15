@@ -15248,18 +15248,6 @@
             ]
           }
         }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getTokenPairs({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_token_pairs(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
-        }
       ]
     },
     "getAggregatedTokenPairStats": {
@@ -15372,18 +15360,6 @@
               }
             ]
           }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.token.getAggregatedTokenPairStats({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.token.get_aggregated_token_pair_stats(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
         }
       ]
     }
