@@ -24906,7 +24906,7 @@
                 "example": "string"
               },
               {
-                "name": "page_size",
+                "name": "pageSize",
                 "type": "number",
                 "description": "The number of results per page",
                 "example": 100,
@@ -24926,57 +24926,57 @@
                   "type": "object",
                   "fields": [
                     {
-                      "name": "exchange_address",
+                      "name": "exchangeAddress",
                       "type": "string",
                       "example": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
                     },
                     {
-                      "name": "exchange_name",
+                      "name": "exchangeName",
                       "type": "string",
                       "example": "Raydium AMM v4"
                     },
                     {
-                      "name": "exchange_logo",
+                      "name": "exchangeLogo",
                       "type": "string",
                       "example": "https://entities-logos.s3.amazonaws.com/raydium.png"
                     },
                     {
-                      "name": "pair_label",
+                      "name": "pairLabel",
                       "type": "string",
                       "example": "SRM/USDT"
                     },
                     {
-                      "name": "pair_address",
+                      "name": "pairAddress",
                       "type": "string",
                       "example": "af8HJg2ffWoKJ6vKvkWJUJ9iWbRR83WgXs8HPs26WGr"
                     },
                     {
-                      "name": "usd_price",
+                      "name": "usdPrice",
                       "type": "number",
                       "example": 0.031079
                     },
                     {
-                      "name": "usd_price_24hr_percent_change",
+                      "name": "usdPrice24hrPercentChange",
                       "type": "number",
                       "example": 5.0889294650706685
                     },
                     {
-                      "name": "usd_price_24hr_usd_change",
+                      "name": "usdPrice24hrUsdChange",
                       "type": "number",
                       "example": 5.0889294650706685
                     },
                     {
-                      "name": "liquidity_usd",
+                      "name": "liquidityUsd",
                       "type": "number",
                       "example": 1.259524
                     },
                     {
-                      "name": "base_token",
+                      "name": "baseToken",
                       "type": "string",
                       "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
                     },
                     {
-                      "name": "quote_token",
+                      "name": "quoteToken",
                       "type": "string",
                       "example": "USDT"
                     },
@@ -24987,37 +24987,37 @@
                         "type": "object",
                         "field": [
                           {
-                            "name": "token_address",
+                            "name": "tokenAddress",
                             "type": "string",
                             "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
                           },
                           {
-                            "name": "token_name",
+                            "name": "tokenName",
                             "type": "string",
                             "example": "Serum"
                           },
                           {
-                            "name": "token_symbol",
+                            "name": "tokenSymbol",
                             "type": "string",
                             "example": "SRM"
                           },
                           {
-                            "name": "token_logo",
+                            "name": "tokenLogo",
                             "type": "string",
                             "example": null
                           },
                           {
-                            "name": "token_decimals",
+                            "name": "tokenDecimals",
                             "type": "string",
                             "example": "6"
                           },
                           {
-                            "name": "pair_token_type",
+                            "name": "pairTokenType",
                             "type": "string",
                             "example": "token0"
                           },
                           {
-                            "name": "liquidity_usd",
+                            "name": "liquidityUsd",
                             "type": "number",
                             "example": 0.635072
                           }
@@ -25027,37 +25027,37 @@
                         "type": "object",
                         "fields": [
                           {
-                            "name": "token_address",
+                            "name": "tokenAddress",
                             "type": "string",
                             "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
                           },
                           {
-                            "name": "token_name",
+                            "name": "tokenName",
                             "type": "string",
                             "example": "Serum"
                           },
                           {
-                            "name": "token_symbol",
+                            "name": "tokenSymbol",
                             "type": "string",
                             "example": "SRM"
                           },
                           {
-                            "name": "token_logo",
+                            "name": "tokenLogo",
                             "type": "string",
                             "example": null
                           },
                           {
-                            "name": "token_decimals",
+                            "name": "tokenDecimals",
                             "type": "string",
                             "example": "6"
                           },
                           {
-                            "name": "pair_token_type",
+                            "name": "pairTokenType",
                             "type": "string",
                             "example": "token0"
                           },
                           {
-                            "name": "liquidity_usd",
+                            "name": "liquidityUsd",
                             "type": "number",
                             "example": 0.635072
                           }
@@ -25069,18 +25069,6 @@
               }
             ]
           }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.token.getTokenPairs({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_token_pairs(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
         }
       ]
     },
@@ -25116,34 +25104,22 @@
             "type": "object",
             "fields": [
               {
-                "name": "total_liquidity_usd",
+                "name": "totalLiquidityUsd",
                 "type": "number",
                 "example": 1184543489313.2297
               },
               {
-                "name": "total_active_pairs",
+                "name": "totalActivePairs",
                 "type": "number",
                 "example": 217
               },
               {
-                "name": "total_active_dexes",
+                "name": "totalActiveDexes",
                 "type": "number",
                 "example": 163
               }
             ]
           }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = Moralis.SolApi.token.getAggregatedTokenPairStats({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import sol_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = sol_api.token.get_aggregated_token_pair_stats(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
         }
       ]
     },
