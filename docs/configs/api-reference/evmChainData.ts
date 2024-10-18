@@ -348,7 +348,7 @@ const chainData = [
     },
     streamsApi: {
       supported: true,
-      blockConfirmations: "100",
+      blockConfirmations: "500",
       internalTxs: true,
     },
     rpcNodes: {
