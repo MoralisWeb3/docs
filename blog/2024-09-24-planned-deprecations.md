@@ -7,7 +7,7 @@ tags: [Web3 Data API]
 ---
 
 ### Endpoints Deprecating (30 Days Notice)
-The following endpoints will sunset in **30 days**:
+The following endpoints will sunset on 24th October 2024:
 
 | Deprecated Endpoint | Recommendation |
 | ---------------------------------- | -------------------------------------- | 
@@ -18,7 +18,7 @@ The following endpoints will sunset in **30 days**:
 | [`/ipfs/uploadFolder`](https://deep-index.moralis.io/api-docs-2.2/#/IPFS/uploadFolder) | We recommend exploring other providers. |
 
 ### Palm: Confirmed Deprecation (60 Days Notice)
-Palm mainnet will be discontinued on 22nd November. Please update your dapps and integrations accordingly. We recommend exploring alternative providers, which you can find at https://docs.palm.io/howto/use-supported-tools/tools.
+Palm mainnet will be discontinued on 22nd November 2024. Please update your dapps and integrations accordingly. We recommend exploring alternative providers, which you can find at https://docs.palm.io/howto/use-supported-tools/tools.
 
 ### Aptos: Confirmed Deprecation (60 Days Notice)
-Aptos mainnet and testnet will be discontinued on November 22nd, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at https://aptos.dev/en/build/apis.
+Aptos mainnet and testnet will be discontinued on November 22nd 2024, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at https://aptos.dev/en/build/apis.
