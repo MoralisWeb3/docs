@@ -1234,6 +1234,44 @@ li.dropdown-divider {
   margin-right: 8px;
   vertical-align: middle;
 }
+/* Ronin */
+.menu__link[href$="ronin-json-rpc-api"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/ronin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Lisk */
+.menu__link[href$="lisk-json-rpc-api"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/lisk.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Flow */
+.menu__link[href$="flow-json-rpc-api"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/flow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
 .navbar__logo img {
   height: 3rem;

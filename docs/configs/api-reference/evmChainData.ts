@@ -1182,8 +1182,7 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
+      supported: true,
       urls: [
         "https://site1.moralis-nodes.com/flow/",
         "https://site2.moralis-nodes.com/flow/",
@@ -1213,11 +1212,10 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
+      supported: true,
       urls: [
-        "https://site1.moralis-nodes.com/flow/",
-        "https://site2.moralis-nodes.com/flow/",
+        "https://site1.moralis-nodes.com/flow-testnet/",
+        "https://site2.moralis-nodes.com/flow-testnet/",
       ],
     },
     authApi: {
@@ -1244,9 +1242,11 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
-      urls: [],
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/ronin/",
+        "https://site2.moralis-nodes.com/ronin/",
+      ],
     },
     authApi: {
       supported: false,
@@ -1272,9 +1272,11 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
-      urls: [],
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/ronin-testnet/",
+        "https://site2.moralis-nodes.com/ronin-testnet/",
+      ],
     },
     authApi: {
       supported: false,
@@ -1300,9 +1302,11 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
-      urls: [],
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/lisk/",
+        "https://site2.moralis-nodes.com/lisk/",
+      ],
     },
     authApi: {
       supported: false,
@@ -1328,9 +1332,11 @@ const chainData = [
       internalTxs: true,
     },
     rpcNodes: {
-      supported: false,
-      reason: "Coming soon",
-      urls: [],
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/lisk-sepolia/",
+        "https://site2.moralis-nodes.com/lisk-sepolia/",
+      ],
     },
     authApi: {
       supported: false,
