@@ -3,11 +3,6 @@ window.onload = function () {
   const pageList = [];
   const referenceList = [
     // For v2.2 Release
-    "API Reference",
-    "Token API",
-    "Get Token PnL",
-    "Wallet API",
-    "Get Wallet PnL",
   ];
 
   const paramList = [];
