@@ -190,7 +190,7 @@ const config = {
             type: "doc",
             docId: "rpc-nodes/overview",
             position: "left",
-            label: "RPC Nodes🔥",
+            label: "RPC Nodes",
           },
           {
             type: "doc",
