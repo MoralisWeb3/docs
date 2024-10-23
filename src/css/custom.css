@@ -1041,6 +1041,211 @@ li.dropdown-divider {
 }
 
 /* Ethereum */
+.menu__link[href$="ethereum"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/eth.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="polygon"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/polygon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="binance-smart-chain"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/bsc.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="arbitrum"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/arbitrum.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="base"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/base.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="optimism"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/optimism.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="linea"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/linea.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="avalanche"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/avalanche.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="fantom"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/fantom.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="cronos"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/cronos.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="palm"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/palm.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="gnosis"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/gnosis.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="chiliz"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/chiliz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="moonbeam"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/moonbeam.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="flow"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/flow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="ronin"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/ronin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.menu__link[href$="lisk"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/lisk.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Ethereum */
 .menu__link[href$="ethereum-json-rpc-api"]::before {
   content: "";
   background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/eth.png");
