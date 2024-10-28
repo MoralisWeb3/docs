@@ -1,0 +1,229 @@
+---
+title: "Supported Web3Data APIs"
+slug: "/supported-web3data-apis"
+sidebar_position: 2
+---
+
+import chainData from "../../configs/api-reference/evmChainData";
+import SupportedIcon from "@site/src/components/SupportedIcons/SupportedIcon";
+import UnsupportedIcon from "@site/src/components/SupportedIcons/UnsupportedIcon";
+
+# Supported Web3Data APIs
+
+This table displays the Web3Data APIs supported by each protocol.
+
+<table
+  style={{
+    width: "100%",
+    borderCollapse: "collapse",
+    marginTop: "20px",
+    border: "1px solid #ddd",
+  }}
+>
+  <thead>
+    <tr>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "left",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Protocol
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Wallet API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        NFT API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Token API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        DeFi API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Entity API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Price API
+      </th>
+      <th
+        style={{
+          padding: "12px 10px",
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        Blockchain API
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {chainData
+      .filter((chain) => chain.evmApi.supported)
+      .map((chain, index) => (
+        <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
+          <td
+            style={{
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img
+                src={chain.logo}
+                alt={`${chain.name} logo`}
+                style={{ width: "20px", height: "20px", marginRight: "8px" }}
+              />
+              {chain.name}
+            </div>
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.walletApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Wallet API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.nftApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="NFT API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.tokenApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Token API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.defiApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="DeFi API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.entityApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Entity API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.priceApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Price API not supported" />
+            )}
+          </td>
+          <td
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              border: "1px solid #ddd",
+              verticalAlign: "middle",
+            }}
+          >
+            {chain.evmApi.blockchainApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Blockchain API not supported" />
+            )}
+          </td>
+        </tr>
+      ))}
+  </tbody>
+</table>

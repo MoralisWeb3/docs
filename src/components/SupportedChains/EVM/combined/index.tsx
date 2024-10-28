@@ -33,7 +33,7 @@ const baseHeaders = [
 ];
 
 const serviceHeaders = {
-  web3api: { key: "evmApi", label: "EVM API" },
+  web3api: { key: "evmApi", label: "Web3 Data API" },
   streamsapi: { key: "streamsApi", label: "Streams API" },
   authapi: { key: "authApi", label: "Auth API" },
   rpc: { key: "rpcNodes", label: "RPC Nodes" },
@@ -41,7 +41,7 @@ const serviceHeaders = {
 
 const allHeaders = [
   ...baseHeaders,
-  { key: "evmApi", label: "EVM API" },
+  { key: "evmApi", label: "Web3 Data API" },
   { key: "streamsApi", label: "Streams API" },
   { key: "authApi", label: "Auth API" },
   { key: "rpcNodes", label: "RPC Nodes" },
@@ -108,7 +108,7 @@ const EVMChainsCombined = () => {
           onChange={handleServiceChange}
         >
           <option value="">All Services</option>
-          <option value="web3api">Web3 API</option>
+          <option value="web3api">Web3 Data API</option>
           <option value="streamsapi">Streams API</option>
           <option value="authapi">Auth API</option>
           <option value="rpc">RPC Nodes</option>

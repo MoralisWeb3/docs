@@ -11,6 +11,10 @@ sidebar_position: 16
 
 Lisk is a blockchain application platform that enables developers to create scalable dApps using sidechains. With an easy-to-use SDK and JavaScript support, Lisk makes blockchain development more accessible and user-friendly.
 
+## Video Guide: Building on Lisk with Moralis
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4CWDMgWAdV4" title="Building on Lisk with Moralis APIs: The Ultimate Guide for Developers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Supported Networks
 
 The Web3 Data API is available for the following Lisk networks:
