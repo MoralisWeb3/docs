@@ -1427,6 +1427,18 @@ li.dropdown-divider {
   vertical-align: middle;
 }
 
+.menu__link[href$="opbnb-json-rpc-api"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/opbnb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 /* Zetachain */
 .menu__link[href$="zetachain-json-rpc-api"]::before {
   content: "";

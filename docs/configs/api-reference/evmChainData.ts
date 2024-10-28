@@ -1203,6 +1203,38 @@ const chainData = [
     },
   },
   {
+    name: "opBNB",
+    logo: "/img/content/opbnb.png",
+    type: "Mainnet",
+    chainID: "0xcc (204)",
+    evmChain: "EvmChain.opBNB",
+    isNew: false,
+    evmApi: {
+      supported: false,
+      internalTxs: false,
+      erc20Swaps: false,
+      nftTrades: false,
+      reason: "Coming soon",
+      queryParams: ["n/a"],
+    },
+    streamsApi: {
+      supported: false,
+      reason: "Coming soon",
+      internalTxs: false,
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/opbnb/",
+        "https://site2.moralis-nodes.com/opbnb/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Coming soon",
+    },
+  },
+  {
     name: "Polygon zkEVM",
     logo: "/img/content/polygon-zkevm.png",
     type: "Mainnet",
