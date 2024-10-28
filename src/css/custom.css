@@ -1483,3 +1483,46 @@ li.dropdown-divider {
   width: 13rem;
   margin-top: -10px;
 }
+
+/* Custom class for Supported Web3Data APIs table */
+.supported-web3data-apis-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid var(--ifm-table-border-color);
+
+  th,
+  td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid var(--ifm-table-border-color);
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: var(--ifm-table-header-background-color);
+    color: var(--ifm-table-header-color);
+    text-align: left;
+  }
+
+  td {
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-color);
+  }
+
+  tr:nth-child(even) td {
+    background-color: var(--ifm-table-background-color);
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
