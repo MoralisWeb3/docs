@@ -11,6 +11,10 @@ sidebar_position: 12
 
 Chiliz is a blockchain platform dedicated to sports and entertainment. It enables fans to engage with their favorite teams through fan tokens, digital assets, and other decentralized tools, providing a unique and interactive experience.
 
+## Video Guide: Building on Chiliz with Moralis
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w5bDcR0_K40" title="Building on Chiliz with Moralis APIs: The Ultimate Guide for Developers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Supported Networks
 
 The Web3 Data API is available for the following Chiliz networks:
