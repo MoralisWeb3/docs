@@ -1,0 +1,159 @@
+---
+title: "Supported Web3Data APIs"
+slug: "/supported-web3data-apis"
+sidebar_position: 2
+---
+
+import chainData from "../../configs/api-reference/evmChainData";
+import SupportedIcon from "@site/src/components/SupportedIcons/SupportedIcon";
+import UnsupportedIcon from "@site/src/components/SupportedIcons/UnsupportedIcon";
+
+# Supported Web3Data APIs
+
+This table displays the Web3Data APIs supported by each protocol.
+
+<table style={{ width: "100%", borderCollapse: "collapse", marginTop: "20px" }}>
+  <thead>
+    <tr>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "left",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Protocol
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Wallet API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        NFT API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Token API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        DeFi API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Entity API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Price API
+      </th>
+      <th
+        style={{
+          padding: "10px",
+          textAlign: "center",
+          borderBottom: "2px solid #ddd",
+        }}
+      >
+        Blockchain API
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {chainData
+      .filter((chain) => chain.evmApi.supported) // Only include chains where evmApi.supported is true
+      .map((chain, index) => (
+        <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
+          <td
+            style={{ display: "flex", alignItems: "center", padding: "10px" }}
+          >
+            <img
+              src={chain.logo}
+              alt={`${chain.name} logo`}
+              style={{ width: 20, height: 20, marginRight: 8 }}
+            />
+            {chain.name}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.walletApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Wallet API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.nftApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="NFT API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.tokenApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Token API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.defiApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="DeFi API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.entityApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Entity API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.priceApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Price API not supported" />
+            )}
+          </td>
+          <td style={{ textAlign: "center", padding: "10px" }}>
+            {chain.evmApi.blockchainApi ? (
+              <SupportedIcon />
+            ) : (
+              <UnsupportedIcon reason="Blockchain API not supported" />
+            )}
+          </td>
+        </tr>
+      ))}
+  </tbody>
+</table>
