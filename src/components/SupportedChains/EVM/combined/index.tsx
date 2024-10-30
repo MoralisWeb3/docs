@@ -37,6 +37,7 @@ const serviceHeaders = {
   streamsapi: { key: "streamsApi", label: "Streams API" },
   authapi: { key: "authApi", label: "Auth API" },
   rpc: { key: "rpcNodes", label: "RPC Nodes" },
+  extendedrpc: { key: "extendedRpcApi", label: "Extended RPC API" },
 };
 
 const allHeaders = [
@@ -45,6 +46,7 @@ const allHeaders = [
   { key: "streamsApi", label: "Streams API" },
   { key: "authApi", label: "Auth API" },
   { key: "rpcNodes", label: "RPC Nodes" },
+  { key: "extendedRpcApi", label: "Extended RPC API" },
 ];
 
 const EVMChainsCombined = () => {
@@ -73,6 +75,15 @@ const EVMChainsCombined = () => {
 
   const getFilteredData = () => {
     if (!service) return chainData;
+
+    // Check if both rpcNodes and evmApi are supported for 'extendedrpc' service
+    if (service === "extendedrpc") {
+      return chainData.filter(
+        (chain) => chain.rpcNodes?.supported && chain.evmApi?.supported
+      );
+    }
+
+    // Default filter for other services
     return chainData.filter(
       (chain) => chain[serviceHeaders[service].key]?.supported
     );
@@ -112,6 +123,7 @@ const EVMChainsCombined = () => {
           <option value="streamsapi">Streams API</option>
           <option value="authapi">Auth API</option>
           <option value="rpc">RPC Nodes</option>
+          <option value="extendedrpc">Extended RPC API</option>
         </select>
       )}
       <GenericTable data={getFilteredData()} headers={getHeaders()} />

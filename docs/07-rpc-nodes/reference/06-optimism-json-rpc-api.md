@@ -4,6 +4,8 @@ slug: "/rpc-nodes/optimism-json-rpc-api"
 sidebar_position: 5
 ---
 
+import Admonition from "@theme/Admonition";
+
 # Optimism JSON RPC API
 
 ## Introduction
@@ -58,6 +60,12 @@ The Optimism RPC API is available for the following networks:
 - [eth_sendRawTransaction](/rpc-nodes/reference/eth_sendRawTransaction)
 
 ## Supported Extended RPC Methods
+
+<Admonition type="note" title="Network Support Notice">
+  <p>
+    The Extended RPC APIs are only supported on the <b>Optimism</b> Mainnet.
+  </p>
+</Admonition>
 
 - [eth_getTransactions](/rpc-nodes/reference/extended-rpc/eth_getTransactions)
 - [eth_getDecodedTransactions](/rpc-nodes/reference/extended-rpc/eth_getDecodedTransactions)
