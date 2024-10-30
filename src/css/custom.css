@@ -1506,7 +1506,7 @@ li.dropdown-divider {
   th,
   td {
     padding: 12px 10px;
-    text-align: center;
+    text-align: left;
     border: 1px solid var(--ifm-table-border-color);
     vertical-align: middle;
   }
