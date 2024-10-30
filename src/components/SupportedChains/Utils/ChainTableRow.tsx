@@ -7,7 +7,13 @@ const TableRow = ({ rowData, headers }) => (
     {headers.map((header, index) => (
       <td
         style={
-          ["evmApi", "streamsApi", "rpcNodes", "authApi"].includes(header)
+          [
+            "evmApi",
+            "streamsApi",
+            "rpcNodes",
+            "authApi",
+            "extendedRpcApi",
+          ].includes(header)
             ? { textAlign: "center" }
             : {}
         }

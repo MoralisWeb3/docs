@@ -4,6 +4,8 @@ slug: "/rpc-nodes/arbitrum-json-rpc-api"
 sidebar_position: 3
 ---
 
+import Admonition from "@theme/Admonition";
+
 # Arbitrum JSON RPC API
 
 ## Introduction
@@ -58,6 +60,12 @@ The Arbitrum RPC API is available for the following networks:
 - [eth_sendRawTransaction](/rpc-nodes/reference/eth_sendRawTransaction)
 
 ## Supported Extended RPC Methods
+
+<Admonition type="note" title="Network Support Notice">
+  <p>
+    The Extended RPC APIs are only supported on the <b>Arbitrum</b> Mainnet.
+  </p>
+</Admonition>
 
 - [eth_getTransactions](/rpc-nodes/reference/extended-rpc/eth_getTransactions)
 - [eth_getDecodedTransactions](/rpc-nodes/reference/extended-rpc/eth_getDecodedTransactions)

@@ -104,6 +104,14 @@ const TableCell = ({ header, rowData }) => {
     ) : (
       <span>No URLs Available</span>
     );
+  } else if (header === "extendedRpcApi") {
+    const isSupported =
+      rowData.evmApi?.supported && rowData.rpcNodes?.supported;
+    return isSupported ? (
+      <SupportedIcon />
+    ) : (
+      <UnsupportedIcon reason="Unsupported" />
+    );
   } else if (["evmApi", "streamsApi", "rpcNodes", "authApi"].includes(header)) {
     const { supported, reason } = rowData[header];
     return supported ? <SupportedIcon /> : <UnsupportedIcon reason={reason} />;
