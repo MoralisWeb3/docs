@@ -22,8 +22,12 @@ Simply click on a chain's name to jump to its respective section for more detail
 - [Fantom Opera](#fantom-opera)
 - [Cronos](#cronos)
 - [Arbitrum](#arbitrum)
+- [Optimism](#optimism)
 - [Base](#base)
 - [Linea](#linea)
+- [Moonbeam](#moonbeam)
+- [Ronin](#ronin)
+- [PulseChain](#pulsechain)
 
 :::note
 If you do not specify a particular `exchange`, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.
@@ -82,6 +86,7 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | ----------------------------------------- | --------------------- |
 | [Uniswap v3](https://app.uniswap.org/)    | uniswapv3             |
 | [Camelot V2](https://www.camelotsix.com/) | camelotv2             |
+| [Sparta Dex](https://sparta.exchange/)    | spartadex             |
 
 ### Optimism
 
@@ -106,6 +111,25 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | ------------------------------------------------ | --------------------- |
 | [PancakeSwap v3](https://pancakeswap.finance/v3) | pancakeswapv3         |
 | [Nile](https://www.thenile.exchange/swap)        | nile                  |
+
+### Moonbeam
+
+| Supported DEX(s)                      | Query Parameter Value |
+| ------------------------------------- | --------------------- |
+| [Beamswap](https://beamswap.io/)      | beamswap              |
+| [StellaSwap](https://stellaswap.com/) | stellaswap            |
+
+### Ronin
+
+| Supported DEX(s)                         | Query Parameter Value |
+| ---------------------------------------- | --------------------- |
+| [Katana](https://katana.roninchain.com/) | katana                |
+
+### PulseChain
+
+| Supported DEX(s)              | Query Parameter Value |
+| ----------------------------- | --------------------- |
+| [PulseX](https://pulsex.com/) | pulsex                |
 
 ## Endpoints DEXs integration
 
