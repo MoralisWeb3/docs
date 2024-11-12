@@ -40,6 +40,7 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | [Uniswap v3](https://app.uniswap.org/) | uniswapv3             |
 | [Uniswap v2](https://uniswap.org/)     | uniswapv2             |
 | [Sushiswap v2](https://sushi.com/)     | sushiswapv2           |
+| [Frax v2](https://frax.finance/)       | fraxswap              |
 
 ### Polygon
 
@@ -48,7 +49,7 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | [Quickswap v2](https://quickswap.exchange/) | quickswapv2           |
 | [Uniswap v3](https://app.uniswap.org/)      | uniswapv3             |
 | [Uniswap v2](https://uniswap.org/)          | uniswapv2             |
-| [MM Finance](https://mm.finance/)           | mm finance            |
+| [MM Finance](https://mm.finance/)           | mmfinance             |
 
 ### Binance Smart Chain (BSC)
 
@@ -77,7 +78,7 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | Supported DEX(s)                    | Query Parameter Value |
 | ----------------------------------- | --------------------- |
 | [VVS Finance](https://vvs.finance/) | vvs                   |
-| [MM Finance](https://mm.finance/)   | mm finance            |
+| [MM Finance](https://mm.finance/)   | mmfinance             |
 | [Crodex](https://crodex.exchange/)  | crodex                |
 
 ### Arbitrum
@@ -102,8 +103,8 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 | [Sharkswap](https://www.sharkswap.finance/swap) | sharkswap             |
 | [Aerodrome](https://aerodrome.finance)          | aerodrome             |
 | [Baseswap](https://baseswap.fi)                 | baseswap              |
-| [PancakeSwap](https://pancakeswap.finance/)     | pancakeswap           |
-| [Sushiswap](https://sushi.com/)                 | sushiswap             |
+| [PancakeSwap v2](https://pancakeswap.finance/)  | pancakeswapv2         |
+| [Sushiswap v2](https://sushi.com/)              | sushiswapv2           |
 
 ### Linea
 
@@ -114,22 +115,22 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Moonbeam
 
-| Supported DEX(s)                      | Query Parameter Value |
-| ------------------------------------- | --------------------- |
-| [Beamswap](https://beamswap.io/)      | beamswap              |
-| [StellaSwap](https://stellaswap.com/) | stellaswap            |
+| Supported DEX(s)                               | Query Parameter Value |
+| ---------------------------------------------- | --------------------- |
+| [Beamswap](https://beamswap.io/)               | beamswap              |
+| [StellaSwap](https://stellaswap.com/)          | stellaswap            |
 
 ### Ronin
 
-| Supported DEX(s)                         | Query Parameter Value |
-| ---------------------------------------- | --------------------- |
-| [Katana](https://katana.roninchain.com/) | katana                |
+| Supported DEX(s)                               | Query Parameter Value |
+| ---------------------------------------------- | --------------------- |
+| [Katana](https://katana.roninchain.com/)       | katana                |
 
 ### PulseChain
 
-| Supported DEX(s)              | Query Parameter Value |
-| ----------------------------- | --------------------- |
-| [PulseX](https://pulsex.com/) | pulsex                |
+| Supported DEX(s)                               | Query Parameter Value |
+| ---------------------------------------------- | --------------------- |
+| [PulseX](https://pulsex.com/)                  | pulsex                |
 
 ## Endpoints DEXs integration
 
