@@ -22,8 +22,13 @@ This table displays the Web3Data APIs supported by each protocol.
         <th>Token API</th>
         <th>DeFi API</th>
         <th>Entity API</th>
-        <th>Price API</th>
         <th>Blockchain API</th>
+        <th>Profitability API</th>
+        <th>Token Prices</th>
+        <th>NFT Trades</th>
+        <th>NFT Trade Prices</th>
+        <th>NFT Floor Prices</th>
+        <th>Internal Transactions</th>
       </tr>
     </thead>
     <tbody>
@@ -77,17 +82,52 @@ This table displays the Web3Data APIs supported by each protocol.
               )}
             </td>
             <td>
-              {chain.evmApi.priceApi ? (
-                <SupportedIcon />
-              ) : (
-                <UnsupportedIcon reason="Price API not supported" />
-              )}
-            </td>
-            <td>
               {chain.evmApi.blockchainApi ? (
                 <SupportedIcon />
               ) : (
                 <UnsupportedIcon reason="Blockchain API not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.pnlApi ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="Profitability API not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.tokenPrices ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="Token Prices not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.nftTrades ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="NFT Trades not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.nftPrices ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="NFT Trade Prices not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.nftFloorPrices ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="NFT Floor Prices not supported" />
+              )}
+            </td>
+            <td>
+              {chain.evmApi.internalTxs ? (
+                <SupportedIcon />
+              ) : (
+                <UnsupportedIcon reason="Internal transactions not supported" />
               )}
             </td>
           </tr>
