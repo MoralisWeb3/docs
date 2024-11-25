@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: Get Aggregated Token Pair Stats
 slug: /web3-data-api/solana/reference/get-aggregated-token-pair-stats
 ---

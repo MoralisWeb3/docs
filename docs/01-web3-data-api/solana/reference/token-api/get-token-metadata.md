@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: Get token metadata
+sidebar_label: Get Token Metadata
 slug: /web3-data-api/solana/reference/get-token-metadata
 ---
 

@@ -15262,6 +15262,506 @@
         }
       ]
     },
+    "getPairStats": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get pair stats",
+      "description": "Get the pair stats by using pair address",
+      "method": "GET",
+      "path": "/pairs/:address/stats",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The pair address",
+          "required": true,
+          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the pair stats.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+              },
+              {
+                "name": "tokenName",
+                "type": "string",
+                "description": "The token name",
+                "example": "Wrapped Ether",
+                "required": true
+              },
+              {
+                "name": "tokenSymbol",
+                "type": "string",
+                "description": "The token symbol",
+                "example": "WETH",
+                "required": true
+              },
+              {
+                "name": "tokenLogo",
+                "type": "string",
+                "description": "The token image",
+                "example": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_996ca17c00e6665189c55f0101abba12",
+                "required": true
+              },
+              {
+                "name": "pairCreated",
+                "type": "string",
+                "description": "The time when the pair was created",
+                "example": "2021-04-02T10:07:54.000Z",
+                "required": true
+              },
+              {
+                "name": "pairLabel",
+                "type": "string",
+                "description": "The pair label",
+                "example": "WETH/PEPE",
+                "required": true
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+                "required": true
+              },
+              {
+                "name": "exchange",
+                "type": "string",
+                "description": "The exchange name",
+                "example": "Uniswap v2",
+                "required": true
+              },
+              {
+                "name": "exchangeAddress",
+                "type": "string",
+                "description": "The exchange address",
+                "example": "0x101cc05f4a51c0319f570d5e146a8c625198e222",
+                "required": true
+              },
+              {
+                "name": "exchangeLogo",
+                "type": "string",
+                "description": "The exchange logo",
+                "example": "uniswap.png",
+                "required": true
+              },
+              {
+                "name": "exchangeUrl",
+                "type": "string",
+                "description": "The exchange url",
+                "example": "app.uniswap.com",
+                "required": true
+              },
+              {
+                "name": "currentUsdPrice",
+                "type": "string",
+                "description": "The current usd price",
+                "example": "0.00000194",
+                "required": true
+              },
+              {
+                "name": "currentNativePrice",
+                "type": "string",
+                "description": "The current native price",
+                "example": "0.0000000042",
+                "required": true
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in usd",
+                "example": "43345522",
+                "required": true
+              },
+              {
+                "name": "pairs",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "exchange_address",
+                      "type": "string",
+                      "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                    },
+                    {
+                      "name": "exchange_name",
+                      "type": "string",
+                      "example": "Uniswap v3"
+                    },
+                    {
+                      "name": "exchange_logo",
+                      "type": "string",
+                      "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+                    },
+                    {
+                      "name": "pair_label",
+                      "type": "string",
+                      "example": "USDC/WETH"
+                    },
+                    {
+                      "name": "pair_address",
+                      "type": "string",
+                      "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+                    },
+                    {
+                      "name": "from_address_entity_logo",
+                      "type": "string",
+                      "description": "The logo of the from address entity",
+                      "example": "https://opensea.io/favicon.ico"
+                    },
+
+                    {
+                      "name": "usd_price",
+                      "type": "number",
+                      "example": 1.0006209353320241
+                    },
+                    {
+                      "name": "usd_price_24hr_percent_change",
+                      "type": "number",
+                      "example": -0.060345507380585806
+                    },
+                    {
+                      "name": "usd_price_24hr_usd_change",
+                      "type": "number",
+                      "example": -0.0006041943845493947
+                    },
+                    {
+                      "name": "liquidity_usd",
+                      "type": "number",
+                      "example": 147124866.6
+                    },
+                    {
+                      "name": "base_token",
+                      "type": "string",
+                      "example": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                    },
+                    {
+                      "name": "quote_token",
+                      "type": "string",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                    },
+                    {
+                      "name": "pricePercentChange",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 0.09856979079440326
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 0.23177601087570995
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 1.3056575044286343
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 0.4482653565002788
+                        }
+                      ]
+                    },
+                    {
+                      "name": "liquidityPercentChange",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 0.03745609400699131
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 0.23280716969448695
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": -3.5386931892386437
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": -2.5011308034564723
+                        }
+                      ]
+                    },
+                    {
+                      "name": "buys",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 10
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 78
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 345
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 2282
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sells",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 10
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 108
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 409
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 3130
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalVolume",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 517133.48427126
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 6628184.8790348
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 23767839.919415
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 257825464.3465
+                        }
+                      ]
+                    },
+                    {
+                      "name": "buyVolume",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 384363.38145012
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 3564931.2694156
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 13366086.701575
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 129123325.63683
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sellVolume",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 132770.10282114
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 3063253.6096191
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 10401753.21784
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 128702138.70967
+                        }
+                      ]
+                    },
+                    {
+                      "name": "buyers",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 6
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 24
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 47
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 114
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sellers",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "5min",
+                          "type": "number",
+                          "example": 6
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "example": 26
+                        },
+                        {
+                          "name": "4h",
+                          "type": "number",
+                          "example": 60
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "example": 139
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getAggregatedTokenPairStats": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get aggregated token pair statistics by address",
@@ -25078,6 +25578,373 @@
                     }
                   ]
                 }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getPairStats": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get pair stats",
+      "description": "Get the pair stats by using pair address",
+      "method": "GET",
+      "path": "/token/:network/pairs/:pairAddress/stats",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "pairAddress",
+          "description": "The pair address",
+          "required": true,
+          "example": "83v8iPyZihDEjDdY8RdZddyZNyUtXngz69Lgo9Kt5d6d",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the pair stats.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "So11111111111111111111111111111111111111112",
+                "required": true
+              },
+              {
+                "name": "tokenName",
+                "type": "string",
+                "description": "The token name",
+                "example": "Wrapped SOL",
+                "required": true
+              },
+              {
+                "name": "tokenSymbol",
+                "type": "string",
+                "description": "The token symbol",
+                "example": "SOL",
+                "required": true
+              },
+              {
+                "name": "tokenLogo",
+                "type": "string",
+                "description": "The token logo",
+                "example": null,
+                "required": true
+              },
+              {
+                "name": "pairCreated",
+                "type": "string",
+                "description": "The time when the pair was created",
+                "example": null,
+                "required": true
+              },
+              {
+                "name": "pairLabel",
+                "type": "string",
+                "description": "The pair label",
+                "example": "SOL/USDC",
+                "required": true
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "83v8iPyZihDEjDdY8RdZddyZNyUtXngz69Lgo9Kt5d6d",
+                "required": true
+              },
+              {
+                "name": "exchange",
+                "type": "string",
+                "description": "The exchange name",
+                "example": "Orca Whirlpool",
+                "required": true
+              },
+              {
+                "name": "exchangeAddress",
+                "type": "string",
+                "description": "The exchange address",
+                "example": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+                "required": true
+              },
+              {
+                "name": "exchangeLogo",
+                "type": "string",
+                "description": "The exchange logo",
+                "example": "https://entities-logos.s3.amazonaws.com/orca.png",
+                "required": true
+              },
+              {
+                "name": "exchangeUrl",
+                "type": "string",
+                "description": "The exchange url",
+                "example": null,
+                "required": true
+              },
+              {
+                "name": "currentUsdPrice",
+                "type": "string",
+                "description": "The current USD price",
+                "example": "253.828998134",
+                "required": true
+              },
+              {
+                "name": "currentNativePrice",
+                "type": "string",
+                "description": "The current native price",
+                "example": "1.000000000",
+                "required": true
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD",
+                "example": "418891.89570704",
+                "required": true
+              },
+              {
+                "name": "pricePercentChange",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": -0.008714344862928774
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": -0.717635588435784
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 0.6634414953055396
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 0.6554089425811667
+                  }
+                ]
+              },
+              {
+                "name": "liquidityChange",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 0.002550807647409825
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 0.7293455553137336
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 1.0947695816991907
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": -3.494241942992604
+                  }
+                ]
+              },
+              {
+                "name": "buys",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 25
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 1320
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 5268
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 35760
+                  }
+                ]
+              },
+              {
+                "name": "sells",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 23
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 1122
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 4219
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 30895
+                  }
+                ]
+              },
+              {
+                "name": "totalVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 23544.275417954
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 816271.9723616
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 2892716.8329447
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 23915669.075196
+                  }
+                ]
+              },
+              {
+                "name": "buyVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 10962.891523975
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 391476.55636069
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 1455752.2761177
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 11968623.126369
+                  }
+                ]
+              },
+              {
+                "name": "sellVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 12581.383893979
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 424795.41600092
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 1436964.5568269
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 11947045.948827
+                  }
+                ]
+              },
+              {
+                "name": "buyers",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 23
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 645
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 2063
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 9980
+                  }
+                ]
+              },
+              {
+                "name": "sellers",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 15
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 422
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 1179
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 5634
+                  }
+                ]
               }
             ]
           }
