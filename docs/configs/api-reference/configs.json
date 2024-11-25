@@ -15453,309 +15453,238 @@
                 "required": true
               },
               {
-                "name": "pairs",
-                "type": "array",
-                "field": {
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "exchange_address",
-                      "type": "string",
-                      "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
-                    },
-                    {
-                      "name": "exchange_name",
-                      "type": "string",
-                      "example": "Uniswap v3"
-                    },
-                    {
-                      "name": "exchange_logo",
-                      "type": "string",
-                      "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
-                    },
-                    {
-                      "name": "pair_label",
-                      "type": "string",
-                      "example": "USDC/WETH"
-                    },
-                    {
-                      "name": "pair_address",
-                      "type": "string",
-                      "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-                    },
-                    {
-                      "name": "from_address_entity_logo",
-                      "type": "string",
-                      "description": "The logo of the from address entity",
-                      "example": "https://opensea.io/favicon.ico"
-                    },
-
-                    {
-                      "name": "usd_price",
-                      "type": "number",
-                      "example": 1.0006209353320241
-                    },
-                    {
-                      "name": "usd_price_24hr_percent_change",
-                      "type": "number",
-                      "example": -0.060345507380585806
-                    },
-                    {
-                      "name": "usd_price_24hr_usd_change",
-                      "type": "number",
-                      "example": -0.0006041943845493947
-                    },
-                    {
-                      "name": "liquidity_usd",
-                      "type": "number",
-                      "example": 147124866.6
-                    },
-                    {
-                      "name": "base_token",
-                      "type": "string",
-                      "example": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-                    },
-                    {
-                      "name": "quote_token",
-                      "type": "string",
-                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
-                    },
-                    {
-                      "name": "pricePercentChange",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 0.09856979079440326
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 0.23177601087570995
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 1.3056575044286343
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 0.4482653565002788
-                        }
-                      ]
-                    },
-                    {
-                      "name": "liquidityPercentChange",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 0.03745609400699131
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 0.23280716969448695
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": -3.5386931892386437
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": -2.5011308034564723
-                        }
-                      ]
-                    },
-                    {
-                      "name": "buys",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 10
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 78
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 345
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 2282
-                        }
-                      ]
-                    },
-                    {
-                      "name": "sells",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 10
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 108
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 409
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 3130
-                        }
-                      ]
-                    },
-                    {
-                      "name": "totalVolume",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 517133.48427126
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 6628184.8790348
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 23767839.919415
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 257825464.3465
-                        }
-                      ]
-                    },
-                    {
-                      "name": "buyVolume",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 384363.38145012
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 3564931.2694156
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 13366086.701575
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 129123325.63683
-                        }
-                      ]
-                    },
-                    {
-                      "name": "sellVolume",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 132770.10282114
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 3063253.6096191
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 10401753.21784
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 128702138.70967
-                        }
-                      ]
-                    },
-                    {
-                      "name": "buyers",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 6
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 24
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 47
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 114
-                        }
-                      ]
-                    },
-                    {
-                      "name": "sellers",
-                      "type": "object",
-                      "fields": [
-                        {
-                          "name": "5min",
-                          "type": "number",
-                          "example": 6
-                        },
-                        {
-                          "name": "1h",
-                          "type": "number",
-                          "example": 26
-                        },
-                        {
-                          "name": "4h",
-                          "type": "number",
-                          "example": 60
-                        },
-                        {
-                          "name": "24h",
-                          "type": "number",
-                          "example": 139
-                        }
-                      ]
-                    }
-                  ]
-                }
+                "name": "pricePercentChange",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 0.09856979079440326
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 0.23177601087570995
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 1.3056575044286343
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 0.4482653565002788
+                  }
+                ]
+              },
+              {
+                "name": "liquidityPercentChange",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 0.03745609400699131
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 0.23280716969448695
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": -3.5386931892386437
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": -2.5011308034564723
+                  }
+                ]
+              },
+              {
+                "name": "buys",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 10
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 78
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 345
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 2282
+                  }
+                ]
+              },
+              {
+                "name": "sells",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 10
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 108
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 409
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 3130
+                  }
+                ]
+              },
+              {
+                "name": "totalVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 517133.48427126
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 6628184.8790348
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 23767839.919415
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 257825464.3465
+                  }
+                ]
+              },
+              {
+                "name": "buyVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 384363.38145012
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 3564931.2694156
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 13366086.701575
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 129123325.63683
+                  }
+                ]
+              },
+              {
+                "name": "sellVolume",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 132770.10282114
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 3063253.6096191
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 10401753.21784
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 128702138.70967
+                  }
+                ]
+              },
+              {
+                "name": "buyers",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 6
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 24
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 47
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 114
+                  }
+                ]
+              },
+              {
+                "name": "sellers",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "number",
+                    "example": 6
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "example": 26
+                  },
+                  {
+                    "name": "4h",
+                    "type": "number",
+                    "example": 60
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "example": 139
+                  }
+                ]
               }
             ]
           }
