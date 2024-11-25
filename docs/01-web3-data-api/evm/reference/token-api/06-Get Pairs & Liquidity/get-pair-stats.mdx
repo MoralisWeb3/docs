@@ -6,9 +6,18 @@ slug: /web3-data-api/evm/reference/get-token-pair-stats
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
+import Admonition from "@theme/Admonition";
 
 # Get Token Pair Stats
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiReference {...config.token.getPairStats} />
+<ApiReference {...config.token.getPairStats} >
+<Admonition type="info" title="Note">
+
+<p>
+The data is updated every 30 seconds to ensure you have access to near real-time information about price changes, liquidity, volume, and trading activity.
+
+</p>
+</Admonition>
+</ApiReference>
