@@ -30,10 +30,12 @@ Simply click on a chain's name to jump to its respective section for more detail
 - [PulseChain](#pulsechain)
 
 :::note
-If you do not specify a particular `exchange`, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.
+If you do not specify a particular exchange, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.
 :::
 
 ### Ethereum
+
+Chain ID: `0x1`
 
 | Supported DEX(s)                       | Query Parameter Value |
 | -------------------------------------- | --------------------- |
@@ -44,23 +46,30 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Polygon
 
+Chain ID: `0x89`
+
 | Supported DEX(s)                            | Query Parameter Value |
 | ------------------------------------------- | --------------------- |
 | [Quickswap v2](https://quickswap.exchange/) | quickswapv2           |
 | [Uniswap v3](https://app.uniswap.org/)      | uniswapv3             |
 | [Uniswap v2](https://uniswap.org/)          | uniswapv2             |
-| [MM Finance](https://mm.finance/)           | mmfinance             |
+| [MM Finance](https://mm.finance/)           | mm finance            |
 
 ### Binance Smart Chain (BSC)
 
+Chain ID: `0x38`
+
 | Supported DEX(s)                                 | Query Parameter Value |
 | ------------------------------------------------ | --------------------- |
-| [PancakeSwap v2](https://pancakeswap.finance/)   | pancakeswapv2         |
 | [PancakeSwap v3](https://pancakeswap.finance/v3) | pancakeswapv3         |
+| [PancakeSwap v2](https://pancakeswap.finance/)   | pancakeswapv2         |
 | [PancakeSwap v1](https://pancakeswap.finance/v1) | pancakeswapv1         |
 | [Uniswap v3](https://app.uniswap.org/)           | uniswapv3             |
+| [Uniswap v2](https://uniswap.org/)               | uniswapv2             |
 
 ### Avalanche
+
+Chain ID: `0xa86a`
 
 | Supported DEX(s)                           | Query Parameter Value |
 | ------------------------------------------ | --------------------- |
@@ -69,19 +78,26 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Fantom Opera
 
+Chain ID: `0xfa`
+
 | Supported DEX(s)                          | Query Parameter Value |
 | ----------------------------------------- | --------------------- |
 | [SpookySwap](https://spookyswap.finance/) | spookyswap            |
+| [Uniswap v3](https://app.uniswap.org/)    | uniswapv3             |
 
 ### Cronos
+
+Chain ID: `0x19`
 
 | Supported DEX(s)                    | Query Parameter Value |
 | ----------------------------------- | --------------------- |
 | [VVS Finance](https://vvs.finance/) | vvs                   |
-| [MM Finance](https://mm.finance/)   | mmfinance             |
+| [MM Finance](https://mm.finance/)   | mm finance            |
 | [Crodex](https://crodex.exchange/)  | crodex                |
 
 ### Arbitrum
+
+Chain ID: `0xa4b1`
 
 | Supported DEX(s)                          | Query Parameter Value |
 | ----------------------------------------- | --------------------- |
@@ -91,22 +107,32 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Optimism
 
-| Supported DEX(s)                       | Query Parameter Value |
-| -------------------------------------- | --------------------- |
-| [Uniswap v3](https://app.uniswap.org/) | uniswapv3             |
+Chain ID: `0x64`
+
+| Supported DEX(s)                   | Query Parameter Value |
+| ---------------------------------- | --------------------- |
+| [Sushiswap v2](https://sushi.com/) | sushiswapv2           |
+| [Uniswap v2](https://uniswap.org/) | uniswapv2             |
 
 ### Base
 
-| Supported DEX(s)                                | Query Parameter Value |
-| ----------------------------------------------- | --------------------- |
-| [Uniswap v3](https://app.uniswap.org/)          | uniswapv3             |
-| [Sharkswap](https://www.sharkswap.finance/swap) | sharkswap             |
-| [Aerodrome](https://aerodrome.finance)          | aerodrome             |
-| [Baseswap](https://baseswap.fi)                 | baseswap              |
-| [PancakeSwap v2](https://pancakeswap.finance/)  | pancakeswapv2         |
-| [Sushiswap v2](https://sushi.com/)              | sushiswapv2           |
+Chain ID: `0x2105`
+
+| Supported DEX(s)                               | Query Parameter Value |
+| ---------------------------------------------- | --------------------- |
+| [Sharkswap](https://www.sharkswap.finance/)    | sharkswap             |
+| [Uniswap v2](https://uniswap.org/)             | uniswapv2             |
+| [Uniswap v3](https://app.uniswap.org/)         | uniswapv3             |
+| [Sushiswap v2](https://sushi.com/)             | sushiswapv2           |
+| [Sushiswap v3](https://sushi.com/)             | sushiswapv3           |
+| [PancakeSwap v2](https://pancakeswap.finance/) | pancakeswapv2         |
+| [PancakeSwap v3](https://pancakeswap.finance/) | pancakeswapv3         |
+| [Baseswap](https://baseswap.fi)                | baseswap              |
+| [Aerodrome](https://aerodrome.finance)         | aerodrome             |
 
 ### Linea
+
+Chain ID: `0xe708`
 
 | Supported DEX(s)                                 | Query Parameter Value |
 | ------------------------------------------------ | --------------------- |
@@ -115,29 +141,35 @@ If you do not specify a particular `exchange`, our API takes a comprehensive app
 
 ### Moonbeam
 
-| Supported DEX(s)                               | Query Parameter Value |
-| ---------------------------------------------- | --------------------- |
-| [Beamswap](https://beamswap.io/)               | beamswap              |
-| [StellaSwap](https://stellaswap.com/)          | stellaswap            |
+Chain ID: `0x504`
+
+| Supported DEX(s)                      | Query Parameter Value |
+| ------------------------------------- | --------------------- |
+| [Beamswap v3](https://beamswap.io/)   | beamswap              |
+| [StellaSwap](https://stellaswap.com/) | stellaswap            |
 
 ### Ronin
 
-| Supported DEX(s)                               | Query Parameter Value |
-| ---------------------------------------------- | --------------------- |
-| [Katana](https://katana.roninchain.com/)       | katana                |
+Chain ID: `0x7e4`
+
+| Supported DEX(s)                         | Query Parameter Value |
+| ---------------------------------------- | --------------------- |
+| [Katana](https://katana.roninchain.com/) | katana                |
 
 ### PulseChain
 
-| Supported DEX(s)                               | Query Parameter Value |
-| ---------------------------------------------- | --------------------- |
-| [PulseX](https://pulsex.com/)                  | pulsex                |
+Chain ID: `0x171`
+
+| Supported DEX(s)              | Query Parameter Value |
+| ----------------------------- | --------------------- |
+| [PulseX](https://pulsex.com/) | pulsex                |
 
 ## Endpoints DEXs integration
 
 The table shows the list of endpoints that are integrated with the supported DEXs:
 
-| No. | Method                   | Description                | API Reference                                                                  | URL                                                                                                                                                                      |
-| --- | ------------------------ | -------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | `getTokenPrice`          | Get ERC20 token price      | [Method Documentation](/web3-data-api/evm/reference/get-token-price)           | [https://deep-index.moralis.io/api/v2.2/erc20/:address/price](https://deep-index.moralis.io/api/v2.2/erc20/:address/price)                                               |
-| 2   | `getMultipleTokenPrices` | Get multiple token prices  | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices) | [https://deep-index.moralis.io/api/v2.2/erc20/prices](https://deep-index.moralis.io/api/v2.2/erc20/prices)                                                               |
-| 3   | `getPairAddress`         | Get DEX token pair address | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)          | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress) |
+| No. | Method                 | Description                | API Reference                                                                  | URL                                                                                                                                                                      |
+| --- | ---------------------- | -------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | getTokenPrice          | Get ERC20 token price      | [Method Documentation](/web3-data-api/evm/reference/get-token-price)           | [https://deep-index.moralis.io/api/v2.2/erc20/:address/price](https://deep-index.moralis.io/api/v2.2/erc20/:address/price)                                               |
+| 2   | getMultipleTokenPrices | Get multiple token prices  | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices) | [https://deep-index.moralis.io/api/v2.2/erc20/prices](https://deep-index.moralis.io/api/v2.2/erc20/prices)                                                               |
+| 3   | getPairAddress         | Get DEX token pair address | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)          | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress) |
