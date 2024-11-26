@@ -368,7 +368,7 @@ const config = {
               },
               {
                 label: "Pricing",
-                href: "https://moralis.io/pricing/",
+                href: "https://developers.moralis.com/pricing/",
               },
               {
                 label: "Careers",
@@ -376,11 +376,11 @@ const config = {
               },
               {
                 label: "Blog",
-                href: "https://moralis.io/blog/",
+                href: "https://developers.moralis.com/blog/",
               },
               {
                 label: "Contact Support",
-                href: "https://moralis.io/contact-support/",
+                href: "https://developers.moralis.com/contact-support/",
               },
               {
                 label: "Status",
@@ -388,7 +388,7 @@ const config = {
               },
               {
                 label: "FAQ",
-                href: "https://moralis.io/faq/",
+                href: "https://developers.moralis.com/faq/",
               },
             ],
           },
@@ -401,7 +401,7 @@ const config = {
               },
               {
                 label: "Discord",
-                href: "https://moralis.io/joindiscord/",
+                href: "https://developers.moralis.com/joindiscord/",
               },
               {
                 label: "Stack Overflow",
@@ -414,11 +414,11 @@ const config = {
             items: [
               {
                 label: "Twitter",
-                href: "https://twitter.com/MoralisWeb3",
+                href: "https://x.com/moralisdevs",
               },
               {
                 label: "Youtube",
-                href: "https://www.youtube.com/channel/UCgWS9Q3P5AxCWyQLT2kQhBw",
+                href: "https://www.youtube.com/@MoralisWeb3",
               },
               {
                 label: "Linkedin",
@@ -431,19 +431,19 @@ const config = {
             items: [
               {
                 label: "Privacy",
-                href: "https://moralis.io/privacy-policy/",
+                href: "https://developers.moralis.com/privacy-policy/",
               },
               {
                 label: "Terms",
-                href: "https://moralis.io/terms/",
+                href: "https://developers.moralis.com/terms/",
               },
               {
                 label: "Cookie Policy",
-                href: "https://moralis.io/cookie-policy/",
+                href: "https://developers.moralis.com/cookie-policy/",
               },
               {
                 label: "Security Policy",
-                href: "https://moralis.io/security-policy/",
+                href: "https://developers.moralis.com/security-policy/",
               },
             ],
           },
