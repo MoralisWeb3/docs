@@ -15803,6 +15803,253 @@
           }
         }
       ]
+    },
+    "getPairCandlesticks": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get OHLCV by pair address",
+      "description": "Get the OHLCV candle stick by using pair address",
+      "method": "GET",
+      "path": "/pairs/:address/ohlcv",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The pair address",
+          "required": true,
+          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The timeframe",
+          "required": true,
+          "type": "string",
+          "example": "1h",
+          "enum": [
+            "1s",
+            "10s",
+            "30s",
+            "1min",
+            "5min",
+            "10min",
+            "30min",
+            "1h",
+            "4h",
+            "12h",
+            "1d",
+            "1w",
+            "1M"
+          ]
+        },
+        {
+          "name": "currency",
+          "description": "The currency",
+          "required": true,
+          "type": "string",
+          "example": "usd",
+          "enum": ["usd", "native"]
+        },
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "example": "2024-11-25",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": true,
+          "example": "2024-11-26",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the OHLCV data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "description": "The cursor to get to the next page",
+                "type": "string",
+                "example": "string"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+                "required": true
+              },
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+                "required": true
+              },
+              {
+                "name": "timeframe",
+                "type": "string",
+                "description": "The timeframe",
+                "example": "1h",
+                "required": true
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "description": "The currency",
+                "example": "usd",
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "The timestamp of the candle",
+                      "example": "2024-02-14T00:00:00.000Z"
+                    },
+                    {
+                      "name": "open",
+                      "type": "number",
+                      "description": "The opening price for the period",
+                      "example": 253.82
+                    },
+                    {
+                      "name": "high",
+                      "type": "number",
+                      "description": "The highest price reached during the period",
+                      "example": 255.14
+                    },
+                    {
+                      "name": "low",
+                      "type": "number",
+                      "description": "The lowest price reached during the period",
+                      "example": 252.91
+                    },
+                    {
+                      "name": "close",
+                      "type": "number",
+                      "description": "The closing price for the period",
+                      "example": 253.95
+                    },
+                    {
+                      "name": "volume",
+                      "type": "number",
+                      "description": "The total trading volume for the period",
+                      "example": 23544.27541795
+                    },
+                    {
+                      "name": "swaps",
+                      "type": "number",
+                      "description": "The total number of swaps executed during the period",
+                      "example": 48
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
@@ -25874,6 +26121,193 @@
                     "example": 5634
                   }
                 ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getCandleSticks": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Gets candlesticks for a pair address",
+      "description": "Gets the candlesticks for a specific pair address",
+      "method": "GET",
+      "path": "/token/:network/pairs/:pairAddress/ohlcv",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "pairAddress",
+          "description": "The pair address",
+          "required": true,
+          "example": "83v8iPyZihDEjDdY8RdZddyZNyUtXngz69Lgo9Kt5d6d",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "timeframe",
+          "description": "The timeframe",
+          "required": true,
+          "type": "string",
+          "example": "1h",
+          "enum": [
+            "1s",
+            "10s",
+            "30s",
+            "1min",
+            "5min",
+            "10min",
+            "30min",
+            "1h",
+            "4h",
+            "12h",
+            "1d",
+            "1w",
+            "1M"
+          ]
+        },
+        {
+          "name": "currency",
+          "description": "The currency",
+          "required": true,
+          "type": "string",
+          "example": "usd",
+          "enum": ["usd", "native"]
+        },
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "example": "2024-11-25",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": true,
+          "example": "2024-11-26",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "example": 10,
+          "minimum": 0
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the OHLCV data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "description": "The cursor to get to the next page",
+                "type": "string",
+                "example": "string"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce",
+                "required": true
+              },
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+                "required": true
+              },
+              {
+                "name": "timeframe",
+                "type": "string",
+                "description": "The timeframe",
+                "example": "1h",
+                "required": true
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "description": "The currency",
+                "example": "usd",
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "The timestamp of the candle",
+                      "example": "2024-02-14T00:00:00.000Z"
+                    },
+                    {
+                      "name": "open",
+                      "type": "number",
+                      "description": "The opening price for the period",
+                      "example": 253.82
+                    },
+                    {
+                      "name": "high",
+                      "type": "number",
+                      "description": "The highest price reached during the period",
+                      "example": 255.14
+                    },
+                    {
+                      "name": "low",
+                      "type": "number",
+                      "description": "The lowest price reached during the period",
+                      "example": 252.91
+                    },
+                    {
+                      "name": "close",
+                      "type": "number",
+                      "description": "The closing price for the period",
+                      "example": 253.95
+                    },
+                    {
+                      "name": "volume",
+                      "type": "number",
+                      "description": "The total trading volume for the period",
+                      "example": 23544.27541795
+                    },
+                    {
+                      "name": "swaps",
+                      "type": "number",
+                      "description": "The total number of swaps executed during the period",
+                      "example": 48
+                    }
+                  ]
+                }
               }
             ]
           }

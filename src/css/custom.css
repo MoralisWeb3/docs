@@ -100,9 +100,13 @@
   --ifm-z-index-fixed: 40;
 
   /* ApiBanner */
-  --api-banner-background-color: #f8f8f8;
-  --api-banner-text-color: #3f3f3f;
-  --api-banner-border-color: #e3e3e3;
+  --api-banner-background-color: #f8ebff;
+  --api-banner-text-color: #8541ed;
+  --api-banner-border-color: #5e0fd3;
+  --api-banner-button-background-color: #e9c4ff; /* Light purple background */
+  --api-banner-button-text-color: #5e0fd3; /* Purple text */
+  --api-banner-button-border-color: #5e0fd3; /* Dark purple border */
+  --api-banner-svg-color: #5e0fd3;
 
   /* Home Search */
   --home-search-box-background-color: white;
@@ -128,9 +132,13 @@
   --docs-color-background-200: #2a2a2a;
 
   /* ApiBanner */
-  --api-banner-background-color: #1c212f;
-  --api-banner-text-color: white;
-  --api-banner-border-color: #444950;
+  --api-banner-background-color: #23094a;
+  --api-banner-text-color: #b992f4;
+  --api-banner-border-color: #b992f4;
+  --api-banner-button-background-color: #490ca5; /* Light purple background */
+  --api-banner-button-text-color: #b992f4; /* Purple text */
+  --api-banner-button-border-color: #b992f4; /* Dark purple border */
+  --api-banner-svg-color: #b992f4;
 
   /* Home Search */
   --home-search-box-background-color: #1c212f;
@@ -857,15 +865,23 @@ h2 {
 }
 
 .api-banner {
+  display: flex;
   align-items: center;
   background-color: var(--api-banner-background-color);
   border-radius: 8px;
+  gap: 1rem;
   color: var(--api-banner-text-color);
-  display: flex;
-  justify-content: space-between;
   margin: 20px 0;
   padding: 26px 32px;
   border: 1px solid var(--api-banner-border-color);
+}
+
+.api-banner-icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.api-banner-text {
+  flex: 1; /* Allow text to take up remaining space */
 }
 
 .api-banner > div {
@@ -886,8 +902,11 @@ h2 {
 
 .api-banner h1 {
   font-weight: 700;
-  color: #0f7fff;
   font-size: 2rem;
+}
+
+.api-banner svg {
+  color: var(--api-banner-svg-color); /* Apply dynamic color */
 }
 
 .api-banner p {
@@ -895,22 +914,26 @@ h2 {
 }
 
 .api-banner .cta-button {
-  background-color: #0f7fff;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
   display: inline-block;
-  padding: 14px 25px;
-  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.3s;
-  font-weight: 600;
-  font-size: 18px;
+  text-align: center;
+  background-color: var(--api-banner-button-background-color);
+  color: var(--api-banner-button-text-color);
+  border: 1px solid var(--api-banner-button-border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
 }
 
 .api-banner .cta-button:hover {
-  background-color: #0056b3;
+  background-color: var(
+    --api-banner-button-text-color
+  ); /* Swap colors for hover */
+  color: var(--api-banner-button-background-color); /* Contrast text */
+  border-color: var(--api-banner-button-text-color); /* Highlight border */
 }
 
 /* Tooltip */
