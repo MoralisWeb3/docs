@@ -25668,7 +25668,7 @@
                 ]
               },
               {
-                "name": "liquidityChange",
+                "name": "liquidityPercentChange",
                 "type": "object",
                 "fields": [
                   {
