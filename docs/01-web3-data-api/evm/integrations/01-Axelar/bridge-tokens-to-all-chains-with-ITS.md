@@ -986,7 +986,7 @@ You can also explore other functionalities of the Interchain Token Service, such
 - [Ethereum Boilerplate](https://github.com/ethereum-boilerplate/ethereum-boilerplate)
 - [Interchain Token Service Documentation](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/intro)
 - [Interchain Tokens GitHub Repository](https://github.com/axelarnetwork/interchain-token-service/tree/main)
-- [AxelarJS SDK](https://github.com/axelar-network/axelarjs-sdk)
+- [AxelarJS SDK](https://github.com/axelarnetwork/axelarjs-sdk)
 
 ```
 
