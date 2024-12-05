@@ -422,9 +422,7 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 .web3-data-api .menu__list,
 .market-insights-api .menu__list,
 .streams-api .menu__list {
-  background-color: var(
-    --ifm-background-surface-color
-  ); /* Sets the background color of the sidebar */
+  /* Sets the background color of the sidebar */
   border-radius: 4px; /* Rounds the corners of the sidebar */
   padding: 5px !important;
 }
@@ -872,6 +870,7 @@ h2 {
   gap: 1rem;
   color: var(--api-banner-text-color);
   margin: 20px 0;
+  margin-top: 5px;
   padding: 26px 32px;
   border: 1px solid var(--api-banner-border-color);
 }
@@ -889,6 +888,11 @@ h2 {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+
+.img-custom {
+  width: 64px !important;
+  height: 64px !important;
 }
 
 /*General (both dark and light)*/

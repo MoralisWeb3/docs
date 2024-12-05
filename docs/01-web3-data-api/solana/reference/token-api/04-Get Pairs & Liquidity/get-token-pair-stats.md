@@ -5,12 +5,21 @@ slug: /web3-data-api/solana/reference/get-token-pair-stats
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
+import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
+
 import Admonition from "@theme/Admonition";
 
 # Get Token Pair Stats
 
 <ApiReference {...config.solana.getPairStats} >
+<EthereumApiBanner
+  customTitle="Looking for token pair stats on EVM?"
+  customText="Access token pair stats on EVM using our API."
+  customButtonText="Explore EVM API"
+  customButtonLink="/web3-data-api/evm/reference/get-token-pair-stats"
+/>
+
 <Admonition type="info" title="Note">
 
 <p>

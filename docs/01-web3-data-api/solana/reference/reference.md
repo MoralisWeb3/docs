@@ -1,9 +1,9 @@
 ---
-title: "All Web3 Data Endpoints - Solana"
+title: "Solana API"
 sidebar_label: "Overview"
 slug: "/web3-data-api/solana/reference"
 description: "Get started on Moralis Enterprise-Grade Web3 API Reference for Solana."
-sidebar_position: 1
+sidebar_position: 0
 sidebar_class_name: "sidebar-api-reference"
 ---
 
@@ -11,36 +11,116 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This section contains a full list of all methods within the Solana Web3 data.
 
+:::tip Swagger Interface
+https://solana-gateway.moralis.io/api/
+:::
+
 ## Full List of APIs by Category
 
 Find your favorite method by selecting one of the following categories:
 
-- [NFT API](#nft-api)
 - [Token API](#token-api)
-- [Balance API](#balance-api)
+- [Wallet API](#wallet-api)
+- [NFT API](#nft-api)
+- [Price API](#price-api)
 
-### NFT API
+## Token API
 
-| No. | Method           | Description        | API Reference                                                                | URL                                                                                                                                  | Spam Detection |
-| --- | ---------------- | ------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| 1   | `getNFTs`        | Get NFTs by wallet | [Method Documentation](/web3-data-api/solana/reference/get-sol-nfts)         | [https://solana-gateway.moralis.io/account/:network/:address/nft](https://solana-gateway.moralis.io/account/:network/:address/nft)   |                |
-| 2   | `getNFTMetadata` | Get NFT metadata   | [Method Documentation](/web3-data-api/solana/reference/get-sol-nft-metadata) | [https://solana-gateway.moralis.io/nft/:network/:address/metadata](https://solana-gateway.moralis.io/nft/:network/:address/metadata) |                |
+Select what you want to achieve:
 
-### Token API
+- [Get Token Metadata](#get-token-metadata)
+- [Get Token Balances](#get-token-balances)
+- [Get Token Swaps](#get-token-swaps)
+- [Get Pairs & Liquidity](#get-pairs--liquidity)
+- [Get Token Prices](#get-token-prices)
 
-| No. | Method                        | Description                                      | API Reference                                                                           | URL                                                                                                                                                    | Spam Detection |
-| --- | ----------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| 1   | `getTokenPrice`               | Get token price                                  | [Method Documentation](/web3-data-api/solana/reference/get-sol-token-price)             | [https://solana-gateway.moralis.io/token/:network/:address/price](https://solana-gateway.moralis.io/token/:network/:address/price)                     |                |
-| 2   | `getTokenMetadata`            | Get token metadata                               | [Method Documentation](/web3-data-api/solana/reference/get-token-metadata)              | [https://solana-gateway.moralis.io/token/:network/:address/metadata](https://solana-gateway.moralis.io/token/:network/:address/metadata)               |                |
-| 3   | `getTokenPairs`               | Get token pairs by address                       | [Method Documentation](/web3-data-api/solana/reference/get-token-pairs-by-address)      | [https://solana-gateway.moralis.io/token/:network/:address/pairs](https://solana-gateway.moralis.io/token/:network/:address/pairs)                     |                |
-| 4   | `getTokenPairStats`           | Get token pair statistics                        | [Method Documentation](/web3-data-api/solana/reference/get-token-pair-stats)            | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/stats](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/stats) |
-| 5   | `getAggregatedTokenPairStats` | Get aggregated token pair statistics             | [Method Documentation](/web3-data-api/solana/reference/get-aggregated-token-pair-stats) | [https://solana-gateway.moralis.io/token/:network/:address/pairs/stats](https://solana-gateway.moralis.io/token/:network/:address/pairs/stats)         |                |
-| 6   | `getCandleSticks`             | Get the OHLCV candlesticks by using pair address | [Method Documentation](/web3-data-api/solana/reference/get-ohlcv-by-pair-address)       | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv) |                |
+### Get Token Metadata
 
-### Balance API
+| No. | Method             | Description        | API Reference                                                              | URL                                                                                                                                      |
+| --- | ------------------ | ------------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getTokenMetadata` | Get token metadata | [Method Documentation](/web3-data-api/solana/reference/get-token-metadata) | [https://solana-gateway.moralis.io/token/:network/:address/metadata](https://solana-gateway.moralis.io/token/:network/:address/metadata) |
 
-| No. | Method         | Description                  | API Reference                                                             | URL                                                                                                                                            | Spam Detection |
-| --- | -------------- | ---------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 1   | `balance`      | Get native balance by wallet | [Method Documentation](/web3-data-api/solana/reference/sol-balance)       | [https://solana-gateway.moralis.io/account/:network/:address/balance](https://solana-gateway.moralis.io/account/:network/:address/balance)     |                |
-| 2   | `getSPL`       | Get token balance by wallet  | [Method Documentation](/web3-data-api/solana/reference/get-spl)           | [https://solana-gateway.moralis.io/account/:network/:address/tokens](https://solana-gateway.moralis.io/account/:network/:address/tokens)       |                |
-| 3   | `getPortfolio` | Gets portfolio by wallet     | [Method Documentation](/web3-data-api/solana/reference/get-sol-portfolio) | [https://solana-gateway.moralis.io/account/:network/:address/portfolio](https://solana-gateway.moralis.io/account/:network/:address/portfolio) |                |
+### Get Token Balances
+
+| No. | Method         | Description                  | API Reference                                                             | URL                                                                                                                                            |
+| --- | -------------- | ---------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getSPL`       | Get token balance by wallet  | [Method Documentation](/web3-data-api/solana/reference/get-spl)           | [https://solana-gateway.moralis.io/account/:network/:address/tokens](https://solana-gateway.moralis.io/account/:network/:address/tokens)       |
+| 2   | `balance`      | Get native balance by wallet | [Method Documentation](/web3-data-api/solana/reference/sol-balance)       | [https://solana-gateway.moralis.io/account/:network/:address/balance](https://solana-gateway.moralis.io/account/:network/:address/balance)     |
+| 3   | `getPortfolio` | Get portfolio by wallet      | [Method Documentation](/web3-data-api/solana/reference/get-sol-portfolio) | [https://solana-gateway.moralis.io/account/:network/:address/portfolio](https://solana-gateway.moralis.io/account/:network/:address/portfolio) |
+
+### Get Token Swaps
+
+| No. | Method                    | Description                 | API Reference                                                                       | URL                                                                                                                                                    |
+| --- | ------------------------- | --------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getSwapsByPairAddress`   | Get swaps by pair address   | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-pair-address)   | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/swaps](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/swaps) |
+| 2   | `getSwapsByWalletAddress` | Get swaps by wallet address | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-wallet-address) | [https://solana-gateway.moralis.io/token/:network/:tokenAddress/swaps](https://solana-gateway.moralis.io/token/:network/:tokenAddress/swaps)           |
+| 3   | `getSwapsByTokenAddress`  | Get swaps by token address  | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-token-address)  | [https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps](https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps)     |
+
+### Get Pairs & Liquidity
+
+| No. | Method                        | Description                          | API Reference                                                                           | URL                                                                                                                                                    |
+| --- | ----------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getTokenPairs`               | Get token pairs by address           | [Method Documentation](/web3-data-api/solana/reference/get-token-pairs-by-address)      | [https://solana-gateway.moralis.io/token/:network/:address/pairs](https://solana-gateway.moralis.io/token/:network/:address/pairs)                     |
+| 2   | `getTokenPairStats`           | Get token pair statistics            | [Method Documentation](/web3-data-api/solana/reference/get-token-pair-stats)            | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/stats](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/stats) |
+| 3   | `getAggregatedTokenPairStats` | Get aggregated token pair statistics | [Method Documentation](/web3-data-api/solana/reference/get-aggregated-token-pair-stats) | [https://solana-gateway.moralis.io/token/:network/:address/pairs/stats](https://solana-gateway.moralis.io/token/:network/:address/pairs/stats)         |
+
+### Get Token Prices
+
+| No. | Method            | Description                            | API Reference                                                                     | URL                                                                                                                                                    |
+| --- | ----------------- | -------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getTokenPrice`   | Get token price                        | [Method Documentation](/web3-data-api/solana/reference/get-sol-token-price)       | [https://solana-gateway.moralis.io/token/:network/:address/price](https://solana-gateway.moralis.io/token/:network/:address/price)                     |
+| 2   | `getCandleSticks` | Get OHLCV candlesticks by pair address | [Method Documentation](/web3-data-api/solana/reference/get-ohlcv-by-pair-address) | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv) |
+
+## Wallet API
+
+Select what you want to achieve:
+
+- [Get Native Balance](#get-native-balance)
+- [Get Token Balances](#get-token-balances)
+- [Get Portfolio](#get-portfolio)
+- [Get Wallet Token Swaps](#get-wallet-token-swaps)
+- [Get Wallet NFTs](#get-wallet-nfts)
+
+### Get Native Balance
+
+| No. | Method    | Description                  | API Reference                                                       | URL                                                                                                                                        |
+| --- | --------- | ---------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `balance` | Get native balance by wallet | [Method Documentation](/web3-data-api/solana/reference/sol-balance) | [https://solana-gateway.moralis.io/account/:network/:address/balance](https://solana-gateway.moralis.io/account/:network/:address/balance) |
+
+### Get Token Balances
+
+| No. | Method   | Description                 | API Reference                                                   | URL                                                                                                                                      |
+| --- | -------- | --------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 2   | `getSPL` | Get token balance by wallet | [Method Documentation](/web3-data-api/solana/reference/get-spl) | [https://solana-gateway.moralis.io/account/:network/:address/tokens](https://solana-gateway.moralis.io/account/:network/:address/tokens) |
+
+### Get Portfolio
+
+| No. | Method         | Description             | API Reference                                                             | URL                                                                                                                                            |
+| --- | -------------- | ----------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 3   | `getPortfolio` | Get portfolio by wallet | [Method Documentation](/web3-data-api/solana/reference/get-sol-portfolio) | [https://solana-gateway.moralis.io/account/:network/:address/portfolio](https://solana-gateway.moralis.io/account/:network/:address/portfolio) |
+
+### Get Wallet Token Swaps
+
+| No. | Method                    | Description                       | API Reference                                                                       | URL                                                                                                                                                |
+| --- | ------------------------- | --------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 4   | `getSwapsByWalletAddress` | Get token swaps by wallet address | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-wallet-address) | [https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps](https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps) |
+
+### Get Wallet NFTs
+
+| No. | Method    | Description        | API Reference                                                        | URL                                                                                                                                |
+| --- | --------- | ------------------ | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 5   | `getNFTs` | Get NFTs by wallet | [Method Documentation](/web3-data-api/solana/reference/get-sol-nfts) | [https://solana-gateway.moralis.io/account/:network/:address/nft](https://solana-gateway.moralis.io/account/:network/:address/nft) |
+
+## NFT API
+
+| No. | Method           | Description        | API Reference                                                                | URL                                                                                                                                  |
+| --- | ---------------- | ------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getNFTs`        | Get NFTs by wallet | [Method Documentation](/web3-data-api/solana/reference/get-sol-nfts)         | [https://solana-gateway.moralis.io/account/:network/:address/nft](https://solana-gateway.moralis.io/account/:network/:address/nft)   |
+| 2   | `getNFTMetadata` | Get NFT metadata   | [Method Documentation](/web3-data-api/solana/reference/get-sol-nft-metadata) | [https://solana-gateway.moralis.io/nft/:network/:address/metadata](https://solana-gateway.moralis.io/nft/:network/:address/metadata) |
+
+## Price API
+
+| No. | Method            | Description                                      | API Reference                                                                     | URL                                                                                                                                                    |
+| --- | ----------------- | ------------------------------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getTokenPrice`   | Get token price                                  | [Method Documentation](/web3-data-api/solana/reference/get-sol-token-price)       | [https://solana-gateway.moralis.io/token/:network/:address/price](https://solana-gateway.moralis.io/token/:network/:address/price)                     |
+| 2   | `getCandleSticks` | Get the OHLCV candlesticks by using pair address | [Method Documentation](/web3-data-api/solana/reference/get-ohlcv-by-pair-address) | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/ohlcv) |

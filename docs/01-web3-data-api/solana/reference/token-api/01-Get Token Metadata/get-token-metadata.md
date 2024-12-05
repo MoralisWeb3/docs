@@ -5,7 +5,7 @@ slug: /web3-data-api/solana/reference/get-token-metadata
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../configs/api-reference/configs.json";
+import config from "@site/docs/configs/api-reference/configs.json";
 
 # Get Token Metadata
 

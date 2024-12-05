@@ -14,41 +14,6 @@ import { useWindowSize } from "@docusaurus/theme-common";
 import usePageState from "../../hooks/usePageState";
 
 const networks = {
-  "web3-data-api": [
-    {
-      value: "evm",
-      label: "EVM",
-      icon: EthereumIcon,
-      iconDark: EthereumIcon,
-    },
-    {
-      value: "aptos",
-      label: "Aptos",
-      icon: AptosIcon,
-      iconDark: AptosDarkIcon,
-    },
-
-    {
-      value: "solana",
-      label: "Solana",
-      icon: SolanaIcon,
-      iconDark: SolanaIcon,
-    },
-  ],
-  "streams-api": [
-    {
-      value: "evm",
-      label: "EVM",
-      icon: EthereumIcon,
-      iconDark: EthereumIcon,
-    },
-    {
-      value: "aptos",
-      label: "Aptos",
-      icon: AptosIcon,
-      iconDark: AptosDarkIcon,
-    },
-  ],
   "authentication-api": [
     // hiding sidebar temporary
     {
@@ -56,12 +21,6 @@ const networks = {
       label: "EVM",
       icon: EthereumIcon,
       iconDark: EthereumIcon,
-    },
-    {
-      value: "aptos",
-      label: "Aptos",
-      icon: AptosIcon,
-      iconDark: AptosDarkIcon,
     },
     {
       value: "solana",
