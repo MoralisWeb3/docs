@@ -30,8 +30,7 @@ function EthereumApiBanner({
         <img
           src="/img/network-icons/ethereum.svg"
           alt="Ethereum Logo"
-          width="64"
-          height="64"
+          className="img-custom"
         />
       </div>
       <div

@@ -31,8 +31,7 @@ function SolanaApiBanner({
         <img
           src="/img/network-icons/solana.svg"
           alt="Solana Logo"
-          width="64"
-          height="64"
+          className="img-custom"
         />
       </div>
       <div

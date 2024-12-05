@@ -891,6 +891,11 @@ h2 {
   height: 100%;
 }
 
+.img-custom {
+  width: 64px !important;
+  height: 64px !important;
+}
+
 /*General (both dark and light)*/
 .api-banner h1,
 .api-banner p {
