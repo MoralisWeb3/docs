@@ -5,6 +5,7 @@ slug: /web3-data-api/evm/reference/get-token-pair-stats
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
+import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 import config from "@site/docs/configs/api-reference/configs.json";
 import Admonition from "@theme/Admonition";
 
@@ -13,6 +14,14 @@ import Admonition from "@theme/Admonition";
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <ApiReference {...config.token.getPairStats} >
+
+<SolanaApiBanner
+  customTitle="Looking for pair stats on Solana?"
+  customText="Access pair stats data on Solana using our API."
+  customButtonText="Explore Solana API"
+  customButtonLink="/web3-data-api/solana/reference/get-token-pair-stats"
+/>
+
 <Admonition type="info" title="Note">
 
 <p>
@@ -20,4 +29,5 @@ The data is updated every 30 seconds to ensure you have access to near real-time
 
 </p>
 </Admonition>
+
 </ApiReference>

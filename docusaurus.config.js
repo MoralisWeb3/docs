@@ -169,10 +169,16 @@ const config = {
             value: "<hr>",
           },
           {
-            type: "doc",
-            docId: "web3-data-api/evm/reference/reference",
+            to: "/web3-data-api/evm/reference",
+            label: "EVM API",
             position: "left",
-            label: "Web3 Data API",
+            exact: true,
+          },
+          {
+            to: "/web3-data-api/solana/reference",
+            label: "Solana API",
+            position: "left",
+            exact: true,
           },
           {
             type: "doc",

@@ -16050,6 +16050,1179 @@
           }
         }
       ]
+    },
+    "getSwapsByPairAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get swap transactions by pair address.",
+      "description": "Get all swap related transactions (buy, sell, add liquidity & remove liquidity)",
+      "method": "GET",
+      "path": "/pairs/:address/swaps",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The pair address token-transactions are to be retrieved for.",
+          "required": true,
+          "example": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a"
+          ]
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "fromBlock",
+          "description": "The minimum block number from which to get the token transactions\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toBlock",
+          "description": "The block number up to which you want to get the token transactions from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Array of transaction types. Allowed values are 'buy', 'sell', 'addLiquidity', 'removeLiquidity'."
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by pair address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "cursor",
+                "description": "The cursor to get to the next page",
+                "type": "string",
+                "example": "string"
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "exchangeAddress",
+                "type": "string",
+                "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+              },
+              {
+                "name": "exchangeLogo",
+                "type": "string",
+                "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+              },
+              {
+                "name": "exchangeName",
+                "type": "string",
+                "example": "Uniswap v3"
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed"
+              },
+              {
+                "name": "pairLabel",
+                "type": "string",
+                "example": "WBTC/WETH"
+              },
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+                "required": true
+              },
+              {
+                "name": "baseToken",
+                "type": "object",
+                "description": "The base token",
+                "fields": [
+                  {
+                    "name": "address",
+                    "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+                    "type": "string",
+                    "description": "The address of the native token"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Wrapped BTC"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the token",
+                    "example": "WBTC"
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "description": "The logo of the token",
+                    "example": "https://logo.moralis.io/0x1_0x2260fac5e5542a773aa44fbcfedf7c193bc2c599_3d45c7efabf4bff37f5d92817940bddb.png"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "string",
+                    "description": "The number of decimals of the native price value",
+                    "example": "8"
+                  }
+                ]
+              },
+              {
+                "name": "quoteToken",
+                "type": "object",
+                "description": "The quote token",
+                "fields": [
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the quote token",
+                    "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the token",
+                    "example": "Wrapped Ether"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the token",
+                    "example": "WETH"
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "description": "The logo of the token",
+                    "example": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_018112a9229b4bf1bf0d042beb7c2c55.png"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "string",
+                    "description": "The number of decimals of the token",
+                    "example": "18"
+                  }
+                ]
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "0x9cb8f18d9aedd7d215186bc423f8f726e74f06acc6e63207b21f628e09c1124f"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "integer",
+                      "description": "The index of the transaction within the block",
+                      "example": 5
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "buy"
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-04T13:36:59.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "integer",
+                      "description": "The number of the block",
+                      "example": 21329474
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "0x206bb16d50890aa69a6c723fd18cc8438bfdfca8"
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "newPosition"
+                    },
+                    {
+                      "name": "baseTokenAmount",
+                      "type": "string",
+                      "description": "The amount of the base token",
+                      "example": "0.14668467"
+                    },
+                    {
+                      "name": "quoteTokenAmount",
+                      "type": "string",
+                      "description": "The amount of the quote token",
+                      "example": "-3.787990094781687594"
+                    },
+                    {
+                      "name": "baseTokenPriceUsd",
+                      "type": "string",
+                      "description": "The USD price of the base token",
+                      "example": "95248.957482020033763352"
+                    },
+                    {
+                      "name": "quoteTokenPriceUsd",
+                      "type": "string",
+                      "description": "The USD price of the quote token",
+                      "example": "3699.329804324900700000"
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "25.747625251110109537"
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total value of the transaction in USD",
+                      "example": 13971.56189609414
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getSwapsByTokenAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get swap transactions by token address.",
+      "description": "Get all swap related transactions (buy, sell)",
+      "method": "GET",
+      "path": "/erc20/:address/swaps",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address to get transaction for",
+          "required": true,
+          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a"
+          ]
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "fromBlock",
+          "description": "The minimum block number from which to get the token transactions\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toBlock",
+          "description": "The block number up to which you want to get the token transactions from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Array of transaction types. Allowed values are 'buy', 'sell'"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by token address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "description": "The cursor to get to the next page",
+                "type": "string",
+                "example": "string"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "0x2339c3c92317e94672cdb6e39d69e042d5e67f2b59f0f0a74118b330ae0a3b6a"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "number",
+                      "description": "The index of the transaction within the block",
+                      "example": 15
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "sell"
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "26.339942637915532257"
+                    },
+                    {
+                      "name": "entity",
+                      "type": "string",
+                      "description": "The entity associated with the transaction",
+                      "example": null
+                    },
+                    {
+                      "name": "entityLogo",
+                      "type": "string",
+                      "description": "The logo of the associated entity",
+                      "example": null
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-05T08:12:11.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "integer",
+                      "description": "The number of the block",
+                      "example": 21335021
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "partialSell"
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "0xa172577031eafd8b03dce022533863fe988159cd"
+                    },
+                    {
+                      "name": "walletAddressLabel",
+                      "type": "string",
+                      "description": "The label for the wallet address",
+                      "example": null
+                    },
+                    {
+                      "name": "pairAddress",
+                      "type": "string",
+                      "description": "The pair address",
+                      "example": "0xe6ff8b9a37b0fab776134636d9981aa778c4e718"
+                    },
+                    {
+                      "name": "pairLabel",
+                      "type": "string",
+                      "description": "The token pair label",
+                      "example": "WBTC/WETH"
+                    },
+                    {
+                      "name": "exchangeName",
+                      "type": "string",
+                      "description": "The name of the exchange",
+                      "example": "Uniswap v3"
+                    },
+                    {
+                      "name": "exchangeAddress",
+                      "type": "string",
+                      "description": "The address of the exchange",
+                      "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                    },
+                    {
+                      "name": "exchangeLogo",
+                      "type": "string",
+                      "description": "The logo URL of the exchange",
+                      "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+                    },
+                    {
+                      "name": "baseToken",
+                      "type": "string",
+                      "description": "The address of the base token in the pair",
+                      "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+                    },
+                    {
+                      "name": "quoteToken",
+                      "type": "string",
+                      "description": "The address of the quote token in the pair",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                    },
+                    {
+                      "name": "bought",
+                      "type": "object",
+                      "description": "Details of the token bought",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token bought",
+                          "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token bought",
+                          "example": "3.827024226435305903"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token bought",
+                          "example": 3873.6908509932464
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token bought",
+                          "example": 14824.70873247195
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "WETH"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the bought token",
+                          "example": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_018112a9229b4bf1bf0d042beb7c2c55.png"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped Ether"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the bought token (token0 or token1)",
+                          "example": "token1"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sold",
+                      "type": "object",
+                      "description": "Details of the token sold",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token sold",
+                          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token sold",
+                          "example": "-0.14521667"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token sold",
+                          "example": 102032.79481218032
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token sold",
+                          "example": -14816.862693418101
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "WBTC"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the sold token",
+                          "example": "https://logo.moralis.io/0x1_0x2260fac5e5542a773aa44fbcfedf7c193bc2c599_3d45c7efabf4bff37f5d92817940bddb.png"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped BTC"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the sold token (token0 or token1)",
+                          "example": "token0"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total USD value of the transaction",
+                      "example": 14816.862693418101
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getSwapsByWalletAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get swap transactions by wallet address.",
+      "description": "Get all swap related transactions (buy, sell)",
+      "method": "GET",
+      "path": "/wallets/:address/swaps",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The wallet address token-transactions are to be retrieved for.",
+          "required": true,
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a"
+          ]
+        },
+        {
+          "name": "tokenAddress",
+          "description": "The token address to get transaction for (optional)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "fromBlock",
+          "description": "The minimum block number from which to get the token transactions\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toBlock",
+          "description": "The block number up to which you want to get the token transactions from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Array of transaction types. Allowed values are 'buy', 'sell'"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "description": "The cursor to get to the next page",
+                "type": "string",
+                "example": "string"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "0x2339c3c92317e94672cdb6e39d69e042d5e67f2b59f0f0a74118b330ae0a3b6a"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "number",
+                      "description": "The index of the transaction within the block",
+                      "example": 15
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "sell"
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "26.339942637915532257"
+                    },
+                    {
+                      "name": "entity",
+                      "type": "string",
+                      "description": "The entity associated with the transaction",
+                      "example": null
+                    },
+                    {
+                      "name": "entityLogo",
+                      "type": "string",
+                      "description": "The logo of the associated entity",
+                      "example": null
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-05T08:12:11.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "integer",
+                      "description": "The number of the block",
+                      "example": 21335021
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "partialSell"
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "0xa172577031eafd8b03dce022533863fe988159cd"
+                    },
+                    {
+                      "name": "walletAddressLabel",
+                      "type": "string",
+                      "description": "The label for the wallet address",
+                      "example": null
+                    },
+                    {
+                      "name": "pairAddress",
+                      "type": "string",
+                      "description": "The pair address",
+                      "example": "0xe6ff8b9a37b0fab776134636d9981aa778c4e718"
+                    },
+                    {
+                      "name": "pairLabel",
+                      "type": "string",
+                      "description": "The token pair label",
+                      "example": "WBTC/WETH"
+                    },
+                    {
+                      "name": "exchangeName",
+                      "type": "string",
+                      "description": "The name of the exchange",
+                      "example": "Uniswap v3"
+                    },
+                    {
+                      "name": "exchangeAddress",
+                      "type": "string",
+                      "description": "The address of the exchange",
+                      "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                    },
+                    {
+                      "name": "exchangeLogo",
+                      "type": "string",
+                      "description": "The logo URL of the exchange",
+                      "example": "https://entities-logos.s3.us-east-1.amazonaws.com/uniswap.png"
+                    },
+                    {
+                      "name": "baseToken",
+                      "type": "string",
+                      "description": "The address of the base token in the pair",
+                      "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+                    },
+                    {
+                      "name": "quoteToken",
+                      "type": "string",
+                      "description": "The address of the quote token in the pair",
+                      "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                    },
+                    {
+                      "name": "bought",
+                      "type": "object",
+                      "description": "Details of the token bought",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token bought",
+                          "example": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token bought",
+                          "example": "3.827024226435305903"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token bought",
+                          "example": 3873.6908509932464
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token bought",
+                          "example": 14824.70873247195
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "WETH"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the bought token",
+                          "example": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_018112a9229b4bf1bf0d042beb7c2c55.png"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped Ether"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the bought token (token0 or token1)",
+                          "example": "token1"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sold",
+                      "type": "object",
+                      "description": "Details of the token sold",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token sold",
+                          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token sold",
+                          "example": "-0.14521667"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token sold",
+                          "example": 102032.79481218032
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token sold",
+                          "example": -14816.862693418101
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "WBTC"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the sold token",
+                          "example": "https://logo.moralis.io/0x1_0x2260fac5e5542a773aa44fbcfedf7c193bc2c599_3d45c7efabf4bff37f5d92817940bddb.png"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped BTC"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the sold token (token0 or token1)",
+                          "example": "token0"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total USD value of the transaction",
+                      "example": 14816.862693418101
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
@@ -26365,6 +27538,921 @@
         }
       ]
     },
+    "getSwapsByPairAddress": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get all swap related transactions (buy, sell, add liquidity & remove liquidity) for a specific pair address.",
+      "description": "Get all swap related transactions (buy, sell, add liquidity & remove liquidity) for a specific pair address.",
+      "method": "GET",
+      "path": "/token/:network/pairs/:pairAddress/swaps",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "pairAddress",
+          "description": "The address of the pair",
+          "required": true,
+          "type": "string",
+          "example": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Transaction types to fetch. Allowed values are 'buy', 'sell', 'addLiquidity', 'removeLiquidity'."
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by pair address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page",
+                "example": ""
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "exchangeLogo",
+                "type": "string",
+                "description": "The logo of the exchange",
+                "example": "https://entities-logos.s3.amazonaws.com/raydium.png"
+              },
+              {
+                "name": "exchangeName",
+                "type": "string",
+                "description": "The name of the exchange",
+                "example": "Raydium AMM v4"
+              },
+              {
+                "name": "exchangeAddress",
+                "type": "string",
+                "description": "The address of the exchange",
+                "example": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+              },
+              {
+                "name": "pairAddress",
+                "type": "string",
+                "description": "The pair address",
+                "example": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx"
+              },
+              {
+                "name": "pairLabel",
+                "type": "string",
+                "description": "The label of the token pair",
+                "example": "$WIF/SOL"
+              },
+              {
+                "name": "baseToken",
+                "type": "object",
+                "description": "The base token",
+                "fields": [
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the base token",
+                    "example": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the base token",
+                    "example": "dogwifhat"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the base token",
+                    "example": "$WIF"
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "description": "The logo of the base token",
+                    "example": "https://bafkreibk3covs5ltyqxa272uodhculbr6kea6betidfwy3ajsav2vjzyum.ipfs.nftstorage.link"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "string",
+                    "description": "The number of decimals of the base token",
+                    "example": "6"
+                  }
+                ]
+              },
+              {
+                "name": "quoteToken",
+                "type": "object",
+                "description": "The quote token",
+                "fields": [
+                  {
+                    "name": "address",
+                    "type": "string",
+                    "description": "The address of the quote token",
+                    "example": "So11111111111111111111111111111111111111112"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name of the quote token",
+                    "example": "Wrapped SOL"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "The symbol of the quote token",
+                    "example": "SOL"
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "description": "The logo of the quote token",
+                    "example": null
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "string",
+                    "description": "The number of decimals of the quote token",
+                    "example": "9"
+                  }
+                ]
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "3TKXFCC8LQ9AoXjexQZocNaKhP9Lzh76AYL2kRherokwzxaZsaqZTfJU2c79UNsQyjFYxLFR8JLyiwr5Gpu96brW"
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "sell"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "number",
+                      "description": "The index of the transaction within the block",
+                      "example": 103
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-05T09:16:31.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "number",
+                      "description": "The number of the block",
+                      "example": 305530938
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "partialSell"
+                    },
+                    {
+                      "name": "baseTokenAmount",
+                      "type": "string",
+                      "description": "The amount of the base token",
+                      "example": "267.722149000"
+                    },
+                    {
+                      "name": "quoteTokenAmount",
+                      "type": "string",
+                      "description": "The amount of the quote token",
+                      "example": "3.718135539"
+                    },
+                    {
+                      "name": "baseTokenPriceUsd",
+                      "type": "number",
+                      "description": "The USD price of the base token",
+                      "example": 3.268334358
+                    },
+                    {
+                      "name": "quoteTokenPriceUsd",
+                      "type": "number",
+                      "description": "The USD price of the quote token",
+                      "example": 235.334481202
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "0.013888038"
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total value of the transaction in USD",
+                      "example": 875.005498109
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getSwapsByTokenAddress": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get all swap related transactions (buy, sell) for a specific token address.",
+      "description": "Get all swap related transactions (buy, sell) for a specific token address.",
+      "method": "GET",
+      "path": "/token/:network/:tokenAddress/swaps",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "tokenAddress",
+          "description": "The address of the token",
+          "required": true,
+          "type": "string",
+          "example": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Transaction types to fetch. Possible values: 'buy','sell'"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by token address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page",
+                "example": ""
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "5aQsHeSC3hqsNKhk1NNfBCX8cGEmQNwLb58rQQXifdpRLeLA84KiNdf9Bun3ySPjmYTeWiE8RoH4rsKCEPQsPnD9"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "number",
+                      "description": "The index of the transaction within the block",
+                      "example": 225
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "sell"
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "71.400663877"
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-05T09:27:57.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "number",
+                      "description": "The number of the block",
+                      "example": 305532588
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "partialSell"
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "HeVbY7DnpmdPsp3dHPs9uewW1VZtzS2Ng8jf3UX5mexv"
+                    },
+                    {
+                      "name": "pairAddress",
+                      "type": "string",
+                      "description": "The pair address",
+                      "example": "4mMDQ5kG9fFrBSQeedErsUoTBhY5KKnsKWGvenXRTwSy"
+                    },
+                    {
+                      "name": "pairLabel",
+                      "type": "string",
+                      "description": "The token pair label",
+                      "example": "$WIF/SOL"
+                    },
+                    {
+                      "name": "exchangeName",
+                      "type": "string",
+                      "description": "The name of the exchange",
+                      "example": "Raydium CLMM"
+                    },
+                    {
+                      "name": "exchangeAddress",
+                      "type": "string",
+                      "description": "The address of the exchange",
+                      "example": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK"
+                    },
+                    {
+                      "name": "exchangeLogo",
+                      "type": "string",
+                      "description": "The logo URL of the exchange",
+                      "example": "https://entities-logos.s3.amazonaws.com/raydium.png"
+                    },
+                    {
+                      "name": "baseToken",
+                      "type": "string",
+                      "description": "The address of the base token in the pair",
+                      "example": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+                    },
+                    {
+                      "name": "quoteToken",
+                      "type": "string",
+                      "description": "The address of the quote token in the pair",
+                      "example": "So11111111111111111111111111111111111111112"
+                    },
+                    {
+                      "name": "bought",
+                      "type": "object",
+                      "description": "Details of the token bought",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token bought",
+                          "example": "So11111111111111111111111111111111111111112"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token bought",
+                          "example": "0.046709315"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token bought",
+                          "example": 235.994560973
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token bought",
+                          "example": 11.023144286774563
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "SOL"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the bought token",
+                          "example": null
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped SOL"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the bought token (token0 or token1)",
+                          "example": "token0"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sold",
+                      "type": "object",
+                      "description": "Details of the token sold",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token sold",
+                          "example": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token sold",
+                          "example": "3.367337000"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token sold",
+                          "example": 3.30521522
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token sold",
+                          "example": 11.12977350326914
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "$WIF"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the sold token",
+                          "example": "https://bafkreibk3covs5ltyqxa272uodhculbr6kea6betidfwy3ajsav2vjzyum.ipfs.nftstorage.link"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "dogwifhat"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the sold token (token0 or token1)",
+                          "example": "token1"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total USD value of the transaction",
+                      "example": 11.129773503
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getSwapsByWalletAddress": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get all swap related transactions (buy, sell) for a specific wallet address.",
+      "description": "Get all swap related transactions (buy, sell) for a specific wallet address.",
+      "method": "GET",
+      "path": "/account/:network/:walletAddress/swaps",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "walletAddress",
+          "description": "The address of the wallet",
+          "required": true,
+          "type": "string",
+          "example": "6Hf1CYNfDAbpKdiz8N9RAFMoZfqinGVytJX7hD1zHg7v"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page)",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The number of results to return",
+          "required": false,
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "name": "order",
+          "required": false,
+          "type": "string",
+          "description": "The order of the result, in ascending (ASC) or descending (DESC)",
+          "example": "DESC",
+          "enum": ["ASC", "DESC"]
+        },
+        {
+          "name": "transactionTypes",
+          "required": false,
+          "type": "string",
+          "description": "Transaction types to fetch. Possible values: 'buy','sell' or both separated by comma"
+        },
+        {
+          "name": "tokenAddress",
+          "description": "Token address to get transactions for",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns swap transactions by wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page",
+                "example": null
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": 1,
+                "required": true
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": 100,
+                "required": true
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "transactionHash",
+                      "type": "string",
+                      "description": "The hash of the transaction",
+                      "example": "5KweZ2jJsfeyYdjZBsQdntbaxcH4EhSqbeWxLZsDDMCuqTmQJEqA2etZzrrgSuoRVLP7oqxk5jmKzUZnVf4Q37h5"
+                    },
+                    {
+                      "name": "transactionIndex",
+                      "type": "number",
+                      "description": "The index of the transaction within the block",
+                      "example": 195
+                    },
+                    {
+                      "name": "transactionType",
+                      "type": "string",
+                      "description": "The type of transaction (buy/sell)",
+                      "example": "buy"
+                    },
+                    {
+                      "name": "baseQuotePrice",
+                      "type": "string",
+                      "description": "The price of the base token relative to the quote token",
+                      "example": "0.000001180"
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "string",
+                      "description": "The timestamp of the block",
+                      "example": "2024-12-04T09:59:07.000Z"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "integer",
+                      "description": "The number of the block",
+                      "example": 305331277
+                    },
+                    {
+                      "name": "subCategory",
+                      "type": "string",
+                      "description": "The sub-category of the transaction",
+                      "example": "accumulation"
+                    },
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The wallet address involved in the transaction",
+                      "example": "6Hf1CYNfDAbpKdiz8N9RAFMoZfqinGVytJX7hD1zHg7v"
+                    },
+                    {
+                      "name": "pairAddress",
+                      "type": "string",
+                      "description": "The pair address",
+                      "example": "4w2iPn26d9UJAbQpoaAw34iFPta53fq6KvHr3cGfYsxa"
+                    },
+                    {
+                      "name": "pairLabel",
+                      "type": "string",
+                      "description": "The token pair label",
+                      "example": "SANTA/SOL"
+                    },
+                    {
+                      "name": "exchangeName",
+                      "type": "string",
+                      "description": "The name of the exchange",
+                      "example": "Raydium AMM v4"
+                    },
+                    {
+                      "name": "exchangeAddress",
+                      "type": "string",
+                      "description": "The address of the exchange",
+                      "example": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+                    },
+                    {
+                      "name": "exchangeLogo",
+                      "type": "string",
+                      "description": "The logo URL of the exchange",
+                      "example": "https://entities-logos.s3.amazonaws.com/raydium.png"
+                    },
+                    {
+                      "name": "baseToken",
+                      "type": "string",
+                      "description": "The address of the base token in the pair",
+                      "example": "J8uZpXLyrmaPawRFdu81byzRSLqnurTvhQ9nd2ZLVQvE"
+                    },
+                    {
+                      "name": "quoteToken",
+                      "type": "string",
+                      "description": "The address of the quote token in the pair",
+                      "example": "So11111111111111111111111111111111111111112"
+                    },
+                    {
+                      "name": "bought",
+                      "type": "object",
+                      "description": "Details of the token bought",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token bought",
+                          "example": "J8uZpXLyrmaPawRFdu81byzRSLqnurTvhQ9nd2ZLVQvE"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token bought",
+                          "example": "84006.619895709"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token bought",
+                          "example": 0.000278171
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token bought",
+                          "example": 23.368205463009268
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "SANTA"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the bought token",
+                          "example": "https://gateway.irys.xyz/4teQlB8gGU-G_RfqUOiK3gg9h3VelCt_rFcl7dlzrQg"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "santawifhat"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the bought token (token0 or token1)",
+                          "example": "token0"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sold",
+                      "type": "object",
+                      "description": "Details of the token sold",
+                      "fields": [
+                        {
+                          "name": "address",
+                          "type": "string",
+                          "description": "The address of the token sold",
+                          "example": "So11111111111111111111111111111111111111112"
+                        },
+                        {
+                          "name": "amount",
+                          "type": "string",
+                          "description": "The amount of the token sold",
+                          "example": "0.099150000"
+                        },
+                        {
+                          "name": "usdPrice",
+                          "type": "number",
+                          "description": "The USD price of the token sold",
+                          "example": 235.686180744
+                        },
+                        {
+                          "name": "usdAmount",
+                          "type": "number",
+                          "description": "The total USD value of the token sold",
+                          "example": 23.368284820767602
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the token",
+                          "example": "SOL"
+                        },
+                        {
+                          "name": "logo",
+                          "type": "string",
+                          "description": "The logo URL for the sold token",
+                          "example": null
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the token",
+                          "example": "Wrapped SOL"
+                        },
+                        {
+                          "name": "tokenType",
+                          "type": "string",
+                          "description": "The type of the sold token (token0 or token1)",
+                          "example": "token1"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalValueUsd",
+                      "type": "number",
+                      "description": "The total USD value of the transaction",
+                      "example": 23.36828482
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getTokenMetadata": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get Token metadata",
@@ -31793,7 +33881,7 @@
               {
                 "name": "sequence_number",
                 "type": "string",
-                "description": "A string containing a 64-bit unsigned integer.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
+                "description": "A string containing a 64-bit unsigned number.\nWe represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.",
                 "example": "32425224034"
               },
               {

@@ -1,0 +1,23 @@
+---
+sidebar_position: 0
+sidebar_label: Get Token Price
+slug: /web3-data-api/solana/reference/price/get-sol-token-price
+---
+
+import ApiReference from "@site/src/components/ApiReference";
+import Admonition from "@theme/Admonition";
+import ReactMarkdown from "react-markdown";
+import config from "@site/docs/configs/api-reference/configs.json";
+
+# Get Token Price
+
+<ApiReference {...config.solana.getTokenPrice}>
+<Admonition type="info" icon="💡" title="USD Price Decimal">
+<ReactMarkdown>
+The `usdPrice` output field now supports results with more than 4 decimal
+places. The smallest unit returned will be based on the SPL token's
+decimal value. For example, if the token price is 0.001 and the token
+decimal is 2, the price will be 0.
+</ReactMarkdown>
+</Admonition>
+</ApiReference>
