@@ -422,9 +422,7 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 .web3-data-api .menu__list,
 .market-insights-api .menu__list,
 .streams-api .menu__list {
-  background-color: var(
-    --ifm-background-surface-color
-  ); /* Sets the background color of the sidebar */
+  /* Sets the background color of the sidebar */
   border-radius: 4px; /* Rounds the corners of the sidebar */
   padding: 5px !important;
 }
