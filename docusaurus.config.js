@@ -242,26 +242,6 @@ const config = {
             items: [
               {
                 type: "html",
-                value: "Getting Started",
-                className: "dropdown-divider",
-              },
-              {
-                label: "Tutorials",
-                type: "doc",
-                docId: "web3-data-api/evm/tutorials",
-              },
-              {
-                label: "Guides",
-                type: "doc",
-                docId: "guides/overview",
-              },
-              {
-                label: "FAQs",
-                type: "doc",
-                docId: "web3-data-api/evm/all-faqs",
-              },
-              {
-                type: "html",
                 value: "API References",
                 className: "dropdown-divider",
               },
@@ -276,34 +256,14 @@ const config = {
                 docId: "web3-data-api/solana/reference/reference",
               },
               {
-                label: "Aptos API",
-                type: "doc",
-                docId: "web3-data-api/aptos/reference/reference",
-              },
-              {
                 label: "Streams API",
                 type: "doc",
                 docId: "streams-api/evm/reference/reference",
               },
               {
-                label: "Auth API API",
+                label: "Auth API",
                 type: "doc",
                 docId: "authentication-api/evm/reference/reference",
-              },
-              {
-                type: "html",
-                value: "SDK References",
-                className: "dropdown-divider",
-              },
-              {
-                label: "JS SDK",
-                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
-                target: "_blank",
-              },
-              {
-                label: "Python SDK",
-                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
-                target: "_blank",
               },
               {
                 type: "html",
@@ -321,11 +281,6 @@ const config = {
                 target: "_blank",
               },
               {
-                label: "Aptos API Swagger",
-                href: "https://mainnet-aptos-api.moralis.io/swagger",
-                target: "_blank",
-              },
-              {
                 label: "Streams API Swagger",
                 href: "https://api.moralis-streams.com/api-docs/",
                 target: "_blank",
@@ -335,6 +290,21 @@ const config = {
                 href: "https://authapi.moralis.io/api-docs/",
                 target: "_blank",
               },
+              {
+                type: "html",
+                value: "SDK References",
+                className: "dropdown-divider",
+              },
+              {
+                label: "JS SDK",
+                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
+                target: "_blank",
+              },
+              {
+                label: "Python SDK",
+                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
+                target: "_blank",
+              }
             ],
           },
           {
