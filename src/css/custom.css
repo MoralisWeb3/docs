@@ -872,6 +872,7 @@ h2 {
   gap: 1rem;
   color: var(--api-banner-text-color);
   margin: 20px 0;
+  margin-top: 5px;
   padding: 26px 32px;
   border: 1px solid var(--api-banner-border-color);
 }
