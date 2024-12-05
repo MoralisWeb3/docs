@@ -1344,6 +1344,18 @@
           "required": false,
           "example": true,
           "type": "boolean"
+        },
+        {
+          "name": "max_token_inactivity",
+          "description": "Exclude tokens inactive for more than the given amount of days",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "min_pair_side_liquidity_usd",
+          "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
+          "required": false,
+          "type": "number"
         }
       ],
       "responses": [
@@ -11558,6 +11570,18 @@
           "example": "percent_change",
           "type": "string",
           "enum": ["percent_change"]
+        },
+        {
+          "name": "max_token_inactivity",
+          "description": "Exclude tokens inactive for more than the given amount of days",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "min_pair_side_liquidity_usd",
+          "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
+          "required": false,
+          "type": "number"
         }
       ],
       "bodyParam": {
@@ -11743,6 +11767,18 @@
         {
           "name": "to_block",
           "description": "The block number from which the token price should be checked",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "max_token_inactivity",
+          "description": "Exclude tokens inactive for more than the given amount of days",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "min_pair_side_liquidity_usd",
+          "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
           "required": false,
           "type": "number"
         }
@@ -12027,6 +12063,18 @@
           "description": "Exclude native balance from the result",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "max_token_inactivity",
+          "description": "Exclude tokens inactive for more than the given amount of days",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "min_pair_side_liquidity_usd",
+          "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
+          "required": false,
+          "type": "number"
         }
       ],
       "responses": [
