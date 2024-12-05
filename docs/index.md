@@ -22,11 +22,11 @@ import SearchBar from "@site/src/theme/SearchBar";
         <div className="popular-searches">
             <div>Popular Searches</div>
             <ul>
-                <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-history">Get transaction history</a></li>
-                <li><a href="/web3-data-api/evm/reference/wallet-api">Wallet api</a></li>
-                <li><a href="/web3-data-api/evm/reference/get-wallet-token-balances-price">Get wallet tokens</a></li>
-                <li><a href="/web3-data-api/evm/reference/get-token-price">Token prices</a></li>
-                <li><a href="/web3-data-api/evm/reference/wallet-api/get-nfts-by-wallet">Get NFTs</a></li>
+                <li><a href="/web3-data-api/evm/reference/price/get-ohlcv-by-pair-address">Get OHLCV Prices</a></li>
+                <li><a href="/web3-data-api/solana/reference/get-token-pairs-by-address">Get Token Pairs</a></li>
+                <li><a href="/web3-data-api/evm/reference/get-swaps-by-token-address">Get Token Swaps</a></li>
+                <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-history">Get Wallet History</a></li>
+                <li><a href="/web3-data-api/evm/reference/get-token-pair-stats">Get Pair Stats</a></li>
             </ul>
         </div>
     </div>
@@ -92,7 +92,7 @@ import SearchBar from "@site/src/theme/SearchBar";
     <div className="row">
         <div className="col col--4">
             <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm">
+                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
                     <p>Get NFT, token and transaction data from EVM chains.</p>
                 </a>
@@ -104,44 +104,6 @@ import SearchBar from "@site/src/theme/SearchBar";
                     <h3>
 <svg xmlns="http://www.w3.org/2000/svg" width="37" height="29" viewBox="0 0 37 29" fill="none"><g id="Solana"><g id="Vector"><path d="M6.51468 21.866C6.7319 21.6489 7.03058 21.5222 7.34735 21.5222H36.0747C36.5996 21.5222 36.8621 22.1554 36.491 22.5263L30.8161 28.198C30.5989 28.4151 30.3002 28.5417 29.9835 28.5417H1.25615C0.731204 28.5417 0.46873 27.9085 0.839814 27.5376L6.51468 21.866Z" fill="url(#paint0_linear_8357_1864)"></path><path d="M6.51467 0.689929C6.74094 0.472832 7.03962 0.346191 7.34735 0.346191H36.0747C36.5996 0.346191 36.8621 0.979392 36.491 1.35027L30.8161 7.02194C30.5989 7.23903 30.3002 7.36567 29.9834 7.36567H1.25614C0.731196 7.36567 0.468722 6.73247 0.839806 6.3616L6.51467 0.689929Z" fill="url(#paint1_linear_8357_1864)"></path><path d="M30.8161 11.2101C30.5989 10.993 30.3002 10.8664 29.9835 10.8664H1.25615C0.731204 10.8664 0.46873 11.4996 0.839814 11.8705L6.51468 17.5421C6.7319 17.7592 7.03058 17.8859 7.34735 17.8859H36.0747C36.5996 17.8859 36.8621 17.2527 36.491 16.8818L30.8161 11.2101Z" fill="url(#paint2_linear_8357_1864)"></path></g></g><defs><linearGradient id="paint0_linear_8357_1864" x1="18.6654" y1="0.346191" x2="18.6654" y2="28.5417" gradientUnits="userSpaceOnUse"><stop stop-color="#33FFCC"></stop><stop offset="1" stop-color="#D625FD"></stop></linearGradient><linearGradient id="paint1_linear_8357_1864" x1="18.6654" y1="0.346191" x2="18.6654" y2="28.5417" gradientUnits="userSpaceOnUse"><stop stop-color="#33FFCC"></stop><stop offset="1" stop-color="#D625FD"></stop></linearGradient><linearGradient id="paint2_linear_8357_1864" x1="18.6654" y1="0.346191" x2="18.6654" y2="28.5417" gradientUnits="userSpaceOnUse"><stop stop-color="#33FFCC"></stop><stop offset="1" stop-color="#D625FD"></stop></linearGradient></defs></svg>&nbsp;&nbsp;Solana API</h3>
                     <p>Fetch user and token data from the Solana blockchain.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/aptos/reference">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" id="a" width="36" height="36"  viewBox="0 0 500 500"><path fill="#51e7c1" d="M400.14 163.42h-42.4c-4.94 0-9.64-2.12-12.91-5.81l-17.2-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.45 25.45 0 0 1-19.04 8.58H41.53c-6.61 18.84-10.92 38.74-12.64 59.38h219.1c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56L316.48 217c3.27 3.7 7.97 5.81 12.91 5.81h178.84c-1.72-20.65-6.03-40.55-12.64-59.38h-95.46ZM161.48 347.67c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.55l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h242.36c9.08-18.76 15.73-38.89 19.69-59.98H272.3c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58H32.19c3.96 21.09 10.62 41.22 19.69 59.98h109.59ZM333.42 98.52c3.85 0 7.54-1.57 10.2-4.35l20.4-21.29c2.55-2.66 6.07-4.16 9.75-4.16h.84c3.87 0 7.55 1.66 10.11 4.56l17.19 19.43c3.27 3.7 7.97 5.81 12.91 5.81h46.09C417.02 40.18 347.21 2.44 268.57 2.44S120.12 40.18 76.22 98.52h257.2ZM240.84 407.11h-63.03c-4.94 0-9.64-2.12-12.91-5.81l-17.19-19.43c-2.56-2.9-6.25-4.55-10.11-4.55s-7.55 1.66-10.11 4.55l-14.75 16.67a25.455 25.455 0 0 1-19.05 8.58h-.98c43.91 47.05 106.44 76.5 175.87 76.5s131.95-29.45 175.87-76.5H240.84Z" className="b"/></svg>&nbsp;&nbsp;Aptos API</h3>
-                    <p>Fetch user and token data from the Aptos blockchain.</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div className="container">
-    <h2>Integrations</h2>
-    <div className="row">
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/firebase-nodejs">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#FFA000" d="m6 28 4.06-26.356a.747.747 0 0 1 1.402-.243l4.2 7.946 1.675-3.232a.747.747 0 0 1 1.329 0L30 28H6Z"/><path fill="#F57C00" d="M20 18.095 15.642 10 6 28l14-9.905Z"/><path fill="#FFCA28" d="M30 28.445 26.889 8.643a.767.767 0 0 0-.511-.606.733.733 0 0 0-.758.189L6 28.444l10.855 6.263a2.195 2.195 0 0 0 2.192 0L30 28.445Z"/><path fill="#fff" fillOpacity=".2" d="M26.892 8.46a.757.757 0 0 0-.51-.596.741.741 0 0 0-.758.186L21.732 12l-3.06-5.898a.746.746 0 0 0-1.329 0L15.67 9.326 11.473 1.4a.746.746 0 0 0-1.402.242L6.013 27.93H6l.013.015.105.054L25.617 8.244a.745.745 0 0 1 1.27.41l3.083 19.295.03-.018L26.892 8.46ZM6.048 27.896 10.07 1.83a.75.75 0 0 1 .614-.631.751.751 0 0 1 .788.39l4.197 7.924 1.673-3.224a.746.746 0 0 1 1.329 0l3 5.77L6.047 27.897Z"/><path fill="#A52714" d="M19.049 34.499a2.124 2.124 0 0 1-2.193 0l-10.83-6.49-.026.177 10.856 6.51a2.124 2.124 0 0 0 2.193 0L30 28.185 29.972 28 19.05 34.499Z" opacity=".2"/></svg>&nbsp;&nbsp;<span>Firebase</span></h3>
-                    <p>Authenticate a user to your Firebase application with an EVM or Solana wallet.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/parse-server-nodejs">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path fill="#fff" d="M18 32.44c7.909 0 14.32-6.411 14.32-14.32C32.32 10.211 25.91 3.8 18 3.8c-7.909 0-14.32 6.411-14.32 14.32 0 7.909 6.411 14.32 14.32 14.32Z"/><path fill="#169CEE" d="M20.667 21.893H12.8c-1.147 0-1.813.707-1.813 1.72 0 .907.613 1.547 1.493 1.547 1.027 0 1.613-.707 1.667-1.72h2.28c-.12 2.48-1.667 3.8-3.974 3.8-2.16 0-3.773-1.467-3.773-3.653 0-2.28 1.693-3.867 4.24-3.867h7.787c2.626 0 4.626-1.933 4.626-4.533 0-2.627-1.786-4.48-4.333-4.48-2.52 0-4.56 1.84-4.56 5.24v2.226h-2.307v-2.226c0-4.507 2.894-7.427 6.907-7.427 3.827 0 6.613 2.747 6.613 6.64.027 3.893-2.96 6.733-6.986 6.733ZM18 34c8.947 0 16-7.08 16-16S26.947 2 18 2 2 9.107 2 18c0 8.92 7.053 16 16 16Z"/></svg>&nbsp;&nbsp;Parse Server</h3>
-                    <p>Authenticate a user to your Parse server with MetaMask.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/authentication-api/evm/integrations/supabase-nodejs">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path fill="url(#b)" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="url(#c)" fillOpacity=".2" d="M20.706 33.468c-.817 1.03-2.475.466-2.495-.849l-.288-19.226h12.928c2.342 0 3.648 2.704 2.191 4.538L20.706 33.468Z"/><path fill="#3ECF8E" d="M15.448 2.532c.818-1.03 2.476-.466 2.495.849l.127 19.226H5.304c-2.342 0-3.648-2.704-2.192-4.538L15.448 2.532Z"/></g><defs><linearGradient id="b" x1="17.923" x2="29.413" y1="17.656" y2="22.475" gradientUnits="userSpaceOnUse"><stop stopColor="#249361"/><stop offset="1" stopColor="#3ECF8E"/></linearGradient><linearGradient id="c" x1="12.829" x2="18.069" y1="10.681" y2="20.545" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stopOpacity="0"/></linearGradient><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Supabase</span></h3>
-                    <p>Combine Web3 authentication with Supabase authentication.</p>
                 </a>
             </div>
         </div>
