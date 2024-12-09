@@ -20,7 +20,9 @@ Aspects like contract compliance with standards, minting & transfer activities (
 
 ### Community support! Help report spam or suspicious contracts 
 
-This is a starting point for us building out the best spam library in the whole of Web3, and we would love our community to contribute to this! We're currently working on an endpoint that will allow customers to programmatically submit spam contracts for review. If a contract meets our criteria, it will be marked as spam. In the meantime, manual reports can be submitted via our public submission board at [https://roadmap.moralis.io/b/report-spam-contracts/](https://roadmap.moralis.io/b/report-spam-contracts/)
+We're building the best spam library in Web3, and we would love your help! We're currently working on an endpoint that will allow users to programmatically submit spam contracts for review. If a contract meets our criteria, it will be flagged as spam.
+
+In the meantime, you can manually report suspicious contracts by emailing us at hello@moralis.io. Your contributions help make Web3 a safer space for everyone!
 
 ### What chains is this supported on?
 This feature is supported on all EVMs, however, our initial classification includes contracts from:
