@@ -2,8 +2,9 @@
 title: "Pagination"
 slug: "pagination"
 description: "This tutorial teaches you how to use pagination with the Moralis Web3 API."
-sidebar_position: 7
+sidebar_position: 2
 ---
+
 ## What Is Pagination?
 
 Pagination is the process of dividing the responses from an API into multiple pages of results. This allows for faster response times for end users by reducing the amount of data that needs to be returned with each request.

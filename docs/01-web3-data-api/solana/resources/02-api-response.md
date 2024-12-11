@@ -2,7 +2,7 @@
 title: "Solana Response codes"
 slug: "api-response"
 sidebar_label: "Response codes"
-sidebar_position: 6
+sidebar_position: 1
 ---
 
 Moralis uses conventional [HTTP response codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to indicate success or failure of an API request.

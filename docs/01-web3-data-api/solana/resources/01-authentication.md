@@ -1,7 +1,7 @@
 ---
 title: "Solana API – Authentication"
 sidebar_label: "Authentication"
-sidebar_position: 5
+sidebar_position: 0
 ---
 
 # Authentication
