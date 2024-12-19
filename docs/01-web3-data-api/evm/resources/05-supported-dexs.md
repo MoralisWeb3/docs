@@ -163,6 +163,7 @@ Chain ID: `0x171`
 | Supported DEX(s)              | Query Parameter Value |
 | ----------------------------- | --------------------- |
 | [PulseX](https://pulsex.com/) | pulsex                |
+| [9 Inch](https://www.9inch.io/) | 9inch                |
 
 ## Endpoints DEXs integration
 
