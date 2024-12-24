@@ -524,6 +524,42 @@
       "path": "/account/{network}/{address}/portfolio",
       "price": 10,
       "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getTokenPairs",
+      "path": "/token/{network}/{address}/pairs",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenPairStats",
+      "path": "/token/{network}/{address}/pairs/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getCandleSticks",
+      "path": "/token/{network}/pairs/{pairAddress}/ohlcv",
+      "price": 150,
+      "rateLimitCost": 150
+    },
+    {
+      "endpoint": "getSwapsByPairAddress",
+      "path": "/token/{network}/pairs/{pairAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSwapsByWalletAddress",
+      "path": "/account/{network}/{walletAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSwapsByTokenAddress",
+      "path": "/token/{network}/{tokenAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
     }
   ],
   "aptos": [
