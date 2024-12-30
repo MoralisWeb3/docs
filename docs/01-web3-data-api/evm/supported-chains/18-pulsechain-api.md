@@ -1,6 +1,6 @@
 ---
 title: "Pulsechain API"
-slug: "/web3-data-api/evm/chains/Pulsechain"
+slug: "/web3-data-api/evm/chains/pulsechain"
 sidebar_label: "Pulsechain"
 sidebar_position: 16
 ---
