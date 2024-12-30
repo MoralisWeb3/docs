@@ -1212,7 +1212,7 @@ li.dropdown-divider {
   vertical-align: middle;
 }
 
-.menu__link[href$="Pulsechain"]::before {
+.menu__link[href$="pulsechain"]::before {
   content: "";
   background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/pulsechain.png");
   background-size: contain;
