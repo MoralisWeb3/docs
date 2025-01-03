@@ -902,8 +902,10 @@ const chainData = [
     },
     rpcNodes: {
       supported: true,
-      urls: [],
-      reason: "Unsupported",
+      urls: [
+        "https://site1.moralis-nodes.com/pulse/",
+        "https://site2.moralis-nodes.com/pulse/",
+      ],
     },
     authApi: {
       supported: false,
