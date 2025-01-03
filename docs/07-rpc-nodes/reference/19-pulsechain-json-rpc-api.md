@@ -61,9 +61,6 @@ The Pulsechain RPC API is available for the following networks:
 - [eth_getTokenBalances](/rpc-nodes/reference/extended-rpc/eth_getTokenBalances)
 - [eth_getTokenPrice](/rpc-nodes/reference/extended-rpc/eth_getTokenPrice)
 - [eth_getTokenMetadata](/rpc-nodes/reference/extended-rpc/eth_getTokenMetadata)
-- [eth_getNFTBalances](/rpc-nodes/reference/extended-rpc/eth_getNFTBalances)
-- [eth_getNFTCollections](/rpc-nodes/reference/extended-rpc/eth_getNFTCollections)
-- [eth_getTokenTransfers](/rpc-nodes/reference/extended-rpc/eth_getTokenTransfers)
 
 ---
 
