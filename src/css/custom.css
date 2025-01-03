@@ -1529,6 +1529,19 @@ li.dropdown-divider {
   vertical-align: middle;
 }
 
+/* Pulse */
+.menu__link[href$="pulsechain-json-rpc-api"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/pulsechain.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .navbar__logo img {
   height: 3rem;
   width: 13rem;

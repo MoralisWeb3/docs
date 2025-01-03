@@ -901,7 +901,7 @@ const chainData = [
       reason: "Unsupported",
     },
     rpcNodes: {
-      supported: false,
+      supported: true,
       urls: [],
       reason: "Unsupported",
     },
