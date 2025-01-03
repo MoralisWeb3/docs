@@ -16010,7 +16010,7 @@
         {
           "name": "fromDate",
           "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
-          "example": "2024-11-25",
+          "example": "2024-12-25",
           "required": true,
           "type": "string"
         },
@@ -16018,7 +16018,7 @@
           "name": "toDate",
           "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
           "required": true,
-          "example": "2024-11-26",
+          "example": "2025-01-01",
           "type": "string"
         },
         {
