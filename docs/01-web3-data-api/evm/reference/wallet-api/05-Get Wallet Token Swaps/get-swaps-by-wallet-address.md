@@ -8,6 +8,7 @@ import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../../configs/api-reference/configs.json";
 
 import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
+import Admonition from "@theme/Admonition";
 
 # Get Swaps by Wallet Address
 
@@ -18,4 +19,12 @@ import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
   customButtonLink="/web3-data-api/solana/reference/get-swaps-by-wallet-address"
 />
 
-<ApiReference {...config.token.getSwapsByWalletAddress} />
+<ApiReference {...config.token.getSwapsByWalletAddress} >
+<Admonition type="info" title="Note">
+
+<p>
+Swaps data is synced and available only from September 2024 onwards. Data
+prior to this date is not included.
+</p>
+</Admonition>
+</ApiReference>
