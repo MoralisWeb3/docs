@@ -2,7 +2,8 @@
 sidebar_position: 1
 sidebar_label: Get OHLCV by Pair Address
 slug: /web3-data-api/evm/reference/price/get-ohlcv-by-pair-address
-description: Retrieve historical OHLCV (Open, High, Low, Close, Volume) data for a specific token pair address. This endpoint provides detailed candlestick data for price and trading volume, allowing you to analyze token pair trends and market activity over specified timeframes.
+title: Get OHLCV Data by Pair Address for EVM
+description: Get historical OHLCV data for token pairs on EVM chains. Analyze price trends and trading volumes.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
