@@ -7,6 +7,7 @@ slug: /web3-data-api/solana/reference/get-swaps-by-pair-address
 import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
+import Admonition from "@theme/Admonition";
 
 # Get Swaps by Pair Address
 
@@ -17,4 +18,12 @@ import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
   customButtonLink="/web3-data-api/evm/reference/get-swaps-by-pair-address"
 />
 
-<ApiReference {...config.solana.getSwapsByPairAddress} />
+<ApiReference {...config.solana.getSwapsByPairAddress} >
+<Admonition type="info" title="Note">
+
+<p>
+Swaps data is synced and available only from September 2024 onwards. Data
+prior to this date is not included.
+</p>
+</Admonition>
+</ApiReference>
