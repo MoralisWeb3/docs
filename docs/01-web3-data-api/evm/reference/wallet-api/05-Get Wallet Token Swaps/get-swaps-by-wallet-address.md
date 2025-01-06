@@ -9,8 +9,9 @@ import config from "../../../../../configs/api-reference/configs.json";
 
 import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 import Admonition from "@theme/Admonition";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
-# Get Swaps by Wallet Address
+# Get Swaps by Wallet Address <MainnetBadge />
 
 <SolanaApiBanner
   customTitle="Looking for swaps by wallet address on Solana?"
