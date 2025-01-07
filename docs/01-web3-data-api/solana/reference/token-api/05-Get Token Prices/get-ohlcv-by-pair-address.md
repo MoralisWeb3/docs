@@ -11,8 +11,9 @@ import config from "@site/docs/configs/api-reference/configs.json";
 
 import ChartWidgetBanner from "@site/src/components/ChartWidgetBanner/ChartWidgetBanner.tsx";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
-# Get OHLCV by Pair Address
+# Get OHLCV by Pair Address <MainnetBadge />
 
 <div
   style={{

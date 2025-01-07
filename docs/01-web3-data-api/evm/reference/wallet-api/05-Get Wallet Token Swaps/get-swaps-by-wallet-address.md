@@ -2,6 +2,8 @@
 sidebar_position: 0
 sidebar_label: Get Swaps by Wallet Address
 slug: /web3-data-api/evm/reference/wallet-api/get-swaps-by-wallet-address
+title: Get Swaps by Wallet Address for EVM
+description: Retrieve swap transaction data for a specific wallet address on EVM chains.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -9,8 +11,9 @@ import config from "../../../../../configs/api-reference/configs.json";
 
 import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 import Admonition from "@theme/Admonition";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
-# Get Swaps by Wallet Address
+# Get Swaps by Wallet Address <MainnetBadge />
 
 <SolanaApiBanner
   customTitle="Looking for swaps by wallet address on Solana?"
