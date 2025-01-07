@@ -10,7 +10,7 @@ dotenv.config();
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Moralis API Documentation",
-  url: "https://docs.moralis.io",
+  url: "https://docs.moralis.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
@@ -40,7 +40,7 @@ const config = {
       tagName: "link",
       attributes: {
         rel: "preload",
-        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2",
+        href: "https://docs.moralis.com/fonts/golos/Golos-Text_Bold.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
@@ -50,7 +50,7 @@ const config = {
       tagName: "link",
       attributes: {
         rel: "preload",
-        href: "https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2",
+        href: "https://docs.moralis.com/fonts/golos/Golos-Text_DemiBold.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
@@ -60,7 +60,7 @@ const config = {
       tagName: "link",
       attributes: {
         rel: "preload",
-        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2",
+        href: "https://docs.moralis.com/fonts/golos/Golos-Text_Medium.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
@@ -70,7 +70,7 @@ const config = {
       tagName: "link",
       attributes: {
         rel: "preload",
-        href: "https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2",
+        href: "https://docs.moralis.com/fonts/golos/Golos-Text_Regular.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
@@ -304,7 +304,7 @@ const config = {
                 label: "Python SDK",
                 href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
                 target: "_blank",
-              }
+              },
             ],
           },
           {
