@@ -498,7 +498,7 @@ const chainData = [
     logo: "/img/content/linea.png",
     chainID: "0xe708 (59144)",
     evmChain: "EvmChain.LINEA",
-    isNew: true,
+    isNew: false,
     type: "Mainnet",
     evmApi: {
       supported: true,
@@ -538,7 +538,7 @@ const chainData = [
     type: "Testnet",
     chainID: "0xe705 (59141)",
     evmChain: "EvmChain.LINEA_SEPOLIA",
-    isNew: true,
+    isNew: false,
     evmApi: {
       supported: true,
       walletApi: true,
@@ -869,47 +869,6 @@ const chainData = [
     },
     authApi: {
       supported: true,
-    },
-  },
-  {
-    name: "Pulsechain",
-    logo: "/img/content/pulsechain.png",
-    type: "Mainnet",
-    chainID: "0x171 (369)",
-    evmChain: "EvmChain.PULSECHAIN",
-    isNew: false,
-    evmApi: {
-      supported: true,
-      walletApi: true,
-      nftApi: false,
-      tokenApi: true,
-      defiApi: false,
-      entityApi: true,
-      blockchainApi: true,
-      pnlApi: false,
-      tokenPrices: true,
-      internalTxs: true,
-      nftTrades: false,
-      nftPrices: false,
-      nftFloorPrices: false,
-      queryParams: ["pulse", "0x171"],
-    },
-    streamsApi: {
-      supported: true,
-      blockConfirmations: "100",
-      internalTxs: false,
-      reason: "Unsupported",
-    },
-    rpcNodes: {
-      supported: true,
-      urls: [
-        "https://site1.moralis-nodes.com/pulse/",
-        "https://site2.moralis-nodes.com/pulse/",
-      ],
-    },
-    authApi: {
-      supported: false,
-      reason: "Unsupported",
     },
   },
   {
@@ -1616,6 +1575,47 @@ const chainData = [
     },
     authApi: {
       supported: false,
+    },
+  },
+  {
+    name: "Pulsechain",
+    logo: "/img/content/pulsechain.png",
+    type: "Mainnet",
+    chainID: "0x171 (369)",
+    evmChain: "EvmChain.PULSECHAIN",
+    isNew: true,
+    evmApi: {
+      supported: true,
+      walletApi: true,
+      nftApi: false,
+      tokenApi: true,
+      defiApi: false,
+      entityApi: true,
+      blockchainApi: true,
+      pnlApi: false,
+      tokenPrices: true,
+      internalTxs: true,
+      nftTrades: false,
+      nftPrices: false,
+      nftFloorPrices: false,
+      queryParams: ["pulse", "0x171"],
+    },
+    streamsApi: {
+      supported: true,
+      blockConfirmations: "100",
+      internalTxs: false,
+      reason: "Unsupported",
+    },
+    rpcNodes: {
+      supported: true,
+      urls: [
+        "https://site1.moralis-nodes.com/pulse/",
+        "https://site2.moralis-nodes.com/pulse/",
+      ],
+    },
+    authApi: {
+      supported: false,
+      reason: "Unsupported",
     },
   },
 ] as const;

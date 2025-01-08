@@ -1548,45 +1548,104 @@ li.dropdown-divider {
   margin-top: -10px;
 }
 
-/* Custom class for Supported Web3Data APIs table */
+/* Web3Data APIs table styles */
 .supported-web3data-apis-table {
   width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.supported-web3data-apis-table table {
+  min-width: 100%;
+  width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
-  margin-top: 20px;
   border: 1px solid var(--ifm-table-border-color);
+}
 
-  th,
-  td {
-    padding: 12px 10px;
-    text-align: left;
-    border: 1px solid var(--ifm-table-border-color);
-    vertical-align: middle;
+.supported-web3data-apis-table th,
+.supported-web3data-apis-table td {
+  padding: 8px 6px;
+  text-align: left;
+  border: 1px solid var(--ifm-table-border-color);
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.supported-web3data-apis-table th {
+  background-color: var(--ifm-table-header-background-color);
+  color: var(--ifm-table-header-color);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.supported-web3data-apis-table td {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color);
+  width: 7%;
+}
+
+.supported-web3data-apis-table .protocol-column {
+  width: 15%;
+}
+
+.supported-web3data-apis-table tr:nth-child(even) td {
+  background-color: var(--ifm-table-stripe-background);
+}
+
+/* Stacked header styling */
+.stacked-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  gap: 2px;
+}
+
+.stacked-header span {
+  display: block;
+  font-size: 13px;
+}
+
+/* Icon container */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* For mobile devices */
+@media (max-width: 1200px) {
+  .supported-web3data-apis-table table {
+    table-layout: auto;
+    width: max-content;
   }
 
-  th {
-    background-color: var(--ifm-table-header-background-color);
-    color: var(--ifm-table-header-color);
-    text-align: left;
+  .supported-web3data-apis-table td {
+    min-width: 60px;
+    width: auto;
   }
 
-  td {
-    background-color: var(--ifm-background-color);
-    color: var(--ifm-color);
+  .supported-web3data-apis-table .protocol-column {
+    min-width: 180px;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .supported-web3data-apis-table {
+    margin: 0 -16px;
+    border-left: 0;
+    border-right: 0;
   }
 
-  tr:nth-child(even) td {
-    background-color: var(--ifm-table-background-color);
+  .supported-web3data-apis-table th,
+  .supported-web3data-apis-table td {
+    padding: 6px 4px;
+    font-size: 12px;
   }
 
-  img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
-
-  .icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .stacked-header span {
+    font-size: 12px;
   }
 }
