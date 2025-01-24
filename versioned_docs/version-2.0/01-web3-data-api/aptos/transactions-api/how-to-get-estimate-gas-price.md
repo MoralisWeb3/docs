@@ -5,9 +5,18 @@ description: "Learn how to estimate the gas price using Moralis Transaction API.
 sidebar_label: Estimate Gas Price
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following ready:
+
+- Node v.14+ or Python
+- NPM/Yarn or Pip
+
 ## Step 1: Setup Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
+
+<SetupMoralis node="moralis" python="moralis" />
 
 ## Step 2: Estimate gas price
 
@@ -57,7 +66,7 @@ const runApp = async () => {
   });
 
   const network = "mainnet";
-
+  
   const response = await Moralis.AptosApi.transactions.estimateGasPrice({
     network,
   });

@@ -1,5 +1,5 @@
 ---
-title: "Aptos Web3 Data API"
+title: "Web3 Data API"
 sidebar_label: "Overview"
 slug: "/web3-data-api/aptos"
 sidebar_position: 1
@@ -8,13 +8,9 @@ description: "The Moralis Web3 Data APIs are a set of highly scalable APIs that 
 sidebar_class_name: "sidebar-overview"
 ---
 
-import Admonition from "@theme/Admonition";
+# Aptos Web3 Data API
 
-<Admonition type="warning" icon="🚨" title="Aptos: Confirmed Deprecation (60 Days Notice)">
-  <p>
-    Aptos mainnet and testnet will be discontinued on <strong>November 22nd</strong>, in line with the network’s deprecation of their v1 Indexers. We recommend exploring alternative providers, which you can find at <a href="https://aptos.dev/en/build/apis">Aptos APIs</a>.
-  </p>
-</Admonition>
+![23_04_Aptos-Web3-Data-API](https://user-images.githubusercontent.com/13417464/232769407-b8a10c03-03c6-4f8c-b328-b1555c623aa3.jpg)
 
 ## What are the Web3 Data APIs?
 
