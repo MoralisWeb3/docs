@@ -2,7 +2,6 @@
 title: "Aptos Response codes"
 slug: "api-response"
 sidebar_label: "Response codes"
-sidebar_position: 10
 ---
 
 Moralis uses conventional [HTTP response codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to indicate success or failure of an API request.

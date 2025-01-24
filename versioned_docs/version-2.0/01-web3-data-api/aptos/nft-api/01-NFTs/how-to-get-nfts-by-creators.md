@@ -5,9 +5,18 @@ description: "Learn how to get NFTs by creator(s) using Moralis NFT API."
 sidebar_label: Get NFTs By Creator(s)
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following ready:
+
+- Node v.14+ or Python
+- NPM/Yarn or Pip
+
 ## Step 1: Setup Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
+
+<SetupMoralis node="moralis" python="moralis" />
 
 ## Step 2: Get NFTs By Creator(s)
 
@@ -61,15 +70,13 @@ const runApp = async () => {
   });
 
   const limit = 10;
-  const creatorAddresses: [
-    "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"
-  ];
+  const creatorAddresses: ["0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702"];
   const network = "mainnet";
 
   const response = Moralis.AptosApi.nfts.getNFTsByCreators({
     limit,
     creatorAddresses,
-    network,
+    network
   });
 
   console.log(response.result);
@@ -113,29 +120,29 @@ In your terminal, you should see the following JSON response:
 
 ```json
 [
-  {
-    "collection_data_id_hash": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301",
-    "collection_name": "Aptos Monkeys",
-    "creator_address": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702",
-    "default_properties": {},
-    "description": "",
-    "description_mutable": true,
-    "largest_property_version": "0",
-    "last_transaction_timestamp": "2022-10-25T18:01:10.000Z",
-    "name": "AptosMonkeys #3652",
-    "last_transaction_version": "12598823",
-    "maximum": "1",
-    "maximum_mutable": true,
-    "metadata_uri": "ipfs://bafybeihnochxvsv6h43qvg4snenpeasoml66nwxhuiadfzkefix7vbetyq/3652.json",
-    "payee_address": "0x89e272841c2381ec63e7d8ccf6a70bd784b2a9dda6d6425aeb31657f4a5619c0",
-    "properties_mutable": true,
-    "royalty_mutable": true,
-    "royalty_points_denominator": "10000",
-    "royalty_points_numerator": "500",
-    "token_data_id_hash": "00064cd1e0206b281345c3169e3c5d738bc0a7b0623d3451baab10a91bd43cdb",
-    "supply": "1",
-    "uri_mutable": true
-  }
+    {
+      "collection_data_id_hash": "7ac8cecb76edbbd5da40d719bbb9795fc5744e4098ee0ce1be4bb86c90f42301",
+      "collection_name": "Aptos Monkeys",
+      "creator_address": "0xf932dcb9835e681b21d2f411ef99f4f5e577e6ac299eebee2272a39fb348f702",
+      "default_properties": {},
+      "description": "",
+      "description_mutable": true,
+      "largest_property_version": "0",
+      "last_transaction_timestamp": "2022-10-25T18:01:10.000Z",
+      "name": "AptosMonkeys #3652",
+      "last_transaction_version": "12598823",
+      "maximum": "1",
+      "maximum_mutable": true,
+      "metadata_uri": "ipfs://bafybeihnochxvsv6h43qvg4snenpeasoml66nwxhuiadfzkefix7vbetyq/3652.json",
+      "payee_address": "0x89e272841c2381ec63e7d8ccf6a70bd784b2a9dda6d6425aeb31657f4a5619c0",
+      "properties_mutable": true,
+      "royalty_mutable": true,
+      "royalty_points_denominator": "10000",
+      "royalty_points_numerator": "500",
+      "token_data_id_hash": "00064cd1e0206b281345c3169e3c5d738bc0a7b0623d3451baab10a91bd43cdb",
+      "supply": "1",
+      "uri_mutable": true
+    }
 ]
 ```
 

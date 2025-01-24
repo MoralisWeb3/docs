@@ -5,9 +5,18 @@ description: "Learn how to get transactions by hash using Moralis Transaction AP
 sidebar_label: Get Transactions By Hash
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following ready:
+
+- Node v.14+ or Python
+- NPM/Yarn or Pip
+
 ## Step 1: Setup Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
+
+<SetupMoralis node="moralis" python="moralis" />
 
 ## Step 2: Get transactions
 
@@ -32,14 +41,13 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const transactionHash =
-    "0x40b19053969a956b051d91a616d0e5f53f4212ce5c01a38c182d7450d756987a";
-
+  const transactionHash = "0x40b19053969a956b051d91a616d0e5f53f4212ce5c01a38c182d7450d756987a";
+  
   const network = "mainnet";
 
   const response = await Moralis.AptosApi.transactions.getTransactionByHash({
     transactionHash,
-    network,
+    network
   });
 
   console.log(response);
@@ -60,14 +68,13 @@ const runApp = async () => {
     // ...and any other configuration
   });
 
-  const transactionHash =
-    "0x40b19053969a956b051d91a616d0e5f53f4212ce5c01a38c182d7450d756987a";
-
+  const transactionHash = "0x40b19053969a956b051d91a616d0e5f53f4212ce5c01a38c182d7450d756987a";
+  
   const network = "mainnet";
 
   const response = await Moralis.AptosApi.transactions.getTransactionByHash({
     transactionHash,
-    network,
+    network
   });
 
   console.log(response);
@@ -279,7 +286,7 @@ In your terminal, you should see the following JSON response:
       },
       "type": "write_table_item"
     }
-  ]
+  ],
 }
 ```
 

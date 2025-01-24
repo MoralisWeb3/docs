@@ -5,9 +5,18 @@ description: "Learn how to get account transactions using Moralis Transaction AP
 sidebar_label: Get Account Transactions
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following ready:
+
+- Node v.14+ or Python
+- NPM/Yarn or Pip
+
 ## Step 1: Setup Moralis
 
-Read the article [Setting Up Moralis: Getting Started](/web3-data-api/aptos/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
+import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
+
+<SetupMoralis node="moralis" python="moralis" />
 
 ## Step 2: Get account transactions
 
