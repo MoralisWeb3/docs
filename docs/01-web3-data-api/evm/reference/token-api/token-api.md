@@ -23,6 +23,7 @@ Select what you want to achieve:
 - [Get Token Snipers](#get-token-snipers)
 - [Get Trending Tokens](#get-trending-tokens)
 - [Get Filtered Tokens](#get-filtered-tokens)
+- [Search Tokens](#search-tokens)
 
 ### Get Token Balances
 
@@ -124,3 +125,9 @@ Select what you want to achieve:
 | No. | Method              | Description         | API Reference                                                            | URL                                                                                                                |
 | --- | ------------------- | ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | 36  | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
+
+### Search Tokens
+
+| No. | Method         | Description   | API Reference                                                      | URL                                                                                                          |
+| --- | -------------- | ------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| 37  | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/evm/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |

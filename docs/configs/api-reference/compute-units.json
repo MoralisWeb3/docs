@@ -630,6 +630,12 @@
       "path": "/erc20/:tokenAddress/holders/historical",
       "price": 50,
       "rateLimitCost": 20
+    },
+    {
+      "endpoint": "searchTokens",
+      "path": "/tokens/search",
+      "price": 150,
+      "rateLimitCost": 50
     }
   ],
   "solana": [

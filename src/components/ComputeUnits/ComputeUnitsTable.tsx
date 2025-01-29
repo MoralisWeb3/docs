@@ -71,6 +71,7 @@ const fixedPath = {
   getDateToBlock: "",
   getTokenHolders: "get-token-owners",
   getHistoricalTokenHolders: "",
+  searchTokens: "search-tokens",
 };
 
 const DynamicPriceUnits = {

@@ -17574,6 +17574,211 @@
           }
         }
       ]
+    },
+    "searchTokens": {
+      "apiHost": "https://deep-index.moralis.io",
+      "summary": "Search for tokens based on contract address, token name or token symbol",
+      "description": "Search for tokens based on contract address, token name or token symbol. Premium endpoint available as an add-on. Please contact support for access details.",
+      "method": "GET",
+      "path": "/api/v2.2/tokens/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chains",
+          "description": "The chain(s) to query",
+          "required": true,
+          "type": "string",
+          "example": "eth"
+        },
+        {
+          "name": "query",
+          "description": "Search query - can be token address, token name or token symbol",
+          "required": true,
+          "type": "string",
+          "example": "pepe"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns search results for tokens",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total",
+                "type": "number",
+                "required": true,
+                "description": "Total number of results",
+                "example": 10
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "Array of token results",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "required": true,
+                      "description": "The token contract address",
+                      "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                    },
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "required": true,
+                      "description": "The chain ID in hex format",
+                      "example": "0x1"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true,
+                      "description": "Token name",
+                      "example": "Pepe"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "required": true,
+                      "description": "Token symbol",
+                      "example": "PEPE"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "number",
+                      "required": true,
+                      "description": "Block number when token was created",
+                      "example": 17046105
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "number",
+                      "required": true,
+                      "description": "Timestamp when token was created",
+                      "example": 1681483883
+                    },
+                    {
+                      "name": "usdPrice",
+                      "type": "number",
+                      "required": true,
+                      "description": "Current USD price",
+                      "example": 0.000012302426023896
+                    },
+                    {
+                      "name": "marketCap",
+                      "type": "number",
+                      "required": true,
+                      "description": "Market capitalization in USD",
+                      "example": 5056032434.591353
+                    },
+                    {
+                      "name": "experiencedNetBuyers",
+                      "type": "object",
+                      "required": true,
+                      "description": "Net buyers over different time periods",
+                      "fields": [
+                        {
+                          "name": "oneDay",
+                          "type": "number",
+                          "required": true,
+                          "description": "Net buyers in last 24 hours",
+                          "example": -34
+                        },
+                        {
+                          "name": "oneWeek",
+                          "type": "number",
+                          "required": true,
+                          "description": "Net buyers in last 7 days",
+                          "example": -176
+                        }
+                      ]
+                    },
+                    {
+                      "name": "netVolumeUsd",
+                      "type": "object",
+                      "required": true,
+                      "description": "Net volume in USD over different time periods",
+                      "fields": [
+                        {
+                          "name": "oneDay",
+                          "type": "number",
+                          "required": true,
+                          "description": "Net volume in last 24 hours",
+                          "example": -212308.385726963
+                        }
+                      ]
+                    },
+                    {
+                      "name": "liquidityChangeUSD",
+                      "type": "object",
+                      "required": true,
+                      "description": "Liquidity change in USD over different time periods",
+                      "fields": [
+                        {
+                          "name": "oneDay",
+                          "type": "number",
+                          "required": true,
+                          "description": "Liquidity change in last 24 hours",
+                          "example": -298883.8224104196
+                        }
+                      ]
+                    },
+                    {
+                      "name": "usdPricePercentChange",
+                      "type": "object",
+                      "required": true,
+                      "description": "Price change percentage over different time periods",
+                      "fields": [
+                        {
+                          "name": "oneDay",
+                          "type": "number",
+                          "required": true,
+                          "description": "Price change % in last 24 hours",
+                          "example": -3.7369101031758394
+                        }
+                      ]
+                    },
+                    {
+                      "name": "volumeUsd",
+                      "type": "object",
+                      "required": true,
+                      "description": "Volume in USD over different time periods",
+                      "fields": [
+                        {
+                          "name": "oneDay",
+                          "type": "number",
+                          "required": true,
+                          "description": "Volume in last 24 hours",
+                          "example": 8575800.708427625
+                        }
+                      ]
+                    },
+                    {
+                      "name": "securityScore",
+                      "type": "number",
+                      "required": true,
+                      "description": "Security score of the token",
+                      "example": 92
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "required": false,
+                      "description": "URL of token logo image",
+                      "example": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0x6982508145454ce325ddbe47a25d4ec3d2311933_icon.png"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
