@@ -1,8 +1,8 @@
 ---
-title: "Token Price FAQ"
+title: "Token Price Logic FAQ"
 description: "Learn how Moralis Token Price API works, including price calculation methods, pool selection criteria, and supported networks"
 slug: "/web3-data-api/evm/token-price-faq"
-sidebar_position: 7
+sidebar_position: 0
 ---
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
