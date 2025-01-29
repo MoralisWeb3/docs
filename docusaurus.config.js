@@ -188,12 +188,6 @@ const config = {
           },
           {
             type: "doc",
-            docId: "market-insights-api/overview",
-            position: "left",
-            label: "Market Insights API",
-          },
-          {
-            type: "doc",
             docId: "rpc-nodes/overview",
             position: "left",
             label: "RPC Nodes",
