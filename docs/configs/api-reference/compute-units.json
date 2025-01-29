@@ -590,44 +590,8 @@
       "rateLimitCost": 20
     },
     {
-      "endpoint": "getVolumeStatsByChain",
-      "path": "/volume/chains",
-      "price": 150,
-      "rateLimitCost": 20
-    },
-    {
-      "endpoint": "getVolumeStatsByCategory",
-      "path": "/volume/categories",
-      "price": 150,
-      "rateLimitCost": 20
-    },
-    {
-      "endpoint": "getTimeSeriesVolume",
-      "path": "/volume/timeseries",
-      "price": 150,
-      "rateLimitCost": 20
-    },
-    {
-      "endpoint": "getTimeSeriesVolumeByCategory",
-      "path": "/volume/timeseries/:categoryId",
-      "price": 150,
-      "rateLimitCost": 20
-    },
-    {
-      "endpoint": "getDateToBlock",
-      "path": "/block/date",
-      "price": 1,
-      "rateLimitCost": 10
-    },
-    {
       "endpoint": "getTokenHolders",
       "path": "/erc20/:tokenAddress/holders",
-      "price": 50,
-      "rateLimitCost": 20
-    },
-    {
-      "endpoint": "getHistoricalTokenHolders",
-      "path": "/erc20/:tokenAddress/holders/historical",
       "price": 50,
       "rateLimitCost": 20
     },
