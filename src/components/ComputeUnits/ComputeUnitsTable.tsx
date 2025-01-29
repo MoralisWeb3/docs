@@ -63,6 +63,7 @@ const fixedPath = {
   getCandleSticks: "get-ohlcv-by-pair-address",
   getSnipersByPairAddress: "get-snipers-by-pair-address",
   getPairStats: "get-token-pair-stats",
+  getFilteredTokens: "get-filtered-tokens",
   getVolumeStatsByChain: "",
   getVolumeStatsByCategory: "",
   getTimeSeriesVolume: "",

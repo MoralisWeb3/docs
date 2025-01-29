@@ -1,6 +1,12 @@
 {
   "evm": [
     {
+      "endpoint": "getFilteredTokens",
+      "path": "/discovery/tokens",
+      "price": 250,
+      "rateLimitCost": 50
+    },
+    {
       "endpoint": "getRisingLiquidityTokens",
       "path": "/discovery/tokens/rising-liquidity",
       "price": 250,

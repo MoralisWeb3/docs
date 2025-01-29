@@ -33032,6 +33032,281 @@
           }
         }
       ]
+    },
+    "getFilteredTokens": {
+      "apiHost": "https://deep-index.moralis.io",
+      "summary": "Get Filtered Tokens",
+      "description": "Returns filtered tokens based on specified metrics and criteria.",
+      "method": "POST",
+      "path": "/api/v2.2/discovery/tokens",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "description": "The request payload for filtering tokens",
+        "type": "object",
+        "fields": [
+          {
+            "name": "chain",
+            "type": "string",
+            "required": true,
+            "description": "The chain ID in hex format",
+            "example": "0x1"
+          },
+          {
+            "name": "filters",
+            "type": "array",
+            "required": true,
+            "description": "Array of filter criteria",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "metric",
+                  "type": "string",
+                  "description": "The metric to filter on",
+                  "example": "experiencedBuyers"
+                },
+                {
+                  "name": "timeFrame",
+                  "type": "string",
+                  "description": "The time frame for the filter",
+                  "example": "oneMonth"
+                },
+                {
+                  "name": "gt",
+                  "type": "string",
+                  "description": "Greater-than value for the filter.",
+                  "required": false,
+                  "example": "10"
+                },
+                {
+                  "name": "lt",
+                  "type": "string",
+                  "description": "Less-than value for the filter.",
+                  "required": false
+                },
+                {
+                  "name": "eq",
+                  "type": "string",
+                  "description": "Equal to value for the filter.",
+                  "required": false
+                }
+              ]
+            }
+          },
+          {
+            "name": "sortBy",
+            "type": "object",
+            "required": false,
+            "description": "Sorting criteria",
+            "fields": [
+              {
+                "name": "metric",
+                "type": "string",
+                "required": true,
+                "description": "Metric to sort by",
+                "example": "experiencedBuyers"
+              },
+              {
+                "name": "timeFrame",
+                "type": "string",
+                "required": true,
+                "description": "Time frame for the metric",
+                "example": "oneMonth"
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "required": true,
+                "description": "Sort direction (ASC or DESC)",
+                "example": "DESC"
+              }
+            ]
+          },
+          {
+            "name": "timeFramesToReturn",
+            "type": "array",
+            "required": false,
+            "description": "List of time frames to include in the response.",
+            "field": {
+              "type": "string",
+              "example": "oneDay"
+            }
+          },
+          {
+            "name": "metricsToReturn",
+            "type": "array",
+            "required": false,
+            "description": "Metrics to include in response",
+            "field": {
+              "type": "string",
+              "example": "marketCap"
+            }
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "required": false,
+            "description": "Maximum number of results to return",
+            "example": 100
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns filtered token data",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "metadata",
+                "type": "object",
+                "required": true,
+                "description": "Token metadata",
+                "fields": [
+                  {
+                    "name": "tokenAddress",
+                    "type": "string",
+                    "required": true,
+                    "description": "The token contract address",
+                    "example": "0x55d398326f99059ff775485246999027b3197955"
+                  },
+                  {
+                    "name": "chainId",
+                    "type": "string",
+                    "required": true,
+                    "description": "The chain ID in hex format",
+                    "example": "0x1"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true,
+                    "description": "Token name",
+                    "example": "Tether USD"
+                  },
+                  {
+                    "name": "symbol",
+                    "type": "string",
+                    "required": true,
+                    "description": "Token symbol",
+                    "example": "USDT"
+                  },
+                  {
+                    "name": "decimals",
+                    "type": "number",
+                    "required": true,
+                    "description": "Token decimals",
+                    "example": 18
+                  },
+                  {
+                    "name": "logo",
+                    "type": "string",
+                    "required": true,
+                    "description": "URL to token logo",
+                    "example": "https://example.com/logo.png"
+                  },
+                  {
+                    "name": "blockNumberMinted",
+                    "type": "number",
+                    "required": true,
+                    "description": "Block number when token was minted",
+                    "example": 176416
+                  },
+                  {
+                    "name": "usdPrice",
+                    "type": "number",
+                    "required": true,
+                    "description": "Current USD price of token",
+                    "example": 0.9982436729635321
+                  },
+                  {
+                    "name": "security",
+                    "type": "object",
+                    "required": true,
+                    "description": "Security information about the token",
+                    "fields": [
+                      {
+                        "name": "isOpenSource",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether contract is open source",
+                        "example": true
+                      },
+                      {
+                        "name": "isProxy",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether contract is a proxy",
+                        "example": false
+                      },
+                      {
+                        "name": "isMintable",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether token is mintable",
+                        "example": true
+                      },
+                      {
+                        "name": "hiddenOwner",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether contract has hidden owner",
+                        "example": false
+                      },
+                      {
+                        "name": "buyTax",
+                        "type": "string",
+                        "required": true,
+                        "description": "Buy tax percentage",
+                        "example": "0"
+                      },
+                      {
+                        "name": "sellTax",
+                        "type": "string",
+                        "required": true,
+                        "description": "Sell tax percentage",
+                        "example": "0"
+                      },
+                      {
+                        "name": "cannotBuy",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether token cannot be bought",
+                        "example": false
+                      },
+                      {
+                        "name": "cannotSellAll",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether all tokens cannot be sold",
+                        "example": false
+                      },
+                      {
+                        "name": "isHoneyPot",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Whether token is a honeypot",
+                        "example": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "metrics",
+                "type": "object",
+                "required": true,
+                "description": "Token metrics data",
+                "example": {}
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": []
     }
   },
   "rpc": {

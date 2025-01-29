@@ -228,6 +228,7 @@ Select what you want to achieve:
 - [Get Token Owners](#get-token-owners)
 - [Get Token Snipers](#get-token-snipers)
 - [Get Trending Tokens](#get-trending-tokens)
+- [Get Filtered Tokens](#get-filtered-tokens)
 
 ### Get Token Balances
 
@@ -323,6 +324,12 @@ Select what you want to achieve:
 | 33  | `getTrendingTokens`              | Get trending tokens                                        | [Method Documentation](/web3-data-api/evm/reference/get-trending-tokens)                  | [https://deep-index.moralis.io/api/v2.2/discovery/tokens/trending](https://deep-index.moralis.io/api/v2.2/discovery/tokens/trending)                       |
 | 34  | `getTopERC20TokensByMarketCap`   | Get the top ERC20 tokens by market cap                     | [Method Documentation](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap)   | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens)               |
 | 35  | `getTopERC20TokensByPriceChange` | Get the top ERC20 tokens by price change                   | [Method Documentation](/web3-data-api/evm/reference/get-top-erc20-tokens-by-price-movers) | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-movers](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-movers)               |
+
+### Get Filtered Tokens
+
+| No. | Method              | Description         | API Reference                                                            | URL                                                                                                                |
+| --- | ------------------- | ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| 36  | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
 
 ## DeFi API
 
