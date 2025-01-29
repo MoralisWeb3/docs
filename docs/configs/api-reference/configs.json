@@ -17317,6 +17317,263 @@
           }
         }
       ]
+    },
+    "getSnipersByPairAddress": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get snipers by pair address.",
+      "description": "Get all snipers (wallets that quickly buy and sell tokens) for a specific token pair address.",
+      "method": "GET",
+      "path": "/pairs/:address/snipers",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The pair address for which snipers are to be retrieved.",
+          "required": true,
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query.",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "holesky",
+            "0x4268",
+            "polygon",
+            "0x89",
+            "polygon amoy",
+            "0x13882",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "palm",
+            "0x2a15c308d",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "linea sepolia",
+            "0xe705",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a",
+            "pulse",
+            "0x171"
+          ]
+        },
+        {
+          "name": "blocksAfterCreation",
+          "description": "The number of blocks after the token pair creation to consider for sniper activity.",
+          "required": false,
+          "type": "number",
+          "example": 3
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns snipers by pair address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "transactionHash",
+                "type": "string",
+                "description": "The hash of the transaction.",
+                "example": "0x2bfcba4715774420936669cd0ff2241d70e9abecab76c9db813602015b3134ad"
+              },
+              {
+                "name": "blockTimestamp",
+                "type": "string",
+                "description": "The timestamp of the block.",
+                "example": "2022-02-22T00:00:00Z"
+              },
+              {
+                "name": "blockNumber",
+                "type": "integer",
+                "description": "The block number.",
+                "example": 21093423
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "An array of sniper details.",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The address of the sniper wallet.",
+                      "example": "0x2bfcba4715774420936669cd0ff2241d70e9abec"
+                    },
+                    {
+                      "name": "totalTokensSniped",
+                      "type": "number",
+                      "description": "Total tokens sniped by the wallet.",
+                      "example": 0
+                    },
+                    {
+                      "name": "totalSnipedUsd",
+                      "type": "number",
+                      "description": "Total USD value of tokens sniped.",
+                      "example": 0
+                    },
+                    {
+                      "name": "totalSnipedTransactions",
+                      "type": "number",
+                      "description": "Total number of snipe transactions.",
+                      "example": 0
+                    },
+                    {
+                      "name": "totalTokensSold",
+                      "type": "number",
+                      "description": "Total tokens sold by the wallet.",
+                      "example": 0
+                    },
+                    {
+                      "name": "totalSoldUsd",
+                      "type": "number",
+                      "description": "Total USD value of tokens sold.",
+                      "example": 0
+                    },
+                    {
+                      "name": "totalSellTransactions",
+                      "type": "number",
+                      "description": "Total number of sell transactions.",
+                      "example": 0
+                    },
+                    {
+                      "name": "currentBalance",
+                      "type": "number",
+                      "description": "Current token balance of the wallet.",
+                      "example": 0
+                    },
+                    {
+                      "name": "currentBalanceUsdValue",
+                      "type": "number",
+                      "description": "Current USD value of the token balance.",
+                      "example": 0
+                    },
+                    {
+                      "name": "realizedProfitPercentage",
+                      "type": "number",
+                      "description": "Percentage of realized profit.",
+                      "example": 0
+                    },
+                    {
+                      "name": "realizedProfitUsd",
+                      "type": "number",
+                      "description": "USD value of realized profit.",
+                      "example": 0
+                    },
+                    {
+                      "name": "snipedTransactions",
+                      "type": "array",
+                      "description": "Array of snipe transactions.",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "transactionHash",
+                            "type": "string",
+                            "description": "The hash of the snipe transaction.",
+                            "example": "0x2bfcba4715774420936669cd0ff2241d70e9abec"
+                          },
+                          {
+                            "name": "blocksAfterCreation",
+                            "type": "number",
+                            "description": "Number of blocks after token pair creation.",
+                            "example": 0
+                          },
+                          {
+                            "name": "transactionTimestamp",
+                            "type": "number",
+                            "description": "Timestamp of the snipe transaction.",
+                            "example": 0
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "sellTransactions",
+                      "type": "array",
+                      "description": "Array of sell transactions.",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "transactionHash",
+                            "type": "string",
+                            "description": "The hash of the sell transaction.",
+                            "example": "0x2bfcba4715774420936669cd0ff2241d70e9abec"
+                          },
+                          {
+                            "name": "blocksAfterCreation",
+                            "type": "number",
+                            "description": "Number of blocks after token pair creation.",
+                            "example": 0
+                          },
+                          {
+                            "name": "transactionTimestamp",
+                            "type": "number",
+                            "description": "Timestamp of the sell transaction.",
+                            "example": 0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
@@ -26764,7 +27021,7 @@
     "getTokenPrice": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token price",
-      "description": "Gets the token price (usd and native) for a given contract address and network. Currently, this API only support fetching token price listed on [Raydium DEX](https://raydium.io/).",
+      "description": "Gets the token price (usd and native) for a given contract address and network. Fetches the price information for the DEX pair with the highest liquidity",
       "method": "GET",
       "path": "/token/:network/:address/price",
       "pathParams": [
@@ -28658,6 +28915,192 @@
         {
           "status": "400",
           "description": ""
+        }
+      ]
+    },
+    "getSnipersByPairAddress": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get snipers by pair address on Solana.",
+      "description": "Get all snipers (wallets that quickly buy and sell tokens) for a specific token pair address on the Solana network.",
+      "method": "GET",
+      "path": "/token/mainnet/pairs/:address/snipers",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The pair address for which snipers are to be retrieved.",
+          "required": true,
+          "example": "72Fxbe17djHuwZ5AtcihK58FERSULoLWiC5sh2Hjhma8",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "blocksAfterCreation",
+          "description": "The number of blocks after the token pair creation to consider for sniper activity.",
+          "required": false,
+          "type": "number",
+          "example": 1000
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns snipers by pair address on Solana.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "blockNumber",
+                "type": "number",
+                "description": "The block number.",
+                "example": 307001996
+              },
+              {
+                "name": "blockTimestamp",
+                "type": "string",
+                "description": "The timestamp of the block.",
+                "example": "2024-12-12T11:22:59.000Z"
+              },
+              {
+                "name": "transactionHash",
+                "type": "string",
+                "description": "The hash of the transaction.",
+                "example": "5hkLKoo7dV9YNBWbszVmKfoqUxdwt64WKhvgXNY6xYkURYMEbRYRdTMg3LvczUr574LEJPCEzomrn2nnvVdj61af"
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "description": "An array of sniper details.",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "walletAddress",
+                      "type": "string",
+                      "description": "The address of the sniper wallet.",
+                      "example": "56S29mZ3wqvw8hATuUUFqKhGcSGYFASRRFNT38W8q7G3"
+                    },
+                    {
+                      "name": "snipedTransactions",
+                      "type": "array",
+                      "description": "Array of snipe transactions.",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "transactionHash",
+                            "type": "string",
+                            "description": "The hash of the snipe transaction.",
+                            "example": "47cMhsbgeVbixpy27GZiwYFGvrJ6Wr9FezNZxfxyUgHaT9yxRuce6oKZvSz8ryvdSm3xjP6z95ooBzzZZjfz8iZU"
+                          },
+                          {
+                            "name": "transactionTimestamp",
+                            "type": "string",
+                            "description": "The timestamp of the snipe transaction.",
+                            "example": "2024-12-12T11:23:00.000Z"
+                          },
+                          {
+                            "name": "blocksAfterCreation",
+                            "type": "number",
+                            "description": "Number of blocks after token pair creation.",
+                            "example": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "sellTransactions",
+                      "type": "array",
+                      "description": "Array of sell transactions.",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "transactionHash",
+                            "type": "string",
+                            "description": "The hash of the sell transaction.",
+                            "example": "3TLitbnH52Vm4CyPL85gU5jogasj9geUTiW2hwUa3X7XAeKkDwGPEX8gaxnfvwQifruMbq9xFFv1JBVHumde9B3R"
+                          },
+                          {
+                            "name": "transactionTimestamp",
+                            "type": "string",
+                            "description": "The timestamp of the sell transaction.",
+                            "example": "2024-12-12T11:24:40.000Z"
+                          },
+                          {
+                            "name": "blocksAfterCreation",
+                            "type": "number",
+                            "description": "Number of blocks after token pair creation.",
+                            "example": 252
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "totalSellTransactions",
+                      "type": "number",
+                      "description": "Total number of sell transactions.",
+                      "example": 1
+                    },
+                    {
+                      "name": "totalSnipedTransactions",
+                      "type": "number",
+                      "description": "Total number of snipe transactions.",
+                      "example": 1
+                    },
+                    {
+                      "name": "totalTokensSniped",
+                      "type": "number",
+                      "description": "Total tokens sniped by the wallet.",
+                      "example": 8.995286313543
+                    },
+                    {
+                      "name": "totalSnipedUsd",
+                      "type": "number",
+                      "description": "Total USD value of tokens sniped.",
+                      "example": 824.632037769
+                    },
+                    {
+                      "name": "totalTokensSold",
+                      "type": "number",
+                      "description": "Total tokens sold by the wallet.",
+                      "example": -8.995286313543
+                    },
+                    {
+                      "name": "totalSoldUsd",
+                      "type": "number",
+                      "description": "Total USD value of tokens sold.",
+                      "example": 885.834928692
+                    },
+                    {
+                      "name": "currentBalance",
+                      "type": "number",
+                      "description": "Current token balance of the wallet.",
+                      "example": 17.990572627086
+                    },
+                    {
+                      "name": "currentBalanceUsdValue",
+                      "type": "number",
+                      "description": "Current USD value of the token balance.",
+                      "example": 0.001649249764442855
+                    },
+                    {
+                      "name": "realizedProfitPercentage",
+                      "type": "number",
+                      "description": "Percentage of realized profit.",
+                      "example": 7.421842484871341
+                    },
+                    {
+                      "name": "realizedProfitUsd",
+                      "type": "number",
+                      "description": "USD value of realized profit.",
+                      "example": 61.20289092299993
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ]
     }

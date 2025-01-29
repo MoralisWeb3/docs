@@ -218,6 +218,7 @@ Select what you want to achieve:
 - [Get Token Pairs & Liquidity](#get-token-pairs--liquidity)
 - [Get Token Stats](#get-token-stats)
 - [Get Token Owners](#get-token-owners)
+- [Get Token Snipers](#get-token-snipers)
 
 ### Get Token Balances
 
@@ -291,6 +292,12 @@ Select what you want to achieve:
 | No. | Method           | Description            | API Reference                                                         | URL                                                                                                                                      |
 | --- | ---------------- | ---------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 23  | `getTokenOwners` | Get ERC20 token owners | [Method Documentation](/web3-data-api/evm/reference/get-token-owners) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners) |
+
+### Get Token Snipers
+
+| No. | Method                    | Description                 | API Reference                                                                    | URL                                                                                                                            |
+| --- | ------------------------- | --------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 24  | `getSnipersByPairAddress` | Get snipers by pair address | [Method Documentation](/web3-data-api/evm/reference/get-snipers-by-pair-address) | [https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers](https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers) |
 
 ## DeFi API
 
