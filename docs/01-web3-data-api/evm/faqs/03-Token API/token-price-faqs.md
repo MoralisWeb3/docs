@@ -63,10 +63,6 @@ For historical prices:
 - The last record from each pool is compared.
 - The pool with higher liquidity is chosen.
 
-### What changed in the historical price selection logic after July 8, 2024?
-
-Previously, the last 5 events of the top 2 pools were considered, and the pool with a higher sum of `blockNumbers` was selected. This logic has been replaced by a simpler liquidity-based approach.
-
 ---
 
 ## Liquidity and Stability
@@ -92,15 +88,6 @@ Yes, using the `min_pair_side_liquidity_usd` query parameter, you can set a cust
 
 - `min_pair_side_liquidity_usd=5000` ensures only pairs with at least $5000 in liquidity are considered.
 
-### How are stablecoin pairs handled?
-
-Stablecoin pairs can be found in the `stableTokens` section of the Chain Strategies API. For Solana, supported stables include:
-
-- **USDC:** `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v`
-- **USDT:** `Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB`
-
----
-
 ## Inactivity Handling
 
 ### How does the API handle inactive tokens?
@@ -115,20 +102,6 @@ Tokens with no trading activity for extended periods can be excluded using the `
 - **GetTokenPrice:** A `400` error is returned with a message about no trading activity.
 - **GetWalletTokenBalancePrice:** Token price is returned as `null`.
 - **GetWalletNetWorth:** Token price is excluded from net worth calculation.
-
----
-
-## Additional Features
-
-### What is `pairTotalLiquidityUsd` in the response?
-
-`pairTotalLiquidityUsd` represents the total liquidity of a pair, calculated as:
-
-- `amountLockedUsd` = total locked amount of the token \* its current USD price
-- `oppositeAmountLockedUsd` = total locked amount of the opposite token \* its current USD price
-- Total liquidity = `amountLockedUsd` + `oppositeAmountLockedUsd`
-
----
 
 ## Errors and Edge Cases
 
