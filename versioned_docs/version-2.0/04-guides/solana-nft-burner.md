@@ -81,8 +81,6 @@ To use the app, we must first connect to the Solana wallet. This can be done by 
 
 The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial.
 
-If you want to know how authentication works, you can take a look at this [video](https://www.youtube.com/watch?v=0fuevxebv_E). You can also check out this [tutorial](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) to learn how to get all NFTs linked to a Solana wallet.
-
 Once the wallet connection is successful, visit the`/nftBurner` page, and we can view the NFTs the wallet is holding.
 
 The first step of the app is to connect the Metaplex SDK with the wallet and the devnet cluster.
