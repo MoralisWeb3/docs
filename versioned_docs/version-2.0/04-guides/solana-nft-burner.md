@@ -13,11 +13,7 @@ Once complete, you can use this dapp to burn spam or unwanted NFTs from your wal
 
 #### Why Does Burning Solana NFTs Give You Solana Tokens Back?
 
-Solana blockchain has this concept called "Rent" that should be paid every time we store data in the Solana account. When we [mint new NFTs](/guides/solana-nft-minter) we pay the rent through a transaction fee.
-
 When we burn NFTs, the Solana program returns back the remaining rent in the NFT account to the current NFT owner. So, even by burning spam or unwanted NFTs, we can recover some Solana tokens from NFT accounts.
-
-In this project, we will use [Metaplex JavaScript SDK](https://github.com/metaplex-foundation/js) to burn and the [Moralis API](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) to view the NFTs.
 
 This is what the final application looks like. You can click on any NFTs in your wallet that you want to remove and click on the burn button to burn the NFT.
 
