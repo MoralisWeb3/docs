@@ -11,8 +11,6 @@ This tutorial teaches you how to create your very own NFT minter dapp in NextJS 
 
 Once complete, you can use this dapp to mint NFTs on the Solana blockchain in a few clicks.
 
-We will use [Metaplex JavaScript SDK](https://github.com/metaplex-foundation/js) and the [Moralis API](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) to mint and view the NFTs.
-
 This is what the final application looks like.
 
 ![Solana NFT Minter Page View](/img/content/5863afd-image.webp)
@@ -80,8 +78,6 @@ To use the app, we must first connect to the Solana wallet. This can be done by 
 Once the wallet connection is successful, visit the`/balances/nft` page, and we can view the NFTs the wallet is holding.
 
 The code related to authentication can be found in the `src/components/modules/ConnectButton` folder, although we won't be looking at the authentication code in this tutorial.
-
-If you want to know how authentication works, you can take a look at this [video](https://www.youtube.com/watch?v=0fuevxebv_E). You can also check out this [tutorial](/web3-data-api/solana/how-to-get-native-solana-balance-by-wallet) to learn how to get all NFTs linked to a Solana wallet.
 
 The first step of the app is to connect the Metaplex SDK with the wallet and the devnet cluster.
 
