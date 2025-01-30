@@ -17320,7 +17320,7 @@
     },
     "getSnipersByPairAddress": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get snipers by pair address.",
+      "summary": "Get snipers by pair address on EVM",
       "description": "Get all snipers (wallets that quickly buy and sell tokens) for a specific token pair address.",
       "method": "GET",
       "path": "/pairs/:address/snipers",
@@ -17329,7 +17329,7 @@
           "name": "address",
           "description": "The pair address for which snipers are to be retrieved.",
           "required": true,
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905",
+          "example": "0x85218527945d48167A682e277867F1539AD00068",
           "type": "string"
         }
       ],
@@ -33263,6 +33263,13 @@
             "type": "array",
             "required": true,
             "description": "Array of filter criteria",
+            "example": [
+              {
+                "metric": "experiencedBuyers",
+                "timeFrame": "oneMonth",
+                "gt": "10"
+              }
+            ],
             "field": {
               "type": "object",
               "fields": [
@@ -33354,7 +33361,7 @@
             "type": "number",
             "required": false,
             "description": "Maximum number of results to return",
-            "example": 100
+            "example": 5
           }
         ]
       },
