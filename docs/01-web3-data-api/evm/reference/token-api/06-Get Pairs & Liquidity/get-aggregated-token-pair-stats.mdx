@@ -14,6 +14,7 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 # Get Aggregated Token Pair Stats <MainnetBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+import Admonition from "@theme/Admonition";
 
 <SolanaApiBanner
   customTitle="Looking for aggregated token pair stats on Solana?"
@@ -21,4 +22,10 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
   customButtonText="Explore Solana API"
   customButtonLink="/web3-data-api/solana/reference/get-aggregated-token-pair-stats"
 />
-<ApiReference {...config.token.getAggregatedTokenPairStats} />
+
+<ApiReference {...config.token.getAggregatedTokenPairStats}>
+  <Admonition type="info" title="Note">
+    This endpoint has a limit of 200 pairs that is considered when aggregating
+    the totals.
+  </Admonition>
+</ApiReference>

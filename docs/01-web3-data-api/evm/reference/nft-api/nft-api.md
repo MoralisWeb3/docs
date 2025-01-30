@@ -17,6 +17,7 @@ Select what you want to achieve:
 - [Get NFT Trades](#get-nft-trades)
 - [Get NFT Stats](#get-nft-stats)
 - [Get NFT Traits and Rarity](#get-nft-traits-and-rarity)
+- [Get Trending NFTs](#get-trending-nfts)
 
 ### Get NFTs
 
@@ -92,3 +93,10 @@ Select what you want to achieve:
 | 28  | `getNFTTraitsByCollectionPaginate` | Get NFT traits by collection (paginated, no limit)                      | [Method Documentation](/web3-data-api/evm/reference/get-nft-traits-by-collection-paginate) | [https://deep-index.moralis.io/api/v2.2/nft/:address/traits/paginate](https://deep-index.moralis.io/api/v2.2/nft/:address/traits/paginate) |                |
 | 29  | `getNFTsByTraits`                  | Get NFTs by traits                                                      | [Method Documentation](/web3-data-api/evm/reference/get-nfts-by-traits)                    | [https://deep-index.moralis.io/api/v2.2/nft/:address/nfts-by-traits](https://deep-index.moralis.io/api/v2.2/nft/:address/nfts-by-traits)   | ✅             |
 | 30  | `resyncNFTTraitsByCollection`      | Resync NFT traits by collection                                         | [Method Documentation](/web3-data-api/evm/reference/resync-nft-traits-by-collection)       | [https://deep-index.moralis.io/api/v2.2/nft/:address/traits/resync](https://deep-index.moralis.io/api/v2.2/nft/:address/traits/resync)     |                |
+
+## Get Trending NFTs
+
+| No. | Method                                | Description                                   | API Reference                                                                                  | URL                                                                                                                                                        |
+| --- | ------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 31  | `getTopNFTCollectionsByMarketCap`     | Get the top NFT collections by market cap     | [Method Documentation](/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap)     | [https://deep-index.moralis.io/api/v2.2/market-data/nfts/top-collections](https://deep-index.moralis.io/api/v2.2/market-data/nfts/top-collections)         |
+| 32  | `getTopNFTCollectionsByTradingVolume` | Get the top NFT collections by trading volume | [Method Documentation](/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume) | [https://deep-index.moralis.io/api/v2.2/market-data/nfts/hottest-collections](https://deep-index.moralis.io/api/v2.2/market-data/nfts/hottest-collections) |

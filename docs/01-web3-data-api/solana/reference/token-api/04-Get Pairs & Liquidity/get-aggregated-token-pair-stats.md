@@ -10,6 +10,7 @@ import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
+import Admonition from "@theme/Admonition";
 
 # Get Aggregated Token Pair Stats <MainnetBadge />
 
@@ -20,4 +21,9 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
   customButtonLink="/web3-data-api/evm/reference/get-aggregated-token-pair-stats"
 />
 
-<ApiReference {...config.solana.getAggregatedTokenPairStats} />
+<ApiReference {...config.solana.getAggregatedTokenPairStats} >
+<Admonition type="info" title="Note">
+This endpoint has a limit of 200 pairs that is considered when aggregating
+the totals.
+</Admonition>
+</ApiReference>
