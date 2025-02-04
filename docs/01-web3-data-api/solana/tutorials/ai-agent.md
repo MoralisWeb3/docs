@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Tutorials"
+title: "Web3 AI Agent Tutorials"
 slug: "/web3-data-api/solana/ai-agent-tutorials"
 sidebar_position: 4
 sidebar_class_name: "sidebar-ai-agent-tutorials"
