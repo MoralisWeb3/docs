@@ -6,7 +6,7 @@ authors:
 tags: [Web3 Data API]
 ---
 
-Today we're super excited to announce the launch of [ERC20 Token Owners](/web3-data-api/evm/reference/get-token-owners) 🤩 
+Today we're super excited to announce the launch of [ERC20 Token Owners](/web3-data-api/evm/reference/get-token-holders) 🤩
 
 This endpoint allows you to instantly fetch all owners of a given ERC20 token, sorted by highest holders first, letting you quickly understand the top holders of a token.
 
@@ -26,4 +26,4 @@ Here's an example response:
 }
 ```
 
-[Test it out yourself](/web3-data-api/evm/reference/get-token-owners) and start building today 🚀
+[Test it out yourself](/web3-data-api/evm/reference/get-token-holders) and start building today 🚀
