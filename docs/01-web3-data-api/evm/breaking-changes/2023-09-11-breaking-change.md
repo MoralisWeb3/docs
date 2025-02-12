@@ -117,7 +117,7 @@ The endpoints are:
 #### New: Get Block stats
 
 - Endpoint: `/block/{block_number_or_hash}/stats`
-- [View API reference](/web3-data-api/evm/reference/get-block-stats)
+- [View API reference]
 - Example response:
 
 ```js
