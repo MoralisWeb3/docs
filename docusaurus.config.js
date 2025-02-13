@@ -175,7 +175,7 @@ const config = {
             exact: true,
           },
           {
-            to: "/web3-data-api/solana/reference",
+            to: "/web3-data-api/solana",
             label: "Solana API",
             position: "left",
             exact: true,
