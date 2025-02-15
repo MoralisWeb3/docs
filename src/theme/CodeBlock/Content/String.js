@@ -42,7 +42,7 @@ export default function CodeBlockString({
     showLineNumbersProp ?? containsLineNumbers(metastring);
 
   useEffect(() => {
-    // wrapping code block on intial render
+    // wrapping code block on initial render
     wordWrap.toggle();
   }, []);
 
