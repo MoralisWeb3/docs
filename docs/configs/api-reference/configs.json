@@ -18476,6 +18476,401 @@
           }
         }
       ]
+    },
+
+    "getTrendingTokens": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get trending tokens",
+      "description": "Get trending tokens",
+      "method": "GET",
+      "path": "/tokens/trending",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "optimism",
+            "0xa",
+            "pulsechain",
+            "0x171",
+            "base",
+            "0x2105",
+            "ronin",
+            "0x7e4",
+            "solana"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token details",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chainId",
+                  "type": "string",
+                  "example": "0x1",
+                  "description": "The blockchain identifier the token is on",
+                  "required": true
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "example": "0xadd39272e83895e7d3f244f696b7a25635f34234",
+                  "description": "The contract address of the token",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "example": "Pepe Unchained",
+                  "description": "The official name of the token",
+                  "required": true
+                },
+                {
+                  "name": "uniqueName",
+                  "type": "string",
+                  "example": "pepe-unchained-19",
+                  "description": "Unique identifier for the token",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "example": "PEPU",
+                  "description": "The abbreviated symbol of the token",
+                  "required": true
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "example": 18,
+                  "description": "Number of decimal places for the token",
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "example": "https://d23exngyjlavgo.cloudfront.net/0x1_0xadd39272e83895e7d3f244f696b7a25635f34234",
+                  "description": "URL to the token's logo image",
+                  "required": false
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "example": 0.00790310700101,
+                  "description": "Current price of the token in USD",
+                  "required": true
+                },
+                {
+                  "name": "createdAt",
+                  "type": "number",
+                  "example": 1733839223,
+                  "description": "Token creation timestamp",
+                  "required": true
+                },
+                {
+                  "name": "marketCap",
+                  "type": "number",
+                  "example": 63224066,
+                  "description": "Market capitalization of the token in USD",
+                  "required": true
+                },
+                {
+                  "name": "liquidityUsd",
+                  "type": "number",
+                  "example": 1150563,
+                  "description": "Current liquidity in USD",
+                  "required": true
+                },
+                {
+                  "name": "holders",
+                  "type": "number",
+                  "example": 75783,
+                  "description": "Number of token holders",
+                  "required": true
+                },
+                {
+                  "name": "pricePercentChange",
+                  "type": "object",
+                  "description": "Percentage changes in token price over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": -0.03552125070606443,
+                      "description": "Percentage price change in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": -0.09207686802800803,
+                      "description": "Percentage price change in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": -0.11019146356496257,
+                      "description": "Percentage price change in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": -0.13592146886852405,
+                      "description": "Percentage price change in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "totalVolume",
+                  "type": "object",
+                  "description": "Trading volume over various time periods in USD",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 97580,
+                      "description": "Trading volume in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 761204,
+                      "description": "Trading volume in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 1010638,
+                      "description": "Trading volume in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 1291895,
+                      "description": "Trading volume in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "transactions",
+                  "type": "object",
+                  "description": "Number of transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 119,
+                      "description": "Number of transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 603,
+                      "description": "Number of transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 904,
+                      "description": "Number of transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 1428,
+                      "description": "Number of transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "buyTransactions",
+                  "type": "object",
+                  "description": "Number of buy transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 54,
+                      "description": "Number of buy transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 360,
+                      "description": "Number of buy transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 511,
+                      "description": "Number of buy transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 746,
+                      "description": "Number of buy transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "sellTransactions",
+                  "type": "object",
+                  "description": "Number of sell transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 65,
+                      "description": "Number of sell transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 243,
+                      "description": "Number of sell transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 393,
+                      "description": "Number of sell transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 682,
+                      "description": "Number of sell transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "buyers",
+                  "type": "object",
+                  "description": "Number of unique buyers over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 47,
+                      "description": "Number of unique buyers in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 275,
+                      "description": "Number of unique buyers in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 359,
+                      "description": "Number of unique buyers in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 515,
+                      "description": "Number of unique buyers in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "sellers",
+                  "type": "object",
+                  "description": "Number of unique sellers over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 57,
+                      "description": "Number of unique sellers in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 210,
+                      "description": "Number of unique sellers in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 339,
+                      "description": "Number of unique sellers in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 576,
+                      "description": "Number of unique sellers in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   },
   "balance": {
@@ -30498,6 +30893,400 @@
         }
       ],
       "codeSamples": []
+    },
+    "getTrendingTokens": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get trending tokens",
+      "description": "Get trending tokens",
+      "method": "GET",
+      "path": "/tokens/trending",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "optimism",
+            "0xa",
+            "pulsechain",
+            "0x171",
+            "base",
+            "0x2105",
+            "ronin",
+            "0x7e4",
+            "solana"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the Solana token details",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chainId",
+                  "type": "string",
+                  "example": "solana",
+                  "description": "The blockchain identifier (always 'solana' for Solana chain)",
+                  "required": true
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "example": "CfJ58KZpVvPm5ketxbUMmRMHZh41AWZh9qx8r9cspump",
+                  "description": "The Solana token address",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "example": "doodles",
+                  "description": "The official name of the token",
+                  "required": true
+                },
+                {
+                  "name": "uniqueName",
+                  "type": "string",
+                  "example": "doodles-821143262",
+                  "description": "Unique identifier for the token",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "example": "DOOD",
+                  "description": "The abbreviated symbol of the token",
+                  "required": true
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "example": 6,
+                  "description": "Number of decimal places for the token",
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "example": "https://d23exngyjlavgo.cloudfront.net/solana_CfJ58KZpVvPm5ketxbUMmRMHZh41AWZh9qx8r9cspump",
+                  "description": "URL to the token's logo image",
+                  "required": false
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "example": 0.000655483894313,
+                  "description": "Current price of the token in USD",
+                  "required": true
+                },
+                {
+                  "name": "createdAt",
+                  "type": "number",
+                  "example": 1739745029,
+                  "description": "Token creation timestamp",
+                  "required": true
+                },
+                {
+                  "name": "marketCap",
+                  "type": "number",
+                  "example": 655478,
+                  "description": "Market capitalization of the token in USD",
+                  "required": true
+                },
+                {
+                  "name": "liquidityUsd",
+                  "type": "number",
+                  "example": 56983,
+                  "description": "Current liquidity in USD",
+                  "required": true
+                },
+                {
+                  "name": "holders",
+                  "type": "number",
+                  "example": 24667,
+                  "description": "Number of token holders",
+                  "required": true
+                },
+                {
+                  "name": "pricePercentChange",
+                  "type": "object",
+                  "description": "Percentage changes in token price over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": -0.33801255044203293,
+                      "description": "Percentage price change in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": -0.48742981106028005,
+                      "description": "Percentage price change in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 1.1810803769845877,
+                      "description": "Percentage price change in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 7.537889198641526,
+                      "description": "Percentage price change in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "totalVolume",
+                  "type": "object",
+                  "description": "Trading volume over various time periods in USD",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 434764,
+                      "description": "Trading volume in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 1729031,
+                      "description": "Trading volume in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 9100448,
+                      "description": "Trading volume in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 10568778,
+                      "description": "Trading volume in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "transactions",
+                  "type": "object",
+                  "description": "Number of transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 9589,
+                      "description": "Number of transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 34103,
+                      "description": "Number of transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 128212,
+                      "description": "Number of transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 145532,
+                      "description": "Number of transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "buyTransactions",
+                  "type": "object",
+                  "description": "Number of buy transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 4684,
+                      "description": "Number of buy transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 18119,
+                      "description": "Number of buy transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 71017,
+                      "description": "Number of buy transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 80921,
+                      "description": "Number of buy transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "sellTransactions",
+                  "type": "object",
+                  "description": "Number of sell transactions over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 4905,
+                      "description": "Number of sell transactions in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 15984,
+                      "description": "Number of sell transactions in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 57195,
+                      "description": "Number of sell transactions in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 64611,
+                      "description": "Number of sell transactions in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "buyers",
+                  "type": "object",
+                  "description": "Number of unique buyers over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 3937,
+                      "description": "Number of unique buyers in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 14699,
+                      "description": "Number of unique buyers in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 52021,
+                      "description": "Number of unique buyers in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 58690,
+                      "description": "Number of unique buyers in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "sellers",
+                  "type": "object",
+                  "description": "Number of unique sellers over various time periods",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "1h",
+                      "type": "number",
+                      "example": 3368,
+                      "description": "Number of unique sellers in the last hour",
+                      "required": true
+                    },
+                    {
+                      "name": "4h",
+                      "type": "number",
+                      "example": 8955,
+                      "description": "Number of unique sellers in the last 4 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "12h",
+                      "type": "number",
+                      "example": 25689,
+                      "description": "Number of unique sellers in the last 12 hours",
+                      "required": true
+                    },
+                    {
+                      "name": "24h",
+                      "type": "number",
+                      "example": 28200,
+                      "description": "Number of unique sellers in the last 24 hours",
+                      "required": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   },
 
@@ -32699,373 +33488,6 @@
                   "type": "number",
                   "example": 1,
                   "description": "Current price of the token in USD",
-                  "required": true
-                },
-                {
-                  "name": "security_score",
-                  "type": "number",
-                  "example": 88,
-                  "description": "Security score assigned to the token",
-                  "required": true
-                },
-                {
-                  "name": "market_cap",
-                  "type": "number",
-                  "example": 1351767630.85,
-                  "description": "Market capitalization of the token",
-                  "required": true
-                },
-                {
-                  "name": "fully_diluted_valuation",
-                  "type": "number",
-                  "example": 1363915420.28,
-                  "description": "Fully diluted market cap of the token",
-                  "required": true
-                },
-                {
-                  "name": "twitter_followers",
-                  "type": "number",
-                  "example": 255217,
-                  "description": "Number of followers for the token's official Twitter account",
-                  "required": true
-                },
-                {
-                  "name": "holders_change",
-                  "type": "object",
-                  "description": "Changes in the number of token holders over various time periods",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in the last month",
-                      "required": true
-                    }
-                  ]
-                },
-                {
-                  "name": "liquidity_change_usd",
-                  "type": "object",
-                  "description": "Changes in liquidity over various time periods, in USD",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in liquidity in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in liquidity in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in liquidity in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in liquidity in the last month",
-                      "required": true
-                    }
-                  ]
-                },
-                {
-                  "name": "experienced_net_buyers_change",
-                  "type": "object",
-                  "description": "Changes in the count of experienced net buyers over various time periods",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in experienced net buyers in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in experienced net buyers in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in experienced net buyers in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in experienced net buyers in the last month",
-                      "required": true
-                    }
-                  ]
-                },
-                {
-                  "name": "volume_change_usd",
-                  "type": "object",
-                  "description": "Changes in trading volume over various time periods, in USD",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in volume in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in volume in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in volume in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in volume in the last month",
-                      "required": true
-                    }
-                  ]
-                },
-                {
-                  "name": "net_volume_change_usd",
-                  "type": "object",
-                  "description": "Changes in net trading volume over various time periods, in USD",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in net volume in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Change in net volume in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in net volume in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Change in net volume in the last month",
-                      "required": true
-                    }
-                  ]
-                },
-                {
-                  "name": "price_percent_change_usd",
-                  "type": "object",
-                  "description": "Percentage changes in token price over various time periods",
-                  "required": true,
-                  "fields": [
-                    {
-                      "name": "1h",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Percentage price change in the last hour",
-                      "required": true
-                    },
-                    {
-                      "name": "1d",
-                      "type": "number",
-                      "example": 14,
-                      "description": "Percentage price change in the last day",
-                      "required": true
-                    },
-                    {
-                      "name": "1w",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Percentage price change in the last week",
-                      "required": true
-                    },
-                    {
-                      "name": "1M",
-                      "type": "number",
-                      "example": 162,
-                      "description": "Percentage price change in the last month",
-                      "required": true
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "getTrendingTokens": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get trending tokens",
-      "description": "Get trending tokens",
-      "method": "GET",
-      "path": "/discovery/tokens/trending",
-      "pathParams": [],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "mainnet",
-            "0x1",
-            "matic",
-            "0x89",
-            "polygon",
-            "bsc",
-            "binance",
-            "0x38",
-            "fantom",
-            "ftm",
-            "0xfa",
-            "arbitrum",
-            "0xa4b1",
-            "optimism",
-            "0xa",
-            "pulsechain",
-            "0x171",
-            "base",
-            "0x2105"
-          ]
-        },
-        {
-          "name": "min_market_cap",
-          "description": "The minimum market cap in usd of a token",
-          "required": false,
-          "example": 50000000,
-          "type": "number"
-        },
-        {
-          "name": "security_score",
-          "description": "The minimum security score of a token",
-          "required": false,
-          "example": 80,
-          "type": "number"
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the token details",
-          "body": {
-            "type": "array",
-            "field": {
-              "type": "object",
-              "fields": [
-                {
-                  "name": "chain_id",
-                  "type": "string",
-                  "example": "0x1",
-                  "description": "The blockchain identifier the token is on",
-                  "required": true
-                },
-                {
-                  "name": "token_address",
-                  "type": "string",
-                  "example": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
-                  "description": "The contract address of the token",
-                  "required": true
-                },
-                {
-                  "name": "token_name",
-                  "type": "string",
-                  "example": "Maker",
-                  "description": "The official name of the token",
-                  "required": true
-                },
-                {
-                  "name": "token_symbol",
-                  "type": "string",
-                  "example": "MKR",
-                  "description": "The abbreviated symbol of the token",
-                  "required": true
-                },
-                {
-                  "name": "token_logo",
-                  "type": "string",
-                  "example": "string",
-                  "description": "URL to the token's logo image",
-                  "required": false
-                },
-                {
-                  "name": "price_usd",
-                  "type": "number",
-                  "example": 1,
-                  "description": "Current price of the token in USD",
-                  "required": true
-                },
-                {
-                  "name": "token_age_in_days",
-                  "type": "number",
-                  "example": 1,
-                  "description": "Age of the token in days",
-                  "required": true
-                },
-                {
-                  "name": "on_chain_strength_index",
-                  "type": "number",
-                  "example": 1,
-                  "description": "Index representing the on-chain strength of the token",
                   "required": true
                 },
                 {
