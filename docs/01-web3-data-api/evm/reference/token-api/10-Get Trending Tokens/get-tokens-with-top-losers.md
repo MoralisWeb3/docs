@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: Get tokens with top losers
+sidebar_label: Get Top Losers
 
 slug: /web3-data-api/evm/reference/get-tokens-with-top-losers
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Get tokens with top gainers
+sidebar_label: Get Top Gainers
 
 slug: /web3-data-api/evm/reference/get-tokens-with-top-gainers
 ---

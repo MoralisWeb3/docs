@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-sidebar_label: Get trending tokens
+sidebar_label: Get Trending Tokens
 
 slug: /web3-data-api/evm/reference/get-trending-tokens
 ---
