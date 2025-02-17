@@ -15,4 +15,4 @@ import ReactMarkdown from "react-markdown";
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<ApiReference {...config.discovery.getFilteredTokens}></ApiReference>
+<ApiReference {...config.solana.getFilteredTokens}></ApiReference>
