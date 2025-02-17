@@ -7,15 +7,14 @@ sidebar_class_name: "sidebar-market-data-api"
 
 ![23_04_Market-Data-API](https://user-images.githubusercontent.com/13417464/232770625-5621e164-165b-4cd4-afe2-365b6b2b8591.jpg)
 
-
 ## What is the Market Data API?
 
 Our Market Data API allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers. We're introducing four new endpoints with this launch, including:
 
-- [ERC20 top movers](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap)
-- [ERC20 top 50 tokens](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers)
-- [Top NFT collections by market cap](/market-insights-api/reference/get-top-nft-collections-by-market-cap)
-- [Hot NFT collections by trading volume](/market-insights-api/reference/get-top-nft-collections-by-trading-volume)
+- [ERC20 top movers]
+- [ERC20 top 50 tokens]
+- [Top NFT collections by market cap]
+- [Hot NFT collections by trading volume]
 
 ## Example use cases
 
@@ -30,15 +29,18 @@ The use cases for our NFT API are truly endless! Some popular use cases include:
 
 Our initial launch only supports Ethereum. Future chains will be coming!
 
-| Chain Name        | Chain Id (HEX) | Chain Id (INT) |
-| ----------------- | -------------- | -------------- |
-| eth               | 0x1            | 1              |
+| Chain Name | Chain Id (HEX) | Chain Id (INT) |
+| ---------- | -------------- | -------------- |
+| eth        | 0x1            | 1              |
 
 ## How often is the data refreshed?
+
 All endpoints are refreshed on an hourly basis and report on the last 24 hours of data.
 
 ## Is the Market Data API available on all plans?
+
 No, this set of endpoints is not available to users on our free plan (requires Pro plan or above).
 
 ## Feature requests or feedback
+
 We would welcome your feature requests or feedback on how we can improve the next iteration of our Market Data API. Please submit all feedback here: https://moralis.typeform.com/to/fcCh9UEC
