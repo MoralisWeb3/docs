@@ -18277,7 +18277,7 @@
         {
           "name": "chains",
           "description": "The chain(s) to query",
-          "required": true,
+          "required": false,
           "type": "string",
           "example": "eth"
         },
@@ -18287,6 +18287,12 @@
           "required": true,
           "type": "string",
           "example": "pepe"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
         }
       ],
       "responses": [
