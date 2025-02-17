@@ -14,4 +14,11 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 
 # Get trending tokens <MainnetBadge /> <PremiumEndpointBadge />
 
+  <Admonition type="info" icon="💡" title="Premium Endpoint">
+    <p>
+      To use this API, you will need an API key associated with a Moralis
+      account on the <strong>Business</strong> plan or higher.
+    </p>
+  </Admonition>
+
 <ApiReference {...config.solana.getTrendingTokens} />
