@@ -13,16 +13,12 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 
 # Get Top Tokens by Market Cap <MainnetBadge /> <PremiumEndpointBadge />
 
-<ApiReference {...config["market-data"].getTopERC20TokensByMarketCap}>
-  {/* <Admonition type="info" icon="💡" title="PREMIUM ENDPOINT">
-    <p>
-      To use this API, you will need an API key under a Moralis account with the
-      Pro or above plan. To upgrade your API plan, go to the{" "}
-      <Link href="https://admin.moralis.com/account/billing">billing page</Link>{" "}
-      in the Moralis Dashboard.
-    </p>
-    <p>
-    This API has no parameter and you can simply use the <b>Try It</b> button to test it out.
-    </p>
-  </Admonition> */}
-</ApiReference>
+<Admonition type="info" icon="💡" title="Premium Endpoint">
+  <p>
+    To use this API, you will need an API key associated with a Moralis account
+    on the <strong>Business</strong> plan or higher.
+  </p>
+</Admonition>
+<ApiReference
+  {...config["market-data"].getTopERC20TokensByMarketCap}
+></ApiReference>
