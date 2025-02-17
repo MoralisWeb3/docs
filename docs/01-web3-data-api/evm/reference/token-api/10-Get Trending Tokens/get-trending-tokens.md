@@ -1,8 +1,9 @@
 ---
+title: Get Trending Tokens
+description: Retrieve a list of trending tokens based on various criteria.
+slug: /web3-data-api/evm/reference/get-trending-tokens
 sidebar_position: 0
 sidebar_label: Get Trending Tokens
-
-slug: /web3-data-api/evm/reference/get-trending-tokens
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -12,7 +13,7 @@ import config from "../../../../../configs/api-reference/configs.json";
 import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
-# Get trending tokens <MainnetBadge /> <PremiumEndpointBadge />
+# Get Trending Tokens <MainnetBadge /> <PremiumEndpointBadge />
 
   <Admonition type="info" icon="💡" title="Premium Endpoint">
     <p>
