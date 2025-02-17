@@ -18275,18 +18275,18 @@
       "pathParams": [],
       "queryParams": [
         {
-          "name": "chains",
-          "description": "The chain(s) to query",
-          "required": false,
-          "type": "string",
-          "example": "eth"
-        },
-        {
           "name": "query",
           "description": "Search query - can be token address, token name or token symbol",
           "required": true,
           "type": "string",
           "example": "pepe"
+        },
+        {
+          "name": "chains",
+          "description": "The chain(s) to query",
+          "required": false,
+          "type": "string",
+          "example": "eth"
         },
         {
           "name": "limit",
