@@ -11,7 +11,10 @@ import config from "../../../../../configs/api-reference/configs.json";
 import Admonition from "@theme/Admonition";
 import ReactMarkdown from "react-markdown";
 
-# Get Filtered Tokens
+import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
+
+# Get Filtered Tokens <MainnetBadge /> <PremiumEndpointBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 

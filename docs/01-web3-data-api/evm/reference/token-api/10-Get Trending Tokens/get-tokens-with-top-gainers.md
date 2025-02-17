@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 1
 sidebar_label: Get tokens with top gainers
 
 slug: /web3-data-api/evm/reference/get-tokens-with-top-gainers
@@ -10,7 +10,10 @@ import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
 import config from "../../../../../configs/api-reference/configs.json";
 
-# Get tokens with top gainers
+import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
+
+# Get tokens with top gainers <MainnetBadge /> <PremiumEndpointBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 

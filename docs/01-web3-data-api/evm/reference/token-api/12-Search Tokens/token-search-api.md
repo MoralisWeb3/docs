@@ -8,8 +8,10 @@ description: Search for tokens based on contract address, token name, or token s
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "@site/docs/configs/api-reference/configs.json";
+import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
+import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
-# Search Tokens
+# Search Tokens <MainnetBadge /> <PremiumEndpointBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
