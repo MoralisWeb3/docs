@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Search Tokens
-slug: /web3-data-api/evm/reference/search-tokens
+slug: /web3-data-api/solana/reference/search-tokens
 title: Search Tokens on EVM & Solana
 description: Search for tokens based on contract address, token name, or token symbol - EVM & Solana
 ---
@@ -26,4 +26,4 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
     </p>
 </Admonition>
 
-<ApiReference {...config.token.searchTokens} />
+<ApiReference {...config.solana.searchTokens} />

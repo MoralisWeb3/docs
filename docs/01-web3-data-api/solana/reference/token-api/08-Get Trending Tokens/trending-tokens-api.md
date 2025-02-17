@@ -2,7 +2,7 @@
 sidebar_position: 0
 sidebar_label: Get Trending Tokens
 
-slug: /web3-data-api/evm/reference/get-trending-tokens
+slug: /web3-data-api/solana/reference/get-trending-tokens
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -21,4 +21,4 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
     </p>
   </Admonition>
 
-<ApiReference {...config.token.getTrendingTokens} />
+<ApiReference {...config.solana.getTrendingTokens} />
