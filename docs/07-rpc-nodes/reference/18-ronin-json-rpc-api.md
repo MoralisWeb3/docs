@@ -40,7 +40,6 @@ The Ronin RPC API is available for the following networks:
 - [eth_getBlockByNumber](/rpc-nodes/reference/eth_getBlockByNumber)
 - [eth_getBlockTransactionCountByHash](/rpc-nodes/reference/eth_getBlockTransactionCountByHash)
 - [eth_getBlockTransactionCountByNumber](/rpc-nodes/reference/eth_getBlockTransactionCountByNumber)
-- [eth_getBlockReceipts](/rpc-nodes/reference/eth_getBlockReceipts)
 - [eth_getCode](/rpc-nodes/reference/eth_getCode)
 - [eth_getLogs](/rpc-nodes/reference/eth_getLogs)
 - [eth_getProof](/rpc-nodes/reference/eth_getProof)
