@@ -1666,7 +1666,7 @@ li.dropdown-divider {
 
 .simplehash-migration-table th,
 .simplehash-migration-table td {
-  padding: 8px 6px;
+  padding: 8px 12px;
   text-align: left;
   border: 1px solid var(--ifm-table-border-color);
   vertical-align: top;
@@ -1681,30 +1681,25 @@ li.dropdown-divider {
   font-weight: var(--ifm-font-weight-semibold);
 }
 
-/* Column width distribution */
+/* Column width distribution for the new table structure */
 .simplehash-migration-table th:nth-child(1),
 .simplehash-migration-table td:nth-child(1) {
-  width: 15%; /* Feature column */
+  width: 10%; /* Chain column */
 }
 
 .simplehash-migration-table th:nth-child(2),
 .simplehash-migration-table td:nth-child(2) {
-  width: 25%; /* SimpleHash Endpoint column */
+  width: 25%; /* Moralis Equivalent column */
 }
 
 .simplehash-migration-table th:nth-child(3),
 .simplehash-migration-table td:nth-child(3) {
-  width: 20%; /* Moralis Equivalent column */
+  width: 45%; /* Moralis URL column */
 }
 
 .simplehash-migration-table th:nth-child(4),
 .simplehash-migration-table td:nth-child(4) {
-  width: 25%; /* Moralis URL column */
-}
-
-.simplehash-migration-table th:nth-child(5),
-.simplehash-migration-table td:nth-child(5) {
-  width: 15%; /* Moralis Documentation column */
+  width: 20%; /* Documentation column */
 }
 
 .simplehash-migration-table code {
@@ -1715,6 +1710,17 @@ li.dropdown-divider {
 
 .simplehash-migration-table tr:nth-child(even) td {
   background-color: var(--ifm-table-stripe-background);
+}
+
+/* SimpleHash endpoint heading styles */
+.simplehash-endpoint {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 14px;
+  background-color: var(--ifm-code-background);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 /* Make sure links don't overflow */
