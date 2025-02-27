@@ -7,15 +7,13 @@ sidebar_label: "Get ERC20 token spender allowance"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-
-
 ## Step 1: Setup Moralis
 
 Read the article [Setting Up Moralis: Getting Started](/web3-data-api/evm/get-your-api-key) and make sure to finish all the steps. Only after that you can go ahead to complete this guide.
 
 ## Step 2: Get the spender allowance of an ERC20 token
 
-In order to get the spender allowance, Moralis provides you with an [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance) endpoint.
+In order to get the spender allowance, Moralis provides you with an [getTokenAllowance]() endpoint.
 
 Here you'll need four parameters: `address` , `chain`, `ownerAddress` , `spenderAddress`.
 
@@ -142,7 +140,7 @@ Congratulations 🥳 You just got the spender allowance with just a few lines of
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)
+- [getTokenAllowance]()
 
 ## Support
 

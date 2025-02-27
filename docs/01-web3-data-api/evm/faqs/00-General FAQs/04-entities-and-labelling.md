@@ -59,20 +59,20 @@ Here’s an example of a transaction enriched with entity data:
 
 Any endpoint that includes a `to_address` and `from_address`, the endpoints are listed in the table below:
 
-| Name                               | Endpoint                               | API Reference                                                                        |
-| ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| Get Wallet History                 | /wallets/:address/history              | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
-| Get Native Transactions by Wallet  | /:address                              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-transactions)         |
-| Get Decoded Transactions by Wallet | /:address/verbose                      | [Method Documentation](/web3-data-api/evm/reference/get-decoded-wallet-transaction)  |
-| Get Transaction by Hash            | /transaction/:transaction_hash         | [Method Documentation](/web3-data-api/evm/reference/get-transaction)                 |
-| Get Decoded Transaction by Hash    | /transaction/:transaction_hash/verbose | [Method Documentation](/web3-data-api/evm/reference/get-decoded-transaction)         |
-| Get NFT Transfers by Wallet        | /:address/nft/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nft-transfers)        |
-| Get NFT Transfers by Contract      | /nft/:address/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-nft-contract-transfers)      |
-| Get NFT Transfers From a Block     | /nft/transfers                         | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers-from-to-block) |
-| Get NFT Transfers by Block         | /block/:block_hash/nft/transfers       | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers-by-block)      |
-| Get NFT Transfers by Token ID      | /nft/:address/:token_id/transfers      | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers)               |
-| Get ERC20 Transfers by Wallet      | /:address/erc20/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
-| Get ERC20 Transfers by Contract    | /erc20/:address/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
+| Name                               | Endpoint                               | API Reference                                                                       |
+| ---------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------- |
+| Get Wallet History                 | /wallets/:address/history              | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)  |
+| Get Native Transactions by Wallet  | /:address                              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-transactions)        |
+| Get Decoded Transactions by Wallet | /:address/verbose                      | [Method Documentation](/web3-data-api/evm/reference/get-decoded-wallet-transaction) |
+| Get Transaction by Hash            | /transaction/:transaction_hash         | [Method Documentation](/web3-data-api/evm/reference/get-transaction)                |
+| Get Decoded Transaction by Hash    | /transaction/:transaction_hash/verbose | [Method Documentation](/web3-data-api/evm/reference/get-decoded-transaction)        |
+| Get NFT Transfers by Wallet        | /:address/nft/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-wallet-nft-transfers)       |
+| Get NFT Transfers by Contract      | /nft/:address/transfers                | [Method Documentation](/web3-data-api/evm/reference/get-nft-contract-transfers)     |
+| Get NFT Transfers From a Block     | /nft/transfers                         | [Method Documentation]                                                              |
+| Get NFT Transfers by Block         | /block/:block_hash/nft/transfers       | [Method Documentation]                                                              |
+| Get NFT Transfers by Token ID      | /nft/:address/:token_id/transfers      | [Method Documentation](/web3-data-api/evm/reference/get-nft-transfers)              |
+| Get ERC20 Transfers by Wallet      | /:address/erc20/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)     |
+| Get ERC20 Transfers by Contract    | /erc20/:address/transfers              | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)            |
 
 ## How many entities are supported?
 

@@ -10,7 +10,6 @@ Select what you want to achieve:
 
 - [Get Blocks](#get-blocks)
 - [Get Transactions](#get-transactions)
-- [Get Logs](#get-logs)
 - [Get Stats](#get-stats)
 - [Get Latest Block Number](#get-latest-block-number)
 
@@ -31,14 +30,8 @@ Select what you want to achieve:
 | 6   | `getInternalTransactions`     | Get internal transactions by transaction hash | [Method Documentation](/web3-data-api/evm/reference/get-internal-transactions)      | [https://deep-index.moralis.io/api/v2.2/transaction/:transaction_hash/internal-transactions](https://deep-index.moralis.io/api/v2.2/transaction/:transaction_hash/internal-transactions) |
 | 7   | `getWalletTransactions`       | Get native transactions by wallet             | [Method Documentation](/web3-data-api/evm/reference/get-wallet-transactions)        | [https://deep-index.moralis.io/api/v2.2/:address](https://deep-index.moralis.io/api/v2.2/:address)                                                                                       |
 
-### Get Logs
-
-| No. | Method              | Description            | API Reference                                                            | URL                                                                                                              |
-| --- | ------------------- | ---------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| 8   | `getContractEvents` | Get events by contract | [Method Documentation](/web3-data-api/evm/reference/get-contract-events) | [https://deep-index.moralis.io/api/v2.2/:address/events](https://deep-index.moralis.io/api/v2.2/:address/events) |
-
 ### Get Latest Block Number
 
 | No. | Method                 | Description              | API Reference                                                                | URL                                                                                                                                |
 | --- | ---------------------- | ------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 9   | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |
+| 8   | `getLatestBlockNumber` | Get latest block number. | [Method Documentation](/web3-data-api/evm/reference/get-latest-block-number) | [https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain](https://deep-index.moralis.io/api/v2.2/latestBlockNumber/:chain) |

@@ -1369,7 +1369,7 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenallowance",
-    destination: "/web3-data-api/evm/reference/get-token-allowance",
+    destination: "",
     permanent: true,
   },
   {
@@ -5841,7 +5841,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-token-allowance",
-    destination: "/web3-data-api/evm/reference/get-token-allowance",
+    destination: "",
     permanent: true,
   },
   {

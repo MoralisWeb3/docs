@@ -21,12 +21,12 @@ All of our transfer and transaction endpoints can now be ordered by date asc/des
 
 - [NFT transfers by wallet](/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)
 - [NFT transfers by collection](/web3-data-api/evm/reference/get-nft-contract-transfers)
-- [NFT transfers by block](/web3-data-api/evm/reference/get-nft-transfers-by-block)
-- [NFT transfers from a block to a block](/web3-data-api/evm/reference/get-nft-transfers-from-to-block)
+- [NFT transfers by block]
+- [NFT transfers from a block to a block]
 - [NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 - [ERC20 transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
 - [ERC20 transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
 - [Get transactions by wallet](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)
 - [Get decoded transactions by wallet](/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet)
 - [Get logs by contract]
-- [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
+- [Get events by contract]

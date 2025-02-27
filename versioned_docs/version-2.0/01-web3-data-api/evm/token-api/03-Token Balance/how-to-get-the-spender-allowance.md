@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get the spender allowance of an ERC20 token
 
-In order to get the spender allowance, Moralis provides you with an [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance) endpoint.
+In order to get the spender allowance, Moralis provides you with an [getTokenAllowance]() endpoint.
 
 Here you'll need four parameters: `address` , `chain`, `ownerAddress` , `spenderAddress`.
 
@@ -147,7 +147,7 @@ Congratulations 🥳 You just got the spender allowance with just a few lines of
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)
+- [getTokenAllowance]()
 
 ## Support
 

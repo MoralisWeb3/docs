@@ -33,7 +33,7 @@ This API category comprised of 2 APIs:
 | API Name                                                                         | Path                       | Use Cases                                                                                                                    |
 | -------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) | /{address}/erc20           | Fetch ERC20 token balances for a specific wallet `address`.                                                                  |
-| [getTokenAllowance](/web3-data-api/evm/reference/get-token-allowance)            | /erc20/{address}/allowance | Fetch the allowance of a specific ERC20 token given its `address` by the `spender_address` on behalf of the `owner_address`. |
+| [getTokenAllowance]()                                                            | /erc20/{address}/allowance | Fetch the allowance of a specific ERC20 token given its `address` by the `spender_address` on behalf of the `owner_address`. |
 
 ### Get Transfers
 
@@ -43,7 +43,7 @@ This API category comprised of 3 APIs:
 
 | API Name                                                                           | Path                       | Use Cases                                                                                             |
 | ---------------------------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [getErc20Transfers](/2.0/web3-data-api/reference/get-erc20-transfers)                  | /erc20/transfers           | Fetch historical ERC20 token transactions ordered by descending block order.                          |
+| [getErc20Transfers](/2.0/web3-data-api/reference/get-erc20-transfers)              | /erc20/transfers           | Fetch historical ERC20 token transactions ordered by descending block order.                          |
 | [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) | /{address}/erc20/transfers | Fetch historical ERC20 token transactions on a given wallet `address` by descending block order.      |
 | [getTokenTransfers](/web3-data-api/evm/reference/get-token-transfers)              | /erc20/{address}/transfers | Fetch historical ERC20 token transactions on a given ERC20 token `address` by descending block order. |
 
@@ -53,8 +53,8 @@ The [Get Mints API](/2.0/web3-data-api/evm/reference/get-erc20-mints) is a colle
 
 This API category comprised of 1 API:
 
-| API Name                                                      | Path         | Use Case                                                                                                                                |
-| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| API Name                                                          | Path         | Use Case                                                                                                                                |
+| ----------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [getErc20Mints](/2.0/web3-data-api/evm/reference/get-erc20-mints) | /erc20/mints | Fetch ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Burns
@@ -63,8 +63,8 @@ The [Get Burns API](/2.0/web3-data-api/evm/reference/get-erc20-burns) is a colle
 
 This API category comprised of 1 API:
 
-| API Name                                                      | Path         | Use Case                                                                                                                                |
-| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| API Name                                                          | Path         | Use Case                                                                                                                                |
+| ----------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [getErc20Burns](/2.0/web3-data-api/evm/reference/get-erc20-burns) | /erc20/burns | Fetch ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Approvals
@@ -73,8 +73,8 @@ The [Get Approvals API](/2.0/web3-data-api/evm/reference/get-erc20-approvals) is
 
 This API category comprised of 1 API:
 
-| API Name                                                              | Path             | Use Case                                                                                                                       |
-| --------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| API Name                                                                  | Path             | Use Case                                                                                                                       |
+| ------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | [getErc20Approvals](/2.0/web3-data-api/evm/reference/get-erc20-approvals) | /erc20/approvals | Fetch ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Metadata
