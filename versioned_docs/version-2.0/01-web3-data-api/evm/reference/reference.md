@@ -79,7 +79,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get NFT Market Data
 
-- [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
+- [Get NFT trades by contract](/web3-data-api/evm/reference/get-nft-trades)
 
 ### Token API
 

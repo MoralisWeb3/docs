@@ -1645,7 +1645,7 @@ export const ApiSchema = {
       },
       getNFTTrades: {
         apiHost: "https://deep-index.moralis.io/api/v2.2",
-        summary: "Get NFT trades by marketplace",
+        summary: "Get NFT trades by contract",
         description: "Get trades of NFTs for a given contract and marketplace.",
         sdkTag: "nft",
         tags: ["NFT", "Get Market Data"],

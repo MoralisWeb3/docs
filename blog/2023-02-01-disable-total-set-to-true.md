@@ -22,7 +22,7 @@ This flag now defaults to `true` and the `total` response will be returned as `n
 - [Get NFT transfers by contract](/web3-data-api/evm/reference/get-nft-contract-transfers)
 - [Get NFT transfers from a block to block]
 - [Get NFT transfers by block]
-- [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
+- [Get NFT trades by contract](/web3-data-api/evm/reference/get-nft-trades)
 - [Get NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 - [Get NFT owners token ID](/web3-data-api/evm/reference/get-nft-token-id-owners)
 - [Search NFTs](/2.0/web3-data-api/evm/reference/search-nfts)
