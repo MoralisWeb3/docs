@@ -6,9 +6,9 @@ sidebar_label: "eth_getLogs and getContractLogs"
 description: "How to get, view, and analyze event logs on Ethereum using eth_getLogs RPC method and Moralis getContractLogs RPC method"
 ---
 
-Insights into events occurring on the Ethereum blockchain are crucial for blockchain developers. Accessing this valuable data is made simpler with eth_getLogs, and one of the tools for this purpose is the [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis.
+Insights into events occurring on the Ethereum blockchain are crucial for blockchain developers. Accessing this valuable data is made simpler with eth_getLogs, and one of the tools for this purpose is the [getContractLogs] endpoint from Moralis.
 
-Thanks to the Moralis SDK, fetching and analyzing event logs on Ethereum is easy, and if you want to learn how to retrieve and analyze Ethereum event logs using the SDK, this guide will be highly beneficial. It includes practical JavaScript examples, and compares Moralis' [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint with the [eth_getLogs](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getlogs) RPC call to help you make informed decisions.
+Thanks to the Moralis SDK, fetching and analyzing event logs on Ethereum is easy, and if you want to learn how to retrieve and analyze Ethereum event logs using the SDK, this guide will be highly beneficial. It includes practical JavaScript examples, and compares Moralis' [getContractLogs] endpoint with the [eth_getLogs](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getlogs) RPC call to help you make informed decisions.
 
 :::tip
 For a step-by-step tutorial on obtaining contract logs using the Moralis blockchain API, read the [Get logs for contract](/web3-data-api/evm/how-to-get-the-logs-for-a-contract) article.
@@ -24,7 +24,7 @@ Also, transaction receipts serve as repositories for Ethereum event logs, captur
 
 ## Unveiling the Efficiency of Moralis' getContractLogs Endpoint
 
-The [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint from Moralis stands as a hallmark of convenience, offering an effective way to access ETH get logs. Before diving into Moralis, let's see how Moralis' getContractLogs compares against `eth_getLogs`.
+The [getContractLogs] endpoint from Moralis stands as a hallmark of convenience, offering an effective way to access ETH get logs. Before diving into Moralis, let's see how Moralis' getContractLogs compares against `eth_getLogs`.
 
 ### Moralis’ getContractLogs vs eth_getLogs: Comparative Analysis
 

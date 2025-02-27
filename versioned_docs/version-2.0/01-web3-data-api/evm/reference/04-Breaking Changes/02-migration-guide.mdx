@@ -5,13 +5,14 @@ sidebar_label: "Migration Guide"
 slug: "/web3-data-api/breaking-changes/migration-guide"
 ---
 
---- 
+---
 
 # Summary of changes
+
 This migration guide covers the following:
 
 - Deprecation of `total` and `disable_total`
-- Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
+- Changes to [`getLogsByAddress`]
 - Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - Deprecation of endpoints
 
@@ -42,6 +43,7 @@ We plan to launch 5 new endpoints that will provide you with these totals. This 
 The endpoints are:
 
 #### New: Get wallet stats
+
 - Endpoint: `/wallets/{address}/stats`
 - Example response:
 
@@ -63,6 +65,7 @@ The endpoints are:
 ```
 
 #### New: Get NFT collection stats
+
 - Endpoint: `/nft/{address}/stats`
 - Example response:
 
@@ -79,6 +82,7 @@ The endpoints are:
 ```
 
 #### New: Get NFT token ID stats
+
 - Endpoint: `/nft/{address}/{token_id}/stats`
 - Example response:
 
@@ -94,6 +98,7 @@ The endpoints are:
 ```
 
 #### New: Get ERC20 token stats
+
 - Endpoint: `/erc20/{address}/stats`
 - Example response:
 
@@ -106,6 +111,7 @@ The endpoints are:
 ```
 
 #### New: Get Block stats
+
 - Endpoint: `/block/{block_number_or_hash}/stats`
 - Example response:
 
@@ -117,40 +123,45 @@ The endpoints are:
 }
 ```
 
-## Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
-Now a `topic0` must be provided when making a request to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs). The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
+## Changes to [`getLogsByAddress`]
+
+Now a `topic0` must be provided when making a request to [`getLogsByAddress`]. The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
 
 Also, it is no longer possible to provide a `topic1`, `topic2` or `topic3` in the request. If you need to filter out specific values in the logs, then you should do it in the client side, after the request is made.
 
 Update your code in the following way:
 
 #### 1. You are already providing a `topic0`, and no other topics in your request
+
 No changes needed.
 
 #### 2. You are not providing any topic in your request
+
 Now you need to provide a `topic0`. To find this topic:
 
 1. Check out the event signature in the ABI. It should look something like `Transfer(address indexed from, address indexed to ,uint256 value)`
 
 2. Remove the parameters from this signature so it looks like `Transfer(address,address,uint256)`. Also make sure there are no whitespaces in the string.
-Hash it with keccak256 (use any library that you want: web3js/ethersjs etc.):
+   Hash it with keccak256 (use any library that you want: web3js/ethersjs etc.):
 
 3. Some examples on how to get the `topic0` from the event signature using ethersJs. Many other web3/crypto libraries support similar functions.
 
 ```js
-const ethers = require('ethers');
+const ethers = require("ethers");
 
-const eventSignature = 'Transfer(address,address,uint256)';
-const hash = ethers.utils.solidityKeccak256(['string'], [eventSignature]);
+const eventSignature = "Transfer(address,address,uint256)";
+const hash = ethers.utils.solidityKeccak256(["string"], [eventSignature]);
 ```
 
 For example for the `Transfer` event, that we showed above, we get: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef`
 Note: Make sure that the hash is prefixed with `0x`. If the library that you use does not include the `0x`, then make sure to manually prefix the hash with `0x`.
 
 #### 3. You are providing `topic1`/`topic`2/`topic3`
+
 If you are providing any topics other than `topic0`, then you should remove them from the request. If you need to filter out specific values in the logs, then you should do it in the client side, after the request is made.
 
 #### 4. You are using all events/logs from a contract
+
 If you want all events/logs from a contract, you now need to make multiple calls for each `topic0`. This needs to be done for all events of the contract. These events can be found in the ABI (or search via Etherscan for example). Refer to 2. on how to get the `topic0` from the event signature.
 
 ## Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
@@ -158,7 +169,9 @@ If you want all events/logs from a contract, you now need to make multiple calls
 The `direction` parameter on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers) is deprecated. Remove this parameter from your request, and remove any usage of the `direction` from your code.
 
 ## Deprecation of endpoints
-The following endpoints will be deprecated: 
+
+The following endpoints will be deprecated:
+
 - [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts)
 - [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints)
 - [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
@@ -166,20 +179,24 @@ The following endpoints will be deprecated:
 - [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
 
 #### Deprecation of [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers)
+
 If you are using [`getErc20Transfers`](https://docs.moralis.io/web3-data-api/reference/get-erc20-transfers) then please start using [`getTokenTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-wallet-token-transfers) and/or [`getTokenAddressTransfers`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-transfers).
 
 #### Deprecation of [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals)
+
 If you are using [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance)
 
 Taking the following request on [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals):
+
 ```js
 curl --request GET \
      --url 'https://deep-index.moralis.io/api/v2/0x26fcbd3afebbe28d0a8684f790c48368d21665b5/erc20/transfers?chain=eth' \
      --header 'accept: application/json' \
-     --header 'X-API-Key: YOUR_API_KEY' 
+     --header 'X-API-Key: YOUR_API_KEY'
 ```
 
 Returns the following response, and we can see that the allowance is `144999999999999999` for the `contract_address` of `0xae7ab96520de3a18e5e111b5eaab095312d7fe84`.
+
 ```js
 {
   "cursor": null,
@@ -211,9 +228,11 @@ Returns the following response, and we can see that the allowance is `1449999999
 To get the same allowance using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance), you would make the below request with the following inputs:
 
 Path parameters:
+
 - `address` = `0xae7ab96520de3a18e5e111b5eaab095312d7fe84` (i.e. `contract_address` from the above)
 
 Query parameters:
+
 - `owner_address` = `0xcB1C1FdE09f811B294172696404e88E658659905` (i.e. `from_wallet` from the above)
 - `spender_address` = `0x1111111254eeb25477b68fb85ed929f73a960582` (i.e. `to_wallet` from the above)
 
@@ -221,7 +240,7 @@ Query parameters:
 curl --request GET \
      --url 'https://deep-index.moralis.io/api/v2/erc20/0xae7ab96520de3a18e5e111b5eaab095312d7fe84/allowance?chain=eth&owner_address=0xcB1C1FdE09f811B294172696404e88E658659905&spender_address=0x1111111254eeb25477b68fb85ed929f73a960582' \
      --header 'accept: application/json' \
-     --header 'X-API-Key: YOUR_API_KEY' 
+     --header 'X-API-Key: YOUR_API_KEY'
 ```
 
 When making this request, we get the following response:
@@ -234,5 +253,6 @@ When making this request, we get the following response:
 
 We then see that `allowance` returned mirrors `value` from the [`getErc20Approvals`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-approvals).
 
-####  Deprecation of [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints), [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
-If you are using [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts),  [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints) or [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns) please remove these endpoints from your code base.
+#### Deprecation of [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts), [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints), [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns)
+
+If you are using [`searchNFTs`](https://docs.moralis.io/web3-data-api/evm/reference/search-nfts), [`getErc20Mints`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-mints) or [`getErc20Burns`](https://docs.moralis.io/web3-data-api/evm/reference/get-erc20-burns) please remove these endpoints from your code base.

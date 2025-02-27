@@ -48,4 +48,4 @@ If you rely on a `total` count value, you will need to explicitly set the `disab
 - [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
 - [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
 - [Get verbose transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
-- [Get logs by contract](/web3-data-api/evm/reference/get-contract-logs)
+- [Get logs by contract]

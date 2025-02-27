@@ -11,7 +11,7 @@ slug: "/web3-data-api/breaking-changes/migration-guide"
 This migration guide covers the following:
 
 - Deprecation of `total` and `disable_total`
-- Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
+- Changes to [`getLogsByAddress`]
 - Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - Deprecation of endpoints
 
@@ -134,9 +134,9 @@ The endpoints are:
 }
 ```
 
-## Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
+## Changes to [`getLogsByAddress`]
 
-Now a `topic0` must be provided when making a request to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs). The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
+Now a `topic0` must be provided when making a request to [`getLogsByAddress`]. The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
 
 Also, it is no longer possible to provide a `topic1`, `topic2` or `topic3` in the request. If you need to filter out specific values in the logs, then you should do it in the client side, after the request is made.
 

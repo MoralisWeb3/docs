@@ -21,7 +21,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get logs by contract
 
-In order to get the logs for a contract, Moralis provides you a [getContractLogs](/web3-data-api/evm/reference/get-contract-logs) endpoint to do so.
+In order to get the logs for a contract, Moralis provides you a [getContractLogs] endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -172,7 +172,7 @@ https://www.youtube.com/watch?v=Bff3IQjrYs0
 
 ## API Reference
 
-- [getContractLogs](/web3-data-api/evm/reference/get-contract-logs)
+- [getContractLogs]
 
 ## Support
 
