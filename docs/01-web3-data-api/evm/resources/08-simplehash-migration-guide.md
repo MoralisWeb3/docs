@@ -6,61 +6,59 @@ sidebar_position: 8
 
 # Migrating from SimpleHash to Moralis
 
-With SimpleHash deprecating their API offering, Moralis provides a comprehensive alternative with equivalent functionality and additional capabilities. This guide will help you seamlessly transition your projects from SimpleHash to Moralis.
-
 :::warning URGENT MIGRATION NEEDED
 SimpleHash is shutting down ALL THEIR APIs. Wallet providers and applications using SimpleHash API need to migrate as soon as possible to avoid service disruptions. Moralis APIs are almost an exact match, making migration straightforward.
 :::
 
-## API Endpoint Equivalence
+With SimpleHash deprecating their API offering, Moralis provides a comprehensive alternative with equivalent functionality and additional capabilities. This guide will help you seamlessly transition your projects from SimpleHash to Moralis.
+
+# API Endpoint Equivalence
 
 SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll find the mapping organized by API category.
 
-### Quick Navigation
+## Quick Reference Guide
 
-- **Token API**
-
-  - [Token & Prices](#token--prices) (`api.simplehash.com/api/v0/fungibles/assets`)
-  - [Token Balances by Wallet(s)](#token-balances-by-wallets) (`api.simplehash.com/api/v0/fungibles/balances`)
-  - [Token Top Holders](#token-top-holders) (`api.simplehash.com/api/v0/fungibles/top_wallets`)
-  - [Swaps & Transfers by Wallet(s)](#swaps--transfers-by-wallets) (`api.simplehash.com/api/v0/fungibles/transfers/wallets`)
-  - [Swaps & Transfers by Token](#swaps--transfers-by-token) (`api.simplehash.com/api/v0/fungibles/transfers/wallets`)
-  - [Historical Token Prices](#historical-token-prices) (`api.simplehash.com/api/v0/fungibles/prices_v2/{fungible_id}`)
-  - [Historical Token OHLC](#historical-token-ohlc) (`api.simplehash.com/api/v0/fungibles/ohlc/{fungible_id}`)
-  - [Native Token Balances by Wallet(s)](#native-token-balances-by-wallets) (`api.simplehash.com/api/v0/native_tokens/balances`)
-
-- **NFT API**
-
-  - [NFT by Token ID](#nft-by-token-id) (`api.simplehash.com/api/v0/nfts/{chain}/{contract_address}/{token_id}`)
-  - [NFTs by Contract](#nfts-by-contract) (`api.simplehash.com/api/v0/nfts/{chain}/{contract_address}`)
-  - [NFTs by Wallet(s)](#nfts-by-wallets) (`api.simplehash.com/api/v0/nfts/owners_v2`)
-  - [Sales & Transfers by Wallet(s)](#sales--transfers-by-wallets) (`api.simplehash.com/api/v0/nfts/transfers/wallets`)
-  - [Sales & Transfers by NFT](#sales--transfers-by-nft) (`api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}/{token_id}`)
-  - [Sales & Transfers by Contract](#sales--transfers-by-contract) (`api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}`)
-  - [Owners by NFT](#owners-by-nft) (`api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/{token_id}`)
-  - [Owners by Contract](#owners-by-contract) (`api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/`)
-  - [Ownership Summary by Wallet(s)](#ownership-summary-by-wallets) (`api.simplehash.com/api/v0/nfts/contracts`)
-  - [Collections by Wallet(s)](#collections-by-wallets) (`api.simplehash.com/api/v0/nfts/collections_by_wallets_v2`)
-  - [Collections by Contract](#collections-by-contract) (`api.simplehash.com/api/v0/nfts/collections/{chain}/{contract_address}`)
-  - [Collection Historical Floor Prices](#collection-historical-floor-prices) (`api.simplehash.com/api/v0/nfts/floor_prices_v2/collection/{collection_id}/{granularity}`)
-  - [Top Collections](#top-collections) (`api.simplehash.com/api/v0/nfts/collections/top_v2`)
-  - [Trending Collections](#trending-collections) (`api.simplehash.com/api/v0/nfts/collections/trending`)
-  - [Traits by Collection](#traits-by-collection) (`api.simplehash.com/api/v0/nfts/traits/collection/{collection_id}`)
-  - [Wallet Valuation](#wallet-valuation) (`api.simplehash.com/api/v0/nfts/owners/value`)
-  - [Refresh NFT Metadata](#refresh-nft-metadata) (`api.simplehash.com/api/v0/nfts/refresh/{chain}/{contract_address}/{token_id}`)
-  - [Refresh Contract Metadata](#refresh-contract-metadata) (`api.simplehash.com/reference/refresh-contract-metadata`)
-
-- **Name Resolution**
-
-  - [ENS Lookup](#ens-lookup) (`api.simplehash.com/api/v0/ens/lookup`)
-  - [Reverse ENS Lookup](#reverse-ens-lookup) (`api.simplehash.com/api/v0/ens/reverse_lookup`)
-
-- **Real-time Data**
-  - [Webhooks](#webhooks) (Moralis Streams API equivalent)
+Make use of the table below to quickly find the Moralis equivalent for each SimpleHash endpoint by clicking on the Moralis Equivalent column.
 
 ### Token API
 
-#### Token & Prices
+| Feature                            | SimpleHash Endpoint                                           | Moralis Equivalent                           |
+| ---------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
+| Token & Prices                     | `api.simplehash.com/api/v0/fungibles/assets`                  | [Details](#token--prices)                    |
+| Token Balances by Wallet(s)        | `api.simplehash.com/api/v0/fungibles/balances`                | [Details](#token-balances-by-wallets)        |
+| Token Top Holders                  | `api.simplehash.com/api/v0/fungibles/top_wallets`             | [Details](#token-top-holders)                |
+| Swaps & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps--transfers-by-wallets)      |
+| Swaps & Transfers by Token         | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps--transfers-by-token)        |
+| Historical Token Prices            | `api.simplehash.com/api/v0/fungibles/prices_v2/{fungible_id}` | [Details](#historical-token-prices)          |
+| Historical Token OHLC              | `api.simplehash.com/api/v0/fungibles/ohlc/{fungible_id}`      | [Details](#historical-token-ohlc)            |
+| Native Token Balances by Wallet(s) | `api.simplehash.com/api/v0/native_tokens/balances`            | [Details](#native-token-balances-by-wallets) |
+
+### NFT API
+
+| Feature                            | SimpleHash Endpoint                                                                       | Moralis Equivalent                             |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| NFT by Token ID                    | `api.simplehash.com/api/v0/nfts/{chain}/{contract_address}/{token_id}`                    | [Details](#nft-by-token-id)                    |
+| NFTs by Contract                   | `api.simplehash.com/api/v0/nfts/{chain}/{contract_address}`                               | [Details](#nfts-by-contract)                   |
+| NFTs by Wallet(s)                  | `api.simplehash.com/api/v0/nfts/owners_v2`                                                | [Details](#nfts-by-wallets)                    |
+| Sales & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/nfts/transfers/wallets`                                        | [Details](#sales--transfers-by-wallets)        |
+| Sales & Transfers by NFT           | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}/{token_id}`          | [Details](#sales--transfers-by-nft)            |
+| Sales & Transfers by Contract      | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}`                     | [Details](#sales--transfers-by-contract)       |
+| Owners by NFT                      | `api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/{token_id}`             | [Details](#owners-by-nft)                      |
+| Owners by Contract                 | `api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/`                       | [Details](#owners-by-contract)                 |
+| Ownership Summary by Wallet(s)     | `api.simplehash.com/api/v0/nfts/contracts`                                                | [Details](#ownership-summary-by-wallets)       |
+| Collections by Wallet(s)           | `api.simplehash.com/api/v0/nfts/collections_by_wallets_v2`                                | [Details](#collections-by-wallets)             |
+| Collections by Contract            | `api.simplehash.com/api/v0/nfts/collections/{chain}/{contract_address}`                   | [Details](#collections-by-contract)            |
+| Collection Historical Floor Prices | `api.simplehash.com/api/v0/nfts/floor_prices_v2/collection/{collection_id}/{granularity}` | [Details](#collection-historical-floor-prices) |
+| Top Collections                    | `api.simplehash.com/api/v0/nfts/collections/top_v2`                                       | [Details](#top-collections)                    |
+| Trending Collections               | `api.simplehash.com/api/v0/nfts/collections/trending`                                     | [Details](#trending-collections)               |
+| Traits by Collection               | `api.simplehash.com/api/v0/nfts/traits/collection/{collection_id}`                        | [Details](#traits-by-collection)               |
+| Wallet Valuation                   | `api.simplehash.com/api/v0/nfts/owners/value`                                             | [Details](#wallet-valuation)                   |
+| Refresh NFT Metadata               | `api.simplehash.com/api/v0/nfts/refresh/{chain}/{contract_address}/{token_id}`            | [Details](#refresh-nft-metadata)               |
+| Refresh Contract Metadata          | `api.simplehash.com/reference/refresh-contract-metadata`                                  | [Details](#refresh-contract-metadata)          |
+
+## Token API
+
+### Token & Prices
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/assets`
 
@@ -76,7 +74,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis also supports historical price lookups by block number and returns additional metadata like links.
 
-#### Token Balances by Wallet(s)
+### Token Balances by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/balances?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -90,7 +88,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Token Top Holders
+### Token Top Holders
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/top_wallets`
 
@@ -120,7 +118,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis offers additional related endpoints including ERC20 token transfers by wallet and the comprehensive wallet history API.
 
-#### Swaps & Transfers by Token
+### Swaps & Transfers by Token
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/transfers/wallets?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -135,7 +133,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis provides additional related endpoints including ERC20 token transfers by contract, swaps by pair address, and Solana swaps by pair address.
 
-#### Historical Token Prices
+### Historical Token Prices
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/prices_v2/{fungible_id}`
 
@@ -148,7 +146,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Historical Token OHLC
+### Historical Token OHLC
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/fungibles/ohlc/{fungible_id}`
 
@@ -161,7 +159,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Native Token Balances by Wallet(s)
+### Native Token Balances by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/native_tokens/balances?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -176,9 +174,9 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-### NFT API
+## NFT API
 
-#### NFT by Token ID
+### NFT by Token ID
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/{chain}/{contract_address}/{token_id}`
 
@@ -191,7 +189,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### NFTs by Contract
+### NFTs by Contract
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/{chain}/{contract_address}`
 
@@ -203,7 +201,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### NFTs by Wallet(s)
+### NFTs by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/owners_v2?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -216,7 +214,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Sales & Transfers by Wallet(s)
+### Sales & Transfers by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/transfers/wallets?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -230,7 +228,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis offers additional related endpoints including NFT transfers by wallet and comprehensive wallet history.
 
-#### Sales & Transfers by NFT
+### Sales & Transfers by NFT
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}/{token_id}`
 
@@ -242,7 +240,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Sales & Transfers by Contract
+### Sales & Transfers by Contract
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}`
 
@@ -254,7 +252,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Owners by NFT
+### Owners by NFT
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/{token_id}`
 
@@ -266,7 +264,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Owners by Contract
+### Owners by Contract
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/`
 
@@ -278,7 +276,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Ownership Summary by Wallet(s)
+### Ownership Summary by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/contracts?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -292,7 +290,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis supports filtering by token address(es).
 
-#### Collections by Wallet(s)
+### Collections by Wallet(s)
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/collections_by_wallets_v2?chains={chains}&wallet_addresses={wallet_addresses}`
 
@@ -304,7 +302,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Collections by Contract
+### Collections by Contract
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/collections/{chain}/{contract_address}`
 
@@ -316,7 +314,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Collection Historical Floor Prices
+### Collection Historical Floor Prices
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/floor_prices_v2/collection/{collection_id}/{granularity}`
 
@@ -330,7 +328,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Floor prices are supported on Ethereum & Base. Moralis also offers additional endpoints for NFT Floor Price by Contract, NFT Floor Price by Token ID, Sale Prices by Contract, and Sale Prices by Token ID.
 
-#### Trait Floor Prices by NFT
+### Trait Floor Prices by NFT
 
 <div className="simplehash-migration-table">
 
@@ -340,7 +338,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Top Collections
+### Top Collections
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/collections/top_v2`
 
@@ -354,7 +352,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Currently only supports Ethereum.
 
-#### Trending Collections
+### Trending Collections
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/collections/trending`
 
@@ -368,7 +366,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Currently only supports Ethereum.
 
-#### Traits by Collection
+### Traits by Collection
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/traits/collection/{collection_id}`
 
@@ -382,7 +380,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis also offers an endpoint to get NFTs by traits.
 
-#### Wallet Valuation
+### Wallet Valuation
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/owners/value`
 
@@ -396,7 +394,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Currently calculates based on fungibles.
 
-#### Refresh NFT Metadata
+### Refresh NFT Metadata
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/nfts/refresh/{chain}/{contract_address}/{token_id}`
 
@@ -408,7 +406,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-#### Refresh Contract Metadata
+### Refresh Contract Metadata
 
 **SimpleHash Endpoint**: `https://docs.simplehash.com/reference/refresh-contract-metadata`
 
@@ -420,9 +418,9 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 </div>
 
-### Name Resolution
+## Name Resolution
 
-#### ENS Lookup
+### ENS Lookup
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/ens/lookup`
 
@@ -436,7 +434,7 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis offers additional endpoints for resolving Unstoppable Domains and other resolution services.
 
-#### Reverse ENS Lookup
+### Reverse ENS Lookup
 
 **SimpleHash Endpoint**: `https://api.simplehash.com/api/v0/ens/reverse_lookup`
 
@@ -450,9 +448,9 @@ SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll f
 
 **Notes**: Moralis provides additional endpoints for getting Unstoppable Domain by Address and Address by Unstoppable Domain.
 
-### Real-time Data
+## Real-time Data
 
-#### Webhooks
+### Webhooks
 
 <div className="simplehash-migration-table">
 
@@ -470,99 +468,32 @@ Moralis offers many additional endpoints and features not available in SimpleHas
 
 ### Advanced Wallet Analysis
 
-- **Wallet History**: Get comprehensive transaction history across multiple chains
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/wallets/:address/history
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-history)
-
-- **Token Transfers by Wallet**: Get detailed ERC20 token transfers
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/:address/erc20/transfers
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-wallet-token-transfers)
-
-- **Wallet Approvals**: Get all token approvals by wallet
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/wallets/:address/approvals
-  ```
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-wallet-token-approvals)
+| Feature              | Endpoint                                                                | Documentation                                                                                         |
+| -------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Wallet History**   | `GET https://deep-index.moralis.io/api/v2.2/wallets/:address/history`   | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
+| **Wallet Approvals** | `GET https://deep-index.moralis.io/api/v2.2/wallets/:address/approvals` | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-wallet-token-approvals)      |
+| **Wallet Net Worth** | `GET https://deep-index.moralis.io/api/v2.2/wallets/:address/net-worth` | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth) |
 
 ### Token Analytics
 
-- **Token Holder Stats**: Get statistical information about token holders
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/stats
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-token-holder-stats)
-
-- **Historical Token Holders**: Track holder changes over time
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical
-  ```
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-historical-token-holders)
+| Feature                      | Endpoint                                                                             | Documentation                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| **Token Holder Stats**       | `GET https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/stats`      | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-token-holder-stats)       |
+| **Historical Token Holders** | `GET https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical` | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-historical-token-holders) |
 
 ### Token Search & Discovery
 
-- **Search Tokens**: Powerful token search functionality
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/tokens/search
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/search-tokens)
-
-- **Trending Tokens**: Get the most trending tokens
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/tokens/trending
-  ```
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-trending-tokens)
-
-### Price & OHLCV Data
-
-- **OHLCV Candlesticks**: Get detailed OHLCV candlestick data
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/pairs/:address/ohlcv
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-ohlcv-by-pair-address)
-
-- **Token Price**: Get current price for any token
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/erc20/:address/price
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-token-price)
-
-- **Multiple Token Prices**: Get prices for multiple tokens in one call
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/erc20/prices
-  ```
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-multiple-token-prices)
+| Feature             | Endpoint                                                     | Documentation                                                                             |
+| ------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| **Search Tokens**   | `GET https://deep-index.moralis.io/api/v2.2/tokens/search`   | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/search-tokens)       |
+| **Trending Tokens** | `GET https://deep-index.moralis.io/api/v2.2/tokens/trending` | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-trending-tokens) |
 
 ### DEX and Pair Analytics
 
-- **Pair Stats**: Get comprehensive statistics for token pairs
-
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/pairs/:address/stats
-  ```
-
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-token-pair-stats)
-
-- **Get Aggregated Token Pair Stats**: Get aggregated statistics across pairs
-  ```
-  GET https://deep-index.moralis.io/api/v2.2/:token_address/pairs/stats
-  ```
-  [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-aggregated-token-pair-stats)
+| Feature                         | Endpoint                                                                | Documentation                                                                                         |
+| ------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Pair Stats**                  | `GET https://deep-index.moralis.io/api/v2.2/pairs/:address/stats`       | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-token-pair-stats)            |
+| **Aggregated Token Pair Stats** | `GET https://deep-index.moralis.io/api/v2.2/:token_address/pairs/stats` | [Documentation](https://docs.moralis.com/web3-data-api/evm/reference/get-aggregated-token-pair-stats) |
 
 ### NFT Advanced Capabilities
 
