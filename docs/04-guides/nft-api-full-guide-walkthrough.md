@@ -81,10 +81,10 @@ The [Get NFT Market Data](/web3-data-api/evm/reference/get-nft-trades) API is a 
 
 This API category comprised of 2 APIs:
 
-| API Name                                                               | Path                       | Use Cases                                                                                      |
-| ---------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)            | /nft/{address}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
-| [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) | /nft/{address}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
+| API Name                                                    | Path                       | Use Cases                                                                                      |
+| ----------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------- |
+| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades) | /nft/{address}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
+| [getNFTLowestPrice]                                         | /nft/{address}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
 
 ### Get NFT Metadata API
 
@@ -310,7 +310,7 @@ Once the code is added, you will be able to obtain the historical NFT transfers 
 
 #### Feature #3: Fetch NFT lowest price from the NFT balance
 
-In order to fetch the NFT price from the NFT balance, Moralis provides you with a [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) endpoint to do so.
+In order to fetch the NFT price from the NFT balance, Moralis provides you with a [getNFTLowestPrice] endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 

@@ -80,7 +80,6 @@ sidebar_class_name: "sidebar-api-reference"
 #### Get NFT Market Data
 
 - [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
-- [Get NFT lowest price](/web3-data-api/evm/reference/get-nft-lowest-price)
 
 ### Token API
 
@@ -97,7 +96,6 @@ sidebar_class_name: "sidebar-api-reference"
 #### Get Balance
 
 - [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
-- [Get ERC20 token allowance]()
 
 #### Get Transfers
 

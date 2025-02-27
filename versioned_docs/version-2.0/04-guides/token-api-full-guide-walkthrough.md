@@ -30,10 +30,9 @@ The [Get Balance API](/web3-data-api/evm/reference/get-wallet-token-balances) is
 
 This API category comprised of 2 APIs:
 
-| API Name                                                                         | Path                       | Use Cases                                                                                                                    |
-| -------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) | /{address}/erc20           | Fetch ERC20 token balances for a specific wallet `address`.                                                                  |
-| [getTokenAllowance]()                                                            | /erc20/{address}/allowance | Fetch the allowance of a specific ERC20 token given its `address` by the `spender_address` on behalf of the `owner_address`. |
+| API Name                                                                         | Path             | Use Cases                                                   |
+| -------------------------------------------------------------------------------- | ---------------- | ----------------------------------------------------------- |
+| [getWalletTokenBalances](/web3-data-api/evm/reference/get-wallet-token-balances) | /{address}/erc20 | Fetch ERC20 token balances for a specific wallet `address`. |
 
 ### Get Transfers
 
