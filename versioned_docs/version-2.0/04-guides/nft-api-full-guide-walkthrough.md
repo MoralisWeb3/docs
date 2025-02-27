@@ -34,7 +34,7 @@ This API category comprised of 4 APIs:
 | [getMultipleNFTs](/web3-data-api/evm/reference/get-multiple-nfts) | /nft/getMultipleNFTs | Fetch a complete stats of multiple NFTs (max 25 per call) in a given `tokens` array.                                       |
 | [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)     | /{address}/nft       | Fetch all NFTs in a given wallet `address`. This is ideal for displaying NFT balance for a portfolio dashboard.            |
 | [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts) | /nft/{address}       | Fetch all tokens in a given NFT collection `address`.                                                                      |
-| [searchNFTs](/2.0/web3-data-api/evm/reference/search-nfts)            | /nft/search          | Fetch all NFT that have metadata that contains a given `q` string. This is ideal for building an NFT search functionality. |
+| [searchNFTs](/2.0/web3-data-api/evm/reference/search-nfts)        | /nft/search          | Fetch all NFT that have metadata that contains a given `q` string. This is ideal for building an NFT search functionality. |
 
 ### Get NFT Transfers API
 
@@ -42,13 +42,13 @@ The [Get NFT Transfers](/web3-data-api/evm/reference/get-wallet-nft-transfers) A
 
 This API category comprised of 5 APIs:
 
-| API Name                                                                                   | Path                                        | Use Cases                                                                                                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)             | /{address}/nft/transfers                    | Fetch all transfers of NFT that interacted with a given `address`. This does not include any indirect NFT transfers, e.g. transfering NFT with OpenSea contract.         |
-| [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers)         | /nft/{address}/transfers                    | Fetch all transfers of a specific NFT collection with a given contract `address`.                                                                                        |
-| [getNFTTransfersFromToBlock](/web3-data-api/evm/reference/get-nft-transfers-from-to-block) | /nft/transfers                              | Fetch all transfers of NFTs within the given `from_block` and `to_block` range. This is ideal for fetching NFT transfers from a specific range of time or block numbers. |
-| [getNFTTransfersByBlock](/web3-data-api/evm/reference/get-nft-transfers-by-block)          | /block/{block_number_or_hash}/nft/transfers | Fetch all transfers of NFTs in a given `block_number_or_hash`                                                                                                            |
-| [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)                          | /nft/{address}/{token_id}/transfers         | Fetch all transfers of a specific NFT with given `address` and `token_id`.                                                                                               |
+| API Name                                                                           | Path                                        | Use Cases                                                                                                                                                                |
+| ---------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)     | /{address}/nft/transfers                    | Fetch all transfers of NFT that interacted with a given `address`. This does not include any indirect NFT transfers, e.g. transfering NFT with OpenSea contract.         |
+| [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers) | /nft/{address}/transfers                    | Fetch all transfers of a specific NFT collection with a given contract `address`.                                                                                        |
+| [getNFTTransfersFromToBlock]                                                       | /nft/transfers                              | Fetch all transfers of NFTs within the given `from_block` and `to_block` range. This is ideal for fetching NFT transfers from a specific range of time or block numbers. |
+| [getNFTTransfersByBlock]                                                           | /block/{block_number_or_hash}/nft/transfers | Fetch all transfers of NFTs in a given `block_number_or_hash`                                                                                                            |
+| [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)                  | /nft/{address}/{token_id}/transfers         | Fetch all transfers of a specific NFT with given `address` and `token_id`.                                                                                               |
 
 ### Get NFT Collections API
 
@@ -81,10 +81,10 @@ The [Get NFT Market Data](/web3-data-api/evm/reference/get-nft-trades) API is a 
 
 This API category comprised of 2 APIs:
 
-| API Name                                                               | Path                       | Use Cases                                                                                      |
-| ---------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)            | /nft/{address}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
-| [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) | /nft/{address}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
+| API Name                                                    | Path                       | Use Cases                                                                                      |
+| ----------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------- |
+| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades) | /nft/{address}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
+| [getNFTLowestPrice]                                         | /nft/{address}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
 
 ### Get NFT Metadata API
 
@@ -150,7 +150,7 @@ const runApp = async () => {
 
   const address = "USER_WALLET_ADDRESS";
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getWalletNFTs({
     address,
@@ -178,7 +178,7 @@ const runApp = async () => {
 
   const address = "USER_WALLET_ADDRESS";
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getWalletNFTs({
     address,
@@ -241,7 +241,7 @@ const runApp = async () => {
 
   const address = "USER_WALLET_ADDRESS";
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getWalletNFTTransfers({
     address,
@@ -269,7 +269,7 @@ const runApp = async () => {
 
   const address = "USER_WALLET_ADDRESS";
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getWalletNFTTransfers({
     address,
@@ -310,7 +310,7 @@ Once the code is added, you will be able to obtain the historical NFT transfers 
 
 #### Feature #3: Fetch NFT lowest price from the NFT balance
 
-In order to fetch the NFT price from the NFT balance, Moralis provides you with a [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) endpoint to do so.
+In order to fetch the NFT price from the NFT balance, Moralis provides you with a [getNFTLowestPrice] endpoint to do so.
 
 Here you'll need two parameters: `address` and `chain`.
 
@@ -331,7 +331,7 @@ const runApp = async () => {
 
   const address = "NFT_CONTRACT_ADDRESS"; // provided from `getWalletNFTs`
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
     address,
@@ -359,7 +359,7 @@ const runApp = async () => {
 
   const address = "NFT_CONTRACT_ADDRESS"; // provided from `getWalletNFTs`
 
-  const chain = "CHAIN" // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
+  const chain = "CHAIN"; // e.g EvmChain.ETHEREUM, EvmChain.POLYGON
 
   const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
     address,

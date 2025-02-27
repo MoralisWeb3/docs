@@ -11,7 +11,7 @@ slug: "/web3-data-api/breaking-changes/migration-guide"
 This migration guide covers the following:
 
 - Deprecation of `total` and `disable_total`
-- Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
+- Changes to [`getLogsByAddress`]
 - Deprecation of `direction` on [`getNFTTransfers`](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - Deprecation of endpoints
 
@@ -33,11 +33,11 @@ As of 11th September, the `total` returned on the below endpoints will no longer
 - [`getTokenAddressTransfers`](/web3-data-api/evm/reference/get-token-transfers)
 - [`getWalletTokenIdTransfers`](/web3-data-api/evm/reference/get-nft-transfers)
 - [`getAllTokenIds`](/web3-data-api/evm/reference/get-contract-nfts)
-- [`getNFTTransfersFromToBlock`](/web3-data-api/evm/reference/get-nft-transfers-from-to-block)
-- [`getNFTTransfersByBlock`](/web3-data-api/evm/reference/get-nft-transfers-by-block)
+- [`getNFTTransfersFromToBlock`]
+- [`getNFTTransfersByBlock`]
 - [`getTokenIdOwners`](/web3-data-api/evm/reference/get-nft-token-id-owners)
 - [`getTransactions`](/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)
-- [`getContractEvents`](/web3-data-api/evm/reference/get-contract-events)
+- [`getContractEvents`]
 
 We have launched 5 new endpoints that will provide you with these totals.
 
@@ -86,7 +86,7 @@ The endpoints are:
 #### New: Get NFT token ID stats
 
 - Endpoint: `/nft/{address}/{token_id}/stats`
-- [View API reference](/web3-data-api/evm/reference/get-nft-token-stats)
+- [View API reference]
 - Example response:
 
 ```js
@@ -134,9 +134,9 @@ The endpoints are:
 }
 ```
 
-## Changes to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs)
+## Changes to [`getLogsByAddress`]
 
-Now a `topic0` must be provided when making a request to [`getLogsByAddress`](/web3-data-api/evm/reference/get-contract-logs). The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
+Now a `topic0` must be provided when making a request to [`getLogsByAddress`]. The `topic0` is the keccak256 hash of the event signature. This signature can be found in the ABI of the contract. For example, the Transfer event signature for an ERC20 contract is: `Transfer(address indexed from, address indexed to ,uint256 value)`.
 
 Also, it is no longer possible to provide a `topic1`, `topic2` or `topic3` in the request. If you need to filter out specific values in the logs, then you should do it in the client side, after the request is made.
 
@@ -195,7 +195,7 @@ If you are using [`getErc20Transfers`](https://docs.moralis.io/2.0/web3-data-api
 
 #### Deprecation of [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals)
 
-If you are using [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance)
+If you are using [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals) for wallet approvals, then please start using [`getTokenAllowance`](https://docs.moralis.io). The below example illustrates how to migrate to [`getTokenAllowance`](https://docs.moralis.io)
 
 Taking the following request on [`getErc20Approvals`](https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals):
 
@@ -236,7 +236,7 @@ Returns the following response, and we can see that the allowance is `1449999999
 }
 ```
 
-To get the same allowance using [`getTokenAllowance`](https://docs.moralis.io/web3-data-api/evm/reference/get-token-allowance), you would make the below request with the following inputs:
+To get the same allowance using [`getTokenAllowance`](https://docs.moralis.io), you would make the below request with the following inputs:
 
 Path parameters:
 

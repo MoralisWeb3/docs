@@ -62,8 +62,8 @@ sidebar_class_name: "sidebar-api-reference"
 
 - [Get NFT transfers by wallet](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - [Get NFT transfers by contract](/web3-data-api/evm/reference/get-nft-contract-transfers)
-- [Get NFT transfers from a block to a block](/web3-data-api/evm/reference/get-nft-transfers-from-to-block)
-- [Get NFT transfers by block](/web3-data-api/evm/reference/get-nft-transfers-by-block)
+- [Get NFT transfers from a block to a block]
+- [Get NFT transfers by block]
 - [Get NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 
 #### Get NFT Collections
@@ -79,8 +79,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get NFT Market Data
 
-- [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
-- [Get NFT lowest price](/web3-data-api/evm/reference/get-nft-lowest-price)
+- [Get NFT trades by contract](/web3-data-api/evm/reference/get-nft-trades)
 
 ### Token API
 
@@ -97,7 +96,6 @@ sidebar_class_name: "sidebar-api-reference"
 #### Get Balance
 
 - [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
-- [Get ERC20 token allowance](/web3-data-api/evm/reference/get-token-allowance)
 
 #### Get Transfers
 
@@ -151,7 +149,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Logs
 
-- [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
+- [Get events by contract]
 
 ### Utils
 
