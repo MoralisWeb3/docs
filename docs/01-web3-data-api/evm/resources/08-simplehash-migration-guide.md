@@ -1,5 +1,7 @@
 ---
-title: "Migrating from SimpleHash to Moralis"
+title: "Migration Guide | Switch from SimpleHash to Moralis"
+description: "SimpleHash is shutting down on March 27, 2025. Any project using SimpleHash API needs a new provider before then. Migrate to Moralis APIs in 4 simple steps!"
+sidebar_label: "Migrating from SimpleHash to Moralis"
 slug: "/web3-data-api/evm/simplehash-migration-guide"
 sidebar_position: 8
 ---
@@ -12,7 +14,7 @@ SimpleHash is shutting down ALL THEIR APIs. Wallet providers and applications us
 
 With SimpleHash deprecating their API offering, Moralis provides a comprehensive alternative with equivalent functionality and additional capabilities. This guide will help you seamlessly transition your projects from SimpleHash to Moralis.
 
-# API Endpoint Equivalence
+## API Endpoint Equivalence
 
 SimpleHash endpoints can be easily mapped to Moralis equivalents. Below you'll find the mapping organized by API category.
 
