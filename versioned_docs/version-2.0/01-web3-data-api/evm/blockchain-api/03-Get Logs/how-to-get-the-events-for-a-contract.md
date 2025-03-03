@@ -21,7 +21,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get events by contract
 
-In order to get the events for a contract, Moralis provides you a [getContractEvents](/web3-data-api/evm/reference/get-contract-events) endpoint to do so.
+In order to get the events for a contract, Moralis provides you a [getContractEvents] endpoint to do so.
 
 Here you'll need four parameters: `address`, `chain`, `topic`, and `abi`.
 
@@ -245,7 +245,7 @@ Congratulations 🥳 You just got the events for a contract address with just a 
 
 ## API Reference
 
-- [getContractEvents](/web3-data-api/evm/reference/get-contract-events)
+- [getContractEvents]
 
 ## Support
 

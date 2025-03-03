@@ -21,7 +21,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get the top ERC20 tokens by price change
 
-In order to get the top ERC20 tokens by price change, Moralis provides you with a [getTopERC20TokensByPriceMovers](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers) endpoint to do so. To use the API, you can copy the following code:
+In order to get the top ERC20 tokens by price change, Moralis provides you with a [getTopERC20TokensByPriceMovers]endpoint to do so. To use the API, you can copy the following code:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -136,7 +136,7 @@ Congratulations 🥳 you just got the top ERC20 tokens by price change using Mar
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTopERC20TokensByPriceMovers](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers)
+- [getTopERC20TokensByPriceMovers]
 
 ## Support
 

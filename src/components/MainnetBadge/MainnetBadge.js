@@ -7,9 +7,11 @@ export const MainnetBadge = () => (
       fontSize: "12px",
       fontWeight: "bold",
       color: "#fff",
-      backgroundColor: "#f39c12",
+      backgroundColor: "blue",
       borderRadius: "4px",
       marginLeft: "8px",
+      position: "relative",
+      top: "-5px",
     }}
   >
     Mainnet Only

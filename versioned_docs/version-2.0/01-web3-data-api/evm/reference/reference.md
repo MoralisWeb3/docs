@@ -62,8 +62,8 @@ sidebar_class_name: "sidebar-api-reference"
 
 - [Get NFT transfers by wallet](/web3-data-api/evm/reference/get-wallet-nft-transfers)
 - [Get NFT transfers by contract](/web3-data-api/evm/reference/get-nft-contract-transfers)
-- [Get NFT transfers from a block to a block](/web3-data-api/evm/reference/get-nft-transfers-from-to-block)
-- [Get NFT transfers by block](/web3-data-api/evm/reference/get-nft-transfers-by-block)
+- [Get NFT transfers from a block to a block]
+- [Get NFT transfers by block]
 - [Get NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 
 #### Get NFT Collections
@@ -79,8 +79,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get NFT Market Data
 
-- [Get NFT trades by marketplace](/web3-data-api/evm/reference/get-nft-trades)
-- [Get NFT lowest price](/web3-data-api/evm/reference/get-nft-lowest-price)
+- [Get NFT trades by contract](/web3-data-api/evm/reference/get-nft-trades)
 
 ### Token API
 
@@ -97,7 +96,6 @@ sidebar_class_name: "sidebar-api-reference"
 #### Get Balance
 
 - [Get ERC20 token balance by wallet](/web3-data-api/evm/reference/get-wallet-token-balances)
-- [Get ERC20 token allowance](/web3-data-api/evm/reference/get-token-allowance)
 
 #### Get Transfers
 
@@ -119,23 +117,20 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get ERC20 token metadata by contract](/web3-data-api/evm/reference/get-token-metadata)
 - [Get ERC20 token metadata by symbols](/web3-data-api/evm/reference/get-token-metadata-by-symbol)
 
-
 #### Get Burns
 
 - [Get ERC20 token burns](/2.0/web3-data-api/evm/reference/get-erc20-burns)
 
 #### Get Mints
 
-- [Get ERC20 token mints](/2.0/web3-data-api/evm/reference/get-erc20-mints  )
-
+- [Get ERC20 token mints](/2.0/web3-data-api/evm/reference/get-erc20-mints)
 
 ### Market Data API
 
-- [Get the top ERC20 tokens by market cap](/market-insights-api/reference/get-top-erc20-tokens-by-market-cap)
-- [Get the top ERC20 tokens by price change](/market-insights-api/reference/get-top-erc20-tokens-by-price-movers)
-- [Get the top NFT collections by market cap](/market-insights-api/reference/get-top-nft-collections-by-market-cap)
-- [Get the top NFT collections by trading volume](/market-insights-api/reference/get-top-nft-collections-by-trading-volume)
-
+- [Get the top ERC20 tokens by market cap]
+- [Get the top ERC20 tokens by price change]
+- [Get the top NFT collections by market cap]
+- [Get the top NFT collections by trading volume]
 
 ### Blockchain API
 
@@ -154,8 +149,7 @@ sidebar_class_name: "sidebar-api-reference"
 
 #### Get Logs
 
-- [Get events by contract](/web3-data-api/evm/reference/get-contract-events)
-
+- [Get events by contract]
 
 ### Utils
 

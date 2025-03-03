@@ -16,6 +16,9 @@ Select what you want to achieve:
 - [Get Pairs & Liquidity](#get-pairs--liquidity)
 - [Get Token Prices](#get-token-prices)
 - [Get Token Snipers](#get-token-snipers)
+- [Get Filtered Tokens](#get-filtered-tokens)
+- [Get Trending Tokens](#get-trending-tokens)
+- [Search Tokens](#search-tokens)
 
 ### Get Token Metadata
 
@@ -59,3 +62,21 @@ Select what you want to achieve:
 | No. | Method                    | Description                 | API Reference                                                                       | URL                                                                                                                                                        |
 | --- | ------------------------- | --------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 13  | `getSnipersByPairAddress` | Get snipers by pair address | [Method Documentation](/web3-data-api/solana/reference/get-snipers-by-pair-address) | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/snipers](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/snipers) |
+
+### Get Filtered Tokens
+
+| No. | Method              | Description         | API Reference                                                               | URL                                                                                                                |
+| --- | ------------------- | ------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 14  | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/solana/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
+
+### Get Trending Tokens
+
+| No. | Method              | Description         | API Reference                                                            | URL                                                                                                              |
+| --- | ------------------- | ------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| 15  | `getTrendingTokens` | Get trending tokens | [Method Documentation](/web3-data-api/evm/reference/get-trending-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/trending](https://deep-index.moralis.io/api/v2.2/tokens/trending) |
+
+### Search Tokens
+
+| No. | Method         | Description   | API Reference                                                         | URL                                                                                                          |
+| --- | -------------- | ------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 16  | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/solana/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |

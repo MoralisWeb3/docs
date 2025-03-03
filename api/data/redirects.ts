@@ -1369,7 +1369,7 @@ export const redirects = [
   },
   {
     source: "/reference/gettokenallowance",
-    destination: "/web3-data-api/evm/reference/get-token-allowance",
+    destination: "",
     permanent: true,
   },
   {
@@ -5841,7 +5841,7 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-token-allowance",
-    destination: "/web3-data-api/evm/reference/get-token-allowance",
+    destination: "",
     permanent: true,
   },
   {
@@ -6905,6 +6905,119 @@ export const redirects = [
   {
     source: "/web3-data-api/evm/reference/resolve-domain",
     destination: "/web3-data-api/evm/reference/wallet-api/resolve-domain",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-trending-tokens",
+    destination: "/web3-data-api/evm/reference/get-trending-tokens",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-top-gainers",
+    destination: "/web3-data-api/evm/reference/get-tokens-with-top-gainers",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-top-losers",
+    destination: "/web3-data-api/evm/reference/get-tokens-with-top-losers",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-top-erc20-tokens-by-market-cap",
+    destination:
+      "/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap",
+    permanent: true,
+  },
+  {
+    source:
+      "/market-insights-api/reference/get-top-nft-collections-by-market-cap",
+    destination:
+      "/web3-data-api/evm/reference/get-top-nft-collections-by-market-cap",
+    permanent: true,
+  },
+  {
+    source:
+      "/market-insights-api/reference/get-top-nft-collections-by-trading-volume",
+    destination:
+      "/web3-data-api/evm/reference/get-top-nft-collections-by-trading-volume",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-rising-liquidity",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-buying-pressure",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-experienced-buyers",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-solid-performance",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-blue-chip",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/get-tokens-with-risky-bets",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source:
+      "/market-insights-api/reference/get-top-erc20-tokens-by-price-movers",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source:
+      "/market-insights-api/reference/get-top-crypto-currencies-by-market-cap",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source:
+      "/market-insights-api/reference/get-top-crypto-currencies-by-trading-volume",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/market-data-api/overview",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/discovery-api/overview",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/why-did-it-move-api/overview",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference/why-did-it-move-api/news",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api/reference",
+    destination: "/web3-data-api/evm/reference/token-api",
+    permanent: true,
+  },
+  {
+    source: "/market-insights-api",
+    destination: "/web3-data-api/evm/reference/token-api",
     permanent: true,
   },
 ];

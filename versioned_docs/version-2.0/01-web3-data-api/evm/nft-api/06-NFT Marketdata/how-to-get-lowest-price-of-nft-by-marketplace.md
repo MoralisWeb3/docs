@@ -20,7 +20,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ## Step 2: Get All Transfers Of An NFT
 
-In order to get lowest price of an NFT, Moralis provides you with an [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price) endpoint.
+In order to get lowest price of an NFT, Moralis provides you with an [getNFTLowestPrice] endpoint.
 
 Here you'll need three parameters: `address`, `marketplace`, and `chain`.
 
@@ -45,7 +45,7 @@ const runApp = async () => {
   const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 
   const chain = EvmChain.ETHEREUM;
-  
+
   const marketplace = "opensea";
 
   const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
@@ -76,7 +76,7 @@ const runApp = async () => {
   const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 
   const chain = EvmChain.ETHEREUM;
-  
+
   const marketplace = "opensea";
 
   const response = await Moralis.EvmApi.nft.getNFTLowestPrice({
@@ -127,9 +127,7 @@ In your terminal, you should see the following JSON response:
 {
   "transaction_hash": "0x7f144f0ba4a412b8b683b126e10962754d80f1010531f57f425e499c23983c9a",
   "transaction_index": "47",
-  "token_ids": [
-    "3644"
-  ],
+  "token_ids": ["3644"],
   "seller_address": "0xdacc47d22370a3cc940160efbe62750c47900f44",
   "buyer_address": "0x756dcf63d25ba456c492a892db61719e5861a872",
   "token_address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
@@ -147,7 +145,7 @@ Congratulations 🥳 You just got lowest price of an NFT with just a few lines o
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTLowestPrice](/web3-data-api/evm/reference/get-nft-lowest-price)
+- [getNFTLowestPrice]
 
 ## Support
 

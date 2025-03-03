@@ -3137,7 +3137,7 @@
     },
     "getNFTTrades": {
       "apiHost": "https://deep-index.moralis.io/api/v2",
-      "summary": "Get NFT trades by marketplace",
+      "summary": "Get NFT trades by contract",
       "description": "Get trades of NFTs for a given contract and marketplace.",
       "method": "GET",
       "path": "/nft/:address/trades",
@@ -14717,7 +14717,7 @@
           "description": "The address of the contract",
           "required": true,
           "type": "string",
-          "example": "DDy5QHKEDgg5ZyWmwi1rJKwYHe7ZR5udGQfJkc8EPfLM"
+          "example": "7zuR45WCsAsWsrqvYPyvLXFiCRKuvjh7HrMcNJ6F36Kd"
         }
       ],
       "queryParams": [],
