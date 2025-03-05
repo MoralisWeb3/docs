@@ -16814,6 +16814,598 @@
         }
       ]
     },
+    "getVolumeStatsByChain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume statistics by chain",
+      "description": "Returns volume statistics, active wallets, and total transactions for supported blockchain networks",
+      "method": "GET",
+      "path": "/volume/chains",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for all supported chains",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "chains",
+                "type": "array",
+                "description": "List of chains with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "description": "The chain identifier (hex chain ID or 'solana')",
+                      "example": "0x1",
+                      "required": true
+                    },
+                    {
+                      "name": "totalVolume",
+                      "type": "object",
+                      "description": "Total volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total volume in the last 5 minutes",
+                          "example": 1690971.708286464
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total volume in the last hour",
+                          "example": 46146546.893509656
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total volume in the last 6 hours",
+                          "example": 325726471.73284143
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total volume in the last 24 hours",
+                          "example": 2296130181.8957353
+                        }
+                      ]
+                    },
+                    {
+                      "name": "activeWallets",
+                      "type": "object",
+                      "description": "Number of active wallets across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Active wallets in the last 5 minutes",
+                          "example": 416
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Active wallets in the last hour",
+                          "example": 4860
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Active wallets in the last 6 hours",
+                          "example": 40954
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Active wallets in the last 24 hours",
+                          "example": 193324
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalTransactions",
+                      "type": "object",
+                      "description": "Total number of transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total transactions in the last 5 minutes",
+                          "example": 617
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total transactions in the last hour",
+                          "example": 5913
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total transactions in the last 6 hours",
+                          "example": 50554
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total transactions in the last 24 hours",
+                          "example": 240210
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getVolumeStatsByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume and chain data by categories",
+      "description": "Returns volume statistics, buyer/seller counts, and transaction counts for token categories on a specific chain",
+      "method": "GET",
+      "path": "/volume/categories",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for token categories on the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "categories",
+                "type": "array",
+                "description": "List of categories with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "categoryId",
+                      "type": "string",
+                      "description": "The category identifier",
+                      "example": "artificial-intelligence",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "Total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 714.0815536553663
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 8330.827220195075
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 226941.46075181215
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 844976.6205963915
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "Total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 974.2512412423143
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 27373.23458490025
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 212581.83058358674
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 1099797.4109894654
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "Number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buyers in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buyers in the last hour",
+                          "example": 22
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buyers in the last 6 hours",
+                          "example": 240
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buyers in the last 24 hours",
+                          "example": 1206
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "Number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sellers in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sellers in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sellers in the last 6 hours",
+                          "example": 236
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sellers in the last 24 hours",
+                          "example": 1020
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "Number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy transactions in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy transactions in the last hour",
+                          "example": 23
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 6 hours",
+                          "example": 253
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 24 hours",
+                          "example": 1271
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "Number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell transactions in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell transactions in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 6 hours",
+                          "example": 249
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 24 hours",
+                          "example": 1074
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolume": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by chain",
+      "description": "Returns historical volume data for chains in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "volume",
+                      "type": "number",
+                      "description": "Total volume for this time interval",
+                      "example": 50377606.51392583,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolumeByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by category",
+      "description": "Returns historical buy and sell volume data for a specific token category in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries/:categoryId",
+      "pathParams": [
+        {
+          "name": "categoryId",
+          "description": "The category identifier",
+          "required": true,
+          "example": "artificial-intelligence",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified category",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "buyVolume",
+                      "type": "number",
+                      "description": "Total buy volume for this time interval",
+                      "example": 8330.827220195075,
+                      "required": true
+                    },
+                    {
+                      "name": "sellVolume",
+                      "type": "number",
+                      "description": "Total sell volume for this time interval",
+                      "example": 27373.234584900256,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getAggregatedTokenPairStats": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get aggregated token pair statistics by address",
@@ -19472,7 +20064,6 @@
         }
       ]
     },
-
     "getTrendingTokens": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get trending tokens",
