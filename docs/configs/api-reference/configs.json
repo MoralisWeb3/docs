@@ -30531,6 +30531,426 @@
         }
       ]
     },
+    "getNewTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get new tokens by exchange",
+      "description": "Returns a list of newly created tokens on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/new",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of new tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "HcUx4pSPpWoKZCPhHApnMVp3ZE29TM9ZB9JtVFr1LjoB",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Test",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "$TEST",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": null
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.0000000280515",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000004092",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "8768.063894688",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "4092",
+                      "required": true
+                    },
+                    {
+                      "name": "createdAt",
+                      "type": "string",
+                      "description": "The token creation timestamp",
+                      "example": "2025-03-05T09:34:11.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getBondingTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get tokens in bonding phase by exchange",
+      "description": "Returns a list of tokens currently in the bonding phase on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/bonding",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of tokens in the bonding phase on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "SKYTO",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "SKYTO",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://d23exngyjlavgo.cloudfront.net/solana_H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.000000346",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000050522",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "30803.481504874",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "50522",
+                      "required": true
+                    },
+                    {
+                      "name": "bondingCurveProgress",
+                      "type": "number",
+                      "description": "The progress percentage of the bonding curve",
+                      "example": 96.85384504519783,
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getGraduatedTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get graduated tokens by exchange",
+      "description": "Returns a list of tokens that have graduated (completed bonding phase) on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/graduated",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of graduated tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "Cy12AGDENaqgdM7A6o8R7TUATdDY2rudLMTpbzbGpump",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Ginkgo",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "Ginkgo",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://d23exngyjlavgo.cloudfront.net/solana_Cy12AGDENaqgdM7A6o8R7TUATdDY2rudLMTpbzbGpump"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.000000559",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000081556",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "28183.83084726",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "81556",
+                      "required": true
+                    },
+                    {
+                      "name": "graduatedAt",
+                      "type": "string",
+                      "description": "The timestamp when the token graduated",
+                      "example": "2025-03-05T09:30:42.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenBondingStatus": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get bonding status of a specific token",
+      "description": "Returns the bonding progress status for a specific token",
+      "method": "GET",
+      "path": "/token/mainnet/:tokenAddress/bonding-status",
+      "pathParams": [
+        {
+          "name": "tokenAddress",
+          "description": "The token address",
+          "required": true,
+          "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the bonding status of the specified token",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "string",
+                "description": "The token address",
+                "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                "required": true
+              },
+              {
+                "name": "bondingProgress",
+                "type": "number",
+                "description": "The current bonding curve progress percentage",
+                "example": 96.788763272986,
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getCandleSticks": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Gets candlesticks for a pair address",
