@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Get OHLCV by Pair Address
 title: Get OHLCV Data by Pair Address for Solana
 slug: /web3-data-api/solana/reference/get-ohlcv-by-pair-address

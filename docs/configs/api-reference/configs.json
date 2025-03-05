@@ -29979,6 +29979,162 @@
         }
       ]
     },
+
+    "getMultipleTokenPrices": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get multiple token prices on Solana",
+      "description": "Returns price information for multiple Solana tokens in a single request",
+      "method": "POST",
+      "path": "/token/mainnet/prices",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "addresses",
+            "type": "array",
+            "required": true,
+            "description": "Array of token addresses to fetch prices for",
+            "example": [
+              "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+              "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux"
+            ],
+            "field": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns price information for requested tokens",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token address",
+                  "example": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+                  "required": true
+                },
+                {
+                  "name": "pairAddress",
+                  "type": "string",
+                  "description": "The address of the liquidity pair",
+                  "example": "71HuFmuYAFEFUna2x2R4HJjrFNQHGuagW3gUMFToL9tk",
+                  "required": true
+                },
+                {
+                  "name": "exchangeName",
+                  "type": "string",
+                  "description": "The name of the exchange",
+                  "example": "Meteora DLMM",
+                  "required": true
+                },
+                {
+                  "name": "exchangeAddress",
+                  "type": "string",
+                  "description": "The address of the exchange",
+                  "example": "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+                  "required": true
+                },
+                {
+                  "name": "nativePrice",
+                  "type": "object",
+                  "description": "The token price in native currency (SOL)",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "value",
+                      "type": "string",
+                      "description": "The native price value",
+                      "example": "90899405",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The native currency symbol",
+                      "example": "WSOL",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The native currency name",
+                      "example": "Wrapped Solana",
+                      "required": true
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "number",
+                      "description": "The native currency decimals",
+                      "example": 9,
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "description": "The current price in USD",
+                  "example": 13.403560961,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24h",
+                  "type": "number",
+                  "description": "The price 24 hours ago in USD",
+                  "example": 12.405562499,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24hrUsdChange",
+                  "type": "number",
+                  "description": "The absolute USD price change in the last 24 hours",
+                  "example": 0.9959895529999994,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24hrPercentChange",
+                  "type": "number",
+                  "description": "The percentage price change in the last 24 hours",
+                  "example": 8.028572288280238,
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "URL to the token logo",
+                  "example": "https://d23exngyjlavgo.cloudfront.net/solana_6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The token name",
+                  "example": "OFFICIAL TRUMP",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The token symbol",
+                  "example": "TRUMP",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "getTokenPairs": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token pairs by address",
