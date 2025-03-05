@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Get Multiple Token Prices (Solana)
+sidebar_label: Get Multiple Token Prices
 slug: /web3-data-api/solana/reference/get-multiple-token-prices
 title: Get Multiple Token Prices on Solana
 description: Retrieve price information for multiple Solana tokens in a single request, including USD price, 24-hour change, and exchange details.
