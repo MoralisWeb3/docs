@@ -71,10 +71,10 @@ Select what you want to achieve:
 
 ### Get Token Analytics
 
-| No. | Method                      | Description                  | API Reference                                                                     | URL                                                                                                                                  |
-| --- | --------------------------- | ---------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| 11  | `getTokenAnalytics`         | Get token analytics          | [Method Documentation](/web3-data-api/evm/reference/get-token-analytics)          | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
-| 12  | `getMultipleTokenAnalytics` | Get multiple token analytics | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-analytics) | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
+| No. | Method                      | Description                  | API Reference                                                                        | URL                                                                                                                                  |
+| --- | --------------------------- | ---------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 11  | `getTokenAnalytics`         | Get token analytics          | [Method Documentation](/web3-data-api/solana/reference/get-token-analytics)          | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
+| 12  | `getMultipleTokenAnalytics` | Get multiple token analytics | [Method Documentation](/web3-data-api/solana/reference/get-multiple-token-analytics) | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
 
 ### Get Token Prices
 
