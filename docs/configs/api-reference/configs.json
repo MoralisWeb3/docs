@@ -951,7 +951,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -1120,7 +1120,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -1354,6 +1354,7 @@
         {
           "name": "max_token_inactivity",
           "description": "Exclude tokens inactive for more than the given amount of days",
+          "example": 1,
           "required": false,
           "type": "number"
         },
@@ -1361,6 +1362,7 @@
           "name": "min_pair_side_liquidity_usd",
           "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
           "required": false,
+          "example": 1000,
           "type": "number"
         }
       ],
@@ -2215,7 +2217,7 @@
           "description": "The wallet address for which profitability summary is to be retrieved.",
           "required": true,
           "type": "string",
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -2337,7 +2339,7 @@
           "description": "The wallet address for which profitability is to be retrieved.",
           "required": true,
           "type": "string",
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -3450,6 +3452,12 @@
           "type": "boolean",
           "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -3680,6 +3688,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified. Currently supported for ethereum NFT contracts.",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -4178,6 +4296,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -4342,6 +4466,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -4601,7 +4835,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -4714,6 +4948,12 @@
         {
           "name": "media_items",
           "description": "Should preview media data be returned?",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
           "required": false,
           "type": "boolean"
         }
@@ -4948,63 +5188,63 @@
                         "name": "transaction_hash",
                         "type": "string",
                         "description": "The hash of the transaction",
-                        "example": "string",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
                         "required": true
                       },
                       {
                         "name": "block_timestamp",
                         "type": "string",
                         "description": "The timestamp of the block",
-                        "example": "string",
+                        "example": "2023-04-04T15:59:11.000Z",
                         "required": true
                       },
                       {
                         "name": "buyer_address",
                         "type": "string",
                         "description": "The wallet address of the buyer",
-                        "example": "string",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
                         "required": true
                       },
                       {
                         "name": "seller_address",
                         "type": "string",
                         "description": "The wallet address of the seller",
-                        "example": "string",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
                         "required": true
                       },
                       {
                         "name": "price",
                         "type": "string",
                         "description": "The price of the NFT in the sale",
-                        "example": "string",
+                        "example": "7300000000000000",
                         "required": true
                       },
                       {
                         "name": "price_formatted",
                         "type": "string",
                         "description": "The formatted price of the NFT in the sale",
-                        "example": "string",
+                        "example": "0.0073",
                         "required": true
                       },
                       {
                         "name": "usd_price_at_sale",
                         "type": "string",
                         "description": "The USD price at the time of sale",
-                        "example": "string",
+                        "example": "13.61",
                         "required": true
                       },
                       {
                         "name": "current_usd_value",
                         "type": "string",
                         "description": "The current USD value of the NFT",
-                        "example": "string",
+                        "example": "15.53",
                         "required": true
                       },
                       {
                         "name": "token_id",
                         "type": "string",
                         "description": "The token ID of the NFT",
-                        "example": "string",
+                        "example": "170",
                         "required": true
                       },
                       {
@@ -5016,33 +5256,33 @@
                             "name": "token_name",
                             "type": "string",
                             "description": "The name of the payment token",
-                            "example": "string",
+                            "example": "Ether",
                             "required": true
                           },
                           {
                             "name": "token_symbol",
                             "type": "string",
                             "description": "The symbol of the payment token",
-                            "example": "string",
+                            "example": "ETH",
                             "required": true
                           },
                           {
                             "name": "token_logo",
                             "type": "string",
                             "description": "The logo URL of the payment token",
-                            "example": "string"
+                            "example": "https://cdn.moralis.io/eth/0x.png"
                           },
                           {
                             "name": "token_decimals",
                             "type": "string",
                             "description": "The number of decimals for the payment token",
-                            "example": "string"
+                            "example": "18"
                           },
                           {
                             "name": "token_address",
                             "type": "string",
                             "description": "The address of the payment token contract",
-                            "example": "string",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                             "required": true
                           }
                         ]
@@ -5079,7 +5319,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -5437,7 +5677,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -5560,6 +5800,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -5723,6 +5969,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -6957,6 +7313,12 @@
           "type": "boolean",
           "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -7168,63 +7530,63 @@
                     "name": "transaction_hash",
                     "type": "string",
                     "description": "The hash of the transaction",
-                    "example": "string",
+                    "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
                     "required": true
                   },
                   {
                     "name": "block_timestamp",
                     "type": "string",
                     "description": "The timestamp of the block",
-                    "example": "string",
+                    "example": "2023-04-04T15:59:11.000Z",
                     "required": true
                   },
                   {
                     "name": "buyer_address",
                     "type": "string",
                     "description": "The wallet address of the buyer",
-                    "example": "string",
+                    "example": "0xcb1c1fde09f811b294172696404e88e658659905",
                     "required": true
                   },
                   {
                     "name": "seller_address",
                     "type": "string",
                     "description": "The wallet address of the seller",
-                    "example": "string",
+                    "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
                     "required": true
                   },
                   {
                     "name": "price",
                     "type": "string",
                     "description": "The price of the NFT in the sale",
-                    "example": "string",
+                    "example": "7300000000000000",
                     "required": true
                   },
                   {
                     "name": "price_formatted",
                     "type": "string",
                     "description": "The formatted price of the NFT in the sale",
-                    "example": "string",
+                    "example": "0.0073",
                     "required": true
                   },
                   {
                     "name": "usd_price_at_sale",
                     "type": "string",
                     "description": "The USD price at the time of sale",
-                    "example": "string",
+                    "example": "13.61",
                     "required": true
                   },
                   {
                     "name": "current_usd_value",
                     "type": "string",
                     "description": "The current USD value of the NFT",
-                    "example": "string",
+                    "example": "15.53",
                     "required": true
                   },
                   {
                     "name": "token_id",
                     "type": "string",
                     "description": "The token ID of the NFT",
-                    "example": "string",
+                    "example": "170",
                     "required": true
                   },
                   {
@@ -7236,33 +7598,33 @@
                         "name": "token_name",
                         "type": "string",
                         "description": "The name of the payment token",
-                        "example": "string",
+                        "example": "Ether",
                         "required": true
                       },
                       {
                         "name": "token_symbol",
                         "type": "string",
                         "description": "The symbol of the payment token",
-                        "example": "string",
+                        "example": "ETH",
                         "required": true
                       },
                       {
                         "name": "token_logo",
                         "type": "string",
                         "description": "The logo URL of the payment token",
-                        "example": "string"
+                        "example": "https://cdn.moralis.io/eth/0x.png"
                       },
                       {
                         "name": "token_decimals",
                         "type": "string",
                         "description": "The number of decimals for the payment token",
-                        "example": "string"
+                        "example": "18"
                       },
                       {
                         "name": "token_address",
                         "type": "string",
                         "description": "The address of the payment token contract",
-                        "example": "string",
+                        "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                         "required": true
                       }
                     ]
@@ -7618,6 +7980,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -7782,6 +8150,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -8647,7 +9125,7 @@
           "description": "The address of the NFT collection",
           "required": true,
           "type": "string",
-          "example": "0x8821bee2ba0df28761afff119d66390d594cd280"
+          "example": "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949"
         }
       ],
       "queryParams": [
@@ -10689,7 +11167,7 @@
         }
       ]
     },
-    "getNFTsbyTraits": {
+    "getNFTByContractTraits": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFTs by traits",
       "description": "Get NFTs by traits for a given contract.",
@@ -10813,8 +11291,7 @@
         "required": true,
         "example": {
           "traits": {
-            "body": "astronaut",
-            "skin": "purple"
+            "Legendary": "Astronaut"
           }
         }
       },
@@ -13729,7 +14206,7 @@
           "name": "token_address",
           "description": "The address of the token contract",
           "required": true,
-          "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -13925,7 +14402,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         }
       ],
       "queryParams": [
@@ -14071,7 +14548,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         }
       ],
       "queryParams": [
@@ -14470,13 +14947,13 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         },
         {
           "name": "protocol",
           "description": "The protocol to query",
           "required": true,
-          "example": "uniswap-v3",
+          "example": "aave-v3",
           "type": "string",
           "enum": [
             "uniswap-v2",
@@ -14897,7 +15374,7 @@
           "description": "The ERC20 token address.",
           "required": true,
           "type": "string",
-          "example": "0x7c9f4c87d911613fe9ca58b579f737911aad2d43"
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
         }
       ],
       "queryParams": [
@@ -15355,7 +15832,7 @@
           "name": "address",
           "description": "The pair address",
           "required": true,
-          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -15786,7 +16263,7 @@
           "name": "token_address",
           "description": "The address of the token contract",
           "required": true,
-          "example": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -15901,7 +16378,7 @@
           "name": "address",
           "description": "The pair address",
           "required": true,
-          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
@@ -16010,7 +16487,7 @@
         {
           "name": "fromDate",
           "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
-          "example": "2024-12-25",
+          "example": "2025-01-01T10:00:00.000",
           "required": true,
           "type": "string"
         },
@@ -16018,7 +16495,7 @@
           "name": "toDate",
           "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
           "required": true,
-          "example": "2025-01-01",
+          "example": "2025-01-02T10:00:00.000",
           "type": "string"
         },
         {
@@ -16150,7 +16627,7 @@
           "name": "address",
           "description": "The pair address token-transactions are to be retrieved for.",
           "required": true,
-          "example": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
@@ -16515,7 +16992,7 @@
           "name": "address",
           "description": "The token address to get transaction for",
           "required": true,
-          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -16996,12 +17473,6 @@
           ]
         },
         {
-          "name": "tokenAddress",
-          "description": "The token address to get transaction for (optional)",
-          "required": false,
-          "type": "string"
-        },
-        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page)",
           "required": false,
@@ -17329,7 +17800,7 @@
           "name": "address",
           "description": "The pair address for which snipers are to be retrieved.",
           "required": true,
-          "example": "0x85218527945d48167A682e277867F1539AD00068",
+          "example": "0xa3c2076eb97d573cc8842f1db1ecdf7b6f77ba27",
           "type": "string"
         }
       ],
@@ -17549,7 +18020,7 @@
           "description": "The token contract address",
           "required": true,
           "type": "string",
-          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
         }
       ],
       "queryParams": [
@@ -17989,7 +18460,7 @@
         {
           "name": "fromDate",
           "description": "The starting date (format in seconds or datestring accepted by momentjs)\n",
-          "example": "2024-11-25",
+          "example": "2025-01-01T10:00:00",
           "required": true,
           "type": "string"
         },
@@ -17997,7 +18468,7 @@
           "name": "toDate",
           "description": "The ending date (format in seconds or datestring accepted by momentjs)\n",
           "required": true,
-          "example": "2025-01-01",
+          "example": "2025-02-01T11:00:00",
           "type": "string"
         },
         {
@@ -20256,7 +20727,7 @@
           "name": "transaction_hash",
           "description": "The transaction hash",
           "required": true,
-          "example": "0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109",
+          "example": "0xfeda0e8f0d6e54112c28d319c0d303c065d1125c9197bd653682f5fcb0a6c81e",
           "type": "string"
         }
       ],
@@ -20654,7 +21125,7 @@
           "name": "transaction_hash",
           "description": "The transaction hash",
           "required": true,
-          "example": "0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760",
+          "example": "0xfeda0e8f0d6e54112c28d319c0d303c065d1125c9197bd653682f5fcb0a6c81e",
           "type": "string"
         }
       ],
