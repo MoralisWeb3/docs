@@ -222,6 +222,7 @@ Select what you want to achieve:
 - [Get Token Transfers](#get-token-transfers)
 - [Get Token Top Traders](#get-token-top-traders)
 - [Get Token Pairs & Liquidity](#get-token-pairs--liquidity)
+- [Get Token Analytics](#get-token-analytics)
 - [Get Token Stats](#get-token-stats)
 - [Get Token Holders](#get-token-holders)
 - [Get Token Snipers](#get-token-snipers)
@@ -289,46 +290,53 @@ Select what you want to achieve:
 | 19  | `getPairAddress`              | Get DEX token pair address           | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)                | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres) |
 | 20  | `getPairReserves`             | Get DEX token pair reserves          | [Method Documentation](/web3-data-api/evm/reference/get-pair-reserves)               | [https://deep-index.moralis.io/api/v2.2/:pair_address/reserves](https://deep-index.moralis.io/api/v2.2/:pair_address/reserves)                                         |
 
+### Get Token Analytics
+
+| No. | Method                      | Description                  | API Reference                                                                     | URL                                                                                                                                  |
+| --- | --------------------------- | ---------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 21  | `getTokenAnalytics`         | Get token analytics          | [Method Documentation](/web3-data-api/evm/reference/get-token-analytics)          | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
+| 22  | `getMultipleTokenAnalytics` | Get multiple token analytics | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-analytics) | [https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics](https://deep-index.moralis.io/api/v2.2/tokens/:address/analytics) |
+
 ### Get Token Stats
 
 | No. | Method          | Description           | API Reference                                                        | URL                                                                                                                        |
 | --- | --------------- | --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| 21  | `getTokenStats` | Get ERC20 token stats | [Method Documentation](/web3-data-api/evm/reference/get-token-stats) | [https://deep-index.moralis.io/api/v2.2/erc20/:address/stats](https://deep-index.moralis.io/api/v2.2/erc20/:address/stats) |
+| 23  | `getTokenStats` | Get ERC20 token stats | [Method Documentation](/web3-data-api/evm/reference/get-token-stats) | [https://deep-index.moralis.io/api/v2.2/erc20/:address/stats](https://deep-index.moralis.io/api/v2.2/erc20/:address/stats) |
 
 ### Get Token Holders
 
 | No. | Method                      | Description                              | API Reference                                                                     | URL                                                                                                                                                              |
 | --- | --------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 22  | `getTokenOwners`            | Get ERC20 Token Holders                  | [Method Documentation](/web3-data-api/evm/reference/get-token-holders)            | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners)                         |
-| 23  | `getTokenHolders`           | Get ERC20 Token Holders Stats            | [Method Documentation](/web3-data-api/evm/reference/get-token-holder-stats)       | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders)                       |
-| 24  | `getHistoricalTokenHolders` | Get ERC20 token holders Stats Timeseries | [Method Documentation](/web3-data-api/evm/reference/get-historical-token-holders) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical) |
+| 24  | `getTokenOwners`            | Get ERC20 Token Holders                  | [Method Documentation](/web3-data-api/evm/reference/get-token-holders)            | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners)                         |
+| 25  | `getTokenHolders`           | Get ERC20 Token Holders Stats            | [Method Documentation](/web3-data-api/evm/reference/get-token-holder-stats)       | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders)                       |
+| 26  | `getHistoricalTokenHolders` | Get ERC20 token holders Stats Timeseries | [Method Documentation](/web3-data-api/evm/reference/get-historical-token-holders) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical) |
 
 ### Get Token Snipers
 
 | No. | Method                    | Description                 | API Reference                                                                    | URL                                                                                                                            |
 | --- | ------------------------- | --------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| 25  | `getSnipersByPairAddress` | Get snipers by pair address | [Method Documentation](/web3-data-api/evm/reference/get-snipers-by-pair-address) | [https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers](https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers) |
+| 27  | `getSnipersByPairAddress` | Get snipers by pair address | [Method Documentation](/web3-data-api/evm/reference/get-snipers-by-pair-address) | [https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers](https://deep-index.moralis.io/api/v2.2/pairs/:address/snipers) |
 
 ### Get Trending Tokens
 
 | No. | Method                         | Description                            | API Reference                                                                           | URL                                                                                                                                          |
 | --- | ------------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 26  | `getTrendingTokens`            | Get trending tokens                    | [Method Documentation](/web3-data-api/evm/reference/get-trending-tokens)                | [https://deep-index.moralis.io/api/v2.2/tokens/trending](https://deep-index.moralis.io/api/v2.2/tokens/trending)                             |
-| 27  | `getTopGainersTokens`          | Get tokens with top gainers            | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)        | [https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-gainers](https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-gainers)   |
-| 28  | `getTopLosersTokens`           | Get tokens with top losers             | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)         | [https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-losers](https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-losers)     |
-| 29  | `getTopERC20TokensByMarketCap` | Get the top ERC20 tokens by market cap | [Method Documentation](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap) | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens) |
+| 28  | `getTrendingTokens`            | Get trending tokens                    | [Method Documentation](/web3-data-api/evm/reference/get-trending-tokens)                | [https://deep-index.moralis.io/api/v2.2/tokens/trending](https://deep-index.moralis.io/api/v2.2/tokens/trending)                             |
+| 29  | `getTopGainersTokens`          | Get tokens with top gainers            | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)        | [https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-gainers](https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-gainers)   |
+| 30  | `getTopLosersTokens`           | Get tokens with top losers             | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)         | [https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-losers](https://deep-index.moralis.io/api/v2.2/discovery/tokens/top-losers)     |
+| 31  | `getTopERC20TokensByMarketCap` | Get the top ERC20 tokens by market cap | [Method Documentation](/web3-data-api/evm/reference/get-top-erc20-tokens-by-market-cap) | [https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens](https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens) |
 
 ### Get Filtered Tokens
 
 | No. | Method              | Description         | API Reference                                                            | URL                                                                                                                |
 | --- | ------------------- | ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| 30  | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
+| 32  | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
 
 ### Search Tokens
 
 | No. | Method         | Description   | API Reference                                                      | URL                                                                                                          |
 | --- | -------------- | ------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| 31  | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/evm/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |
+| 33  | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/evm/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |
 
 ## DeFi API
 

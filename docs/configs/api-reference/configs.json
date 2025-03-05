@@ -16252,6 +16252,568 @@
         }
       ]
     },
+    "getTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token analytics",
+      "description": "Get analytics for a token by token address",
+      "method": "GET",
+      "path": "/tokens/:address/analytics",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address",
+          "required": true,
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token analytics data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+                "required": true
+              },
+              {
+                "name": "totalBuyVolume",
+                "type": "object",
+                "description": "The total buy volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Buy volume in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Buy volume in the last hour",
+                    "example": 43678.642005116264
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Buy volume in the last 6 hours",
+                    "example": 129974.13379912674
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Buy volume in the last 24 hours",
+                    "example": 4583254.969119737
+                  }
+                ]
+              },
+              {
+                "name": "totalSellVolume",
+                "type": "object",
+                "description": "The total sell volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Sell volume in the last 5 minutes",
+                    "example": 147.69184595604904
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Sell volume in the last hour",
+                    "example": 393.0296489666009
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Sell volume in the last 6 hours",
+                    "example": 257421.35479601548
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Sell volume in the last 24 hours",
+                    "example": 4735908.689740969
+                  }
+                ]
+              },
+              {
+                "name": "totalBuyers",
+                "type": "object",
+                "description": "The total number of buyers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buyers in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buyers in the last hour",
+                    "example": 33
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 6 hours",
+                    "example": 115
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 24 hours",
+                    "example": 547
+                  }
+                ]
+              },
+              {
+                "name": "totalSellers",
+                "type": "object",
+                "description": "The total number of sellers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sellers in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sellers in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 6 hours",
+                    "example": 78
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalBuys",
+                "type": "object",
+                "description": "The total number of buy transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last hour",
+                    "example": 34
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 6 hours",
+                    "example": 120
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalSells",
+                "type": "object",
+                "description": "The total number of sell transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 6 hours",
+                    "example": 87
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 24 hours",
+                    "example": 622
+                  }
+                ]
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD",
+                "example": "36741131.82999999",
+                "required": true
+              },
+              {
+                "name": "totalFullyDilutedValuation",
+                "type": "string",
+                "description": "The total fully diluted valuation of the token",
+                "example": "2967517591.181045",
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getMultipleTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get analytics for multiple tokens",
+      "description": "Returns analytics data for multiple token addresses across different chains",
+      "method": "POST",
+      "path": "/tokens/analytics",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to fetch analytics for",
+            "example": [
+              {
+                "chain": "0x1",
+                "tokenAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+              },
+              {
+                "chain": "solana",
+                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+              }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "description": "The chain identifier (chain name or hex chain ID)",
+                  "example": "0x1",
+                  "required": false
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token contract address",
+                  "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                  "required": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns analytics data for the requested tokens",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokens",
+                "type": "array",
+                "description": "Array of token analytics data",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "The total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 620018.368745647
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 6171117.52967764
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 36449765.17913502
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 271657291.0959589
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "The total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 376750.0725032808
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 6363315.515975114
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 45127944.04393408
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 278022340.90688425
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "The total number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buyers in the last 5 minutes",
+                          "example": 43
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buyers in the last hour",
+                          "example": 552
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 6 hours",
+                          "example": 3535
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 24 hours",
+                          "example": 20336
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "The total number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sellers in the last 5 minutes",
+                          "example": 48
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sellers in the last hour",
+                          "example": 582
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 6 hours",
+                          "example": 3675
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 24 hours",
+                          "example": 20166
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "The total number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 5 minutes",
+                          "example": 51
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last hour",
+                          "example": 641
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 6 hours",
+                          "example": 4114
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 24 hours",
+                          "example": 24506
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "The total number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 5 minutes",
+                          "example": 55
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last hour",
+                          "example": 676
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 6 hours",
+                          "example": 4242
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 24 hours",
+                          "example": 24198
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalLiquidityUsd",
+                      "type": "string",
+                      "description": "The total liquidity in USD",
+                      "example": "300289168.54999965",
+                      "required": true
+                    },
+                    {
+                      "name": "totalFullyDilutedValuation",
+                      "type": "string",
+                      "description": "The total fully diluted valuation of the token",
+                      "example": "75897332933.73126",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getAggregatedTokenPairStats": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get aggregated token pair statistics by address",
@@ -29401,6 +29963,568 @@
                     "example": 5634
                   }
                 ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token analytics",
+      "description": "Get analytics for a token by token address",
+      "method": "GET",
+      "path": "/tokens/:address/analytics",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address",
+          "required": true,
+          "example": "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token analytics data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+                "required": true
+              },
+              {
+                "name": "totalBuyVolume",
+                "type": "object",
+                "description": "The total buy volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Buy volume in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Buy volume in the last hour",
+                    "example": 43678.642005116264
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Buy volume in the last 6 hours",
+                    "example": 129974.13379912674
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Buy volume in the last 24 hours",
+                    "example": 4583254.969119737
+                  }
+                ]
+              },
+              {
+                "name": "totalSellVolume",
+                "type": "object",
+                "description": "The total sell volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Sell volume in the last 5 minutes",
+                    "example": 147.69184595604904
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Sell volume in the last hour",
+                    "example": 393.0296489666009
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Sell volume in the last 6 hours",
+                    "example": 257421.35479601548
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Sell volume in the last 24 hours",
+                    "example": 4735908.689740969
+                  }
+                ]
+              },
+              {
+                "name": "totalBuyers",
+                "type": "object",
+                "description": "The total number of buyers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buyers in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buyers in the last hour",
+                    "example": 33
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 6 hours",
+                    "example": 115
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 24 hours",
+                    "example": 547
+                  }
+                ]
+              },
+              {
+                "name": "totalSellers",
+                "type": "object",
+                "description": "The total number of sellers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sellers in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sellers in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 6 hours",
+                    "example": 78
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalBuys",
+                "type": "object",
+                "description": "The total number of buy transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last hour",
+                    "example": 34
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 6 hours",
+                    "example": 120
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalSells",
+                "type": "object",
+                "description": "The total number of sell transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 6 hours",
+                    "example": 87
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 24 hours",
+                    "example": 622
+                  }
+                ]
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD",
+                "example": "36741131.82999999",
+                "required": true
+              },
+              {
+                "name": "totalFullyDilutedValuation",
+                "type": "string",
+                "description": "The total fully diluted valuation of the token",
+                "example": "2967517591.181045",
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getMultipleTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get analytics for multiple tokens",
+      "description": "Returns analytics data for multiple token addresses across different chains",
+      "method": "POST",
+      "path": "/tokens/analytics",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to fetch analytics for",
+            "example": [
+              {
+                "chain": "solana",
+                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+              },
+              {
+                "chain": "0x1",
+                "tokenAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+              }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "description": "The chain identifier (chain name or hex chain ID)",
+                  "example": "0x1",
+                  "required": false
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token contract address",
+                  "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                  "required": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns analytics data for the requested tokens",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokens",
+                "type": "array",
+                "description": "Array of token analytics data",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "The total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 620018.368745647
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 6171117.52967764
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 36449765.17913502
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 271657291.0959589
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "The total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 376750.0725032808
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 6363315.515975114
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 45127944.04393408
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 278022340.90688425
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "The total number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buyers in the last 5 minutes",
+                          "example": 43
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buyers in the last hour",
+                          "example": 552
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 6 hours",
+                          "example": 3535
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 24 hours",
+                          "example": 20336
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "The total number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sellers in the last 5 minutes",
+                          "example": 48
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sellers in the last hour",
+                          "example": 582
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 6 hours",
+                          "example": 3675
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 24 hours",
+                          "example": 20166
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "The total number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 5 minutes",
+                          "example": 51
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last hour",
+                          "example": 641
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 6 hours",
+                          "example": 4114
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 24 hours",
+                          "example": 24506
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "The total number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 5 minutes",
+                          "example": 55
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last hour",
+                          "example": 676
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 6 hours",
+                          "example": 4242
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 24 hours",
+                          "example": 24198
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalLiquidityUsd",
+                      "type": "string",
+                      "description": "The total liquidity in USD",
+                      "example": "300289168.54999965",
+                      "required": true
+                    },
+                    {
+                      "name": "totalFullyDilutedValuation",
+                      "type": "string",
+                      "description": "The total fully diluted valuation of the token",
+                      "example": "75897332933.73126",
+                      "required": true
+                    }
+                  ]
+                }
               }
             ]
           }
