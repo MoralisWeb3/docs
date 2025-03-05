@@ -15832,7 +15832,7 @@
           "name": "address",
           "description": "The pair address",
           "required": true,
-          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
