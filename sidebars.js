@@ -247,6 +247,10 @@ const sidebars = {
       },
       items: [
         {
+          type: "doc",
+          id: "web3-data-api/solana/tutorials/ai-chatbots",
+        },
+        {
           type: "category",
           label: "Building AI Agents",
           link: {
