@@ -251,6 +251,10 @@ const sidebars = {
           id: "web3-data-api/solana/tutorials/ai-chatbots",
         },
         {
+          type: "doc",
+          id: "web3-data-api/solana/tutorials/dexscreener-clone",
+        },
+        {
           type: "category",
           label: "Building AI Agents",
           link: {
