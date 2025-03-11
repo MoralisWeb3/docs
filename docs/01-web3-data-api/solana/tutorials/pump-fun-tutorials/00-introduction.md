@@ -1,10 +1,12 @@
 ---
-title: "Moralis Pump.fun API"
+title: "Free Pump Fun API | Moralis Pump.Fun API | Moralis API Documentation"
 slug: "../introduction-to-pump-fun-api-support-in-moralis"
-description: "Learn how to retrieve Pump.fun token data using Moralis' Solana APIs."
+description: "Retrieve live token data for Pump.fun memecoins with Moralis Pump Fun API! Try the top Pump.fun API for real-time crypto data."
 sidebar_label: "Introduction"
 sidebar_position: 0
 ---
+
+# Moralis Pump Fun API
 
 Pump.fun is one of the most popular platforms on Solana for creating and trading tokens instantly. With Moralis' Solana APIs, developers can seamlessly retrieve comprehensive data for Pump.fun tokens, enabling powerful analytics, trading tools, and applications.
 
