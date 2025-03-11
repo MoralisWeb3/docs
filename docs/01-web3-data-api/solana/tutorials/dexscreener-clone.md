@@ -28,7 +28,7 @@ Learn how to create a comprehensive cryptocurrency terminal application with Rea
 - 📈 **Trending Tokens** - Track the most popular tokens across multiple blockchains
 - 🔍 **Token Details** - In-depth information about any token including price charts and transactions
 - 💼 **Portfolio Tracking** - Monitor your crypto holdings in one place
-- 🚀 **Pump.fun Integration** - Discover new tokens from the Pump.fun ecosystem
+- 🚀 **Pump.fun Integration** - Discover new tokens from the Pump.fun ecosystem with our [Pump Fun API](/web3-data-api/solana/pump-fun-tutorials)
 - 🔎 **Advanced Search** - Find tokens by name, symbol, or contract address
 - ⛓️ **Multi-Chain Support** - Data from Ethereum, BSC, Polygon, Solana, and more
 
