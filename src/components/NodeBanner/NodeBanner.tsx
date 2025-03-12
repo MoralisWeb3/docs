@@ -20,7 +20,16 @@ function NodeBanner({
   return (
     <div className="api-banner">
       <div>
-        <h1>Don't have an RPC Node yet?</h1>
+        <h2
+          style={{
+            fontSize: "2rem",
+            fontWeight: "600",
+            margin: "0",
+            lineHeight: "1.2",
+          }}
+        >
+          Don't have an RPC Node yet?
+        </h2>
         <p>{text}</p>
       </div>
       <a

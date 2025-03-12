@@ -38,7 +38,16 @@ function ApiBanner({
 
       {/* Center Text */}
       <div className="api-banner-text">
-        <h1>{title}</h1>
+        <h2
+          style={{
+            fontSize: "2rem",
+            fontWeight: "600",
+            margin: "0",
+            lineHeight: "1.2",
+          }}
+        >
+          {title}
+        </h2>
         <p>{text}</p>
       </div>
 

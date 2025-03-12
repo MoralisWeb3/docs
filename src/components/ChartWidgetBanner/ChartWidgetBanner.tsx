@@ -37,7 +37,16 @@ function ChartWidgetBanner({
         </svg>
       </div>
       <div style={{ textAlign: "left", marginRight: "7%" }}>
-        <h1>{title}</h1>
+        <h2
+          style={{
+            fontSize: "2rem",
+            fontWeight: "600",
+            margin: "0",
+            lineHeight: "1.2",
+          }}
+        >
+          {title}
+        </h2>
         <p>{text}</p>
       </div>
       <a

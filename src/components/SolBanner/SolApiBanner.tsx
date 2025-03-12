@@ -37,7 +37,16 @@ function SolanaApiBanner({
       <div
         style={{ textAlign: "left", marginRight: "7%", width: "fit-content" }}
       >
-        <h1 style={{ fontSize: "1.3rem" }}>{title}</h1>
+        <h2
+          style={{
+            fontSize: "1.3rem",
+            fontWeight: "600",
+            margin: "0",
+            lineHeight: "1.2",
+          }}
+        >
+          {title}
+        </h2>
         <p>{text}</p>
       </div>
       {isRelativeLink ? (
