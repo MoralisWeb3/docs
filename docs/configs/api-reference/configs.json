@@ -951,7 +951,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -1120,7 +1120,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -1354,6 +1354,7 @@
         {
           "name": "max_token_inactivity",
           "description": "Exclude tokens inactive for more than the given amount of days",
+          "example": 1,
           "required": false,
           "type": "number"
         },
@@ -1361,6 +1362,7 @@
           "name": "min_pair_side_liquidity_usd",
           "description": "Exclude tokens with liquidity less than the specified amount in USD. This parameter refers to the liquidity on a single side of the pair.",
           "required": false,
+          "example": 1000,
           "type": "number"
         }
       ],
@@ -2215,7 +2217,7 @@
           "description": "The wallet address for which profitability summary is to be retrieved.",
           "required": true,
           "type": "string",
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -2337,7 +2339,7 @@
           "description": "The wallet address for which profitability is to be retrieved.",
           "required": true,
           "type": "string",
-          "example": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
         }
       ],
       "queryParams": [
@@ -3450,6 +3452,12 @@
           "type": "boolean",
           "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -3680,6 +3688,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified. Currently supported for ethereum NFT contracts.",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -4178,6 +4296,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -4342,6 +4466,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -4601,7 +4835,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -4714,6 +4948,12 @@
         {
           "name": "media_items",
           "description": "Should preview media data be returned?",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
           "required": false,
           "type": "boolean"
         }
@@ -4948,63 +5188,63 @@
                         "name": "transaction_hash",
                         "type": "string",
                         "description": "The hash of the transaction",
-                        "example": "string",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
                         "required": true
                       },
                       {
                         "name": "block_timestamp",
                         "type": "string",
                         "description": "The timestamp of the block",
-                        "example": "string",
+                        "example": "2023-04-04T15:59:11.000Z",
                         "required": true
                       },
                       {
                         "name": "buyer_address",
                         "type": "string",
                         "description": "The wallet address of the buyer",
-                        "example": "string",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
                         "required": true
                       },
                       {
                         "name": "seller_address",
                         "type": "string",
                         "description": "The wallet address of the seller",
-                        "example": "string",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
                         "required": true
                       },
                       {
                         "name": "price",
                         "type": "string",
                         "description": "The price of the NFT in the sale",
-                        "example": "string",
+                        "example": "7300000000000000",
                         "required": true
                       },
                       {
                         "name": "price_formatted",
                         "type": "string",
                         "description": "The formatted price of the NFT in the sale",
-                        "example": "string",
+                        "example": "0.0073",
                         "required": true
                       },
                       {
                         "name": "usd_price_at_sale",
                         "type": "string",
                         "description": "The USD price at the time of sale",
-                        "example": "string",
+                        "example": "13.61",
                         "required": true
                       },
                       {
                         "name": "current_usd_value",
                         "type": "string",
                         "description": "The current USD value of the NFT",
-                        "example": "string",
+                        "example": "15.53",
                         "required": true
                       },
                       {
                         "name": "token_id",
                         "type": "string",
                         "description": "The token ID of the NFT",
-                        "example": "string",
+                        "example": "170",
                         "required": true
                       },
                       {
@@ -5016,33 +5256,33 @@
                             "name": "token_name",
                             "type": "string",
                             "description": "The name of the payment token",
-                            "example": "string",
+                            "example": "Ether",
                             "required": true
                           },
                           {
                             "name": "token_symbol",
                             "type": "string",
                             "description": "The symbol of the payment token",
-                            "example": "string",
+                            "example": "ETH",
                             "required": true
                           },
                           {
                             "name": "token_logo",
                             "type": "string",
                             "description": "The logo URL of the payment token",
-                            "example": "string"
+                            "example": "https://cdn.moralis.io/eth/0x.png"
                           },
                           {
                             "name": "token_decimals",
                             "type": "string",
                             "description": "The number of decimals for the payment token",
-                            "example": "string"
+                            "example": "18"
                           },
                           {
                             "name": "token_address",
                             "type": "string",
                             "description": "The address of the payment token contract",
-                            "example": "string",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                             "required": true
                           }
                         ]
@@ -5079,7 +5319,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -5437,7 +5677,7 @@
           "name": "address",
           "description": "The address of the NFT contract",
           "required": true,
-          "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+          "example": "0x306b1ea3ecdf94aB739F1910bbda052Ed4A9f949",
           "type": "string"
         }
       ],
@@ -5560,6 +5800,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -5723,6 +5969,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -6957,6 +7313,12 @@
           "type": "boolean",
           "description": "Should preview media data be returned? Learn more about media items [here](/web3-data-api/evm/nft-image-previews).",
           "example": false
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -7168,63 +7530,63 @@
                     "name": "transaction_hash",
                     "type": "string",
                     "description": "The hash of the transaction",
-                    "example": "string",
+                    "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
                     "required": true
                   },
                   {
                     "name": "block_timestamp",
                     "type": "string",
                     "description": "The timestamp of the block",
-                    "example": "string",
+                    "example": "2023-04-04T15:59:11.000Z",
                     "required": true
                   },
                   {
                     "name": "buyer_address",
                     "type": "string",
                     "description": "The wallet address of the buyer",
-                    "example": "string",
+                    "example": "0xcb1c1fde09f811b294172696404e88e658659905",
                     "required": true
                   },
                   {
                     "name": "seller_address",
                     "type": "string",
                     "description": "The wallet address of the seller",
-                    "example": "string",
+                    "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
                     "required": true
                   },
                   {
                     "name": "price",
                     "type": "string",
                     "description": "The price of the NFT in the sale",
-                    "example": "string",
+                    "example": "7300000000000000",
                     "required": true
                   },
                   {
                     "name": "price_formatted",
                     "type": "string",
                     "description": "The formatted price of the NFT in the sale",
-                    "example": "string",
+                    "example": "0.0073",
                     "required": true
                   },
                   {
                     "name": "usd_price_at_sale",
                     "type": "string",
                     "description": "The USD price at the time of sale",
-                    "example": "string",
+                    "example": "13.61",
                     "required": true
                   },
                   {
                     "name": "current_usd_value",
                     "type": "string",
                     "description": "The current USD value of the NFT",
-                    "example": "string",
+                    "example": "15.53",
                     "required": true
                   },
                   {
                     "name": "token_id",
                     "type": "string",
                     "description": "The token ID of the NFT",
-                    "example": "string",
+                    "example": "170",
                     "required": true
                   },
                   {
@@ -7236,33 +7598,33 @@
                         "name": "token_name",
                         "type": "string",
                         "description": "The name of the payment token",
-                        "example": "string",
+                        "example": "Ether",
                         "required": true
                       },
                       {
                         "name": "token_symbol",
                         "type": "string",
                         "description": "The symbol of the payment token",
-                        "example": "string",
+                        "example": "ETH",
                         "required": true
                       },
                       {
                         "name": "token_logo",
                         "type": "string",
                         "description": "The logo URL of the payment token",
-                        "example": "string"
+                        "example": "https://cdn.moralis.io/eth/0x.png"
                       },
                       {
                         "name": "token_decimals",
                         "type": "string",
                         "description": "The number of decimals for the payment token",
-                        "example": "string"
+                        "example": "18"
                       },
                       {
                         "name": "token_address",
                         "type": "string",
                         "description": "The address of the payment token contract",
-                        "example": "string",
+                        "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                         "required": true
                       }
                     ]
@@ -7618,6 +7980,12 @@
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page).",
           "type": "string"
+        },
+        {
+          "name": "include_prices",
+          "description": "Should NFT last sale prices be included in the result?",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -7782,6 +8150,116 @@
                     "type": "boolean",
                     "description": "Indicates if a contract is verified",
                     "example": "false"
+                  },
+                  {
+                    "name": "last_sale",
+                    "type": "object",
+                    "description": "Details of the last sale of the NFT",
+                    "fields": [
+                      {
+                        "name": "transaction_hash",
+                        "type": "string",
+                        "description": "The hash of the transaction",
+                        "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c",
+                        "required": true
+                      },
+                      {
+                        "name": "block_timestamp",
+                        "type": "string",
+                        "description": "The timestamp of the block",
+                        "example": "2023-04-04T15:59:11.000Z",
+                        "required": true
+                      },
+                      {
+                        "name": "buyer_address",
+                        "type": "string",
+                        "description": "The wallet address of the buyer",
+                        "example": "0xcb1c1fde09f811b294172696404e88e658659905",
+                        "required": true
+                      },
+                      {
+                        "name": "seller_address",
+                        "type": "string",
+                        "description": "The wallet address of the seller",
+                        "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f",
+                        "required": true
+                      },
+                      {
+                        "name": "price",
+                        "type": "string",
+                        "description": "The price of the NFT in the sale",
+                        "example": "7300000000000000",
+                        "required": true
+                      },
+                      {
+                        "name": "price_formatted",
+                        "type": "string",
+                        "description": "The formatted price of the NFT in the sale",
+                        "example": "0.0073",
+                        "required": true
+                      },
+                      {
+                        "name": "usd_price_at_sale",
+                        "type": "string",
+                        "description": "The USD price at the time of sale",
+                        "example": "13.61",
+                        "required": true
+                      },
+                      {
+                        "name": "current_usd_value",
+                        "type": "string",
+                        "description": "The current USD value of the NFT",
+                        "example": "15.53",
+                        "required": true
+                      },
+                      {
+                        "name": "token_id",
+                        "type": "string",
+                        "description": "The token ID of the NFT",
+                        "example": "170",
+                        "required": true
+                      },
+                      {
+                        "name": "payment_token",
+                        "type": "object",
+                        "description": "Details of the payment token used in the sale",
+                        "fields": [
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "description": "The name of the payment token",
+                            "example": "Ether",
+                            "required": true
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "description": "The symbol of the payment token",
+                            "example": "ETH",
+                            "required": true
+                          },
+                          {
+                            "name": "token_logo",
+                            "type": "string",
+                            "description": "The logo URL of the payment token",
+                            "example": "https://cdn.moralis.io/eth/0x.png"
+                          },
+                          {
+                            "name": "token_decimals",
+                            "type": "string",
+                            "description": "The number of decimals for the payment token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "token_address",
+                            "type": "string",
+                            "description": "The address of the payment token contract",
+                            "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "required": true
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -8647,7 +9125,7 @@
           "description": "The address of the NFT collection",
           "required": true,
           "type": "string",
-          "example": "0x8821bee2ba0df28761afff119d66390d594cd280"
+          "example": "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949"
         }
       ],
       "queryParams": [
@@ -10689,7 +11167,7 @@
         }
       ]
     },
-    "getNFTsbyTraits": {
+    "getNFTByContractTraits": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFTs by traits",
       "description": "Get NFTs by traits for a given contract.",
@@ -10813,8 +11291,7 @@
         "required": true,
         "example": {
           "traits": {
-            "body": "astronaut",
-            "skin": "purple"
+            "Legendary": "Astronaut"
           }
         }
       },
@@ -13729,7 +14206,7 @@
           "name": "token_address",
           "description": "The address of the token contract",
           "required": true,
-          "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -13925,7 +14402,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         }
       ],
       "queryParams": [
@@ -14071,7 +14548,7 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         }
       ],
       "queryParams": [
@@ -14470,13 +14947,13 @@
           "description": "Wallet address",
           "required": true,
           "type": "string",
-          "example": "0xcB1C1FdE09f811B294172696404e88E658659905"
+          "example": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
         },
         {
           "name": "protocol",
           "description": "The protocol to query",
           "required": true,
-          "example": "uniswap-v3",
+          "example": "aave-v3",
           "type": "string",
           "enum": [
             "uniswap-v2",
@@ -14897,7 +15374,7 @@
           "description": "The ERC20 token address.",
           "required": true,
           "type": "string",
-          "example": "0x7c9f4c87d911613fe9ca58b579f737911aad2d43"
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
         }
       ],
       "queryParams": [
@@ -15355,7 +15832,7 @@
           "name": "address",
           "description": "The pair address",
           "required": true,
-          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
@@ -15775,6 +16252,1160 @@
         }
       ]
     },
+    "getTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token analytics",
+      "description": "Get analytics for a token by token address",
+      "method": "GET",
+      "path": "/tokens/:address/analytics",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address",
+          "required": true,
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token analytics data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+                "required": true
+              },
+              {
+                "name": "totalBuyVolume",
+                "type": "object",
+                "description": "The total buy volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Buy volume in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Buy volume in the last hour",
+                    "example": 43678.642005116264
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Buy volume in the last 6 hours",
+                    "example": 129974.13379912674
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Buy volume in the last 24 hours",
+                    "example": 4583254.969119737
+                  }
+                ]
+              },
+              {
+                "name": "totalSellVolume",
+                "type": "object",
+                "description": "The total sell volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Sell volume in the last 5 minutes",
+                    "example": 147.69184595604904
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Sell volume in the last hour",
+                    "example": 393.0296489666009
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Sell volume in the last 6 hours",
+                    "example": 257421.35479601548
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Sell volume in the last 24 hours",
+                    "example": 4735908.689740969
+                  }
+                ]
+              },
+              {
+                "name": "totalBuyers",
+                "type": "object",
+                "description": "The total number of buyers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buyers in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buyers in the last hour",
+                    "example": 33
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 6 hours",
+                    "example": 115
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 24 hours",
+                    "example": 547
+                  }
+                ]
+              },
+              {
+                "name": "totalSellers",
+                "type": "object",
+                "description": "The total number of sellers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sellers in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sellers in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 6 hours",
+                    "example": 78
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalBuys",
+                "type": "object",
+                "description": "The total number of buy transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last hour",
+                    "example": 34
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 6 hours",
+                    "example": 120
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalSells",
+                "type": "object",
+                "description": "The total number of sell transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 6 hours",
+                    "example": 87
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 24 hours",
+                    "example": 622
+                  }
+                ]
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD",
+                "example": "36741131.82999999",
+                "required": true
+              },
+              {
+                "name": "totalFullyDilutedValuation",
+                "type": "string",
+                "description": "The total fully diluted valuation of the token",
+                "example": "2967517591.181045",
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getMultipleTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get analytics for multiple tokens",
+      "description": "Returns analytics data for multiple token addresses across different chains",
+      "method": "POST",
+      "path": "/tokens/analytics",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to fetch analytics for",
+            "example": [
+              {
+                "chain": "0x1",
+                "tokenAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+              },
+              {
+                "chain": "solana",
+                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+              }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "description": "The chain identifier (chain name or hex chain ID)",
+                  "example": "0x1",
+                  "required": false
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token contract address",
+                  "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                  "required": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns analytics data for the requested tokens",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokens",
+                "type": "array",
+                "description": "Array of token analytics data",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "The total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 620018.368745647
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 6171117.52967764
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 36449765.17913502
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 271657291.0959589
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "The total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 376750.0725032808
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 6363315.515975114
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 45127944.04393408
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 278022340.90688425
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "The total number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buyers in the last 5 minutes",
+                          "example": 43
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buyers in the last hour",
+                          "example": 552
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 6 hours",
+                          "example": 3535
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 24 hours",
+                          "example": 20336
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "The total number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sellers in the last 5 minutes",
+                          "example": 48
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sellers in the last hour",
+                          "example": 582
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 6 hours",
+                          "example": 3675
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 24 hours",
+                          "example": 20166
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "The total number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 5 minutes",
+                          "example": 51
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last hour",
+                          "example": 641
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 6 hours",
+                          "example": 4114
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 24 hours",
+                          "example": 24506
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "The total number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 5 minutes",
+                          "example": 55
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last hour",
+                          "example": 676
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 6 hours",
+                          "example": 4242
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 24 hours",
+                          "example": 24198
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalLiquidityUsd",
+                      "type": "string",
+                      "description": "The total liquidity in USD",
+                      "example": "300289168.54999965",
+                      "required": true
+                    },
+                    {
+                      "name": "totalFullyDilutedValuation",
+                      "type": "string",
+                      "description": "The total fully diluted valuation of the token",
+                      "example": "75897332933.73126",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getVolumeStatsByChain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume statistics by chain",
+      "description": "Returns volume statistics, active wallets, and total transactions for supported blockchain networks",
+      "method": "GET",
+      "path": "/volume/chains",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for all supported chains",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "chains",
+                "type": "array",
+                "description": "List of chains with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "description": "The chain identifier (hex chain ID or 'solana')",
+                      "example": "0x1",
+                      "required": true
+                    },
+                    {
+                      "name": "totalVolume",
+                      "type": "object",
+                      "description": "Total volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total volume in the last 5 minutes",
+                          "example": 1690971.708286464
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total volume in the last hour",
+                          "example": 46146546.893509656
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total volume in the last 6 hours",
+                          "example": 325726471.73284143
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total volume in the last 24 hours",
+                          "example": 2296130181.8957353
+                        }
+                      ]
+                    },
+                    {
+                      "name": "activeWallets",
+                      "type": "object",
+                      "description": "Number of active wallets across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Active wallets in the last 5 minutes",
+                          "example": 416
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Active wallets in the last hour",
+                          "example": 4860
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Active wallets in the last 6 hours",
+                          "example": 40954
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Active wallets in the last 24 hours",
+                          "example": 193324
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalTransactions",
+                      "type": "object",
+                      "description": "Total number of transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total transactions in the last 5 minutes",
+                          "example": 617
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total transactions in the last hour",
+                          "example": 5913
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total transactions in the last 6 hours",
+                          "example": 50554
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total transactions in the last 24 hours",
+                          "example": 240210
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getVolumeStatsByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume and chain data by categories",
+      "description": "Returns volume statistics, buyer/seller counts, and transaction counts for token categories on a specific chain",
+      "method": "GET",
+      "path": "/volume/categories",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for token categories on the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "categories",
+                "type": "array",
+                "description": "List of categories with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "categoryId",
+                      "type": "string",
+                      "description": "The category identifier",
+                      "example": "artificial-intelligence",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "Total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 714.0815536553663
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 8330.827220195075
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 226941.46075181215
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 844976.6205963915
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "Total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 974.2512412423143
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 27373.23458490025
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 212581.83058358674
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 1099797.4109894654
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "Number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buyers in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buyers in the last hour",
+                          "example": 22
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buyers in the last 6 hours",
+                          "example": 240
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buyers in the last 24 hours",
+                          "example": 1206
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "Number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sellers in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sellers in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sellers in the last 6 hours",
+                          "example": 236
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sellers in the last 24 hours",
+                          "example": 1020
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "Number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy transactions in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy transactions in the last hour",
+                          "example": 23
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 6 hours",
+                          "example": 253
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 24 hours",
+                          "example": 1271
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "Number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell transactions in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell transactions in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 6 hours",
+                          "example": 249
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 24 hours",
+                          "example": 1074
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolume": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by chain",
+      "description": "Returns historical volume data for chains in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "volume",
+                      "type": "number",
+                      "description": "Total volume for this time interval",
+                      "example": 50377606.51392583,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolumeByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by category",
+      "description": "Returns historical buy and sell volume data for a specific token category in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries/:categoryId",
+      "pathParams": [
+        {
+          "name": "categoryId",
+          "description": "The category identifier",
+          "required": true,
+          "example": "artificial-intelligence",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified category",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "buyVolume",
+                      "type": "number",
+                      "description": "Total buy volume for this time interval",
+                      "example": 8330.827220195075,
+                      "required": true
+                    },
+                    {
+                      "name": "sellVolume",
+                      "type": "number",
+                      "description": "Total sell volume for this time interval",
+                      "example": 27373.234584900256,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getAggregatedTokenPairStats": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get aggregated token pair statistics by address",
@@ -15786,7 +17417,7 @@
           "name": "token_address",
           "description": "The address of the token contract",
           "required": true,
-          "example": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -15901,7 +17532,7 @@
           "name": "address",
           "description": "The pair address",
           "required": true,
-          "example": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
@@ -16010,7 +17641,7 @@
         {
           "name": "fromDate",
           "description": "The starting date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'fromBlock' or 'fromDate'\n* If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.\n",
-          "example": "2024-12-25",
+          "example": "2025-01-01T10:00:00.000",
           "required": true,
           "type": "string"
         },
@@ -16018,7 +17649,7 @@
           "name": "toDate",
           "description": "The ending date (format in seconds or datestring accepted by momentjs)\n* Provide the param 'toBlock' or 'toDate'\n* If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.\n",
           "required": true,
-          "example": "2025-01-01",
+          "example": "2025-01-02T10:00:00.000",
           "type": "string"
         },
         {
@@ -16150,7 +17781,7 @@
           "name": "address",
           "description": "The pair address token-transactions are to be retrieved for.",
           "required": true,
-          "example": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+          "example": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
           "type": "string"
         }
       ],
@@ -16515,7 +18146,7 @@
           "name": "address",
           "description": "The token address to get transaction for",
           "required": true,
-          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
           "type": "string"
         }
       ],
@@ -16996,12 +18627,6 @@
           ]
         },
         {
-          "name": "tokenAddress",
-          "description": "The token address to get transaction for (optional)",
-          "required": false,
-          "type": "string"
-        },
-        {
           "name": "cursor",
           "description": "The cursor returned in the previous response (used for getting the next page)",
           "required": false,
@@ -17329,7 +18954,7 @@
           "name": "address",
           "description": "The pair address for which snipers are to be retrieved.",
           "required": true,
-          "example": "0x85218527945d48167A682e277867F1539AD00068",
+          "example": "0xa3c2076eb97d573cc8842f1db1ecdf7b6f77ba27",
           "type": "string"
         }
       ],
@@ -17549,7 +19174,7 @@
           "description": "The token contract address",
           "required": true,
           "type": "string",
-          "example": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
         }
       ],
       "queryParams": [
@@ -17989,7 +19614,7 @@
         {
           "name": "fromDate",
           "description": "The starting date (format in seconds or datestring accepted by momentjs)\n",
-          "example": "2024-11-25",
+          "example": "2025-01-01T10:00:00",
           "required": true,
           "type": "string"
         },
@@ -17997,7 +19622,7 @@
           "name": "toDate",
           "description": "The ending date (format in seconds or datestring accepted by momentjs)\n",
           "required": true,
-          "example": "2025-01-01",
+          "example": "2025-02-01T11:00:00",
           "type": "string"
         },
         {
@@ -18439,7 +20064,6 @@
         }
       ]
     },
-
     "getTrendingTokens": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get trending tokens",
@@ -20256,7 +21880,7 @@
           "name": "transaction_hash",
           "description": "The transaction hash",
           "required": true,
-          "example": "0xdc85cb1b75fd09c2f6d001fea4aba83764193cbd7881a1fa8ccde350a5681109",
+          "example": "0xfeda0e8f0d6e54112c28d319c0d303c065d1125c9197bd653682f5fcb0a6c81e",
           "type": "string"
         }
       ],
@@ -20654,7 +22278,7 @@
           "name": "transaction_hash",
           "description": "The transaction hash",
           "required": true,
-          "example": "0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760",
+          "example": "0xfeda0e8f0d6e54112c28d319c0d303c065d1125c9197bd653682f5fcb0a6c81e",
           "type": "string"
         }
       ],
@@ -28355,6 +29979,162 @@
         }
       ]
     },
+
+    "getMultipleTokenPrices": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get multiple token prices on Solana",
+      "description": "Returns price information for multiple Solana tokens in a single request",
+      "method": "POST",
+      "path": "/token/mainnet/prices",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "addresses",
+            "type": "array",
+            "required": true,
+            "description": "Array of token addresses to fetch prices for",
+            "example": [
+              "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+              "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux"
+            ],
+            "field": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns price information for requested tokens",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token address",
+                  "example": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+                  "required": true
+                },
+                {
+                  "name": "pairAddress",
+                  "type": "string",
+                  "description": "The address of the liquidity pair",
+                  "example": "71HuFmuYAFEFUna2x2R4HJjrFNQHGuagW3gUMFToL9tk",
+                  "required": true
+                },
+                {
+                  "name": "exchangeName",
+                  "type": "string",
+                  "description": "The name of the exchange",
+                  "example": "Meteora DLMM",
+                  "required": true
+                },
+                {
+                  "name": "exchangeAddress",
+                  "type": "string",
+                  "description": "The address of the exchange",
+                  "example": "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+                  "required": true
+                },
+                {
+                  "name": "nativePrice",
+                  "type": "object",
+                  "description": "The token price in native currency (SOL)",
+                  "required": true,
+                  "fields": [
+                    {
+                      "name": "value",
+                      "type": "string",
+                      "description": "The native price value",
+                      "example": "90899405",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The native currency symbol",
+                      "example": "WSOL",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The native currency name",
+                      "example": "Wrapped Solana",
+                      "required": true
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "number",
+                      "description": "The native currency decimals",
+                      "example": 9,
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "description": "The current price in USD",
+                  "example": 13.403560961,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24h",
+                  "type": "number",
+                  "description": "The price 24 hours ago in USD",
+                  "example": 12.405562499,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24hrUsdChange",
+                  "type": "number",
+                  "description": "The absolute USD price change in the last 24 hours",
+                  "example": 0.9959895529999994,
+                  "required": true
+                },
+                {
+                  "name": "usdPrice24hrPercentChange",
+                  "type": "number",
+                  "description": "The percentage price change in the last 24 hours",
+                  "example": 8.028572288280238,
+                  "required": true
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "URL to the token logo",
+                  "example": "https://d23exngyjlavgo.cloudfront.net/solana_6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The token name",
+                  "example": "OFFICIAL TRUMP",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The token symbol",
+                  "example": "TRUMP",
+                  "required": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "getTokenPairs": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get token pairs by address",
@@ -28930,6 +30710,1580 @@
                     "example": 5634
                   }
                 ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token analytics",
+      "description": "Get analytics for a token by token address",
+      "method": "GET",
+      "path": "/tokens/:address/analytics",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address",
+          "required": true,
+          "example": "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the token analytics data.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+                "required": true
+              },
+              {
+                "name": "totalBuyVolume",
+                "type": "object",
+                "description": "The total buy volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Buy volume in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Buy volume in the last hour",
+                    "example": 43678.642005116264
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Buy volume in the last 6 hours",
+                    "example": 129974.13379912674
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Buy volume in the last 24 hours",
+                    "example": 4583254.969119737
+                  }
+                ]
+              },
+              {
+                "name": "totalSellVolume",
+                "type": "object",
+                "description": "The total sell volume across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Sell volume in the last 5 minutes",
+                    "example": 147.69184595604904
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Sell volume in the last hour",
+                    "example": 393.0296489666009
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Sell volume in the last 6 hours",
+                    "example": 257421.35479601548
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Sell volume in the last 24 hours",
+                    "example": 4735908.689740969
+                  }
+                ]
+              },
+              {
+                "name": "totalBuyers",
+                "type": "object",
+                "description": "The total number of buyers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buyers in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buyers in the last hour",
+                    "example": 33
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 6 hours",
+                    "example": 115
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buyers in the last 24 hours",
+                    "example": 547
+                  }
+                ]
+              },
+              {
+                "name": "totalSellers",
+                "type": "object",
+                "description": "The total number of sellers across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sellers in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sellers in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 6 hours",
+                    "example": 78
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sellers in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalBuys",
+                "type": "object",
+                "description": "The total number of buy transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 5 minutes",
+                    "example": 0
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last hour",
+                    "example": 34
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 6 hours",
+                    "example": 120
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of buy transactions in the last 24 hours",
+                    "example": 587
+                  }
+                ]
+              },
+              {
+                "name": "totalSells",
+                "type": "object",
+                "description": "The total number of sell transactions across different time periods",
+                "required": true,
+                "fields": [
+                  {
+                    "name": "5m",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 5 minutes",
+                    "example": 1
+                  },
+                  {
+                    "name": "1h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last hour",
+                    "example": 2
+                  },
+                  {
+                    "name": "6h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 6 hours",
+                    "example": 87
+                  },
+                  {
+                    "name": "24h",
+                    "type": "number",
+                    "description": "Number of sell transactions in the last 24 hours",
+                    "example": 622
+                  }
+                ]
+              },
+              {
+                "name": "totalLiquidityUsd",
+                "type": "string",
+                "description": "The total liquidity in USD",
+                "example": "36741131.82999999",
+                "required": true
+              },
+              {
+                "name": "totalFullyDilutedValuation",
+                "type": "string",
+                "description": "The total fully diluted valuation of the token",
+                "example": "2967517591.181045",
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getMultipleTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get analytics for multiple tokens",
+      "description": "Returns analytics data for multiple token addresses across different chains",
+      "method": "POST",
+      "path": "/tokens/analytics",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "description": "Request body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to fetch analytics for",
+            "example": [
+              {
+                "chain": "solana",
+                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+              },
+              {
+                "chain": "0x1",
+                "tokenAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+              }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "description": "The chain identifier (chain name or hex chain ID)",
+                  "example": "0x1",
+                  "required": false
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token contract address",
+                  "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                  "required": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns analytics data for the requested tokens",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokens",
+                "type": "array",
+                "description": "Array of token analytics data",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "The total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 620018.368745647
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 6171117.52967764
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 36449765.17913502
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 271657291.0959589
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "The total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 376750.0725032808
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 6363315.515975114
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 45127944.04393408
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 278022340.90688425
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "The total number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buyers in the last 5 minutes",
+                          "example": 43
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buyers in the last hour",
+                          "example": 552
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 6 hours",
+                          "example": 3535
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buyers in the last 24 hours",
+                          "example": 20336
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "The total number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sellers in the last 5 minutes",
+                          "example": 48
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sellers in the last hour",
+                          "example": 582
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 6 hours",
+                          "example": 3675
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sellers in the last 24 hours",
+                          "example": 20166
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "The total number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 5 minutes",
+                          "example": 51
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last hour",
+                          "example": 641
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 6 hours",
+                          "example": 4114
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of buy transactions in the last 24 hours",
+                          "example": 24506
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "The total number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 5 minutes",
+                          "example": 55
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last hour",
+                          "example": 676
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 6 hours",
+                          "example": 4242
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Number of sell transactions in the last 24 hours",
+                          "example": 24198
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalLiquidityUsd",
+                      "type": "string",
+                      "description": "The total liquidity in USD",
+                      "example": "300289168.54999965",
+                      "required": true
+                    },
+                    {
+                      "name": "totalFullyDilutedValuation",
+                      "type": "string",
+                      "description": "The total fully diluted valuation of the token",
+                      "example": "75897332933.73126",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getNewTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get new tokens by exchange",
+      "description": "Returns a list of newly created tokens on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/new",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of new tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "HcUx4pSPpWoKZCPhHApnMVp3ZE29TM9ZB9JtVFr1LjoB",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Test",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "$TEST",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": null
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.0000000280515",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000004092",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "8768.063894688",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "4092",
+                      "required": true
+                    },
+                    {
+                      "name": "createdAt",
+                      "type": "string",
+                      "description": "The token creation timestamp",
+                      "example": "2025-03-05T09:34:11.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getBondingTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get tokens in bonding phase by exchange",
+      "description": "Returns a list of tokens currently in the bonding phase on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/bonding",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of tokens in the bonding phase on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "SKYTO",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "SKYTO",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://d23exngyjlavgo.cloudfront.net/solana_H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.000000346",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000050522",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "30803.481504874",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "50522",
+                      "required": true
+                    },
+                    {
+                      "name": "bondingCurveProgress",
+                      "type": "number",
+                      "description": "The progress percentage of the bonding curve",
+                      "example": 96.85384504519783,
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getGraduatedTokensByExchange": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get graduated tokens by exchange",
+      "description": "Returns a list of tokens that have graduated (completed bonding phase) on the specified exchange",
+      "method": "GET",
+      "path": "/token/mainnet/exchange/:exchange/graduated",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "pumpfun",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of graduated tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "Cy12AGDENaqgdM7A6o8R7TUATdDY2rudLMTpbzbGpump",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "Ginkgo",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "Ginkgo",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://d23exngyjlavgo.cloudfront.net/solana_Cy12AGDENaqgdM7A6o8R7TUATdDY2rudLMTpbzbGpump"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "6",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (SOL)",
+                      "example": "0.000000559",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000081556",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "28183.83084726",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "81556",
+                      "required": true
+                    },
+                    {
+                      "name": "graduatedAt",
+                      "type": "string",
+                      "description": "The timestamp when the token graduated",
+                      "example": "2025-03-05T09:30:42.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenBondingStatus": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get bonding status of a specific token",
+      "description": "Returns the bonding progress status for a specific token",
+      "method": "GET",
+      "path": "/token/mainnet/:tokenAddress/bonding-status",
+      "pathParams": [
+        {
+          "name": "tokenAddress",
+          "description": "The token address",
+          "required": true,
+          "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+          "type": "string"
+        }
+      ],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the bonding status of the specified token",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "string",
+                "description": "The token address",
+                "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                "required": true
+              },
+              {
+                "name": "bondingProgress",
+                "type": "number",
+                "description": "The current bonding curve progress percentage",
+                "example": 96.788763272986,
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getVolumeStatsByChain": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume statistics by chain",
+      "description": "Returns volume statistics, active wallets, and total transactions for supported blockchain networks",
+      "method": "GET",
+      "path": "/volume/chains",
+      "pathParams": [],
+      "queryParams": [],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for all supported chains",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "chains",
+                "type": "array",
+                "description": "List of chains with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "description": "The chain identifier (hex chain ID or 'solana')",
+                      "example": "solana",
+                      "required": true
+                    },
+                    {
+                      "name": "totalVolume",
+                      "type": "object",
+                      "description": "Total volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total volume in the last 5 minutes",
+                          "example": 1690971.708286464
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total volume in the last hour",
+                          "example": 46146546.893509656
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total volume in the last 6 hours",
+                          "example": 325726471.73284143
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total volume in the last 24 hours",
+                          "example": 2296130181.8957353
+                        }
+                      ]
+                    },
+                    {
+                      "name": "activeWallets",
+                      "type": "object",
+                      "description": "Number of active wallets across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Active wallets in the last 5 minutes",
+                          "example": 416
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Active wallets in the last hour",
+                          "example": 4860
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Active wallets in the last 6 hours",
+                          "example": 40954
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Active wallets in the last 24 hours",
+                          "example": 193324
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalTransactions",
+                      "type": "object",
+                      "description": "Total number of transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Total transactions in the last 5 minutes",
+                          "example": 617
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Total transactions in the last hour",
+                          "example": 5913
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Total transactions in the last 6 hours",
+                          "example": 50554
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Total transactions in the last 24 hours",
+                          "example": 240210
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getVolumeStatsByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get volume and chain data by categories",
+      "description": "Returns volume statistics, buyer/seller counts, and transaction counts for token categories on a specific chain",
+      "method": "GET",
+      "path": "/volume/categories",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns volume statistics for token categories on the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "categories",
+                "type": "array",
+                "description": "List of categories with volume statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "categoryId",
+                      "type": "string",
+                      "description": "The category identifier",
+                      "example": "artificial-intelligence",
+                      "required": true
+                    },
+                    {
+                      "name": "totalBuyVolume",
+                      "type": "object",
+                      "description": "Total buy volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy volume in the last 5 minutes",
+                          "example": 714.0815536553663
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy volume in the last hour",
+                          "example": 8330.827220195075
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy volume in the last 6 hours",
+                          "example": 226941.46075181215
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy volume in the last 24 hours",
+                          "example": 844976.6205963915
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellVolume",
+                      "type": "object",
+                      "description": "Total sell volume across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell volume in the last 5 minutes",
+                          "example": 974.2512412423143
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell volume in the last hour",
+                          "example": 27373.23458490025
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell volume in the last 6 hours",
+                          "example": 212581.83058358674
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell volume in the last 24 hours",
+                          "example": 1099797.4109894654
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuyers",
+                      "type": "object",
+                      "description": "Number of buyers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buyers in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buyers in the last hour",
+                          "example": 22
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buyers in the last 6 hours",
+                          "example": 240
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buyers in the last 24 hours",
+                          "example": 1206
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSellers",
+                      "type": "object",
+                      "description": "Number of sellers across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sellers in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sellers in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sellers in the last 6 hours",
+                          "example": 236
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sellers in the last 24 hours",
+                          "example": 1020
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalBuys",
+                      "type": "object",
+                      "description": "Number of buy transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Buy transactions in the last 5 minutes",
+                          "example": 4
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Buy transactions in the last hour",
+                          "example": 23
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 6 hours",
+                          "example": 253
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Buy transactions in the last 24 hours",
+                          "example": 1271
+                        }
+                      ]
+                    },
+                    {
+                      "name": "totalSells",
+                      "type": "object",
+                      "description": "Number of sell transactions across different time periods",
+                      "required": true,
+                      "fields": [
+                        {
+                          "name": "5m",
+                          "type": "number",
+                          "description": "Sell transactions in the last 5 minutes",
+                          "example": 3
+                        },
+                        {
+                          "name": "1h",
+                          "type": "number",
+                          "description": "Sell transactions in the last hour",
+                          "example": 35
+                        },
+                        {
+                          "name": "6h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 6 hours",
+                          "example": 249
+                        },
+                        {
+                          "name": "24h",
+                          "type": "number",
+                          "description": "Sell transactions in the last 24 hours",
+                          "example": 1074
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolume": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by chain",
+      "description": "Returns historical volume data for chains in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified chain",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "volume",
+                      "type": "number",
+                      "description": "Total volume for this time interval",
+                      "example": 50377606.51392583,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTimeSeriesVolumeByCategory": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by category",
+      "description": "Returns historical buy and sell volume data for a specific token category in time intervals",
+      "method": "GET",
+      "path": "/volume/timeseries/:categoryId",
+      "pathParams": [
+        {
+          "name": "categoryId",
+          "description": "The category identifier",
+          "required": true,
+          "example": "ai-agents",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "solana",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "arbitrum",
+            "0xa4b1",
+            "gnosis",
+            "0x64",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "ronin",
+            "0x7e4",
+            "pulse",
+            "0x171",
+            "solana"
+          ]
+        },
+        {
+          "name": "timeframe",
+          "description": "The time interval for data points",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns time series volume data for the specified category",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "timeseries",
+                "type": "array",
+                "description": "Time series data points",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "description": "Timestamp for the data point",
+                      "example": "2025-03-04T10:00:00.000Z",
+                      "required": true
+                    },
+                    {
+                      "name": "buyVolume",
+                      "type": "number",
+                      "description": "Total buy volume for this time interval",
+                      "example": 8330.827220195075,
+                      "required": true
+                    },
+                    {
+                      "name": "sellVolume",
+                      "type": "number",
+                      "description": "Total sell volume for this time interval",
+                      "example": 27373.234584900256,
+                      "required": true
+                    }
+                  ]
+                }
               }
             ]
           }
