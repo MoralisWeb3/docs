@@ -1,5 +1,5 @@
 ---
-title: "Free Pump Fun API | Moralis Pump.Fun API | Moralis API Documentation"
+title: "Free Pump Fun API | Moralis Pump.Fun API"
 slug: "../introduction-to-pump-fun-api-support-in-moralis"
 description: "Retrieve live token data for Pump.fun memecoins with Moralis Pump Fun API! Try the top Pump.fun API for real-time crypto data."
 sidebar_label: "Introduction"
