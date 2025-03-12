@@ -69,7 +69,7 @@ const fixedPath = {
   // getTimeSeriesVolume: "",
   // getTimeSeriesVolumeByCategory: "",
   // getDateToBlock: "",
-  getTokenHolders: "get-token-owners",
+  getTokenHolders: "get-token-holders",
   // getHistoricalTokenHolders: "",
   searchTokens: "search-tokens",
 };
