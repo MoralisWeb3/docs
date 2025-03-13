@@ -600,6 +600,42 @@
       "path": "/tokens/search",
       "price": 150,
       "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getVolumeStatsByChain",
+      "path": "/volume/chains",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getVolumeStatsByCategory",
+      "path": "/volume/categories",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolume",
+      "path": "/volume/timeseries",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolumeByCategory",
+      "path": "/volume/timeseries/{category}",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAnalytics",
+      "path": "/tokens/:tokenAddress/analytics",
+      "price": 80,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getMultipleTokenAnalytics",
+      "path": "/tokens/analytics",
+      "price": 150,
+      "rateLimitCost": 50
     }
   ],
   "solana": [
@@ -700,28 +736,64 @@
       "rateLimitCost": 50
     },
     {
+      "endpoint": "getNewTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/new",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getBondingTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/bonding",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getGraduatedTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/graduated",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenBondingStatus",
+      "path": "/token/mainnet/:tokenAddress/bonding-status",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
       "endpoint": "getVolumeStatsByChain",
       "path": "/volume/chains",
       "price": 150,
-      "rateLimitCost": 150
+      "rateLimitCost": 20
     },
     {
       "endpoint": "getVolumeStatsByCategory",
       "path": "/volume/categories",
       "price": 150,
-      "rateLimitCost": 150
+      "rateLimitCost": 20
     },
     {
       "endpoint": "getTimeSeriesVolume",
       "path": "/volume/timeseries",
       "price": 150,
-      "rateLimitCost": 150
+      "rateLimitCost": 20
     },
     {
       "endpoint": "getTimeSeriesVolumeByCategory",
-      "path": "/volume/timeseries/{categoryId}",
+      "path": "/volume/timeseries/{category}",
       "price": 150,
-      "rateLimitCost": 150
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAnalytics",
+      "path": "/tokens/:tokenAddress/analytics",
+      "price": 80,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getMultipleTokenAnalytics",
+      "path": "/tokens/analytics",
+      "price": 150,
+      "rateLimitCost": 50
     }
   ]
 }

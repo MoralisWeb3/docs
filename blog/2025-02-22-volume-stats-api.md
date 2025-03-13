@@ -14,12 +14,12 @@ We're excited to introduce our new Volume Stats APIs! These powerful new endpoin
 
 ### What's New?
 
-| Name                                   | Description                                 | API Reference                                                                       |
-| -------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Get Volume Stats By Chain**          | Get volume statistics by chain              | [Method Documentation](/web3-data-api/reference/get-volume-stats-by-chain)          |
-| **Get Volume Stats By Category**       | Get volume and chain data by categories     | [Method Documentation](/web3-data-api/reference/get-volume-stats-by-category)       |
-| **Get Time Series Volume**             | Retrieve timeseries volume data by chain    | [Method Documentation](/web3-data-api/reference/get-time-series-volume)             |
-| **Get Time Series Volume By Category** | Retrieve timeseries volume data by category | [Method Documentation](/web3-data-api/reference/get-time-series-volume-by-category) |
+| Name                                   | Description                                 | API Reference                                                                           |
+| -------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Get Volume Stats By Chain**          | Get volume statistics by chain              | [Method Documentation](/web3-data-api/evm/reference/get-volume-stats-by-chain)          |
+| **Get Volume Stats By Category**       | Get volume and chain data by categories     | [Method Documentation](/web3-data-api/evm/reference/get-volume-stats-by-category)       |
+| **Get Time Series Volume**             | Retrieve timeseries volume data by chain    | [Method Documentation](/web3-data-api/evm/reference/get-time-series-volume)             |
+| **Get Time Series Volume By Category** | Retrieve timeseries volume data by category | [Method Documentation](/web3-data-api/evm/reference/get-time-series-volume-by-category) |
 
 ### Key Features:
 
