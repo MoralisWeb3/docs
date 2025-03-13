@@ -51,4 +51,4 @@ We're excited to introduce our new Volume Stats APIs! These powerful new endpoin
 
 ### Getting Started
 
-To start using the Volume Stats APIs, check out our [documentation](/web3-data-api/reference/get-volume-stats-by-chain) for detailed usage examples and integration guides.
+To start using the Volume Stats APIs, check out our [documentation](/web3-data-api/evm/reference/get-volume-stats-by-chain) for detailed usage examples and integration guides.
