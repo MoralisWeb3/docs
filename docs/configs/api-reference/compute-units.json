@@ -517,12 +517,6 @@
       "rateLimitCost": 50
     },
     {
-      "endpoint": "getTokenOwners",
-      "path": "/erc20/{token_address}/owners",
-      "price": 50,
-      "rateLimitCost": 20
-    },
-    {
       "endpoint": "getTokenStats",
       "path": "/erc20/{address}/stats",
       "price": 50,
@@ -591,7 +585,19 @@
     },
     {
       "endpoint": "getTokenHolders",
+      "path": "/erc20/:token_address/owners",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenHolderStats",
       "path": "/erc20/:tokenAddress/holders",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getHistoricalTokenHolders",
+      "path": "/erc20/:tokenAddress/holders/historical",
       "price": 50,
       "rateLimitCost": 20
     },

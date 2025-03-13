@@ -74,9 +74,9 @@ const fixedPath = {
   getBondingTokensByExchange: "get-bonding-tokens-by-exchange",
   getGraduatedTokensByExchange: "get-graduated-tokens-by-exchange",
   getTokenBondingStatus: "get-bonding-status-by-token-address",
-  // getDateToBlock: "",
   getTokenHolders: "get-token-holders",
-  // getHistoricalTokenHolders: "",
+  getTokenHolderStats: "get-token-holder-stats",
+  getHistoricalTokenHolders: "get-historical-token-holders",
   searchTokens: "search-tokens",
 };
 
