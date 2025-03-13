@@ -16554,7 +16554,7 @@
               },
               {
                 "chain": "solana",
-                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                "tokenAddress": "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux"
               }
             ],
             "field": {
@@ -31014,7 +31014,7 @@
             "example": [
               {
                 "chain": "solana",
-                "tokenAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                "tokenAddress": "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux"
               },
               {
                 "chain": "0x1",
