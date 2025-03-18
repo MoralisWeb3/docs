@@ -14,13 +14,13 @@ The following changes will take effect in 60 days, on 6th December 2024:
 
 The following endpoints will be removed from all chains:
 
-| Deprecated Endpoint                                                                                               | Recommendation                                                                                                                        |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [`/{address}/logs`]                                                                                               | Retrieve logs via our RPC nodes instead. You can learn more about this in [our documentation here](/rpc-nodes/reference/eth_getLogs). |
-| [`/{address}/events`]                                                                                             | Retrieve logs via our RPC nodes instead. You can learn more about this in [our documentation here](/rpc-nodes/reference/eth_getLogs). |
-| [`/block/{block_number_or_hash}/stats`]                                                                           | Migrate to our [Streams API](/streams-api/evm) to monitor block stats in real time.                                                   |
-| [`/nft/{address}/{token_id}/stats`]                                                                               | Migrate to our [Streams API](/streams-api/evm) to monitor NFT stats in real time.                                                     |
-| [`/transaction/{transaction_hash}/internal-transactions`](/web3-data-api/evm/reference/get-internal-transactions) | Migrate to [getTransactionHash](/web3-data-api/evm/reference/get-transaction) using `include=internal_transactions`.                  |
+| Deprecated Endpoint                                       | Recommendation                                                                                                                        |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [`/{address}/logs`]                                       | Retrieve logs via our RPC nodes instead. You can learn more about this in [our documentation here](/rpc-nodes/reference/eth_getLogs). |
+| [`/{address}/events`]                                     | Retrieve logs via our RPC nodes instead. You can learn more about this in [our documentation here](/rpc-nodes/reference/eth_getLogs). |
+| [`/block/{block_number_or_hash}/stats`]                   | Migrate to our [Streams API](/streams-api/evm) to monitor block stats in real time.                                                   |
+| [`/nft/{address}/{token_id}/stats`]                       | Migrate to our [Streams API](/streams-api/evm) to monitor NFT stats in real time.                                                     |
+| [`/transaction/{transaction_hash}/internal-transactions`] | Migrate to [getTransactionHash](/web3-data-api/evm/reference/get-transaction) using `include=internal_transactions`.                  |
 
 ### Gnosis NFT APIs
 

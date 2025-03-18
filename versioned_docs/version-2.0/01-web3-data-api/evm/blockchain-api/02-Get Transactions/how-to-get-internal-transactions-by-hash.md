@@ -157,7 +157,7 @@ Congratulations 🥳 you just got all the internal transactions by transaction h
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getInternalTransactions](/web3-data-api/evm/reference/get-internal-transactions)
+- [getInternalTransactions]
 
 ## Support
 

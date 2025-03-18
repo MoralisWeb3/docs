@@ -144,7 +144,7 @@ sidebar_class_name: "sidebar-api-reference"
 - [Get decoded transactions by wallet](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
 - [Get transaction by hash](/web3-data-api/evm/reference/get-transaction)
 - [Get decoded transaction by hash](/web3-data-api/evm/reference/get-decoded-transaction)
-- [Get internal transactions by transaction hash](/web3-data-api/evm/reference/get-internal-transactions)
+- [Get internal transactions by transaction hash]
 - [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
 
 #### Get Logs

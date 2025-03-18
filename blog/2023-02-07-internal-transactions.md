@@ -18,6 +18,6 @@ Internal transactions have been added on three existing endpoints by introducing
 
 We have also launched a new endpoint that specifically fetches internal transactions for a given transaction hash:
 
-- [Get internal transactions by transaction hash](/web3-data-api/evm/reference/get-internal-transactions)
+- [Get internal transactions by transaction hash]
 
 Read more: [/web3-data-api/evm/internal-transaction](/web3-data-api/evm/internal-transactions)
