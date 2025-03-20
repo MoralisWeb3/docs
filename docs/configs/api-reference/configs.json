@@ -34603,6 +34603,555 @@
           }
         }
       ]
+    },
+    "getTokenHolders": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get Solana token holder summary by token address.",
+      "description": "Get Solana token holder summary",
+      "method": "GET",
+      "path": "/token/mainnet/holders/:address",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "address",
+          "description": "The token mint address",
+          "required": true,
+          "type": "string",
+          "example": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns token holder summary",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "totalHolders",
+                "type": "number",
+                "required": true,
+                "description": "Total number of token holders",
+                "example": 647639
+              },
+              {
+                "name": "holdersByAcquisition",
+                "type": "object",
+                "required": true,
+                "description": "Breakdown of how holders acquired tokens",
+                "fields": [
+                  {
+                    "name": "swap",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of holders who acquired via swaps",
+                    "example": 475836
+                  },
+                  {
+                    "name": "transfer",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of holders who acquired via transfers",
+                    "example": 156565
+                  },
+                  {
+                    "name": "airdrop",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of holders who acquired via airdrops",
+                    "example": 15238
+                  }
+                ]
+              },
+              {
+                "name": "holderChange",
+                "type": "object",
+                "required": true,
+                "description": "Changes in holder count over different time periods",
+                "fields": [
+                  {
+                    "name": "5min",
+                    "type": "object",
+                    "required": true,
+                    "description": "5 minute change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": 1
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": 0.00015
+                      }
+                    ]
+                  },
+                  {
+                    "name": "1h",
+                    "type": "object",
+                    "required": true,
+                    "description": "1 hour change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": -4
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": -0.00062
+                      }
+                    ]
+                  },
+                  {
+                    "name": "6h",
+                    "type": "object",
+                    "required": true,
+                    "description": "6 hour change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": -68
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": -0.01
+                      }
+                    ]
+                  },
+                  {
+                    "name": "24h",
+                    "type": "object",
+                    "required": true,
+                    "description": "24 hour change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": -294
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": -0.045
+                      }
+                    ]
+                  },
+                  {
+                    "name": "3d",
+                    "type": "object",
+                    "required": true,
+                    "description": "3 day change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": 2961
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": 0.46
+                      }
+                    ]
+                  },
+                  {
+                    "name": "7d",
+                    "type": "object",
+                    "required": true,
+                    "description": "7 day change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": 6624
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": 1
+                      }
+                    ]
+                  },
+                  {
+                    "name": "30d",
+                    "type": "object",
+                    "required": true,
+                    "description": "30 day change",
+                    "fields": [
+                      {
+                        "name": "change",
+                        "type": "number",
+                        "required": true,
+                        "description": "Absolute change in holders",
+                        "example": -69531
+                      },
+                      {
+                        "name": "changePercent",
+                        "type": "number",
+                        "required": true,
+                        "description": "Percentage change in holders",
+                        "example": -11
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "holderDistribution",
+                "type": "object",
+                "required": true,
+                "description": "Token holder distribution by wallet size category",
+                "fields": [
+                  {
+                    "name": "whales",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of whale-sized holders",
+                    "example": 2
+                  },
+                  {
+                    "name": "sharks",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of shark-sized holders",
+                    "example": 2
+                  },
+                  {
+                    "name": "dolphins",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of dolphin-sized holders",
+                    "example": 4
+                  },
+                  {
+                    "name": "fish",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of fish-sized holders",
+                    "example": 5
+                  },
+                  {
+                    "name": "octopus",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of octopus-sized holders",
+                    "example": 16
+                  },
+                  {
+                    "name": "crabs",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of crab-sized holders",
+                    "example": 54
+                  },
+                  {
+                    "name": "shrimps",
+                    "type": "number",
+                    "required": true,
+                    "description": "Number of shrimp-sized holders",
+                    "example": 647558
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getHistoricalHolders": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get historical Solana token holder statistics",
+      "description": "Get historical holder statistics for a specific Solana token address over a date range",
+      "method": "GET",
+      "path": "/token/mainnet/holders/:address/historical",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "address",
+          "description": "The token mint address",
+          "required": true,
+          "type": "string",
+          "example": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "fromDate",
+          "description": "The starting date (format in seconds or datestring accepted by momentjs)",
+          "example": "2025-01-01T10:00:00",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "toDate",
+          "description": "The ending date (format in seconds or datestring accepted by momentjs)",
+          "required": true,
+          "example": "2025-02-01T11:00:00",
+          "type": "string"
+        },
+        {
+          "name": "timeFrame",
+          "description": "The timeframe",
+          "required": true,
+          "type": "string",
+          "example": "1d",
+          "enum": [
+            "1min",
+            "5min",
+            "10min",
+            "30min",
+            "1h",
+            "4h",
+            "12h",
+            "1d",
+            "1w",
+            "1M"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "Number of results to return",
+          "required": false,
+          "type": "number",
+          "example": 100
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns historical token holder statistics",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "Array of historical holder statistics",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "timestamp",
+                      "type": "string",
+                      "required": true,
+                      "description": "Timestamp for the data point",
+                      "example": "2025-02-01T00:00:00.000Z"
+                    },
+                    {
+                      "name": "totalHolders",
+                      "type": "number",
+                      "required": true,
+                      "description": "Total number of holders at this timestamp",
+                      "example": 666573
+                    },
+                    {
+                      "name": "netHolderChange",
+                      "type": "number",
+                      "required": true,
+                      "description": "Net change in number of holders",
+                      "example": -10384
+                    },
+                    {
+                      "name": "holderPercentChange",
+                      "type": "number",
+                      "required": true,
+                      "description": "Percentage change in holders",
+                      "example": -1.6
+                    },
+                    {
+                      "name": "newHoldersByAcquisition",
+                      "type": "object",
+                      "required": true,
+                      "description": "Breakdown of how new holders acquired tokens",
+                      "fields": [
+                        {
+                          "name": "swap",
+                          "type": "number",
+                          "required": true,
+                          "description": "Number of new holders from swaps",
+                          "example": 6746
+                        },
+                        {
+                          "name": "transfer",
+                          "type": "number",
+                          "required": true,
+                          "description": "Number of new holders from transfers",
+                          "example": 5696
+                        },
+                        {
+                          "name": "airdrop",
+                          "type": "number",
+                          "required": true,
+                          "description": "Number of new holders from airdrops",
+                          "example": 529
+                        }
+                      ]
+                    },
+                    {
+                      "name": "holdersIn",
+                      "type": "object",
+                      "required": true,
+                      "description": "New holders by wallet size category",
+                      "fields": [
+                        {
+                          "name": "whales",
+                          "type": "number",
+                          "required": true,
+                          "description": "New whale-sized holders",
+                          "example": 1
+                        },
+                        {
+                          "name": "sharks",
+                          "type": "number",
+                          "required": true,
+                          "description": "New shark-sized holders",
+                          "example": 1
+                        },
+                        {
+                          "name": "dolphins",
+                          "type": "number",
+                          "required": true,
+                          "description": "New dolphin-sized holders",
+                          "example": 1
+                        },
+                        {
+                          "name": "fish",
+                          "type": "number",
+                          "required": true,
+                          "description": "New fish-sized holders",
+                          "example": 1
+                        },
+                        {
+                          "name": "octopus",
+                          "type": "number",
+                          "required": true,
+                          "description": "New octopus-sized holders",
+                          "example": 1
+                        },
+                        {
+                          "name": "crab",
+                          "type": "number",
+                          "required": true,
+                          "description": "New crab-sized holders",
+                          "example": 32
+                        },
+                        {
+                          "name": "shrimps",
+                          "type": "number",
+                          "required": true,
+                          "description": "New shrimp-sized holders",
+                          "example": 12939
+                        }
+                      ]
+                    },
+                    {
+                      "name": "holdersOut",
+                      "type": "object",
+                      "required": true,
+                      "description": "Holders that left by wallet size category",
+                      "fields": [
+                        {
+                          "name": "whales",
+                          "type": "number",
+                          "required": true,
+                          "description": "Whale-sized holders that left",
+                          "example": 10
+                        },
+                        {
+                          "name": "sharks",
+                          "type": "number",
+                          "required": true,
+                          "description": "Shark-sized holders that left",
+                          "example": 10
+                        },
+                        {
+                          "name": "dolphins",
+                          "type": "number",
+                          "required": true,
+                          "description": "Dolphin-sized holders that left",
+                          "example": 10
+                        },
+                        {
+                          "name": "fish",
+                          "type": "number",
+                          "required": true,
+                          "description": "Fish-sized holders that left",
+                          "example": 12
+                        },
+                        {
+                          "name": "octopus",
+                          "type": "number",
+                          "required": true,
+                          "description": "Octopus-sized holders that left",
+                          "example": 3
+                        },
+                        {
+                          "name": "crab",
+                          "type": "number",
+                          "required": true,
+                          "description": "Crab-sized holders that left",
+                          "example": 36
+                        },
+                        {
+                          "name": "shrimps",
+                          "type": "number",
+                          "required": true,
+                          "description": "Shrimp-sized holders that left",
+                          "example": 23316
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
 

@@ -8,7 +8,15 @@ description: Get historical Timeseries holder statistics for a specific ERC20 to
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../../configs/api-reference/configs.json";
+import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 
 # Get ERC20 Token Holders Timeseries
+
+<SolanaApiBanner
+  customTitle="Looking for token holders timeseries on Solana?"
+  customText="Access historical token holder statistics on Solana using our API."
+  customButtonText="Explore Solana API"
+  customButtonLink="/web3-data-api/solana/reference/get-historical-token-holders"
+/>
 
 <ApiReference {...config.token.getHistoricalTokenHolders}></ApiReference>

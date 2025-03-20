@@ -8,7 +8,15 @@ description: Get holders summary statistics for a specific ERC20 token address
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "../../../../../configs/api-reference/configs.json";
+import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 
 # Get ERC20 Token Holder Stats
+
+<SolanaApiBanner
+  customTitle="Looking for token holder stats on Solana?"
+  customText="Access token holder statistics on Solana using our API."
+  customButtonText="Explore Solana API"
+  customButtonLink="/web3-data-api/solana/reference/get-token-holder-stats"
+/>
 
 <ApiReference {...config.token.getTokenHolders}></ApiReference>
