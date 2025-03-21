@@ -8,7 +8,7 @@ tags: [Web3 Data API, Solana]
 
 ## Changelog: Solana Token Holders APIs
 
-### Release Date: April 19, 2025
+### Release Date: March 19, 2025
 
 We're excited to announce our new Solana Token Holders APIs! These powerful endpoints give developers comprehensive insights into token distribution and holder statistics across the Solana ecosystem, enabling detailed analysis of token metrics and holder behavior over time.
 
