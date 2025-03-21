@@ -9,6 +9,8 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Token Search API FAQ
 
+> For the complete API reference, please see the [Search Tokens API documentation](/web3-data-api/evm/reference/search-tokens).
+
 ## Overview
 
 ### What is the Token Search API?

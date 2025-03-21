@@ -5,7 +5,7 @@ slug: "/web3-data-api/evm/filtered-token-api-faq"
 sidebar_position: 1
 ---
 
-# Filtered Tokens API FAQ
+> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens).
 
 ## Overview
 
