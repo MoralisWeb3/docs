@@ -812,6 +812,18 @@
       "path": "/discovery/tokens/trending",
       "price": 250,
       "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenHolderStats",
+      "path": "/token/mainnet/holders/:address",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getHistoricalTokenHolders",
+      "path": "/token/mainnet/holders/:address/historical",
+      "price": 50,
+      "rateLimitCost": 20
     }
   ]
 }
