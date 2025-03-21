@@ -160,17 +160,25 @@ Chain ID: `0x7e4`
 
 Chain ID: `0x171`
 
-| Supported DEX(s)              | Query Parameter Value |
-| ----------------------------- | --------------------- |
-| [PulseX](https://pulsex.com/) | pulsex                |
-| [9 Inch](https://www.9inch.io/) | 9inch                |
+| Supported DEX(s)                | Query Parameter Value |
+| ------------------------------- | --------------------- |
+| [PulseX](https://pulsex.com/)   | pulsex                |
+| [9 Inch](https://www.9inch.io/) | 9inch                 |
 
 ## Endpoints DEXs integration
 
 The table shows the list of endpoints that are integrated with the supported DEXs:
 
-| No. | Method                 | Description                | API Reference                                                                  | URL                                                                                                                                                                      |
-| --- | ---------------------- | -------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | getTokenPrice          | Get ERC20 token price      | [Method Documentation](/web3-data-api/evm/reference/get-token-price)           | [https://deep-index.moralis.io/api/v2.2/erc20/:address/price](https://deep-index.moralis.io/api/v2.2/erc20/:address/price)                                               |
-| 2   | getMultipleTokenPrices | Get multiple token prices  | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices) | [https://deep-index.moralis.io/api/v2.2/erc20/prices](https://deep-index.moralis.io/api/v2.2/erc20/prices)                                                               |
-| 3   | getPairAddress         | Get DEX token pair address | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)          | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddress) |
+| No. | Method                        | Description                                      | API Reference                                                                        | URL                                                                                                                                                                    |
+| --- | ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getTokenPairs`               | Get token pairs by address                       | [Method Documentation](/web3-data-api/evm/reference/get-token-pairs)                 | [https://deep-index.moralis.io/api/v2.2/:token_address/pairs](https://deep-index.moralis.io/api/v2.2/:token_address/pairs)                                             |
+| 2   | `getPairStats`                | Get token pair statistics                        | [Method Documentation](/web3-data-api/evm/reference/get-token-pair-stats)            | [https://deep-index.moralis.io/api/v2.2//pairs/:address/stats](https://deep-index.moralis.io/api/v2.2//pairs/:address/stats)                                           |
+| 3   | `getAggregatedTokenPairStats` | Get aggregated token pair statistics             | [Method Documentation](/web3-data-api/evm/reference/get-aggregated-token-pair-stats) | [https://deep-index.moralis.io/api/v2.2/:token_address/pairs/stats](https://deep-index.moralis.io/api/v2.2/:token_address/pairs/stats)                                 |
+| 4   | `getPairAddress`              | Get DEX token pair address                       | [Method Documentation](/web3-data-api/evm/reference/get-pair-address)                | [https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres](https://deep-index.moralis.io/api/v2.2/:token0_address/:token1_address/pairAddres) |
+| 5   | `getPairReserves`             | Get DEX token pair reserves                      | [Method Documentation](/web3-data-api/evm/reference/get-pair-reserves)               | [https://deep-index.moralis.io/api/v2.2/:pair_address/reserves](https://deep-index.moralis.io/api/v2.2/:pair_address/reserves)                                         |
+| 6   | `getTokenPrice`               | Get ERC20 token price                            | [Method Documentation](/web3-data-api/evm/reference/price/get-token-price)           | [https://deep-index.moralis.io/api/v2.2/erc20/:address/price](https://deep-index.moralis.io/api/v2.2/erc20/:address/price)                                             |
+| 7   | `getMultipleTokenPrices`      | Get multiple token prices                        | [Method Documentation](/web3-data-api/evm/reference/price/get-multiple-token-prices) | [https://deep-index.moralis.io/api/v2.2/erc20/prices](https://deep-index.moralis.io/api/v2.2/erc20/prices)                                                             |
+| 8   | `getPairCandlesticks`         | Get the OHLCV candlesticks by using pair address | [Method Documentation](/web3-data-api/evm/reference/price/get-ohlcv-by-pair-address) | [https://deep-index.moralis.io/api/v2.2/pairs/:address/ohlcv](https://deep-index.moralis.io/api/v2.2/pairs/:address/ohlcv)                                             |
+| 9   | `getSwapsByPairAddress`       | Get swaps by pair address                        | [Method Documentation](/web3-data-api/evm/reference/get-swaps-by-pair-address)       | [https://deep-index.moralis.io/api/v2.2/pairs/:address/swaps](https://deep-index.moralis.io/api/v2.2/pairs/:address/swaps)                                             |
+| 10  | `getSwapsByTokenAddress`      | Get swaps by ERC20 token address                 | [Method Documentation](/web3-data-api/evm/reference/get-swaps-by-token-address)      | [https://deep-index.moralis.io/api/v2.2/erc20/:address/swaps](https://deep-index.moralis.io/api/v2.2/erc20/:address/swaps)                                             |
+| 11  | `getSwapsByWalletAddress`     | Get swaps by wallet address                      | [Method Documentation](/web3-data-api/evm/reference/get-swaps-by-wallet-address)     | [https://deep-index.moralis.io/api/v2.2/wallets/:address/swaps](https://deep-index.moralis.io/api/v2.2/wallets/:address/swaps)                                         |
