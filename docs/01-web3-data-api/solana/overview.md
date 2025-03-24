@@ -45,9 +45,9 @@ Powers the main search bar on moralis.com, enabling instant token lookup by cont
 
 **Related APIs:**
 
-| No. | Method         | Description   | API Reference                                                      | URL                                                                                                          |
-| --- | -------------- | ------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| 1   | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/evm/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |
+| No. | Method         | Description   | API Reference                                                         | URL                                                                                                          |
+| --- | -------------- | ------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1   | `searchTokens` | Search tokens | [Method Documentation](/web3-data-api/solana/reference/search-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/search](https://deep-index.moralis.io/api/v2.2/tokens/search) |
 
 ### Token Discovery & Trending
 
@@ -63,9 +63,46 @@ Analysis system behind moralis.com's trending section, highlighting tokens showi
 
 **Related APIs:**
 
-| No. | Method              | Description         | API Reference                                                            | URL                                                                                                                |
-| --- | ------------------- | ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| 1   | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
+| No. | Method              | Description         | API Reference                                                               | URL                                                                                                              |
+| --- | ------------------- | ------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 1   | `getTrendingTokens` | Get trending tokens | [Method Documentation](/web3-data-api/solana/reference/get-trending-tokens) | [https://deep-index.moralis.io/api/v2.2/tokens/trending](https://deep-index.moralis.io/api/v2.2/tokens/trending) |
+
+### Strategy Builder
+
+![Strategy Builder](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/strategy-builder.png)
+
+Create custom token discovery strategies with our powerful filtering capabilities. Build, test, and deploy sophisticated token screening rules tailored to your trading approach.
+
+- Multi-criteria filtering
+- Real-time evaluation
+- Customizable parameters
+- Market metric combinations
+
+**Related APIs:**
+
+| No. | Method              | Description         | API Reference                                                               | URL                                                                                                                |
+| --- | ------------------- | ------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getFilteredTokens` | Get filtered tokens | [Method Documentation](/web3-data-api/solana/reference/get-filtered-tokens) | [https://deep-index.moralis.io/api/v2.2/discovery/tokens](https://deep-index.moralis.io/api/v2.2/discovery/tokens) |
+
+### Pump Fun Tokens
+
+![Pump Fun Tokens](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/pump-fun-tokens.png)
+
+Access comprehensive data on pump fun tokens and prebonded tokens. Monitor new launches, track bonding phase tokens, and analyze graduated tokens.
+
+- New token monitoring
+- Bonding phase tracking
+- Graduated token analysis
+- Bonding status verification
+
+**Related APIs:**
+
+| No. | Method                         | Description                             | API Reference                                                                               | URL                                                                                                                                                          |
+| --- | ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getNewTokensByExchange`       | Get new tokens by exchange              | [Method Documentation](/web3-data-api/solana/reference/get-new-tokens-by-exchange)          | [https://solana-gateway.moralis.io/token/mainnet/exchange/:exchange/new](https://solana-gateway.moralis.io/token/mainnet/exchange/pumpfun/new)               |
+| 2   | `getBondingTokensByExchange`   | Get tokens in bonding phase by exchange | [Method Documentation](/web3-data-api/solana/reference/get-bonding-tokens-by-exchange)      | [https://solana-gateway.moralis.io/token/mainnet/exchange/:exchange/bonding](https://solana-gateway.moralis.io/token/mainnet/exchange/pumpfun/bonding)       |
+| 3   | `getGraduatedTokensByExchange` | Get graduated tokens by exchange        | [Method Documentation](/web3-data-api/solana/reference/get-graduated-tokens-by-exchange)    | [https://solana-gateway.moralis.io/token/mainnet/exchange/:exchange/graduated](https://solana-gateway.moralis.io/token/mainnet/exchange/pumpfun/graduated)   |
+| 4   | `getTokenBondingStatus`        | Get bonding status by token address     | [Method Documentation](/web3-data-api/solana/reference/get-bonding-status-by-token-address) | [https://solana-gateway.moralis.io/token/mainnet/:tokenAddress/bonding-status](https://solana-gateway.moralis.io/token/mainnet/:tokenAddress/bonding-status) |
 
 ### Token Prices & Charts
 
@@ -101,6 +138,24 @@ Access comprehensive token information and metadata for any Solana token. Used t
 | No. | Method             | Description        | API Reference                                                              | URL                                                                                                                                      |
 | --- | ------------------ | ------------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | `getTokenMetadata` | Get token metadata | [Method Documentation](/web3-data-api/solana/reference/get-token-metadata) | [https://solana-gateway.moralis.io/token/:network/:address/metadata](https://solana-gateway.moralis.io/token/:network/:address/metadata) |
+
+### Token Holders
+
+![Token Holders](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/holders-solana.png)
+
+Track holder statistics and distribution patterns for any token. Analyze holder growth, concentration, and historical trends.
+
+- Current holder count
+- Distribution analysis
+- Holder growth trends
+- Concentration metrics
+
+**Related APIs:**
+
+| No. | Method                      | Description                            | API Reference                                                                        | URL                                                                                                                                                        |
+| --- | --------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getTokenHolderStats`       | Get token holder statistics            | [Method Documentation](/web3-data-api/solana/reference/get-token-holder-stats)       | [https://solana-gateway.moralis.io/token/mainnet/holders/:address](https://solana-gateway.moralis.io/token/mainnet/holders/:address)                       |
+| 2   | `getHistoricalTokenHolders` | Get historical token holder statistics | [Method Documentation](/web3-data-api/solana/reference/get-historical-token-holders) | [https://solana-gateway.moralis.io/token/mainnet/holders/:address/historical](https://solana-gateway.moralis.io/token/mainnet/holders/:address/historical) |
 
 ### Token Pairs & Liquidity
 
@@ -139,6 +194,42 @@ Track token swaps and trading activity. Featured in moralis.com's swap analysis 
 | 1   | `getSwapsByPairAddress`   | Get swaps by pair   | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-pair-address)   | [https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/swaps](https://solana-gateway.moralis.io/token/:network/pairs/:pairAddress/swaps) |
 | 2   | `getSwapsByWalletAddress` | Get swaps by wallet | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-wallet-address) | [https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps](https://solana-gateway.moralis.io/account/:network/:walletAddress/swaps)     |
 | 3   | `getSwapsByTokenAddress`  | Get swaps by token  | [Method Documentation](/web3-data-api/solana/reference/get-swaps-by-token-address)  | [https://solana-gateway.moralis.io/token/:network/:tokenAddress/swaps](https://solana-gateway.moralis.io/token/:network/:tokenAddress/swaps)           |
+
+### Network Volume Analytics
+
+![Network Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/network-volume-stats.png)
+
+Track comprehensive blockchain-level volume statistics across multiple timeframes. Get insights into total trading volume, active wallets, and transaction counts for Solana.
+
+- Total trading volume metrics
+- Volume trends across timeframes (5m, 1h, 6h, 24h)
+- Active wallet statistics
+- Transaction count analytics
+
+**Related APIs:**
+
+| No. | Method                  | Description                         | API Reference                                                                     | URL                                                                                                                                                                      |
+| --- | ----------------------- | ----------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | `getVolumeStatsByChain` | Get volume statistics by chain      | [Method Documentation](/web3-data-api/solana/reference/get-volume-stats-by-chain) | [https://deep-index.moralis.io/api/v2.2/volume/chains](https://deep-index.moralis.io/api/v2.2/volume/chains)                                                             |
+| 2   | `getTimeSeriesVolume`   | Get timeseries volume data by chain | [Method Documentation](/web3-data-api/solana/reference/get-time-series-volume)    | [https://deep-index.moralis.io/api/v2.2/volume/timeseries?chain=solana&timeframe=1d](https://deep-index.moralis.io/api/v2.2/volume/timeseries?chain=solana&timeframe=1d) |
+
+### Category Volume Analytics
+
+![Category Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/category-volume-stats.png)
+
+Analyze trading volume broken down by token categories. Identify which sectors are seeing increased activity and track buy/sell ratios across different token types.
+
+- Volume breakdowns by token categories (DeFi, AI, Gaming, etc.)
+- Buy/sell volume ratio analysis
+- Buyer and seller counts by category
+- Transaction activity metrics per category
+
+**Related APIs:**
+
+| No. | Method                          | Description                            | API Reference                                                                              | URL                                                                                                                                                                                          |
+| --- | ------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getVolumeStatsByCategory`      | Get volume statistics by category      | [Method Documentation](/web3-data-api/solana/reference/get-volume-stats-by-category)       | [https://deep-index.moralis.io/api/v2.2/volume/categories?chain=solana](https://deep-index.moralis.io/api/v2.2/volume/categories?chain=solana)                                               |
+| 2   | `getTimeSeriesVolumeByCategory` | Get timeseries volume data by category | [Method Documentation](/web3-data-api/solana/reference/get-time-series-volume-by-category) | [https://deep-index.moralis.io/api/v2.2/volume/timeseries/ai-agents?chain=solana&timeframe=1d](https://deep-index.moralis.io/api/v2.2/volume/timeseries/ai-agents?chain=solana&timeframe=1d) |
 
 ### TradingView Token Chart Widget Integration
 
