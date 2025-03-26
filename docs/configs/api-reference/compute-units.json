@@ -799,7 +799,7 @@
       "endpoint": "getTimeSeriesTokenAnalytics",
       "path": "/tokens/analytics/timeseries",
       "price": 200,
-      "rateLimitCost": 50
+      "rateLimitCost": 20
     },
     {
       "endpoint": "getFilteredTokens",
