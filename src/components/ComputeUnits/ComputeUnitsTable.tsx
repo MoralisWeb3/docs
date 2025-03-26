@@ -70,6 +70,7 @@ const fixedPath = {
   getTimeSeriesVolumeByCategory: "get-time-series-volume-by-category",
   getTokenAnalytics: "get-token-analytics",
   getMultipleTokenAnalytics: "get-multiple-token-analytics",
+  getTimeSeriesTokenAnalytics: "get-timeseries-token-analytics",
   getNewTokensByExchange: "get-new-tokens-by-exchange",
   getBondingTokensByExchange: "get-bonding-tokens-by-exchange",
   getGraduatedTokensByExchange: "get-graduated-tokens-by-exchange",
