@@ -642,6 +642,12 @@
       "path": "/tokens/analytics",
       "price": 150,
       "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTimeSeriesTokenAnalytics",
+      "path": "/tokens/analytics/timeseries",
+      "price": 200,
+      "rateLimitCost": 20
     }
   ],
   "solana": [
