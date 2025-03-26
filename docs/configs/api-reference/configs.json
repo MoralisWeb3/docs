@@ -17406,6 +17406,210 @@
         }
       ]
     },
+    "getTimeSeriesTokenAnalytics": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Retrieve timeseries volume data by token addresses",
+      "description": "Retrieve timeseries volume data by token addresses",
+      "method": "POST",
+      "path": "/tokens/analytics/timeseries",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "timeframe",
+          "description": "The timeframe to query",
+          "required": true,
+          "example": "1d",
+          "type": "string",
+          "enum": ["1d", "7d", "30d"]
+        }
+      ],
+      "bodyParam": {
+        "required": true,
+        "description": "Body",
+        "type": "object",
+        "fields": [
+          {
+            "name": "tokens",
+            "type": "array",
+            "required": true,
+            "description": "The tokens to be fetched",
+            "example": [
+              {
+                "chain": "0x1",
+                "tokenAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+              },
+              {
+                "chain": "solana",
+                "tokenAddress": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+              }
+            ],
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "chain",
+                  "type": "string",
+                  "description": "The chain identifier (chain name or hex chain ID)",
+                  "example": "0x1",
+                  "required": true,
+                  "enum": [
+                    "eth",
+                    "0x1",
+                    "sepolia",
+                    "0xaa36a7",
+                    "polygon",
+                    "0x89",
+                    "bsc",
+                    "0x38",
+                    "bsc testnet",
+                    "0x61",
+                    "avalanche",
+                    "0xa86a",
+                    "fantom",
+                    "0xfa",
+                    "cronos",
+                    "0x19",
+                    "arbitrum",
+                    "0xa4b1",
+                    "chiliz",
+                    "0x15b38",
+                    "chiliz testnet",
+                    "0x15b32",
+                    "gnosis",
+                    "0x64",
+                    "gnosis testnet",
+                    "0x27d8",
+                    "base",
+                    "0x2105",
+                    "base sepolia",
+                    "0x14a34",
+                    "optimism",
+                    "0xa",
+                    "holesky",
+                    "0x4268",
+                    "polygon amoy",
+                    "0x13882",
+                    "linea",
+                    "0xe708",
+                    "moonbeam",
+                    "0x504",
+                    "moonriver",
+                    "0x505",
+                    "moonbase",
+                    "0x507",
+                    "linea sepolia",
+                    "0xe705",
+                    "flow",
+                    "0x2eb",
+                    "flow-testnet",
+                    "0x221",
+                    "ronin",
+                    "0x7e4",
+                    "ronin-testnet",
+                    "0x7e5",
+                    "lisk",
+                    "0x46f",
+                    "lisk-sepolia",
+                    "0x106a",
+                    "pulse",
+                    "0x171",
+                    "solana"
+                  ]
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The token contract address",
+                  "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                  "required": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "Array of token timeseries data",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "description": "The chain identifier",
+                      "example": "0x1",
+                      "required": true
+                    },
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                      "required": true
+                    },
+                    {
+                      "name": "timeseries",
+                      "type": "array",
+                      "description": "Array of timeseries data points",
+                      "required": true,
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "timestamp",
+                            "type": "string",
+                            "description": "Timestamp of the data point",
+                            "example": "2022-02-22T00:00:00Z",
+                            "required": true
+                          },
+                          {
+                            "name": "buyVolume",
+                            "type": "number",
+                            "description": "Buy volume for this time period",
+                            "example": 4565,
+                            "required": true
+                          },
+                          {
+                            "name": "sellVolume",
+                            "type": "number",
+                            "description": "Sell volume for this time period",
+                            "example": 4565,
+                            "required": true
+                          },
+                          {
+                            "name": "liquidityUsd",
+                            "type": "number",
+                            "description": "Liquidity in USD for this time period",
+                            "example": 4565,
+                            "required": true
+                          },
+                          {
+                            "name": "fullyDilutedValuation",
+                            "type": "number",
+                            "description": "Fully diluted valuation for this time period",
+                            "example": 4565,
+                            "required": true
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getAggregatedTokenPairStats": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get aggregated token pair statistics by address",

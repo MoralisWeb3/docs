@@ -1,5 +1,5 @@
 ---
-title: "PumpSwap DEX Support Added to Solana API 🎉"
+title: "PumpSwap DEX Support Added to Solana API"
 slug: "moralis-adds-pumpswap-support-solana"
 authors:
   name: John Pilla

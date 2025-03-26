@@ -796,6 +796,12 @@
       "rateLimitCost": 50
     },
     {
+      "endpoint": "getTimeSeriesTokenAnalytics",
+      "path": "/tokens/analytics/timeseries",
+      "price": 200,
+      "rateLimitCost": 50
+    },
+    {
       "endpoint": "getFilteredTokens",
       "path": "/discovery/tokens",
       "price": 250,
