@@ -50,8 +50,8 @@ The API currently limits results to 100 tokens per request and does not support 
 To find recently created tokens:
 
 1. Calculate the Unix timestamp for your desired age (e.g., 10 days ago)
-2. Use the tokenAge metric with the "lt" (less than) operator
-3. Example: `{"metric": "tokenAge", "lt": calculated_timestamp}`
+2. Use the tokenAge metric with the "gt" (less than) operator
+3. Example: `{"metric": "tokenAge", "gt": calculated_timestamp}`
 
 ### How do I ensure token quality?
 
