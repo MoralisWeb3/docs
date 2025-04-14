@@ -18101,8 +18101,8 @@
     },
     "getTimeSeriesTokenAnalytics": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Retrieve timeseries volume data by token addresses",
-      "description": "Retrieve timeseries volume data by token addresses",
+      "summary": "Get Timeseries Token Analytics for EVM & Solana",
+      "description": "Retrieve comprehensive timeseries analytics for multiple tokens with on both EVM and Solana chains, including volume, transaction counts, and valuation data.",
       "method": "POST",
       "path": "/tokens/analytics/timeseries",
       "pathParams": [],
