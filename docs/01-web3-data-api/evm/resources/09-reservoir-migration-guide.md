@@ -9,7 +9,7 @@ sidebar_position: 9
 # Migrating from Reservoir to Moralis
 
 :::warning URGENT MIGRATION NEEDED
-Reservoir is sunsetting THEIR NFT APIs on October 15th, 2025. Applications and platforms using Reservoir API need to migrate as soon as possible to avoid service disruptions. Moralis APIs offer equivalent functionality, making migration straightforward.
+Reservoir is sunsetting their NFT APIs on October 15th, 2025. Applications and platforms using Reservoir API need to migrate as soon as possible to avoid service disruptions. Moralis APIs offer equivalent functionality, making migration straightforward.
 :::
 
 With Reservoir deprecating their API offering, Moralis provides a comprehensive alternative with equivalent functionality. This guide will help you seamlessly transition your projects from Reservoir to Moralis.
