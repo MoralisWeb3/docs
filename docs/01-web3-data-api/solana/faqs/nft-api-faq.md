@@ -1,6 +1,6 @@
 ---
 title: "Solana NFT Metadata API FAQ"
-description: "Learn how the Solana NFT Metadata API works, including metadata structure, standards, and collection information"
+description: "Learn how the Solana NFT Metadata API works, including metadata structure, standards, collection information, and media items"
 slug: "/web3-data-api/solana/nft-metadata-faq"
 sidebar_position: 0
 ---
@@ -26,6 +26,26 @@ A typical response for a Metaplex-standard NFT will include a collection object 
   "sellerFeeBasisPoints": 500
 }
 ```
+
+### Are NFT media items now available for Solana?
+
+Yes! We now support NFT media items for Solana, providing the same image preview capabilities that were previously available only for EVM chains. The following endpoints now include media information:
+
+- `getNFTMetadata`
+- `getNFTs`
+- `getPortfolio`
+
+Media information is returned in a `media` object with the following structure:
+
+```json
+"media": {
+  "status": "processing",
+  "originalMediaUrl": "https://madlads.s3.us-west-2.amazonaws.com/images/7256.png",
+  "updatedAt": "2025-04-24T10:19:26.056Z"
+}
+```
+
+The `status` field indicates whether the media is still being processed or is ready for display. The `originalMediaUrl` provides direct access to the NFT's original media.
 
 ### What fields can I expect in a full NFT metadata response?
 
@@ -56,9 +76,16 @@ Based on the example responses, a complete NFT metadata response typically inclu
   "collection": {...},
   "firstCreated": {...},
   "creators": [...],
-  "properties": {...}
+  "properties": {...},
+  "media": {
+    "status": "processing",
+    "originalMediaUrl": "https://madlads.s3.us-west-2.amazonaws.com/images/7256.png",
+    "updatedAt": "2025-04-24T10:19:26.056Z"
+  }
 }
 ```
+
+Note the addition of the `media` object in the response.
 
 ### How are NFT attributes/traits structured?
 
