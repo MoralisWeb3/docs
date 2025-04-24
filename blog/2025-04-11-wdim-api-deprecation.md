@@ -2,7 +2,7 @@
 title: "Upcoming Changes: 'Why Did It Move' Endpoint Deprecation"
 slug: "wdim-api-deprecation"
 authors:
-  name: Reuben Salisbury
+  name: Bharath Babu
 tags: [Web3 Data API]
 ---
 
