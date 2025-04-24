@@ -105,3 +105,7 @@ You can customize the chart's appearance by tweaking these options:
 
 You can embed charts for pre-bonded Pump.fun tokens the same way!
 Just enter the pre-bonded token address when configuring the widget.
+
+---
+
+Charts are powered by [TradingView](https://www.tradingview.com/), the leading provider of financial charting tools and trading platform.
