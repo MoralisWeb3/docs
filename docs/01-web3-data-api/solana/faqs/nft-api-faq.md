@@ -39,9 +39,28 @@ Media information is returned in a `media` object with the following structure:
 
 ```json
 "media": {
-  "status": "processing",
-  "originalMediaUrl": "https://madlads.s3.us-west-2.amazonaws.com/images/7256.png",
-  "updatedAt": "2025-04-24T10:19:26.056Z"
+  "status": "success",
+  "updatedAt": "2025-04-21T16:34:37.665Z",
+  "mimetype": "image/png",
+  "parent_hash": "0xd74c7c0ec9fdc611cb86317d7505be611a38feeb2abfea866bb9b695c6ac358e",
+  "media_collection": {
+    "low": {
+      "height": 100,
+      "width": 100,
+      "url": "https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/0x22429fbf9d7fccfdcd86bb1f4a8551127c408c920b392e220b43b4b89a3e9b4e/low.png"
+    },
+    "medium": {
+      "height": 250,
+      "width": 250,
+      "url": "https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/0x22429fbf9d7fccfdcd86bb1f4a8551127c408c920b392e220b43b4b89a3e9b4e/medium.png"
+    },
+    "high": {
+      "height": 500,
+      "width": 500,
+      "url": "https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/0x22429fbf9d7fccfdcd86bb1f4a8551127c408c920b392e220b43b4b89a3e9b4e/high.png"
+    }
+  },
+  "original_media_url": "https://www.larvalabs.com/cryptopunks/cryptopunk001.png"
 }
 ```
 
@@ -246,3 +265,19 @@ The `properties` field can contain various additional data, often including file
   ]
 }
 ```
+
+### What does the media object contain?
+
+In the NFT media object, you'll find:
+
+- `status`: Indicates the processing status of the media (`success`, `processing`, or `failed`)
+- `updatedAt`: Timestamp of when the media was last updated
+- `mimetype`: The media file type (e.g., "image/png")
+- `parent_hash`: A unique hash identifier for the NFT
+- `media_collection`: Contains three resolution options for the image:
+  - `low`: 100x100 pixel preview
+  - `medium`: 250x250 pixel preview
+  - `high`: 500x500 pixel preview
+- `original_media_url`: Direct link to the original NFT media file
+
+Each resolution in the `media_collection` includes height, width, and direct URL to the image file, making it easy to choose the appropriate size for your application's needs.
