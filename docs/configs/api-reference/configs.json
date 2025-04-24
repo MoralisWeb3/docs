@@ -30497,8 +30497,446 @@
         }
       ],
       "responses": [
-        { "status": "200", "description": "" },
-        { "status": "400", "description": "" }
+        {
+          "status": "200",
+          "description": "Returns NFTs owned by the given wallet address",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "associatedTokenAddress",
+                  "type": "string",
+                  "description": "The associated token address for this NFT in the wallet",
+                  "example": "FH1D4qJ6nC2ng5UjZW6q36R98wRidb5vF6Js93khzSj6",
+                  "required": true
+                },
+                {
+                  "name": "mint",
+                  "type": "string",
+                  "description": "The mint address of the NFT",
+                  "example": "71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the NFT",
+                  "example": "goose #720",
+                  "required": true
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT collection",
+                  "example": "goose",
+                  "required": true
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "description": "Decimal places for the token",
+                  "example": 0,
+                  "required": true
+                },
+                {
+                  "name": "amount",
+                  "type": "string",
+                  "description": "The amount of tokens owned",
+                  "example": "1",
+                  "required": true
+                },
+                {
+                  "name": "amountRaw",
+                  "type": "string",
+                  "description": "The raw amount of tokens owned",
+                  "example": "1",
+                  "required": true
+                },
+                {
+                  "name": "totalSupply",
+                  "type": "string",
+                  "description": "The total supply of this NFT",
+                  "example": "1",
+                  "required": true
+                },
+                {
+                  "name": "attributes",
+                  "type": "array",
+                  "description": "The attributes/traits of the NFT",
+                  "field": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "traitType",
+                        "type": "string",
+                        "description": "The type of the trait",
+                        "example": "Background",
+                        "required": true
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "description": "The value of the trait",
+                        "example": "Yellow",
+                        "required": true
+                      }
+                    ]
+                  },
+                  "required": true
+                },
+                {
+                  "name": "contract",
+                  "type": "object",
+                  "description": "Information about the NFT contract",
+                  "fields": [
+                    {
+                      "name": "type",
+                      "type": "string",
+                      "description": "The type of contract",
+                      "example": "non-fungible-programmable",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the contract",
+                      "example": "gooses",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the contract",
+                      "example": "goose",
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "collection",
+                  "type": "object",
+                  "description": "Information about the NFT collection",
+                  "fields": [
+                    {
+                      "name": "collectionAddress",
+                      "type": "string",
+                      "description": "The address of the collection",
+                      "example": "6ubyyuUz3EVFwZrBh3C2ezSXXfyjxP4jhemLPyGgdL6Y",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the collection",
+                      "example": "gooses",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "type": "string",
+                      "description": "The description of the collection",
+                      "example": "gooses for you to collect and enjoy!",
+                      "required": true
+                    },
+                    {
+                      "name": "imageOriginalUrl",
+                      "type": "string",
+                      "description": "The URL of the collection's original image",
+                      "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                      "required": true
+                    },
+                    {
+                      "name": "externalUrl",
+                      "type": "string",
+                      "description": "The external URL related to the collection",
+                      "example": "",
+                      "required": true
+                    },
+                    {
+                      "name": "metaplexMint",
+                      "type": "string",
+                      "description": "The Metaplex mint address of the collection",
+                      "example": "6ubyyuUz3EVFwZrBh3C2ezSXXfyjxP4jhemLPyGgdL6Y",
+                      "required": true
+                    },
+                    {
+                      "name": "sellerFeeBasisPoints",
+                      "type": "number",
+                      "description": "The seller fee basis points for the collection",
+                      "example": 0,
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "firstCreated",
+                  "type": "object",
+                  "description": "Information about when the NFT was first created",
+                  "fields": [
+                    {
+                      "name": "mintTimestamp",
+                      "type": "number",
+                      "description": "The timestamp when the NFT was minted",
+                      "example": 1705370276,
+                      "required": true
+                    },
+                    {
+                      "name": "mintBlockNumber",
+                      "type": "number",
+                      "description": "The block number when the NFT was minted",
+                      "example": 242073688,
+                      "required": true
+                    },
+                    {
+                      "name": "mintTransaction",
+                      "type": "string",
+                      "description": "The transaction hash of the mint",
+                      "example": "3t8aEZdN2fpEWcLsEaxdYyVD8orisyi4vY839HDfdWHg9PFaJvRPxbB8Z8oYRgjiTLdKJPzfLnBdgx7WQijiGvpA",
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "creators",
+                  "type": "array",
+                  "description": "Information about the creators of the NFT",
+                  "field": {
+                    "type": "object",
+                    "fields": [
+                      {
+                        "name": "address",
+                        "type": "string",
+                        "description": "The address of the creator",
+                        "example": "AYKFGxeow8mXf3TyANdsm2QyUQndk1Gwo78VxyEv5hQD",
+                        "required": true
+                      },
+                      {
+                        "name": "share",
+                        "type": "number",
+                        "description": "The creator's share percentage",
+                        "example": 0,
+                        "required": true
+                      },
+                      {
+                        "name": "verified",
+                        "type": "boolean",
+                        "description": "Indicates if the creator is verified",
+                        "example": true,
+                        "required": true
+                      }
+                    ]
+                  },
+                  "required": true
+                },
+                {
+                  "name": "properties",
+                  "type": "object",
+                  "description": "Additional properties of the NFT",
+                  "fields": [
+                    {
+                      "name": "files",
+                      "type": "array",
+                      "description": "Files associated with the NFT",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "uri",
+                            "type": "string",
+                            "description": "The URI of the file",
+                            "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                            "required": true
+                          },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "description": "The MIME type of the file",
+                            "example": "image/jpeg",
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "category",
+                      "type": "string",
+                      "description": "The category of the NFT",
+                      "example": "image",
+                      "required": true
+                    },
+                    {
+                      "name": "creators",
+                      "type": "array",
+                      "description": "Creators information in properties",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "address",
+                            "type": "string",
+                            "description": "The address of the creator in properties",
+                            "example": "5Le4teStdGbdUEcbaDQYDjZ1UZQFX5KJbYr57jhJg8jf",
+                            "required": true
+                          },
+                          {
+                            "name": "share",
+                            "type": "number",
+                            "description": "The creator's share percentage in properties",
+                            "example": 100,
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                },
+                {
+                  "name": "media",
+                  "type": "object",
+                  "description": "Media information and resized previews of the NFT",
+                  "fields": [
+                    {
+                      "name": "status",
+                      "type": "string",
+                      "description": "Status of the media processing",
+                      "example": "success",
+                      "required": true
+                    },
+                    {
+                      "name": "mimetype",
+                      "type": "string",
+                      "description": "MIME type of the media",
+                      "example": "image/jpeg",
+                      "required": true
+                    },
+                    {
+                      "name": "originalMediaUrl",
+                      "type": "string",
+                      "description": "URL of the original media",
+                      "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                      "required": true
+                    },
+                    {
+                      "name": "updatedAt",
+                      "type": "string",
+                      "description": "Timestamp when the media was last updated",
+                      "example": "2025-04-24T10:19:31.683Z",
+                      "required": true
+                    },
+                    {
+                      "name": "mediaCollection",
+                      "type": "object",
+                      "description": "Collection of resized preview images in different sizes",
+                      "fields": [
+                        {
+                          "name": "low",
+                          "type": "object",
+                          "description": "Low resolution preview image",
+                          "fields": [
+                            {
+                              "name": "height",
+                              "type": "number",
+                              "description": "Height of the low resolution image",
+                              "example": 100,
+                              "required": true
+                            },
+                            {
+                              "name": "width",
+                              "type": "number",
+                              "description": "Width of the low resolution image",
+                              "example": 100,
+                              "required": true
+                            },
+                            {
+                              "name": "url",
+                              "type": "string",
+                              "description": "URL of the low resolution image",
+                              "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/low.jpeg",
+                              "required": true
+                            }
+                          ],
+                          "required": true
+                        },
+                        {
+                          "name": "medium",
+                          "type": "object",
+                          "description": "Medium resolution preview image",
+                          "fields": [
+                            {
+                              "name": "height",
+                              "type": "number",
+                              "description": "Height of the medium resolution image",
+                              "example": 250,
+                              "required": true
+                            },
+                            {
+                              "name": "width",
+                              "type": "number",
+                              "description": "Width of the medium resolution image",
+                              "example": 250,
+                              "required": true
+                            },
+                            {
+                              "name": "url",
+                              "type": "string",
+                              "description": "URL of the medium resolution image",
+                              "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/medium.jpeg",
+                              "required": true
+                            }
+                          ],
+                          "required": true
+                        },
+                        {
+                          "name": "high",
+                          "type": "object",
+                          "description": "High resolution preview image",
+                          "fields": [
+                            {
+                              "name": "height",
+                              "type": "number",
+                              "description": "Height of the high resolution image",
+                              "example": 500,
+                              "required": true
+                            },
+                            {
+                              "name": "width",
+                              "type": "number",
+                              "description": "Width of the high resolution image",
+                              "example": 500,
+                              "required": true
+                            },
+                            {
+                              "name": "url",
+                              "type": "string",
+                              "description": "URL of the high resolution image",
+                              "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/high.jpeg",
+                              "required": true
+                            }
+                          ],
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "status": "400",
+          "description": "Bad request. Invalid address or other request error."
+        }
       ],
       "codeSamples": [
         {
@@ -30548,59 +30986,548 @@
       "responses": [
         {
           "status": "200",
-          "description": "",
+          "description": "Returns the complete portfolio of the wallet address, including native balance, tokens, and NFTs",
           "body": {
             "type": "object",
             "fields": [
               {
                 "name": "nativeBalance",
                 "type": "object",
+                "description": "The native SOL balance in the wallet",
                 "fields": [
-                  {
-                    "name": "solana",
-                    "type": "string",
-                    "required": true
-                  },
                   {
                     "name": "lamports",
                     "type": "string",
+                    "description": "The native balance in lamports (raw)",
+                    "example": "18610324351",
+                    "required": true
+                  },
+                  {
+                    "name": "solana",
+                    "type": "string",
+                    "description": "The native balance in SOL",
+                    "example": "18.610324351",
                     "required": true
                   }
-                ]
-              },
-              {
-                "name": "nfts",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "associatedTokenAddress",
-                    "type": "string"
-                  },
-                  { "name": "mint", "type": "string" },
-                  { "name": "name", "type": "string" },
-                  { "name": "symbol", "type": "string" }
-                ]
+                ],
+                "required": true
               },
               {
                 "name": "tokens",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "associatedTokenAddress",
-                    "type": "string"
-                  },
-                  { "name": "mint", "type": "string" },
-                  { "name": "name", "type": "string" },
-                  { "name": "symbol", "type": "string" },
-                  { "name": "amount", "type": "string" },
-                  { "name": "amountRaw", "type": "string" },
-                  { "name": "decimals", "type": "number" }
-                ]
+                "type": "array",
+                "description": "List of SPL tokens held in the wallet",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "associatedTokenAddress",
+                      "type": "string",
+                      "description": "The associated token address for this token in the wallet",
+                      "example": "BxemX7FdJo5msrC3aBi6JNafRjS2MfdmYcVr3yFPFvKn",
+                      "required": true
+                    },
+                    {
+                      "name": "mint",
+                      "type": "string",
+                      "description": "The mint address of the token",
+                      "example": "5ykhiPoUTcoqpieSnQ6w2tPbCERJawe9kAM6MuZJMcbP",
+                      "required": true
+                    },
+                    {
+                      "name": "amountRaw",
+                      "type": "string",
+                      "description": "The raw amount of tokens owned",
+                      "example": "3387402990000",
+                      "required": true
+                    },
+                    {
+                      "name": "amount",
+                      "type": "string",
+                      "description": "The formatted amount of tokens owned",
+                      "example": "3387402.99",
+                      "required": true
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "number",
+                      "description": "Decimal places for the token",
+                      "example": 6,
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the token",
+                      "example": "onchain dog　",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the token",
+                      "example": "OCD",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token's logo image (null if not available)",
+                      "example": "https://logo.moralis.io/solana-mainnet_5ykhiPoUTcoqpieSnQ6w2tPbCERJawe9kAM6MuZJMcbP_0442d558f20da42a000ba4469d8b7046.png",
+                      "required": true
+                    },
+                    {
+                      "name": "isVerifiedContract",
+                      "type": "boolean",
+                      "description": "Indicates if the token contract is verified",
+                      "example": false,
+                      "required": true
+                    }
+                  ]
+                },
+                "required": true
+              },
+              {
+                "name": "nfts",
+                "type": "array",
+                "description": "List of NFTs held in the wallet",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "associatedTokenAddress",
+                      "type": "string",
+                      "description": "The associated token address for this NFT in the wallet",
+                      "example": "FH1D4qJ6nC2ng5UjZW6q36R98wRidb5vF6Js93khzSj6",
+                      "required": true
+                    },
+                    {
+                      "name": "mint",
+                      "type": "string",
+                      "description": "The mint address of the NFT",
+                      "example": "71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The name of the NFT",
+                      "example": "goose #720",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The symbol of the NFT collection",
+                      "example": "goose",
+                      "required": true
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "number",
+                      "description": "Decimal places for the NFT (usually 0)",
+                      "example": 0,
+                      "required": true
+                    },
+                    {
+                      "name": "amount",
+                      "type": "string",
+                      "description": "The amount of NFTs owned (usually '1')",
+                      "example": "1",
+                      "required": true
+                    },
+                    {
+                      "name": "amountRaw",
+                      "type": "string",
+                      "description": "The raw amount of NFTs owned",
+                      "example": "1",
+                      "required": true
+                    },
+                    {
+                      "name": "totalSupply",
+                      "type": "string",
+                      "description": "The total supply of this NFT (usually '1')",
+                      "example": "1",
+                      "required": true
+                    },
+                    {
+                      "name": "attributes",
+                      "type": "array",
+                      "description": "The attributes/traits of the NFT",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "traitType",
+                            "type": "string",
+                            "description": "The type of the trait",
+                            "example": "Background",
+                            "required": true
+                          },
+                          {
+                            "name": "value",
+                            "type": "string",
+                            "description": "The value of the trait",
+                            "example": "Yellow",
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "contract",
+                      "type": "object",
+                      "description": "Information about the NFT contract",
+                      "fields": [
+                        {
+                          "name": "type",
+                          "type": "string",
+                          "description": "The type of contract",
+                          "example": "non-fungible-programmable",
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the contract",
+                          "example": "gooses",
+                          "required": true
+                        },
+                        {
+                          "name": "symbol",
+                          "type": "string",
+                          "description": "The symbol of the contract",
+                          "example": "goose",
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    },
+                    {
+                      "name": "collection",
+                      "type": "object",
+                      "description": "Information about the NFT collection",
+                      "fields": [
+                        {
+                          "name": "collectionAddress",
+                          "type": "string",
+                          "description": "The address of the collection",
+                          "example": "6ubyyuUz3EVFwZrBh3C2ezSXXfyjxP4jhemLPyGgdL6Y",
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "description": "The name of the collection",
+                          "example": "gooses",
+                          "required": true
+                        },
+                        {
+                          "name": "description",
+                          "type": "string",
+                          "description": "The description of the collection",
+                          "example": "gooses for you to collect and enjoy!",
+                          "required": true
+                        },
+                        {
+                          "name": "imageOriginalUrl",
+                          "type": "string",
+                          "description": "The URL of the collection's original image",
+                          "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                          "required": true
+                        },
+                        {
+                          "name": "externalUrl",
+                          "type": "string",
+                          "description": "The external URL related to the collection",
+                          "example": "",
+                          "required": true
+                        },
+                        {
+                          "name": "metaplexMint",
+                          "type": "string",
+                          "description": "The Metaplex mint address of the collection",
+                          "example": "6ubyyuUz3EVFwZrBh3C2ezSXXfyjxP4jhemLPyGgdL6Y",
+                          "required": true
+                        },
+                        {
+                          "name": "sellerFeeBasisPoints",
+                          "type": "number",
+                          "description": "The seller fee basis points for the collection",
+                          "example": 0,
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    },
+                    {
+                      "name": "firstCreated",
+                      "type": "object",
+                      "description": "Information about when the NFT was first created",
+                      "fields": [
+                        {
+                          "name": "mintTimestamp",
+                          "type": "number",
+                          "description": "The timestamp when the NFT was minted",
+                          "example": 1705370276,
+                          "required": true
+                        },
+                        {
+                          "name": "mintBlockNumber",
+                          "type": "number",
+                          "description": "The block number when the NFT was minted",
+                          "example": 242073688,
+                          "required": true
+                        },
+                        {
+                          "name": "mintTransaction",
+                          "type": "string",
+                          "description": "The transaction hash of the mint",
+                          "example": "3t8aEZdN2fpEWcLsEaxdYyVD8orisyi4vY839HDfdWHg9PFaJvRPxbB8Z8oYRgjiTLdKJPzfLnBdgx7WQijiGvpA",
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    },
+                    {
+                      "name": "creators",
+                      "type": "array",
+                      "description": "Information about the creators of the NFT",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "address",
+                            "type": "string",
+                            "description": "The address of the creator",
+                            "example": "AYKFGxeow8mXf3TyANdsm2QyUQndk1Gwo78VxyEv5hQD",
+                            "required": true
+                          },
+                          {
+                            "name": "share",
+                            "type": "number",
+                            "description": "The creator's share percentage",
+                            "example": 0,
+                            "required": true
+                          },
+                          {
+                            "name": "verified",
+                            "type": "boolean",
+                            "description": "Indicates if the creator is verified",
+                            "example": true,
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "properties",
+                      "type": "object",
+                      "description": "Additional properties of the NFT",
+                      "fields": [
+                        {
+                          "name": "files",
+                          "type": "array",
+                          "description": "Files associated with the NFT",
+                          "field": {
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "uri",
+                                "type": "string",
+                                "description": "The URI of the file",
+                                "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                                "required": true
+                              },
+                              {
+                                "name": "type",
+                                "type": "string",
+                                "description": "The MIME type of the file",
+                                "example": "image/jpeg",
+                                "required": true
+                              }
+                            ]
+                          },
+                          "required": true
+                        },
+                        {
+                          "name": "category",
+                          "type": "string",
+                          "description": "The category of the NFT",
+                          "example": "image",
+                          "required": true
+                        },
+                        {
+                          "name": "creators",
+                          "type": "array",
+                          "description": "Creators information in properties",
+                          "field": {
+                            "type": "object",
+                            "fields": [
+                              {
+                                "name": "address",
+                                "type": "string",
+                                "description": "The address of the creator in properties",
+                                "example": "5Le4teStdGbdUEcbaDQYDjZ1UZQFX5KJbYr57jhJg8jf",
+                                "required": true
+                              },
+                              {
+                                "name": "share",
+                                "type": "number",
+                                "description": "The creator's share percentage in properties",
+                                "example": 100,
+                                "required": true
+                              }
+                            ]
+                          },
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    },
+                    {
+                      "name": "media",
+                      "type": "object",
+                      "description": "Media information and resized previews of the NFT",
+                      "fields": [
+                        {
+                          "name": "status",
+                          "type": "string",
+                          "description": "Status of the media processing",
+                          "example": "success",
+                          "required": true
+                        },
+                        {
+                          "name": "mimetype",
+                          "type": "string",
+                          "description": "MIME type of the media",
+                          "example": "image/jpeg",
+                          "required": true
+                        },
+                        {
+                          "name": "originalMediaUrl",
+                          "type": "string",
+                          "description": "URL of the original media",
+                          "example": "https://gateway.pinit.io/ipfs/QmeBKjawYwSA6QLX8NqPq722eEHCroLumw2G7WxNqWdyG7/720",
+                          "required": true
+                        },
+                        {
+                          "name": "updatedAt",
+                          "type": "string",
+                          "description": "Timestamp when the media was last updated",
+                          "example": "2025-04-24T10:19:31.683Z",
+                          "required": true
+                        },
+                        {
+                          "name": "mediaCollection",
+                          "type": "object",
+                          "description": "Collection of resized preview images in different sizes",
+                          "fields": [
+                            {
+                              "name": "low",
+                              "type": "object",
+                              "description": "Low resolution preview image",
+                              "fields": [
+                                {
+                                  "name": "height",
+                                  "type": "number",
+                                  "description": "Height of the low resolution image",
+                                  "example": 100,
+                                  "required": true
+                                },
+                                {
+                                  "name": "width",
+                                  "type": "number",
+                                  "description": "Width of the low resolution image",
+                                  "example": 100,
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "URL of the low resolution image",
+                                  "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/low.jpeg",
+                                  "required": true
+                                }
+                              ],
+                              "required": true
+                            },
+                            {
+                              "name": "medium",
+                              "type": "object",
+                              "description": "Medium resolution preview image",
+                              "fields": [
+                                {
+                                  "name": "height",
+                                  "type": "number",
+                                  "description": "Height of the medium resolution image",
+                                  "example": 250,
+                                  "required": true
+                                },
+                                {
+                                  "name": "width",
+                                  "type": "number",
+                                  "description": "Width of the medium resolution image",
+                                  "example": 250,
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "URL of the medium resolution image",
+                                  "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/medium.jpeg",
+                                  "required": true
+                                }
+                              ],
+                              "required": true
+                            },
+                            {
+                              "name": "high",
+                              "type": "object",
+                              "description": "High resolution preview image",
+                              "fields": [
+                                {
+                                  "name": "height",
+                                  "type": "number",
+                                  "description": "Height of the high resolution image",
+                                  "example": 500,
+                                  "required": true
+                                },
+                                {
+                                  "name": "width",
+                                  "type": "number",
+                                  "description": "Width of the high resolution image",
+                                  "example": 500,
+                                  "required": true
+                                },
+                                {
+                                  "name": "url",
+                                  "type": "string",
+                                  "description": "URL of the high resolution image",
+                                  "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/71P6frZcEbQxT7WEKxPoySNCmRh4MGbjpLT8r6zXg4Bt/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/high.jpeg",
+                                  "required": true
+                                }
+                              ],
+                              "required": true
+                            }
+                          ],
+                          "required": true
+                        }
+                      ],
+                      "required": true
+                    }
+                  ]
+                },
+                "required": true
               }
             ]
           }
         },
-        { "status": "400", "description": "" }
+        {
+          "status": "400",
+          "description": "Bad request. Invalid address or other request error."
+        }
       ],
       "codeSamples": [
         {
@@ -31027,6 +31954,137 @@
                         }
                       ]
                     },
+                    "required": true
+                  }
+                ],
+                "required": true
+              },
+              {
+                "name": "media",
+                "type": "object",
+                "description": "Media information and resized previews of the NFT",
+                "fields": [
+                  {
+                    "name": "status",
+                    "type": "string",
+                    "description": "Status of the media processing",
+                    "example": "success",
+                    "required": true
+                  },
+                  {
+                    "name": "mimetype",
+                    "type": "string",
+                    "description": "MIME type of the media",
+                    "example": "image/png",
+                    "required": true
+                  },
+                  {
+                    "name": "originalMediaUrl",
+                    "type": "string",
+                    "description": "URL of the original media",
+                    "example": "https://madlads.s3.us-west-2.amazonaws.com/images/7256.png",
+                    "required": true
+                  },
+                  {
+                    "name": "updatedAt",
+                    "type": "string",
+                    "description": "Timestamp when the media was last updated",
+                    "example": "2025-04-24T10:19:31.683Z",
+                    "required": true
+                  },
+                  {
+                    "name": "mediaCollection",
+                    "type": "object",
+                    "description": "Collection of resized preview images in different sizes",
+                    "fields": [
+                      {
+                        "name": "low",
+                        "type": "object",
+                        "description": "Low resolution preview image",
+                        "fields": [
+                          {
+                            "name": "height",
+                            "type": "number",
+                            "description": "Height of the low resolution image",
+                            "example": 100,
+                            "required": true
+                          },
+                          {
+                            "name": "width",
+                            "type": "number",
+                            "description": "Width of the low resolution image",
+                            "example": 80,
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "URL of the low resolution image",
+                            "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/FVzM6rUA1SigPxh6e3iQ8dAPjQNf2guap3Xcdj8Q6R2H/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/low.png",
+                            "required": true
+                          }
+                        ],
+                        "required": true
+                      },
+                      {
+                        "name": "medium",
+                        "type": "object",
+                        "description": "Medium resolution preview image",
+                        "fields": [
+                          {
+                            "name": "height",
+                            "type": "number",
+                            "description": "Height of the medium resolution image",
+                            "example": 250,
+                            "required": true
+                          },
+                          {
+                            "name": "width",
+                            "type": "number",
+                            "description": "Width of the medium resolution image",
+                            "example": 200,
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "URL of the medium resolution image",
+                            "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/FVzM6rUA1SigPxh6e3iQ8dAPjQNf2guap3Xcdj8Q6R2H/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/medium.png",
+                            "required": true
+                          }
+                        ],
+                        "required": true
+                      },
+                      {
+                        "name": "high",
+                        "type": "object",
+                        "description": "High resolution preview image",
+                        "fields": [
+                          {
+                            "name": "height",
+                            "type": "number",
+                            "description": "Height of the high resolution image",
+                            "example": 500,
+                            "required": true
+                          },
+                          {
+                            "name": "width",
+                            "type": "number",
+                            "description": "Width of the high resolution image",
+                            "example": 400,
+                            "required": true
+                          },
+                          {
+                            "name": "url",
+                            "type": "string",
+                            "description": "URL of the high resolution image",
+                            "example": "https://nft-preview-media.s3.us-east-1.amazonaws.com/solana/mainnet/FVzM6rUA1SigPxh6e3iQ8dAPjQNf2guap3Xcdj8Q6R2H/0x831a9883966f1fa6f03b0405cfc6f7523d66273e6a7b594de41ddb90688d7dd0/high.png",
+                            "required": true
+                          }
+                        ],
+                        "required": true
+                      }
+                    ],
                     "required": true
                   }
                 ],
