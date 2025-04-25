@@ -19,7 +19,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 <Admonition type="info" icon="💡" title="Premium Endpoint">
     <p>
       To use this API, you will need an API key associated with a Moralis 
-      account on the <strong>Business</strong> plan or higher.
+      account on the <strong>Business</strong> plan or a custom Enterprise plan.
     </p>
     <p>
       For FAQs and more information about token search, please check out our <a href="/web3-data-api/evm/token-search">Token Search API FAQ</a>.
