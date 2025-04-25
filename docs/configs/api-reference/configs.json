@@ -20859,6 +20859,13 @@
                       "required": false,
                       "description": "URL of token logo image",
                       "example": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0x6982508145454ce325ddbe47a25d4ec3d2311933_icon.png"
+                    },
+                    {
+                      "name": "isVerifiedContract",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Whether the contract is verified",
+                      "example": true
                     }
                   ]
                 }
@@ -36129,6 +36136,13 @@
                       "required": false,
                       "description": "URL of token logo image",
                       "example": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0x6982508145454ce325ddbe47a25d4ec3d2311933_icon.png"
+                    },
+                    {
+                      "name": "isVerifiedContract",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Whether the contract is verified",
+                      "example": true
                     }
                   ]
                 }
