@@ -20684,6 +20684,13 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "isVerifiedContract",
+          "type": "boolean",
+          "required": false,
+          "description": "Whether the contract is verified",
+          "example": true
         }
       ],
       "responses": [
@@ -35961,6 +35968,13 @@
           "description": "The desired page size of the result.",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "isVerifiedContract",
+          "type": "boolean",
+          "required": false,
+          "description": "Whether the contract is verified",
+          "example": true
         }
       ],
       "responses": [
