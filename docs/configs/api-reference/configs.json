@@ -20897,6 +20897,7 @@
           "example": "eth",
           "type": "string",
           "enum": [
+            "solana",
             "eth",
             "0x1",
             "polygon",
@@ -20915,7 +20916,8 @@
             "0x2105",
             "ronin",
             "0x7e4",
-            "solana"
+            "linea",
+            "0xe708"
           ]
         },
         {
@@ -36463,6 +36465,7 @@
           "example": "solana",
           "type": "string",
           "enum": [
+            "solana",
             "eth",
             "0x1",
             "polygon",
@@ -36481,7 +36484,8 @@
             "0x2105",
             "ronin",
             "0x7e4",
-            "solana"
+            "linea",
+            "0xe708"
           ]
         },
         {
