@@ -30,7 +30,6 @@ The Web3 Data API is available for the following Gnosis networks:
 The following APIs are supported for Gnosis:
 
 - [Wallet API](/web3-data-api/evm/reference#wallet-api)
-- [NFT API](/web3-data-api/evm/reference#nft-api)
 - [Token API](/web3-data-api/evm/reference#token-api)
 - [DeFi API](/web3-data-api/evm/reference#defi-api)
 - [Entity API](/web3-data-api/evm/reference#entity-api)
@@ -44,26 +43,11 @@ The Wallet API enables you to interact with wallet data on the Gnosis blockchain
 - [Get Wallet History on Gnosis](/web3-data-api/evm/reference#get-wallet-history)
 - [Get Wallet Token Balances on Gnosis](/web3-data-api/evm/reference#get-wallet-token-balances)
 - [Get Wallet Token Approvals on Gnosis](/web3-data-api/evm/reference#get-wallet-token-approvals)
-- [Get Wallet NFT Balances on Gnosis](/web3-data-api/evm/reference#get-wallet-nfts)
 - [Get Wallet DeFi Positions on Gnosis](/web3-data-api/evm/reference#get-wallet-defi-positions)
 - [Get Wallet Net-worth on Gnosis](/web3-data-api/evm/reference#get-wallet-net-worth)
 - [Get Wallet PnL on Gnosis](/web3-data-api/evm/reference#get-wallet-pnl)
 - [Get Wallet Details on Gnosis](/web3-data-api/evm/reference#get-wallet-details)
 - [Get Wallet Domains on Gnosis](/web3-data-api/evm/reference#get-wallet-domains)
-
-### NFT API
-
-The NFT API allows you to interact with NFT-related data on Gnosis. You can:
-
-- [Get NFTs on Gnosis](/web3-data-api/evm/reference#get-nfts)
-- [Get NFT Metadata on Gnosis](/web3-data-api/evm/reference#get-nft-metadata)
-- [Get NFT Transfers on Gnosis](/web3-data-api/evm/reference#get-nft-transfers)
-- [Get NFT Collections on Gnosis](/web3-data-api/evm/reference#get-nft-collections)
-- [Get NFT Owners on Gnosis](/web3-data-api/evm/reference#get-nft-owners)
-- [Get NFT Prices on Gnosis](/web3-data-api/evm/reference#get-nft-prices)
-- [Get NFT Trades on Gnosis](/web3-data-api/evm/reference#get-nft-trades)
-- [Get NFT Stats on Gnosis](/web3-data-api/evm/reference#get-nft-stats)
-- [Get NFT Traits and Rarity on Gnosis](/web3-data-api/evm/reference#get-nft-traits-and-rarity)
 
 ### Token API
 
@@ -79,12 +63,6 @@ The Token API provides methods for interacting with ERC-20 tokens on Gnosis. Cho
 - [Get Token Stats on Gnosis](/web3-data-api/evm/reference#get-token-stats)
 - [Get Token Owners on Gnosis](/web3-data-api/evm/reference#get-token-owners)
 
-### DeFi API
-
-The DeFi API enables interaction with decentralized finance positions and data on Gnosis:
-
-- [Get Wallet DeFi Positions on Gnosis](/web3-data-api/evm/reference#get-wallet-defi-positions)
-
 ### Entity API
 
 The Entity API allows you to interact with various entities on Gnosis, such as exchanges or other organizations:
@@ -98,7 +76,6 @@ The Entity API allows you to interact with various entities on Gnosis, such as e
 Retrieve price data for tokens and NFTs on Gnosis using the Price API:
 
 - [Get Token Prices on Gnosis](/web3-data-api/evm/reference#get-token-prices)
-- [Get NFT Prices on Gnosis](/web3-data-api/evm/reference#get-nft-prices)
 
 ### Blockchain API
 

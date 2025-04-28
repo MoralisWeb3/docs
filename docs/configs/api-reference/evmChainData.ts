@@ -727,7 +727,7 @@ const chainData = [
     evmApi: {
       supported: true,
       walletApi: true,
-      nftApi: true,
+      nftApi: false,
       tokenApi: true,
       defiApi: false,
       entityApi: true,
@@ -767,7 +767,7 @@ const chainData = [
     evmApi: {
       supported: true,
       walletApi: true,
-      nftApi: true,
+      nftApi: false,
       tokenApi: true,
       defiApi: false,
       entityApi: true,
