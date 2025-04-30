@@ -41,6 +41,10 @@ The following DEXs are integrated into the Moralis Token API for Solana, enablin
 
 - **Address**: [pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA](https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA)
 
+### LaunchLab
+
+- **Address**: [WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh](https://solscan.io/account/WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh)
+
 ## Endpoints DEXs Integration
 
 The table shows the list of endpoints that are integrated with the supported Solana DEXs:
