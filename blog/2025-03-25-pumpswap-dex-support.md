@@ -1,37 +1,33 @@
 ---
-title: "PumpSwap DEX Support Added to Solana API"
-slug: "moralis-adds-pumpswap-support-solana"
+title: "PumpSwap DEX Support Added"
+slug: "pumpswap-dex-support"
 authors:
-  name: John Pilla
-tags: [Solana, PumpSwap, DEX, API]
+  name: Bharath Babu
+tags: [Web3 Data API, Solana]
 ---
 
 ## Changelog: PumpSwap DEX Support
 
 ### Release Date: March 25, 2025
 
-Moralis now supports PumpSwap DEX on Solana, enabling developers to access swap data from PumpSwap. 🚀
+We're excited to announce full support for PumpSwap DEX on the Solana blockchain through the Moralis Token API! This integration provides comprehensive data access for all tokens and trading activity on the PumpSwap decentralized exchange.
 
----
+### What's New?
 
-With this update, you can:
+The Moralis Token API now fully supports PumpSwap DEX with comprehensive data access:
 
-- **Access Swap Data by Pair Address:** Retrieve all swap-related transactions (buy, sell, add liquidity, and remove liquidity) for a specific pair address on PumpSwap. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-pair-address)
+- **Token Price Data**: Get real-time and historical price information for any token on PumpSwap
+- **Pair Analytics**: Access detailed statistics on PumpSwap trading pairs including liquidity and volume
+- **Transaction Tracking**: Monitor all swap transactions on the PumpSwap platform
+- **OHLCV Data**: Access candlestick data for technical analysis of tokens traded on PumpSwap
+- **Multi-Token Queries**: Fetch data for multiple PumpSwap tokens in a single API call
 
-- **Access Swap Data by Token Address:** Fetch all swap-related transactions for a specific token address, enabling detailed analysis of token activity on PumpSwap. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-token-address)
+All existing Token API endpoints now work seamlessly with PumpSwap, allowing you to integrate complete PumpSwap data into your applications with minimal effort.
 
-- **Access Swap Data by Wallet Address:** Obtain all swap-related transactions associated with a specific wallet address, allowing for comprehensive tracking of user activity on PumpSwap. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-wallet-address)
+- **PumpSwap Address**: [pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA](https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA)
 
-For a complete list of supported DEXs on Solana, including PumpSwap, please refer to our [Supported DEXs documentation](https://docs.moralis.com/web3-data-api/solana/supported-dexs).
+### Getting Started
 
-Additionally, Moralis now provides APIs to interact with Pump.fun's token ecosystem:
+Access PumpSwap token data through the standard Moralis Token API endpoints with the PumpSwap tokens and pairs.
 
-- **Get New Tokens By Exchange:** Retrieve newly created tokens on Pump.fun. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-new-tokens-by-exchange)
-
-- **Get Bonding Tokens By Exchange:** Access tokens currently in the bonding phase. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-bonding-tokens-by-exchange)
-
-- **Get Graduated Tokens By Exchange:** Fetch tokens that have completed the bonding phase. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-graduated-tokens-by-exchange)
-
-- **Get Token Bonding Status:** Check the bonding progress of a specific token. [Method Documentation](https://docs.moralis.com/web3-data-api/solana/reference/get-bonding-status-by-token-address)
-
-These additions empower developers to build more robust and feature-rich applications on the Solana network. Happy coding!
+For a complete list of supported DEXs on Solana, including PumpSwap, please refer to our [Supported DEXs documentation](/web3-data-api/solana/supported-dexs).
