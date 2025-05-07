@@ -5,6 +5,8 @@ slug: "/web3-data-api/evm/token-holders-api-faq"
 sidebar_position: 4
 ---
 
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
 # Token Holder Categories and Distribution
 
 This guide explains how token holders are classified in the Moralis Holder Statistics API, including distribution categories, acquisition methods, and how to interpret holder distribution data.
@@ -32,64 +34,64 @@ Moralis categorizes holders into different "species" based on the percentage of 
 
 | Category | Threshold (% of Total Supply) |
 | -------- | ----------------------------- |
-| Whales   | > 5%                          |
-| Sharks   | 1% - 5%                       |
-| Dolphins | 0.1% - 1%                     |
-| Fish     | 0.01% - 0.1%                  |
-| Octopus  | 0.001% - 0.01%                |
-| Crabs    | 0.0001% - 0.001%              |
-| Shrimps  | < 0.00001%                    |
+| Whales   | > 0.1%                        |
+| Sharks   | 0.05% - 0.1%                  |
+| Dolphins | 0.005% - 0.05%                |
+| Fish     | 0.001% - 0.005%               |
+| Octopus  | 0.00025% - 0.001%             |
+| Crabs    | 0.00015% - 0.00025%           |
+| Shrimps  | < 0.00015%                    |
 
 ### Examples by Token
 
-The table below shows examples of minimum token amounts to qualify for each category based on token supply and current price:
+Below are examples showing the minimum token amounts required to qualify for each category across different tokens:
 
 **PEPE** (Supply: 420,690,000,000,000 | Price: $0.000023)
 
-- **Whales**: >21,034,500,000,000 (>$483,793,500)
-- **Sharks**: 4,206,900,000,000 - 21,034,500,000,000 ($96,758,700 - $483,793,500)
-- **Dolphins**: 420,690,000,000 - 4,206,900,000,000 ($9,675,870 - $96,758,700)
-- **Fish**: 42,069,000,000 - 420,690,000,000 ($967,587 - $9,675,870)
-- **Octopus**: 4,206,900,000 - 42,069,000,000 ($96,759 - $967,587)
-- **Crabs**: 420,690,000 - 4,206,900,000 ($9,676 - $96,759)
-- **Shrimps**: <42,069,000 (<$967)
+- **Whales**: 420,690,000,000 ($9,675,870)
+- **Sharks**: 210,345,000,000 ($4,837,935)
+- **Dolphins**: 21,034,500,000 ($483,794)
+- **Fish**: 4,206,900,000 ($96,759)
+- **Octopus**: 1,051,725,000 ($24,190)
+- **Crabs**: 631,035,000 ($14,514)
+- **Shrimps**: <631,035,000 (<$14,514)
 
 **BTC** (Supply: 21,000,000 | Price: $105,000)
 
-- **Whales**: >1,050,000 (>$110,250,000,000)
-- **Sharks**: 210,000 - 1,050,000 ($22,050,000,000 - $110,250,000,000)
-- **Dolphins**: 21,000 - 210,000 ($2,205,000,000 - $22,050,000,000)
-- **Fish**: 2,100 - 21,000 ($220,500,000 - $2,205,000,000)
-- **Octopus**: 210 - 2,100 ($22,050,000 - $220,500,000)
-- **Crabs**: 21 - 210 ($2,205,000 - $22,050,000)
-- **Shrimps**: <2.1 (<$220,500)
+- **Whales**: 21,000 ($2,205,000,000)
+- **Sharks**: 10,500 ($1,102,500,000)
+- **Dolphins**: 1,050 ($110,250,000)
+- **Fish**: 210 ($22,050,000)
+- **Octopus**: 53 ($5,512,500)
+- **Crabs**: 32 ($3,307,500)
+- **Shrimps**: <32 (<$3,307,500)
 
 **LUCE** (Supply: 1,000,000,000 | Price: $0.09)
 
-- **Whales**: >50,000,000 (>$4,500,000)
-- **Sharks**: 10,000,000 - 50,000,000 ($900,000 - $4,500,000)
-- **Dolphins**: 1,000,000 - 10,000,000 ($90,000 - $900,000)
-- **Fish**: 100,000 - 1,000,000 ($9,000 - $90,000)
-- **Octopus**: 10,000 - 100,000 ($900 - $9,000)
-- **Crabs**: 1,000 - 10,000 ($90 - $900)
-- **Shrimps**: <100 (<$9)
+- **Whales**: 1,000,000 ($90,000)
+- **Sharks**: 500,000 ($45,000)
+- **Dolphins**: 50,000 ($4,500)
+- **Fish**: 10,000 ($900)
+- **Octopus**: 2,500 ($225)
+- **Crabs**: 1,500 ($135)
+- **Shrimps**: <1,500 (<$135)
 
 **Fartcoin** (Supply: 1,000,000,000 | Price: $0.82)
 
-- **Whales**: >50,000,000 (>$41,000,000)
-- **Sharks**: 10,000,000 - 50,000,000 ($8,200,000 - $41,000,000)
-- **Dolphins**: 1,000,000 - 10,000,000 ($820,000 - $8,200,000)
-- **Fish**: 100,000 - 1,000,000 ($82,000 - $820,000)
-- **Octopus**: 10,000 - 100,000 ($8,200 - $82,000)
-- **Crabs**: 1,000 - 10,000 ($820 - $8,200)
-- **Shrimps**: <100 (<$82)
+- **Whales**: 1,000,000 ($820,000)
+- **Sharks**: 500,000 ($410,000)
+- **Dolphins**: 50,000 ($41,000)
+- **Fish**: 10,000 ($8,200)
+- **Octopus**: 2,500 ($2,050)
+- **Crabs**: 1,500 ($1,230)
+- **Shrimps**: <1,500 (<$1,230)
 
 ## Interpreting Holder Distribution
 
 A healthy token distribution typically shows:
 
 - **Few or no whales**: Reduces risk of price manipulation
-- **Some sharks & dolphins**: Can indicate institutional or early investor interest (big players entering early)
+- **Some sharks & dolphins**: Can indicate institutional or early investor interest
 - **Many fish, octopus, crabs, and shrimps**: Indicates healthy retail participation and community interest
 
 An ideal distribution has a wide base of smaller holders (shrimps, crabs) and a limited concentration at the top, resulting in a more decentralized and robust token economy.
