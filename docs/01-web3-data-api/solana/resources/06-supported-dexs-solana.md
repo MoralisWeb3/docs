@@ -17,7 +17,7 @@ The following DEXs are integrated into the Moralis Token API for Solana, enablin
 
 - **Address**: [675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8](https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8)
 
-### Raydium CLMM (Constant Product Market Maker)
+### Raydium CLMM (Concentrated Liquidity Market Maker)
 
 - **Address**: [CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK](https://solscan.io/account/CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK)
 
@@ -37,9 +37,17 @@ The following DEXs are integrated into the Moralis Token API for Solana, enablin
 
 - **Address**: [whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc](https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc)
 
+### PumpFun
+
+- **Address**: [6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P](https://solscan.io/account/6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P)
+
 ### PumpSwap
 
 - **Address**: [pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA](https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA)
+
+### LaunchLab
+
+- **Address**: [LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj](https://solscan.io/account/LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj)
 
 ## Endpoints DEXs Integration
 
