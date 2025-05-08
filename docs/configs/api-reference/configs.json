@@ -33552,7 +33552,7 @@
                       "name": "tokenAddress",
                       "type": "string",
                       "description": "The token address",
-                      "example": "HcUx4pSPpWoKZCPhHApnMVp3ZE29TM9ZB9JtVFr1LjoB",
+                      "example": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
                       "required": true
                     },
                     {
@@ -33678,7 +33678,7 @@
                       "name": "tokenAddress",
                       "type": "string",
                       "description": "The token address",
-                      "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                      "example": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
                       "required": true
                     },
                     {
@@ -33804,7 +33804,7 @@
                       "name": "tokenAddress",
                       "type": "string",
                       "description": "The token address",
-                      "example": "Cy12AGDENaqgdM7A6o8R7TUATdDY2rudLMTpbzbGpump",
+                      "example": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
                       "required": true
                     },
                     {
@@ -33893,7 +33893,7 @@
           "name": "tokenAddress",
           "description": "The token address",
           "required": true,
-          "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+          "example": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
           "type": "string"
         }
       ],
@@ -33909,7 +33909,7 @@
                 "name": "mint",
                 "type": "string",
                 "description": "The token address",
-                "example": "H2p8S7Ssd3mrBft1bcDGnzW8KNRAGtPTtJLv1tnupump",
+                "example": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
                 "required": true
               },
               {
