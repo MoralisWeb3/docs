@@ -37394,6 +37394,146 @@
           }
         }
       ]
+    },
+    "getTopHolders": {
+      "apiHost": "https://solana-gateway.moralis.io",
+      "summary": "Get top Solana token holders by token address",
+      "description": "Get a list of top token holders for a specific Solana token address",
+      "method": "GET",
+      "path": "/token/:network/:address/top-holders",
+      "pathParams": [
+        {
+          "name": "network",
+          "description": "The network to query",
+          "required": true,
+          "type": "string",
+          "enum": ["mainnet", "devnet"],
+          "example": "mainnet"
+        },
+        {
+          "name": "address",
+          "description": "The token mint address",
+          "required": true,
+          "type": "string",
+          "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "description": "Number of results to return",
+          "required": false,
+          "type": "number",
+          "example": 100
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiJ9..."
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-Api-Key",
+          "description": "API key for authentication",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns top token holders",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "cursor",
+                "type": "string",
+                "required": true,
+                "description": "Pagination cursor for the next set of results",
+                "example": "eyJhbGciOiJIUzI1NiJ9.eyJsYXN0U2VlbkJhbGFuY2UiOiI3Njc1Njk0MTYxODkyIiwibGFzdFNlZW5Ib2xkZXIiOiIzV1pKTW50eDJtM2I4OVAzTDlBY3ZxVGFSRFpxQTVTN0xXWm9vWXN2dnRkMiIsInBhZ2UiOjF9.NKUdvbdD3Semls_JrwrYOHNhMyWp1SMob1Na-_KeZsc"
+              },
+              {
+                "name": "page",
+                "type": "number",
+                "required": true,
+                "description": "Current page number",
+                "example": 1
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "required": true,
+                "description": "Number of results per page",
+                "example": 100
+              },
+              {
+                "name": "totalSupply",
+                "type": "string",
+                "required": true,
+                "description": "Total supply of the token",
+                "example": "9274687279.490104"
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "required": true,
+                "description": "Array of top token holders",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "balance",
+                      "type": "string",
+                      "required": true,
+                      "description": "Raw token balance",
+                      "example": "656478944294576"
+                    },
+                    {
+                      "name": "balanceFormatted",
+                      "type": "string",
+                      "required": true,
+                      "description": "Formatted token balance",
+                      "example": "656478944.294576"
+                    },
+                    {
+                      "name": "isContract",
+                      "type": "boolean",
+                      "required": true,
+                      "description": "Whether the holder is a contract",
+                      "example": false
+                    },
+                    {
+                      "name": "ownerAddress",
+                      "type": "string",
+                      "required": true,
+                      "description": "Address of the token holder",
+                      "example": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"
+                    },
+                    {
+                      "name": "usdValue",
+                      "type": "string",
+                      "required": true,
+                      "description": "USD value of the token holdings",
+                      "example": "656451182.456500726675536"
+                    },
+                    {
+                      "name": "percentageRelativeToTotalSupply",
+                      "type": "number",
+                      "required": true,
+                      "description": "Percentage of total supply held by this holder",
+                      "example": 7.08
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
 
