@@ -37430,8 +37430,7 @@
           "name": "cursor",
           "description": "Cursor for pagination",
           "required": false,
-          "type": "string",
-          "example": "eyJhbGciOiJIUzI1NiJ9..."
+          "type": "string"
         }
       ],
       "headers": [
