@@ -87,11 +87,96 @@ Moralis also provides **Extended RPC Methods** that offer more advanced data ret
 
 To maximize your CU allocation, you can:
 
-- **Batch Requests**: Where possible, batch multiple requests into a single API call. Just note that batch requests have a maximum size of 20.
 - **Limit Block Range**: The default block range for queries is 100 blocks. Requesting larger block ranges or querying archive data will result in higher CU consumption.
 - **Monitor Usage**: Regularly track your CU usage in the Moralis dashboard to avoid hitting your rate limits unexpectedly.
 
 ---
+
+## Batch Requests
+
+Batching allows you to combine multiple RPC requests into a single API call, improving efficiency and user experience by reducing the number of HTTP requests. Note that batching does not reduce the total CU cost, as each request within the batch consumes the same amount of CUs as individual requests. The maximum batch size is 20 requests per call.
+
+### How It Works
+
+Instead of sending separate requests, you can send an array of JSON-RPC request objects in a single HTTP request. The server processes each request in the batch and returns an array of responses, maintaining the same order as the requests. Each request in the batch must include the `method`, `params`, and `id` fields, as per the JSON-RPC 2.0 specification.
+
+### Example
+
+Below is an example of a batch request and its corresponding response:
+
+**Batch Request:**
+
+```
+[
+  {
+    "jsonrpc": "2.0",
+    "method": "eth_getBalance",
+    "params": ["0x1234567890abcdef1234567890abcdef12345678", "latest"],
+    "id": 1
+  },
+  {
+    "jsonrpc": "2.0",
+    "method": "eth_getBalance",
+    "params": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045", "latest"],
+    "id": 2
+  },
+  {
+    "jsonrpc": "2.0",
+    "method": "eth_getBlockByNumber",
+    "params": ["0x1", true],
+    "id": 3
+  }
+]
+```
+
+**Batch Response:**
+
+```
+[
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x21e1b40ac49d98bdaee"
+  },
+  {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": "0xf1863477e42429b41b2"
+  },
+  {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "difficulty": "0x3ff800000",
+      "extraData": "0x476574682f76312e302e302f6c696e75782f676f312e342e32",
+      "gasLimit": "0x1388",
+      "gasUsed": "0x0",
+      "hash": "0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6",
+      "logsBloom": "0x000000000000000000000000000000000000000000000000000000000",
+      "miner": "0x05a56e2d52c817161883f50c441c3228cfe54d9f",
+      "mixHash": "0x969b900de27b6ac6a67742365dd65f55a0526c41fd18e1b16f1a1215c2e66f59",
+      "nonce": "0x539bd4979fef1ec4",
+      "number": "0x1",
+      "parentHash": "0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3",
+      "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+      "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+      "size": "0x219",
+      "stateRoot": "0xd67e4d450343046425ae4271474353857ab860dbc0a1dde64b41b5cd3a532bf3",
+      "timestamp": "0x55ba4224",
+      "totalDifficulty": "0x7ff800000",
+      "transactions": [],
+      "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+      "uncles": []
+    }
+  }
+]
+```
+
+In this example:
+- The first two requests fetch the balance of two different Ethereum addresses.
+- The third request retrieves details of block number 1, excluding full transaction objects (`false` parameter).
+- The response array contains the results for each request, identified by their respective id values.
+
 
 ## Need Higher Limits?
 
