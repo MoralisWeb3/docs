@@ -37454,7 +37454,7 @@
                 "type": "string",
                 "required": true,
                 "description": "Pagination cursor for the next set of results",
-                "example": "eyJhbGciOiJIUzI1NiJ9.eyJsYXN0U2VlbkJhbGFuY2UiOiI3Njc1Njk0MTYxODkyIiwibGFzdFNlZW5Ib2xkZXIiOiIzV1pKTW50eDJtM2I4OVAzTDlBY3ZxVGFSRFpxQTVTN0xXWm9vWXN2dnRkMiIsInBhZ2UiOjF9.NKUdvbdD3Semls_JrwrYOHNhMyWp1SMob1Na-_KeZsc"
+                "example": "string"
               },
               {
                 "name": "page",
