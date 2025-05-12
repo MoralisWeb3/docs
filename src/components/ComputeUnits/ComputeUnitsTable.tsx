@@ -79,6 +79,7 @@ const fixedPath = {
   getTokenHolderStats: "get-token-holder-stats",
   getHistoricalTokenHolders: "get-historical-token-holders",
   searchTokens: "search-tokens",
+  getTokenTopHolders: "get-token-top-holders",
 };
 
 const DynamicPriceUnits = {

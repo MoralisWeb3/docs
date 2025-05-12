@@ -836,6 +836,12 @@
       "path": "/token/mainnet/holders/:address/historical",
       "price": 50,
       "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenTopHolders",
+      "path": "/token/mainnet/holders/:address",
+      "price": 50,
+      "rateLimitCost": 20
     }
   ]
 }
