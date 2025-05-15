@@ -39,6 +39,7 @@ Chain ID: `0x1`
 
 | Supported DEX(s)                       | Query Parameter Value |
 | -------------------------------------- | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/) | uniswapv4             |
 | [Uniswap v3](https://app.uniswap.org/) | uniswapv3             |
 | [Uniswap v2](https://uniswap.org/)     | uniswapv2             |
 | [Sushiswap v2](https://sushi.com/)     | sushiswapv2           |
@@ -50,6 +51,7 @@ Chain ID: `0x89`
 
 | Supported DEX(s)                            | Query Parameter Value |
 | ------------------------------------------- | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)      | uniswapv4             |
 | [Quickswap v2](https://quickswap.exchange/) | quickswapv2           |
 | [Uniswap v3](https://app.uniswap.org/)      | uniswapv3             |
 | [Uniswap v2](https://uniswap.org/)          | uniswapv2             |
@@ -61,6 +63,7 @@ Chain ID: `0x38`
 
 | Supported DEX(s)                                 | Query Parameter Value |
 | ------------------------------------------------ | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)           | uniswapv4             |
 | [PancakeSwap v3](https://pancakeswap.finance/v3) | pancakeswapv3         |
 | [PancakeSwap v2](https://pancakeswap.finance/)   | pancakeswapv2         |
 | [PancakeSwap v1](https://pancakeswap.finance/v1) | pancakeswapv1         |
@@ -73,6 +76,7 @@ Chain ID: `0xa86a`
 
 | Supported DEX(s)                           | Query Parameter Value |
 | ------------------------------------------ | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)     | uniswapv4             |
 | [TraderJoe](https://www.traderjoexyz.com/) | traderjoe             |
 | [Pangolin](https://pangolin.exchange/)     | pangolin              |
 
@@ -101,6 +105,7 @@ Chain ID: `0xa4b1`
 
 | Supported DEX(s)                          | Query Parameter Value |
 | ----------------------------------------- | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)    | uniswapv4             |
 | [Uniswap v3](https://app.uniswap.org/)    | uniswapv3             |
 | [Camelot V2](https://www.camelotsix.com/) | camelotv2             |
 | [Sparta Dex](https://sparta.exchange/)    | spartadex             |
@@ -109,10 +114,11 @@ Chain ID: `0xa4b1`
 
 Chain ID: `0x64`
 
-| Supported DEX(s)                   | Query Parameter Value |
-| ---------------------------------- | --------------------- |
-| [Sushiswap v2](https://sushi.com/) | sushiswapv2           |
-| [Uniswap v2](https://uniswap.org/) | uniswapv2             |
+| Supported DEX(s)                       | Query Parameter Value |
+| -------------------------------------- | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/) | uniswapv4             |
+| [Sushiswap v2](https://sushi.com/)     | sushiswapv2           |
+| [Uniswap v2](https://uniswap.org/)     | uniswapv2             |
 
 ### Base
 
@@ -120,6 +126,7 @@ Chain ID: `0x2105`
 
 | Supported DEX(s)                               | Query Parameter Value |
 | ---------------------------------------------- | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)         | uniswapv4             |
 | [Sharkswap](https://www.sharkswap.finance/)    | sharkswap             |
 | [Uniswap v2](https://uniswap.org/)             | uniswapv2             |
 | [Uniswap v3](https://app.uniswap.org/)         | uniswapv3             |
