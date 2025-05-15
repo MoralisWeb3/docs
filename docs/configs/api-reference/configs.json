@@ -20683,13 +20683,34 @@
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 10
         },
         {
           "name": "isVerifiedContract",
           "type": "boolean",
           "required": false,
           "description": "Whether the contract is verified",
+          "example": true
+        },
+        {
+          "name": "sortBy",
+          "type": "string",
+          "required": false,
+          "description": "Sort by volume1hDesc, volume24hDesc, liquidityDesc, marketCapDesc",
+          "example": "volume1hDesc",
+          "enum": [
+            "volume1hDesc",
+            "volume24hDesc",
+            "liquidityDesc",
+            "marketCapDesc"
+          ]
+        },
+        {
+          "name": "boostVerifiedContracts",
+          "type": "boolean",
+          "required": false,
+          "description": "True to boost verified contracts",
           "example": true
         }
       ],
@@ -36114,13 +36135,34 @@
           "name": "limit",
           "description": "The desired page size of the result.",
           "required": false,
-          "type": "number"
+          "type": "number",
+          "example": 10
         },
         {
           "name": "isVerifiedContract",
           "type": "boolean",
           "required": false,
           "description": "Whether the contract is verified",
+          "example": true
+        },
+        {
+          "name": "sortBy",
+          "type": "string",
+          "required": false,
+          "description": "Sort by volume1hDesc, volume24hDesc, liquidityDesc, marketCapDesc",
+          "example": "volume1hDesc",
+          "enum": [
+            "volume1hDesc",
+            "volume24hDesc",
+            "liquidityDesc",
+            "marketCapDesc"
+          ]
+        },
+        {
+          "name": "boostVerifiedContracts",
+          "type": "boolean",
+          "required": false,
+          "description": "True to boost verified contracts",
           "example": true
         }
       ],
