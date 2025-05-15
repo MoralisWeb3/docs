@@ -30462,10 +30462,99 @@
           "example": "EJpLyTeE8XHG9CeREeHd6pr6hNhaRnTRJx4Z5DPhEJJ6"
         }
       ],
-      "queryParams": [],
+      "queryParams": [
+        {
+          "name": "excludeSpam",
+          "description": "Should exclude spam tokens",
+          "example": false,
+          "required": false,
+          "type": "boolean"
+        }
+      ],
       "responses": [
-        { "status": "200", "description": "" },
-        { "status": "400", "description": "" }
+        {
+          "status": "200",
+          "description": "Returns the complete portfolio of the wallet address, including native balance, tokens, and NFTs",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "associatedTokenAddress",
+                "type": "string",
+                "description": "The associated token address for this token in the wallet",
+                "example": "BxemX7FdJo5msrC3aBi6JNafRjS2MfdmYcVr3yFPFvKn",
+                "required": true
+              },
+              {
+                "name": "mint",
+                "type": "string",
+                "description": "The mint address of the token",
+                "example": "5ykhiPoUTcoqpieSnQ6w2tPbCERJawe9kAM6MuZJMcbP",
+                "required": true
+              },
+              {
+                "name": "amountRaw",
+                "type": "string",
+                "description": "The raw amount of tokens owned",
+                "example": "3387402990000",
+                "required": true
+              },
+              {
+                "name": "amount",
+                "type": "string",
+                "description": "The formatted amount of tokens owned",
+                "example": "3387402.99",
+                "required": true
+              },
+              {
+                "name": "decimals",
+                "type": "number",
+                "description": "Decimal places for the token",
+                "example": 6,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "description": "The name of the token",
+                "example": "onchain dog　",
+                "required": true
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "description": "The symbol of the token",
+                "example": "OCD",
+                "required": true
+              },
+              {
+                "name": "logo",
+                "type": "string",
+                "description": "URL to the token's logo image (null if not available)",
+                "example": "https://logo.moralis.io/solana-mainnet_5ykhiPoUTcoqpieSnQ6w2tPbCERJawe9kAM6MuZJMcbP_0442d558f20da42a000ba4469d8b7046.png",
+                "required": true
+              },
+              {
+                "name": "isVerifiedContract",
+                "type": "boolean",
+                "description": "Indicates if the token contract is verified",
+                "example": false,
+                "required": true
+              },
+              {
+                "name": "possibleSpam",
+                "type": "boolean",
+                "description": "Indicates if the token is possible spam",
+                "example": false,
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "status": "400",
+          "description": "Bad request. Invalid address or other request error."
+        }
       ],
       "codeSamples": [
         {
@@ -30508,6 +30597,20 @@
           "name": "nftMetadata",
           "description": "Should NFT metadata be included in the result?",
           "example": true,
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "mediaItems",
+          "description": "Should return media items",
+          "example": false,
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "excludeSpam",
+          "description": "Should exclude spam NFTs",
+          "example": false,
           "required": false,
           "type": "boolean"
         }
@@ -30568,6 +30671,13 @@
                   "type": "string",
                   "description": "The raw amount of tokens owned",
                   "example": "1",
+                  "required": true
+                },
+                {
+                  "name": "possibleSpam",
+                  "type": "boolean",
+                  "description": "Indicates if the NFT is possible spam",
+                  "example": false,
                   "required": true
                 },
                 {
@@ -30997,6 +31107,20 @@
           "example": true,
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "mediaItems",
+          "description": "Should return media items",
+          "example": false,
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "excludeSpam",
+          "description": "Should exclude spam NFTs",
+          "example": false,
+          "required": false,
+          "type": "boolean"
         }
       ],
       "responses": [
@@ -31097,6 +31221,13 @@
                       "description": "Indicates if the token contract is verified",
                       "example": false,
                       "required": true
+                    },
+                    {
+                      "name": "possibleSpam",
+                      "type": "boolean",
+                      "description": "Indicates if the token is possible spam",
+                      "example": false,
+                      "required": true
                     }
                   ]
                 },
@@ -31142,6 +31273,13 @@
                       "type": "number",
                       "description": "Decimal places for the NFT (usually 0)",
                       "example": 0,
+                      "required": true
+                    },
+                    {
+                      "name": "possibleSpam",
+                      "type": "boolean",
+                      "description": "Indicates if the token is possible spam",
+                      "example": false,
                       "required": true
                     },
                     {
@@ -32101,6 +32239,13 @@
                         "required": true
                       }
                     ],
+                    "required": true
+                  },
+                  {
+                    "name": "possibleSpam",
+                    "type": "boolean",
+                    "description": "Indicates if the NFT is possible spam",
+                    "example": false,
                     "required": true
                   }
                 ],
