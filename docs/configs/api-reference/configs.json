@@ -20964,6 +20964,472 @@
           }
         }
       ]
+    },
+    "getNewTokensByExchange": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get new tokens by exchange",
+      "description": "Returns a list of newly created tokens on the specified exchange",
+      "method": "GET",
+      "path": "/erc20/exchange/:exchange/new",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "tama.meme",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "ronin",
+          "type": "string",
+          "enum": ["ronin"]
+        },
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of new tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0x2a7dc2753ce8e5bb58d87d7a3b7a0a3a4f8e9c1d",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://cf-ipfs.com/ipfs/QmYrNjXgKzDXG1234example"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "18",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (WRON)",
+                      "example": "0.000012345678901234",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000008765432109876",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "15420.25",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "8765.432109876",
+                      "required": true
+                    },
+                    {
+                      "name": "createdAt",
+                      "type": "string",
+                      "description": "The token creation timestamp",
+                      "example": "2025-05-22T14:30:15.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getBondingTokensByExchange": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get bonding tokens by exchange",
+      "description": "Returns a list of tokens currently in bonding curve phase on the specified exchange",
+      "method": "GET",
+      "path": "/erc20/exchange/:exchange/bonding",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "tama.meme",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "ronin",
+          "type": "string",
+          "enum": ["ronin"]
+        },
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of tokens in bonding curve phase on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of bonding tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0x2a7dc2753ce8e5bb58d87d7a3b7a0a3a4f8e9c1d",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://cf-ipfs.com/ipfs/QmYrNjXgKzDXG1234example"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "18",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (WRON)",
+                      "example": "0.000015742096539867",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000011253734396464",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "18750.42",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "11253.734396464",
+                      "required": true
+                    },
+                    {
+                      "name": "bondingCurveProgress",
+                      "type": "number",
+                      "description": "The bonding curve progress percentage",
+                      "example": 67.85432109876543,
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getGraduatedTokensByExchange": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get graduated tokens by exchange",
+      "description": "Returns a list of tokens that have graduated from bonding curve to full trading on the specified exchange",
+      "method": "GET",
+      "path": "/erc20/exchange/:exchange/graduated",
+      "pathParams": [
+        {
+          "name": "exchange",
+          "description": "The exchange identifier",
+          "required": true,
+          "example": "tama.meme",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "ronin",
+          "type": "string",
+          "enum": ["ronin"]
+        },
+        {
+          "name": "limit",
+          "description": "The maximum number of tokens to return",
+          "required": false,
+          "example": "100",
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "Cursor for pagination",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a list of graduated tokens on the specified exchange",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "result",
+                "type": "array",
+                "description": "The list of graduated tokens",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "description": "The token address",
+                      "example": "0x2a7dc2753ce8e5bb58d87d7a3b7a0a3a4f8e9c1d",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The token name",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "description": "The token symbol",
+                      "example": "RONKE",
+                      "required": true
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "description": "URL to the token logo",
+                      "example": "https://cf-ipfs.com/ipfs/QmYrNjXgKzDXG1234example"
+                    },
+                    {
+                      "name": "decimals",
+                      "type": "string",
+                      "description": "The token decimals",
+                      "example": "18",
+                      "required": true
+                    },
+                    {
+                      "name": "priceNative",
+                      "type": "string",
+                      "description": "The token price in native currency (WRON)",
+                      "example": "0.000609987141763549",
+                      "required": true
+                    },
+                    {
+                      "name": "priceUsd",
+                      "type": "string",
+                      "description": "The token price in USD",
+                      "example": "0.000451249123892451",
+                      "required": true
+                    },
+                    {
+                      "name": "liquidity",
+                      "type": "string",
+                      "description": "The token liquidity value",
+                      "example": "32540.67",
+                      "required": true
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "string",
+                      "description": "The token fully diluted valuation in USD",
+                      "example": "451249.123892451",
+                      "required": true
+                    },
+                    {
+                      "name": "graduatedAt",
+                      "type": "string",
+                      "description": "The token graduation timestamp",
+                      "example": "2025-05-20T08:15:42.000Z",
+                      "required": true
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "Cursor for pagination to get the next set of results"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenBondingStatus": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token bonding status",
+      "description": "Returns the bonding curve status and progress for a specific token",
+      "method": "GET",
+      "path": "/erc20/:address/bondingStatus",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The token address to get bonding status for",
+          "required": true,
+          "example": "0x5161af98f7e88f675d7bfa95fc60225057b8b937",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "ronin",
+          "type": "string",
+          "enum": ["ronin"]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the bonding status for the specified token",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "address",
+                "type": "string",
+                "description": "The token address",
+                "example": "0x5161af98f7e88f675d7bfa95fc60225057b8b937",
+                "required": true
+              },
+              {
+                "name": "exchangeName",
+                "type": "string",
+                "description": "The name of the exchange",
+                "example": "tama.meme",
+                "required": true
+              },
+              {
+                "name": "bondingProgress",
+                "type": "number",
+                "description": "The bonding curve progress percentage",
+                "example": 73.25689012345678,
+                "required": true
+              },
+              {
+                "name": "graduatedAt",
+                "type": "string",
+                "description": "The graduation timestamp (null if not graduated)",
+                "example": null
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
