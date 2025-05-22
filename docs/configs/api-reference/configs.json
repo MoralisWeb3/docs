@@ -3331,15 +3331,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -3980,15 +3975,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -4489,15 +4479,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -4941,15 +4926,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -5162,15 +5142,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -5776,15 +5751,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -6133,15 +6103,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -6569,15 +6534,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -6897,15 +6857,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -7161,270 +7116,6 @@
         }
       ]
     },
-    "getNFTTrades": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get NFT trades by contract",
-      "description": "Get trades of NFTs for a given contract and marketplace.",
-      "method": "GET",
-      "path": "/nft/:address/trades",
-      "pathParams": [
-        {
-          "name": "address",
-          "description": "The address of the NFT contract",
-          "required": true,
-          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
-          "type": "string"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "sepolia",
-            "0xaa36a7",
-            "holesky",
-            "0x4268",
-            "polygon",
-            "0x89",
-            "polygon amoy",
-            "0x13882",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
-            "chiliz",
-            "0x15b38",
-            "chiliz testnet",
-            "0x15b32",
-            "base",
-            "0x2105",
-            "base sepolia",
-            "0x14a34",
-            "optimism",
-            "0xa",
-            "linea",
-            "0xe708",
-            "linea sepolia",
-            "0xe705",
-            "moonbeam",
-            "0x504",
-            "moonriver",
-            "0x505",
-            "moonbase",
-            "0x507",
-            "flow",
-            "0x2eb",
-            "flow-testnet",
-            "0x221",
-            "ronin",
-            "0x7e4",
-            "ronin-testnet",
-            "0x7e5",
-            "lisk",
-            "0x46f",
-            "lisk-sepolia",
-            "0x106a"
-          ]
-        },
-        {
-          "name": "from_block",
-          "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "number"
-        },
-        {
-          "name": "to_block",
-          "description": "The block number to get the trades from",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "from_date",
-          "description": "The start date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "to_date",
-          "description": "The end date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "marketplace",
-          "description": "Marketplace from which to get the trades (only OpenSea is supported at the moment)",
-          "required": false,
-          "example": "opensea",
-          "type": "string"
-        },
-        {
-          "name": "cursor",
-          "description": "The cursor returned in the previous response (used for getting the next page).",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "name": "limit",
-          "description": "The desired page size of the result.",
-          "required": false,
-          "example": 3,
-          "type": "number"
-        },
-        {
-          "name": "nft_metadata",
-          "description": "Should NFT metadata be included in the result?",
-          "example": true,
-          "required": false,
-          "type": "boolean"
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the trades",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "page",
-                "type": "number",
-                "description": "The current page of the result",
-                "example": "2"
-              },
-              {
-                "name": "page_size",
-                "type": "number",
-                "description": "The number of results per page",
-                "example": "100"
-              },
-              {
-                "name": "cursor",
-                "type": "string",
-                "description": "The cursor to get to the next page"
-              },
-              {
-                "name": "result",
-                "type": "object",
-                "fields": [
-                  {
-                    "name": "transaction_hash",
-                    "type": "string",
-                    "description": "The transaction hash",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "transaction_index",
-                    "type": "string",
-                    "description": "The transaction index"
-                  },
-                  {
-                    "name": "token_ids",
-                    "type": "array",
-                    "description": "The token ID(s) traded",
-                    "example": ["15", "54"],
-                    "field": {
-                      "type": "string",
-                      "example": "15"
-                    }
-                  },
-                  {
-                    "name": "seller_address",
-                    "type": "string",
-                    "description": "The address that sold the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "buyer_address",
-                    "type": "string",
-                    "description": "The address that bought the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "token_address",
-                    "type": "string",
-                    "description": "The address of the NFT contract",
-                    "example": "0x4ad3785ec7eed7589fa86538244a4530f962434f"
-                  },
-                  {
-                    "name": "marketplace_address",
-                    "type": "string",
-                    "description": "The address of the contract that traded the NFT",
-                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-                  },
-                  {
-                    "name": "price_token_address",
-                    "type": "string",
-                    "description": "The address of the token used to pay for the NFT",
-                    "example": "0x60e4d786628fea6478f785a6d7e704777c86a7c6"
-                  },
-                  {
-                    "name": "price",
-                    "type": "string",
-                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
-                    "example": "1000000000000000"
-                  },
-                  {
-                    "name": "block_timestamp",
-                    "type": "string",
-                    "description": "The block timestamp",
-                    "example": "2021-06-04T16:00:15"
-                  },
-                  {
-                    "name": "block_number",
-                    "type": "string",
-                    "description": "The block number of the transaction",
-                    "example": "13680123"
-                  },
-                  {
-                    "name": "block_hash",
-                    "type": "string",
-                    "description": "The block hash",
-                    "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
-                  },
-                  {
-                    "name": "verified_collection",
-                    "type": "boolean",
-                    "description": "Indicates whether or not the collection has been verified on OpenSea. Currently supported for ethereum NFT contracts.",
-                    "example": "true"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTTrades({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_trades(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
-        }
-      ]
-    },
     "getNFTContractMetadata": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFT collection metadata",
@@ -7466,15 +7157,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -7684,15 +7370,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -8307,15 +7988,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -8542,15 +8218,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -8970,15 +8641,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -9327,15 +8993,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -9438,15 +9099,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -9553,188 +9209,6 @@
         {
           "language": "python",
           "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.re_sync_metadata(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
-          "name": "Moralis Python SDK"
-        }
-      ]
-    },
-    "getNFTLowestPrice": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get NFT lowest price",
-      "description": "Get the lowest executed price for an NFT contract for the last x days (only trades paid in ETH).",
-      "method": "GET",
-      "path": "/nft/:address/lowestprice",
-      "pathParams": [
-        {
-          "name": "address",
-          "description": "The address of the NFT contract",
-          "required": true,
-          "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
-          "type": "string"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "sepolia",
-            "0xaa36a7",
-            "holesky",
-            "0x4268",
-            "polygon",
-            "0x89",
-            "polygon amoy",
-            "0x13882",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
-            "chiliz",
-            "0x15b38",
-            "chiliz testnet",
-            "0x15b32",
-            "base",
-            "0x2105",
-            "base sepolia",
-            "0x14a34",
-            "optimism",
-            "0xa",
-            "linea",
-            "0xe708",
-            "linea sepolia",
-            "0xe705",
-            "moonbeam",
-            "0x504",
-            "moonriver",
-            "0x505",
-            "moonbase",
-            "0x507",
-            "flow",
-            "0x2eb",
-            "flow-testnet",
-            "0x221",
-            "ronin",
-            "0x7e4",
-            "ronin-testnet",
-            "0x7e5",
-            "lisk",
-            "0x46f",
-            "lisk-sepolia",
-            "0x106a"
-          ]
-        },
-        {
-          "name": "days",
-          "description": "The number of days to look back to find the lowest price\nIf not provided 7 days will be the default\n",
-          "required": false,
-          "type": "number"
-        },
-        {
-          "name": "marketplace",
-          "description": "Marketplace from which to get the trades (only OpenSea is supported at the moment)",
-          "required": false,
-          "example": "opensea",
-          "type": "string"
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the trade with the lowest price",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "transaction_hash",
-                "type": "string",
-                "description": "The transaction hash",
-                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-              },
-              {
-                "name": "transaction_index",
-                "type": "string",
-                "description": "The transaction index"
-              },
-              {
-                "name": "token_ids",
-                "type": "array",
-                "description": "The token ID(s) traded",
-                "example": ["15", "54"],
-                "field": { "type": "string", "example": "15" }
-              },
-              {
-                "name": "seller_address",
-                "type": "string",
-                "description": "The address that sold the NFT",
-                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-              },
-              {
-                "name": "buyer_address",
-                "type": "string",
-                "description": "The address that bought the NFT",
-                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-              },
-              {
-                "name": "marketplace_address",
-                "type": "string",
-                "description": "The address of the contract that traded the NFT",
-                "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
-              },
-              {
-                "name": "price",
-                "type": "string",
-                "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
-                "example": "1000000000000000"
-              },
-              {
-                "name": "block_timestamp",
-                "type": "string",
-                "description": "The block timestamp",
-                "example": "2021-06-04T16:00:15"
-              },
-              {
-                "name": "block_number",
-                "type": "string",
-                "description": "The block number of the transaction",
-                "example": "13680123"
-              },
-              {
-                "name": "block_hash",
-                "type": "string",
-                "description": "The block hash",
-                "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
-              }
-            ]
-          }
-        }
-      ],
-      "codeSamples": [
-        {
-          "language": "node",
-          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTLowestPrice({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
-          "name": "Moralis NodeJS SDK"
-        },
-        {
-          "language": "python",
-          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_lowest_price(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
           "name": "Moralis Python SDK"
         }
       ]
@@ -9928,15 +9402,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -10899,6 +10368,223 @@
         }
       ]
     },
+    "getNFTTrades": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get NFT trades by contract",
+      "description": "Get trades of NFTs for a given contract and marketplace.",
+      "method": "GET",
+      "path": "/nft/:address/trades",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x524cab2ec69124574082676e6f654a18df49a048",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "avalanche",
+            "0xa86a",
+            "base",
+            "0x2105",
+            "optimism",
+            "0xa"
+          ]
+        },
+        {
+          "name": "from_block",
+          "description": "The minimum block number from which to get the transfers\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "to_block",
+          "description": "The block number to get the trades from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "from_date",
+          "description": "The start date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'from_block' or 'from_date'\n* If 'from_date' and 'from_block' are provided, 'from_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "to_date",
+          "description": "The end date from which to get the transfers (any format that is accepted by momentjs)\n* Provide the param 'to_block' or 'to_date'\n* If 'to_date' and 'to_block' are provided, 'to_block' will be used.\n",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "marketplace",
+          "description": "Marketplace from which to get the trades (only OpenSea is supported at the moment)",
+          "required": false,
+          "example": "opensea",
+          "type": "string"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "example": 3,
+          "type": "number"
+        },
+        {
+          "name": "nft_metadata",
+          "description": "Should NFT metadata be included in the result?",
+          "example": true,
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns the trades",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "page_size",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page"
+              },
+              {
+                "name": "result",
+                "type": "object",
+                "fields": [
+                  {
+                    "name": "transaction_hash",
+                    "type": "string",
+                    "description": "The transaction hash",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "transaction_index",
+                    "type": "string",
+                    "description": "The transaction index"
+                  },
+                  {
+                    "name": "token_ids",
+                    "type": "array",
+                    "description": "The token ID(s) traded",
+                    "example": ["15", "54"],
+                    "field": {
+                      "type": "string",
+                      "example": "15"
+                    }
+                  },
+                  {
+                    "name": "seller_address",
+                    "type": "string",
+                    "description": "The address that sold the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "buyer_address",
+                    "type": "string",
+                    "description": "The address that bought the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "token_address",
+                    "type": "string",
+                    "description": "The address of the NFT contract",
+                    "example": "0x4ad3785ec7eed7589fa86538244a4530f962434f"
+                  },
+                  {
+                    "name": "marketplace_address",
+                    "type": "string",
+                    "description": "The address of the contract that traded the NFT",
+                    "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                  },
+                  {
+                    "name": "price_token_address",
+                    "type": "string",
+                    "description": "The address of the token used to pay for the NFT",
+                    "example": "0x60e4d786628fea6478f785a6d7e704777c86a7c6"
+                  },
+                  {
+                    "name": "price",
+                    "type": "string",
+                    "description": "The value that was sent in the transaction (ETH/BNB/etc..)",
+                    "example": "1000000000000000"
+                  },
+                  {
+                    "name": "block_timestamp",
+                    "type": "string",
+                    "description": "The block timestamp",
+                    "example": "2021-06-04T16:00:15"
+                  },
+                  {
+                    "name": "block_number",
+                    "type": "string",
+                    "description": "The block number of the transaction",
+                    "example": "13680123"
+                  },
+                  {
+                    "name": "block_hash",
+                    "type": "string",
+                    "description": "The block hash",
+                    "example": "0x4a7c916ca4a970358b9df90051008f729685ff05e9724a9dddba32630c37cb96"
+                  },
+                  {
+                    "name": "verified_collection",
+                    "type": "boolean",
+                    "description": "Indicates whether or not the collection has been verified on OpenSea. Currently supported for ethereum NFT contracts.",
+                    "example": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "codeSamples": [
+        {
+          "language": "node",
+          "code": "import Moralis from 'moralis';\n\ntry {\n  await Moralis.start({\n    apiKey: \"YOUR_API_KEY\"\n  });\n\n  const response = await Moralis.EvmApi.nft.getNFTTrades({});\n\n  console.log(response.raw);\n} catch (e) {\n  console.error(e);\n}",
+          "name": "Moralis NodeJS SDK"
+        },
+        {
+          "language": "python",
+          "code": "from moralis import evm_api\n\napi_key = \"YOUR_API_KEY\"\n\nparams = {}\n\nresult = evm_api.nft.get_nft_trades(\n  api_key=api_key,\n  params=params,\n)\n\nprint(result)",
+          "name": "Moralis Python SDK"
+        }
+      ]
+    },
     "getNFTTradesByToken": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFT trades by token",
@@ -11390,15 +11076,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -11541,15 +11222,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -11729,15 +11405,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
@@ -11844,15 +11515,10 @@
             "0xa86a",
             "fantom",
             "0xfa",
-
             "cronos",
             "0x19",
             "arbitrum",
             "0xa4b1",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
             "chiliz",
             "0x15b38",
             "chiliz testnet",
