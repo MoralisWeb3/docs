@@ -32,7 +32,7 @@ Yes, Moralis offers detailed **chain-specific pages** for all supported networks
 
 ### 4. What is the maximum size for batch requests?
 
-The maximum size for batch requests is **20 requests per batch**. If you need to send more than 20 requests, you will need to split them into multiple batches.
+The maximum size for batch requests is **20 requests per batch**. If you need to send more than 20 requests, you will need to split them into multiple batches. For more information on how batching works, see our [Batching RPC Requests](/rpc-nodes/reference/batching-rpc-requests) guide.
 
 ---
 
