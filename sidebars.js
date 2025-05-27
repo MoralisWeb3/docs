@@ -223,7 +223,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "MCP Server",
+      label: "Moralis MCP Server",
       link: {
         type: "doc",
         id: "moralis-cortex/mcp-server-overview",
@@ -237,7 +237,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Integrations",
+      label: "AI Integrations",
       link: {
         type: "doc",
         id: "moralis-cortex/integrations-overview",

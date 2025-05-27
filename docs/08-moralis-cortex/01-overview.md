@@ -70,10 +70,3 @@ Deploy the MCP server in your own environment for full control and customization
 | **Deployment Options**  | ✅ API or self-hosted package                  | ❌ Hosted only                      | ✅ Various options               |
 | **LLM Flexibility**     | ✅ Use OpenAI, Claude, or OSS models           | ❌ OpenAI only                      | ❌ No LLM integration            |
 | **Customization**       | ✅ Full control over grounding + prompt logic  | ❌ Closed model, limited control    | ✅ Full control but complex      |
-
-## Next Steps
-
-Ready to get started? Choose your path:
-
-- **[Understanding MCP](/cortex/understanding-mcp/what-is-mcp)** - Learn about the Model Context Protocol
-- **[Getting Started](/cortex/getting-started)** - Quick start guide
