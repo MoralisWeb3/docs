@@ -154,9 +154,12 @@ X-API-Key: YOUR_API_KEY
 
 ## Next Steps
 
-Explore our tutorials:
+Explore our tutorials to see what you can do with the Filtered Tokens API:
 
-- [Finding Trending Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens)
-- [Top Gainers & Losers →](/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers)
-- [Solid Performers →](/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers)
-- [Blue Chip Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens)
+- [Finding Trending Tokens](/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens)
+- [Top Gainers & Losers](/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers)
+- [Solid Performers](/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers)
+- [Blue Chip Tokens](/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens)
+- [Tokens with Buying Pressure](/web3-data-api/evm/tutorials/filtered-tokens-api/buying-pressure)
+- [Tokens with Experienced Buyers](/web3-data-api/evm/tutorials/filtered-tokens-api/experienced-buyers)
+- [Risky Bets](/web3-data-api/evm/tutorials/filtered-tokens-api/risky-bets)
