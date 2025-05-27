@@ -25222,7 +25222,7 @@
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Review contracts",
       "description": "Review contracts as spam or not spam",
-      "method": "POST",
+      "method": "GET",
       "path": "/contracts-review",
       "pathParams": [],
       "queryParams": [
