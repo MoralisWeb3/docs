@@ -2,7 +2,7 @@
 title: "Tokens with Experienced Buyers"
 description: "Learn how to use the Filtered Tokens API to find tokens being accumulated by experienced traders, often indicating smart money movement and quality opportunities."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/experienced-buyers"
-sidebar_label: "Experienced Buyers"
+sidebar_label: "Get Tokens with Experienced Buyers"
 sidebar_position: 7
 ---
 

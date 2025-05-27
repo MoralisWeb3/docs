@@ -5,7 +5,7 @@ slug: "/web3-data-api/evm/filtered-token-api-faq"
 sidebar_position: 1
 ---
 
-> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens).
+> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens) and for tutorials, please see the [Filtered Tokens API tutorials](/web3-data-api/evm/tutorials/filtered-tokens-api/overview).
 
 ## Overview
 
@@ -20,7 +20,7 @@ The Filtered Tokens API is a powerful POST endpoint that enables you to discover
 - **Time-based analysis**: Track changes across 8 different time frames
 - **Flexible sorting**: Sort by any metric in ascending or descending order
 - **Category filtering**: Include or exclude specific token categories
-- **Rich metrics**: Access over 40 different metrics including holder distribution, security scores, and acquisition methods
+- **Rich metrics**: Access comprehensive metrics including holder distribution, security scores, and acquisition methods
 
 ## Core Features
 

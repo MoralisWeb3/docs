@@ -2,7 +2,7 @@
 title: "Tokens with Buying Pressure"
 description: "Learn how to use the Filtered Tokens API to find tokens with strong buying pressure, indicating potential upward price movement and market interest."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/buying-pressure"
-sidebar_label: "Buying Pressure"
+sidebar_label: "Get Tokens with Buying Pressure"
 sidebar_position: 6
 ---
 

@@ -2,7 +2,7 @@
 title: "Finding Trending Tokens"
 description: "Learn how to use the Filtered Tokens API to discover trending tokens across multiple blockchains based on volume, buyer activity, and price momentum."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens"
-sidebar_label: "Trending Tokens"
+sidebar_label: " Get Trending Tokens"
 sidebar_position: 2
 ---
 

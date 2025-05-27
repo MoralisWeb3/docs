@@ -2,7 +2,7 @@
 title: "Risky Bets"
 description: "Learn how to use the Filtered Tokens API to find high-risk, high-reward tokens with explosive potential but significant downside risk."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/risky-bets"
-sidebar_label: "Risky Bets"
+sidebar_label: "Get Risky Bets"
 sidebar_position: 8
 ---
 

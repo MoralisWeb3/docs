@@ -2,7 +2,7 @@
 title: "Top Gainers & Losers"
 description: "Learn how to use the Filtered Tokens API to find the biggest price movers - tokens with significant gains or losses across different time frames."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers"
-sidebar_label: "Top Gainers & Losers"
+sidebar_label: "Get Top Gainers & Losers"
 sidebar_position: 3
 ---
 

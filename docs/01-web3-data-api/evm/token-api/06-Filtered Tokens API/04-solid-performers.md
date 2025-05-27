@@ -2,6 +2,7 @@
 title: "Solid Performers"
 description: "Learn how to use the Filtered Tokens API to find stable, consistently performing tokens with good security scores and steady growth across multiple time frames."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers"
+sidebar_label: "Get Solid Performers"
 sidebar_position: 4
 ---
 

@@ -2,6 +2,7 @@
 title: "Blue Chip Tokens"
 description: "Learn how to use the Filtered Tokens API to identify established, high-quality tokens with large market caps, proven track records, and substantial trading activity."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens"
+sidebar_label: "Get Blue Chip Tokens"
 sidebar_position: 5
 ---
 

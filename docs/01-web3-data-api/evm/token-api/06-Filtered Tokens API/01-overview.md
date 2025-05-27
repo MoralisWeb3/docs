@@ -1,82 +1,73 @@
 ---
-title: "Filtered Tokens API Overview"
-description: "Discover the power of the Filtered Tokens API - a comprehensive token discovery and analysis endpoint that enables you to find trending tokens, analyze market movements, and build sophisticated token screening tools across multiple blockchains."
+title: "Filtered Tokens API Tutorials"
+description: "Learn how to use the Filtered Tokens API to discover trending tokens, analyze market movements, and filter tokens by various metrics across multiple blockchains."
 slug: "/web3-data-api/evm/tutorials/filtered-tokens-api/overview"
 sidebar_label: "Overview"
 sidebar_position: 1
 ---
 
-# Filtered Tokens API Overview
+> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens) and for FAQ, please see the [Filtered Tokens API FAQ](/web3-data-api/evm/filtered-token-api-faq).
 
-The Filtered Tokens API is one of the most powerful endpoints in the Moralis Web3 Data API suite. It enables developers to build sophisticated token discovery platforms, market analysis tools, and trading dashboards by providing granular filtering capabilities across multiple metrics and blockchains.
+The Filtered Tokens API enables you to discover and analyze tokens across multiple blockchains using powerful filtering, sorting, and metric selection capabilities.
 
-## Why Use the Filtered Tokens API?
+## What is the Filtered Tokens API?
 
-Traditional token APIs require you to fetch large datasets and filter them client-side, which is inefficient and resource-intensive. The Filtered Tokens API solves this by allowing you to:
+It's a POST endpoint (`/api/v2.2/discovery/tokens`) that allows you to:
 
-- **Query across multiple chains** in a single request
-- **Apply complex filters** server-side for optimal performance
-- **Sort by any metric** to find exactly what you need
-- **Access rich metadata** including holder distribution, security scores, and trading activity
-- **Analyze time-based trends** across 8 different time frames
+- Search tokens across multiple chains in one request
+- Filter by various metrics like volume, market cap, and holder activity
+- Sort results by any supported metric
+- Analyze time-based changes in token performance
 
-## Key Features
+## Supported Chains
 
-### 🌐 Multi-Chain Support
+Query tokens across these blockchains:
 
-Query tokens across 12+ major blockchains including:
+- `eth` - Ethereum
+- `solana` - Solana
+- `base` - Base
+- `arbitrum` - Arbitrum
+- `polygon` - Polygon
+- `binance` - BNB Chain
+- `avalanche` - Avalanche
+- `optimism` - Optimism
+- `ronin` - Ronin
+- `linea` - Linea
+- `fantom` - Fantom
+- `pulse` - PulseChain
 
-- Ethereum, Solana, Base, Arbitrum
-- Polygon, BNB Chain, Avalanche
-- Optimism, Ronin, Linea, Fantom, PulseChain
+## Key Metrics
 
-### 📊 40+ Filterable Metrics
+### Time-Based Metrics (require timeFrame)
 
-Access comprehensive token data:
+- `volumeUsd` - Trading volume
+- `usdPricePercentChange` - Price change percentage
+- `liquidityChange` / `liquidityChangeUSD` - Liquidity changes
+- `holders` - Change in holder count
+- `buyers` / `sellers` / `netBuyers` - Trading activity
+- `experiencedBuyers` / `experiencedSellers` / `netExperiencedBuyers` - Smart money activity
 
-- **Market metrics**: Market cap, FDV, liquidity
-- **Trading metrics**: Volume, price changes, buyer/seller activity
-- **Holder metrics**: Total holders, distribution by wallet size
-- **Security metrics**: Security score, token age
-- **Acquisition metrics**: How holders acquired tokens (swap, transfer, airdrop)
+### Snapshot Metrics (current state, no timeFrame)
 
-### ⏱️ Time-Based Analysis
+- `marketCap` - Market capitalization
+- `fullyDilutedValuation` - FDV
+- `totalLiquidityUsd` - Total liquidity
+- `totalHolders` - Current holder count
+- `securityScore` - Token security (0-100)
+- `tokenAge` - Days since creation
+- Holder distribution: `holdersWhale`, `holdersShark`, etc.
+- Holder supply concentration: `holderSupplyPercentTop10`, etc.
+- Acquisition methods: `holdersBySwap`, `holdersByTransfer`, `holdersByAirdrop`
 
-Track changes across multiple time frames:
+## Time Frames
 
-- Short-term: 10 minutes, 30 minutes, 1 hour
-- Medium-term: 4 hours, 12 hours, 1 day
-- Long-term: 1 week, 1 month
+Available time periods for analysis:
 
-### 🎯 Advanced Filtering
+- `tenMinutes`, `thirtyMinutes`
+- `oneHour`, `fourHours`, `twelveHours`
+- `oneDay`, `oneWeek`, `oneMonth`
 
-Combine multiple conditions to find exactly what you need:
-
-- Use `gt` (greater than) and `lt` (less than) operators
-- Apply filters on both snapshot and time-based metrics
-- Include or exclude specific token categories
-
-## Real-World Use Cases
-
-### 🚀 Token Discovery Platforms
-
-Build platforms that help users discover new tokens based on customizable criteria like market cap ranges, holder patterns, and trading activity.
-
-### 📈 Market Analysis Tools
-
-Create dashboards showing top gainers, losers, and trending tokens with real-time data updates every 10 seconds.
-
-### 🤖 Trading Bots
-
-Develop bots that monitor specific token patterns like whale accumulation, retail FOMO, or liquidity injections.
-
-### 🔍 Portfolio Research Tools
-
-Build tools that help investors find tokens matching specific investment criteria like security scores, holder distribution, and market metrics.
-
-## How It Works
-
-The API uses a POST request with a JSON body containing your query parameters:
+## Basic Request Structure
 
 ```json
 {
@@ -84,17 +75,16 @@ The API uses a POST request with a JSON body containing your query parameters:
   "filters": [
     {
       "metric": "marketCap",
-      "gt": 1000000,
-      "lt": 100000000
+      "gt": 1000000
     },
     {
       "metric": "volumeUsd",
       "timeFrame": "oneDay",
-      "gt": 500000
+      "gt": 100000
     }
   ],
   "sortBy": {
-    "metric": "usdPricePercentChange",
+    "metric": "volumeUsd",
     "timeFrame": "oneDay",
     "type": "DESC"
   },
@@ -102,27 +92,28 @@ The API uses a POST request with a JSON body containing your query parameters:
 }
 ```
 
-This query would return:
+## Filter Operators
 
-- Tokens on Ethereum and Base
-- With market cap between $1M and $100M
-- Daily volume over $500K
-- Sorted by daily price change (highest first)
-- Limited to top 50 results
+- `gt` - Greater than
+- `lt` - Less than
+- Can combine both for ranges
 
-## Getting Started
+## Categories
 
-To use the Filtered Tokens API, you'll need:
+Include or exclude token categories:
 
-1. **A Moralis API Key** - Sign up at [developers.moralis.com](https://developers.moralis.com)
-2. **API Endpoint** - `POST /api/v2.2/discovery/tokens`
-3. **Required Headers** - `X-API-Key: YOUR_API_KEY`
+```json
+{
+  "categories": {
+    "include": ["meme", "gaming"],
+    "exclude": ["stablecoin", "wrapped"]
+  }
+}
+```
 
-## Best Practices
+## Recommended Safety Filters
 
-### 1. Always Include Safety Filters
-
-Protect users from scams and dead tokens:
+Always include these to avoid low-quality tokens:
 
 ```json
 {
@@ -134,36 +125,38 @@ Protect users from scams and dead tokens:
 }
 ```
 
-### 2. Use Appropriate Time Frames
+## Authentication
 
-- For day trading: `tenMinutes`, `oneHour`
-- For swing trading: `oneDay`, `oneWeek`
-- For investing: `oneWeek`, `oneMonth`
+Required header:
 
-### 3. Optimize Your Queries
-
-- Start with broader filters and refine
-- Use sorting to prioritize results
-- Leverage category filters to focus on specific token types
-
-## Data Freshness
-
-- **Price & Volume Data**: Updated every 10 seconds
-- **Holder Metrics**: Updated every 10 seconds (up to 5-minute delay for extremely active tokens)
-- **Security Scores**: Updated as new information becomes available
+```
+X-API-Key: YOUR_API_KEY
+```
 
 ## Limitations
 
-- **Results**: Maximum 100 tokens per request
-- **Pagination**: Not currently supported - use filters to narrow results
-- **Rate Limits**: Standard Moralis API rate limits apply
+- Maximum 100 tokens per request
+- No pagination support
+- Use filters to narrow results
+
+## Data Updates
+
+- Most metrics update every 10 seconds
+- Holder distribution metrics may have up to 5-minute delay for very active tokens
+
+## Common Use Cases
+
+1. **Trending Tokens** - High volume and buyer activity
+2. **Top Gainers/Losers** - Biggest price movements
+3. **Blue Chip Tokens** - Large cap, established tokens
+4. **Smart Money Tracking** - Following experienced buyers
+5. **New Token Discovery** - Recently launched tokens
 
 ## Next Steps
 
-Now that you understand the Filtered Tokens API's capabilities, explore our tutorials to learn how to:
+Explore our tutorials:
 
-1. [Find Trending Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens)
-2. [Discover Top Gainers & Losers →](/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers)
-3. [Identify Solid Performers →](/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers)
-4. [Find Blue Chip Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens)
-5. [Find Tokens with Buying Pressure →](/web3-data-api/evm/tutorials/filtered-tokens-api/buying-pressure)
+- [Finding Trending Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens)
+- [Top Gainers & Losers →](/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers)
+- [Solid Performers →](/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers)
+- [Blue Chip Tokens →](/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens)
