@@ -5,85 +5,105 @@ slug: "/web3-data-api/evm/filtered-token-api-faq"
 sidebar_position: 1
 ---
 
-> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens).
+> For the complete API reference, please see the [Get Filtered Tokens API documentation](/web3-data-api/evm/reference/get-filtered-tokens) and for tutorials, please see the [Filtered Tokens API tutorials](/web3-data-api/evm/tutorials/filtered-tokens-api/overview).
 
 ## Overview
 
 ### What is the Filtered Tokens API?
 
-The Filtered Tokens API allows you to discover and analyze tokens based on various metrics, time frames, and parameters. You can filter tokens by metrics like market cap, volume, holders, and security scores, making it powerful for building token discovery and analysis tools.
+The Filtered Tokens API is a powerful POST endpoint that enables you to discover and analyze tokens across multiple blockchain networks. It provides advanced filtering, sorting, and metric selection capabilities, making it ideal for building token discovery platforms, market analysis tools, and trading dashboards.
 
-### What can I do with this API?
+### What makes this API unique?
 
-You can filter tokens based on multiple criteria, sort results by specific metrics, and retrieve detailed token information. This is particularly useful for building token discovery tools, analyzing market trends, and identifying trading opportunities.
+- **Multi-chain support**: Query tokens across Ethereum, Solana, Base, Arbitrum, and more
+- **Advanced filtering**: Combine multiple metrics with comparison operators
+- **Time-based analysis**: Track changes across 8 different time frames
+- **Flexible sorting**: Sort by any metric in ascending or descending order
+- **Category filtering**: Include or exclude specific token categories
+- **Rich metrics**: Access comprehensive metrics including holder distribution, security scores, and acquisition methods
 
-## Core Concepts
+## Core Features
 
-### What metrics can I filter by?
+### What chains are supported?
 
-The API supports numerous metrics including:
+The API supports major blockchain networks:
 
-- Market metrics: marketCap, volumeUsd, fullyDilutedValuation
-- User metrics: holders, buyers, sellers, netBuyers
-- Experience metrics: experiencedBuyers, experiencedSellers, netExperiencedBuyers
-- Price metrics: usdPricePercentChange
-- Liquidity metrics: liquidityChange, liquidityChangeUSD
-- Security metrics: securityScore
-- Age metrics: tokenAge
+- `eth` - Ethereum
+- `solana` - Solana
+- `base` - Base
+- `arbitrum` - Arbitrum
+- `polygon` - Polygon
+- `binance` - BNB Chain
+- `avalanche` - Avalanche
+- `optimism` - Optimism
+- `ronin` - Ronin
+- `linea` - Linea
+- `fantom` - Fantom
+- `pulse` - PulseChain
 
-### What time frames are supported?
+### What metrics can I filter and analyze?
 
-The API supports various time frames for metric analysis:
+**Market Metrics:**
 
-- Short term: tenMinutes, thirtyMinutes
-- Medium term: oneHour, fourHours, twelveHours, oneDay
-- Long term: oneWeek, oneMonth
+- `marketCap` - Current market capitalization
+- `fullyDilutedValuation` - FDV calculation
+- `totalLiquidityUsd` - Total liquidity in USD
 
-### How does pagination work?
+**Trading Metrics:**
 
-The API currently limits results to 100 tokens per request and does not support pagination. You should use your filters effectively to narrow down results within this limit.
+- `volumeUsd` - Trading volume (time-based)
+- `usdPricePercentChange` - Price change percentage (time-based)
+- `liquidityChange` - Liquidity change amount (time-based)
+- `liquidityChangeUSD` - Liquidity change in USD (time-based)
+
+**Holder Metrics:**
+
+- `totalHolders` - Current holder count
+- `holders` - Holder count change (time-based)
+- `buyers` / `sellers` - Active traders (time-based)
+- `netBuyers` - Net buyer flow (time-based)
+- `experiencedBuyers` / `experiencedSellers` - Experienced trader activity (time-based)
+
+**Distribution Metrics:**
+
+- `holdersWhale`, `holdersShark`, `holdersDolphin`, `holdersFish`, `holdersOctopus`, `holdersCrab`, `holdersShrimp` - Holder size distribution
+- `holderSupplyPercentTop10` through `holderSupplyPercentTop500` - Supply concentration
+
+**Acquisition Metrics:**
+
+- `holdersBySwap` - % acquired via DEX
+- `holdersByTransfer` - % acquired via transfer
+- `holdersByAirdrop` - % acquired via airdrop
+
+**Security & Age:**
+
+- `securityScore` - Token security rating (0-100)
+- `tokenAge` - Days since token creation
+
+### What time frames are available?
+
+- `tenMinutes` - Ultra short-term trends
+- `thirtyMinutes` - Short-term momentum
+- `oneHour` - Hourly analysis
+- `fourHours` - Intraday patterns
+- `twelveHours` - Half-day trends
+- `oneDay` - Daily performance
+- `oneWeek` - Weekly trends
+- `oneMonth` - Monthly analysis
 
 ## Common Use Cases
 
-### How do I filter for new tokens?
+### How do I find trending tokens?
 
-To find recently created tokens:
-
-1. Calculate the Unix timestamp for your desired age (e.g., 10 days ago)
-2. Use the tokenAge metric with the "lt" (less than) operator
-3. Example: `{"metric": "tokenAge", "lt": calculated_timestamp}`
-
-### How do I ensure token quality?
-
-You can combine multiple filters:
-
-1. Set a minimum security score
-2. Check for minimum holder count
-3. Verify sufficient liquidity
-   Example filters:
-
-```json
-[
-  { "metric": "securityScore", "gt": 80 },
-  { "metric": "holders", "timeFrame": "oneWeek", "gt": 500 },
-  { "metric": "liquidityChangeUSD", "gt": 100000 }
-]
-```
-
-### How do I track trending tokens?
-
-Focus on volume and buyer metrics:
-
-1. Filter for high volume
-2. Check for increasing buyers
-3. Sort by price change or volume
-   Example:
+Combine volume, buyer activity, and price momentum:
 
 ```json
 {
+  "chains": ["eth", "base"],
   "filters": [
-    { "metric": "volumeUsd", "timeFrame": "oneDay", "gt": 500000 },
-    { "metric": "buyers", "timeFrame": "oneDay", "gt": 100 }
+    { "metric": "volumeUsd", "timeFrame": "oneDay", "gt": 1000000 },
+    { "metric": "buyers", "timeFrame": "oneHour", "gt": 50 },
+    { "metric": "usdPricePercentChange", "timeFrame": "oneDay", "gt": 10 }
   ],
   "sortBy": {
     "metric": "volumeUsd",
@@ -93,61 +113,195 @@ Focus on volume and buyer metrics:
 }
 ```
 
-## Technical Details
+### How do I filter for quality tokens?
 
-### What's the request structure?
+Apply safety filters to avoid scams and dead tokens:
 
-Required fields in the request body:
+```json
+{
+  "filters": [
+    { "metric": "marketCap", "gt": 100000, "lt": 5000000000000 },
+    { "metric": "totalLiquidityUsd", "gt": 500 },
+    { "metric": "volumeUsd", "timeFrame": "oneDay", "gt": 1000 },
+    { "metric": "securityScore", "gt": 70 }
+  ]
+}
+```
 
-- chain: Blockchain identifier (e.g., "0x1" for Ethereum)
-- filters: Array of filter objects
-- sortBy: Sorting parameters
-- limit: Maximum number of results (up to 100)
+### How do I find retail-driven tokens?
 
-### How do filters work?
+Look for tokens with high small holder percentages:
 
-Each filter object requires:
+```json
+{
+  "filters": [
+    { "metric": "holdersShrimp", "gt": 60 },
+    { "metric": "holdersCrab", "gt": 20 },
+    { "metric": "holdersWhale", "lt": 5 },
+    { "metric": "holderSupplyPercentTop10", "lt": 30 }
+  ]
+}
+```
 
-- metric: What to filter on
-- timeFrame: Time period (if applicable)
-- Comparison operator: gt (greater than), lt (less than), or eq (equals)
+### How do I identify newly launched tokens?
 
-### How does sorting work?
+Use tokenAge to find recent launches:
 
-The sortBy object requires:
+```json
+{
+  "filters": [
+    { "metric": "tokenAge", "lt": 7 },
+    { "metric": "marketCap", "gt": 500000 },
+    { "metric": "totalHolders", "gt": 100 }
+  ],
+  "sortBy": {
+    "metric": "volumeUsd",
+    "timeFrame": "oneDay",
+    "type": "DESC"
+  }
+}
+```
 
-- metric: What to sort by
-- timeFrame: Time period (if applicable)
-- type: "ASC" or "DESC" for ascending or descending order
+## Advanced Filtering
+
+### How do I use category filters?
+
+Include or exclude specific token types:
+
+```json
+{
+  "categories": {
+    "include": ["meme", "gaming"],
+    "exclude": ["stablecoin", "wrapped"]
+  }
+}
+```
+
+### How do I combine multiple filters effectively?
+
+Filters use AND logic - all conditions must be met:
+
+```json
+{
+  "filters": [
+    { "metric": "marketCap", "gt": 1000000, "lt": 100000000 },
+    { "metric": "volumeUsd", "timeFrame": "oneDay", "gt": 500000 },
+    { "metric": "holders", "timeFrame": "oneWeek", "gt": 1000 },
+    { "metric": "securityScore", "gt": 80 }
+  ]
+}
+```
+
+### Can I use grouped metrics?
+
+Yes, use these to get multiple related metrics at once:
+
+- `holderDistribution` - Returns all holder size percentages
+- `holderAcquisition` - Returns all acquisition method percentages
+- `holderSupply` - Returns all top holder supply percentages
 
 ## Best Practices
 
-### How should I optimize my queries?
+### What are recommended default filters?
 
-1. Use specific filters to narrow down results
-2. Combine multiple relevant metrics
-3. Set appropriate thresholds based on chain activity
-4. Consider time frames relevant to your use case
+For most queries, include these safety filters:
 
-### How can I ensure reliable results?
+- `marketCap`: > $100K and < $5 trillion
+- `totalLiquidityUsd`: > $500
+- `volumeUsd` (oneDay): > $1,000
+- `securityScore`: > 70
 
-1. Always check the security score for quality
-2. Verify sufficient liquidity exists
-3. Combine multiple metrics to validate trends
-4. Use appropriate time frames for your analysis
+### How should I handle the 100 token limit?
 
-## Limitations
+1. Use specific filters to narrow results
+2. Combine multiple metrics for precision
+3. Use appropriate time frames
+4. Sort by the most relevant metric for your use case
 
-### What are the main limitations?
+### What's the difference between time-based and snapshot metrics?
 
-1. Maximum 100 results per request
-2. No pagination support
-3. Some tokens may lack logos
-4. Historical data limited to supported time frames
+- **Time-based metrics** require a timeFrame and show changes over that period
+- **Snapshot metrics** show current state and don't accept timeFrame
+- Using timeFrame with snapshot metrics will cause an error
 
-### How should I handle missing data?
+## Common Patterns
 
-1. Check if logo field exists before using it
-2. Verify all required metrics are present
-3. Implement fallbacks for missing values
-4. Consider multiple time frames for comprehensive analysis
+### Top Gainers Pattern
+
+```json
+{
+  "filters": [
+    { "metric": "marketCap", "gt": 5000000 },
+    { "metric": "securityScore", "gt": 80 },
+    { "metric": "usdPricePercentChange", "timeFrame": "oneDay", "gt": 25 }
+  ],
+  "sortBy": {
+    "metric": "usdPricePercentChange",
+    "timeFrame": "oneDay",
+    "type": "DESC"
+  }
+}
+```
+
+### Blue Chip Discovery Pattern
+
+```json
+{
+  "filters": [
+    { "metric": "marketCap", "gt": 150000000, "lt": 3000000000 },
+    { "metric": "securityScore", "gt": 70 },
+    { "metric": "tokenAge", "gt": 365 },
+    { "metric": "volumeUsd", "timeFrame": "oneMonth", "gt": 10000000 }
+  ]
+}
+```
+
+### Whale Accumulation Pattern
+
+```json
+{
+  "filters": [
+    { "metric": "holdersWhale", "gt": 20 },
+    { "metric": "holders", "timeFrame": "oneWeek", "gt": 100 },
+    { "metric": "volumeUsd", "timeFrame": "oneWeek", "gt": 1000000 }
+  ]
+}
+```
+
+## Troubleshooting
+
+### Why am I getting timeFrame errors?
+
+Ensure you're only using timeFrame with time-based metrics. Snapshot metrics like `marketCap`, `totalHolders`, and holder distribution metrics don't support timeFrame.
+
+### Why are some tokens missing logos?
+
+Not all tokens have logo data available. Always check if the logo field exists before using it in your application.
+
+### How do I handle rate limits?
+
+The API has standard rate limits. For high-volume applications:
+
+1. Implement caching for frequently requested data
+2. Batch similar queries when possible
+3. Use appropriate time frames to reduce query frequency
+
+### Why am I getting fewer than 100 results?
+
+This happens when:
+
+1. Your filters are too restrictive
+2. The chain has fewer tokens meeting your criteria
+3. Some tokens lack required metric data
+
+## Data Freshness
+
+### How often is data updated?
+
+- Most metrics update every 10 seconds
+- Holder distribution and acquisition metrics may have up to 5-minute delays for highly active tokens
+- Price and volume data are near real-time
+
+### What about historical data?
+
+The API provides historical data based on the supported time frames. For deeper historical analysis, consider combining multiple queries with different time frames.

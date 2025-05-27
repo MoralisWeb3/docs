@@ -42,6 +42,8 @@ export default function DocPageLayoutMain({
             <ApiBanner />
           ) : reversedPath.includes("authentication-api") ? (
             <ApiBanner />
+          ) : reversedPath.includes("cortex") ? (
+            <ApiBanner />
           ) : (
             <> </>
           )}

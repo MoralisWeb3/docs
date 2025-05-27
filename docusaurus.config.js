@@ -198,6 +198,12 @@ const config = {
             position: "left",
             label: "Auth API",
           },
+          {
+            type: "doc",
+            docId: "moralis-cortex/overview",
+            position: "left",
+            label: "🧠 Moralis Cortex",
+          },
           // position: Right
           {
             type: "html",
