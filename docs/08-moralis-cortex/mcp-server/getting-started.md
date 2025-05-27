@@ -229,12 +229,6 @@ export MORALIS_API_KEY=your_api_key
 3. Restart Claude Desktop completely
 4. Check for config file typos
 
-## Next Steps
-
-- **[Integrations](/cortex/mcp-server/integrations)** - Connect with more AI tools
-- **[Configuration](/cortex/mcp-server/configuration)** - Customize your setup
-- **[Development](/cortex/mcp-server/development)** - Extend and contribute
-
 ## Resources
 
 - **GitHub:** [MoralisWeb3/moralis-mcp-server](https://github.com/MoralisWeb3/moralis-mcp-server)

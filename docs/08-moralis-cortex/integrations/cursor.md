@@ -224,15 +224,8 @@ Make sure to approve MCP tool usage when prompted.
 
 You can configure different MCP servers for different projects by using project-specific `.cursor/mcp.json` files with different API keys or configurations.
 
-## Next Steps
-
-- **[Windsurf Integration](/cortex/integrations/windsurf)** - Set up another AI IDE
-- **[Claude Desktop](/cortex/integrations/claude-desktop)** - Configure desktop AI assistant
-- **[Use Cases](/cortex/use-cases)** - Explore what you can build
-- **[MCP Server Configuration](/cortex/mcp-server/configuration)** - Advanced server setup
-
 ## Resources
 
 - **[Cursor MCP Documentation](https://docs.cursor.com/context/model-context-protocol)** - Official Cursor MCP guide
 - **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Moralis MCP Server source
-- **[API Reference](/cortex/api-reference)** - Complete technical documentation
+- **[Use Cases](/cortex/use-cases)** - Explore what you can build

@@ -18,7 +18,7 @@ Build user-friendly interfaces that explain crypto holdings in plain language.
 
 **Example Query:** _"Analyze my portfolio diversity across Ethereum and Base, and suggest improvements"_
 
-**Best Integration:** [Cortex API](/cortex/api) for web apps, [Cursor](/cortex/integrations/cursor) for development
+**Best Integration:** Cortex API for web apps, [Cursor](/cortex/integrations/cursor) for development
 
 ### Market Intelligence Platform
 
@@ -44,7 +44,7 @@ Create chatbots that can answer user questions about their wallets and transacti
 
 **Example Query:** _"Why didn't my transaction go through and what can I do about it?"_
 
-**Best Integration:** [Cortex API](/cortex/api) for easy deployment
+**Best Integration:** Cortex API for easy deployment
 
 ## Developer Tools
 
@@ -72,7 +72,7 @@ Add intelligence to DeFi apps to help users understand risks, yields, and opport
 
 **Example Query:** _"What are the risks of providing liquidity to this pool based on historical data?"_
 
-**Best Integration:** [Cortex API](/cortex/api) for real-time web integration
+**Best Integration:** Cortex API for real-time web integration
 
 ### Yield Optimization
 
@@ -87,7 +87,7 @@ Build tools that explain complex DeFi strategies in simple terms.
 ### For Rapid Prototyping
 
 - **[Getting Started Guide](/cortex/getting-started)** - Quick setup
-- **[Cortex API](/cortex/api)** - No infrastructure needed
+- **Cortex API** - No infrastructure needed
 
 ### For Production Applications
 
@@ -115,7 +115,4 @@ All examples above can be implemented using natural language queries like:
 ## Need Help?
 
 - **[FAQs](/cortex/faqs)** - Common questions and solutions
-- **[API Reference](/cortex/api-reference)** - Technical documentation
 - **[GitHub](https://github.com/MoralisWeb3/moralis-mcp-server)** - Source code and issues
-
-Ready to build? Choose your integration path and start creating AI-powered Web3 applications today.

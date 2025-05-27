@@ -170,13 +170,8 @@ async function safeQuery(prompt) {
 }
 ```
 
-## Next Steps
-
-- **[Claude API Integration](/cortex/integrations/claude-api)** - Set up Claude API with remote MCP
-- **[Use Cases](/cortex/use-cases)** - Explore what you can build
-- **[API Reference](/cortex/api-reference)** - Complete technical documentation
-
 ## Resources
 
 - **[OpenAI Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp)** - Official remote MCP documentation
 - **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Moralis MCP Server source
+- **[Use Cases](/cortex/use-cases)** - Explore what you can build

@@ -247,13 +247,8 @@ async function safeQuery(prompt) {
 }
 ```
 
-## Next Steps
-
-- **[ChatGPT API Integration](/cortex/integrations/chatgpt-api)** - Set up OpenAI API with remote MCP
-- **[Use Cases](/cortex/use-cases)** - Explore what you can build
-- **[API Reference](/cortex/api-reference)** - Complete technical documentation
-
 ## Resources
 
+- **[Use Cases](/cortex/use-cases)** - Explore what you can build
 - **[Claude API Documentation](https://docs.anthropic.com/claude/reference)** - Official Claude API docs
 - **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Moralis MCP Server source

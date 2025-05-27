@@ -263,16 +263,10 @@ You can configure multiple MCP servers simultaneously:
 - Some features require a **Moralis paid plan** for full access and production performance
 - MCP servers run locally on your machine for security and privacy
 
-## Next Steps
-
-- **[Cursor Integration](/cortex/integrations/cursor)** - Set up AI IDE integration
-- **[Windsurf Integration](/cortex/integrations/windsurf)** - Configure another AI IDE
-- **[Use Cases](/cortex/use-cases)** - Explore what you can build
-- **[MCP Server Configuration](/cortex/mcp-server/configuration)** - Advanced server setup
-
 ## Resources
 
 - **[Smithery CLI](https://smithery.ai/)** - Automated MCP server installation
 - **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Moralis MCP Server source
 - **[Claude Desktop](https://claude.ai/download)** - Download Claude Desktop app
 - **[MCP Specification](https://github.com/modelcontextprotocol/spec)** - Model Context Protocol standard
+- **[Use Cases](/cortex/use-cases)** - Explore what you can build

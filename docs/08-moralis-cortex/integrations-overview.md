@@ -89,18 +89,6 @@ Once integrated, you can ask natural language questions about blockchain data:
 - **Node.js** (for MCP server installations)
 - Your chosen AI tool or API access
 
-## Support
-
-Need help with integrations?
-
-- **[MCP Server Documentation](/cortex/mcp-server)** - Complete setup guide
-- **[API Reference](/cortex/api-reference)** - Technical documentation
-- **[FAQs](/cortex/faqs)** - Common questions and solutions
-
----
-
-Ready to get started? Choose your integration path below:
-
 ### AI IDEs
 
 - **[Set up Cursor →](/cortex/integrations/cursor)**

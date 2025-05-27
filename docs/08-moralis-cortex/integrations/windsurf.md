@@ -270,15 +270,9 @@ While Windsurf primarily uses stdio transport, you can specify transport options
 }
 ```
 
-## Next Steps
-
-- **[Claude Desktop Integration](/cortex/integrations/claude-desktop)** - Set up another AI assistant
-- **[Cursor Integration](/cortex/integrations/cursor)** - Configure another AI IDE
-- **[Use Cases](/cortex/use-cases)** - Explore what you can build
-- **[MCP Server Configuration](/cortex/mcp-server/configuration)** - Advanced server setup
-
 ## Resources
 
 - **[Windsurf MCP Documentation](https://docs.windsurf.com/windsurf/cascade/mcp)** - Official Windsurf MCP guide
 - **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Moralis MCP Server source
 - **[MCP Specification](https://github.com/modelcontextprotocol/spec)** - Model Context Protocol standard
+- **[Use Cases](/cortex/use-cases)** - Explore what you can build

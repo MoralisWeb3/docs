@@ -125,9 +125,8 @@ The MCP Server enables natural language queries for:
 Ready to deploy your own MCP Server?
 
 1. **[Getting Started Guide](/cortex/mcp-server/getting-started)** - Installation and setup
-2. **[Choose Deployment](/cortex/mcp-server/deployment-options)** - Local, cloud, or Docker
-3. **[Pick Integration](/cortex/mcp-server/integrations)** - Connect with your AI tools
-4. **[Configure Setup](/cortex/mcp-server/configuration)** - Customize for your needs
+2. **[Pick Integration](/cortex/integrations)** - Connect with your AI tools
+3. **[Configure Setup](/cortex/mcp-server/configuration)** - Customize for your needs
 
 ## GitHub Repository
 
@@ -142,9 +141,3 @@ Install directly from NPM:
 **📦 [@moralisweb3/api-mcp-server](https://www.npmjs.com/package/@moralisweb3/api-mcp-server)**
 
 ---
-
-**Next Steps:**
-
-- [Getting Started](/cortex/mcp-server/getting-started) - Set up your first MCP server
-- [Deployment Options](/cortex/mcp-server/deployment-options) - Choose how to run it
-- [Integrations](/cortex/mcp-server/integrations) - Connect with AI tools
