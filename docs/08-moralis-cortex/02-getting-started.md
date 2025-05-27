@@ -10,11 +10,28 @@ sidebar_position: 3
 
 Get up and running with AI-powered Web3 intelligence in minutes. This guide will help you make your first blockchain query using natural language.
 
+## What is Moralis Cortex?
+
+Moralis Cortex connects AI models to blockchain data through the **Model Context Protocol (MCP)**. Ask questions like "What tokens does vitalik.eth hold?" and get intelligent responses powered by real-time Web3 data.
+
 ## Choose Your Path
 
-Moralis Cortex offers two ways to access AI-powered blockchain insights:
+### 🧩 MCP Server (Self-Hosted)
 
-### 🌐 Cortex API (Recommended for Getting Started)
+**Perfect for:** Full control, custom integrations, and privacy-focused applications.
+
+- ✅ Run in your infrastructure
+- ✅ Use any LLM model (OpenAI, Claude, open-source)
+- ✅ Complete control over data
+- ✅ Available as NPM package
+
+**Quick install:**
+
+```bash
+npx @moralisweb3/api-mcp-server --version
+```
+
+### 🌐 Cortex API
 
 **Perfect for:** Quick prototyping, testing, and production apps without infrastructure overhead.
 
@@ -23,183 +40,51 @@ Moralis Cortex offers two ways to access AI-powered blockchain insights:
 - ✅ Enterprise-grade reliability
 - ✅ Start building immediately
 
-### 🧩 MCP Server (Self-Hosted)
-
-**Perfect for:** Full control, custom integrations, and enterprise security requirements.
-
-- ✅ Run in your infrastructure
-- ✅ Customize LLM models
-- ✅ Complete control over data
-- ✅ Privacy and compliance focused
-
 ---
 
 ## Quick Start with MCP Server
 
-### Step 1: Install the MCP Server
+### Step 1: Get Your API Key
 
-```bash
-# Install via npm globally
-npm install -g @moralisweb3/api-mcp-server
+1. Visit [Moralis Admin Panel](https://admin.moralis.com)
+2. Navigate to [API Keys](https://admin.moralis.com/api-keys)
+3. Copy your API key
 
-# Or use npx (no installation required)
-npx @moralisweb3/api-mcp-server --version
-```
+### Step 2: Choose Your Integration
 
-### Step 2: Configure Your Environment
+#### **AI IDEs & Code Editors**
 
-```bash
-# Set your API key in your environment, use the template as .env.example
-MORALIS_API_KEY="your_api_key_here"
-```
+- **[Cursor](/cortex/integrations/cursor)** - AI-powered code editor
+- **[Windsurf](/cortex/integrations/windsurf)** - Next-generation AI IDE
 
-### Step 3: Test the Installation
+#### **Desktop AI Assistants**
 
-```bash
-# Run the MCP server with stdio transport
-moralis-api-mcp --transport stdio
+- **[Claude Desktop](/cortex/integrations/claude-desktop)** - Anthropic's desktop app
 
-# Or run with npx
-npx @moralisweb3/api-mcp-server --transport stdio
-```
+#### **API Integrations**
 
-### Step 4: Quick Install for Claude Desktop
+- **[ChatGPT API](/cortex/integrations/chatgpt-api)** - OpenAI's API with remote MCP
+- **[Claude API](/cortex/integrations/claude-api)** - Anthropic's API with remote MCP
 
-```bash
-# Install automatically via Smithery
-npx -y @smithery/cli install @MoralisWeb3/moralis-mcp-server --client claude
-```
+### Step 3: Follow Your Integration Guide
 
-### Step 5: Manual Configuration for Claude Desktop
-
-Add to your Claude Desktop config file:
-
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "moralis": {
-      "command": "npx @moralisweb3/api-mcp-server",
-      "args": [],
-      "env": {
-        "MORALIS_API_KEY": "your_api_key_here"
-      }
-    }
-  }
-}
-```
-
-### Step 6: Restart Claude Desktop
-
-After configuration, restart Claude Desktop and you should see MCP tools available in your conversation.
+Each integration has specific setup instructions. Choose your preferred tool above and follow the setup guide.
 
 ---
 
-## Your First Queries
+## Example Queries
 
-Try these example queries to see Cortex in action:
+Once set up, try these natural language queries:
 
-### **Basic Price Queries**
-
-```
-"What's the current price of PEPE and Ethereum?"
-```
-
-### **Wallet Analysis**
-
-```
-"What tokens does wallet 0xab71...4321 hold?"
-```
-
-### **NFT Exploration**
-
-```
-"Show me the NFTs owned by vitalik.eth on Base"
-```
-
-### **Portfolio Insights**
-
-```
-"What is the current net worth in USD of wallet 0xabc...123?"
-```
-
-### **Market Intelligence**
-
-```
-"What is the current trading sentiment for TOSHI on Base — bullish or bearish?"
-```
-
-### **Historical Analysis**
-
-```
-"When was wallet 0xabc...123 first and last seen active on Ethereum, Base, and Polygon?"
-```
-
-### **Transaction History**
-
-```
-"Show me the complete transaction history for 0xabc...123 across Ethereum, Base, and BNB Chain"
-```
-
-### **Whale Watching**
-
-```
-"Find wallet addresses that are likely associated with Coinbase"
-```
-
-### **Token Analytics**
-
-```
-"Analyze the current holder distribution of SPX6900 — include whales, small holders, and recent growth trends"
-```
-
-### **Price Trends**
-
-```
-"Show me PEPE's daily OHLC data for the past 30 days and provide a summary of the trend"
-```
-
----
-
-## Understanding Response Formats
-
-### API Response Structure
-
-Cortex returns both human-readable summaries and structured data:
-
-```json
-{
-  "response": {
-    "summary": "Human-readable explanation of the data",
-    "structuredData": {
-      "key": "value",
-      "timestamp": "2025-05-27T10:30:00Z"
-    }
-  },
-  "chatId": "session-identifier",
-  "usage": {
-    "tokensUsed": 145,
-    "requestCount": 1
-  }
-}
-```
-
-### MCP Server Response
-
-When using the MCP server, responses come through your AI client (Claude, Cursor, etc.) with:
-
-- **Natural language explanations** formatted for easy reading
-- **Structured data** when available
-- **Context retention** across conversation turns
-- **Tool usage transparency** showing which APIs were called
-
----
+- "What's the current price of PEPE and Ethereum?"
+- "Show me the NFTs owned by vitalik.eth on Base"
+- "What tokens does wallet 0xabc...123 hold?"
+- "Analyze the current holder distribution of SPX6900"
+- "Find wallet addresses likely associated with Coinbase"
 
 ## Supported Blockchains
 
-Cortex supports queries across multiple blockchain networks - all networks supported in web data API are supported in Cortex.
+Cortex supports queries across multiple blockchain networks:
 
 - **Ethereum** - ETH, ERC-20 tokens, NFTs
 - **Base** - Native tokens, Coinbase ecosystem
@@ -208,46 +93,49 @@ Cortex supports queries across multiple blockchain networks - all networks suppo
 - **Avalanche** - AVAX, Avalanche C-Chain
 - **Arbitrum** - L2 scaling solution
 - **Optimism** - Optimistic rollup data
-- **And more...** - Additional chains being added regularly
+- **And more...** - All networks supported in Moralis Web Data API
 
----
+## Installation Options
 
-## Common Use Cases
+### NPM Package
 
-### 1. **Portfolio Dashboards**
+```bash
+# Install globally
+npm install -g @moralisweb3/api-mcp-server
 
-Build user-friendly interfaces that explain crypto holdings in plain language.
+# Or use without installation
+npx @moralisweb3/api-mcp-server
+```
 
-### 2. **Trading Bots**
+### Auto-Install (Claude Desktop)
 
-Create AI-powered trading assistants that understand market conditions and wallet behavior.
+```bash
+npx -y @smithery/cli install @MoralisWeb3/moralis-mcp-server --client claude
+```
 
-### 3. **Analytics Tools**
+## What You Can Build
 
-Develop sophisticated analysis tools that can explain complex on-chain patterns.
+- **Portfolio Dashboards** - AI-powered crypto portfolio analysis
+- **Trading Bots** - Intelligent market sentiment analysis
+- **Analytics Tools** - Complex on-chain pattern recognition
+- **DeFi Apps** - Risk assessment and yield optimization
+- **Developer Tools** - Blockchain data in your development workflow
 
-### 4. **Customer Support**
+**Explore more:** [Use Cases & Examples](/cortex/use-cases)
 
-Build chatbots that can answer user questions about their wallets and transactions.
+## Next Steps
 
-### 5. **Research Platforms**
+### Learn the Fundamentals
 
-Create tools for crypto researchers to quickly analyze tokens, wallets, and market trends.
+- **[Understanding MCP](/cortex/understanding-mcp/what-is-mcp)** - Learn about Model Context Protocol
+- **[MCP vs Other Approaches](/cortex/understanding-mcp/mcp-vs-other-approaches)** - Compare with alternatives
 
-### 6. **DeFi Applications**
+### Set Up Your Environment
 
-Add intelligence to DeFi apps to help users understand risks, yields, and opportunities.
+- **[MCP Server Documentation](/cortex/mcp-server)** - Complete setup guide
+- **[Choose Your Integration](/cortex/integrations)** - AI tools and APIs
 
----
+### Get Help
 
-## What's Next?
-
-You're now ready to build amazing AI-powered Web3 applications! The possibilities are endless:
-
-- Build the next generation of portfolio trackers
-- Create intelligent trading assistants
-- Develop powerful analytics platforms
-- Design user-friendly DeFi interfaces
-- Build educational tools for crypto newcomers
-
-Ready to dive deeper? Choose your path and let's build the future of Web3 together.
+- **[FAQs](/cortex/faqs)** - Common questions and solutions
+- **[GitHub Repository](https://github.com/MoralisWeb3/moralis-mcp-server)** - Source code and issues

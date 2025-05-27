@@ -18,12 +18,12 @@ Moralis Cortex is an AI-powered Web3 intelligence platform that lets you query b
 
 ### What's the difference between Cortex API and MCP Server?
 
-- **[Cortex API](/cortex/api)**: Hosted solution, no setup required, great for production apps
-- **[MCP Server](/cortex/mcp-server)**: Self-hosted, full control, custom LLM models, privacy-focused
+- **Cortex API**: Hosted solution, no setup required, great for production apps
+- **MCP Server**: Self-hosted, full control, custom LLM models, privacy-focused
 
 ### Which blockchains are supported?
 
-Ethereum, Base, Polygon, BNB Chain, Avalanche, Arbitrum, Optimism, and more. See the [Getting Started guide](/cortex/getting-started) for the full list.
+All the chains supported by Web3 Data API. See the [Supported Chains](/supported-chains) for the full list.
 
 ## Setup & Installation
 
@@ -53,7 +53,7 @@ See the [Claude Desktop integration guide](/cortex/integrations/claude-desktop).
 
 ### What is MCP (Model Context Protocol)?
 
-MCP is an open standard that connects AI models to external tools and data sources. It's like a universal adapter for AI applications. Learn more in [Understanding MCP](/cortex/understanding-mcp).
+MCP is an open standard that connects AI models to external tools and data sources. It's like a universal adapter for AI applications. Learn more in [Understanding MCP](/cortex/understanding-mcp/what-is-mcp).
 
 ### Which AI tools support MCP?
 
@@ -85,23 +85,6 @@ Verify your Moralis API key is valid and active. Some features require a paid Mo
 3. Restart your AI client completely
 4. Look for server status indicators
 
-## Pricing & Limits
-
-### Is Moralis Cortex free?
-
-- **Cortex API**: 1,000 requests/month free, paid plans available
-- **MCP Server**: Free to use, requires Moralis API key (has free tier)
-
-### What are the rate limits?
-
-Depends on your Moralis plan. Free tier has monthly limits, paid plans have higher quotas. Check your usage in the [Moralis admin panel](https://admin.moralis.com).
-
-### Do I need a paid AI service?
-
-- **Desktop apps**: Use your existing Claude Desktop or free versions
-- **AI IDEs**: Most have free tiers (Cursor, Windsurf)
-- **APIs**: Require OpenAI or Claude API keys (paid services)
-
 ## Use Cases
 
 ### What can I build with Cortex?
@@ -124,7 +107,6 @@ Cortex complements traditional APIs by adding AI-powered natural language queryi
 
 - **Documentation**: Complete guides and references here
 - **GitHub**: [Issues and discussions](https://github.com/MoralisWeb3/moralis-mcp-server)
-- **Community**: [Moralis Discord](https://discord.gg/moralis)
 - **Support**: [Contact Moralis support](https://moralis.io/contact)
 
 ### How do I report bugs?

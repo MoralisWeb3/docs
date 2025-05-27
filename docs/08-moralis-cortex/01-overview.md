@@ -75,7 +75,5 @@ Deploy the MCP server in your own environment for full control and customization
 
 Ready to get started? Choose your path:
 
-- **[Understanding MCP](/cortex/understanding-mcp)** - Learn about the Model Context Protocol
+- **[Understanding MCP](/cortex/understanding-mcp/what-is-mcp)** - Learn about the Model Context Protocol
 - **[Getting Started](/cortex/getting-started)** - Quick start guide
-- **[Cortex API](/cortex/api)** - Use our hosted solution
-- **[MCP Server](/cortex/mcp-server)** - Self-host for full control
