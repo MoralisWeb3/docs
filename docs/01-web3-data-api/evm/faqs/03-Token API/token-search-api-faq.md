@@ -39,6 +39,7 @@ The API supports multiple chains including:
 
 - Ethereum (eth, 0x1)
 - Polygon (polygon, 0x89)
+- Ronin (ronin, 0x7e4)
 - Binance Smart Chain (bsc, 0x38)
 - Avalanche (avalanche, 0xa86a)
 - Fantom (fantom, 0xfa)
