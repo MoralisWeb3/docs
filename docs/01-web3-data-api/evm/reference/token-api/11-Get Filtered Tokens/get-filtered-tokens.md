@@ -24,7 +24,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
       account on the <strong>Business</strong> plan or higher.
     </p>
     <p>
-      For FAQs and more information about the filtered tokens API, please check out our <a href="/web3-data-api/evm/filtered-token-api-faq">Filtered Tokens FAQ</a>.
+      For FAQs and more information about the filtered tokens API, please check out our <a href="/web3-data-api/evm/filtered-token-api-faq">Filtered Tokens FAQ</a>. For tutorials, please see the <a href="/web3-data-api/evm/tutorials/filtered-tokens-api/overview">Filtered Tokens API tutorials</a>.
     </p>
 </Admonition>
 
