@@ -3,7 +3,7 @@
       <img src="https://github.com/MoralisWeb3/Moralis-JS-SDK/raw/main/assets/moralis-logo.svg" alt="Moralis JS SDK" height=200/>
     </a>
     <h1 align="center">Moralis Documentation</h1>
-    <a href="https://discord.gg/moralis" target="_blank">
+    <a href="https://moralis.com/joindiscord" target="_blank">
       <img alt="Join the Moralis DAO on Discord" src="https://img.shields.io/discord/819584798443569182?color=7289DA&label=Discord&logo=discord&logoColor=ffffff" />
     </a>
     <a href="https://docs.moralis.com" target="_blank">
