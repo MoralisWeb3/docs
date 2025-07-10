@@ -5,8 +5,6 @@ import SearchNavbarItem from "@theme/NavbarItem/SearchNavbarItem";
 import HtmlNavbarItem from "@theme/NavbarItem/HtmlNavbarItem";
 import DocNavbarItem from "@theme/NavbarItem/DocNavbarItem";
 import DocSidebarNavbarItem from "@theme/NavbarItem/DocSidebarNavbarItem";
-import DocsVersionNavbarItem from "@theme/NavbarItem/DocsVersionNavbarItem";
-import DocsVersionDropdownNavbarItem from "@theme/NavbarItem/DocsVersionDropdownNavbarItem";
 const ComponentTypes = {
   default: DefaultNavbarItem,
   localeDropdown: LocaleDropdownNavbarItem,
@@ -15,7 +13,5 @@ const ComponentTypes = {
   html: HtmlNavbarItem,
   doc: DocNavbarItem,
   docSidebar: DocSidebarNavbarItem,
-  docsVersion: DocsVersionNavbarItem,
-  docsVersionDropdown: DocsVersionDropdownNavbarItem,
 };
 export default ComponentTypes;

@@ -36,45 +36,45 @@ This API category comprised of 2 APIs:
 
 ### Get Transfers
 
-The [Get Transfers API](/2.0/web3-data-api/reference/get-erc20-transfers) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with all ERC20 token transfers on the [EVM chains](/web3-data-api/evm#supported-chains) the Moralis supported.
+The [Get Transfers API](/web3-data-api/reference/get-erc20-transfers) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with all ERC20 token transfers on the [EVM chains](/web3-data-api/evm#supported-chains) the Moralis supported.
 
 This API category comprised of 3 APIs:
 
 | API Name                                                                           | Path                       | Use Cases                                                                                             |
 | ---------------------------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [getErc20Transfers](/2.0/web3-data-api/reference/get-erc20-transfers)              | /erc20/transfers           | Fetch historical ERC20 token transactions ordered by descending block order.                          |
+| [getErc20Transfers](/web3-data-api/reference/get-erc20-transfers)              | /erc20/transfers           | Fetch historical ERC20 token transactions ordered by descending block order.                          |
 | [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers) | /{address}/erc20/transfers | Fetch historical ERC20 token transactions on a given wallet `address` by descending block order.      |
 | [getTokenTransfers](/web3-data-api/evm/reference/get-token-transfers)              | /erc20/{address}/transfers | Fetch historical ERC20 token transactions on a given ERC20 token `address` by descending block order. |
 
 ### Get Mints
 
-The [Get Mints API](/2.0/web3-data-api/evm/reference/get-erc20-mints) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time minting information on any ERC20 tokens.
+The [Get Mints API](/web3-data-api/evm/reference/get-erc20-mints) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time minting information on any ERC20 tokens.
 
 This API category comprised of 1 API:
 
 | API Name                                                          | Path         | Use Case                                                                                                                                |
 | ----------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [getErc20Mints](/2.0/web3-data-api/evm/reference/get-erc20-mints) | /erc20/mints | Fetch ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
+| [getErc20Mints](/web3-data-api/evm/reference/get-erc20-mints) | /erc20/mints | Fetch ERC20 token mints, minted by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Burns
 
-The [Get Burns API](/2.0/web3-data-api/evm/reference/get-erc20-burns) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time burning information on any ERC20 tokens.
+The [Get Burns API](/web3-data-api/evm/reference/get-erc20-burns) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time burning information on any ERC20 tokens.
 
 This API category comprised of 1 API:
 
 | API Name                                                          | Path         | Use Case                                                                                                                                |
 | ----------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [getErc20Burns](/2.0/web3-data-api/evm/reference/get-erc20-burns) | /erc20/burns | Fetch ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
+| [getErc20Burns](/web3-data-api/evm/reference/get-erc20-burns) | /erc20/burns | Fetch ERC20 token burns, burned by one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Approvals
 
-The [Get Approvals API](/2.0/web3-data-api/evm/reference/get-erc20-approvals) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time approvals information on any ERC20 tokens.
+The [Get Approvals API](/web3-data-api/evm/reference/get-erc20-approvals) is a collection of [Token API](https://moralis.io/api/token/) that provides developer with real-time approvals information on any ERC20 tokens.
 
 This API category comprised of 1 API:
 
 | API Name                                                                  | Path             | Use Case                                                                                                                       |
 | ------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| [getErc20Approvals](/2.0/web3-data-api/evm/reference/get-erc20-approvals) | /erc20/approvals | Fetch ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
+| [getErc20Approvals](/web3-data-api/evm/reference/get-erc20-approvals) | /erc20/approvals | Fetch ERC20 approvals for one or many wallet addresses and/or contract addresses, ordered by block number in descending order. |
 
 ### Get Metadata
 

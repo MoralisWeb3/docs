@@ -84,13 +84,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          lastVersion: "current",
-          versions: {
-            current: {
-              label: "2.2",
-              path: "",
-            },
-          },
           editUrl: "https://github.com/MoralisWeb3/docs/edit/main/",
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
@@ -304,21 +297,6 @@ const config = {
                 label: "Python SDK",
                 href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
                 target: "_blank",
-              },
-            ],
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-            dropdownItemsAfter: [
-              {
-                type: "html",
-                value: "Archived versions",
-              },
-              {
-                href: "https://v1docs.moralis.io/",
-                label: "1.0",
               },
             ],
           },
