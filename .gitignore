@@ -28,3 +28,4 @@ yarn-error.log*
 # partytown
 ~partytown
 .env*.local
+docusaurus.config.js
