@@ -1,44 +1,106 @@
 {
-  "grammarly.files.include": [
-    "**/readme.md",
-    "**/README.md",
-    "**/*.txt",
-    "**/*.md",
-    "**/*.mdx"
-  ],
+  // Editor Settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.probe": [
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.tabSize": 4,
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  // ESLint Settings
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "markdown"
+    "markdown",
+    "mdx"
   ],
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
-  "grammarly.startTextCheckInPausedState": true,
-  "grammarly.config.suggestions.OxfordComma": true,
-  "grammarly.config.documentDomain": "business",
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".md",
+      ".mdx"
+    ]
+  },
+  // Markdown Settings
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // MDX Settings
+  "[mdx]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JSON Settings
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // YAML Settings
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // CSS/SCSS Settings
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.tabSize": 2
+  },
+  // Markdown Link Validation
+  "markdown.validate.enabled": true,
   "markdown.validate.ignoredLinks": [
-    "/web3-data-api/aptos/reference/get-coin-balances-by-wallets",
-    "/web3-data-api/aptos/reference/get-nft-collections-by-creator",
-    "/web3-data-api/aptos/reference/get-account-transactions",
-    "/web3-data-api/aptos/reference/get-transactions",
-    "/web3-data-api/aptos/reference/get-coins-by-creators",
-    "/web3-data-api/aptos/reference/get-latest-coins",
-    "/web3-data-api/evm/reference/get-token-price",
-    "/web3-data-api/evm/reference/get-wallet-transactions",
-    "/web3-data-api/evm/reference/get-contract-logs",
-    "/web3-data-api/evm/reference/get-wallet-token-balances",
-    "/web3-data-api/evm/reference/get-erc20-mints",
-    "/web3-data-api/evm/reference/get-erc20-burns",
-    "/web3-data-api/evm/reference/compute-units-cu",
-    "/web3-data-api/evm/reference/get-token-transfers",
-    "/web3-data-api/evm/reference/get-wallet-token-transfers",
-    "/web3-data-api/evm/reference/get-block",
-    "/web3-data-api/evm/reference/get-erc20-approvals",
-    "/changelog/planned-cu-increase-across-multiple-endpoints",
+    "/web3-data-api/aptos/reference/**",
+    "/web3-data-api/evm/reference/**",
+    "/changelog/**",
     "/web3-data-api/evm/nft-spam-detection"
   ],
-  "eslint.workingDirectories": [".eslintrc", ".eslintignore"]
+  // File Associations
+  "files.associations": {
+    "*.mdx": "mdx"
+  },
+  // Search Exclusions
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/.docusaurus": true,
+    "**/dist": true,
+    "**/.cache": true
+  },
+  // Files to Exclude from Explorer
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.docusaurus": true,
+    "**/build": true
+  },
+  // Additional Helpful Settings for Docusaurus
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "emmet.includeLanguages": {
+    "mdx": "javascriptreact"
+  },
+  "tailwindCSS.includeLanguages": {
+    "mdx": "javascriptreact"
+  }
 }

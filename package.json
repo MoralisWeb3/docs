@@ -26,7 +26,10 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "format:check": "prettier --check .",
+    "format:docs": "prettier --write \"docs/**/*.{md,mdx}\"",
+    "format:code": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss}\""
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
@@ -88,18 +91,22 @@
     "web-vitals": "^3.0.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.5.4",
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
     "@docusaurus/eslint-plugin": "^2.4.0",
     "@docusaurus/module-type-aliases": "^2.4.0",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/common-tags": "^1.8.1",
     "@types/lodash": "^4.14.192",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-mdx": "^3.6.2",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "2.8.7",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^2.8.7",
     "prisma": "^4.11.0",
     "typescript": "^4.9.5",
     "vercel": "^28.18.4"
