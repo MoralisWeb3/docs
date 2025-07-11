@@ -23,6 +23,10 @@
   overflow-wrap: break-word;
 }
 
+[data-theme='light'] .codeBlock {
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
 .codeBlockTitle + .codeBlockContent .codeBlock {
   border-top-left-radius: 0;
   border-top-right-radius: 0;

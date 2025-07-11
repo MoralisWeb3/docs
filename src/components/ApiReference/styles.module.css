@@ -117,6 +117,10 @@ button.apiParamButton:hover {
   border-radius: var(--ifm-global-radius);
 }
 
+[data-theme='light'] .group {
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
 .group .group {
   margin: -0.25rem -0.5rem;
 }
