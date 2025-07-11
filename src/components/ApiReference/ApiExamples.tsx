@@ -11,7 +11,6 @@ import TabItem from "@theme/TabItem";
 import { useHistory } from "@docusaurus/router";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
-import usePageState from "@site/src/hooks/usePageState";
 import camelToSnakeCase from "@site/utils/camelToSnakeCase.js";
 import snakeToCamelCase from "@site/utils/snakeToCamelCase.js";
 import { bodyFixer } from "./utils";
@@ -432,7 +431,6 @@ export const injectParamsToCode = (
   lang: string,
   params: any,
   auth: string,
-  network: string,
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   const fixedBody = bodyFixer(code, body);
@@ -538,7 +536,6 @@ const ApiExamples = ({
 >) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
-  const { network } = usePageState();
   const history = useHistory();
   const defaultPathParams = useMemo(
     () => mapValues(values.path, (_: any, key: number) => `:${key}`),
@@ -577,7 +574,6 @@ const ApiExamples = ({
                         lang,
                         values,
                         auth,
-                        network,
                       )
                     ),
                   ])
