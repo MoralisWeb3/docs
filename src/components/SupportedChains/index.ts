@@ -9,7 +9,3 @@ export { default as SolanaChainData } from "./Solana/web3api";
 // export { default as SolanaAuthChainData } from "./Solana/authAPI"; // Currently not used, we need to add a page for this in Auth API
 export { default as SolanaCombined } from "./Solana/combined";
 
-export { default as AptosChainData } from "./Aptos/web3api";
-export { default as AptosStreamsChainData } from "./Aptos/streamsAPI";
-// export { default as AptosAuthChainData } from "./Aptos/authAPI"; // Currently not used, we need to add a page for this in Auth API
-export { default as AptosCombined } from "./Aptos/combined";

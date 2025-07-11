@@ -433,7 +433,6 @@ export const injectParamsToCode = (
   params: any,
   auth: string,
   network: string,
-  aptosNetwork?: "mainnet" | "testnet"
 ) => {
   const { query = {}, path = {}, body = {} } = params ?? {};
   const fixedBody = bodyFixer(code, body);
@@ -472,7 +471,6 @@ export const injectParamsToCode = (
                 ...formatParamsByLang({ ...path }, lang),
                 ...formatParamsByLang({ ...fixedBody }, lang),
                 ...customNodeSdkBody(code, fixedBody),
-                ...(network === "aptos" ? { network: aptosNetwork } : {}),
               }),
               true
             ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
@@ -488,7 +486,6 @@ export const injectParamsToCode = (
             removeEmpty({
               ...formatParamsByLang({ ...query }, lang),
               ...formatParamsByLang({ ...path }, lang),
-              ...(network === "aptos" ? { network: aptosNetwork } : {}),
             }),
             true
           )
@@ -535,10 +532,9 @@ const ApiExamples = ({
   apiHost,
   path,
   codeSamples,
-  aptosNetwork,
 }: Pick<
   ApiReferenceProps,
-  "method" | "apiHost" | "path" | "codeSamples" | "aptosNetwork"
+  "method" | "apiHost" | "path" | "codeSamples"
 >) => {
   const { values } = useFormikContext<FormValues>();
   const { token } = useContext(ApiReferenceTokenContext);
@@ -582,7 +578,6 @@ const ApiExamples = ({
                         values,
                         auth,
                         network,
-                        aptosNetwork
                       )
                     ),
                   ])

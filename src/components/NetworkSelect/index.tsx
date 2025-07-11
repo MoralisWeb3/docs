@@ -6,8 +6,6 @@ import { useColorMode } from "@docusaurus/theme-common";
 import { FiCheck, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import styles from "./styles.module.css";
 import EthereumIcon from "@site/static/img/network-icons/ethereum.svg";
-import AptosIcon from "@site/static/img/network-icons/aptos.svg";
-import AptosDarkIcon from "@site/static/img/network-icons/aptosDark.svg";
 import SolanaIcon from "@site/static/img/network-icons/solana.svg";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { useWindowSize } from "@docusaurus/theme-common";

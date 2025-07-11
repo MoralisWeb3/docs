@@ -52,8 +52,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/aptos/reference",
-    destination: "/web3-data-api/aptos/api-reference",
     permanent: true,
   },
   {
@@ -5472,18 +5470,12 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/streams-api/aptos/tutorials",
-    destination: "/streams-api/aptos/tutorials/add-address-to-stream",
     permanent: true,
   },
   {
-    source: "/streams-api/aptos/usage",
-    destination: "/streams-api/aptos/records",
     permanent: true,
   },
   {
-    source: "/aptos/overview",
-    destination: "/streams-api/aptos/overview",
     permanent: true,
   },
   {
@@ -5577,7 +5569,6 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nft-by-owners",
-    destination: "/web3-data-api/aptos/reference/get-nft-by-wallet-addresses",
     permanent: true,
   },
   {
@@ -5996,84 +5987,68 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/encode-submission",
-    destination: "/web3-data-api/aptos/reference/encode-submission",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account",
-    destination: "/web3-data-api/aptos/reference/get-account",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/estimate-gas-price",
-    destination: "/web3-data-api/aptos/reference/estimate-gas-price",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account-module",
-    destination: "/web3-data-api/aptos/reference/get-account-module",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account-modules",
-    destination: "/web3-data-api/aptos/reference/get-account-modules",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account-resource",
-    destination: "/web3-data-api/aptos/reference/get-account-resource",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account-resources",
-    destination: "/web3-data-api/aptos/reference/get-account-resources",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-account-transactions",
-    destination: "/web3-data-api/aptos/reference/get-account-transactions",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-block-by-height",
-    destination: "/web3-data-api/aptos/reference/get-block-by-height",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-block-by-version",
-    destination: "/web3-data-api/aptos/reference/get-block-by-version",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coin-balances-by-wallets",
-    destination: "/web3-data-api/aptos/reference/get-coin-balances-by-wallets",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coin-transfers-by-block-heights",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-block-heights",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coins-by-creators",
-    destination: "/web3-data-api/aptos/reference/get-coins-by-creators",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coins-by-name-range",
-    destination: "/web3-data-api/aptos/reference/get-coins-by-name-range",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coin-info-by-coin-type-hashes",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-info-by-coin-type-hashes",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-coins-by-symbol-range",
-    destination: "/web3-data-api/aptos/reference/get-coins-by-symbol-range",
     permanent: true,
   },
   {
@@ -6088,44 +6063,36 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-events-by-creation-number",
-    destination: "/web3-data-api/aptos/reference/get-events-by-creation-number",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-events-by-event-handle",
-    destination: "/web3-data-api/aptos/reference/get-events-by-event-handle",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-historical-coin-balances-by-wallets",
     destination:
-      "/web3-data-api/aptos/reference/get-historical-coin-balances-by-wallets",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-latest-coins",
-    destination: "/web3-data-api/aptos/reference/get-latest-coins",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-by-wallet-addresses",
-    destination: "/web3-data-api/aptos/reference/get-nft-by-wallet-addresses",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-collections",
-    destination: "/web3-data-api/aptos/reference/get-nft-collections",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-collections-by-creator",
     destination:
-      "/web3-data-api/aptos/reference/get-nft-collections-by-creator",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-collections-by-ids",
-    destination: "/web3-data-api/aptos/reference/get-nft-collections-by-ids",
     permanent: true,
   },
   {
@@ -6135,12 +6102,10 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-nft-owners-by-collection",
-    destination: "/web3-data-api/aptos/reference/get-nft-owners-by-collection",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-owners-of-collection",
-    destination: "/web3-data-api/aptos/reference/get-nft-owners-of-collection",
     permanent: true,
   },
   {
@@ -6150,17 +6115,14 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-top-holders-by-coin",
-    destination: "/web3-data-api/aptos/reference/get-top-holders-by-coin",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-transaction-by-hash",
-    destination: "/web3-data-api/aptos/reference/get-transaction-by-hash",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-transaction-byversion",
-    destination: "/web3-data-api/aptos/reference/get-transaction-byversion",
     permanent: true,
   },
   {
@@ -6170,30 +6132,25 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/get-wallets-nft-transfers",
-    destination: "/web3-data-api/aptos/reference/get-wallets-nft-transfers",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/getcointransfersbycointype",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-coin-type",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/getcointransfersbyowneraddresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/getcointransfersbywalletaddresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/getnftownersbytokens",
-    destination: "/web3-data-api/aptos/reference/get-nft-owners-by-tokens",
     permanent: true,
   },
   {
@@ -6203,22 +6160,18 @@ export const redirects = [
   },
   {
     source: "/web3-data-api/reference/simulate-transaction",
-    destination: "/web3-data-api/aptos/reference/simulate-transaction",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/submit-batch-transactions",
-    destination: "/web3-data-api/aptos/reference/submit-batch-transactions",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/submit-transaction",
-    destination: "/web3-data-api/aptos/reference/submit-transaction",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/submit-transaction",
-    destination: "/web3-data-api/aptos/reference/submit-transaction",
     permanent: true,
   },
   {
@@ -6234,37 +6187,30 @@ export const redirects = [
   {
     source: "/web3-data-api/reference/get-nft-transfers-by-collection",
     destination:
-      "/web3-data-api/aptos/reference/get-nft-transfers-by-collection",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-transfers-by-creators",
-    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-creators",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-transfers-by-ids",
-    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-ids",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nft-transfers-by-wallets",
-    destination: "/web3-data-api/aptos/reference/get-nft-transfers-by-wallets",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nfts-by-collection",
-    destination: "/web3-data-api/aptos/reference/get-nfts-by-collection",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nfts-by-creators",
-    destination: "/web3-data-api/aptos/reference/get-nfts-by-creators",
     permanent: true,
   },
   {
     source: "/web3-data-api/reference/get-nfts-by-ids",
-    destination: "/web3-data-api/aptos/reference/get-nfts-by-ids",
     permanent: true,
   },
   {
@@ -6409,8 +6355,6 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/streams-api/aptos/overview",
-    destination: "/streams-api/aptos",
     permanent: true,
   },
   {
@@ -6539,48 +6483,30 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-get-all",
-    destination: "/streams-api/aptos/reference/aptos-streams-get-all",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-create",
-    destination: "/streams-api/aptos/reference/aptos-streams-create",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-get",
-    destination: "/streams-api/aptos/reference/aptos-streams-get",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-update",
-    destination: "/streams-api/aptos/reference/aptos-streams-update",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-delete",
-    destination: "/streams-api/aptos/reference/aptos-streams-delete",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-add-addresses",
-    destination: "/streams-api/aptos/reference/aptos-streams-add-addresses",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-delete-addresses",
-    destination: "/streams-api/aptos/reference/aptos-streams-delete-addresses",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptos-streams-get-addresses",
-    destination: "/streams-api/aptos/reference/aptos-streams-get-addresses",
     permanent: true,
   },
   {
-    source: "/streams-api/reference/aptosstreamsupdatestatus",
-    destination: "/streams-api/aptos/reference/aptos-streams-update-status",
     permanent: true,
   },
   {
@@ -6590,9 +6516,7 @@ export const redirects = [
   },
   {
     source:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-wallet-addresses",
     destination:
-      "/web3-data-api/aptos/reference/get-coin-transfers-by-owner-addresses",
     permanent: true,
   },
   {
@@ -6617,25 +6541,17 @@ export const redirects = [
   },
   {
     source:
-      "/web3-data-api/aptos/coin-api/how-to-get-coin-metadata-by-creator-addresses",
     destination:
-      "/web3-data-api/aptos/how-to-get-coin-metadata-by-creator-addresses",
     permanent: true,
   },
   {
-    source: "/web3-data-api/aptos/coin-api/how-to-get-latest-deployed-coins",
-    destination: "/web3-data-api/aptos/how-to-get-latest-deployed-coins",
     permanent: true,
   },
   {
     source:
-      "/web3-data-api/aptos/nft-api/how-to-get-nft-collections-by-creator",
-    destination: "/web3-data-api/aptos/how-to-get-nft-collections-by-creator",
     permanent: true,
   },
   {
-    source: "/web3-data-api/aptos/transaction-api",
-    destination: "/web3-data-api/aptos/transactions-api",
     permanent: true,
   },
   {
@@ -6644,13 +6560,9 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/web3-data-api/aptos/reference/get-transaction-byversion",
-    destination: "/web3-data-api/aptos/reference/get-transaction-by-version",
     permanent: true,
   },
   {
-    source: "/web3-data-api/aptos/how-to-get-get-wallets-nft-transfers",
-    destination: "/web3-data-api/aptos/how-to-get-wallets-nft-transfers",
     permanent: true,
   },
   {
@@ -6772,13 +6684,9 @@ export const redirects = [
     permanent: true,
   },
   {
-    source: "/authentication-api/reference/request-challenge-aptos",
-    destination: "/authentication-api/aptos/reference/request-challenge-aptos",
     permanent: true,
   },
   {
-    source: "/authentication-api/reference/verify-challenge-aptos",
-    destination: "/authentication-api/aptos/reference/verify-challenge-aptos",
     permanent: true,
   },
   {

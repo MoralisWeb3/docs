@@ -5,10 +5,7 @@ const generateCode = async () => {
   Object.keys(apiReference).map((group) => {
     // Remove codeSamples from all API groups and endpoints
     Object.keys(apiReference[group]).map((fctn) => {
-      // Skip Aptos streams endpoints if they exist
-      if (!fctn.includes("aptosStreams")) {
-        delete apiReference[group][fctn].codeSamples;
-      }
+      delete apiReference[group][fctn].codeSamples;
     });
   });
 
