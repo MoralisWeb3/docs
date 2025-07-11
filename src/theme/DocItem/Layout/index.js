@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/theme-common/internal';
@@ -16,11 +16,31 @@ import { useLocation } from "@docusaurus/router";
 import styles from './styles.module.css';
 
 /**
+ * Hook to check if window width is >= 1250px
+ */
+function useIsWideScreen() {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsWideScreen(window.innerWidth >= 1250);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  return isWideScreen;
+}
+
+/**
  * Decide if the toc should be rendered, on mobile or desktop viewports
  */
 function useDocTOC() {
   const {frontMatter, toc} = useDoc();
   const windowSize = useWindowSize();
+  const isWideScreen = useIsWideScreen();
 
   const hidden = frontMatter.hide_table_of_contents;
   const canRender = !hidden && toc.length > 0;
@@ -28,7 +48,7 @@ function useDocTOC() {
   const mobile = canRender ? <DocItemTOCMobile /> : undefined;
 
   const desktop =
-    canRender && (windowSize === 'desktop' || windowSize === 'ssr') ? (
+    canRender && (windowSize === 'desktop' || windowSize === 'ssr') && isWideScreen ? (
       <DocItemTOCDesktop />
     ) : undefined;
 

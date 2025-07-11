@@ -29,7 +29,9 @@
     max-width: none !important;
     padding-right: 2rem;
   }
-  
+}
+
+@media (min-width: 1250px) {
   .tocColumn {
     flex: 0 0 25%;
     max-width: 25%;
