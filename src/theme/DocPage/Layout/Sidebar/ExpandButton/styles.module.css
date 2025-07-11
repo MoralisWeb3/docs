@@ -10,6 +10,7 @@
     justify-content: center;
     transition: background-color var(--ifm-transition-fast) ease;
     background-color: var(--docusaurus-collapse-button-bg);
+    border: 1px solid var(--ifm-toc-border-color);
   }
 
   .expandButton:hover,
