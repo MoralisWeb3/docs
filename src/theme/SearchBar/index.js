@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { DocSearchButton, useDocSearchKeyboardEvents } from "@docsearch/react";
+import { useDocSearchKeyboardEvents } from "@docsearch/react";
+import { CustomDocSearchButton } from "@site/src/components/CustomDocSearchButton";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { useHistory } from "@docusaurus/router";
@@ -126,6 +127,31 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
     },
     [siteMetadata.docusaurusVersion]
   );
+  // Custom keyboard events to handle "/" key
+  React.useEffect(() => {
+    function onKeyDown(event) {
+      if (
+        event.key === '/' &&
+        !isOpen &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.altKey &&
+        !event.shiftKey &&
+        event.target.tagName !== 'INPUT' &&
+        event.target.tagName !== 'TEXTAREA' &&
+        !event.target.isContentEditable
+      ) {
+        event.preventDefault();
+        onOpen();
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isOpen, onOpen]);
+
   useDocSearchKeyboardEvents({
     isOpen,
     onOpen,
@@ -146,7 +172,7 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
         />
       </Head>
 
-      <DocSearchButton
+      <CustomDocSearchButton
         onTouchStart={importDocSearchModalIfNeeded}
         onFocus={importDocSearchModalIfNeeded}
         onMouseOver={importDocSearchModalIfNeeded}

@@ -149,6 +149,73 @@
   background-color: rgba(10, 10, 11, 1) !important;
 }
 
+/* Dark mode search bar styling */
+[data-theme="dark"] .DocSearch-Button {
+  background-color: rgba(10, 10, 11, 1) !important;
+  border: 1px solid var(--ifm-toc-border-color) !important;
+}
+
+[data-theme="dark"] #home button.DocSearch.DocSearch-Button {
+  background-color: rgba(10, 10, 11, 1) !important;
+  border: 1px solid var(--ifm-toc-border-color) !important;
+}
+
+/* Search bar border radius */
+.DocSearch-Button {
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+}
+
+/* Pretty button styling for / key */
+.DocSearch-Button-Key {
+  background: transparent !important;
+  border: 1px solid var(--ifm-toc-border-color) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  color: var(--ifm-font-color-base) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  height: 20px !important;
+  line-height: 18px !important;
+  margin: 0 !important;
+  min-width: 20px !important;
+  padding: 2px 6px !important;
+  position: static !important;
+  top: auto !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+[data-theme="dark"] .DocSearch-Button-Key {
+  background: transparent !important;
+  border: 1px solid var(--ifm-toc-border-color) !important;
+  color: var(--ifm-font-color-base) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure proper button layout */
+.DocSearch-Button-Container {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
+.DocSearch-Button-Keys {
+  align-items: center !important;
+  display: flex !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  min-width: auto !important;
+  width: auto !important;
+}
+
 /* You can override the default shadcn/ui variables here. */
 @layer base {
   :root {
