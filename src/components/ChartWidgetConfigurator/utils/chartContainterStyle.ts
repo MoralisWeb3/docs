@@ -1,11 +1,18 @@
-import { isNullish } from '@apollo/client/cache/inmemory/helpers';
-import { WgetForm } from '../PriceChartWidgetConfig';
+import { WgetForm } from "./types";
 
-const DEFAULT_WIDTH = '100%';
-const DEFAULT_HEIGHT = '100%';
-export const AUTO_SIZE_HEIGHT = '100vh';
+const isNullish = (value: unknown): value is null | undefined => value == null;
 
-export const getChartHeight = ({ autoSize, height }: { autoSize?: boolean; height?: string }) => {
+const DEFAULT_WIDTH = "100%";
+const DEFAULT_HEIGHT = "100%";
+export const AUTO_SIZE_HEIGHT = "100vh";
+
+export const getChartHeight = ({
+  autoSize,
+  height,
+}: {
+  autoSize?: boolean;
+  height?: string;
+}) => {
   if (isNullish(autoSize) && isNullish(height)) {
     return DEFAULT_HEIGHT;
   }

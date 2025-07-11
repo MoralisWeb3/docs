@@ -1,53 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { cn } from "../ui/utils";
-
-interface ConfigState {
-  networkId: string;
-  addressType: "pair" | "token";
-  address: string;
-  showHoldersChart: boolean;
-  automaticSize: boolean;
-  width: string;
-  height: string;
-  backgroundColor: string;
-  candleUpColor: string;
-  candleDownColor: string;
-  gridColor: string;
-  textColor: string;
-  colorTheme: string;
-  hideTopToolbar: boolean;
-  hideBottomToolbar: boolean;
-  hideLeftToolbar: boolean;
-  language: string;
-  timezone: string;
-  defaultInterval: string;
-}
+import { PRICE_CHART_WIDGET_FORM_DEFAULT_VALUES, WgetForm } from "./utils/wget";
 
 const ChartWidgetConfigurator = () => {
   const [activeTab, setActiveTab] = useState<"html" | "react">("html");
-  const [config, setConfig] = useState<ConfigState>({
-    networkId: "ethereum",
-    addressType: "token",
-    address: "0x56534741cd8b152df6d448df7ac51f75169a83b2",
-    showHoldersChart: true,
-    automaticSize: true,
-    width: "",
-    height: "",
-    backgroundColor: "#071321",
-    candleUpColor: "#4CE666",
-    candleDownColor: "#E64C4C",
-    gridColor: "#0d2035",
-    textColor: "#68738D",
-    colorTheme: "custom",
-    hideTopToolbar: false,
-    hideBottomToolbar: false,
-    hideLeftToolbar: false,
-    language: "en",
-    timezone: "auto",
-    defaultInterval: "1D",
-  });
+  const [config, setConfig] = useState<WgetForm>(
+    PRICE_CHART_WIDGET_FORM_DEFAULT_VALUES
+  );
 
   const [embedCode, setEmbedCode] = useState("");
 

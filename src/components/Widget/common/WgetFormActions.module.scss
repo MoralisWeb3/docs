@@ -1,8 +1,0 @@
-@use '@moralis/scss/mui';
-
-.configButtons {
-  @media screen and (max-width: mui.$breakpoint-md) {
-    width: 100%;
-    display: flex;
-  }
-}

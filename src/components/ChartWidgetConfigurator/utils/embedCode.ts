@@ -1,13 +1,14 @@
-import { SEO_DOMAIN } from '@/utils/seo';
-import { CodeLang } from '../../utils/code';
-import { WgetForm } from '../PriceChartWidgetConfig';
-import { getReactContainerStyle } from './chartContainterStyle';
-import { isMoralisCustomTheme } from './theme';
+import { getReactContainerStyle } from "./chartContainterStyle";
+import { isMoralisCustomTheme } from "./theme";
+import { CodeLang } from "./types";
+import { WgetForm } from "./wget";
+
+const SEO_DOMAIN = "https://moralis.com";
 
 export const CHART_URL_SRC = `${SEO_DOMAIN}/static/embed/chart.js`;
 
 export const getEmbedCode = (language: CodeLang, params: WgetForm) => {
-  return language === 'html' ? getHtmlCode(params) : getReactCode(params);
+  return language === "html" ? getHtmlCode(params) : getReactCode(params);
 };
 
 const buildOptions = (args: WgetForm) => {
@@ -34,9 +35,11 @@ const buildOptions = (args: WgetForm) => {
     options.push(`defaultInterval: '${args.defaultInterval}'`);
   }
   if (args.timeZone) {
-    if (args.timeZone === 'auto') {
+    if (args.timeZone === "auto") {
       // Insert the timezone expression without quotes
-      options.push(`timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'Etc/UTC'`);
+      options.push(
+        `timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'Etc/UTC'`
+      );
     } else {
       // Insert the timezone as a string
       options.push(`timeZone: '${args.timeZone}'`);
@@ -76,7 +79,7 @@ const buildOptions = (args: WgetForm) => {
 };
 
 const stringifyOptions = (options: string[]) => {
-  return options.join(',\n          ');
+  return options.join(",\n          ");
 };
 
 const getReactCode = (args: WgetForm) => {
