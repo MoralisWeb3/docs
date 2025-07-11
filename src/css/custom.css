@@ -149,6 +149,11 @@
   background-color: rgba(10, 10, 11, 1) !important;
 }
 
+/* Dark mode footer background */
+[data-theme="dark"] .footer {
+  background-color: rgba(10, 10, 11, 1) !important;
+}
+
 /* Dark mode search bar styling */
 [data-theme="dark"] .DocSearch-Button {
   background-color: rgba(10, 10, 11, 1) !important;
