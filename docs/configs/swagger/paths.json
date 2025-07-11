@@ -12,21 +12,15 @@
         "category": "auth-api"
     },
     "streams": {
-        "swaggerPath": "https://swagger.moralis.io/streams/v2/swagger.json",
+        "swaggerPath": "https://api.moralis-streams.com/api-docs/swagger.json",
         "filePath": "./docs/reference/streams-api",
         "importPath": "../../configs/api-reference/configs.json",
         "category": "streams-api"
     },
     "solana": {
-        "swaggerPath": "https://swagger.moralis.io/solana/v2/swagger.json",
+        "swaggerPath": "https://solana-gateway.moralis.io/api-json",
         "filePath": "./docs/reference/web3-data-api/solana-api",
         "importPath": "../../../configs/api-reference/configs.json",
         "category": "web3-data-api"
-    },
-    "market-insights": {
-        "swaggerPath": "https://wdim.moralis.io/swagger-json",
-        "filePath": "./docs/reference/market-insights-api",
-        "importPath": "../../../configs/api-reference/configs.json",
-        "category": "market-insights-api"
     }
 }
