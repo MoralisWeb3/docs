@@ -5,12 +5,6 @@
         "importPath": "../../../../configs/api-reference/configs.json",
         "category": "web3-data-api"
     },
-    "auth": {
-        "swaggerPath": "https://swagger.moralis.io/auth/v2/swagger.json",
-        "filePath": "./docs/reference/authentication-api",
-        "importPath": "../../configs/api-reference/configs.json",
-        "category": "auth-api"
-    },
     "streams": {
         "swaggerPath": "https://api.moralis-streams.com/api-docs/swagger.json",
         "filePath": "./docs/reference/streams-api",
