@@ -114,8 +114,8 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"]:root {
-  --ifm-background-color: #0f0e13;
-  --ifm-background-surface-color: #1c212f;
+  --ifm-background-color: rgba(10, 10, 11, 1);
+  --ifm-background-surface-color: rgba(10, 10, 11, 1);
   --ifm-color-primary: #57a5ff;
   --ifm-color-primary-dark: #3593ff;
   --ifm-color-primary-darker: #248aff;
@@ -142,6 +142,11 @@
 
   /* Home Search */
   --home-search-box-background-color: #1c212f;
+}
+
+/* Dark mode navbar background */
+[data-theme="dark"] .navbar {
+  background-color: rgba(10, 10, 11, 1) !important;
 }
 
 /* You can override the default shadcn/ui variables here. */
@@ -180,16 +185,16 @@
   }
 
   [data-theme="dark"]:root {
-    --background: 224 71% 4%;
+    --background: 224 3% 4%;
     --foreground: 213 31% 91%;
 
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --popover: 224 71% 4%;
+    --popover: 224 3% 4%;
     --popover-foreground: 215 20.2% 65.1%;
 
-    --card: 224 71% 4%;
+    --card: 224 3% 4%;
     --card-foreground: 213 31% 91%;
 
     --border: var(--docs-color-border);
