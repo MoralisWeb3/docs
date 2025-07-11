@@ -162,6 +162,12 @@ const config = {
             value: "<hr>",
           },
           {
+            to: "/get-started",
+            label: "Get Started",
+            position: "left",
+            exact: true,
+          },
+          {
             to: "/web3-data-api/evm/reference",
             label: "EVM API",
             position: "left",
@@ -184,12 +190,6 @@ const config = {
             docId: "rpc-nodes/overview",
             position: "left",
             label: "RPC Nodes",
-          },
-          {
-            type: "doc",
-            docId: "authentication-api/evm/overview",
-            position: "left",
-            label: "Auth API",
           },
           {
             type: "doc",
