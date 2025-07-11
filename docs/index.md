@@ -20,9 +20,13 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
 </div>
 
 <div className="container">
-    <h2>Popular APIs</h2>
     <div className="row">
-        <div className="col col--4">
+        <div className="col">
+            <h2>Explore APIs</h2>
+        </div>
+    </div>
+    <div className="row">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/wallet-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><g clip-path="url(#clip0_9467_365051)"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.86492 7.21751C5.96092 7.21751 5.22808 7.94751 5.22808 8.84801V23.152C5.22808 24.0525 5.96092 24.7825 6.86492 24.7825H24.1882C25.0922 24.7825 25.8251 24.0525 25.8251 23.152V20.8112C25.8251 20.0608 26.4358 19.4525 27.1891 19.4525C27.9424 19.4525 28.5531 20.0608 28.5531 20.8112V23.152C28.5531 25.5533 26.5989 27.5 24.1882 27.5H6.86492C4.45424 27.5 2.5 25.5533 2.5 23.152V8.84801C2.5 6.44667 4.45424 4.5 6.86492 4.5H24.1882C26.5989 4.5 28.5531 6.44667 28.5531 8.84801V11.1888C28.5531 11.9392 27.9424 12.5475 27.1891 12.5475C26.4358 12.5475 25.8251 11.9392 25.8251 11.1888V8.84801C25.8251 7.94751 25.0922 7.21751 24.1882 7.21751H6.86492Z" fill="#57A5FF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19.724 13.7146C19.6076 13.7146 19.5132 13.8086 19.5132 13.9246V18.0626C19.5132 18.1786 19.6076 18.2726 19.724 18.2726H27.5735C27.6899 18.2726 27.7843 18.1786 27.7843 18.0626V13.9246C27.7843 13.8086 27.6899 13.7146 27.5735 13.7146H19.724ZM16.7852 13.9246C16.7852 12.3078 18.1009 10.9971 19.724 10.9971H27.5735C29.1966 10.9971 30.5123 12.3078 30.5123 13.9246V18.0626C30.5123 19.6794 29.1966 20.9901 27.5735 20.9901H19.724C18.1009 20.9901 16.7852 19.6794 16.7852 18.0626V13.9246Z" fill="#57A5FF"></path><path d="M22.6874 15.9999C22.6874 15.4336 22.2266 14.9746 21.6581 14.9746C21.0897 14.9746 20.6289 15.4336 20.6289 15.9999C20.6289 16.5661 21.0897 17.0251 21.6581 17.0251C22.2266 17.0251 22.6874 16.5661 22.6874 15.9999Z" fill="#57A5FF"></path></g><defs><clipPath id="clip0_9467_365051"><rect width="28" height="23" fill="white" transform="translate(2.5 4.5)"></rect></clipPath></defs></svg>&nbsp;&nbsp;Wallet API</h3>
@@ -30,7 +34,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
                 </a>
             </div>
         </div>
-        <div className="col col--4">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/nft-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g clipPath="url(#a)"><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m23.258 6.528 6.312-3.876c1.612-.995 3.687.171 3.687 2.058v18.129M12.899 6.528 6.57 2.652c-1.612-.995-3.687.171-3.687 2.058v18.129"/><path stroke="#9B22FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" d="M21.543 33.608h-6.929c-6.483 0-11.731-5.248-11.731-11.73v-1.081c0-8.353 8.13-15.18 15.178-15.18 7.05 0 15.18 6.827 15.18 15.18v1.08c0 6.483-5.25 11.732-11.732 11.732h.034Z"/><path fill="#9B22FF" d="m16.518 23.37 1.56.789 1.544-.79"/><path stroke="#BC68FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" d="m16.518 23.37 1.56.789 1.544-.79M18.079 24.468v2.109"/><circle cx="12.105" cy="17.95" r="2.084" fill="#9B22FF"/><circle cx="24.035" cy="17.95" r="2.084" fill="#9B22FF"/></g><defs><clipPath id="a"><path fill="#fff" d="M1.476.885h33.187v34.13H1.476z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>NFT API</span></h3>
@@ -38,7 +42,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
                 </a>
             </div>
         </div>
-        <div className="col col--4">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/token-api">
                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><g strokeLinejoin="round" strokeWidth="2.8" clipPath="url(#a)"><path stroke="#F0C800" d="M5.261 10.055 19.124 2.05l13.863 8.004v16.007l-13.863 8.004L5.26 26.062V10.055Z"/><path stroke="#D69700" d="m19.124 10.412 4.588 7.646-4.588 7.646-4.587-7.646 4.587-7.646Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36v36H0z"/></clipPath></defs></svg>&nbsp;&nbsp;<span>Token API</span></h3>
@@ -46,7 +50,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
                 </a>
             </div>
         </div>
-        <div className="col col--4">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/streams-api/evm">
                     <h3>
@@ -55,7 +59,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
                 </a>
             </div>
         </div>
-        <div className="col col--4">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/price-api">
                     <h3><svg id="Layer_24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 23.78 23.78"><line className="cls-1" x1="1.68" y1="21.66" x2="21.87" y2="21.66" fill="#6fc276"/><rect className="cls-4" x="3.59" y="17.65" width="2.58" height="3.99" fill="#6fc276"/><rect className="cls-4" x="10.53" y="15.76" width="2.58" height="5.88" fill="#6fc276"/><rect className="cls-4" x="17.48" y="12.68" width="2.58" height="8.96" fill="#6fc276"/><polyline className="cls-3" points="2.55 12.45 9.07 6.01 13.2 10.14 20.62 2.72" fill="#6fc276"/><polyline className="cls-2" points="16.42 2.01 21.75 2.01 21.75 7.05" fill="#6fc276"/></svg>&nbsp;&nbsp;<span>Price API</span></h3>
@@ -63,29 +67,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
                 </a>
             </div>
         </div>
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference/blockchain-api">
-                    <h3><img src="https://developers.moralis.com/wp-content/uploads/2024/10/blockchain-api-36.svg" alt="Blockchain API" width="36" height="36" />&nbsp;&nbsp;Blockchain API</h3>
-                    <p>Get the Blocks, Transactions and logs data of a blockchain.</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div className="container">
-    <h2>Explore by Chain</h2>
-    <div className="row">
-        <div className="col col--4">
-            <div className="col-demo margin-bottom--lg">
-                <a className="card padding--lg card--homepage" href="/web3-data-api/evm/reference">
-                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18.005 1.213 7.928 17.31l10.077 5.735V1.213Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 1.213v21.823l10.072-5.733L18 1.213Z"/><path stroke="#85B3DB" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="1.791" d="M18.005 34.801V27L7.928 21.366 18.005 34.8Z"/><path stroke="#5B8DB9" strokeLinejoin="round" strokeMiterlimit="2.927" strokeWidth="2.238" d="M18 26.987v7.799l10.072-13.43L18 26.987Z"/></svg>&nbsp;&nbsp;<span>EVM API</span></h3>
-                    <p>Get NFT, token and transaction data from EVM chains.</p>
-                </a>
-            </div>
-        </div>
-        <div className="col col--4">
+        <div className="col col--6">
             <div className="col-demo margin-bottom--lg">
                 <a className="card padding--lg card--homepage" href="/web3-data-api/solana/reference">
                     <h3>

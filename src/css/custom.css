@@ -303,6 +303,12 @@ video {
   border: 1px solid var(--ifm-color-emphasis-200);
   transition: all var(--ifm-transition-fast) ease;
   transition-property: border, box-shadow;
+  min-height: 120px;
+}
+
+/* Add more spacing between cards in the new 2-column layout */
+.col-demo {
+  padding: 0 12px;
 }
 
 .card--homepage:hover {
@@ -816,11 +822,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
     font-size: 4rem;
   }
 
-  /* Home hero style */
-  .docs-doc-id-index main,
-  .docs-doc-id-index #docusaurus_skipToContent_fallback {
-    background-position: 0px -100px !important;
-  }
 }
 
 /* Homepage styles */
@@ -841,25 +842,28 @@ li.sidebar-developer-tools a.menu__link--active:before {
 /* Homepage hero section */
 
 .docs-doc-id-index main {
-  background-position: 0px -10px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("/img/content/home-bg-1.webp");
   max-width: 100%;
 }
 
-.docs-doc-id-index #docusaurus_skipToContent_fallback {
-  background-position: 0px -10px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("/img/content/home-bg-2.webp");
+#home {
+  padding: 40px 0;
+  margin-bottom: 0;
 }
 
-#home {
-  padding: 50px 0;
-}
 #home .intro {
   text-align: center;
+}
+
+/* Ensure consistent spacing for main page containers */
+.docs-doc-id-index .container {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+/* Align section headers with cards */
+.docs-doc-id-index .container h2 {
+  padding-left: 12px;
+  margin-bottom: 20px;
 }
 
 #home h1 {
