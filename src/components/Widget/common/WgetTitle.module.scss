@@ -1,0 +1,40 @@
+@use '@moralis/scss/mui';
+
+.header {
+  margin: mui.px-to-rem(24) 0 mui.px-to-rem(32);
+  max-width: mui.px-to-rem(700);
+}
+
+.title {
+  @include mui.color-body-default;
+  @include mui.headline-h2;
+}
+
+.subtitle {
+  @include mui.color-headline-secondary;
+  @include mui.body-16-regular;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  display: block;
+  margin-top: mui.px-to-rem(16);
+  text-align: center;
+  svg {
+    transform: translateY(mui.px-to-rem(1));
+  }
+}
+.tradingviewLink {
+  @include mui.color-headline-secondary;
+  @include mui.body-14-regular;
+  a {
+    @include mui.color-button-outline;
+    text-decoration: none;
+    transition: mui.$transitionDefault;
+    &:hover {
+      @include mui.color-button-outlinehover;
+      transition: mui.$transitionDefault;
+    }
+  }
+}

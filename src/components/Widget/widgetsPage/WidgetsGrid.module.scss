@@ -1,0 +1,13 @@
+@use '@moralis/scss/mui';
+
+.inlineContainer {
+  display: inline-block;
+  width: 100%;
+  max-width: mui.px-to-rem(1000);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
