@@ -169,13 +169,13 @@ const config = {
           },
           {
             to: "/web3-data-api/evm/reference",
-            label: "EVM API",
+            label: "EVM",
             position: "left",
             exact: true,
           },
           {
             to: "/web3-data-api/solana",
-            label: "Solana API",
+            label: "Solana",
             position: "left",
             exact: true,
           },
@@ -183,7 +183,7 @@ const config = {
             type: "doc",
             docId: "streams-api/evm/overview",
             position: "left",
-            label: "Streams API",
+            label: "Streams",
           },
           {
             type: "doc",
@@ -239,22 +239,22 @@ const config = {
                 className: "dropdown-divider",
               },
               {
-                label: "EVM API",
+                label: "EVM",
                 type: "doc",
                 docId: "web3-data-api/evm/reference/reference",
               },
               {
-                label: "Solana API",
+                label: "Solana",
                 type: "doc",
                 docId: "web3-data-api/solana/reference/reference",
               },
               {
-                label: "Streams API",
+                label: "Streams",
                 type: "doc",
                 docId: "streams-api/evm/reference/reference",
               },
               {
-                label: "Auth API",
+                label: "Auth",
                 type: "doc",
                 docId: "authentication-api/evm/reference/reference",
               },
@@ -264,22 +264,22 @@ const config = {
                 className: "dropdown-divider",
               },
               {
-                label: "EVM API Swagger",
+                label: "EVM Swagger",
                 href: "https://deep-index.moralis.io/api-docs-2.2/",
                 target: "_blank",
               },
               {
-                label: "Solana API Swagger",
+                label: "Solana Swagger",
                 href: "https://solana-gateway.moralis.io/api/#/",
                 target: "_blank",
               },
               {
-                label: "Streams API Swagger",
+                label: "Streams Swagger",
                 href: "https://api.moralis-streams.com/api-docs/",
                 target: "_blank",
               },
               {
-                label: "Auth API Swagger",
+                label: "Auth Swagger",
                 href: "https://authapi.moralis.io/api-docs/",
                 target: "_blank",
               },

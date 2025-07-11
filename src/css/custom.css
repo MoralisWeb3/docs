@@ -1115,7 +1115,14 @@ li.dropdown-divider {
 
 }
 
-@media (max-width: 996px) {
+/* Hide / key on smaller search bars */
+@media (max-width: 1100px) {
+  .DocSearch-Button-Keys {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
   .navbar__item--hide-on-mobile {
     display: none;
   }
