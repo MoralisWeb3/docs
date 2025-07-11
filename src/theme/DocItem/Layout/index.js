@@ -41,6 +41,18 @@ function useDocTOC() {
   const {frontMatter, toc} = useDoc();
   const windowSize = useWindowSize();
   const isWideScreen = useIsWideScreen();
+  const location = useLocation();
+
+  // Completely skip TOC for RPC reference pages (but not schema page)
+  const isRpcReference = location.pathname.includes('/rpc-nodes/reference/') && 
+                         !location.pathname.includes('/rpc-nodes/reference/evm-rpc-schema');
+  if (isRpcReference) {
+    return {
+      hidden: true,
+      mobile: undefined,
+      desktop: undefined,
+    };
+  }
 
   const hidden = frontMatter.hide_table_of_contents;
   const canRender = !hidden && toc.length > 0;
