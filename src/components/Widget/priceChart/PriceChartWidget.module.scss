@@ -1,0 +1,82 @@
+@use '@moralis/scss/mui';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (max-width: mui.$breakpoint-md) {
+    padding: mui.px-to-rem(12);
+    text-align: center;
+  }
+}
+
+.chartWrapper {
+  @include mui.border-input-default;
+  border-radius: mui.px-to-rem(8);
+  border: mui.px-to-rem(1) solid;
+  height: mui.px-to-rem(720);
+  max-width: mui.px-to-rem(1000);
+  overflow: auto;
+  padding: mui.px-to-rem(16);
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: mui.px-to-rem(32) 0 mui.px-to-rem(24);
+  gap: mui.px-to-rem(52);
+
+  > * {
+    width: 50%;
+  }
+
+  @media screen and (max-width: mui.$breakpoint-md) {
+    flex-direction: column;
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: mui.px-to-rem(32);
+}
+
+.configButtons {
+  @media screen and (max-width: mui.$breakpoint-md) {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.copyButtonDesktop {
+  display: flex;
+  width: fit-content;
+  white-space: nowrap;
+  @media screen and (max-width: mui.$breakpoint-md) {
+    display: none;
+  }
+}
+
+.copyButtonMobile {
+  display: none;
+  @media screen and (max-width: mui.$breakpoint-md) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.upgradeButton {
+  text-decoration: none;
+  color: inherit !important;
+  display: flex;
+  align-items: center;
+  gap: mui.px-to-rem(4);
+}

@@ -1,0 +1,64 @@
+@use '@moralis/scss/mui';
+
+.title {
+  @include mui.subtitle-28;
+  @include mui.color-body-default;
+}
+
+.iconContainer {
+  svg {
+    width: mui.px-to-rem(24);
+    height: mui.px-to-rem(24);
+  }
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: mui.px-to-rem(16);
+  color: mui.$color-aero-400;
+  justify-content: space-between;
+}
+
+.colorGroup {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: mui.px-to-rem(16);
+}
+
+// Applies custom CSS to the SketchPicker component, so that it respects moralis ui theme
+.customSketchPicker {
+  background-color: mui.$color-aero-800 !important;
+  color: mui.$color-aero-300 !important;
+}
+.customSketchPicker {
+  :global(.w-color-editable-input input) {
+    color: mui.$color-aero-300 !important;
+  }
+  :global(.w-color-editable-input label) {
+    color: mui.$color-aero-300 !important;
+  }
+}
+
+.colorPickerLabelAndButton {
+  display: flex;
+  gap: mui.px-to-rem(8);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorPickerBtn {
+  color: mui.$color-aero-300;
+  border: 1px solid mui.$color-aero-700;
+  border-radius: mui.px-to-rem(4);
+  height: mui.px-to-rem(24);
+  width: mui.px-to-rem(24);
+  cursor: pointer;
+}
+
+.colorPickerDisabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

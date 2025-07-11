@@ -1,0 +1,37 @@
+@use '@moralis/scss/mui';
+
+.title {
+  @include mui.subtitle-28;
+  @include mui.color-body-default;
+}
+
+.textArea {
+  @include mui.border-input-default;
+  @include mui.color-input-default;
+  @include mui.body-14-regular;
+  padding: mui.px-to-rem(24);
+  border: mui.px-to-rem(1) solid;
+  border-radius: mui.px-to-rem(8);
+
+  overflow: auto;
+  width: 100%;
+
+  @media screen and (max-width: mui.$breakpoint-md) {
+    max-height: mui.px-to-rem(300);
+    width: 100%;
+  }
+}
+
+.md {
+  max-height: mui.px-to-rem(722);
+}
+
+.sm {
+  max-height: mui.px-to-rem(400);
+}
+
+.titleAndToggle {
+  display: flex;
+  align-items: center;
+  gap: mui.px-to-rem(24);
+}
