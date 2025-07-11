@@ -154,6 +154,31 @@
   background-color: rgba(10, 10, 11, 1) !important;
 }
 
+/* Footer logo opacity fix - broader approach */
+.footer *,
+.footer img,
+.footer a,
+.footer a img,
+.footer a:hover,
+.footer a:hover img,
+footer *,
+footer img,
+footer a,
+footer a img,
+footer a:hover,
+footer a:hover img {
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Remove any hover effects that might dim the logo */
+.footer a:hover *,
+footer a:hover * {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
 /* Dark mode search bar styling */
 [data-theme="dark"] .DocSearch-Button {
   background-color: rgba(10, 10, 11, 1) !important;
