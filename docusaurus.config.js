@@ -283,21 +283,6 @@ const config = {
                 href: "https://authapi.moralis.io/api-docs/",
                 target: "_blank",
               },
-              {
-                type: "html",
-                value: "SDK References",
-                className: "dropdown-divider",
-              },
-              {
-                label: "JS SDK",
-                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
-                target: "_blank",
-              },
-              {
-                label: "Python SDK",
-                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
-                target: "_blank",
-              },
             ],
           },
         ],
