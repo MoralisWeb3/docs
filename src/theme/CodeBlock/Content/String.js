@@ -6,12 +6,10 @@ import {
   parseLanguage,
   parseLines,
   containsLineNumbers,
-  useCodeWordWrap,
 } from "@docusaurus/theme-common/internal";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import Line from "@theme/CodeBlock/Line";
 import CopyButton from "@theme/CodeBlock/CopyButton";
-import WordWrapButton from "@theme/CodeBlock/WordWrapButton";
 import Container from "@theme/CodeBlock/Container";
 import styles from "./styles.module.css";
 export default function CodeBlockString({
@@ -28,7 +26,6 @@ export default function CodeBlockString({
   const language =
     languageProp ?? parseLanguage(blockClassName) ?? defaultLanguage;
   const prismTheme = usePrismTheme();
-  const wordWrap = useCodeWordWrap();
   // We still parse the metastring in case we want to support more syntax in the
   // future. Note that MDX doesn't strip quotes when parsing metastring:
   // "title=\"xyz\"" => title: "\"xyz\""
@@ -41,10 +38,6 @@ export default function CodeBlockString({
   const showLineNumbers =
     showLineNumbersProp ?? containsLineNumbers(metastring);
 
-  useEffect(() => {
-    // wrapping code block on intial render
-    wordWrap.toggle();
-  }, []);
 
   return (
     <Container
@@ -67,7 +60,6 @@ export default function CodeBlockString({
           {({ className, tokens, getLineProps, getTokenProps }) => (
             <pre
               tabIndex={0}
-              ref={wordWrap.codeBlockRef}
               className={clsx(className, styles.codeBlock, "thin-scrollbar")}
             >
               <code
@@ -91,13 +83,6 @@ export default function CodeBlockString({
           )}
         </Highlight>
         <div className={styles.buttonGroup}>
-          {(wordWrap.isEnabled || wordWrap.isCodeScrollable) && (
-            <WordWrapButton
-              className={styles.codeButton}
-              onClick={() => wordWrap.toggle()}
-              isEnabled={wordWrap.isEnabled}
-            />
-          )}
           <CopyButton className={styles.codeButton} code={code} />
         </div>
       </div>
