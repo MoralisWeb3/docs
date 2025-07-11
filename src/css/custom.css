@@ -155,10 +155,6 @@
   border: 1px solid var(--ifm-toc-border-color) !important;
 }
 
-[data-theme="dark"] #home button.DocSearch.DocSearch-Button {
-  background-color: rgba(10, 10, 11, 1) !important;
-  border: 1px solid var(--ifm-toc-border-color) !important;
-}
 
 /* Search bar border radius */
 .DocSearch-Button {
@@ -878,46 +874,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
   margin: 0 auto 20px;
 }
 
-#home button.DocSearch.DocSearch-Button {
-  margin: 0 auto;
-  max-width: 800px;
-  height: 50px;
-  width: 100%;
-  padding: 30px;
-  border: 1px solid var(--api-banner-border-color);
-  background-color: var(--home-search-box-background-color);
-}
-
-.popular-searches {
-  text-align: center;
-  max-width: 800px;
-  margin: 15px auto 0;
-  font-weight: 700;
-}
-
-.popular-searches ul {
-  padding: 0;
-  margin-top: 10px;
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-weight: 500;
-}
-
-.popular-searches ul li {
-  margin: 5px 10px 5px 0;
-}
-
-.popular-searches a {
-  margin-top: 0;
-  margin-right: 10px;
-  background-color: var(--api-banner-background-color);
-  padding: 6px 15px;
-  border-radius: 40px;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
 
 .markdown h1:first-child {
   margin-bottom: 0.75rem;
@@ -1123,9 +1079,6 @@ li.dropdown-divider {
     margin-top: 10px;
   }
 
-  #home .DocSearch-Button-Placeholder {
-    display: block;
-  }
 }
 
 @media (max-width: 996px) {

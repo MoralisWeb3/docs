@@ -12,23 +12,10 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
   <meta name="google-site-verification" content="QZyujgj641snkG6ghbv9VJq5lDJkTkino1N4bIZmSos" />
 </head>
 
-import SearchBar from "@site/src/theme/SearchBar";
-
 <div id="home">
     <div className="intro">
         <h1>Moralis Web3 Docs</h1>
         <p>Build with ease across 30+ chains with our API references, guides, and tutorials.</p>
-        <SearchBar />
-        <div className="popular-searches">
-            <div>Popular Searches</div>
-            <ul>
-                <li><a href="/web3-data-api/evm/reference/price/get-ohlcv-by-pair-address">Get OHLCV Prices</a></li>
-                <li><a href="/web3-data-api/solana/reference/get-token-pairs-by-address">Get Token Pairs</a></li>
-                <li><a href="/web3-data-api/evm/reference/get-swaps-by-token-address">Get Token Swaps</a></li>
-                <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-history">Get Wallet History</a></li>
-                <li><a href="/web3-data-api/evm/reference/get-token-pair-stats">Get Pair Stats</a></li>
-            </ul>
-        </div>
     </div>
 </div>
 
