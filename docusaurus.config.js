@@ -195,7 +195,7 @@ const config = {
             type: "doc",
             docId: "moralis-cortex/overview",
             position: "left",
-            label: "🧠 Moralis Cortex",
+            label: "Moralis Cortex",
           },
           // position: Right
           {
