@@ -12,8 +12,8 @@ import { useHistory } from "@docusaurus/router";
 import { ApiReferenceProps, FormValues } from ".";
 import { ApiReferenceTokenContext } from "./ApiReferenceToken";
 import usePageState from "@site/src/hooks/usePageState";
-import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
-import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
+import camelToSnakeCase from "@site/utils/camelToSnakeCase.js";
+import snakeToCamelCase from "@site/utils/snakeToCamelCase.js";
 import { bodyFixer } from "./utils";
 
 const INDENT_LENGTH = 2;

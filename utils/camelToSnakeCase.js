@@ -7,4 +7,4 @@ const camelToSnakeCase = (str) => {
     .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 };
 
-export default camelToSnakeCase;
+module.exports = camelToSnakeCase;
