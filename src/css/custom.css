@@ -419,9 +419,12 @@ li:has(> a[href="/web3-data-api/evm/reference/upload-folder"]) {
 }
 
 /* General Styles for Sidebar */
+.get-started .menu__list,
 .web3-data-api .menu__list,
 .market-insights-api .menu__list,
-.streams-api .menu__list {
+.streams-api .menu__list,
+.rpc-nodes .menu__list,
+.cortex .menu__list {
   /* Sets the background color of the sidebar */
   border-radius: 4px; /* Rounds the corners of the sidebar */
   padding: 5px !important;
@@ -432,6 +435,10 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
 }
 
 /* Styling for Links in Top-level Categories */
+.get-started
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
 .web3-data-api
   .theme-doc-sidebar-item-category-level-1
   > .menu__list-item-collapsible
@@ -444,9 +451,20 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
   .theme-doc-sidebar-item-category-level-1
   > .menu__list-item-collapsible
   .menu__link,
+.rpc-nodes
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
+.cortex
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link,
+.get-started .theme-doc-sidebar-item-link-level-1 .menu__link,
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link,
-.streams-api .theme-doc-sidebar-item-link-level-1 .menu__link {
+.streams-api .theme-doc-sidebar-item-link-level-1 .menu__link,
+.rpc-nodes .theme-doc-sidebar-item-link-level-1 .menu__link,
+.cortex .theme-doc-sidebar-item-link-level-1 .menu__link {
   font-family: var(
     --ifm-heading-font-family
   ); /* Sets the font family for the category links */
@@ -455,22 +473,31 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
 }
 
 /* Submenu Styling in Sidebar */
+.get-started .theme-doc-sidebar-item-category-level-1 > .menu__list,
 .web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
 .market-insights-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
-.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
+.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.rpc-nodes .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.cortex .theme-doc-sidebar-item-category-level-1 > .menu__list {
   padding-left: 30px; /* Indents the submenu items for better hierarchy visualization */
 }
 
 .menu-list > .menu__list,
+.get-started .theme-doc-sidebar-item-category-level-1 > .menu__list,
 .streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
-.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list {
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.rpc-nodes .theme-doc-sidebar-item-category-level-1 > .menu__list,
+.cortex .theme-doc-sidebar-item-category-level-1 > .menu__list {
   padding-left: unset;
 }
 
 /*Second level*/
 .menu-list > .menu__list,
+.get-started .theme-doc-sidebar-item-category-level-2 > .menu__list,
 .streams-api .theme-doc-sidebar-item-category-level-2 > .menu__list,
-.web3-data-api .theme-doc-sidebar-item-category-level-2 > .menu__list {
+.web3-data-api .theme-doc-sidebar-item-category-level-2 > .menu__list,
+.rpc-nodes .theme-doc-sidebar-item-category-level-2 > .menu__list,
+.cortex .theme-doc-sidebar-item-category-level-2 > .menu__list {
   padding-left: unset;
 }
 
