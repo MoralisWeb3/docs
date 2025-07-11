@@ -10,7 +10,10 @@
 
 @media (min-width: 997px) {
   .form {
-    margin-right: calc(-1 / 3 * (100% + 2 * var(--ifm-spacing-horizontal)));
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .runner {
