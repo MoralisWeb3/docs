@@ -1,10 +1,7 @@
 import { CHAIN_ID_MAP, ChainIdString } from "./chains";
 import { ChartTimezone } from "./timezone";
-import {
-  ResolutionString,
-  TradingViewCustomizationTheme,
-  TradingViewLanguageCode,
-} from "./types";
+import { ResolutionString, TradingViewCustomizationTheme } from "./types";
+import { TradingViewLanguageCode } from "./language";
 
 export const PRICE_CHART_WIDGET_FORM_DEFAULT_VALUES: WgetForm = {
   autoSize: true,

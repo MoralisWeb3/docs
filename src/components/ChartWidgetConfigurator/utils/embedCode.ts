@@ -24,8 +24,14 @@ const buildOptions = (args: WgetForm) => {
   // Add required parameters
   options.push(`chainId: '${args.chainId}'`);
 
-  args.pairAddress && options.push(`pairAddress: '${args.pairAddress}'`);
-  args.tokenAddress && options.push(`tokenAddress: '${args.tokenAddress}'`);
+  // Add address based on toggle state
+  if (args.toggleAddressType) {
+    // Token address mode
+    args.tokenAddress && options.push(`tokenAddress: '${args.tokenAddress}'`);
+  } else {
+    // Pair address mode
+    args.pairAddress && options.push(`pairAddress: '${args.pairAddress}'`);
+  }
 
   // Add holders chart boolean parameter
   options.push(`showHoldersChart: ${args.showHoldersChart}`);
