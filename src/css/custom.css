@@ -886,7 +886,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
 /* Ensure consistent spacing for main page containers */
 .docs-doc-id-index .container {
-  margin-top: 40px;
   margin-bottom: 0;
 }
 
@@ -1760,21 +1759,21 @@ li.dropdown-divider {
 /* Sidebar Section Titles and Separators */
 .sidebar-section-title {
   font-weight: 600;
-  color: var(--ifm-color-emphasis-800);
-  text-transform: uppercase;
-  font-size: 0.75rem;
+  color: #c5c5c7;
+  font-size: 16px;
   margin: 1.5rem 0 0.5rem 0;
-  padding: 0 var(--ifm-menu-link-padding-horizontal);
+  padding-left: 15px;
   letter-spacing: 0.05em;
   line-height: 1.2;
 }
 
-.sidebar-separator hr {
-  margin: 1rem var(--ifm-menu-link-padding-horizontal);
-  border: none;
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+/* Sidebar menu items */
+.menu__link {
+  font-size: 14px;
 }
 
 .sidebar-separator {
-  margin: 0.75rem 0;
+  margin: 0.75rem -1rem;
+  height: 1px;
+  background-color: var(--ifm-toc-border-color);
 }

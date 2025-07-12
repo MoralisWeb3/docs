@@ -25,6 +25,13 @@ const sidebars = {
       type: "doc",
       id: "web3-data-api/evm/overview",
     },
+
+    // Fundamentals Section
+    {
+      type: 'html',
+      value: 'Fundamentals',
+      className: 'sidebar-section-title',
+    },
     {
       type: "category",
       label: "Getting Started",
@@ -54,6 +61,19 @@ const sidebars = {
       ],
     },
 
+    // Separator
+    {
+      type: 'html',
+      value: '<div></div>',
+      className: 'sidebar-separator',
+    },
+
+    // Development Section
+    {
+      type: 'html',
+      value: 'Development',
+      className: 'sidebar-section-title',
+    },
     {
       type: "category",
       label: "API Reference",
@@ -68,7 +88,6 @@ const sidebars = {
         },
       ],
     },
-
     {
       type: "category",
       label: "Developer Tools",
@@ -83,7 +102,6 @@ const sidebars = {
         },
       ],
     },
-
     {
       type: "category",
       label: "Integrations",
@@ -99,6 +117,19 @@ const sidebars = {
       ],
     },
 
+    // Separator
+    {
+      type: 'html',
+      value: '<div></div>',
+      className: 'sidebar-separator',
+    },
+
+    // Learning Section
+    {
+      type: 'html',
+      value: 'Learning',
+      className: 'sidebar-section-title',
+    },
     {
       type: "category",
       label: "Tutorials",
@@ -164,6 +195,20 @@ const sidebars = {
           ],
         },
       ],
+    },
+
+    // Separator
+    {
+      type: 'html',
+      value: '<div></div>',
+      className: 'sidebar-separator',
+    },
+
+    // Support Section
+    {
+      type: 'html',
+      value: 'Support',
+      className: 'sidebar-section-title',
     },
     {
       type: "category",
