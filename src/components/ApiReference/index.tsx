@@ -18,6 +18,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import PostBodyField from "./PostBodyField";
 import { Field } from "formik";
 import HttpMethodBadge from "../HttpMethodBadge";
+import StatusCodeBadge from "../StatusCodeBadge";
+import { responseExamples } from "./responseExamples";
 
 export interface CodeSample {
     language: "node" | "csharp" | "python";
@@ -115,6 +117,7 @@ const ApiReference = ({
     const [response, setResponse] = useState(null);
     const [loading, setLoading] = useState(false);
     const [responseIndex, setResponseIndex] = useState(0);
+    const [expandedResponse, setExpandedResponse] = useState<number | null>(null);
     const { siteConfig } = useDocusaurusContext();
     const { specialApiKey = [] } = siteConfig?.customFields ?? {};
     const { token, setToken } = useContext(ApiReferenceTokenContext);
@@ -349,21 +352,53 @@ const ApiReference = ({
                             <div className={styles.section}>
                                 <div className={styles.sectionTitle}>Responses</div>
 
-                                {responses &&
-                                    responses?.map((response, index) => (
-                                        <div key={index} className={styles.section}>
-                                            <div className={styles.group}>
-                                                <ApiResponseField
-                                                    collapsible
-                                                    field={{
-                                                        type: "object",
-                                                        name: `${response.status} ${response.description}`,
-                                                        ...response.body,
-                                                    }}
-                                                />
+                                <div className={styles.group}>
+                                    {/* Render all responses (API-defined and examples) */}
+                                    {[
+                                        ...(responses || []),
+                                        ...Object.values(responseExamples)
+                                    ].map((response, index) => {
+                                        const isApiResponse = index < (responses?.length || 0);
+                                        const actualIndex = isApiResponse ? index : -1;
+                                        const hasBody = isApiResponse && 'body' in response && response.body;
+                                        
+                                        return (
+                                            <div key={index} className={styles.field}>
+                                                <div className={styles.fieldInfo}>
+                                                    <div
+                                                        className={styles.responseHeaderContent}
+                                                        onClick={() =>
+                                                            hasBody &&
+                                                            setExpandedResponse(
+                                                                expandedResponse === actualIndex
+                                                                    ? null
+                                                                    : actualIndex
+                                                            )
+                                                        }
+                                                        style={{
+                                                            cursor: hasBody
+                                                                ? "pointer"
+                                                                : "default",
+                                                        }}
+                                                    >
+                                                        <StatusCodeBadge status={response.status} />
+                                                        <span className={styles.responseDescription}>
+                                                            {response.description}
+                                                        </span>
+                                                    </div>
+                                                    {hasBody && expandedResponse === actualIndex && (
+                                                        <ApiResponseField
+                                                            field={{
+                                                                type: "object",
+                                                                ...(response as ApiResponse).body,
+                                                            }}
+                                                        />
+                                                    )}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                         <div className="col col--7">

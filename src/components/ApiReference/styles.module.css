@@ -48,6 +48,24 @@
   color: var(--ifm-font-color-secondary);
 }
 
+.responseHeaderContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.responseDescription {
+  font-size: 14px;
+  color: var(--ifm-font-color-base);
+}
+
+.statusCodesList {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+
 .sectionTitle + .section {
   margin: 0;
 }

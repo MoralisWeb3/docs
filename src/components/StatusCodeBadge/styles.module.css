@@ -1,0 +1,37 @@
+.statusCodeBadge {
+  align-items: center;
+  border-radius: 6px;
+  border: 0px solid;
+  box-sizing: border-box;
+  column-gap: 4px;
+  display: inline-flex;
+  font-family: var(--ifm-font-family-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* 2xx Success - Green */
+.success {
+  background-color: rgba(34, 197, 94, 0.227);
+  color: rgb(34, 197, 94);
+}
+
+/* 4xx Client Error - Orange */
+.clientError {
+  background-color: rgba(251, 146, 60, 0.227);
+  color: rgb(251, 146, 60);
+}
+
+/* 5xx Server Error - Red */
+.serverError {
+  background-color: rgba(239, 68, 68, 0.227);
+  color: rgb(239, 68, 68);
+}
+
+/* 429 Rate Limit - Purple */
+.rateLimit {
+  background-color: rgba(147, 51, 234, 0.227);
+  color: rgb(147, 51, 234);
+}
