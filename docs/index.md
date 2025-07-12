@@ -4,7 +4,10 @@ slug: "/"
 sidebar_position: 1
 hide_table_of_contents: true
 hide_title: true
-description: "Moralis API Documentation offers Web3 API tutorials for developers. Integrate Web3 into any tech stack with powerful APIs and step-by-step guides."
+description:
+    "Moralis API Documentation offers Web3 API tutorials for developers.
+    Integrate Web3 into any tech stack with powerful APIs and step-by-step
+    guides."
 ---
 
 <head>
@@ -14,7 +17,7 @@ description: "Moralis API Documentation offers Web3 API tutorials for developers
 
 <div id="home">
     <div className="intro">
-        <h1>Moralis Web3 Docs</h1>
+        <h1>Moralis <span style={{color: '#0F7FFF'}}>Documentation</span></h1>
         <p>Build with ease across 30+ chains with our API references, guides, and tutorials.</p>
     </div>
 </div>
