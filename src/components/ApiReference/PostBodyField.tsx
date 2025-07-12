@@ -112,7 +112,7 @@ const PostBodyField = ({ field, form, param }: PostBodyFieldProps) => {
   const inputClassName = `${styles.jsonCodeEditor} ${hasError ? styles.invalid : ''}`;
 
   return (
-    <div className={styles.groupContainer}>
+    <div className={`${styles.groupContainer} ${styles.bodyParamContainer}`}>
       <ApiParamInfo 
         param={{
           ...param,

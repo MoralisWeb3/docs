@@ -307,6 +307,20 @@ button.groupHeader:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--ifm-color-danger-rgb), 0.25);
 }
 
+/* Body parameter container spacing */
+.bodyParamContainer {
+  padding: 1rem;
+}
+
+.bodyParamContainer .fieldInfo {
+  margin-bottom: 1rem;
+}
+
+.bodyParamContainer .paramDescription {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .button {
   padding: 0.6rem 1rem;
   border: 0;
