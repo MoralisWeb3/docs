@@ -154,6 +154,75 @@ const formatParameters = (parameters) => {
   return { pathParams, queryParams };
 };
 
+/**
+ * @name generateDefaultExample
+ * @description Generate a default example value based on field type and name
+ * @param field - The field object containing type, name, and description
+ * @returns Default example value
+ */
+const generateDefaultExample = (field) => {
+  const { type, name, description } = field;
+  
+  switch (type) {
+    case "string":
+      if (name?.toLowerCase().includes("url") || name?.toLowerCase().includes("webhook")) {
+        return "string";
+      }
+      if (name?.toLowerCase().includes("email")) {
+        return "string";
+      }
+      if (name?.toLowerCase().includes("address")) {
+        return "string";
+      }
+      if (name?.toLowerCase().includes("id")) {
+        return "string";
+      }
+      return "string";
+    
+    case "number":
+    case "integer":
+      return 0;
+    
+    case "boolean":
+      return false;
+    
+    case "array":
+      return [];
+    
+    case "object":
+      return {};
+    
+    default:
+      return "string";
+  }
+};
+
+/**
+ * @name addMissingExamples
+ * @description Recursively add example values to fields that don't have them
+ * @param fields - Array of field objects
+ * @returns Fields with examples added
+ */
+const addMissingExamples = (fields) => {
+  if (!Array.isArray(fields)) return fields;
+  
+  return fields.map(field => {
+    const updatedField = { ...field };
+    
+    // Add example if missing
+    if (updatedField.example === undefined) {
+      updatedField.example = generateDefaultExample(field);
+    }
+    
+    // Recursively process nested fields
+    if (updatedField.fields && Array.isArray(updatedField.fields)) {
+      updatedField.fields = addMissingExamples(updatedField.fields);
+    }
+    
+    return updatedField;
+  });
+};
+
 const formatBodyParameters = (requestBody) => {
   if (requestBody) {
     const { required, description, content } = requestBody;
@@ -163,7 +232,7 @@ const formatBodyParameters = (requestBody) => {
       $ref: schemaRef,
     } = content?.["application/json"]?.schema;
 
-    return {
+    const bodyParam = {
       required,
       description,
       ...(schemaRef
@@ -173,6 +242,13 @@ const formatBodyParameters = (requestBody) => {
             ...(items && { field: translateSchemaReference(items?.$ref) }),
           }),
     };
+
+    // Add missing examples to all fields
+    if (bodyParam.fields) {
+      bodyParam.fields = addMissingExamples(bodyParam.fields);
+    }
+
+    return bodyParam;
   }
 
   return;

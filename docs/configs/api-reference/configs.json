@@ -26131,22 +26131,26 @@
           {
             "name": "webhookUrl",
             "type": "string",
-            "description": "Webhook URL where moralis will send the POST request."
+            "description": "Webhook URL where moralis will send the POST request.",
+            "example": "string"
           },
           {
             "name": "description",
             "type": "string",
-            "description": "A description for this stream"
+            "description": "A description for this stream",
+            "example": "string"
           },
           {
             "name": "tag",
             "type": "string",
-            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "string"
           },
           {
             "name": "topic0",
             "type": "array",
             "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -26154,56 +26158,67 @@
           {
             "name": "allAddresses",
             "type": "boolean",
-            "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)",
+            "example": false
           },
           {
             "name": "includeNativeTxs",
             "type": "boolean",
-            "description": "Include or not native transactions defaults to false"
+            "description": "Include or not native transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeContractLogs",
             "type": "boolean",
-            "description": "Include or not logs of contract interactions defaults to false"
+            "description": "Include or not logs of contract interactions defaults to false",
+            "example": false
           },
           {
             "name": "includeInternalTxs",
             "type": "boolean",
-            "description": "Include or not include internal transactions defaults to false"
+            "description": "Include or not include internal transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeAllTxLogs",
             "type": "boolean",
-            "description": "Include all logs if atleast one value in tx or log matches stream config"
+            "description": "Include all logs if atleast one value in tx or log matches stream config",
+            "example": false
           },
           {
             "name": "getNativeBalances",
             "type": "object",
             "description": "Include native balances for each address in the webhook",
+            "example": {},
             "fields": [
               {
                 "name": "selectors",
                 "type": "array",
+                "example": [],
                 "field": {
                   "type": "string"
                 }
               },
               {
                 "name": "type",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               }
             ]
           },
           {
-            "name": "abi"
+            "name": "abi",
+            "example": "string"
           },
           {
-            "name": "advancedOptions"
+            "name": "advancedOptions",
+            "example": "string"
           },
           {
             "name": "chainIds",
             "type": "array",
             "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -26211,29 +26226,35 @@
           {
             "name": "filterPossibleSpamAddresses",
             "type": "boolean",
-            "description": "Indicator if it is a demo stream"
+            "description": "Indicator if it is a demo stream",
+            "example": false
           },
           {
             "name": "demo",
             "type": "boolean",
-            "description": "Filter possible spam addresses"
+            "description": "Filter possible spam addresses",
+            "example": false
           },
           {
             "name": "triggers",
             "type": "object",
             "description": "triggers",
+            "example": {},
             "fields": [
               {
                 "name": "type",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "contractAddress",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "inputs",
                 "type": "array",
+                "example": [],
                 "field": {
                   "anyOf": [
                     {
@@ -26294,11 +26315,13 @@
               },
               {
                 "name": "topic0",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "callFrom",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               }
             ]
           }
@@ -26782,22 +26805,26 @@
           {
             "name": "webhookUrl",
             "type": "string",
-            "description": "Webhook URL where moralis will send the POST request."
+            "description": "Webhook URL where moralis will send the POST request.",
+            "example": "string"
           },
           {
             "name": "description",
             "type": "string",
-            "description": "A description for this stream"
+            "description": "A description for this stream",
+            "example": "string"
           },
           {
             "name": "tag",
             "type": "string",
-            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "string"
           },
           {
             "name": "topic0",
             "type": "array",
             "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -26805,56 +26832,67 @@
           {
             "name": "allAddresses",
             "type": "boolean",
-            "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)",
+            "example": false
           },
           {
             "name": "includeNativeTxs",
             "type": "boolean",
-            "description": "Include or not native transactions defaults to false"
+            "description": "Include or not native transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeContractLogs",
             "type": "boolean",
-            "description": "Include or not logs of contract interactions defaults to false"
+            "description": "Include or not logs of contract interactions defaults to false",
+            "example": false
           },
           {
             "name": "includeInternalTxs",
             "type": "boolean",
-            "description": "Include or not include internal transactions defaults to false"
+            "description": "Include or not include internal transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeAllTxLogs",
             "type": "boolean",
-            "description": "Include all logs if atleast one value in tx or log matches stream config"
+            "description": "Include all logs if atleast one value in tx or log matches stream config",
+            "example": false
           },
           {
             "name": "getNativeBalances",
             "type": "object",
             "description": "Include native balances for each address in the webhook",
+            "example": {},
             "fields": [
               {
                 "name": "selectors",
                 "type": "array",
+                "example": [],
                 "field": {
                   "type": "string"
                 }
               },
               {
                 "name": "type",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               }
             ]
           },
           {
-            "name": "abi"
+            "name": "abi",
+            "example": "string"
           },
           {
-            "name": "advancedOptions"
+            "name": "advancedOptions",
+            "example": "string"
           },
           {
             "name": "chainIds",
             "type": "array",
             "description": "The ids of the chains for this stream in hex Ex: [\"0x1\",\"0x38\"]",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -26862,29 +26900,35 @@
           {
             "name": "filterPossibleSpamAddresses",
             "type": "boolean",
-            "description": "Indicator if it is a demo stream"
+            "description": "Indicator if it is a demo stream",
+            "example": false
           },
           {
             "name": "demo",
             "type": "boolean",
-            "description": "Filter possible spam addresses"
+            "description": "Filter possible spam addresses",
+            "example": false
           },
           {
             "name": "triggers",
             "type": "object",
             "description": "triggers",
+            "example": {},
             "fields": [
               {
                 "name": "type",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "contractAddress",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "inputs",
                 "type": "array",
+                "example": [],
                 "field": {
                   "anyOf": [
                     {
@@ -26945,11 +26989,13 @@
               },
               {
                 "name": "topic0",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               },
               {
                 "name": "callFrom",
-                "type": "string"
+                "type": "string",
+                "example": "string"
               }
             ]
           }
@@ -27983,7 +28029,8 @@
         "fields": [
           {
             "name": "address",
-            "description": "The address or a list of addresses to be added to the Stream."
+            "description": "The address or a list of addresses to be added to the Stream.",
+            "example": "string"
           }
         ]
       },
@@ -28030,7 +28077,8 @@
         "fields": [
           {
             "name": "address",
-            "description": "The address or a list of addresses to be removed from the Stream."
+            "description": "The address or a list of addresses to be removed from the Stream.",
+            "example": "string"
           }
         ]
       },
@@ -28077,7 +28125,8 @@
         "fields": [
           {
             "name": "address",
-            "description": "The address or a list of addresses to be removed from the Stream."
+            "description": "The address or a list of addresses to be removed from the Stream.",
+            "example": "string"
           }
         ]
       },
@@ -28129,12 +28178,14 @@
           {
             "name": "tag",
             "type": "string",
-            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "string"
           },
           {
             "name": "topic0",
             "type": "array",
             "description": "An Array of topic0's in string-signature format ex: ['FunctionName(address,uint256)']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -28142,41 +28193,50 @@
           {
             "name": "allAddresses",
             "type": "boolean",
-            "description": "Include events for all addresses (only applied when abi and topic0 is provided)"
+            "description": "Include events for all addresses (only applied when abi and topic0 is provided)",
+            "example": false
           },
           {
             "name": "includeNativeTxs",
             "type": "boolean",
-            "description": "Include or not native transactions defaults to false"
+            "description": "Include or not native transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeContractLogs",
             "type": "boolean",
-            "description": "Include or not logs of contract interactions defaults to false"
+            "description": "Include or not logs of contract interactions defaults to false",
+            "example": false
           },
           {
             "name": "includeInternalTxs",
             "type": "boolean",
-            "description": "Include or not include internal transactions defaults to false"
+            "description": "Include or not include internal transactions defaults to false",
+            "example": false
           },
           {
             "name": "includeAllTxLogs",
             "type": "boolean",
-            "description": "Include all logs if atleast one value in tx or log matches stream config"
+            "description": "Include all logs if atleast one value in tx or log matches stream config",
+            "example": false
           },
           {
             "name": "filterPossibleSpamAddresses",
-            "type": "boolean"
+            "type": "boolean",
+            "example": false
           },
           {
-            "name": "abi"
+            "name": "abi",
+            "example": "string"
           },
           {
-            "name": "advancedOptions"
+            "name": "advancedOptions",
+            "example": "string"
           },
           {
             "name": "addresses",
             "type": "array",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -28433,12 +28493,14 @@
               "us-west-2",
               "eu-central-1",
               "ap-southeast-1"
-            ]
+            ],
+            "example": "string"
           },
           {
             "name": "secretKey",
             "type": "string",
-            "description": "The secret key to validate the webhooks"
+            "description": "The secret key to validate the webhooks",
+            "example": "string"
           }
         ]
       },
@@ -28929,17 +28991,20 @@
           {
             "name": "webhookUrl",
             "type": "string",
-            "description": "Webhook URL where moralis will send the POST request."
+            "description": "Webhook URL where moralis will send the POST request.",
+            "example": "string"
           },
           {
             "name": "tag",
             "type": "string",
-            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "string"
           },
           {
             "name": "functions",
             "type": "array",
             "description": "An Array of events in string-signature format ex: ['0x1::aptos_account::transfer']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -28948,6 +29013,7 @@
             "name": "events",
             "type": "array",
             "description": "An Array of events in string-signature format ex: ['0x1::coin::WithdrawEvent']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -28962,37 +29028,44 @@
                 "mainnet",
                 "testnet"
               ]
-            }
+            },
+            "example": []
           },
           {
             "name": "includePayload",
             "type": "boolean",
-            "description": "Include or not payload for every transaction in webhook defaults to false"
+            "description": "Include or not payload for every transaction in webhook defaults to false",
+            "example": false
           },
           {
             "name": "includeEvents",
             "type": "boolean",
-            "description": "Include or not events in webhook defaults to false"
+            "description": "Include or not events in webhook defaults to false",
+            "example": false
           },
           {
             "name": "includeChanges",
             "type": "boolean",
-            "description": "Include or not raw changes for every transaction in webhook defaults to false"
+            "description": "Include or not raw changes for every transaction in webhook defaults to false",
+            "example": false
           },
           {
             "name": "description",
             "type": "string",
-            "description": "A description for this stream"
+            "description": "A description for this stream",
+            "example": "string"
           },
           {
             "name": "demo",
             "type": "boolean",
-            "description": "Indicator if it is a demo stream"
+            "description": "Indicator if it is a demo stream",
+            "example": false
           },
           {
             "name": "allAddresses",
             "type": "boolean",
-            "description": "Include events for all addresses (only applied when at least one event or function is provided)"
+            "description": "Include events for all addresses (only applied when at least one event or function is provided)",
+            "example": false
           }
         ]
       },
@@ -29227,32 +29300,38 @@
           {
             "name": "allAddresses",
             "type": "boolean",
-            "description": "Include events for all addresses (only applied when at least one event or function is provided)"
+            "description": "Include events for all addresses (only applied when at least one event or function is provided)",
+            "example": false
           },
           {
             "name": "demo",
             "type": "boolean",
-            "description": "Indicator if it is a demo stream"
+            "description": "Indicator if it is a demo stream",
+            "example": false
           },
           {
             "name": "description",
             "type": "string",
-            "description": "A description for this stream"
+            "description": "A description for this stream",
+            "example": "string"
           },
           {
             "name": "includeChanges",
             "type": "boolean",
-            "description": "Include or not raw changes for every transaction in webhook defaults to false"
+            "description": "Include or not raw changes for every transaction in webhook defaults to false",
+            "example": false
           },
           {
             "name": "includeEvents",
             "type": "boolean",
-            "description": "Include or not events in webhook defaults to false"
+            "description": "Include or not events in webhook defaults to false",
+            "example": false
           },
           {
             "name": "includePayload",
             "type": "boolean",
-            "description": "Include or not payload for every transaction in webhook defaults to false"
+            "description": "Include or not payload for every transaction in webhook defaults to false",
+            "example": false
           },
           {
             "name": "network",
@@ -29264,12 +29343,14 @@
                 "mainnet",
                 "testnet"
               ]
-            }
+            },
+            "example": []
           },
           {
             "name": "events",
             "type": "array",
             "description": "An Array of events in string-signature format ex: ['0x1::coin::WithdrawEvent']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -29278,6 +29359,7 @@
             "name": "functions",
             "type": "array",
             "description": "An Array of events in string-signature format ex: ['0x1::aptos_account::transfer']",
+            "example": [],
             "field": {
               "type": "string"
             }
@@ -29285,12 +29367,14 @@
           {
             "name": "tag",
             "type": "string",
-            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present"
+            "description": "A user-provided tag that will be send along the webhook, the user can use this tag to identify the specific stream if multiple streams are present",
+            "example": "string"
           },
           {
             "name": "webhookUrl",
             "type": "string",
-            "description": "Webhook URL where moralis will send the POST request."
+            "description": "Webhook URL where moralis will send the POST request.",
+            "example": "string"
           }
         ]
       },
