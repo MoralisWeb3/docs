@@ -47,10 +47,12 @@ const ApiResponseField = ({
   field,
   isInsideObject = false, // Indicates if this component is inside an object
   isInsideArray = false, // Indicates if this component is directly inside an array
+  collapsible = true, // Whether fields should be collapsible
 }: {
   field?: ApiParam;
   isInsideObject?: boolean;
   isInsideArray?: boolean;
+  collapsible?: boolean;
 }) => {
   const initialCollapsedState = !(
     (isInsideObject || isInsideArray) &&
@@ -78,6 +80,7 @@ const ApiResponseField = ({
         field={field}
         isInsideObject={isInsideObject || parentType === "object"}
         isInsideArray={isInsideArray || parentType === "array"}
+        collapsible={collapsible}
       />
     ));
   };
@@ -95,6 +98,26 @@ const ApiResponseField = ({
   }
 
   if (field.type === "object") {
+    if (!collapsible) {
+      return (
+        <div className={styles.field}>
+          <div className={styles.fieldInfo}>
+            <ApiParamInfo param={field} />
+          </div>
+          {field.fields && (
+            <div className={styles.group}>
+              {renderFields(
+                field.fields,
+                "object",
+                isInsideObject,
+                isInsideArray
+              )}
+            </div>
+          )}
+        </div>
+      );
+    }
+
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -121,6 +144,27 @@ const ApiResponseField = ({
   }
 
   if (field.type === "array") {
+    if (!collapsible) {
+      return (
+        <div className={styles.field}>
+          <div className={styles.fieldInfo}>
+            <ApiParamInfo param={field} />
+          </div>
+          {field.field && (
+            <div className={styles.group}>
+              <ApiResponseField
+                field={field.field}
+                parentType="array"
+                isInsideArray={true}
+                isInsideObject={isInsideObject}
+                collapsible={collapsible}
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+
     return (
       <div className={styles.field}>
         <div className={styles.groupContainer}>
@@ -138,6 +182,7 @@ const ApiResponseField = ({
                 parentType="array"
                 isInsideArray={true}
                 isInsideObject={isInsideObject}
+                collapsible={collapsible}
               />
             </div>
           )}

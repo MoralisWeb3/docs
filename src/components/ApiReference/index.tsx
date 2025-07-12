@@ -6,7 +6,7 @@ import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
 import qs from "qs";
 import styles from "./styles.module.css";
-import ApiResponseField, { ApiResponse, buildResponse } from "./ApiResponseField";
+import { ApiResponse, buildResponse } from "./ApiResponseField";
 import ApiParamField, { ApiParam, apiParamInitialValue } from "./ApiParamField";
 import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
@@ -117,7 +117,6 @@ const ApiReference = ({
     const [response, setResponse] = useState(null);
     const [loading, setLoading] = useState(false);
     const [responseIndex, setResponseIndex] = useState(0);
-    const [expandedResponse, setExpandedResponse] = useState<number | null>(null);
     const { siteConfig } = useDocusaurusContext();
     const { specialApiKey = [] } = siteConfig?.customFields ?? {};
     const { token, setToken } = useContext(ApiReferenceTokenContext);
@@ -354,50 +353,36 @@ const ApiReference = ({
 
                                 <div className={styles.group}>
                                     {/* Render all responses (API-defined and examples) */}
-                                    {[
-                                        ...(responses || []),
-                                        ...Object.values(responseExamples)
-                                    ].map((response, index) => {
-                                        const isApiResponse = index < (responses?.length || 0);
-                                        const actualIndex = isApiResponse ? index : -1;
-                                        const hasBody = isApiResponse && 'body' in response && response.body;
-                                        
-                                        return (
-                                            <div key={index} className={styles.field}>
-                                                <div className={styles.fieldInfo}>
-                                                    <div
-                                                        className={styles.responseHeaderContent}
-                                                        onClick={() =>
-                                                            hasBody &&
-                                                            setExpandedResponse(
-                                                                expandedResponse === actualIndex
-                                                                    ? null
-                                                                    : actualIndex
-                                                            )
-                                                        }
-                                                        style={{
-                                                            cursor: hasBody
-                                                                ? "pointer"
-                                                                : "default",
-                                                        }}
-                                                    >
-                                                        <StatusCodeBadge status={response.status} />
-                                                        <span className={styles.responseDescription}>
-                                                            {response.description}
-                                                        </span>
+                                    {[...(responses || []), ...Object.values(responseExamples)].map(
+                                        (response, index) => {
+                                            const isApiResponse = index < (responses?.length || 0);
+                                            const hasBody =
+                                                isApiResponse &&
+                                                "body" in response &&
+                                                response.body;
+
+                                            return (
+                                                <div key={index} className={styles.field}>
+                                                    <div className={styles.fieldInfo}>
+                                                        <div
+                                                            className={styles.responseHeaderContent}
+                                                        >
+                                                            <StatusCodeBadge
+                                                                status={response.status}
+                                                            />
+                                                            <span
+                                                                className={
+                                                                    styles.responseDescription
+                                                                }
+                                                            >
+                                                                {response.description}
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    {hasBody && expandedResponse === actualIndex && (
-                                                        <ApiResponseField
-                                                            field={{
-                                                                type: "object",
-                                                                ...(response as ApiResponse).body,
-                                                            }}
-                                                        />
-                                                    )}
                                                 </div>
-                                            </div>
-                                        );
-                                    })}
+                                            );
+                                        }
+                                    )}
                                 </div>
                             </div>
                         </div>
