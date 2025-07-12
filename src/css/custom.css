@@ -1742,3 +1742,17 @@ li.dropdown-divider {
     font-size: 12px;
   }
 }
+
+/* Table of Contents Styling */
+.table-of-contents {
+  font-size: 0.9rem; /* Increased from default 0.8rem */
+}
+
+.table-of-contents__link {
+  color: rgba(255, 255, 255, 0.8); /* Dimmed white text for better readability */
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary); /* Keep primary color for active/hover states */
+}
