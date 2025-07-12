@@ -19,402 +19,355 @@ const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
 
 const escapeChar = (str: string, char: string) =>
-  str.replace(new RegExp(`(?:\\\\)?(${char})`, "g"), "\\$1");
+    str.replace(new RegExp(`(?:\\\\)?(${char})`, "g"), "\\$1");
 
 const buildTemplate = (lines: Array<string | null>) =>
-  lines.filter((line) => line != null).join("\n");
+    lines.filter((line) => line != null).join("\n");
 
-const line = (str: string, indent = 0) =>
-  `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
+const line = (str: string, indent = 0) => `${" ".repeat(indent * INDENT_LENGTH)}${str}`;
 
 export const stringifyJSON = (obj: object, pretty = false) =>
-  JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
+    JSON.stringify(obj, null, pretty ? INDENT_LENGTH : undefined);
 
 const tabs = [
-  {
-    lang: "node",
-    langCode: "js",
-    title: "Node.js",
-    template: ({ method, url, auth, body, authField }) => {
-      const authHeader = url.includes("wdim.moralis.io")
-        ? "Authorization"
-        : authField;
-      const authValue = url.includes("wdim.moralis.io")
-        ? `Bearer ${auth}`
-        : auth;
-      return buildTemplate([
-        line("// Dependencies to install:"),
-        line("// $ npm install node-fetch --save"),
-        line(`// add "type": "module" to package.json`),
-        line(""),
-        line("import fetch from 'node-fetch';"),
-        line(""),
-        line("const options = {"),
-        line(`method: '${method}',`, 1),
-        line("headers: {", 1),
-        line(`accept: 'application/json'${auth || body ? "," : ""}`, 2),
-        body
-          ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2)
-          : null,
-        auth ? line(`'${authHeader}': '${authValue}'`, 2) : null,
-        line("},", 1),
-        body
-          ? line(
-              `body: JSON.stringify(${stringifyJSON(body, true)})`,
-              1
-            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-          : null,
-        line("};"),
-        line(""),
-        line(`fetch('${url}', options)`),
-        line(".then(response => response.json())", 1),
-        line(".then(response => console.log(response))", 1),
-        line(".catch(err => console.error(err));", 1),
-      ]);
-    },
-  },
-  {
-    lang: "python",
-    langCode: "python",
-    title: "Python",
-    template: ({ method, url, auth, body, authField }) => {
-      const authHeader = url.includes("wdim.moralis.io")
-        ? "Authorization"
-        : authField;
-      const authValue = url.includes("wdim.moralis.io")
-        ? `Bearer ${auth}`
-        : auth;
-      return buildTemplate([
-        line("# Dependencies to install:\n"),
-        line("# $ python -m pip install requests"),
-        line(""),
-        line("import requests"),
-        line(""),
-        line(`url = "${url}"`),
-        line(""),
-        body ? line(`payload = ${stringifyJSON(body, true)}`) : null,
-        line("headers = {"),
-        line(`"Accept": "application/json"${auth || body ? "," : ""}`, 1),
-        body
-          ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1)
-          : null,
-        auth ? line(`"${authHeader}": "${authValue}"`, 1) : null,
-        line(`}`),
-        line(""),
-        line(
-          `response = requests.request("${method}", url, ${
-            body ? "json=payload, " : ""
-          }headers=headers)`
-        ),
-        line(""),
-        line("print(response.text)"),
-      ]);
-    },
-  },
-  {
-    lang: "bash",
-    langCode: "bash",
-    title: "cURL",
-    template: ({ method, url, auth, body, authField }) => {
-      const authHeader = url.includes("wdim.moralis.io")
-        ? "Authorization"
-        : authField;
-      const authValue = url.includes("wdim.moralis.io")
-        ? `Bearer ${auth}`
-        : auth;
-      const indent = " ".repeat("curl ".length);
+    {
+        lang: "bash",
+        langCode: "bash",
+        title: "curl",
+        template: ({ method, url, auth, body, authField }) => {
+            const authHeader = url.includes("wdim.moralis.io") ? "Authorization" : authField;
+            const authValue = url.includes("wdim.moralis.io") ? `Bearer ${auth}` : auth;
+            const indent = " ".repeat("curl ".length);
 
-      return buildTemplate([
-        line(`curl --request ${method} \\`),
-        line(`${indent}--url '${url}' \\`),
-        line(
-          `${indent}--header 'accept: application/json' ${
-            body || auth ? "\\" : ""
-          }`
-        ),
-        auth
-          ? line(
-              `${indent}--header '${authHeader}: ${authValue}' ${
-                body ? "\\" : ""
-              }`
-            )
-          : null,
-        body
-          ? line(`${indent}--header 'content-type: application/json' \\`)
-          : null,
-        body ? line(`${indent}--data '`) : null,
-        body ? line(stringifyJSON(body, true)) : null,
-        body ? line("'") : null,
-      ]);
+            return buildTemplate([
+                line(`curl --request ${method} \\`),
+                line(`${indent}--url '${url}' \\`),
+                line(`${indent}--header 'accept: application/json' ${body || auth ? "\\" : ""}`),
+                auth
+                    ? line(`${indent}--header '${authHeader}: ${authValue}' ${body ? "\\" : ""}`)
+                    : null,
+                body ? line(`${indent}--header 'content-type: application/json' \\`) : null,
+                body ? line(`${indent}--data '`) : null,
+                body ? line(stringifyJSON(body, true)) : null,
+                body ? line("'") : null,
+            ]);
+        },
     },
-  },
-  {
-    lang: "go",
-    langCode: "go",
-    title: "Go",
-    template: ({ method, url, auth, body, authField }) => {
-      const authHeader = url.includes("wdim.moralis.io")
-        ? "Authorization"
-        : authField;
-      const authValue = url.includes("wdim.moralis.io")
-        ? `Bearer ${auth}`
-        : auth;
-      return buildTemplate([
-        line("package main"),
-        line(""),
-        line("import ("),
-        line('"fmt"', 1),
-        body ? line('"strings"', 1) : null,
-        line('"net/http"', 1),
-        line('"io/ioutil"', 1),
-        line(")"),
-        line(""),
-        line("func main() {"),
-        line(""),
-        line(`url := "${url}"`, 1),
-        line(""),
-        body
-          ? line(
-              `payload := strings.NewReader("${escapeChar(
-                stringifyJSON(body),
-                '"'
-              )}")`,
-              1
-            )
-          : null,
-        body ? line("") : null,
-        line(`req, _ := http.NewRequest("${method}", url, payload)`, 1),
-        line(""),
-        line('req.Header.Add("Accept", "application/json")', 1),
-        body
-          ? line('req.Header.Add("Content-Type", "application/json")', 1)
-          : null,
-        auth
-          ? line(`req.Header.Add("${authHeader}", "${authValue}")`, 1)
-          : null,
-        line(""),
-        line("res, _ := http.DefaultClient.Do(req)", 1),
-        line(""),
-        line("defer res.Body.Close()", 1),
-        line("body, _ := ioutil.ReadAll(res.Body)", 1),
-        line(""),
-        line("fmt.Println(res)", 1),
-        line("fmt.Println(string(body))", 1),
-        line(""),
-        line("}"),
-      ]);
+    {
+        lang: "node",
+        langCode: "js",
+        title: "nodejs",
+        template: ({ method, url, auth, body, authField }) => {
+            const authHeader = url.includes("wdim.moralis.io") ? "Authorization" : authField;
+            const authValue = url.includes("wdim.moralis.io") ? `Bearer ${auth}` : auth;
+            return buildTemplate([
+                line("// Dependencies to install:"),
+                line("// $ npm install node-fetch --save"),
+                line(`// add "type": "module" to package.json`),
+                line(""),
+                line("import fetch from 'node-fetch';"),
+                line(""),
+                line("const options = {"),
+                line(`method: '${method}',`, 1),
+                line("headers: {", 1),
+                line(`accept: 'application/json'${auth || body ? "," : ""}`, 2),
+                body ? line(`'content-type': 'application/json'${auth ? "," : ""}`, 2) : null,
+                auth ? line(`'${authHeader}': '${authValue}'`, 2) : null,
+                line("},", 1),
+                body
+                    ? line(`body: JSON.stringify(${stringifyJSON(body, true)})`, 1).replace(
+                          /\n/g,
+                          `\n${" ".repeat(INDENT_LENGTH)}`
+                      )
+                    : null,
+                line("};"),
+                line(""),
+                line(`fetch('${url}', options)`),
+                line(".then(response => response.json())", 1),
+                line(".then(response => console.log(response))", 1),
+                line(".catch(err => console.error(err));", 1),
+            ]);
+        },
     },
-  },
-  {
-    lang: "php",
-    langCode: "php",
-    title: "PHP",
-    template: ({ method, url, auth, body, authField }) => {
-      const authHeader = url.includes("wdim.moralis.io")
-        ? "Authorization"
-        : authField;
-      const authValue = url.includes("wdim.moralis.io")
-        ? `Bearer ${auth}`
-        : auth;
-      return buildTemplate([
-        line("<?php"),
-        line("// Dependencies to install:"),
-        line("// $ composer require guzzlehttp/guzzle"),
-        line(""),
-        line("require_once('vendor/autoload.php');"),
-        line(""),
-        line("$client = new \\GuzzleHttp\\Client();"),
-        line(""),
-        line(`$response = $client->request('${method}', '${url}', [`),
-        body
-          ? line(`'body' => '${escapeChar(stringifyJSON(body), "'")}',`, 1)
-          : null,
-        line("'headers' => [", 1),
-        line("'Accept' => 'application/json',", 2),
-        auth ? line(`'${authHeader}' => '${authValue}',`, 2) : null,
-        body ? line("'Content-Type' => 'application/json',", 2) : null,
-        line("],", 1),
-        line("]);"),
-        line(""),
-        line("echo $response->getBody();"),
-      ]);
+    {
+        lang: "python",
+        langCode: "python",
+        title: "python",
+        template: ({ method, url, auth, body, authField }) => {
+            const authHeader = url.includes("wdim.moralis.io") ? "Authorization" : authField;
+            const authValue = url.includes("wdim.moralis.io") ? `Bearer ${auth}` : auth;
+            return buildTemplate([
+                line("# Dependencies to install:"),
+                line("# $ python -m pip install requests"),
+                line(""),
+                line("import requests"),
+                line(""),
+                line(`url = "${url}"`),
+                line(""),
+                body ? line(`payload = ${stringifyJSON(body, true)}`) : null,
+                line("headers = {"),
+                line(`"Accept": "application/json"${auth || body ? "," : ""}`, 1),
+                body ? line(`"Content-Type": "application/json"${auth ? "," : ""}`, 1) : null,
+                auth ? line(`"${authHeader}": "${authValue}"`, 1) : null,
+                line(`}`),
+                line(""),
+                line(
+                    `response = requests.request("${method}", url, ${
+                        body ? "json=payload, " : ""
+                    }headers=headers)`
+                ),
+                line(""),
+                line("print(response.text)"),
+            ]);
+        },
     },
-  },
+    {
+        lang: "go",
+        langCode: "go",
+        title: "go",
+        template: ({ method, url, auth, body, authField }) => {
+            const authHeader = url.includes("wdim.moralis.io") ? "Authorization" : authField;
+            const authValue = url.includes("wdim.moralis.io") ? `Bearer ${auth}` : auth;
+            return buildTemplate([
+                line("package main"),
+                line(""),
+                line("import ("),
+                line('"fmt"', 1),
+                body ? line('"strings"', 1) : null,
+                line('"net/http"', 1),
+                line('"io/ioutil"', 1),
+                line(")"),
+                line(""),
+                line("func main() {"),
+                line(""),
+                line(`url := "${url}"`, 1),
+                line(""),
+                body
+                    ? line(
+                          `payload := strings.NewReader("${escapeChar(stringifyJSON(body), '"')}")`,
+                          1
+                      )
+                    : null,
+                body ? line("") : null,
+                line(`req, _ := http.NewRequest("${method}", url, payload)`, 1),
+                line(""),
+                line('req.Header.Add("Accept", "application/json")', 1),
+                body ? line('req.Header.Add("Content-Type", "application/json")', 1) : null,
+                auth ? line(`req.Header.Add("${authHeader}", "${authValue}")`, 1) : null,
+                line(""),
+                line("res, _ := http.DefaultClient.Do(req)", 1),
+                line(""),
+                line("defer res.Body.Close()", 1),
+                line("body, _ := ioutil.ReadAll(res.Body)", 1),
+                line(""),
+                line("fmt.Println(res)", 1),
+                line("fmt.Println(string(body))", 1),
+                line(""),
+                line("}"),
+            ]);
+        },
+    },
+    {
+        lang: "php",
+        langCode: "php",
+        title: "php",
+        template: ({ method, url, auth, body, authField }) => {
+            const authHeader = url.includes("wdim.moralis.io") ? "Authorization" : authField;
+            const authValue = url.includes("wdim.moralis.io") ? `Bearer ${auth}` : auth;
+            return buildTemplate([
+                line("<?php"),
+                line("// Dependencies to install:"),
+                line("// $ composer require guzzlehttp/guzzle"),
+                line(""),
+                line("require_once('vendor/autoload.php');"),
+                line(""),
+                line("$client = new \\GuzzleHttp\\Client();"),
+                line(""),
+                line(`$response = $client->request('${method}', '${url}', [`),
+                body ? line(`'body' => '${escapeChar(stringifyJSON(body), "'")}',`, 1) : null,
+                line("'headers' => [", 1),
+                line("'Accept' => 'application/json',", 2),
+                auth ? line(`'${authHeader}' => '${authValue}',`, 2) : null,
+                body ? line("'Content-Type' => 'application/json',", 2) : null,
+                line("],", 1),
+                line("]);"),
+                line(""),
+                line("echo $response->getBody();"),
+            ]);
+        },
+    },
 ];
 
 // Used to filter out the fields that are empty in the example body JSON
 export const filterOutEmpty = (value: any) => {
-  /**
-   * This is temporary solution for fixing
-   * Auth API adding additional `\` on special
-   * characters. This applies to:
-   * - verifyChallengeEvm
-   * - verifyChallengeSolana
-   */
-  if (value?.message)
-    value = { ...value, message: value.message.replaceAll("\\n", "\n") };
+    /**
+     * This is temporary solution for fixing
+     * Auth API adding additional `\` on special
+     * characters. This applies to:
+     * - verifyChallengeEvm
+     * - verifyChallengeSolana
+     */
+    if (value?.message) value = { ...value, message: value.message.replaceAll("\\n", "\n") };
 
-  if (Array.isArray(value)) {
-    const cleanArray = value
-      .map((item) => filterOutEmpty(item))
-      .filter((item) => item != null);
-    return cleanArray.length === 0 ? undefined : cleanArray;
-  }
+    if (Array.isArray(value)) {
+        const cleanArray = value.map((item) => filterOutEmpty(item)).filter((item) => item != null);
+        return cleanArray.length === 0 ? undefined : cleanArray;
+    }
 
-  if (isPlainObject(value)) {
-    const cleanObject = Object.entries(value)?.reduce((obj, [key, value]) => {
-      const cleanValue = filterOutEmpty(value);
-      return cleanValue == null ? obj : { ...obj, [key]: cleanValue };
-    }, {});
+    if (isPlainObject(value)) {
+        const cleanObject = Object.entries(value)?.reduce((obj, [key, value]) => {
+            const cleanValue = filterOutEmpty(value);
+            return cleanValue == null ? obj : { ...obj, [key]: cleanValue };
+        }, {});
 
-    return Object.keys(cleanObject).length === 0 ? undefined : cleanObject;
-  }
+        return Object.keys(cleanObject).length === 0 ? undefined : cleanObject;
+    }
 
-  return value;
+    return value;
 };
 
 function getChainHexValue(chain) {
-  switch (chain) {
-    case "eth":
-      return "0x1";
-    case "sepolia":
-      return "0xaa36a7";
-    case "holesky":
-      return "0x4268";
-    case "polygon":
-      return "0x89";
-    case "amoy":
-      return "0x13882";
-    case "polygon amoy":
-      return "0x13882";
-    case "bsc":
-      return "0x38";
-    case "bsc testnet":
-      return "0x61";
-    case "avalanche":
-      return "0xa86a";
-    case "fantom":
-      return "0xfa";
-    case "palm":
-      return "0x2a15c308d";
-    case "cronos":
-      return "0x19";
-    case "arbitrum":
-      return "0xa4b1";
-    case "fantom testnet":
-      return "0xfa2";
-    case "avax":
-      return "0xa86a";
-    case "avax testnet":
-      return "0xa869";
-    case "cronos testnet":
-      return "0x152";
-    case "ronin":
-      return "0x7e4";
-    case "arbitrum testnet":
-      return "0x66eed";
-    case "gnosis":
-      return "0x64";
-    case "gnosis testnet":
-      return "0x27d8";
-    case "base":
-      return "0x2105";
-    case "base sepolia":
-      return "0x14a33";
-    case "optimism":
-      return "0xa";
-    case "optimism sepolia":
-      return "0xaa37dc";
-    case "chiliz":
-      return "0x15b38";
-    case "chiliz testnet":
-      return "0x15b32";
-    case "linea":
-      return "0xe705";
-    case "linea sepolia":
-      return "0xe705";
-    case "moonbeam":
-      return "0x504";
-    case "moonriver":
-      return "0x505";
-    case "moonbase":
-      return "0x507";
-    default:
-      return chain;
-  }
+    switch (chain) {
+        case "eth":
+            return "0x1";
+        case "sepolia":
+            return "0xaa36a7";
+        case "holesky":
+            return "0x4268";
+        case "polygon":
+            return "0x89";
+        case "amoy":
+            return "0x13882";
+        case "polygon amoy":
+            return "0x13882";
+        case "bsc":
+            return "0x38";
+        case "bsc testnet":
+            return "0x61";
+        case "avalanche":
+            return "0xa86a";
+        case "fantom":
+            return "0xfa";
+        case "palm":
+            return "0x2a15c308d";
+        case "cronos":
+            return "0x19";
+        case "arbitrum":
+            return "0xa4b1";
+        case "fantom testnet":
+            return "0xfa2";
+        case "avax":
+            return "0xa86a";
+        case "avax testnet":
+            return "0xa869";
+        case "cronos testnet":
+            return "0x152";
+        case "ronin":
+            return "0x7e4";
+        case "arbitrum testnet":
+            return "0x66eed";
+        case "gnosis":
+            return "0x64";
+        case "gnosis testnet":
+            return "0x27d8";
+        case "base":
+            return "0x2105";
+        case "base sepolia":
+            return "0x14a33";
+        case "optimism":
+            return "0xa";
+        case "optimism sepolia":
+            return "0xaa37dc";
+        case "chiliz":
+            return "0x15b38";
+        case "chiliz testnet":
+            return "0x15b32";
+        case "linea":
+            return "0xe705";
+        case "linea sepolia":
+            return "0xe705";
+        case "moonbeam":
+            return "0x504";
+        case "moonriver":
+            return "0x505";
+        case "moonbase":
+            return "0x507";
+        default:
+            return chain;
+    }
 }
 
 export const formatParamsByLang = (params: any, lang: string) => {
-  for (const key of Object.keys(params)) {
-    let formattedKey = "";
-    switch (lang) {
-      case "node":
-        formattedKey = snakeToCamelCase(key);
-        break;
-      case "python":
-        formattedKey = camelToSnakeCase(key)?.replace("-", "_");
-        break;
-      default:
-        break;
+    for (const key of Object.keys(params)) {
+        let formattedKey = "";
+        switch (lang) {
+            case "node":
+                formattedKey = snakeToCamelCase(key);
+                break;
+            case "python":
+                formattedKey = camelToSnakeCase(key)?.replace("-", "_");
+                break;
+            default:
+                break;
+        }
+
+        // If an array, recursively format each child
+        if (Array.isArray(params[key])) {
+            params[key] = params[key]
+                .filter((val) => val !== null && val !== undefined) // filter null or undefined values
+                .map((childParams) => {
+                    return formatParamsByLang(childParams, lang);
+                });
+        }
+
+        if (key !== formattedKey) {
+            params[formattedKey] = params[key];
+            delete params[key];
+            // Handling hex chain values for NodeJS SDK
+        } else if (formattedKey === "chain" && lang === "node") {
+            params.chain = getChainHexValue(params.chain);
+        } else if (formattedKey === "chains" && lang === "node") {
+            params.chains = params.chains.map((chain) => getChainHexValue(chain));
+        }
     }
 
-    // If an array, recursively format each child
-    if (Array.isArray(params[key])) {
-      params[key] = params[key]
-        .filter((val) => val !== null && val !== undefined) // filter null or undefined values
-        .map((childParams) => {
-          return formatParamsByLang(childParams, lang);
-        });
-    }
-
-    if (key !== formattedKey) {
-      params[formattedKey] = params[key];
-      delete params[key];
-      // Handling hex chain values for NodeJS SDK
-    } else if (formattedKey === "chain" && lang === "node") {
-      params.chain = getChainHexValue(params.chain);
-    } else if (formattedKey === "chains" && lang === "node") {
-      params.chains = params.chains.map((chain) => getChainHexValue(chain));
-    }
-  }
-
-  return params;
+    return params;
 };
 
 const customNodeSdkBody = (code: string, body: any) => {
-  // For `requestChallengeEvm` and `requestChallengeSolana`
-  if (code.includes("requestMessage")) {
-    const { chainId, network } = body ?? {};
-    if (chainId) {
-      return {
-        chain: `0x${parseInt(chainId).toString(16)}`,
-        chainId: undefined,
-        networkType: "evm",
-      };
-    } else if (network) {
-      return {
-        solNetwork: network,
-        networkType: "solana",
-      };
+    // For `requestChallengeEvm` and `requestChallengeSolana`
+    if (code.includes("requestMessage")) {
+        const { chainId, network } = body ?? {};
+        if (chainId) {
+            return {
+                chain: `0x${parseInt(chainId).toString(16)}`,
+                chainId: undefined,
+                networkType: "evm",
+            };
+        } else if (network) {
+            return {
+                solNetwork: network,
+                networkType: "solana",
+            };
+        }
     }
-  }
 };
 
 function removeEmpty(jsonData) {
-  for (const key in jsonData) {
-    if (typeof jsonData[key] === "object" && jsonData[key] !== null) {
-      // if the property is an object
-      jsonData[key] = removeEmpty(jsonData[key]); // recursively repeat process for sub-object
-      if (Object.keys(jsonData[key]).length === 0) {
-        // if the object has no more properties (i.e., is empty)
-        delete jsonData[key]; // delete the object
-      }
-    } else if (Array.isArray(jsonData[key]) && jsonData[key].length === 0) {
-      // if the property is an empty array
-      delete jsonData[key]; // delete the array
+    for (const key in jsonData) {
+        if (typeof jsonData[key] === "object" && jsonData[key] !== null) {
+            // if the property is an object
+            jsonData[key] = removeEmpty(jsonData[key]); // recursively repeat process for sub-object
+            if (Object.keys(jsonData[key]).length === 0) {
+                // if the object has no more properties (i.e., is empty)
+                delete jsonData[key]; // delete the object
+            }
+        } else if (Array.isArray(jsonData[key]) && jsonData[key].length === 0) {
+            // if the property is an empty array
+            delete jsonData[key]; // delete the array
+        }
     }
-  }
-  return jsonData;
+    return jsonData;
 }
 
 /**
@@ -426,188 +379,170 @@ function removeEmpty(jsonData) {
  * @param auth
  * @returns
  */
-export const injectParamsToCode = (
-  code: string,
-  lang: string,
-  params: any,
-  auth: string,
-) => {
-  const { query = {}, path = {}, body = {} } = params ?? {};
-  const fixedBody = bodyFixer(code, body);
-  switch (lang) {
-    case "node":
-      if (code.includes("getMultipleTokenPrices")) {
-        return code
-          .replace("{}", "{},{}")
-          .replace(
-            "{}",
-            stringifyJSON(
-              removeEmpty({
-                ...formatParamsByLang({ ...query }, lang),
-                ...formatParamsByLang({ ...path }, lang),
-              }),
-              true
-            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-          )
-          .replace(
-            "{}",
-            stringifyJSON(
-              removeEmpty({
-                ...formatParamsByLang({ ...fixedBody }, lang),
-              }),
-              true
-            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-          )
-          .replace(/YOUR_API_KEY/, auth);
-      } else {
-        return code
-          .replace(
-            "{}",
-            stringifyJSON(
-              removeEmpty({
-                ...formatParamsByLang({ ...query }, lang),
-                ...formatParamsByLang({ ...path }, lang),
-                ...formatParamsByLang({ ...fixedBody }, lang),
-                ...customNodeSdkBody(code, fixedBody),
-              }),
-              true
-            ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
-          )
-          .replace(/YOUR_API_KEY/, auth);
-      }
-    case "python":
-    default:
-      return code
-        .replace(
-          "{}",
-          stringifyJSON(
-            removeEmpty({
-              ...formatParamsByLang({ ...query }, lang),
-              ...formatParamsByLang({ ...path }, lang),
-            }),
-            true
-          )
-        )
-        .replace(
-          "[]",
-          stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true)
-        )
-        .replace("true", "True")
-        .replace("false", "False")
-        .replace(/YOUR_API_KEY/, auth);
-  }
+export const injectParamsToCode = (code: string, lang: string, params: any, auth: string) => {
+    const { query = {}, path = {}, body = {} } = params ?? {};
+    const fixedBody = bodyFixer(code, body);
+    switch (lang) {
+        case "node":
+            if (code.includes("getMultipleTokenPrices")) {
+                // return code
+                //     .replace("{}", "{},{}")
+                //     .replace(
+                //         "{}",
+                //         stringifyJSON(
+                //             removeEmpty({
+                //                 ...formatParamsByLang({ ...query }, lang),
+                //                 ...formatParamsByLang({ ...path }, lang),
+                //             }),
+                //             true
+                //         ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+                //     )
+                //     .replace(
+                //         "{}",
+                //         stringifyJSON(
+                //             removeEmpty({
+                //                 ...formatParamsByLang({ ...fixedBody }, lang),
+                //             }),
+                //             true
+                //         ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+                //     )
+                //     .replace(/YOUR_API_KEY/, auth);
+            } else {
+                return code
+                    .replace(
+                        "{}",
+                        stringifyJSON(
+                            removeEmpty({
+                                ...formatParamsByLang({ ...query }, lang),
+                                ...formatParamsByLang({ ...path }, lang),
+                                ...formatParamsByLang({ ...fixedBody }, lang),
+                                ...customNodeSdkBody(code, fixedBody),
+                            }),
+                            true
+                        ).replace(/\n/g, `\n${" ".repeat(INDENT_LENGTH)}`)
+                    )
+                    .replace(/YOUR_API_KEY/, auth);
+            }
+        case "python":
+        default:
+            return code
+                .replace(
+                    "{}",
+                    stringifyJSON(
+                        removeEmpty({
+                            ...formatParamsByLang({ ...query }, lang),
+                            ...formatParamsByLang({ ...path }, lang),
+                        }),
+                        true
+                    )
+                )
+                .replace("[]", stringifyJSON({ ...formatParamsByLang({ ...body }, lang) }, true))
+                .replace("true", "True")
+                .replace("false", "False")
+                .replace(/YOUR_API_KEY/, auth);
+    }
 };
 
 const objectToQueryParams = (params) => {
-  return (
-    "?" +
-    Object.keys(params)
-      .map((key) => {
-        let value = params[key];
+    return (
+        "?" +
+        Object.keys(params)
+            .map((key) => {
+                let value = params[key];
 
-        // Check if the key is 'apiKey' and replace its value with 'YOUR_API_KEY'
-        if (key === "apiKey") {
-          value = "YOUR_API_KEY";
-        }
+                // Check if the key is 'apiKey' and replace its value with 'YOUR_API_KEY'
+                if (key === "apiKey") {
+                    value = "YOUR_API_KEY";
+                }
 
-        if (value !== null && value !== undefined) {
-          const serializedValue =
-            typeof value === "object"
-              ? JSON.stringify(value)
-              : encodeURIComponent(value);
-          return `${encodeURIComponent(key)}=${serializedValue}`;
-        }
+                if (value !== null && value !== undefined) {
+                    const serializedValue =
+                        typeof value === "object"
+                            ? JSON.stringify(value)
+                            : encodeURIComponent(value);
+                    return `${encodeURIComponent(key)}=${serializedValue}`;
+                }
 
-        return null;
-      })
-      .filter((value) => value !== null && value !== undefined)
-      .join("&")
-  );
+                return null;
+            })
+            .filter((value) => value !== null && value !== undefined)
+            .join("&")
+    );
 };
 
 const ApiExamples = ({
-  method,
-  apiHost,
-  path,
-  codeSamples,
-}: Pick<
-  ApiReferenceProps,
-  "method" | "apiHost" | "path" | "codeSamples"
->) => {
-  const { values } = useFormikContext<FormValues>();
-  const { token } = useContext(ApiReferenceTokenContext);
-  const history = useHistory();
-  const defaultPathParams = useMemo(
-    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
-    []
-  );
-  const formattedValuesForQueryPath = useMemo(() => {
-    const { body, path, query } = values ?? {};
-    return {
-      ...body,
-      ...path,
-      ...query,
-    };
-  }, [values]);
+    method,
+    apiHost,
+    path,
+    codeSamples,
+}: Pick<ApiReferenceProps, "method" | "apiHost" | "path" | "codeSamples">) => {
+    const { values } = useFormikContext<FormValues>();
+    const { token } = useContext(ApiReferenceTokenContext);
+    const history = useHistory();
+    const defaultPathParams = useMemo(
+        () => mapValues(values.path, (_: any, key: number) => `:${key}`),
+        []
+    );
+    const formattedValuesForQueryPath = useMemo(() => {
+        const { body, path, query } = values ?? {};
+        return {
+            ...body,
+            ...path,
+            ...query,
+        };
+    }, [values]);
 
-  useEffect(() => {
-    const newQueryParams = objectToQueryParams(formattedValuesForQueryPath);
-    history.replace({ search: newQueryParams });
-  }, [formattedValuesForQueryPath]);
+    useEffect(() => {
+        const newQueryParams = objectToQueryParams(formattedValuesForQueryPath);
+        history.replace({ search: newQueryParams });
+    }, [formattedValuesForQueryPath]);
 
-  return (
-    <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
-      {tabs.map(({ lang, langCode, template, title }, index) => {
-        const { code = "" } =
-          codeSamples?.find((sample) => sample?.language === lang) ?? {};
-        const auth =
-          apiHost !== "https://site1.moralis-nodes.com" &&
-          (token.length > 0 ? token : "YOUR_API_KEY");
-        return (
-          <TabItem key={index} value={lang} label={title}>
-            <CodeBlock className={`language-${langCode}`}>
-              {code
-                ? buildTemplate([
-                    line(
-                      injectParamsToCode(
-                        code,
-                        lang,
-                        values,
-                        auth,
-                      )
-                    ),
-                  ])
-                : template({
-                    method,
-                    url: [
-                      apiHost,
-                      new Path(path).build(
-                        {
-                          ...defaultPathParams,
-                          ...omitBy(values.path, (value) => value == null),
-                        },
-                        {
-                          urlParamsEncoding: "uriComponent",
-                        }
-                      ),
-                      qs.stringify(values.query || {}, {
-                        addQueryPrefix: true,
-                      }),
-                    ].join(""),
-                    auth: auth,
-                    body:
-                      // temporary fix for runContractFunction
-                      path === "/:address/function"
-                        ? values.body
-                        : filterOutEmpty(values.body),
-                    authField: "X-API-Key",
-                  })}
-            </CodeBlock>
-          </TabItem>
-        );
-      })}
-    </Tabs>
-  );
+    return (
+        <Tabs groupId={STORAGE_EXAMPLE_TAB_KEY}>
+            {tabs.map(({ lang, langCode, template, title }, index) => {
+                const { code = "" } =
+                    codeSamples?.find((sample) => sample?.language === lang) ?? {};
+                const auth =
+                    apiHost !== "https://site1.moralis-nodes.com" &&
+                    (token.length > 0 ? token : "YOUR_API_KEY");
+                return (
+                    <TabItem key={index} value={lang} label={title}>
+                        <CodeBlock className={`language-${langCode}`}>
+                            {code
+                                ? buildTemplate([
+                                      line(injectParamsToCode(code, lang, values, auth)),
+                                  ])
+                                : template({
+                                      method,
+                                      url: [
+                                          apiHost,
+                                          new Path(path).build(
+                                              {
+                                                  ...defaultPathParams,
+                                                  ...omitBy(values.path, (value) => value == null),
+                                              },
+                                              {
+                                                  urlParamsEncoding: "uriComponent",
+                                              }
+                                          ),
+                                          qs.stringify(values.query || {}, {
+                                              addQueryPrefix: true,
+                                          }),
+                                      ].join(""),
+                                      auth: auth,
+                                      body:
+                                          // temporary fix for runContractFunction
+                                          path === "/:address/function"
+                                              ? values.body
+                                              : filterOutEmpty(values.body),
+                                      authField: "X-API-Key",
+                                  })}
+                        </CodeBlock>
+                    </TabItem>
+                );
+            })}
+        </Tabs>
+    );
 };
 
 export default ApiExamples;
