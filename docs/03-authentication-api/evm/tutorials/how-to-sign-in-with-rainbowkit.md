@@ -4,9 +4,6 @@ slug: "../how-to-sign-in-with-rainbowkit"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the task of creating a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
 
-<video controls>
-  <source src="/video/9dcbe29-rainbow.mp4"/>
-</video>
 
 ## Before Starting
 

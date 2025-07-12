@@ -4,9 +4,6 @@ slug: "../how-to-sign-in-with-web3authio"
 description: "This tutorial will teach you how to add secure Web3 Moralis authentication to your NextJS application by walking you through the process of developing a full-stack Web3 authentication solution using the popular NextJS framework."
 ---
 
-<video controls>
-  <source src="/video/2ebfdfe-web3auth.mp4"/>
-</video>
 
 ## What is Web3Auth?
 

@@ -6,9 +6,6 @@ description: "This tutorial will teach you how to authenticate a user to your Fi
 
 This tutorial will teach you how to authenticate a user to your Firebase application with an EVM or Solana wallet. To simplify and speed up this process, we will use the \"Authenticate with Moralis Web3\" extension for Firebase.
 
-<video controls>
-  <source src="/video/4169289-moralis-auth-firebase.mp4"/>
-</video>
 
 Make sure to check out the [Firebase (NodeJS)](/web3-data-api/evm/integrations/firebase-nodejs) tutorial before starting this one, so you understand the basics of creating a project and running the Firebase emulator. 
 
@@ -20,9 +17,6 @@ In this tutorial, we will use the following services:
 
 ## Install Extension
 
-<video controls>
-  <source src="/video/befc63c-firebase-cert.mp4"/>
-</video>
 
 Before we install the Moralis extension, we need to create a service account certificate. This certificate allows the extension to issue [custom tokens](https://firebase.google.com/docs/auth/admin/create-custom-tokens) to Firebase. 
 
