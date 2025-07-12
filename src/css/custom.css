@@ -822,7 +822,6 @@ li.sidebar-developer-tools a.menu__link--active:before {
 
   .navbar__items > .navbar__link--active {
     border-bottom: 2px solid var(--ifm-navbar-link-hover-color);
-    font-weight: 600;
   }
 
   .navbar__items--right > :last-child {
