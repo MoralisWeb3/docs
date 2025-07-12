@@ -1756,3 +1756,25 @@ li.dropdown-divider {
 .table-of-contents__link--active {
   color: var(--ifm-color-primary); /* Keep primary color for active/hover states */
 }
+
+/* Sidebar Section Titles and Separators */
+.sidebar-section-title {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin: 1.5rem 0 0.5rem 0;
+  padding: 0 var(--ifm-menu-link-padding-horizontal);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.sidebar-separator hr {
+  margin: 1rem var(--ifm-menu-link-padding-horizontal);
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.sidebar-separator {
+  margin: 0.75rem 0;
+}
