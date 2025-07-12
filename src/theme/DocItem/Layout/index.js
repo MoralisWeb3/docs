@@ -16,14 +16,14 @@ import { useLocation } from "@docusaurus/router";
 import styles from './styles.module.css';
 
 /**
- * Hook to check if window width is >= 1250px
+ * Hook to check if window width is >= 1550px
  */
 function useIsWideScreen() {
   const [isWideScreen, setIsWideScreen] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsWideScreen(window.innerWidth >= 1250);
+      setIsWideScreen(window.innerWidth >= 1550);
     };
 
     checkScreenSize();
