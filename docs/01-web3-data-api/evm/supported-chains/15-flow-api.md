@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Flow networks:
 
 ## Network Details
 
-| Network          | Chain ID    | EVM Chain             |
-| ---------------- | ----------- | --------------------- |
-| **Flow Mainnet** | 0x2eb (747) | EvmChain.FLOW         |
-| **Flow Testnet** | 0x221 (545) | EvmChain.FLOW_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Flow Mainnet** | 0x2eb (747) |
+| **Flow Testnet** | 0x221 (545) |
 
 ## Supported APIs
 

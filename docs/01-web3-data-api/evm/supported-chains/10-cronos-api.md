@@ -19,9 +19,9 @@ The Web3 Data API is available for the following Cronos network:
 
 ## Network Details
 
-| Network            | Chain ID  | EVM Chain       |
-| ------------------ | --------- | --------------- |
-| **Cronos Mainnet** | 0x19 (25) | EvmChain.CRONOS |
+| Network | Chain ID |
+| ---- | ---- |
+| **Cronos Mainnet** | 0x19 (25) |
 
 ## Supported APIs
 

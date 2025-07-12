@@ -19,9 +19,9 @@ The Web3 Data API is available for the following Avalanche network:
 
 ## Network Details
 
-| Network               | Chain ID       | EVM Chain          |
-| --------------------- | -------------- | ------------------ |
-| **Avalanche Mainnet** | 0xa86a (43114) | EvmChain.AVALANCHE |
+| Network | Chain ID |
+| ---- | ---- |
+| **Avalanche Mainnet** | 0xa86a (43114) |
 
 ## Supported APIs
 

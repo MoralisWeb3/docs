@@ -24,10 +24,10 @@ The Web3 Data API is available for the following Ronin networks:
 
 ## Network Details
 
-| Network                  | Chain ID     | EVM Chain              |
-| ------------------------ | ------------ | ---------------------- |
-| **Ronin Mainnet**        | 0x7e4 (2020) | EvmChain.RONIN         |
-| **Ronin Saigon Testnet** | 0x7e5 (2021) | EvmChain.RONIN_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Ronin Mainnet**        | 0x7e4 (2020) |
+| **Ronin Saigon Testnet** | 0x7e5 (2021) |
 
 ## Supported APIs
 

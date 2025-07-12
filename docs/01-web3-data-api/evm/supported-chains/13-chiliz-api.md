@@ -24,10 +24,10 @@ The Web3 Data API is available for the following Chiliz networks:
 
 ## Network Details
 
-| Network            | Chain ID        | EVM Chain               |
-| ------------------ | --------------- | ----------------------- |
-| **Chiliz Mainnet** | 0x15b38 (88888) | EvmChain.CHILIZ         |
-| **Chiliz Testnet** | 0x15b32 (88882) | EvmChain.CHILIZ_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Chiliz Mainnet** | 0x15b38 (88888) |
+| **Chiliz Testnet** | 0x15b32 (88882) |
 
 ## Supported APIs
 

@@ -4,7 +4,6 @@ const chainData = [
     logo: "/img/content/eth.png",
     type: "Mainnet",
     chainID: "0x1 (1)",
-    evmChain: "EvmChain.ETHEREUM",
     isNew: false,
     hasSpamDetection: true,
     evmApi: {
@@ -44,7 +43,6 @@ const chainData = [
     logo: "/img/content/eth.png",
     type: "Testnet",
     chainID: "0xaa36a7 (11155111)",
-    evmChain: "EvmChain.SEPOLIA",
     isNew: false,
     evmApi: {
       supported: true,
@@ -83,7 +81,6 @@ const chainData = [
     logo: "/img/content/eth.png",
     type: "Testnet",
     chainID: "0x4268 (17000)",
-    evmChain: "EvmChain.HOLESKY",
     isNew: false,
     evmApi: {
       supported: true,
@@ -121,7 +118,6 @@ const chainData = [
     name: "Polygon Mainnet",
     logo: "/img/content/polygon.png",
     chainID: "0x89 (137)",
-    evmChain: "EvmChain.POLYGON",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -161,7 +157,6 @@ const chainData = [
     logo: "/img/content/polygon.png",
     type: "Testnet",
     chainID: "0x13882 (80002)",
-    evmChain: "EvmChain.POLYGON_AMOY",
     isNew: false,
     evmApi: {
       supported: true,
@@ -199,7 +194,6 @@ const chainData = [
     name: "Binance Smart Chain Mainnet",
     logo: "/img/content/bsc.png",
     chainID: "0x38 (56)",
-    evmChain: "EvmChain.BSC",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -238,7 +232,6 @@ const chainData = [
     name: "Binance Smart Chain Testnet",
     logo: "/img/content/bsc.png",
     chainID: "0x61 (97)",
-    evmChain: "EvmChain.BSC_TESTNET",
     isNew: false,
     type: "Testnet",
     evmApi: {
@@ -277,7 +270,6 @@ const chainData = [
     name: "Arbitrum",
     logo: "/img/content/arbitrum.png",
     chainID: "0xa4b1 (42161)",
-    evmChain: "EvmChain.ARBITRUM",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -317,7 +309,6 @@ const chainData = [
     logo: "/img/content/arbitrum.png",
     type: "Testnet",
     chainID: "0x66eee (421614)",
-    evmChain: "EvmChain.ARBITRUM_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -348,7 +339,6 @@ const chainData = [
     name: "Base",
     logo: "/img/content/base.png",
     chainID: "0x2105 (8453)",
-    evmChain: "EvmChain.BASE",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -388,7 +378,6 @@ const chainData = [
     logo: "/img/content/base.png",
     type: "Testnet",
     chainID: "0x14a34 (84532)",
-    evmChain: "EvmChain.BASE_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: true,
@@ -426,7 +415,6 @@ const chainData = [
     name: "Optimism",
     logo: "/img/content/optimism.png",
     chainID: "0xa (10)",
-    evmChain: "EvmChain.OPTIMISM",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -466,7 +454,6 @@ const chainData = [
     logo: "/img/content/optimism.png",
     type: "Testnet",
     chainID: "0xaa37dc (11155420)",
-    evmChain: "EvmChain.OPTIMISM_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -497,7 +484,6 @@ const chainData = [
     name: "Linea",
     logo: "/img/content/linea.png",
     chainID: "0xe708 (59144)",
-    evmChain: "EvmChain.LINEA",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -537,7 +523,6 @@ const chainData = [
     logo: "/img/content/linea.png",
     type: "Testnet",
     chainID: "0xe705 (59141)",
-    evmChain: "EvmChain.LINEA_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: true,
@@ -576,7 +561,6 @@ const chainData = [
     logo: "/img/content/avalanche.png",
     type: "Mainnet",
     chainID: "0xa86a (43114)",
-    evmChain: "EvmChain.AVALANCHE",
     isNew: false,
     evmApi: {
       supported: true,
@@ -615,7 +599,6 @@ const chainData = [
     logo: "/img/content/fantom.png",
     type: "Mainnet",
     chainID: "0xfa (250)",
-    evmChain: "EvmChain.FANTOM",
     isNew: false,
     evmApi: {
       supported: true,
@@ -652,7 +635,6 @@ const chainData = [
     logo: "/img/content/fantom.png",
     type: "Testnet",
     chainID: "0xfa2 (4002)",
-    evmChain: "EvmChain.FANTOM_TESTNET",
     isNew: false,
     evmApi: {
       supported: false,
@@ -681,7 +663,6 @@ const chainData = [
     name: "Cronos Mainnet",
     logo: "/img/content/cronos.png",
     chainID: "0x19 (25)",
-    evmChain: "EvmChain.CRONOS",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -721,7 +702,6 @@ const chainData = [
     name: "Gnosis",
     logo: "/img/content/gnosis.png",
     chainID: "0x64 (100)",
-    evmChain: "EvmChain.GNOSIS",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -762,7 +742,6 @@ const chainData = [
     logo: "/img/content/gnosis.png",
     type: "Testnet",
     chainID: "0x27d8 (10200)",
-    evmChain: "EvmChain.GNOSIS_TESTNET",
     isNew: false,
     evmApi: {
       supported: true,
@@ -801,7 +780,6 @@ const chainData = [
     name: "Chiliz Mainnet",
     logo: "/img/content/chiliz.png",
     chainID: "0x15b38 (88888)",
-    evmChain: "EvmChain.CHILIZ",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -839,7 +817,6 @@ const chainData = [
     logo: "/img/content/chiliz.png",
     type: "Testnet",
     chainID: "0x15b32 (88882)",
-    evmChain: "EvmChain.CHILIZ_TESTNET",
     isNew: false,
     evmApi: {
       supported: true,
@@ -875,7 +852,6 @@ const chainData = [
     name: "Moonbeam",
     logo: "/img/content/moonbeam.png",
     chainID: "0x504 (1284)",
-    evmChain: "EvmChain.MOONBEAM",
     isNew: false,
     type: "Mainnet",
     evmApi: {
@@ -916,7 +892,6 @@ const chainData = [
     logo: "/img/content/moonbeam.png",
     type: "Testnet",
     chainID: "0x505 (1285)",
-    evmChain: "EvmChain.MOONRIVER",
     isNew: false,
     evmApi: {
       supported: true,
@@ -956,7 +931,6 @@ const chainData = [
     logo: "/img/content/moonbeam.png",
     type: "Testnet",
     chainID: "0x507 (1287)",
-    evmChain: "EvmChain.MOONBASE",
     isNew: false,
     evmApi: {
       supported: true,
@@ -996,7 +970,6 @@ const chainData = [
     logo: "/img/content/blast.png",
     type: "Mainnet",
     chainID: "0x13e31 (81457)",
-    evmChain: "EvmChain.BLAST",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1028,7 +1001,6 @@ const chainData = [
     logo: "/img/content/blast.png",
     type: "Testnet",
     chainID: "0xa0c71fd (168587773)",
-    evmChain: "EvmChain.BLAST_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1060,7 +1032,6 @@ const chainData = [
     logo: "/img/content/zksync.png",
     type: "Mainnet",
     chainID: "0x144 (324)",
-    evmChain: "EvmChain.ZKSYNC",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1092,7 +1063,6 @@ const chainData = [
     logo: "/img/content/zksync.png",
     type: "Testnet",
     chainID: "0x12c (300)",
-    evmChain: "EvmChain.ZKSYNC_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1124,7 +1094,6 @@ const chainData = [
     logo: "/img/content/mantle.png",
     type: "Mainnet",
     chainID: "0x1388 (5000)",
-    evmChain: "EvmChain.MANTLE",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1156,7 +1125,6 @@ const chainData = [
     logo: "/img/content/mantle.png",
     type: "Testnet",
     chainID: "0x138b (5003)",
-    evmChain: "EvmChain.MANTLE_SEPOLIA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1188,7 +1156,6 @@ const chainData = [
     logo: "/img/content/opbnb.png",
     type: "Mainnet",
     chainID: "0xcc (204)",
-    evmChain: "EvmChain.opBNB",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1220,7 +1187,6 @@ const chainData = [
     logo: "/img/content/polygon-zkevm.png",
     type: "Mainnet",
     chainID: "0x44d (1101)",
-    evmChain: "EvmChain.POLYGON_ZKEVM",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1252,7 +1218,6 @@ const chainData = [
     logo: "/img/content/polygon-zkevm.png",
     type: "Testnet",
     chainID: "0x98a (2442)",
-    evmChain: "EvmChain.POLYGON_ZKEVM_CARDONA",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1284,7 +1249,6 @@ const chainData = [
     logo: "/img/content/zetachain.png",
     type: "Mainnet",
     chainID: "0x1b58 (7000)",
-    evmChain: "EvmChain.ZETACHAIN",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1316,7 +1280,6 @@ const chainData = [
     logo: "/img/content/zetachain.png",
     type: "Testnet",
     chainID: "0x1b59 (7001)",
-    evmChain: "EvmChain.ZETACHAIN_TESTNET",
     isNew: false,
     evmApi: {
       supported: false,
@@ -1348,7 +1311,6 @@ const chainData = [
     logo: "/img/content/flow.png",
     type: "Mainnet",
     chainID: "0x2eb (747)",
-    evmChain: "EvmChain.FLOW",
     isNew: true,
     evmApi: {
       supported: true,
@@ -1387,7 +1349,6 @@ const chainData = [
     logo: "/img/content/flow.png",
     type: "Testnet",
     chainID: "0x221 (545)",
-    evmChain: "EvmChain.FLOW_TESTNET",
     isNew: true,
     evmApi: {
       supported: true,
@@ -1425,7 +1386,6 @@ const chainData = [
     name: "Ronin",
     logo: "/img/content/ronin.png",
     chainID: "0x7e4 (2020)",
-    evmChain: "EvmChain.RONIN",
     isNew: true,
     type: "Mainnet",
     evmApi: {
@@ -1464,7 +1424,6 @@ const chainData = [
     name: "Ronin Saigon Testnet",
     logo: "/img/content/ronin.png",
     chainID: "0x7e5 (2021)",
-    evmChain: "EvmChain.RONIN_TESTNET",
     isNew: true,
     type: "Testnet",
     evmApi: {
@@ -1503,7 +1462,6 @@ const chainData = [
     name: "Lisk",
     logo: "/img/content/lisk.png",
     chainID: "0x46f (1135)",
-    evmChain: "EvmChain.LISK",
     isNew: true,
     type: "Mainnet",
     evmApi: {
@@ -1542,7 +1500,6 @@ const chainData = [
     name: "Lisk Sepolia Testnet",
     logo: "/img/content/lisk.png",
     chainID: "0x106a (4202)",
-    evmChain: "EvmChain.LISK_SEPOLIA",
     isNew: true,
     type: "Testnet",
     evmApi: {
@@ -1582,7 +1539,6 @@ const chainData = [
     logo: "/img/content/pulsechain.png",
     type: "Mainnet",
     chainID: "0x171 (369)",
-    evmChain: "EvmChain.PULSECHAIN",
     isNew: true,
     evmApi: {
       supported: true,

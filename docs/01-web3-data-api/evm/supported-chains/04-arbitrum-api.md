@@ -19,9 +19,9 @@ The Web3 Data API is available for the following Arbitrum network:
 
 ## Network Details
 
-| Network              | Chain ID       | EVM Chain         |
-| -------------------- | -------------- | ----------------- |
-| **Arbitrum Mainnet** | 0xa4b1 (42161) | EvmChain.ARBITRUM |
+| Network | Chain ID |
+| ---- | ---- |
+| **Arbitrum Mainnet** | 0xa4b1 (42161) |
 
 ## Supported APIs
 

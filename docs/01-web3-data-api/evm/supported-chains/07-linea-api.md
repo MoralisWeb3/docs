@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Linea networks:
 
 ## Network Details
 
-| Network                   | Chain ID       | EVM Chain              |
-| ------------------------- | -------------- | ---------------------- |
-| **Linea Mainnet**         | 0xe708 (59144) | EvmChain.LINEA         |
-| **Linea Sepolia Testnet** | 0xe705 (59141) | EvmChain.LINEA_SEPOLIA |
+| Network | Chain ID |
+| ---- | ---- |
+| **Linea Mainnet**         | 0xe708 (59144) |
+| **Linea Sepolia Testnet** | 0xe705 (59141) |
 
 ## Supported APIs
 

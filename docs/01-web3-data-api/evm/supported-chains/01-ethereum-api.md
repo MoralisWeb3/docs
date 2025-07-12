@@ -21,11 +21,11 @@ The Web3 Data API is available for the following networks on Ethereum:
 
 ## Network Details
 
-| Network              | Chain ID            | EVM Chain         |
-| -------------------- | ------------------- | ----------------- |
-| **Ethereum Mainnet** | 0x1 (1)             | EvmChain.ETHEREUM |
-| **Ethereum Sepolia** | 0xaa36a7 (11155111) | EvmChain.SEPOLIA  |
-| **Ethereum Holesky** | 0x4268 (17000)      | EvmChain.HOLESKY  |
+| Network | Chain ID |
+| ---- | ---- |
+| **Ethereum Mainnet** | 0x1 (1)             |
+| **Ethereum Sepolia** | 0xaa36a7 (11155111) |
+| **Ethereum Holesky** | 0x4268 (17000)      |
 
 ## Supported APIs
 

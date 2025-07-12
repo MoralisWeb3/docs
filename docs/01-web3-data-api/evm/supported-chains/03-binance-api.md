@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Binance Smart Chain networks:
 
 ## Network Details
 
-| Network                         | Chain ID  | EVM Chain            |
-| ------------------------------- | --------- | -------------------- |
-| **Binance Smart Chain Mainnet** | 0x38 (56) | EvmChain.BSC         |
-| **Binance Smart Chain Testnet** | 0x61 (97) | EvmChain.BSC_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Binance Smart Chain Mainnet** | 0x38 (56) |
+| **Binance Smart Chain Testnet** | 0x61 (97) |
 
 ## Supported APIs
 

@@ -19,9 +19,9 @@ The Web3 Data API is available for the following Optimism network:
 
 ## Network Details
 
-| Network              | Chain ID | EVM Chain         |
-| -------------------- | -------- | ----------------- |
-| **Optimism Mainnet** | 0xa (10) | EvmChain.OPTIMISM |
+| Network | Chain ID |
+| ---- | ---- |
+| **Optimism Mainnet** | 0xa (10) |
 
 ## Supported APIs
 

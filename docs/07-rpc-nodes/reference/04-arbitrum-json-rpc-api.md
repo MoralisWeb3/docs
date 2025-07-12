@@ -21,11 +21,11 @@ The Arbitrum RPC API is available for the following networks:
 
 ## Network Details
 
-| Network              | Chain ID         | EVM Chain                 | RPC URLs                                                                                               |
+| Network              | Chain ID                          | RPC URLs                                                                                               |
 | -------------------- | ---------------- | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **Arbitrum Mainnet** | 0xa4b1 (42161)   | EvmChain.ARBITRUM         | [https://site1.moralis-nodes.com/arbitrum/](https://site1.moralis-nodes.com/arbitrum/)                 |
+| **Arbitrum Mainnet** | 0xa4b1 (42161)   | [https://site1.moralis-nodes.com/arbitrum/](https://site1.moralis-nodes.com/arbitrum/)                 |
 |                      |                  |                           | [https://site2.moralis-nodes.com/arbitrum/](https://site2.moralis-nodes.com/arbitrum/)                 |
-| **Arbitrum Sepolia** | 0x66eee (421614) | EvmChain.ARBITRUM_SEPOLIA | [https://site1.moralis-nodes.com/arbitrum-sepolia/](https://site1.moralis-nodes.com/arbitrum-sepolia/) |
+| **Arbitrum Sepolia** | 0x66eee (421614) | [https://site1.moralis-nodes.com/arbitrum-sepolia/](https://site1.moralis-nodes.com/arbitrum-sepolia/) |
 |                      |                  |                           | [https://site2.moralis-nodes.com/arbitrum-sepolia/](https://site2.moralis-nodes.com/arbitrum-sepolia/) |
 
 ## Supported RPC Methods

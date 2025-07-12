@@ -115,8 +115,6 @@ const TableCell = ({ header, rowData }) => {
   } else if (["evmApi", "streamsApi", "rpcNodes", "authApi"].includes(header)) {
     const { supported, reason } = rowData[header];
     return supported ? <SupportedIcon /> : <UnsupportedIcon reason={reason} />;
-  } else if (header === "evmChain") {
-    return <code>{rowData[header]}</code>;
   }
 
   // If the data is not nested from chainData, and no extra styling is needed, the cell data will be output here

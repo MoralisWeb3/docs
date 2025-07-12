@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Polygon networks:
 
 ## Network Details
 
-| Network             | Chain ID        | EVM Chain             |
-| ------------------- | --------------- | --------------------- |
-| **Polygon Mainnet** | 0x89 (137)      | EvmChain.POLYGON      |
-| **Polygon Amoy**    | 0x13882 (80002) | EvmChain.POLYGON_AMOY |
+| Network | Chain ID |
+| ---- | ---- |
+| **Polygon Mainnet** | 0x89 (137)      |
+| **Polygon Amoy**    | 0x13882 (80002) |
 
 ## Supported APIs
 

@@ -24,10 +24,10 @@ The Web3 Data API is available for the following Lisk networks:
 
 ## Network Details
 
-| Network                  | Chain ID      | EVM Chain             |
-| ------------------------ | ------------- | --------------------- |
-| **Lisk Mainnet**         | 0x46f (1135)  | EvmChain.LISK         |
-| **Lisk Sepolia Testnet** | 0x106a (4202) | EvmChain.LISK_SEPOLIA |
+| Network | Chain ID |
+| ---- | ---- |
+| **Lisk Mainnet**         | 0x46f (1135)  |
+| **Lisk Sepolia Testnet** | 0x106a (4202) |
 
 ## Supported APIs
 

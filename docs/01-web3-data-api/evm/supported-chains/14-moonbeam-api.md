@@ -21,11 +21,11 @@ The Web3 Data API is available for the following Moonbeam networks:
 
 ## Network Details
 
-| Network               | Chain ID     | EVM Chain          |
-| --------------------- | ------------ | ------------------ |
-| **Moonbeam Mainnet**  | 0x504 (1284) | EvmChain.MOONBEAM  |
-| **Moonriver Testnet** | 0x505 (1285) | EvmChain.MOONRIVER |
-| **Moonbase Testnet**  | 0x507 (1287) | EvmChain.MOONBASE  |
+| Network | Chain ID |
+| ---- | ---- |
+| **Moonbeam Mainnet**  | 0x504 (1284) |
+| **Moonriver Testnet** | 0x505 (1285) |
+| **Moonbase Testnet**  | 0x507 (1287) |
 
 ## Supported APIs
 

@@ -19,11 +19,11 @@ The Base RPC API is available for the following networks:
 
 ## Network Details
 
-| Network          | Chain ID        | EVM Chain             | RPC URLs                                                                                       |
+| Network          | Chain ID                     | RPC URLs                                                                                       |
 | ---------------- | --------------- | --------------------- | ---------------------------------------------------------------------------------------------- |
-| **Base Mainnet** | 0x2105 (8453)   | EvmChain.BASE         | [https://site1.moralis-nodes.com/base/](https://site1.moralis-nodes.com/base/)                 |
+| **Base Mainnet** | 0x2105 (8453)   | [https://site1.moralis-nodes.com/base/](https://site1.moralis-nodes.com/base/)                 |
 |                  |                 |                       | [https://site2.moralis-nodes.com/base/](https://site2.moralis-nodes.com/base/)                 |
-| **Base Sepolia** | 0x14a34 (84532) | EvmChain.BASE_SEPOLIA | [https://site1.moralis-nodes.com/base-sepolia/](https://site1.moralis-nodes.com/base-sepolia/) |
+| **Base Sepolia** | 0x14a34 (84532) | [https://site1.moralis-nodes.com/base-sepolia/](https://site1.moralis-nodes.com/base-sepolia/) |
 |                  |                 |                       | [https://site2.moralis-nodes.com/base-sepolia/](https://site2.moralis-nodes.com/base-sepolia/) |
 
 ## Supported RPC Methods

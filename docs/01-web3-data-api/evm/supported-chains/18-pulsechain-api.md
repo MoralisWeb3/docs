@@ -19,9 +19,9 @@ The Web3 Data API is available for the following Pulsechain networks:
 
 ## Network Details
 
-| Network                | Chain ID    | EVM Chain           |
-| ---------------------- | ----------- | ------------------- |
-| **Pulsechain Mainnet** | 0x171 (369) | EvmChain.Pulsechain |
+| Network | Chain ID |
+| ---- | ---- |
+| **Pulsechain Mainnet** | 0x171 (369) |
 
 ## Supported APIs
 

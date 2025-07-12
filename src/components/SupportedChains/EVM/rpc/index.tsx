@@ -7,7 +7,6 @@ const headers = [
   { key: "name", label: "Name" },
   { key: "type", label: "Type" },
   { key: "chainID", label: "Chain ID" },
-  { key: "evmChain", label: "EvmChain" },
   { key: "urls", label: "URLs" },
 ];
 

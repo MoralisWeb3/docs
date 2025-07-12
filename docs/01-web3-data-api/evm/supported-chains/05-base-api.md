@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Base networks:
 
 ## Network Details
 
-| Network                  | Chain ID        | EVM Chain             |
-| ------------------------ | --------------- | --------------------- |
-| **Base Mainnet**         | 0x2105 (8453)   | EvmChain.BASE         |
-| **Base Sepolia Testnet** | 0x14a34 (84532) | EvmChain.BASE_SEPOLIA |
+| Network | Chain ID |
+| ---- | ---- |
+| **Base Mainnet**         | 0x2105 (8453)   |
+| **Base Sepolia Testnet** | 0x14a34 (84532) |
 
 ## Supported APIs
 

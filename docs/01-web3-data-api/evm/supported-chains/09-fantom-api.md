@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Fantom networks:
 
 ## Network Details
 
-| Network            | Chain ID     | EVM Chain               |
-| ------------------ | ------------ | ----------------------- |
-| **Fantom Mainnet** | 0xfa (250)   | EvmChain.FANTOM         |
-| **Fantom Testnet** | 0xfa2 (4002) | EvmChain.FANTOM_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Fantom Mainnet** | 0xfa (250)   |
+| **Fantom Testnet** | 0xfa2 (4002) |
 
 ## Supported APIs
 
