@@ -239,8 +239,7 @@ async function sleep(millis) {
 async function generateEmbeddings() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    false // OpenAI removed
+    !process.env.SUPABASE_SERVICE_ROLE_KEY
   ) {
     return console.log(
       "Environment variables NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required: skipping embeddings generation"
@@ -318,12 +317,10 @@ async function generateEmbeddings() {
       );
       for (const section of sections) {
         await sleep(1500);
-        // OpenAI recommends replacing newlines with spaces for best results (specific to embeddings)
         const input = section.replace(/\n/g, " ");
 
         try {
-          // OpenAI code removed - embedding generation disabled
-          console.log("Skipping embedding generation - OpenAI removed");
+          console.log("Skipping embedding generation - disabled");
           continue;
 
           if (insertPageSectionError) {
