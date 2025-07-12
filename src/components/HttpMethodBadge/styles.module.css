@@ -1,0 +1,43 @@
+.httpMethodBadge {
+  align-items: center;
+  border-radius: 6px;
+  border: 0px solid;
+  box-sizing: border-box;
+  column-gap: 4px;
+  display: flex;
+  font-family: var(--ifm-font-family-base);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* GET - Green */
+.get {
+  background-color: rgba(34, 197, 94, 0.227);
+  color: rgb(34, 197, 94);
+}
+
+/* POST - Blue */
+.post {
+  background-color: rgba(0, 119, 255, 0.227);
+  color: rgb(112, 184, 255);
+}
+
+/* PUT - Orange */
+.put {
+  background-color: rgba(249, 115, 22, 0.227);
+  color: rgb(249, 115, 22);
+}
+
+/* PATCH - Yellow */
+.patch {
+  background-color: rgba(234, 179, 8, 0.227);
+  color: rgb(234, 179, 8);
+}
+
+/* DELETE - Red */
+.delete {
+  background-color: rgba(239, 68, 68, 0.227);
+  color: rgb(239, 68, 68);
+}

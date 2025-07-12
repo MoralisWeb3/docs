@@ -114,16 +114,33 @@ const validateField = (param: ApiParam) => (value: string) => {
 };
 
 const ApiParamField = ({ prefix, param }: ApiParamFieldProps) => {
-  const Component = apiParamComponents[param.type];
+  // Default to "string" type if type is missing
+  const paramType = param.type || "string";
+  const Component = apiParamComponents[paramType];
+  
+  if (!Component) {
+    console.error(`Missing component for param type: ${paramType}`, param);
+    return (
+      <div className={styles.field}>
+        <div className={styles.fieldError}>
+          Error: Unknown field type "{paramType}" for field "{param.name}"
+        </div>
+      </div>
+    );
+  }
+  
+  // Use the param with the defaulted type
+  const paramWithType = { ...param, type: paramType };
+  
   const field = (
-    <Field name={buildParamPath(param, prefix)} validate={validateField(param)}>
-      {(props: FieldProps) => <Component {...props} param={param} />}
+    <Field name={buildParamPath(paramWithType, prefix)} validate={validateField(paramWithType)}>
+      {(props: FieldProps) => <Component {...props} param={paramWithType} />}
     </Field>
   );
 
   return (
     <div className={styles.field}>
-      {PRIMITIVE_TYPES.includes(param.type) ? (
+      {PRIMITIVE_TYPES.includes(paramType) ? (
         <>
           <ApiParamInfo param={param} />
 

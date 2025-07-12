@@ -17,6 +17,7 @@ import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import PostBodyField from "./PostBodyField";
 import { Field } from "formik";
+import HttpMethodBadge from "../HttpMethodBadge";
 
 export interface CodeSample {
     language: "node" | "csharp" | "python";
@@ -290,7 +291,7 @@ const ApiReference = ({
                     <div className="row row--no-gutters">
                         <div className="col col--5">
                             <div className={styles.url}>
-                                <span className={styles.method}>{method}</span>
+                                <HttpMethodBadge method={method} />
                                 {hostUrl}
                                 {path}
                             </div>

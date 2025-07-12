@@ -55,6 +55,9 @@
 .url {
   padding-top: 0.1rem;
   font-size: 13px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .method {
