@@ -16,6 +16,7 @@
   max-width: none;
   padding-left: 1rem;
   padding-right: 1rem;
+  justify-content: center;
 }
 
 @media (min-width: 997px) {
@@ -26,8 +27,13 @@
   
   .docItemCol {
     flex: 1;
-    max-width: none !important;
+    max-width: 800px; /* Center content when no TOC */
     padding-right: 2rem;
+  }
+  
+  /* When TOC is present, allow full width */
+  .docLayoutWrapper:has(.tocColumn) .docItemCol {
+    max-width: none !important;
   }
 }
 

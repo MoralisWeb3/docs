@@ -9,6 +9,15 @@
   max-width: none;
 }
 
+.docMainContainerNoToc {
+  /* Additional styles when no TOC is present */
+}
+
+.docItemWrapperCentered {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 @media (min-width: 997px) {
   .docMainContainer {
     flex-grow: 1;
@@ -21,5 +30,9 @@
 
   .docItemWrapperEnhanced {
     max-width: none !important;
+  }
+  
+  .docItemWrapperCentered {
+    max-width: 1200px !important;
   }
 }

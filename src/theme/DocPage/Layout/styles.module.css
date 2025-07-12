@@ -8,3 +8,24 @@
   display: flex;
   flex: 1 0 auto;
 }
+
+/* Section-specific styling classes */
+.docPage.get-started {
+  /* Specific styles for Get Started section if needed */
+}
+
+.docPage.web3-data-api {
+  /* Specific styles for Web3 Data API sections if needed */
+}
+
+.docPage.streams-api {
+  /* Specific styles for Streams API section if needed */
+}
+
+.docPage.rpc-nodes {
+  /* Specific styles for RPC Nodes section if needed */
+}
+
+.docPage.cortex {
+  /* Specific styles for Moralis Cortex section if needed */
+}
