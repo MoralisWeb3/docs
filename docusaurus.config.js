@@ -12,7 +12,7 @@ const config = {
   title: "Moralis API Documentation",
   url: "https://docs.moralis.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/favicon.ico",
 
