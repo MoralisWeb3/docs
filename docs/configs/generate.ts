@@ -7,7 +7,12 @@ const {
 } = require("./generate.config.json");
 const camelToSnakeCase = require("../../utils/camelToSnakeCase.mts");
 
-const apiReferenceConfigFile = "./docs/configs/api-reference/configs-test.json";
+const apiReferenceConfigFile = "./docs/configs/api-reference/configs.json";
+
+// Command line arguments for selective updates
+const args = process.argv.slice(2);
+const specificApiKeys = args.filter(arg => arg.startsWith('--api=')).map(arg => arg.split('=')[1]);
+const forceFullReplace = args.includes('--force-replace');
 
 let swaggerSchemas;
 const swaggerOAS = {};
@@ -263,10 +268,40 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 };
 
 /**
+ * @name loadExistingConfigs
+ * @description Load existing configs.json file if it exists
+ * @returns Existing config object or empty object
+ */
+const loadExistingConfigs = () => {
+  try {
+    if (fs.existsSync(apiReferenceConfigFile)) {
+      const fileContent = fs.readFileSync(apiReferenceConfigFile, 'utf8');
+      return JSON.parse(fileContent);
+    }
+  } catch (error) {
+    console.warn('Could not load existing configs.json, starting fresh:', error.message);
+  }
+  return {};
+};
+
+/**
  * @name generateConfigs
  * @description
  * Generate JSON config for API Reference & write it to JSON file.
- * This already works well for:
+ * 
+ * NEW FEATURES:
+ * - Incremental updates: Only updates specified API groups, preserves existing data
+ * - Selective processing: Use --api=<api-key> to update specific APIs only
+ * - Force replace: Use --force-replace to completely rebuild the file
+ * 
+ * USAGE EXAMPLES:
+ * node docs/configs/generate.ts                    // Update all APIs incrementally
+ * node docs/configs/generate.ts --api=evm-docs     // Update only EVM API
+ * node docs/configs/generate.ts --api=streams      // Update only Streams API
+ * node docs/configs/generate.ts --api=evm-docs --api=solana  // Update multiple specific APIs
+ * node docs/configs/generate.ts --force-replace    // Complete rebuild (old behavior)
+ * 
+ * This works well for:
  * - NFT API
  * - Token API
  * - Balance API
@@ -289,64 +324,105 @@ const formatSwaggerJSON = (swaggerJSON, apiHost) => {
 const generateConfigs = async () => {
   try {
     if (isGenerateSchemaOn) {
-      for (const key in swaggerPaths) {
-        // if (["web3"].includes(key)) {
-        const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
-        const swaggerJSON = await swaggerRes?.json();
-        let swaggerContent;
+      // Load existing configs to preserve existing data (unless force replace is specified)
+      const existingConfigs = forceFullReplace ? {} : loadExistingConfigs();
+      
+      // Determine which APIs to process
+      const apisToProcess = specificApiKeys.length > 0 
+        ? specificApiKeys.filter(key => swaggerPaths[key])
+        : Object.keys(swaggerPaths);
+      
+      if (specificApiKeys.length > 0) {
+        console.log(`Processing specific APIs: ${apisToProcess.join(', ')}`);
+      } else {
+        console.log(`Processing all APIs: ${apisToProcess.join(', ')}`);
+      }
+      
+      for (const key of apisToProcess) {
+        console.log(`Fetching and processing API: ${key}`);
+        try {
+          const swaggerRes = await fetch(swaggerPaths[key].swaggerPath);
+          const swaggerJSON = await swaggerRes?.json();
+          
+          if (!swaggerJSON || !swaggerJSON.paths) {
+            console.error(`Invalid swagger JSON for API: ${key}`);
+            continue;
+          }
 
-        // Store Swagger Schema for global usage
-        swaggerSchemas = swaggerJSON.components.schemas;
+          // Store Swagger Schema for global usage
+          swaggerSchemas = swaggerJSON.components.schemas;
 
-        const apiHost = swaggerJSON.servers?.[0]?.url;
-
-        // If statement is temporary, for testing only
-        swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
-        swaggerOAS[key] = swaggerContent;
-        // }
+          const apiHost = swaggerJSON.servers?.[0]?.url;
+          const swaggerContent = formatSwaggerJSON(swaggerJSON, apiHost);
+          
+          // Compare with existing to show what changed
+          const existingMethodCount = existingConfigs[key] ? Object.keys(existingConfigs[key]).length : 0;
+          const newMethodCount = Object.keys(swaggerContent).length;
+          
+          // Update only the specific API group, preserving others
+          existingConfigs[key] = swaggerContent;
+          
+          console.log(`Updated API: ${key}`);
+          console.log(`  - Previous methods: ${existingMethodCount}`);
+          console.log(`  - New methods: ${newMethodCount}`);
+          console.log(`  - Change: ${newMethodCount > existingMethodCount ? '+' : ''}${newMethodCount - existingMethodCount}`);
+          
+        } catch (error) {
+          console.error(`Failed to process API: ${key}`, error.message);
+        }
       }
 
-      // Write API reference Config
+      // Write the combined result with pretty formatting
       await fs.writeFile(
         apiReferenceConfigFile,
-        JSON.stringify(swaggerOAS),
+        JSON.stringify(existingConfigs, null, 2),
         "utf8",
-        () => {}
+        () => {
+          const mode = forceFullReplace ? 'full replacement' : 'incremental update';
+          const apiCount = apisToProcess.length;
+          console.log(`Successfully completed ${mode} for ${apiCount} API(s) in configs.json`);
+        }
       );
     }
 
     if (isGenerateReferenceOn) {
-      for (const key in swaggerOAS) {
-        // if (["web3"].includes(key)) {
-        for (const index in Object.keys(swaggerOAS[key])) {
-          const functionName = Object.keys(swaggerOAS[key])[index];
-          const snakeCaseFunctionName = camelToSnakeCase(functionName);
+      // Load the final configs to use for reference generation
+      const finalConfigs = loadExistingConfigs();
+      
+      for (const key in finalConfigs) {
+        // Only generate for APIs that are in our swagger paths
+        if (swaggerPaths[key]) {
+          console.log(`Generating MDX files for API: ${key}`);
+          
+          for (const index in Object.keys(finalConfigs[key])) {
+            const functionName = Object.keys(finalConfigs[key])[index];
+            const snakeCaseFunctionName = camelToSnakeCase(functionName);
 
-          // Write MDX Files for API Reference pages
-          await fs.writeFile(
-            `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
-            `---
+            // Write MDX Files for API Reference pages
+            await fs.writeFile(
+              `${swaggerPaths[key].filePath}/${snakeCaseFunctionName}.mdx`,
+              `---
 sidebar_position: ${index}
-sidebar_label: ${swaggerOAS[key][functionName]?.summary}
+sidebar_label: ${finalConfigs[key][functionName]?.summary}
 slug: /${swaggerPaths[key].category}/reference/${functionName.toLowerCase()}
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
 import config from "${swaggerPaths[key].importPath}";
 
-# ${swaggerOAS[key][functionName]?.summary}
+# ${finalConfigs[key][functionName]?.summary}
 
 <ApiReference {...config.${key}.${functionName}} />`,
-            { flag: "w" },
-            (err) => {
-              if (err) {
-                return console.log(err);
+              { flag: "w" },
+              (err) => {
+                if (err) {
+                  return console.log(err);
+                }
+                console.log(`Generated MDX file for ${functionName}`);
               }
-              console.log("The file was saved!");
-            }
-          );
+            );
+          }
         }
-        // }
       }
     }
   } catch (e) {
