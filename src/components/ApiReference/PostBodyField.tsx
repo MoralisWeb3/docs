@@ -108,7 +108,8 @@ const PostBodyField = ({ field, form, param }: PostBodyFieldProps) => {
     }
   };
 
-  const inputClassName = `${styles.input} ${styles.textarea}`;
+  const hasError = form.touched[field.name] && form.errors[field.name];
+  const inputClassName = `${styles.jsonCodeEditor} ${hasError ? styles.invalid : ''}`;
 
   return (
     <div className={styles.groupContainer}>
@@ -124,14 +125,10 @@ const PostBodyField = ({ field, form, param }: PostBodyFieldProps) => {
         value={textAreaValue}
         onChange={handleInputChange}
         onBlur={handleBlur}
-        placeholder='Enter request body as JSON object, e.g., {"key": "value"}'
-        minRows={6}
-        style={{ 
-          fontFamily: 'Monaco, Menlo, "Ubuntu Mono", monospace',
-          fontSize: '14px'
-        }}
+        placeholder='{\n  "key": "value",\n  "anotherKey": "anotherValue"\n}'
+        minRows={8}
       />
-      {form.touched[field.name] && form.errors[field.name] && (
+      {hasError && (
         <div className={styles.errorText}>{form.errors[field.name]}</div>
       )}
     </div>
