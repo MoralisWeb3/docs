@@ -1777,3 +1777,13 @@ li.dropdown-divider {
   height: 1px;
   background-color: var(--ifm-toc-border-color);
 }
+
+/* Hide scrollbars while preserving scroll functionality */
+.thin-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and other WebKit browsers */
+}
