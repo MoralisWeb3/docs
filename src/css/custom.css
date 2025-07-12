@@ -816,7 +816,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
     margin-right: 24px;
     padding-bottom: 10px;
     display: inline-block;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
   }
 
   .navbar__items > .navbar__link--active {

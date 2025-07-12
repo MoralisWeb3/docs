@@ -165,19 +165,16 @@ const config = {
             to: "/get-started",
             label: "Get Started",
             position: "left",
-            exact: true,
           },
           {
             to: "/web3-data-api/evm",
             label: "EVM",
             position: "left",
-            exact: true,
           },
           {
             to: "/web3-data-api/solana",
             label: "Solana",
             position: "left",
-            exact: true,
           },
           {
             type: "doc",
