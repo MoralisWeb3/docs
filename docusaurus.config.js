@@ -168,7 +168,7 @@ const config = {
             exact: true,
           },
           {
-            to: "/web3-data-api/evm/reference",
+            to: "/web3-data-api/evm",
             label: "EVM",
             position: "left",
             exact: true,
