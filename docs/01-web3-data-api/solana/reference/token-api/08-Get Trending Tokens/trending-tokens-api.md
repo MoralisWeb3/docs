@@ -22,4 +22,4 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
     </p>
   </Admonition>
 
-<ApiReference {...config.solana.getTrendingTokens} />
+<ApiReference {...config.token.getTrendingTokens} />

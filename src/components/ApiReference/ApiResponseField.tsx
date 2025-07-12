@@ -37,7 +37,7 @@ export const buildResponse = (field: ApiParam) => {
   }
 
   if (field.type === "oneOf") {
-    return buildResponse(field.options[0]);
+    return buildResponse(field.options?.[0]);
   }
 
   return "";
@@ -218,7 +218,7 @@ const ApiResponseField = ({
             </div>
           )}
           <div className={styles.group}>
-            {field.options.map((fieldParam, index) => (
+            {(field.options || []).map((fieldParam, index) => (
               <React.Fragment key={index}>
                 {expandedIndex === index ? (
                   <div className={styles.groupHeader}>

@@ -123,7 +123,7 @@ const ApiReference = ({
     const [network, setNetwork] = useState<"mainnet" | "testnet">("mainnet");
     const hostUrl = useMemo(() => (network === "mainnet" ? apiHost : testHost), [network]);
     const location = useLocation();
-    const initialQueryValues = queryParamsToObject(location.search);
+    const initialQueryValues = queryParamsToObject(location.search) || {};
 
     const handleResponseSelect = useCallback((event) => {
         setResponseIndex(+event.currentTarget.value);
@@ -257,9 +257,9 @@ const ApiReference = ({
             const body = {};
             // return {};
             for (const key in initialQueryValues) {
-                if (pathParams.some((item) => item?.name === key)) {
+                if (pathParams && Array.isArray(pathParams) && pathParams.some((item) => item?.name === key)) {
                     path[key] = initialQueryValues[key];
-                } else if (queryParams.some((item) => item?.name === key)) {
+                } else if (queryParams && Array.isArray(queryParams) && queryParams.some((item) => item?.name === key)) {
                     query[key] = initialQueryValues[key];
                 } else {
                     body[key] = initialQueryValues[key];
@@ -446,7 +446,7 @@ const ApiReference = ({
                                                 </option>
                                             )}
 
-                                            {responses.map((response, index) => (
+                                            {(responses || []).map((response, index) => (
                                                 <option key={index} value={index}>
                                                     {response.status} {response.description}
                                                 </option>

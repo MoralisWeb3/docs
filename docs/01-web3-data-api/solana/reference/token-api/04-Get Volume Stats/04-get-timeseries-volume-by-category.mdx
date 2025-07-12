@@ -3,7 +3,10 @@ sidebar_position: 4
 sidebar_label: Get Time Series Volume By Category
 slug: /web3-data-api/solana/reference/get-time-series-volume-by-category
 title: Retrieve Timeseries Volume Data By Category for EVM & Solana
-description: Retrieve historical buy and sell volume data for specific token categories across different blockchain networks, enabling detailed sector trend analysis.
+description:
+    Retrieve historical buy and sell volume data for specific token categories
+    across different blockchain networks, enabling detailed sector trend
+    analysis.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
@@ -14,13 +17,12 @@ import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/
 
 # Get Timeseries Volume By Category <MainnetBadge /> <PremiumEndpointBadge />
 
-
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <Admonition type="info" icon="💡" title="Premium Endpoint">
-  <p>
-    To use this API, you will need an API key associated with a Moralis account
-    on the <strong>Business</strong> plan or higher.
-  </p>
+    <p>
+        To use this API, you will need an API key associated with a Moralis
+        account on the <strong>Business</strong> plan or higher.
+    </p>
 </Admonition>
-<ApiReference {...config.solana.getTimeSeriesVolumeByCategory} />
+<ApiReference {...config.token.getTimeSeriesVolumeByCategory} />

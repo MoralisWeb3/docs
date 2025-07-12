@@ -27,4 +27,4 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
     </p>
 </Admonition>
 
-<ApiReference {...config.solana.getFilteredTokens}></ApiReference>
+<ApiReference {...config.discovery.getFilteredTokens}></ApiReference>
