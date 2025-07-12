@@ -8,8 +8,6 @@ import { fromMarkdown } from "mdast-util-from-markdown";
 import { mdxFromMarkdown, MdxjsEsm } from "mdast-util-mdx";
 import { toMarkdown } from "mdast-util-to-markdown";
 import { mdxjs } from "micromark-extension-mdxjs";
-import "openai";
-import { Configuration, OpenAIApi } from "openai";
 import { join } from "path";
 import { u } from "unist-builder";
 import { filter } from "unist-util-filter";
@@ -242,10 +240,10 @@ async function generateEmbeddings() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
     !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    !process.env.OPENAI_KEY
+    false // OpenAI removed
   ) {
     return console.log(
-      "Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and OPENAI_KEY are required: skipping embeddings generation"
+      "Environment variables NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required: skipping embeddings generation"
     );
   }
 
@@ -324,32 +322,9 @@ async function generateEmbeddings() {
         const input = section.replace(/\n/g, " ");
 
         try {
-          const configuration = new Configuration({
-            apiKey: process.env.OPENAI_KEY,
-          });
-          const openai = new OpenAIApi(configuration);
-
-          const embeddingResponse = await openai.createEmbedding({
-            model: "text-embedding-ada-002",
-            input,
-          });
-          if (embeddingResponse.status !== 200) {
-            throw new Error(inspect(embeddingResponse.data, false, 2));
-          }
-
-          const [responseData] = embeddingResponse.data.data;
-
-          const { error: insertPageSectionError } = await supabaseClient
-            .from("page_section")
-            .insert({
-              page_id: page.id,
-              content: section,
-              token_count: embeddingResponse.data.usage.total_tokens,
-              embedding: responseData.embedding,
-            })
-            .select()
-            .limit(1)
-            .single();
+          // OpenAI code removed - embedding generation disabled
+          console.log("Skipping embedding generation - OpenAI removed");
+          continue;
 
           if (insertPageSectionError) {
             throw insertPageSectionError;
