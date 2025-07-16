@@ -4,6 +4,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
     }
   }
 }

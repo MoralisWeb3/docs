@@ -1,9 +1,9 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+
+const dotenv = require('dotenv');
 
 const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
 const darkCodeTheme = require("prism-react-renderer/themes/palenight");
-const dotenv = require("dotenv");
 
 dotenv.config();
 
@@ -393,7 +393,7 @@ const config = {
       },
       algolia: {
         appId: "K26H89KJU5",
-        apiKey: process.env.ALGOLIA_API_KEY,
+        apiKey: process.env.ALGOLIA_API_KEY || 'dummy-key-for-build',
         indexName: "gold-iota",
         contextualSearch: true,
       },
