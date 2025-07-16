@@ -32,13 +32,13 @@ npm run generate-reference:force
 
 ```bash
 # Update multiple specific APIs
-node docs/configs/generate.ts --api=evm-docs --api=streams
+node configs/generate.ts --api=evm-docs --api=streams
 
 # Update with custom API keys
-node docs/configs/generate.ts --api=evm-docs --api=solana
+node configs/generate.ts --api=evm-docs --api=solana
 
 # Force complete replacement
-node docs/configs/generate.ts --force-replace
+node configs/generate.ts --force-replace
 ```
 
 ## Available API Keys

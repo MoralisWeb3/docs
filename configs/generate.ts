@@ -7,7 +7,7 @@ const {
 } = require("./generate.config.json");
 const camelToSnakeCase = require("../../utils/camelToSnakeCase.mts");
 
-const apiReferenceConfigFile = "./docs/configs/api-reference/configs.json";
+const apiReferenceConfigFile = "./configs/api-reference/configs.json";
 
 // Command line arguments for selective updates
 const args = process.argv.slice(2);
@@ -371,11 +371,11 @@ const loadExistingConfigs = () => {
  * - Force replace: Use --force-replace to completely rebuild the file
  * 
  * USAGE EXAMPLES:
- * node docs/configs/generate.ts                    // Update all APIs incrementally
- * node docs/configs/generate.ts --api=evm-docs     // Update only EVM API
- * node docs/configs/generate.ts --api=streams      // Update only Streams API
- * node docs/configs/generate.ts --api=evm-docs --api=solana  // Update multiple specific APIs
- * node docs/configs/generate.ts --force-replace    // Complete rebuild (old behavior)
+ * node configs/generate.ts                    // Update all APIs incrementally
+ * node configs/generate.ts --api=evm-docs     // Update only EVM API
+ * node configs/generate.ts --api=streams      // Update only Streams API
+ * node configs/generate.ts --api=evm-docs --api=solana  // Update multiple specific APIs
+ * node configs/generate.ts --force-replace    // Complete rebuild (old behavior)
  * 
  * This works well for:
  * - NFT API

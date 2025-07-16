@@ -7,7 +7,7 @@ description: Retrieve price information for multiple Solana tokens in a single r
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
 # Get Multiple Token Prices on Solana <MainnetBadge />

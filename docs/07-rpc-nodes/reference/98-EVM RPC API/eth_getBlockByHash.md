@@ -8,7 +8,7 @@ description: eth_getBlockByHash returns block details matching the given block h
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 
 <head>
     <title>eth_getBlockByHash RPC Method - Moralis Documentation</title>

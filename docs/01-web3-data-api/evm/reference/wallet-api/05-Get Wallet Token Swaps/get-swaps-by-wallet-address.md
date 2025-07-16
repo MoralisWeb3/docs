@@ -7,7 +7,7 @@ description: Retrieve swap transaction data for a specific wallet address on EVM
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 
 import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 import Admonition from "@theme/Admonition";

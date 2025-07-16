@@ -7,7 +7,7 @@ slug: /rpc-nodes/reference/extended-rpc/eth_getNFTCollections
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 
 ## Get NFT Collections by Wallet Address
 

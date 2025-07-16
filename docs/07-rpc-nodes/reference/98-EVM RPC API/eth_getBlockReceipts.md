@@ -8,7 +8,7 @@ description: eth_getBlockReceipts retrieves all transaction receipts for a given
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 
 <head>
     <title>eth_getBlockReceipts RPC Method - Moralis Documentation</title>

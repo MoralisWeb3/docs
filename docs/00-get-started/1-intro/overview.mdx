@@ -1,0 +1,514 @@
+---
+title: "Get Started with Moralis"
+sidebar_label: "Introduction to Moralis API"
+slug: "/get-started"
+sidebar_position: 1
+sidebar_class_name: "sidebar-getting-started"
+description:
+    "Quick start guide to building Web3 applications with Moralis APIs. Learn
+    how to integrate blockchain data, NFTs, tokens, and real-time streams into
+    your app."
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Get Started with Moralis
+
+Welcome to Moralis! This guide will get you up and running with our
+comprehensive Web3 development platform in minutes. Moralis provides powerful
+APIs to access blockchain data across 30+ chains, making Web3 development as
+easy as Web2.
+
+## Quick Overview
+
+Moralis offers four main categories of tools to accelerate your Web3
+development:
+
+1. **[Web3 Data APIs](#web3-data-apis)** - Access NFTs, tokens, transactions,
+   and DeFi data
+2. **[Streams API](#streams-api)** - Real-time blockchain event monitoring
+3. **[RPC Nodes](#rpc-nodes)** - Reliable blockchain infrastructure
+4. **[Authentication API](#authentication-api)** - Web3 wallet authentication
+
+---
+
+## Prerequisites
+
+-   A Moralis account ([Sign up for free](https://admin.moralis.com/register))
+-   Your API key from the [Moralis Admin Panel](https://admin.moralis.com/)
+-   Basic knowledge of JavaScript/Python (examples provided in both)
+
+---
+
+## Web3 Data APIs
+
+Our Web3 Data APIs provide high-level access to blockchain data without the
+complexity of direct RPC calls. Get NFTs, tokens, prices, and transaction data
+with simple REST API calls.
+
+### Your First API Call
+
+Let's fetch all NFTs owned by a wallet address:
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X 'GET' \
+  'https://deep-index.moralis.io/api/v2.2/0x26fcbd3afebbe28d0a8684f790c48368d21665b5/nft?chain=eth&format=decimal&media_items=false' \
+  -H 'accept: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY'
+```
+
+</TabItem>
+<TabItem value="javascript" label="JavaScript">
+
+```javascript
+const Moralis = require("moralis").default;
+
+const runApp = async () => {
+    await Moralis.start({
+        apiKey: "YOUR_API_KEY",
+    });
+
+    const address = "0x26fcbd3afebbe28d0a8684f790c48368d21665b5";
+
+    const response = await Moralis.EvmApi.nft.getWalletNFTs({
+        chain: "0x1",
+        format: "decimal",
+        mediaItems: false,
+        address: address,
+    });
+
+    console.log(response.raw);
+};
+
+runApp();
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from moralis import evm_api
+
+api_key = "YOUR_API_KEY"
+
+params = {
+    "address": "0x26fcbd3afebbe28d0a8684f790c48368d21665b5",
+    "chain": "eth",
+    "format": "decimal",
+    "media_items": False
+}
+
+result = evm_api.nft.get_wallet_nfts(
+    api_key=api_key,
+    params=params,
+)
+
+print(result)
+```
+
+</TabItem>
+</Tabs>
+
+### Key Features
+
+-   **NFT API**: Get NFT metadata, transfers, prices, and collections
+-   **Token API**: Access ERC20 token data, balances, and transfers
+-   **Price API**: Real-time and historical price data with OHLCV
+-   **Wallet API**: Complete wallet activity and portfolio data
+-   **DeFi API**: DEX trades, liquidity pools, and yield farming data
+
+### Popular Use Cases
+
+-   Portfolio trackers and wallet analytics
+-   NFT marketplaces and galleries
+-   DeFi dashboards and yield optimizers
+-   Trading bots and price alerts
+-   Multi-chain dApp backends
+
+---
+
+## Streams API
+
+Monitor blockchain events in real-time with our Streams API. Get instant
+notifications when specific transactions, transfers, or smart contract events
+occur.
+
+### Create Your First Stream
+
+Here's how to monitor all USDC transfers on Ethereum:
+
+<Tabs>
+<TabItem value="javascript" label="JavaScript">
+
+```javascript
+const Moralis = require("moralis").default;
+
+const runApp = async () => {
+    await Moralis.start({
+        apiKey: "YOUR_API_KEY",
+    });
+
+    const stream = {
+        chains: ["0x1"], // Ethereum
+        description: "Monitor USDC transfers",
+        tag: "USDC_transfers",
+        webhookUrl: "https://YOUR_WEBHOOK_URL.com/webhook",
+        abi: [
+            {
+                anonymous: false,
+                inputs: [
+                    { indexed: true, name: "from", type: "address" },
+                    { indexed: true, name: "to", type: "address" },
+                    { indexed: false, name: "value", type: "uint256" },
+                ],
+                name: "Transfer",
+                type: "event",
+            },
+        ],
+        advancedOptions: [
+            {
+                topic0: "Transfer(address,address,uint256)",
+                filter: {
+                    and: [
+                        {
+                            eq: [
+                                "from",
+                                "0xa0b86a33e6776c8b2a4d1a5b9b3f4e4f7f8e5f4f",
+                            ],
+                        },
+                        { gt: ["value", 1000000] }, // Greater than $1 (6 decimals)
+                    ],
+                },
+                includeContractLogs: true,
+                includeInternalTxs: false,
+            },
+        ],
+        includeContractLogs: true,
+        includeInternalTxs: false,
+    };
+
+    const newStream = await Moralis.Streams.add(stream);
+    console.log(newStream);
+};
+
+runApp();
+```
+
+</TabItem>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X 'POST' \
+  'https://api.moralis-streams.com/streams/evm' \
+  -H 'accept: application/json' \
+  -H 'content-type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "chains": ["0x1"],
+    "description": "Monitor USDC transfers",
+    "tag": "USDC_transfers",
+    "webhookUrl": "https://YOUR_WEBHOOK_URL.com/webhook",
+    "includeContractLogs": true,
+    "advancedOptions": [
+      {
+        "topic0": "Transfer(address,address,uint256)",
+        "includeContractLogs": true
+      }
+    ]
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+### Stream Features
+
+-   **Real-time monitoring** of transactions, events, and state changes
+-   **Advanced filtering** with custom logic and conditions
+-   **Multi-chain support** across 30+ blockchain networks
+-   **Webhook delivery** with automatic retries and guaranteed delivery
+-   **Historical syncing** to backfill missed events
+
+---
+
+## RPC Nodes
+
+Access reliable, high-performance RPC endpoints for direct blockchain
+interaction. Perfect for sending transactions, deploying contracts, and custom
+blockchain queries.
+
+### Quick Connection
+
+<Tabs>
+<TabItem value="javascript" label="JavaScript (Web3.js)">
+
+```javascript
+const Web3 = require("web3");
+
+// Replace with your Moralis RPC URL
+const web3 = new Web3(
+    "https://site1.moralis-nodes.com/eth/mainnet/YOUR_API_KEY"
+);
+
+// Get latest block
+const latestBlock = await web3.eth.getBlockNumber();
+console.log("Latest block:", latestBlock);
+
+// Get account balance
+const balance = await web3.eth.getBalance(
+    "0x742d35cc659c5cfb5e751e53d5b6e6b3bd7c8b2a"
+);
+console.log("Balance:", web3.utils.fromWei(balance, "ether"), "ETH");
+```
+
+</TabItem>
+<TabItem value="ethers" label="JavaScript (Ethers.js)">
+
+```javascript
+const { ethers } = require("ethers");
+
+// Connect to Moralis RPC
+const provider = new ethers.providers.JsonRpcProvider(
+    "https://site1.moralis-nodes.com/eth/mainnet/YOUR_API_KEY"
+);
+
+// Get network info
+const network = await provider.getNetwork();
+console.log("Connected to:", network.name);
+
+// Get account balance
+const balance = await provider.getBalance(
+    "0x742d35cc659c5cfb5e751e53d5b6e6b3bd7c8b2a"
+);
+console.log("Balance:", ethers.utils.formatEther(balance), "ETH");
+```
+
+</TabItem>
+</Tabs>
+
+### Supported Networks
+
+-   **Ethereum**: Mainnet, Sepolia, Holesky
+-   **Polygon**: Mainnet, Mumbai, Amoy
+-   **BSC**: Mainnet, Testnet
+-   **Avalanche**: C-Chain, Fuji
+-   **Arbitrum**: One, Nova, Sepolia
+-   **Optimism**: Mainnet, Sepolia
+-   **Base**: Mainnet, Sepolia
+-   And 20+ more chains...
+
+---
+
+## Authentication API
+
+Implement secure Web3 wallet authentication with just a few lines of code.
+Support for MetaMask, WalletConnect, and other popular wallets.
+
+### Web3 Login Flow
+
+<Tabs>
+<TabItem value="javascript" label="JavaScript">
+
+```javascript
+const Moralis = require("moralis").default;
+
+const runApp = async () => {
+    await Moralis.start({
+        apiKey: "YOUR_API_KEY",
+    });
+
+    // Request message for signing
+    const { message } = await Moralis.Auth.requestMessage({
+        address: "0x742d35cc659c5cfb5e751e53d5b6e6b3bd7c8b2a",
+        chain: "0x1",
+        networkType: "evm",
+        domain: "moralis.io",
+        statement: "Please sign this message to confirm your identity.",
+        uri: "https://moralis.io/",
+        expirationTime: "2023-01-01T00:00:00.000Z",
+        timeout: 15,
+    });
+
+    console.log("Message to sign:", message);
+
+    // After user signs the message with their wallet
+    const signature = "USER_SIGNATURE_FROM_WALLET";
+
+    // Verify the signature
+    const { profileId } = await Moralis.Auth.verify({
+        message,
+        signature,
+        networkType: "evm",
+    });
+
+    console.log("Verified user profile:", profileId);
+};
+
+runApp();
+```
+
+</TabItem>
+<TabItem value="react" label="React Example">
+
+```jsx
+import { useMoralis } from "react-moralis";
+
+function WalletConnect() {
+    const { authenticate, isAuthenticated, user, logout } = useMoralis();
+
+    const handleConnect = async () => {
+        await authenticate({
+            signingMessage: "Sign to verify your identity",
+            chain: "eth",
+        });
+    };
+
+    if (isAuthenticated) {
+        return (
+            <div>
+                <h3>Welcome {user.get("ethAddress")}</h3>
+                <button onClick={logout}>Disconnect</button>
+            </div>
+        );
+    }
+
+    return <button onClick={handleConnect}>Connect Wallet</button>;
+}
+```
+
+</TabItem>
+</Tabs>
+
+---
+
+## Next Steps
+
+Now that you understand the basics, here are some suggested next steps:
+
+### 🎯 **Choose Your Path**
+
+<div className="row">
+    <div className="col col--6">
+        <div className="card padding--lg margin-bottom--lg">
+            <h3>🏗️ Build a dApp</h3>
+            <p>Create a complete Web3 application using our APIs:</p>
+            <ul>
+                <li>
+                    <a href="/web3-data-api/evm/quickstart-nextjs">
+                        Next.js Quickstart
+                    </a>
+                </li>
+                <li>
+                    <a href="/web3-data-api/evm/quickstart-react">
+                        React Quickstart
+                    </a>
+                </li>
+                <li>
+                    <a href="/web3-data-api/evm/quickstart-nodejs">
+                        Node.js Backend
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div className="col col--6">
+        <div className="card padding--lg margin-bottom--lg">
+            <h3>📚 Explore Tutorials</h3>
+            <p>Follow step-by-step guides for common use cases:</p>
+            <ul>
+                <li>
+                    <a href="/web3-data-api/evm/how-to-get-nft-transfers-by-block">
+                        NFT Transfers
+                    </a>
+                </li>
+                <li>
+                    <a href="/web3-data-api/evm/how-to-get-all-tokens-owned-by-an-address">
+                        Token Balances
+                    </a>
+                </li>
+                <li>
+                    <a href="/streams-api/evm/how-to-monitor-erc20-token-transfers-over-100k">
+                        Token Monitoring
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+### 🔗 **Useful Resources**
+
+-   **[API Reference](/web3-data-api/evm/reference)** - Complete API
+    documentation
+-   **[SDKs & Libraries](/web3-data-api/evm/quickstart-nodejs)** - Official SDKs
+    for popular languages
+-   **[Code Examples](https://github.com/MoralisWeb3)** - Open source examples
+    and templates
+-   **[Discord Community](https://discord.gg/moralis)** - Get help from
+    developers and team
+-   **[YouTube Channel](https://www.youtube.com/@MoralisWeb3)** - Video
+    tutorials and guides
+
+### 💡 **Common Integration Patterns**
+
+1. **Portfolio Tracker**: Use Wallet API + Token API + Price API
+2. **NFT Marketplace**: Use NFT API + Streams API for real-time updates
+3. **DeFi Dashboard**: Use DeFi API + Price API + historical data
+4. **Transaction Monitor**: Use Streams API + Webhook processing
+5. **Multi-chain dApp**: Use Cross-chain APIs + RPC Nodes
+
+---
+
+<div className="api-banner">
+    <div className="api-banner-icon">
+        <svg
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M32 8L8 32L32 56L56 32L32 8Z"
+                fill="currentColor"
+                opacity="0.1"
+            />
+            <path
+                d="M32 16L16 32L32 48L48 32L32 16Z"
+                fill="currentColor"
+                opacity="0.2"
+            />
+            <path d="M32 24L24 32L32 40L40 32L32 24Z" fill="currentColor" />
+        </svg>
+    </div>
+    <div className="api-banner-text">
+        <h1>Ready to build?</h1>
+        <p>
+            Get your free API key and start building Web3 applications with
+            Moralis today. Join thousands of developers already using our
+            platform.
+        </p>
+        <a
+            href="https://admin.moralis.com/register"
+            target="_blank"
+            className="cta-button"
+        >
+            Get Free API Key
+        </a>
+    </div>
+</div>
+
+## Questions?
+
+-   💬 **[Join our Discord](https://discord.gg/moralis)** for community support
+-   📧
+    **[Contact Support](https://moralisweb3.atlassian.net/servicedesk/customer/portal/1)**
+    for technical issues
+-   📖 **[Browse Documentation](/web3-data-api/evm/reference)** for detailed
+    guides
+-   🐛 **[Report Bugs](https://github.com/MoralisWeb3/Moralis-JS-SDK/issues)**
+    on GitHub

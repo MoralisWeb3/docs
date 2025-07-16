@@ -7,7 +7,7 @@ description: Retrieve pump fun tokens in graduated phase by exchange for Solana.
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
 # Get Graduated Tokens by Exchange <MainnetBadge />

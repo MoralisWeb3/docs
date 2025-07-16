@@ -7,7 +7,7 @@ description: Retrieve newly created Pump fun tokens by exchange for Solana. This
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
 # Get New Tokens by Exchange <MainnetBadge />

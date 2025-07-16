@@ -21,5 +21,5 @@ fs.readdir(directoryPath, function (err, files) {
 
   const jsonData = JSON.stringify(guidesList, null, 2);
 
-  fs.writeFileSync("./docs/configs/guides/guides.json", jsonData);
+  fs.writeFileSync("./configs/guides/guides.json", jsonData);
 });

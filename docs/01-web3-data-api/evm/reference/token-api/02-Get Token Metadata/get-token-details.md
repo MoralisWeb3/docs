@@ -9,7 +9,7 @@ description: Get comprehensive token details including price, market metrics, so
 import ApiReference from "@site/src/components/ApiReference";
 import Admonition from "@theme/Admonition";
 import Link from "@docusaurus/Link";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
 
 # Get Token Details <PremiumEndpointBadge />

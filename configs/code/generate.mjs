@@ -12,7 +12,7 @@ const generateCode = async () => {
   // Write code samples to config.json
   try {
     await fs.promises.writeFile(
-      "./docs/configs/api-reference/configs.json",
+      "./configs/api-reference/configs.json",
       JSON.stringify(apiReference),
       { flag: "w" }
     );
