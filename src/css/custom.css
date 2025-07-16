@@ -154,6 +154,121 @@
   background-color: rgba(10, 10, 11, 1) !important;
 }
 
+/* Footer alignment and centering */
+.footer {
+  padding: 4rem 0 2rem;
+}
+
+.footer .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer__col {
+  min-width: 150px;
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-footer-link-color);
+}
+
+/* Match homepage container width for consistency */
+@media (min-width: 997px) {
+  .footer .container,
+  .footer .container-fluid {
+    max-width: var(--ifm-container-width);
+    padding-right: var(--ifm-spacing-horizontal);
+    padding-left: var(--ifm-spacing-horizontal);
+  }
+}
+
+/* Responsive footer padding */
+@media (max-width: 996px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  
+  .footer__links {
+    gap: 2rem;
+  }
+}
+
+/* DocItem Footer alignment and centering */
+.docItemContainer_src-theme-DocItem-Layout-styles-module footer,
+.theme-doc-footer {
+  max-width: 1140px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+/* Center the footer content rows */
+.docItemContainer_src-theme-DocItem-Layout-styles-module footer .row,
+.theme-doc-footer .row {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Ensure consistent spacing for footer sections */
+.docItemContainer_src-theme-DocItem-Layout-styles-module footer .col,
+.theme-doc-footer .col {
+  padding: 1rem;
+}
+
+/* Align footer content with main article content */
+@media (min-width: 997px) {
+  .docItemContainer_src-theme-DocItem-Layout-styles-module footer,
+  .theme-doc-footer {
+    max-width: var(--ifm-container-width);
+    padding-right: var(--ifm-spacing-horizontal);
+    padding-left: var(--ifm-spacing-horizontal);
+  }
+}
+
+/* Responsive adjustments for doc footer */
+@media (max-width: 996px) {
+  .docItemContainer_src-theme-DocItem-Layout-styles-module footer,
+  .theme-doc-footer {
+    padding: 0 1rem;
+  }
+}
+
+/* Ensure docItemContainer aligns with homepage container */
+.docItemContainer_src-theme-DocItem-Layout-styles-module {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Match article content width with container */
+.docItemContainer_src-theme-DocItem-Layout-styles-module article {
+  max-width: 100%;
+}
+
+/* Paginator alignment */
+.docItemContainer_src-theme-DocItem-Layout-styles-module nav.pagination-nav {
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
 /* Footer logo opacity fix - broader approach */
 .footer *,
 .footer img,
