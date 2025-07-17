@@ -11958,7 +11958,20 @@
           "required": false,
           "example": "eth",
           "type": "string",
-          "enum": ["eth", "0x1", "base", "0x2105"]
+          "enum": [
+            "eth",
+            "0x1",
+            "base",
+            "0x2105",
+            "flow",
+            "0x2eb",
+            "ronin",
+            "0x7e4",
+            "bsc",
+            "0x38",
+            "arbitrum",
+            "0xa4b1"
+          ]
         }
       ],
       "responses": [
@@ -12068,7 +12081,20 @@
           "required": false,
           "example": "eth",
           "type": "string",
-          "enum": ["eth", "0x1", "base", "0x2105"]
+          "enum": [
+            "eth",
+            "0x1",
+            "base",
+            "0x2105",
+            "flow",
+            "0x2eb",
+            "ronin",
+            "0x7e4",
+            "bsc",
+            "0x38",
+            "arbitrum",
+            "0xa4b1"
+          ]
         }
       ],
       "responses": [
