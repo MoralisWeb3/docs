@@ -32,6 +32,7 @@ npx @moralisweb3/api-mcp-server --version
 ```
 
 ### 🌐 Cortex API
+The Cortex API lets you query Moralis AI models for real-time or standard responses. Ask questions, get insights - streamed or all at once.
 
 **Perfect for:** Quick prototyping, testing, and production apps without infrastructure overhead.
 
@@ -39,6 +40,33 @@ npx @moralisweb3/api-mcp-server --version
 - ✅ Hosted and maintained by Moralis
 - ✅ Enterprise-grade reliability
 - ✅ Start building immediately
+
+**API Endpoint:**
+
+```bash
+https://cortex-api.moralis.com/chat
+```
+
+**Swagger Docs:** <br/>
+https://cortex-api.moralis.com/documentation#/
+
+**Example API Request:**
+
+```
+{
+  "prompt": "What is the current price of PEPE?",
+  "stream": true,
+  "model": "gpt-4.1-nano"
+}
+```
+
+| Field | Type | Required | Description |
+| ----- | ----- |------- | ---------- |
+| `prompt` | string | ✅ | The question or message you want to send to the AI. |
+| `stream` | boolean | ❌ | If `true`, enables real-time streaming (chunked responses). Default: `false`. |
+| `model` | string | ❌ | The model to use. Currently supports: `gpt-4.1-nano`, `gpt-4.1-mini`. Default: `gpt-4.1-nano`. |
+
+
 
 ---
 
