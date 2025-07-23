@@ -21,7 +21,7 @@ function ChartWidgetBanner({
   const buttonText = customButtonText || "Embed Chart";
   const buttonLink =
     customButtonLink ||
-    "https://moralis.com/widgets/price-chart?utm_source=docs";
+    "https://explorer.moralis.com/widgets/price-chart?utm_source=docs";
 
   return (
     <div className="api-banner">

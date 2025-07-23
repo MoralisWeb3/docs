@@ -28,9 +28,9 @@ We’re excited to announce the launch of **Candlestick APIs** and a new **Candl
 
 #### Candlestick Chart Widget
 
-| Name                         | Description                                                                                     | Widget Link                                                                   |
-| ---------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Candlestick Chart Widget** | Embed a pre-built, customizable price chart displaying OHLCV data directly in your application. | [Price Chart Widget](https://moralis.com/widgets/price-chart?utm_source=docs) |
+| Name                         | Description                                                                                     | Widget Link                                                                            |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Candlestick Chart Widget** | Embed a pre-built, customizable price chart displaying OHLCV data directly in your application. | [Price Chart Widget](https://explorer.moralis.com/widgets/price-chart?utm_source=docs) |
 
 ### What Can You Do?
 
@@ -50,4 +50,4 @@ With these new APIs and the widget, you can:
 
 - [EVM OHLCV API Documentation](/web3-data-api/evm/reference/get-ohlcv-by-pair-address)
 - [Solana OHLCV API Documentation](/web3-data-api/solana/reference/get-ohlcv-by-pair-address)
-- [Candlestick Chart Widget](https://moralis.com/widgets/price-chart?utm_source=docs)
+- [Candlestick Chart Widget](https://explorer.moralis.com/widgets/price-chart?utm_source=docs)
