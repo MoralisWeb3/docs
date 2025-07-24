@@ -1,8 +1,15 @@
-export const redirects = [
+type Redirect = {
+  source: string;
+  destination: string;
+  permanent?: boolean;
+};
+
+export const redirects: Redirect[] = [
   { source: "/undefined", destination: "/", permanent: true },
   {
     source: "/web3-data-api/evm/token-api/supported-dexs-defi-api",
     destination: "/web3-data-api/evm/supported-dexs-token-api",
+    permanent: true,
   },
   {
     source: "/docs/sign-in-with-web3authio",
@@ -139,7 +146,7 @@ export const redirects = [
   },
   {
     source: "/docs/permission-roles",
-    destination: "/admin-panel/permission-roles",
+    destination: "https://api-help.moralis.io/en/articles/33348-permission-and-roles",
     permanent: true,
   },
   {

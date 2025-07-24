@@ -16,12 +16,10 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   );
 
   if (foundRedirect) {
-    // If req.url found redirect to destionation
-    if (foundRedirect.permanent) {
-      res.statusCode = 308;
-    } else {
-      res.statusCode = 307;
-    }
+    // If req.url found redirect to destination
+    // Default to permanent redirect (308) if not specified
+    const isPermanent = foundRedirect.permanent ?? true;
+    res.statusCode = isPermanent ? 308 : 307;
     res.setHeader("location", foundRedirect.destination);
     // Caching headers
     res.setHeader("Cache-Control", "s-maxage=600");
