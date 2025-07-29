@@ -265,14 +265,14 @@ const ApiReference = ({
     } else {
       const path = {};
       const query = {};
-      const body = {};
+      const body = bodyParam ? {} : undefined;
       // return {};
       for (const key in initialQueryValues) {
         if (pathParams.some((item) => item?.name === key)) {
           path[key] = initialQueryValues[key];
         } else if (queryParams.some((item) => item?.name === key)) {
           query[key] = initialQueryValues[key];
-        } else {
+        } else if (bodyParam) {
           body[key] = initialQueryValues[key];
         }
       }
