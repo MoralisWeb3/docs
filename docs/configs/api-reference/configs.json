@@ -30885,7 +30885,7 @@
     "getNFTs": {
       "apiHost": "https://solana-gateway.moralis.io",
       "summary": "Get NFTs by wallet",
-      "description": "Gets NFTs owned by a given network and address.",
+      "description": "Gets NFTs owned by a given network and address.\n\nBy default, this endpoint returns only Non-Fungible Tokens (NFTs) as defined by Metaplex: Token Standards 0, 3, and 4. You can read more about these standards [here](https://developers.metaplex.com/token-metadata/token-standard).\n\nSome platforms (like SolScan) also display Fungible Assets (Token Standard 1) as NFTs. If you'd like to include these in the response, you can use the query parameter: `includeFungibleAssets=true`.",
       "method": "GET",
       "path": "/account/:network/:address/nft",
       "pathParams": [
@@ -30923,6 +30923,13 @@
         {
           "name": "excludeSpam",
           "description": "Should exclude spam NFTs",
+          "example": false,
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "includeFungibleAssets",
+          "description": "Include Fungible Assets (Token Standard 1) as NFTs",
           "example": false,
           "required": false,
           "type": "boolean"
