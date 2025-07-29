@@ -43811,6 +43811,11 @@
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
+                      "external_url": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
                       "animation_url": {
                         "type": "string",
                         "description": "An animated version of the NFT's image",
@@ -45215,6 +45220,11 @@
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                       },
+                      "external_url": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
                       "animation_url": {
                         "type": "string",
                         "description": "An animated version of the NFT's image",
@@ -45503,6 +45513,140 @@
         }
       ]
     },
+    "getUniqueOwnersByCollection": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get unique wallet addresses owning NFTs from a contract.",
+      "description": "Get unique wallet addresses owning NFTs from a contract.",
+      "method": "GET",
+      "path": "/nft/:address/unique-owners",
+      "pathParams": [
+        {
+          "name": "address",
+          "description": "The address of the NFT contract",
+          "required": true,
+          "example": "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a",
+            "pulse",
+            "0x171"
+          ]
+        },
+        {
+          "name": "limit",
+          "description": "The desired page size of the result.",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "cursor",
+          "description": "The cursor returned in the previous response (used for getting the next page).",
+          "type": "string"
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Returns a collection of unique NFT owners",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "page",
+                "type": "number",
+                "description": "The current page of the result",
+                "example": "2"
+              },
+              {
+                "name": "pageSize",
+                "type": "number",
+                "description": "The number of results per page",
+                "example": "100"
+              },
+              {
+                "name": "cursor",
+                "type": "string",
+                "description": "The cursor to get to the next page"
+              },
+              {
+                "name": "walletAddresses",
+                "type": "array",
+                "description": "Array of wallet addresses",
+                "field": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "getNFTOwners": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Get NFT owners by contract address",
@@ -45719,6 +45863,11 @@
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
                       "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "external_url": {
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
@@ -46630,6 +46779,11 @@
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
                       "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "external_url": {
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
@@ -48563,6 +48717,11 @@
                     "description": "A link to additional information",
                     "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
                   },
+                  "external_url": {
+                    "type": "string",
+                    "description": "A link to additional information",
+                    "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                  },
                   "animation_url": {
                     "type": "string",
                     "description": "An animated version of the NFT's image",
@@ -49487,6 +49646,11 @@
                         "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                       },
                       "external_link": {
+                        "type": "string",
+                        "description": "A link to additional information",
+                        "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                      },
+                      "external_url": {
                         "type": "string",
                         "description": "A link to additional information",
                         "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
@@ -54251,6 +54415,11 @@
                             "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
                           },
                           "external_link": {
+                            "type": "string",
+                            "description": "A link to additional information",
+                            "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                          },
+                          "external_url": {
                             "type": "string",
                             "description": "A link to additional information",
                             "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
@@ -59428,7 +59597,9 @@
             "ronin",
             "0x7e4",
             "bsc",
-            "0x38"
+            "0x38",
+            "arbitrum",
+            "0xa4b1"
           ]
         }
       ],
@@ -59532,7 +59703,9 @@
             "ronin",
             "0x7e4",
             "bsc",
-            "0x38"
+            "0x38",
+            "arbitrum",
+            "0xa4b1"
           ]
         }
       ],
@@ -59635,7 +59808,9 @@
             "ronin",
             "0x7e4",
             "bsc",
-            "0x38"
+            "0x38",
+            "arbitrum",
+            "0xa4b1"
           ]
         },
         {
