@@ -29,9 +29,17 @@ The following DEXs are integrated into the Moralis Token API for Solana, enablin
 
 - **Address**: [Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB](https://solscan.io/account/Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB)
 
+### Meteora Dynamic AMM v2 (Automated Market Maker)
+
+- **Address**: [cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG](https://solscan.io/account/cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG)
+
 ### Meteora DLMM (Dynamic Liquidity Market Maker)
 
 - **Address**: [LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo](https://solscan.io/account/LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo)
+
+### Meteora Dynamic Bonding Curve (DBC)
+
+- **Address**: [dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN](https://solscan.io/account/dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN)
 
 ### Orca/Whirlpool
 
