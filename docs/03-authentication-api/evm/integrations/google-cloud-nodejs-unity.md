@@ -14,20 +14,34 @@ This tutorial will teach you how to host your custom backend (powered by Moralis
 
 ## The Steps We Will Take
 
-- [The Steps We Will Take](#the-steps-we-will-take)
-- [Prerequisites](#prerequisites)
-- [Customize Code from the _Quickstart NodeJS_ Tutorial](#customize-code-from-the-quickstart-nodejs-tutorial)
-- [Adding Authentication Methods](#adding-authentication-methods)
-- [Adding Authentication Operations](#adding-authentication-operations)
-- [Run on Google Cloud](#run-on-google-cloud)
-  - [Prerequisites](#prerequisites-1)
-  - [Deploying to Cloud Run](#deploying-to-cloud-run)
-    - [Using the Cloud Code Extension](#using-the-cloud-code-extension)
-- [Calling from Unity](#calling-from-unity)
-  - [Prerequisites](#prerequisites-2)
-  - [Connection to Custom Backend](#connection-to-custom-backend)
-  - [Authentication](#authentication)
-    - [Congratulations! You completed the _Using Unity \& Google Cloud_ tutorial!](#congratulations-you-completed-the-using-unity--google-cloud-tutorial)
+<ul>
+<li><a href="#the-steps-we-will-take">The Steps We Will Take</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#customize-code-from-the-quickstart-nodejs-tutorial">Customize Code from the _Quickstart NodeJS_ Tutorial</a></li>
+<li><a href="#adding-authentication-methods">Adding Authentication Methods</a></li>
+<li><a href="#adding-authentication-operations">Adding Authentication Operations</a></li>
+<li><a href="#run-on-google-cloud">Run on Google Cloud</a>
+  <ul>
+  <li><a href="#prerequisites-1">Prerequisites</a></li>
+  <li><a href="#deploying-to-cloud-run">Deploying to Cloud Run</a>
+    <ul>
+    <li><a href="#using-the-cloud-code-extension">Using the Cloud Code Extension</a></li>
+    </ul>
+  </li>
+  </ul>
+</li>
+<li><a href="#calling-from-unity">Calling from Unity</a>
+  <ul>
+  <li><a href="#prerequisites-2">Prerequisites</a></li>
+  <li><a href="#connection-to-custom-backend">Connection to Custom Backend</a></li>
+  <li><a href="#authentication">Authentication</a>
+    <ul>
+    <li><a href="#congratulations-you-completed-the-using-unity--google-cloud-tutorial">Congratulations! You completed the _Using Unity \& Google Cloud_ tutorial!</a></li>
+    </ul>
+  </li>
+  </ul>
+</li>
+</ul>
 
 ## Prerequisites
 

@@ -454,8 +454,10 @@ This is the scene that we're going to run. Let's go ahead and hit **_Play_**:
 
 From here we're going to split the walkthrough between:
 
-- [Authentication](#authentication)
-- [Calling backend requests](#calling-backend-requests)
+<ul>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#calling-backend-requests">Calling backend requests</a></li>
+</ul>
 
 #### Authentication
 
