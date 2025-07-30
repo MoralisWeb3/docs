@@ -14,9 +14,12 @@ To prevent transactions related to these suspicious contracts from triggering we
 By default, `filterPossibleSpamAddresses` is set to `false`.
 
 Example of spam transactions that would be excluded:
-- https://polygonscan.com/tx/0x01709e31d9072a87c606a1a439ec34ef8e0ce2a4117ddad1c9f5a289f4033791
-- https://polygonscan.com/tx/0xb9780d586c524195c64f080709f54d76764144a6c05872e32974d192a9ca1de3
-- https://polygonscan.com/tx/0x5a879e9a244db9e82de812f17a9bcc9329f4c28cd32fe54f5d9f9138991739a6
+
+<ul>
+<li><a href="https://polygonscan.com/tx/0x01709e31d9072a87c606a1a439ec34ef8e0ce2a4117ddad1c9f5a289f4033791">https://polygonscan.com/tx/0x01709e31d9072a87c606a1a439ec34ef8e0ce2a4117ddad1c9f5a289f4033791</a></li>
+<li><a href="https://polygonscan.com/tx/0xb9780d586c524195c64f080709f54d76764144a6c05872e32974d192a9ca1de3">https://polygonscan.com/tx/0xb9780d586c524195c64f080709f54d76764144a6c05872e32974d192a9ca1de3</a></li>
+<li><a href="https://polygonscan.com/tx/0x5a879e9a244db9e82de812f17a9bcc9329f4c28cd32fe54f5d9f9138991739a6">https://polygonscan.com/tx/0x5a879e9a244db9e82de812f17a9bcc9329f4c28cd32fe54f5d9f9138991739a6</a></li>
+</ul>
 
 When using the UI, you can easily exclude possible spam by following these steps:
 
