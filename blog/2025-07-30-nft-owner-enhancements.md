@@ -1,9 +1,9 @@
 ---
 title: "New: NFT Owners Endpoint"
-slug: "moralis-cortex-api"
+slug: "new-nft-owners-endpoint"
 authors:
   name: Reuben Salisbury
-tags: [Web3 Data API, Cortex API]
+tags: [Web3 Data API]
 ---
 
 # New Endpoint: NFT Owners v2
