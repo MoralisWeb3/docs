@@ -15,19 +15,21 @@ The following tables show you how to find a list of supported chains on the [Mor
 
 Simply click on a chain's name to jump to its respective section for more details:
 
-- [Ethereum](#ethereum)
-- [Polygon](#polygon)
-- [Binance Smart Chain (BSC)](#binance-smart-chain-bsc)
-- [Avalanche](#avalanche)
-- [Fantom Opera](#fantom-opera)
-- [Cronos](#cronos)
-- [Arbitrum](#arbitrum)
-- [Optimism](#optimism)
-- [Base](#base)
-- [Linea](#linea)
-- [Moonbeam](#moonbeam)
-- [Ronin](#ronin)
-- [PulseChain](#pulsechain)
+<ul>
+<li><a href="#ethereum">Ethereum</a></li>
+<li><a href="#polygon">Polygon</a></li>
+<li><a href="#binance-smart-chain-bsc">Binance Smart Chain (BSC)</a></li>
+<li><a href="#avalanche">Avalanche</a></li>
+<li><a href="#fantom-opera">Fantom Opera</a></li>
+<li><a href="#cronos">Cronos</a></li>
+<li><a href="#arbitrum">Arbitrum</a></li>
+<li><a href="#optimism">Optimism</a></li>
+<li><a href="#base">Base</a></li>
+<li><a href="#linea">Linea</a></li>
+<li><a href="#moonbeam">Moonbeam</a></li>
+<li><a href="#ronin">Ronin</a></li>
+<li><a href="#pulsechain">PulseChain</a></li>
+</ul>
 
 :::note
 If you do not specify a particular exchange, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.

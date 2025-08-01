@@ -10,19 +10,21 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-- [Get Token Metadata](#get-token-metadata)
-- [Get Token Balances](#get-token-balances)
-- [Get Pump Fun Tokens](#get-pump-fun-tokens)
-- [Get Token Holders](#get-token-holders)
-- [Get Token Swaps](#get-token-swaps)
-- [Get Pairs & Liquidity](#get-pairs--liquidity)
-- [Get Token Analytics](#get-token-analytics)
-- [Get Volume Stats](#get-volume-stats)
-- [Get Token Prices](#get-token-prices)
-- [Get Token Snipers](#get-token-snipers)
-- [Get Filtered Tokens](#get-filtered-tokens)
-- [Get Trending Tokens](#get-trending-tokens)
-- [Search Tokens](#search-tokens)
+<ul>
+<li><a href="#get-token-metadata">Get Token Metadata</a></li>
+<li><a href="#get-token-balances">Get Token Balances</a></li>
+<li><a href="#get-pump-fun-tokens">Get Pump Fun Tokens</a></li>
+<li><a href="#get-token-holders">Get Token Holders</a></li>
+<li><a href="#get-token-swaps">Get Token Swaps</a></li>
+<li><a href="#get-pairs--liquidity">Get Pairs & Liquidity</a></li>
+<li><a href="#get-token-analytics">Get Token Analytics</a></li>
+<li><a href="#get-volume-stats">Get Volume Stats</a></li>
+<li><a href="#get-token-prices">Get Token Prices</a></li>
+<li><a href="#get-token-snipers">Get Token Snipers</a></li>
+<li><a href="#get-filtered-tokens">Get Filtered Tokens</a></li>
+<li><a href="#get-trending-tokens">Get Trending Tokens</a></li>
+<li><a href="#search-tokens">Search Tokens</a></li>
+</ul>
 
 ### Get Token Metadata
 

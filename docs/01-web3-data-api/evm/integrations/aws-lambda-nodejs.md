@@ -6,7 +6,14 @@ description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3
 
 ## Introduction
 
-This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
+This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:
+
+<ul>
+<li>Develop and deploy a <a href="#lambda-app-with-multiple-functions">Lambda App with multiple functions</a>.</li>
+<li>Develop and deploy a <a href="#lambda-nodejs-express-api">Lambda NodeJS Express API</a>.</li>
+</ul>
+
+To make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
 
 :::info What is AWS Lambda?
 
