@@ -10,9 +10,11 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-- [Search Entities](#search-entities)
-- [Get Entity Categories](#get-entity-categories)
-- [Get Entities](#get-entities)
+<ul>
+<li><a href="#search-entities">Search Entities</a></li>
+<li><a href="#get-entity-categories">Get Entity Categories</a></li>
+<li><a href="#get-entities">Get Entities</a></li>
+</ul>
 
 ### Search Entities
 

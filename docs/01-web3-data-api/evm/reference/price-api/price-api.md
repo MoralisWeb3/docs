@@ -10,8 +10,10 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-- [Get Token Prices](#get-token-prices)
-- [Get NFT Prices](#get-nft-prices)
+<ul>
+<li><a href="#get-token-prices">Get Token Prices</a></li>
+<li><a href="#get-nft-prices">Get NFT Prices</a></li>
+</ul>
 
 ### Get NFT Prices
 

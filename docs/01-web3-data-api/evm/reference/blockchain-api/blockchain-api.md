@@ -8,10 +8,12 @@ sidebar_position: 5
 
 Select what you want to achieve:
 
-- [Get Blocks](#get-blocks)
-- [Get Transactions](#get-transactions)
-- [Get Stats](#get-stats)
-- [Get Latest Block Number](#get-latest-block-number)
+<ul>
+<li><a href="#get-blocks">Get Blocks</a></li>
+<li><a href="#get-transactions">Get Transactions</a></li>
+<li><a href="#get-stats">Get Stats</a></li>
+<li><a href="#get-latest-block-number">Get Latest Block Number</a></li>
+</ul>
 
 ### Get Blocks
 

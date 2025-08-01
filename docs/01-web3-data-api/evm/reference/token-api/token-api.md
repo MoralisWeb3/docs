@@ -10,23 +10,25 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-- [Get Token Balances](#get-token-balances)
-- [Get Token Approvals](#get-token-approvals)
-- [Get Token Metadata](#get-token-metadata)
-- [Get Token Price](#get-token-price)
-- [Get Token Swaps](#get-token-swaps)
-- [Get Token Transfers](#get-token-transfers)
-- [Get Token Top Traders](#get-token-top-traders)
-- [Get Volume Stats](#get-volume-stats)
-- [Get Token Pairs & Liquidity](#get-token-pairs--liquidity)
-- [Get Token Analytics](#get-token-analytics)
-- [Get Tokens by Exchange](#get-tokens-by-exchange)
-- [Get Token Stats](#get-token-stats)
-- [Get Token Holders](#get-token-holders)
-- [Get Token Snipers](#get-token-snipers)
-- [Get Trending Tokens](#get-trending-tokens)
-- [Get Filtered Tokens](#get-filtered-tokens)
-- [Search Tokens](#search-tokens)
+<ul>
+<li><a href="#get-token-balances">Get Token Balances</a></li>
+<li><a href="#get-token-approvals">Get Token Approvals</a></li>
+<li><a href="#get-token-metadata">Get Token Metadata</a></li>
+<li><a href="#get-token-price">Get Token Price</a></li>
+<li><a href="#get-token-swaps">Get Token Swaps</a></li>
+<li><a href="#get-token-transfers">Get Token Transfers</a></li>
+<li><a href="#get-token-top-traders">Get Token Top Traders</a></li>
+<li><a href="#get-volume-stats">Get Volume Stats</a></li>
+<li><a href="#get-token-pairs--liquidity">Get Token Pairs & Liquidity</a></li>
+<li><a href="#get-token-analytics">Get Token Analytics</a></li>
+<li><a href="#get-tokens-by-exchange">Get Tokens by Exchange</a></li>
+<li><a href="#get-token-stats">Get Token Stats</a></li>
+<li><a href="#get-token-holders">Get Token Holders</a></li>
+<li><a href="#get-token-snipers">Get Token Snipers</a></li>
+<li><a href="#get-trending-tokens">Get Trending Tokens</a></li>
+<li><a href="#get-filtered-tokens">Get Filtered Tokens</a></li>
+<li><a href="#search-tokens">Search Tokens</a></li>
+</ul>
 
 ### Get Token Balances
 
