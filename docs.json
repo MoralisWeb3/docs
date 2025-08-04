@@ -41,6 +41,12 @@
             ]
           },
           {
+            "tab": "Data APIs",
+            "pages": [
+              "index"
+            ]
+          },
+          {
             "tab": "Solana API",
             "pages": [
               "web3-data-api/solana",
