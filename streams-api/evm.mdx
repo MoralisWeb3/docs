@@ -5,7 +5,7 @@ description: "With Streams API you can listen for real time events on chain, you
 ---
 
 <Tip>
-You can learn by [watching the Streams API Demo](#demos).
+  You can learn by [watching the Streams API Demo](#demos).
 </Tip>
 
 ## What is the Streams API?
@@ -52,11 +52,11 @@ Webhooks allow you to receive real-time notifications for events that are happen
 
 ## Run Smart Contract Functions
 
-- Run smart contract functions against Events [Read more here!](https://docs.moralis.com/streams-api/evm/triggers)
+- Run smart contract functions against Events [Read more here\!](https://docs.moralis.com/streams-api/evm/triggers)
 
 ## Get Native Balances
 
-- Get Native Balances for addresses! [Read more here!](https://docs.moralis.com/streams-api/evm/get-native-balances)
+- Get Native Balances for addresses\! [Read more here\!](https://docs.moralis.com/streams-api/evm/get-native-balances)
 
 ## High Reliability
 
@@ -67,52 +67,52 @@ Webhooks allow you to receive real-time notifications for events that are happen
 ## Supported Chains
 
 <Note>
-### Reorgnization Before Confirmation
-Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
+  ### Reorgnization Before Confirmation
+
+  Until a block is confirmed, it is possible that a re-organization of the chain may occur, invalidating some information. If a re-organization does occur before a block is confirmed, the information associated with the block is deleted and the updated block is inserted in its place.
 </Note>
 
 <Tip>
-### Supported Chains
+  ### Supported Chains
 
-See the table below for all supported chains we support on Streams. For wider chains we support across all products, check the **[full list of supported chains.](https://docs.moralis.com/supported-chains)**
-
+  See the table below for all supported chains we support on Streams. For wider chains we support across all products, check the [**full list of supported chains.**](https://docs.moralis.com/supported-chains)
 </Tip>
 
-| Name | Type | Chain ID | EvmChain | Internal Transaction Support | Blocks Until Confirmed |
-| --- | --- | --- | --- | --- | --- |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/eth.png"/> Ethereum Mainnet</p> | Mainnet | 0x1 (1) | `EvmChain.ETHEREUM` |  | 12 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/eth.png"/> Ethereum Sepolia</p> | Testnet | 0xaa36a7 (11155111) | `EvmChain.SEPOLIA` |  | 18 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/eth.png"/> Ethereum Holesky</p> | Testnet | 0x4268 (17000) | `EvmChain.HOLESKY` |  | 18 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/polygon.png"/> Polygon Mainnet</p> | Mainnet | 0x89 (137) | `EvmChain.POLYGON` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/polygon.png"/> Polygon Amoy</p> | Testnet | 0x13882 (80002) | `EvmChain.POLYGON_AMOY` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/bsc.png"/> Binance Smart Chain Mainnet</p> | Mainnet | 0x38 (56) | `EvmChain.BSC` |  | 18 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/bsc.png"/> Binance Smart Chain Testnet</p> | Testnet | 0x61 (97) | `EvmChain.BSC_TESTNET` |  | 18 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/arbitrum.png"/> Arbitrum</p> | Mainnet | 0xa4b1 (42161) | `EvmChain.ARBITRUM` |  | 18 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/arbitrum.png"/> Arbitrum Sepolia</p> | Testnet | 0x66eee (421614) | `EvmChain.ARBITRUM_SEPOLIA` |  | 600 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/base.png"/> Base</p> | Mainnet | 0x2105 (8453) | `EvmChain.BASE` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/base.png"/> Base Sepolia</p> | Testnet | 0x14a34 (84532) | `EvmChain.BASE_SEPOLIA` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/optimism.png"/> Optimism</p> | Mainnet | 0xa (10) | `EvmChain.OPTIMISM` |  | 500 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/optimism.png"/> Optimism Sepolia</p> | Testnet | 0xaa37dc (11155420) | `EvmChain.OPTIMISM_SEPOLIA` |  | 600 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/linea.png"/> Linea</p> | Mainnet | 0xe708 (59144) | `EvmChain.LINEA` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/linea.png"/> Linea Sepolia</p> | Testnet | 0xe705 (59141) | `EvmChain.LINEA_SEPOLIA` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/avalanche.png"/> Avalanche</p> | Mainnet | 0xa86a (43114) | `EvmChain.AVALANCHE` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/fantom.png"/> Fantom Mainnet</p> | Mainnet | 0xfa (250) | `EvmChain.FANTOM` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/fantom.png"/> Fantom Testnet</p> | Testnet | 0xfa2 (4002) | `EvmChain.FANTOM_TESTNET` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/cronos.png"/> Cronos Mainnet</p> | Mainnet | 0x19 (25) | `EvmChain.CRONOS` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/gnosis.png"/> Gnosis</p> | Mainnet | 0x64 (100) | `EvmChain.GNOSIS` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/gnosis.png"/> Gnosis Chiado</p> | Testnet | 0x27d8 (10200) | `EvmChain.GNOSIS_TESTNET` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/chiliz.png"/> Chiliz Mainnet</p> | Mainnet | 0x15b38 (88888) | `EvmChain.CHILIZ` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/chiliz.png"/> Chiliz Testnet</p> | Testnet | 0x15b32 (88882) | `EvmChain.CHILIZ_TESTNET` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/moonbeam.png"/> Moonbeam</p> | Mainnet | 0x504 (1284) | `EvmChain.MOONBEAM` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/moonbeam.png"/> Moonriver</p> | Testnet | 0x505 (1285) | `EvmChain.MOONRIVER` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/moonbeam.png"/> Moonbase</p> | Testnet | 0x507 (1287) | `EvmChain.MOONBASE` | Unsupported | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/flow.png"/> Flow</p> | Mainnet | 0x2eb (747) | `EvmChain.FLOW` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/flow.png"/> Flow Testnet</p> | Testnet | 0x221 (545) | `EvmChain.FLOW_TESTNET` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/ronin.png"/> Ronin</p> | Mainnet | 0x7e4 (2020) | `EvmChain.RONIN` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/ronin.png"/> Ronin Saigon Testnet</p> | Testnet | 0x7e5 (2021) | `EvmChain.RONIN_TESTNET` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/lisk.png"/> Lisk</p> | Mainnet | 0x46f (1135) | `EvmChain.LISK` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/lisk.png"/> Lisk Sepolia Testnet</p> | Testnet | 0x106a (4202) | `EvmChain.LISK_SEPOLIA` |  | 100 |
-| <p className="flex items-center gap-2"><Icon icon="https://docs.moralis.com/img/content/pulsechain.png"/> Pulsechain</p> | Mainnet | 0x171 (369) | `EvmChain.PULSECHAIN` |  | 100 |
+| Name                                                                                                                                 | Type    | Chain ID            | EvmChain                    | Internal Transaction Support | Blocks Until Confirmed |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------- | --------------------------- | ---------------------------- | ---------------------- |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/eth.png" /> Ethereum Mainnet</p>            | Mainnet | 0x1 (1)             | `EvmChain.ETHEREUM`         |                              | 12                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/eth.png" /> Ethereum Sepolia</p>            | Testnet | 0xaa36a7 (11155111) | `EvmChain.SEPOLIA`          |                              | 18                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/eth.png" /> Ethereum Holesky</p>            | Testnet | 0x4268 (17000)      | `EvmChain.HOLESKY`          |                              | 18                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/polygon.png" /> Polygon Mainnet</p>         | Mainnet | 0x89 (137)          | `EvmChain.POLYGON`          |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/polygon.png" /> Polygon Amoy</p>            | Testnet | 0x13882 (80002)     | `EvmChain.POLYGON_AMOY`     |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/bsc.png" /> Binance Smart Chain Mainnet</p> | Mainnet | 0x38 (56)           | `EvmChain.BSC`              |                              | 18                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/bsc.png" /> Binance Smart Chain Testnet</p> | Testnet | 0x61 (97)           | `EvmChain.BSC_TESTNET`      |                              | 18                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/arbitrum.png" /> Arbitrum</p>               | Mainnet | 0xa4b1 (42161)      | `EvmChain.ARBITRUM`         |                              | 18                     |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/arbitrum.png" /> Arbitrum Sepolia</p>       | Testnet | 0x66eee (421614)    | `EvmChain.ARBITRUM_SEPOLIA` |                              | 600                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/base.png" /> Base</p>                       | Mainnet | 0x2105 (8453)       | `EvmChain.BASE`             |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/base.png" /> Base Sepolia</p>               | Testnet | 0x14a34 (84532)     | `EvmChain.BASE_SEPOLIA`     |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/optimism.png" /> Optimism</p>               | Mainnet | 0xa (10)            | `EvmChain.OPTIMISM`         |                              | 500                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/optimism.png" /> Optimism Sepolia</p>       | Testnet | 0xaa37dc (11155420) | `EvmChain.OPTIMISM_SEPOLIA` |                              | 600                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/linea.png" /> Linea</p>                     | Mainnet | 0xe708 (59144)      | `EvmChain.LINEA`            |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/linea.png" /> Linea Sepolia</p>             | Testnet | 0xe705 (59141)      | `EvmChain.LINEA_SEPOLIA`    |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/avalanche.png" /> Avalanche</p>             | Mainnet | 0xa86a (43114)      | `EvmChain.AVALANCHE`        |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/fantom.png" /> Fantom Mainnet</p>           | Mainnet | 0xfa (250)          | `EvmChain.FANTOM`           |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/fantom.png" /> Fantom Testnet</p>           | Testnet | 0xfa2 (4002)        | `EvmChain.FANTOM_TESTNET`   |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/cronos.png" /> Cronos Mainnet</p>           | Mainnet | 0x19 (25)           | `EvmChain.CRONOS`           | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/gnosis.png" /> Gnosis</p>                   | Mainnet | 0x64 (100)          | `EvmChain.GNOSIS`           | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/gnosis.png" /> Gnosis Chiado</p>            | Testnet | 0x27d8 (10200)      | `EvmChain.GNOSIS_TESTNET`   | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/chiliz.png" /> Chiliz Mainnet</p>           | Mainnet | 0x15b38 (88888)     | `EvmChain.CHILIZ`           |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/chiliz.png" /> Chiliz Testnet</p>           | Testnet | 0x15b32 (88882)     | `EvmChain.CHILIZ_TESTNET`   |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/moonbeam.png" /> Moonbeam</p>               | Mainnet | 0x504 (1284)        | `EvmChain.MOONBEAM`         | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/moonbeam.png" /> Moonriver</p>              | Testnet | 0x505 (1285)        | `EvmChain.MOONRIVER`        | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/moonbeam.png" /> Moonbase</p>               | Testnet | 0x507 (1287)        | `EvmChain.MOONBASE`         | Unsupported                  | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/flow.png" /> Flow</p>                       | Mainnet | 0x2eb (747)         | `EvmChain.FLOW`             |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/flow.png" /> Flow Testnet</p>               | Testnet | 0x221 (545)         | `EvmChain.FLOW_TESTNET`     |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/ronin.png" /> Ronin</p>                     | Mainnet | 0x7e4 (2020)        | `EvmChain.RONIN`            |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/ronin.png" /> Ronin Saigon Testnet</p>      | Testnet | 0x7e5 (2021)        | `EvmChain.RONIN_TESTNET`    |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/lisk.png" /> Lisk</p>                       | Mainnet | 0x46f (1135)        | `EvmChain.LISK`             |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/lisk.png" /> Lisk Sepolia Testnet</p>       | Testnet | 0x106a (4202)       | `EvmChain.LISK_SEPOLIA`     |                              | 100                    |
+| <p className="flex items-center gap-2"> <Icon icon="https://docs.moralis.com/img/content/pulsechain.png" /> Pulsechain</p>           | Mainnet | 0x171 (369)         | `EvmChain.PULSECHAIN`       |                              | 100                    |
 
 ## To get started, check the following tutorials:
 
@@ -133,5 +133,5 @@ See [Records and pricing](https://docs.moralis.com/streams-api/evm/records-and-p
 ## Demos
 
 <Frame>
-  <iframe width="100%" height="420" src="https://www.youtube.com/embed/pnmVhxdUBao" title="Monitor Crypto Wallet Addresses - Beginner Introduction To Moralis Streams" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="100%" height="420" src="https://www.youtube.com/embed/pnmVhxdUBao" title="Monitor Crypto Wallet Addresses - Beginner Introduction To Moralis Streams" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 </Frame>
