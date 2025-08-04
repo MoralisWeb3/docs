@@ -1,0 +1,140 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Moralis",
+  "colors": {
+    "primary": "#0f7fff",
+    "light": "#0f7fff",
+    "dark": "#0f7fff"
+  },
+  "favicon": "/favicon.png",
+    "appearance": {
+      "default": "light"
+    },
+    "background": {
+      "color": {
+        "dark": "#191B19"
+      }
+    },
+    "fonts": {
+      "family": "sw",
+      "source": "https://mintlify-assets.b-cdn.net/fonts/sw.woff2",
+      "format": "woff2"
+    },
+    "contextual": {
+      "options": [
+        "chatgpt",
+        "claude",
+        "copy",
+        "view"
+      ]
+    },
+  "navigation": {
+    "versions": [
+      {
+        "version": "2.2",
+        "tabs": [
+          {
+            "tab": "Home",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "tab": "Solana API",
+            "pages": [
+              "web3-data-api/solana",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "web3-data-api/solana/getting-started",
+                  "web3-data-api/solana/get-your-api-key"
+                ]
+              },
+              {
+                "group": "API Reference",
+                "openapi": "https://solana-gateway.moralis.io/api-json"
+              },
+              {
+                "group": "FAQs",
+                "pages": [
+                  "web3-data-api/solana/faqs",
+                  "web3-data-api/solana/nft-metadata-faq"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Streams API",
+            "pages": [
+              "streams-api/evm",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "streams-api/evm/getting-started",
+                  "streams-api/evm/setup-secret-key"
+                ]
+              },
+              {
+                "group": "API Reference",
+                "openapi": "https://deep-index.moralis.io/api-docs-2.2/v2.2/swagger.json"
+              }
+            ]
+          },
+          {
+            "tab": "Changelog",
+            "pages": [
+              "changelog",
+              "changelog/get-tokens-by-exchange-api"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Status",
+          "href": "https://status.moralis.io/",
+          "icon": "signal"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://moralis.com/joindiscord/",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://moralis.com/blog/",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://moralis.com/"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Login",
+        "href": "https://admin.moralis.com/"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Start for Free",
+      "href": "https://admin.moralis.com/register"
+    }
+  },
+  "footer": {
+    "socials": {
+      "youtube": "https://www.youtube.com/channel/UCgWS9Q3P5AxCWyQLT2kQhBw",
+      "x": "https://x.com/moralisdevs",
+      "linkedin": "https://www.linkedin.com/company/moralisweb3/",
+      "discord": "https://discord.gg/s3UfDvXQTc"
+    }
+  }
+}

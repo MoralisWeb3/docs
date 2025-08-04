@@ -1,0 +1,27 @@
+export const HeroCard = ({ title, href }) => {
+  return (
+    <a
+      href={href}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "6px",
+        padding: "8px 16px",
+        borderRadius: "24px",
+        backgroundColor: "#23094a",
+        textDecoration: "none",
+        height: "34px",
+        width: "fit-content",
+        border: "1px solid #3F3F46",
+      }}
+      className="intro-card border hover:!border-primary dark:hover:!border-primary-light transition-colors"
+    >
+      <span
+        style={{ fontSize: "14px", fontWeight: 600, lineHeight: 1, color: "#fff"}}
+      >
+        {title}
+      </span>
+    </a>
+  );
+};

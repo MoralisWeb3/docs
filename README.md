@@ -1,48 +1,44 @@
-<div align="center">
-    <a align="center" href="https://moralis.io" target="_blank">
-      <img src="https://github.com/MoralisWeb3/Moralis-JS-SDK/raw/main/assets/moralis-logo.svg" alt="Moralis JS SDK" height=200/>
-    </a>
-    <h1 align="center">Moralis Documentation</h1>
-    <a href="https://discord.gg/moralis" target="_blank">
-      <img alt="Join the Moralis DAO on Discord" src="https://img.shields.io/discord/819584798443569182?color=7289DA&label=Discord&logo=discord&logoColor=ffffff" />
-    </a>
-    <a href="https://docs.moralis.com" target="_blank">
-      <img alt="Check the docs" src="https://img.shields.io/badge/Docs-Full Documentation-21BF96?style=flat&logo=gitbook&logoColor=ffffff" />
-    </a>
-    <a href="https://forum.moralis.io" target="_blank">
-      <img alt="Discourse posts" src="https://img.shields.io/discourse/posts?color=B7E803&label=Forum&logo=discourse&server=https%3A%2F%2Fforum.moralis.io" />
-    </a><br/>
-    <img alt="vercel" src="https://img.shields.io/github/deployments/MoralisWeb3/docs/production?label=vercel&logo=vercel&logoColor=white" />
-    <img alt="github" src="https://img.shields.io/github/last-commit/MoralisWeb3/docs" />
-    <img alt="algolia" src="https://github.com/MoralisWeb3/docs/actions/workflows/algolia.yml/badge.svg" />
-  <p>
-  </p>
-  <p>
-    The official repository of <a href="https://docs.moralis.com">Moralis Documentation</a>.
-  </p>
-  <br/>
-</div>
+# Mintlify Starter Kit
 
-### Installation
+Use the starter kit to get your docs deployed and ready to customize.
 
-```sh
-npm i
+Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+
+- Guide pages
+- Navigation
+- Customizations
+- API reference pages
+- Use of popular components
+
+**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+
+## Development
+
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+
+```
+npm i -g mint
 ```
 
-### Local Development
+Run the following command at the root of your documentation, where your `docs.json` is located:
 
-To start a local development server, run the following command.
-
-```sh
-npm run start
+```
+mint dev
 ```
 
-This command opens up a browser window and most changes are reflected live without having to restart the server.
+View your local preview at `http://localhost:3000`.
 
-### Build
+## Publishing changes
 
-```sh
-npm run build
-```
+Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Need help?
+
+### Troubleshooting
+
+- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
+- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+
+### Resources
+- [Mintlify documentation](https://mintlify.com/docs)
+- [Mintlify community](https://mintlify.com/community)

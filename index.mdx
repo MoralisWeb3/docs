@@ -1,0 +1,151 @@
+---
+mode: "custom"
+title: "Moralis Web3 Docs"
+---
+import {HeroCard} from '/snippets/hero-card.mdx';
+
+<div className="relative w-full flex items-center justify-center" style={{ height: '32rem', overflow: 'hidden'}}>
+
+  <div
+    id="background-div"
+    className="absolute inset-0 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://docs.moralis.com/assets/images/home-bg-1-4e33739ad0c75a8c8ea9e7f6aa65d3a2.webp)', backgroundSize: 'cover'}}>
+  </div>
+
+  <div
+    style={{
+      position: 'absolute', textAlign: 'center', padding: '0 1rem',
+    }}
+  >
+    <div
+      className="text-5xl dark:text-gray-200 text-black font-extrabold w-full mt-12 leading-[1.2] tracking-tight"
+    >
+      Moralis Web3 Docs
+    </div>
+
+    <p className=" text-base dark:text-gray-200 text-gray-900 font-bold mt-4">
+      Build with ease across 30+ chains with our API references, guides, and tutorials.
+    </p>
+
+    <div className="flex items-center justify-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <button
+        type="button"
+        className="hidden w-full lg:flex items-center text-sm leading-6 py-4 pl-4 pr-4 text-gray-500 rounded-full"
+        id="home-search-entry"
+        style={{
+          marginTop: '2rem',
+          maxWidth: '40rem',
+          background: '#FFF',
+          boxShadow: '0px 1px 4px 0px rgba(8, 9, 10, 0.25), 0px 0px 0px 4px rgba(255, 255, 255, 0.20)',
+          cursor: 'pointer',
+          textAlign: 'left',
+        }}
+        onClick={()=> document.getElementById('search-bar-entry').click()}
+      >
+        <svg
+          className="h-4 w-4 ml-1.5 flex-none bg-primary hover:bg-gray-600 dark:bg-primary-dark dark:hover:bg-white/70"
+          style={{
+          marginRight: '0.5rem',
+          maskImage:
+            'url("https://mintlify.b-cdn.net/v6.5.1/solid/magnifying-glass.svg")',
+          maskRepeat: 'no-repeat',
+          maskPosition: 'center center',
+          }}
+        />
+        Search or ask...
+      </button>
+    </div>
+    <div style={{ maxWidth: '650px', margin: '0 auto', marginTop: '2rem' }}>
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-2">
+        <p className=" text-lg dark:text-gray-200 text-gray-900 font-bold">
+          Popular Searches
+        </p>
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-3 mt-3">
+        <HeroCard title="Get OHLCV Prices" href="https://docs.moralis.com/web3-data-api/evm/reference/price/get-ohlcv-by-pair-address" />
+        <HeroCard title="Get Token Pairs" href="https://docs.moralis.com/web3-data-api/solana/reference/get-token-pairs-by-address" />
+        <HeroCard title="Get Token Swaps" href="https://docs.moralis.com/web3-data-api/evm/reference/get-swaps-by-token-address" />
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-3 mt-3">
+        <HeroCard title="Get Wallet History" href="https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-history" />
+        <HeroCard title="Get Pair Stats" href="https://docs.moralis.com/web3-data-api/evm/reference/get-token-pair-stats" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  style={{marginTop: '2rem', marginBottom: '8rem', maxWidth: '70rem', marginLeft: 'auto',
+  marginRight: 'auto', paddingLeft: '1.25rem',
+  paddingRight: '1.25rem' }}
+>
+<div className="flex flex-col w-full" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+  <h2
+    className="text-gray-900 dark:text-gray-200 "
+    style={{
+      fontSize: '2rem',
+      fontWeight: '700',
+    }}
+  >
+    Popular APIs
+  </h2>
+  </div>
+
+<Columns cols={3}>
+ <Card title="Wallet API" icon="wallet" href="https://docs.moralis.com/web3-data-api/evm/reference/wallet-api">
+
+Get all the balances and transactions for a specific wallet address.
+</Card>
+
+<Card title="NFT API" icon="shield-cat" href="https://docs.moralis.com/web3-data-api/evm/reference/nft-api">
+
+Summon all NFT transfers, prices, and metadata in realtime.
+</Card>
+
+<Card title="Token API" icon="hexagon-plus" href="https://docs.moralis.com/web3-data-api/evm/reference/token-api">
+
+Access all the information you need for any ERC20 tokens.
+</Card>
+
+<Card title="Streams API" icon="waveform-lines" href="/streams-api/evm">
+
+Receive blockchain data by listening to realtime on-chain events.
+</Card>
+
+<Card title="Price API" icon="chart-line-up" href="https://docs.moralis.com/web3-data-api/evm/reference/price-api">
+
+Access comprehensive price data for tokens - real time, historical, OHLCV etc.
+</Card>
+
+<Card title="Blockchain API" icon="cubes" href="https://docs.moralis.com/web3-data-api/evm/reference/blockchain-api">
+
+Get the Blocks, Transactions and logs data of a blockchain.
+</Card>
+
+</Columns>
+
+<div className="flex flex-col w-full" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+<h2
+  className="text-gray-900 dark:text-gray-200"
+  style={{
+    fontSize: '2rem',
+    fontWeight: '700',
+  }}
+>
+  Explore by Chain
+</h2>
+</div>
+
+<Columns cols={2}>
+<Card title="EVM API" icon="gem" href="https://docs.moralis.com/web3-data-api/evm/reference">
+
+Get NFT, token and transaction data from EVM chains.
+</Card>
+
+<Card title="Solana API" icon="code" href="https://docs.moralis.com/web3-data-api/solana/reference">
+
+Fetch user and token data from the Solana blockchain.
+</Card>
+
+</Columns>
+
+</div>
