@@ -124,7 +124,7 @@
   "logo": {
     "light": "/logo/light.png",
     "dark": "/logo/dark.png",
-    "href": "https://moralis.com/"
+    "page": "index"
   },
   "navbar": {
     "links": [
