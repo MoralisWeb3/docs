@@ -43,7 +43,11 @@
           {
             "tab": "Data APIs",
             "pages": [
-              "data-apis/index"
+              "data-api/index",
+              {
+                "group": "API Reference",
+                "openapi": "https://api.moralis.com/api-json"
+              },
             ]
           },
           {
