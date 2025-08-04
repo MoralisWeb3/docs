@@ -47,7 +47,7 @@
               {
                 "group": "API Reference",
                 "openapi": "https://api.moralis.com/api-json"
-              },
+              }
             ]
           },
           {
