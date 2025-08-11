@@ -18,7 +18,7 @@ A simple REST endpoint to access AI-powered blockchain intelligence - no setup r
 
 
 ```
-POST https://cortex-api.moralis.com/chat
+POST https://cortex-api.moralis.io/chat
 ```
 
 ## Self-Hosted MCP Server

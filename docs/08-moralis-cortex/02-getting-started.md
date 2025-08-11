@@ -44,7 +44,7 @@ The Cortex API lets you query Moralis AI models for real-time or standard respon
 **API Endpoint:**
 
 ```bash
-https://cortex-api.moralis.com/chat
+https://cortex-api.moralis.io/chat
 ```
 
 **Swagger Docs:** <br/>
@@ -68,7 +68,7 @@ Include your API key in the `X-API-KEY` header.
 #### Example Request 
 
 ```bash
-curl -X POST https://cortex-api.moralis.com/chat \
+curl -X POST https://cortex-api.moralis.io/chat \
   -H "Content-Type: application/json" \
   -H "X-API-KEY: YOUR_API_KEY_HERE" \
   -d '{
