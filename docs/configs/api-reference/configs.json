@@ -36145,22 +36145,118 @@
           "name": "network",
           "description": "The network to query",
           "required": true,
-          "type": "string",
-          "enum": ["mainnet", "devnet"],
-          "example": "mainnet"
+          "type": "string"
         },
         {
           "name": "address",
-          "description": "The address of the contract",
+          "description": "The address to query",
           "required": true,
-          "type": "string",
-          "example": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+          "example": "So11111111111111111111111111111111111111112",
+          "type": "string"
         }
       ],
       "queryParams": [],
       "responses": [
         {
           "status": "200",
+          "description": "",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "string",
+                "example": "So11111111111111111111111111111111111111112"
+              },
+              {
+                "name": "standard",
+                "type": "string",
+                "example": "metaplex"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "example": "Wrapped SOL"
+              },
+              {
+                "name": "symbol",
+                "type": "string",
+                "example": "SOL"
+              },
+              {
+                "name": "logo",
+                "type": "string",
+                "example": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp"
+              },
+              {
+                "name": "decimals",
+                "type": "string",
+                "example": "9"
+              },
+              {
+                "name": "tokenStandard",
+                "type": "number",
+                "example": 2
+              },
+              {
+                "name": "metaplex",
+                "type": "json",
+                "example": {
+                  "metadataUri": "",
+                  "masterEdition": false,
+                  "isMutable": true,
+                  "sellerFeeBasisPoints": 0,
+                  "updateAuthority": "AqH29mZfQFgRpfwaPoTMWSKJ5kqauoc1FwVBRksZyQrt",
+                  "primarySaleHappened": 0
+                }
+              },
+              {
+                "name": "fullyDilutedValue",
+                "type": "string",
+                "example": "119328194494.34"
+              },
+              {
+                "name": "totalSupply",
+                "type": "string",
+                "example": "607474490122173000"
+              },
+              {
+                "name": "totalSupplyFormatted",
+                "type": "string",
+                "example": "607474490.122173"
+              },
+              {
+                "name": "links",
+                "type": "json",
+                "example": {
+                  "discord": "https://discordapp.com/invite/pquxPsq",
+                  "reddit": "https://www.reddit.com/r/solana",
+                  "twitter": "https://twitter.com/solana",
+                  "website": "https://solana.com/",
+                  "medium": "https://medium.com/solana-labs",
+                  "moralis": "https://moralis.com/chain/solana/token/price/So11111111111111111111111111111111111111112"
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "example": "Solana is a high-performance blockchain platform designed for mass adoption, offering fast transaction speeds, low fees, and scalability. It supports a wide range of applications, from payments and gaming to NFTs and DeFi, with a focus on real-world use cases and environmental sustainability."
+              },
+              {
+                "name": "isVerifiedContract",
+                "type": "boolean",
+                "example": true
+              },
+              {
+                "name": "possibleSpam",
+                "type": "boolean",
+                "example": true
+              }
+            ]
+          }
+        },
+        {
+          "status": "default",
           "description": "",
           "body": {
             "type": "object",
@@ -36182,11 +36278,36 @@
                 "type": "string"
               },
               {
+                "name": "logo",
+                "type": "string"
+              },
+              {
+                "name": "decimals",
+                "type": "string"
+              },
+              {
+                "name": "tokenStandard",
+                "type": "number"
+              },
+              {
+                "name": "totalSupply",
+                "type": "string"
+              },
+              {
+                "name": "totalSupplyFormatted",
+                "type": "string"
+              },
+              {
+                "name": "fullyDilutedValue",
+                "type": "string"
+              },
+              {
                 "name": "metaplex",
                 "type": "object",
                 "properties": {
                   "metadataUri": {
-                    "type": "string"
+                    "type": "string",
+                    "nullable": true
                   },
                   "masterEdition": {
                     "type": "boolean"
@@ -36201,7 +36322,8 @@
                     "type": "number"
                   },
                   "updateAuthority": {
-                    "type": "string"
+                    "type": "string",
+                    "nullable": true
                   }
                 },
                 "required": [
@@ -36212,13 +36334,26 @@
                   "sellerFeeBasisPoints",
                   "updateAuthority"
                 ]
+              },
+              {
+                "name": "links",
+                "type": "object",
+                "fields": []
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "isVerifiedContract",
+                "type": "boolean"
+              },
+              {
+                "name": "possibleSpam",
+                "type": "boolean"
               }
             ]
           }
-        },
-        {
-          "status": "400",
-          "description": ""
         }
       ]
     },
