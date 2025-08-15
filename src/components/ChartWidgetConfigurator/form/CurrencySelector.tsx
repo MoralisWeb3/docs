@@ -6,14 +6,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../ui/select";
-import { WgetForm } from "../utils/wget";
-import {
-  getLanguageDisplayName,
-  getPrimaryCode,
-  PRICE_CHART_LANGUAGES,
-} from "../utils/language";
+import { CURRENCY_OPTIONS, WgetForm } from "../utils/wget";
 
-export const LanguageSelector = ({
+export const CurrencySelector = ({
   config,
   onChange,
 }: {
@@ -21,18 +16,18 @@ export const LanguageSelector = ({
   onChange: (key: keyof WgetForm, value: any) => void;
 }) => (
   <div>
-    <label className="block text-sm font-medium mb-2">Language</label>
+    <label className="block text-sm font-medium mb-2">Currency</label>
     <Select
-      value={config.locale}
-      onValueChange={(value) => onChange("locale", value)}
+      value={config.currency || ""}
+      onValueChange={(value) => onChange("currency", value)}
     >
       <SelectTrigger className="w-full">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        {PRICE_CHART_LANGUAGES.map((code) => (
+        {CURRENCY_OPTIONS.map((code) => (
           <SelectItem key={code} value={code}>
-            {getLanguageDisplayName(getPrimaryCode(code))} ({code})
+            {code}
           </SelectItem>
         ))}
       </SelectContent>
