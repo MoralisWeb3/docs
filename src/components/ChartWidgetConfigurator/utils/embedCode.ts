@@ -58,6 +58,13 @@ const buildOptions = (args: WgetForm) => {
     options.push(`locale: '${args.locale}'`);
   }
 
+  if (args.showCurrencyToggle) {
+    options.push(`showCurrencyToggle: ${args.showCurrencyToggle}`);
+  }
+  if (args.currency) {
+    options.push(`currency: '${args.currency}'`);
+  }
+
   if (isMoralisCustomTheme(args.theme)) {
     if (args.chartBgColor) {
       options.push(`backgroundColor: '${args.chartBgColor}'`);

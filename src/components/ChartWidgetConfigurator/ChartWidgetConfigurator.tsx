@@ -17,6 +17,7 @@ import { ToolbarOptions } from "./form/ToolbarOptions";
 import { getEmbedCode } from "./utils/embedCode";
 import { CodeLang } from "./utils/types";
 import { PRICE_CHART_WIDGET_FORM_DEFAULT_VALUES, WgetForm } from "./utils/wget";
+import { CurrencySelector } from "./form/CurrencySelector";
 
 const ChartWidgetConfigurator = () => {
   const [activeTab, setActiveTab] = useState<CodeLang>("html");
@@ -104,6 +105,7 @@ const ChartWidgetConfigurator = () => {
               <ThemeSelector config={config} onChange={handleConfigChange} />
               <ToolbarOptions config={config} onChange={handleConfigChange} />
               <LanguageSelector config={config} onChange={handleConfigChange} />
+              <CurrencySelector config={config} onChange={handleConfigChange} />
               <div className="grid grid-cols-2 gap-4">
                 <TimezoneSelector
                   config={config}

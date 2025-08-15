@@ -18,7 +18,11 @@ export const PRICE_CHART_WIDGET_FORM_DEFAULT_VALUES: WgetForm = {
   hideTopToolbar: false,
   hideBottomToolbar: false,
   showHoldersChart: true,
+  showCurrencyToggle: true,
 };
+
+export const CURRENCY_OPTIONS = ["usd", "native"] as const;
+export type Currency = (typeof CURRENCY_OPTIONS)[number];
 
 export type WgetForm = {
   chainId: ChainIdString;
@@ -41,4 +45,6 @@ export type WgetForm = {
   candleUpColor?: string;
   candleDownColor?: string;
   showHoldersChart?: boolean;
+  showCurrencyToggle?: boolean;
+  currency?: Currency;
 };

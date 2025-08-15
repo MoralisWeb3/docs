@@ -27,5 +27,14 @@ export const ChartOptions = ({
       />
       <span>Automatic width & height</span>
     </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="checkbox"
+        checked={config.showCurrencyToggle}
+        onChange={(e) => onChange("showCurrencyToggle", e.target.checked)}
+        className="rounded"
+      />
+      <span>Show Currency Toggle</span>
+    </label>
   </div>
 );
