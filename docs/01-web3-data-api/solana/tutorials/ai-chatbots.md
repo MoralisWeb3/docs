@@ -20,17 +20,25 @@ This guide will help you build AI chatbots that can effectively:
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-- [AI Query to API Endpoint Mapping](#ai-query-to-api-endpoint-mapping)
-  - [EVM Chains](#evm-chains)
-  - [Solana](#solana)
-  - [Cross-Chain Capabilities](#cross-chain-capabilities)
-- [Implementation Approaches](#implementation-approaches)
-  - [Prompt Engineering](#prompt-engineering)
-  - [Function Calling](#function-calling)
-  - [RAG (Retrieval-Augmented Generation)](#rag-retrieval-augmented-generation)
-- [Best Practices](#best-practices)
-- [Resources](#resources)
+<ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#ai-query-to-api-endpoint-mapping">AI Query to API Endpoint Mapping</a>
+  <ul>
+  <li><a href="#evm-chains">EVM Chains</a></li>
+  <li><a href="#solana">Solana</a></li>
+  <li><a href="#cross-chain-capabilities">Cross-Chain Capabilities</a></li>
+  </ul>
+</li>
+<li><a href="#implementation-approaches">Implementation Approaches</a>
+  <ul>
+  <li><a href="#prompt-engineering">Prompt Engineering</a></li>
+  <li><a href="#function-calling">Function Calling</a></li>
+  <li><a href="#rag-retrieval-augmented-generation">RAG (Retrieval-Augmented Generation)</a></li>
+  </ul>
+</li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
 
 ## Getting Started
 

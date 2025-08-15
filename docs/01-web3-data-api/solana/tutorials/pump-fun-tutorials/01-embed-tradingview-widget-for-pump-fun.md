@@ -27,7 +27,7 @@ To see a complete walkthrough of embedding TradingView charts using Moralis, che
 
 ## 🛠 Step 1: Configure Your Chart
 
-1. Go to **[Moralis Price Chart Widget](https://moralis.com/widgets/price-chart)**.
+1. Go to **[Moralis Price Chart Widget](https://explorer.moralis.com/widgets/price-chart)**.
 2. Enter your **token address or pair address**.
 3. Customize your **theme, background, candle colors, text colors, etc.**.
 4. Choose a **default time interval** (e.g., `1D`, `1H`, `5M`).

@@ -433,7 +433,7 @@ const config = {
       },
       algolia: {
         appId: "K26H89KJU5",
-        apiKey: process.env.ALGOLIA_API_KEY,
+        apiKey: process.env.ALGOLIA_API_KEY || "dummy-key",
         indexName: "gold-iota",
         contextualSearch: true,
       },
@@ -450,7 +450,7 @@ const config = {
     ],
     [
       "./src/plugins/docusaurus-plugin-segment",
-      { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
+      { apiKey: process.env.SEGMENT_API_KEY || "dummy_key", host: "tr-cdn.moralis.io" },
     ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],

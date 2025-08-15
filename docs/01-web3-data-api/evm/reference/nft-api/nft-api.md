@@ -8,16 +8,18 @@ sidebar_position: 2
 
 Select what you want to achieve:
 
-- [Get NFTs](#get-nfts)
-- [Get NFT Metadata](#get-nft-metadata)
-- [Get NFT Transfers](#get-nft-transfers)
-- [Get NFT Collections](#get-nft-collections)
-- [Get NFT Owners](#get-nft-owners)
-- [Get NFT Prices](#get-nft-prices)
-- [Get NFT Trades](#get-nft-trades)
-- [Get NFT Stats](#get-nft-stats)
-- [Get NFT Traits and Rarity](#get-nft-traits-and-rarity)
-- [Get Trending NFTs](#get-trending-nfts)
+<ul>
+<li><a href="#get-nfts">Get NFTs</a></li>
+<li><a href="#get-nft-metadata">Get NFT Metadata</a></li>
+<li><a href="#get-nft-transfers">Get NFT Transfers</a></li>
+<li><a href="#get-nft-collections">Get NFT Collections</a></li>
+<li><a href="#get-nft-owners">Get NFT Owners</a></li>
+<li><a href="#get-nft-prices">Get NFT Prices</a></li>
+<li><a href="#get-nft-trades">Get NFT Trades</a></li>
+<li><a href="#get-nft-stats">Get NFT Stats</a></li>
+<li><a href="#get-nft-traits-and-rarity">Get NFT Traits and Rarity</a></li>
+<li><a href="#get-trending-nfts">Get Trending NFTs</a></li>
+</ul>
 
 ### Get NFTs
 
