@@ -8,32 +8,40 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This article provides a comprehensive and continually expanding list of supported DeFi protocols and chains for the following endpoints:
 
-- [DeFi Protocols by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary)
-- [DeFi Positions by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary)
-- [Get Detailed DeFi Positions by Wallet and Protocol](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol)
+<ul>
+  <li>
+    <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary">DeFi Protocols by Wallet</a>
+  </li>
+  <li>
+    <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary">DeFi Positions by Wallet</a>
+  </li>
+  <li>
+    <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol">Get Detailed DeFi Positions by Wallet and Protocol</a>
+  </li>
+</ul>
 
 ## Supported Protocols & Chains
 
-| Protocol              | Query Parameter  | Supported Chains                                                                                |
-| --------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
-| Aave v2               | `aave-v2`        | - Ethereum <br/>- Polygon                                                                       |
-| Aave v3               | `aave-v3`        | - Arbitrum <br/>- Base <br/>- Ethereum <br/>- Polygon                                                           |
-| Eigenlayer            | `eigenlayer`     | - Ethereum                                                                                      |
-| Etherfi\*             | `etherfi`        | - Arbitrum<br/>- Base<br/>- Binance<br/>- Ethereum<br/>- Linea<br/>- Optimism                   |
-| FraxSwap v1           | `fraxswap-v1`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
-| FraxSwap v2           | `fraxswap-v2`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
-| Lido                  | `lido`           | - Ethereum                                                                                      |
-| MakerDAO              | `makerdao`       | - Ethereum                                                                                      |
-| Pancakeswap v2        | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
-| Pancakeswap v3        | `pancakeswap-v3` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
-| Pendle                | `pendle`         | - Arbitrum <br/>- Ethereum                                                                                      |
-| QuickSwap v2          | `quickswap-v2`   | - Polygon                                                                                       |
-| QuickSwap v3          | `quickswap-v3`   | - Polygon                                                                                       |
-| Rocket Pool           | `rocketpool`     | - Arbitrum<br/>- Ethereum<br/>- Base<br/>- Polygon<br/>- Optimism                               |
-| Spark                 | `sparkfi`        | - Ethereum                                                                                      |
-| SushiSwap v2          | `sushiswap-v2`   | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Polygon                                                |
-| Uniswap v2\*\*        | `uniswap-v2`     | - Arbitrum<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea <br/>- Polygon        |
-| Uniswap v3            | `uniswap-v3`     | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon |
+| Protocol       | Query Parameter  | Supported Chains                                                                                |
+| -------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| Aave v2        | `aave-v2`        | - Ethereum <br/>- Polygon                                                                       |
+| Aave v3        | `aave-v3`        | - Arbitrum <br/>- Base <br/>- Ethereum <br/>- Polygon                                           |
+| Eigenlayer     | `eigenlayer`     | - Ethereum                                                                                      |
+| Etherfi\*      | `etherfi`        | - Arbitrum<br/>- Base<br/>- Binance<br/>- Ethereum<br/>- Linea<br/>- Optimism                   |
+| FraxSwap v1    | `fraxswap-v1`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
+| FraxSwap v2    | `fraxswap-v2`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
+| Lido           | `lido`           | - Ethereum                                                                                      |
+| MakerDAO       | `makerdao`       | - Ethereum                                                                                      |
+| Pancakeswap v2 | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
+| Pancakeswap v3 | `pancakeswap-v3` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
+| Pendle         | `pendle`         | - Arbitrum <br/>- Ethereum                                                                      |
+| QuickSwap v2   | `quickswap-v2`   | - Polygon                                                                                       |
+| QuickSwap v3   | `quickswap-v3`   | - Polygon                                                                                       |
+| Rocket Pool    | `rocketpool`     | - Arbitrum<br/>- Ethereum<br/>- Base<br/>- Polygon<br/>- Optimism                               |
+| Spark          | `sparkfi`        | - Ethereum                                                                                      |
+| SushiSwap v2   | `sushiswap-v2`   | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Polygon                                |
+| Uniswap v2\*\* | `uniswap-v2`     | - Arbitrum<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea <br/>- Polygon                    |
+| Uniswap v3     | `uniswap-v3`     | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon |
 
 _\*Etherfi currently only supports Staking positions. Yield positions are not yet supported._
 
