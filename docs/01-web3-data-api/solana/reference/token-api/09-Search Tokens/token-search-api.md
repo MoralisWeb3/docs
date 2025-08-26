@@ -16,6 +16,6 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-<PremiumEndpoint customText="To use this API, you will need an API key associated with a Moralis account on the <strong>Business</strong> plan or a custom Enterprise plan.</p><p>For FAQs and more information about token search, please check out our <a href='/web3-data-api/evm/token-search'>Token Search API FAQ</a>." />
+<PremiumEndpoint customText="For FAQs and more information about token search, please check out our [Token Search API FAQs](/web3-data-api/evm/token-search)." />
 
 <ApiReference {...config.solana.searchTokens} />
