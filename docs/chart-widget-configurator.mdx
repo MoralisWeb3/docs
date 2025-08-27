@@ -16,3 +16,40 @@ Charts powered by [TradingView](https://www.tradingview.com/).
 Do you want to remove the Moralis badge? [Upgrade to business](https://moralis.com/pricing/)
 
 <ChartWidgetConfigurator />{" "}
+
+## Error Handling
+
+To handle widget errors in your application, add the following error handling code:
+
+### React
+
+```typescript
+useEffect(() => {
+  const handleMessage = (event: MessageEvent) => {
+    if (event.data?.type === 'MORALIS_WIDGET_ERROR') {
+      console.error('Moralis Widget Error:', event.data);
+
+      // Handle the error (e.g., show notification, log to analytics, retry logic, etc.)
+    }
+  };
+
+  window.addEventListener('message', handleMessage);
+
+  return () => {
+    window.removeEventListener('message', handleMessage);
+  };
+}, []);
+```
+
+### JavaScript + HTML
+
+```html
+<script>
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'MORALIS_WIDGET_ERROR') {
+      console.error('Moralis Widget Error:', event.data);
+      // Handle the error
+    }
+  });
+</script>
+```
