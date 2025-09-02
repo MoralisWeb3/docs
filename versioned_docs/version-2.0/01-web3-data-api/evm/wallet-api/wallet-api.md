@@ -25,7 +25,7 @@ The Wallet API provides out-of-the-box functionality for the most popular featur
 
 ## Example use cases
 
-The use cases for our Wallet API API are truly endless! Some popular use cases include:
+The use cases for our Wallet API are truly endless! Some popular use cases include:
 
 - Web3 Wallets
   - Current and historical token balances
