@@ -62,10 +62,6 @@ If a supported token cannot be fully analyzed due to insufficient data, it will 
 
 Yes, a token’s security score is dynamic and can change over time. After a token is initially analyzed and assigned a score, this score remains valid for one week. After this period, the token will be re-analyzed upon its next trade. If the token is not traded for another month, it will not be re-analyzed until a new trade occurs.
 
-## Can I access a detailed breakdown of the factors contributing to a token's security score?
-
-Yes, users can access a comprehensive breakdown of all the metrics that contribute to a token's security score. To view this detailed data, please contact our enterprise sales team.
-
 ## What chains are supported?
 
 All mainnet chains are supported.
