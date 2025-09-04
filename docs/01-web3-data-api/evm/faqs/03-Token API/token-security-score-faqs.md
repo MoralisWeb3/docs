@@ -46,8 +46,6 @@ Our Token Security Score leverages over 35 distinct metrics to provide a compreh
 
 These metrics, along with many others, are combined to form a holistic view of a token's security, ensuring that users are better protected from potential threats in the decentralized finance ecosystem.
 
-For a full comprehensive breakdown of all metrics we consider, as well as to get access to this detailed data, please contact our enterprise sales team.
-
 ## What criteria must a token meet to receive a security score?
 
 As soon as a token begins trading, it qualifies for analysis and will be assigned a security score based on the available data.
