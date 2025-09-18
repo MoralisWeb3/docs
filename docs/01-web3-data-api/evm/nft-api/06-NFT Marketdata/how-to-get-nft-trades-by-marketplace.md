@@ -146,7 +146,9 @@ Congratulations 🥳 You just got all the trades of an NFT with just a few lines
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-nft-trades">getNFTTrades</a></li>
+</ul>
 
 ## Support
 

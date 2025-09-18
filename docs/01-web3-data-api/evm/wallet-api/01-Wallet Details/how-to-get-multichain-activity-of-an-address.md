@@ -174,7 +174,9 @@ Congratulations 🥳 you just found the activity of a wallet address on multiple
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletActiveChains](/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet">getWalletActiveChains</a></li>
+</ul>
 
 ## Support
 

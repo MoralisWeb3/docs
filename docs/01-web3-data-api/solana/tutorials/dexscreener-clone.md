@@ -14,7 +14,9 @@ Learn how to create a comprehensive cryptocurrency terminal application with Rea
 
 - Basic knowledge of React
 - Familiarity with Web3 concepts
-- [Moralis account](https://admin.moralis.com/register)
+<ul>
+  <li><a href="https://admin.moralis.com/register">Moralis account</a></li>
+</ul>
 - Node.js installed on your computer
 
 ## Video Tutorial

@@ -156,7 +156,9 @@ Congratulations 🥳 you just got the price of an ERC20 metadata by multiple tok
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadata](/web3-data-api/evm/reference/get-token-metadata)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-token-metadata">getTokenMetadata</a></li>
+</ul>
 
 ## Support
 

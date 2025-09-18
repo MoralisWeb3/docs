@@ -121,7 +121,9 @@ https://www.youtube.com/watch?v=Q0tPFW0nf1E
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [resolveAddress](/web3-data-api/evm/reference/wallet-api/resolve-address)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/wallet-api/resolve-address">resolveAddress</a></li>
+</ul>
 
 ## Support
 

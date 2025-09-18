@@ -156,10 +156,12 @@ X-API-Key: YOUR_API_KEY
 
 Explore our tutorials to see what you can do with the Filtered Tokens API:
 
-- [Finding Trending Tokens](/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens)
-- [Top Gainers & Losers](/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers)
-- [Solid Performers](/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers)
-- [Blue Chip Tokens](/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens)
-- [Tokens with Buying Pressure](/web3-data-api/evm/tutorials/filtered-tokens-api/buying-pressure)
-- [Tokens with Experienced Buyers](/web3-data-api/evm/tutorials/filtered-tokens-api/experienced-buyers)
-- [Risky Bets](/web3-data-api/evm/tutorials/filtered-tokens-api/risky-bets)
+<ul>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/trending-tokens">Finding Trending Tokens</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/top-gainers-losers">Top Gainers & Losers</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/solid-performers">Solid Performers</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/blue-chip-tokens">Blue Chip Tokens</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/buying-pressure">Tokens with Buying Pressure</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/experienced-buyers">Tokens with Experienced Buyers</a></li>
+  <li><a href="/web3-data-api/evm/tutorials/filtered-tokens-api/risky-bets">Risky Bets</a></li>
+</ul>

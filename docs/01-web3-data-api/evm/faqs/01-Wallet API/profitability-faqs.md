@@ -8,9 +8,11 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This article provides a set of FAQs for the following wallet and token PnL endpoints:
 
-- [Wallet PnL Summary](/web3-data-api/evm/reference/wallet-api/get-wallet-profitability-summary?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth)
-- [Wallet PnL Breakdown](/web3-data-api/evm/reference/wallet-api/get-wallet-profitability?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth&token_addresses=[])
-- [Top Profitable Wallets by Token](/web3-data-api/evm/reference/get-top-profitable-wallet-per-token?address=0x7c9f4c87d911613fe9ca58b579f737911aad2d43&chain=eth)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-profitability-summary?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth">Wallet PnL Summary</a></li>
+  <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-profitability?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&chain=eth&token_addresses=[]">Wallet PnL Breakdown</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-top-profitable-wallet-per-token?address=0x7c9f4c87d911613fe9ca58b579f737911aad2d43&chain=eth">Top Profitable Wallets by Token</a></li>
+</ul>
 
 ### What type of PnL (Profit and Loss) is supported?
 

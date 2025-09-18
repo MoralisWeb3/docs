@@ -130,7 +130,9 @@ https://www.youtube.com/watch?v=sL5t07JE0aE
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNativeBalance](/web3-data-api/evm/reference/get-native-balance)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-native-balance">getNativeBalance</a></li>
+</ul>
 
 ## Support
 

@@ -122,9 +122,11 @@ Whether you’re building NFT marketplaces, portfolio trackers, or analytical to
 
 For more detailed information on the NFT Floor Price APIs, check out the official documentation:
 
-- [Get NFT Floor Price by Contract](/web3-data-api/evm/reference/price/get-nft-floor-price-by-contract) - Retrieve the floor price for any NFT collection by contract address
-- [Get NFT Floor Price by Token](/web3-data-api/evm/reference/price/get-nft-floor-price-by-token) - Get the floor price for a specific token within an NFT collection.
-- [Get Historical NFT Floor Prices](/web3-data-api/evm/reference/price/get-nft-historical-floor-price-by-contract) - Fetch historical floor prices for any NFT collection, perfect for tracking price trends over time.
+<ul>
+  <li><a href="/web3-data-api/evm/reference/price/get-nft-floor-price-by-contract">Get NFT Floor Price by Contract</a> - Retrieve the floor price for any NFT collection by contract address</li>
+  <li><a href="/web3-data-api/evm/reference/price/get-nft-floor-price-by-token">Get NFT Floor Price by Token</a> - Get the floor price for a specific token within an NFT collection.</li>
+  <li><a href="/web3-data-api/evm/reference/price/get-nft-historical-floor-price-by-contract">Get Historical NFT Floor Prices</a> - Fetch historical floor prices for any NFT collection, perfect for tracking price trends over time.</li>
+</ul>
 
 For additional guidance and frequently asked questions, visit our[NFT Floor Price API FAQs](/web3-data-api/evm/nft-floor-price-faqs)
 

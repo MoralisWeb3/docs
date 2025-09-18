@@ -178,7 +178,9 @@ Congratulations 🥳 You just got a block using its block number with just a few
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getBlock](/web3-data-api/evm/reference/get-block)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-block">getBlock</a></li>
+</ul>
 
 ## Support
 

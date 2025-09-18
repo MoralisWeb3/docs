@@ -180,7 +180,9 @@ Congratulations 🥳 You just got all the transfers for an NFT collection with j
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-nft-contract-transfers">getNFTContractTransfers</a></li>
+</ul>
 
 ## Support
 

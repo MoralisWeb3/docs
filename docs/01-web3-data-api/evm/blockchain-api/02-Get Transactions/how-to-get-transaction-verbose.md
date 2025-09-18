@@ -168,7 +168,9 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactionsVerbose](/web3-data-api/evm/reference/get-decoded-wallet-transaction)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-decoded-wallet-transaction">getWalletTransactionsVerbose</a></li>
+</ul>
 
 ## Support
 

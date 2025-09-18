@@ -167,7 +167,9 @@ Now, let's make the client-side that implements the authentication process.
 
 We need to add the following dependencies using the CDN:
 
-- [Ether.js](https://docs.ethers.io/v5/) - so we can sign messages with our wallet (MetaMask in the case of this demo)
+<ul>
+  <li><a href="https://docs.ethers.io/v5/">Ether.js</a> - so we can sign messages with our wallet (MetaMask in the case of this demo)</li>
+</ul>
 - The Supabase SDK
 - Axios (for making HTTP requests)
 

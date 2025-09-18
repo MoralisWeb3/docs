@@ -197,7 +197,9 @@ Congratulations 🥳 You just got the historical price of an ERC20 Token with ju
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-token-price">getTokenPrice</a></li>
+</ul>
 
 ## Support
 

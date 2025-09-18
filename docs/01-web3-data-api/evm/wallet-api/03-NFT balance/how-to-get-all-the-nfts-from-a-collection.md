@@ -189,7 +189,9 @@ https://www.youtube.com/watch?v=3oUb9QGTXEU
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-contract-nfts">getContractNFTs</a></li>
+</ul>
 
 ## Support
 

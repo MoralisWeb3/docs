@@ -167,7 +167,9 @@ Get started with Moralis today and take advantage of its powerful Web3 API featu
 
 For more information on the Token Approvals API, check out the official documentation:
 
-- [Token Approvals API](/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals">Token Approvals API</a></li>
+</ul>
 
 The documentation provides in-depth details on all available parameters, response formats, and chain support for the API.
 

@@ -12,9 +12,11 @@ If you want to call the Moralis API from your frontend app, don't do this direct
 
 Moreover, in this tutorial, we will use three Firebase services:
 
-- [Hosting](https://firebase.google.com/docs/hosting)
-- [Firestore](https://firebase.google.com/docs/firestore)
-- [Cloud Functions](https://firebase.google.com/docs/functions) (only in the "Pay as you go" billing plan).
+<ul>
+  <li><a href="https://firebase.google.com/docs/hosting">Hosting</a></li>
+  <li><a href="https://firebase.google.com/docs/firestore">Firestore</a></li>
+  <li><a href="https://firebase.google.com/docs/functions">Cloud Functions</a> (only in the "Pay as you go" billing plan).</li>
+</ul>
 
 ## Proxy Function
 

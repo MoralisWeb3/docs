@@ -8,9 +8,11 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This article provides a comprehensive and continually expanding list of supported DeFi protocols and chains for the following endpoints:
 
-- [DeFi Protocols by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary)
-- [DeFi Positions by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary)
-- [Get Detailed DeFi Positions by Wallet and Protocol](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol)
+<ul>
+  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary">DeFi Protocols by Wallet</a></li>
+  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary">DeFi Positions by Wallet</a></li>
+  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol">Get Detailed DeFi Positions by Wallet and Protocol</a></li>
+</ul>
 
 ## Supported Protocols & Chains
 

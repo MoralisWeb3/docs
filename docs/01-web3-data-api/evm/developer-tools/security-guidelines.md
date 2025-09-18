@@ -120,15 +120,19 @@ In order to avoid bad actor stealing your [Moralis API key](/web3-data-api/evm/g
 
 ## References
 
-- [Moralis API Key](/web3-data-api/evm/get-your-api-key)
-- [Moralis SDK](/web3-data-api/evm/moralis-sdk)
-- [`@moralisweb3/next`](https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next)
+<ul>
+  <li><a href="/web3-data-api/evm/get-your-api-key">Moralis API Key</a></li>
+  <li><a href="/web3-data-api/evm/moralis-sdk">Moralis SDK</a></li>
+  <li><a href="https://github.com/MoralisWeb3/Moralis-JS-SDK/tree/main/packages/next">`@moralisweb3/next`</a></li>
+</ul>
 
 ## Next Steps
 
 To secure your dapp even further, we have more in-depth guides on specific APIs:
 
-- [Streams API Webhook Security](/streams-api/evm/webhook-security)
+<ul>
+  <li><a href="/streams-api/evm/webhook-security">Streams API Webhook Security</a></li>
+</ul>
 
 ## Support
 

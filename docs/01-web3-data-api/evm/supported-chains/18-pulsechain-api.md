@@ -27,59 +27,71 @@ The Web3 Data API is available for the following Pulsechain networks:
 
 The following APIs are supported for Pulsechain:
 
-- [Wallet API](/web3-data-api/evm/reference#wallet-api)
-- [Token API](/web3-data-api/evm/reference#token-api)
-- [Entity API](/web3-data-api/evm/reference#entity-api)
-- [Price API](/web3-data-api/evm/reference#price-api)
-- [Blockchain API](/web3-data-api/evm/reference#blockchain-api)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a></li>
+  <li><a href="/web3-data-api/evm/reference#token-api">Token API</a></li>
+  <li><a href="/web3-data-api/evm/reference#entity-api">Entity API</a></li>
+  <li><a href="/web3-data-api/evm/reference#price-api">Price API</a></li>
+  <li><a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a></li>
+</ul>
 
 ### Wallet API
 
 The Wallet API enables you to interact with wallet data on the Pulsechain blockchain.
 
-- [Get Wallet History on Pulsechain](/web3-data-api/evm/reference#get-wallet-history)
-- [Get Wallet Token Balances on Pulsechain](/web3-data-api/evm/reference#get-wallet-token-balances)
-- [Get Wallet Token Approvals on Pulsechain](/web3-data-api/evm/reference#get-wallet-token-approvals)
-- [Get Wallet Net-worth on Pulsechain](/web3-data-api/evm/reference#get-wallet-net-worth)
-- [Get Wallet Details on Pulsechain](/web3-data-api/evm/reference#get-wallet-details)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Pulsechain</a></li>
+</ul>
 
 ### Token API
 
 The Token API provides methods for interacting with ERC-20 tokens on Pulsechain. Choose from the following actions:
 
-- [Get Token Metadata on Pulsechain](/web3-data-api/evm/reference#get-token-metadata)
-- [Get Token Price on Pulsechain](/web3-data-api/evm/reference#get-token-price)
-- [Get Token Balances on Pulsechain](/web3-data-api/evm/reference#get-token-balances)
-- [Get Token Approvals on Pulsechain](/web3-data-api/evm/reference#get-token-approvals)
-- [Get Token Transfers on Pulsechain](/web3-data-api/evm/reference#get-token-transfers)
-- [Get Token Top Traders on Pulsechain](/web3-data-api/evm/reference#get-token-top-traders)
-- [Get Token Pairs & Liquidity on Pulsechain](/web3-data-api/evm/reference#get-token-pairs--liquidity)
-- [Get Token Stats on Pulsechain](/web3-data-api/evm/reference#get-token-stats)
-- [Get Token Owners on Pulsechain](/web3-data-api/evm/reference#get-token-owners)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Pulsechain</a></li>
+</ul>
 
 ### Entity API
 
 The Entity API allows you to interact with various entities on Pulsechain, such as exchanges or other organizations:
 
-- [Search Entities](/web3-data-api/evm/reference#search-entities)
-- [Get Entity Categories](/web3-data-api/evm/reference#get-entity-categories)
-- [Get Entities](/web3-data-api/evm/reference#get-entities)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#search-entities">Search Entities</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-entities">Get Entities</a></li>
+</ul>
 
 ### Price API
 
 Retrieve price data for tokens on Pulsechain using the Price API:
 
-- [Get Token Prices on Pulsechain](/web3-data-api/evm/reference#get-token-prices)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Pulsechain</a></li>
+</ul>
 
 ### Blockchain API
 
 The Blockchain API gives access to blockchain-level data such as blocks, transactions, and logs:
 
-- [Get Blocks on Pulsechain](/web3-data-api/evm/reference#get-blocks)
-- [Get Transactions on Pulsechain](/web3-data-api/evm/reference#get-transactions)
-- [Get Logs on Pulsechain](/web3-data-api/evm/reference#get-logs)
-- [Get Stats on Pulsechain](/web3-data-api/evm/reference#get-stats)
-- [Get Latest Block Number on Pulsechain](/web3-data-api/evm/reference#get-latest-block-number)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Pulsechain</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Pulsechain</a></li>
+</ul>
 
 ---
 

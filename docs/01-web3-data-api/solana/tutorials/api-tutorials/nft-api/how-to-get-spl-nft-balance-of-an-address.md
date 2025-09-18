@@ -126,7 +126,9 @@ Congratulations 🥳 You just got the SPL NFT balance of a wallet address with j
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTs](/web3-data-api/solana/reference/get-sol-nfts)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/get-sol-nfts">getNFTs</a></li>
+</ul>
 
 ## YouTube Tutorial
 

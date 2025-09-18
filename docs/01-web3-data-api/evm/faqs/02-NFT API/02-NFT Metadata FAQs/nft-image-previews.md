@@ -17,12 +17,14 @@ We currently support popular image types such as JPG, JPEG, PNG, GIFs, TIFF etc.
 
 NFT thumbnail previews are added across all endpoints that currently return NFTs today. Media items will be included when the query paramter, `media_items` is set to `true`, across the following endpoints:
 
-- [Get Multiple NFTs](/web3-data-api/evm/reference/get-multiple-nfts)
-- [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
-- [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
-- [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)
-- [Get NFT owners by token id](/web3-data-api/evm/reference/get-nft-token-id-owners)
-- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-multiple-nfts">Get Multiple NFTs</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-nfts">Get NFTs by wallet</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-contract-nfts">Get NFTs by contract</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-nft-owners">Get NFT owners by contract</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-nft-token-id-owners">Get NFT owners by token id</a></li>
+  <li><a href="/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a></li>
+</ul>
 
 ## Does this cost additional CUs?
 

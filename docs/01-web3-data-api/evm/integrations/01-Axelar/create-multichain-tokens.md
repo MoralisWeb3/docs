@@ -963,15 +963,19 @@ Woohoo! Congratulations, you have just completely built and deployed a multichai
 
 You can also explore other functionalities of the Interchain Token Service, such as:
 
-- [Creating a new custom Interchain Token](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/create-token#create-a-custom-interchain-token)
-- [Transforming an existing token into an Interchain token](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/upgrade-tokens#canonical-tokens-simple-wrappers)
-- [Turn deployed tokens on multiple chains into Interchain Tokens](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/upgrade-tokens#link-deployed-tokens-on-multiple-chains-into-interchain-tokens)
+<ul>
+  <li><a href="https://docs.axelar.dev/dev/send-tokens/interchain-tokens/create-token#create-a-custom-interchain-token">Creating a new custom Interchain Token</a></li>
+  <li><a href="https://docs.axelar.dev/dev/send-tokens/interchain-tokens/upgrade-tokens#canonical-tokens-simple-wrappers">Transforming an existing token into an Interchain token</a></li>
+  <li><a href="https://docs.axelar.dev/dev/send-tokens/interchain-tokens/upgrade-tokens#link-deployed-tokens-on-multiple-chains-into-interchain-tokens">Turn deployed tokens on multiple chains into Interchain Tokens</a></li>
+</ul>
 
 ## References
 
-- [Moralis](https://moralis.io/)
-- [Moralis Docs](https://docs.moralis.io)
-- [Ethereum Boilerplate](https://github.com/ethereum-boilerplate/ethereum-boilerplate)
-- [Interchain Token Service Documentation](https://docs.axelar.dev/dev/send-tokens/interchain-tokens/intro)
-- [Interchain Tokens GitHub Repository](https://github.com/axelarnetwork/interchain-token-service/tree/main)
-- [AxelarJS SDK](https://github.com/axelar-network/axelarjs-sdk)
+<ul>
+  <li><a href="https://moralis.io/">Moralis</a></li>
+  <li><a href="https://docs.moralis.io">Moralis Docs</a></li>
+  <li><a href="https://github.com/ethereum-boilerplate/ethereum-boilerplate">Ethereum Boilerplate</a></li>
+  <li><a href="https://docs.axelar.dev/dev/send-tokens/interchain-tokens/intro">Interchain Token Service Documentation</a></li>
+  <li><a href="https://github.com/axelarnetwork/interchain-token-service/tree/main">Interchain Tokens GitHub Repository</a></li>
+  <li><a href="https://github.com/axelar-network/axelarjs-sdk">AxelarJS SDK</a></li>
+</ul>

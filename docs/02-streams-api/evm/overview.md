@@ -82,8 +82,10 @@ Until a block is confirmed, it is possible that a re-organization of the chain m
 
 ## To get started, check the following tutorials:
 
-- [Your First Stream using NodeJS SDK](/streams-api/evm/using-node-js-sdk)
-- [Your First Stream using WebUI](/streams-api/evm/using-webui)
+<ul>
+  <li><a href="/streams-api/evm/using-node-js-sdk">Your First Stream using NodeJS SDK</a></li>
+  <li><a href="/streams-api/evm/using-webui">Your First Stream using WebUI</a></li>
+</ul>
 - You can also use the [Swagger Interface](https://api.moralis-streams.com/api-docs/) directly.
 
 ## How Streams are priced
@@ -92,9 +94,11 @@ See [Records and pricing](/streams-api/evm/records-and-pricing)
 
 ## Learn more advanced applications of Streams
 
-- [Monitor specific NFTs](/streams-api/evm/how-to-monitor-specific-nfts)
-- [Monitor for Burn/Mint Tokens](/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints)
-- [Monitor ENS Name Registrations](/streams-api/evm/how-to-monitor-ens-domain-registrations)
+<ul>
+  <li><a href="/streams-api/evm/how-to-monitor-specific-nfts">Monitor specific NFTs</a></li>
+  <li><a href="/streams-api/evm/how-to-monitor-for-erc20-token-burns-or-mints">Monitor for Burn/Mint Tokens</a></li>
+  <li><a href="/streams-api/evm/how-to-monitor-ens-domain-registrations">Monitor ENS Name Registrations</a></li>
+</ul>
 
 ## Demos
 

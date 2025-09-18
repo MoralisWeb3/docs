@@ -360,6 +360,8 @@ Building this kind of dapp is just the tip of the iceberg.
 
 Check out the following to continue learning about Axelar and its interchain possibilities:
 
-- [Axelar docs](https://docs.axelar.dev/)
-- [Axelar examples](https://github.com/axelarnetwork/axelar-examples)
-- [Axelar developer tutorials](https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2)
+<ul>
+  <li><a href="https://docs.axelar.dev/">Axelar docs</a></li>
+  <li><a href="https://github.com/axelarnetwork/axelar-examples">Axelar examples</a></li>
+  <li><a href="https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2">Axelar developer tutorials</a></li>
+</ul>

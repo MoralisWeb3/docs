@@ -230,7 +230,9 @@ Congratulations 🥳 you just got all the NFTs owners by a contract address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-nft-owners">getNFTOwners</a></li>
+</ul>
 
 ## Support
 

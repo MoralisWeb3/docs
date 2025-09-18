@@ -657,8 +657,10 @@ To test an endpoint that requires a request body, you can use [Postman](https://
 :::info Remember...
 If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
 
-- [Install dependencies on `aws-node-project`](#install-dependencies)
-- [Install dependencies on `aws-node-express-api-project`](#install-dependencies-1)
+<ul>
+  <li><a href="#install-dependencies">Install dependencies on `aws-node-project`</a></li>
+  <li><a href="#install-dependencies-1">Install dependencies on `aws-node-express-api-project`</a></li>
+</ul>
   :::
 
 It's time to deploy to **AWS**. Whatever project you chose, open the terminal and make sure you're in the root folder (where you installed the dependencies). Then, run this simple command:
@@ -691,8 +693,10 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 **Next, we differentiate the testing process between these functions:**
 
-- [Testing Express API function](#testing-express-api-function).
-- [Testing single functions](#testing-single-functions).
+<ul>
+  <li><a href="#testing-express-api-function">Testing Express API function</a> .</li>
+  <li><a href="#testing-single-functions">Testing single functions</a> .</li>
+</ul>
 
 ## Testing Express API function
 

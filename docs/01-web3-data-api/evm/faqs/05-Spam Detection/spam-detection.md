@@ -28,12 +28,14 @@ Contracts marked as spam are evaluated based on multiple criteria, including but
 
 Spam detection is available on the following endpoints:
 
-- [Get ERC20 token balance by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-token-balances)
-- [Get ERC20 token transfers by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-token-transfers)
-- [Get ERC20 token metadata by contract](https://docs.moralis.io/web3-data-api/reference/get-token-metadata)
-- [Get NFTs by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts)
-- [Get NFT transfers by wallet](https://docs.moralis.io/web3-data-api/reference/get-wallet-nft-transfers)
-- [Get NFT metadata](https://docs.moralis.io/web3-data-api/evm/reference/get-nft-metadata)
+<ul>
+  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-token-balances">Get ERC20 token balance by wallet</a></li>
+  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-token-transfers">Get ERC20 token transfers by wallet</a></li>
+  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-token-metadata">Get ERC20 token metadata by contract</a></li>
+  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts">Get NFTs by wallet</a></li>
+  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-nft-transfers">Get NFT transfers by wallet</a></li>
+  <li><a href="https://docs.moralis.io/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a></li>
+</ul>
 
 ### Supported Chains
 

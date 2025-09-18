@@ -148,7 +148,9 @@ https://www.youtube.com/watch?v=kpxgYuC4uyA
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTransactions](/web3-data-api/evm/reference/get-wallet-transactions)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-transactions">getWalletTransactions</a></li>
+</ul>
 
 ## Support
 

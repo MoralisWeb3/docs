@@ -129,7 +129,9 @@ Congratulations 🥳 You just got the SPL token balance of a wallet address with
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getSPL](/web3-data-api/solana/reference/get-spl)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/get-spl">getSPL</a></li>
+</ul>
 
 ## Youtube Video
 

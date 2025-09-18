@@ -170,14 +170,18 @@ https://www.youtube.com/watch?v=Zq-eoO-mTbc
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTCollections](/web3-data-api/evm/reference/get-wallet-nft-collections)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-nft-collections">getWalletNFTCollections</a></li>
+</ul>
 
 ## Next Steps
 
 Learn how to use the Moralis NFT API to build dapps:
 
-- [NFT-Gated Website NodeJS](/guides/token-gating-website-nextjs)
-- [NFT-Gated Website (Django)](/guides/token-gating-website-django)
+<ul>
+  <li><a href="/guides/token-gating-website-nextjs">NFT-Gated Website NodeJS</a></li>
+  <li><a href="/guides/token-gating-website-django">NFT-Gated Website (Django)</a></li>
+</ul>
 
 ## Support
 

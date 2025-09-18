@@ -438,6 +438,8 @@ npm start
 
 ## Resources
 
-- [Moralis Documentation](https://docs.moralis.com)
-- [TradingView Lightweight Charts Documentation](https://tradingview.github.io/lightweight-charts/)
-- [React Documentation](https://reactjs.org)
+<ul>
+  <li><a href="https://docs.moralis.com">Moralis Documentation</a></li>
+  <li><a href="https://tradingview.github.io/lightweight-charts/">TradingView Lightweight Charts Documentation</a></li>
+  <li><a href="https://reactjs.org">React Documentation</a></li>
+</ul>

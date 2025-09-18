@@ -126,7 +126,9 @@ Congratulations 🥳 You just get the pair reserves of a Pancakeswap V1 liquidit
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairReserves](/web3-data-api/evm/reference/get-pair-reserves)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-pair-reserves">getPairReserves</a></li>
+</ul>
 
 ## Support
 

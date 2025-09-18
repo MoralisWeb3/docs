@@ -144,7 +144,9 @@ Congratulations 🥳 You just got the Solana Portfolio balance of a wallet addre
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPortfolio](/web3-data-api/solana/reference/get-sol-portfolio)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/get-sol-portfolio">getPortfolio</a></li>
+</ul>
 
 ## YouTube Tutorial
 

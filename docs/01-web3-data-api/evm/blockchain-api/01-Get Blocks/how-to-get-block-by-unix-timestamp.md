@@ -122,7 +122,9 @@ Congratulations 🥳 You just got the closest block using a unix timestamp with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getDateToBlock](/web3-data-api/evm/reference/get-date-to-block)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-date-to-block">getDateToBlock</a></li>
+</ul>
 
 ## Support
 

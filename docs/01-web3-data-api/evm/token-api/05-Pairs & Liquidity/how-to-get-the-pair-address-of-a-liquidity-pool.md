@@ -164,7 +164,9 @@ https://www.youtube.com/watch?v=TocrId1UeDg
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getPairAddress](/web3-data-api/evm/reference/get-pair-address)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-pair-address">getPairAddress</a></li>
+</ul>
 
 ## Support
 

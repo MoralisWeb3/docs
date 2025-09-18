@@ -152,7 +152,9 @@ Congratulations 🥳 you just got the owners of an NFT with just a few lines of 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-nft-token-id-owners">getNFTTokenIdOwners</a></li>
+</ul>
 
 ## Support
 

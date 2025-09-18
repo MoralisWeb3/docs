@@ -129,7 +129,9 @@ https://www.youtube.com/watch?v=NoAhtCJj3Q8
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [solbalance](/web3-data-api/solana/reference/sol-balance)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/sol-balance">solbalance</a></li>
+</ul>
 
 ## Support
 

@@ -131,7 +131,9 @@ Congratulations 🥳 You just got the price of a SPL token with just a few lines
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/solana/reference/get-sol-token-price)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/get-sol-token-price">getTokenPrice</a></li>
+</ul>
 
 ## YouTube Tutorial
 

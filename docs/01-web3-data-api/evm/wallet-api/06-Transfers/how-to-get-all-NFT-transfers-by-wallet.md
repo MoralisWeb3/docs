@@ -151,7 +151,9 @@ Congratulations 🥳 You just got all NFT transfers by wallet with just a few li
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-nft-transfers">getWalletNFTTransfers</a></li>
+</ul>
 
 ## Support
 

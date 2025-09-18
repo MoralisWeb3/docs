@@ -164,7 +164,9 @@ Congratulations 🥳 You just got all ERC20 transfers by wallet with just a few 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletTokenTransfers](/web3-data-api/evm/reference/get-wallet-token-transfers)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-token-transfers">getWalletTokenTransfers</a></li>
+</ul>
 
 ## Support
 

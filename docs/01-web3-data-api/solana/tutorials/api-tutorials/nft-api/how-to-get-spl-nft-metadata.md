@@ -146,7 +146,9 @@ Congratulations 🥳 You just got the metadata of a SPL NFT with just a few line
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getNFTMetadata](/web3-data-api/solana/reference/get-sol-nft-metadata)
+<ul>
+  <li><a href="/web3-data-api/solana/reference/get-sol-nft-metadata">getNFTMetadata</a></li>
+</ul>
 
 ## YouTube Tutorial
 

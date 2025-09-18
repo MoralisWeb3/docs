@@ -27,86 +27,102 @@ The Web3 Data API is available for the following Arbitrum network:
 
 The following APIs are supported for Arbitrum:
 
-- [Wallet API](/web3-data-api/evm/reference#wallet-api)
-- [NFT API](/web3-data-api/evm/reference#nft-api)
-- [Token API](/web3-data-api/evm/reference#token-api)
-- [DeFi API](/web3-data-api/evm/reference#defi-api)
-- [Entity API](/web3-data-api/evm/reference#entity-api)
-- [Price API](/web3-data-api/evm/reference#price-api)
-- [Blockchain API](/web3-data-api/evm/reference#blockchain-api)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a></li>
+  <li><a href="/web3-data-api/evm/reference#nft-api">NFT API</a></li>
+  <li><a href="/web3-data-api/evm/reference#token-api">Token API</a></li>
+  <li><a href="/web3-data-api/evm/reference#defi-api">DeFi API</a></li>
+  <li><a href="/web3-data-api/evm/reference#entity-api">Entity API</a></li>
+  <li><a href="/web3-data-api/evm/reference#price-api">Price API</a></li>
+  <li><a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a></li>
+</ul>
 
 ### Wallet API
 
 The Wallet API enables you to interact with wallet data on the Arbitrum blockchain.
 
-- [Get Wallet History on Arbitrum](/web3-data-api/evm/reference#get-wallet-history)
-- [Get Wallet Token Balances on Arbitrum](/web3-data-api/evm/reference#get-wallet-token-balances)
-- [Get Wallet Token Approvals on Arbitrum](/web3-data-api/evm/reference#get-wallet-token-approvals)
-- [Get Wallet NFT Balances on Arbitrum](/web3-data-api/evm/reference#get-wallet-nfts)
-- [Get Wallet DeFi Positions on Arbitrum](/web3-data-api/evm/reference#get-wallet-defi-positions)
-- [Get Wallet Net-worth on Arbitrum](/web3-data-api/evm/reference#get-wallet-net-worth)
-- [Get Wallet PnL on Arbitrum](/web3-data-api/evm/reference#get-wallet-pnl)
-- [Get Wallet Details on Arbitrum](/web3-data-api/evm/reference#get-wallet-details)
-- [Get Wallet Domains on Arbitrum](/web3-data-api/evm/reference#get-wallet-domains)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-domains">Get Wallet Domains on Arbitrum</a></li>
+</ul>
 
 ### NFT API
 
 The NFT API allows you to interact with NFT-related data on Arbitrum. You can:
 
-- [Get NFTs on Arbitrum](/web3-data-api/evm/reference#get-nfts)
-- [Get NFT Metadata on Arbitrum](/web3-data-api/evm/reference#get-nft-metadata)
-- [Get NFT Transfers on Arbitrum](/web3-data-api/evm/reference#get-nft-transfers)
-- [Get NFT Collections on Arbitrum](/web3-data-api/evm/reference#get-nft-collections)
-- [Get NFT Owners on Arbitrum](/web3-data-api/evm/reference#get-nft-owners)
-- [Get NFT Prices on Arbitrum](/web3-data-api/evm/reference#get-nft-prices)
-- [Get NFT Trades on Arbitrum](/web3-data-api/evm/reference#get-nft-trades)
-- [Get NFT Stats on Arbitrum](/web3-data-api/evm/reference#get-nft-stats)
-- [Get NFT Traits and Rarity on Arbitrum](/web3-data-api/evm/reference#get-nft-traits-and-rarity)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-nfts">Get NFTs on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-metadata">Get NFT Metadata on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-transfers">Get NFT Transfers on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-collections">Get NFT Collections on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-owners">Get NFT Owners on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-trades">Get NFT Trades on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-stats">Get NFT Stats on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-traits-and-rarity">Get NFT Traits and Rarity on Arbitrum</a></li>
+</ul>
 
 ### Token API
 
 The Token API provides methods for interacting with ERC-20 tokens on Arbitrum. Choose from the following actions:
 
-- [Get Token Metadata on Arbitrum](/web3-data-api/evm/reference#get-token-metadata)
-- [Get Token Price on Arbitrum](/web3-data-api/evm/reference#get-token-price)
-- [Get Token Balances on Arbitrum](/web3-data-api/evm/reference#get-token-balances)
-- [Get Token Approvals on Arbitrum](/web3-data-api/evm/reference#get-token-approvals)
-- [Get Token Transfers on Arbitrum](/web3-data-api/evm/reference#get-token-transfers)
-- [Get Token Top Traders on Arbitrum](/web3-data-api/evm/reference#get-token-top-traders)
-- [Get Token Pairs & Liquidity on Arbitrum](/web3-data-api/evm/reference#get-token-pairs--liquidity)
-- [Get Token Stats on Arbitrum](/web3-data-api/evm/reference#get-token-stats)
-- [Get Token Owners on Arbitrum](/web3-data-api/evm/reference#get-token-owners)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Arbitrum</a></li>
+</ul>
 
 ### DeFi API
 
 The DeFi API enables interaction with decentralized finance positions and data on Arbitrum:
 
-- [Get Wallet DeFi Positions on Arbitrum](/web3-data-api/evm/reference#get-wallet-defi-positions)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Arbitrum</a></li>
+</ul>
 
 ### Entity API
 
 The Entity API allows you to interact with various entities on Arbitrum, such as exchanges or other organizations:
 
-- [Search Entities on Arbitrum](/web3-data-api/evm/reference#search-entities)
-- [Get Entity Categories on Arbitrum](/web3-data-api/evm/reference#get-entity-categories)
-- [Get Entities on Arbitrum](/web3-data-api/evm/reference#get-entities)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#search-entities">Search Entities on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-entities">Get Entities on Arbitrum</a></li>
+</ul>
 
 ### Price API
 
 Retrieve price data for tokens and NFTs on Arbitrum using the Price API:
 
-- [Get Token Prices on Arbitrum](/web3-data-api/evm/reference#get-token-prices)
-- [Get NFT Prices on Arbitrum](/web3-data-api/evm/reference#get-nft-prices)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Arbitrum</a></li>
+</ul>
 
 ### Blockchain API
 
 The Blockchain API gives access to blockchain-level data such as blocks, transactions, and logs:
 
-- [Get Blocks on Arbitrum](/web3-data-api/evm/reference#get-blocks)
-- [Get Transactions on Arbitrum](/web3-data-api/evm/reference#get-transactions)
-- [Get Logs on Arbitrum](/web3-data-api/evm/reference#get-logs)
-- [Get Stats on Arbitrum](/web3-data-api/evm/reference#get-stats)
-- [Get Latest Block Number on Arbitrum](/web3-data-api/evm/reference#get-latest-block-number)
+<ul>
+  <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Arbitrum</a></li>
+  <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Arbitrum</a></li>
+</ul>
 
 ---
 

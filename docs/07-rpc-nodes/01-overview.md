@@ -84,9 +84,11 @@ Moralis enforces rate limits at the **account level** to ensure fair usage acros
 
 ## Next Steps
 
-- [Setting Up RPC Nodes](./get-your-node-api-key): Learn how to set up your first RPC node.
-- [Fetching ERC20 Balances](./tutorials/fetching-erc20-token-balances): Step-by-step guide on how to fetch token balances.
-- [Fetching Wallet Transactions](./tutorials/fetching-wallet-transactions): Guide for retrieving all transactions associated with a wallet.
+<ul>
+  <li><a href="./get-your-node-api-key">Setting Up RPC Nodes</a> : Learn how to set up your first RPC node.</li>
+  <li><a href="./tutorials/fetching-erc20-token-balances">Fetching ERC20 Balances</a> : Step-by-step guide on how to fetch token balances.</li>
+  <li><a href="./tutorials/fetching-wallet-transactions">Fetching Wallet Transactions</a> : Guide for retrieving all transactions associated with a wallet.</li>
+</ul>
 
 ---
 

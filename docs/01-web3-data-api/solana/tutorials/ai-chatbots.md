@@ -322,11 +322,13 @@ To build an effective blockchain AI chatbot with Moralis APIs:
 
 ## Resources
 
-- [Moralis Web3 API Documentation](https://docs.moralis.com/)
-- [Moralis EVM API Reference](https://docs.moralis.com/web3-data-api/evm/reference)
-- [Moralis Solana API Reference](https://docs.moralis.com/web3-data-api/solana/reference)
-- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling)
-- [Anthropic Claude Function Calling](https://docs.anthropic.com/claude/docs/function-calling)
+<ul>
+  <li><a href="https://docs.moralis.com/">Moralis Web3 API Documentation</a></li>
+  <li><a href="https://docs.moralis.com/web3-data-api/evm/reference">Moralis EVM API Reference</a></li>
+  <li><a href="https://docs.moralis.com/web3-data-api/solana/reference">Moralis Solana API Reference</a></li>
+  <li><a href="https://platform.openai.com/docs/guides/function-calling">OpenAI Function Calling Guide</a></li>
+  <li><a href="https://docs.anthropic.com/claude/docs/function-calling">Anthropic Claude Function Calling</a></li>
+</ul>
 
 ---
 

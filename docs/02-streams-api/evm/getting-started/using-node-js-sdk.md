@@ -339,13 +339,17 @@ In rare cases, the webhook with **confirmed:true** may come before the one with 
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [Stream API refference](/streams-api/evm/evm/reference)
+<ul>
+  <li><a href="/streams-api/evm/evm/reference">Stream API refference</a></li>
+</ul>
 
 ## Next Steps
 
 Learn how to use the Moralis Streams API to build dapps:
 
-- [Check our Tutorials](/streams-api/evm/tutorials)
+<ul>
+  <li><a href="/streams-api/evm/tutorials">Check our Tutorials</a></li>
+</ul>
 
 
 ## Support

@@ -164,7 +164,9 @@ Congratulations 🥳 You just got all ERC20 transfers by contract with just a fe
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenTransfers](/web3-data-api/evm/reference/get-token-transfers)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-token-transfers">getTokenTransfers</a></li>
+</ul>
 
 ## Support
 

@@ -11,16 +11,18 @@ function processMarkdownFile(filePath) {
 
         while (i < lines.length) {
             const line = lines[i].trimEnd();
-            // Match lines like "- [text](url)"
-            if (/^\s*- \[[^\]]+\]\([^)]+\)\s*$/.test(line)) {
+            // Match lines starting with "- [text](url)" with flexible whitespace
+            if (/^\s*-\s+\[[^\]]+\]\([^)]+\)/.test(line)) {
                 newLines.push('<ul>');
                 while (i < lines.length) {
                     const currentLine = lines[i].trimEnd();
-                    const match = currentLine.match(/^\s*- \[(.*?)\]\((.*?)\)\s*$/);
+                    // Match [text](url) with optional trailing text and flexible whitespace
+                    const match = currentLine.match(/^\s*-\s+\[(.*?)\]\((.*?)\)(\s*.*)?$/);
                     if (match) {
                         const text = match[1].trim();
                         const link = match[2].trim();
-                        newLines.push(`  <li><a href="${link}">${text}</a></li>`);
+                        const extraText = match[3] ? match[3].trim() : '';
+                        newLines.push(`  <li><a href="${link}">${text}</a>${extraText ? ' ' + extraText : ''}</li>`);
                         i++;
                     } else {
                         break;

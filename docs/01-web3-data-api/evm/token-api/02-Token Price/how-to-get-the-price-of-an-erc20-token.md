@@ -144,7 +144,9 @@ https://www.youtube.com/watch?v=4OYm8LHBGOQ
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenPrice](/web3-data-api/evm/reference/get-token-price)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-token-price">getTokenPrice</a></li>
+</ul>
 
 ## Support
 

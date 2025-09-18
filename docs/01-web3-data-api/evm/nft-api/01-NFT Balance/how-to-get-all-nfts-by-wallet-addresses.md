@@ -198,14 +198,18 @@ Congratulations 🥳 you just got all the NFTs owned by an address across chains
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-wallet-nfts">getWalletNFTs</a></li>
+</ul>
 
 ## Next Steps
 
 Learn how to use the Moralis NFT API to build dapps:
 
-- [NFT-Gated Website NodeJS](/guides/token-gating-website-nextjs)
-- [NFT-Gated Website (Django)](/guides/token-gating-website-django)
+<ul>
+  <li><a href="/guides/token-gating-website-nextjs">NFT-Gated Website NodeJS</a></li>
+  <li><a href="/guides/token-gating-website-django">NFT-Gated Website (Django)</a></li>
+</ul>
 
 ## Support
 

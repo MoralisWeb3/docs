@@ -162,7 +162,9 @@ https://www.youtube.com/watch?v=t1H4FsZ9Gsw
 
 If you want to know more details on the endpoint and optional parameters, check out:
 
-- [getTokenMetadataBySymbol](/web3-data-api/evm/reference/get-token-metadata-by-symbol)
+<ul>
+  <li><a href="/web3-data-api/evm/reference/get-token-metadata-by-symbol">getTokenMetadataBySymbol</a></li>
+</ul>
 
 ## Support
 

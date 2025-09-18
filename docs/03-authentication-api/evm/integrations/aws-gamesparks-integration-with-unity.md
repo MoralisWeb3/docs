@@ -497,8 +497,10 @@ Once authenticated, you can now click on the _GetNativeBalance_ or _GetWalletNft
 
 This is also handled in _AppManager.cs_:
 
-- [_GetNativeBalance_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L44)
-- [_GetWalletNfts_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L71)
+<ul>
+  <li><a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L44">_GetNativeBalance_</a></li>
+  <li><a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L71">_GetWalletNfts_</a></li>
+</ul>
 
 You can see that both [access a class named _**MyWeb3GameBackendOperations**_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L52), which is the one containing the methods to access the messages in our Amazon GameSparks game backend.
 

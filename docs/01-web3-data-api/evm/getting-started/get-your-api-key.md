@@ -13,8 +13,10 @@ This step-by-step tutorial shows how to set up your Moralis account, get your Mo
 
 Make sure that you have the installed all the following prerequisites:
 
-- [Node.js](https://nodejs.org/) v14+ or [Python](https://www.python.org/downloads/)
-- [NPM](https://www.npmjs.com/)/[Yarn](https://classic.yarnpkg.com/en/) or [Pip](https://pip.pypa.io/en/stable/)
+<ul>
+  <li><a href="https://nodejs.org/">Node.js</a> v14+ or [Python](https://www.python.org/downloads/)</li>
+  <li><a href="https://www.npmjs.com/">NPM</a> /[Yarn](https://classic.yarnpkg.com/en/) or [Pip](https://pip.pypa.io/en/stable/)</li>
+</ul>
 
 ## Step 1: Create Your Account
 
