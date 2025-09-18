@@ -7,7 +7,7 @@ description: Retrieve bonding status of a pump fun token. This API is used for g
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
 # Get Bonding Status <MainnetBadge />

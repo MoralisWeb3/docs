@@ -10,7 +10,10 @@
 
 @media (min-width: 997px) {
   .form {
-    margin-right: calc(-1 / 3 * (100% + 2 * var(--ifm-spacing-horizontal)));
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .runner {
@@ -45,6 +48,23 @@
   color: var(--ifm-font-color-secondary);
 }
 
+.responseHeaderContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.responseDescription {
+  font-size: 14px;
+  color: var(--ifm-font-color-base);
+}
+
+.statusCodesList {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
 .sectionTitle + .section {
   margin: 0;
 }
@@ -52,6 +72,9 @@
 .url {
   padding-top: 0.1rem;
   font-size: 13px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .method {
@@ -112,6 +135,10 @@ button.apiParamButton:hover {
   flex: 1;
   border: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
   border-radius: var(--ifm-global-radius);
+}
+
+[data-theme='light'] .group {
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .group .group {
@@ -247,6 +274,79 @@ button.groupHeader:focus {
 
 .invalid {
   border-color: var(--ifm-color-danger);
+}
+
+/* JSON Code Editor Styling - matches existing code blocks */
+.jsonCodeEditor {
+  background: var(--prism-background-color);
+  color: var(--prism-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-code-border-radius);
+  padding: var(--ifm-pre-padding);
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace);
+  font-size: var(--ifm-code-font-size);
+  box-shadow: var(--ifm-global-shadow-lw);
+  resize: vertical;
+  line-height: 1.5;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.jsonCodeEditor::placeholder {
+  color: var(--ifm-color-emphasis-600);
+  opacity: 0.8;
+}
+
+.jsonCodeEditor:hover {
+  border-color: var(--ifm-color-primary-light);
+}
+
+.jsonCodeEditor:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--ifm-color-primary-rgb), 0.25);
+}
+
+/* Dark theme specific styling */
+[data-theme='dark'] .jsonCodeEditor {
+  border-color: var(--ifm-toc-border-color);
+}
+
+[data-theme='dark'] .jsonCodeEditor:hover {
+  border-color: var(--ifm-color-primary-dark);
+}
+
+/* Light theme specific styling */
+[data-theme='light'] .jsonCodeEditor {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Error state for JSON editor */
+.jsonCodeEditor.invalid {
+  border-color: var(--ifm-color-danger);
+  box-shadow: 0 0 0 0.2rem rgba(var(--ifm-color-danger-rgb), 0.25);
+}
+
+/* Body parameter container spacing */
+.bodyParamContainer {
+  padding: 1rem;
+}
+
+.bodyParamContainer .fieldInfo {
+  margin-bottom: 1rem;
+}
+
+.bodyParamContainer .paramDescription {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Error text styling */
+.errorText {
+  color: var(--ifm-color-danger);
+  font-size: 12px;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .button {

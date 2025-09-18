@@ -98,7 +98,7 @@ Yes. Moralis provides a price chart widget that lets you embed real-time Trading
 - Time intervals (e.g., 1D, 1H, 5M)
 - Toolbar visibility options
 
-To configure and embed the chart, visit the [Moralis Price Chart Widget page](https://explorer.moralis.com/widgets/price-chart).
+To configure and embed the chart, visit the [Moralis Price Chart Widget page](https://moralis.com/widgets/price-chart).
 
 ### **Can I display price charts for pre-bonded Pump.fun tokens?**
 

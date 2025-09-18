@@ -10,9 +10,6 @@ Let's start by defining Supabase. In short, Supabase is an open-source substitut
 
 In this guide, we will take advantage of Supabase's row-level security (RLS) as we use a custom authentication provider!
 
-<video controls>
-  <source src="/video/supabase.mp4"/>
-</video>
 
 Let's dive in.
 

@@ -1,0 +1,138 @@
+---
+title: "EVM Compute Units"
+slug: "/web3-data-api/evm/reference/compute-units-cu"
+sidebar_label: "Compute Units (CU)"
+description: "Learn more about what is Compute Units and how does it affects your pricing."
+sidebar_position: 1
+---
+
+All [Moralis plans](/web3-data-api/evm/pricing-plans) have generous limits on the number of requests you can make per month. How many included requests you have depends on the plan you have, check the [pricing page](https://moralis.io/pricing) for more details.
+
+Some requests are more expensive than others. By giving some heavy requests higher weight, we ensure that you only pay for what you use and not a cent more.
+
+This allows you to get cheaper requests for most use cases while protecting our systems from abuse by weighing the computationally expensive endpoints.
+
+## What is a Compute Unit (CU)?
+
+A Compute Unit (CU) measures the computational complexity of a specific API request. Each API request carries a corresponding CU weight. For instance, simple endpoints like getNativeBalance have a low computational load, whereas more complex ones like getWalletNetworth, which fetches native balance, ERC20 balances, and prices across various chains, are more resource-intensive and therefore carry a higher CU.
+
+Each request has both **price** and **rate limit cost** that are measured in terms of compute units. **The rate limit cost of an API request is what contributes towards your CU/s throughput.**
+
+It is also important to note that some API will have dynamic pricing that will cost more CU the more inputs you add for the request.
+
+### CU Price
+
+Request price denotes the number of compute units (CUs) counted towards your monthly or daily API usage billing. This means that the CU cost of an API endpoint will be subtracted from the limits defined by your plan. For instance, the free plan offers 40,000 CUs per day, while paid plans provide 100,000,000 CUs per month or more. If usage exceeds the allocated CUs on a paid plan, overage charges apply, determined by the excess CUs consumed.
+
+### CU Rate Limit Cost
+
+CUs also play a crucial role in regulating the frequency of API requests through rate limits. Rate limit costs help manage your "API health" by preventing system overload caused by an excessive number of requests within a short timeframe.
+
+Each API request is assigned two weights:
+
+1. CU price, which contributes to billing as discussed earlier
+2. Rate Limit CU Cost, which determines the frequency of calls to an endpoint and contributes to the CU/second throughput of your plan
+
+:::tip
+When you're setting up a function call, remember to factor in the query parameters as well! These can sometimes add to the CU cost. To stay on top of it, always check the individual query parameter costs in the [query parameters table](#query-parameters) to have a clear picture of the total CU cost your call will incur. This way, you can make well-informed decisions and prevent any unexpected surprises in your CU usage.
+:::
+
+By taking a moment to consult the table before making a call, you can avoid unexpected CU charges and keep your API interactions smooth and efficient.
+
+### Compute Units and Rate Limit prices
+
+import ComputeUnitsTable from "@site/src/components/ComputeUnits/ComputeUnitsTable.tsx";
+
+<ComputeUnitsTable chain="evm" />
+
+### Dynamic Prices
+
+Some endpoints have a dynamically priced CU cost based on the number of resources being requested. The more resources being requested, the higher the CU cost for that particular request.
+Taking [getNativeBalancesForAddresses](/web3-data-api/evm/reference/get-native-balances-for-addresses) as an example; the base CU cost of this endpoint when fetching the balance of a single address is 10 CU. If we wanted to fetch the balances of 5 addresses at once, then the CU cost for that particular call would be 50 CU.
+
+### Query Parameters
+
+In addition to having compute units charged on each API request, there are additional query parameters that cost additional compute units when added to an API request.
+
+| Query parameter                                                                                                      | CU Cost |
+| -------------------------------------------------------------------------------------------------------------------- | ------- |
+| `include=internal_transactions` on [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)              | 50      |
+| `include=internal_transactions` on [`/transaction/{transaction_hash}`](/web3-data-api/evm/reference/get-transaction) | 30      |
+| `include=internal_transactions` on [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)         | 100     |
+
+## How to Check Compute Units?
+
+To check the latest compute units of our API offerings, you can use [endpointWeights](/web3-data-api/evm/reference/endpoint-weights) to do so.
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
+```javascript index.js
+const Moralis = require("moralis").default;
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+});
+
+const response = await Moralis.EvmApi.utils.endpointWeights();
+
+console.log(response?.toJSON());
+```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
+```typescript index.ts
+import Moralis from "moralis";
+
+await Moralis.start({
+  apiKey: "YOUR_API_KEY",
+  // ...and any other configuration
+});
+
+const response = await Moralis.EvmApi.utils.web3ApiVersion();
+
+console.log(response?.toJSON());
+```
+
+</TabItem>
+</Tabs>
+
+Your output for the API request will be as follows:
+
+```json
+[
+  {
+    "endpoint": "getBlock",
+    "path": "/block/{block_number_or_hash}",
+    "price": 100,
+    "rateLimitCost": 20
+  },
+  {
+    "endpoint": "getContractEvents",
+    "path": "/{address}/events",
+    "price": 20,
+    "rateLimitCost": 20
+  },
+  {
+    "endpoint": "getTransaction",
+    "path": "/transaction/{transaction_hash}",
+    "price": 10,
+    "rateLimitCost": 10
+  }
+]
+```
+
+where `price` refers to how much CU does the API request cost in terms of billing and `rateLimitCost` refers to how much CU does the API request cost in terms of rate limits.
+
+## Streams and Compute Units
+
+For [Moralis Streams](/streams-api/evm#what-is-the-streams-api), it is important to note that each [record](/streams-api/evm/records-and-pricing#what-is-the-record) has a fixed cost of 50 Compute Units.
+
+:::tip
+You can read the article [Records and Pricing](/streams-api/evm/records-and-pricing) to understand how records play a crucial role in the Streams API, allowing you to make the right decisions regarding usage and pricing.
+:::

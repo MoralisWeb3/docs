@@ -24,7 +24,7 @@ Whether you're building dashboards, bots, reports, or intelligent assistants, Co
 
 Use our hosted API to ask blockchain questions and get real-time insights - no setup required.
 
-- **POST `https://cortex-api.moralis.io/chat`** - simple, secure REST endpoint
+- **POST /v1/cortex/chat** - simple, secure REST endpoint
 - Powered by enterprise-grade LLMs and Moralis infrastructure
 - Returns summaries and structured data
 - Supports chat history (chatId) for multi-turn conversations

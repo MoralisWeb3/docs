@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-  useContext,
-  Component,
-} from "react";
+import React, { useState, useCallback, useMemo, useContext, Component } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import ReactMarkdown from "react-markdown";
 import { Formik, Form } from "formik";
@@ -12,10 +6,7 @@ import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
 import qs from "qs";
 import styles from "./styles.module.css";
-import ApiResponseField, {
-  ApiResponse,
-  buildResponse,
-} from "./ApiResponseField";
+import { ApiResponse, buildResponse } from "./ApiResponseField";
 import ApiParamField, { ApiParam, apiParamInitialValue } from "./ApiParamField";
 import ApiParamButton from "./ApiParamButton";
 import ApiExamples, { stringifyJSON, filterOutEmpty } from "./ApiExamples";
@@ -24,6 +15,11 @@ import makeMetaDescription from "@site/src/utils/makeMetaDescription";
 import LoadingCircle from "@site/src/components/LoadingCircle";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import PostBodyField from "./PostBodyField";
+import { Field } from "formik";
+import HttpMethodBadge from "../HttpMethodBadge";
+import StatusCodeBadge from "../StatusCodeBadge";
+import { responseExamples } from "./responseExamples";
 
 export interface CodeSample {
   language: "node" | "csharp" | "python";
@@ -333,7 +329,7 @@ const ApiReference = ({
           <div className="row row--no-gutters">
             <div className="col col--5">
               <div className={styles.url}>
-                <span className={styles.method}>{method}</span>
+                <HttpMethodBadge method={method} />
                 {hostUrl}
                 {path}
               </div>
@@ -375,7 +371,15 @@ const ApiReference = ({
                   <div className={styles.sectionTitle}>BODY PARAM</div>
 
                   <div className={styles.group}>
-                    <ApiParamField param={bodyParam} prefix="body" />
+                    {method === "POST" || method === "PUT" ? (
+                      <Field name="body">
+                        {(props) => (
+                          <PostBodyField {...props} param={bodyParam} />
+                        )}
+                      </Field>
+                    ) : (
+                      <ApiParamField param={bodyParam} prefix="body" />
+                    )}
                   </div>
                 </div>
               )}
@@ -383,21 +387,39 @@ const ApiReference = ({
               <div className={styles.section}>
                 <div className={styles.sectionTitle}>Responses</div>
 
-                {responses &&
-                  responses?.map((response, index) => (
-                    <div key={index} className={styles.section}>
-                      <div className={styles.group}>
-                        <ApiResponseField
-                          collapsible
-                          field={{
-                            type: "object",
-                            name: `${response.status} ${response.description}`,
-                            ...response.body,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                <div className={styles.group}>
+                  {/* Render all responses (API-defined and examples) */}
+                  {[...(responses || []), ...Object.values(responseExamples)].map(
+                    (response, index) => {
+                      const isApiResponse = index < (responses?.length || 0);
+                      const hasBody =
+                        isApiResponse &&
+                        "body" in response &&
+                        response.body;
+
+                      return (
+                        <div key={index} className={styles.field}>
+                          <div className={styles.fieldInfo}>
+                            <div
+                              className={styles.responseHeaderContent}
+                            >
+                              <StatusCodeBadge
+                                status={response.status}
+                              />
+                              <span
+                                className={
+                                  styles.responseDescription
+                                }
+                              >
+                                {response.description}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
               </div>
             </div>
             <div className="col col--7">

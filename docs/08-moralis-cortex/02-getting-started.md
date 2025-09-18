@@ -16,7 +16,7 @@ Moralis Cortex connects AI models to blockchain data through the **Model Context
 
 ## Choose Your Path
 
-### 1. 🧩 MCP Server (Self-Hosted)
+### 🧩 MCP Server (Self-Hosted)
 
 **Perfect for:** Full control, custom integrations, and privacy-focused applications.
 
@@ -31,8 +31,7 @@ Moralis Cortex connects AI models to blockchain data through the **Model Context
 npx @moralisweb3/api-mcp-server --version
 ```
 
-### 2. 🌐 Cortex API
-The Cortex API lets you query Moralis AI models for real-time or standard responses. Ask questions, get insights - streamed or all at once.
+### 🌐 Cortex API
 
 **Perfect for:** Quick prototyping, testing, and production apps without infrastructure overhead.
 
@@ -40,110 +39,6 @@ The Cortex API lets you query Moralis AI models for real-time or standard respon
 - ✅ Hosted and maintained by Moralis
 - ✅ Enterprise-grade reliability
 - ✅ Start building immediately
-
-**API Endpoint:**
-
-```bash
-https://cortex-api.moralis.io/chat
-```
-
-**Swagger Docs:** <br/>
-https://cortex-api.moralis.com/documentation#/
-
-## Quick Start with Cortex API
-
-### Step 1: Get Your API Key
-
-1. Visit [Moralis Admin Panel](https://admin.moralis.com)
-2. Navigate to [API Keys](https://admin.moralis.com/api-keys)
-3. Copy your API key
-
-### Step 2: Make Your First Request
-
-Send a `POST` request to the Cortex API with your prompt.
-
-#### Authentication
-Include your API key in the `X-API-KEY` header.
-
-#### Example Request 
-
-```bash
-curl -X POST https://cortex-api.moralis.io/chat \
-  -H "Content-Type: application/json" \
-  -H "X-API-KEY: YOUR_API_KEY_HERE" \
-  -d '{
-    "prompt": "Provide a detailed analysis of PEPE holders, is the trend bullish or bearish?,
-    "stream": false,
-    "model": "gpt-4.1-mini"
-  }'
-```
-
-#### Example Response
-
-```
-{
-    "text": "Here is a detailed analysis of PEPE token holders:\n\n- Total holders: 468,303\n- Holder acquisition breakdown:\n  - Swap: 125,517 holders\n  - Transfer: 324,912 holders\n  - Airdrop: 17,874 holders\n\nHolder change trends:\n- In the last 5 minutes: decreased by 2 holders (-0.00043%)\n- In the last 1 hour: decreased by 117 holders (-0.025%)\n- In the last 6 hours: decreased by 13 holders (-0.0028%)\n- In the last 24 hours: increased by 323 holders (+0.069%)\n- In the last 3 days: increased by 2,109 holders (+0.45%)\n- In the last 7 days: increased by 4,081 holders (+0.87%)\n- In the last 30 days: increased by 15,040 holders (+3.2%)\n\nHolder supply concentration:\n- Top 10 holders control 39% of the supply\n- Top 25 holders control 53% of the supply\n- Top 50 holders control 64% of the supply\n- Top 100 holders control 73% of the supply\n- Top 250 holders control 82% of the supply\n- Top 500 holders control 87% of the supply\n\nHolder distribution by size:\n- Whales: 119\n- Sharks: 61\n- Dolphins: 617\n- Fish: 2,071\n- Octopus: 6,042\n- Crabs: 21,352\n- Shrimps: 438,041\n\nTrend analysis:\n- The number of holders has been increasing steadily over the last 24 hours, 3 days, 7 days, and 30 days, indicating growing interest and accumulation.\n- The supply is somewhat concentrated among the top holders, but there is a large base of smaller holders (shrimps and crabs).\n- The recent slight decrease in holders in the last 1 hour and 6 hours could be short-term fluctuations.\n\nOverall, the trend appears bullish with a growing holder base and accumulation over the past month."
-}
-```
-
-Once formatted, the output will look like:
-
-```
-Here is a detailed analysis of PEPE token holders:
-
-Total holders: 468,303
-
-Holder acquisition breakdown:
-- Swap: 125,517 holders
-- Transfer: 324,912 holders
-- Airdrop: 17,874 holders
- 
-Holder change trends:
-- In the last 5 minutes: decreased by 2 holders (-0.00043%)
-- In the last 1 hour: decreased by 117 holders (-0.025%)
-- In the last 6 hours: decreased by 13 holders (-0.0028%)
-- In the last 24 hours: increased by 323 holders (+0.069%)
-- In the last 3 days: increased by 2,109 holders (+0.45%)
-- In the last 7 days: increased by 4,081 holders (+0.87%)
-- In the last 30 days: increased by 15,040 holders (+3.2%)
- 
-Holder supply concentration:
-- Top 10 holders control 39% of the supply
-- Top 25 holders control 53% of the supply
-- Top 50 holders control 64% of the supply
-- Top 100 holders control 73% of the supply
-- Top 250 holders control 82% of the supply
-- Top 500 holders control 87% of the supply
-
-Holder distribution by size:
-- Whales: 119
-- Sharks: 61
-- Dolphins: 617
-- Fish: 2,071
-- Octopus: 6,042
-- Crabs: 21,352
-- Shrimps: 438,041
-
-Trend analysis:
-- The number of holders has been increasing steadily over the last 24 hours, 3 days, 7 days, and 30 days, indicating growing interest and accumulation.
-- The supply is somewhat concentrated among the top holders, but there is a large base of smaller holders (shrimps and crabs).
-- The recent slight decrease in holders in the last 1 hour and 6 hours could be short-term fluctuations.
-
-Overall, the trend appears bullish with a growing holder base and accumulation over the past month.
-```
-
-**🎉 You're all set:** You can now build streaming bots, assistants, chat interfaces, and more - powered by Cortex.
-
-
-### Supported Parameters
-
-| Field | Type | Required | Description |
-| ----- | ----- |------- | ---------- |
-| `prompt` | string | ✅ | The question or message you want to send to the AI. |
-| `stream` | boolean | ❌ | If `true`, enables real-time streaming (chunked responses). Default: `false`. |
-| `model` | string | ❌ | The model to use. Currently supports: `gpt-4.1-nano`, `gpt-4.1-mini`. Default: `gpt-4.1-nano`. |
-
-
 
 ---
 

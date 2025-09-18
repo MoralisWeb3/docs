@@ -1,0 +1,20 @@
+{
+    "evm-docs": {
+        "swaggerPath": "https://deep-index.moralis.io/api-docs-2.2/v2.2/swagger.json",
+        "filePath": "./docs/reference/web3-data-api/evm-api",
+        "importPath": "../../../../configs/api-reference/configs.json",
+        "category": "web3-data-api"
+    },
+    "streams": {
+        "swaggerPath": "https://api.moralis-streams.com/api-docs/swagger.json",
+        "filePath": "./docs/reference/streams-api",
+        "importPath": "../../configs/api-reference/configs.json",
+        "category": "streams-api"
+    },
+    "solana": {
+        "swaggerPath": "https://solana-gateway.moralis.io/api-json",
+        "filePath": "./docs/reference/web3-data-api/solana-api",
+        "importPath": "../../../configs/api-reference/configs.json",
+        "category": "web3-data-api"
+    }
+}

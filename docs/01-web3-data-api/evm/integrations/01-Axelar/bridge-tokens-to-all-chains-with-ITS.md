@@ -950,7 +950,7 @@ Check the [Axelarscan testnet scanner](https://testnet.axelarscan.io/) to see if
 
 ## Check the transactions using Moralis API
 
-You can also check the transactions directly from your application. Navigate to the Transactions tab on the menu. You should see a list of transactions done by the connected wallet address so far, which was implemented using the useEvmWalletTransactions hook from Moralis inside the Transactions.tsx page. You can learn more about [how to get transactions by user address here](https://docs.moralis.io/web3-data-api/aptos/how-to-get-transactions).
+You can also check the transactions directly from your application. Navigate to the Transactions tab on the menu. You should see a list of transactions done by the connected wallet address so far, which was implemented using the useEvmWalletTransactions hook from Moralis inside the Transactions.tsx page.
 
 When you navigate to the transactions page on your browser, you should see a table similar to the one below.
 

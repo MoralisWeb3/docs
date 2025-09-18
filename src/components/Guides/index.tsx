@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Card } from "@site/src/components/ui/card";
 import { Badge } from "@site/src/components/ui/badge";
 import Link from "@docusaurus/Link";
-import guidesList from "@site/docs/configs/guides/guides.json";
+import guidesList from "@site/configs/guides/guides.json";
 import ReactMarkdown from "react-markdown";
 
 const Guides = () => {

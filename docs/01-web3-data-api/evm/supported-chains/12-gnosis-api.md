@@ -20,10 +20,10 @@ The Web3 Data API is available for the following Gnosis networks:
 
 ## Network Details
 
-| Network                   | Chain ID       | EVM Chain               |
-| ------------------------- | -------------- | ----------------------- |
-| **Gnosis Mainnet**        | 0x64 (100)     | EvmChain.GNOSIS         |
-| **Gnosis Chiado Testnet** | 0x27d8 (10200) | EvmChain.GNOSIS_TESTNET |
+| Network | Chain ID |
+| ---- | ---- |
+| **Gnosis Mainnet**        | 0x64 (100)     |
+| **Gnosis Chiado Testnet** | 0x27d8 (10200) |
 
 ## Supported APIs
 

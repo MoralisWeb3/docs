@@ -1,0 +1,12 @@
+---
+sidebar_position: 2
+sidebar_label: Get Token Metadata
+slug: /web3-data-api/solana/reference/get-token-metadata
+---
+
+import ApiReference from "@site/src/components/ApiReference";
+import config from "@site/docs/configs/api-reference/configs.json";
+
+# Get Token Metadata
+
+<ApiReference {...config.solana.getTokenMetadata} />

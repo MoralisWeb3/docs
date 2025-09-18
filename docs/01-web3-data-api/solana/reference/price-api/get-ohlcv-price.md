@@ -7,7 +7,7 @@ description: Access historical OHLCV data for token pairs on Solana. Track price
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
 
 import ChartWidgetBanner from "@site/src/components/ChartWidgetBanner/ChartWidgetBanner.tsx";

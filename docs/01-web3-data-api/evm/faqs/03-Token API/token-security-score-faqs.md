@@ -46,6 +46,8 @@ Our Token Security Score leverages over 35 distinct metrics to provide a compreh
 
 These metrics, along with many others, are combined to form a holistic view of a token's security, ensuring that users are better protected from potential threats in the decentralized finance ecosystem.
 
+For a full comprehensive breakdown of all metrics we consider, as well as to get access to this detailed data, please contact our enterprise sales team.
+
 ## What criteria must a token meet to receive a security score?
 
 As soon as a token begins trading, it qualifies for analysis and will be assigned a security score based on the available data.
@@ -59,6 +61,10 @@ If a supported token cannot be fully analyzed due to insufficient data, it will 
 ## Can a token’s security score change over time?
 
 Yes, a token’s security score is dynamic and can change over time. After a token is initially analyzed and assigned a score, this score remains valid for one week. After this period, the token will be re-analyzed upon its next trade. If the token is not traded for another month, it will not be re-analyzed until a new trade occurs.
+
+## Can I access a detailed breakdown of the factors contributing to a token's security score?
+
+Yes, users can access a comprehensive breakdown of all the metrics that contribute to a token's security score. To view this detailed data, please contact our enterprise sales team.
 
 ## What chains are supported?
 

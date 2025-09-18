@@ -1,0 +1,39 @@
+{
+  "evm-docs": {
+    "swaggerPath": "https://deep-index.moralis.io/api-docs-2.2/v2.2/swagger.json",
+    "filePath": "./docs/reference/web3-data-api/evm-api",
+    "importPath": "../../../../configs/api-reference/configs.json",
+    "category": "web3-data-api"
+  },
+  "auth": {
+    "swaggerPath": "https://swagger.moralis.io/auth/v2/swagger.json",
+    "filePath": "./docs/reference/authentication-api",
+    "importPath": "../../configs/api-reference/configs.json",
+    "category": "auth-api"
+  },
+  "streams": {
+    "swaggerPath": "https://swagger.moralis.io/streams/v2/swagger.json",
+    "filePath": "./docs/reference/streams-api",
+    "importPath": "../../configs/api-reference/configs.json",
+    "category": "streams-api"
+  },
+  "solana": {
+    "swaggerPath": "https://swagger.moralis.io/solana/v2/swagger.json",
+    "filePath": "./docs/reference/web3-data-api/solana-api",
+    "importPath": "../../../configs/api-reference/configs.json",
+    "category": "web3-data-api"
+  },
+  "aptos-web3": {
+    "swaggerPath": "https://mainnet-aptos-api.moralis.io/swagger-json",
+    "testnetSwaggerPath": "https://testnet-aptos-api.moralis.io",
+    "filePath": "./docs/reference/web3-data-api/aptos-api",
+    "importPath": "../../../configs/api-reference/configs.json",
+    "category": "web3-data-api"
+  },
+  "market-insights": {
+    "swaggerPath": "https://wdim.moralis.io/swagger-json",
+    "filePath": "./docs/reference/market-insights-api",
+    "importPath": "../../../configs/api-reference/configs.json",
+    "category": "market-insights-api"
+  }
+}

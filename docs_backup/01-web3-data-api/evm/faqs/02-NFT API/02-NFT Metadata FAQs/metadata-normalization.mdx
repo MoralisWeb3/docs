@@ -1,0 +1,104 @@
+---
+title: "Metadata Normalization"
+slug: "/web3-data-api/evm/metadata-normalization"
+description: "When working with NFT Metadata, you have the option to receive either a normalized or non-normalized metadata from our NFT APIs."
+sidebar_position: 0
+---
+
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+Through our [NFT APIs](/web3-data-api/evm/nft-api), you have the option to receive either a [normalized or non-normalized NFT metadata](/web3-data-api/evm/normalized-vs-non-normalized-metadata).
+
+To use this feature, simply set `normalizeMetadata` parameter to `true`.
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs groupId="programming-language">
+  <TabItem value="javascript" label="index.js (JavaScript)" default>
+
+```javascript index.js
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
+
+const chain = EvmChain.ETHEREUM;
+
+const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
+
+const tokenId = "1";
+
+await Moralis.start({
+  apiKey: "<YOUR_API_KEY>",
+  // ...and any other configuration
+});
+
+const response = await Moralis.EvmApi.nft.getNFTMetadata({
+  address,
+  chain,
+  tokenId,
+  normalizeMetadata: true,
+});
+
+console.log(response.toJSON());
+```
+
+</TabItem>
+<TabItem value="typescript" label="index.ts (TypeScript)">
+
+```typescript index.ts
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
+
+const chain = EvmChain.ETHEREUM;
+
+const address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
+
+const tokenId = "1";
+
+await Moralis.start({
+  apiKey: "<YOUR_API_KEY>",
+  // ...and any other configuration
+});
+
+const response = await Moralis.EvmApi.nft.getNFTMetadata({
+  address,
+  chain,
+  tokenId,
+  normalizeMetadata: true,
+});
+
+console.log(response.toJSON());
+```
+
+</TabItem>
+<TabItem value="python" label="index.py (Python)">
+
+```python index.py
+from moralis import evm_api
+
+api_key = "YOUR_API_KEY"
+
+params = {
+    "chain": "ethereum",
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "tokenId": "1",
+}
+
+result = aptos_api.coins.get_coins_by_coin_type_hashes(
+    api_key=api_key,
+    params=params,
+)
+
+print(result)
+```
+
+</TabItem>
+</Tabs>
+
+This feature is available in the following NFT APIs:
+
+- [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts)
+- [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts)
+- [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners)
+- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata)
+- [Get owners by token ID](/web3-data-api/evm/reference/get-nft-token-id-owners)

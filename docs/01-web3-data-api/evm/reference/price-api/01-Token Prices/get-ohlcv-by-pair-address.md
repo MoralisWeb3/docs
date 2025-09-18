@@ -7,7 +7,7 @@ description: Get historical OHLCV data for token pairs on EVM chains. Analyze pr
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "../../../../../configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import SolanaApiBanner from "@site/src/components/SolBanner/SolApiBanner.tsx";
 import { MainnetBadge } from '@site/src/components/MainnetBadge/MainnetBadge.js';
 

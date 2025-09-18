@@ -1,0 +1,847 @@
+{
+  "evm": [
+    {
+      "endpoint": "getFilteredTokens",
+      "path": "/discovery/tokens",
+      "price": 250,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getRisingLiquidityTokens",
+      "path": "/discovery/tokens/rising-liquidity",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getTopBuyPressureTokens",
+      "path": "/discovery/tokens/buying-pressure",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getExperiencedBuyerTokens",
+      "path": "/discovery/tokens/experienced-buyers",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getSolidPerformanceTokens",
+      "path": "/discovery/tokens/solid-performers",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getBlueChipTokens",
+      "path": "/discovery/tokens/blue-chip",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getRiskyBetTokens",
+      "path": "/discovery/tokens/risky-bets",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getTopGainersTokens",
+      "path": "/discovery/tokens/top-gainers",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getTopLosersTokens",
+      "path": "/discovery/tokens/top-losers",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getTrendingTokens",
+      "path": "/discovery/tokens/trending",
+      "price": 250,
+      "rateLimitCost": 250
+    },
+    {
+      "endpoint": "getDiscoveryToken",
+      "path": "/discovery/token",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getBlock",
+      "path": "/block/{block_number_or_hash}",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getContractEvents",
+      "path": "/{address}/events",
+      "price": 20,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTransaction",
+      "path": "/transaction/{transaction_hash}",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getTransactions",
+      "path": "/{address}",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTransactionVerbose",
+      "path": "/transaction/{transaction_hash}/verbose",
+      "price": 20,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getMultipleNFTs",
+      "path": "/nft/getMultipleNFTs",
+      "price": 150,
+      "rateLimitCost": 20,
+      "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
+    },
+    {
+      "endpoint": "getTransactionsVerbose",
+      "path": "/{address}/verbose",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getInternalTransactions",
+      "path": "/transaction/{transaction_hash}/internal-transactions",
+      "price": 20,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNativeBalance",
+      "path": "/{address}/balance",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNativeBalancesForAddresses",
+      "path": "/wallets/balances",
+      "price": 10,
+      "rateLimitCost": 10,
+      "dynamic": true,
+      "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
+    },
+    {
+      "endpoint": "getWalletTokenBalances",
+      "path": "/{address}/erc20",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletTokenBalancesPrice",
+      "path": "/{address}/tokens",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getDefiSummary",
+      "path": "/wallets/{address}/defi/summary",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getDefiPositionsByProtocol",
+      "path": "/wallets/:address/defi/:protocol/positions",
+      "price": 15,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getDefiPositionsSummary",
+      "path": "/wallets/{address}/defi/positions",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletProfitabilitySummary",
+      "path": "/wallets/{address}/profitability/summary",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletProfitability",
+      "path": "/wallets/{address}/profitability",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletApprovals",
+      "path": "/wallets/{address}/approvals",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "searchEntities",
+      "path": "/entities/search",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntity",
+      "path": "/entities/{entityId}",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntityCategories",
+      "path": "/entities/categories",
+      "price": 10,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getEntitiesByCategory",
+      "path": "/entities/categories/{categoryId}",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenTransfers",
+      "path": "/{address}/erc20/transfers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAddressTransfers",
+      "path": "/erc20/{address}/transfers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTopProfitableWalletPerToken",
+      "path": "/erc20/{address}/top-gainers",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getNFTs",
+      "path": "/{address}/nft",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTransfers",
+      "path": "/{address}/nft/transfers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNftTransfersByBlock",
+      "path": "/block/{block_number_or_hash}/nft/transfers",
+      "price": 20,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenMetadata",
+      "path": "/erc20/metadata",
+      "price": 10,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "web3ApiVersion",
+      "path": "/web3/version",
+      "price": 1,
+      "rateLimitCost": 1
+    },
+    {
+      "endpoint": "getTokenMetadataBySymbol",
+      "path": "/erc20/metadata/symbols",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getTokenPrice",
+      "path": "/erc20/{address}/price",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getMultipleTokenPrices",
+      "path": "/erc20/prices",
+      "price": "100",
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAllowance",
+      "path": "/erc20/{address}/allowance",
+      "price": 10,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getAllTokenIds",
+      "path": "/nft/{address}",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getContractNFTTransfers",
+      "path": "/nft/{address}/transfers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletNFTCollections",
+      "path": "/nft/{address}/collections",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTOwners",
+      "path": "/nft/{address}/owners",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTMetadata",
+      "path": "/nft/{address}/metadata",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "syncNFTContract",
+      "path": "/nft/{address}/sync",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "reSyncMetadata",
+      "path": "/nft/{address}/{token_id}/metadata/resync",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenIdMetadata",
+      "path": "/nft/{address}/{token_id}",
+      "price": 20,
+      "rateLimitCost": 20
+    },
+
+    {
+      "endpoint": "getTokenIdOwners",
+      "path": "/nft/{address}/{token_id}/owners",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getWalletTokenIdTransfers",
+      "path": "/nft/{address}/{token_id}/transfers",
+      "price": 20,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTraitsByCollection",
+      "path": "/nft/{address}/traits",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTraitsByCollectionPaginate",
+      "path": "/nft/{address}/nfts-by-traits",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "resyncNFTRarity",
+      "path": "/nft/{address}/traits/resync",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNFTByContractTraits",
+      "path": "/nft/{address}/nfts-by-traits",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTFloorPriceByContract",
+      "path": "/nft/{address}/floor-price",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTFloorPriceByToken",
+      "path": "/nft/{address}/{token_id}/floor-price",
+      "price": 30,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTHistoricalFloorPriceByContract",
+      "path": "/nft/{address}/floor-price/historical",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "resolveDomain",
+      "path": "/resolve/{domain}",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "resolveAddressToDomain",
+      "path": "/resolve/{address}/domain",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "resolveENSDomain",
+      "path": "/resolve/ens/{domain}",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "resolveAddress",
+      "path": "/resolve/{address}/reverse",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getPairReserves",
+      "path": "/{pair_address}/reserves",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getLogsByAddress",
+      "path": "/{address}/logs",
+      "price": 20,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNftTransfersFromToBlock",
+      "path": "/nft/transfers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTrades",
+      "path": "/nft/{address}/trades",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTradesByToken",
+      "path": "/nft/{address}/{token_id}/trades",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTTradesByWallet",
+      "path": "/wallets/{address}/nfts/trades",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTLowestPrice",
+      "path": "/nft/{address}/lowestprice",
+      "price": 40,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getNFTContractSalePrices",
+      "path": "/nft/{address}/price",
+      "price": 30,
+      "rateLimitCost": 30
+    },
+    {
+      "endpoint": "getNFTSalePrices",
+      "path": "/nft/{address}/{token_id}/price",
+      "price": 30,
+      "rateLimitCost": 30
+    },
+    {
+      "endpoint": "getWalletActiveChains",
+      "path": "/wallets/{address}/chains",
+      "price": 50,
+      "rateLimitCost": 50,
+      "dynamic": true,
+      "detailedInfo": "https://docs.moralis.io/web3-data-api/compute-units-cu#dynamic-prices"
+    },
+    {
+      "endpoint": "getTopERC20TokensByMarketCap",
+      "path": "/market-data/erc20s/top-tokens",
+      "price": 200,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTopERC20TokensByPriceMovers",
+      "path": "/market-data/erc20s/top-movers",
+      "price": 200,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTopNFTCollectionsByMarketCap",
+      "path": "/market-data/nfts/top-collections",
+      "price": 200,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getHottestNFTCollectionsByTradingVolume",
+      "path": "/market-data/nfts/hottest-collections",
+      "price": 200,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "contractsReview",
+      "path": "/contracts-review",
+      "price": 1,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "endpointWeights",
+      "path": "/info/endpointWeights",
+      "price": 1,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getWalletStats",
+      "path": "/wallets/{address}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getNFTCollectionStats",
+      "path": "/nft/{address}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getNFTTokenStats",
+      "path": "/nft/{address}/{token_id}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenStats",
+      "path": "/erc20/{address}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getBlockStats",
+      "path": "/block/{block_number_or_hash}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getLatestBlockNumber",
+      "path": "/latestBlockNumber/{chain}",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getWalletNetWorth",
+      "path": "/wallets/{address}/net-worth",
+      "price": 250,
+      "rateLimitCost": 50,
+      "dynamic": true
+    },
+    {
+      "endpoint": "getWalletHistory",
+      "path": "/wallets/{address}/history",
+      "price": 150,
+      "rateLimitCost": 30
+    },
+    {
+      "endpoint": "getSwapsByPairAddress",
+      "path": "/pair/:address/swaps",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getSwapsByTokenAddress",
+      "path": "/erc20/:address/swaps",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getSwapsByWalletAddress",
+      "path": "/wallets/:address/swaps",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getCandleSticks",
+      "path": "/pairs/:address/ohlcv",
+      "price": 150,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSnipersByPairAddress",
+      "path": "/pair/:address/snipers",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getPairStats",
+      "path": "/pairs/:address/stats",
+      "price": 100,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenHolders",
+      "path": "/erc20/:token_address/owners",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenHolderStats",
+      "path": "/erc20/:tokenAddress/holders",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getHistoricalTokenHolders",
+      "path": "/erc20/:tokenAddress/holders/historical",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "searchTokens",
+      "path": "/tokens/search",
+      "price": 150,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getVolumeStatsByChain",
+      "path": "/volume/chains",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getVolumeStatsByCategory",
+      "path": "/volume/categories",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolume",
+      "path": "/volume/timeseries",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolumeByCategory",
+      "path": "/volume/timeseries/{category}",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAnalytics",
+      "path": "/tokens/:tokenAddress/analytics",
+      "price": 80,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getMultipleTokenAnalytics",
+      "path": "/tokens/analytics",
+      "price": 150,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTimeSeriesTokenAnalytics",
+      "path": "/tokens/analytics/timeseries",
+      "price": 200,
+      "rateLimitCost": 20
+    }
+  ],
+  "solana": [
+    {
+      "endpoint": "balance",
+      "path": "/account/{network}/{address}/balance",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getPortfolio",
+      "path": "/account/{network}/{address}/portfolio",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getSPL",
+      "path": "/account/{network}/{address}/tokens",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNFTs",
+      "path": "/account/{network}/{address}/nft",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getNFTMetadata",
+      "path": "/nft/{network}/{address}/metadata",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getTokenMetadata",
+      "path": "/token/{network}/{address}/metadata",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getTokenPrice",
+      "path": "/token/{network}/{address}/price",
+      "price": 10,
+      "rateLimitCost": 10
+    },
+    {
+      "endpoint": "getCandleSticks",
+      "path": "/token/{network}/pairs/{pairAddress}/ohlcv",
+      "price": 150,
+      "rateLimitCost": 150
+    },
+    {
+      "endpoint": "getTokenPairs",
+      "path": "/token/{network}/{address}/pairs",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenPairStats",
+      "path": "/token/{network}/{address}/pairs/{pairAddress}/stats",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getAggregatedTokenPairStats",
+      "path": "/token/{network}/{address}/pairs/stats",
+      "price": 100,
+      "rateLimitCost": 100
+    },
+    {
+      "endpoint": "getSnipersByPairAddress",
+      "path": "/pairs/{address}/snipers",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSwapsByPairAddress",
+      "path": "/token/{network}/pairs/{pairAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSwapsByWalletAddress",
+      "path": "/account/{network}/{walletAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getSwapsByTokenAddress",
+      "path": "/token/{network}/{tokenAddress}/swaps",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getNewTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/new",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getBondingTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/bonding",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getGraduatedTokensByExchange",
+      "path": "/token/mainnet/exchange/:exchange/graduated",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenBondingStatus",
+      "path": "/token/mainnet/:tokenAddress/bonding-status",
+      "price": 50,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getVolumeStatsByChain",
+      "path": "/volume/chains",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getVolumeStatsByCategory",
+      "path": "/volume/categories",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolume",
+      "path": "/volume/timeseries",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTimeSeriesVolumeByCategory",
+      "path": "/volume/timeseries/{category}",
+      "price": 150,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenAnalytics",
+      "path": "/tokens/:tokenAddress/analytics",
+      "price": 80,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getMultipleTokenAnalytics",
+      "path": "/tokens/analytics",
+      "price": 150,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTimeSeriesTokenAnalytics",
+      "path": "/tokens/analytics/timeseries",
+      "price": 200,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getFilteredTokens",
+      "path": "/discovery/tokens",
+      "price": 250,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "searchTokens",
+      "path": "/tokens/search",
+      "price": 150,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTrendingTokens",
+      "path": "/discovery/tokens/trending",
+      "price": 250,
+      "rateLimitCost": 50
+    },
+    {
+      "endpoint": "getTokenHolderStats",
+      "path": "/token/mainnet/holders/:address",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getHistoricalTokenHolders",
+      "path": "/token/mainnet/holders/:address/historical",
+      "price": 50,
+      "rateLimitCost": 20
+    },
+    {
+      "endpoint": "getTokenTopHolders",
+      "path": "/token/mainnet/holders/:address",
+      "price": 50,
+      "rateLimitCost": 20
+    }
+  ]
+}

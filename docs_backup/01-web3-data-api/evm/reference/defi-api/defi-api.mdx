@@ -1,0 +1,23 @@
+---
+title: "DeFi API"
+sidebar_label: "DeFi API"
+slug: "../defi-api"
+sidebar_class_name: "sidebar-defi-api"
+sidebar_position: 3
+---
+
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+
+Select what you want to achieve:
+
+<ul>
+<li><a href="#get-wallet-defi-positions">Get Wallet DeFi Positions</a></li>
+</ul>
+
+### Get Wallet DeFi Positions
+
+| No. | Method                       | Description                                        | API Reference                                                                       | URL                                                                                                                                                                  |
+| --- | ---------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `getDefiSummary`             | Get DeFi protocols by wallet                       | [Method Documentation](/web3-data-api/evm/reference/get-defi-summary)               | [https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/summary](https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/summary)                         |
+| 2   | `getDefiPositionsSummary`    | Get DeFi positions by wallet                       | [Method Documentation](/web3-data-api/evm/reference/get-defi-positions-summary)     | [https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/positions](https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/positions)                     |
+| 3   | `getDefiPositionsByProtocol` | Get detailed DeFi positions by wallet and protocol | [Method Documentation](/web3-data-api/evm/reference/get-defi-positions-by-protocol) | [https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/:protocol/positions](https://deep-index.moralis.io/api/v2.2/wallets/:address/defi/:protocol/positions) |

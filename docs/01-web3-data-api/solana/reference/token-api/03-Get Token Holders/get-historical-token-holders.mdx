@@ -3,20 +3,22 @@ sidebar_position: 2
 sidebar_label: Get Token Holders Timeseries
 slug: /web3-data-api/solana/reference/get-historical-token-holders
 title: Get Token Holders Timeseries
-description: Get historical Timeseries holder statistics for a specific Solana token address over a date range
+description:
+    Get historical Timeseries holder statistics for a specific Solana token
+    address over a date range
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
 
 # Get Token Holders Timeseries
 
 <EthereumApiBanner
-  customTitle="Looking for token holders timeseries on EVM?"
-  customText="Access historical token holder statistics on EVM using our API."
-  customButtonText="Explore EVM API"
-  customButtonLink="/web3-data-api/evm/reference/get-historical-token-holders"
+    customTitle="Looking for token holders timeseries on EVM?"
+    customText="Access historical token holder statistics on EVM using our API."
+    customButtonText="Explore EVM API"
+    customButtonLink="/web3-data-api/evm/reference/get-historical-token-holders"
 />
 
-<ApiReference {...config.solana.getHistoricalHolders} />
+<ApiReference {...config.solana.getHistoricalTokenHolders} />

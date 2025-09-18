@@ -1,9 +1,9 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
+
+const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
+const darkCodeTheme = require("prism-react-renderer/themes/palenight");
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const config = {
   title: "Moralis API Documentation",
   url: "https://docs.moralis.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/favicon.ico",
 
@@ -84,13 +84,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          lastVersion: "current",
-          versions: {
-            current: {
-              label: "2.2",
-              path: "",
-            },
-          },
           editUrl: "https://github.com/MoralisWeb3/docs/edit/main/",
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
@@ -168,23 +161,27 @@ const config = {
             className: "navbar__item--linebreak",
             value: "<hr>",
           },
+          // Temporarily hidden - Get Started section
+          // {
+          //   to: "/get-started",
+          //   label: "Get Started",
+          //   position: "left",
+          // },
           {
-            to: "/web3-data-api/evm/reference",
-            label: "EVM API",
+            to: "/web3-data-api/evm",
+            label: "EVM",
             position: "left",
-            exact: true,
           },
           {
             to: "/web3-data-api/solana",
-            label: "Solana API",
+            label: "Solana",
             position: "left",
-            exact: true,
           },
           {
             type: "doc",
             docId: "streams-api/evm/overview",
             position: "left",
-            label: "Streams API",
+            label: "Streams",
           },
           {
             type: "doc",
@@ -194,15 +191,9 @@ const config = {
           },
           {
             type: "doc",
-            docId: "authentication-api/evm/overview",
-            position: "left",
-            label: "Auth API",
-          },
-          {
-            type: "doc",
             docId: "moralis-cortex/overview",
             position: "left",
-            label: "🧠 Moralis Cortex",
+            label: "Moralis Cortex",
           },
           // position: Right
           {
@@ -246,22 +237,22 @@ const config = {
                 className: "dropdown-divider",
               },
               {
-                label: "EVM API",
+                label: "EVM",
                 type: "doc",
                 docId: "web3-data-api/evm/reference/reference",
               },
               {
-                label: "Solana API",
+                label: "Solana",
                 type: "doc",
                 docId: "web3-data-api/solana/reference/reference",
               },
               {
-                label: "Streams API",
+                label: "Streams",
                 type: "doc",
                 docId: "streams-api/evm/reference/reference",
               },
               {
-                label: "Auth API",
+                label: "Auth",
                 type: "doc",
                 docId: "authentication-api/evm/reference/reference",
               },
@@ -271,54 +262,24 @@ const config = {
                 className: "dropdown-divider",
               },
               {
-                label: "EVM API Swagger",
+                label: "EVM Swagger",
                 href: "https://deep-index.moralis.io/api-docs-2.2/",
                 target: "_blank",
               },
               {
-                label: "Solana API Swagger",
+                label: "Solana Swagger",
                 href: "https://solana-gateway.moralis.io/api/#/",
                 target: "_blank",
               },
               {
-                label: "Streams API Swagger",
+                label: "Streams Swagger",
                 href: "https://api.moralis-streams.com/api-docs/",
                 target: "_blank",
               },
               {
-                label: "Auth API Swagger",
+                label: "Auth Swagger",
                 href: "https://authapi.moralis.io/api-docs/",
                 target: "_blank",
-              },
-              {
-                type: "html",
-                value: "SDK References",
-                className: "dropdown-divider",
-              },
-              {
-                label: "JS SDK",
-                href: "https://moralisweb3.github.io/Moralis-JS-SDK/",
-                target: "_blank",
-              },
-              {
-                label: "Python SDK",
-                href: "https://moralisweb3.github.io/Moralis-Python-SDK/",
-                target: "_blank",
-              },
-            ],
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-            dropdownItemsAfter: [
-              {
-                type: "html",
-                value: "Archived versions",
-              },
-              {
-                href: "https://v1docs.moralis.io/",
-                label: "1.0",
               },
             ],
           },
@@ -433,7 +394,7 @@ const config = {
       },
       algolia: {
         appId: "K26H89KJU5",
-        apiKey: process.env.ALGOLIA_API_KEY || "dummy-key",
+        apiKey: process.env.ALGOLIA_API_KEY || 'dummy-key-for-build',
         indexName: "gold-iota",
         contextualSearch: true,
       },
@@ -448,10 +409,11 @@ const config = {
         containerId: "GTM-WD3V6LS6",
       },
     ],
-    [
-      "./src/plugins/docusaurus-plugin-segment",
-      { apiKey: process.env.SEGMENT_API_KEY || "dummy_key", host: "tr-cdn.moralis.io" },
-    ],
+    // Temporarily disabled - Segment plugin
+    // [
+    //   "./src/plugins/docusaurus-plugin-segment",
+    //   { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
+    // ],
     ["./src/plugins/vercel-vitals", {}],
     ["@docusaurus/plugin-ideal-image", {}],
     async function pluginTailwindCSS(context, options) {

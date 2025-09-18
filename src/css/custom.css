@@ -685,12 +685,41 @@ li.sidebar-developer-tools a.menu__link--active:before {
     margin-right: 24px;
     padding-bottom: 10px;
     display: inline-block;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
   }
 
-  .navbar__items > .navbar__link--active {
-    border-bottom: 2px solid var(--ifm-navbar-link-hover-color);
-    font-weight: 600;
+  .navbar__items > .navbar__link--active,
+  .navbar__items > .navbar__item.navbar__link--active,
+  .navbar__items > .navbar__item:has(.navbar__link--active) {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  /* Ensure active state persists on navigation */
+  .navbar__items > .navbar__item a.navbar__link--active {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  /* Specific active states for each section */
+  body[class*="evm-api"] .navbar__items > .navbar__item a[href*="evm-api"],
+  body[class*="web3-data-api-evm"] .navbar__items > .navbar__item a[href*="evm-api"] {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  body[class*="solana-api"] .navbar__items > .navbar__item a[href*="solana-api"],
+  body[class*="web3-data-api-solana"] .navbar__items > .navbar__item a[href*="solana-api"] {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  body[class*="streams-api"] .navbar__items > .navbar__item a[href*="streams-api"] {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  body[class*="rpc-nodes"] .navbar__items > .navbar__item a[href*="rpc-nodes"] {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
+  }
+
+  body[class*="moralis-cortex"] .navbar__items > .navbar__item a[href*="moralis-cortex"] {
+    border-bottom: 2px solid var(--ifm-navbar-link-hover-color) !important;
   }
 
   .navbar__items--right > :last-child {
@@ -1647,5 +1676,40 @@ li.dropdown-divider {
 
   .stacked-header span {
     font-size: 12px;
+  }
+}
+
+/* General doc item width constraint */
+@media (min-width: 997px) {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    max-width: 75% !important;
+  }
+}
+
+/* Full width for API reference endpoint pages only - override the 75% width constraint */
+@media (min-width: 997px) {
+  /* Target pages that contain the ApiReference component */
+  /* Use any CSS modules class that starts with the component path */
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([class*="form"][class*="src-components-ApiReference-styles-module"]) {
+    max-width: 100% !important;
+  }
+
+  /* More specific targeting for endpoint pages */
+  body[class*="get-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="post-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="put-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="delete-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    max-width: 100% !important;
+  }
+
+  /* 50/50 split for ApiReference component pages - target any form with ApiReference styles */
+  [class*="form"][class*="src-components-ApiReference-styles-module"] .col--5 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  [class*="form"][class*="src-components-ApiReference-styles-module"] .col--7 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
   }
 }

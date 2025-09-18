@@ -4,9 +4,6 @@ slug: "../how-to-sign-in-with-particle"
 description: "Learn how to add secure Web3 Moralis authentication to your NextJS application by creating a full-stack Web3 authentication solution using NextJS framework."
 ---
 
-<video controls>
-	<source src="/video/particle.mp4"/>
-</video>
 
 ## What is Particle Network?
 

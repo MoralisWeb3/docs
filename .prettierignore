@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+.yarn/
+.pnp.*
+
+# Production
+build/
+dist/
+.docusaurus/
+.cache-loader/
+
+# Generated files
+*.generated.*
+.docusaurus/
+.cache-loader/
+
+# Misc
+.DS_Store
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary
+tmp/
+temp/
+
+# Version control
+.git/
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Static assets that shouldn't be formatted
+static/img/
+static/fonts/
+
+# Specific file types you might not want to format
+*.min.js
+*.min.css
+
+# Changelog (if generated)
+CHANGELOG.md
+
+# API reference files (if auto-generated)
+docs/api/
+
+# Versioned docs (if using Docusaurus versioning)
+versioned_docs/
+versioned_sidebars/
+
+# i18n (if using internationalization)
+i18n/

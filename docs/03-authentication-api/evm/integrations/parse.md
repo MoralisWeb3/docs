@@ -10,9 +10,6 @@ To achieve this, we will need to:
 2. Set up the parse-server dashboard to access db
 3. Integrate Moralis Auth with your Parse Server
 
-<video controls>
-  <source src="/video/3199457-parse-server.mp4"/>
-</video>
 
 For this tutorial, we'll be building with Express, which Parse makes use of. Let's get started!
 

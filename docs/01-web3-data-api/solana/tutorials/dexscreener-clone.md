@@ -112,9 +112,9 @@ This project leverages several Moralis APIs to fetch blockchain data:
 
 ### Chart Widget
 
-| Feature              | Source                                      | Description                                | Moralis Docs Link                                               |
-| -------------------- | ------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------- |
-| Moralis Chart Widget | `https://moralis.com/static/embed/chart.js` | Embeds interactive price charts for tokens | [Widget Docs](https://explorer.moralis.com/widgets/price-chart) |
+| Feature              | Source                                      | Description                                | Moralis Docs Link                                      |
+| -------------------- | ------------------------------------------- | ------------------------------------------ | ------------------------------------------------------ |
+| Moralis Chart Widget | `https://moralis.com/static/embed/chart.js` | Embeds interactive price charts for tokens | [Widget Docs](https://moralis.com/widgets/price-chart) |
 
 ## Supported Blockchains
 

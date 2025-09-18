@@ -7,7 +7,7 @@ description: Retrieve a list of token pairs on Solana, including their addresses
 ---
 
 import ApiReference from "@site/src/components/ApiReference";
-import config from "@site/docs/configs/api-reference/configs.json";
+import config from "@site/configs/api-reference/configs.json";
 import EthereumApiBanner from "@site/src/components/EthBanner/EthApiBanner.tsx";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
 
