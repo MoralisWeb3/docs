@@ -127,6 +127,7 @@ const ApiReference = ({
   );
   const location = useLocation();
   const initialQueryValues = queryParamsToObject(location.search);
+  const currentPageUrl = `${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}${location.pathname}${location.search}`;
 
   const handleResponseSelect = useCallback((event) => {
     setResponseIndex(+event.currentTarget.value);
@@ -182,7 +183,7 @@ const ApiReference = ({
                 "content-type": "application/json",
                 [authHeaderKey]: authHeaderValue,
                 "x-moralis-source": `Moralis API docs`,
-                referer: "moralis.io",
+                referer: currentPageUrl,
               },
               body: JSON.stringify(
                 // temporary fix for runContractFunction
@@ -215,7 +216,7 @@ const ApiReference = ({
                 "content-type": "application/json",
                 "X-API-Key": dynamicApiKey,
                 "x-moralis-source": `Moralis API docs`,
-                referer: "moralis io",
+                referer: currentPageUrl,
               },
               query: values.query || {},
               body:

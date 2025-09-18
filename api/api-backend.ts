@@ -9,83 +9,204 @@ const sumUtcDateMonth = utcDay + utcMonth;
 
 const key = `test${sumUtcDateMonth}`;
 
-const { MORALIS_API_KEY, SUPER_SECRET_KEY } = process.env;
+const { MORALIS_API_KEY, SUPER_SECRET_KEY, SLACK_WEBHOOK_URL } = process.env;
+
+async function sendSlackNotification(
+    method: string,
+    query: any,
+    body: any,
+    error: string,
+    statusCode: number,
+    hostUrl: string,
+    path: string,
+    docsUrl?: string
+) {
+    try {
+        const timestamp = new Date().toISOString().replace("T", " ").substring(0, 19) + " UTC";
+        const fullUrl = [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(
+            ""
+        );
+
+        const slackPayload = {
+            text: "🚨 @iulian User tried the API in docs and it failed",
+            blocks: [
+                {
+                    type: "section",
+                    text: {
+                        type: "mrkdwn",
+                        text: `*🚨 @iulian User tried the API in docs and it failed*\n\nts: ${timestamp}`,
+                    },
+                },
+                {
+                    type: "section",
+                    fields: [
+                        {
+                            type: "mrkdwn",
+                            text: `*Method:*\n${method}`,
+                        },
+                        {
+                            type: "mrkdwn",
+                            text: `*Status Code:*\n${statusCode}`,
+                        },
+                        {
+                            type: "mrkdwn",
+                            text: `*API URL:*\n\`${fullUrl}\``,
+                        },
+                        {
+                            type: "mrkdwn",
+                            text: `*Docs Page:*\n${docsUrl || "Unknown"}`,
+                        },
+                    ],
+                },
+            ],
+        };
+
+        // Add query parameters if they exist
+        if (query && Object.keys(query).length > 0) {
+            slackPayload.blocks.push({
+                type: "section",
+                text: {
+                    type: "mrkdwn",
+                    text: `*Query Parameters:*\n\`\`\`\n${JSON.stringify(query, null, 2)}\n\`\`\``,
+                },
+            });
+        }
+
+        // Add request body if it exists
+        if (body && Object.keys(body).length > 0) {
+            slackPayload.blocks.push({
+                type: "section",
+                text: {
+                    type: "mrkdwn",
+                    text: `*Request Body:*\n\`\`\`\n${JSON.stringify(body, null, 2)}\n\`\`\``,
+                },
+            });
+        }
+
+        // Add error response
+        slackPayload.blocks.push({
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: `*Error Response:*\n\`\`\`\n${error}\n\`\`\``,
+            },
+        });
+
+        if (!SLACK_WEBHOOK_URL) {
+            console.error("SLACK_WEBHOOK_URL is not defined");
+            return;
+        }
+
+        await fetch(SLACK_WEBHOOK_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(slackPayload),
+        });
+    } catch (slackError) {
+        console.error("Failed to send Slack notification:", slackError);
+    }
+}
 
 const restrictedIPs = ["171.248.175.163"];
 
 export default async function (req: VercelRequest, res: VercelResponse) {
-  try {
-    const { hostUrl, path, method, headers, body, query } = req.body;
+    // Capture the original docs page URL before any processing
+    const originalDocsUrl = req.body?.headers?.referer || req.body?.headers?.origin || "Unknown";
 
-    // Check if the client IP is in the restricted list
-    const forwardedIps =
-      (req.headers["x-forwarded-for"] as string) ||
-      req.connection.remoteAddress;
-    const clientIp = forwardedIps.split(",")[0].trim(); // Takes the first IP and trims any extra whitespace
-    // console.log({ utcDay, utcMonth, key });
-    // if (
-    //   headers["X-API-Key"] !== key ||
-    //   // &&
-    //   // headers["X-API-Key"] !== key0 &&
-    //   // headers["X-API-Key"] !== key2
-    //   headers["referer"] !== "moralis io"
-    // ) {
-    //   console.log(`Request from Spammer: ${clientIp}`);
-    //   console.log({ hostUrl, path, method, headers, body, query });
-    //   return res.status(200).json({});
-    // }
-    // console.log({ hostUrl, path, method, headers, body, query });
-    if (restrictedIPs.includes(clientIp)) {
-      // Return the dummy response immediately if the IP matches
-      // console.log(`Request from banned IP: ${clientIp}`);
-      // console.log(
-      //   [
-      //     hostUrl,
-      //     path,
-      //     qs.stringify(query || {}, { addQueryPrefix: true }),
-      //   ].join("")
-      // );
-      return res.status(200).json([]);
+    try {
+        const { hostUrl, path, method, headers, body, query } = req.body;
+
+        // Check if the client IP is in the restricted list
+        const forwardedIps =
+            (req.headers["x-forwarded-for"] as string) || req.connection.remoteAddress;
+        const clientIp = forwardedIps ? forwardedIps.split(",")[0].trim() : "unknown"; // Takes the first IP and trims any extra whitespace
+        // console.log({ utcDay, utcMonth, key });
+        // if (
+        //   headers["X-API-Key"] !== key ||
+        //   // &&
+        //   // headers["X-API-Key"] !== key0 &&
+        //   // headers["X-API-Key"] !== key2
+        //   headers["referer"] !== "moralis io"
+        // ) {
+        //   console.log(`Request from Spammer: ${clientIp}`);
+        //   console.log({ hostUrl, path, method, headers, body, query });
+        //   return res.status(200).json({});
+        // }
+        // console.log({ hostUrl, path, method, headers, body, query });
+        if (restrictedIPs.includes(clientIp)) {
+            // Return the dummy response immediately if the IP matches
+            // console.log(`Request from banned IP: ${clientIp}`);
+            // console.log(
+            //   [
+            //     hostUrl,
+            //     path,
+            //     qs.stringify(query || {}, { addQueryPrefix: true }),
+            //   ].join("")
+            // );
+            return res.status(200).json([]);
+        }
+
+        const authHeaderKey = hostUrl.includes("wdim.moralis.io") ? "Authorization" : "X-API-Key";
+        const authHeaderValue = hostUrl.includes("wdim.moralis.io")
+            ? `Bearer ${MORALIS_API_KEY}`
+            : MORALIS_API_KEY;
+
+        const newHeaders = {
+            ...headers,
+            [authHeaderKey]: authHeaderValue,
+            referer: SUPER_SECRET_KEY,
+        };
+
+        // console.log({ newHeaders });
+
+        const response = await fetch(
+            [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(""),
+            {
+                method,
+                headers: newHeaders,
+                body: JSON.stringify(body),
+            }
+        );
+
+        if (response.ok) {
+            const result = await response.json();
+
+            res.status(response.status).send(result);
+        } else {
+            const error = await response.text();
+            console.log({ "API Error": error });
+
+            // Send Slack notification for API errors
+            await sendSlackNotification(
+                method,
+                query,
+                body,
+                error,
+                response.status,
+                hostUrl,
+                path,
+                originalDocsUrl
+            );
+
+            res.status(response.status).send(error);
+        }
+    } catch (error) {
+        console.log({ "Function Error": error });
+
+        // Send Slack notification for function errors
+        await sendSlackNotification(
+            req.body?.method || "Unknown Method",
+            req.body?.query || {},
+            req.body?.body || {},
+            JSON.stringify(error),
+            500,
+            req.body?.hostUrl || "Unknown Host",
+            req.body?.path || "Unknown Path",
+            originalDocsUrl
+        );
+
+        res.status(500).send(error);
     }
-
-    const authHeaderKey = hostUrl.includes("wdim.moralis.io")
-      ? "Authorization"
-      : "X-API-Key";
-    const authHeaderValue = hostUrl.includes("wdim.moralis.io")
-      ? `Bearer ${MORALIS_API_KEY}`
-      : MORALIS_API_KEY;
-
-    const newHeaders = {
-      ...headers,
-      [authHeaderKey]: authHeaderValue,
-      referer: SUPER_SECRET_KEY,
-    };
-
-    // console.log({ newHeaders });
-
-    const response = await fetch(
-      [hostUrl, path, qs.stringify(query || {}, { addQueryPrefix: true })].join(
-        ""
-      ),
-      {
-        method,
-        headers: newHeaders,
-        body: JSON.stringify(body),
-      }
-    );
-
-    if (response.ok) {
-      const result = await response.json();
-
-      res.status(response.status).send(result);
-    } else {
-      const error = await response.text();
-      console.log({ "API Error": error });
-
-      res.status(response.status).send(error);
-    }
-  } catch (error) {
-    console.log({ "Function Error": error });
-    res.status(500).send(error);
-  }
 }
