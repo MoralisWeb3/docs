@@ -1,7 +1,8 @@
 import React from "react";
-import { Field, FieldProps } from "formik";
+import { Field as FormikField, FieldProps } from "formik";
 
 import ApiParamInfo from "./ApiParamInfo";
+import { getDefaultForParam } from "@site/src/utils/defaults";
 import ApiParamTextField from "./ApiParamTextField";
 import ApiParamNumberField from "./ApiParamNumberField";
 import ApiParamBooleanField from "./ApiParamBooleanField";
@@ -70,27 +71,55 @@ export const buildParamPath = (param: ApiParam | string, prefix?: string) =>
     .filter((x) => x != null)
     .join(".") || null;
 
+const inferTypeFromExample = (example: any): ApiParam["type"] | null => {
+  if (example === null || example === undefined) return null;
+
+  if (typeof example === "boolean") return "boolean";
+  if (typeof example === "number") return "number";
+  if (Array.isArray(example)) return "array";
+  if (typeof example === "object") return "object";
+  if (typeof example === "string") {
+    // Try to parse as number
+    if (!isNaN(Number(example)) && example.trim() !== "") {
+      return "number";
+    }
+    return "string";
+  }
+
+  return "string"; // default fallback
+};
+
 interface ApiParamFieldProps {
   prefix: string;
   param: ApiParam;
 }
 
-export const apiParamInitialValue = (param) => {
-  if (param.type === "oneOf") {
+export const apiParamInitialValue = (param, endpoint) => {
+  // Handle missing type by inferring from example or defaulting to string
+  const type = param.type || inferTypeFromExample(param.example) || 'string';
+
+  if (type === "oneOf") {
     return {};
   }
 
   const path = param.name ? buildParamPath(param) : null;
-  const value = PRIMITIVE_TYPES.includes(param.type)
-    ? param.example
-    : param.type === "object"
+
+  // Use example if provided, otherwise try to get default value
+  let exampleValue = param.example;
+  if (exampleValue === undefined && PRIMITIVE_TYPES.includes(type)) {
+    exampleValue = getDefaultForParam(param.name, type, endpoint);
+  }
+
+  const value = PRIMITIVE_TYPES.includes(type)
+    ? exampleValue
+    : type === "object"
     ? param.fields?.reduce(
-        (obj, field) => ({ ...obj, ...apiParamInitialValue(field) }),
+        (obj, field) => ({ ...obj, ...apiParamInitialValue(field, endpoint) }),
         {}
       )
-    : param.type === "array" && param.field
+    : type === "array" && param.field
     ? (param.example || []).map((item) => item)
-    : param.type === "record"
+    : type === "record"
     ? {}
     : undefined;
 
@@ -102,9 +131,11 @@ export const apiParamInitialValue = (param) => {
 };
 
 const validateField = (param: ApiParam) => (value: string) => {
-  if (!param || !param.type || !PRIMITIVE_TYPES.includes(param.type)) return;
+  const type = param?.type || inferTypeFromExample(param?.example) || 'string';
 
-  if (param.type === "json" && value != null) {
+  if (!param || !type || !PRIMITIVE_TYPES.includes(type)) return;
+
+  if (type === "json" && value != null) {
     try {
       if (typeof value === "string") JSON.parse(value);
     } catch {
@@ -114,18 +145,28 @@ const validateField = (param: ApiParam) => (value: string) => {
 };
 
 const ApiParamField = ({ prefix, param }: ApiParamFieldProps) => {
-  const Component = apiParamComponents[param.type];
+  // Handle missing type by inferring from example or defaulting to string
+  const inferredParam = {
+    ...param,
+    type: param.type || inferTypeFromExample(param.example) || 'string'
+  };
+
+  const Component = apiParamComponents[inferredParam.type as ApiParam["type"]];
+
+  // If component is still undefined, fall back to string component
+  const SafeComponent = Component || apiParamComponents.string;
+
   const field = (
-    <Field name={buildParamPath(param, prefix)} validate={validateField(param)}>
-      {(props: FieldProps) => <Component {...props} param={param} />}
-    </Field>
+    <FormikField name={buildParamPath(inferredParam, prefix)} validate={validateField(inferredParam)}>
+      {(props: FieldProps) => <SafeComponent {...props} param={inferredParam} />}
+    </FormikField>
   );
 
   return (
     <div className={styles.field}>
-      {PRIMITIVE_TYPES.includes(param.type) ? (
+      {PRIMITIVE_TYPES.includes(inferredParam.type as ApiParam["type"]) ? (
         <>
-          <ApiParamInfo param={param} />
+          <ApiParamInfo param={inferredParam} />
 
           <div className={styles.fieldInput}>{field}</div>
         </>

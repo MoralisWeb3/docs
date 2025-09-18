@@ -1,6 +1,6 @@
 import React from "react";
 import endpoints from "@site/configs/api-reference/compute-units.json";
-const camelToSnakeCase = require("../../../utils/camelToSnakeCase.mts");
+import camelToSnakeCase from "../../../utils/camelToSnakeCase.mts";
 
 interface EndpointWeightResponse {
   endpoint: string;

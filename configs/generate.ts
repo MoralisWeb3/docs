@@ -5,7 +5,7 @@ const {
   isGenerateSchemaOn,
   isGenerateReferenceOn,
 } = require("./generate.config.json");
-const camelToSnakeCase = require("../utils/camelToSnakeCase.mts");
+const camelToSnakeCase = require("../utils/camelToSnakeCase.js");
 
 const apiReferenceConfigFile = "./configs/api-reference/configs.json";
 

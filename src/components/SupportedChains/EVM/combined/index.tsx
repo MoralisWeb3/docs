@@ -22,7 +22,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "@docusaurus/router";
 // import chainData from "../../../../../configs/api-reference/evmChainData";
-import chainData from "../../../../../docs/configs/api-reference/evmChainData";
+import chainData from "../../../../../configs/api-reference/evmChainData";
 import GenericTable from "../../Utils/ChainTable";
 import styles from "../../tabsStyles.module.css";
 

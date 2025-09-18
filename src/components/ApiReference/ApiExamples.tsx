@@ -15,6 +15,7 @@ import usePageState from "@site/src/hooks/usePageState";
 import camelToSnakeCase from "@site/utils/camelToSnakeCase.mts";
 import snakeToCamelCase from "@site/utils/snakeToCamelCase.mts";
 import { bodyFixer } from "./utils";
+import { getDefaultEvmChain } from "@site/src/utils/defaults";
 
 const INDENT_LENGTH = 2;
 const STORAGE_EXAMPLE_TAB_KEY = "API_REFERENCE_EXAMPLE_TAB";
@@ -277,7 +278,7 @@ export const filterOutEmpty = (value: any) => {
 function getChainHexValue(chain) {
   switch (chain) {
     case "eth":
-      return "0x1";
+      return getDefaultEvmChain();
     case "sepolia":
       return "0xaa36a7";
     case "holesky":
@@ -545,8 +546,8 @@ const ApiExamples = ({
   const { network } = usePageState();
   const history = useHistory();
   const defaultPathParams = useMemo(
-    () => mapValues(values.path, (_: any, key: number) => `:${key}`),
-    []
+    () => mapValues(values.path, (_: any, key: string) => `:${key}`),
+    [values.path]
   );
   const formattedValuesForQueryPath = useMemo(() => {
     const { body, path, query } = values ?? {};
@@ -590,15 +591,23 @@ const ApiExamples = ({
                     method,
                     url: [
                       apiHost,
-                      new Path(path).build(
-                        {
-                          ...defaultPathParams,
-                          ...omitBy(values.path, (value) => value == null),
-                        },
-                        {
-                          urlParamsEncoding: "uriComponent",
+                      (() => {
+                        try {
+                          return new Path(path).build(
+                            {
+                              ...defaultPathParams,
+                              ...omitBy(values.path, (value) => value == null),
+                            },
+                            {
+                              urlParamsEncoding: "uriComponent",
+                            }
+                          );
+                        } catch (error) {
+                          // If path building fails due to missing parameters, return the original path
+                          // This allows the example to show with placeholder parameters
+                          return path;
                         }
-                      ),
+                      })(),
                       qs.stringify(values.query || {}, {
                         addQueryPrefix: true,
                       }),

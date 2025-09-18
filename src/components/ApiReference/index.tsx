@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useMemo, useContext, Component } from "react";
+import React, { useState, useCallback, useMemo, useContext } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import ReactMarkdown from "react-markdown";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field as FormikFieldComponent } from "formik";
 import CodeBlock from "@theme/CodeBlock";
 import Head from "@docusaurus/Head";
 import qs from "qs";
@@ -16,7 +16,6 @@ import LoadingCircle from "@site/src/components/LoadingCircle";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import PostBodyField from "./PostBodyField";
-import { Field } from "formik";
 import HttpMethodBadge from "../HttpMethodBadge";
 import StatusCodeBadge from "../StatusCodeBadge";
 import { responseExamples } from "./responseExamples";
@@ -38,7 +37,7 @@ export interface ApiReferenceProps {
   apiHost: string;
   testHost?: string;
   codeSamples?: CodeSample[];
-  children?: Component;
+  children?: React.ReactNode;
   aptosNetwork?: "mainnet" | "testnet";
   disabled?: boolean;
 }
@@ -141,10 +140,18 @@ const ApiReference = ({
 
         // Replace path values (For example :address) in path
         for (const pathValue in values.path) {
-          pathReplace = pathReplace.replace(
-            `:${pathValue}`,
-            values.path[pathValue]
-          );
+          if (values.path[pathValue]) {
+            pathReplace = pathReplace.replace(
+              `:${pathValue}`,
+              values.path[pathValue]
+            );
+          }
+        }
+
+        // Check if there are still unresolved path parameters
+        const unresolvedParams = pathReplace.match(/:[^/]+/g);
+        if (unresolvedParams) {
+          throw new Error(`Missing required path parameters: ${unresolvedParams.join(', ')}`);
         }
 
         let response;
@@ -253,10 +260,13 @@ const ApiReference = ({
         fields: queryParams,
       };
 
+      // Create endpoint context for better default detection
+      const endpointContext = `${apiHost}${path}`;
+
       return {
-        path: pathParam && apiParamInitialValue(pathParam),
-        query: queryParam && apiParamInitialValue(queryParam),
-        body: bodyParam && apiParamInitialValue(bodyParam),
+        path: pathParam && apiParamInitialValue(pathParam, endpointContext),
+        query: queryParam && apiParamInitialValue(queryParam, endpointContext),
+        body: bodyParam && apiParamInitialValue(bodyParam, endpointContext),
       };
     } else {
       const path = {};
@@ -264,9 +274,9 @@ const ApiReference = ({
       const body = bodyParam ? {} : undefined;
       // return {};
       for (const key in initialQueryValues) {
-        if (pathParams.some((item) => item?.name === key)) {
+        if (pathParams?.some((item) => item?.name === key)) {
           path[key] = initialQueryValues[key];
-        } else if (queryParams.some((item) => item?.name === key)) {
+        } else if (queryParams?.some((item) => item?.name === key)) {
           query[key] = initialQueryValues[key];
         } else if (bodyParam) {
           body[key] = initialQueryValues[key];
@@ -279,7 +289,7 @@ const ApiReference = ({
         body,
       };
     }
-  }, [bodyParam, pathParams, queryParams]);
+  }, [bodyParam, pathParams, queryParams, initialQueryValues]);
 
   const onChangeToken = useCallback(
     (event) => setToken(event.currentTarget.value),
@@ -372,11 +382,11 @@ const ApiReference = ({
 
                   <div className={styles.group}>
                     {method === "POST" || method === "PUT" ? (
-                      <Field name="body">
+                      <FormikFieldComponent name="body">
                         {(props) => (
                           <PostBodyField {...props} param={bodyParam} />
                         )}
-                      </Field>
+                      </FormikFieldComponent>
                     ) : (
                       <ApiParamField param={bodyParam} prefix="body" />
                     )}

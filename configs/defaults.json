@@ -1,0 +1,14 @@
+{
+    "evmChain": "0x1",
+    "evmWallet": "0xdadB0d80178819F2319190D340ce9A924f783711",
+    "evmToken": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+    "evmPair": "0xe11Ae46AA5200984d59FF54F3b2c7Ff6AC6EF749",
+    "evmNft": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "nft_metadata": true,
+    "solChain": "mainnet",
+    "solWallet": "A7FMMgue4aZmPLLoutVtbC7gJcyqkHybUieiaDg9aaVE",
+    "solToken": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+    "solPair": "9d9mb8kooFfaD3SctgZtkxQypkshx6ezhbKio89ixyy2",
+    "solNft": "f25cd97f956c603b9a1fd405ae8b6a438c07dbe39f53ab48162ddd08429da6d9",
+    "solExchange": "pumpfun"
+}
