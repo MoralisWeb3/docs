@@ -1,0 +1,95 @@
+name: Test All Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - 'configs/**'
+      - 'package.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - 'configs/**'
+      - 'package.json'
+
+jobs:
+  test-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run TypeScript type checking
+      run: npm run typecheck
+
+    - name: Run linting
+      run: npm run lint
+
+    - name: Test page compilation (build test)
+      run: npm run test:pages:build
+
+    - name: Test page runtime loading
+      run: npm run test:pages:runtime
+
+    - name: Upload test report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: page-test-report
+        path: test-report.json
+
+    - name: Comment PR with test results
+      if: github.event_name == 'pull_request' && always()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+
+          if (fs.existsSync('test-report.json')) {
+            const report = JSON.parse(fs.readFileSync('test-report.json', 'utf8'));
+
+            const body = `## Page Test Results 📄
+
+            **Summary:**
+            - Total Pages: ${report.summary.totalPages}
+            - Passed: ${report.summary.passedPages} ✅
+            - Failed: ${report.summary.failedPages} ❌
+            - Success Rate: ${report.summary.successRate}
+
+            **Issues Found:**
+            - Build Errors: ${report.buildErrors.length}
+            - Runtime Errors: ${report.runtimeErrors.length}
+            - Warnings: ${report.warnings.length}
+
+            ${report.runtimeErrors.length > 0 ? `
+            **Failed Pages:**
+            ${report.runtimeErrors.map(error => `- \`${error.route}\`: ${error.message}`).join('\n')}
+            ` : ''}
+
+            ${report.buildErrors.length > 0 ? `
+            **Build Errors:**
+            ${report.buildErrors.map(error => `- ${error.type}: ${error.message}`).join('\n')}
+            ` : ''}
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+          }

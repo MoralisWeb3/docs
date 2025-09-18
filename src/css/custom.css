@@ -1681,28 +1681,76 @@ li.dropdown-divider {
 
 /* General doc item width constraint */
 @media (min-width: 997px) {
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  .docItemCol_VOVn,
+  .generatedIndexPage_vN6x {
     max-width: 75% !important;
   }
 }
 
 /* Full width for API reference endpoint pages only - override the 75% width constraint */
 @media (min-width: 997px) {
-  /* Target pages that contain the ApiReference component */
-  /* Use any CSS modules class that starts with the component path */
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([class*="form"][class*="src-components-ApiReference-styles-module"]) {
+  /* Primary selector: Target pages that contain the ApiReference component using data attribute */
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([data-api-reference-form="true"]),
+  .docItemCol_VOVn:has([data-api-reference-form="true"]) {
     max-width: 100% !important;
   }
 
-  /* More specific targeting for endpoint pages */
+  /* Fallback selectors for better browser compatibility */
   body[class*="get-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="get-"] .docItemCol_VOVn,
   body[class*="post-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="post-"] .docItemCol_VOVn,
   body[class*="put-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
-  body[class*="delete-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+  body[class*="put-"] .docItemCol_VOVn,
+  body[class*="delete-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="delete-"] .docItemCol_VOVn {
     max-width: 100% !important;
   }
 
-  /* 50/50 split for ApiReference component pages - target any form with ApiReference styles */
+  /* Target pages under /reference/ path - more reliable way to identify API endpoints */
+  body[class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="reference"] .docItemCol_VOVn {
+    max-width: 100% !important;
+  }
+
+  /* Target all API reference pages based on URL structure */
+  body[class*="web3-data-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="web3-data-api"][class*="reference"] .docItemCol_VOVn,
+  body[class*="streams-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="streams-api"][class*="reference"] .docItemCol_VOVn,
+  body[class*="authentication-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="authentication-api"][class*="reference"] .docItemCol_VOVn {
+    max-width: 100% !important;
+  }
+
+  /* Universal fallback for any page containing API reference forms */
+  [data-api-reference-form="true"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure parent containers of API reference forms are full width */
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([data-api-reference-form]) {
+    max-width: 100% !important;
+  }
+
+  .docItemCol_VOVn:has([data-api-reference-form]) {
+    max-width: 100% !important;
+  }
+
+  /* 50/50 split for ApiReference component pages */
+  [data-api-reference-form="true"] .col--5 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  [data-api-reference-form="true"] .col--7 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Additional fallback using CSS module classes */
   [class*="form"][class*="src-components-ApiReference-styles-module"] .col--5 {
     flex: 0 0 50% !important;
     max-width: 50% !important;

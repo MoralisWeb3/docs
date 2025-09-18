@@ -335,7 +335,7 @@ const ApiReference = ({
         )}
       </div>
       <Formik<FormValues> initialValues={initialValues} onSubmit={execCallback}>
-        <Form autoComplete="off" className={styles.form}>
+        <Form autoComplete="off" className={styles.form} data-api-reference-form="true">
           <div className="row row--no-gutters">
             <div className="col col--5">
               <div className={styles.url}>

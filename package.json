@@ -32,7 +32,11 @@
     "prettier:fix": "prettier --write .",
     "format": "npm run prettier:fix && npm run lint:fix",
     "format:docs": "prettier --write \"docs/**/*.{md,mdx}\"",
-    "format:code": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss}\""
+    "format:code": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+    "test:pages:build": "node scripts/test-pages.js build",
+    "test:pages:runtime": "node scripts/test-pages.js runtime",
+    "test:pages:all": "node scripts/test-pages.js all",
+    "test:pages": "npm run test:pages:all"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
