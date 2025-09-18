@@ -13,7 +13,8 @@ dist/
 *.generated.*
 .docusaurus/
 .cache-loader/
-
+*.md
+*.mdx
 # Misc
 .DS_Store
 .env
