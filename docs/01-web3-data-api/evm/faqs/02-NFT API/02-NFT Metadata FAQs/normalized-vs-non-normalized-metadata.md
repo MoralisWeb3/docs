@@ -13,13 +13,11 @@ You'll find a query parameter named `normalizeMetadata` on the endpoints listed 
 
 ## Endpoints
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-wallet-nfts">Get NFTs by wallet</a> - /{address}/nft</li>
-  <li><a href="/web3-data-api/evm/reference/get-contract-nfts">Get NFTs by contract</a> - /nft/{address}</li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-owners">Get NFT owners by contract</a> - /nft/{address}/owners</li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a> - /nft/{address}/{token_id}</li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-token-id-owners">Get owners by token ID</a> - /nft/{address}/{token_id}/owners</li>
-</ul>
+- [Get NFTs by wallet](/web3-data-api/evm/reference/get-wallet-nfts) - `/{address}/nft`
+- [Get NFTs by contract](/web3-data-api/evm/reference/get-contract-nfts) - `/nft/{address}`
+- [Get NFT owners by contract](/web3-data-api/evm/reference/get-nft-owners) - `/nft/{address}/owners`
+- [Get NFT metadata](/web3-data-api/evm/reference/get-nft-metadata) - `/nft/{address}/{token_id}`
+- [Get owners by token ID](/web3-data-api/evm/reference/get-nft-token-id-owners) - `/nft/{address}/{token_id}/owners`
 
 Here is the definition of normalized metadata:
 
