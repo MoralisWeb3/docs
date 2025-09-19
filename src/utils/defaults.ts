@@ -102,7 +102,7 @@ export const getDefaultForParam = (
     // Number parameters - only provide number defaults
     if (type === "number") {
         if (name === "limit") {
-            return "100";
+            return "50";
         }
         // For other number params, don't provide defaults unless specifically needed
         return undefined;

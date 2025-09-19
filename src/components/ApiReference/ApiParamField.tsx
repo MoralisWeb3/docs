@@ -100,7 +100,13 @@ export const apiParamInitialValue = (param, endpoint) => {
 
     // Use example if provided, otherwise try to get default value
     let exampleValue = param.example;
-    if (exampleValue === undefined && PRIMITIVE_TYPES.includes(type) && param.name) {
+    // Only use defaults if example is truly not provided (undefined or null)
+    // but allow 0, false, and empty string as valid examples
+    if (
+        (exampleValue === undefined || exampleValue === null) &&
+        PRIMITIVE_TYPES.includes(type) &&
+        param.name
+    ) {
         exampleValue = getDefaultForParam(param.name, type, endpoint);
     }
 
