@@ -1,24 +1,25 @@
-name: Reindex Algolia Crawler
+name: Reindex Algolia
 
 on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */6 * * *"  # Run every 6 hours instead of every hour
   workflow_dispatch:
 
 jobs:
   reindex:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
+          cache: 'npm'
       - run: npm ci
-      - name: Reindex Algolia Crawler
+      - name: Reindex Algolia
         env:
-          CRAWLER_API_KEY: ${{secrets.CRAWLER_API_KEY}}
-          CRAWLER_USER_ID: ${{secrets.CRAWLER_USER_ID}}
-          CRAWLER_ID: ${{secrets.CRAWLER_ID}}
-        run: npm run algolia
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+        run: npm run algolia:docusaurus
