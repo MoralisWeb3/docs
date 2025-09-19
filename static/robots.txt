@@ -1,3 +1,2 @@
 User-Agent: *
 Allow: /
-# Algolia-Crawler-Verif: DC23ECC79D9F81AB
