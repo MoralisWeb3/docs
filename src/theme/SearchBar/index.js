@@ -51,6 +51,15 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
     ...props.searchParameters,
     facetFilters,
   };
+
+  console.log('DocSearch props:', {
+    appId: props.appId,
+    apiKey: props.apiKey ? 'Set' : 'Not set',
+    indexName: props.indexName,
+    contextualSearch,
+    facetFilters,
+    searchParameters
+  });
   const history = useHistory();
   const searchContainer = useRef(null);
   const searchButtonRef = useRef(null);
@@ -102,16 +111,32 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
       }
     },
   }).current;
-  const transformItems = useRef((items) =>
-    props.transformItems
-      ? // Custom transformItems
-        props.transformItems(items)
-      : // Default transformItems
-        items.map((item) => ({
-          ...item,
-          url: processSearchResultUrl(item.url),
-        }))
-  ).current;
+  const transformItems = useRef((items) => {
+    console.log('Transform items called with:', items);
+
+    const transformed = props.transformItems
+      ? props.transformItems(items)
+      : items.map(item => {
+          // Fix the URL to use production domain if in local development
+          let fixedUrl = item.url;
+
+          // If we're in development, prepend the production domain
+          if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+            // Remove any leading slash and create production URL
+            fixedUrl = fixedUrl.startsWith('/') ? fixedUrl : '/' + fixedUrl;
+            // For local dev, we keep relative URLs so they work locally
+            // But you could change this to: fixedUrl = 'https://docs.moralis.com' + fixedUrl;
+          }
+
+          return {
+            ...item,
+            url: fixedUrl
+          };
+        });
+
+    console.log('Transformed items:', transformed);
+    return transformed;
+  }).current;
   const resultsFooterComponent = useMemo(
     () => (footerProps) => <ResultsFooter {...footerProps} onClose={onClose} />,
     [onClose]
@@ -182,5 +207,16 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
 }
 export default function SearchBar() {
   const { siteConfig } = useDocusaurusContext();
-  return <DocSearch {...siteConfig.themeConfig.algolia} />;
+  const algoliaConfig = siteConfig.themeConfig.algolia;
+
+  // Debug logging
+  console.log('Algolia Config:', {
+    appId: algoliaConfig.appId,
+    apiKey: algoliaConfig.apiKey ? 'Set (hidden)' : 'Not set',
+    indexName: algoliaConfig.indexName,
+    contextualSearch: algoliaConfig.contextualSearch,
+    searchPagePath: algoliaConfig.searchPagePath
+  });
+
+  return <DocSearch {...algoliaConfig} />;
 }
