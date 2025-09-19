@@ -393,11 +393,10 @@ const config = {
         additionalLanguages: ["php", "solidity", "csharp"],
       },
       algolia: {
-        appId: process.env.ALGOLIA_APP_ID || "YOUR_APP_ID",
-        apiKey: process.env.ALGOLIA_API_KEY || "YOUR_SEARCH_API_KEY",
-        indexName: process.env.ALGOLIA_INDEX_NAME || "YOUR_INDEX_NAME",
-        contextualSearch: false,
-        searchPagePath: 'search',
+        appId: "K26H89KJU5",
+        apiKey: process.env.ALGOLIA_API_KEY || 'dummy-key-for-build',
+        indexName: "gold-iota",
+        contextualSearch: true,
       },
     }),
   customFields: {
