@@ -16,5 +16,11 @@
         "filePath": "./docs/reference/web3-data-api/solana-api",
         "importPath": "../../../configs/api-reference/configs.json",
         "category": "web3-data-api"
+    },
+    "cortex": {
+        "swaggerPath": "https://cortex-api.moralis.io/documentation-json",
+        "filePath": "./docs/reference/cortex-api",
+        "importPath": "../../configs/api-reference/configs.json",
+        "category": "cortex-api"
     }
 }

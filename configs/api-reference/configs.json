@@ -31668,8 +31668,7 @@
                     "name": "limit",
                     "description": "The limit per page",
                     "required": false,
-                    "type": "number",
-                    "example": 50
+                    "type": "number"
                 }
             ],
             "responses": [
@@ -65633,6 +65632,56 @@
                             }
                         ]
                     }
+                }
+            ]
+        }
+    },
+    "cortex": {
+        "McpController_chat": {
+            "method": "POST",
+            "path": "/chat",
+            "pathParams": [],
+            "queryParams": [],
+            "bodyParam": {
+                "required": true,
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "prompt",
+                        "type": "string",
+                        "example": "What is the price of SOL today?"
+                    },
+                    {
+                        "name": "model",
+                        "type": "string",
+                        "description": "Select model",
+                        "example": "gpt-4.1-mini"
+                    },
+                    {
+                        "name": "stream",
+                        "type": "boolean",
+                        "description": "Stream over SSE",
+                        "example": false
+                    }
+                ]
+            },
+            "responses": [
+                {
+                    "status": "200",
+                    "description": "When `stream` is `false`",
+                    "body": {
+                        "type": "object",
+                        "fields": [
+                            {
+                                "name": "text",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "status": "default",
+                    "description": "When `stream` is `true`"
                 }
             ]
         }
