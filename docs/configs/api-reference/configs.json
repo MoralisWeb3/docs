@@ -20255,25 +20255,23 @@
           "example": "2025-02-01T11:00:00",
           "type": "string"
         },
-        {
-          "name": "timeFrame",
-          "description": "The timeframe",
-          "required": true,
-          "type": "string",
-          "example": "1d",
-          "enum": [
-            "1min",
-            "5min",
-            "10min",
-            "30min",
-            "1h",
-            "4h",
-            "12h",
-            "1d",
-            "1w",
-            "1M"
-          ]
-        }
+                {
+                    "name": "timeFrame",
+                    "description": "The timeframe",
+                    "required": true,
+                    "type": "string",
+                    "example": "1d",
+                    "enum": [
+                        "10min",
+                        "30min",
+                        "1h",
+                        "4h",
+                        "12h",
+                        "1d",
+                        "1w",
+                        "1M"
+                    ]
+                }
       ],
       "responses": [
         {
