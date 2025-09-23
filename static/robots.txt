@@ -1,2 +1,6 @@
 User-Agent: *
 Allow: /
+Disallow: /*?*
+
+Host: docs.moralis.com
+Sitemap: https://docs.moralis.com/sitemap.xml
