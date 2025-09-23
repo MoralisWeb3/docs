@@ -35,7 +35,8 @@ const PostBodyField = ({ field, form, param }: PostBodyFieldProps) => {
                     example[fieldParam.name] = fieldParam.example;
                 } else if (fieldParam.type === "string" || !fieldParam.type) {
                     // Default to string if no type is specified
-                    example[fieldParam.name] = fieldParam.example || fieldParam.description || "string_value";
+                    example[fieldParam.name] =
+                        fieldParam.example || fieldParam.description || "string_value";
                 } else if (fieldParam.type === "number") {
                     example[fieldParam.name] = 1;
                 } else if (fieldParam.type === "boolean") {

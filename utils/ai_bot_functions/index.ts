@@ -1,44 +1,35 @@
-export {
-  getAnswerFromDocs,
-  getAnswerFromDocsSchema,
-} from "./getAnswerFromDocs";
+export { getAnswerFromDocs, getAnswerFromDocsSchema } from "./getAnswerFromDocs";
+
+export { getArticlesList, getArticlesListSchema } from "./getMoralisArticlesList";
+
+export { getArticlesByIds, getArticlesByIdsSchema } from "./getMoralisArticlesData";
 
 export {
-  getArticlesList,
-  getArticlesListSchema,
-} from "./getMoralisArticlesList";
-
-export {
-  getArticlesByIds,
-  getArticlesByIdsSchema,
-} from "./getMoralisArticlesData";
-
-export {
-  getMoralisApiEndpointsList,
-  getMoralisApiEndpointsListSchema,
+    getMoralisApiEndpointsList,
+    getMoralisApiEndpointsListSchema,
 } from "./getMoralisApiEndpointsList";
 
 export {
-  getMoralisApiEndpointsData,
-  getMoralisApiEndpointsDataSchema,
+    getMoralisApiEndpointsData,
+    getMoralisApiEndpointsDataSchema,
 } from "./getMoralisApiEndpointsData";
 
 export {
-  getMoralisApiArticlesList,
-  getMoralisApiArticlesListSchema,
+    getMoralisApiArticlesList,
+    getMoralisApiArticlesListSchema,
 } from "./getMoralisApiArticlesList";
 
 export {
-  getMoralisApiArticlesByIds,
-  getMoralisApiArticlesDataSchema,
+    getMoralisApiArticlesByIds,
+    getMoralisApiArticlesDataSchema,
 } from "./getMoralisApiArticlesData";
 
 export {
-  getMoralisSaaSPricingArticlesList,
-  getMoralisSaaSPricingArticlesSchema,
+    getMoralisSaaSPricingArticlesList,
+    getMoralisSaaSPricingArticlesSchema,
 } from "./getMoralisSaaSPricingArticlesList";
 
 export {
-  getMoralisSaaSPricingArticlesDataById,
-  getMoralisSaaSPricingArticlesDataSchema,
+    getMoralisSaaSPricingArticlesDataById,
+    getMoralisSaaSPricingArticlesDataSchema,
 } from "./getMoralisSaaSPricingArticlesData";

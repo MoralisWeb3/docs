@@ -12,14 +12,10 @@ import Link from "@docusaurus/Link";
 import config from "@site/configs/api-reference/configs.json";
 import { PremiumEndpointBadge } from "@site/src/components/PremiumEndpointBadge/PremiumEndpointBadge.js";
 import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js";
+import PremiumEndpointNotice from "@site/src/components/PremiumEndpointNotice/PremiumEndpointNotice";
 
 # Get Trending Tokens <MainnetBadge /> <PremiumEndpointBadge />
 
-  <Admonition type="info" icon="💡" title="Premium Endpoint">
-    <p>
-      To use this API, you will need an API key associated with a Moralis
-      account on the <strong>Business</strong> plan or higher.
-    </p>
-  </Admonition>
+  <PremiumEndpointNotice />
 
 <ApiReference {...config.token.getTrendingTokens} />

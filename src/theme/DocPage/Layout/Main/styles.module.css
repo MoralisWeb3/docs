@@ -13,8 +13,6 @@
   }
 
   .docItemWrapperEnhanced {
-    max-width: calc(
-      var(--ifm-container-width) + var(--doc-sidebar-width)
-    ) !important;
+    max-width: calc(var(--ifm-container-width) + var(--doc-sidebar-width)) !important;
   }
 }

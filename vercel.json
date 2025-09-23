@@ -1,19 +1,19 @@
 {
-  "rewrites": [
-    {
-      "source": "/:path*{/}?",
-      "has": [
+    "rewrites": [
         {
-          "type": "host",
-          "value": "^docs[.]moralis[.]io|.*[.]vercel[.]app$"
+            "source": "/:path*{/}?",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "^docs[.]moralis[.]io|.*[.]vercel[.]app$"
+                }
+            ],
+            "destination": "/api/404"
         }
-      ],
-      "destination": "/api/404"
+    ],
+    "functions": {
+        "api/**/*": {
+            "maxDuration": 180
+        }
     }
-  ],
-  "functions": {
-    "api/**/*": {
-      "maxDuration": 180
-    }
-  }
 }

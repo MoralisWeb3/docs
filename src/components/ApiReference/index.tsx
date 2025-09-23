@@ -162,14 +162,14 @@ const ApiReference = ({
                 const isCortexAPI = hostUrl?.includes("cortex-api.moralis.io");
 
                 // Check if streaming was requested - don't even make the request
-                const isStreamingRequest =
-                    values.body?.stream === true && isCortexAPI;
+                const isStreamingRequest = values.body?.stream === true && isCortexAPI;
 
                 if (isStreamingRequest) {
                     // Show message that streaming is not available in docs
                     const fetchBody = {
-                        message: "Streaming responses are not available in the documentation interface. Please use the API directly with your preferred client to test streaming functionality.",
-                        note: "Set 'stream': true in your API request to enable streaming when using the API directly."
+                        message:
+                            "Streaming responses are not available in the documentation interface. Please use the API directly with your preferred client to test streaming functionality.",
+                        note: "Set 'stream': true in your API request to enable streaming when using the API directly.",
                     };
                     setResponse({ status: 200, body: fetchBody });
                     setResponseIndex(-1);
@@ -321,12 +321,13 @@ const ApiReference = ({
             const endpointContext = {
                 endpointName: endpointName || metadata.endpointName,
                 apiCategory: apiCategory || metadata.apiCategory,
-                fullPath: `${apiHost}${path}`
+                fullPath: `${apiHost}${path}`,
             };
 
             return {
                 path: pathParam && apiParamInitialValue(pathParam, endpointContext, "pathParams"),
-                query: queryParam && apiParamInitialValue(queryParam, endpointContext, "queryParams"),
+                query:
+                    queryParam && apiParamInitialValue(queryParam, endpointContext, "queryParams"),
                 body: bodyParam && apiParamInitialValue(bodyParam, endpointContext, "bodyParam"),
             };
         } else {

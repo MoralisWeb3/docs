@@ -3,12 +3,12 @@ import { ApiReferenceTokenProvider } from "@site/src/components/ApiReference/Api
 import { Toaster } from "@site/src/components/ui/toaster";
 
 const Root = ({ children }) => {
-  return (
-    <>
-      <ApiReferenceTokenProvider>{children}</ApiReferenceTokenProvider>
-      <Toaster />
-    </>
-  );
+    return (
+        <>
+            <ApiReferenceTokenProvider>{children}</ApiReferenceTokenProvider>
+            <Toaster />
+        </>
+    );
 };
 
 export default Root;

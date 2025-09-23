@@ -1,0 +1,36 @@
+{
+    "timestamp": "2025-09-18T04:34:15.898Z",
+    "summary": {
+        "totalPages": 733,
+        "passedPages": 729,
+        "failedPages": 4,
+        "successRate": "99.45%"
+    },
+    "buildErrors": [],
+    "runtimeErrors": [
+        {
+            "type": "http_error",
+            "route": "/changelog/2023-02-16-transaction-labeling.md",
+            "status": 404,
+            "message": "HTTP 404"
+        },
+        {
+            "type": "http_error",
+            "route": "/changelog/2023-03-02-new-erc20-endpoints.md",
+            "status": 404,
+            "message": "HTTP 404"
+        },
+        {
+            "type": "http_error",
+            "route": "/changelog/v2.2-released",
+            "status": 404,
+            "message": "HTTP 404"
+        },
+        {
+            "type": "javascript_error",
+            "route": "/web3-data-api/solana/tutorials/embed-tradingview-chart",
+            "message": "JavaScript reference error detected in HTML"
+        }
+    ],
+    "warnings": []
+}

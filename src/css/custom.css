@@ -13,40 +13,35 @@
   font-family: "Golos";
   font-style: normal;
   font-weight: 400;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2")
-    format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Regular.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 500;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2")
-    format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Medium.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 600;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2")
-    format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_DemiBold.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 700;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
-    format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Golos";
   font-style: normal;
   font-weight: 800;
-  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2")
-    format("woff2");
+  src: url("https://docs.moralis.io/fonts/golos/Golos-Text_Bold.woff2") format("woff2");
   font-display: swap;
 }
 /* End Custom Fonts CSS */
@@ -73,14 +68,12 @@
   --ifm-blockquote-border-left-width: 3px;
   --ifm-badge-padding-horizontal: 0.5rem;
 
-  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
-    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto,
-    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --ifm-font-family-base: "Golos", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-heading-font-family: "Golos", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -295,24 +288,18 @@ video {
 
 /* Hiding C# cards*/
 .col:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-.col:has(
-    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+.col:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]) {
   display: none;
 }
 
 /* Hiding C# sidebar elements*/
 li:has(> a[href="/web3-data-api/evm/quickstart-dot-net-csharp"]),
-li:has(
-    > a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]
-  ) {
+li:has(> a[href="/authentication-api/evm/how-to-sign-in-with-metamask-csharp-dot-net"]) {
   display: none;
 }
 
 /* Hiding Google Unity tutorial sidebar elements*/
-li:has(
-    > a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]
-  ) {
+li:has(> a[href="/authentication-api/evm/integrations/google-cloud-nodejs-unity"]) {
   display: none;
 }
 
@@ -432,24 +419,16 @@ nav.menu.thin-scrollbar.menu_src-theme-DocSidebar-Desktop-Content-styles-module 
 }
 
 /* Styling for Links in Top-level Categories */
-.web3-data-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link,
+.web3-data-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
 .market-insights-api
   .theme-doc-sidebar-item-category-level-1
   > .menu__list-item-collapsible
   .menu__link,
-.streams-api
-  .theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link,
+.streams-api .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link,
 .web3-data-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .market-insights-api .theme-doc-sidebar-item-link-level-1 .menu__link,
 .streams-api .theme-doc-sidebar-item-link-level-1 .menu__link {
-  font-family: var(
-    --ifm-heading-font-family
-  ); /* Sets the font family for the category links */
+  font-family: var(--ifm-heading-font-family); /* Sets the font family for the category links */
   padding-left: 15px; /* Adds padding to the left of the category links */
   padding-right: 6px; /* Adds padding to the right of the category links */
 }
@@ -762,11 +741,8 @@ li.sidebar-developer-tools a.menu__link--active:before {
   margin: unset;
 }
 
-.docs-doc-id-index
-  .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
-.docs-doc-id-index
-  .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module
-  .row,
+.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module,
+.docs-doc-id-index .docMainContainerEnhanced_src-theme-DocPage-Layout-Main-styles-module .row,
 .docs-doc-id-index .docMainContainerEnhanced_u7bj,
 .docs-doc-id-index .docMainContainerEnhanced_u7bj .row {
   max-width: 100%;
@@ -857,9 +833,7 @@ li.sidebar-developer-tools a.menu__link--active:before {
 .markdown > h2,
 h2 {
   --ifm-h2-font-size: 2rem;
-  margin-bottom: calc(
-    var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading)
-  );
+  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading));
   margin-top: calc(var(--ifm-h2-vertical-rhythm-top) * var(--ifm-leading));
 }
 .cls-1 {
@@ -962,9 +936,7 @@ h2 {
 }
 
 .api-banner .cta-button:hover {
-  background-color: var(
-    --api-banner-button-text-color
-  ); /* Swap colors for hover */
+  background-color: var(--api-banner-button-text-color); /* Swap colors for hover */
   color: var(--api-banner-button-background-color); /* Contrast text */
   border-color: var(--api-banner-button-text-color); /* Highlight border */
 }
@@ -1691,35 +1663,45 @@ li.dropdown-divider {
 /* Full width for API reference endpoint pages only - override the 75% width constraint */
 @media (min-width: 997px) {
   /* Primary selector: Target pages that contain the ApiReference component using data attribute */
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([data-api-reference-form="true"]),
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has(
+      [data-api-reference-form="true"]
+    ),
   .docItemCol_VOVn:has([data-api-reference-form="true"]) {
     max-width: 100% !important;
   }
 
   /* Fallback selectors for better browser compatibility */
-  body[class*="get-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="get-"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="get-"] .docItemCol_VOVn,
-  body[class*="post-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="post-"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="post-"] .docItemCol_VOVn,
-  body[class*="put-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="put-"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="put-"] .docItemCol_VOVn,
-  body[class*="delete-"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="delete-"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="delete-"] .docItemCol_VOVn {
     max-width: 100% !important;
   }
 
   /* Target pages under /reference/ path - more reliable way to identify API endpoints */
-  body[class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="reference"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="reference"] .docItemCol_VOVn {
     max-width: 100% !important;
   }
 
   /* Target all API reference pages based on URL structure */
-  body[class*="web3-data-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="web3-data-api"][class*="reference"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="web3-data-api"][class*="reference"] .docItemCol_VOVn,
-  body[class*="streams-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="streams-api"][class*="reference"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="streams-api"][class*="reference"] .docItemCol_VOVn,
-  body[class*="authentication-api"][class*="reference"] .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+  body[class*="authentication-api"][class*="reference"]
+    .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
   body[class*="authentication-api"][class*="reference"] .docItemCol_VOVn {
     max-width: 100% !important;
   }
@@ -1731,7 +1713,9 @@ li.dropdown-divider {
   }
 
   /* Ensure parent containers of API reference forms are full width */
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has([data-api-reference-form]) {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module:has(
+      [data-api-reference-form]
+    ) {
     max-width: 100% !important;
   }
 

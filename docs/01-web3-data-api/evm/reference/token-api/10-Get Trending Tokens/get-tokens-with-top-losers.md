@@ -17,12 +17,8 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 # Get Top Losers <MainnetBadge /> <PremiumEndpointBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+import PremiumEndpointNotice from "@site/src/components/PremiumEndpointNotice/PremiumEndpointNotice";
 
-<Admonition type="info" icon="💡" title="Premium Endpoint">
-  <p>
-    To use this API, you will need an API key associated with a Moralis account
-    on the <strong>Business</strong> plan or higher.
-  </p>
-</Admonition>
+<PremiumEndpointNotice />
 
 <ApiReference {...config.discovery.getTopLosersTokens} />

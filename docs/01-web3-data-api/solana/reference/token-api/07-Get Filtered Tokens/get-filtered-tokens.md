@@ -16,15 +16,12 @@ import { MainnetBadge } from "@site/src/components/MainnetBadge/MainnetBadge.js"
 # Get Filtered Tokens <MainnetBadge /> <PremiumEndpointBadge />
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+import PremiumEndpointNotice from "@site/src/components/PremiumEndpointNotice/PremiumEndpointNotice";
 
-<Admonition type="info" icon="💡" title="Premium Endpoint">
-    <p>
-      To use this API, you will need an API key associated with a Moralis
-      account on the <strong>Business</strong> plan or higher.
-    </p>
-    <p>
+<PremiumEndpointNotice>
+  <p>
       For FAQs and more information about the filtered tokens API, please check out our <a href="/web3-data-api/evm/filtered-token-api-faq">Filtered Tokens FAQ</a>. For tutorials, please see the <a href="/web3-data-api/evm/tutorials/filtered-tokens-api/overview">Filtered Tokens API tutorials</a>.
     </p>
-</Admonition>
+</PremiumEndpointNotice>
 
 <ApiReference {...config.discovery.getFilteredTokens}></ApiReference>

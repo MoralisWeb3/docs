@@ -6,13 +6,13 @@ import styles from "./styles.module.css";
 // the children is not a simple string, we just return a styled block without
 // actually highlighting.
 export default function CodeBlockJSX({ children, className }) {
-  return (
-    <Container
-      as="pre"
-      tabIndex={0}
-      className={clsx(styles.codeBlockStandalone, "thin-scrollbar", className)}
-    >
-      <code className={styles.codeBlockLines}>{children}</code>
-    </Container>
-  );
+    return (
+        <Container
+            as="pre"
+            tabIndex={0}
+            className={clsx(styles.codeBlockStandalone, "thin-scrollbar", className)}
+        >
+            <code className={styles.codeBlockLines}>{children}</code>
+        </Container>
+    );
 }

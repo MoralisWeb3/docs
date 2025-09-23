@@ -2,22 +2,21 @@ name: Mark Stale
 
 on:
   schedule:
-  - cron: '00 00 * * *'
+    - cron: "00 00 * * *"
 
 jobs:
   stale:
-
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
 
     steps:
-    - uses: actions/stale@v5
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'Stale issue message'
-        stale-pr-message: 'Stale pull request message'
-        stale-issue-label: 'no-issue-activity'
-        stale-pr-label: 'no-pr-activity'
-        days-before-stale: 7
+      - uses: actions/stale@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: "Stale issue message"
+          stale-pr-message: "Stale pull request message"
+          stale-issue-label: "no-issue-activity"
+          stale-pr-label: "no-pr-activity"
+          days-before-stale: 7

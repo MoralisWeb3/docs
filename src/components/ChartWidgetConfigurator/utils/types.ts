@@ -3,7 +3,7 @@ import { PRICE_CHART_TIMEZONES } from "./timezone";
 export type CodeLang = "html" | "react";
 
 type Nominal<T, Name extends string> = T & {
-  [Symbol.species]: Name;
+    [Symbol.species]: Name;
 };
 
 export type ResolutionString = Nominal<string, "ResolutionString">;

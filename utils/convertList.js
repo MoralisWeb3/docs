@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // Process a single Markdown file, converting eligible lists to HTML <ul>
 function processMarkdownFile(filePath) {
     try {
-        let content = fs.readFileSync(filePath, 'utf-8');
-        const lines = content.split('\n');
+        let content = fs.readFileSync(filePath, "utf-8");
+        const lines = content.split("\n");
         let newLines = [];
         let i = 0;
 
@@ -13,7 +13,7 @@ function processMarkdownFile(filePath) {
             const line = lines[i].trimEnd();
             // Match lines starting with "- [text](url)" with flexible whitespace
             if (/^\s*-\s+\[[^\]]+\]\([^)]+\)/.test(line)) {
-                newLines.push('<ul>');
+                newLines.push("<ul>");
                 while (i < lines.length) {
                     const currentLine = lines[i].trimEnd();
                     // Match [text](url) with optional trailing text and flexible whitespace
@@ -21,14 +21,18 @@ function processMarkdownFile(filePath) {
                     if (match) {
                         const text = match[1].trim();
                         const link = match[2].trim();
-                        const extraText = match[3] ? match[3].trim() : '';
-                        newLines.push(`  <li><a href="${link}">${text}</a>${extraText ? ' ' + extraText : ''}</li>`);
+                        const extraText = match[3] ? match[3].trim() : "";
+                        newLines.push(
+                            `  <li><a href="${link}">${text}</a>${
+                                extraText ? " " + extraText : ""
+                            }</li>`
+                        );
                         i++;
                     } else {
                         break;
                     }
                 }
-                newLines.push('</ul>');
+                newLines.push("</ul>");
             } else {
                 newLines.push(lines[i]);
                 i++;
@@ -36,7 +40,7 @@ function processMarkdownFile(filePath) {
         }
 
         // Write the modified content back to the file
-        fs.writeFileSync(filePath, newLines.join('\n'), 'utf-8');
+        fs.writeFileSync(filePath, newLines.join("\n"), "utf-8");
         console.log(`Processed: ${filePath}`);
     } catch (error) {
         console.error(`Error processing ${filePath}: ${error.message}`);
@@ -51,7 +55,10 @@ function walkDirectory(dirPath) {
             const fullPath = path.join(dirPath, file.name);
             if (file.isDirectory()) {
                 walkDirectory(fullPath); // Recurse into subdirectory
-            } else if (file.name.toLowerCase().endsWith('.md') || file.name.toLowerCase().endsWith('.mdx')) {
+            } else if (
+                file.name.toLowerCase().endsWith(".md") ||
+                file.name.toLowerCase().endsWith(".mdx")
+            ) {
                 processMarkdownFile(fullPath);
             }
         }
@@ -62,7 +69,7 @@ function walkDirectory(dirPath) {
 
 // Main function to start processing
 function main() {
-    const dirPath = process.argv[2] || '.';
+    const dirPath = process.argv[2] || ".";
     walkDirectory(dirPath);
 }
 
