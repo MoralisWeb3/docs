@@ -1,0 +1,187 @@
+{
+    "description": "Override values for API endpoints. Categories should match the top-level keys in configs.json",
+    "overrides": {
+        "market-data": {
+            "comment": "Market Data API overrides",
+            "endpoints": {}
+        },
+        "token": {
+            "comment": "Token API overrides",
+            "endpoints": {
+                "getMultipleTokenPrices": {
+                    "bodyParam": {
+                        "tokens": [
+                            {
+                                "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                            },
+                            {
+                                "token_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                            }
+                        ]
+                    }
+                },
+                "getHistoricalTokenHolders": {
+                    "pathParams": {
+                        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                    },
+                    "queryParams": {
+                        "limit": 5,
+                        "fromDate": "2025-09-20T01:00:00Z",
+                        "toDate": "2025-09-20T02:00:00Z",
+                        "timeFrame": "10min"
+                    }
+                }
+            }
+        },
+        "nft": {
+            "comment": "NFT API overrides",
+            "endpoints": {}
+        },
+        "balance": {
+            "comment": "Balance API overrides",
+            "endpoints": {}
+        },
+        "transaction": {
+            "comment": "Transaction API overrides",
+            "endpoints": {}
+        },
+        "block": {
+            "comment": "Block API overrides",
+            "endpoints": {
+                "getDateToBlock": {
+                    "queryParams": {
+                        "date": "2025-09-01T00:00:00Z"
+                    }
+                }
+            }
+        },
+        "events": {
+            "comment": "Events API overrides",
+            "endpoints": {}
+        },
+        "defi": {
+            "comment": "DeFi API overrides",
+            "endpoints": {}
+        },
+        "resolve": {
+            "comment": "Resolve API overrides",
+            "endpoints": {}
+        },
+        "ipfs": {
+            "comment": "IPFS API overrides",
+            "endpoints": {}
+        },
+        "streams": {
+            "comment": "Streams API overrides",
+            "endpoints": {}
+        },
+        "auth": {
+            "comment": "Auth API overrides",
+            "endpoints": {}
+        },
+        "solana": {
+            "comment": "Solana API overrides",
+            "endpoints": {
+                "getNewTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "pumpfun"
+                    },
+                    "queryParams": {
+                        "limit": 10
+                    }
+                },
+                "getBondingTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "pumpfun"
+                    },
+                    "queryParams": {
+                        "limit": 10
+                    }
+                },
+                "getGraduatedTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "pumpfun"
+                    },
+                    "queryParams": {
+                        "limit": 10
+                    }
+                },
+                "getTokenBondingStatus": {
+                    "pathParams": {
+                        "address": "Aygpsdr1BvL5dYjZnt8nzz1n73Ev7t7MXmfA2Z9Xpump"
+                    }
+                },
+                "getHistoricalTokenHolders": {
+                    "pathParams": {
+                        "address": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"
+                    },
+                    "queryParams": {
+                        "limit": 5,
+                        "fromDate": "2025-09-20T01:00:00Z",
+                        "toDate": "2025-09-20T02:00:00Z",
+                        "timeFrame": "10min"
+                    }
+                },
+                "getMultipleTokenPrices": {
+                    "bodyParam": {
+                        "addresses": [
+                            "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+                            "Aygpsdr1BvL5dYjZnt8nzz1n73Ev7t7MXmfA2Z9Xpump"
+                        ]
+                    }
+                },
+                "getCandleSticks": {
+                    "pathParams": {
+                        "address": "9d9mb8kooFfaD3SctgZtkxQypkshx6ezhbKio89ixyy2"
+                    },
+                    "queryParams": {
+                        "fromDate": "2025-08-01T00:00:00Z",
+                        "toDate": "2025-08-10T00:00:00Z",
+                        "timeframe": "1h",
+                        "limit": 5,
+                        "currency": "usd"
+                    }
+                }
+            }
+        },
+        "cortex": {
+            "comment": "Cortex API overrides",
+            "endpoints": {
+                "exampleEndpoint": {
+                    "comment": "Example showing all three parameter types",
+                    "pathParams": {
+                        "id": "12345"
+                    },
+                    "queryParams": {
+                        "filter": "active",
+                        "page": 1
+                    },
+                    "bodyParam": {
+                        "name": "Example Item",
+                        "description": "This is a complete body override",
+                        "settings": {
+                            "enabled": true,
+                            "timeout": 30
+                        },
+                        "tags": ["demo", "test"]
+                    }
+                }
+            }
+        },
+        "rpc": {
+            "comment": "RPC API overrides",
+            "endpoints": {}
+        }
+    },
+    "globalOverrides": {
+        "comment": "Global overrides that apply to all endpoints with matching parameter names",
+        "limit": 25,
+        "order": "DESC",
+        "network": "mainnet",
+        "excludeSpam": true,
+        "mediaItems": false,
+        "nftMetadata": false,
+        "blocksAfterCreation": 1000,
+        "includeFungibleAssets": true
+    }
+}

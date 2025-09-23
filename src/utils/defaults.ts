@@ -1,4 +1,5 @@
-import defaults from "../../configs/defaults.json";
+import * as defaults from "../../configs/defaults.json";
+import { getParamOverride } from "./overrides";
 
 /**
  * Get default values for various blockchain-related parameters
@@ -63,88 +64,34 @@ export const getDefaultSolExchange = () => defaults.solExchange;
 
 /**
  * Get default value based on parameter name, type, and API context
+ * This function now only returns override values from overrides.json
+ * The old defaults system has been removed to prevent conflicts
  */
 export const getDefaultForParam = (
-    paramName: string,
+    paramName: string | undefined,
     paramType?: string,
-    endpoint?: string
-): string | undefined => {
-    // Handle undefined or null paramName
+    endpoint?: string,
+    paramLocation?: "pathParams" | "queryParams" | "bodyParam",
+    apiCategory?: string
+): any => {
+    // For bodyParam without a paramName, we want the entire body object
+    if (paramLocation === "bodyParam" && !paramName) {
+        const override = getParamOverride(endpoint, undefined, paramLocation, apiCategory);
+        return override; // Return the object directly, not stringified
+    }
+
+    // Handle undefined or null paramName for other cases
     if (!paramName) {
         return undefined;
     }
 
-    const name = paramName.toLowerCase();
-    const type = paramType?.toLowerCase();
-    const endpointLower = endpoint?.toLowerCase() || "";
-
-    // Determine if this is Solana-related based on multiple indicators
-    const isSolana =
-        endpointLower.includes("solana") ||
-        endpointLower.includes("sol") ||
-        endpointLower.includes("/token/mainnet") ||
-        endpointLower.includes("solana-gateway") ||
-        name.includes("sol") ||
-        name.includes("network");
-
-    // Only provide defaults for string type parameters unless specifically designed for other types
-    // This prevents address values being used for boolean/number parameters
-
-    // Boolean parameters - only provide boolean defaults
-    if (type === "boolean") {
-        if (name === "nft_metadata") {
-            return defaults.nft_metadata?.toString();
-        }
-        // For other boolean params, don't provide defaults unless specifically needed
-        return undefined;
+    // Check if there's an override for this parameter
+    const override = getParamOverride(endpoint, paramName, paramLocation, apiCategory);
+    if (override !== undefined) {
+        // Convert to string if needed (for consistency with existing behavior)
+        return override === null ? undefined : String(override);
     }
 
-    // Number parameters - only provide number defaults
-    if (type === "number") {
-        if (name === "limit") {
-            return "50";
-        }
-        // For other number params, don't provide defaults unless specifically needed
-        return undefined;
-    }
-
-    // String parameters - provide address defaults only for appropriate parameters
-    if (type === "string" || !type) {
-        // Chain/Network - only exact matches
-        if (name === "chain" || name === "network") {
-            return isSolana ? defaults.solChain : defaults.evmChain;
-        }
-
-        // Wallet/Address - only exact matches to avoid false positives
-        if (name === "address" || name === "wallet" || name === "owner") {
-            return isSolana ? defaults.solWallet : defaults.evmWallet;
-        }
-
-        // Token - only exact matches
-        if (name === "token" || name === "token_address") {
-            return isSolana ? defaults.solToken : defaults.evmToken;
-        }
-
-        // Pair - only exact matches
-        if (name === "pair" || name === "pair_address") {
-            return isSolana ? defaults.solPair : defaults.evmPair;
-        }
-
-        // NFT contract address - only exact matches
-        if (name === "contract_address" || name === "nft_address") {
-            return isSolana ? defaults.solNft : defaults.evmNft;
-        }
-
-        // Exchange (Solana specific)
-        if (name === "exchange") {
-            return isSolana ? defaults.solExchange : undefined;
-        }
-
-        // Cursor is typically optional for pagination
-        if (name === "cursor") {
-            return undefined;
-        }
-    }
-
+    // No default values - only overrides are used
     return undefined;
 };

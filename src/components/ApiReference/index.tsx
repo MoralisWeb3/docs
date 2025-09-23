@@ -19,6 +19,7 @@ import PostBodyField from "./PostBodyField";
 import HttpMethodBadge from "../HttpMethodBadge";
 import StatusCodeBadge from "../StatusCodeBadge";
 import { responseExamples } from "./responseExamples";
+import { getEndpointMetadata } from "@site/src/utils/endpointMapping";
 
 export interface CodeSample {
     language: "node" | "csharp" | "python";
@@ -40,6 +41,8 @@ export interface ApiReferenceProps {
     children?: React.ReactNode;
     aptosNetwork?: "mainnet" | "testnet";
     disabled?: boolean;
+    apiCategory?: string; // e.g., "solana", "evm", "market-data"
+    endpointName?: string; // e.g., "getNewTokensByExchange"
 }
 
 export interface FormValues {
@@ -113,6 +116,8 @@ const ApiReference = ({
     codeSamples,
     children,
     disabled,
+    apiCategory,
+    endpointName,
 }: ApiReferenceProps) => {
     const [response, setResponse] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -311,12 +316,18 @@ const ApiReference = ({
             };
 
             // Create endpoint context for better default detection
-            const endpointContext = `${apiHost}${path}`;
+            // Automatically extract endpoint name from the path if not provided
+            const metadata = getEndpointMetadata(path);
+            const endpointContext = {
+                endpointName: endpointName || metadata.endpointName,
+                apiCategory: apiCategory || metadata.apiCategory,
+                fullPath: `${apiHost}${path}`
+            };
 
             return {
-                path: pathParam && apiParamInitialValue(pathParam, endpointContext),
-                query: queryParam && apiParamInitialValue(queryParam, endpointContext),
-                body: bodyParam && apiParamInitialValue(bodyParam, endpointContext),
+                path: pathParam && apiParamInitialValue(pathParam, endpointContext, "pathParams"),
+                query: queryParam && apiParamInitialValue(queryParam, endpointContext, "queryParams"),
+                body: bodyParam && apiParamInitialValue(bodyParam, endpointContext, "bodyParam"),
             };
         } else {
             const path = {};

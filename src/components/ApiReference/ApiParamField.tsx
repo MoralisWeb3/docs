@@ -88,7 +88,10 @@ interface ApiParamFieldProps {
     param: ApiParam;
 }
 
-export const apiParamInitialValue = (param, endpoint) => {
+export const apiParamInitialValue = (param, endpointContext, paramLocation?: "pathParams" | "queryParams" | "bodyParam") => {
+    // Handle both old string format and new object format
+    const endpoint = typeof endpointContext === 'string' ? endpointContext : endpointContext?.endpointName;
+    const apiCategory = typeof endpointContext === 'object' ? endpointContext?.apiCategory : undefined;
     // Handle missing type by inferring from example or defaulting to string
     const type = param.type || inferTypeFromExample(param.example) || "string";
 
@@ -98,27 +101,45 @@ export const apiParamInitialValue = (param, endpoint) => {
 
     const path = param.name ? buildParamPath(param) : null;
 
-    // Use example if provided, otherwise try to get default value
-    let exampleValue = param.example;
-    // Only use defaults if example is truly not provided (undefined or null)
-    // but allow 0, false, and empty string as valid examples
-    if (
-        (exampleValue === undefined || exampleValue === null) &&
-        PRIMITIVE_TYPES.includes(type) &&
-        param.name
-    ) {
-        exampleValue = getDefaultForParam(param.name, type, endpoint);
+    // First check for overrides, then use example if no override found
+    let exampleValue;
+
+    // For bodyParam location and object type, check if there's a complete body override
+    if (paramLocation === "bodyParam" && type === "object" && !param.name) {
+        const bodyOverride = getDefaultForParam(undefined, "object", endpoint, paramLocation, apiCategory);
+        if (bodyOverride) {
+            // If we have a complete body override, use it directly
+            // It's already an object from the JSON config, no need to parse
+            return bodyOverride;
+        }
+    }
+
+    if (PRIMITIVE_TYPES.includes(type) && param.name) {
+        const overrideValue = getDefaultForParam(param.name, type, endpoint, paramLocation, apiCategory);
+        // Use override if it exists, otherwise fall back to example
+        exampleValue = overrideValue !== undefined ? overrideValue : param.example;
+    } else {
+        exampleValue = param.example;
     }
 
     const value = PRIMITIVE_TYPES.includes(type)
         ? exampleValue
         : type === "object"
         ? param.fields?.reduce(
-              (obj, field) => ({ ...obj, ...apiParamInitialValue(field, endpoint) }),
+              (obj, field) => ({ ...obj, ...apiParamInitialValue(field, endpointContext, paramLocation) }),
               {}
           )
         : type === "array" && param.field
-        ? (param.example || []).map((item) => item)
+        ? (() => {
+              // For arrays in bodyParam, check if there's an override for this specific field
+              if (paramLocation === "bodyParam" && param.name) {
+                  const bodyOverride = getDefaultForParam(undefined, "object", endpoint, paramLocation, apiCategory);
+                  if (bodyOverride && bodyOverride[param.name]) {
+                      return bodyOverride[param.name];
+                  }
+              }
+              return (param.example || []).map((item) => item);
+          })()
         : type === "record"
         ? {}
         : undefined;
