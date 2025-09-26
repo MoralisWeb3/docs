@@ -408,10 +408,10 @@ const config = {
             },
         ],
         // Temporarily disabled - Segment plugin
-        // [
-        //   "./src/plugins/docusaurus-plugin-segment",
-        //   { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
-        // ],
+        [
+            "./src/plugins/docusaurus-plugin-segment",
+            { apiKey: process.env.SEGMENT_API_KEY, host: "tr-cdn.moralis.io" },
+        ],
         ["./src/plugins/vercel-vitals", {}],
         ["@docusaurus/plugin-ideal-image", {}],
         async function pluginTailwindCSS(context, options) {
