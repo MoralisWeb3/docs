@@ -34,7 +34,7 @@ async function sendSlackNotification(
                     type: "section",
                     text: {
                         type: "mrkdwn",
-                        text: `*🚨 @iulian User tried the API in docs and it failed*\n\nts: ${timestamp}`,
+                        text: `*🚨User tried the API in docs and it failed*\n\nts: ${timestamp}`,
                     },
                 },
                 {
