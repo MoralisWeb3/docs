@@ -1568,6 +1568,35 @@ const chainData = [
             reason: "Unsupported",
         },
     },
+    {
+        name: "HyperEVM",
+        logo: "/img/network-icons/hyperevm-icon.png",
+        type: "Mainnet",
+        chainID: "0x3e7 (999)",
+        isNew: true,
+        evmApi: {
+            supported: false,
+            reason: "Unsupported",
+            internalTxs: false,
+            erc20Swaps: false,
+            nftTrades: false,
+            queryParams: [],
+        },
+        streamsApi: {
+            supported: true,
+            blockConfirmations: "100",
+            internalTxs: true,
+        },
+        rpcNodes: {
+            supported: false,
+            reason: "Unsupported",
+            urls: [],
+        },
+        authApi: {
+            supported: false,
+            reason: "Unsupported",
+        },
+    },
 ] as const;
 
 export default chainData;
