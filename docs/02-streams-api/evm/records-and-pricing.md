@@ -13,7 +13,7 @@ Records are the basic unit for calculating your Streams usage, with charges appl
 
 In Moralis Streams, a **record** refers to either a transaction (`txs` in response), a log (`logs` in response), or an internal transaction (`txsInternal` in response). The total number of records within a webhook is calculated as the sum of `txs + logs + txsInternal`.
 
-For every record within a webhook, your account will be charged 50 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
+For every record within a webhook, your account will be charged 10 [Compute Units](/web3-data-api/evm/reference/compute-units-cu). To identify the total number of records in a webhook, check the `x-records-charged` field within the webhook's header.
 
 :::tip
 Please note that only confirmed blocks will require charges, with unconfirmed blocks having `'x-records-charged': '0'`.
@@ -32,7 +32,7 @@ headers: {
 
 ## Records Pricing
 
-For each record you consume, your account will be charged 50 compute units.
+For each record you consume, your account will be charged 10 compute units.
 
 :::note
 Note that each Moralis plan has a certain number of included compute units.
