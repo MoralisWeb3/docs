@@ -93,7 +93,7 @@ Selectors are not allowed.
 
 Can only be specified if type is `log`!
 
-The benefit of specifying a topic0 is using Selectors against the decoded event log for [Inputs](##inputs) or the [caller's address](##callfrom-optional), or [smart contract](##contractaddress) .
+The benefit of specifying a topic0 is using Selectors against the decoded event log for [Inputs](#inputs-partially-optional) or the [caller's address](#callfrom-optional), or [smart contract](#contractaddress) .
 
 ### callFrom (optional)
 
