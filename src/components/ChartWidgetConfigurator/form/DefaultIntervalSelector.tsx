@@ -5,7 +5,7 @@ import { WgetForm } from "../utils/wget";
 const PRICE_CHART_INTERVALS = [
     { label: "1 Minute", value: "1" },
     { label: "5 Minutes", value: "5" },
-    { label: "15 Minutes", value: "15" },
+    { label: "10 Minutes", value: "10" },
     { label: "30 Minutes", value: "30" },
     { label: "1 Hour", value: "60" },
     { label: "4 Hours", value: "240" },
