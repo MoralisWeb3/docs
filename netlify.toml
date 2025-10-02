@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  CI = "false"
 
 [functions]
   directory = "netlify/functions/"
