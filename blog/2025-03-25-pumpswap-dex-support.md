@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana]
 
 We're excited to announce full support for PumpSwap DEX on the Solana blockchain through the Moralis Token API! This integration provides comprehensive data access for all tokens and trading activity on the PumpSwap decentralized exchange.
 
+<!-- truncate -->
+
 ### What's New?
 
 The Moralis Token API now fully supports PumpSwap DEX with comprehensive data access:

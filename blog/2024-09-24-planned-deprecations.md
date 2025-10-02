@@ -10,6 +10,8 @@ tags: [Web3 Data API]
 
 The following endpoints will sunset on 24th October 2024:
 
+<!-- truncate -->
+
 | Deprecated Endpoint                                                                    | Recommendation                                                                                                                                                                                     |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`/erc20/{address}/allowance`]                                                         | Migrate to our newer endpoint [Wallet Token Approvals](/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals).                                                                        |

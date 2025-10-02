@@ -8,6 +8,8 @@ tags: [Notice]
 
 Today we have removed support for **Cronos Testnet** and **Avalanche Testnet**. Cronos Mainnet and Avalanche Mainnet will remain.
 
+<!-- truncate -->
+
 For developers building on these testnets, we recommend building on an alternate EVM testnet that is supported (such as Goerli, Sepolia etc), or use one of the following options:
 
 * [Avascan Testnet API](https://docs.avascan.info/)

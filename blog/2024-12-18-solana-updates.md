@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're announcing several updates to our Solana and EVM APIs, including enhanced Solana token metadata, support for Pump.fun tokens, extended Solana DEX integrations, and important changes to IPFS gateway behavior.
 
+<!-- truncate -->
+
 ### What's New?
 #### 1. **Solana Total Supply**
 

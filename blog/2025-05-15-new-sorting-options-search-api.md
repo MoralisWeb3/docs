@@ -14,6 +14,8 @@ tags: [Web3 Data API, Search API, Token Verification]
 
 We're pleased to announce new customization options for our Search API that provide greater control over search results. These enhancements build upon our search API and are now available for all users.
 
+<!-- truncate -->
+
 ### What's New?
 
 - **Custom Sorting**: New `sortBy` parameter to order results by different metrics

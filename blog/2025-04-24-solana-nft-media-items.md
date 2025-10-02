@@ -14,6 +14,8 @@ tags: [Web3 Data API, Solana, NFT, Media]
 
 We're excited to announce that NFT Media Items are now available for Solana NFTs! This feature brings the same image preview capabilities that EVM users have enjoyed to our Solana API endpoints.
 
+<!-- truncate -->
+
 ### What's New?
 
 - **NFT Media Items for Solana**: Get image previews and media information for Solana NFTs

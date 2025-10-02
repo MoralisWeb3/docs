@@ -12,6 +12,8 @@ tags: [Web3 Data API, Token API, DEX]
 
 We're excited to announce our new Get Tokens by Exchange API endpoints! This powerful addition to our Token API suite enables developers to track tokens at various lifecycle stages on decentralized exchanges, with tama.meme as our initial supported DEX.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                          | Description                                                           | API Reference                                                                         |

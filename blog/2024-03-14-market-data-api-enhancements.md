@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're excited to unveil a series of enhancements to our Market Data API, including two new endpoints, making our data even more accessible and comprehensive. And the best part? All these features are now available to our free plan users as well! 🤩
 
+<!-- truncate -->
+
 ### 🚀 New Endpoints
 
 Dive deeper into the crypto market with our latest additions:

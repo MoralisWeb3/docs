@@ -10,6 +10,8 @@ tags: [Web3 Data API]
 
 The new `GET /nft/:address/unique-owners` endpoint is now available - a faster, cleaner way to fetch all **wallet addresses that own NFTs** from a specific collection.
 
+<!-- truncate -->
+
 ## ✅ What's New
 
 - Returns a **condensed list of unique wallet addresses**

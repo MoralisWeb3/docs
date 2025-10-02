@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’re excited to announce the launch of the **Token Swap Transactions API** for both EVM and Solana networks!
 
+<!-- truncate -->
+
 These APIs empower you to fetch detailed swap data for wallets, tokens, and token pairs, enabling seamless integration into trading, analytics, or notification platforms.
 
 ### What’s New?

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we've launched a number of enhancements to our NFT collection endpoints 🔥 They include:
 
+<!-- truncate -->
+
 - Richer NFT collection metadata
 - Expansion of `verified_collection` status across more chains
 - Token counts on NFT collections by wallet

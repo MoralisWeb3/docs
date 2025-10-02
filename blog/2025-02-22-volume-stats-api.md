@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to introduce our new Volume Stats APIs! These powerful new endpoints provide comprehensive volume statistics across multiple chains and token categories, enabling developers to analyze trading activity and track volume trends over time.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                                   | Description                                 | API Reference                                                                           |

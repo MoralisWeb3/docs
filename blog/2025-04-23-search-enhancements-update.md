@@ -14,6 +14,8 @@ tags: [Web3 Data API, Search API, Token Verification]
 
 We're excited to announce several improvements to our Search API that enhance token search capabilities and relevance. These updates are now live and can be seen working on [Moralis.com](https://moralis.com).
 
+<!-- truncate -->
+
 ### What's New?
 
 - **Verified Tokens**: CoinGecko-listed tokens are now prioritized in search results

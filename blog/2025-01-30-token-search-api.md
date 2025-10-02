@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of the **Token Search API**, now available for both **EVM chains** and **Solana** through a single unified endpoint! This powerful new API enables developers to search for tokens across multiple blockchains simultaneously, making it easier than ever to build cross-chain applications.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name              | Description                                                      | API Reference                                                      |

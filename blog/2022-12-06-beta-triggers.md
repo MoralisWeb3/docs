@@ -8,6 +8,8 @@ tags: [Streams API]
 
 Moralis "Triggers" Beta launched!
 
+<!-- truncate -->
+
 Run smart contract functions against blockchain events!
 
 [Read more!](/streams-api/evm/triggers)

@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of powerful new Token Analytics APIs for both EVM chains and Solana! These new endpoints enable developers to retrieve comprehensive analytics for tokens, including volume metrics, transaction counts, and valuation data.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                             | Description                                             | API Reference                                                                     |

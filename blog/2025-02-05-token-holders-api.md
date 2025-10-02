@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of new Token Holders APIs for EVM chains! These powerful new tools enable developers to analyze token holder data, track holder changes over time, and get detailed holder statistics.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                             | Description                                                           | API Reference                                                                     |

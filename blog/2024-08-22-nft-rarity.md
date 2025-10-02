@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Our latest update enhances our NFT Traits feature and introduces NFT Rarity, allowing you to access detailed trait data and rarity scores for ERC721 and ERC1155 collections. 🔥
 
+<!-- truncate -->
+
 **Traits have been extended to include:**
 - `count`: The total occurrences of this attribute/trait.
 - `percentage`: The percentage of NFTs that possess this trait.

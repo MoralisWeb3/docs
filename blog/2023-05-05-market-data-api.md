@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're extremely excited to announce the launch of a new product, our Market Data API! 🚀
 
+<!-- truncate -->
+
 Our Market Data API allows you to explore the latest trends in NFT collections, keep an eye on the top coins, and monitor the largest ERC20 gainers and losers.
 
 We're introducing four new endpoints with this launch, including:

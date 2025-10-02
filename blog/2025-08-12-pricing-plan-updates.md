@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We've rolled out new pricing plan updates to make it easier for teams of all sizes to work with crypto data. These changes are **effective as of August 12, 2025**.
 
+<!-- truncate -->
+
 ## 🚀 New: Starter Plan
 
 We've introduced a **Starter** plan - perfect for small teams getting serious about blockchain data.

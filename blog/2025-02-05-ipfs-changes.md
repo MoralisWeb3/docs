@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 As [outlined in an earlier post](/changelog/solana-token-metadata-enhancements#changes-to-ipfs-gateway-behavior), we have **sunset the public Moralis IPFS gateways** which is referenced across our API. 
 
+<!-- truncate -->
+
 This change means our `token_uris` will now return the **on-chain tokenURI** (e.g., `ipfs://` links), instead of gateway URLs like `https://ipfs.moralis.io`.
 
 **Example:**

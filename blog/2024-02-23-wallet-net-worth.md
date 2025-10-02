@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’ve just launched our [Wallet Net-worth endpoint](/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth), allowing you to fetch the USD value of a wallet, across all chains and assets, with a **single API call** 🤯
 
+<!-- truncate -->
+
 This endpoint features three query parameters:
 
 - `chains`: specify multiple chains 🥳

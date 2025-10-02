@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’re thrilled to announce the launch of our brand new **NFT Floor Price APIs**! 🎉 This update introduces powerful new tools for retrieving and tracking floor prices for NFT collections and tokens, both current and historical.
 
+<!-- truncate -->
+
 ### What’s New?
 
 We’ve launched three new endpoints for NFT floor prices:

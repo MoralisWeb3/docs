@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana]
 
 We're thrilled to announce our new Pump.fun APIs for the Solana ecosystem! These powerful new endpoints give developers direct access to Pump.fun's innovative token ecosystem, enabling tracking of new tokens, bonding phases, and graduated tokens.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                                 | Description                                      | API Reference                                                                               |

@@ -8,6 +8,8 @@ tags: [RPC Nodes]
 
 We're extremely excited to announce that we now support the following RPC Nodes:
 
+<!-- truncate -->
+
 - Blast Mainnet
 - Blast Sepolia
 - zkSync Mainnet

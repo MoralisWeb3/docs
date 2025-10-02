@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We’re excited to announce the launch of **Candlestick APIs** and a new **Candlestick Chart Widget** for both Solana and EVM networks! These tools provide real-time and historical OHLCV (Open, High, Low, Close, Volume) data, empowering you to build feature-rich trading dashboards and analytics platforms with ease.
 
+<!-- truncate -->
+
 ### What’s New?
 
 #### Solana APIs

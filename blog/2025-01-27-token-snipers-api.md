@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of the **Token Snipers API**, now available for both **EVM chains** and **Solana**! This powerful new API provides real-time data about sniper activity on token pairs, enabling developers to build advanced trading and analytics applications.
 
+<!-- truncate -->
+
 ### What's New?
 
 #### Solana API

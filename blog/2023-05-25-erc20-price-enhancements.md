@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're excited to announce a number of improvements to our ERC20 price endpoints 🎉
 
+<!-- truncate -->
+
 ### Fetch multiple ERC20 prices
 We've added a new endpoint, `/erc20/prices`, that allows you to fetch the prices of up to 25 ERC20s in one API call. No more fetching prices one by one 😍
 

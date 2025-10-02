@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we've launched two new endpoints allowing you to fetch NFT sale prices by collection and by token id 🤩
 
+<!-- truncate -->
+
 Both of these endpoints provide you with rich insights into the `last_sale`, `lowest_sale`, `highest_sale` and `average_sale` for a given timeframe.
 
 These endpoints are supported across the following NFT Marketplaces:

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We've launched a new endpoint for fetching [ERC20 tokens by wallet](/web3-data-api/evm/reference/get-wallet-token-balances-price) which includes token balances, metadata, USD prices and a whole lot more for every token 🤩
 
+<!-- truncate -->
+
 Compared to our regular token balances endpoint, this endpoint includes the following extra data points per token:
 
 - `balance_formatted`: decimal formatted balance

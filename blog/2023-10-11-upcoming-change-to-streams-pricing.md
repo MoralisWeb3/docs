@@ -8,6 +8,8 @@ tags: [Streams API]
 
 Up until now, Streams and API pricing have been separate. And all accounts on Moralis have had a certain number of Stream records included in their plan. 
 
+<!-- truncate -->
+
 Today we're announcing the streamlining of Streams and API pricing. Both Streams and API moving forward will be priced in Compute Units. 
 
 Each Streams record will have a fixed price of 15 Compute Units. Which means that the amount of Streams records included in your plan will be a lot higher than today for the vast majority of clients.

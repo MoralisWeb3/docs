@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 🎉 We're excited to announce that we've expanded our Wallet History transaction decodings to include support for Approve and Revoke category types!
 
+<!-- truncate -->
+
 These new categories are designed for both ERC20 and NFT tokens, allowing clear labeling and categorization of approval and revocation actions. This enhancement provides detailed information about the amount, spender, and fully decoded token metadata.
 
 Detailed approval or revoke information can now be accessed within the `contract_interactions` object. Here's an example of an `approve` transaction:

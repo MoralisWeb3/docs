@@ -8,6 +8,8 @@ tags: [Streams API]
 
 We've added **HyperEVM mainnet** to the **Moralis Streams API**. You can now listen to real-time blockchain activity on HyperEVM - perfect for notifications, indexing, and on-chain automation.
 
+<!-- truncate -->
+
 ## What you get
 - 🔔 Real-time events: contract logs, native & token transfers, NFT mints/transfers, wallet activity  
 - ⚡ Low-latency webhooks with retries & idempotency  

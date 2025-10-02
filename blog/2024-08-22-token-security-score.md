@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’re excited to announce the launch of our Token Security Score, a robust metric that evaluates ERC-20 tokens using over 35 factors. This score helps users assess a token's safety by analyzing aspects like contract vulnerabilities, transaction patterns, and more.
 
+<!-- truncate -->
+
 **Key Highlights:**
 
 - **Comprehensive Analysis:** Evaluates over 35 key factors such as sell/buy taxes, minting, honeypots, and more.

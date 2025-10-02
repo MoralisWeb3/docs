@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we have launched four new ERC20 token endpoints allowing you to quickly fetch mints, burns, approvals and transfers for any wallet or contract address 🚀
 
+<!-- truncate -->
+
 These endpoints have no required inputs or query parameters, meaning we return all on-chain transactions by default. Each endpoint supports flexible filtering by wallet address, contract address and even addresses to exclude (see more about filtering below).
 
 <!--truncate-->
@@ -18,7 +20,7 @@ Fetch all token mints, including by wallet address or for a given contract using
 
 Example use case: lookup and monitor all mint events for the USDC contract.
 
-[Read the docs](/2.0/web3-data-api/evm/reference/get-erc20-mints)
+[Read the docs](/web3-data-api/evm/reference/get-erc20-mints)
 
 ### 🔥 Burns
 
@@ -26,7 +28,7 @@ Fetch all token burns, including by wallet address or for a given contract using
 
 Example use case: lookup and monitor all burn events for the Wrapped Ether contract.
 
-[Read the docs](/2.0/web3-data-api/evm/reference/get-erc20-burns)
+[Read the docs](/web3-data-api/evm/reference/get-erc20-burns)
 
 ### 👍 Approvals
 
@@ -34,7 +36,7 @@ Quickly identify all approvals that exist on one or many addresses. Never forget
 
 Example use case: build your own token approval checker, similar to [Etherscan's](https://etherscan.io/tokenapprovalchecker).
 
-[Read the docs](/2.0/web3-data-api/evm/reference/get-erc20-approvals)
+[Read the docs](/web3-data-api/evm/reference/get-erc20-approvals)
 
 ### ↪️ Transfers
 
@@ -42,7 +44,7 @@ We already have endpoints for ERC20 transfers, however, this new endpoint `/erc2
 
 Example use case: identify all ERC20 transfers from your own wallet, or from a specific contract such as Uniswap.
 
-[Read the docs](/2.0/web3-data-api/reference/get-erc20-transfers)
+[Read the docs](/web3-data-api/evm/reference/get-erc20-transfers)
 
 ### Filtering
 

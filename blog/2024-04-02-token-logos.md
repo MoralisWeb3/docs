@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’ve got some big token logo news for our Token API ✨ 
 
+<!-- truncate -->
+
 Say goodbye to outdated token visuals - we're bringing industry-leading coverage of EVM token logos to Moralis!
 
 All of our [Token API endpoints](/web3-data-api/evm/reference/token-api) are now fully enriched with the latest token logos 🤩

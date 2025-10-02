@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Our NFT Trades API has had a complete overhaul 🤩 As part of this, we've launched two new endpoints, extended our NFT Marketplace coverage, extended our chain coverage, and also enriched all APIs with additional metadata 🚀
 
+<!-- truncate -->
+
 ### New Endpoints
 In addition to our pre-existing [NFT Trades by Collection](/web3-data-api/evm/reference/get-nft-trades?address=0x524cab2ec69124574082676e6f654a18df49a048&chain=eth&marketplace=opensea) endpoint, we've added the following:
 

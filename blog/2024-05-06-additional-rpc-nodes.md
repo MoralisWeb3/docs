@@ -8,6 +8,8 @@ tags: [RPC Nodes]
 
 As we continue to expand our RPC Node offering, the following new chains have been added:
 
+<!-- truncate -->
+
 - Linea
 - Linea Sepolia
 - Avalanche mainnet

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we have launched version 1 of our new transaction decoding and labeling feature 🥳
 
+<!-- truncate -->
+
 This feature automatically decodes raw transaction input data into human-readable events and then labels each transaction and log, allowing you to quickly identify on-chain activity such as Transfer, Swap, Deposit etc.
 
 Transaction labeling can be found on the following two endpoints:

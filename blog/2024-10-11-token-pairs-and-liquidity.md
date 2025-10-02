@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We’re excited to announce the addition of new **Token Pairs** and **Liquidity APIs** across both Solana and EVM networks! These updates provide you with deeper insights into token pairings and liquidity data, enabling you to build more comprehensive DeFi and trading applications.
 
+<!-- truncate -->
+
 ### What’s New?
 
 #### Solana APIs

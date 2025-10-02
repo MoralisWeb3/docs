@@ -8,6 +8,8 @@ tags: [Streams API]
 
 We’re thrilled to be launching the first-ever real-time Ronin events stream! ✨
 
+<!-- truncate -->
+
 ---
 
 We’re excited to announce Moralis now supports the Ronin Network!

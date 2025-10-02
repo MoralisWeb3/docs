@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We’re thrilled to announce the release of the **Token Pair Stats API**, now live across both **EVM chains** and **Solana**! This powerful new API provides real-time and historical data for token pairs, enabling developers to build advanced analytics and trading applications.
 
+<!-- truncate -->
+
 ### What’s New?
 
 #### Solana API

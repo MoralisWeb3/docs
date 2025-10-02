@@ -12,6 +12,8 @@ tags: [Web3 Data API, Token API, EVM]
 
 We're excited to announce comprehensive support for Uniswap v4 on the Moralis Token API! This integration ensures you have complete access to all token data, trading pairs, and swaps on Uniswap's latest protocol version.
 
+<!-- truncate -->
+
 ### What's New?
 
 The Moralis Token API now fully supports Uniswap v4 with comprehensive data access:

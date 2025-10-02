@@ -8,6 +8,8 @@ tags: [Streams API]
 
 There is a new option added to the Stream options. By setting getNativeBalances you can get the native balances of addresses in your webhook! Read more here!
 
+<!-- truncate -->
+
 Business plan is required to use this feature!
 
 ```json

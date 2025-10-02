@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana]
 
 We're excited to announce our new Solana Top Holders API endpoint! This powerful addition to our Solana Token Analytics suite gives developers direct access to ranked lists of the largest token holders for any Solana token, enabling detailed analysis of whale activity, ownership concentration, and distribution patterns.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                      | Description                                                             | API Reference                                                                 |

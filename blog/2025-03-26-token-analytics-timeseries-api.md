@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of our new Timeseries Token Analytics API! This powerful endpoint enables developers to retrieve comprehensive timeseries analytics for up to 200 tokens in a single request.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                               | Description                                    | API Reference                                                                       |

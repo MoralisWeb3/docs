@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we've launched our new Realized Profit and Loss (PnL) feature, designed to provide comprehensive insights into wallet and token profitability. 🎉 
 
+<!-- truncate -->
+
 These new endpoints will make it easier than ever to track and analyze your profits and losses across various tokens, as well as allow you to identify the most profitable wallets for a given ERC20 token. 🤩
 
 ### New Endpoints

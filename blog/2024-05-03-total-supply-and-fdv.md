@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're excited to announce that we have enriched our ERC20 Token metadata endpoints with two new metrics: Total Supply and Fully Diluted Valuation (FDV) ✨
 
+<!-- truncate -->
+
 When fetching token metadata, you'll now be returned with the following:
 
 - `total_supply`: Total tokens created minus any that have been burned

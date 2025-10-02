@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana, NFT, Metadata]
 
 We're excited to announce significant improvements to our Solana NFT Metadata API! This update enhances the response structure and expands the metadata information returned when querying NFT details on Solana.
 
+<!-- truncate -->
+
 ### What's Updated?
 
 | Name                 | Description                                                   | API Reference                                                                |

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we have enriched our ERC20 Token metadata endpoints with Token Categories and Token Links 🤩
 
+<!-- truncate -->
+
 When fetching token metadata, you'll now be returned with `categories` and `links` for each token.
 
 Here's an example for Uniswap:

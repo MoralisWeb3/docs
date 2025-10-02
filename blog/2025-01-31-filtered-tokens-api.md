@@ -12,6 +12,8 @@ tags: [Web3 Data API]
 
 We're excited to announce the release of the **Filtered Tokens API**, now available for both **EVM chains** and **Solana**! This powerful new tool enables developers to discover and analyze tokens based on various metrics and parameters across multiple blockchains, making it easier than ever to identify market opportunities and trends.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                    | Description                                                         | API Reference                                                            |

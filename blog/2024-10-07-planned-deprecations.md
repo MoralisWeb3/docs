@@ -10,6 +10,8 @@ tags: [Web3 Data API]
 
 The following changes will take effect in 60 days, on 6th December 2024:
 
+<!-- truncate -->
+
 ### Endpoints on All Chains
 
 The following endpoints will be removed from all chains:

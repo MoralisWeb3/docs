@@ -8,6 +8,8 @@ tags: [Streams API]
 
 Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos and all testnets are supported. We’re working on adding more networks every day! 🚀🎉
 
+<!-- truncate -->
+
 ---
 
 Moralis’ Streams API is the latest addition to the Moralis API suite (which includes our popular NFT API, EVM API, Solana API and more). With this new API, you can get real-time on-chain events sent directly to your backend via webhooks! What does this mean? It means seamless access to:

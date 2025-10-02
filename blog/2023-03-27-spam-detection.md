@@ -7,6 +7,8 @@ authors:
 
 We're excited to announce the launch of our new spam detection feature across our EVM APIs!
 
+<!-- truncate -->
+
 Our latest update adds a new field called **`possible_spam`** to all ERC20s and NFTs. This field returns **`true`** or **`false`**, depending on whether the contract address is associated with spam, phishing attempts, or suspicious activities.
 
 This feature is currently available on our EVM API and will soon be launching on our Streams API 🔥 Stay tuned!

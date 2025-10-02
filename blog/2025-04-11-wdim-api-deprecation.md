@@ -10,6 +10,8 @@ tags: [Web3 Data API]
 
 The 'Why Did It Move' endpoint will sunset on April 25th, 2025.
 
+<!-- truncate -->
+
 ### What This Means
 
 After April 25th, 2025, the 'Why Did It Move' endpoint will no longer be accessible. Please update your integrations before this date to avoid disruption to your services.

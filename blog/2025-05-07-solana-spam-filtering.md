@@ -14,6 +14,8 @@ tags: [Web3 Data API, Solana, NFT, Token, Spam Filtering]
 
 We're excited to announce that Spam Filtering is now available for Solana NFTs and Tokens! This feature brings the same spam detection capabilities that EVM users have enjoyed to our Solana API endpoints.
 
+<!-- truncate -->
+
 ### What's New?
 
 - **Spam Filtering for Solana**: Identify and filter out potential spam NFTs and tokens across both NFT and Token APIs

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we've launched filtering and sorting across the many of our transfer and transaction endpoints 🚀
 
+<!-- truncate -->
+
 #### Filter by contract address
 
 Wallet transfer endpoints can now be filtered by specific contract addresses (one or many), allowing you to filter results down to specific contract(s). You'll find a new query parameter called `contract_addresses` on the following endpoints:

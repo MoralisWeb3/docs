@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana]
 
 We're pleased to announce the release of our Multiple Token Prices API for Solana! This new endpoint allows developers to retrieve pricing information for multiple Solana tokens in a single request, significantly improving efficiency for applications tracking multiple assets.
 
+<!-- truncate -->
+
 ### What's New?
 
 | Name                          | Description                                   | API Reference                                                                     |

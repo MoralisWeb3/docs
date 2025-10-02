@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Today we're super excited to announce the launch of [ERC20 Token Owners](/web3-data-api/evm/reference/get-token-holders) 🤩
 
+<!-- truncate -->
+
 This endpoint allows you to instantly fetch all owners of a given ERC20 token, sorted by highest holders first, letting you quickly understand the top holders of a token.
 
 For each token holder, gain insights into their wallet balance, whether they are a contract or not, their owner address, label, USD value, and their percentage relative to the total token supply 🔥

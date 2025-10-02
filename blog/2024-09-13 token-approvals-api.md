@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Our latest update introduces the **Token Approvals API**, allowing you to easily access approval data for ERC20 tokens. Now you can track which addresses have approval to spend tokens from a given wallet 🔥
 
+<!-- truncate -->
+
 ### Token Approvals Feature
 
 The Token Approvals API provides detailed information, including:

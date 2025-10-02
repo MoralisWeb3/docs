@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 Our DeFi Positions feature is now fully live! 🚀 We're excited to announce the launch of three powerful new endpoints that make it easier than ever to fetch a wallet's DeFi balance and positions. 🤩
 
+<!-- truncate -->
+
 ### New Endpoints
 - **[DeFi Protocols by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary):** This endpoint provides a summary breakdown of all protocols that the wallet is currently interacting with, as well as summary wallet stats including the total USD value held in DeFi protocols, as well as the total unclaimed USD value available.
 - **[DeFi Positions by Wallet](https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary):** This endpoint provides a summary breakdown of all protocol positions that the wallet is currently interacting with in a standardized format, with each position being an individual object.

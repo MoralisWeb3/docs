@@ -8,6 +8,8 @@ tags: [Stream API]
 
 We are thrilled to announce a new feature in our Streams API: the ability to filter out potential spam transactions!
 
+<!-- truncate -->
+
 Certain contract addresses are associated with spam, phishing attempts, or other suspicious activities. We label these addresses as possibleSpam = true. For more information, see [Spam Detection](https://docs.moralis.io/streams-api/evm/spam-detection).
 
 To help you maintain clean and relevant data streams, you can now set our new property `filterPossibleSpamAddresses` to `true`.

@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 We’re excited to announce that today we have launched internal transactions across a number of our most popular EVM chains!
 
+<!-- truncate -->
+
 Real-time and historical internal transactions are now available across Ethereum, Sepolia, Polygon, Mumbai, BNB and BNB testnet. For complete coverage, please see the table outlined here.
 
 Internal transactions have been added on three existing endpoints by introducing a new query parameter `include` that supports `internal_transactions` as an input:

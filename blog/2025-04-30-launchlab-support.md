@@ -12,6 +12,8 @@ tags: [Web3 Data API, Solana]
 
 We're excited to announce full support for Raydium's LaunchLab token launch platform on the Moralis Token API! This integration provides comprehensive data access for all tokens launched through Raydium's new token launchpad.
 
+<!-- truncate -->
+
 ### What's New?
 
 The Moralis Token API now fully supports Raydium's LaunchLab with comprehensive data access:

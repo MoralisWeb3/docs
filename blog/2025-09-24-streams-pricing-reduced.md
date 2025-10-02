@@ -8,6 +8,8 @@ tags: [Streams API]
 
 We've made **Streams more cost-efficient**!  
 
+<!-- truncate -->
+
 - 🔄 Pricing has been reduced from **50 CUs per record → 10 CUs per record**  
 - 📉 This means up to **5x more data** for the same cost  
 - 🚀 Applies to all chains and all Streams starting today

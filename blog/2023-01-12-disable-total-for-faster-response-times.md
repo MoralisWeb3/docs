@@ -8,6 +8,8 @@ tags: [Web3 Data API]
 
 In order to vastly improve the response times on a number of endpoints (by up to x10!), we are planning to phase out support for `total` within our API responses.
 
+<!-- truncate -->
+
 A new flag called `disable_total` exists on the below endpoints which defaults to `false`. When users set this to `true`, the `total` count from the response will return as `null`, and the endpoint's response time is greatly improved. We strongly recommend to begin using this flag.
 
 <!--truncate-->
@@ -43,7 +45,7 @@ If you rely on a `total` count value, you will need to explicitly set the `disab
 - [Get NFT trades by contract](/web3-data-api/evm/reference/get-nft-trades)
 - [Get NFT transfers by token ID](/web3-data-api/evm/reference/get-nft-transfers)
 - [Get NFT owners token ID](/web3-data-api/evm/reference/get-nft-token-id-owners)
-- [Search NFTs](/2.0/web3-data-api/evm/reference/search-nfts)
+- [Search NFTs](/web3-data-api/evm/reference/search-nfts)
 - [Get ERC20 token transfers by wallet](/web3-data-api/evm/reference/get-wallet-token-transfers)
 - [Get ERC20 token transfers by contract](/web3-data-api/evm/reference/get-token-transfers)
 - [Get native transactions by wallet](/web3-data-api/evm/reference/get-wallet-transactions)
