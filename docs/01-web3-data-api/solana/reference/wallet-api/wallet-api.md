@@ -6,17 +6,16 @@ sidebar_class_name: "sidebar-balance-api"
 sidebar_position: 1
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-native-balance">Get Native Balance</a></li>
-<li><a href="#get-token-balances">Get Token Balances</a></li>
-<li><a href="#get-portfolio">Get Portfolio</a></li>
-<li><a href="#get-wallet-token-swaps">Get Wallet Token Swaps</a></li>
-<li><a href="#get-wallet-nfts">Get Wallet NFTs</a></li>
-</ul>
+
+- <a href="#get-native-balance">Get Native Balance</a>
+- <a href="#get-token-balances">Get Token Balances</a>
+- <a href="#get-portfolio">Get Portfolio</a>
+- <a href="#get-wallet-token-swaps">Get Wallet Token Swaps</a>
+- <a href="#get-wallet-nfts">Get Wallet NFTs</a>
+
 
 ### Get Native Balance
 

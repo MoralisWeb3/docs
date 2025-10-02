@@ -6,29 +6,28 @@ sidebar_class_name: "sidebar-token-api"
 sidebar_position: 3
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-token-balances">Get Token Balances</a></li>
-<li><a href="#get-token-approvals">Get Token Approvals</a></li>
-<li><a href="#get-token-metadata">Get Token Metadata</a></li>
-<li><a href="#get-token-price">Get Token Price</a></li>
-<li><a href="#get-token-swaps">Get Token Swaps</a></li>
-<li><a href="#get-token-transfers">Get Token Transfers</a></li>
-<li><a href="#get-token-top-traders">Get Token Top Traders</a></li>
-<li><a href="#get-volume-stats">Get Volume Stats</a></li>
-<li><a href="#get-token-pairs--liquidity">Get Token Pairs & Liquidity</a></li>
-<li><a href="#get-token-analytics">Get Token Analytics</a></li>
-<li><a href="#get-tokens-by-exchange">Get Tokens by Exchange</a></li>
-<li><a href="#get-token-stats">Get Token Stats</a></li>
-<li><a href="#get-token-holders">Get Token Holders</a></li>
-<li><a href="#get-token-snipers">Get Token Snipers</a></li>
-<li><a href="#get-trending-tokens">Get Trending Tokens</a></li>
-<li><a href="#get-filtered-tokens">Get Filtered Tokens</a></li>
-<li><a href="#search-tokens">Search Tokens</a></li>
-</ul>
+
+- <a href="#get-token-balances">Get Token Balances</a>
+- <a href="#get-token-approvals">Get Token Approvals</a>
+- <a href="#get-token-metadata">Get Token Metadata</a>
+- <a href="#get-token-price">Get Token Price</a>
+- <a href="#get-token-swaps">Get Token Swaps</a>
+- <a href="#get-token-transfers">Get Token Transfers</a>
+- <a href="#get-token-top-traders">Get Token Top Traders</a>
+- <a href="#get-volume-stats">Get Volume Stats</a>
+- <a href="#get-token-pairs--liquidity">Get Token Pairs & Liquidity</a>
+- <a href="#get-token-analytics">Get Token Analytics</a>
+- <a href="#get-tokens-by-exchange">Get Tokens by Exchange</a>
+- <a href="#get-token-stats">Get Token Stats</a>
+- <a href="#get-token-holders">Get Token Holders</a>
+- <a href="#get-token-snipers">Get Token Snipers</a>
+- <a href="#get-trending-tokens">Get Trending Tokens</a>
+- <a href="#get-filtered-tokens">Get Filtered Tokens</a>
+- <a href="#search-tokens">Search Tokens</a>
+
 
 ### Get Token Balances
 

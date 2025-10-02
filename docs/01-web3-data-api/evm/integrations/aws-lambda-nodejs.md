@@ -8,10 +8,10 @@ description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3
 
 This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:
 
-<ul>
-<li>Develop and deploy a <a href="#lambda-app-with-multiple-functions">Lambda App with multiple functions</a>.</li>
-<li>Develop and deploy a <a href="#lambda-nodejs-express-api">Lambda NodeJS Express API</a>.</li>
-</ul>
+
+- Develop and deploy a <a href="#lambda-app-with-multiple-functions">Lambda App with multiple functions</a>.
+- Develop and deploy a <a href="#lambda-nodejs-express-api">Lambda NodeJS Express API</a>.
+
 
 To make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_.
 
@@ -657,10 +657,10 @@ To test an endpoint that requires a request body, you can use [Postman](https://
 :::info Remember...
 If you come from [GitHub completed projects](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs), make sure you have the dependencies installed before deploying:
 
-<ul>
-  <li><a href="#install-dependencies">Install dependencies on `aws-node-project`</a></li>
-  <li><a href="#install-dependencies-1">Install dependencies on `aws-node-express-api-project`</a></li>
-</ul>
+
+  - <a href="#install-dependencies">Install dependencies on `aws-node-project`</a>
+  - <a href="#install-dependencies-1">Install dependencies on `aws-node-express-api-project`</a>
+
   :::
 
 It's time to deploy to **AWS**. Whatever project you chose, open the terminal and make sure you're in the root folder (where you installed the dependencies). Then, run this simple command:
@@ -693,10 +693,10 @@ By contrast, the **Lambda NodeJS Express API** is contained in just one function
 
 **Next, we differentiate the testing process between these functions:**
 
-<ul>
-  <li><a href="#testing-express-api-function">Testing Express API function</a> .</li>
-  <li><a href="#testing-single-functions">Testing single functions</a> .</li>
-</ul>
+
+  - <a href="#testing-express-api-function">Testing Express API function</a> .
+  - <a href="#testing-single-functions">Testing single functions</a> .
+
 
 ## Testing Express API function
 

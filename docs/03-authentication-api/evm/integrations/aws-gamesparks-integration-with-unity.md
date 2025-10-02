@@ -454,10 +454,10 @@ This is the scene that we're going to run. Let's go ahead and hit **_Play_**:
 
 From here we're going to split the walkthrough between:
 
-<ul>
-<li><a href="#authentication">Authentication</a></li>
-<li><a href="#calling-backend-requests">Calling backend requests</a></li>
-</ul>
+
+- <a href="#authentication">Authentication</a>
+- <a href="#calling-backend-requests">Calling backend requests</a>
+
 
 #### Authentication
 
@@ -497,10 +497,10 @@ Once authenticated, you can now click on the _GetNativeBalance_ or _GetWalletNft
 
 This is also handled in _AppManager.cs_:
 
-<ul>
-  <li><a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L44">_GetNativeBalance_</a></li>
-  <li><a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L71">_GetWalletNfts_</a></li>
-</ul>
+
+  - <a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L44">_GetNativeBalance_</a>
+  - <a href="https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L71">_GetWalletNfts_</a>
+
 
 You can see that both [access a class named _**MyWeb3GameBackendOperations**_](https://github.com/MoralisWeb3/demo-unity-moralis-aws-gamesparks/blob/93328372d004e760e8bf8a8cc3cd03cbee08d157/Assets/_Project/Scripts/AppManager.cs#L52), which is the one containing the methods to access the messages in our Amazon GameSparks game backend.
 

@@ -21,11 +21,11 @@ Having a verified collection badge on OpenSea helps users easily identify authen
 
 The verified contract and collection status is available on the following endpoints:
 
-<ul>
-  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-token-metadata">Get ERC20 token metadata by contract</a></li>
-  <li><a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts">Get NFTs by wallet</a></li>
-  <li><a href="https://docs.moralis.io/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a></li>
-</ul>
+
+  - <a href="https://docs.moralis.io/web3-data-api/reference/get-token-metadata">Get ERC20 token metadata by contract</a>
+  - <a href="https://docs.moralis.io/web3-data-api/reference/get-wallet-nfts">Get NFTs by wallet</a>
+  - <a href="https://docs.moralis.io/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a>
+
 
 ### Supported Chains
 

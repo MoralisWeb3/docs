@@ -6,7 +6,6 @@ sidebar_label: "Build a Revoke.cash Clone"
 sidebar_position: 0
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 <head>
     <title>How to Build a Revoke.Cash Clone Using Moralis | Moralis API Documentation</title>
@@ -167,9 +166,9 @@ Get started with Moralis today and take advantage of its powerful Web3 API featu
 
 For more information on the Token Approvals API, check out the official documentation:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals">Token Approvals API</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals">Token Approvals API</a>
+
 
 The documentation provides in-depth details on all available parameters, response formats, and chain support for the API.
 

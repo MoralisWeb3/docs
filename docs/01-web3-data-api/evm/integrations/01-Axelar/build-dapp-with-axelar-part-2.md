@@ -83,7 +83,7 @@ You should see a table that can send ERC-20 tokens and query ERC-20 balances in 
 - An input field for the token’s receiving address.
 - An input field for the amount of tokens to send.
 
-![](/img/content/axelar05.png)
+![](/img/content/axelar05.webp)
 
 ## Import WAGMI to Interact with the Contract
 
@@ -360,8 +360,8 @@ Building this kind of dapp is just the tip of the iceberg.
 
 Check out the following to continue learning about Axelar and its interchain possibilities:
 
-<ul>
-  <li><a href="https://docs.axelar.dev/">Axelar docs</a></li>
-  <li><a href="https://github.com/axelarnetwork/axelar-examples">Axelar examples</a></li>
-  <li><a href="https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2">Axelar developer tutorials</a></li>
-</ul>
+
+  - <a href="https://docs.axelar.dev/">Axelar docs</a>
+  - <a href="https://github.com/axelarnetwork/axelar-examples">Axelar examples</a>
+  - <a href="https://www.youtube.com/watch?v=qF9cVhcD2CY&list=PLh_q0hSKS_y0Zt_GfL3olZHi4GwbF6tuo&index=2">Axelar developer tutorials</a>
+

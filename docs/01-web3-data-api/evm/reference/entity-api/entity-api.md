@@ -6,15 +6,14 @@ sidebar_class_name: "sidebar-entity-api"
 sidebar_position: 3
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#search-entities">Search Entities</a></li>
-<li><a href="#get-entity-categories">Get Entity Categories</a></li>
-<li><a href="#get-entities">Get Entities</a></li>
-</ul>
+
+- <a href="#search-entities">Search Entities</a>
+- <a href="#get-entity-categories">Get Entity Categories</a>
+- <a href="#get-entities">Get Entities</a>
+
 
 ### Search Entities
 

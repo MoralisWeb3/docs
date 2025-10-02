@@ -4,7 +4,7 @@ slug: "/web3-data-api/evm/transaction-labelling"
 sidebar_position: 6
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
+import ApiBanner from "@site/src/components/ApiBanner/ApiBanner";
 
 The Moralis Transaction API automatically decodes raw transaction input data into human-readable events based on the functions and events defined within the associated contract ABI, such as "Transfer", "Approve", "Mint", "Deposit", etc.
 
@@ -49,7 +49,7 @@ Transaction labeling can be a powerful feature in a number of different use case
 
 As an example, we can see that Ethereum transaction `0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760` is labelled as a `Transfer` on Etherscan:
 
-![image](https://user-images.githubusercontent.com/13417464/219065293-01a75803-f1fa-482b-963a-10e8f5a2a295.png)
+![image](https://user-images.githubusercontent.com/13417464/219065293-01a75803-f1fa-482b-963a-10e8f5a2a295.webp)
 
 If we [look at this transaction in more detail on Etherscan](https://etherscan.io/tx/0x012b9b98e21664117ec0b499d726a39f492ac8bd402cca8bebcbd163b9f75760), we can see that the transaction has the following input data:
 

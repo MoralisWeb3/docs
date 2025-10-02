@@ -18,10 +18,10 @@ Breaking changes are typically any changes that might require action from our cu
 
 ### All breaking changes will be communicated across the following channels:
 
-<ul>
-  <li><a href="/changelog">Changelog</a></li>
-  <li><a href="https://forum.moralis.io/">Forum</a></li>
-</ul>
+
+  - <a href="/changelog">Changelog</a>
+  - <a href="https://forum.moralis.io/">Forum</a>
+
 - <a href="https://x.com/moralisdevs">Twitter</a>
 - Intercom
 - Discord

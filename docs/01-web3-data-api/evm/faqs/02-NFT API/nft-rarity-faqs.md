@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/nft-rarity-faqs"
 sidebar_position: 2
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # What is NFT Rarity?
 

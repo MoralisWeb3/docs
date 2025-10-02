@@ -5,7 +5,6 @@ description: "All NFTs served through our API include low, medium and high resol
 sidebar_position: 4
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 The Moralis NFT API allows for the generation of low, medium, and high-resolution thumbnails for NFT images, improving the user experience by offering optimized image sizes for various use cases. This allows developers to easily integrate faster-loading images into their applications, reducing page load times and enhancing the overall user experience.
 
@@ -17,14 +16,14 @@ We currently support popular image types such as JPG, JPEG, PNG, GIFs, TIFF etc.
 
 NFT thumbnail previews are added across all endpoints that currently return NFTs today. Media items will be included when the query paramter, `media_items` is set to `true`, across the following endpoints:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-multiple-nfts">Get Multiple NFTs</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-wallet-nfts">Get NFTs by wallet</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-contract-nfts">Get NFTs by contract</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-owners">Get NFT owners by contract</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-token-id-owners">Get NFT owners by token id</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/get-multiple-nfts">Get Multiple NFTs</a>
+  - <a href="/web3-data-api/evm/reference/get-wallet-nfts">Get NFTs by wallet</a>
+  - <a href="/web3-data-api/evm/reference/get-contract-nfts">Get NFTs by contract</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-owners">Get NFT owners by contract</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-token-id-owners">Get NFT owners by token id</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-metadata">Get NFT metadata</a>
+
 
 ## Does this cost additional CUs?
 

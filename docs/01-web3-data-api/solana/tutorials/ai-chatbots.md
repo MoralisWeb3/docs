@@ -20,25 +20,25 @@ This guide will help you build AI chatbots that can effectively:
 
 ## Table of Contents
 
-<ul>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#ai-query-to-api-endpoint-mapping">AI Query to API Endpoint Mapping</a>
-  <ul>
-  <li><a href="#evm-chains">EVM Chains</a></li>
-  <li><a href="#solana">Solana</a></li>
-  <li><a href="#cross-chain-capabilities">Cross-Chain Capabilities</a></li>
-  </ul>
-</li>
-<li><a href="#implementation-approaches">Implementation Approaches</a>
-  <ul>
-  <li><a href="#prompt-engineering">Prompt Engineering</a></li>
-  <li><a href="#function-calling">Function Calling</a></li>
-  <li><a href="#rag-retrieval-augmented-generation">RAG (Retrieval-Augmented Generation)</a></li>
-  </ul>
-</li>
-<li><a href="#best-practices">Best Practices</a></li>
-<li><a href="#resources">Resources</a></li>
-</ul>
+
+- <a href="#getting-started">Getting Started</a>
+- <a href="#ai-query-to-api-endpoint-mapping">AI Query to API Endpoint Mapping</a>
+  
+  - <a href="#evm-chains">EVM Chains</a>
+  - <a href="#solana">Solana</a>
+  - <a href="#cross-chain-capabilities">Cross-Chain Capabilities</a>
+  
+
+- <a href="#implementation-approaches">Implementation Approaches</a>
+  
+  - <a href="#prompt-engineering">Prompt Engineering</a>
+  - <a href="#function-calling">Function Calling</a>
+  - <a href="#rag-retrieval-augmented-generation">RAG (Retrieval-Augmented Generation)</a>
+  
+
+- <a href="#best-practices">Best Practices</a>
+- <a href="#resources">Resources</a>
+
 
 ## Getting Started
 
@@ -322,13 +322,13 @@ To build an effective blockchain AI chatbot with Moralis APIs:
 
 ## Resources
 
-<ul>
-  <li><a href="https://docs.moralis.com/">Moralis Web3 API Documentation</a></li>
-  <li><a href="https://docs.moralis.com/web3-data-api/evm/reference">Moralis EVM API Reference</a></li>
-  <li><a href="https://docs.moralis.com/web3-data-api/solana/reference">Moralis Solana API Reference</a></li>
-  <li><a href="https://platform.openai.com/docs/guides/function-calling">OpenAI Function Calling Guide</a></li>
-  <li><a href="https://docs.anthropic.com/claude/docs/function-calling">Anthropic Claude Function Calling</a></li>
-</ul>
+
+  - <a href="https://docs.moralis.com/">Moralis Web3 API Documentation</a>
+  - <a href="https://docs.moralis.com/web3-data-api/evm/reference">Moralis EVM API Reference</a>
+  - <a href="https://docs.moralis.com/web3-data-api/solana/reference">Moralis Solana API Reference</a>
+  - <a href="https://platform.openai.com/docs/guides/function-calling">OpenAI Function Calling Guide</a>
+  - <a href="https://docs.anthropic.com/claude/docs/function-calling">Anthropic Claude Function Calling</a>
+
 
 ---
 

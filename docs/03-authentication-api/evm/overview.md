@@ -7,7 +7,6 @@ description: "Auth API allows your user to authenticate and verify signed messag
 sidebar_class_name: "sidebar-overview"
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 
 
@@ -33,10 +32,10 @@ At moralis.com, we offer Magic.link as an option for users to log in. To support
 
 Here are some tutorials on this topic:
 
-<ul>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-web3authio">How to Authenticate Users with Web3Auth</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-magiclink">How to Authenticate Users with Magic.Link</a></li>
-</ul>
+
+  - <a href="/authentication-api/evm/how-to-sign-in-with-web3authio">How to Authenticate Users with Web3Auth</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-magiclink">How to Authenticate Users with Magic.Link</a>
+
 
 ## Auth API Features
 
@@ -59,12 +58,12 @@ The Auth API currently does not support [EIP-1271](https://eips.ethereum.org/EIP
 
 The use cases for our Auth API are truly endless! Some popular use cases include:
 
-<ul>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-metamask">How to Authenticate Users with Metamask</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-walletconnect">How to Authenticate Users with WalletConnect</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-rainbowkit">How to Authenticate Users with RainbowKit</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-coinbase-wallet">How to Authenticate Users with Coinbase Wallet</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-web3authio">How to Authenticate Users with Web3Auth</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-magiclink">How to Authenticate Users with Magic.Link</a></li>
-  <li><a href="/authentication-api/evm/how-to-sign-in-with-particle">How to Authenticate Users with Particle Network</a></li>
-</ul>
+
+  - <a href="/authentication-api/evm/how-to-sign-in-with-metamask">How to Authenticate Users with Metamask</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-walletconnect">How to Authenticate Users with WalletConnect</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-rainbowkit">How to Authenticate Users with RainbowKit</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-coinbase-wallet">How to Authenticate Users with Coinbase Wallet</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-web3authio">How to Authenticate Users with Web3Auth</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-magiclink">How to Authenticate Users with Magic.Link</a>
+  - <a href="/authentication-api/evm/how-to-sign-in-with-particle">How to Authenticate Users with Particle Network</a>
+

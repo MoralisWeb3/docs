@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/internal-transactions"
 sidebar_position: 5
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Internal transactions in the context of blockchain refer to transactions that occur between smart contracts rather than involving the transfer of funds between external addresses. Unlike regular transactions initiated by users, internal transactions are interactions between different functionalities within the blockchain network.
 

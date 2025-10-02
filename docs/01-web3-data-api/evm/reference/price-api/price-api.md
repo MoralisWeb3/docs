@@ -6,14 +6,13 @@ sidebar_class_name: "sidebar-price-api"
 sidebar_position: 4
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-token-prices">Get Token Prices</a></li>
-<li><a href="#get-nft-prices">Get NFT Prices</a></li>
-</ul>
+
+- <a href="#get-token-prices">Get Token Prices</a>
+- <a href="#get-nft-prices">Get NFT Prices</a>
+
 
 ### Get NFT Prices
 

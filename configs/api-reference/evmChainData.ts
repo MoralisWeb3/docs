@@ -1,7 +1,7 @@
 const chainData = [
     {
         name: "Ethereum Mainnet",
-        logo: "/img/content/eth.png",
+        logo: "/img/content/eth.webp",
         type: "Mainnet",
         chainID: "0x1 (1)",
         isNew: false,
@@ -37,7 +37,7 @@ const chainData = [
     },
     {
         name: "Ethereum Sepolia",
-        logo: "/img/content/eth.png",
+        logo: "/img/content/eth.webp",
         type: "Testnet",
         chainID: "0xaa36a7 (11155111)",
         isNew: false,
@@ -75,7 +75,7 @@ const chainData = [
     },
     {
         name: "Ethereum Holesky",
-        logo: "/img/content/eth.png",
+        logo: "/img/content/eth.webp",
         type: "Testnet",
         chainID: "0x4268 (17000)",
         isNew: false,
@@ -113,7 +113,7 @@ const chainData = [
     },
     {
         name: "Polygon Mainnet",
-        logo: "/img/content/polygon.png",
+        logo: "/img/content/polygon.webp",
         chainID: "0x89 (137)",
         isNew: false,
         type: "Mainnet",
@@ -151,7 +151,7 @@ const chainData = [
     },
     {
         name: "Polygon Amoy",
-        logo: "/img/content/polygon.png",
+        logo: "/img/content/polygon.webp",
         type: "Testnet",
         chainID: "0x13882 (80002)",
         isNew: false,
@@ -189,7 +189,7 @@ const chainData = [
     },
     {
         name: "Binance Smart Chain Mainnet",
-        logo: "/img/content/bsc.png",
+        logo: "/img/content/bsc.webp",
         chainID: "0x38 (56)",
         isNew: false,
         type: "Mainnet",
@@ -224,7 +224,7 @@ const chainData = [
     },
     {
         name: "Binance Smart Chain Testnet",
-        logo: "/img/content/bsc.png",
+        logo: "/img/content/bsc.webp",
         chainID: "0x61 (97)",
         isNew: false,
         type: "Testnet",
@@ -262,7 +262,7 @@ const chainData = [
     },
     {
         name: "Arbitrum",
-        logo: "/img/content/arbitrum.png",
+        logo: "/img/content/arbitrum.webp",
         chainID: "0xa4b1 (42161)",
         isNew: false,
         type: "Mainnet",
@@ -300,7 +300,7 @@ const chainData = [
     },
     {
         name: "Arbitrum Sepolia",
-        logo: "/img/content/arbitrum.png",
+        logo: "/img/content/arbitrum.webp",
         type: "Testnet",
         chainID: "0x66eee (421614)",
         isNew: false,
@@ -331,7 +331,7 @@ const chainData = [
     },
     {
         name: "Base",
-        logo: "/img/content/base.png",
+        logo: "/img/content/base.webp",
         chainID: "0x2105 (8453)",
         isNew: false,
         type: "Mainnet",
@@ -369,7 +369,7 @@ const chainData = [
     },
     {
         name: "Base Sepolia",
-        logo: "/img/content/base.png",
+        logo: "/img/content/base.webp",
         type: "Testnet",
         chainID: "0x14a34 (84532)",
         isNew: false,
@@ -407,7 +407,7 @@ const chainData = [
     },
     {
         name: "Optimism",
-        logo: "/img/content/optimism.png",
+        logo: "/img/content/optimism.webp",
         chainID: "0xa (10)",
         isNew: false,
         type: "Mainnet",
@@ -445,7 +445,7 @@ const chainData = [
     },
     {
         name: "Optimism Sepolia",
-        logo: "/img/content/optimism.png",
+        logo: "/img/content/optimism.webp",
         type: "Testnet",
         chainID: "0xaa37dc (11155420)",
         isNew: false,
@@ -476,7 +476,7 @@ const chainData = [
     },
     {
         name: "Linea",
-        logo: "/img/content/linea.png",
+        logo: "/img/content/linea.webp",
         chainID: "0xe708 (59144)",
         isNew: false,
         type: "Mainnet",
@@ -514,7 +514,7 @@ const chainData = [
     },
     {
         name: "Linea Sepolia",
-        logo: "/img/content/linea.png",
+        logo: "/img/content/linea.webp",
         type: "Testnet",
         chainID: "0xe705 (59141)",
         isNew: false,
@@ -552,7 +552,7 @@ const chainData = [
     },
     {
         name: "Avalanche",
-        logo: "/img/content/avalanche.png",
+        logo: "/img/content/avalanche.webp",
         type: "Mainnet",
         chainID: "0xa86a (43114)",
         isNew: false,
@@ -590,7 +590,7 @@ const chainData = [
     },
     {
         name: "Fantom Mainnet",
-        logo: "/img/content/fantom.png",
+        logo: "/img/content/fantom.webp",
         type: "Mainnet",
         chainID: "0xfa (250)",
         isNew: false,
@@ -626,7 +626,7 @@ const chainData = [
     },
     {
         name: "Fantom Testnet",
-        logo: "/img/content/fantom.png",
+        logo: "/img/content/fantom.webp",
         type: "Testnet",
         chainID: "0xfa2 (4002)",
         isNew: false,
@@ -655,7 +655,7 @@ const chainData = [
     },
     {
         name: "Cronos Mainnet",
-        logo: "/img/content/cronos.png",
+        logo: "/img/content/cronos.webp",
         chainID: "0x19 (25)",
         isNew: false,
         type: "Mainnet",
@@ -694,7 +694,7 @@ const chainData = [
     },
     {
         name: "Gnosis",
-        logo: "/img/content/gnosis.png",
+        logo: "/img/content/gnosis.webp",
         chainID: "0x64 (100)",
         isNew: false,
         type: "Mainnet",
@@ -733,7 +733,7 @@ const chainData = [
     },
     {
         name: "Gnosis Chiado",
-        logo: "/img/content/gnosis.png",
+        logo: "/img/content/gnosis.webp",
         type: "Testnet",
         chainID: "0x27d8 (10200)",
         isNew: false,
@@ -772,7 +772,7 @@ const chainData = [
     },
     {
         name: "Chiliz Mainnet",
-        logo: "/img/content/chiliz.png",
+        logo: "/img/content/chiliz.webp",
         chainID: "0x15b38 (88888)",
         isNew: false,
         type: "Mainnet",
@@ -808,7 +808,7 @@ const chainData = [
     },
     {
         name: "Chiliz Testnet",
-        logo: "/img/content/chiliz.png",
+        logo: "/img/content/chiliz.webp",
         type: "Testnet",
         chainID: "0x15b32 (88882)",
         isNew: false,
@@ -844,7 +844,7 @@ const chainData = [
     },
     {
         name: "Moonbeam",
-        logo: "/img/content/moonbeam.png",
+        logo: "/img/content/moonbeam.webp",
         chainID: "0x504 (1284)",
         isNew: false,
         type: "Mainnet",
@@ -883,7 +883,7 @@ const chainData = [
     },
     {
         name: "Moonriver",
-        logo: "/img/content/moonbeam.png",
+        logo: "/img/content/moonbeam.webp",
         type: "Testnet",
         chainID: "0x505 (1285)",
         isNew: false,
@@ -922,7 +922,7 @@ const chainData = [
     },
     {
         name: "Moonbase",
-        logo: "/img/content/moonbeam.png",
+        logo: "/img/content/moonbeam.webp",
         type: "Testnet",
         chainID: "0x507 (1287)",
         isNew: false,
@@ -961,7 +961,7 @@ const chainData = [
     },
     {
         name: "Blast",
-        logo: "/img/content/blast.png",
+        logo: "/img/content/blast.webp",
         type: "Mainnet",
         chainID: "0x13e31 (81457)",
         isNew: false,
@@ -992,7 +992,7 @@ const chainData = [
     },
     {
         name: "Blast Sepolia",
-        logo: "/img/content/blast.png",
+        logo: "/img/content/blast.webp",
         type: "Testnet",
         chainID: "0xa0c71fd (168587773)",
         isNew: false,
@@ -1023,7 +1023,7 @@ const chainData = [
     },
     {
         name: "zkSync",
-        logo: "/img/content/zksync.png",
+        logo: "/img/content/zksync.webp",
         type: "Mainnet",
         chainID: "0x144 (324)",
         isNew: false,
@@ -1054,7 +1054,7 @@ const chainData = [
     },
     {
         name: "zkSync Sepolia",
-        logo: "/img/content/zksync.png",
+        logo: "/img/content/zksync.webp",
         type: "Testnet",
         chainID: "0x12c (300)",
         isNew: false,
@@ -1085,7 +1085,7 @@ const chainData = [
     },
     {
         name: "Mantle",
-        logo: "/img/content/mantle.png",
+        logo: "/img/content/mantle.webp",
         type: "Mainnet",
         chainID: "0x1388 (5000)",
         isNew: false,
@@ -1116,7 +1116,7 @@ const chainData = [
     },
     {
         name: "Mantle Sepolia",
-        logo: "/img/content/mantle.png",
+        logo: "/img/content/mantle.webp",
         type: "Testnet",
         chainID: "0x138b (5003)",
         isNew: false,
@@ -1147,7 +1147,7 @@ const chainData = [
     },
     {
         name: "opBNB",
-        logo: "/img/content/opbnb.png",
+        logo: "/img/content/opbnb.webp",
         type: "Mainnet",
         chainID: "0xcc (204)",
         isNew: false,
@@ -1178,7 +1178,7 @@ const chainData = [
     },
     {
         name: "Polygon zkEVM",
-        logo: "/img/content/polygon-zkevm.png",
+        logo: "/img/content/polygon-zkevm.webp",
         type: "Mainnet",
         chainID: "0x44d (1101)",
         isNew: false,
@@ -1209,7 +1209,7 @@ const chainData = [
     },
     {
         name: "Polygon zkEVM Cardona",
-        logo: "/img/content/polygon-zkevm.png",
+        logo: "/img/content/polygon-zkevm.webp",
         type: "Testnet",
         chainID: "0x98a (2442)",
         isNew: false,
@@ -1240,7 +1240,7 @@ const chainData = [
     },
     {
         name: "Zetachain",
-        logo: "/img/content/zetachain.png",
+        logo: "/img/content/zetachain.webp",
         type: "Mainnet",
         chainID: "0x1b58 (7000)",
         isNew: false,
@@ -1271,7 +1271,7 @@ const chainData = [
     },
     {
         name: "Zetachain Testnet",
-        logo: "/img/content/zetachain.png",
+        logo: "/img/content/zetachain.webp",
         type: "Testnet",
         chainID: "0x1b59 (7001)",
         isNew: false,
@@ -1302,7 +1302,7 @@ const chainData = [
     },
     {
         name: "Flow",
-        logo: "/img/content/flow.png",
+        logo: "/img/content/flow.webp",
         type: "Mainnet",
         chainID: "0x2eb (747)",
         isNew: true,
@@ -1340,7 +1340,7 @@ const chainData = [
     },
     {
         name: "Flow Testnet",
-        logo: "/img/content/flow.png",
+        logo: "/img/content/flow.webp",
         type: "Testnet",
         chainID: "0x221 (545)",
         isNew: true,
@@ -1378,7 +1378,7 @@ const chainData = [
     },
     {
         name: "Ronin",
-        logo: "/img/content/ronin.png",
+        logo: "/img/content/ronin.webp",
         chainID: "0x7e4 (2020)",
         isNew: true,
         type: "Mainnet",
@@ -1416,7 +1416,7 @@ const chainData = [
     },
     {
         name: "Ronin Saigon Testnet",
-        logo: "/img/content/ronin.png",
+        logo: "/img/content/ronin.webp",
         chainID: "0x7e5 (2021)",
         isNew: true,
         type: "Testnet",
@@ -1454,7 +1454,7 @@ const chainData = [
     },
     {
         name: "Lisk",
-        logo: "/img/content/lisk.png",
+        logo: "/img/content/lisk.webp",
         chainID: "0x46f (1135)",
         isNew: true,
         type: "Mainnet",
@@ -1492,7 +1492,7 @@ const chainData = [
     },
     {
         name: "Lisk Sepolia Testnet",
-        logo: "/img/content/lisk.png",
+        logo: "/img/content/lisk.webp",
         chainID: "0x106a (4202)",
         isNew: true,
         type: "Testnet",
@@ -1530,7 +1530,7 @@ const chainData = [
     },
     {
         name: "Pulsechain",
-        logo: "/img/content/pulsechain.png",
+        logo: "/img/content/pulsechain.webp",
         type: "Mainnet",
         chainID: "0x171 (369)",
         isNew: true,
@@ -1570,7 +1570,7 @@ const chainData = [
     },
     {
         name: "HyperEVM",
-        logo: "/img/network-icons/hyperevm-icon.png",
+        logo: "/img/network-icons/hyperevm-icon.webp",
         type: "Mainnet",
         chainID: "0x3e7 (999)",
         isNew: true,

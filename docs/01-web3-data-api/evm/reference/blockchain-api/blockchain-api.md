@@ -8,12 +8,12 @@ sidebar_position: 5
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-blocks">Get Blocks</a></li>
-<li><a href="#get-transactions">Get Transactions</a></li>
-<li><a href="#get-stats">Get Stats</a></li>
-<li><a href="#get-latest-block-number">Get Latest Block Number</a></li>
-</ul>
+
+- <a href="#get-blocks">Get Blocks</a>
+- <a href="#get-transactions">Get Transactions</a>
+- <a href="#get-stats">Get Stats</a>
+- <a href="#get-latest-block-number">Get Latest Block Number</a>
+
 
 ### Get Blocks
 

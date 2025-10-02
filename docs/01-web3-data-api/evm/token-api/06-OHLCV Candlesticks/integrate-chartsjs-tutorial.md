@@ -467,8 +467,8 @@ npm start
 
 ## Resources
 
-<ul>
-  <li><a href="https://www.chartjs.org/docs/latest/">Chart.js Documentation</a></li>
-  <li><a href="https://docs.moralis.com">Moralis API Documentation</a></li>
-  <li><a href="https://react-chartjs-2.js.org/">React Chart.js 2</a></li>
-</ul>
+
+  - <a href="https://www.chartjs.org/docs/latest/">Chart.js Documentation</a>
+  - <a href="https://docs.moralis.com">Moralis API Documentation</a>
+  - <a href="https://react-chartjs-2.js.org/">React Chart.js 2</a>
+

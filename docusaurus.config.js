@@ -2,9 +2,6 @@
 
 const dotenv = require("dotenv");
 
-const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
-const darkCodeTheme = require("prism-react-renderer/themes/palenight");
-
 dotenv.config();
 
 /** @type {import('@docusaurus/types').Config} */
@@ -12,8 +9,7 @@ const config = {
     title: "Moralis API Documentation",
     url: "https://docs.moralis.com",
     baseUrl: "/",
-    onBrokenLinks: "ignore",
-    onBrokenMarkdownLinks: "throw",
+    onBrokenLinks: "warn",
     favicon: "img/favicon.ico",
 
     // GitHub pages deployment config.
@@ -31,6 +27,18 @@ const config = {
 
     markdown: {
         mermaid: true,
+        format: 'detect',
+    },
+
+    future: {
+        experimental_faster: {
+            swcJsLoader: true,
+            swcJsMinimizer: true,
+            swcHtmlMinimizer: true,
+            lightningCssMinimizer: true,
+            rspackBundler: false,
+            mdxCrossCompilerCache: true,
+        },
     },
 
     themes: ["@docusaurus/theme-mermaid"],
@@ -100,6 +108,7 @@ const config = {
                     showReadingTime: true,
                     readingTime: ({ content, frontMatter, defaultReadingTime }) =>
                         defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+                    onInlineAuthors: 'ignore',
                 },
                 theme: {
                     customCss: [require.resolve("./src/css/custom.css")],
@@ -386,8 +395,6 @@ const config = {
                 copyright: `Copyright © ${new Date().getFullYear()} Moralis Web3 Technology`,
             },
             prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
                 additionalLanguages: ["php", "solidity", "csharp"],
             },
             algolia: {

@@ -16,7 +16,7 @@ Moralis provides enterprise-grade APIs and analytics for the Solana ecosystem, p
 
 ### Moralis.com Terminal
 
-![Main Moralis Page](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/main-page.png)
+![Main Moralis Page](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/main-page.webp)
 
 ## API Coverage
 
@@ -34,7 +34,7 @@ Whether you're building a trading terminal, portfolio tracker, or market analyti
 
 ### Token Search
 
-![Token Search](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-search.png)
+![Token Search](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-search.webp)
 
 Powers the main search bar on moralis.com, enabling instant token lookup by contract address, name, or symbol. Used by thousands of traders daily on moralis.com to discover and analyze new tokens through the universal search bar.
 
@@ -51,7 +51,7 @@ Powers the main search bar on moralis.com, enabling instant token lookup by cont
 
 ### Token Discovery & Trending
 
-![Token Trending](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/sol-trending-tokens.png)
+![Token Trending](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/sol-trending-tokens.webp)
 
 Analysis system behind moralis.com's trending section, highlighting tokens showing significant market activity. Featured prominently on the dashboard, helping traders identify potential opportunities through real-time metric analysis.
 
@@ -69,7 +69,7 @@ Analysis system behind moralis.com's trending section, highlighting tokens showi
 
 ### Strategy Builder
 
-![Strategy Builder](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/strategy-builder.png)
+![Strategy Builder](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/strategy-builder.webp)
 
 Create custom token discovery strategies with our powerful filtering capabilities. Build, test, and deploy sophisticated token screening rules tailored to your trading approach.
 
@@ -86,7 +86,7 @@ Create custom token discovery strategies with our powerful filtering capabilitie
 
 ### Pump Fun Tokens
 
-![Pump Fun Tokens](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/pump-fun-tokens.png)
+![Pump Fun Tokens](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/pump-fun-tokens.webp)
 
 Access comprehensive data on pump fun tokens and prebonded tokens. Monitor new launches, track bonding phase tokens, and analyze graduated tokens.
 
@@ -106,7 +106,7 @@ Access comprehensive data on pump fun tokens and prebonded tokens. Monitor new l
 
 ### Token Prices & Charts
 
-![Token Prices and Charts](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/prices-and-charts.png)
+![Token Prices and Charts](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/prices-and-charts.webp)
 
 Enterprise-grade charting through TradingView integration and raw OHLCV data. Powers all price analysis on moralis.com with support for all token types including pump fun tokens.
 
@@ -124,7 +124,7 @@ Enterprise-grade charting through TradingView integration and raw OHLCV data. Po
 
 ### Token Metadata
 
-![Token Metadata](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-metadata.png)
+![Token Metadata](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-metadata.webp)
 
 Access comprehensive token information and metadata for any Solana token. Used throughout moralis.com to provide detailed token insights.
 
@@ -141,7 +141,7 @@ Access comprehensive token information and metadata for any Solana token. Used t
 
 ### Token Holders
 
-![Token Holders](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/holders-solana.png)
+![Token Holders](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/holders-solana.webp)
 
 Track holder statistics and distribution patterns for any token. Analyze holder growth, concentration, and historical trends.
 
@@ -159,7 +159,7 @@ Track holder statistics and distribution patterns for any token. Analyze holder 
 
 ### Token Pairs & Liquidity
 
-![Token Pairs and Liquidity](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-pairs-and-liquidity.png)
+![Token Pairs and Liquidity](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-pairs-and-liquidity.webp)
 
 Monitor market depth, pair statistics, and trading activity. Used throughout moralis.com's token pair pages to provide detailed insights into liquidity pools and market activity.
 
@@ -178,7 +178,7 @@ Monitor market depth, pair statistics, and trading activity. Used throughout mor
 
 ### Token Swaps
 
-![Token Swaps](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-txs.png)
+![Token Swaps](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/token-txs.webp)
 
 Track token swaps and trading activity. Featured in moralis.com's swap analysis sections for monitoring market movements.
 
@@ -197,7 +197,7 @@ Track token swaps and trading activity. Featured in moralis.com's swap analysis 
 
 ### Network Volume Analytics
 
-![Network Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/network-volume-stats.png)
+![Network Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/network-volume-stats.webp)
 
 Track comprehensive blockchain-level volume statistics across multiple timeframes. Get insights into total trading volume, active wallets, and transaction counts for Solana.
 
@@ -215,7 +215,7 @@ Track comprehensive blockchain-level volume statistics across multiple timeframe
 
 ### Category Volume Analytics
 
-![Category Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/category-volume-stats.png)
+![Category Volume Stats](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/category-volume-stats.webp)
 
 Analyze trading volume broken down by token categories. Identify which sectors are seeing increased activity and track buy/sell ratios across different token types.
 
@@ -233,7 +233,7 @@ Analyze trading volume broken down by token categories. Identify which sectors a
 
 ### TradingView Token Chart Widget Integration
 
-![Token Price Chart Widget Embed](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/price-widget-embed.png)
+![Token Price Chart Widget Embed](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/price-widget-embed.webp)
 
 Embed professional-grade trading charts in your application with our TradingView widget integration. The same charts powering moralis.com's trading terminal can be easily integrated into any platform, with comprehensive token pair support including:
 

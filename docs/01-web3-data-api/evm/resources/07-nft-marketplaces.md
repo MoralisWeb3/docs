@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/nft-marketplaces"
 sidebar_position: 6
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This articles includes a growing list of supported NFT marketplaces within [Moralis NFT API](/web3-data-api/evm/reference/nft-api) to provide you with extensive access to NFT trade data and sale prices across different marketplaces and chains.
 

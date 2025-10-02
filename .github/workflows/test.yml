@@ -1,0 +1,45 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run image tests
+      run: node scripts/test-images.js
+    
+    - name: Run link tests
+      run: node scripts/test-links.js
+      continue-on-error: true
+    
+    - name: Build site
+      run: npm run build
+    
+    - name: Run page tests
+      run: npm run test:pages:build
+    
+    - name: Upload test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-reports
+        path: |
+          *-test-report.json
+          test-report.json

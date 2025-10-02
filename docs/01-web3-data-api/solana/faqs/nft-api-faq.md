@@ -5,7 +5,6 @@ slug: "/web3-data-api/solana/nft-metadata-faq"
 sidebar_position: 0
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Solana NFT Metadata API FAQ
 

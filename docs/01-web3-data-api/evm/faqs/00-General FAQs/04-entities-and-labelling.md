@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/blockchain-api/entities-and-labelling"
 sidebar_position: 3
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Entities and Labeling
 

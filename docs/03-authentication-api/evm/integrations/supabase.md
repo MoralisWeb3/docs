@@ -28,9 +28,9 @@ We will not use the Supabase default auth schema because we do not want to use e
 
 On the dashboard, go to **Table editor**, select **public schema** and click on **Create a new table**:
 
-![](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.webp "Screenshot 2022-08-17 at 22.39.08.webp")
+![Screenshot 2022-08-17 at 22.39.08](/img/content/6b88eed-Screenshot_2022-08-17_at_22.39.08.webp)
 
-![](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.webp "Screenshot 2022-08-17 at 22.49.04.webp")
+![Screenshot 2022-08-17 at 22.49.04](/img/content/1e757b3-Screenshot_2022-08-17_at_22.49.04.webp)
 
 Remember, since Supabase uses PostgreSQL, your table must be structured with all the necessary fields. In this case, `id`, `moralis provider id`, and `metadata`.
 
@@ -40,7 +40,7 @@ We will create a policy that allows only authenticated users to access the table
 
 To do this, go to **Authentication** > **Policies**, then click on **Enable RLS** for the table we just created > click on **New policy** for the created table:
 
-![](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.webp "Screenshot 2022-08-17 at 22.45.42.webp")
+![Screenshot 2022-08-17 at 22.45.42](/img/content/2618319-Screenshot_2022-08-17_at_22.45.42.webp)
 
 ```sql
 CREATE POLICY "Enable select for authenticated users only"
@@ -76,7 +76,7 @@ Now, we can get `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE` from the Supabase das
 
 Note that `SUPABASE_SERVICE_ROLE` is the service role that has the ability to bypass the RLS. Never share it publicly or use it on the client side.
 
-![](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.webp "Screenshot 2022-08-17 at 22.46.59.webp")
+![Screenshot 2022-08-17 at 22.46.59](/img/content/61ce3ef-Screenshot_2022-08-17_at_22.46.59.webp)
 
 The Moralis SDK must also be initialized:
 
@@ -167,9 +167,9 @@ Now, let's make the client-side that implements the authentication process.
 
 We need to add the following dependencies using the CDN:
 
-<ul>
-  <li><a href="https://docs.ethers.io/v5/">Ether.js</a> - so we can sign messages with our wallet (MetaMask in the case of this demo)</li>
-</ul>
+
+  - <a href="https://docs.ethers.io/v5/">Ether.js</a> - so we can sign messages with our wallet (MetaMask in the case of this demo)
+
 - The Supabase SDK
 - Axios (for making HTTP requests)
 

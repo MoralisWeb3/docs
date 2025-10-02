@@ -52,21 +52,21 @@ This is the blueprint holding most of the logic of this sample game.
 
 Zoom out to visualize and locate **4 important areas**:
 
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#open-sample-game">Open sample game</a></li>
-<li><a href="#setting-up">Setting up</a>
-  <ul>
-  <li><a href="#manage-input">Manage input</a></li>
-  <li><a href="#construct-request-body">Construct request body</a></li>
-  <li><a href="#get-native-balance">Get Native Balance</a></li>
-  <li><a href="#get-wallet-nfts">Get Wallet NFTs</a></li>
-  <li><a href="#saving-changes">Saving changes</a></li>
-  </ul>
-</li>
-<li><a href="#play-the-game">Play the game</a></li>
-</ul>
+
+- <a href="#introduction">Introduction</a>
+- <a href="#prerequisites">Prerequisites</a>
+- <a href="#open-sample-game">Open sample game</a>
+- <a href="#setting-up">Setting up</a>
+  
+  - <a href="#manage-input">Manage input</a>
+  - <a href="#construct-request-body">Construct request body</a>
+  - <a href="#get-native-balance">Get Native Balance</a>
+  - <a href="#get-wallet-nfts">Get Wallet NFTs</a>
+  - <a href="#saving-changes">Saving changes</a>
+  
+
+- <a href="#play-the-game">Play the game</a>
+
 
 ![](/img/content/0d0bd99-image.webp)
 

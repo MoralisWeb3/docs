@@ -59,7 +59,7 @@ console.log(balances[0].value)
 
 console.log(balances[0].amount)
 //console output:
-BigNumber<20000000000000000000>
+BigNumber&lt;20000000000000000000>
 ```
 
 ## `.raw`

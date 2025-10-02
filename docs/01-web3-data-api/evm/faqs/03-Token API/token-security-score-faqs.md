@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/token-security-score-faqs"
 sidebar_position: 3
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Moralis Token Security Score
 

@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/wallet-history"
 sidebar_position: 5
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 ## Endpoint Overview
 

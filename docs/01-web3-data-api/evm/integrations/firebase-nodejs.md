@@ -14,10 +14,10 @@ Learn how to set up a Firebase dapp that can query blockchain data, such as NFTs
 
 In this tutorial, we will use two Firebase services:
 
-<ul>
-  <li><a href="https://firebase.google.com/docs/hosting">Hosting</a></li>
-  <li><a href="https://firebase.google.com/docs/functions">Cloud Functions</a> (only in the "Pay as you go" billing plan)</li>
-</ul>
+
+  - <a href="https://firebase.google.com/docs/hosting">Hosting</a>
+  - <a href="https://firebase.google.com/docs/functions">Cloud Functions</a> (only in the "Pay as you go" billing plan)
+
 
 :::info Firebase Billing Plan
 

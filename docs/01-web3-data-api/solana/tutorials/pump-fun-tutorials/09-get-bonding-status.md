@@ -218,10 +218,10 @@ This alert system could be valuable for traders looking to position themselves b
 
 ## 🔗 Additional Resources
 
-<ul>
-  <li><a href="https://docs.moralis.com/web3-data-api/solana">Moralis Solana API Documentation</a></li>
-  <li><a href="https://pump.fun">Pump.fun Official Website</a></li>
-  <li><a href="https://solana.com/developers">Solana Developer Resources</a></li>
-</ul>
+
+  - <a href="https://docs.moralis.com/web3-data-api/solana">Moralis Solana API Documentation</a>
+  - <a href="https://pump.fun">Pump.fun Official Website</a>
+  - <a href="https://solana.com/developers">Solana Developer Resources</a>
+
 
 With these Moralis APIs, you now have programmatic access to every aspect of the Pump.fun ecosystem, allowing you to build sophisticated tools, dashboards, and trading applications!

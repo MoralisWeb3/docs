@@ -4,7 +4,6 @@ slug: "/web3-data-api/evm/pricing-plans"
 sidebar_position: 0
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 In this guide, you will explore the various tiers and features of [Moralis's pricing plans](https://developers.moralis.com/pricing/) to find the perfect fit for your web3 development needs.
 

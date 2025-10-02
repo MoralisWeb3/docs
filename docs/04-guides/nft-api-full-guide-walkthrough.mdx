@@ -32,8 +32,8 @@ This API category comprised of 4 APIs:
 | API Name                                                          | Path                 | Use Cases                                                                                                                  |
 | ----------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | [getMultipleNFTs](/web3-data-api/evm/reference/get-multiple-nfts) | /nft/getMultipleNFTs | Fetch a complete stats of multiple NFTs (max 25 per call) in a given `tokens` array.                                       |
-| [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)     | /{address}/nft       | Fetch all NFTs in a given wallet `address`. This is ideal for displaying NFT balance for a portfolio dashboard.            |
-| [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts) | /nft/{address}       | Fetch all tokens in a given NFT collection `address`.                                                                      |
+| [getWalletNFTs](/web3-data-api/evm/reference/get-wallet-nfts)     | /\{address\}/nft       | Fetch all NFTs in a given wallet `address`. This is ideal for displaying NFT balance for a portfolio dashboard.            |
+| [getContractNFTs](/web3-data-api/evm/reference/get-contract-nfts) | /nft/\{address\}       | Fetch all tokens in a given NFT collection `address`.                                                                      |
 | [searchNFTs](/2.0/web3-data-api/evm/reference/search-nfts)        | /nft/search          | Fetch all NFT that have metadata that contains a given `q` string. This is ideal for building an NFT search functionality. |
 
 ### Get NFT Transfers API
@@ -44,11 +44,11 @@ This API category comprised of 5 APIs:
 
 | API Name                                                                           | Path                                        | Use Cases                                                                                                                                                                |
 | ---------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)     | /{address}/nft/transfers                    | Fetch all transfers of NFT that interacted with a given `address`. This does not include any indirect NFT transfers, e.g. transferring NFT with OpenSea contract.        |
-| [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers) | /nft/{address}/transfers                    | Fetch all transfers of a specific NFT collection with a given contract `address`.                                                                                        |
+| [getWalletNFTTransfers](/web3-data-api/evm/reference/get-wallet-nft-transfers)     | /\{address\}/nft/transfers                    | Fetch all transfers of NFT that interacted with a given `address`. This does not include any indirect NFT transfers, e.g. transferring NFT with OpenSea contract.        |
+| [getNFTContractTransfers](/web3-data-api/evm/reference/get-nft-contract-transfers) | /nft/\{address\}/transfers                    | Fetch all transfers of a specific NFT collection with a given contract `address`.                                                                                        |
 | [getNFTTransfersFromToBlock]                                                       | /nft/transfers                              | Fetch all transfers of NFTs within the given `from_block` and `to_block` range. This is ideal for fetching NFT transfers from a specific range of time or block numbers. |
-| [getNFTTransfersByBlock]                                                           | /block/{block_number_or_hash}/nft/transfers | Fetch all transfers of NFTs in a given `block_number_or_hash`                                                                                                            |
-| [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)                  | /nft/{address}/{token_id}/transfers         | Fetch all transfers of a specific NFT with given `address` and `token_id`.                                                                                               |
+| [getNFTTransfersByBlock]                                                           | /block/\{block_number_or_hash\}/nft/transfers | Fetch all transfers of NFTs in a given `block_number_or_hash`                                                                                                            |
+| [getNFTTransfers](/web3-data-api/evm/reference/get-nft-transfers)                  | /nft/\{address\}/\{token_id\}/transfers         | Fetch all transfers of a specific NFT with given `address` and `token_id`.                                                                                               |
 
 ### Get NFT Collections API
 
@@ -60,9 +60,9 @@ This API category comprised of 3 APIs:
 
 | API Name                                                                           | Path                       | Use Cases                                                                                                          |
 | ---------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [getWalletNFTCollections](/web3-data-api/evm/reference/get-wallet-nft-collections) | /{address}/nft/collections | Fetch all NFT collection (not specific token) that is owned by a given `address`.                                  |
-| [getNFTContractMetadata](/web3-data-api/evm/reference/get-nft-contract-metadata)   | /nft/{address}/metadata    | Fetch the NFT collection metadata (name, symbol, and contract type _ERC721, ERC115, others_) of a given `address`. |
-| [syncNFTContract](/web3-data-api/evm/reference/sync-nft-contract)                  | /nft/{address}/sync        | Manually sync to index an unindexed NFT collection with a given `address`.                                         |
+| [getWalletNFTCollections](/web3-data-api/evm/reference/get-wallet-nft-collections) | /\{address\}/nft/collections | Fetch all NFT collection (not specific token) that is owned by a given `address`.                                  |
+| [getNFTContractMetadata](/web3-data-api/evm/reference/get-nft-contract-metadata)   | /nft/\{address\}/metadata    | Fetch the NFT collection metadata (name, symbol, and contract type _ERC721, ERC115, others_) of a given `address`. |
+| [syncNFTContract](/web3-data-api/evm/reference/sync-nft-contract)                  | /nft/\{address\}/sync        | Manually sync to index an unindexed NFT collection with a given `address`.                                         |
 
 ### Get NFT Owners API
 
@@ -72,8 +72,8 @@ This API category comprised of 2 APIs:
 
 | API Name                                                                    | Path                             | Use Cases                                                                                                                                                                     |
 | --------------------------------------------------------------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners)                 | /nft/{address}/owners            | Fetch all the token holders/owners of a given NFT collection with contract `address`. This can be used to verify NFT ownership for NFT-gating application.                    |
-| [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners) | /nft/{address}/{token_id}/owners | Fetch all the token holders/owners of a given specific NFT token with contract `address` and `token_id`. This can be used to verify NFT ownership for NFT-gating application. |
+| [getNFTOwners](/web3-data-api/evm/reference/get-nft-owners)                 | /nft/\{address\}/owners            | Fetch all the token holders/owners of a given NFT collection with contract `address`. This can be used to verify NFT ownership for NFT-gating application.                    |
+| [getNFTTokenIdOwners](/web3-data-api/evm/reference/get-nft-token-id-owners) | /nft/\{address\}/\{token_id\}/owners | Fetch all the token holders/owners of a given specific NFT token with contract `address` and `token_id`. This can be used to verify NFT ownership for NFT-gating application. |
 
 ### Get NFT Market Data API
 
@@ -83,8 +83,8 @@ This API category comprised of 2 APIs:
 
 | API Name                                                    | Path                       | Use Cases                                                                                      |
 | ----------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades) | /nft/{address}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
-| [getNFTLowestPrice]                                         | /nft/{address}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
+| [getNFTTrades](/web3-data-api/evm/reference/get-nft-trades) | /nft/\{address\}/trades      | Fetch the list of trades of an NFT with a given contract `address` on OpenSea NFT Marketplace. |
+| [getNFTLowestPrice]                                         | /nft/\{address\}/lowestprice | Fetch the lowest price of an NFT with a given contract `address` on OpenSea NFT Marketplace.   |
 
 ### Get NFT Metadata API
 
@@ -94,8 +94,8 @@ This API comprised of 2 APIs:
 
 | API Name                                                        | Path                                     | Use Cases                                                                                               |
 | --------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [getNFTMetadata](/web3-data-api/evm/reference/get-nft-metadata) | /nft/{address}/{token_id}                | Fetch the metadata (either off-chain or on-chain) a specific NFT with a given `address` and `token_id`. |
-| [reSyncMetadata](/web3-data-api/evm/reference/resync-metadata)  | nft/{address}/{token_id}/metadata/resync | Resync/Update NFT metadata to its latest, if it dynamically changes.                                    |
+| [getNFTMetadata](/web3-data-api/evm/reference/get-nft-metadata) | /nft/\{address\}/\{token_id\}                | Fetch the metadata (either off-chain or on-chain) a specific NFT with a given `address` and `token_id`. |
+| [reSyncMetadata](/web3-data-api/evm/reference/resync-metadata)  | nft/\{address\}/\{token_id\}/metadata/resync | Resync/Update NFT metadata to its latest, if it dynamically changes.                                    |
 
 ## How to get started?
 
@@ -118,7 +118,7 @@ import SetupMoralis from '/docs/partials/\_install-moralis-sdk.mdx';
 
 ### Step 2: Add to Your Code
 
-To use the NFT API, it is very simple. All the [NFT API](https://moralis.io/api/nft/) can be called by using `Moralis.EvmApi.nft.{apiName}` where `apiName` will be replaced by the [NFT API](https://moralis.io/api/nft/) used.
+To use the NFT API, it is very simple. All the [NFT API](https://moralis.io/api/nft/) can be called by using `Moralis.EvmApi.nft.\{apiName\}` where `apiName` will be replaced by the [NFT API](https://moralis.io/api/nft/) used.
 
 In this guide, suppose you are building a simple NFT portfolio dashboard.
 

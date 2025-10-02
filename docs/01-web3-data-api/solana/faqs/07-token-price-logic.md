@@ -5,7 +5,6 @@ slug: "/web3-data-api/solana/token-price-faq"
 sidebar_position: 7
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Token Price FAQ
 

@@ -5,7 +5,6 @@ description: "How to find the difference between normalized and non-normalized m
 sidebar_position: 1
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 The Moralis NFT API has the option to take the original source metadata and output it into a clean, predictable object - making it much easier for you to work with.
 

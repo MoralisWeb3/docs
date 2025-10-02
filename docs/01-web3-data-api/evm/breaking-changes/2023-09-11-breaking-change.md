@@ -23,24 +23,24 @@ As outlined in an [earlier post](/web3-data-api/breaking-changes/disable-totals)
 
 As of 11th September, the `total` returned on the below endpoints will no longer be returned. This also means that we deprecate the `disable_total` (or `disableTotal` when using the Javascript SDK) parameter. Remove this parameter from your request, and remove any usage of the `total` from your code. This affects the following endpoints:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-wallet-token-transfers">`getTokenTransfers`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-wallet-nfts">`getNFTs`</a></li>
-  <li><a href="/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet">`getWalletNFTCollections`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-trades">`getNFTTrades`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-wallet-nft-transfers">`getNFTTransfers`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-contract-transfers">`getContractNFTTransfers`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-owners">`getNFTOwners`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-token-transfers">`getTokenAddressTransfers`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-nft-transfers">`getWalletTokenIdTransfers`</a></li>
-  <li><a href="/web3-data-api/evm/reference/get-contract-nfts">`getAllTokenIds`</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/get-wallet-token-transfers">`getTokenTransfers`</a>
+  - <a href="/web3-data-api/evm/reference/get-wallet-nfts">`getNFTs`</a>
+  - <a href="/web3-data-api/evm/reference/wallet-api/get-nft-collections-by-wallet">`getWalletNFTCollections`</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-trades">`getNFTTrades`</a>
+  - <a href="/web3-data-api/evm/reference/get-wallet-nft-transfers">`getNFTTransfers`</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-contract-transfers">`getContractNFTTransfers`</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-owners">`getNFTOwners`</a>
+  - <a href="/web3-data-api/evm/reference/get-token-transfers">`getTokenAddressTransfers`</a>
+  - <a href="/web3-data-api/evm/reference/get-nft-transfers">`getWalletTokenIdTransfers`</a>
+  - <a href="/web3-data-api/evm/reference/get-contract-nfts">`getAllTokenIds`</a>
+
 - [`getNFTTransfersFromToBlock`]
 - [`getNFTTransfersByBlock`]
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-nft-token-id-owners">`getTokenIdOwners`</a></li>
-  <li><a href="/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet">`getTransactions`</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/get-nft-token-id-owners">`getTokenIdOwners`</a>
+  - <a href="/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet">`getTransactions`</a>
+
 - [`getContractEvents`]
 
 We have launched 5 new endpoints that will provide you with these totals.
@@ -50,9 +50,9 @@ The endpoints are:
 #### New: Get wallet stats
 
 - Endpoint: `/wallets/{address}/stats`
-<ul>
-  <li><a href="/web3-data-api/evm/reference/wallet-api/get-wallet-stats">View API reference</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/wallet-api/get-wallet-stats">View API reference</a>
+
 - Example response:
 
 ```js
@@ -74,9 +74,9 @@ The endpoints are:
 #### New: Get NFT collection stats
 
 - Endpoint: `/nft/{address}/stats`
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-nft-collection-stats">View API reference</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/get-nft-collection-stats">View API reference</a>
+
 - Example response:
 
 ```js
@@ -111,9 +111,9 @@ The endpoints are:
 #### New: Get ERC20 token stats
 
 - Endpoint: `/erc20/{address}/stats`
-<ul>
-  <li><a href="/web3-data-api/evm/reference/get-token-stats">View API reference</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference/get-token-stats">View API reference</a>
+
 - Example response:
 
 ```js
@@ -193,13 +193,13 @@ The `direction` parameter on [`getNFTTransfers`](/web3-data-api/evm/reference/ge
 
 The following endpoints will be deprecated:
 
-<ul>
-  <li><a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/search-nfts">`searchNFTs`</a></li>
-  <li><a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-mints">`getErc20Mints`</a></li>
-  <li><a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-burns">`getErc20Burns`</a></li>
-  <li><a href="https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers">`getErc20Transfers`</a></li>
-  <li><a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals">`getErc20Approvals`</a></li>
-</ul>
+
+  - <a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/search-nfts">`searchNFTs`</a>
+  - <a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-mints">`getErc20Mints`</a>
+  - <a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-burns">`getErc20Burns`</a>
+  - <a href="https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers">`getErc20Transfers`</a>
+  - <a href="https://docs.moralis.io/2.0/web3-data-api/evm/reference/get-erc20-approvals">`getErc20Approvals`</a>
+
 
 #### Deprecation of [`getErc20Transfers`](https://docs.moralis.io/2.0/web3-data-api/reference/get-erc20-transfers)
 

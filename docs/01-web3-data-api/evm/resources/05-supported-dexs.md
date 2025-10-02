@@ -5,7 +5,6 @@ sidebar_label: "Supported DEXs"
 sidebar_position: 4
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 The [Moralis Token API](/web3-data-api/evm/token-api) seamlessly integrates with leading decentralized exchanges (DEXs) across multiple EVM blockchains, providing comprehensive support for token-related data.
 
@@ -15,21 +14,21 @@ The following tables show you how to find a list of supported chains on the [Mor
 
 Simply click on a chain's name to jump to its respective section for more details:
 
-<ul>
-<li><a href="#ethereum">Ethereum</a></li>
-<li><a href="#polygon">Polygon</a></li>
-<li><a href="#binance-smart-chain-bsc">Binance Smart Chain (BSC)</a></li>
-<li><a href="#avalanche">Avalanche</a></li>
-<li><a href="#fantom-opera">Fantom Opera</a></li>
-<li><a href="#cronos">Cronos</a></li>
-<li><a href="#arbitrum">Arbitrum</a></li>
-<li><a href="#optimism">Optimism</a></li>
-<li><a href="#base">Base</a></li>
-<li><a href="#linea">Linea</a></li>
-<li><a href="#moonbeam">Moonbeam</a></li>
-<li><a href="#ronin">Ronin</a></li>
-<li><a href="#pulsechain">PulseChain</a></li>
-</ul>
+
+- <a href="#ethereum">Ethereum</a>
+- <a href="#polygon">Polygon</a>
+- <a href="#binance-smart-chain-bsc">Binance Smart Chain (BSC)</a>
+- <a href="#avalanche">Avalanche</a>
+- <a href="#fantom-opera">Fantom Opera</a>
+- <a href="#cronos">Cronos</a>
+- <a href="#arbitrum">Arbitrum</a>
+- <a href="#optimism">Optimism</a>
+- <a href="#base">Base</a>
+- <a href="#linea">Linea</a>
+- <a href="#moonbeam">Moonbeam</a>
+- <a href="#ronin">Ronin</a>
+- <a href="#pulsechain">PulseChain</a>
+
 
 :::note
 If you do not specify a particular exchange, our API takes a comprehensive approach. It checks various exchanges one by one, ensuring that it finds the price you need. It does this while being smart about avoiding exchanges or pairs with low liquidity, guaranteeing you get reliable and accurate results for your queries.

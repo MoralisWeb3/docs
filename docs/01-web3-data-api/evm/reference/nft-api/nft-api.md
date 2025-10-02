@@ -8,18 +8,18 @@ sidebar_position: 2
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-nfts">Get NFTs</a></li>
-<li><a href="#get-nft-metadata">Get NFT Metadata</a></li>
-<li><a href="#get-nft-transfers">Get NFT Transfers</a></li>
-<li><a href="#get-nft-collections">Get NFT Collections</a></li>
-<li><a href="#get-nft-owners">Get NFT Owners</a></li>
-<li><a href="#get-nft-prices">Get NFT Prices</a></li>
-<li><a href="#get-nft-trades">Get NFT Trades</a></li>
-<li><a href="#get-nft-stats">Get NFT Stats</a></li>
-<li><a href="#get-nft-traits-and-rarity">Get NFT Traits and Rarity</a></li>
-<li><a href="#get-trending-nfts">Get Trending NFTs</a></li>
-</ul>
+
+- <a href="#get-nfts">Get NFTs</a>
+- <a href="#get-nft-metadata">Get NFT Metadata</a>
+- <a href="#get-nft-transfers">Get NFT Transfers</a>
+- <a href="#get-nft-collections">Get NFT Collections</a>
+- <a href="#get-nft-owners">Get NFT Owners</a>
+- <a href="#get-nft-prices">Get NFT Prices</a>
+- <a href="#get-nft-trades">Get NFT Trades</a>
+- <a href="#get-nft-stats">Get NFT Stats</a>
+- <a href="#get-nft-traits-and-rarity">Get NFT Traits and Rarity</a>
+- <a href="#get-trending-nfts">Get Trending NFTs</a>
+
 
 ### Get NFTs
 

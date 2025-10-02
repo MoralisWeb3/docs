@@ -5,13 +5,13 @@ description: "Discover quick answers to frequently asked questions about our Web
 ---
 
 For immediate support and insights, our FAQ section provides concise answers and resources:
-<ul>
-  <li><a href="/web3-data-api/evm/resources">Explore Web3 Data API Resources and FAQs</a></li>
-  <li><a href="/streams-api/evm/faq">Explore Streams API Resources and FAQs</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/resources">Explore Web3 Data API Resources and FAQs</a>
+  - <a href="/streams-api/evm/faq">Explore Streams API Resources and FAQs</a>
+
 
 If your question remains unanswered, or you require personalized assistance, please reach out to our customer support team for further help:
-<ul>
-  <li><a href="https://moralis.io/discord">Discord</a></li>
-  <li><a href="https://forum.moralis.io">Forum</a></li>
-</ul>
+
+  - <a href="https://moralis.io/discord">Discord</a>
+  - <a href="https://forum.moralis.io">Forum</a>
+

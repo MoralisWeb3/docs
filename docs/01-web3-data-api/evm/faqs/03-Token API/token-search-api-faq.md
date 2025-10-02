@@ -5,7 +5,6 @@ slug: "/web3-data-api/evm/token-search"
 sidebar_position: 2
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Token Search API FAQ
 

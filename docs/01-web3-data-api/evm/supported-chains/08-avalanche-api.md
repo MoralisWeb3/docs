@@ -27,102 +27,102 @@ The Web3 Data API is available for the following Avalanche network:
 
 The following APIs are supported for Avalanche:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a></li>
-  <li><a href="/web3-data-api/evm/reference#nft-api">NFT API</a></li>
-  <li><a href="/web3-data-api/evm/reference#token-api">Token API</a></li>
-  <li><a href="/web3-data-api/evm/reference#defi-api">DeFi API</a></li>
-  <li><a href="/web3-data-api/evm/reference#entity-api">Entity API</a></li>
-  <li><a href="/web3-data-api/evm/reference#price-api">Price API</a></li>
-  <li><a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a>
+  - <a href="/web3-data-api/evm/reference#nft-api">NFT API</a>
+  - <a href="/web3-data-api/evm/reference#token-api">Token API</a>
+  - <a href="/web3-data-api/evm/reference#defi-api">DeFi API</a>
+  - <a href="/web3-data-api/evm/reference#entity-api">Entity API</a>
+  - <a href="/web3-data-api/evm/reference#price-api">Price API</a>
+  - <a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a>
+
 
 ### Wallet API
 
 The Wallet API enables you to interact with wallet data on the Avalanche blockchain.
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-domains">Get Wallet Domains on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-domains">Get Wallet Domains on Avalanche</a>
+
 
 ### NFT API
 
 The NFT API allows you to interact with NFT-related data on Avalanche. You can:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-nfts">Get NFTs on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-metadata">Get NFT Metadata on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-transfers">Get NFT Transfers on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-collections">Get NFT Collections on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-owners">Get NFT Owners on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-trades">Get NFT Trades on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-stats">Get NFT Stats on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-traits-and-rarity">Get NFT Traits and Rarity on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-nfts">Get NFTs on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-metadata">Get NFT Metadata on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-transfers">Get NFT Transfers on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-collections">Get NFT Collections on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-owners">Get NFT Owners on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-trades">Get NFT Trades on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-stats">Get NFT Stats on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-traits-and-rarity">Get NFT Traits and Rarity on Avalanche</a>
+
 
 ### Token API
 
 The Token API provides methods for interacting with ERC-20 tokens on Avalanche. Choose from the following actions:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Avalanche</a>
+
 
 ### DeFi API
 
 The DeFi API enables interaction with decentralized finance positions and data on Avalanche:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Avalanche</a>
+
 
 ### Entity API
 
 The Entity API allows you to interact with various entities on Avalanche, such as exchanges or other organizations:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#search-entities">Search Entities on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-entities">Get Entities on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#search-entities">Search Entities on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-entities">Get Entities on Avalanche</a>
+
 
 ### Price API
 
 Retrieve price data for tokens and NFTs on Avalanche using the Price API:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-nft-prices">Get NFT Prices on Avalanche</a>
+
 
 ### Blockchain API
 
 The Blockchain API gives access to blockchain-level data such as blocks, transactions, and logs:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Avalanche</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Avalanche</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Avalanche</a>
+
 
 ---
 

@@ -14,34 +14,34 @@ This tutorial will teach you how to host your custom backend (powered by Moralis
 
 ## The Steps We Will Take
 
-<ul>
-<li><a href="#the-steps-we-will-take">The Steps We Will Take</a></li>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#customize-code-from-the-quickstart-nodejs-tutorial">Customize Code from the _Quickstart NodeJS_ Tutorial</a></li>
-<li><a href="#adding-authentication-methods">Adding Authentication Methods</a></li>
-<li><a href="#adding-authentication-operations">Adding Authentication Operations</a></li>
-<li><a href="#run-on-google-cloud">Run on Google Cloud</a>
-  <ul>
-  <li><a href="#prerequisites-1">Prerequisites</a></li>
-  <li><a href="#deploying-to-cloud-run">Deploying to Cloud Run</a>
-    <ul>
-    <li><a href="#using-the-cloud-code-extension">Using the Cloud Code Extension</a></li>
-    </ul>
-  </li>
-  </ul>
-</li>
-<li><a href="#calling-from-unity">Calling from Unity</a>
-  <ul>
-  <li><a href="#prerequisites-2">Prerequisites</a></li>
-  <li><a href="#connection-to-custom-backend">Connection to Custom Backend</a></li>
-  <li><a href="#authentication">Authentication</a>
-    <ul>
-    <li><a href="#congratulations-you-completed-the-using-unity--google-cloud-tutorial">Congratulations! You completed the _Using Unity \& Google Cloud_ tutorial!</a></li>
-    </ul>
-  </li>
-  </ul>
-</li>
-</ul>
+
+- <a href="#the-steps-we-will-take">The Steps We Will Take</a>
+- <a href="#prerequisites">Prerequisites</a>
+- <a href="#customize-code-from-the-quickstart-nodejs-tutorial">Customize Code from the _Quickstart NodeJS_ Tutorial</a>
+- <a href="#adding-authentication-methods">Adding Authentication Methods</a>
+- <a href="#adding-authentication-operations">Adding Authentication Operations</a>
+- <a href="#run-on-google-cloud">Run on Google Cloud</a>
+  
+  - <a href="#prerequisites-1">Prerequisites</a>
+  - <a href="#deploying-to-cloud-run">Deploying to Cloud Run</a>
+    
+    - <a href="#using-the-cloud-code-extension">Using the Cloud Code Extension</a>
+    
+  
+  
+
+- <a href="#calling-from-unity">Calling from Unity</a>
+  
+  - <a href="#prerequisites-2">Prerequisites</a>
+  - <a href="#connection-to-custom-backend">Connection to Custom Backend</a>
+  - <a href="#authentication">Authentication</a>
+    
+    - <a href="#congratulations-you-completed-the-using-unity--google-cloud-tutorial">Congratulations! You completed the _Using Unity \& Google Cloud_ tutorial!</a>
+    
+  
+  
+
+
 
 ## Prerequisites
 

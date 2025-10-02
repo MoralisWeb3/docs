@@ -29,75 +29,75 @@ The Web3 Data API is available for the following Gnosis networks:
 
 The following APIs are supported for Gnosis:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a></li>
-  <li><a href="/web3-data-api/evm/reference#token-api">Token API</a></li>
-  <li><a href="/web3-data-api/evm/reference#defi-api">DeFi API</a></li>
-  <li><a href="/web3-data-api/evm/reference#entity-api">Entity API</a></li>
-  <li><a href="/web3-data-api/evm/reference#price-api">Price API</a></li>
-  <li><a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#wallet-api">Wallet API</a>
+  - <a href="/web3-data-api/evm/reference#token-api">Token API</a>
+  - <a href="/web3-data-api/evm/reference#defi-api">DeFi API</a>
+  - <a href="/web3-data-api/evm/reference#entity-api">Entity API</a>
+  - <a href="/web3-data-api/evm/reference#price-api">Price API</a>
+  - <a href="/web3-data-api/evm/reference#blockchain-api">Blockchain API</a>
+
 
 ### Wallet API
 
 The Wallet API enables you to interact with wallet data on the Gnosis blockchain.
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-wallet-domains">Get Wallet Domains on Gnosis</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-details">Get Wallet Details on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-domains">Get Wallet Domains on Gnosis</a>
+
 
 ### Token API
 
 The Token API provides methods for interacting with ERC-20 tokens on Gnosis. Choose from the following actions:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Gnosis</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-token-metadata">Get Token Metadata on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-price">Get Token Price on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-balances">Get Token Balances on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-approvals">Get Token Approvals on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-transfers">Get Token Transfers on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Gnosis</a>
+
 
 ### Entity API
 
 The Entity API allows you to interact with various entities on Gnosis, such as exchanges or other organizations:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#search-entities">Search Entities on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-entities">Get Entities on Gnosis</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#search-entities">Search Entities on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-entity-categories">Get Entity Categories on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-entities">Get Entities on Gnosis</a>
+
 
 ### Price API
 
 Retrieve price data for tokens and NFTs on Gnosis using the Price API:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Gnosis</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-token-prices">Get Token Prices on Gnosis</a>
+
 
 ### Blockchain API
 
 The Blockchain API gives access to blockchain-level data such as blocks, transactions, and logs:
 
-<ul>
-  <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Gnosis</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Gnosis</a></li>
-</ul>
+
+  - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Gnosis</a>
+
 
 ---
 

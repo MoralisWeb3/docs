@@ -1,0 +1,109 @@
+{
+  "missing": [],
+  "large": [],
+  "shouldConvert": [],
+  "broken": [],
+  "total": 396,
+  "unusedImages": [
+    {
+      "path": "/Users/iulian/Code/docs/static/img/chatgpt.webp",
+      "size": 44344,
+      "name": "chatgpt.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/00720ee-6.webp",
+      "size": 50808,
+      "name": "00720ee-6.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/009db76-Railway_-_env.webp",
+      "size": 30824,
+      "name": "009db76-Railway_-_env.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/00b9508-Screenshot_2022-09-08_at_02.43.11.webp",
+      "size": 19364,
+      "name": "00b9508-Screenshot_2022-09-08_at_02.43.11.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/00d25ea-image.webp",
+      "size": 11370,
+      "name": "00d25ea-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/03e3db9-image.webp",
+      "size": 44652,
+      "name": "03e3db9-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp",
+      "size": 54314,
+      "name": "049946d-4n3pANatV2_KA3lpaig2g_screenshot-2022-08-08-at-150705.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/0556f0c-azure_functions_1.webp",
+      "size": 45278,
+      "name": "0556f0c-azure_functions_1.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/05d7960-image.webp",
+      "size": 48916,
+      "name": "05d7960-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/08eff9f-image.webp",
+      "size": 39826,
+      "name": "08eff9f-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/0a77de9-image.webp",
+      "size": 53324,
+      "name": "0a77de9-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/0bb5259-image.webp",
+      "size": 29434,
+      "name": "0bb5259-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/1121070-image.webp",
+      "size": 7952,
+      "name": "1121070-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/161ccae-image.webp",
+      "size": 57168,
+      "name": "161ccae-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/17b0fd0-image.webp",
+      "size": 13414,
+      "name": "17b0fd0-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/1cbb56b-console_4.webp",
+      "size": 46008,
+      "name": "1cbb56b-console_4.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/2100f89-image.webp",
+      "size": 76824,
+      "name": "2100f89-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/25f9568-image.webp",
+      "size": 46212,
+      "name": "25f9568-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/263def3-image.webp",
+      "size": 79380,
+      "name": "263def3-image.webp"
+    },
+    {
+      "path": "/Users/iulian/Code/docs/static/img/content/27497f9-Screenshot_2022-09-07_at_23.25.41.webp",
+      "size": 87226,
+      "name": "27497f9-Screenshot_2022-09-07_at_23.25.41.webp"
+    }
+  ]
+}

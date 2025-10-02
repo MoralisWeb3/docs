@@ -6,25 +6,24 @@ sidebar_class_name: "sidebar-token-api"
 sidebar_position: 0
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 Select what you want to achieve:
 
-<ul>
-<li><a href="#get-token-metadata">Get Token Metadata</a></li>
-<li><a href="#get-token-balances">Get Token Balances</a></li>
-<li><a href="#get-pump-fun-tokens">Get Pump Fun Tokens</a></li>
-<li><a href="#get-token-holders">Get Token Holders</a></li>
-<li><a href="#get-token-swaps">Get Token Swaps</a></li>
-<li><a href="#get-pairs--liquidity">Get Pairs & Liquidity</a></li>
-<li><a href="#get-token-analytics">Get Token Analytics</a></li>
-<li><a href="#get-volume-stats">Get Volume Stats</a></li>
-<li><a href="#get-token-prices">Get Token Prices</a></li>
-<li><a href="#get-token-snipers">Get Token Snipers</a></li>
-<li><a href="#get-filtered-tokens">Get Filtered Tokens</a></li>
-<li><a href="#get-trending-tokens">Get Trending Tokens</a></li>
-<li><a href="#search-tokens">Search Tokens</a></li>
-</ul>
+
+- <a href="#get-token-metadata">Get Token Metadata</a>
+- <a href="#get-token-balances">Get Token Balances</a>
+- <a href="#get-pump-fun-tokens">Get Pump Fun Tokens</a>
+- <a href="#get-token-holders">Get Token Holders</a>
+- <a href="#get-token-swaps">Get Token Swaps</a>
+- <a href="#get-pairs--liquidity">Get Pairs & Liquidity</a>
+- <a href="#get-token-analytics">Get Token Analytics</a>
+- <a href="#get-volume-stats">Get Volume Stats</a>
+- <a href="#get-token-prices">Get Token Prices</a>
+- <a href="#get-token-snipers">Get Token Snipers</a>
+- <a href="#get-filtered-tokens">Get Filtered Tokens</a>
+- <a href="#get-trending-tokens">Get Trending Tokens</a>
+- <a href="#search-tokens">Search Tokens</a>
+
 
 ### Get Token Metadata
 

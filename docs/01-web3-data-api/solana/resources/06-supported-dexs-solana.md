@@ -5,7 +5,6 @@ sidebar_label: "Supported DEXs on Solana"
 sidebar_position: 5
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 The [Moralis Token API](/web3-data-api/solana/reference/token-api) supports several decentralized exchanges (DEXs) on Solana. Below is the list of supported Solana DEXs and their corresponding addresses.
 

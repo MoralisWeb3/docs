@@ -4,15 +4,14 @@ slug: "/web3-data-api/evm/defi-protocols-and-chains"
 sidebar_position: 5
 ---
 
-import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 This article provides a comprehensive and continually expanding list of supported DeFi protocols and chains for the following endpoints:
 
-<ul>
-  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary">DeFi Protocols by Wallet</a></li>
-  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary">DeFi Positions by Wallet</a></li>
-  <li><a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol">Get Detailed DeFi Positions by Wallet and Protocol</a></li>
-</ul>
+
+  - <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiSummary">DeFi Protocols by Wallet</a>
+  - <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsSummary">DeFi Positions by Wallet</a>
+  - <a href="https://deep-index.moralis.io/api-docs-2.2/#/Wallets/getDefiPositionsByProtocol">Get Detailed DeFi Positions by Wallet and Protocol</a>
+
 
 ## Supported Protocols & Chains
 
