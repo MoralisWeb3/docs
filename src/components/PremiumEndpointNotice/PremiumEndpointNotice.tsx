@@ -14,10 +14,8 @@ const PremiumEndpointNotice: React.FC<PremiumEndpointNoticeProps> = ({ children,
 
     return (
         <Admonition type="info" icon="💡" title={title}>
-            <p>
-                {text} <strong>Pro</strong> plan or higher.
-            </p>
-            {children}
+            {text} <strong>Pro</strong> plan or higher.
+            {children && <><br /><br />{children}</>}
         </Admonition>
     );
 };
