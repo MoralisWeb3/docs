@@ -1,6 +1,6 @@
 [build]
   publish = "build/"
-  command = "npm run build"
+  command = "NODE_OPTIONS='--max-old-space-size=4096' npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
