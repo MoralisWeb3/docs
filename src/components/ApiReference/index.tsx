@@ -399,7 +399,7 @@ const ApiReference = ({
 
                             {description && (
                                 <div className={styles.section}>
-                                    <ReactMarkdown>{description}</ReactMarkdown>
+                                    <ReactMarkdown>{String(description)}</ReactMarkdown>
                                 </div>
                             )}
                             <div className={styles.section}>{children}</div>
