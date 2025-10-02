@@ -1,0 +1,27 @@
+[build]
+  publish = "build/"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  directory = "netlify/functions/"
+  node_bundler = "esbuild"
+
+# Redirect rules from vercel.json
+# This catches requests to old docs.moralis.io domain and redirects to 404
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/404"
+  status = 200
+  conditions = {Host = ["docs.moralis.io"]}
+  force = true
+
+# Default headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
