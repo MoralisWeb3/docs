@@ -395,6 +395,8 @@ const config = {
                 copyright: `Copyright © ${new Date().getFullYear()} Moralis Web3 Technology`,
             },
             prism: {
+                theme: require('prism-react-renderer').themes.github,
+                darkTheme: require('prism-react-renderer').themes.dracula,
                 additionalLanguages: ["php", "solidity", "csharp"],
             },
             algolia: {
