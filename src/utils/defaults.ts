@@ -1,66 +1,66 @@
-import * as defaults from "../../configs/defaults.json";
+import defaultsData from "../../configs/defaults.json";
 import { getParamOverride } from "./overrides";
 
 /**
  * Get default values for various blockchain-related parameters
  * These defaults are used across API examples and documentation
  */
-export const getDefaults = () => defaults;
+export const getDefaults = () => defaultsData;
 
 /**
  * Get default EVM chain (as hex value)
  */
-export const getDefaultEvmChain = () => defaults.evmChain;
+export const getDefaultEvmChain = () => defaultsData.evmChain;
 
 /**
  * Get default EVM wallet address
  */
-export const getDefaultEvmWallet = () => defaults.evmWallet;
+export const getDefaultEvmWallet = () => defaultsData.evmWallet;
 
 /**
  * Get default EVM token address
  */
-export const getDefaultEvmToken = () => defaults.evmToken;
+export const getDefaultEvmToken = () => defaultsData.evmToken;
 
 /**
  * Get default EVM pair address
  */
-export const getDefaultEvmPair = () => defaults.evmPair;
+export const getDefaultEvmPair = () => defaultsData.evmPair;
 
 /**
  * Get default EVM NFT address
  */
-export const getDefaultEvmNft = () => defaults.evmNft;
+export const getDefaultEvmNft = () => defaultsData.evmNft;
 
 /**
  * Get default Solana network
  */
-export const getDefaultSolChain = () => defaults.solChain;
+export const getDefaultSolChain = () => defaultsData.solChain;
 
 /**
  * Get default Solana wallet address
  */
-export const getDefaultSolWallet = () => defaults.solWallet;
+export const getDefaultSolWallet = () => defaultsData.solWallet;
 
 /**
  * Get default Solana token address
  */
-export const getDefaultSolToken = () => defaults.solToken;
+export const getDefaultSolToken = () => defaultsData.solToken;
 
 /**
  * Get default Solana pair address
  */
-export const getDefaultSolPair = () => defaults.solPair;
+export const getDefaultSolPair = () => defaultsData.solPair;
 
 /**
  * Get default Solana NFT address
  */
-export const getDefaultSolNft = () => defaults.solNft;
+export const getDefaultSolNft = () => defaultsData.solNft;
 
 /**
  * Get default Solana exchange
  */
-export const getDefaultSolExchange = () => defaults.solExchange;
+export const getDefaultSolExchange = () => defaultsData.solExchange;
 
 /**
  * Get default value based on parameter name, type, and API context

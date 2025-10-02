@@ -1,4 +1,4 @@
-import * as overridesConfig from "../../configs/overrides.json";
+import overridesConfig from "../../configs/overrides.json";
 
 /**
  * Get parameter override value from the overrides configuration
