@@ -71,7 +71,7 @@ const Guides = () => {
                                             </Badge>
                                         ))}
                                     </div>
-                                    <ReactMarkdown>{description}</ReactMarkdown>
+                                    <ReactMarkdown>{String(description)}</ReactMarkdown>
                                 </div>
                                 <div>
                                     <Link href={slug}>Read More</Link>
