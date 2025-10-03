@@ -1,0 +1,37 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}
+
+.docLayoutWrapper {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 997px) {
+  .docLayoutWrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .docItemCol {
+    flex: 1;
+    max-width: none !important;
+    padding-right: 2rem;
+  }
+
+  .tocColumn {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
