@@ -14,8 +14,6 @@ sidebar_class_name: "sidebar-overview"
 
 Moralis provides enterprise-grade APIs and analytics for the Solana ecosystem, powering moralis.com's terminal and processing millions of queries daily. This documentation showcases our comprehensive API suite that enables developers to build sophisticated trading and analytics platforms with institutional-grade data.
 
-### Moralis.com Terminal
-
 ![Main Moralis Page](https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/screenshots-moraliscom-solana-page/main-page.webp)
 
 ## API Coverage
