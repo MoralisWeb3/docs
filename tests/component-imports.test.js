@@ -40,6 +40,7 @@ describe('Component Imports', () => {
 
         let inFrontmatter = false;
         let frontmatterClosed = false;
+        let inCodeBlock = false;
         let importSectionEnded = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -57,18 +58,27 @@ describe('Component Imports', () => {
           }
           if (inFrontmatter) continue;
 
-          // After frontmatter, imports should be at the top
+          // Track code blocks
+          if (line.trim().startsWith('```')) {
+            inCodeBlock = !inCodeBlock;
+            continue;
+          }
+
+          // Skip lines inside code blocks
+          if (inCodeBlock) continue;
+
+          // After frontmatter, imports should be at the top (before markdown content starts)
           if (frontmatterClosed && !importSectionEnded) {
             if (line.trim().startsWith('import ')) {
               continue; // Valid import location
-            } else if (line.trim() === '') {
-              continue; // Empty lines are OK
-            } else if (line.trim().startsWith('#') || line.trim().startsWith('<')) {
-              importSectionEnded = true; // Content has started
+            } else if (line.trim() === '' || line.trim().startsWith('<')) {
+              continue; // Empty lines and JSX elements are OK before content starts
+            } else if (line.trim().startsWith('#')) {
+              importSectionEnded = true; // Markdown headers indicate content has started
             }
           }
 
-          // Check for imports appearing in content (after headers/components start)
+          // Check for imports appearing in content (after markdown headers start)
           if (importSectionEnded && line.includes('import ') &&
               (line.includes(' from ') || line.includes('import {'))) {
             filesWithVisibleImports.push({
