@@ -1,6 +1,6 @@
 ---
 title: "Monitoring NFT Transfers from Specific Wallet Addresses"
-slug: "../how-to-listen-to-all-nft-transfers-sent-from-a-specific-address"
+slug: "/streams-api/evm/tutorials/how-to-listen-to-all-nft-transfers-sent-from-a-specific-address"
 description: "Learn how to listen to all NFT transfers sent from a specific address using Moralis Streams API."
 ---
 

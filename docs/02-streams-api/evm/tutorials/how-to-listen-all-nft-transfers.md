@@ -1,6 +1,6 @@
 ---
 title: "Track NFT transfers"
-slug: "../how-to-listen-all-nft-transfers"
+slug: "/streams-api/evm/tutorials/how-to-listen-all-nft-transfers"
 description: "Learn how to listen to all NFT transfers using Moralis Streams API."
 ---
 Lets create a stream that monitors all the NFT contract transfers.

@@ -26,11 +26,11 @@ Make use of the table below to quickly find the Moralis equivalent for each Simp
 
 | Feature                            | SimpleHash Endpoint                                           | Moralis Equivalent                           |
 | ---------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
-| Token & Prices                     | `api.simplehash.com/api/v0/fungibles/assets`                  | [Details](#token--prices)                    |
+| Token & Prices                     | `api.simplehash.com/api/v0/fungibles/assets`                  | [Details](#token-prices)                    |
 | Token Balances by Wallet(s)        | `api.simplehash.com/api/v0/fungibles/balances`                | [Details](#token-balances-by-wallets)        |
 | Token Top Holders                  | `api.simplehash.com/api/v0/fungibles/top_wallets`             | [Details](#token-top-holders)                |
-| Swaps & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps--transfers-by-wallets)      |
-| Swaps & Transfers by Token         | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps--transfers-by-token)        |
+| Swaps & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps-transfers-by-wallets)      |
+| Swaps & Transfers by Token         | `api.simplehash.com/api/v0/fungibles/transfers/wallets`       | [Details](#swaps-transfers-by-token)        |
 | Historical Token Prices            | `api.simplehash.com/api/v0/fungibles/prices_v2/{fungible_id}` | [Details](#historical-token-prices)          |
 | Historical Token OHLC              | `api.simplehash.com/api/v0/fungibles/ohlc/{fungible_id}`      | [Details](#historical-token-ohlc)            |
 | Native Token Balances by Wallet(s) | `api.simplehash.com/api/v0/native_tokens/balances`            | [Details](#native-token-balances-by-wallets) |
@@ -42,9 +42,9 @@ Make use of the table below to quickly find the Moralis equivalent for each Simp
 | NFT by Token ID                    | `api.simplehash.com/api/v0/nfts/{chain}/{contract_address}/{token_id}`                    | [Details](#nft-by-token-id)                    |
 | NFTs by Contract                   | `api.simplehash.com/api/v0/nfts/{chain}/{contract_address}`                               | [Details](#nfts-by-contract)                   |
 | NFTs by Wallet(s)                  | `api.simplehash.com/api/v0/nfts/owners_v2`                                                | [Details](#nfts-by-wallets)                    |
-| Sales & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/nfts/transfers/wallets`                                        | [Details](#sales--transfers-by-wallets)        |
-| Sales & Transfers by NFT           | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}/{token_id}`          | [Details](#sales--transfers-by-nft)            |
-| Sales & Transfers by Contract      | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}`                     | [Details](#sales--transfers-by-contract)       |
+| Sales & Transfers by Wallet(s)     | `api.simplehash.com/api/v0/nfts/transfers/wallets`                                        | [Details](#sales-transfers-by-wallets)        |
+| Sales & Transfers by NFT           | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}/{token_id}`          | [Details](#sales-transfers-by-nft)            |
+| Sales & Transfers by Contract      | `api.simplehash.com/api/v0/nfts/transfers/{chain}/{contract_address}`                     | [Details](#sales-transfers-by-contract)       |
 | Owners by NFT                      | `api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/{token_id}`             | [Details](#owners-by-nft)                      |
 | Owners by Contract                 | `api.simplehash.com/api/v0/nfts/owners/{chain}/{contract_address}/`                       | [Details](#owners-by-contract)                 |
 | Ownership Summary by Wallet(s)     | `api.simplehash.com/api/v0/nfts/contracts`                                                | [Details](#ownership-summary-by-wallets)       |

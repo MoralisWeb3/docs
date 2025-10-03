@@ -1,6 +1,6 @@
 ---
 title: "Monitor High-Value ERC20 Transfers by Address"
-slug: "../how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address"
+slug: "/streams-api/evm/tutorials/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address"
 description: "Learn how to listen to all ERC20 token transfers over certain amount sent by specific address using Moralis Streams API."
 ---
 Let's create a stream that monitors all the ERC20 contract transfers where sender is a specific address and the number of coins transferred is over 1000.

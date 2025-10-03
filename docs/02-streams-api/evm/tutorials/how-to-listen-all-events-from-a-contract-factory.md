@@ -1,6 +1,6 @@
 ---
 title: "Track Smart Contract Events in Real-Time with Web3"
-slug: "../how-to-listen-all-events-from-a-contract-factory"
+slug: "/streams-api/evm/tutorials/how-to-listen-all-events-from-a-contract-factory"
 description: "Learn how to listen to all events from a contract factory using Moralis Streams API."
 ---
 

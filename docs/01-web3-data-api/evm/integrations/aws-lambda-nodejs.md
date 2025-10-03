@@ -1,6 +1,6 @@
 ---
 title: "AWS Lambda (NodeJS)"
-slug: "aws-lambda-nodejs"
+slug: "/web3-data-api/evm/integrations/aws-lambda-nodejs"
 description: "This tutorial shows how to easily integrate our [NodeJS SDK](/web3-data-api/evm/moralis-sdk) with AWS Lambda. We're going to cover two ways of doing it:\n* Develop and deploy a [Lambda App with multiple functions](#lambda-app-with-multiple-functions).\n* Develop and deploy a [Lambda NodeJS Express API](#lambda-nodejs-express-api).\n\nTo make everything easier, we're going to use _[Serverless Framework](https://www.serverless.com/)_."
 ---
 
@@ -349,7 +349,7 @@ serverless invoke local -f getNativeBalance --path event.json
 # Lambda NodeJS Express API
 
 :::info Download completed project
-You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to [_Install dependencies_](#install-dependencies-1).
+You can download the completed VS Code project [here](https://github.com/MoralisWeb3/examples-aws-lambda-nodejs/tree/main/aws-node-express-api-project). If you do so, you can skip _Project setup_ and _Development_ steps and go straight to _Install dependencies_.
 :::
 
 :::info
@@ -659,7 +659,7 @@ If you come from [GitHub completed projects](https://github.com/MoralisWeb3/exam
 
 
   - <a href="#install-dependencies">Install dependencies on `aws-node-project`</a>
-  - <a href="#install-dependencies-1">Install dependencies on `aws-node-express-api-project`</a>
+  - Install dependencies on `aws-node-express-api-project`
 
   :::
 

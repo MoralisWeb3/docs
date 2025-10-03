@@ -29,7 +29,13 @@ describe('Link Validation', () => {
         // Extract slug from frontmatter
         const slugMatch = content.match(/slug:\s*["']?([^"'\n]+)["']?/);
         if (slugMatch) {
-          allPageSlugs.add(slugMatch[1]);
+          let slug = slugMatch[1];
+          // If slug contains .., resolve it relative to the file's directory
+          if (slug.includes('..')) {
+            const fileDir = path.dirname(file.replace(docsPath, ''));
+            slug = path.normalize(path.join(fileDir, slug));
+          }
+          allPageSlugs.add(slug);
         } else {
           // Generate slug from file path
           const relativePath = file.replace(docsPath, '').replace(/\.(mdx?|md)$/, '');
@@ -59,7 +65,17 @@ describe('Link Validation', () => {
           }
         });
 
-        const slug = slugMatch ? slugMatch[1] : file.replace(docsPath, '').replace(/\.(mdx?|md)$/, '');
+        let slug;
+        if (slugMatch) {
+          slug = slugMatch[1];
+          // If slug contains .., resolve it relative to the file's directory
+          if (slug.includes('..')) {
+            const fileDir = path.dirname(file.replace(docsPath, ''));
+            slug = path.normalize(path.join(fileDir, slug));
+          }
+        } else {
+          slug = file.replace(docsPath, '').replace(/\.(mdx?|md)$/, '');
+        }
         allAnchors.set(slug, anchors);
       });
     } catch (e) {
@@ -148,10 +164,8 @@ describe('Link Validation', () => {
 
       const message = 'Found broken internal links:\n' +
         Object.entries(linkCounts)
-          .slice(0, 15)
           .map(([link, count]) => `  ${link} (found in ${count} file${count > 1 ? 's' : ''})`)
-          .join('\n') +
-        (Object.keys(linkCounts).length > 15 ? `\n  ... and ${Object.keys(linkCounts).length - 15} more` : '');
+          .join('\n');
       console.log(message);
     }
 
@@ -169,7 +183,17 @@ describe('Link Validation', () => {
 
         // Get the slug for this file
         const slugMatch = content.match(/slug:\s*["']?([^"'\n]+)["']?/);
-        const currentSlug = slugMatch ? slugMatch[1] : relativeFilePath.replace(/\.(mdx?|md)$/, '');
+        let currentSlug;
+        if (slugMatch) {
+          currentSlug = slugMatch[1];
+          // If slug contains .., resolve it relative to the file's directory
+          if (currentSlug.includes('..')) {
+            const fileDir = path.dirname(relativeFilePath);
+            currentSlug = path.normalize(path.join(fileDir, currentSlug));
+          }
+        } else {
+          currentSlug = relativeFilePath.replace(/\.(mdx?|md)$/, '');
+        }
 
         // Find all anchor links
         const anchorPattern = /\[([^\]]+)\]\(([^)]*#[^)]+)\)/g;

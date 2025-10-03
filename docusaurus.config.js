@@ -397,7 +397,7 @@ const config = {
             prism: {
                 additionalLanguages: ["php", "solidity", "csharp"],
                 theme: require('prism-react-renderer').themes.github,
-                darkTheme: require('prism-react-renderer').themes.vsDark,
+                darkTheme: require('prism-react-renderer').themes.oneDark,
             },
             algolia: {
                 appId: "K26H89KJU5",
