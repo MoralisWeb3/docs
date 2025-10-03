@@ -47,7 +47,7 @@ The Wallet API enables you to interact with wallet data on the Binance Smart Cha
   - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on BSC</a>
-  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on BSC</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nft-balances">Get Wallet NFT Balances on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on BSC</a>
@@ -84,7 +84,7 @@ The Token API provides methods for interacting with BEP-20 tokens on Binance Sma
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on BSC</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on BSC</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on BSC</a>
 
 
 ### DeFi API
@@ -121,8 +121,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on BSC</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on BSC</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on BSC</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on BSC</a>
 
 

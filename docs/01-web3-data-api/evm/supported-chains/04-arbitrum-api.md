@@ -45,7 +45,7 @@ The Wallet API enables you to interact with wallet data on the Arbitrum blockcha
   - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Arbitrum</a>
-  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Arbitrum</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nft-balances">Get Wallet NFT Balances on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Arbitrum</a>
@@ -82,7 +82,7 @@ The Token API provides methods for interacting with ERC-20 tokens on Arbitrum. C
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Arbitrum</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Arbitrum</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on Arbitrum</a>
 
 
 ### DeFi API
@@ -119,8 +119,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Arbitrum</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Arbitrum</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Arbitrum</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Arbitrum</a>
 
 

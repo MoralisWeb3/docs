@@ -66,7 +66,7 @@ The Token API provides methods for interacting with ERC-20 tokens on Gnosis. Cho
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Gnosis</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Gnosis</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Gnosis</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Gnosis</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on Gnosis</a>
 
 
 ### Entity API
@@ -94,8 +94,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Gnosis</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Gnosis</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Gnosis</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Gnosis</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Gnosis</a>
 
 

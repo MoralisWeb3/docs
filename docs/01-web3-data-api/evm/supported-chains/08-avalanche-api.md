@@ -45,7 +45,7 @@ The Wallet API enables you to interact with wallet data on the Avalanche blockch
   - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Avalanche</a>
-  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nft-balances">Get Wallet NFT Balances on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Avalanche</a>
@@ -82,7 +82,7 @@ The Token API provides methods for interacting with ERC-20 tokens on Avalanche. 
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Avalanche</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Avalanche</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on Avalanche</a>
 
 
 ### DeFi API
@@ -119,8 +119,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Avalanche</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Avalanche</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Avalanche</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Avalanche</a>
 
 

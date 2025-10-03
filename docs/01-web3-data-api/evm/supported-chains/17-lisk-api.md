@@ -51,7 +51,7 @@ The Wallet API enables you to interact with wallet data on the Lisk blockchain.
   - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Lisk</a>
-  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Lisk</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nft-balances">Get Wallet NFT Balances on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Lisk</a>
@@ -88,7 +88,7 @@ The Token API provides methods for interacting with ERC-20 tokens on Lisk. Choos
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Lisk</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Lisk</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on Lisk</a>
 
 
 ### DeFi API
@@ -125,8 +125,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Lisk</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Lisk</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Lisk</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Lisk</a>
 
 

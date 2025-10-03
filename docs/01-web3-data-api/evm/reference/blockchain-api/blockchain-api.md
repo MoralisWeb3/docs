@@ -11,7 +11,6 @@ Select what you want to achieve:
 
 - <a href="#get-blocks">Get Blocks</a>
 - <a href="#get-transactions">Get Transactions</a>
-- <a href="#get-stats">Get Stats</a>
 - <a href="#get-latest-block-number">Get Latest Block Number</a>
 
 

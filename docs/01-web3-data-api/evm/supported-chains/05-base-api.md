@@ -47,7 +47,7 @@ The Wallet API enables you to interact with wallet data on the Base blockchain.
   - <a href="/web3-data-api/evm/reference#get-wallet-history">Get Wallet History on Base</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-balances">Get Wallet Token Balances on Base</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-token-approvals">Get Wallet Token Approvals on Base</a>
-  - <a href="/web3-data-api/evm/reference#get-wallet-nfts">Get Wallet NFT Balances on Base</a>
+  - <a href="/web3-data-api/evm/reference#get-wallet-nft-balances">Get Wallet NFT Balances on Base</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-defi-positions">Get Wallet DeFi Positions on Base</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-net-worth">Get Wallet Net-worth on Base</a>
   - <a href="/web3-data-api/evm/reference#get-wallet-pnl">Get Wallet PnL on Base</a>
@@ -84,7 +84,7 @@ The Token API provides methods for interacting with ERC-20 tokens on Base. Choos
   - <a href="/web3-data-api/evm/reference#get-token-top-traders">Get Token Top Traders on Base</a>
   - <a href="/web3-data-api/evm/reference#get-token-pairs--liquidity">Get Token Pairs & Liquidity on Base</a>
   - <a href="/web3-data-api/evm/reference#get-token-stats">Get Token Stats on Base</a>
-  - <a href="/web3-data-api/evm/reference#get-token-owners">Get Token Owners on Base</a>
+  - <a href="/web3-data-api/evm/reference#get-token-holders">Get Token Owners on Base</a>
 
 
 ### DeFi API
@@ -121,8 +121,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 
   - <a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Base</a>
   - <a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Base</a>
-  - <a href="/web3-data-api/evm/reference#get-logs">Get Logs on Base</a>
-  - <a href="/web3-data-api/evm/reference#get-stats">Get Stats on Base</a>
   - <a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Base</a>
 
 
