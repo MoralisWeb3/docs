@@ -253,6 +253,18 @@ video {
   align-items: center;
   justify-content: flex-start;
   overflow-wrap: anywhere;
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+/* Override Docusaurus sidebar link truncation */
+.menu__link [class*="linkLabel"] {
+  overflow: visible !important;
+  display: block !important;
+  line-clamp: unset !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  max-height: none !important;
 }
 
 .menu__caret::before,
@@ -272,8 +284,14 @@ video {
   margin-right: -10px;
 }
 
+/* Navbar search button styling - match home page search */
 .DocSearch-Button {
-  width: 300px;
+  width: 320px;
+  height: 38px;
+  border-radius: 20px;
+  border: 0.5px solid var(--ifm-toc-border-color);
+  background-color: var(--home-search-box-background-color);
+  padding: 0 16px;
 }
 
 .card h3 {
@@ -1049,6 +1067,8 @@ li.dropdown-divider {
   }
   .DocSearch-Button {
     width: auto;
+    height: 34px;
+    border-radius: 17px;
   }
   .hero__title {
     font-size: var(--ifm-h1-font-size);

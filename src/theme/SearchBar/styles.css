@@ -1,11 +1,48 @@
 :root {
   --docsearch-primary-color: var(--ifm-color-primary);
   --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-key-background: var(--ifm-color-emphasis-200);
+  --docsearch-key-color: var(--ifm-font-color-base);
+}
+
+[data-theme="dark"] {
+  --docsearch-key-background: var(--ifm-color-emphasis-300);
+  --docsearch-key-color: var(--ifm-font-color-base);
 }
 
 .DocSearch-Button {
   margin: 0;
   transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  width: 320px;
+  height: 38px;
+  border-radius: 20px !important;
+  border: 0.5px solid var(--ifm-toc-border-color) !important;
+  background-color: var(--home-search-box-background-color) !important;
+  padding: 0 16px !important;
+}
+
+@media (max-width: 996px) {
+  .DocSearch-Button {
+    width: auto;
+    height: 34px;
+    border-radius: 17px !important;
+  }
+}
+
+/* Style keyboard shortcut keys for better visibility */
+.DocSearch-Button-Key {
+  background: var(--docsearch-key-background) !important;
+  color: var(--docsearch-key-color) !important;
+  border: 1px solid var(--ifm-color-emphasis-400) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.DocSearch-Button-Key--ctrl {
+  min-width: 35px !important;
 }
 
 .DocSearch-Container {
