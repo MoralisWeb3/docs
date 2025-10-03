@@ -72,7 +72,6 @@ Yes, with the MCP Server you can use OpenAI, Claude, or open-source models. The 
 1. Check your `MORALIS_API_KEY` is set correctly
 2. Verify Node.js is installed (version 16+)
 3. Restart your AI client after configuration
-4. See [MCP Server troubleshooting](/cortex/mcp-server/getting-started#troubleshooting)
 
 ### "Authentication failed" error?
 

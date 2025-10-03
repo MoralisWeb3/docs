@@ -16,8 +16,8 @@ Previously, token metadata were only available through the [ERC20 metadata](/web
 
 This metadata is now available on the following endpoints:
 
-- [ERC20 transfers (by wallet or contract)](/web3-data-api/evm/reference/get-erc20-transfers)
-- [ERC20 mints](/web3-data-api/evm/reference/get-erc20-mints)
-- [ERC20 burns](/web3-data-api/evm/reference/get-erc20-burns)
-- [ERC20 approvals](/web3-data-api/evm/reference/get-erc20-approvals)
+- ERC20 transfers (by wallet or contract)
+- ERC20 mints
+- ERC20 burns
+- ERC20 approvals
 - [ERC20 token price](/web3-data-api/evm/reference/get-token-price)

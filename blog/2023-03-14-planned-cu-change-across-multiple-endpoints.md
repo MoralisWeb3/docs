@@ -16,9 +16,9 @@ From 28th March 2023, the compute units (CUs) charged on the below endpoints wil
 | [`/{address}`](/web3-data-api/evm/reference/get-wallet-transactions)                    | 5             |
 | [`/{address}/logs`]                                                                     | 5             |
 | [`/{address}/erc20`](/web3-data-api/evm/reference/get-wallet-token-balances)            | 10            |
-| [`/erc20/mints`](/web3-data-api/evm/reference/get-erc20-mints)                      | 10            |
-| [`/erc20/burns`](/web3-data-api/evm/reference/get-erc20-burns)                      | 10            |
-| [`/erc20/approvals`](/web3-data-api/evm/reference/get-erc20-approvals)              | 10            |
+| `/erc20/mints`                      | 10            |
+| `/erc20/burns`                      | 10            |
+| `/erc20/approvals`              | 10            |
 | [`/block/{block_number_or_hash}`](/web3-data-api/evm/reference/get-block)               | 10            |
 | [`/{address}/erc20/transfers`](/web3-data-api/evm/reference/get-wallet-token-transfers) | 5             |
 | [`/erc20/{address}/transfers`](/web3-data-api/evm/reference/get-token-transfers)        | 10            |
