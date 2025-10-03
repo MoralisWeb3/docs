@@ -6,7 +6,7 @@
         "docusaurus": "docusaurus",
         "start": "docusaurus start",
         "start:vercel": "vercel dev",
-        "build": "NODE_OPTIONS='--max-old-space-size=8192' DOCUSAURUS_BUILD_CACHE=true docusaurus build",
+        "build": "NODE_OPTIONS='--max-old-space-size=8192' docusaurus build",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy",
         "clear": "docusaurus clear",
