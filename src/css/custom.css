@@ -1778,3 +1778,17 @@ li.dropdown-divider {
     max-width: 50% !important;
   }
 }
+
+/* Code block text wrapping */
+div[class^='codeBlockContent'] code,
+pre[class*='language-'] code,
+code[class*='language-'] {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+/* Keep copy button always visible */
+div[class^='codeBlockContent'] button[class*='copyButton'],
+div[class^='codeBlockContent'] button[class*='clean-btn'] {
+  opacity: 1 !important;
+}
