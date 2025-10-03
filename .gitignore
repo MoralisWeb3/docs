@@ -8,6 +8,14 @@
 .docusaurus
 .cache-loader
 
+# Build caches
+.webpack-cache
+.babel-cache
+.ts-cache
+.tsbuildinfo
+.cache
+node_modules/.cache
+
 # Misc
 .DS_Store
 .env.local

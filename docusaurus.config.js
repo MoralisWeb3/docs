@@ -32,12 +32,12 @@ const config = {
 
     future: {
         experimental_faster: {
-            swcJsLoader: true,
-            swcJsMinimizer: true,
-            swcHtmlMinimizer: true,
-            lightningCssMinimizer: true,
-            rspackBundler: false,
-            mdxCrossCompilerCache: true,
+            swcJsLoader: true,           // Use SWC for faster transpilation with less memory
+            swcJsMinimizer: true,        // Use SWC minifier - faster and less memory than Terser
+            swcHtmlMinimizer: true,      // Use SWC for HTML - faster
+            lightningCssMinimizer: true, // Use Lightning CSS - much faster
+            rspackBundler: false,        // Keep webpack for compatibility
+            mdxCrossCompilerCache: true, // Enable caching for faster builds
         },
     },
 
