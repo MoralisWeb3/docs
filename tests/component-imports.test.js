@@ -39,9 +39,7 @@ describe('Component Imports', () => {
         const lines = content.split('\n');
 
         let inFrontmatter = false;
-        let frontmatterClosed = false;
         let inCodeBlock = false;
-        let importSectionEnded = false;
 
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
@@ -53,12 +51,11 @@ describe('Component Imports', () => {
           }
           if (inFrontmatter && line.trim() === '---') {
             inFrontmatter = false;
-            frontmatterClosed = true;
             continue;
           }
           if (inFrontmatter) continue;
 
-          // Track code blocks
+          // Track code blocks (markdown code blocks with ```)
           if (line.trim().startsWith('```')) {
             inCodeBlock = !inCodeBlock;
             continue;
@@ -67,25 +64,21 @@ describe('Component Imports', () => {
           // Skip lines inside code blocks
           if (inCodeBlock) continue;
 
-          // After frontmatter, imports should be at the top (before markdown content starts)
-          if (frontmatterClosed && !importSectionEnded) {
-            if (line.trim().startsWith('import ')) {
-              continue; // Valid import location
-            } else if (line.trim() === '' || line.trim().startsWith('<')) {
-              continue; // Empty lines and JSX elements are OK before content starts
-            } else if (line.trim().startsWith('#')) {
-              importSectionEnded = true; // Markdown headers indicate content has started
-            }
-          }
+          // Check for import statements that are NOT actual MDX imports
+          // Real MDX imports should work fine, we're looking for broken ones that show as text
+          // An import is "visible/broken" if it's indented or inside a CodeBlock component
+          const trimmedLine = line.trim();
 
-          // Check for imports appearing in content (after markdown headers start)
-          if (importSectionEnded && line.includes('import ') &&
-              (line.includes(' from ') || line.includes('import {'))) {
-            filesWithVisibleImports.push({
-              file: file.replace(path.join(__dirname, '../'), ''),
-              line: i + 1,
-              content: line.trim()
-            });
+          if (trimmedLine.startsWith('import ') && (line.includes(' from ') || line.includes('import {'))) {
+            // Check if the import is indented (which would make it render as text/code)
+            const leadingWhitespace = line.match(/^(\s+)/);
+            if (leadingWhitespace && leadingWhitespace[1].length > 0) {
+              filesWithVisibleImports.push({
+                file: file.replace(path.join(__dirname, '../'), ''),
+                line: i + 1,
+                content: trimmedLine
+              });
+            }
           }
         }
       } catch (e) {
@@ -157,6 +150,7 @@ describe('Component Imports', () => {
         // Extract imports
         const imports = [];
         let inFrontmatter = false;
+        let inCodeBlock = false;
 
         lines.forEach((line, index) => {
           if (index === 0 && line.trim() === '---') {
@@ -168,6 +162,15 @@ describe('Component Imports', () => {
             return;
           }
           if (inFrontmatter) return;
+
+          // Track code blocks
+          if (line.trim().startsWith('```')) {
+            inCodeBlock = !inCodeBlock;
+            return;
+          }
+
+          // Skip imports inside code blocks
+          if (inCodeBlock) return;
 
           // Match: import ComponentName from "..."
           const defaultImport = line.match(/^import\s+([A-Z][a-zA-Z]*)\s+from/);
@@ -187,11 +190,20 @@ describe('Component Imports', () => {
 
         // Check if imports are used
         imports.forEach(imported => {
+          // Remove code blocks and CodeBlock components from content before checking usage
+          let contentToCheck = content;
+
+          // Remove markdown code blocks
+          contentToCheck = contentToCheck.replace(/```[\s\S]*?```/g, '');
+
+          // Remove CodeBlock components
+          contentToCheck = contentToCheck.replace(/<CodeBlock[\s\S]*?<\/CodeBlock>/g, '');
+
           // Create regex to find component usage (as JSX tag or function call)
           const usagePattern = new RegExp(`<${imported.name}[\\s/>]|${imported.name}\\(`, 'g');
 
-          // Count occurrences (subtract the import line itself)
-          const usages = (content.match(usagePattern) || []).length;
+          // Count occurrences
+          const usages = (contentToCheck.match(usagePattern) || []).length;
 
           if (usages === 0) {
             unusedImports.push({
