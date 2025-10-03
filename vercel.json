@@ -5,7 +5,7 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "^docs[.]moralis[.]io|.*[.]vercel[.]app$"
+                    "value": "^docs[.]moralis[.]com|.*[.]vercel[.]app$"
                 }
             ],
             "destination": "/api/404"
@@ -15,5 +15,28 @@
         "api/**/*": {
             "maxDuration": 180
         }
-    }
+    },
+    "headers": [
+        {
+            "source": "/api/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                }
+            ]
+        }
+    ]
 }
