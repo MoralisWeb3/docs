@@ -33,7 +33,7 @@
 .DocSearch-Button-Key {
   background: var(--docsearch-key-background) !important;
   color: var(--docsearch-key-color) !important;
-  border: 1px solid var(--ifm-color-emphasis-400) !important;
+  border: 1px solid var(--ifm-toc-border-color) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
   height: 26px !important;
