@@ -171,39 +171,6 @@
         "rpc": {
             "comment": "RPC API overrides",
             "endpoints": {}
-        },
-        "evm-docs": {
-            "comment": "EVM Data API overrides (consolidated from legacy sections)",
-            "endpoints": {
-                "getMultipleTokenPrices": {
-                    "bodyParam": {
-                        "tokens": [
-                            {
-                                "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-                            },
-                            {
-                                "token_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-                            }
-                        ]
-                    }
-                },
-                "getHistoricalTokenHolders": {
-                    "pathParams": {
-                        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-                    },
-                    "queryParams": {
-                        "limit": 5,
-                        "fromDate": "2025-09-20T01:00:00Z",
-                        "toDate": "2025-09-20T02:00:00Z",
-                        "timeFrame": "10min"
-                    }
-                },
-                "getDateToBlock": {
-                    "queryParams": {
-                        "date": "2025-09-01T00:00:00Z"
-                    }
-                }
-            }
         }
     },
     "globalOverrides": {
