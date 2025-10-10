@@ -29079,6 +29079,58 @@
         }
       ]
     },
+    "CreateJob": {
+      "apiHost": "https://api.moralis-streams.com",
+      "method": "POST",
+      "path": "/historicalJobs/createJob",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": {
+        "required": true,
+        "type": "object",
+        "fields": [
+          {
+            "name": "chainId",
+            "type": "string",
+            "example": "string"
+          },
+          {
+            "name": "streamId",
+            "type": "string",
+            "example": "string"
+          },
+          {
+            "name": "blockFrom",
+            "type": "number",
+            "example": 0
+          },
+          {
+            "name": "blockTo",
+            "type": "number",
+            "example": 0
+          }
+        ]
+      },
+      "responses": [
+        {
+          "status": "200",
+          "description": "Ok",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string"
+              },
+              {
+                "name": "totalPartitions",
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "aptosStreamsGetAll": {
       "apiHost": "https://api.moralis-streams.com",
       "summary": "Gets all aptos streams.",
@@ -32556,20 +32608,9 @@
         },
         {
           "name": "timeFrame",
-          "description": "The timeframe",
+          "description": "The interval of the holders data",
           "required": true,
-          "type": "string",
-          "example": "1d",
-          "enum": [
-            "10min",
-            "30min",
-            "1h",
-            "4h",
-            "12h",
-            "1d",
-            "1w",
-            "1M"
-          ]
+          "type": "string"
         },
         {
           "name": "fromDate",
@@ -66280,7 +66321,7 @@
           {
             "name": "prompt",
             "type": "string",
-            "example": "What is the price of SOL today?"
+            "example": "Provide a detailed analysis of PEPE holders, is the trend bullish or bearish?"
           },
           {
             "name": "model",
