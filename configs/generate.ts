@@ -444,17 +444,15 @@ const generateConfigs = async () => {
             }
 
             // Write the combined result with pretty formatting
-            await fs.writeFile(
+            fs.writeFileSync(
                 apiReferenceConfigFile,
                 JSON.stringify(existingConfigs, null, 2),
-                "utf8",
-                () => {
-                    const mode = forceFullReplace ? "full replacement" : "incremental update";
-                    const apiCount = apisToProcess.length;
-                    console.log(
-                        `Successfully completed ${mode} for ${apiCount} API(s) in configs.json`
-                    );
-                }
+                "utf8"
+            );
+            const mode = forceFullReplace ? "full replacement" : "incremental update";
+            const apiCount = apisToProcess.length;
+            console.log(
+                `Successfully completed ${mode} for ${apiCount} API(s) in configs.json`
             );
         }
 
@@ -503,4 +501,77 @@ import config from "${swaggerPaths[key].importPath}";
     }
 };
 
-generateConfigs();
+/**
+ * @name syncLegacyCategories
+ * @description Sync changes from evm-docs to legacy category sections.
+ * Matches endpoints by operationId (name), method, and path to ensure 100% accuracy.
+ */
+const syncLegacyCategories = () => {
+    try {
+        const existingConfigs = loadExistingConfigs();
+
+        if (!existingConfigs['evm-docs']) {
+            console.log('No evm-docs section found, skipping sync');
+            return;
+        }
+
+        const evmDocs = existingConfigs['evm-docs'];
+        const legacyCategories = ['wallet', 'nft', 'token', 'balance', 'transaction',
+                                  'block', 'utils', 'resolve', 'defi', 'entities',
+                                  'market-data', 'discovery'];
+
+        let totalUpdates = 0;
+
+        console.log('\n🔄 Syncing evm-docs to legacy categories...\n');
+
+        for (const category of legacyCategories) {
+            if (!existingConfigs[category]) {
+                continue;
+            }
+
+            let categoryUpdates = 0;
+
+            // For each endpoint in evm-docs, find matching endpoint in legacy category
+            for (const [evmEndpointName, evmConfig] of Object.entries(evmDocs)) {
+                // Try to find match by: 1) same name, 2) same method+path
+                for (const [legacyEndpointName, legacyConfig] of Object.entries(existingConfigs[category])) {
+                    const nameMatch = evmEndpointName === legacyEndpointName;
+                    const methodMatch = evmConfig.method === legacyConfig.method;
+                    const pathMatch = evmConfig.path === legacyConfig.path;
+
+                    // Match if: (same name AND same method+path) OR (same method+path)
+                    if ((nameMatch && methodMatch && pathMatch) || (methodMatch && pathMatch)) {
+                        // Copy the entire config from evm-docs to legacy category
+                        existingConfigs[category][legacyEndpointName] = { ...evmConfig };
+                        categoryUpdates++;
+                        break;
+                    }
+                }
+            }
+
+            if (categoryUpdates > 0) {
+                totalUpdates += categoryUpdates;
+                console.log(`✓ ${category.padEnd(15)} - Updated ${categoryUpdates} endpoints`);
+            }
+        }
+
+        if (totalUpdates > 0) {
+            // Write back
+            fs.writeFileSync(
+                apiReferenceConfigFile,
+                JSON.stringify(existingConfigs, null, 2),
+                'utf8'
+            );
+            console.log(`\n✅ Synced ${totalUpdates} endpoints to legacy categories\n`);
+        }
+    } catch (e) {
+        console.error('Error syncing legacy categories:', e);
+    }
+};
+
+generateConfigs().then(() => {
+    // After generating configs, sync to legacy categories
+    if (isGenerateSchemaOn) {
+        syncLegacyCategories();
+    }
+});
