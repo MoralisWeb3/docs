@@ -31,7 +31,19 @@ const EmbeddedChart = ({ chartConfig }: { chartConfig: WgetForm }) => {
     useEffect(() => {
         const loadWidget = () => {
             if (typeof window.createMyWidget === "function") {
-                window.createMyWidget(PRICE_CHART_ID, chartConfig);
+                // Filter config to only include the relevant address type
+                const filteredConfig = { ...chartConfig };
+
+                // Remove the address property that's not being used
+                if (chartConfig.toggleAddressType) {
+                    // Token address mode - remove pair address
+                    delete filteredConfig.pairAddress;
+                } else {
+                    // Pair address mode - remove token address
+                    delete filteredConfig.tokenAddress;
+                }
+
+                window.createMyWidget(PRICE_CHART_ID, filteredConfig);
             }
         };
 
