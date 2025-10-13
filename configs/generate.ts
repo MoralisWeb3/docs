@@ -72,7 +72,7 @@ const translateSchemaReference = (schemaRef) => {
                         example,
                         ...(items && items?.$ref
                             ? // If there are more arrays within the child, do recursion
-                              translateSchemaReference(items?.$ref)
+                              { field: translateSchemaReference(items?.$ref) }
                             : { field: items }),
                     };
                 } else if (type === "object" && !items) {
@@ -535,14 +535,18 @@ const syncLegacyCategories = () => {
             for (const [evmEndpointName, evmConfig] of Object.entries(evmDocs)) {
                 // Try to find match by: 1) same name, 2) same method+path
                 for (const [legacyEndpointName, legacyConfig] of Object.entries(existingConfigs[category])) {
+                    // Type cast to any to avoid TypeScript errors
+                    const evmCfg = evmConfig as any;
+                    const legacyCfg = legacyConfig as any;
+
                     const nameMatch = evmEndpointName === legacyEndpointName;
-                    const methodMatch = evmConfig.method === legacyConfig.method;
-                    const pathMatch = evmConfig.path === legacyConfig.path;
+                    const methodMatch = evmCfg.method === legacyCfg.method;
+                    const pathMatch = evmCfg.path === legacyCfg.path;
 
                     // Match if: (same name AND same method+path) OR (same method+path)
                     if ((nameMatch && methodMatch && pathMatch) || (methodMatch && pathMatch)) {
                         // Copy the entire config from evm-docs to legacy category
-                        existingConfigs[category][legacyEndpointName] = { ...evmConfig };
+                        existingConfigs[category][legacyEndpointName] = { ...evmCfg };
                         categoryUpdates++;
                         break;
                     }
