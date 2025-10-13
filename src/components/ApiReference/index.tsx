@@ -224,7 +224,7 @@ const ApiReference = ({
                         [
                             hostUrl,
                             pathReplace,
-                            qs.stringify(values.query || {}, { addQueryPrefix: true }),
+                            qs.stringify(filterOutEmpty(values.query) || {}, { addQueryPrefix: true }),
                         ].join(""),
                         {
                             method,
@@ -270,7 +270,7 @@ const ApiReference = ({
                             path: pathReplace,
                             method,
                             headers: proxyHeaders,
-                            query: values.query || {},
+                            query: filterOutEmpty(values.query) || {},
                             body:
                                 // temporary fix for runContractFunction
                                 path === "/:address/function"

@@ -209,17 +209,22 @@ export const filterOutEmpty = (value: any) => {
     if (value?.message) value = { ...value, message: value.message.replaceAll("\\n", "\n") };
 
     if (Array.isArray(value)) {
-        const cleanArray = value.map((item) => filterOutEmpty(item)).filter((item) => item != null);
+        const cleanArray = value.map((item) => filterOutEmpty(item)).filter((item) => item != null && item !== "");
         return cleanArray.length === 0 ? undefined : cleanArray;
     }
 
     if (isPlainObject(value)) {
         const cleanObject = Object.entries(value)?.reduce((obj, [key, value]) => {
             const cleanValue = filterOutEmpty(value);
-            return cleanValue == null ? obj : { ...obj, [key]: cleanValue };
+            return cleanValue == null || cleanValue === "" ? obj : { ...obj, [key]: cleanValue };
         }, {});
 
         return Object.keys(cleanObject).length === 0 ? undefined : cleanObject;
+    }
+
+    // Filter out empty strings at the primitive level
+    if (value === "") {
+        return undefined;
     }
 
     return value;
@@ -463,7 +468,7 @@ const objectToQueryParams = (params) => {
                     value = "YOUR_API_KEY";
                 }
 
-                if (value !== null && value !== undefined) {
+                if (value !== null && value !== undefined && value !== "") {
                     const serializedValue =
                         typeof value === "object"
                             ? JSON.stringify(value)
@@ -555,7 +560,7 @@ const ApiExamples = ({
                                                   return path;
                                               }
                                           })(),
-                                          qs.stringify(values.query || {}, {
+                                          qs.stringify(filterOutEmpty(values.query) || {}, {
                                               addQueryPrefix: true,
                                           }),
                                       ].join(""),
