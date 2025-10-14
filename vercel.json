@@ -1,16 +1,4 @@
 {
-    "rewrites": [
-        {
-            "source": "/:path*{/}?",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "^docs[.]moralis[.]io|.*[.]vercel[.]app$"
-                }
-            ],
-            "destination": "/api/404"
-        }
-    ],
     "functions": {
         "api/**/*": {
             "maxDuration": 180
