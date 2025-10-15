@@ -2269,6 +2269,7 @@
           "name": "entityId",
           "description": "",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -2316,6 +2317,7 @@
           "name": "categoryId",
           "description": "The category Id",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -2432,6 +2434,7 @@
           "name": "query",
           "description": "The search query",
           "required": true,
+          "example": "Doge",
           "type": "string"
         },
         {
@@ -8816,6 +8819,7 @@
           "name": "token_id",
           "description": "The token id of the NFT collection",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -12309,7 +12313,8 @@
           "required": true,
           "type": "array",
           "field": {
-            "type": "string"
+            "type": "string",
+            "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0"
           }
         }
       ],
@@ -15375,6 +15380,7 @@
           "name": "categoryId",
           "description": "The category id",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -21683,7 +21689,7 @@
         {
           "name": "date",
           "description": "Unix date in milliseconds or a datestring (format in seconds or datestring accepted by momentjs)",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -21960,6 +21966,7 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
+          "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
           "type": "string"
         }
       ],
@@ -46427,6 +46434,7 @@
           "name": "token_id",
           "description": "The token id of the NFT collection",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -48874,7 +48882,8 @@
           "required": true,
           "type": "array",
           "field": {
-            "type": "string"
+            "type": "string",
+            "example": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0"
           }
         }
       ],
@@ -53570,7 +53579,7 @@
         {
           "name": "date",
           "description": "Unix date in milliseconds or a datestring (format in seconds or datestring accepted by momentjs)",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -53633,6 +53642,7 @@
           "name": "address",
           "description": "The address of the contract",
           "required": true,
+          "example": "0xdac17f958d2ee523a2206206994597c13d831ec7",
           "type": "string"
         }
       ],
@@ -56085,131 +56095,6 @@
         }
       ]
     },
-    "getBlockStats": {
-      "apiHost": "https://deep-index.moralis.io/api/v2.2",
-      "summary": "Get summary stats by block",
-      "description": "Get the stats for a block",
-      "method": "GET",
-      "path": "/block/:block_number_or_hash/stats",
-      "pathParams": [
-        {
-          "name": "block_number_or_hash",
-          "description": "The block number or hash",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "queryParams": [
-        {
-          "name": "chain",
-          "description": "The chain to query",
-          "required": false,
-          "example": "eth",
-          "type": "string",
-          "enum": [
-            "eth",
-            "0x1",
-            "sepolia",
-            "0xaa36a7",
-            "polygon",
-            "0x89",
-            "bsc",
-            "0x38",
-            "bsc testnet",
-            "0x61",
-            "avalanche",
-            "0xa86a",
-            "fantom",
-            "0xfa",
-            "cronos",
-            "0x19",
-            "arbitrum",
-            "0xa4b1",
-            "chiliz",
-            "0x15b38",
-            "chiliz testnet",
-            "0x15b32",
-            "gnosis",
-            "0x64",
-            "gnosis testnet",
-            "0x27d8",
-            "base",
-            "0x2105",
-            "base sepolia",
-            "0x14a34",
-            "optimism",
-            "0xa",
-            "holesky",
-            "0x4268",
-            "polygon amoy",
-            "0x13882",
-            "linea",
-            "0xe708",
-            "moonbeam",
-            "0x504",
-            "moonriver",
-            "0x505",
-            "moonbase",
-            "0x507",
-            "linea sepolia",
-            "0xe705",
-            "flow",
-            "0x2eb",
-            "flow-testnet",
-            "0x221",
-            "ronin",
-            "0x7e4",
-            "ronin-testnet",
-            "0x7e5",
-            "lisk",
-            "0x46f",
-            "lisk-sepolia",
-            "0x106a",
-            "pulse",
-            "0x171",
-            "sei",
-            "0x531"
-          ]
-        }
-      ],
-      "responses": [
-        {
-          "status": "200",
-          "description": "Returns the stats for the block.",
-          "body": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "transactions",
-                "type": "object",
-                "description": "Transaction stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of transactions made in a block",
-                    "example": "7"
-                  }
-                ]
-              },
-              {
-                "name": "nft_transfers",
-                "type": "object",
-                "description": "NFT transfer stats",
-                "fields": [
-                  {
-                    "name": "total",
-                    "type": "string",
-                    "description": "The number of NFT transfers made in a block",
-                    "example": "0"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    },
     "getFilteredTokens": {
       "apiHost": "https://deep-index.moralis.io/api/v2.2",
       "summary": "Returns a list of tokens that match the specified filters and criteria",
@@ -57856,7 +57741,8 @@
         {
           "name": "query",
           "description": "The query to search",
-          "required": false,
+          "required": true,
+          "example": "pepe",
           "type": "string"
         },
         {
@@ -57904,6 +57790,7 @@
           "name": "query",
           "description": "The search query",
           "required": true,
+          "example": "Doge",
           "type": "string"
         },
         {
@@ -57975,6 +57862,7 @@
           "name": "entityId",
           "description": "",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -58076,6 +57964,7 @@
           "name": "categoryId",
           "description": "The category Id",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],
@@ -61233,6 +61122,7 @@
           "name": "categoryId",
           "description": "The category id",
           "required": true,
+          "example": "1",
           "type": "string"
         }
       ],

@@ -1597,6 +1597,40 @@ const chainData = [
             reason: "Unsupported",
         },
     },
+    {
+        name: "Sei",
+        logo: "/img/content/sei.webp",
+        type: "Mainnet",
+        chainID: "0x531 (1329)",
+        isNew: true,
+        evmApi: {
+            supported: true,
+            walletApi: true,
+            nftApi: true,
+            tokenApi: true,
+            defiApi: true,
+            entityApi: true,
+            blockchainApi: true,
+            pnlApi: false,
+            tokenPrices: true,
+            internalTxs: true,
+            nftTrades: true,
+            nftPrices: true,
+            nftFloorPrices: true,
+            queryParams: ["sei", "0x531"],
+        },
+        streamsApi: {
+            supported: false,
+            internalTxs: false,
+        },
+        rpcNodes: {
+            supported: false,
+            urls: [],
+        },
+        authApi: {
+            supported: false,
+        },
+    },
 ] as const;
 
 export default chainData;

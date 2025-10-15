@@ -1285,6 +1285,18 @@ li.dropdown-divider {
   vertical-align: middle;
 }
 
+.menu__link[href$="sei"]::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/MoralisWeb3/docs/main/static/img/content/sei.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 /* Ethereum */
 .menu__link[href$="ethereum-json-rpc-api"]::before {
   content: "";
