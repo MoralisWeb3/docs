@@ -121,8 +121,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 <ul>
   <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Fantom</a></li>
   <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Fantom</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Fantom</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Fantom</a></li>
   <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Fantom</a></li>
 </ul>
 

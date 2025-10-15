@@ -88,8 +88,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 <ul>
   <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Pulsechain</a></li>
   <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Pulsechain</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Pulsechain</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Pulsechain</a></li>
   <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Pulsechain</a></li>
 </ul>
 

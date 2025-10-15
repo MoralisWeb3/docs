@@ -123,8 +123,6 @@ The Blockchain API gives access to blockchain-level data such as blocks, transac
 <ul>
   <li><a href="/web3-data-api/evm/reference#get-blocks">Get Blocks on Ethereum</a></li>
   <li><a href="/web3-data-api/evm/reference#get-transactions">Get Transactions on Ethereum</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-logs">Get Logs on Ethereum</a></li>
-  <li><a href="/web3-data-api/evm/reference#get-stats">Get Stats on Ethereum</a></li>
   <li><a href="/web3-data-api/evm/reference#get-latest-block-number">Get Latest Block Number on Ethereum</a></li>
 </ul>
 
