@@ -1631,6 +1631,40 @@ const chainData = [
             supported: false,
         },
     },
+    {
+        name: "Sei Testnet",
+        logo: "/img/content/sei.webp",
+        type: "Testnet",
+        chainID: "0x530 (1328)",
+        isNew: true,
+        evmApi: {
+            supported: true,
+            walletApi: true,
+            nftApi: true,
+            tokenApi: true,
+            defiApi: true,
+            entityApi: true,
+            blockchainApi: true,
+            pnlApi: false,
+            tokenPrices: false,
+            internalTxs: true,
+            nftTrades: false,
+            nftPrices: false,
+            nftFloorPrices: false,
+            queryParams: ["sei-testnet", "0x530"],
+        },
+        streamsApi: {
+            supported: false,
+            internalTxs: false,
+        },
+        rpcNodes: {
+            supported: false,
+            urls: [],
+        },
+        authApi: {
+            supported: false,
+        },
+    },
 ] as const;
 
 export default chainData;

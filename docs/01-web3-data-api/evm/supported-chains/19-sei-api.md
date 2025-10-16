@@ -13,15 +13,17 @@ Sei is a high-performance Layer 1 blockchain optimized for trading and DeFi appl
 
 ## Supported Networks
 
-The Web3 Data API is available for the following Sei network:
+The Web3 Data API is available for the following Sei networks:
 
-**Sei Mainnet**
+1. **Sei Mainnet**
+2. **Sei Testnet**
 
 ## Network Details
 
 | Network | Chain ID |
 | ---- | ---- |
 | **Sei Mainnet** | 0x531 (1329) |
+| **Sei Testnet** | 0x530 (1328) |
 
 ## Supported APIs
 
