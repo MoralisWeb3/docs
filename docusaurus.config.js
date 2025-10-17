@@ -14,7 +14,7 @@ const config = {
     baseUrl: "/",
     onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "throw",
-    favicon: "img/favicon.ico",
+    favicon: "img/moralis-icon.svg",
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
@@ -143,12 +143,12 @@ const config = {
                 hideOnScroll: false,
                 logo: {
                     alt: "Moralis Logo",
-                    src: "img/logo.svg",
-                    srcDark: "img/logo-dark.svg",
+                    src: "img/moralis-logo.png",
+                    srcDark: "img/moralis-logo-dark.png",
                     href: "/",
                     target: "_self",
                     height: "32",
-                    width: "133",
+                    width: "192",
                 },
                 items: [
                     {
@@ -286,12 +286,12 @@ const config = {
             footer: {
                 logo: {
                     alt: "Moralis Logo",
-                    src: "img/logo.svg",
-                    srcDark: "img/logo-dark.svg",
+                    src: "img/moralis-logo.png",
+                    srcDark: "img/moralis-logo.png",
                     href: "/",
                     target: "_self",
                     height: "32",
-                    width: "133",
+                    width: "192",
                 },
                 links: [
                     {

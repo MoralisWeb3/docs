@@ -1555,12 +1555,6 @@ li.dropdown-divider {
   vertical-align: middle;
 }
 
-.navbar__logo img {
-  height: 3rem;
-  width: 13rem;
-  margin-top: -10px;
-}
-
 /* Web3Data APIs table styles */
 .supported-web3data-apis-table {
   width: 100%;

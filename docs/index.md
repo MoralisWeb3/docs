@@ -16,7 +16,7 @@ import SearchBar from "@site/src/theme/SearchBar";
 
 <div id="home">
     <div className="intro">
-        <h1>Moralis Web3 Docs</h1>
+        <h1>Moralis Docs</h1>
         <p>Build with ease across 30+ chains with our API references, guides, and tutorials.</p>
         <SearchBar />
         <div className="popular-searches">
