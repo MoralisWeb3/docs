@@ -1,9 +1,6 @@
 import React from "react";
 import SearchBar from "@theme/SearchBar";
 import NavbarSearch from "@theme/Navbar/Search";
-import ChatGPT from "@site/src/components/ChatGPT";
-import ChatGPTBot from "@site/src/components/ChatGPTBot";
-import AssistantBot from "@site/src/components/AssistantBot";
 
 export default function SearchNavbarItem({ mobile, className }) {
     if (mobile) {
@@ -21,9 +18,6 @@ export default function SearchNavbarItem({ mobile, className }) {
                     }}
                 >
                     <SearchBar />
-                    {/* <ChatGPT /> */}
-                    {/* <ChatGPTBot /> */}
-                    {/* <AssistantBot /> */}
                 </div>
             </NavbarSearch>
         </>
