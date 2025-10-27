@@ -14,8 +14,7 @@ Pump.fun is one of the most popular platforms on Solana for creating and trading
 
 To see a complete walkthrough of retrieving Pump.fun token data using Moralis' Solana APIs, check out the video tutorial below:
 
-[![Watch the video](https://img.youtube.com/vi/pHuqtseaxj8/0.jpg)](https://www.youtube.com/watch?v=pHuqtseaxj8)
-
+[![YouTube Tutorial](https://img.youtube.com/vi/pHuqtseaxj8/maxresdefault.jpg)](https://youtu.be/pHuqtseaxj8)
 ## What You Can Retrieve
 
 Moralis provides extensive support for Pump.fun token data, allowing developers to fetch:
