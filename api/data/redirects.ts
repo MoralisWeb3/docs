@@ -5,7 +5,11 @@ type Redirect = {
 };
 
 export const redirects: Redirect[] = [
-    { source: "/undefined", destination: "/", permanent: true },
+    {
+        source: "/undefined",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/web3-data-api/evm/token-api/supported-dexs-defi-api",
         destination: "/web3-data-api/evm/supported-dexs-token-api",
@@ -31,8 +35,16 @@ export const redirects: Redirect[] = [
         destination: "/authentication-api/how-to-sign-in-with-magiclink",
         permanent: true,
     },
-    { source: "/page/undefined", destination: "/", permanent: true },
-    { source: "/docs/undefined", destination: "/", permanent: true },
+    {
+        source: "/page/undefined",
+        destination: "/",
+        permanent: true,
+    },
+    {
+        source: "/docs/undefined",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/docs/nextjs-nft-gated-website",
         destination: "/guides/token-gating-website-nextjs",
@@ -88,7 +100,11 @@ export const redirects: Redirect[] = [
         destination: "/authentication-api/how-to-sign-in-with-metamask-angular",
         permanent: true,
     },
-    { source: "/docs/overview", destination: "/", permanent: true },
+    {
+        source: "/docs/overview",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/docs/quickstart",
         destination: "/web3-data-api/evm/get-your-api-key",
@@ -1340,11 +1356,6 @@ export const redirects: Redirect[] = [
         permanent: true,
     },
     {
-        source: "/reference/gettokenallowance",
-        destination: "",
-        permanent: true,
-    },
-    {
         source: "/reference/gettokenprice",
         destination: "/web3-data-api/evm/reference/get-token-price",
         permanent: true,
@@ -1595,7 +1606,11 @@ export const redirects: Redirect[] = [
         destination: "/authentication-api/how-to-sign-in-with-metamask-python-django",
         permanent: true,
     },
-    { source: "/docs/", destination: "/", permanent: true },
+    {
+        source: "/docs/",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/api-response",
         destination: "/web3-data-api/evm/reference/api-response",
@@ -1746,7 +1761,11 @@ export const redirects: Redirect[] = [
         destination: "/streams-api",
         permanent: true,
     },
-    { source: "/reference/undefined", destination: "/", permanent: true },
+    {
+        source: "/reference/undefined",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/docs/using-unity-aws-gamesparks",
         destination: "/authentication-api/integrations/amazon-gamesparks-integration-with-unity",
@@ -2404,7 +2423,11 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm/reference/get-contract-logs",
         permanent: true,
     },
-    { source: "/introduction/re", destination: "/", permanent: true },
+    {
+        source: "/introduction/re",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/endpoints-8",
         destination: "/web3-data-api/evm/reference/endpoint-weights",
@@ -3051,7 +3074,11 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm/reference/get-wallet-token-balances",
         permanent: true,
     },
-    { source: "/page/🔗", destination: "/", permanent: true },
+    {
+        source: "/page/🔗",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/moralis-server/web3-sdk/supported-chains",
         destination: "/web3-data-api/evm",
@@ -3228,7 +3255,11 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm/getting-started/",
         permanent: true,
     },
-    { source: "/introduction/readme", destination: "/", permanent: true },
+    {
+        source: "/introduction/readme",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/contract-1",
         destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
@@ -3274,7 +3305,11 @@ export const redirects: Redirect[] = [
         destination: "/streams-api/reference/get-stats",
         permanent: true,
     },
-    { source: "/docs/our-products", destination: "/", permanent: true },
+    {
+        source: "/docs/our-products",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/getnfttransfersfromtoblock-1",
         destination: "/web3-data-api/evm/reference/get-nft-transfers-from-to-block",
@@ -3582,7 +3617,11 @@ export const redirects: Redirect[] = [
         destination: "/authentication-api/reference/overview",
         permanent: true,
     },
-    { source: "/docs", destination: "/", permanent: true },
+    {
+        source: "/docs",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/docs/how-streams-api-works",
         destination: "/streams-api",
@@ -3713,8 +3752,11 @@ export const redirects: Redirect[] = [
         destination: "/changelog/block-filtering-added-to-getnftcontracttransfers-%EF%B8%8F",
         permanent: false,
     },
-
-    { source: "/i", destination: "/", permanent: true },
+    {
+        source: "/i",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/getportfolio",
         destination: "/web3-data-api/solana/reference/get-sol-portfolio",
@@ -3870,7 +3912,11 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm/reference/get-nft-trades",
         permanent: true,
     },
-    { source: "/functions/", destination: "/", permanent: true },
+    {
+        source: "/functions/",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/moralis-server/solana-sdk/nft",
         destination: "/web3-data-api/solana/reference/get-sol-nfts",
@@ -3916,7 +3962,11 @@ export const redirects: Redirect[] = [
         destination: "/",
         permanent: true,
     },
-    { source: "/hosting", destination: "/", permanent: true },
+    {
+        source: "/hosting",
+        destination: "/",
+        permanent: true,
+    },
     {
         source: "/reference/utils-1",
         destination: "/2.0/web3-data-api/evm/reference/run-contract-function",
@@ -4340,7 +4390,6 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm/reference/get-wallet-transactions",
         permanent: true,
     },
-
     {
         source: "/reference/get-metadata-1",
         destination: "/web3-data-api/evm/reference/get-nft-metadata",
@@ -4438,7 +4487,6 @@ export const redirects: Redirect[] = [
         destination: "https://v1docs.moralis.io/moralis-dapp/automatic-transaction-sync",
         permanent: true,
     },
-
     {
         source: "/docs/using-aw...",
         destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs#aws-setup",
@@ -4495,7 +4543,6 @@ export const redirects: Redirect[] = [
         destination: "/authentication-api/integrations/google-cloud-nodejs-unity",
         permanent: true,
     },
-
     {
         source: "/docs/introduction",
         destination: "/web3-data-api/evm",
@@ -4513,13 +4560,11 @@ export const redirects: Redirect[] = [
             "/streams-api/how-to-listen-to-all-erc20-contract-transfers-over-certain-amount-sent-by-specific-address",
         permanent: true,
     },
-
     {
         source: "/docs/sign-in-with-metamask-dot-net",
         destination: "/authentication-api/how-to-sign-in-with-metamask-csharp-dot-net",
         permanent: true,
     },
-
     {
         source: "/moralis-dapp/",
         destination: "https://v1docs.moralis.io/moralis-dapp/getting-started/create-a-moralis-dapp",
@@ -4970,7 +5015,6 @@ export const redirects: Redirect[] = [
         destination: "/web3-data-api/evm#supported-chains",
         permanent: true,
     },
-
     {
         source: "/reference/challenge-1",
         destination: "/authentication-api/reference/request-challenge-evm",
@@ -5345,38 +5389,13 @@ export const redirects: Redirect[] = [
         permanent: true,
     },
     {
-        source: "/web3-data-api/evm/nft-api",
-        destination: "/web3-data-api/evm/nft-api",
-        permanent: true,
-    },
-    {
         source: "/web3-data-api/getting-started",
         destination: "/web3-data-api/evm/getting-started",
         permanent: true,
     },
     {
-        source: "/web3-data-api/evm/get-your-api-key",
-        destination: "/web3-data-api/evm/get-your-api-key",
-        permanent: true,
-    },
-    {
         source: "/web3-data-api/moralis-sdk",
         destination: "/web3-data-api/evm/moralis-sdk",
-        permanent: true,
-    },
-    {
-        source: "/web3-data-api/evm/quickstart-angular",
-        destination: "/web3-data-api/evm/quickstart-angular",
-        permanent: true,
-    },
-    {
-        source: "/web3-data-api/evm/quickstart-nextjs",
-        destination: "/web3-data-api/evm/quickstart-nextjs",
-        permanent: true,
-    },
-    {
-        source: "/web3-data-api/evm/quickstart-nodejs",
-        destination: "/web3-data-api/evm/quickstart-nodejs",
         permanent: true,
     },
     {
@@ -5483,11 +5502,6 @@ export const redirects: Redirect[] = [
         permanent: true,
     },
     {
-        source: "/web3-data-api/evm/reference/get-wallet-nfts",
-        destination: "/web3-data-api/evm/reference/get-wallet-nfts",
-        permanent: true,
-    },
-    {
         source: "/web3-data-api/reference/get-contract-nfts",
         destination: "/web3-data-api/evm/reference/get-contract-nfts",
         permanent: true,
@@ -5525,11 +5539,6 @@ export const redirects: Redirect[] = [
     {
         source: "/web3-data-api/reference/get-wallet-nft-collections",
         destination: "/web3-data-api/evm/reference/get-wallet-nft-collections",
-        permanent: true,
-    },
-    {
-        source: "/web3-data-api/evm/reference/get-nft-contract-metadata",
-        destination: "/web3-data-api/evm/reference/get-nft-contract-metadata",
         permanent: true,
     },
     {
@@ -5670,11 +5679,6 @@ export const redirects: Redirect[] = [
     {
         source: "/web3-data-api/reference/resolve-address",
         destination: "/web3-data-api/evm/reference/wallet-api/resolve-address",
-        permanent: true,
-    },
-    {
-        source: "/web3-data-api/reference/get-token-allowance",
-        destination: "",
         permanent: true,
     },
     {
