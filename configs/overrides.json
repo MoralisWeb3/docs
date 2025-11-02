@@ -30,6 +30,39 @@
                         "toDate": "2025-09-20T02:00:00Z",
                         "timeFrame": "10min"
                     }
+                },
+                "getNewTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "tama.meme"
+                    },
+                    "queryParams": {
+                        "chain": "ronin"
+                    }
+                },
+                "getBondingTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "tama.meme"
+                    },
+                    "queryParams": {
+                        "chain": "ronin"
+                    }
+                },
+                "getGraduatedTokensByExchange": {
+                    "pathParams": {
+                        "exchange": "tama.meme"
+                    },
+                    "queryParams": {
+                        "chain": "ronin"
+                    }
+                },
+                "getTokenBondingStatus": {
+                    "pathParams": {
+                        "exchange": "tama.meme",
+                        "address": "0x928be0448f1fb8a511c74e6dc8b0dae6ded1f799"
+                    },
+                    "queryParams": {
+                        "chain": "ronin"
+                    }
                 }
             }
         },
