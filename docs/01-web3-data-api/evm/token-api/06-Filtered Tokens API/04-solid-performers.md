@@ -282,7 +282,7 @@ Look for these patterns in the response:
     { "metric": "tokenAge", "gt": 180 },
     { "metric": "totalHolders", "gt": 5000 },
     { "metric": "marketCap", "gt": 50000000 },
-    { "metric": "holderSupplyPercentTop10", "lt": 50 }
+    { "metric": "totalLiquidityUsd", "gt": 100000 }
   ]
 }
 ```

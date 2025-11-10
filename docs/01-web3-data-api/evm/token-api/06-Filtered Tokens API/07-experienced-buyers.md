@@ -116,15 +116,15 @@ Track sustained experienced buyer interest:
       "gt": 100
     },
     {
-      "metric": "holdersWhale",
-      "gt": 5
+      "metric": "totalHolders",
+      "gt": 1000
     }
   ],
   "metricsToReturn": [
     "experiencedBuyers",
     "experiencedSellers",
     "netExperiencedBuyers",
-    "holdersWhale",
+    "totalHolders",
     "volumeUsd"
   ],
   "timeFramesToReturn": ["oneDay", "oneWeek"]
@@ -135,7 +135,7 @@ Track sustained experienced buyer interest:
 
 - High experienced buyers over longer periods
 - Low experienced sellers (holding, not flipping)
-- Whale participation increasing
+- Growing holder base
 - Consistent volume
 
 ## Early Smart Money
@@ -236,7 +236,7 @@ Smart money patterns to recognize:
   "buyers": {
     "oneDay": 2500
   },
-  "holdersWhale": 8.5,
+  "totalHolders": 125000,
   "marketCap": 1250000000
 }
 ```
@@ -245,7 +245,7 @@ Smart money patterns to recognize:
 
 - High ratio of experienced to total buyers
 - Positive net experienced buyers
-- Growing whale percentage
+- Growing holder base
 - Price stability or gradual increase
 
 ## Smart Money Strategies
@@ -263,7 +263,7 @@ Smart money patterns to recognize:
   "filters": [
     { "metric": "securityScore", "gt": 85 },
     { "metric": "experiencedBuyers", "timeFrame": "oneWeek", "gt": 100 },
-    { "metric": "holderSupplyPercentTop10", "lt": 70 }
+    { "metric": "totalLiquidityUsd", "gt": 100000 }
   ]
 }
 ```

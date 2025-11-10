@@ -55,8 +55,6 @@ Query tokens across these blockchains:
 - `totalHolders` - Current holder count
 - `securityScore` - Token security (0-100)
 - `tokenAge` - Days since creation
-- Holder distribution: `holdersWhale`, `holdersShark`, etc.
-- Holder supply concentration: `holderSupplyPercentTop10`, etc.
 - Acquisition methods: `holdersBySwap`, `holdersByTransfer`, `holdersByAirdrop`
 
 ## Time Frames
@@ -142,7 +140,7 @@ X-API-Key: YOUR_API_KEY
 ## Data Updates
 
 - Most metrics update every 10 seconds
-- Holder distribution metrics may have up to 5-minute delay for very active tokens
+- Acquisition metrics may have up to 5-minute delay for very active tokens
 
 ## Common Use Cases
 

@@ -245,7 +245,7 @@ High-risk token characteristics:
   },
   "totalHolders": 850,
   "securityScore": 45,
-  "holderSupplyPercentTop10": 65
+  "totalLiquidityUsd": 15000
 }
 ```
 

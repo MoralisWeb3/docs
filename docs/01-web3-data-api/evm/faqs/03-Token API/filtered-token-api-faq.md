@@ -64,11 +64,6 @@ The API supports major blockchain networks:
 - `netBuyers` - Net buyer flow (time-based)
 - `experiencedBuyers` / `experiencedSellers` - Experienced trader activity (time-based)
 
-**Distribution Metrics:**
-
-- `holdersWhale`, `holdersShark`, `holdersDolphin`, `holdersFish`, `holdersOctopus`, `holdersCrab`, `holdersShrimp` - Holder size distribution
-- `holderSupplyPercentTop10` through `holderSupplyPercentTop500` - Supply concentration
-
 **Acquisition Metrics:**
 
 - `holdersBySwap` - % acquired via DEX
@@ -135,10 +130,9 @@ Look for tokens with high small holder percentages:
 ```json
 {
   "filters": [
-    { "metric": "holdersShrimp", "gt": 60 },
-    { "metric": "holdersCrab", "gt": 20 },
-    { "metric": "holdersWhale", "lt": 5 },
-    { "metric": "holderSupplyPercentTop10", "lt": 30 }
+    { "metric": "totalHolders", "timeFrame": "oneWeek", "gt": 100 },
+    { "metric": "buyers", "timeFrame": "oneDay", "gt": 50 },
+    { "metric": "securityScore", "gt": 70 }
   ]
 }
 ```
@@ -196,9 +190,7 @@ Filters use AND logic - all conditions must be met:
 
 Yes, use these to get multiple related metrics at once:
 
-- `holderDistribution` - Returns all holder size percentages
 - `holderAcquisition` - Returns all acquisition method percentages
-- `holderSupply` - Returns all top holder supply percentages
 
 ## Best Practices
 
@@ -261,7 +253,7 @@ For most queries, include these safety filters:
 ```json
 {
   "filters": [
-    { "metric": "holdersWhale", "gt": 20 },
+    { "metric": "marketCap", "gt": 1000000 },
     { "metric": "holders", "timeFrame": "oneWeek", "gt": 100 },
     { "metric": "volumeUsd", "timeFrame": "oneWeek", "gt": 1000000 }
   ]
@@ -272,7 +264,7 @@ For most queries, include these safety filters:
 
 ### Why am I getting timeFrame errors?
 
-Ensure you're only using timeFrame with time-based metrics. Snapshot metrics like `marketCap`, `totalHolders`, and holder distribution metrics don't support timeFrame.
+Ensure you're only using timeFrame with time-based metrics. Snapshot metrics like `marketCap`, `totalHolders`, and acquisition metrics don't support timeFrame.
 
 ### Why are some tokens missing logos?
 
@@ -299,7 +291,7 @@ This happens when:
 ### How often is data updated?
 
 - Most metrics update every 10 seconds
-- Holder distribution and acquisition metrics may have up to 5-minute delays for highly active tokens
+- Acquisition metrics may have up to 5-minute delays for highly active tokens
 - Price and volume data are near real-time
 
 ### What about historical data?

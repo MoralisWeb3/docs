@@ -175,8 +175,8 @@ Search for blue chips across major chains:
       "gt": 180
     },
     {
-      "metric": "holderSupplyPercentTop10",
-      "lt": 60
+      "metric": "totalLiquidityUsd",
+      "gt": 1000000
     }
   ],
   "metricsToReturn": [
@@ -195,7 +195,7 @@ Search for blue chips across major chains:
 ### Additional Filters:
 
 - Excludes meme coins for serious investments
-- Checks holder distribution (top 10 hold < 60%)
+- Ensures sufficient liquidity for trading
 - Returns only essential metrics
 
 ## Sector-Specific Blue Chips
@@ -248,7 +248,7 @@ Typical blue chip token characteristics:
     "oneWeek": 620000000,
     "oneMonth": 2400000000
   },
-  "holderSupplyPercentTop10": 42.5,
+  "totalLiquidityUsd": 125000000,
   "usdPricePercentChange": {
     "oneDay": 2.1,
     "oneWeek": -3.4,
@@ -282,7 +282,7 @@ Key metrics to evaluate:
 {
   "filters": [
     { "metric": "securityScore", "gt": 90 },
-    { "metric": "holderSupplyPercentTop10", "lt": 50 },
+    { "metric": "totalHolders", "gt": 10000 },
     { "metric": "totalLiquidityUsd", "gt": 1000000 }
   ]
 }
