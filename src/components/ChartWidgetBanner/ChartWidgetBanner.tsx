@@ -16,7 +16,8 @@ function ChartWidgetBanner({
     // Default values
     const title = customTitle || "Need a candlestick chart for your website?";
     const text =
-        customText || "Embed our free chart widget directly on your site in just a few clicks";
+        customText ||
+        "Embed our chart widget directly on your site in just a few clicks. The widget is available for pro and business subscriptions.";
     const buttonText = customButtonText || "Embed Chart";
     const buttonLink =
         customButtonLink || "https://explorer.moralis.com/widgets/price-chart?utm_source=docs";
