@@ -8,6 +8,9 @@ import styles from "./styles.module.css";
 const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">) => {
     const arrayValues = Array.isArray(field.value) ? [...field.value] : [];
 
+    // Handle both 'field' (correct) and 'fields' (incorrect but used in config) properties
+    const arrayFieldParam = (param as any).field || (param as any).fields;
+
     return (
         <div className={styles.groupContainer}>
             {param.name && (
@@ -18,7 +21,7 @@ const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">
 
             <div className={styles.group}>
                 {arrayValues.length > 0 ? (
-                    arrayValues.map((value, index) => (
+                    arrayValues.map((_, index) => (
                         <div key={index} className={styles.field}>
                             <div className={styles.group}>
                                 <div className={styles.groupHeader}>
@@ -37,7 +40,7 @@ const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">
                                 </div>
 
                                 <ApiParamField
-                                    param={param.field}
+                                    param={arrayFieldParam}
                                     prefix={`${field.name}[${index}]`}
                                 />
                             </div>
@@ -52,7 +55,7 @@ const ApiParamArrayField = ({ param, field, form }: FieldComponentProps<"array">
                     onClick={() => {
                         form.setFieldValue(field.name, [
                             ...arrayValues,
-                            apiParamInitialValue(param.field, undefined),
+                            apiParamInitialValue(arrayFieldParam, undefined),
                         ]);
                     }}
                     className={styles.groupHeader}
