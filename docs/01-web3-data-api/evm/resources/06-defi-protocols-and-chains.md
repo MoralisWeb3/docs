@@ -25,12 +25,14 @@ This article provides a comprehensive and continually expanding list of supporte
 | Eigenlayer            | `eigenlayer`     | - Ethereum                                                                                      |
 | Etherfi\* **(new)**   | `etherfi`        | - Ethereum<br/>- Arbitrum<br/>- Base<br/>- Binance<br/>- Linea<br/>- Optimism                   |
 | FraxSwap v1           | `fraxswap-v1`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
+| Kintsu **(new)**      | `kintsu`         | - Monad                                                                                        |
 | FraxSwap v2           | `fraxswap-v2`    | - BSC<br/>- Ethereum<br/>- Polygon                                                              |
 | Lido                  | `lido`           | - Ethereum                                                                                      |
 | MakerDAO              | `makerdao`       | - Ethereum                                                                                      |
+| Neverland **(new)**   | `neverland`      | - Monad                                                                                        |
 | OKU Trade             | `okutrade`       | - Sei                                                                                           |
-| Pancakeswap v2        | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
-| Pancakeswap v3        | `pancakeswap-v3` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea                                   |
+| Pancakeswap v2        | `pancakeswap-v2` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea<br/>- Monad                       |
+| Pancakeswap v3        | `pancakeswap-v3` | - Arbitrum <br/>- Base <br/>- BSC <br/>- Ethereum<br/>- Linea<br/>- Monad                      |
 | Pendle **(new)**      | `pendle`         | - Ethereum                                                                                      |
 | QuickSwap v2          | `quickswap-v2`   | - Polygon                                                                                       |
 | QuickSwap v3          | `quickswap-v3`   | - Polygon                                                                                       |
@@ -39,8 +41,8 @@ This article provides a comprehensive and continually expanding list of supporte
 | Spark **(new)**       | `sparkfi`        | - Ethereum                                                                                      |
 | SushiSwap v2          | `sushiswap-v2`   | - Base <br/>- BSC <br/>- Ethereum <br/>- Polygon                                                |
 | Takara Lend           | `takara-lend`    | - Sei                                                                                           |
-| Uniswap v2\*\*        | `uniswap-v2`     | - Arbitrum (new)<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea (new) <br/>- Polygon        |
-| Uniswap v3            | `uniswap-v3`     | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Optimism<br/>- Polygon |
+| Uniswap v2\*\*        | `uniswap-v2`     | - Arbitrum (new)<br/>- Base <br/>- BSC <br/>- Ethereum <br/>- Linea (new) <br/>- Monad<br/>- Polygon |
+| Uniswap v3            | `uniswap-v3`     | - Arbitrum <br/>- Avalanche <br/>- Base <br/>- BSC<br/> - Ethereum<br/>- Monad<br/>- Optimism<br/>- Polygon |
 | Yei Finance           | `yei-finance`    | - Sei                                                                                           |
 
 _\*Etherfi currently only supports Staking positions. Yield positions are not yet supported._
