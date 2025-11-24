@@ -1,0 +1,1333 @@
+[
+  {
+    "endpoint": "contractsReview",
+    "type": "EVM",
+    "expected": 1,
+    "actual": 30,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "endpointWeights",
+    "type": "EVM",
+    "expected": 1,
+    "actual": 1,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getAggregatedTokenPairStats",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getAllTokenIds",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getBlock",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getBlockStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 1,
+    "matches": false,
+    "status": 410
+  },
+  {
+    "endpoint": "getBlueChipTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getBondingTokensByExchange",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getCandleSticks",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getContractEvents",
+    "type": "EVM",
+    "expected": 20,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getContractNFTs",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getContractNFTTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getDateToBlock",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getDefiPositionsByProtocol",
+    "type": "EVM",
+    "expected": 15,
+    "actual": 15,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getDefiPositionsSummary",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": "ERROR",
+    "error": "Timeout"
+  },
+  {
+    "endpoint": "getDefiSummary",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": "ERROR",
+    "error": "Timeout"
+  },
+  {
+    "endpoint": "getDiscoveryToken",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getEntitiesByCategory",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getEntity",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getEntityCategories",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getExperiencedBuyerTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getFilteredTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getGraduatedTokensByExchange",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getHistoricalTokenHolders",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getHottestNFTCollectionsByTradingVolume",
+    "type": "EVM",
+    "expected": 200,
+    "actual": 200,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getInternalTransactions",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 1,
+    "matches": false,
+    "status": 410
+  },
+  {
+    "endpoint": "getLatestBlockNumber",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getLogsByAddress",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 1,
+    "matches": false,
+    "status": 410
+  },
+  {
+    "endpoint": "getMultipleNFTs",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 50,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "getMultipleTokenAnalytics",
+    "type": "EVM",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getMultipleTokenPrices",
+    "type": "EVM",
+    "expected": "100",
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getNativeBalance",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNativeBalancesForAddresses",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getNewTokensByExchange",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getNFTBulkContractMetadata",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTByContractTraits",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 20,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTCollectionStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTContractMetadata",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getNFTContractSalePrices",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 1,
+    "matches": false,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTContractTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTFloorPriceByContract",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 202
+  },
+  {
+    "endpoint": "getNFTFloorPriceByToken",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTHistoricalFloorPriceByContract",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTLowestPrice",
+    "type": "EVM",
+    "expected": 40,
+    "actual": 40,
+    "matches": true,
+    "status": 410
+  },
+  {
+    "endpoint": "getNFTMetadata",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getNFTOwners",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTs",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTSalePrices",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTokenIdOwners",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTokenStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 1,
+    "matches": false,
+    "status": 410
+  },
+  {
+    "endpoint": "getNFTTrades",
+    "type": "EVM",
+    "expected": 40,
+    "actual": 40,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTradesByToken",
+    "type": "EVM",
+    "expected": 40,
+    "actual": 40,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTradesByWallet",
+    "type": "EVM",
+    "expected": 40,
+    "actual": 40,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTraitsByCollection",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNFTTraitsByCollectionPaginate",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 20,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getNftTransfersByBlock",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 20,
+    "matches": true,
+    "status": 410
+  },
+  {
+    "endpoint": "getNftTransfersFromToBlock",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 410
+  },
+  {
+    "endpoint": "getPairAddress",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getPairCandlesticks",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getPairReserves",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getPairStats",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getRisingLiquidityTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getRiskyBetTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getSnipersByPairAddress",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getSolidPerformanceTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getSwapsByPairAddress",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getSwapsByTokenAddress",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getSwapsByWalletAddress",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTimeSeriesTokenAnalytics",
+    "type": "EVM",
+    "expected": 200,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTimeSeriesVolume",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTimeSeriesVolumeByCategory",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenAddressTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenAllowance",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 410
+  },
+  {
+    "endpoint": "getTokenAnalytics",
+    "type": "EVM",
+    "expected": 80,
+    "actual": 80,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenBondingStatus",
+    "type": "EVM",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenHolders",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenHolderStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenIdMetadata",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 20,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenIdOwners",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenMetadata",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenMetadataBySymbol",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenOwners",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenPairs",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenPrice",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTokenTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopBuyPressureTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopERC20TokensByMarketCap",
+    "type": "EVM",
+    "expected": 200,
+    "actual": 200,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopERC20TokensByPriceMovers",
+    "type": "EVM",
+    "expected": 200,
+    "actual": 200,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopGainersTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopLosersTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopNFTCollectionsByMarketCap",
+    "type": "EVM",
+    "expected": 200,
+    "actual": 200,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTopProfitableWalletPerToken",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTransaction",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getTransactions",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTransactionsVerbose",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getTransactionVerbose",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 20,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "getTrendingTokens",
+    "type": "EVM",
+    "expected": 250,
+    "actual": 250,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getUniqueOwnersByCollection",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getVolumeStatsByCategory",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getVolumeStatsByChain",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletActiveChains",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletApprovals",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletHistory",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletNetWorth",
+    "type": "EVM",
+    "expected": 250,
+    "actual": "ERROR",
+    "matches": null,
+    "status": "ERROR",
+    "error": "Timeout"
+  },
+  {
+    "endpoint": "getWalletNFTCollections",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 20,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "getWalletNFTs",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletNFTTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletProfitability",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletProfitabilitySummary",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletStats",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTokenApprovals",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTokenBalances",
+    "type": "EVM",
+    "expected": 100,
+    "actual": 100,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTokenBalancesPrice",
+    "type": "EVM",
+    "expected": 100,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getWalletTokenIdTransfers",
+    "type": "EVM",
+    "expected": 20,
+    "actual": 20,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTokenTransfers",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTransactions",
+    "type": "EVM",
+    "expected": 30,
+    "actual": 30,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getWalletTransactionsVerbose",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "resolveAddress",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "resolveAddressToDomain",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 404
+  },
+  {
+    "endpoint": "resolveDomain",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "resolveENSDomain",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "reSyncMetadata",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 202
+  },
+  {
+    "endpoint": "resyncNFTRarity",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "resyncNFTTrait",
+    "type": "EVM",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "searchEntities",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "searchTokens",
+    "type": "EVM",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "syncNFTContract",
+    "type": "EVM",
+    "expected": 50,
+    "actual": 20,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "web3ApiVersion",
+    "type": "EVM",
+    "expected": 1,
+    "actual": 10,
+    "matches": false,
+    "status": 200
+  },
+  {
+    "endpoint": "balance",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getAggregatedTokenPairStats",
+    "type": "SOLANA",
+    "expected": 100,
+    "actual": 50,
+    "matches": false,
+    "status": 400
+  },
+  {
+    "endpoint": "getBondingTokensByExchange",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getCandleSticks",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": 150,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getFilteredTokens",
+    "type": "SOLANA",
+    "expected": 250,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getGraduatedTokensByExchange",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getHistoricalTokenHolders",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getMultipleTokenAnalytics",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getMultipleTokenPrices",
+    "type": "SOLANA",
+    "expected": 100,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getNewTokensByExchange",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTMetadata",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getNFTs",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getPairStats",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getPortfolio",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getSnipersByPairAddress",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getSPL",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getSwapsByPairAddress",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getSwapsByTokenAddress",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 200
+  },
+  {
+    "endpoint": "getSwapsByWalletAddress",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTimeSeriesTokenAnalytics",
+    "type": "SOLANA",
+    "expected": 200,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTimeSeriesVolume",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTimeSeriesVolumeByCategory",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenAnalytics",
+    "type": "SOLANA",
+    "expected": 80,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenBondingStatus",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 20,
+    "matches": false,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenHolders",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenHolderStats",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenMetadata",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenPairs",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenPairStats",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getTokenPrice",
+    "type": "SOLANA",
+    "expected": 10,
+    "actual": 10,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTokenTopHolders",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTopHolders",
+    "type": "SOLANA",
+    "expected": 50,
+    "actual": 50,
+    "matches": true,
+    "status": 400
+  },
+  {
+    "endpoint": "getTrendingTokens",
+    "type": "SOLANA",
+    "expected": 250,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getVolumeStatsByCategory",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "getVolumeStatsByChain",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  },
+  {
+    "endpoint": "searchTokens",
+    "type": "SOLANA",
+    "expected": 150,
+    "actual": "ERROR",
+    "matches": null,
+    "status": 404
+  }
+]
