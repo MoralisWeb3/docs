@@ -29,6 +29,7 @@ Simply click on a chain's name to jump to its respective section for more detail
 <li><a href="#moonbeam">Moonbeam</a></li>
 <li><a href="#ronin">Ronin</a></li>
 <li><a href="#pulsechain">PulseChain</a></li>
+<li><a href="#monad">Monad</a></li>
 </ul>
 
 :::note
@@ -173,6 +174,18 @@ Chain ID: `0x171`
 | ------------------------------- | --------------------- |
 | [PulseX](https://pulsex.com/)   | pulsex                |
 | [9 Inch](https://www.9inch.io/) | 9inch                 |
+
+### Monad
+
+Chain ID: `0x8f`
+
+| Supported DEX(s)                                 | Query Parameter Value |
+| ------------------------------------------------ | --------------------- |
+| [Uniswap v4](https://app.uniswap.org/)           | uniswapv4             |
+| [Uniswap v3](https://app.uniswap.org/)           | uniswapv3             |
+| [Uniswap v2](https://uniswap.org/)               | uniswapv2             |
+| [PancakeSwap v3](https://pancakeswap.finance/v3) | pancakeswapv3         |
+| [PancakeSwap v2](https://pancakeswap.finance/)   | pancakeswapv2         |
 
 ## Endpoints DEXs integration
 
