@@ -2,7 +2,7 @@
 title: "Streams API"
 sidebar_label: "Overview"
 slug: "/streams-api/evm"
-description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin and testnets are supported. More networks to be added soon."
+description: "Stream blockchain data into your backend via webhooks. Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Cronos, Arbitrum, Ronin, Monad and testnets are supported. More networks to be added soon."
 sidebar_position: 1
 image: "/img/content/e1ac10a-d06bbe5-Moralis-Streams-API.webp"
 sidebar_class_name: "sidebar-overview"

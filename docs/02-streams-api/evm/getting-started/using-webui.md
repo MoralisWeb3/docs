@@ -9,7 +9,7 @@ sidebar_position: 1
 
 1. Go to [http://admin.moralis.com/streams](http://admin.moralis.com/streams).
 
-2. Click on `Create a new Stream` button.
+2. Click on `Create a new Stream` b utton.
 
 ![](/img/content/streams-webui-2.png)
 

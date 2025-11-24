@@ -1665,6 +1665,44 @@ const chainData = [
             supported: false,
         },
     },
+    {
+        name: "Monad",
+        logo: "/img/content/monad.png",
+        type: "Mainnet",
+        chainID: "0x8f (143)",
+        isNew: true,
+        evmApi: {
+            supported: true,
+            walletApi: true,
+            nftApi: true,
+            tokenApi: true,
+            defiApi: true,
+            entityApi: true,
+            blockchainApi: true,
+            pnlApi: false,
+            tokenPrices: true,
+            internalTxs: true,
+            nftTrades: true,
+            nftPrices: true,
+            nftFloorPrices: false,
+            queryParams: ["monad", "0x8f"],
+        },
+        streamsApi: {
+            supported: true,
+            blockConfirmations: "100",
+            internalTxs: true,
+        },
+        rpcNodes: {
+            supported: false,
+            urls: [
+                "https://site1.moralis-nodes.com/monad/",
+                "https://site2.moralis-nodes.com/monad/",
+            ],
+        },
+        authApi: {
+            supported: true,
+        },
+    },
 ] as const;
 
 export default chainData;
