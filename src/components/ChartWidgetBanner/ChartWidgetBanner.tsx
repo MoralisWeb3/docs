@@ -46,7 +46,7 @@ function ChartWidgetBanner({
                 >
                     {title}
                 </h2>
-                <p>{text}</p>
+                <p dangerouslySetInnerHTML={{ __html: text }} />
             </div>
             <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="cta-button">
                 {buttonText}
