@@ -14,6 +14,7 @@ When adding new addresses to a stream, the system needs to reload the stream to 
 
 - **Rate Limit**: A maximum of 5 requests per 5 minutes.
 - Each request can include multiple addresses. If you need to add many addresses, it is more efficient to batch them into a single request to avoid triggering rate limits.
+- You can safely retry these requests
 
 ## Impact on Webhooks
 
