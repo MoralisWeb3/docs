@@ -122,6 +122,7 @@ This endpoint returns:
 
 ## Supported Endpoints
 Token Scores are returned as part of token metadata across the following endpoints:
+
 | Name                                  | Endpoint                    | API Reference                                                                        |
 | ------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ |
 | Get Wallet History                    | `/wallets/:address/history` | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
@@ -133,10 +134,11 @@ Token Scores are returned as part of token metadata across the following endpoin
 | Get Wallet Token Balances with Prices | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
 | Get ERC20 Metadata by Contract        | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
 | Get ERC20 Metadata by Symbol          | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |
-| Get Filtered Tokens          | `/discovery/tokens`   | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)    |
-| Token Search          | `/tokens/search`   | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
-| Get Top Gainers          | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
-| Get Top Losers          | `/discovery/tokens/top-losers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)    |
+| Get Filtered Tokens                   | `/discovery/tokens`         | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)             |
+| Token Search                          | `/tokens/search`            | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
+| Get Top Gainers                       | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
+| Get Top Losers                        | `/discovery/tokens/top-losers`    | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)    |
+
 
 ## Supported Chains
 
