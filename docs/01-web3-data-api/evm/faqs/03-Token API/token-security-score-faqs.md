@@ -6,72 +6,122 @@ sidebar_position: 3
 
 import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
-# Moralis Token Security Score
+# Moralis Token Score
 
-Our Token Security Score is a bespoke metric designed to evaluate the security of ERC-20 tokens by analyzing multiple aspects of the token's smart contract.
+The **Moralis Token Score** is a unified 0–100 rating that evaluates the onchain quality of a token using **six weighted metrics**.  
 
-This comprehensive score leverages over 35 different factors, incorporating both on-chain and off-chain data to provide a thorough assessment of a token's security. These factors range from contract vulnerabilities and audit results to transaction patterns and liquidity metrics.
+---
 
-The Token Security Score is regularly updated to ensure it reflects the most current information and trends, providing an up-to-date security assessment for users.
+## What is the Token Score?
 
-## How can the Security Score be used?
+The Token Score summarizes a token's onchain fundamentals into a single value between **0 and 100**, where:
 
-The Token Security Score plays a crucial role in safeguarding users in the crypto ecosystem. For traders, wallets, and decentralized exchanges (DEXs), displaying this score on token pages provides an immediate and transparent indicator of a token's security status, helping users make informed decisions before engaging with a token.
+- **Higher scores** indicate stronger on-chain quality  
+- **Lower scores** indicate weaker liquidity, activity, distribution, or unrealistic valuations  
 
-Additionally, the score is invaluable when receiving unknown assets, as wallets can display the score to alert users to potential risks associated with newly received tokens.
+It is designed to be:
 
-By integrating the Token Security Score into user interfaces, platforms can enhance trust and security, ultimately protecting users from engaging with potentially harmful tokens.
+- Simple to display  
+- Easy to filter and sort  
+- Transparent and easy to explain  
 
-## How is the Security Score calculated?
+---
 
-Our Token Security Score leverages over 35 distinct metrics to provide a comprehensive analysis of an ERC-20 token's security. Below are some of the key metrics used in the scoring process:
+## How is the Token Score calculated?
 
-- **Sell Tax:** This metric assesses whether a fee is applied to tokens when they are sold. High or modifiable sell taxes can indicate potential risks, such as attempts to disincentivize selling or manipulate token value.
+Each of the six metrics produces a sub-score from 0 to 100, and the final score is a weighted average. The metrics are:
 
-- **Buy Tax:** Similar to the sell tax, this metric evaluates if a fee is imposed when purchasing tokens. High buy taxes can be used to exploit buyers or fund malicious activities.
+1. **Age** - token activity across multiple timeframes  
+2. **Liquidity** - liquidity depth
+3. **FDV** - fully diluted valuation reasonableness  
+4. **Holder Supply** - distribution of supply among top holders  
+5. **Volume** - trading volume 
+6. **Activity** - transaction counts  
 
-- **Tax Modifiable:** This metric checks whether the contract allows for tax rates to be changed after deployment. The ability to modify tax rates post-deployment can be a red flag, as it may enable the contract owner to impose unexpected fees.
+---
 
-- **Mintable:** This metric determines if new tokens can be created after the contract is deployed. A mintable contract could potentially dilute token value or be used to manipulate the token supply.
+## Metrics Overview
 
-- **Honeypot:** This crucial metric identifies whether a contract might be a honeypot—a type of scam that traps users by preventing them from selling tokens after purchase. Honeypots are a serious risk in the crypto space and are a primary focus in our security assessment.
+### 1. Token Age & Maturity
+- Evaluates activity across timeframes (10m → 30d).  
+- Tokens that sustain or grow activity over longer periods receive higher scores.
 
-- **Token Percentage of Owner:** This metric measures the proportion of the total token supply that is owned by the contract owner. A high percentage suggests a centralized control, which can be risky if the owner decides to sell or manipulate the market.
+### 2. Liquidity Depth
+- Measures liquidity across all pools belonging to a token.
+- Higher liquidity generally indicates healthier and more resilient markets.
 
-- **Is Airdrop Scam:** This metric evaluates whether the token is part of a suspected airdrop scam. Airdrop scams often involve distributing worthless tokens to users, which can then be used to phish for sensitive information or trick users into buying more tokens.
+### 3. Fully Diluted Valuation (FDV)
+- Penalizes extreme or unrealistic valuations.  
+- Reasonably valued tokens receive higher FDV scores.
 
-- **Addresses Related to Honeypot:** This metric flags any addresses associated with known honeypot scams. By identifying these connections, we can assess whether a token is potentially linked to fraudulent activities.
+### 4. Holder Distribution
+- Assesses how much of the supply is concentrated in the top holders.  
+- More decentralization = higher score.
 
-- **Phishing Activities:** This metric checks for any involvement of the token's contract in phishing schemes. Tokens associated with phishing activities pose significant risks to users, and this metric helps to highlight such dangers.
+### 5. Trading Volume
+- Measures trading volume across all time windows.  
+- High volume in any timeframe positively impacts the score.
 
-These metrics, along with many others, are combined to form a holistic view of a token's security, ensuring that users are better protected from potential threats in the decentralized finance ecosystem.
+### 6. Transaction Activity
+- Measures frequency of swaps and transfers.  
+- High transaction counts indicate stronger adoption and usage.
 
-For a full comprehensive breakdown of all metrics we consider, as well as to get access to this detailed data, please contact our enterprise sales team.
+---
 
-## What criteria must a token meet to receive a security score?
+## Score Updates
 
-As soon as a token begins trading, it qualifies for analysis and will be assigned a security score based on the available data.
+- Scores are recalculated whenever a token has activity  
+- As long as trading continues, the score stays up to date  
+- If activity stops, older data decays out of the model and the score may decline  
+---
 
-Depending on the availability of data, the token will typically be scored within a few minutes of its first trade.
+## How can the Token Score be used?
 
-## How do you handle tokens with insufficient data for a security score?
+The Token Score is an informational onchain quality signal suitable for:
 
-If a supported token cannot be fully analyzed due to insufficient data, it will default to a score of `0`. For unsupported tokens, such as certain DeFi or LP tokens that are not actively traded, the security score will be displayed as `null`.
+### Wallets & Explorers
+- Displaying token quality at a glance  
+- Highlighting high-quality tokens  
+- Warning users about low-scoring assets  
 
-## Can a token’s security score change over time?
+### DEXs & Trading Interfaces
+- Supporting safer trading experiences  
+- Powering token discovery and ranking flows  
 
-Yes, a token’s security score is dynamic and can change over time. After a token is initially analyzed and assigned a score, this score remains valid for one week. After this period, the token will be re-analyzed upon its next trade. If the token is not traded for another month, it will not be re-analyzed until a new trade occurs.
+### Analytics & Discovery Tools
+- Filtering tokens by score (e.g., score ≥ 70)  
+- Sorting tokens by on-chain quality  
+- Highlighting trending or improving tokens  
 
-## Can I access a detailed breakdown of the factors contributing to a token's security score?
+### Risk & Monitoring Systems
+- Triggering alerts for sharp score drops  
+- Flagging potentially risky assets for review  
 
-Yes, users can access a comprehensive breakdown of all the metrics that contribute to a token's security score. To view this detailed data, please contact our enterprise sales team.
+> Note: The Token Score is not investment advice. It is an onchain quality indicator.
 
-## What chains are supported?
+---
 
-All mainnet chains are supported.
+## Accessing Detailed Score Data
 
-## Which endpoints are supported?
+Developers can fetch the full scoring breakdown via:
 
+```
+GET /tokens/{address}/score
+```
+
+This endpoint returns:
+
+- Final score (0–100)  
+- Sub-scores for all six metrics  
+- Raw on-chain metrics used in the calculation  
+- Timestamp of last update  
+
+> Note: This endpoint is available on **Pro plans and above**.
+
+---
+
+## Supported Endpoints
+Token Scores are returned as part of token metadata across the following endpoints:
 | Name                                  | Endpoint                    | API Reference                                                                        |
 | ------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ |
 | Get Wallet History                    | `/wallets/:address/history` | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
@@ -83,3 +133,11 @@ All mainnet chains are supported.
 | Get Wallet Token Balances with Prices | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
 | Get ERC20 Metadata by Contract        | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
 | Get ERC20 Metadata by Symbol          | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |
+| Get Filtered Tokens          | `/discovery/tokens`   | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)    |
+| Token Search          | `/tokens/search`   | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
+| Get Top Gainers          | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
+| Get Top Losers          | `/discovery/tokens/top-losers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)    |
+
+## Supported Chains
+
+The Token Score is available on all mainnet chains.
