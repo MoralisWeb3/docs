@@ -16,7 +16,7 @@ The **Moralis Token Score** is a unified 0–100 rating that evaluates the oncha
 
 The Token Score summarizes a token's onchain fundamentals into a single value between **0 and 100**, where:
 
-- **Higher scores** indicate stronger on-chain quality  
+- **Higher scores** indicate stronger onchain quality  
 - **Lower scores** indicate weaker liquidity, activity, distribution, or unrealistic valuations  
 
 It is designed to be:
@@ -68,11 +68,43 @@ Each of the six metrics produces a sub-score from 0 to 100, and the final score 
 
 ---
 
+## Dynamic Scoring
+
+The Token Score is **dynamic**, meaning it updates automatically as new onchain data becomes available. Because the model incorporates multiple rolling timeframes (10 minutes up to 1 month), a token’s score may change due to:
+
+- Increased or decreased transaction activity  
+- Shifts in liquidity  
+- Changes in trading volume  
+- Supply distribution evolving  
+- Market valuation moving significantly  
+
+Scores naturally **decay over time** if a token becomes inactive, as older datapoints fall out of the model.  
+This ensures the score always reflects **current** onchain conditions.
+
+---
+
+## Early & New Tokens
+
+Scores for very new tokens can sometimes be **volatile or appear inconsistent** in the earliest stages of trading.  
+This is expected, as the scoring model is still collecting activity patterns across its time horizons.
+
+**Key points about new-token scoring:**
+
+- Early activity is often spiky and unstable  
+- Short-term timeframes dominate the score until longer periods accumulate  
+- As data builds up, the score stabilizes and becomes more representative  
+- Tokens with genuine early adoption will quickly rise into their appropriate score range  
+
+> The model adapts rapidly to real onchain traction — tokens with strong fundamentals will see their scores normalize within a short timeframe.
+
+---
+
 ## Score Updates
 
 - Scores are recalculated whenever a token has activity  
 - As long as trading continues, the score stays up to date  
-- If activity stops, older data decays out of the model and the score may decline  
+- If activity stops, older data decays out of the model and the score may decline
+
 ---
 
 ## How can the Token Score be used?
@@ -90,7 +122,7 @@ The Token Score is an informational onchain quality signal suitable for:
 
 ### Analytics & Discovery Tools
 - Filtering tokens by score (e.g., score ≥ 70)  
-- Sorting tokens by on-chain quality  
+- Sorting tokens by onchain quality  
 - Highlighting trending or improving tokens  
 
 ### Risk & Monitoring Systems
@@ -113,7 +145,7 @@ This endpoint returns:
 
 - Final score (0–100)  
 - Sub-scores for all six metrics  
-- Raw on-chain metrics used in the calculation  
+- Raw onchain metrics used in the calculation  
 - Timestamp of last update  
 
 > Note: This endpoint is available on **Pro plans and above**.
