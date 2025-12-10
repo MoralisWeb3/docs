@@ -1269,6 +1269,16 @@
                             "example": "15"
                           },
                           {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "Tether USD"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "USDT"
+                          },
+                          {
                             "name": "from_address_entity",
                             "type": "string",
                             "description": "The from address entity",
@@ -1860,7 +1870,52 @@
       "responses": [
         {
           "status": "200",
-          "description": "Successful response with the profitability summary."
+          "description": "Successful response with the profitability summary.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total_count_of_trades",
+                "type": "number",
+                "description": "Total count of trades executed by the wallet."
+              },
+              {
+                "name": "total_trade_volume",
+                "type": "string",
+                "description": "Total trade volume managed by the wallet."
+              },
+              {
+                "name": "total_realized_profit_usd",
+                "type": "string",
+                "description": "Total realized profit in USD for the wallet."
+              },
+              {
+                "name": "total_realized_profit_percentage",
+                "type": "number",
+                "description": "Total realized profit as a percentage."
+              },
+              {
+                "name": "total_buys",
+                "type": "number",
+                "description": "Total number of buy transactions."
+              },
+              {
+                "name": "total_sells",
+                "type": "number",
+                "description": "Total number of sell transactions."
+              },
+              {
+                "name": "total_sold_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens sold by the wallet."
+              },
+              {
+                "name": "total_bought_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens bought by the wallet."
+              }
+            ]
+          }
         }
       ]
     },
@@ -3258,7 +3313,337 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a collection of NFT owners"
+          "description": "Returns a collection of NFT owners",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the NFT contract",
+                  "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                },
+                {
+                  "name": "token_id",
+                  "type": "string",
+                  "description": "The token ID of the NFT",
+                  "example": "15"
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract standard",
+                  "example": "ERC721"
+                },
+                {
+                  "name": "owner_of",
+                  "type": "string",
+                  "description": "The wallet address of the owner of the NFT",
+                  "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "description": "The block number when the amount or owner changed",
+                  "example": "88256"
+                },
+                {
+                  "name": "block_number_minted",
+                  "type": "string",
+                  "description": "The block number when the NFT was minted",
+                  "example": "88256"
+                },
+                {
+                  "name": "token_uri",
+                  "type": "string",
+                  "description": "The URI to the metadata of the token"
+                },
+                {
+                  "name": "metadata",
+                  "type": "string",
+                  "description": "The metadata of the token"
+                },
+                {
+                  "name": "normalized_metadata",
+                  "description": "A normalized metadata version of the NFT's metadata.",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "The name or title of the NFT",
+                      "example": "Moralis Mug"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "A detailed description of the NFT",
+                      "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                    },
+                    "image": {
+                      "type": "string",
+                      "description": "The URL of the NFT's image",
+                      "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                    },
+                    "external_link": {
+                      "type": "string",
+                      "description": "A link to additional information",
+                      "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                    },
+                    "external_url": {
+                      "type": "string",
+                      "description": "A link to additional information",
+                      "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                    },
+                    "animation_url": {
+                      "type": "string",
+                      "description": "An animated version of the NFT's image",
+                      "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "media",
+                  "description": "A set of links to 'thumbnail / preview' media files",
+                  "properties": {
+                    "mimetype": {
+                      "type": "string",
+                      "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                    },
+                    "category": {
+                      "enum": [
+                        "image",
+                        "audio",
+                        "video"
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "success",
+                        "processing",
+                        "unsupported_media",
+                        "invalid_url",
+                        "host_unavailable",
+                        "temporarily_unavailable"
+                      ],
+                      "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
+                    },
+                    "original_media_url": {
+                      "type": "string",
+                      "description": "The url of the original media file."
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "description": "The timestamp of the last update to this NFT media record."
+                    },
+                    "parent_hash": {
+                      "type": "string",
+                      "description": "Hash value of the original media file."
+                    },
+                    "media_collection": {
+                      "description": "Preview item associated with the original",
+                      "$ref": "#/components/schemas/mediaCollection"
+                    }
+                  }
+                },
+                {
+                  "name": "amount",
+                  "type": "string",
+                  "description": "The number of this item the user owns (used by ERC1155)",
+                  "example": "1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the NFT contract",
+                  "example": "CryptoKitties"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "RARI"
+                },
+                {
+                  "name": "token_hash",
+                  "type": "string",
+                  "description": "The token hash",
+                  "example": "502cee781b0fb40ea02508b21d319ced"
+                },
+                {
+                  "name": "rarity_rank",
+                  "type": "number",
+                  "description": "The rarity rank",
+                  "example": 21669
+                },
+                {
+                  "name": "rarity_percentage",
+                  "type": "number",
+                  "description": "The rarity percentage",
+                  "example": 98
+                },
+                {
+                  "name": "rarity_label",
+                  "type": "string",
+                  "description": "The rarity label",
+                  "example": "Top 98%"
+                },
+                {
+                  "name": "last_token_uri_sync",
+                  "type": "string",
+                  "description": "When the token_uri was last updated",
+                  "example": "2021-02-24T00:47:26.647Z"
+                },
+                {
+                  "name": "last_metadata_sync",
+                  "type": "string",
+                  "description": "When the metadata was last updated",
+                  "example": "2021-02-24T00:47:26.647Z"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                },
+                {
+                  "name": "floor_price",
+                  "type": "string",
+                  "description": "The floor price of the NFT",
+                  "example": "12345"
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "description": "The floor price of the NFT in USD",
+                  "example": "12345.4899"
+                },
+                {
+                  "name": "floor_price_currency",
+                  "type": "string",
+                  "description": "The currency of the floor price",
+                  "example": "eth"
+                },
+                {
+                  "name": "last_sale",
+                  "type": "object",
+                  "description": "Details about the most recent sale involving this token.",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash of the last sale",
+                      "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "description": "The block timestamp of the last sale",
+                      "example": "2023-04-04T15:59:11.000Z"
+                    },
+                    {
+                      "name": "buyer_address",
+                      "type": "string",
+                      "description": "The buyer address of the last sale",
+                      "example": "0xcb1c1fde09f811b294172696404e88e658659905"
+                    },
+                    {
+                      "name": "seller_address",
+                      "type": "string",
+                      "description": "The seller address of the last sale",
+                      "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f"
+                    },
+                    {
+                      "name": "price",
+                      "type": "string",
+                      "description": "The price of the last sale",
+                      "example": "7300000000000000"
+                    },
+                    {
+                      "name": "price_formatted",
+                      "type": "string",
+                      "description": "The formatted price of the last sale",
+                      "example": "0.0073"
+                    },
+                    {
+                      "name": "usd_price_at_sale",
+                      "type": "string",
+                      "description": "The USD price of the last sale",
+                      "example": "13.61"
+                    },
+                    {
+                      "name": "current_usd_value",
+                      "type": "string",
+                      "description": "The USD price of the last sale at the current value",
+                      "example": "15.53"
+                    },
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The token address that is sold",
+                      "example": "0xe8778996e096b39705c6a0a937eb587a1ebbda17"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID that is sold",
+                      "example": "170"
+                    },
+                    {
+                      "name": "payment_token",
+                      "type": "object",
+                      "description": "The ERC20 token that is being traded with",
+                      "required": [
+                        "token_name",
+                        "token_symbol",
+                        "token_logo",
+                        "token_decimals",
+                        "token_address"
+                      ],
+                      "properties": {
+                        "token_name": {
+                          "type": "string",
+                          "description": "The token name",
+                          "example": "Ether"
+                        },
+                        "token_symbol": {
+                          "type": "string",
+                          "description": "The token symbol",
+                          "example": "ETH"
+                        },
+                        "token_logo": {
+                          "type": "string",
+                          "description": "The token logo",
+                          "example": "https://cdn.moralis.io/eth/0x.png"
+                        },
+                        "token_decimals": {
+                          "type": "string",
+                          "description": "The token decimals",
+                          "example": "18"
+                        },
+                        "token_address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -3463,6 +3848,16 @@
                       "type": "string",
                       "description": "The token ID of the NFT",
                       "example": "15"
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
                     },
                     {
                       "name": "from_address_entity",
@@ -5417,6 +5812,16 @@
                       "example": "15"
                     },
                     {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
+                    },
+                    {
                       "name": "from_address_entity",
                       "type": "string",
                       "description": "The from address entity",
@@ -7182,7 +7587,234 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the metadata for the requested NFT collections."
+          "description": "Returns the metadata for the requested NFT collections.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "KryptoKitties"
+                },
+                {
+                  "name": "synced_at",
+                  "type": "string",
+                  "description": "Timestamp of when the contract was last synced with the node"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "RARI"
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract",
+                  "example": "ERC721"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                },
+                {
+                  "name": "collection_logo",
+                  "type": "string",
+                  "description": "The logo of the collection",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_banner_image",
+                  "type": "string",
+                  "description": "The banner image of the collection",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_category",
+                  "type": "string",
+                  "description": "The category of the collection",
+                  "example": "Art"
+                },
+                {
+                  "name": "project_url",
+                  "type": "string",
+                  "description": "The project url of the collection",
+                  "example": "https://www.cryptokitties.co/"
+                },
+                {
+                  "name": "wiki_url",
+                  "type": "string",
+                  "description": "The wiki url of the collection",
+                  "example": "https://en.wikipedia.org/wiki/CryptoKitties"
+                },
+                {
+                  "name": "discord_url",
+                  "type": "string",
+                  "description": "The discord url of the collection",
+                  "example": "https://discord.com/invite/cryptokitties"
+                },
+                {
+                  "name": "telegram_url",
+                  "type": "string",
+                  "description": "The telegram url of the collection",
+                  "example": "https://t.me/cryptokitties"
+                },
+                {
+                  "name": "twitter_username",
+                  "type": "string",
+                  "description": "The twitter username of the collection",
+                  "example": "CryptoKitties"
+                },
+                {
+                  "name": "instagram_username",
+                  "type": "string",
+                  "description": "The instagram username of the collection",
+                  "example": "cryptokitties"
+                },
+                {
+                  "name": "floor_price",
+                  "type": "string",
+                  "description": "The floor price of the contract",
+                  "example": "12345"
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "description": "The floor price of the contract in USD",
+                  "example": "12345.4899"
+                },
+                {
+                  "name": "floor_price_currency",
+                  "type": "string",
+                  "description": "The currency of the floor price",
+                  "example": "eth"
+                },
+                {
+                  "name": "last_sale",
+                  "type": "object",
+                  "description": "Details about the most recent sale involving this token.",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash of the last sale",
+                      "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "description": "The block timestamp of the last sale",
+                      "example": "2023-04-04T15:59:11.000Z"
+                    },
+                    {
+                      "name": "buyer_address",
+                      "type": "string",
+                      "description": "The buyer address of the last sale",
+                      "example": "0xcb1c1fde09f811b294172696404e88e658659905"
+                    },
+                    {
+                      "name": "seller_address",
+                      "type": "string",
+                      "description": "The seller address of the last sale",
+                      "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f"
+                    },
+                    {
+                      "name": "price",
+                      "type": "string",
+                      "description": "The price of the last sale",
+                      "example": "7300000000000000"
+                    },
+                    {
+                      "name": "price_formatted",
+                      "type": "string",
+                      "description": "The formatted price of the last sale",
+                      "example": "0.0073"
+                    },
+                    {
+                      "name": "usd_price_at_sale",
+                      "type": "string",
+                      "description": "The USD price of the last sale",
+                      "example": "13.61"
+                    },
+                    {
+                      "name": "current_usd_value",
+                      "type": "string",
+                      "description": "The USD price of the last sale at the current value",
+                      "example": "15.53"
+                    },
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The token address that is sold",
+                      "example": "0xe8778996e096b39705c6a0a937eb587a1ebbda17"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID that is sold",
+                      "example": "170"
+                    },
+                    {
+                      "name": "payment_token",
+                      "type": "object",
+                      "description": "The ERC20 token that is being traded with",
+                      "required": [
+                        "token_name",
+                        "token_symbol",
+                        "token_logo",
+                        "token_decimals",
+                        "token_address"
+                      ],
+                      "properties": {
+                        "token_name": {
+                          "type": "string",
+                          "description": "The token name",
+                          "example": "Ether"
+                        },
+                        "token_symbol": {
+                          "type": "string",
+                          "description": "The token symbol",
+                          "example": "ETH"
+                        },
+                        "token_logo": {
+                          "type": "string",
+                          "description": "The token logo",
+                          "example": "https://cdn.moralis.io/eth/0x.png"
+                        },
+                        "token_decimals": {
+                          "type": "string",
+                          "description": "The token decimals",
+                          "example": "18"
+                        },
+                        "token_address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -7361,6 +7993,16 @@
                       "type": "string",
                       "description": "The token ID of the NFT",
                       "example": "15"
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
                     },
                     {
                       "name": "from_address_entity",
@@ -8200,7 +8842,17 @@
       "responses": [
         {
           "status": "201",
-          "description": "Contract address was triggered for index."
+          "description": "Contract address was triggered for index.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "example": "Request Initiated"
+              }
+            ]
+          }
         }
       ]
     },
@@ -11827,7 +12479,165 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address"
+          "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "tokenName",
+                  "type": "string",
+                  "description": "The name of the token",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "tokenSymbol",
+                  "type": "string",
+                  "description": "The symbol of the token",
+                  "example": "KYL"
+                },
+                {
+                  "name": "tokenLogo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "tokenDecimals",
+                  "type": "string",
+                  "description": "The number of decimals of the token",
+                  "example": "18"
+                },
+                {
+                  "name": "nativePrice",
+                  "required": [
+                    "value",
+                    "decimals",
+                    "name",
+                    "symbol",
+                    "address"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "The native price of the token",
+                      "example": "8409770570506626"
+                    },
+                    "decimals": {
+                      "type": "integer",
+                      "description": "The number of decimals on the token",
+                      "example": 18
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "The name of the token",
+                      "example": "Ether"
+                    },
+                    "symbol": {
+                      "type": "string",
+                      "description": "The symbol of the token",
+                      "example": "ETH"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "The address of the native token"
+                    }
+                  }
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "description": "The price in USD for the token",
+                  "example": 19.722370676
+                },
+                {
+                  "name": "usdPriceFormatted",
+                  "type": "string",
+                  "description": "The price in USD for the token in string format",
+                  "example": "19.722370676"
+                },
+                {
+                  "name": "24hrPercentChange",
+                  "type": "string",
+                  "description": "The 24hr percent change of the token",
+                  "example": "-0.8842730258590583"
+                },
+                {
+                  "name": "exchangeAddress",
+                  "type": "string",
+                  "description": "The address of the exchange used to calculate the price",
+                  "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                },
+                {
+                  "name": "exchangeName",
+                  "type": "string",
+                  "description": "The name of the exchange used to calculate the price",
+                  "example": "Uniswap v3"
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The address of the token",
+                  "example": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c"
+                },
+                {
+                  "name": "toBlock",
+                  "type": "string",
+                  "description": "toBlock",
+                  "example": "16314545"
+                },
+                {
+                  "name": "possibleSpam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verifiedContract",
+                  "type": "boolean",
+                  "description": "Indicates if the contract is verified",
+                  "example": true
+                },
+                {
+                  "name": "pairAddress",
+                  "type": "string",
+                  "description": "The address of the pair",
+                  "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                },
+                {
+                  "name": "pairTotalLiquidityUsd",
+                  "type": "string",
+                  "description": "The total liquidity in USD of the pair",
+                  "example": "123.45"
+                },
+                {
+                  "name": "usdPrice24h",
+                  "type": "number",
+                  "description": "The USD price 24 hours ago",
+                  "example": 1
+                },
+                {
+                  "name": "usdPrice24hrUsdChange",
+                  "type": "number",
+                  "description": "The USD change in price over the last 24 hours",
+                  "example": -0.00008615972490000345
+                },
+                {
+                  "name": "usdPrice24hrPercentChange",
+                  "type": "number",
+                  "description": "The percent change in USD price over the last 24 hours",
+                  "example": -0.008615972490000345
+                },
+                {
+                  "name": "securityScore",
+                  "type": "number",
+                  "description": "A number between 0 and 100 that defines the trust level of this specific token",
+                  "example": 1
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -12524,7 +13334,69 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns token balances for a specific address"
+          "description": "Returns token balances for a specific address",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "description": "The number of decimals on the token",
+                  "example": 18
+                },
+                {
+                  "name": "balance",
+                  "type": "string",
+                  "description": "Timestamp of when the contract was last synced with the node",
+                  "example": "123456789"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -12937,7 +13809,225 @@
       "responses": [
         {
           "status": "200",
-          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo)."
+          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                },
+                {
+                  "name": "address_label",
+                  "type": "string",
+                  "description": "The label of the address",
+                  "example": "Binance 1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned",
+                  "example": "420689899999994793099999999997400"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                  "example": "420689899999994.7930999999999974"
+                },
+                {
+                  "name": "implementations",
+                  "type": "array",
+                  "field": {
+                    "description": "The token addresses of the same symbol from another chains",
+                    "required": [
+                      "chainId",
+                      "address"
+                    ],
+                    "properties": {
+                      "chain": {
+                        "type": "string",
+                        "description": "The chain name",
+                        "example": "eth"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "The token address",
+                        "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "fully_diluted_valuation",
+                  "type": "string",
+                  "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                  "example": "3407271444.05"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string"
+                },
+                {
+                  "name": "validated",
+                  "type": "number"
+                },
+                {
+                  "name": "created_at",
+                  "type": "string",
+                  "description": "The timestamp of when the erc20 token was created"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                },
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "description": "Categories of the token",
+                  "example": [
+                    "stablecoin"
+                  ],
+                  "field": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "links",
+                  "type": "object",
+                  "required": [
+                    "bitbucket",
+                    "discord",
+                    "facebook",
+                    "github",
+                    "instagram",
+                    "linkedin",
+                    "medium",
+                    "reddit",
+                    "telegram",
+                    "tiktok",
+                    "twitter",
+                    "website",
+                    "youtube"
+                  ],
+                  "properties": {
+                    "bitbucket": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "discord": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "facebook": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "github": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "instagram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "linkedin": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "medium": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "reddit": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "telegram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "tiktok": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "twitter": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "youtube": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    }
+                  }
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "description": "The circulating supply of the token",
+                  "example": "4206864.7489303"
+                },
+                {
+                  "name": "market_cap",
+                  "type": "string",
+                  "description": "The market cap of the token",
+                  "example": "3407271444.05"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -13038,7 +14128,225 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo)."
+          "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                },
+                {
+                  "name": "address_label",
+                  "type": "string",
+                  "description": "The label of the address",
+                  "example": "Binance 1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned",
+                  "example": "420689899999994793099999999997400"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                  "example": "420689899999994.7930999999999974"
+                },
+                {
+                  "name": "implementations",
+                  "type": "array",
+                  "field": {
+                    "description": "The token addresses of the same symbol from another chains",
+                    "required": [
+                      "chainId",
+                      "address"
+                    ],
+                    "properties": {
+                      "chain": {
+                        "type": "string",
+                        "description": "The chain name",
+                        "example": "eth"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "The token address",
+                        "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "fully_diluted_valuation",
+                  "type": "string",
+                  "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                  "example": "3407271444.05"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string"
+                },
+                {
+                  "name": "validated",
+                  "type": "number"
+                },
+                {
+                  "name": "created_at",
+                  "type": "string",
+                  "description": "The timestamp of when the erc20 token was created"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                },
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "description": "Categories of the token",
+                  "example": [
+                    "stablecoin"
+                  ],
+                  "field": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "links",
+                  "type": "object",
+                  "required": [
+                    "bitbucket",
+                    "discord",
+                    "facebook",
+                    "github",
+                    "instagram",
+                    "linkedin",
+                    "medium",
+                    "reddit",
+                    "telegram",
+                    "tiktok",
+                    "twitter",
+                    "website",
+                    "youtube"
+                  ],
+                  "properties": {
+                    "bitbucket": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "discord": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "facebook": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "github": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "instagram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "linkedin": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "medium": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "reddit": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "telegram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "tiktok": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "twitter": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "youtube": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    }
+                  }
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "description": "The circulating supply of the token",
+                  "example": "4206864.7489303"
+                },
+                {
+                  "name": "market_cap",
+                  "type": "string",
+                  "description": "The market cap of the token",
+                  "example": "3407271444.05"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -14007,7 +15315,83 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns all defi positions for the wallet address."
+          "description": "Returns all defi positions for the wallet address.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "protocol_name",
+                  "type": "string",
+                  "description": "The name of the protocol",
+                  "example": "Uniswap v2"
+                },
+                {
+                  "name": "protocol_id",
+                  "type": "string",
+                  "description": "The id of the protocol",
+                  "example": "uniswap-v2"
+                },
+                {
+                  "name": "protocol_url",
+                  "type": "string",
+                  "description": "The url of the protocol",
+                  "example": "https://app.uniswap.org/pools/v2"
+                },
+                {
+                  "name": "protocol_logo",
+                  "type": "string",
+                  "description": "The logo of the protocol",
+                  "example": "https://cdn.moralis.io/defi/uniswap.png"
+                },
+                {
+                  "name": "position",
+                  "type": "object",
+                  "description": "The position of the protocol",
+                  "required": [
+                    "label",
+                    "tokens",
+                    "balance_usd",
+                    "total_unclaimed_usd_value"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    "tokens": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/defiTokenBalance"
+                      }
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    "balance_usd": {
+                      "type": "number",
+                      "description": "The balance in USD",
+                      "example": "1000000"
+                    },
+                    "total_unclaimed_usd_value": {
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": "1000000"
+                    },
+                    "position_details": {
+                      "type": "object",
+                      "description": "The details of the position",
+                      "$ref": "#/components/schemas/defiPositionDetails"
+                    }
+                  }
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -14137,7 +15521,314 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the defi positions by protocol for the wallet address."
+          "description": "Returns the defi positions by protocol for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "protocol_name",
+                "type": "string",
+                "description": "The name of the protocol",
+                "example": "Uniswap v2"
+              },
+              {
+                "name": "protocol_id",
+                "type": "string",
+                "description": "The id of the protocol",
+                "example": "uniswap-v2"
+              },
+              {
+                "name": "protocol_url",
+                "type": "string",
+                "description": "The url of the protocol",
+                "example": "https://app.uniswap.org/pools/v2"
+              },
+              {
+                "name": "protocol_logo",
+                "type": "string",
+                "description": "The logo of the protocol",
+                "example": "https://cdn.moralis.io/defi/uniswap.png"
+              },
+              {
+                "name": "total_usd_value",
+                "type": "number",
+                "example": 47754.14278954011
+              },
+              {
+                "name": "total_unclaimed_usd_value",
+                "type": "number",
+                "example": null
+              },
+              {
+                "name": "positions",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    {
+                      "name": "tokens",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_type",
+                            "type": "string",
+                            "description": "The token type (supply/defi/borrow token)",
+                            "example": "defi-token"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the token",
+                            "example": "Wrapped Ether"
+                          },
+                          {
+                            "name": "symbol",
+                            "type": "string",
+                            "description": "The symbol of the token",
+                            "example": "WETH"
+                          },
+                          {
+                            "name": "contract_address",
+                            "type": "string",
+                            "description": "The contract address",
+                            "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                          },
+                          {
+                            "name": "decimals",
+                            "type": "number",
+                            "description": "The decimals of the token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The logo of the token",
+                            "example": "https://cdn.moralis.io/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "thumbnail",
+                            "type": "string",
+                            "description": "The thumbnail of the token",
+                            "example": "https://cdn.moralis.io/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "balance",
+                            "type": "string",
+                            "description": "The balance of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "balance_formatted",
+                            "type": "string",
+                            "description": "The balance of the token formatted",
+                            "example": "1.000000"
+                          },
+                          {
+                            "name": "usd_price",
+                            "type": "number",
+                            "description": "The USD price of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "usd_value",
+                            "type": "number",
+                            "description": "The USD value of the token",
+                            "example": "1000000"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    {
+                      "name": "balance_usd",
+                      "type": "number",
+                      "description": "The balance in USD",
+                      "example": "1000000"
+                    },
+                    {
+                      "name": "total_unclaimed_usd_value",
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": "1000000"
+                    },
+                    {
+                      "name": "position_details",
+                      "type": "object",
+                      "description": "The details of the position",
+                      "properties": {
+                        "fee_tier": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The fee tier of the position"
+                        },
+                        "range_tnd": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The range trend of the position"
+                        },
+                        "reserves": {
+                          "type": "array",
+                          "nullable": true,
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "The reserves of the position"
+                        },
+                        "current_price": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The current price of the position"
+                        },
+                        "is_in_range": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is in range"
+                        },
+                        "price_upper": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The upper price of the range"
+                        },
+                        "price_lower": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The lower price of the range"
+                        },
+                        "price_label": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The price label"
+                        },
+                        "liquidity": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The liquidity of the position"
+                        },
+                        "range_start": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The start of the range"
+                        },
+                        "pool_address": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The address of the pool"
+                        },
+                        "position_key": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The key of the position"
+                        },
+                        "nft_metadata": {
+                          "type": "object",
+                          "nullable": true,
+                          "additionalProperties": true,
+                          "description": "Metadata of the NFT"
+                        },
+                        "asset_standard": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The standard of the asset"
+                        },
+                        "apy": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The annual percentage yield"
+                        },
+                        "is_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a debt"
+                        },
+                        "is_variable_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a variable debt"
+                        },
+                        "is_stable_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a stable debt"
+                        },
+                        "shares": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The shares of the position"
+                        },
+                        "reserve0": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The first reserve of the position"
+                        },
+                        "reserve1": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The second reserve of the position"
+                        },
+                        "factory": {
+                          "type": "string",
+                          "description": "The factory of the position"
+                        },
+                        "pair": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The pair of the position"
+                        },
+                        "share_of_pool": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The share of the pool"
+                        },
+                        "no_price_available": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the price is available"
+                        },
+                        "shares_in_strategy": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The shares in the strategy"
+                        },
+                        "strategy_address": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The address of the strategy"
+                        },
+                        "base_type": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The base type of the position"
+                        },
+                        "health_factor": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The health factor of the position in percent"
+                        },
+                        "is_enabled_collateral": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the supply position is enabled as collateral"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -19734,6 +21425,154 @@
           }
         }
       ]
+    },
+    "getTokenScore": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token score by token address",
+      "description": "Retrieve a score for a specific token along with detailed metrics including price, volume, liquidity, transaction counts, and supply information.",
+      "method": "GET",
+      "path": "/tokens/:tokenAddress/score",
+      "pathParams": [
+        {
+          "name": "tokenAddress",
+          "description": "The token address to query",
+          "required": true,
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a",
+            "pulse",
+            "0x171",
+            "sei-testnet",
+            "0x530",
+            "sei",
+            "0x531",
+            "monad",
+            "0x8f",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "example": "0x1"
+              },
+              {
+                "name": "score",
+                "type": "number",
+                "example": 94
+              },
+              {
+                "name": "updatedAt",
+                "type": "string",
+                "example": "2025-12-03T21:10:28Z"
+              },
+              {
+                "name": "metrics",
+                "type": "object",
+                "properties": {
+                  "usdPrice": {
+                    "type": "number",
+                    "example": 0.00000647147501365255
+                  },
+                  "liquidityUsd": {
+                    "type": "number",
+                    "example": 10890420.9
+                  },
+                  "volumeUsd": {
+                    "$ref": "#/components/schemas/TokenScoreVolumeUsd"
+                  },
+                  "transactions": {
+                    "$ref": "#/components/schemas/TokenScoreTransactions"
+                  },
+                  "supply": {
+                    "$ref": "#/components/schemas/TokenScoreSupply"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "balance": {
@@ -23187,7 +25026,39 @@
       "responses": [
         {
           "status": "200",
-          "description": "The cost and rate limit for each API endpoint."
+          "description": "The cost and rate limit for each API endpoint.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "endpoint",
+                  "type": "string",
+                  "description": "endpoint",
+                  "example": "endpointWeights"
+                },
+                {
+                  "name": "path",
+                  "type": "string",
+                  "description": "The path to the endpoint",
+                  "example": "/info/endpointWeights"
+                },
+                {
+                  "name": "rateLimitCost",
+                  "type": "string",
+                  "description": "The number of hits the request counts towards rate limiting",
+                  "example": 1
+                },
+                {
+                  "name": "price",
+                  "type": "string",
+                  "description": "The number of compute units the request counts towards billing",
+                  "example": 0
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -23327,7 +25198,17 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a message acknowledging the report"
+          "description": "Returns a message acknowledging the report",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "example": "Submission successful"
+              }
+            ]
+          }
         }
       ]
     }
@@ -23605,7 +25486,22 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the pair reserves"
+          "description": "Returns the pair reserves",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "reserve0",
+                "type": "string",
+                "example": "220969226548536862025877"
+              },
+              {
+                "name": "reserve1",
+                "type": "string",
+                "example": "844810441191293211036"
+              }
+            ]
+          }
         }
       ]
     },
@@ -41506,7 +43402,337 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a collection of NFT owners"
+          "description": "Returns a collection of NFT owners",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the NFT contract",
+                  "example": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                },
+                {
+                  "name": "token_id",
+                  "type": "string",
+                  "description": "The token ID of the NFT",
+                  "example": "15"
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract standard",
+                  "example": "ERC721"
+                },
+                {
+                  "name": "owner_of",
+                  "type": "string",
+                  "description": "The wallet address of the owner of the NFT",
+                  "example": "0x057Ec652A4F150f7FF94f089A38008f49a0DF88e"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string",
+                  "description": "The block number when the amount or owner changed",
+                  "example": "88256"
+                },
+                {
+                  "name": "block_number_minted",
+                  "type": "string",
+                  "description": "The block number when the NFT was minted",
+                  "example": "88256"
+                },
+                {
+                  "name": "token_uri",
+                  "type": "string",
+                  "description": "The URI to the metadata of the token"
+                },
+                {
+                  "name": "metadata",
+                  "type": "string",
+                  "description": "The metadata of the token"
+                },
+                {
+                  "name": "normalized_metadata",
+                  "description": "A normalized metadata version of the NFT's metadata.",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "The name or title of the NFT",
+                      "example": "Moralis Mug"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "A detailed description of the NFT",
+                      "example": "Moralis Coffee nug 3D Asset that can be used in 3D worldspaces. This NFT is presented as a flat PNG, a Unity3D Prefab and a standard fbx."
+                    },
+                    "image": {
+                      "type": "string",
+                      "description": "The URL of the NFT's image",
+                      "example": "https://arw2wxg84h6b.moralishost.com:2053/server/files/tNJatzsHirx4V2VAep6sc923OYGxvkpBeJttR7Ks/de504bbadadcbe30c86278342fcf2560_moralismug.png"
+                    },
+                    "external_link": {
+                      "type": "string",
+                      "description": "A link to additional information",
+                      "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                    },
+                    "external_url": {
+                      "type": "string",
+                      "description": "A link to additional information",
+                      "example": "https://giphy.com/gifs/loop-recursion-ting-aaODAv1iuQdgI"
+                    },
+                    "animation_url": {
+                      "type": "string",
+                      "description": "An animated version of the NFT's image",
+                      "example": "https://giphy.com/gifs/food-design-donuts-o9ngTPVYW4qo8"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/normalizedMetadataAttribute"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "media",
+                  "description": "A set of links to 'thumbnail / preview' media files",
+                  "properties": {
+                    "mimetype": {
+                      "type": "string",
+                      "description": "The mimetype of the media file [see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types]"
+                    },
+                    "category": {
+                      "enum": [
+                        "image",
+                        "audio",
+                        "video"
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "success",
+                        "processing",
+                        "unsupported_media",
+                        "invalid_url",
+                        "host_unavailable",
+                        "temporarily_unavailable"
+                      ],
+                      "description": "<table><tr><td>success</td><td>The NFT Preview was created / retrieved successfully</td></tr><tr><td>processing</td><td>The NFT Preview was not found and has been submitted for generation.</td></tr><tr><td>unsupported_media</td><td>The mime-type of the NFT's media file indicates a type not currently supported.</td></tr><tr><td>invalid_url</td><td>The 'image' URL from the NFT's metadata is not a valid URL and cannot be processed.</td></tr><tr><td>host_unavailable</td><td>The 'image' URL from the NFT's metadata returned an HttpCode indicating the host / file is not available.</td></tr><tr><td>temporarily_unavailable</td><td>The attempt to load / parse the NFT media file failed (usually due to rate limiting) and will be tried again at next request.</td></tr></table>"
+                    },
+                    "original_media_url": {
+                      "type": "string",
+                      "description": "The url of the original media file."
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "description": "The timestamp of the last update to this NFT media record."
+                    },
+                    "parent_hash": {
+                      "type": "string",
+                      "description": "Hash value of the original media file."
+                    },
+                    "media_collection": {
+                      "description": "Preview item associated with the original",
+                      "$ref": "#/components/schemas/mediaCollection"
+                    }
+                  }
+                },
+                {
+                  "name": "amount",
+                  "type": "string",
+                  "description": "The number of this item the user owns (used by ERC1155)",
+                  "example": "1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the NFT contract",
+                  "example": "CryptoKitties"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "RARI"
+                },
+                {
+                  "name": "token_hash",
+                  "type": "string",
+                  "description": "The token hash",
+                  "example": "502cee781b0fb40ea02508b21d319ced"
+                },
+                {
+                  "name": "rarity_rank",
+                  "type": "number",
+                  "description": "The rarity rank",
+                  "example": 21669
+                },
+                {
+                  "name": "rarity_percentage",
+                  "type": "number",
+                  "description": "The rarity percentage",
+                  "example": 98
+                },
+                {
+                  "name": "rarity_label",
+                  "type": "string",
+                  "description": "The rarity label",
+                  "example": "Top 98%"
+                },
+                {
+                  "name": "last_token_uri_sync",
+                  "type": "string",
+                  "description": "When the token_uri was last updated",
+                  "example": "2021-02-24T00:47:26.647Z"
+                },
+                {
+                  "name": "last_metadata_sync",
+                  "type": "string",
+                  "description": "When the metadata was last updated",
+                  "example": "2021-02-24T00:47:26.647Z"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                },
+                {
+                  "name": "floor_price",
+                  "type": "string",
+                  "description": "The floor price of the NFT",
+                  "example": "12345"
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "description": "The floor price of the NFT in USD",
+                  "example": "12345.4899"
+                },
+                {
+                  "name": "floor_price_currency",
+                  "type": "string",
+                  "description": "The currency of the floor price",
+                  "example": "eth"
+                },
+                {
+                  "name": "last_sale",
+                  "type": "object",
+                  "description": "Details about the most recent sale involving this token.",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash of the last sale",
+                      "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "description": "The block timestamp of the last sale",
+                      "example": "2023-04-04T15:59:11.000Z"
+                    },
+                    {
+                      "name": "buyer_address",
+                      "type": "string",
+                      "description": "The buyer address of the last sale",
+                      "example": "0xcb1c1fde09f811b294172696404e88e658659905"
+                    },
+                    {
+                      "name": "seller_address",
+                      "type": "string",
+                      "description": "The seller address of the last sale",
+                      "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f"
+                    },
+                    {
+                      "name": "price",
+                      "type": "string",
+                      "description": "The price of the last sale",
+                      "example": "7300000000000000"
+                    },
+                    {
+                      "name": "price_formatted",
+                      "type": "string",
+                      "description": "The formatted price of the last sale",
+                      "example": "0.0073"
+                    },
+                    {
+                      "name": "usd_price_at_sale",
+                      "type": "string",
+                      "description": "The USD price of the last sale",
+                      "example": "13.61"
+                    },
+                    {
+                      "name": "current_usd_value",
+                      "type": "string",
+                      "description": "The USD price of the last sale at the current value",
+                      "example": "15.53"
+                    },
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The token address that is sold",
+                      "example": "0xe8778996e096b39705c6a0a937eb587a1ebbda17"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID that is sold",
+                      "example": "170"
+                    },
+                    {
+                      "name": "payment_token",
+                      "type": "object",
+                      "description": "The ERC20 token that is being traded with",
+                      "required": [
+                        "token_name",
+                        "token_symbol",
+                        "token_logo",
+                        "token_decimals",
+                        "token_address"
+                      ],
+                      "properties": {
+                        "token_name": {
+                          "type": "string",
+                          "description": "The token name",
+                          "example": "Ether"
+                        },
+                        "token_symbol": {
+                          "type": "string",
+                          "description": "The token symbol",
+                          "example": "ETH"
+                        },
+                        "token_logo": {
+                          "type": "string",
+                          "description": "The token logo",
+                          "example": "https://cdn.moralis.io/eth/0x.png"
+                        },
+                        "token_decimals": {
+                          "type": "string",
+                          "description": "The token decimals",
+                          "example": "18"
+                        },
+                        "token_address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -41711,6 +43937,16 @@
                       "type": "string",
                       "description": "The token ID of the NFT",
                       "example": "15"
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
                     },
                     {
                       "name": "from_address_entity",
@@ -43663,6 +45899,16 @@
                       "type": "string",
                       "description": "The token ID of the NFT",
                       "example": "15"
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
                     },
                     {
                       "name": "from_address_entity",
@@ -46076,7 +48322,234 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the metadata for the requested NFT collections."
+          "description": "Returns the metadata for the requested NFT collections.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "KryptoKitties"
+                },
+                {
+                  "name": "synced_at",
+                  "type": "string",
+                  "description": "Timestamp of when the contract was last synced with the node"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "RARI"
+                },
+                {
+                  "name": "contract_type",
+                  "type": "string",
+                  "description": "The type of NFT contract",
+                  "example": "ERC721"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_collection",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                },
+                {
+                  "name": "collection_logo",
+                  "type": "string",
+                  "description": "The logo of the collection",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_banner_image",
+                  "type": "string",
+                  "description": "The banner image of the collection",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "collection_category",
+                  "type": "string",
+                  "description": "The category of the collection",
+                  "example": "Art"
+                },
+                {
+                  "name": "project_url",
+                  "type": "string",
+                  "description": "The project url of the collection",
+                  "example": "https://www.cryptokitties.co/"
+                },
+                {
+                  "name": "wiki_url",
+                  "type": "string",
+                  "description": "The wiki url of the collection",
+                  "example": "https://en.wikipedia.org/wiki/CryptoKitties"
+                },
+                {
+                  "name": "discord_url",
+                  "type": "string",
+                  "description": "The discord url of the collection",
+                  "example": "https://discord.com/invite/cryptokitties"
+                },
+                {
+                  "name": "telegram_url",
+                  "type": "string",
+                  "description": "The telegram url of the collection",
+                  "example": "https://t.me/cryptokitties"
+                },
+                {
+                  "name": "twitter_username",
+                  "type": "string",
+                  "description": "The twitter username of the collection",
+                  "example": "CryptoKitties"
+                },
+                {
+                  "name": "instagram_username",
+                  "type": "string",
+                  "description": "The instagram username of the collection",
+                  "example": "cryptokitties"
+                },
+                {
+                  "name": "floor_price",
+                  "type": "string",
+                  "description": "The floor price of the contract",
+                  "example": "12345"
+                },
+                {
+                  "name": "floor_price_usd",
+                  "type": "string",
+                  "description": "The floor price of the contract in USD",
+                  "example": "12345.4899"
+                },
+                {
+                  "name": "floor_price_currency",
+                  "type": "string",
+                  "description": "The currency of the floor price",
+                  "example": "eth"
+                },
+                {
+                  "name": "last_sale",
+                  "type": "object",
+                  "description": "Details about the most recent sale involving this token.",
+                  "fields": [
+                    {
+                      "name": "transaction_hash",
+                      "type": "string",
+                      "description": "The transaction hash of the last sale",
+                      "example": "0x19e14f34b8f120c980f7ba05338d64c00384857fb9c561e2c56d0f575424a95c"
+                    },
+                    {
+                      "name": "block_timestamp",
+                      "type": "string",
+                      "description": "The block timestamp of the last sale",
+                      "example": "2023-04-04T15:59:11.000Z"
+                    },
+                    {
+                      "name": "buyer_address",
+                      "type": "string",
+                      "description": "The buyer address of the last sale",
+                      "example": "0xcb1c1fde09f811b294172696404e88e658659905"
+                    },
+                    {
+                      "name": "seller_address",
+                      "type": "string",
+                      "description": "The seller address of the last sale",
+                      "example": "0x497a7dee2f13db161eb2fec060fa783cb041419f"
+                    },
+                    {
+                      "name": "price",
+                      "type": "string",
+                      "description": "The price of the last sale",
+                      "example": "7300000000000000"
+                    },
+                    {
+                      "name": "price_formatted",
+                      "type": "string",
+                      "description": "The formatted price of the last sale",
+                      "example": "0.0073"
+                    },
+                    {
+                      "name": "usd_price_at_sale",
+                      "type": "string",
+                      "description": "The USD price of the last sale",
+                      "example": "13.61"
+                    },
+                    {
+                      "name": "current_usd_value",
+                      "type": "string",
+                      "description": "The USD price of the last sale at the current value",
+                      "example": "15.53"
+                    },
+                    {
+                      "name": "token_address",
+                      "type": "string",
+                      "description": "The token address that is sold",
+                      "example": "0xe8778996e096b39705c6a0a937eb587a1ebbda17"
+                    },
+                    {
+                      "name": "token_id",
+                      "type": "string",
+                      "description": "The token ID that is sold",
+                      "example": "170"
+                    },
+                    {
+                      "name": "payment_token",
+                      "type": "object",
+                      "description": "The ERC20 token that is being traded with",
+                      "required": [
+                        "token_name",
+                        "token_symbol",
+                        "token_logo",
+                        "token_decimals",
+                        "token_address"
+                      ],
+                      "properties": {
+                        "token_name": {
+                          "type": "string",
+                          "description": "The token name",
+                          "example": "Ether"
+                        },
+                        "token_symbol": {
+                          "type": "string",
+                          "description": "The token symbol",
+                          "example": "ETH"
+                        },
+                        "token_logo": {
+                          "type": "string",
+                          "description": "The token logo",
+                          "example": "https://cdn.moralis.io/eth/0x.png"
+                        },
+                        "token_decimals": {
+                          "type": "string",
+                          "description": "The token decimals",
+                          "example": "18"
+                        },
+                        "token_address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -46753,6 +49226,16 @@
                       "type": "string",
                       "description": "The token ID of the NFT",
                       "example": "15"
+                    },
+                    {
+                      "name": "token_name",
+                      "type": "string",
+                      "example": "Tether USD"
+                    },
+                    {
+                      "name": "token_symbol",
+                      "type": "string",
+                      "example": "USDT"
                     },
                     {
                       "name": "from_address_entity",
@@ -47592,7 +50075,17 @@
       "responses": [
         {
           "status": "201",
-          "description": "Contract address was triggered for index."
+          "description": "Contract address was triggered for index.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "example": "Request Initiated"
+              }
+            ]
+          }
         }
       ]
     },
@@ -49968,7 +52461,165 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address"
+          "description": "Returns an array of token prices denominated in the blockchain's native token and USD for a given token contract address",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "tokenName",
+                  "type": "string",
+                  "description": "The name of the token",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "tokenSymbol",
+                  "type": "string",
+                  "description": "The symbol of the token",
+                  "example": "KYL"
+                },
+                {
+                  "name": "tokenLogo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "tokenDecimals",
+                  "type": "string",
+                  "description": "The number of decimals of the token",
+                  "example": "18"
+                },
+                {
+                  "name": "nativePrice",
+                  "required": [
+                    "value",
+                    "decimals",
+                    "name",
+                    "symbol",
+                    "address"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "The native price of the token",
+                      "example": "8409770570506626"
+                    },
+                    "decimals": {
+                      "type": "integer",
+                      "description": "The number of decimals on the token",
+                      "example": 18
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "The name of the token",
+                      "example": "Ether"
+                    },
+                    "symbol": {
+                      "type": "string",
+                      "description": "The symbol of the token",
+                      "example": "ETH"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "The address of the native token"
+                    }
+                  }
+                },
+                {
+                  "name": "usdPrice",
+                  "type": "number",
+                  "description": "The price in USD for the token",
+                  "example": 19.722370676
+                },
+                {
+                  "name": "usdPriceFormatted",
+                  "type": "string",
+                  "description": "The price in USD for the token in string format",
+                  "example": "19.722370676"
+                },
+                {
+                  "name": "24hrPercentChange",
+                  "type": "string",
+                  "description": "The 24hr percent change of the token",
+                  "example": "-0.8842730258590583"
+                },
+                {
+                  "name": "exchangeAddress",
+                  "type": "string",
+                  "description": "The address of the exchange used to calculate the price",
+                  "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                },
+                {
+                  "name": "exchangeName",
+                  "type": "string",
+                  "description": "The name of the exchange used to calculate the price",
+                  "example": "Uniswap v3"
+                },
+                {
+                  "name": "tokenAddress",
+                  "type": "string",
+                  "description": "The address of the token",
+                  "example": "0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c"
+                },
+                {
+                  "name": "toBlock",
+                  "type": "string",
+                  "description": "toBlock",
+                  "example": "16314545"
+                },
+                {
+                  "name": "possibleSpam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verifiedContract",
+                  "type": "boolean",
+                  "description": "Indicates if the contract is verified",
+                  "example": true
+                },
+                {
+                  "name": "pairAddress",
+                  "type": "string",
+                  "description": "The address of the pair",
+                  "example": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+                },
+                {
+                  "name": "pairTotalLiquidityUsd",
+                  "type": "string",
+                  "description": "The total liquidity in USD of the pair",
+                  "example": "123.45"
+                },
+                {
+                  "name": "usdPrice24h",
+                  "type": "number",
+                  "description": "The USD price 24 hours ago",
+                  "example": 1
+                },
+                {
+                  "name": "usdPrice24hrUsdChange",
+                  "type": "number",
+                  "description": "The USD change in price over the last 24 hours",
+                  "example": -0.00008615972490000345
+                },
+                {
+                  "name": "usdPrice24hrPercentChange",
+                  "type": "number",
+                  "description": "The percent change in USD price over the last 24 hours",
+                  "example": -0.008615972490000345
+                },
+                {
+                  "name": "securityScore",
+                  "type": "number",
+                  "description": "A number between 0 and 100 that defines the trust level of this specific token",
+                  "example": 1
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -50299,7 +52950,69 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns token balances for a specific address"
+          "description": "Returns token balances for a specific address",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "token_address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x2d30ca6f024dbc1307ac8a1a44ca27de6f797ec22ef20627a1307243b0ab7d09"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "decimals",
+                  "type": "number",
+                  "description": "The number of decimals on the token",
+                  "example": 18
+                },
+                {
+                  "name": "balance",
+                  "type": "string",
+                  "description": "Timestamp of when the contract was last synced with the node",
+                  "example": "123456789"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": "false"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -50712,7 +53425,225 @@
       "responses": [
         {
           "status": "200",
-          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo)."
+          "description": "Get the metadata for a given ERC20 token contract address (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                },
+                {
+                  "name": "address_label",
+                  "type": "string",
+                  "description": "The label of the address",
+                  "example": "Binance 1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned",
+                  "example": "420689899999994793099999999997400"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                  "example": "420689899999994.7930999999999974"
+                },
+                {
+                  "name": "implementations",
+                  "type": "array",
+                  "field": {
+                    "description": "The token addresses of the same symbol from another chains",
+                    "required": [
+                      "chainId",
+                      "address"
+                    ],
+                    "properties": {
+                      "chain": {
+                        "type": "string",
+                        "description": "The chain name",
+                        "example": "eth"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "The token address",
+                        "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "fully_diluted_valuation",
+                  "type": "string",
+                  "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                  "example": "3407271444.05"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string"
+                },
+                {
+                  "name": "validated",
+                  "type": "number"
+                },
+                {
+                  "name": "created_at",
+                  "type": "string",
+                  "description": "The timestamp of when the erc20 token was created"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                },
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "description": "Categories of the token",
+                  "example": [
+                    "stablecoin"
+                  ],
+                  "field": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "links",
+                  "type": "object",
+                  "required": [
+                    "bitbucket",
+                    "discord",
+                    "facebook",
+                    "github",
+                    "instagram",
+                    "linkedin",
+                    "medium",
+                    "reddit",
+                    "telegram",
+                    "tiktok",
+                    "twitter",
+                    "website",
+                    "youtube"
+                  ],
+                  "properties": {
+                    "bitbucket": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "discord": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "facebook": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "github": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "instagram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "linkedin": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "medium": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "reddit": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "telegram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "tiktok": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "twitter": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "youtube": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    }
+                  }
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "description": "The circulating supply of the token",
+                  "example": "4206864.7489303"
+                },
+                {
+                  "name": "market_cap",
+                  "type": "string",
+                  "description": "The market cap of the token",
+                  "example": "3407271444.05"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -50727,7 +53658,38 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a list of ERC20 token categories, such as stablecoin, meme, governance, and more. Use this endpoint to explore available token categories for filtering or analytics."
+          "description": "Returns a list of ERC20 token categories, such as stablecoin, meme, governance, and more. Use this endpoint to explore available token categories for filtering or analytics.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "field": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name of the category",
+                        "example": "Stablecoin"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "The unique identifier of the category",
+                        "example": "stablecoin"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "id"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -50828,7 +53790,225 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo)."
+          "description": "Returns metadata for a given token contract address (name, symbol, decimals, logo).",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "address",
+                  "type": "string",
+                  "description": "The address of the token contract",
+                  "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                },
+                {
+                  "name": "address_label",
+                  "type": "string",
+                  "description": "The label of the address",
+                  "example": "Binance 1"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The name of the token contract",
+                  "example": "Kylin Network"
+                },
+                {
+                  "name": "symbol",
+                  "type": "string",
+                  "description": "The symbol of the NFT contract",
+                  "example": "KYL"
+                },
+                {
+                  "name": "decimals",
+                  "type": "string",
+                  "description": "The number of decimals on the token",
+                  "example": "18"
+                },
+                {
+                  "name": "logo",
+                  "type": "string",
+                  "description": "The logo of the token",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                },
+                {
+                  "name": "logo_hash",
+                  "type": "string",
+                  "description": "The logo hash",
+                  "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "string",
+                  "description": "The thumbnail of the logo",
+                  "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                },
+                {
+                  "name": "total_supply",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned",
+                  "example": "420689899999994793099999999997400"
+                },
+                {
+                  "name": "total_supply_formatted",
+                  "type": "string",
+                  "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                  "example": "420689899999994.7930999999999974"
+                },
+                {
+                  "name": "implementations",
+                  "type": "array",
+                  "field": {
+                    "description": "The token addresses of the same symbol from another chains",
+                    "required": [
+                      "chainId",
+                      "address"
+                    ],
+                    "properties": {
+                      "chain": {
+                        "type": "string",
+                        "description": "The chain name",
+                        "example": "eth"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "The token address",
+                        "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "fully_diluted_valuation",
+                  "type": "string",
+                  "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                  "example": "3407271444.05"
+                },
+                {
+                  "name": "block_number",
+                  "type": "string"
+                },
+                {
+                  "name": "validated",
+                  "type": "number"
+                },
+                {
+                  "name": "created_at",
+                  "type": "string",
+                  "description": "The timestamp of when the erc20 token was created"
+                },
+                {
+                  "name": "possible_spam",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is possibly a spam contract",
+                  "example": "false"
+                },
+                {
+                  "name": "verified_contract",
+                  "type": "boolean",
+                  "description": "Indicates if a contract is verified",
+                  "example": false
+                },
+                {
+                  "name": "categories",
+                  "type": "array",
+                  "description": "Categories of the token",
+                  "example": [
+                    "stablecoin"
+                  ],
+                  "field": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "links",
+                  "type": "object",
+                  "required": [
+                    "bitbucket",
+                    "discord",
+                    "facebook",
+                    "github",
+                    "instagram",
+                    "linkedin",
+                    "medium",
+                    "reddit",
+                    "telegram",
+                    "tiktok",
+                    "twitter",
+                    "website",
+                    "youtube"
+                  ],
+                  "properties": {
+                    "bitbucket": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "discord": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "facebook": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "github": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "instagram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "linkedin": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "medium": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "reddit": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "telegram": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "tiktok": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "twitter": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "website": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    },
+                    "youtube": {
+                      "type": "string",
+                      "description": "The link of the token on the platform"
+                    }
+                  }
+                },
+                {
+                  "name": "circulating_supply",
+                  "type": "string",
+                  "description": "The circulating supply of the token",
+                  "example": "4206864.7489303"
+                },
+                {
+                  "name": "market_cap",
+                  "type": "string",
+                  "description": "The market cap of the token",
+                  "example": "3407271444.05"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -52112,6 +55292,16 @@
                             "type": "string",
                             "description": "The token ID of the NFT",
                             "example": "15"
+                          },
+                          {
+                            "name": "token_name",
+                            "type": "string",
+                            "example": "Tether USD"
+                          },
+                          {
+                            "name": "token_symbol",
+                            "type": "string",
+                            "example": "USDT"
                           },
                           {
                             "name": "from_address_entity",
@@ -55702,7 +58892,39 @@
       "responses": [
         {
           "status": "200",
-          "description": "The cost and rate limit for each API endpoint."
+          "description": "The cost and rate limit for each API endpoint.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "endpoint",
+                  "type": "string",
+                  "description": "endpoint",
+                  "example": "endpointWeights"
+                },
+                {
+                  "name": "path",
+                  "type": "string",
+                  "description": "The path to the endpoint",
+                  "example": "/info/endpointWeights"
+                },
+                {
+                  "name": "rateLimitCost",
+                  "type": "string",
+                  "description": "The number of hits the request counts towards rate limiting",
+                  "example": 1
+                },
+                {
+                  "name": "price",
+                  "type": "string",
+                  "description": "The number of compute units the request counts towards billing",
+                  "example": 0
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -55989,7 +59211,321 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the pair price"
+          "description": "Returns the pair price",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "pair_address",
+                "type": "string",
+                "example": "0x4028daac072e492d34a3afdbef0ba7e35d8b55c4"
+              },
+              {
+                "name": "pair_label",
+                "type": "string",
+                "example": "stETH/WETH"
+              },
+              {
+                "name": "exchange",
+                "type": "string",
+                "example": "Uniswap v2"
+              },
+              {
+                "name": "quote_price",
+                "type": "string",
+                "example": "1.000094331827400707"
+              },
+              {
+                "name": "price_usd",
+                "type": "string",
+                "example": "2905.023454928171304346"
+              },
+              {
+                "name": "base_token",
+                "type": "object",
+                "required": [
+                  "address",
+                  "name",
+                  "symbol",
+                  "decimals",
+                  "created_at",
+                  "possible_spam"
+                ],
+                "properties": {
+                  "address": {
+                    "type": "string",
+                    "description": "The address of the token contract",
+                    "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                  },
+                  "address_label": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The label of the address",
+                    "example": "Binance 1"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the token contract",
+                    "example": "Kylin Network"
+                  },
+                  "symbol": {
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "KYL"
+                  },
+                  "decimals": {
+                    "type": "string",
+                    "description": "The number of decimals on the token",
+                    "example": "18"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The logo of the token",
+                    "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                  },
+                  "logo_hash": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The logo hash",
+                    "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                  },
+                  "thumbnail": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The thumbnail of the logo",
+                    "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                  },
+                  "total_supply": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Total tokens created minus any that have been burned",
+                    "example": "420689899999994793099999999997400"
+                  },
+                  "total_supply_formatted": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                    "example": "420689899999994.7930999999999974"
+                  },
+                  "implementations": {
+                    "type": "array",
+                    "items": {
+                      "description": "The token addresses of the same symbol from another chains",
+                      "required": [
+                        "chainId",
+                        "address"
+                      ],
+                      "properties": {
+                        "chain": {
+                          "type": "string",
+                          "description": "The chain name",
+                          "example": "eth"
+                        },
+                        "address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                        }
+                      }
+                    }
+                  },
+                  "fully_diluted_valuation": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                    "example": "3407271444.05"
+                  },
+                  "block_number": {
+                    "type": "string"
+                  },
+                  "validated": {
+                    "type": "number"
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "description": "The timestamp of when the erc20 token was created"
+                  },
+                  "possible_spam": {
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  "verified_contract": {
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": false
+                  },
+                  "categories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "nullable": true,
+                    "description": "Categories of the token",
+                    "example": [
+                      "stablecoin"
+                    ]
+                  },
+                  "links": {
+                    "$ref": "#/components/schemas/discoveryTokenLinks"
+                  },
+                  "circulating_supply": {
+                    "type": "string",
+                    "description": "The circulating supply of the token",
+                    "example": "4206864.7489303"
+                  },
+                  "market_cap": {
+                    "type": "string",
+                    "description": "The market cap of the token",
+                    "example": "3407271444.05"
+                  }
+                }
+              },
+              {
+                "name": "quote_token",
+                "type": "object",
+                "required": [
+                  "address",
+                  "name",
+                  "symbol",
+                  "decimals",
+                  "created_at",
+                  "possible_spam"
+                ],
+                "properties": {
+                  "address": {
+                    "type": "string",
+                    "description": "The address of the token contract",
+                    "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                  },
+                  "address_label": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The label of the address",
+                    "example": "Binance 1"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the token contract",
+                    "example": "Kylin Network"
+                  },
+                  "symbol": {
+                    "type": "string",
+                    "description": "The symbol of the NFT contract",
+                    "example": "KYL"
+                  },
+                  "decimals": {
+                    "type": "string",
+                    "description": "The number of decimals on the token",
+                    "example": "18"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The logo of the token",
+                    "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c.png"
+                  },
+                  "logo_hash": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The logo hash",
+                    "example": "ee7aa2cdf100649a3521a082116258e862e6971261a39b5cd4e4354fcccbc54d"
+                  },
+                  "thumbnail": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The thumbnail of the logo",
+                    "example": "https://cdn.moralis.io/eth/0x67b6d479c7bb412c54e03dca8e1bc6740ce6b99c_thumb.png"
+                  },
+                  "total_supply": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Total tokens created minus any that have been burned",
+                    "example": "420689899999994793099999999997400"
+                  },
+                  "total_supply_formatted": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Total tokens created minus any that have been burned (decimal formatted)",
+                    "example": "420689899999994.7930999999999974"
+                  },
+                  "implementations": {
+                    "type": "array",
+                    "items": {
+                      "description": "The token addresses of the same symbol from another chains",
+                      "required": [
+                        "chainId",
+                        "address"
+                      ],
+                      "properties": {
+                        "chain": {
+                          "type": "string",
+                          "description": "The chain name",
+                          "example": "eth"
+                        },
+                        "address": {
+                          "type": "string",
+                          "description": "The token address",
+                          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                        }
+                      }
+                    }
+                  },
+                  "fully_diluted_valuation": {
+                    "type": "string",
+                    "nullable": false,
+                    "description": "Fully Diluted Valuation (FDV), this represents the token's Current Price x Total Supply",
+                    "example": "3407271444.05"
+                  },
+                  "block_number": {
+                    "type": "string"
+                  },
+                  "validated": {
+                    "type": "number"
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "description": "The timestamp of when the erc20 token was created"
+                  },
+                  "possible_spam": {
+                    "type": "boolean",
+                    "description": "Indicates if a contract is possibly a spam contract",
+                    "example": "false"
+                  },
+                  "verified_contract": {
+                    "type": "boolean",
+                    "description": "Indicates if a contract is verified",
+                    "example": false
+                  },
+                  "categories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "nullable": true,
+                    "description": "Categories of the token",
+                    "example": [
+                      "stablecoin"
+                    ]
+                  },
+                  "links": {
+                    "$ref": "#/components/schemas/discoveryTokenLinks"
+                  },
+                  "circulating_supply": {
+                    "type": "string",
+                    "description": "The circulating supply of the token",
+                    "example": "4206864.7489303"
+                  },
+                  "market_cap": {
+                    "type": "string",
+                    "description": "The market cap of the token",
+                    "example": "3407271444.05"
+                  }
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -56099,7 +59635,22 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the pair reserves"
+          "description": "Returns the pair reserves",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "reserve0",
+                "type": "string",
+                "example": "220969226548536862025877"
+              },
+              {
+                "name": "reserve1",
+                "type": "string",
+                "example": "844810441191293211036"
+              }
+            ]
+          }
         }
       ]
     },
@@ -56735,7 +60286,17 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns a message acknowledging the report"
+          "description": "Returns a message acknowledging the report",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "message",
+                "type": "string",
+                "example": "Submission successful"
+              }
+            ]
+          }
         }
       ]
     },
@@ -57020,7 +60581,314 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the defi positions by protocol for the wallet address."
+          "description": "Returns the defi positions by protocol for the wallet address.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "protocol_name",
+                "type": "string",
+                "description": "The name of the protocol",
+                "example": "Uniswap v2"
+              },
+              {
+                "name": "protocol_id",
+                "type": "string",
+                "description": "The id of the protocol",
+                "example": "uniswap-v2"
+              },
+              {
+                "name": "protocol_url",
+                "type": "string",
+                "description": "The url of the protocol",
+                "example": "https://app.uniswap.org/pools/v2"
+              },
+              {
+                "name": "protocol_logo",
+                "type": "string",
+                "description": "The logo of the protocol",
+                "example": "https://cdn.moralis.io/defi/uniswap.png"
+              },
+              {
+                "name": "total_usd_value",
+                "type": "number",
+                "example": 47754.14278954011
+              },
+              {
+                "name": "total_unclaimed_usd_value",
+                "type": "number",
+                "example": null
+              },
+              {
+                "name": "positions",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    {
+                      "name": "tokens",
+                      "type": "array",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "token_type",
+                            "type": "string",
+                            "description": "The token type (supply/defi/borrow token)",
+                            "example": "defi-token"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "description": "The name of the token",
+                            "example": "Wrapped Ether"
+                          },
+                          {
+                            "name": "symbol",
+                            "type": "string",
+                            "description": "The symbol of the token",
+                            "example": "WETH"
+                          },
+                          {
+                            "name": "contract_address",
+                            "type": "string",
+                            "description": "The contract address",
+                            "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                          },
+                          {
+                            "name": "decimals",
+                            "type": "number",
+                            "description": "The decimals of the token",
+                            "example": "18"
+                          },
+                          {
+                            "name": "logo",
+                            "type": "string",
+                            "description": "The logo of the token",
+                            "example": "https://cdn.moralis.io/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "thumbnail",
+                            "type": "string",
+                            "description": "The thumbnail of the token",
+                            "example": "https://cdn.moralis.io/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png"
+                          },
+                          {
+                            "name": "balance",
+                            "type": "string",
+                            "description": "The balance of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "balance_formatted",
+                            "type": "string",
+                            "description": "The balance of the token formatted",
+                            "example": "1.000000"
+                          },
+                          {
+                            "name": "usd_price",
+                            "type": "number",
+                            "description": "The USD price of the token",
+                            "example": "1000000"
+                          },
+                          {
+                            "name": "usd_value",
+                            "type": "number",
+                            "description": "The USD value of the token",
+                            "example": "1000000"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    {
+                      "name": "balance_usd",
+                      "type": "number",
+                      "description": "The balance in USD",
+                      "example": "1000000"
+                    },
+                    {
+                      "name": "total_unclaimed_usd_value",
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": "1000000"
+                    },
+                    {
+                      "name": "position_details",
+                      "type": "object",
+                      "description": "The details of the position",
+                      "properties": {
+                        "fee_tier": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The fee tier of the position"
+                        },
+                        "range_tnd": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The range trend of the position"
+                        },
+                        "reserves": {
+                          "type": "array",
+                          "nullable": true,
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "The reserves of the position"
+                        },
+                        "current_price": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The current price of the position"
+                        },
+                        "is_in_range": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is in range"
+                        },
+                        "price_upper": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The upper price of the range"
+                        },
+                        "price_lower": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The lower price of the range"
+                        },
+                        "price_label": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The price label"
+                        },
+                        "liquidity": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The liquidity of the position"
+                        },
+                        "range_start": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The start of the range"
+                        },
+                        "pool_address": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The address of the pool"
+                        },
+                        "position_key": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The key of the position"
+                        },
+                        "nft_metadata": {
+                          "type": "object",
+                          "nullable": true,
+                          "additionalProperties": true,
+                          "description": "Metadata of the NFT"
+                        },
+                        "asset_standard": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The standard of the asset"
+                        },
+                        "apy": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The annual percentage yield"
+                        },
+                        "is_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a debt"
+                        },
+                        "is_variable_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a variable debt"
+                        },
+                        "is_stable_debt": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the position is a stable debt"
+                        },
+                        "shares": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The shares of the position"
+                        },
+                        "reserve0": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The first reserve of the position"
+                        },
+                        "reserve1": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The second reserve of the position"
+                        },
+                        "factory": {
+                          "type": "string",
+                          "description": "The factory of the position"
+                        },
+                        "pair": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The pair of the position"
+                        },
+                        "share_of_pool": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The share of the pool"
+                        },
+                        "no_price_available": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the price is available"
+                        },
+                        "shares_in_strategy": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The shares in the strategy"
+                        },
+                        "strategy_address": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The address of the strategy"
+                        },
+                        "base_type": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The base type of the position"
+                        },
+                        "health_factor": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The health factor of the position in percent"
+                        },
+                        "is_enabled_collateral": {
+                          "type": "boolean",
+                          "nullable": true,
+                          "description": "Whether the supply position is enabled as collateral"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -57119,7 +60987,83 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns all defi positions for the wallet address."
+          "description": "Returns all defi positions for the wallet address.",
+          "body": {
+            "type": "array",
+            "field": {
+              "type": "object",
+              "fields": [
+                {
+                  "name": "protocol_name",
+                  "type": "string",
+                  "description": "The name of the protocol",
+                  "example": "Uniswap v2"
+                },
+                {
+                  "name": "protocol_id",
+                  "type": "string",
+                  "description": "The id of the protocol",
+                  "example": "uniswap-v2"
+                },
+                {
+                  "name": "protocol_url",
+                  "type": "string",
+                  "description": "The url of the protocol",
+                  "example": "https://app.uniswap.org/pools/v2"
+                },
+                {
+                  "name": "protocol_logo",
+                  "type": "string",
+                  "description": "The logo of the protocol",
+                  "example": "https://cdn.moralis.io/defi/uniswap.png"
+                },
+                {
+                  "name": "position",
+                  "type": "object",
+                  "description": "The position of the protocol",
+                  "required": [
+                    "label",
+                    "tokens",
+                    "balance_usd",
+                    "total_unclaimed_usd_value"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "description": "The label of the position",
+                      "example": "liquidity"
+                    },
+                    "tokens": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/defiTokenBalance"
+                      }
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "The address of the position",
+                      "example": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+                    },
+                    "balance_usd": {
+                      "type": "number",
+                      "description": "The balance in USD",
+                      "example": "1000000"
+                    },
+                    "total_unclaimed_usd_value": {
+                      "type": "number",
+                      "description": "The total unclaimed USD value of the position",
+                      "example": "1000000"
+                    },
+                    "position_details": {
+                      "type": "object",
+                      "description": "The details of the position",
+                      "$ref": "#/components/schemas/defiPositionDetails"
+                    }
+                  }
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -58229,7 +62173,20 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the token details"
+          "description": "Returns the token details",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "metadata",
+                "type": "object"
+              },
+              {
+                "name": "metrics",
+                "type": "object"
+              }
+            ]
+          }
         }
       ]
     },
@@ -59971,7 +63928,52 @@
       "responses": [
         {
           "status": "200",
-          "description": "Successful response with the profitability summary."
+          "description": "Successful response with the profitability summary.",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total_count_of_trades",
+                "type": "number",
+                "description": "Total count of trades executed by the wallet."
+              },
+              {
+                "name": "total_trade_volume",
+                "type": "string",
+                "description": "Total trade volume managed by the wallet."
+              },
+              {
+                "name": "total_realized_profit_usd",
+                "type": "string",
+                "description": "Total realized profit in USD for the wallet."
+              },
+              {
+                "name": "total_realized_profit_percentage",
+                "type": "number",
+                "description": "Total realized profit as a percentage."
+              },
+              {
+                "name": "total_buys",
+                "type": "number",
+                "description": "Total number of buy transactions."
+              },
+              {
+                "name": "total_sells",
+                "type": "number",
+                "description": "Total number of sell transactions."
+              },
+              {
+                "name": "total_sold_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens sold by the wallet."
+              },
+              {
+                "name": "total_bought_volume_usd",
+                "type": "string",
+                "description": "Total USD volume of tokens bought by the wallet."
+              }
+            ]
+          }
         }
       ]
     },
@@ -60449,7 +64451,138 @@
       "responses": [
         {
           "status": "200",
-          "description": "Returns the search results"
+          "description": "Returns the search results",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "total",
+                "type": "number",
+                "example": 10000
+              },
+              {
+                "name": "result",
+                "type": "array",
+                "field": {
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "tokenAddress",
+                      "type": "string",
+                      "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                    },
+                    {
+                      "name": "chainId",
+                      "type": "string",
+                      "example": "0x1"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "example": "Pepe"
+                    },
+                    {
+                      "name": "symbol",
+                      "type": "string",
+                      "example": "PEPE"
+                    },
+                    {
+                      "name": "blockNumber",
+                      "type": "number",
+                      "example": 17046105
+                    },
+                    {
+                      "name": "blockTimestamp",
+                      "type": "number",
+                      "example": 1681483883
+                    },
+                    {
+                      "name": "usdPrice",
+                      "type": "number",
+                      "example": 0.000024509478199144
+                    },
+                    {
+                      "name": "marketCap",
+                      "type": "number",
+                      "example": 9825629287.860994
+                    },
+                    {
+                      "name": "experiencedNetBuyers",
+                      "type": "object"
+                    },
+                    {
+                      "name": "netVolumeUsd",
+                      "type": "object"
+                    },
+                    {
+                      "name": "liquidityChangeUSD",
+                      "type": "object"
+                    },
+                    {
+                      "name": "usdPricePercentChange",
+                      "type": "object"
+                    },
+                    {
+                      "name": "volumeUsd",
+                      "type": "object"
+                    },
+                    {
+                      "name": "securityScore",
+                      "type": "number",
+                      "example": 92
+                    },
+                    {
+                      "name": "logo",
+                      "type": "string",
+                      "example": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0x6982508145454ce325ddbe47a25d4ec3d2311933_icon.png"
+                    },
+                    {
+                      "name": "isVerifiedContract",
+                      "type": "boolean",
+                      "example": false
+                    },
+                    {
+                      "name": "fullyDilutedValuation",
+                      "type": "number",
+                      "example": 71242582.97741453
+                    },
+                    {
+                      "name": "totalHolders",
+                      "type": "number",
+                      "example": 18908
+                    },
+                    {
+                      "name": "totalLiquidityUsd",
+                      "type": "number",
+                      "example": 18908.234
+                    },
+                    {
+                      "name": "implementations",
+                      "type": "array",
+                      "description": "The token addresses of the same symbol from another chains",
+                      "field": {
+                        "type": "object",
+                        "fields": [
+                          {
+                            "name": "chain",
+                            "type": "string",
+                            "description": "The chain name",
+                            "example": "eth"
+                          },
+                          {
+                            "name": "address",
+                            "type": "string",
+                            "description": "The token address",
+                            "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ]
     },

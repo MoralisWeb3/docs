@@ -251,16 +251,125 @@ const formatBodyParameters = (requestBody) => {
 const formatResponses = (responses) => {
     const formattedResponses = Object.keys(responses).map((status) => {
         const { description, content } = responses[status];
-        const schemaRef = content?.["application/json"]?.schema?.$ref;
-        return {
-            status,
-            description,
-            ...(schemaRef
-                ? {
-                      body: translateSchemaReference(schemaRef),
-                  }
-                : {}),
-        };
+        const schema = content?.["application/json"]?.schema;
+        const schemaRef = schema?.$ref;
+
+        // Handle both direct $ref and array with items.$ref
+        if (schemaRef) {
+            return {
+                status,
+                description,
+                body: translateSchemaReference(schemaRef),
+            };
+        } else if (schema?.type === "array" && schema?.items?.$ref) {
+            return {
+                status,
+                description,
+                body: {
+                    type: "array",
+                    field: translateSchemaReference(schema.items.$ref),
+                },
+            };
+        } else if (schema?.properties) {
+            // Handle inline schemas
+            return {
+                status,
+                description,
+                body: {
+                    type: schema.type || "object",
+                    fields: Object.keys(schema.properties).map((name) => {
+                        const prop = schema.properties[name];
+                        const { type, description, example, items, $ref } = prop;
+
+                        if ($ref) {
+                            return {
+                                name,
+                                type,
+                                description,
+                                ...swaggerSchemas[$ref.replace("#/components/schemas/", "")],
+                            };
+                        } else if (type === "array" && items?.properties) {
+                            return {
+                                name,
+                                type,
+                                description,
+                                field: {
+                                    type: items.type || "object",
+                                    fields: Object.keys(items.properties).map((itemName) => {
+                                        const itemProp = items.properties[itemName];
+                                        const fieldType = itemProp.type === "integer" ? "number" : itemProp.type;
+
+                                        // Handle nested array fields
+                                        if (fieldType === "array" && itemProp.items?.properties) {
+                                            return {
+                                                name: itemName,
+                                                type: fieldType,
+                                                description: itemProp.description || itemProp.items?.description,
+                                                example: itemProp.example,
+                                                field: {
+                                                    type: "object",
+                                                    fields: Object.keys(itemProp.items.properties).map((nestedItemName) => {
+                                                        const nestedProp = itemProp.items.properties[nestedItemName];
+                                                        return {
+                                                            name: nestedItemName,
+                                                            type: nestedProp.type === "integer" ? "number" : nestedProp.type,
+                                                            description: nestedProp.description,
+                                                            example: nestedProp.example,
+                                                        };
+                                                    }),
+                                                },
+                                            };
+                                        } else if (fieldType === "array" && itemProp.items?.type && !itemProp.items?.properties && !itemProp.items?.$ref) {
+                                            // Handle simple array types without nested properties
+                                            return {
+                                                name: itemName,
+                                                type: fieldType,
+                                                description: itemProp.description || itemProp.items?.description,
+                                                example: itemProp.example,
+                                            };
+                                        } else if (fieldType === "array" && itemProp.items?.type) {
+                                            // Handle array with simple type items
+                                            return {
+                                                name: itemName,
+                                                type: fieldType,
+                                                description: itemProp.description || itemProp.items?.description,
+                                                example: itemProp.example,
+                                            };
+                                        } else {
+                                            return {
+                                                name: itemName,
+                                                type: fieldType,
+                                                description: itemProp.description,
+                                                example: itemProp.example,
+                                            };
+                                        }
+                                    }),
+                                },
+                            };
+                        } else if (type === "array" && items?.$ref) {
+                            return {
+                                name,
+                                type,
+                                description,
+                                field: translateSchemaReference(items.$ref),
+                            };
+                        } else {
+                            return {
+                                name,
+                                type: type === "integer" ? "number" : type,
+                                description,
+                                example,
+                            };
+                        }
+                    }),
+                },
+            };
+        } else {
+            return {
+                status,
+                description,
+            };
+        }
     });
     return formattedResponses;
 };
