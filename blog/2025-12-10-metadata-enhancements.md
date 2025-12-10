@@ -1,5 +1,5 @@
 ---
-title: "Token Metadata Enhanacement"
+title: "Improvement: Token Metadata"
 slug: "metadata-enhancements"
 authors:
   name: Moralis Team
