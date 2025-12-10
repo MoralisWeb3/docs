@@ -23,4 +23,4 @@ import PremiumEndpointNotice from "@site/src/components/PremiumEndpointNotice/Pr
     </p>
 </PremiumEndpointNotice>
 
-<ApiReference {...config.token.searchTokens} />
+<ApiReference {...config['evm-docs'].searchTokens} />
