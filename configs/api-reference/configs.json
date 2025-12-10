@@ -1180,6 +1180,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -14045,7 +14051,9 @@
             "etherfi",
             "rocketpool",
             "sparkfi",
-            "takara-lend"
+            "takara-lend",
+            "neverland",
+            "kintsu"
           ]
         }
       ],
@@ -20348,6 +20356,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -21314,6 +21328,12 @@
                       "type": "string",
                       "description": "The output",
                       "example": "0x"
+                    },
+                    {
+                      "name": "error",
+                      "type": "string",
+                      "description": "Error message if the internal transaction failed",
+                      "example": "Execution reverted"
                     }
                   ]
                 }
@@ -22628,6 +22648,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -51999,6 +52025,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -53465,6 +53497,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -54338,6 +54376,12 @@
                       "type": "string",
                       "description": "The output",
                       "example": "0x"
+                    },
+                    {
+                      "name": "error",
+                      "type": "string",
+                      "description": "Error message if the internal transaction failed",
+                      "example": "Execution reverted"
                     }
                   ]
                 }
@@ -55246,6 +55290,12 @@
                             "type": "string",
                             "description": "The output",
                             "example": "0x"
+                          },
+                          {
+                            "name": "error",
+                            "type": "string",
+                            "description": "Error message if the internal transaction failed",
+                            "example": "Execution reverted"
                           }
                         ]
                       }
@@ -56884,7 +56934,9 @@
             "etherfi",
             "rocketpool",
             "sparkfi",
-            "takara-lend"
+            "takara-lend",
+            "neverland",
+            "kintsu"
           ]
         }
       ],
@@ -64680,6 +64732,154 @@
                 "name": "totalFullyDilutedValuation",
                 "type": "string",
                 "example": "530"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getTokenScore": {
+      "apiHost": "https://deep-index.moralis.io/api/v2.2",
+      "summary": "Get token score by token address",
+      "description": "Retrieve a score for a specific token along with detailed metrics including price, volume, liquidity, transaction counts, and supply information.",
+      "method": "GET",
+      "path": "/tokens/:tokenAddress/score",
+      "pathParams": [
+        {
+          "name": "tokenAddress",
+          "description": "The token address to query",
+          "required": true,
+          "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "type": "string"
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "chain",
+          "description": "The chain to query",
+          "required": false,
+          "example": "eth",
+          "type": "string",
+          "enum": [
+            "eth",
+            "0x1",
+            "sepolia",
+            "0xaa36a7",
+            "polygon",
+            "0x89",
+            "bsc",
+            "0x38",
+            "bsc testnet",
+            "0x61",
+            "avalanche",
+            "0xa86a",
+            "fantom",
+            "0xfa",
+            "cronos",
+            "0x19",
+            "arbitrum",
+            "0xa4b1",
+            "chiliz",
+            "0x15b38",
+            "chiliz testnet",
+            "0x15b32",
+            "gnosis",
+            "0x64",
+            "gnosis testnet",
+            "0x27d8",
+            "base",
+            "0x2105",
+            "base sepolia",
+            "0x14a34",
+            "optimism",
+            "0xa",
+            "holesky",
+            "0x4268",
+            "polygon amoy",
+            "0x13882",
+            "linea",
+            "0xe708",
+            "moonbeam",
+            "0x504",
+            "moonriver",
+            "0x505",
+            "moonbase",
+            "0x507",
+            "linea sepolia",
+            "0xe705",
+            "flow",
+            "0x2eb",
+            "flow-testnet",
+            "0x221",
+            "ronin",
+            "0x7e4",
+            "ronin-testnet",
+            "0x7e5",
+            "lisk",
+            "0x46f",
+            "lisk-sepolia",
+            "0x106a",
+            "pulse",
+            "0x171",
+            "sei-testnet",
+            "0x530",
+            "sei",
+            "0x531",
+            "monad",
+            "0x8f",
+            "solana"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "status": "200",
+          "description": "Successful response",
+          "body": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "tokenAddress",
+                "type": "string",
+                "example": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+              },
+              {
+                "name": "chainId",
+                "type": "string",
+                "example": "0x1"
+              },
+              {
+                "name": "score",
+                "type": "number",
+                "example": 94
+              },
+              {
+                "name": "updatedAt",
+                "type": "string",
+                "example": "2025-12-03T21:10:28Z"
+              },
+              {
+                "name": "metrics",
+                "type": "object",
+                "properties": {
+                  "usdPrice": {
+                    "type": "number",
+                    "example": 0.00000647147501365255
+                  },
+                  "liquidityUsd": {
+                    "type": "number",
+                    "example": 10890420.9
+                  },
+                  "volumeUsd": {
+                    "$ref": "#/components/schemas/TokenScoreVolumeUsd"
+                  },
+                  "transactions": {
+                    "$ref": "#/components/schemas/TokenScoreTransactions"
+                  },
+                  "supply": {
+                    "$ref": "#/components/schemas/TokenScoreSupply"
+                  }
+                }
               }
             ]
           }
