@@ -8,7 +8,7 @@ tags: ["Data API"]
 
 We've added a small but super useful upgrade to our token metadata endpoints.
 
-`getTokenMetadata` and `searchTokens` now return an `implementations` field - giving you a full list of all chains where the same token is deployed (e.g. USDC on Solana, Base, Arbitrum, etc.).
+[`getTokenMetadata`](/web3-data-api/evm/reference/get-token-metadata) and [`searchTokens`](/web3-data-api/evm/reference/search-tokens) now return an `implementations` field - giving you a full list of all chains where the same token is deployed (e.g. USDC on Solana, Base, Arbitrum, etc.).
 
 Here's an example snippet:
 
