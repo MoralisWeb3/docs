@@ -16,24 +16,28 @@ Here's an example snippet:
 {
   "implementations": [
     {
-      "chain": "solana",
-      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        "chainId": "0xa86a",
+        "chain": "avalanche",
+        "chainName": "Avalanche",
+        "address": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"
     },
     {
-      "chain": "monad",
-      "address": "0x754704bc059f8c67012fed69bc8a327a5aafb603"
+        "chainId": "0x89",
+        "chain": "polygon",
+        "chainName": "Polygon POS",
+        "address": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359"
     },
     {
-      "chain": "moonbeam",
-      "address": "0xffffffff7d2b0b761af01ca8e25242976ac0ad7d"
+        "chainId": "0xa4b1",
+        "chain": "arbitrum",
+        "chainName": "Arbitrum One",
+        "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831"
     },
     {
-      "chain": "sei",
-      "address": "0xe15fc38f6d8c56af07bbcbe3baf5708a2bf42392"
-    },
-    {
-      "chain": "base",
-      "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+        "chainId": "0xa",
+        "chain": "optimism",
+        "chainName": "Optimism",
+        "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85"
     },
     ...
   ]
