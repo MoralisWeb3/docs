@@ -19,10 +19,10 @@ The Token Score evaluates tokens using **six weighted onchain signals**:
 
 Higher scores indicate stronger onchain fundamentals, while lower scores highlight weaker liquidity, activity, distribution, or unrealistic valuations.
 
-## Key details
-- 📊 Simple to display, filter, and sort  
-- 🔄 **Dynamic & real-time** - scores update automatically as onchain data changes  
-- ⏳ Naturally decays if a token becomes inactive  
+## Availability
+- ✅ **Available across all endpoints where `security_score` is exposed**
+- 🔄 **Dynamic & real-time** — scores update automatically as onchain data changes  
+- ⏳ Scores decay naturally if a token becomes inactive  
 - ⚠️ New tokens may appear volatile initially as data accumulates  
 
 For a full breakdown of the methodology and FAQs, see the docs:  
