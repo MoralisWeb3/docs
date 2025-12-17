@@ -8,7 +8,7 @@ import ApiBanner from "@site/src/components/ApiBanner/ApiBanner.tsx";
 
 # Moralis Token Score
 
-The **Moralis Token Score** is a unified 0–100 rating that evaluates the onchain quality of a token using **six weighted metrics**.  
+The **Moralis Token Score** is a unified 0–100 rating that evaluates the onchain quality of a token using **six weighted metrics**, supported across all EVM chains and Solana mainnet. 
 
 ---
 
@@ -155,23 +155,27 @@ This endpoint returns:
 ## Supported Endpoints
 Token Scores are returned as part of token metadata across the following endpoints:
 
-| Name                                  | Endpoint                    | API Reference                                                                        |
-| ------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ |
-| Get Wallet History                    | `/wallets/:address/history` | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
-| Get ERC20 Transfers by Wallet         | `/:address/erc20/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
-| Get ERC20 Transfers by Contract       | `/erc20/:address/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
-| Get ERC20 Price                       | `/erc20/:address/price`     | [Method Documentation](/web3-data-api/evm/reference/get-token-price)                 |
-| Get Multiple ERC20 Prices             | `/erc20/prices`             | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices)       |
-| Get Wallet Token Balances             | `/:address/erc20`           | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances)       |
-| Get Wallet Token Balances with Prices | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
-| Get ERC20 Metadata by Contract        | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
-| Get ERC20 Metadata by Symbol          | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |
-| Get Filtered Tokens                   | `/discovery/tokens`         | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)             |
-| Token Search                          | `/tokens/search`            | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
-| Get Top Gainers                       | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
-| Get Top Losers                        | `/discovery/tokens/top-losers`    | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)    |
-
+| Name                                  | Network | Endpoint                    | API Reference                                                                        |
+| ------------------------------------- | ------- | -------------------- | ------------------------------------------------------------------------------------ |
+| Get Wallet History                    | EVM | `/wallets/:address/history` | [Method Documentation](/web3-data-api/evm/reference/wallet-api/get-wallet-history)   |
+| Get ERC20 Transfers by Wallet         | EVM | `/:address/erc20/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-transfers)      |
+| Get ERC20 Transfers by Contract       | EVM | `/erc20/:address/transfers` | [Method Documentation](/web3-data-api/evm/reference/get-token-transfers)             |
+| Get ERC20 Price                       | EVM | `/erc20/:address/price`     | [Method Documentation](/web3-data-api/evm/reference/get-token-price)                 |
+| Get Multiple ERC20 Prices             | EVM | `/erc20/prices`             | [Method Documentation](/web3-data-api/evm/reference/get-multiple-token-prices)       |
+| Get Wallet Token Balances             | EVM | `/:address/erc20`           | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances)       |
+| Get Wallet Token Balances with Prices | EVM | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
+| Get ERC20 Metadata by Contract        | EVM | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
+| Get ERC20 Metadata by Symbol          | EVM | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |
+| Get Filtered Tokens                   | EVM & Solana | `/discovery/tokens`         | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)             |
+| Token Search                          | EVM & Solana | `/tokens/search`            | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
+| Get Top Gainers                       | EVM & Solana | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
+| Get Top Losers                        | EVM & Solana | `/discovery/tokens/top-losers`    | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-losers)    |
+| Get Wallet Token Balances             | Solana | `/account/:network/:address/tokens`   | [Method Documentation](/web3-data-api/solana/reference/get-spl-token-balances)    |
+| Get Wallet Portfolio             | Solana | `/account/:network/:address/portfolio`   | [Method Documentation](/web3-data-api/solana/reference/get-native-and-spl-balances)    |
+| Get Token Metadata             | Solana | `/account/:network/:address/metadata`   | [Method Documentation](/web3-data-api/solana/reference/get-token-metadata)    |
+| Get Token Price             | Solana | `/token/:network/:address/price`   | [Method Documentation](/web3-data-api/solana/reference/get-sol-token-price)    |
+| Get Multiple Token Prices             | Solana | `/token/:network/prices`   | [Method Documentation](/web3-data-api/solana/reference/get-multiple-token-prices)    |
 
 ## Supported Chains
 
-The Token Score is available on all mainnet chains.
+The Token Score is available on all mainnet chains, for **both EVM and Solana tokens**. This allows you to **compare token quality across EVM chains and Solana using a unified metric**, while still respecting chain-specific data structures under the hood.
