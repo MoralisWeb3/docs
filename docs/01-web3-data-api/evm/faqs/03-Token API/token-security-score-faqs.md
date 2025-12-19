@@ -141,7 +141,7 @@ Developers can fetch the full scoring breakdown via:
 GET /tokens/{address}/score
 ```
 
-[View full endpoint](/web3-data-api/evm/reference/get-token-score)
+[View API Reference](/web3-data-api/evm/reference/get-token-score)
 
 This endpoint returns:
 
