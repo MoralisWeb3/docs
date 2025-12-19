@@ -27,7 +27,7 @@ Higher scores indicate stronger onchain fundamentals, while lower scores highlig
 - ⚠️ New tokens may appear volatile initially as data accumulates  
 
 ## New endpoint: Fetch full Token Score
-We've also introduced a **dedicated endpoint** to retrieve the **full Token Score breakdown**, including underlying metrics:
+We've also introduced a [dedicated endpoint](/web3-data-api/evm/reference/get-token-score) to retrieve the **full Token Score breakdown**, including underlying metrics:
 
 ```
 GET /tokens/{address}/score
@@ -75,5 +75,4 @@ Example response:
 }
 ```
 
-For a full breakdown of the methodology and FAQs, see the docs:  
-👉 https://docs.moralis.com/web3-data-api/evm/token-security-score-faqs
+[View API reference](/web3-data-api/evm/reference/get-token-score) or for a full breakdown of the methodology and FAQs, [see the docs](/web3-data-api/evm/token-security-score-faqs).
