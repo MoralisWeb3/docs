@@ -141,6 +141,8 @@ Developers can fetch the full scoring breakdown via:
 GET /tokens/{address}/score
 ```
 
+[View full endpoint](/web3-data-api/evm/reference/get-token-score)
+
 This endpoint returns:
 
 - Final score (0–100)  
@@ -204,6 +206,7 @@ Token Scores are returned as part of token metadata across the following endpoin
 | Get Wallet Token Balances with Prices | EVM | `/wallets/{address}/tokens` | [Method Documentation](/web3-data-api/evm/reference/get-wallet-token-balances-price) |
 | Get ERC20 Metadata by Contract        | EVM | `/erc20/metadata`           | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata)              |
 | Get ERC20 Metadata by Symbol          | EVM | `/erc20/metadata/symbols`   | [Method Documentation](/web3-data-api/evm/reference/get-token-metadata-by-symbol)    |
+| Get Token Score                   | EVM & Solana | `/tokens/:address/score`         | [Method Documentation](/web3-data-api/evm/reference/get-token-score)             |
 | Get Filtered Tokens                   | EVM & Solana | `/discovery/tokens`         | [Method Documentation](/web3-data-api/evm/reference/get-filtered-tokens)             |
 | Token Search                          | EVM & Solana | `/tokens/search`            | [Method Documentation](/web3-data-api/evm/reference/search-tokens)    |
 | Get Top Gainers                       | EVM & Solana | `/discovery/tokens/top-gainers`   | [Method Documentation](/web3-data-api/evm/reference/get-tokens-with-top-gainers)    |
