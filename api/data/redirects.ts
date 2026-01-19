@@ -5777,11 +5777,6 @@ export const redirects: Redirect[] = [
         permanent: true,
     },
     {
-        source: "/web3-data-api/integrations",
-        destination: "/web3-data-api/evm/integrations",
-        permanent: true,
-    },
-    {
         source: "/web3-data-api/integrations/aws-lambda-nodejs",
         destination: "/web3-data-api/evm/integrations/aws-lambda-nodejs",
         permanent: true,
