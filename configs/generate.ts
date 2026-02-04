@@ -60,20 +60,44 @@ const translateSchemaReference = (schemaRef) => {
                 } else if ($ref) {
                     return {
                         name,
-                        type,
                         description,
-                        ...swaggerSchemas[$ref.replace("#/components/schemas/", "")],
+                        ...translateSchemaReference($ref),
                     };
                 } else if (type === "array") {
+                    let field;
+                    if (items && items?.$ref) {
+                        // If there are more arrays within the child, do recursion
+                        field = translateSchemaReference(items?.$ref);
+                    } else if (items?.type === "object" && items?.properties) {
+                        // Convert inline object items to fields format
+                        field = {
+                            type: "object",
+                            fields: Object.keys(items.properties).map((key) => {
+                                const prop = items.properties[key];
+                                if (prop.$ref) {
+                                    return {
+                                        name: key,
+                                        description: prop.description,
+                                        ...translateSchemaReference(prop.$ref),
+                                    };
+                                }
+                                return {
+                                    name: key,
+                                    type: prop.type === "integer" ? "number" : prop.type,
+                                    description: prop.description,
+                                    example: prop.example,
+                                };
+                            }),
+                        };
+                    } else {
+                        field = items;
+                    }
                     return {
                         name,
                         type,
                         description,
                         example,
-                        ...(items && items?.$ref
-                            ? // If there are more arrays within the child, do recursion
-                              { field: translateSchemaReference(items?.$ref) }
-                            : { field: items }),
+                        field,
                     };
                 } else if (type === "object" && !items) {
                     const nestedProperties = properties[name].properties;
@@ -121,7 +145,7 @@ const formatParameters = (parameters) => {
     const pathParams = [];
     for (const param of parameters) {
         const { name, description, required, schema } = param ?? {};
-        const { example, type, $ref, items } = schema ?? {};
+        const { example, type, $ref, items, enum: schemaEnum, default: schemaDefault } = schema ?? {};
         const paramsObject = {
             name,
             description,
@@ -130,6 +154,8 @@ const formatParameters = (parameters) => {
             ...(type
                 ? {
                       type: type === "integer" ? "number" : type,
+                      ...(schemaEnum && { enum: schemaEnum }),
+                      ...(schemaDefault !== undefined && { default: schemaDefault }),
                       ...(items &&
                           (items?.$ref
                               ? {

@@ -24,6 +24,7 @@ Select what you want to achieve:
 <li><a href="#get-tokens-by-exchange">Get Tokens by Exchange</a></li>
 <li><a href="#get-token-stats">Get Token Stats</a></li>
 <li><a href="#get-token-holders">Get Token Holders</a></li>
+<li><a href="#get-token-score">Get Token Score</a></li>
 <li><a href="#get-token-snipers">Get Token Snipers</a></li>
 <li><a href="#get-trending-tokens">Get Trending Tokens</a></li>
 <li><a href="#get-filtered-tokens">Get Filtered Tokens</a></li>
@@ -129,6 +130,13 @@ Select what you want to achieve:
 | 32  | `getTokenHolders`           | Get ERC20 Token Holders                  | [Method Documentation](/web3-data-api/evm/reference/get-token-holders)            | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/owners)                         |
 | 33  | `getTokenHolderStats`       | Get ERC20 Token Holders Stats            | [Method Documentation](/web3-data-api/evm/reference/get-token-holder-stats)       | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders)                       |
 | 34  | `getHistoricalTokenHolders` | Get ERC20 token holders Stats Timeseries | [Method Documentation](/web3-data-api/evm/reference/get-historical-token-holders) | [https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical](https://deep-index.moralis.io/api/v2.2/erc20/:token_address/holders/historical) |
+
+### Get Token Score
+
+| No. | Method                    | Description                | API Reference                                                                           | URL                                                                                                                                                          |
+| --- | ------------------------- | -------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 35  | `getTokenScore`           | Get token score            | [Method Documentation](/web3-data-api/evm/reference/get-token-score)                    | [https://deep-index.moralis.io/api/v2.2/tokens/:tokenAddress/score](https://deep-index.moralis.io/api/v2.2/tokens/:tokenAddress/score)                       |
+| 36  | `getHistoricalTokenScore` | Get historical token score | [Method Documentation](/web3-data-api/evm/reference/get-historical-token-score)         | [https://deep-index.moralis.io/api/v2.2/tokens/:tokenAddress/score/historical](https://deep-index.moralis.io/api/v2.2/tokens/:tokenAddress/score/historical) |
 
 ### Get Token Snipers
 
