@@ -24,7 +24,7 @@ For example, `syncNFTContract` has `rateLimitCost` of 25 CUs/call as shown below
 
 Therefore, for both free plan and pro plan users, they will be able to call the `syncNFTContract` API at maximum of, respectively:
 
-- Free Plan (Throughput: 25 CU/s): 25 CUs/s / 25 CUs/call = 1 call/s
-- Business Plan (Throughput: 100 CU/s): 100 CUs/s / 25 CUs/call = 4 call/s
+- Free Plan (Throughput: 1000 CU/s): 1000 CUs/s / 25 CUs/call = 40 call/s
+- Business Plan (Throughput: 5000 CU/s): 5000 CUs/s / 25 CUs/call = 200 call/s
 
 If you surpassed the maximum number of calls per second, you will get rate limited by the Moralis API. In this case, if the rate limits happen too frequently, it is recommended that you upgrade to a higher pricing plan to increase your throughput.
